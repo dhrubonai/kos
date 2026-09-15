@@ -5526,6 +5526,27 @@
 
     .line 260
     :goto_5
+
+    # KOS-CONNECT-PATCH: try owner backend first (ctx=p1, verName=v5, verCode=v6, pkg=v7)
+    move-object/from16 v8, p1
+
+    invoke-static {v8, v5, v6, v7}, Lcom/kos/lic/LicBridge;->connectRaw(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_kos_native_conn
+
+    const/4 v9, 0x1
+
+    new-array v1, v9, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aput-object v8, v1, v9
+
+    goto/16 :goto_kos_conn_done
+
+    :cond_kos_native_conn
     const/16 v8, 0x3e9
 
     .line 261
@@ -5591,6 +5612,7 @@
     .line 291
     move-result-object v1
 
+    :goto_kos_conn_done
     .line 292
     if-eqz v1, :cond_6
 
@@ -5918,40 +5940,38 @@
     .line 24
     invoke-static {p2, v1}, Landroidx/emoji2/text/lx0;->x(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
-    .line 26
-    .line 27
+    # KOS-LIC-PATCH: try owner license backend first; fall back to native on failure
+    invoke-static {p1, p2}, Lcom/kos/lic/LicBridge;->licenseRaw(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_kos_native_lic
+
+    const/4 v1, 0x1
+
+    new-array p1, v1, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object v3, p1, v1
+
+    goto/16 :goto_kos_lic_done
+
+    :cond_kos_native_lic
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    .line 28
-    .line 29
-    .line 30
-    move-result-object p1
+    move-result-object v3
 
-    .line 31
     const-wide v1, -0x8cac21523f22L
 
-    .line 32
-    .line 33
-    .line 34
-    .line 35
-    .line 36
     invoke-static {v1, v2, v0}, La/a/a/c;->a(J[Ljava/lang/String;)Ljava/lang/String;
 
-    .line 37
-    .line 38
-    .line 39
     move-result-object v1
 
-    .line 40
-    invoke-static {p1, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v1}, Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 41
-    .line 42
-    .line 43
     move-result-object p1
 
-    .line 44
     const/16 v1, 0x3ea
 
     .line 45
@@ -5979,6 +5999,7 @@
     .line 57
     move-result-object p1
 
+    :goto_kos_lic_done
     .line 58
     const/4 p2, 0x0
 

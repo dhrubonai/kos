@@ -80,6 +80,7 @@
     <string name="app_launch_failed">Couldn’t launch %1$s</string>
     <string name="app_launch_failed_short">Launch failed</string>
     <string name="app_name">KOS</string>
+    <string name="kos_api_base" translatable="false">https://kos-license.UNSET.workers.dev</string>
     <string name="app_no_launch_screen">%1$s has no launch screen</string>
     <string name="app_not_found_real_device">Error: App not found on real device.</string>
     <string name="app_remove_failed">Couldn’t remove %1$s</string>

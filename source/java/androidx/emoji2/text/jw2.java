@@ -1,0 +1,42 @@
+package androidx.emoji2.text;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public abstract /* synthetic */ class jw2 {
+
+    /* renamed from: a, reason: collision with root package name */
+    public static final /* synthetic */ int[] f605a;
+
+    static {
+        int[] iArr = new int[n51.values().length];
+        try {
+            iArr[n51.ON_CREATE.ordinal()] = 1;
+        } catch (NoSuchFieldError unused) {
+        }
+        try {
+            iArr[n51.ON_START.ordinal()] = 2;
+        } catch (NoSuchFieldError unused2) {
+        }
+        try {
+            iArr[n51.ON_STOP.ordinal()] = 3;
+        } catch (NoSuchFieldError unused3) {
+        }
+        try {
+            iArr[n51.ON_DESTROY.ordinal()] = 4;
+        } catch (NoSuchFieldError unused4) {
+        }
+        try {
+            iArr[n51.ON_PAUSE.ordinal()] = 5;
+        } catch (NoSuchFieldError unused5) {
+        }
+        try {
+            iArr[n51.ON_RESUME.ordinal()] = 6;
+        } catch (NoSuchFieldError unused6) {
+        }
+        try {
+            iArr[n51.ON_ANY.ordinal()] = 7;
+        } catch (NoSuchFieldError unused7) {
+        }
+        f605a = iArr;
+    }
+}

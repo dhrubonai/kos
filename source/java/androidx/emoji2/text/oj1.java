@@ -1,0 +1,25 @@
+package androidx.emoji2.text;
+
+import android.window.OnBackInvokedDispatcher;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public final class oj1 {
+
+    /* renamed from: a, reason: collision with root package name */
+    public final Runnable f860a;
+    public final th2 b = az0.U(new t2(8, this));
+
+    public oj1(Runnable runnable) {
+        this.f860a = runnable;
+    }
+
+    public final mj1 a() {
+        return (mj1) this.b.getValue();
+    }
+
+    public final void b(OnBackInvokedDispatcher onBackInvokedDispatcher) {
+        a().c.e(new hj1(onBackInvokedDispatcher, 0), 1);
+        a().c.e(new hj1(onBackInvokedDispatcher, 1000000), 0);
+    }
+}

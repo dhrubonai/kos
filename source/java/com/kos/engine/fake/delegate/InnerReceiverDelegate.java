@@ -1,0 +1,72 @@
+package com.kos.engine.fake.delegate;
+
+import a.a.a.c;
+import android.content.IIntentReceiver;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
+import androidx.emoji2.text.rj;
+import androidx.emoji2.text.xa1;
+import black.android.content.BRIIntentReceiver;
+import com.kos.engine.proxy.record.ProxyBroadcastRecord;
+import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public class InnerReceiverDelegate extends IIntentReceiver.Stub {
+    public static final String TAG = c.a(-418613841510178L, xa1.b);
+    private static final Map<IBinder, InnerReceiverDelegate> sInnerReceiverDelegate = new HashMap();
+    private final WeakReference<IIntentReceiver> mIntentReceiver;
+
+    private InnerReceiverDelegate(IIntentReceiver iIntentReceiver) {
+        this.mIntentReceiver = new WeakReference<>(iIntentReceiver);
+    }
+
+    public static IIntentReceiver createProxy(IIntentReceiver iIntentReceiver) throws RemoteException {
+        if (iIntentReceiver instanceof InnerReceiverDelegate) {
+            return iIntentReceiver;
+        }
+        final IBinder iBinderAsBinder = iIntentReceiver.asBinder();
+        InnerReceiverDelegate innerReceiverDelegate = sInnerReceiverDelegate.get(iBinderAsBinder);
+        if (innerReceiverDelegate != null) {
+            return innerReceiverDelegate;
+        }
+        try {
+            iBinderAsBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.kos.engine.fake.delegate.InnerReceiverDelegate.1
+                @Override // android.os.IBinder.DeathRecipient
+                public void binderDied() {
+                    InnerReceiverDelegate.sInnerReceiverDelegate.remove(iBinderAsBinder);
+                    iBinderAsBinder.unlinkToDeath(this, 0);
+                }
+            }, 0);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        InnerReceiverDelegate innerReceiverDelegate2 = new InnerReceiverDelegate(iIntentReceiver);
+        sInnerReceiverDelegate.put(iBinderAsBinder, innerReceiverDelegate2);
+        return innerReceiverDelegate2;
+    }
+
+    public static InnerReceiverDelegate getDelegate(IBinder iBinder) {
+        return sInnerReceiverDelegate.get(iBinder);
+    }
+
+    @Override // android.content.IIntentReceiver
+    public void performReceive(Intent intent, int i, String str, Bundle bundle, boolean z, boolean z2, int i2) {
+        intent.setExtrasClassLoader(rj.i().b.getClassLoader());
+        ProxyBroadcastRecord proxyBroadcastRecordCreate = ProxyBroadcastRecord.create(intent);
+        Intent intent2 = proxyBroadcastRecordCreate.mIntent;
+        if (intent2 != null) {
+            intent2.setExtrasClassLoader(rj.i().b.getClassLoader());
+            intent = proxyBroadcastRecordCreate.mIntent;
+        }
+        Intent intent3 = intent;
+        IIntentReceiver iIntentReceiver = this.mIntentReceiver.get();
+        if (iIntentReceiver != null) {
+            BRIIntentReceiver.get(iIntentReceiver).performReceive(intent3, i, str, bundle, z, z2, i2);
+        }
+    }
+}

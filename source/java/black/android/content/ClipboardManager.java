@@ -1,0 +1,17 @@
+package black.android.content;
+
+import android.os.IInterface;
+import top.niunaijun.blackreflection.annotation.BClassName;
+import top.niunaijun.blackreflection.annotation.BStaticField;
+import top.niunaijun.blackreflection.annotation.BStaticMethod;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+@BClassName("android.content.ClipboardManager")
+/* loaded from: classes.dex */
+public interface ClipboardManager {
+    @BStaticMethod
+    IInterface getService();
+
+    @BStaticField
+    IInterface sService();
+}

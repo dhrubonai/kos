@@ -1,0 +1,14 @@
+package androidx.emoji2.text;
+
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public abstract class h02 implements Serializable {
+    public static final Throwable a(Object obj) {
+        if (obj instanceof g02) {
+            return ((g02) obj).d;
+        }
+        return null;
+    }
+}

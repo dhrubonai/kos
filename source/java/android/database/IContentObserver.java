@@ -1,0 +1,128 @@
+package android.database;
+
+import android.net.Uri;
+import android.os.Binder;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public interface IContentObserver extends IInterface {
+
+    /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+    public static class _Parcel {
+        public static /* bridge */ /* synthetic */ Object a(Parcel parcel) {
+            return readTypedObject(parcel, Uri.CREATOR);
+        }
+
+        private static <T> T readTypedObject(Parcel parcel, Parcelable.Creator<T> creator) {
+            if (parcel.readInt() != 0) {
+                return creator.createFromParcel(parcel);
+            }
+            return null;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static <T extends Parcelable> void writeTypedObject(Parcel parcel, T t, int i) {
+            if (t == null) {
+                parcel.writeInt(0);
+            } else {
+                parcel.writeInt(1);
+                t.writeToParcel(parcel, i);
+            }
+        }
+    }
+
+    void onChange(boolean z, Uri uri, int i);
+
+    /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+    public static abstract class Stub extends Binder implements IContentObserver {
+        public static final String DESCRIPTOR = "android.database.IContentObserver";
+        static final int TRANSACTION_onChange = 1;
+
+        /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+        public static class Proxy implements IContentObserver {
+            private IBinder mRemote;
+
+            public Proxy(IBinder iBinder) {
+                this.mRemote = iBinder;
+            }
+
+            @Override // android.os.IInterface
+            public IBinder asBinder() {
+                return this.mRemote;
+            }
+
+            public String getInterfaceDescriptor() {
+                return Stub.DESCRIPTOR;
+            }
+
+            @Override // android.database.IContentObserver
+            public void onChange(boolean z, Uri uri, int i) {
+                Parcel parcelObtain = Parcel.obtain();
+                Parcel parcelObtain2 = Parcel.obtain();
+                try {
+                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    parcelObtain.writeInt(z ? 1 : 0);
+                    _Parcel.writeTypedObject(parcelObtain, uri, 0);
+                    parcelObtain.writeInt(i);
+                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
+                    parcelObtain2.readException();
+                } finally {
+                    parcelObtain2.recycle();
+                    parcelObtain.recycle();
+                }
+            }
+        }
+
+        public Stub() {
+            attachInterface(this, DESCRIPTOR);
+        }
+
+        public static IContentObserver asInterface(IBinder iBinder) {
+            if (iBinder == null) {
+                return null;
+            }
+            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IContentObserver)) ? new Proxy(iBinder) : (IContentObserver) iInterfaceQueryLocalInterface;
+        }
+
+        @Override // android.os.Binder
+        public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
+            if (i >= 1 && i <= 16777215) {
+                parcel.enforceInterface(DESCRIPTOR);
+            }
+            if (i == 1598968902) {
+                parcel2.writeString(DESCRIPTOR);
+                return true;
+            }
+            if (i != 1) {
+                return super.onTransact(i, parcel, parcel2, i2);
+            }
+            boolean z = parcel.readInt() != 0;
+            Parcelable.Creator creator = Uri.CREATOR;
+            onChange(z, (Uri) _Parcel.a(parcel), parcel.readInt());
+            parcel2.writeNoException();
+            return true;
+        }
+
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return this;
+        }
+    }
+
+    /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+    public static class Default implements IContentObserver {
+        @Override // android.os.IInterface
+        public IBinder asBinder() {
+            return null;
+        }
+
+        @Override // android.database.IContentObserver
+        public void onChange(boolean z, Uri uri, int i) {
+        }
+    }
+}

@@ -1,0 +1,17 @@
+package androidx.emoji2.text;
+
+/* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
+/* loaded from: classes.dex */
+public interface n31 {
+    int a();
+
+    int b(Object obj);
+
+    Object c(int i);
+
+    default Object d(int i) {
+        return null;
+    }
+
+    void e(int i, Object obj, lx lxVar, int i2);
+}

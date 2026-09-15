@@ -110,3 +110,47 @@ return-object p1
 
 Replace `UNSET` with the deployed workers.dev subdomain and rebuild.
 `LicBridge` reads this at runtime — no other change is needed to switch backends.
+
+---
+
+## v2 — crash-diagnostic build (hardening)
+
+After field-testing showed a crash on open, the license patch was hardened:
+
+1. **`com.kos.lic.CrashHook`** (new, classes2.dex): global uncaught-exception
+   handler installed at the top of `App.attachBaseContext`. Fatal traces POST
+   to `{base}/api/crash` (D1 `crashes` table, admin: `GET /api/admin/crashes`).
+2. **`NativeBridge.validateLicense` / `getDataFromServer`**: the `LicBridge`
+   calls are now wrapped in `try/catch Throwable` (smali `.catch` directives;
+   low-register catch handlers). On ANY bridge failure the methods fall back
+   to `LicBridge.offlineValidate()` / `offlineConnect()` — graceful synthetic
+   responses. **The native tasks (1001/1002) are never invoked on this build**,
+   which removes the native-side integrity check on the re-signed APK as a
+   crash vector entirely.
+3. **`LicBridge.post`**: hops to a worker thread when invoked on the main
+   thread (NetworkOnMainThreadException guard) and reports transport errors.
+4. Connect status token is date-derived (`yyyyMMdd`) instead of hardcoded.
+
+### smali v2 shape (validateLicense)
+
+```smali
+.catch Ljava/lang/Throwable; {:try_kos_lic_start .. :try_kos_lic_end} :catch_kos_lic
+:try_kos_lic_start
+invoke-static {p1, p2}, Lcom/kos/lic/LicBridge;->licenseRaw(...)Ljava/lang/String;
+move-result-object v3
+:try_kos_lic_end
+if-eqz v3, :cond_kos_offline_lic
+... wrap v3 into Object[]{v3} ...
+:catch_kos_lic
+move-exception v4
+invoke-static {p1, v4}, Lcom/kos/lic/CrashHook;->report(...)V
+:cond_kos_offline_lic
+invoke-static {}, Lcom/kos/lic/LicBridge;->offlineValidate()Ljava/lang/String;
+move-result-object v3
+... wrap, or null if even the decoder failed ...
+:goto_kos_lic_done
+```
+
+> Register note: with `.locals N >= 16` parameter registers exceed v15, and
+> non-`/range` invoke formats can only address v0–v15. Catch handlers must use
+> low scratch registers (e.g. `move-object/from16` the context into `v8` first).

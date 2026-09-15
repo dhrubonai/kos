@@ -95,6 +95,12 @@ async function ensureSchema(env) {
       token TEXT PRIMARY KEY,
       expires_at INTEGER NOT NULL
     )`),
+    env.KOS_DB.prepare(`CREATE TABLE IF NOT EXISTS crashes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      device TEXT,
+      trace TEXT NOT NULL,
+      ts INTEGER NOT NULL
+    )`),
     env.KOS_DB.prepare(`CREATE INDEX IF NOT EXISTS idx_lic_created ON licenses(created_at)`),
     env.KOS_DB.prepare(`CREATE INDEX IF NOT EXISTS idx_lic_device ON licenses(device)`),
   ]);
@@ -327,6 +333,31 @@ async function handleSummary(env) {
   return json({ ok: true, total: r.total || 0, active, unused: r.unused || 0, revoked: r.revoked || 0, expired: r.expired || 0, bound: active });
 }
 
+/* ---------------------------- crash reporting --------------------------- */
+
+async function handleCrashReport(body, env) {
+  await ensureSchema(env);
+  const device = String(body.device || "").slice(0, 200);
+  const trace = String(body.trace || "").slice(0, 12000);
+  if (!trace) return json({ ok: false, message: "Empty trace" }, 400);
+  await env.KOS_DB.prepare(`INSERT INTO crashes (device, trace, ts) VALUES (?, ?, ?)`)
+    .bind(device, trace, now()).run();
+  // keep table small: retain newest 200 rows
+  await env.KOS_DB.prepare(
+    `DELETE FROM crashes WHERE id NOT IN (SELECT id FROM crashes ORDER BY id DESC LIMIT 200)`
+  ).run();
+  return json({ ok: true });
+}
+
+async function handleCrashList(url, env) {
+  await ensureSchema(env);
+  const limit = Math.min(parseInt(url.searchParams.get("limit") || "50", 10) || 50, 200);
+  const rows = await env.KOS_DB.prepare(
+    `SELECT id, device, trace, ts FROM crashes ORDER BY id DESC LIMIT ?`
+  ).bind(limit).all();
+  return json({ ok: true, crashes: rows.results || [] });
+}
+
 /* ------------------------------- routing -------------------------------- */
 
 export default {
@@ -353,10 +384,16 @@ export default {
         return await handleAdminLogin(body, env);
       }
 
+      if (request.method === "POST" && path === "/api/crash") {
+        const body = await request.json().catch(() => ({}));
+        return await handleCrashReport(body, env);
+      }
+
       const admin = await requireAdmin(request, env);
       if (!admin) return json({ ok: false, message: "Unauthorized" }, 401);
 
       if (request.method === "GET" && path === "/api/admin/summary") return await handleSummary(env);
+      if (request.method === "GET" && path === "/api/admin/crashes") return await handleCrashList(url, env);
       if (request.method === "GET" && path === "/api/admin/licenses") return await handleList(url, env);
       if (request.method === "POST" && path === "/api/admin/licenses") {
         const body = await request.json().catch(() => ({}));

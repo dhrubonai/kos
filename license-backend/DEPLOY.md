@@ -1,124 +1,82 @@
 # Cloudflare Worker — Deployment Guide
 
-The license backend is a single-file Cloudflare Worker (`worker.js`) that
+The license backend is a single-file Cloudflare Worker (`worker-d1.js`) that
 serves both the **admin website** (license generator, mobile friendly) and the
-**app-facing validation API**.
+**app-facing validation API**. Storage is a **D1** SQL database (no KV needed).
 
-## Prerequisites
+## LIVE deployment
 
-- A Cloudflare account (free tier is sufficient)
-- An API Token with permissions: **Workers Scripts:Edit**, **KV Storage:Edit**
-  (create at dash.cloudflare.com → My Profile → API Tokens)
+| Item | Value |
+|------|-------|
+| Admin website | https://kos-license.dhrubomohiuddinabdulkadir.workers.dev/ |
+| App endpoint   | same host — app reads it from the `kos_api_base` string resource |
+| D1 database    | `kos-license-db` → `f91296d0-a35a-4cd6-ac76-1db559208708` |
+| Admin password | set as the Worker secret `ADMIN_PASSWORD` (keep out of the repo!) |
 
-## One-time deployment (via dashboard UI)
+## Storage schema (auto-created on first request)
 
-Dashboard: Workers & Pages → Create → Worker → paste the contents of
-`worker.js` → Deploy. Then Settings → Bindings → add a KV namespace binding
-named `KOS_LICENSES`, and Settings → Variables → add secret `ADMIN_PASSWORD`.
-
-## API deployment (scriptable)
-
-### 1. Get your account id
-
-```bash
-curl -s -H "Authorization: Bearer $CF_TOKEN" \
-  https://api.cloudflare.com/client/v4/accounts
+```sql
+licenses(key TEXT PRIMARY KEY, plan, days, device, activated_at,
+         expires_at, revoked, note, created_at)
+devices(device TEXT PRIMARY KEY, key TEXT)
+sessions(token TEXT PRIMARY KEY, expires_at INTEGER)
 ```
 
-### 2. Create the KV namespace
+- `days = NULL` → lifetime license (`expiry = 0` in app protocol)
+- binding: first successful `/api/validate` locks `device`; admin `unbind` releases it
+- admin sessions live 12h
 
-```bash
-curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/storage/kv/namespaces" \
-  -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
-  -d '{"title":"kos_licenses"}'
-# → result.id  → paste into wrangler.toml kv_namespaces[0].id
+## Endpoints (app-facing)
+
+```
+POST /api/validate   {device, key}  -> {valid, message, key?, plan?, expiry?}
+POST /api/connect    {device}       -> {bound, active, key?, plan?, expiry?, revoked?}
 ```
 
-### 3. Upload the worker script
+## Endpoints (admin, Authorization: Bearer <token>)
+
+```
+POST /api/admin/login            {password}                    -> {ok, token}
+GET  /api/admin/summary                                        -> counts
+GET  /api/admin/licenses        ?query=&status=&limit=         -> {licenses[]}
+POST /api/admin/licenses         {plan, quantity, note, key?}  -> {licenses[]}
+POST /api/admin/licenses/update  {key, action, days?}          -> {ok, license}
+     actions: revoke | unrevoke | unbind | extend | resetExpiry | delete
+```
+
+Plans: `day, week, month, quarter, year, lifetime` (30/7/30/90/365 days / never).
+
+## Redeploy via API (scriptable)
 
 ```bash
-# metadata.json:
-# {
-#   "main_module": "worker.js",
-#   "compatibility_date": "2024-11-01",
-#   "bindings": [
-#     { "type": "kv_namespace", "name": "KOS_LICENSES", "namespace_id": "<KV_ID>" }
-#   ]
-# }
-curl -s -X PUT \
-  "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/workers/scripts/kos-license" \
+CF_TOKEN=<token-with-Workers+D1-Edit>   ACC=<account_id>   DB_ID=<d1_uuid>
+
+# metadata.json: {"main_module":"worker.js","compatibility_date":"2024-11-01",
+#   "bindings":[{"type":"d1","name":"KOS_DB","id":"'$DB_ID'"},
+#               {"type":"secret_text","name":"ADMIN_PASSWORD","text":"'$PW'"}]}
+curl -X PUT "https://api.cloudflare.com/client/v4/accounts/$ACC/workers/scripts/kos-license" \
   -H "Authorization: Bearer $CF_TOKEN" \
   -F "metadata=@metadata.json;type=application/json" \
-  -F "worker.js=@worker.js;type=application/javascript+module"
+  -F "worker.js=@worker-d1.js;filename=worker.js;type=application/javascript+module"
+
+curl -X POST "https://api.cloudflare.com/client/v4/accounts/$ACC/workers/scripts/kos-license/subdomain" \
+  -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
+  -d '{"enabled":true,"previews_enabled":false}'
 ```
 
-### 4. Set the admin password secret
+> curl quirk: the JS part MUST carry `;filename=worker.js`, otherwise the API
+> answers `10021 No such module: worker.js`.
+
+## Redeploy via wrangler
 
 ```bash
-curl -s -X PUT \
-  "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/workers/scripts/kos-license/secrets" \
-  -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
-  -d '{"name":"ADMIN_PASSWORD","text":"<choose-a-strong-password>","type":"secret_text"}'
+wrangler deploy        # uses wrangler.toml (D1 binding)
+wrangler secret put ADMIN_PASSWORD
 ```
 
-### 5. Enable the workers.dev subdomain
+## Local test suite
 
-```bash
-# register subdomain (once per account):
-curl -s -X POST "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/workers/subdomain" \
-  -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
-  -d '{"subdomain":"<pick-a-name>"}'
-# enable for this script:
-curl -s -X POST \
-  "https://api.cloudflare.com/client/v4/accounts/$ACCOUNT_ID/workers/scripts/kos-license/subdomain" \
-  -H "Authorization: Bearer $CF_TOKEN" -H "Content-Type: application/json" \
-  -d '{"enabled":true,"previews_enabled":true}'
-```
-
-The backend will be live at `https://kos-license.<subdomain>.workers.dev`.
-
-### 6. Point the app at it
-
-Replace the URL in `source/smali-workspace/res/values/strings.xml`:
-
-```xml
-<string name="kos_api_base" translatable="false">https://kos-license.<subdomain>.workers.dev</string>
-```
-
-then rebuild + re-sign (see `patch/BUILD.md`).
-
-## Verify deployment
-
-```bash
-# Admin website: open https://kos-license.<subdomain>.workers.dev/ in a browser
-# App API smoke test:
-curl -s -X POST https://kos-license.<subdomain>.workers.dev/api/validate \
-  -H "Content-Type: application/json" \
-  -d '{"device":"test-device","key":"AAAA-BBBB-CCCC-DDDD"}'
-# expected: {"valid":false,"message":"Invalid license key"}   <- API is alive
-```
-
-## Operations
-
-- Create keys: admin website → Create tab → pick plan → Generate
-- Revoke / extend / unbind / delete: Licenses tab → buttons under each key
-- All data lives in the KV namespace `kos_licenses` (export via dashboard if needed)
-
-## API reference (app-facing)
-
-| Endpoint | Body | Response |
-|---|---|---|
-| `POST /api/validate` | `{device, key}` | `{valid, key?, plan?, expiry?, message}` |
-| `POST /api/connect` | `{device}` | `{bound, active, key?, plan?, expiry?}` |
-
-`expiry` is epoch milliseconds; `0` means lifetime.
-
-## API reference (admin, Bearer token from login)
-
-| Endpoint | Body |
-|---|---|
-| `POST /api/admin/login` | `{password}` → `{token}` |
-| `GET /api/admin/summary` | — |
-| `GET /api/admin/licenses?query=&status=all\|active\|unused\|expired\|revoked` | — |
-| `POST /api/admin/licenses` | `{plan, quantity, note}` |
-| `POST /api/admin/licenses/update` | `{key, action: revoke\|unrevoke\|unbind\|extend\|delete, days?}` |
+`36/36 assertions` pass against a mocked D1 (`node:sqlite`):
+admin auth, key generation (batch/custom/duplicate), validate (format, unknown,
+bind, rebind, device conflict), connect, revoke/unrevoke/extend/unbind/delete,
+lifetime semantics, list filters, summary.

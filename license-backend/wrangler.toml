@@ -1,17 +1,13 @@
 name = "kos-license"
-main = "worker.js"
+main = "worker-d1.js"
 compatibility_date = "2024-11-01"
 
-# KV namespace: create with
-#   curl -X POST "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/storage/kv/namespaces" \
-#        -H "Authorization: Bearer <TOKEN>" -H "Content-Type: application/json" \
-#        -d '{"title":"kos_licenses"}'
-# then paste the returned id below:
-kv_namespaces = [
-  { binding = "KOS_LICENSES", id = "PASTE_KV_NAMESPACE_ID_HERE" }
+# D1 database binding (created via dashboard or API):
+#   wrangler d1 create kos-license-db  ->  paste the database_id below
+# Schema auto-creates on first request (licenses / devices / sessions tables).
+d1_databases = [
+  { binding = "KOS_DB", database_name = "kos-license-db", database_id = "f91296d0-a35a-4cd6-ac76-1db559208708" }
 ]
 
 # Secret:
-#   curl -X PUT "https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/workers/scripts/kos-license/secrets" \
-#        -H "Authorization: Bearer <TOKEN>" -H "Content-Type: application/json" \
-#        -d '{"name":"ADMIN_PASSWORD","text":"<your-admin-password>","type":"secret_text"}'
+#   wrangler secret put ADMIN_PASSWORD

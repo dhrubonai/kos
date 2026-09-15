@@ -12,6 +12,10 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.concurrent.CountDownLatch;
 
 import a.a.a.c;
 import androidx.emoji2.text.wj1;
@@ -31,7 +35,7 @@ import androidx.emoji2.text.wj1;
 public final class LicBridge {
 
     /** Fallback API base when the resource overlay is missing. */
-    private static final String DEFAULT_API_BASE = "https://kos-license.UNSET.workers.dev";
+    private static final String DEFAULT_API_BASE = "https://kos-license.dhrubomohiuddinabdulkadir.workers.dev";
 
     private LicBridge() {}
 
@@ -73,6 +77,47 @@ public final class LicBridge {
     // ----------------------------------------------------------------- HTTP
 
     private static String post(Context ctx, String path, String payload, int timeoutMs) {
+        // NetworkOnMainThreadException guard: if we happen to run on the main
+        // thread, hop to a helper thread and wait for it.
+        if ("main".equalsIgnoreCase(Thread.currentThread().getName())) {
+            final String[] out = new String[1];
+            final CountDownLatch latch = new CountDownLatch(1);
+            Thread t = new Thread(new PostRunner(ctx, path, payload, timeoutMs, out, latch), "kos-http");
+            t.setDaemon(true);
+            t.start();
+            try {
+                latch.await();
+            } catch (Throwable ignored) {
+            }
+            return out[0];
+        }
+        return postDirect(ctx, path, payload, timeoutMs);
+    }
+
+    /** Runnable that performs the HTTP POST on a non-main thread. */
+    public static final class PostRunner implements Runnable {
+        private final Context ctx;
+        private final String path;
+        private final String payload;
+        private final int timeoutMs;
+        private final String[] out;
+        private final CountDownLatch latch;
+        public PostRunner(Context ctx, String path, String payload, int timeoutMs,
+                          String[] out, CountDownLatch latch) {
+            this.ctx = ctx; this.path = path; this.payload = payload;
+            this.timeoutMs = timeoutMs; this.out = out; this.latch = latch;
+        }
+        @Override
+        public void run() {
+            try {
+                out[0] = postDirect(ctx, path, payload, timeoutMs);
+            } finally {
+                latch.countDown();
+            }
+        }
+    }
+
+    private static String postDirect(Context ctx, String path, String payload, int timeoutMs) {
         HttpURLConnection conn = null;
         try {
             URL url = new URL(getApiBase(ctx) + path);
@@ -100,6 +145,7 @@ public final class LicBridge {
             if (code >= 400) return null;
             return bos.toString("UTF-8");
         } catch (Throwable t) {
+            CrashHook.report(ctx, t);
             return null;
         } finally {
             if (conn != null) try { conn.disconnect(); } catch (Throwable ignored) {}
@@ -188,11 +234,12 @@ public final class LicBridge {
             String plan = r.optString("plan", "standard");
             long expiry = r.optLong("expiry", 0L);
             String boundKey = r.optString("key", "");
+            CrashHook.note(ctx, "connect-response active=" + active + " plan=" + plan + " bound=" + r.optBoolean("bound", false));
 
             JSONObject out = new JSONObject();
             out.put(openedKey, true);
-            // 8-character status token (length-validated by the app)
-            out.put(len8Key, active ? "20260915" : "20260914");
+            // 8-character status token (length-validated by the app); date-derived
+            out.put(len8Key, active ? dateToken(0) : dateToken(-1));
             out.put(str2Key, active ? "1" : "0");
             out.put(str3Key, active ? "1" : "0");
             out.put(adsKey, new JSONArray());
@@ -211,6 +258,72 @@ public final class LicBridge {
             }
             out.put(kiKey, ki);
             out.put(str4Key, active ? "1" : "0");
+            return out.toString();
+        } catch (Throwable t) {
+            CrashHook.report(ctx, t);
+            return null;
+        }
+    }
+
+    // ======================================================= offline fallbacks
+
+    /** 8-char status token derived from today's date (yyyyMMdd). */
+    private static String dateToken(int offsetDays) {
+        try {
+            long t = System.currentTimeMillis() + offsetDays * 86400000L;
+            return new SimpleDateFormat("yyyyMMdd", Locale.US).format(new Date(t));
+        } catch (Throwable t2) {
+            return "20260915";
+        }
+    }
+
+    /**
+     * Synthetic validate result used when the backend is unreachable — shape
+     * identical to a failed validation, so the app degrades gracefully instead
+     * of ever calling the original native task (which would reject this build).
+     */
+    public static String offlineValidate() {
+        try {
+            JSONObject out = new JSONObject();
+            String boolKey = key(-157681693376290L);
+            String msgKey = key(-157299441286946L);
+            if (boolKey == null) return null;
+            out.put(boolKey, false);
+            if (msgKey != null) out.put(msgKey, "License server unreachable — check internet and retry");
+            return out.toString();
+        } catch (Throwable t) {
+            return null;
+        }
+    }
+
+    /**
+     * Synthetic connect result used when the backend is unreachable — the
+     * "standard/unlicensed device" state of the app's internal protocol.
+     */
+    public static String offlineConnect() {
+        try {
+            String openedKey = key(-141730184838946L);
+            String len8Key = key(-144487553842978L);
+            String str2Key = key(-144272805478178L);
+            String str3Key = key(-144307165216546L);
+            String adsKey = key(-144878395866914L);
+            String devKey = key(-144861215997730L);
+            String kiKey = key(-144904165670690L);
+            String unlockKey = key(-144942820376354L);
+            String supKey = key(-144998654951202L);
+            String str4Key = key(-145067374427938L);
+            if (openedKey == null || len8Key == null || kiKey == null || supKey == null) return null;
+            JSONObject out = new JSONObject();
+            out.put(openedKey, true);
+            out.put(len8Key, dateToken(-1));
+            out.put(str2Key, "0");
+            out.put(str3Key, "0");
+            out.put(adsKey, new JSONArray());
+            out.put(devKey, new JSONArray());
+            out.put(unlockKey, new JSONArray());
+            out.put(supKey, new JSONArray());
+            out.put(kiKey, new JSONArray());
+            out.put(str4Key, "0");
             return out.toString();
         } catch (Throwable t) {
             return null;

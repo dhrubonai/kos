@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accounts_removed_count">
+        <item quantity="other">تمت إزالة %1$d حساب.</item>
+        <item quantity="zero">لم تتم إزالة أي حسابات.</item>
+        <item quantity="one">تمت إزالة حساب واحد.</item>
+        <item quantity="two">تمت إزالة حسابين.</item>
+        <item quantity="few">تمت إزالة %1$d حسابات.</item>
+        <item quantity="many">تمت إزالة %1$d حسابًا.</item>
+    </plurals>
+    <plurals name="virtual_google_accounts_removed_count">
+        <item quantity="other">تمت إزالة %1$d حساب Google افتراضي.</item>
+        <item quantity="zero">لم تتم إزالة أي حسابات Google افتراضية.</item>
+        <item quantity="one">تمت إزالة حساب Google افتراضي واحد.</item>
+        <item quantity="two">تمت إزالة حسابي Google افتراضيين.</item>
+        <item quantity="few">تمت إزالة %1$d حسابات Google افتراضية.</item>
+        <item quantity="many">تمت إزالة %1$d حساب Google افتراضيًا.</item>
+    </plurals>
+</resources>

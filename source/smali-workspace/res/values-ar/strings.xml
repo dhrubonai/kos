@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">التنقل إلى أعلى</string>
+    <string name="abc_action_mode_done">تم</string>
+    <string name="abc_capital_off">إيقاف</string>
+    <string name="abc_capital_on">مفعّلة</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">حذف</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">فضاء</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">القائمة+</string>
+    <string name="abc_search_hint">بحث…</string>
+    <string name="abc_searchview_description_clear">محو طلب البحث</string>
+    <string name="abc_searchview_description_search">البحث</string>
+    <string name="abc_searchview_description_submit">إرسال طلب البحث</string>
+    <string name="abc_searchview_description_voice">بحث صوتي</string>
+    <string name="abc_toolbar_collapse_description">تصغير</string>
+    <string name="account_google_ready_sign_in">Google جاهز — سجّل الدخول الآن</string>
+    <string name="account_google_services_not_installed">خدمات Google غير مثبّتة</string>
+    <string name="account_number">الحساب %1$d</string>
+    <string name="account_number_active">الحساب %1$d · نشط</string>
+    <string name="account_ready_to_play">جاهز للعب</string>
+    <string name="accounts_advanced_summary">التشخيص وعناصر التحكم اليدوية</string>
+    <string name="accounts_advanced_title">متقدم (للدعم)</string>
+    <string name="accounts_remove_services_message">يؤدي هذا إلى إزالة خدمات Google من الحساب الافتراضي %1$d فقط. لن يتأثر حساب Google على هاتفك ولا حسابات KOS الأخرى ولا ألعابك. لن يتوفر تسجيل الدخول إلى Google وPlay Games والحفظ السحابي ومشتريات Play للحساب %1$d حتى تتم إعادة تفعيل خدمات Google.</string>
+    <string name="accounts_remove_services_title">إزالة خدمات Google؟</string>
+    <string name="accounts_sign_out_message">سيؤدي هذا إلى تسجيل خروج الحساب الافتراضي %1$d من Google. ستبقى خدمات Google مثبّتة.</string>
+    <string name="accounts_sign_out_title">تسجيل الخروج من Google؟</string>
+    <string name="accounts_switch_account">تبديل الحساب</string>
+    <string name="accounts_title">الحسابات</string>
+    <string name="action_accept">قبول</string>
+    <string name="action_add">إضافة</string>
+    <string name="action_add_gms">إضافة GMS</string>
+    <string name="action_add_google_services">إضافة خدمات Google</string>
+    <string name="action_back">رجوع</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_clear_data">مسح البيانات</string>
+    <string name="action_continue">متابعة</string>
+    <string name="action_decline">رفض</string>
+    <string name="action_delete_app">حذف التطبيق</string>
+    <string name="action_delete_install_play_games">حذف Play Games وتثبيته</string>
+    <string name="action_dont_show_again">عدم الإظهار مرة أخرى</string>
+    <string name="action_enable">تفعيل</string>
+    <string name="action_enter">دخول</string>
+    <string name="action_exit">خروج</string>
+    <string name="action_exit_application">إغلاق التطبيق</string>
+    <string name="action_fix_play_games_profile">إصلاح ملف Play Games</string>
+    <string name="action_fix_profile">إصلاح الملف</string>
+    <string name="action_launch_anyway">التشغيل على أي حال</string>
+    <string name="action_not_now">ليس الآن</string>
+    <string name="action_open_play_games">فتح Play Games</string>
+    <string name="action_open_play_store">فتح Play Store</string>
+    <string name="action_open_settings">فتح الإعدادات</string>
+    <string name="action_proceed">متابعة</string>
+    <string name="action_recheck">إعادة التحقق</string>
+    <string name="action_remove">إزالة</string>
+    <string name="action_remove_all_gms_accounts">إزالة جميع حسابات GMS</string>
+    <string name="action_remove_services">إزالة الخدمات</string>
+    <string name="action_report_issue">الإبلاغ عن مشكلة</string>
+    <string name="action_run_checks">تشغيل الفحوصات</string>
+    <string name="action_sign_in_google">تسجيل الدخول باستخدام Google</string>
+    <string name="action_sign_out">تسجيل الخروج</string>
+    <string name="action_stop_fix">إيقاف الإصلاح %1$d/%2$d</string>
+    <string name="action_test_run">تشغيل تجريبي</string>
+    <string name="action_visit_page">زيارة الصفحة</string>
+    <string name="action_warm_up_gms">تهيئة GMS</string>
+    <string name="add_app_title">إضافة تطبيق</string>
+    <string name="app_added">تمت إضافة %1$s</string>
+    <string name="app_clone_failed">تعذّر استنساخ %1$s</string>
+    <string name="app_data_clear_failed">تعذّر مسح بيانات %1$s</string>
+    <string name="app_data_cleared">تم مسح بيانات %1$s</string>
+    <string name="app_installation_failed">فشل التثبيت: %1$s</string>
+    <string name="app_installed_launch_failed">تم تثبيت التطبيق لكن تعذّر تشغيله.</string>
+    <string name="app_launch_failed">تعذّر تشغيل %1$s</string>
+    <string name="app_launch_failed_short">فشل التشغيل</string>
+    <string name="app_no_launch_screen">لا يملك %1$s شاشة تشغيل</string>
+    <string name="app_not_found_real_device">خطأ: التطبيق غير موجود على الجهاز الحقيقي.</string>
+    <string name="app_remove_failed">تعذّرت إزالة %1$s</string>
+    <string name="app_removed">تمت إزالة %1$s</string>
+    <string name="app_stop_failed">تعذّر إيقاف %1$s</string>
+    <string name="app_stopped">تم إيقاف %1$s</string>
+    <string name="application_crash_error">خطأ في التطبيق</string>
+    <string name="autofill">الملء التلقائي</string>
+    <string name="bottomsheet_action_collapse">تصغير البطاقة السفلية</string>
+    <string name="bottomsheet_action_expand">توسيع البطاقة السفلية</string>
+    <string name="bottomsheet_action_expand_halfway">توسيع البطاقة السفلية</string>
+    <string name="bottomsheet_drag_handle_content_description">مقبض السحب</string>
+    <string name="busy_adding_google_services">جارٍ إضافة خدمات Google…</string>
+    <string name="busy_fixing_game_profile">جارٍ إصلاح ملف اللعبة…</string>
+    <string name="busy_opening">جارٍ الفتح…</string>
+    <string name="busy_opening_sign_in">جارٍ فتح تسجيل الدخول…</string>
+    <string name="busy_removing_google_services">جارٍ إزالة خدمات Google…</string>
+    <string name="busy_signing_out">جارٍ تسجيل الخروج…</string>
+    <string name="cache_clear_failed">تعذّر مسح ذاكرة التخزين المؤقت لـ %1$s</string>
+    <string name="cache_cleared">تم مسح %1$s من ذاكرة التخزين المؤقت</string>
+    <string name="call_notification_answer_action">ردّ</string>
+    <string name="call_notification_answer_video_action">فيديو</string>
+    <string name="call_notification_decline_action">رفض</string>
+    <string name="call_notification_hang_up_action">قطع الاتصال</string>
+    <string name="call_notification_incoming_text">مكالمة واردة</string>
+    <string name="call_notification_ongoing_text">مكالمة جارية</string>
+    <string name="call_notification_screening_text">يتم فحص المكالمة الواردة</string>
+    <string name="character_counter_content_description">تمّ إدخال %1$d حرف من إجمالي %2$d.</string>
+    <string name="character_counter_overflowed_content_description">تجاوز عدد الأحرف المسموح به %1$d من %2$d.</string>
+    <string name="character_counter_pattern">%2$d/%1$d</string>
+    <string name="check_games_ready">الألعاب جاهزة</string>
+    <string name="check_google_services_installed">تم تثبيت خدمات Google</string>
+    <string name="check_signed_in_google">تم تسجيل الدخول إلى Google</string>
+    <string name="clear_text_end_icon_content_description">محو النص</string>
+    <string name="close_drawer">إغلاق قائمة التنقل</string>
+    <string name="close_sheet">إغلاق الورقة</string>
+    <string name="contact_phone_call">مكالمة هاتفية</string>
+    <string name="copied_to_clipboard">تم النسخ إلى الحافظة</string>
+    <string name="data_clear_failed">فشل مسح البيانات.</string>
+    <string name="data_cleared_successfully">تم مسح البيانات بنجاح.</string>
+    <string name="default_popup_window_title">نافذة منبثقة</string>
+    <string name="developer_account_label">المطوّر</string>
+    <string name="developer_modules_disabled">تم تعطيل وحدات المطوّر</string>
+    <string name="developer_space_confirm_message">سيُعاد تشغيل KOS داخل بيئة مطوّر معزولة. ستبقى ألعابك العادية وحسابك دون تغيير. يمكنك الخروج في أي وقت من القائمة الداخلية.</string>
+    <string name="developer_space_confirm_title">الدخول إلى مساحة المطوّر؟</string>
+    <string name="device_id">معرّف الجهاز</string>
+    <string name="diagnostic_account_manager_ui">واجهة مدير الحسابات</string>
+    <string name="diagnostic_authenticator_detail">خدمات المصادقة=%1$d</string>
+    <string name="diagnostic_carrom_readiness">جاهزية Carrom</string>
+    <string name="diagnostic_carrom_readiness_detail">Carrom=%1$s، Play Games=%2$s، قابل للتشغيل=%3$s، إصلاح المتصل=مفعّل</string>
+    <string name="diagnostic_core_packages">الحزم الأساسية</string>
+    <string name="diagnostic_core_packages_detail">GMS=%1$s، GSF=%2$s، AccountManager اختياري=%3$s</string>
+    <string name="diagnostic_device_target">الجهاز المستهدف</string>
+    <string name="diagnostic_device_target_detail">معرّف Android=%1$s، ذاكرة DroidGuard المؤقتة=%2$s</string>
+    <string name="diagnostic_game_service_actions">إجراءات خدمات الألعاب</string>
+    <string name="diagnostic_game_service_actions_detail">تسجيل الدخول=%1$s، Play Games=%2$s، الفوترة=%3$s</string>
+    <string name="diagnostic_google_account">حساب Google</string>
+    <string name="diagnostic_google_account_detail">المحفوظة=%1$d، الظاهرة لـ GMS=%2$d، الظاهرة لـ Play Games=%3$d</string>
+    <string name="diagnostic_google_auth_provider">موفر مصادقة Google</string>
+    <string name="diagnostic_launchable_detail">قابل للتشغيل=%1$s</string>
+    <string name="diagnostic_play_store_detail">مثبّت=%1$s، قابل للتشغيل=%2$s، الحسابات الظاهرة=%3$d</string>
+    <string name="diagnostics_title">التشخيص</string>
+    <string name="download_failed">فشل التنزيل: %1$s</string>
+    <string name="download_preparing_message">يرجى الانتظار بينما نجهّز تجربتك…</string>
+    <string name="download_resources_title">"جارٍ تنزيل
+الموارد"</string>
+    <string name="error_a11y_label">خطأ: غير صالح</string>
+    <string name="error_icon_content_description">خطأ</string>
+    <string name="error_no_app_can_open_page">لا يوجد تطبيق يمكنه فتح هذه الصفحة</string>
+    <string name="error_sandbox_create_failed">تعذّر إنشاء البيئة المعزولة.</string>
+    <string name="error_title">خطأ</string>
+    <string name="error_virtual_environment_start_failed">تعذّر تشغيل البيئة الافتراضية.</string>
+    <string name="exposed_dropdown_menu_content_description">عرض القائمة المنسدلة</string>
+    <string name="facebook_login_internal_browser">المتصفح الداخلي</string>
+    <string name="facebook_login_legacy">قديم</string>
+    <string name="facebook_login_native_app">التطبيق الأصلي</string>
+    <string name="facebook_native_gms_required">خدمات Google مطلوبة لتشغيل Facebook بشكل صحيح.</string>
+    <string name="facebook_native_installed_selected">تم تثبيت Facebook واختيار تسجيل الدخول عبر التطبيق الأصلي.</string>
+    <string name="facebook_native_store_failed">تعذّر فتح Facebook في متجر Play الافتراضي.</string>
+    <string name="facebook_uninstall_confirm_message">سيؤدي التبديل إلى %1$s إلى إزالة Facebook من الحساب الافتراضي %2$d.</string>
+    <string name="facebook_uninstall_confirm_title">إزالة Facebook؟</string>
+    <string name="facebook_uninstall_failed">تعذّرت إزالة Facebook من هذا الحساب الافتراضي.</string>
+    <string name="game_install_from_store">يرجى تثبيت %1$s من Play Store.</string>
+    <string name="game_locked_purchase_required">اللعبة مقفلة: يلزم الشراء.</string>
+    <string name="game_update_from_store">يرجى تحديث %1$s من Play Store.</string>
+    <string name="game_version_newer_than_supported">أنت تستخدم إصدارًا أحدث من %1$s لا ندعمه بعد.</string>
+    <string name="gms_added_account">تمت إضافة GMS إلى الحساب الافتراضي %1$d.</string>
+    <string name="gms_added_warmed_up">تمت إضافة GMS وتهيئتها.</string>
+    <string name="gms_already_loaded">تم تحميل GMS بالفعل.</string>
+    <string name="gms_checks_refreshed">تم تحديث فحوصات GMS.</string>
+    <string name="gms_core_not_loaded">لم يتم تحميل نواة GMS بعد.</string>
+    <string name="gms_install_did_not_complete">لم يكتمل تثبيت GMS.</string>
+    <string name="gms_install_failed">فشل تثبيت GMS: %1$s</string>
+    <string name="gms_install_incomplete">لم يكتمل تثبيت GMS. الحزم المفقودة: %1$s</string>
+    <string name="gms_manager_title">مدير GMS</string>
+    <string name="gms_not_loaded_message">قد لا يعمل تسجيل الدخول بحساب Google في %1$s. ثبّت GMS من مدير GMS قبل التشغيل للحصول على أفضل نتيجة.</string>
+    <string name="gms_not_loaded_title">لم يتم تحميل GMS</string>
+    <string name="gms_onboarding_benefit_cloud">الحفظ السحابي وملفات اللاعبين والإنجازات في الألعاب المدعومة</string>
+    <string name="gms_onboarding_benefit_purchases">Play Store وعمليات الشراء المدعومة داخل التطبيقات</string>
+    <string name="gms_onboarding_benefit_sign_in">دعم تسجيل الدخول بحساب Google وPlay Games</string>
+    <string name="gms_onboarding_benefits_title">ما الذي ستحصل عليه</string>
+    <string name="gms_onboarding_message">خدمات Google اختيارية. فعّلها إذا أردت استخدام تسجيل الدخول بحساب Google أو Play Games أو Play Store أو مشتريات Google Play في هذا الحساب الافتراضي.</string>
+    <string name="gms_onboarding_note_account">يتطلب تسجيل الدخول بحساب Google</string>
+    <string name="gms_onboarding_note_resources">يستخدم مساحة تخزين وذاكرة وبطارية وبيانات إضافية في الخلفية</string>
+    <string name="gms_onboarding_note_setup">قد يستغرق الإعداد الأولي وقتًا أطول، وقد تحتاج بعض الألعاب إلى إعادة تشغيل واحدة بعد الإعداد</string>
+    <string name="gms_onboarding_notes_title">معلومات مهمة</string>
+    <string name="gms_onboarding_title">تفعيل خدمات Google؟</string>
+    <string name="gms_partially_added">تمت إضافة GMS جزئيًا. الحزم المفقودة غير موجودة على الجهاز.</string>
+    <string name="gms_warm_up_result">تهيئة GMS: تم تشغيل %1$d خدمة، والمفقود %2$d، والفاشل %3$d.</string>
+    <string name="google_account_manager_launched">تم تشغيل مدير حسابات Google.</string>
+    <string name="google_account_manager_not_launchable">لا يملك مدير حسابات Google نشاطًا قابلًا للتشغيل في GMS الافتراضي.</string>
+    <string name="google_account_not_removed">لم تتم إزالة الحساب.</string>
+    <string name="google_account_removed">تمت إزالة %1$s</string>
+    <string name="google_account_saved">تم حفظ حساب Google!</string>
+    <string name="google_account_setup_opened">تم فتح إعداد حساب Google. أضف حسابك ثم شغّل اللعبة مرة أخرى.</string>
+    <string name="google_account_setup_prepare_timeout">لم تصبح خدمات تسجيل الدخول إلى Google جاهزة. اترك تسجيل الدخول إلى Google مغلقًا واضغط على إعادة المحاولة.</string>
+    <string name="google_accounts_title">حسابات Google</string>
+    <string name="google_services_action_failed">فشل إجراء خدمات Google.</string>
+    <string name="google_services_already_removed">تمت إزالة خدمات Google بالفعل من هذا الحساب الافتراضي.</string>
+    <string name="google_services_install_failed">تعذّر تثبيت خدمات Google: %1$s</string>
+    <string name="google_services_removal_already_running">إزالة خدمات Google قيد التشغيل بالفعل لهذا الحساب الافتراضي.</string>
+    <string name="google_services_removal_in_progress">جارٍ إزالة خدمات Google من هذا الحساب الافتراضي.</string>
+    <string name="google_services_removal_not_finished">لم تكتمل إزالة خدمات Google.</string>
+    <string name="google_services_removal_not_finished_details">لم تكتمل إزالة خدمات Google: %1$s</string>
+    <string name="google_services_removal_verify_failed">تعذّر على إزالة خدمات Google التحقق من الحساب الافتراضي المحدد.</string>
+    <string name="google_services_removed_result">تمت إزالة خدمات Google و%1$d من حسابات Google من هذا الحساب الافتراضي. لم تتغير الألعاب ولا الحسابات الافتراضية الأخرى.</string>
+    <string name="google_services_setup_failed">فشل إعداد خدمات Google: %1$s</string>
+    <string name="google_sign_in_needed_message">سجّل الدخول مرة واحدة من Play Store داخل GMS الافتراضي قبل تشغيل %1$s. سيفشل تسجيل الدخول إلى Google حتى يتم حفظ حساب.</string>
+    <string name="google_sign_in_needed_title">يلزم تسجيل الدخول إلى Google</string>
+    <string name="google_sign_in_open_failed">تعذّر فتح تسجيل الدخول: %1$s</string>
+    <string name="google_sign_in_ready_optional_failed">خدمات تسجيل الدخول إلى Google جاهزة. تعذّرت إضافة بعض تطبيقات Google الاختيارية: %1$s</string>
+    <string name="icon_content_description">رمز مربع الحوار</string>
+    <string name="in_progress">قيد التقدم</string>
+    <string name="indeterminate">تم وضع علامة في المربّع بشكل جزئي</string>
+    <string name="installation_required_title">يلزم التثبيت</string>
+    <string name="invalid_loader_config">إعداد المحمّل غير صالح</string>
+    <string name="item_view_role_description">علامة تبويب</string>
+    <string name="kos_service_unavailable">خدمة KOS غير متوفرة. أعد تشغيل KOS ثم حاول مرة أخرى.</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_english">English</string>
+    <string name="language_portuguese_brazil">Português (Brasil)</string>
+    <string name="language_system_default">لغة النظام</string>
+    <string name="launching_game">جارٍ تشغيل %1$s…</string>
+    <string name="license_activate_now">تفعيل الآن</string>
+    <string name="license_activate_title">تفعيل الترخيص</string>
+    <string name="license_activation_failed">فشل التفعيل</string>
+    <string name="license_activation_successful">تم التفعيل بنجاح!</string>
+    <string name="license_buy_prompt">ليس لديك مفتاح؟ اشترِ واحدًا من هنا</string>
+    <string name="license_invalid_format">تنسيق غير صالح (XXXXX-XXXXX-XXXXX-XXXXX)</string>
+    <string name="license_response_parse_error">حدث خطأ أثناء معالجة استجابة الخادم</string>
+    <string name="m3_loading_indicator_content_description">جارٍ التحميل</string>
+    <string name="m3c_bottom_sheet_collapse_description">تصغير البطاقة السفلية</string>
+    <string name="m3c_bottom_sheet_dismiss_description">إغلاق البطاقة السفلية</string>
+    <string name="m3c_bottom_sheet_drag_handle_description">مقبض السحب</string>
+    <string name="m3c_bottom_sheet_expand_description">توسيع البطاقة السفلية</string>
+    <string name="m3c_bottom_sheet_pane_title">بطاقة سفلية</string>
+    <string name="m3c_dialog">مربّع حوار</string>
+    <string name="maintenance_title">صيانة</string>
+    <string name="material_clock_toggle_content_description">يُرجى اختيار صباحًا أو مساءً.</string>
+    <string name="material_timepicker_am">صباحًا</string>
+    <string name="material_timepicker_pm">مساءً</string>
+    <string name="membership_calculating">جارٍ الحساب…</string>
+    <string name="membership_expired">منتهي</string>
+    <string name="membership_expires_in">ينتهي خلال:</string>
+    <string name="membership_free">العضوية المجانية</string>
+    <string name="membership_standard">العضوية القياسية</string>
+    <string name="membership_time_remaining">%1$d ي %2$02d س %3$02d د %4$02d ث</string>
+    <string name="missing_packages">الحزم المفقودة: %1$s</string>
+    <string name="module_trust_removed">تمت إزالة الثقة من %1$s</string>
+    <string name="module_trusted">تم الوثوق بـ %1$s</string>
+    <string name="mtrl_chip_close_icon_content_description">إزالة %1$s</string>
+    <string name="no_apps_found">لم يتم العثور على تطبيقات</string>
+    <string name="no_virtual_google_accounts">لا توجد حسابات Google افتراضية</string>
+    <string name="not_selected">غير محدّد</string>
+    <string name="notification_permission_message">يحتاج KOS إلى إذن الإشعارات لعرض حالة الخدمة النشطة وزر تفريغ السجل.</string>
+    <string name="notification_permission_title">تفعيل إشعارات KOS</string>
+    <string name="package_type_app">تطبيق</string>
+    <string name="package_type_service">خدمة</string>
+    <string name="packages_title">الحزم</string>
+    <string name="password_toggle_content_description">عرض كلمة المرور</string>
+    <string name="play_games_installed_fresh">تم تثبيت Google Play Games تثبيتًا جديدًا.</string>
+    <string name="play_games_launched_finish_profile">تم تشغيل Google Play Games. أكمل ملف اللاعب هناك ثم أعد محاولة Carrom.</string>
+    <string name="play_games_not_installed_real_device">Google Play Games غير مثبّت على الجهاز الحقيقي.</string>
+    <string name="play_games_not_installed_virtual">Google Play Games غير مثبّت في GMS الافتراضي.</string>
+    <string name="play_games_not_launchable">لا يملك Google Play Games نشاطًا قابلًا للتشغيل في GMS الافتراضي.</string>
+    <string name="play_games_open_failed">تعذّر فتح Play Games.</string>
+    <string name="play_games_opened">تم فتح Play Games.</string>
+    <string name="play_games_reinstall_failed">فشلت إعادة تثبيت Google Play Games: %1$s</string>
+    <string name="play_games_reinstalled_clean">تم حذف Google Play Games ومسح ذاكرته المؤقتة وإعادة تثبيته.</string>
+    <string name="play_games_repair_failed">فشل إصلاح Play Games: %1$s</string>
+    <string name="play_games_repair_finished">اكتملت %1$d محاولات لإصلاح Play Games. اضغط مرة أخرى إذا ظل الملف عالقًا.</string>
+    <string name="play_games_repair_stopped">تم إيقاف إصلاح Play Games.</string>
+    <string name="play_games_reset_failed">فشلت إعادة ضبط Google Play Games: %1$s</string>
+    <string name="play_games_title">Play Games</string>
+    <string name="play_store_launch_failed">فشل تشغيل Play Store.</string>
+    <string name="play_store_launched">تم تشغيل Play Store.</string>
+    <string name="play_store_not_available_virtual">Play Store غير متوفر في GMS الافتراضي.</string>
+    <string name="play_store_not_installed_virtual">Play Store غير مثبّت في GMS الافتراضي.</string>
+    <string name="play_store_open_failed">تعذّر فتح Play Store.</string>
+    <string name="play_store_opened">تم فتح Play Store.</string>
+    <string name="play_store_opened_sign_in">تم فتح Play Store. سجّل الدخول هناك ثم شغّل اللعبة مرة أخرى.</string>
+    <string name="play_store_title">Play Store</string>
+    <string name="profile_about_us">من نحن</string>
+    <string name="profile_about_us_summary">تعرّف على المزيد حول خدماتنا</string>
+    <string name="profile_device_identity">هوية الجهاز</string>
+    <string name="profile_information">المعلومات</string>
+    <string name="profile_website">الموقع الإلكتروني</string>
+    <string name="progress_adding_app">جارٍ إضافة التطبيق</string>
+    <string name="progress_clearing_app_data">جارٍ مسح بيانات التطبيق</string>
+    <string name="progress_clearing_cache">جارٍ مسح ذاكرة التخزين المؤقت</string>
+    <string name="progress_clearing_data">جارٍ مسح البيانات…</string>
+    <string name="progress_installing_google_services">جارٍ تثبيت خدمات Google</string>
+    <string name="progress_loading_google_entries">جارٍ تحميل تطبيقات Google وإدخالات الخدمات</string>
+    <string name="progress_opening_google_sign_in">جارٍ فتح تسجيل الدخول إلى Google</string>
+    <string name="progress_preparing_google_services">جارٍ تجهيز Play Store وخدمات Play ودعم تسجيل الدخول</string>
+    <string name="progress_preparing_google_sign_in">جارٍ تجهيز خدمات تسجيل الدخول إلى Google…</string>
+    <string name="progress_refreshing_developer_space">جارٍ تحديث مساحة المطوّر</string>
+    <string name="progress_removing_app">جارٍ إزالة التطبيق</string>
+    <string name="progress_uninstalling">جارٍ إلغاء التثبيت…</string>
+    <string name="range_end">نهاية النطاق</string>
+    <string name="range_start">بداية النطاق</string>
+    <string name="removal_accounts_still_present">الحسابات التي ما زالت موجودة=%1$d</string>
+    <string name="removal_data_still_present">البيانات التي ما زالت موجودة=%1$s</string>
+    <string name="removal_packages_still_installed">الحزم التي ما زالت مثبّتة=%1$s</string>
+    <string name="repair_attempt_result">تم إيقاف %1$d حزمة، %2$s تم تشغيل Play Games=%3$s.</string>
+    <string name="repair_missing_packages">الحزم المفقودة: %1$s.</string>
+    <string name="report_issue_hint">صِف مشكلتك هنا…</string>
+    <string name="report_issue_title">الإبلاغ عن مشكلة</string>
+    <string name="report_sent_successfully">تم إرسال البلاغ بنجاح!</string>
+    <string name="report_submit">إرسال البلاغ</string>
+    <string name="reporting_seller">الإبلاغ عن: %1$s</string>
+    <string name="runtime_integrity_failed">فشل التحقق الأمني. أعد تشغيل التطبيق.</string>
+    <string name="search_installed_apps">البحث في التطبيقات المثبّتة</string>
+    <string name="selected">محدّد</string>
+    <string name="setting_up_google_services">جارٍ إعداد خدمات Google. يرجى الانتظار وعدم إغلاق KOS.</string>
+    <string name="settings_app_language">لغة التطبيق</string>
+    <string name="settings_app_notifications">إشعارات التطبيق</string>
+    <string name="settings_app_notifications_summary">عرض إشعار أثناء تشغيل التطبيقات المستنسخة</string>
+    <string name="settings_developer_space">مساحة المطوّر</string>
+    <string name="settings_developer_space_summary">إعادة التشغيل داخل بيئة تطبيقات معزولة</string>
+    <string name="settings_facebook_login">تسجيل الدخول إلى Facebook</string>
+    <string name="settings_google_account">حساب Google</string>
+    <string name="settings_google_account_summary">الحساب %1$d · الإعداد وتسجيل الدخول</string>
+    <string name="settings_install_open_active_account">التثبيت والفتح في الحساب الافتراضي النشط</string>
+    <string name="settings_installing_and_opening">جارٍ التثبيت والفتح…</string>
+    <string name="settings_logs_saved_after_restart">سيتم حفظ السجلات بعد إعادة التشغيل</string>
+    <string name="settings_play_integrity_verifier">أداة التحقق من Play Integrity</string>
+    <string name="settings_save_debug_logs">حفظ سجلات التصحيح</string>
+    <string name="settings_save_debug_logs_summary">كتابة السجلات إلى مساحة التخزين بعد إعادة التشغيل</string>
+    <string name="settings_section_account">الحساب</string>
+    <string name="settings_section_developer">المطوّر</string>
+    <string name="settings_section_facebook">Facebook</string>
+    <string name="settings_section_general">عام</string>
+    <string name="settings_section_language">اللغة</string>
+    <string name="side_sheet_accessibility_pane_title">ورقة جانبية</string>
+    <string name="state_empty">حقل فارغ</string>
+    <string name="state_off">غير مفعَّل</string>
+    <string name="state_on">مفعَّل</string>
+    <string name="status_adding">جارٍ الإضافة</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_checking">جارٍ التحقق</string>
+    <string name="status_installed">مثبّت</string>
+    <string name="status_missing">مفقود</string>
+    <string name="status_not_installed">غير مثبّت</string>
+    <string name="status_ready">جاهز</string>
+    <string name="status_reinstalling_play_games">جارٍ إعادة تثبيت Play Games</string>
+    <string name="status_removing">جارٍ الإزالة</string>
+    <string name="status_sign_in">تسجيل الدخول</string>
+    <string name="status_starting">جارٍ البدء</string>
+    <string name="store_official_seller">بائع رسمي</string>
+    <string name="store_official_sellers">البائعون الرسميون</string>
+    <string name="subscription_activate">تفعيل الاشتراك</string>
+    <string name="subscription_activate_button">تفعيل الاشتراك</string>
+    <string name="subscription_active">الاشتراك نشط</string>
+    <string name="supported_games">الألعاب المدعومة</string>
+    <string name="switch_role">تبديل</string>
+    <string name="tab">علامة تبويب</string>
+    <string name="tab_games">الألعاب</string>
+    <string name="tab_profile">الملف الشخصي</string>
+    <string name="tab_settings">الإعدادات</string>
+    <string name="tab_store">المتجر</string>
+    <string name="template_percent">%1$d في المئة.</string>
+    <string name="terms_body">"1. قبول الشروط
+باستخدام خدمات King of Shots أو الشراء منها، فإنك توافق على جميع الشروط المذكورة هنا.
+
+2. الخدمات
+نقدم أدوات رقمية وتطبيقات معدّلة. يتم توفيرها “كما هي” من دون ضمانات.
+
+3. سياسة عدم استرداد الأموال
+• جميع المدفوعات نهائية
+• لا توجد مبالغ مستردة بسبب الحظر أو التحديثات أو عدم التوافق
+
+4. مسؤولية المستخدم
+• استخدم الخدمة على مسؤوليتك الخاصة
+• لسنا مسؤولين عن الحظر أو الأضرار
+
+5. قواعد الموزعين والأسعار
+• يجب اتباع جميع تعليمات King of Shots
+• يُمنع تعديل الملفات أو تسريبها
+• لا يُسمح بإعادة البيع إلا بالأسعار الرسمية
+• يجب الالتزام الصارم بقائمة الأسعار: الأسعار الرسمية
+• يُمنع البيع بأقل أو أكثر من السعر المحدد
+
+6. استخدام المفاتيح
+• قد تكون المفاتيح مرتبطة بجهاز محدد
+• لا يُسمح بالمشاركة
+• إساءة الاستخدام = حظر فوري
+
+7. المخالفات
+• مخالفة القواعد = حظر دائم
+• لا توجد مبالغ مستردة بعد المخالفة
+
+8. التحديثات
+قد نغيّر هذه الشروط في أي وقت من دون إشعار.
+
+9. المسؤولية
+لسنا مسؤولين عن أي أضرار أو خسائر."</string>
+    <string name="terms_title">شروط الخدمة</string>
+    <string name="unexpected_error_try_again">حدث خطأ غير متوقع. حاول مرة أخرى.</string>
+    <string name="uninstall_failed">فشل إلغاء التثبيت.</string>
+    <string name="uninstalled_successfully">تم إلغاء التثبيت بنجاح.</string>
+    <string name="unknown_error">خطأ غير معروف</string>
+    <string name="unknown_error_occurred">حدث خطأ غير معروف</string>
+    <string name="unsupported_game_version_title">الإصدار غير مدعوم بعد</string>
+    <string name="update_required_short">يلزم التحديث</string>
+    <string name="update_required_title">يلزم التحديث</string>
+    <string name="virtual_account_required_remove_google">يلزم تحديد حساب افتراضي لإزالة خدمات Google.</string>
+</resources>

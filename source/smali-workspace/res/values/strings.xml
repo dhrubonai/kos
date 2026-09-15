@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">Navigate up</string>
+    <string name="abc_action_mode_done">Done</string>
+    <string name="abc_capital_off">OFF</string>
+    <string name="abc_capital_on">ON</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Search…</string>
+    <string name="abc_searchview_description_clear">Clear query</string>
+    <string name="abc_searchview_description_search">Search</string>
+    <string name="abc_searchview_description_submit">Submit query</string>
+    <string name="abc_searchview_description_voice">Voice search</string>
+    <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="account_google_ready_sign_in">Google is ready — sign in next</string>
+    <string name="account_google_services_not_installed">Google services aren’t installed</string>
+    <string name="account_number">Account %1$d</string>
+    <string name="account_number_active">Account %1$d · Active</string>
+    <string name="account_ready_to_play">Ready to play</string>
+    <string name="accounts_advanced_summary">Diagnostics and manual controls</string>
+    <string name="accounts_advanced_title">Advanced (for support)</string>
+    <string name="accounts_remove_services_message">This removes Google services only from virtual Account %1$d. Your phone’s Google account, other KOS accounts, and your games are untouched. Google login, Play Games, cloud saves, and Play purchases will be unavailable for Account %1$d until Google services are re-enabled.</string>
+    <string name="accounts_remove_services_title">Remove Google services?</string>
+    <string name="accounts_sign_out_message">This signs virtual Account %1$d out of Google. Google services remain installed.</string>
+    <string name="accounts_sign_out_title">Sign out of Google?</string>
+    <string name="accounts_switch_account">Switch account</string>
+    <string name="accounts_title">Accounts</string>
+    <string name="action_accept">Accept</string>
+    <string name="action_add">Add</string>
+    <string name="action_add_gms">Add GMS</string>
+    <string name="action_add_google_services">Add Google services</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_clear_data">Clear Data</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_decline">Decline</string>
+    <string name="action_delete_app">Delete App</string>
+    <string name="action_delete_install_play_games">Delete &amp; Install Play Games</string>
+    <string name="action_dont_show_again">Don’t show again</string>
+    <string name="action_enable">Enable</string>
+    <string name="action_enter">Enter</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_exit_application">Exit Application</string>
+    <string name="action_fix_play_games_profile">Fix Play Games Profile</string>
+    <string name="action_fix_profile">Fix profile</string>
+    <string name="action_launch_anyway">Launch anyway</string>
+    <string name="action_not_now">Not now</string>
+    <string name="action_open_play_games">Open Play Games</string>
+    <string name="action_open_play_store">Open Play Store</string>
+    <string name="action_open_settings">Open settings</string>
+    <string name="action_proceed">Proceed</string>
+    <string name="action_recheck">Re-check</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_remove_all_gms_accounts">Remove All GMS Accounts</string>
+    <string name="action_remove_services">Remove services</string>
+    <string name="action_report_issue">REPORT ISSUE</string>
+    <string name="action_run_checks">Run Checks</string>
+    <string name="action_sign_in_google">Sign in with Google</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="action_stop_fix">Stop Fix %1$d/%2$d</string>
+    <string name="action_test_run">Test Run</string>
+    <string name="action_visit_page">Visit Page</string>
+    <string name="action_warm_up_gms">Warm Up GMS</string>
+    <string name="add_app_title">Add app</string>
+    <string name="androidx_startup">androidx.startup</string>
+    <string name="app_added">Added %1$s</string>
+    <string name="app_clone_failed">Couldn’t clone %1$s</string>
+    <string name="app_data_clear_failed">Couldn’t clear data for %1$s</string>
+    <string name="app_data_cleared">Cleared data for %1$s</string>
+    <string name="app_installation_failed">Installation failed: %1$s</string>
+    <string name="app_installed_launch_failed">App installed but failed to launch.</string>
+    <string name="app_launch_failed">Couldn’t launch %1$s</string>
+    <string name="app_launch_failed_short">Launch failed</string>
+    <string name="app_name">KOS</string>
+    <string name="app_no_launch_screen">%1$s has no launch screen</string>
+    <string name="app_not_found_real_device">Error: App not found on real device.</string>
+    <string name="app_remove_failed">Couldn’t remove %1$s</string>
+    <string name="app_removed">Removed %1$s</string>
+    <string name="app_stop_failed">Couldn’t stop %1$s</string>
+    <string name="app_stopped">Stopped %1$s</string>
+    <string name="application_crash_error">Application error</string>
+    <string name="autofill">Autofill</string>
+    <string name="black_box_service_name">:black</string>
+    <string name="bottom_sheet_behavior">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
+    <string name="bottomsheet_action_collapse">Collapse the bottom sheet</string>
+    <string name="bottomsheet_action_expand">Expand the bottom sheet</string>
+    <string name="bottomsheet_action_expand_halfway">Expand halfway</string>
+    <string name="bottomsheet_drag_handle_content_description">Drag handle</string>
+    <string name="busy_adding_google_services">Adding Google services…</string>
+    <string name="busy_fixing_game_profile">Fixing game profile…</string>
+    <string name="busy_opening">Opening…</string>
+    <string name="busy_opening_sign_in">Opening sign-in…</string>
+    <string name="busy_removing_google_services">Removing Google services…</string>
+    <string name="busy_signing_out">Signing out…</string>
+    <string name="cache_clear_failed">Couldn’t clear cache for %1$s</string>
+    <string name="cache_cleared">Cleared %1$s cache</string>
+    <string name="call_notification_answer_action">Answer</string>
+    <string name="call_notification_answer_video_action">Video</string>
+    <string name="call_notification_decline_action">Decline</string>
+    <string name="call_notification_hang_up_action">Hang Up</string>
+    <string name="call_notification_incoming_text">Incoming call</string>
+    <string name="call_notification_ongoing_text">Ongoing call</string>
+    <string name="call_notification_screening_text">Screening an incoming call</string>
+    <string name="carrom_app_id">1004933637059</string>
+    <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
+    <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
+    <string name="character_counter_pattern">%1$d/%2$d</string>
+    <string name="check_games_ready">Games ready</string>
+    <string name="check_google_services_installed">Google services installed</string>
+    <string name="check_signed_in_google">Signed in to Google</string>
+    <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="close_drawer">Close navigation menu</string>
+    <string name="close_sheet">Close sheet</string>
+    <string name="contact_phone_call">Phone Call</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="data_clear_failed">Failed to clear data.</string>
+    <string name="data_cleared_successfully">Data cleared successfully.</string>
+    <string name="default_popup_window_title">Pop-Up Window</string>
+    <string name="developer_account_label">Developer</string>
+    <string name="developer_modules_disabled">Developer modules disabled</string>
+    <string name="developer_space_confirm_message">KOS will restart into an isolated developer sandbox. Your normal games and account stay untouched. You can leave anytime from the menu inside.</string>
+    <string name="developer_space_confirm_title">Enter Developer Space?</string>
+    <string name="device_id">Device ID</string>
+    <string name="diagnostic_account_manager_ui">Account Manager UI</string>
+    <string name="diagnostic_authenticator_detail">Authenticator services=%1$d</string>
+    <string name="diagnostic_carrom_readiness">Carrom readiness</string>
+    <string name="diagnostic_carrom_readiness_detail">Carrom=%1$s, Play Games=%2$s, launchable=%3$s, caller fix=enabled</string>
+    <string name="diagnostic_core_packages">Core packages</string>
+    <string name="diagnostic_core_packages_detail">GMS=%1$s, GSF=%2$s, AccountManager optional=%3$s</string>
+    <string name="diagnostic_device_target">Device target</string>
+    <string name="diagnostic_device_target_detail">Android ID=%1$s, DroidGuard cache=%2$s</string>
+    <string name="diagnostic_game_service_actions">Game service actions</string>
+    <string name="diagnostic_game_service_actions_detail">Sign-in=%1$s, Play Games=%2$s, Billing=%3$s</string>
+    <string name="diagnostic_google_account">Google account</string>
+    <string name="diagnostic_google_account_detail">Saved=%1$d, visible to GMS=%2$d, visible to Play Games=%3$d</string>
+    <string name="diagnostic_google_auth_provider">Google auth provider</string>
+    <string name="diagnostic_launchable_detail">Launchable=%1$s</string>
+    <string name="diagnostic_play_store_detail">Installed=%1$s, launchable=%2$s, visible accounts=%3$d</string>
+    <string name="diagnostics_title">Diagnostics</string>
+    <string name="download_failed">Download failed: %1$s</string>
+    <string name="download_preparing_message">Please wait while we prepare your experience…</string>
+    <string name="download_resources_title">"DOWNLOADING
+RESOURCES"</string>
+    <string name="error_a11y_label">Error: invalid</string>
+    <string name="error_icon_content_description">Error</string>
+    <string name="error_no_app_can_open_page">No app can open this page</string>
+    <string name="error_sandbox_create_failed">Failed to create sandbox environment.</string>
+    <string name="error_title">Error</string>
+    <string name="error_virtual_environment_start_failed">Virtual environment failed to start.</string>
+    <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
+    <string name="facebook_login_internal_browser">Internal Browser</string>
+    <string name="facebook_login_legacy">Legacy</string>
+    <string name="facebook_login_native_app">Native App</string>
+    <string name="facebook_native_gms_required">Google Services is required to run Facebook properly.</string>
+    <string name="facebook_native_installed_selected">Facebook installed. Native App login selected.</string>
+    <string name="facebook_native_store_failed">Couldn’t open Facebook in the virtual Play Store.</string>
+    <string name="facebook_uninstall_confirm_message">Switching to %1$s will remove Facebook from virtual account %2$d.</string>
+    <string name="facebook_uninstall_confirm_title">Remove Facebook?</string>
+    <string name="facebook_uninstall_failed">Facebook could not be removed from this virtual account.</string>
+    <string name="game_install_from_store">Please install %1$s from Play Store.</string>
+    <string name="game_locked_purchase_required">Game locked: purchase required.</string>
+    <string name="game_update_from_store">Please update %1$s from Play Store.</string>
+    <string name="game_version_newer_than_supported">"You are using a newer version of %1$s that we don't support yet."</string>
+    <string name="gms_added_account">GMS added to virtual account %1$d.</string>
+    <string name="gms_added_warmed_up">GMS added and warmed up.</string>
+    <string name="gms_already_loaded">GMS is already loaded.</string>
+    <string name="gms_checks_refreshed">GMS checks refreshed.</string>
+    <string name="gms_core_not_loaded">GMS core is not loaded yet.</string>
+    <string name="gms_install_did_not_complete">GMS install did not complete.</string>
+    <string name="gms_install_failed">GMS install failed: %1$s</string>
+    <string name="gms_install_incomplete">GMS install incomplete. Missing: %1$s</string>
+    <string name="gms_manager_title">GMS Manager</string>
+    <string name="gms_not_loaded_message">Google login may not work for %1$s. Install GMS from GMS Manager before launching for the best result.</string>
+    <string name="gms_not_loaded_title">GMS is not loaded</string>
+    <string name="gms_onboarding_benefit_cloud">Cloud saves, player profiles, and achievements in supported games</string>
+    <string name="gms_onboarding_benefit_purchases">Play Store and supported in-app purchases</string>
+    <string name="gms_onboarding_benefit_sign_in">Google Sign-In and Play Games support</string>
+    <string name="gms_onboarding_benefits_title">What you get</string>
+    <string name="gms_onboarding_message">Google services are optional. Enable them if you want Google sign-in, Play Games, Play Store, or Google Play purchases in this virtual account.</string>
+    <string name="gms_onboarding_note_account">Requires signing in with a Google account</string>
+    <string name="gms_onboarding_note_resources">Uses additional storage, memory, battery, and background data</string>
+    <string name="gms_onboarding_note_setup">Initial setup may take longer, and some games may need one restart after setup</string>
+    <string name="gms_onboarding_notes_title">Things to know</string>
+    <string name="gms_onboarding_title">Enable Google services?</string>
+    <string name="gms_partially_added">GMS partially added. Missing packages are not on host.</string>
+    <string name="gms_warm_up_result">GMS warm-up: started %1$d service(s), missing %2$d, failed %3$d.</string>
+    <string name="google_account_manager_launched">Google Account Manager launched.</string>
+    <string name="google_account_manager_not_launchable">Google Account Manager has no launchable activity in virtual GMS.</string>
+    <string name="google_account_not_removed">Account was not removed.</string>
+    <string name="google_account_removed">Removed %1$s</string>
+    <string name="google_account_saved">Google Account Saved!</string>
+    <string name="google_account_setup_opened">Google account setup opened. Add your account, then launch the game again.</string>
+    <string name="google_account_setup_prepare_timeout">Google sign-in services did not become ready. Keep Google sign-in closed and tap Retry.</string>
+    <string name="google_accounts_title">Google Accounts</string>
+    <string name="google_services_action_failed">The Google services action failed.</string>
+    <string name="google_services_already_removed">Google services are already removed from this virtual account.</string>
+    <string name="google_services_install_failed">Couldn’t install Google services: %1$s</string>
+    <string name="google_services_removal_already_running">Google services removal is already running for this virtual account.</string>
+    <string name="google_services_removal_in_progress">Google services are being removed from this virtual account.</string>
+    <string name="google_services_removal_not_finished">Google services removal did not finish.</string>
+    <string name="google_services_removal_not_finished_details">Google services removal did not finish: %1$s</string>
+    <string name="google_services_removal_verify_failed">Google services removal could not verify the selected virtual account.</string>
+    <string name="google_services_removed_result">Google services and %1$d Google account(s) were removed from this virtual account. Games and other virtual accounts were not changed.</string>
+    <string name="google_services_setup_failed">Google services setup failed: %1$s</string>
+    <string name="google_sign_in_needed_message">Sign in once from Play Store inside virtual GMS before launching %1$s. Google login will fail until an account is saved.</string>
+    <string name="google_sign_in_needed_title">Google sign-in needed</string>
+    <string name="google_sign_in_open_failed">Couldn’t open sign-in: %1$s</string>
+    <string name="google_sign_in_ready_optional_failed">Google sign-in services are ready. Some optional Google apps could not be added: %1$s</string>
+    <string name="icon_content_description">Dialog Icon</string>
+    <string name="in_progress">In progress</string>
+    <string name="indeterminate">Partially checked</string>
+    <string name="installation_required_title">Installation Required</string>
+    <string name="invalid_loader_config">Invalid loader configuration</string>
+    <string name="item_view_role_description">Tab</string>
+    <string name="kos_service_unavailable">KOS service is unavailable. Restart KOS and try again.</string>
+    <string name="language_arabic">العربية</string>
+    <string name="language_english">English</string>
+    <string name="language_portuguese_brazil">Português (Brasil)</string>
+    <string name="language_system_default">System default</string>
+    <string name="launching_game">Launching %1$s…</string>
+    <string name="license_activate_now">ACTIVATE NOW</string>
+    <string name="license_activate_title">Activate License</string>
+    <string name="license_activation_failed">Activation Failed</string>
+    <string name="license_activation_successful">Activation Successful!</string>
+    <string name="license_buy_prompt">Don’t have a key? Buy one here</string>
+    <string name="license_invalid_format">Invalid Format (XXXXX-XXXXX-XXXXX-XXXXX)</string>
+    <string name="license_response_parse_error">Error parsing server response</string>
+    <string name="m3_loading_indicator_content_description">Loading</string>
+    <string name="m3_ref_typeface_brand_medium">sans-serif-medium</string>
+    <string name="m3_ref_typeface_brand_regular">sans-serif</string>
+    <string name="m3_ref_typeface_plain_medium">sans-serif-medium</string>
+    <string name="m3_ref_typeface_plain_regular">sans-serif</string>
+    <string name="m3_sys_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="m3_sys_motion_easing_emphasized_path_data">M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1</string>
+    <string name="m3_sys_motion_easing_legacy_accelerate">cubic-bezier(0.4, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_legacy_decelerate">cubic-bezier(0, 0, 0.2, 1)</string>
+    <string name="m3_sys_motion_easing_linear">cubic-bezier(0, 0, 1, 1)</string>
+    <string name="m3_sys_motion_easing_standard">cubic-bezier(0.2, 0, 0, 1)</string>
+    <string name="m3c_bottom_sheet_collapse_description">Collapse bottom sheet</string>
+    <string name="m3c_bottom_sheet_dismiss_description">Dismiss bottom sheet</string>
+    <string name="m3c_bottom_sheet_drag_handle_description">Drag handle</string>
+    <string name="m3c_bottom_sheet_expand_description">Expand bottom sheet</string>
+    <string name="m3c_bottom_sheet_pane_title">Bottom Sheet</string>
+    <string name="m3c_dialog">Dialog</string>
+    <string name="maintenance_title">Maintenance</string>
+    <string name="material_clock_display_divider">:</string>
+    <string name="material_clock_toggle_content_description">Select AM or PM</string>
+    <string name="material_motion_easing_accelerated">cubic-bezier(0.4, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_decelerated">cubic-bezier(0.0, 0.0, 0.2, 1.0)</string>
+    <string name="material_motion_easing_emphasized">path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)</string>
+    <string name="material_motion_easing_linear">cubic-bezier(0.0, 0.0, 1.0, 1.0)</string>
+    <string name="material_motion_easing_standard">cubic-bezier(0.4, 0.0, 0.2, 1.0)</string>
+    <string name="material_timepicker_am">AM</string>
+    <string name="material_timepicker_pm">PM</string>
+    <string name="membership_calculating">Calculating…</string>
+    <string name="membership_expired">Expired</string>
+    <string name="membership_expires_in">Expires in:</string>
+    <string name="membership_free">Free Membership</string>
+    <string name="membership_standard">Standard Membership</string>
+    <string name="membership_time_remaining">%1$dd %2$02dh %3$02dm %4$02ds</string>
+    <string name="missing_packages">Missing: %1$s</string>
+    <string name="module_trust_removed">Removed trust for %1$s</string>
+    <string name="module_trusted">Trusted %1$s</string>
+    <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>
+    <string name="mtrl_switch_thumb_group_name">circle_group</string>
+    <string name="mtrl_switch_thumb_path_checked">M4,16 A12,12 0 0,1 16,4 H16 A12,12 0 0,1 16,28 H16 A12,12 0 0,1 4,16</string>
+    <string name="mtrl_switch_thumb_path_morphing">M0,16 A11,11 0 0,1 11,5 H21 A11,11 0 0,1 21,27 H11 A11,11 0 0,1 0,16</string>
+    <string name="mtrl_switch_thumb_path_name">circle</string>
+    <string name="mtrl_switch_thumb_path_pressed">M2,16 A14,14 0 0,1 16,2 H16 A14,14 0 0,1 16,30 H16 A14,14 0 0,1 2,16</string>
+    <string name="mtrl_switch_thumb_path_unchecked">M8,16 A8,8 0 0,1 16,8 H16 A8,8 0 0,1 16,24 H16 A8,8 0 0,1 8,16</string>
+    <string name="mtrl_switch_track_decoration_path">M1,16 A15,15 0 0,1 16,1 H36 A15,15 0 0,1 36,31 H16 A15,15 0 0,1 1,16</string>
+    <string name="mtrl_switch_track_path">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
+    <string name="no_apps_found">No apps found</string>
+    <string name="no_virtual_google_accounts">No virtual Google accounts</string>
+    <string name="not_selected">Not selected</string>
+    <string name="notification_permission_message">KOS needs notification access to show the active-service status and the Dump Log button.</string>
+    <string name="notification_permission_title">Enable KOS notifications</string>
+    <string name="package_type_app">App</string>
+    <string name="package_type_service">Service</string>
+    <string name="packages_title">Packages</string>
+    <string name="password_toggle_content_description">Show password</string>
+    <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
+    <string name="path_password_eye_mask_strike_through">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_eye_mask_visible">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
+    <string name="path_password_strike_through">M3.27,4.27 L19.74,20.74</string>
+    <string name="play_games_installed_fresh">Google Play Games installed fresh.</string>
+    <string name="play_games_launched_finish_profile">Google Play Games launched. Finish the player profile there, then retry Carrom.</string>
+    <string name="play_games_not_installed_real_device">Google Play Games is not installed on the real device.</string>
+    <string name="play_games_not_installed_virtual">Google Play Games is not installed in virtual GMS.</string>
+    <string name="play_games_not_launchable">Google Play Games has no launchable activity in virtual GMS.</string>
+    <string name="play_games_open_failed">Couldn’t open Play Games.</string>
+    <string name="play_games_opened">Play Games opened.</string>
+    <string name="play_games_reinstall_failed">Google Play Games reinstall failed: %1$s</string>
+    <string name="play_games_reinstalled_clean">Google Play Games deleted, cache removed, and reinstalled.</string>
+    <string name="play_games_repair_failed">Play Games repair failed: %1$s</string>
+    <string name="play_games_repair_finished">Finished %1$d Play Games repair attempts. Tap again if the profile is still stuck.</string>
+    <string name="play_games_repair_stopped">Play Games repair stopped.</string>
+    <string name="play_games_reset_failed">Google Play Games reset failed: %1$s</string>
+    <string name="play_games_title">Play Games</string>
+    <string name="play_store_launch_failed">Play Store launch failed.</string>
+    <string name="play_store_launched">Play Store launched.</string>
+    <string name="play_store_not_available_virtual">Play Store is not available in virtual GMS.</string>
+    <string name="play_store_not_installed_virtual">Play Store is not installed in virtual GMS.</string>
+    <string name="play_store_open_failed">Couldn’t open Play Store.</string>
+    <string name="play_store_opened">Play Store opened.</string>
+    <string name="play_store_opened_sign_in">Play Store opened. Sign in there, then launch the game again.</string>
+    <string name="play_store_title">Play Store</string>
+    <string name="profile_about_us">About Us</string>
+    <string name="profile_about_us_summary">Learn more about our services</string>
+    <string name="profile_device_identity">DEVICE IDENTITY</string>
+    <string name="profile_information">INFORMATION</string>
+    <string name="profile_website">Website</string>
+    <string name="progress_adding_app">Adding app</string>
+    <string name="progress_clearing_app_data">Clearing app data</string>
+    <string name="progress_clearing_cache">Clearing cache</string>
+    <string name="progress_clearing_data">Clearing data…</string>
+    <string name="progress_installing_google_services">Installing Google services</string>
+    <string name="progress_loading_google_entries">Loading Google apps and service entries</string>
+    <string name="progress_opening_google_sign_in">Opening Google sign-in</string>
+    <string name="progress_preparing_google_services">Preparing Play Store, Play services, and sign-in support</string>
+    <string name="progress_preparing_google_sign_in">Preparing Google sign-in services…</string>
+    <string name="progress_refreshing_developer_space">Refreshing Developer Space</string>
+    <string name="progress_removing_app">Removing app</string>
+    <string name="progress_uninstalling">Uninstalling…</string>
+    <string name="range_end">Range end</string>
+    <string name="range_start">Range start</string>
+    <string name="removal_accounts_still_present">accounts still present=%1$d</string>
+    <string name="removal_data_still_present">data still present=%1$s</string>
+    <string name="removal_packages_still_installed">packages still installed=%1$s</string>
+    <string name="repair_attempt_result">Stopped %1$d package(s), %2$s Play Games launched=%3$s.</string>
+    <string name="repair_missing_packages">Missing: %1$s.</string>
+    <string name="report_issue_hint">Describe your issue here…</string>
+    <string name="report_issue_title">Report Issue</string>
+    <string name="report_sent_successfully">Report sent successfully!</string>
+    <string name="report_submit">SUBMIT REPORT</string>
+    <string name="reporting_seller">Reporting: %1$s</string>
+    <string name="runtime_integrity_failed">Security verification failed. Restart the app.</string>
+    <string name="search_installed_apps">Search installed apps</string>
+    <string name="selected">Selected</string>
+    <string name="setting_up_google_services">Setting up Google services. Please wait and don’t close KOS.</string>
+    <string name="settings_app_language">App language</string>
+    <string name="settings_app_notifications">App notifications</string>
+    <string name="settings_app_notifications_summary">Show a notification while cloned apps run</string>
+    <string name="settings_developer_space">Developer space</string>
+    <string name="settings_developer_space_summary">Restart into an isolated app sandbox</string>
+    <string name="settings_facebook_login">Facebook login</string>
+    <string name="settings_google_account">Google account</string>
+    <string name="settings_google_account_summary">Account %1$d · set up and sign-in</string>
+    <string name="settings_install_open_active_account">Install and open in active virtual account</string>
+    <string name="settings_installing_and_opening">Installing and opening…</string>
+    <string name="settings_logs_saved_after_restart">Logs will be saved after restart</string>
+    <string name="settings_play_integrity_verifier">Play Integrity verifier</string>
+    <string name="settings_save_debug_logs">Save debug logs</string>
+    <string name="settings_save_debug_logs_summary">Write logs to storage after restart</string>
+    <string name="settings_section_account">Account</string>
+    <string name="settings_section_developer">Developer</string>
+    <string name="settings_section_facebook">Facebook</string>
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_language">Language</string>
+    <string name="side_sheet_accessibility_pane_title">Side Sheet</string>
+    <string name="state_empty">Empty</string>
+    <string name="state_off">Off</string>
+    <string name="state_on">On</string>
+    <string name="status_adding">Adding</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_checking">Checking</string>
+    <string name="status_installed">Installed</string>
+    <string name="status_missing">Missing</string>
+    <string name="status_not_installed">Not installed</string>
+    <string name="status_ready">Ready</string>
+    <string name="status_reinstalling_play_games">Reinstalling Play Games</string>
+    <string name="status_removing">Removing</string>
+    <string name="status_sign_in">Sign in</string>
+    <string name="status_starting">Starting</string>
+    <string name="store_official_seller">Official Seller</string>
+    <string name="store_official_sellers">OFFICIAL SELLERS</string>
+    <string name="subscription_activate">ACTIVATE SUBSCRIPTION</string>
+    <string name="subscription_activate_button">ACTIVATE SUBSCRIPTION</string>
+    <string name="subscription_active">SUBSCRIPTION ACTIVE</string>
+    <string name="supported_games">Supported Games</string>
+    <string name="switch_role">Switch</string>
+    <string name="tab">Tab</string>
+    <string name="tab_games">Games</string>
+    <string name="tab_profile">Profile</string>
+    <string name="tab_settings">Settings</string>
+    <string name="tab_store">Store</string>
+    <string name="template_percent">%1$d percent.</string>
+    <string name="terms_body">"1. Acceptance of Terms
+By accessing or purchasing from King of Shots, you agree to all terms listed here.
+
+2. Services
+We provide digital tools and modified applications. These are provided “as is” without guarantees.
+
+3. No Refund Policy
+• All payments are final
+• No refunds for bans, updates, or incompatibility
+
+4. User Responsibility
+• Use at your own risk
+• We are not responsible for bans or damages
+
+5. Reseller Rules &amp; Pricing
+• You must follow all instructions from King of Shots
+• No modifying or leaking files
+• Reselling only allowed at official prices
+• Follow price list strictly: Official Pricing
+• No undercutting or overpricing
+
+6. Key Usage
+• Keys may be device-limited
+• No sharing allowed
+• Abuse = instant ban
+
+7. Violations
+• Breaking rules = permanent ban
+• No refunds after violation
+
+8. Updates
+We may change terms anytime without notice.
+
+9. Liability
+We are not responsible for any damages or losses."</string>
+    <string name="terms_title">Terms of Service</string>
+    <string name="unexpected_error_try_again">An unexpected error occurred. Try again.</string>
+    <string name="uninstall_failed">Uninstall failed.</string>
+    <string name="uninstalled_successfully">Uninstalled successfully.</string>
+    <string name="unknown_error">unknown error</string>
+    <string name="unknown_error_occurred">Unknown error occurred</string>
+    <string name="unsupported_game_version_title">Version Not Supported Yet</string>
+    <string name="update_required_short">UPDATE REQ</string>
+    <string name="update_required_title">Update Required</string>
+    <string name="virtual_account_required_remove_google">A concrete virtual account is required to remove Google services.</string>
+</resources>

@@ -210,3 +210,51 @@ session 6's commit never landed). No field report on r6 yet.
 3. Boot OK → validate a key → check /api/admin/licenses + D1 bindings → then cleanup
    (production build without probe). Crash with FAIL → branch on the Throwable.
 4. KEEP UPDATING THIS WORKLOG EVERY SESSION. NO EXCEPTIONS.
+
+### Session 7b (2026-09-16) — ROUND-7: surgical 97-byte build shipped
+USER FIELD REPORT: r6 ALSO crashes ("app is not opening... keeps stopping").
+Worker: still ZERO real probe reports ⇒ death < ~2 s ⇒ loadLibrary("kos") native VM
+fail-path, before App.attachBaseContext. r6 lib is byte-identical to the original's,
+so the VM fails on something OUTSIDE the lib that r1–r6 ALL changed: dex size,
+APK total size, arsc/manifest rebuild, res renames. Hypothesis: native size/layout
+fingerprint (e.g. base.apk mapping extent or dex size).
+
+1. Structural zip diff (original vs r6): 664 vs 748 entries; r6 rebuilt arsc with
+   real names vs obfuscated short names; libkos.so physically FIRST entry (data_off
+   4096) in the original; alignment 4K OK both; 16K not needed (original isn't either).
+   Only 4 entries really differ by content besides res renames → r6 zip-level sound ⇒
+   fingerprint must be size/layout-based.
+2. Emulator work (emu_kos.py — the user's "simulate on device" ask):
+   - FIXED A REAL EMU BUG: __system_property_get args were read from x1/x2 instead
+     of x0/x1 — the hidden property name was **"ro.arch"** (from .bss 0x7787b7).
+   - Added ro.arch=aarch64 + more props → VM now passes status/maps×2/dlsym(1026)/
+     C++ init/ro.arch and reaches the JIT final stage (0x8cc000+).
+   - JIT crash analyzed: x19 loaded 0x48 from a VM-internal table slice; the zeroify
+     JIT block itself runs perfectly (16 iterations, clean ret) ⇒ remaining fault is
+     emu table fidelity, NOT a device clue. Emu ROI reached; pivoted to surgical build.
+3. GitHub research (user ask): verifyRuntimeIntegrity / NativeBridge.doTask /
+   Lcom/kos/Native/NativeBridge / stringfog-native → ZERO public matches. KOS's
+   protection is fully closed-source; no public base project exists. RE-only path.
+4. **BUILT app/KOS-r7-surgical-signed.apk** (MD5 b1a090d30f09f193c0c68b60fbd3d94d,
+   11,472,493 B = EXACTLY the original's byte count):
+   - classes.dex patched IN PLACE (scripts/patch_dex_r7.py, own minimal dex parser):
+     verifyRuntimeIntegrity body → const/4 v0,1; return v0; NOP-fill. 47 units kept
+     ⇒ dex size 6,767,000 unchanged; total dex diff = 97 bytes; sha1+adler fixed.
+   - ZIP rebuilt in original CD order, per-entry compression preserved, original
+     sig files dropped, v2+v3 signed (kos-release3). Name-keyed CRC verify: only
+     classes.dex + 3 META-INF files differ; other 745 entries byte-identical.
+   - versionCode 24, original manifest bytes, original arsc/res/assets/libs.
+   - NO probe/licbridge/crashhook — pure boot test; license flow stays native
+     (keys won't validate against the original server — EXPECTED this round).
+5. Uploaded gofile https://gofile.io/d/yAqya136 — user must UNINSTALL old KOS first.
+6. Full details: analysis/ROUND7_SURGICAL.md. Interpreter of results:
+   - r7 BOOTS ⇒ fingerprint = size/layout ⇒ r8 does in-place size-neutral dex
+     patches for license bridging (hand-assembled smali→dex bytes).
+   - r7 CRASHES ⇒ fingerprint = content (dex/cert digest in VM) ⇒ must patch the
+     VM payload; emu completion becomes mandatory.
+
+### NEXT SESSION INSTRUCTIONS (r7 era)
+1. Test result decides the branch above (ROUND7_SURGICAL.md §Interpretation).
+2. If r8 needed: reverse native doTask HTTP protocol (emu can capture it) and/or
+   patch URL string in-place if plain in lib. Keep EVERYTHING size-neutral.
+3. KEEP UPDATING THIS WORKLOG EVERY SESSION. NO EXCEPTIONS.

@@ -13,7 +13,7 @@ from unicorn import *
 from unicorn.arm64_const import *
 from capstone import Cs, CS_ARCH_ARM64, CS_MODE_LITTLE_ENDIAN
 
-LIB = sys.argv[1] if len(sys.argv) > 1 else "/home/z/my-project/fix/repo/native/libkos-original.so"
+LIB = sys.argv[1] if len(sys.argv) > 1 else "/home/z/my-project/kos-repo/native/libkos-original.so"
 TRACE_GATE = "--trace-gate" in sys.argv
 STEP_LIMIT = 200_000_000
 
@@ -511,15 +511,20 @@ def h_sym_generic(uc, name):
         print(f"  syscall(nr={nr}, x1={regs[1]:#x}, x2={regs[2]:#x}) -> 0")
         return 0
     if s == "__system_property_get":
-        # (name, buf) -> len
-        nm = rd_cstr(uc, regs[1], 128)
+        # aarch64: x0 = name, x1 = value buf  (emu previously misread x1/x2!)
+        try:
+            raw = bytes(uc.mem_read(regs[0], 96))
+            print(f"  [prop-name-raw] @x0={regs[0]:#x}: {raw.hex()} | ascii={raw[:48]!r}")
+        except Exception as _e:
+            print(f"  [prop-name-raw] read fail {_e}")
+        nm = rd_cstr(uc, regs[0], 128)
         val = {"ro.build.version.sdk": "34", "ro.build.version.release": "14",
                "ro.product.model": "Pixel 8", "ro.product.manufacturer": "Google",
                "ro.build.version.security_patch": "2026-08-01", "ro.hardware": "tensor",
                "ro.build.fingerprint": "google/axolotl/axolotl:14/UP1A/eng:user/release-keys",
                "ro.product.cpu.abi": "arm64-v8a", "ro.debuggable": "0", "ro.secure": "1",
-               "service.adb.tcp.port": "", "ro.build.tags": "release-keys"}.get(nm, "")
-        uc.mem_write(regs[2], val.encode() + b"\x00")
+               "service.adb.tcp.port": "", "ro.build.tags": "release-keys", "ro.arch": "aarch64", "ro.product.cpu.abilist": "arm64-v8a,armeabi-v7a,armeabi", "ro.zygote": "zygote64_32", "ro.build.version.incremental": "UP1A.eng"}.get(nm, "")
+        uc.mem_write(regs[1], val.encode() + b"\x00")
         print(f"  __system_property_get({nm!r}) = {val!r}")
         return len(val)
     if s == "pthread_mutex_lock" or s == "pthread_mutex_unlock":
@@ -558,7 +563,7 @@ h_generic.seen = set()
 
 # --------------------------------------------------------- file-backed I/O
 import os
-APK_PATH = "/home/z/my-project/fix/repo/app/KOS.apk"
+APK_PATH = "/home/z/my-project/kos-repo/app/KOS.apk"
 FAKE_FDS = {}
 _next_fd = [100]
 
@@ -1051,6 +1056,77 @@ def hook_workerwatch(uc, access, address, size, value, ud):
 
 uc.hook_add(UC_HOOK_MEM_WRITE, hook_workerwatch, begin=BASE + 0xdc06e0, end=BASE + 0xdc06e8)
 
+# --- probe the obfuscated dispatch inside the JIT block (0x8cd448..0x8cd470)
+def hook_dispatch(uc, address, size, ud):
+    off = address - BASE
+    if off == 0x8cd448:
+        x8 = uc.reg_read(UC_ARM64_REG_X8)
+        print(f"  [DISPATCH] 0x8cd448 ldr x8,[x8,#0x840]: x8={x8:#x} (file {x8-BASE:#x})")
+    elif off == 0x8cd458:
+        x8 = uc.reg_read(UC_ARM64_REG_X8); x9 = uc.reg_read(UC_ARM64_REG_X9)
+        ea = (x8 + x9) & 0xFFFFFFFFFFFFFFFF
+        print(f"  [DISPATCH] 0x8cd458 ldr x8,[x8,x9]: x8={x8:#x} x9={x9:#x} ea={ea:#x} (file {ea-BASE:#x})")
+        try:
+            print(f"             slot val={struct.unpack('<Q', uc.mem_read(ea, 8))[0]:#x}")
+        except Exception:
+            print("             slot unmapped")
+    elif off == 0x8cd470:
+        x8 = uc.reg_read(UC_ARM64_REG_X8)
+        x19 = uc.reg_read(UC_ARM64_REG_X19)
+        print(f"  [DISPATCH] 0x8cd470 blr x8 -> {x8:#x} (file {x8-BASE:#x}) x19-before={x19:#x}")
+        if x8 == BASE + 0x8ccdf0:
+            try:
+                blk = bytes(uc.mem_read(x8, 0xD0))
+                print("  [JIT BLOCK @0x8ccdf0]:")
+                for i in md.disasm(blk, x8):
+                    print(f"   0x{i.address-BASE:x}: {i.mnemonic:8s} {i.op_str}")
+            except Exception as ee:
+                print("  (jit disasm fail)", ee)
+uc.hook_add(UC_HOOK_CODE, hook_dispatch)
+
+# --- probe the JIT zeroify loop's indirect br (0x8cce5c) and entry (0x8ccdf0)
+_jit_calls = [0]
+def hook_jit(uc, address, size, ud):
+    off = address - BASE
+    if off == 0x8ccdf0:
+        _jit_calls[0] += 1
+        if _jit_calls[0] <= 3:
+            x0 = uc.reg_read(UC_ARM64_REG_X0); x1 = uc.reg_read(UC_ARM64_REG_X1)
+            x19 = uc.reg_read(UC_ARM64_REG_X19)
+            print(f"  [JIT-CALL #{_jit_calls[0]}] enter 0x8ccdf0 x0={x0:#x} x1={x1:#x} x19={x19:#x}")
+    elif off == 0x8cce5c:
+        x8 = uc.reg_read(UC_ARM64_REG_X8)
+        if _jit_calls[0] <= 3:
+            print(f"   [JIT-BR] target={x8:#x} (file {x8-BASE:#x})")
+uc.hook_add(UC_HOOK_CODE, hook_jit, begin=BASE + 0x8ccdf0, end=BASE + 0x8cce60)
+
+# --- global x19 watch inside JIT region: catch the moment x19 becomes 0x48
+_x19_state = {"val": None}
+def hook_x19(uc, address, size, ud):
+    v = uc.reg_read(UC_ARM64_REG_X19)
+    if v != _x19_state["val"]:
+        pc = address - BASE
+        lr = uc.reg_read(UC_ARM64_REG_X30) - BASE
+        if v == 0x48 or _x19_state["val"] == 0x48:
+            print(f"  [X19-CHANGE] pc={pc:#x} lr={lr:#x}: x19 {_x19_state['val']} -> {v:#x}")
+            try:
+                mem = bytes(uc.mem_read(address, 0x18))
+                for i in md.disasm(mem, address):
+                    print(f"   [AT-CHANGE] 0x{i.address-BASE:x}: {i.mnemonic:8s} {i.op_str}")
+            except Exception as ee:
+                print("   (disasm fail)", ee)
+        _x19_state["val"] = v
+uc.hook_add(UC_HOOK_CODE, hook_x19, begin=BASE + 0x8cc000, end=BASE + 0x8cd600)
+
+# --- watch writes into the .bss page that holds the runtime-built property name
+PROP_BUF_LO = BASE + 0x778000
+PROP_BUF_HI = BASE + 0x77a000
+_pc_of_interest = [0]
+def hook_propwrite(uc, access, address, size, value, user_data):
+    pc = uc.reg_read(UC_ARM64_REG_PC)
+    print(f"  [PROPBUF-WRITE] pc={pc:#x} addr={address:#x} size={size} val={value:#x}")
+uc.hook_add(UC_HOOK_MEM_WRITE, hook_propwrite, begin=PROP_BUF_LO, end=PROP_BUF_HI)
+
 _seen_tbl_writes = set()
 def hook_tblwatch(uc, access, address, size, value, ud):
     off = address - (BASE + 0x672210)
@@ -1139,12 +1215,12 @@ def main():
 
     # dump TRUE decrypted .main + recovered keystream
     true_main = bytes(uc.mem_read(BASE + MAIN_VA, MAIN_SZ))
-    open("/home/z/my-project/fix/work/main_decrypted_TRUE.bin", "wb").write(true_main)
+    open("/home/z/my-project/kos-repo/native/emulation/work/main_decrypted_TRUE.bin", "wb").write(true_main)
     orig = open(LIB, "rb").read()
     off = elf.v2o(MAIN_VA)
     cipher = orig[off:off + MAIN_SZ]
     ks = bytes(a ^ b for a, b in zip(cipher, true_main))
-    open("/home/z/my-project/fix/work/main_keystream_TRUE.bin", "wb").write(ks)
+    open("/home/z/my-project/kos-repo/native/emulation/work/main_keystream_TRUE.bin", "wb").write(ks)
     # where does the variant diverge from standard RC4?
     def rc4(key, data):
         S = list(range(256)); j = 0
@@ -1158,7 +1234,7 @@ def main():
     std_ks = rc4(bytes.fromhex("31a7a7f497ef0dc8a0b3ec441a0d493a"), b"\x00" * MAIN_SZ)
     div = next((i for i in range(MAIN_SZ) if std_ks[i] != ks[i]), -1)
     print(f"TRUE .main dumped; keystream divergence from std RC4 at offset {div:#x} (va {MAIN_VA+div:#x})")
-    with open("/home/z/my-project/fix/work/keystream_check.txt", "w") as f:
+    with open("/home/z/my-project/kos-repo/native/emulation/work/keystream_check.txt", "w") as f:
         for i in range(0, MAIN_SZ, 32):
             mark = "SAME" if std_ks[i:i+32] == ks[i:i+32] else "DIFF"
             f.write(f"{i:06x} {mark} ks={ks[i:i+32].hex()} std={std_ks[i:i+32].hex()}\n")
@@ -1167,13 +1243,22 @@ def main():
     try:
         r = call_func(BASE + 0x57c00, x0=VM, x1=0)
         print(f"\nJNI_OnLoad returned {r:#x} (expect 0x10004)")
-        dump_trace("/home/z/my-project/fix/work/gate_trace.txt", tail=100000000)
+        dump_trace("/home/z/my-project/kos-repo/native/emulation/work/gate_trace.txt", tail=100000000)
     except UcError as e:
         pc = uc.reg_read(UC_ARM64_REG_PC)
         print(f"JNI_OnLoad UC ERROR: {e} pc={pc:#x} (file {pc-BASE:#x})")
         m = magic_by_addr.get(pc)
         print(f"  pc is magic: {m!r}")
         print(f"  LR={uc.reg_read(UC_ARM64_REG_X30)-BASE:#x} SP={uc.reg_read(UC_ARM64_REG_SP):#x}")
+        for rn in ["X0","X1","X2","X8","X9","X19","X20","X21","X22","X23","X24","X25","X26","X27","X28","X29","X30"]:
+            rv = uc.reg_read(globals()["UC_ARM64_REG_" + rn])
+            print(f"  {rn}={rv:#x} (file {rv-BASE:#x} if in lib)")
+        for rname, raddr in [("x19", uc.reg_read(UC_ARM64_REG_X19)), ("x8", uc.reg_read(UC_ARM64_REG_X8))]:
+            try:
+                d = bytes(uc.mem_read(raddr, 48))
+                print(f"  mem[{rname}]: {d.hex()}")
+            except Exception:
+                print(f"  mem[{rname}] unmapped")
         print("last executed:")
         for a in ring[-24:]:
             mm = magic_by_addr.get(a)
@@ -1185,6 +1270,15 @@ def main():
                 print(f"   0x{i.address-BASE:x}: {i.mnemonic:8s} {i.op_str}")
         except Exception as ee:
             print("  (no disasm)", ee)
+        # dump the whole caller JIT block to find where x19 should come from
+        try:
+            blk = bytes(uc.mem_read(BASE + 0x8cd180, 0x8cd480 - 0x8cd180))
+            print("  [CALLER JIT BLOCK 0x8cd180..0x8cd480]:")
+            for i in md.disasm(blk, BASE + 0x8cd180):
+                if "x19" in i.op_str or i.mnemonic in ("stp", "ret", "b.", "b"):
+                    print(f"   0x{i.address-BASE:x}: {i.mnemonic:8s} {i.op_str}")
+        except Exception as ee:
+            print("  (caller disasm fail)", ee)
         return 1
 
     print(f"\n=== captured {len(REG_TABLES)} RegisterNatives tables ===")
@@ -1198,7 +1292,7 @@ def main():
     out = []
     for cls, rows in REG_TABLES:
         out.append({"class": cls, "methods": [{"name": m, "sig": s, "fn": f - BASE} for m, s, f in rows]})
-    with open("/home/z/my-project/fix/work/jni_tables.json", "w") as fp:
+    with open("/home/z/my-project/kos-repo/native/emulation/work/jni_tables.json", "w") as fp:
         json.dump(out, fp, indent=1)
     print("saved -> fix/work/jni_tables.json")
     return 0

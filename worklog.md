@@ -169,3 +169,44 @@ All modified builds crash. Worker still holds ZERO real probe reports.
 2. If boot OK + license flow OK → project complete; remaining work = nice-to-have
    (kill probe in production build, manage licenses via admin endpoints).
 3. If crash returns with FAIL line → branch per analysis/ROUND6_FIX.md §NEXT.
+
+### Session 7 (2026-09-16) — round-6 commit RECOVERED to GitHub + source organization
+⚠️ SELF-REMINDER (per user's order): EVERY session MUST read this worklog first and
+append a diary entry like this one at the end. If everything restarts, this file +
+GitHub repo are the ONLY surviving state. Do not forget. Update. Every. Time.
+
+User message this session: only a fresh GitHub token (old one dead — that's why
+session 6's commit never landed). No field report on r6 yet.
+
+1. Discovered the round-6 commit (fc470d0f: r6 APK + ROUND6_FIX.md + all analysis)
+   was sitting UNPUSHED locally. Pushed with the new token → repo main now at fc470d0f.
+   (This was the most important recovery — the shipped fix's docs were not on GitHub.)
+2. Worker re-checked: `/api/admin/crashes` still holds ONLY the synthetic `diag-test`
+   row. Zero real reports ⇒ r6 result unknown (not tested or not reported yet).
+3. Verified r6 gate-fix completeness directly in the build workspace:
+   - `verifyRuntimeIntegrity` referenced ONLY by `com/kos/Native/NativeBridge.smali`
+     (body = const/4 v0,1 → returns true; the dc.smali call site is GONE).
+   - No other smali invokes it; no doTask(1004) call sites remain (rg sweep).
+   ⇒ r6 cannot hit the re-sign gate anywhere. Build is sound; anything else would be new.
+4. SOURCE ORGANIZATION (user's standing request: "real source code, categorized"):
+   - `source/SOURCE_MAP.md` (NEW) — master navigation: package census with file counts,
+     decoded names of the obfuscated classes (c01=engine starter, dc=integrity gate,
+     vg=sig digest, si2=own crash handler…), honest statement that APK source is
+     recovered-by-decompilation and our-code is the genuinely human-written part.
+   - Per-package READMEs in `source/java/`: root, com (real app names), androidx
+     (⚠ obfuscated app code hides in emoji2/text — 3,575 files), black (hidden-API
+     mirrors), a (string obfuscator), top (BlackReflection), android (stubs), third-party.
+   - `source/our-code/` (NEW) — all OUR genuine source, categorized: java/ (LicBridge
+     332 ln, CrashHook 210 ln, Probe 146 ln), backend/ (worker-d1.js 723 ln = live
+     deployed source), native-tools/ (emu_kos.py = the Unicorn VM harness + 4 more).
+   - README.md rewritten: new tree incl. round-5/6 analysis docs + source/ + status.
+5. Key clarification recorded: STARTUP_PATH.md's "c01.r" = CLASS `androidx.emoji2.text.c01`
+   method `V(Context, jf)` — verified in App.smali line 149. All obfuscated app code
+   lives in `androidx.emoji2.text.*`, NOT in separate root packages.
+
+### NEXT SESSION INSTRUCTIONS (carried forward + updated)
+1. Ask user to test r6 (gofile https://gofile.io/d/mkRcPFWA — uninstall old, install r6).
+2. GET /api/admin/crashes → Probe v3 CP0..CP7 now posts FULL logs; FAIL = exact Throwable.
+3. Boot OK → validate a key → check /api/admin/licenses + D1 bindings → then cleanup
+   (production build without probe). Crash with FAIL → branch on the Throwable.
+4. KEEP UPDATING THIS WORKLOG EVERY SESSION. NO EXCEPTIONS.

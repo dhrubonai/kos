@@ -21,8 +21,18 @@ kos/
 │   ├── STARTUP_PATH.md              # traced cold-start execution order (verified)
 │   ├── CRASH_INVESTIGATION.md       # rounds 1-4 evidence, rule-outs, ranked hypotheses
 │   ├── FIX_PLAN.md                  # agreed round-4 strategy
+│   ├── ROUND5_VM_BREAKTHROUGH.md    # native VM protection solved via emulation
+│   ├── ROUND6_FIX.md                # root cause proven + complete fix (r6 build)
 │   └── class_list.txt               # all 6,777 classes inventoried
-├── source/java/                     # FULL jadx 1.5.1 decompilation (5,335 files)
+├── source/
+│   ├── SOURCE_MAP.md                # ← START: where every piece of code lives
+│   ├── java/                        # FULL jadx 1.5.1 decompilation (5,335 files)
+│   │   └── */README.md              #   per-package guides (com/kos, androidx, black…)
+│   ├── our-code/                    # ALL genuine project source, categorized
+│   │   ├── java/                    #   LicBridge, CrashHook, Probe (buildable)
+│   │   ├── backend/                 #   deployed Cloudflare Worker source
+│   │   └── native-tools/            #   RE toolchain (Unicorn VM harness, disasm)
+│   └── smali-workspace/             # full multi-dex apktool decode (7,623 files)
 ├── smali/                           # FULL apktool 2.10.0 decode = rebuild workspace
 │   ├── smali/                       #   6,777 smali files
 │   ├── res/                         #   all resources (kos_api_base → workers.dev)
@@ -48,9 +58,13 @@ kos/
 - App protocol: `POST /api/validate {device,key}`, `POST /api/connect {device}`
 - Keys issued: lifetime `5CEZ-SRF6-QZA8-A2HB` + 5 monthly keys (see worklog)
 
-## Status (2026-09-16)
+## Status (2026-09-16, session 7)
 
-- Backend: live and verified.
-- App: still crashes on launch after rounds 1-3 (evidence + ranked hypotheses in
-  analysis/CRASH_INVESTIGATION.md). Round-4 plan: FIX_PLAN.md — starts with a
-  pristine-APK control test on the user's device, then disk-backed sync telemetry.
+- Backend: live and verified (worker + D1 + admin + crash store).
+- Root cause of all prior crashes PROVEN: `androidx.emoji2.text.dc` startup gate →
+  `NativeBridge.verifyRuntimeIntegrity()` → native task 1004 rejects any re-signed APK
+  (see analysis/ROUND6_FIX.md for the full evidence chain).
+- **Round-6 build shipped**: `app/KOS-r6-signed.apk` — gate neutered, LicBridge v3,
+  CrashHook, Probe v3, libkos.so byte-pristine. Awaiting user field test;
+  worker `/api/admin/crashes` currently holds zero real reports (r6 untested so far).
+- Source: fully organized under `source/` — see `source/SOURCE_MAP.md`.

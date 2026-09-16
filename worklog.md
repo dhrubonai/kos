@@ -73,3 +73,35 @@ Environment was reset; ALL local work lost. Recovered:
 1. Read analysis/FIX_PLAN.md. Start Phase 0 (pristine control test via user).
 2. In parallel, implement Phase 1 telemetry v2 (sync+disk, 8 checkpoints, same dex).
 3. Keep every intermediate artifact in the repo; append to this file at the end.
+
+### Session 5 (2026-09-16) — round-4 built: root cause identified, telemetry v2 shipped
+Environment SURVIVED this session (repo + tools intact — persistence works).
+
+1. **Round-3 root cause established** (see native/NATIVE_LIB.md §9.4):
+   - Round-3 forced JNI_OnLoad to return 0x10004, but the worker that performs
+     RegisterNatives is installed ONLY by the 2nd-layer-encrypted signature gate body.
+     Gate neutered ⇒ worker never installed ⇒ ZERO natives registered ⇒
+     `a.a.a.c.a()` (native string decryptor) threw UnsatisfiedLinkError at
+     App.attachBaseContext ⇒ instant crash, async probe report lost on the way out.
+   - Also confirmed: hidden R+X LOAD[5] segment (0xdc1000, 10.7 KB) = payload with
+     6-node fn-ptr table (gate 0x57f48, 0x57d28, 0x581b0, 0x587b0, 0x589e8) + register-
+     saving dispatch trampolines; setup1 (0x565e4) unpacks it UNCONDITIONALLY and
+     builds 6 call stubs at runtime. Second encryption layer proven (shared encrypted
+     body prefix between 0x57d28 and 0x57f48).
+2. Built **KOS-r4-telemetry-signed.apk** (MD5 3bd557ddfaaf597fbc9848585a0f89c7):
+   - Minimal 6-site native patch (patch_so_round4.py) — verified by decrypting .main
+     out of the FINAL signed APK (verify_r4.py): all 6 sites + .so stored/aligned +
+     manifest factory/extractNativeLibs intact + v2/v3 signatures OK.
+   - Probe v2 (patch/Probe.java): 8 checkpoints CP0..CP7, disk log, thread-POST,
+     JOIN-on-fail (posts full log), prev-log upload on next boot.
+   - Engine-boot catch widened to catchall (Errors now survivable + reported).
+   - No LicBridge this round (diagnostic build, minimal diff); kos_api_base resource added.
+3. Uploaded gofile + delivered to user with instructions:
+   - Install r4 (UNINSTALL previous first — different keystore).
+   - Then optionally install pristine app/KOS.apk for the H4 control test.
+
+### NEXT SESSION INSTRUCTIONS
+1. `POST /api/admin/login {"password":"KOS-97D0509946"}` → token;
+   `GET /api/admin/crashes?limit=50` — read device "kos-probe" reports
+   (CP0..CP7 trace + FAIL lines with Throwable class = EXACT crash point).
+2. Branch per analysis/FIX_PLAN.md Phase 2 using the checkpoint data.

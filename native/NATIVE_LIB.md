@@ -149,3 +149,59 @@ Server URL is constructed at runtime from the resource `kos_api_base` (values in
 3. Are there runtime-encrypted secondary blobs (the `uncompress` import) that depend on a
    valid signature/CRC?
 4. What exactly fills GOT 0x295f40 at runtime, and is it ever called from elsewhere?
+
+---
+
+## 9. ROUND-4 ADDENDUM (2026-09-16 session) — full architecture solved
+
+### 9.1 The hidden payload segment
+`LOAD[5]`: file 0x664000, vaddr **0xdc1000**, size **0x29f4**, flags R+X. Header
+`{dword0=processed-flag, dword1=6}`. Contains register-saving trampolines
+(0xdc1014: saves x0-x30+q0-q31+nzcv, calls through runtime-filled slot 0xdc1008)
+and a **6-node pointer table** (28-byte stride) at payload+0x6ec..0x780 whose
+fn-ptrs target .main functions:
+
+| node | self-ptr (file) | fn target |
+|---|---|---|
+| 0 | 0xdc16ec | **0x57f48 (gate)** |
+| 1 | 0xdc1708 | 0x587b0 |
+| 2 | 0xdc1724 | — |
+| 3 | 0xdc1740 | 0x57d28 |
+| 4 | 0xdc175c | 0x581b0 |
+| 5 | 0xdc1778 | 0x589e8 |
+
+### 9.2 setup1 (0x565e4) — unconditional runtime stub builder
+Runs BEFORE the gate; parses own phdrs, finds LOAD[5], mprotect RWX, embeds
+.main vaddr (0x5659c) at [x23+8], bias-relocates the 6 nodes, then for each node
+**writes a 6-instruction call stub** (`stp/adr/str/ldr-literal/br x0`) into the
+self-ptr location, `__clear_cache`, mprotect back R-X. Stubs dispatch into
+payload entries 0xdc1014+0x124*n. **All unconditional** (ELF-structural bails only).
+
+### 9.3 Second encryption layer CONFIRMED
+0x57d28 and 0x57f48 share the same 8-byte encrypted body prefix
+(`17b5e1af b0bb2119`) right after identical prologues — same protection template.
+RegisterNatives call does NOT appear in any plaintext (0x6b8 offset absent from
+.text and .main) → **registration happens inside second-layer-encrypted code or
+via computed JNIEnv offsets** — only executes after gate success.
+
+### 9.4 ROOT CAUSE of round-3 crash (established)
+Round-3 forced JNI_OnLoad to return 0x10004 with the gate neutered → the
+`blr x2` worker (which performs RegisterNatives) never ran because
+`*(.bss 0xdc06e0)` stayed 0 (only the gate body installs it). Result:
+**loadLibrary succeeded but ZERO natives registered** → first
+`a.a.a.c.a()` (string decryptor) call in `App.attachBaseContext` →
+UnsatisfiedLinkError → instant crash. Round-3's async-only probe lost the report
+(network on dying process + main-thread exception trap).
+
+### 9.5 Round-4 patch (minimal 6 sites — scripts/patch_so_round4.py)
+Same sites as round-3 minus the redundant 0x57ce8-cf0 block: with `w23=1` the
+cbz-fallback path at 0x57cec naturally yields `mov w0,#4; bfi w0,w23,16,16` =
+0x10004. Ship: `app/KOS-r4-telemetry-signed.apk`
+(MD5 3bd557ddfaaf597fbc9848585a0f89c7, keystore kos-release3).
+
+### 9.6 Telemetry v2 (patch/Probe.java)
+8 checkpoints CP0..CP7 (factory clinit/ctor/pre+post-loadLibrary, App
+clinit/attachBaseContext/engine-boot/onCreate), disk log
+(/data/user/0/com.kos/probe.log) + per-checkpoint POST via daemon thread +
+JOIN-on-fail (2.2s) posting FULL log; previous boot's log uploaded on next boot.
+Engine-boot catch widened Exception→catchall so Errors become survivable+reported.

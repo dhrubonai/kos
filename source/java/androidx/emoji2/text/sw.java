@@ -22,7 +22,7 @@ public final /* synthetic */ class sw implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         int i = this.d;
         String str = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         ComposeAuthActivity composeAuthActivity = this.g;
         yi yiVar = this.f;
         int i2 = 1;
@@ -30,11 +30,11 @@ public final /* synthetic */ class sw implements Function2 {
         switch (i) {
             case 0:
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
                 int i4 = ComposeAuthActivity.w;
-                a.a.a.c.a(-234316794838818L, wj1.f1284a);
+                a.a.a.c.a(-234316794838818L, wj1.f1283a);
                 tx txVar = (tx) lxVar;
-                if (!txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (!txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     txVar.S();
                     break;
                 } else {
@@ -43,11 +43,11 @@ public final /* synthetic */ class sw implements Function2 {
                 }
             case 1:
                 lx lxVar2 = (lx) obj;
-                int iIntValue2 = ((Integer) obj2).intValue();
+                int intValue2 = ((Integer) obj2).intValue();
                 int i5 = ComposeAuthActivity.w;
-                a.a.a.c.a(-222703203270434L, wj1.f1284a);
+                a.a.a.c.a(-222703203270434L, wj1.f1283a);
                 tx txVar2 = (tx) lxVar2;
-                if (!txVar2.P(1 & iIntValue2, (iIntValue2 & 3) != 2)) {
+                if (!txVar2.P(1 & intValue2, (intValue2 & 3) != 2)) {
                     txVar2.S();
                     break;
                 } else {
@@ -56,33 +56,33 @@ public final /* synthetic */ class sw implements Function2 {
                 }
             default:
                 lx lxVar3 = (lx) obj;
-                int iIntValue3 = ((Integer) obj2).intValue();
+                int intValue3 = ((Integer) obj2).intValue();
                 int i6 = ComposeAuthActivity.w;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-223794124963618L, strArr);
                 tx txVar3 = (tx) lxVar3;
-                if (!txVar3.P(iIntValue3 & 1, (iIntValue3 & 3) != 2)) {
+                if (!txVar3.P(intValue3 & 1, (intValue3 & 3) != 2)) {
                     txVar3.S();
                     break;
                 } else {
                     String str2 = yiVar.b;
                     a.a.a.c.a(-222316656213794L, strArr);
-                    boolean zH = txVar3.h(composeAuthActivity);
-                    Object objM = txVar3.M();
-                    on onVar = kx.f663a;
-                    if (zH || objM == onVar) {
-                        objM = new f2(2, composeAuthActivity);
-                        txVar3.i0(objM);
+                    boolean h = txVar3.h(composeAuthActivity);
+                    Object M = txVar3.M();
+                    on onVar = kx.f662a;
+                    if (h || M == onVar) {
+                        M = new f2(2, composeAuthActivity);
+                        txVar3.i0(M);
                     }
-                    Function2 function2 = (Function2) objM;
+                    Function2 function2 = (Function2) M;
                     a.a.a.c.a(-223033915752226L, strArr);
-                    boolean zH2 = txVar3.h(composeAuthActivity);
-                    Object objM2 = txVar3.M();
-                    if (zH2 || objM2 == onVar) {
-                        objM2 = new t2(5, composeAuthActivity);
-                        txVar3.i0(objM2);
+                    boolean h2 = txVar3.h(composeAuthActivity);
+                    Object M2 = txVar3.M();
+                    if (h2 || M2 == onVar) {
+                        M2 = new t2(5, composeAuthActivity);
+                        txVar3.i0(M2);
                     }
-                    h50.c(this.e, str2, function2, (sm0) objM2, txVar3, 0);
+                    h50.c(this.e, str2, function2, (sm0) M2, txVar3, 0);
                     break;
                 }
         }

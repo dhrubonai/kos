@@ -55,11 +55,11 @@ public final class MagnifierElement extends ud1 {
         w81Var.s = this.b;
         qr1 qr1Var2 = this.c;
         w81Var.t = qr1Var2;
-        View viewD0 = bz0.d0(w81Var);
+        View d0 = bz0.d0(w81Var);
         j70 j70Var2 = lx0.T(w81Var).A;
         if (w81Var.w != null) {
-            f72 f72Var = x81.f1323a;
-            if (((!Float.isNaN(Float.NaN) || !Float.isNaN(Float.NaN)) && !qr1Var2.a()) || !da0.a(Float.NaN, Float.NaN) || !da0.a(Float.NaN, Float.NaN) || !qr1Var2.equals(qr1Var) || !viewD0.equals(view) || !lx0.n(j70Var2, j70Var)) {
+            f72 f72Var = x81.f1322a;
+            if (((!Float.isNaN(Float.NaN) || !Float.isNaN(Float.NaN)) && !qr1Var2.a()) || !da0.a(Float.NaN, Float.NaN) || !da0.a(Float.NaN, Float.NaN) || !qr1Var2.equals(qr1Var) || !d0.equals(view) || !lx0.n(j70Var2, j70Var)) {
                 w81Var.J0();
             }
         }

@@ -10,19 +10,19 @@ import java.lang.reflect.Method;
 public abstract class lr2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final uh f708a;
+    public final uh f707a;
     public final uh b;
     public final uh c;
 
     public lr2(uh uhVar, uh uhVar2, uh uhVar3) {
-        this.f708a = uhVar;
+        this.f707a = uhVar;
         this.b = uhVar2;
         this.c = uhVar3;
     }
 
     public abstract mr2 a();
 
-    public final Class b(Class cls) throws ClassNotFoundException {
+    public final Class b(Class cls) {
         String name = cls.getName();
         uh uhVar = this.c;
         Class cls2 = (Class) uhVar.get(name);
@@ -34,8 +34,8 @@ public abstract class lr2 {
         return cls3;
     }
 
-    public final Method c(String str) throws NoSuchMethodException, SecurityException {
-        uh uhVar = this.f708a;
+    public final Method c(String str) {
+        uh uhVar = this.f707a;
         Method method = (Method) uhVar.get(str);
         if (method != null) {
             return method;
@@ -46,16 +46,16 @@ public abstract class lr2 {
         return declaredMethod;
     }
 
-    public final Method d(Class cls) throws NoSuchMethodException, ClassNotFoundException, SecurityException {
+    public final Method d(Class cls) {
         String name = cls.getName();
         uh uhVar = this.b;
         Method method = (Method) uhVar.get(name);
         if (method != null) {
             return method;
         }
-        Class clsB = b(cls);
+        Class b = b(cls);
         System.currentTimeMillis();
-        Method declaredMethod = clsB.getDeclaredMethod("write", cls, lr2.class);
+        Method declaredMethod = b.getDeclaredMethod("write", cls, lr2.class);
         uhVar.put(cls.getName(), declaredMethod);
         return declaredMethod;
     }
@@ -70,12 +70,12 @@ public abstract class lr2 {
     }
 
     public final nr2 g() {
-        String string = ((mr2) this).e.readString();
-        if (string == null) {
+        String readString = ((mr2) this).e.readString();
+        if (readString == null) {
             return null;
         }
         try {
-            return (nr2) c(string).invoke(null, a());
+            return (nr2) c(readString).invoke(null, a());
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e);
         } catch (IllegalAccessException e2) {
@@ -92,24 +92,24 @@ public abstract class lr2 {
 
     public abstract void h(int i);
 
-    public final void i(nr2 nr2Var) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void i(nr2 nr2Var) {
         if (nr2Var == null) {
             ((mr2) this).e.writeString(null);
             return;
         }
         try {
             ((mr2) this).e.writeString(b(nr2Var.getClass()).getName());
-            mr2 mr2VarA = a();
+            mr2 a2 = a();
             try {
-                d(nr2Var.getClass()).invoke(null, nr2Var, mr2VarA);
-                Parcel parcel = mr2VarA.e;
-                int i = mr2VarA.i;
+                d(nr2Var.getClass()).invoke(null, nr2Var, a2);
+                Parcel parcel = a2.e;
+                int i = a2.i;
                 if (i >= 0) {
-                    int i2 = mr2VarA.d.get(i);
-                    int iDataPosition = parcel.dataPosition();
+                    int i2 = a2.d.get(i);
+                    int dataPosition = parcel.dataPosition();
                     parcel.setDataPosition(i2);
-                    parcel.writeInt(iDataPosition - i2);
-                    parcel.setDataPosition(iDataPosition);
+                    parcel.writeInt(dataPosition - i2);
+                    parcel.setDataPosition(dataPosition);
                 }
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException("VersionedParcel encountered ClassNotFoundException", e);

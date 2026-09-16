@@ -18,7 +18,7 @@ public final class na2 extends n10 {
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         this.k = obj;
         this.m |= Integer.MIN_VALUE;
         oa2.k(this.l, null, this);

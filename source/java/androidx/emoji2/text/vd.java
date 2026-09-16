@@ -18,9 +18,9 @@ public final class vd extends g01 implements sm0 {
         switch (this.e) {
             case 0:
                 tn2 tn2Var = this.f;
-                Object objC = tn2Var.c();
+                Object c = tn2Var.c();
                 jf0 jf0Var = jf0.f;
-                return Boolean.valueOf(objC == jf0Var && tn2Var.d.getValue() == jf0Var);
+                return Boolean.valueOf(c == jf0Var && tn2Var.d.getValue() == jf0Var);
             default:
                 return Long.valueOf(this.f.b());
         }

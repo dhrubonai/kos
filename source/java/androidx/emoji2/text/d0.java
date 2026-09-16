@@ -12,9 +12,9 @@ public final class d0 extends c0 implements ListIterator {
     public d0(f0 f0Var, int i) {
         super(f0Var);
         this.g = f0Var;
-        int iA = f0Var.a();
-        if (i < 0 || i > iA) {
-            throw new IndexOutOfBoundsException(zd.e(i, iA, "index: ", ", size: "));
+        int a2 = f0Var.a();
+        if (i < 0 || i > a2) {
+            throw new IndexOutOfBoundsException(zd.e(i, a2, "index: ", ", size: "));
         }
         this.e = i;
     }

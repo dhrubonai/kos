@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public interface ms1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final dd0 f764a = dd0.V;
+    public static final dd0 f763a = dd0.V;
 }

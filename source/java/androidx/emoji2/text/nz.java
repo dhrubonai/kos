@@ -9,7 +9,7 @@ import java.util.HashMap;
 public final class nz {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f833a;
+    public int f832a;
     public final qz b;
     public final pz c;
     public final oz d;
@@ -18,13 +18,13 @@ public final class nz {
 
     public nz() {
         qz qzVar = new qz();
-        qzVar.f986a = 0;
+        qzVar.f985a = 0;
         qzVar.b = 0;
         qzVar.c = 1.0f;
         qzVar.d = Float.NaN;
         this.b = qzVar;
         pz pzVar = new pz();
-        pzVar.f934a = -1;
+        pzVar.f933a = -1;
         pzVar.b = 0;
         pzVar.c = -1;
         pzVar.d = Float.NaN;
@@ -35,7 +35,7 @@ public final class nz {
         pzVar.i = -1;
         this.c = pzVar;
         oz ozVar = new oz();
-        ozVar.f881a = false;
+        ozVar.f880a = false;
         ozVar.d = -1;
         ozVar.e = -1;
         ozVar.f = -1.0f;
@@ -99,7 +99,7 @@ public final class nz {
         ozVar.o0 = 0;
         this.d = ozVar;
         rz rzVar = new rz();
-        rzVar.f1041a = 0.0f;
+        rzVar.f1040a = 0.0f;
         rzVar.b = 0.0f;
         rzVar.c = 0.0f;
         rzVar.d = 1.0f;
@@ -165,7 +165,7 @@ public final class nz {
         izVar.S = ozVar.e0;
         izVar.V = ozVar.E;
         izVar.c = ozVar.f;
-        izVar.f556a = ozVar.d;
+        izVar.f555a = ozVar.d;
         izVar.b = ozVar.e;
         ((ViewGroup.MarginLayoutParams) izVar).width = ozVar.b;
         ((ViewGroup.MarginLayoutParams) izVar).height = ozVar.c;
@@ -184,7 +184,7 @@ public final class nz {
         oz ozVar = nzVar.d;
         ozVar.getClass();
         oz ozVar2 = this.d;
-        ozVar.f881a = ozVar2.f881a;
+        ozVar.f880a = ozVar2.f880a;
         ozVar.b = ozVar2.b;
         ozVar.c = ozVar2.c;
         ozVar.d = ozVar2.d;
@@ -260,14 +260,14 @@ public final class nz {
         pzVar.getClass();
         pz pzVar2 = this.c;
         pzVar2.getClass();
-        pzVar.f934a = pzVar2.f934a;
+        pzVar.f933a = pzVar2.f933a;
         pzVar.c = pzVar2.c;
         pzVar.e = pzVar2.e;
         pzVar.d = pzVar2.d;
         qz qzVar = this.b;
-        int i = qzVar.f986a;
+        int i = qzVar.f985a;
         qz qzVar2 = nzVar.b;
-        qzVar2.f986a = i;
+        qzVar2.f985a = i;
         qzVar2.c = qzVar.c;
         qzVar2.d = qzVar.d;
         qzVar2.b = qzVar.b;
@@ -275,7 +275,7 @@ public final class nz {
         rzVar.getClass();
         rz rzVar2 = this.e;
         rzVar2.getClass();
-        rzVar.f1041a = rzVar2.f1041a;
+        rzVar.f1040a = rzVar2.f1040a;
         rzVar.b = rzVar2.b;
         rzVar.c = rzVar2.c;
         rzVar.d = rzVar2.d;
@@ -288,7 +288,7 @@ public final class nz {
         rzVar.k = rzVar2.k;
         rzVar.l = rzVar2.l;
         rzVar.m = rzVar2.m;
-        nzVar.f833a = this.f833a;
+        nzVar.f832a = this.f832a;
         return nzVar;
     }
 }

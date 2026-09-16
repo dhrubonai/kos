@@ -24,33 +24,33 @@ public final class j62 extends g01 implements sm0 {
     public final Object a() {
         on0 on0Var = this.e;
         sk2 sk2Var = (sk2) on0Var.e;
-        int iIntValue = ((Number) this.i.getValue()).intValue();
+        int intValue = ((Number) this.i.getValue()).intValue();
         dx0 dx0Var = this.h;
         boolean z = dx0Var.b;
         boolean z2 = dx0Var.b() == 1;
         int i = this.f;
-        long jK = sk2Var.k(i);
+        long k = sk2Var.k(i);
         int i2 = al2.c;
-        int iH = (int) (jK >> 32);
-        int iE = sk2Var.e(iH);
-        int i3 = sk2Var.b.f;
-        if (iE != iIntValue) {
-            iH = iIntValue >= i3 ? sk2Var.h(i3 - 1) : sk2Var.h(iIntValue);
+        int i3 = (int) (k >> 32);
+        int e = sk2Var.e(i3);
+        int i4 = sk2Var.b.f;
+        if (e != intValue) {
+            i3 = intValue >= i4 ? sk2Var.h(i4 - 1) : sk2Var.h(intValue);
         }
-        int iD = (int) (jK & 4294967295L);
-        if (sk2Var.e(iD) != iIntValue) {
-            iD = iIntValue >= i3 ? sk2Var.d(i3 - 1, false) : sk2Var.d(iIntValue, false);
+        int i5 = (int) (k & 4294967295L);
+        if (sk2Var.e(i5) != intValue) {
+            i5 = intValue >= i4 ? sk2Var.d(i4 - 1, false) : sk2Var.d(intValue, false);
         }
-        int i4 = this.g;
-        if (iH == i4) {
-            return on0Var.a(iD);
+        int i6 = this.g;
+        if (i3 == i6) {
+            return on0Var.a(i5);
         }
-        if (iD == i4) {
-            return on0Var.a(iH);
+        if (i5 == i6) {
+            return on0Var.a(i3);
         }
-        if (!(z ^ z2) ? i >= iH : i > iD) {
-            iH = iD;
+        if (!(z ^ z2) ? i >= i3 : i > i5) {
+            i3 = i5;
         }
-        return on0Var.a(iH);
+        return on0Var.a(i3);
     }
 }

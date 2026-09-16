@@ -7,16 +7,16 @@ import java.util.List;
 public final class z62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final u62 f1421a;
+    public final u62 f1420a;
     public final re1 b;
 
     public z62(y62 y62Var, lw0 lw0Var) {
-        this.f1421a = y62Var.d;
+        this.f1420a = y62Var.d;
         this.b = new re1(y62.j(4, y62Var).size());
-        List listJ = y62.j(4, y62Var);
-        int size = listJ.size();
+        List j = y62.j(4, y62Var);
+        int size = j.size();
         for (int i = 0; i < size; i++) {
-            y62 y62Var2 = (y62) listJ.get(i);
+            y62 y62Var2 = (y62) j.get(i);
             if (lw0Var.a(y62Var2.g)) {
                 this.b.a(y62Var2.g);
             }

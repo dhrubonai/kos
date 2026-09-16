@@ -9,11 +9,11 @@ public final class zp {
     public static final zp c = new zp(ws.Q0(new ArrayList()), null);
 
     /* renamed from: a, reason: collision with root package name */
-    public final Set f1451a;
+    public final Set f1450a;
     public final lx0 b;
 
     public zp(Set set, lx0 lx0Var) {
-        this.f1451a = set;
+        this.f1450a = set;
         this.b = lx0Var;
     }
 
@@ -22,12 +22,12 @@ public final class zp {
             return false;
         }
         zp zpVar = (zp) obj;
-        return lx0.n(zpVar.f1451a, this.f1451a) && lx0.n(zpVar.b, this.b);
+        return lx0.n(zpVar.f1450a, this.f1450a) && lx0.n(zpVar.b, this.b);
     }
 
     public final int hashCode() {
-        int iHashCode = (this.f1451a.hashCode() + 1517) * 41;
+        int hashCode = (this.f1450a.hashCode() + 1517) * 41;
         lx0 lx0Var = this.b;
-        return iHashCode + (lx0Var != null ? lx0Var.hashCode() : 0);
+        return hashCode + (lx0Var != null ? lx0Var.hashCode() : 0);
     }
 }

@@ -17,8 +17,8 @@ public final class p02 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                double dDoubleValue = ((Number) obj).doubleValue();
-                return Double.valueOf(this.f.n.c(az0.n(dDoubleValue, r10.e, r10.f)));
+                double doubleValue = ((Number) obj).doubleValue();
+                return Double.valueOf(this.f.n.c(az0.n(doubleValue, r10.e, r10.f)));
             default:
                 return Double.valueOf(az0.n(this.f.k.c(((Number) obj).doubleValue()), r10.e, r10.f));
         }

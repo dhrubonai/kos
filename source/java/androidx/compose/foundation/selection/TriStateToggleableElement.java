@@ -52,11 +52,11 @@ final class TriStateToggleableElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iHashCode = this.f34a.hashCode() * 31;
+        int hashCode = this.f34a.hashCode() * 31;
         se1 se1Var = this.b;
-        int iHashCode2 = (iHashCode + (se1Var != null ? se1Var.hashCode() : 0)) * 31;
+        int hashCode2 = (hashCode + (se1Var != null ? se1Var.hashCode() : 0)) * 31;
         zu0 zu0Var = this.c;
-        return this.f.hashCode() + jx0.a(this.e.f613a, jx0.d((iHashCode2 + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 31, this.d), 31);
+        return this.f.hashCode() + jx0.a(this.e.f612a, jx0.d((hashCode2 + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 31, this.d), 31);
     }
 
     @Override // androidx.emoji2.text.ud1

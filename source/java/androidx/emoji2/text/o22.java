@@ -14,7 +14,7 @@ public final class o22 implements l10, g30 {
         this.result = f30Var;
     }
 
-    public final Object a() throws Throwable {
+    public final Object a() {
         Object obj = this.result;
         f30 f30Var = f30.e;
         if (obj == f30Var) {

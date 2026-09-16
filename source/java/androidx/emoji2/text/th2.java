@@ -18,23 +18,23 @@ public final class th2 implements u11, Serializable {
 
     @Override // androidx.emoji2.text.u11
     public final Object getValue() {
-        Object objA;
-        Object obj = this.e;
+        Object obj;
+        Object obj2 = this.e;
         j42 j42Var = j42.t;
-        if (obj != j42Var) {
-            return obj;
+        if (obj2 != j42Var) {
+            return obj2;
         }
         synchronized (this.f) {
-            objA = this.e;
-            if (objA == j42Var) {
+            obj = this.e;
+            if (obj == j42Var) {
                 sm0 sm0Var = this.d;
                 lx0.u(sm0Var);
-                objA = sm0Var.a();
-                this.e = objA;
+                obj = sm0Var.a();
+                this.e = obj;
                 this.d = null;
             }
         }
-        return objA;
+        return obj;
     }
 
     public final String toString() {

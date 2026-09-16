@@ -15,25 +15,25 @@ public final class rn2 extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        long jLongValue = ((Number) obj).longValue();
+        long longValue = ((Number) obj).longValue();
         tn2 tn2Var = this.e;
-        boolean zG = tn2Var.g();
+        boolean g = tn2Var.g();
         sn1 sn1Var = tn2Var.g;
-        if (!zG) {
+        if (!g) {
             if (sn1Var.g() == Long.MIN_VALUE) {
-                sn1Var.h(jLongValue);
-                tn2Var.f1133a.f854a.setValue(Boolean.TRUE);
+                sn1Var.h(longValue);
+                tn2Var.f1132a.f853a.setValue(Boolean.TRUE);
             }
-            long jG = jLongValue - sn1Var.g();
+            long g2 = longValue - sn1Var.g();
             float f = this.f;
             if (f != 0.0f) {
-                jG = xa1.R(jG / f);
+                g2 = xa1.R(g2 / f);
             }
             if (tn2Var.b == null) {
-                tn2Var.f.h(jG);
+                tn2Var.f.h(g2);
             }
-            tn2Var.h(jG, f == 0.0f);
+            tn2Var.h(g2, f == 0.0f);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

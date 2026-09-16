@@ -267,7 +267,7 @@ public class Reflector {
         return (R) callByCaller(this.mCaller, objArr);
     }
 
-    public <R> R callByCaller(Object obj, Object... objArr) throws Exception {
+    public <R> R callByCaller(Object obj, Object... objArr) {
         check(obj, this.mMethod, "Method");
         try {
             return (R) this.mMethod.invoke(obj, objArr);
@@ -278,7 +278,7 @@ public class Reflector {
         }
     }
 
-    public void check(Object obj, Member member, String str) throws Exception {
+    public void check(Object obj, Member member, String str) {
         if (member == null) {
             throw new Exception(zd.h(str, " was null!"));
         }
@@ -288,14 +288,14 @@ public class Reflector {
         checked(obj);
     }
 
-    public Object checked(Object obj) throws Exception {
+    public Object checked(Object obj) {
         if (obj == null || this.mType.isInstance(obj)) {
             return obj;
         }
         throw new Exception("Caller [" + obj + "] is not a instance of type [" + this.mType + "]!");
     }
 
-    public Reflector constructor(Class<?>... clsArr) throws Exception {
+    public Reflector constructor(Class<?>... clsArr) {
         try {
             Constructor<?> declaredConstructor = this.mType.getDeclaredConstructor(clsArr);
             this.mConstructor = declaredConstructor;
@@ -308,11 +308,11 @@ public class Reflector {
         }
     }
 
-    public Reflector field(String str) throws Exception {
+    public Reflector field(String str) {
         try {
-            Field fieldFindField = findField(str);
-            this.mField = fieldFindField;
-            fieldFindField.setAccessible(true);
+            Field findField = findField(str);
+            this.mField = findField;
+            findField.setAccessible(true);
             this.mConstructor = null;
             this.mMethod = null;
             return this;
@@ -321,13 +321,13 @@ public class Reflector {
         }
     }
 
-    public Field findField(String str) throws NoSuchFieldException {
+    public Field findField(String str) {
         try {
             return this.mType.getField(str);
         } catch (NoSuchFieldException e) {
-            for (Class<?> superclass = this.mType; superclass != null; superclass = superclass.getSuperclass()) {
+            for (Class<?> cls = this.mType; cls != null; cls = cls.getSuperclass()) {
                 try {
-                    return superclass.getDeclaredField(str);
+                    return cls.getDeclaredField(str);
                 } catch (NoSuchFieldException unused) {
                 }
             }
@@ -335,13 +335,13 @@ public class Reflector {
         }
     }
 
-    public Method findMethod(String str, Class<?>... clsArr) throws NoSuchMethodException {
+    public Method findMethod(String str, Class<?>... clsArr) {
         try {
             return this.mType.getMethod(str, clsArr);
         } catch (NoSuchMethodException e) {
-            for (Class<?> superclass = this.mType; superclass != null; superclass = superclass.getSuperclass()) {
+            for (Class<?> cls = this.mType; cls != null; cls = cls.getSuperclass()) {
                 try {
-                    return superclass.getDeclaredMethod(str, clsArr);
+                    return cls.getDeclaredMethod(str, clsArr);
                 } catch (NoSuchMethodException unused) {
                 }
             }
@@ -361,11 +361,11 @@ public class Reflector {
         return this.mMethod;
     }
 
-    public Reflector method(String str, Class<?>... clsArr) throws Exception {
+    public Reflector method(String str, Class<?>... clsArr) {
         try {
-            Method methodFindMethod = findMethod(str, clsArr);
-            this.mMethod = methodFindMethod;
-            methodFindMethod.setAccessible(true);
+            Method findMethod = findMethod(str, clsArr);
+            this.mMethod = findMethod;
+            findMethod.setAccessible(true);
             this.mConstructor = null;
             this.mField = null;
             return this;
@@ -374,7 +374,7 @@ public class Reflector {
         }
     }
 
-    public <R> R newInstance(Object... objArr) throws Exception {
+    public <R> R newInstance(Object... objArr) {
         Constructor<?> constructor = this.mConstructor;
         if (constructor == null) {
             throw new Exception("Constructor was null!");
@@ -401,7 +401,7 @@ public class Reflector {
         return on(str, z, Reflector.class.getClassLoader());
     }
 
-    public <R> R get(Object obj) throws Exception {
+    public <R> R get(Object obj) {
         check(obj, this.mField, "Field");
         try {
             return (R) this.mField.get(obj);
@@ -410,7 +410,7 @@ public class Reflector {
         }
     }
 
-    public Reflector set(Object obj, Object obj2) throws Exception {
+    public Reflector set(Object obj, Object obj2) {
         check(obj, this.mField, "Field");
         try {
             this.mField.set(obj, obj2);
@@ -420,7 +420,7 @@ public class Reflector {
         }
     }
 
-    public static Reflector on(String str, boolean z, ClassLoader classLoader) throws Exception {
+    public static Reflector on(String str, boolean z, ClassLoader classLoader) {
         try {
             return on(Class.forName(str, z, classLoader));
         } catch (Throwable th) {

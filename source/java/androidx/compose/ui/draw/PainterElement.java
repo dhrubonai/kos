@@ -59,9 +59,9 @@ final class PainterElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iB = zd.b(this.c, (p00.b.hashCode() + ((this.b.hashCode() + jx0.d(this.f47a.hashCode() * 31, 31, true)) * 31)) * 31, 31);
+        int b = zd.b(this.c, (p00.b.hashCode() + ((this.b.hashCode() + jx0.d(this.f47a.hashCode() * 31, 31, true)) * 31)) * 31, 31);
         ql qlVar = this.d;
-        return iB + (qlVar == null ? 0 : qlVar.hashCode());
+        return b + (qlVar == null ? 0 : qlVar.hashCode());
     }
 
     @Override // androidx.emoji2.text.ud1

@@ -21,7 +21,7 @@ public final class r8 implements ComponentCallbacks2 {
     public final void onConfigurationChanged(Configuration configuration) {
         Configuration configuration2 = this.d;
         configuration2.updateFrom(configuration);
-        Iterator it = this.e.f491a.entrySet().iterator();
+        Iterator it = this.e.f490a.entrySet().iterator();
         while (it.hasNext()) {
             if (((WeakReference) ((Map.Entry) it.next()).getValue()).get() != null) {
                 throw new ClassCastException();
@@ -33,11 +33,11 @@ public final class r8 implements ComponentCallbacks2 {
 
     @Override // android.content.ComponentCallbacks
     public final void onLowMemory() {
-        this.e.f491a.clear();
+        this.e.f490a.clear();
     }
 
     @Override // android.content.ComponentCallbacks2
     public final void onTrimMemory(int i) {
-        this.e.f491a.clear();
+        this.e.f490a.clear();
     }
 }

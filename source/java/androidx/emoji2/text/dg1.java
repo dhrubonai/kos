@@ -14,7 +14,7 @@ public final class dg1 extends k72 implements bg1 {
         this.owner$volatile = xo2.h;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0022, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0022, code lost:
     
         r2 = r0.e;
         androidx.emoji2.text.dg1.h.set(r2, null);
@@ -23,61 +23,39 @@ public final class dg1 extends k72 implements bg1 {
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object c(androidx.emoji2.text.n10 r7) {
-        /*
-            r6 = this;
-            boolean r0 = r6.d()
-            androidx.emoji2.text.up2 r1 = androidx.emoji2.text.up2.f1187a
-            if (r0 == 0) goto L9
-            goto L51
-        L9:
-            androidx.emoji2.text.l10 r7 = androidx.emoji2.text.xa1.E(r7)
-            androidx.emoji2.text.ip r7 = androidx.emoji2.text.xo2.r(r7)
-            androidx.emoji2.text.cg1 r0 = new androidx.emoji2.text.cg1     // Catch: java.lang.Throwable -> L52
-            r0.<init>(r6, r7)     // Catch: java.lang.Throwable -> L52
-        L16:
-            java.util.concurrent.atomic.AtomicIntegerFieldUpdater r2 = androidx.emoji2.text.k72.g     // Catch: java.lang.Throwable -> L52
-            int r2 = r2.getAndDecrement(r6)     // Catch: java.lang.Throwable -> L52
-            int r3 = r6.f624a     // Catch: java.lang.Throwable -> L52
-            if (r2 > r3) goto L16
-            if (r2 <= 0) goto L3e
-            androidx.emoji2.text.dg1 r2 = r0.e     // Catch: java.lang.Throwable -> L52
-            java.util.concurrent.atomic.AtomicReferenceFieldUpdater r3 = androidx.emoji2.text.dg1.h     // Catch: java.lang.Throwable -> L52
-            r4 = 0
-            r3.set(r2, r4)     // Catch: java.lang.Throwable -> L52
-            androidx.emoji2.text.ip r3 = r0.d     // Catch: java.lang.Throwable -> L52
-            androidx.emoji2.text.v r4 = new androidx.emoji2.text.v     // Catch: java.lang.Throwable -> L52
-            r5 = 5
-            r4.<init>(r5, r2, r0)     // Catch: java.lang.Throwable -> L52
-            int r0 = r3.f     // Catch: java.lang.Throwable -> L52
-            androidx.emoji2.text.hp r2 = new androidx.emoji2.text.hp     // Catch: java.lang.Throwable -> L52
-            r5 = 0
-            r2.<init>(r5, r4)     // Catch: java.lang.Throwable -> L52
-            r3.D(r1, r0, r2)     // Catch: java.lang.Throwable -> L52
-            goto L44
-        L3e:
-            boolean r2 = r6.a(r0)     // Catch: java.lang.Throwable -> L52
-            if (r2 == 0) goto L16
-        L44:
-            java.lang.Object r7 = r7.r()
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r7 != r0) goto L4d
-            goto L4e
-        L4d:
-            r7 = r1
-        L4e:
-            if (r7 != r0) goto L51
-            return r7
-        L51:
-            return r1
-        L52:
-            r0 = move-exception
-            r7.B()
-            throw r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dg1.c(androidx.emoji2.text.n10):java.lang.Object");
+    public final Object c(n10 n10Var) {
+        boolean d = d();
+        up2 up2Var = up2.f1186a;
+        if (!d) {
+            ip r = xo2.r(xa1.E(n10Var));
+            try {
+                cg1 cg1Var = new cg1(this, r);
+                while (true) {
+                    int andDecrement = k72.g.getAndDecrement(this);
+                    if (andDecrement <= this.f623a) {
+                        if (andDecrement > 0) {
+                            break;
+                        }
+                        if (a(cg1Var)) {
+                            break;
+                        }
+                    }
+                }
+                Object r2 = r.r();
+                f30 f30Var = f30.d;
+                if (r2 != f30Var) {
+                    r2 = up2Var;
+                }
+                if (r2 == f30Var) {
+                    return r2;
+                }
+            } catch (Throwable th) {
+                r.B();
+                throw th;
+            }
+        }
+        return up2Var;
     }
 
     public final boolean d() {
@@ -85,7 +63,7 @@ public final class dg1 extends k72 implements bg1 {
         while (true) {
             AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = k72.g;
             int i2 = atomicIntegerFieldUpdater.get(this);
-            int i3 = this.f624a;
+            int i3 = this.f623a;
             if (i2 > i3) {
                 do {
                     i = atomicIntegerFieldUpdater.get(this);

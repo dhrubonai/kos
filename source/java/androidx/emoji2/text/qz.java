@@ -9,28 +9,28 @@ import android.util.AttributeSet;
 public final class qz {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f986a;
+    public int f985a;
     public int b;
     public float c;
     public float d;
 
     public final void a(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.g);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.g);
+        int indexCount = obtainStyledAttributes.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i);
+            int index = obtainStyledAttributes.getIndex(i);
             if (index == 1) {
-                this.c = typedArrayObtainStyledAttributes.getFloat(index, this.c);
+                this.c = obtainStyledAttributes.getFloat(index, this.c);
             } else if (index == 0) {
-                int i2 = typedArrayObtainStyledAttributes.getInt(index, this.f986a);
-                this.f986a = i2;
-                this.f986a = sz.d[i2];
+                int i2 = obtainStyledAttributes.getInt(index, this.f985a);
+                this.f985a = i2;
+                this.f985a = sz.d[i2];
             } else if (index == 4) {
-                this.b = typedArrayObtainStyledAttributes.getInt(index, this.b);
+                this.b = obtainStyledAttributes.getInt(index, this.b);
             } else if (index == 3) {
-                this.d = typedArrayObtainStyledAttributes.getFloat(index, this.d);
+                this.d = obtainStyledAttributes.getFloat(index, this.d);
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 }

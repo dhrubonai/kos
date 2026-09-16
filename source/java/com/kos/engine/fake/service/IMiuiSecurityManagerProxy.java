@@ -299,18 +299,18 @@ public class IMiuiSecurityManagerProxy extends BinderInvocationStub {
     }
 
     public boolean isEnable() {
-        int iIntValue;
+        int i;
         String[] strArr = xa1.b;
-        String strA = c.a(-863387769782050L, strArr);
+        String a2 = c.a(-863387769782050L, strArr);
         try {
-            fy1 fy1VarG = fy1.g(c.a(-876169592454946L, strArr));
-            fy1VarG.f(c.a(-876255491800866L, strArr), String.class, Integer.TYPE);
-            iIntValue = ((Integer) fy1VarG.a(fy1VarG.b, strA, 0)).intValue();
+            fy1 g = fy1.g(c.a(-876169592454946L, strArr));
+            g.f(c.a(-876255491800866L, strArr), String.class, Integer.TYPE);
+            i = ((Integer) g.a(g.b, a2, 0)).intValue();
         } catch (Exception e) {
             e.printStackTrace();
-            iIntValue = 0;
+            i = 0;
         }
-        return (iIntValue > 0) || Build.MANUFACTURER.toLowerCase().contains(c.a(-599161381732130L, strArr)) || Build.BRAND.toLowerCase().contains(c.a(-599191446503202L, strArr)) || Build.DISPLAY.toLowerCase().contains(c.a(-599169971666722L, strArr));
+        return (i > 0) || Build.MANUFACTURER.toLowerCase().contains(c.a(-599161381732130L, strArr)) || Build.BRAND.toLowerCase().contains(c.a(-599191446503202L, strArr)) || Build.DISPLAY.toLowerCase().contains(c.a(-599169971666722L, strArr));
     }
 
     @Override // com.kos.engine.fake.hook.BinderInvocationStub, com.kos.engine.fake.hook.ClassInvocationStub

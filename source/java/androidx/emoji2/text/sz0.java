@@ -7,10 +7,10 @@ import java.util.Arrays;
 public final class sz0 implements uc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final em f1095a;
+    public final em f1094a;
 
     public sz0(em emVar) {
-        this.f1095a = emVar;
+        this.f1094a = emVar;
     }
 
     @Override // androidx.emoji2.text.uc0, androidx.emoji2.text.he
@@ -21,13 +21,13 @@ public final class sz0 implements uc0 {
         int[] iArr2;
         Object[] objArr2;
         int i;
-        em emVar = this.f1095a;
+        em emVar = this.f1094a;
         qe1 qe1Var = (qe1) emVar.e;
         pe1 pe1Var = new pe1(qe1Var.e + 2);
         qe1 qe1Var2 = new qe1(qe1Var.e);
         int[] iArr3 = qe1Var.b;
         Object[] objArr3 = qe1Var.c;
-        long[] jArr = qe1Var.f717a;
+        long[] jArr = qe1Var.f716a;
         int length = jArr.length - 2;
         if (length >= 0) {
             int i2 = 0;
@@ -46,7 +46,7 @@ public final class sz0 implements uc0 {
                             pe1Var.a(i7);
                             iArr2 = iArr3;
                             objArr2 = objArr3;
-                            qe1Var2.g(i7, new cr2((oe) wo2Var.f1293a.e(rz0Var.f1042a), rz0Var.b));
+                            qe1Var2.g(i7, new cr2((oe) wo2Var.f1292a.e(rz0Var.f1041a), rz0Var.b));
                         } else {
                             iArr2 = iArr3;
                             objArr2 = objArr3;
@@ -82,7 +82,7 @@ public final class sz0 implements uc0 {
                 throw null;
             }
             pe1Var.b(i8 + 1);
-            int[] iArr4 = pe1Var.f901a;
+            int[] iArr4 = pe1Var.f900a;
             int i9 = pe1Var.b;
             if (i9 != 0) {
                 xh.w0(1, 0, i9, iArr4, iArr4);
@@ -95,7 +95,7 @@ public final class sz0 implements uc0 {
         }
         int i10 = pe1Var.b;
         if (i10 != 0) {
-            int[] iArr5 = pe1Var.f901a;
+            int[] iArr5 = pe1Var.f900a;
             lx0.x(iArr5, "<this>");
             Arrays.sort(iArr5, 0, i10);
         }

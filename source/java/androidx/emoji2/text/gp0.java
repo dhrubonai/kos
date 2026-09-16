@@ -9,35 +9,35 @@ import android.os.IBinder;
 public final class gp0 implements ServiceConnection {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ iu f434a;
+    public final /* synthetic */ iu f433a;
 
     public gp0(iu iuVar) {
-        this.f434a = iuVar;
+        this.f433a = iuVar;
     }
 
     @Override // android.content.ServiceConnection
     public final void onBindingDied(ComponentName componentName) {
-        lx0.x(componentName, a.a.a.c.a(-398951481229090L, wj1.f1284a));
-        this.f434a.U(Boolean.FALSE);
+        lx0.x(componentName, a.a.a.c.a(-398951481229090L, wj1.f1283a));
+        this.f433a.U(Boolean.FALSE);
     }
 
     @Override // android.content.ServiceConnection
     public final void onNullBinding(ComponentName componentName) {
-        lx0.x(componentName, a.a.a.c.a(-398981546000162L, wj1.f1284a));
-        this.f434a.U(Boolean.FALSE);
+        lx0.x(componentName, a.a.a.c.a(-398981546000162L, wj1.f1283a));
+        this.f433a.U(Boolean.FALSE);
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(componentName, a.a.a.c.a(-398852696981282L, strArr));
         lx0.x(iBinder, a.a.a.c.a(-398891351686946L, strArr));
-        this.f434a.U(Boolean.TRUE);
+        this.f433a.U(Boolean.TRUE);
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
-        lx0.x(componentName, a.a.a.c.a(-398925711425314L, wj1.f1284a));
-        this.f434a.U(Boolean.FALSE);
+        lx0.x(componentName, a.a.a.c.a(-398925711425314L, wj1.f1283a));
+        this.f433a.U(Boolean.FALSE);
     }
 }

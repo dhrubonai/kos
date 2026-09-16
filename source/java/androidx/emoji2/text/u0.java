@@ -24,11 +24,11 @@ public abstract class u0 extends w implements Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         Iterator<E> it = iterator();
-        int iHashCode = 0;
+        int i = 0;
         while (it.hasNext()) {
             Object next = it.next();
-            iHashCode += next != null ? next.hashCode() : 0;
+            i += next != null ? next.hashCode() : 0;
         }
-        return iHashCode;
+        return i;
     }
 }

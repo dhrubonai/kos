@@ -80,7 +80,7 @@ public final class j7 extends g01 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         int i2 = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         switch (i2) {
             case 0:
                 break;
@@ -90,29 +90,29 @@ public final class j7 extends g01 implements um0 {
                 break;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 ap1 ap1Var = (ap1) obj;
-                ky kyVar = t8.f1108a;
+                ky kyVar = t8.f1107a;
                 ap1Var.getClass();
                 xo2.E(ap1Var, kyVar);
                 break;
             case 4:
-                wy0[] wy0VarArr = e72.f290a;
+                wy0[] wy0VarArr = e72.f289a;
                 ((u62) obj).d(c72.w, up2Var);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 ((Number) obj).longValue();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ((Number) obj).longValue();
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 break;
             case 8:
-                wy0[] wy0VarArr2 = e72.f290a;
+                wy0[] wy0VarArr2 = e72.f289a;
                 ((u62) obj).d(c72.v, up2Var);
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 tc tcVar = (tc) obj;
                 tcVar.getHandler().post(new m4(tcVar.t, 3));
                 break;
@@ -124,7 +124,7 @@ public final class j7 extends g01 implements um0 {
                 break;
             case 14:
                 break;
-            case 15:
+            case pz0.f /* 15 */:
                 break;
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                 ((ik) obj).K0();
@@ -143,7 +143,7 @@ public final class j7 extends g01 implements um0 {
                 jf2 jf2Var = t8.b;
                 ap1Var2.getClass();
                 if (!((Context) xo2.E(ap1Var2, jf2Var)).getPackageManager().hasSystemFeature("android.software.leanback")) {
-                    in.f536a.getClass();
+                    in.f535a.getClass();
                     break;
                 } else {
                     break;
@@ -152,7 +152,7 @@ public final class j7 extends g01 implements um0 {
                 e72.c((u62) obj, 0);
                 break;
             case 23:
-                long jA = et.a(((et) obj).f321a, qt.x);
+                long a2 = et.a(((et) obj).f320a, qt.x);
                 break;
             case 24:
                 ((Number) obj).longValue();
@@ -162,10 +162,10 @@ public final class j7 extends g01 implements um0 {
             case 26:
                 break;
             case 27:
-                float[] fArr = ((ya1) obj).f1376a;
+                float[] fArr = ((ya1) obj).f1375a;
                 break;
             default:
-                float[] fArr2 = ((ya1) obj).f1376a;
+                float[] fArr2 = ((ya1) obj).f1375a;
                 break;
         }
         return up2Var;

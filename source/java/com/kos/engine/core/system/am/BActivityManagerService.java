@@ -113,10 +113,10 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public IBinder acquireContentProviderClient(ProviderInfo providerInfo) {
-        ProcessRecord processRecordStartProcessLocked = BProcessManagerService.get().startProcessLocked(providerInfo.packageName, providerInfo.processName, BProcessManagerService.get().getUserIdByCallingPid(Binder.getCallingPid()), -1, Binder.getCallingPid());
-        if (processRecordStartProcessLocked != null) {
+        ProcessRecord startProcessLocked = BProcessManagerService.get().startProcessLocked(providerInfo.packageName, providerInfo.processName, BProcessManagerService.get().getUserIdByCallingPid(Binder.getCallingPid()), -1, Binder.getCallingPid());
+        if (startProcessLocked != null) {
             try {
-                return processRecordStartProcessLocked.bActivityThread.acquireContentProviderClient(providerInfo);
+                return startProcessLocked.bActivityThread.acquireContentProviderClient(providerInfo);
             } catch (Throwable th) {
                 th.printStackTrace();
                 return null;
@@ -127,12 +127,12 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public Intent bindService(Intent intent, IBinder iBinder, String str, int i) {
-        Intent intentBindService;
+        Intent bindService;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            intentBindService = orCreateSpaceLocked.mActiveServices.bindService(intent, iBinder, str, i);
+            bindService = orCreateSpaceLocked.mActiveServices.bindService(intent, iBinder, str, i);
         }
-        return intentBindService;
+        return bindService;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
@@ -247,31 +247,31 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
         Context context = c01.s;
         String[] strArr = xa1.b;
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) context.getSystemService(c.a(-525824815152930L, strArr))).getRunningAppProcesses();
-        HashMap map = new HashMap();
+        HashMap hashMap = new HashMap();
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
-            map.put(Integer.valueOf(runningAppProcessInfo.pid), runningAppProcessInfo);
+            hashMap.put(Integer.valueOf(runningAppProcessInfo.pid), runningAppProcessInfo);
         }
         List<ProcessRecord> runningProcessesAsUser = GmsCore.isGoogleAppOrService(str) ? BProcessManagerService.get().getRunningProcessesAsUser(i) : BProcessManagerService.get().getPackageProcessAsUser(str, i);
         RunningAppProcessInfo runningAppProcessInfo2 = new RunningAppProcessInfo();
         int i2 = 0;
         for (ProcessRecord processRecord : runningProcessesAsUser) {
-            ActivityManager.RunningAppProcessInfo runningAppProcessInfo3 = (ActivityManager.RunningAppProcessInfo) map.get(Integer.valueOf(processRecord.pid));
+            ActivityManager.RunningAppProcessInfo runningAppProcessInfo3 = (ActivityManager.RunningAppProcessInfo) hashMap.get(Integer.valueOf(processRecord.pid));
             if (runningAppProcessInfo3 != null || GmsCore.isGoogleAppOrService(str)) {
-                ActivityManager.RunningAppProcessInfo runningAppProcessInfoBuildVirtualRunningProcessInfo = buildVirtualRunningProcessInfo(processRecord, runningAppProcessInfo3);
+                ActivityManager.RunningAppProcessInfo buildVirtualRunningProcessInfo = buildVirtualRunningProcessInfo(processRecord, runningAppProcessInfo3);
                 if (runningAppProcessInfo3 == null) {
                     i2++;
                 }
-                runningAppProcessInfo2.mAppProcessInfoList.add(runningAppProcessInfoBuildVirtualRunningProcessInfo);
+                runningAppProcessInfo2.mAppProcessInfoList.add(buildVirtualRunningProcessInfo);
             }
         }
         if (GmsCore.isGoogleAppOrService(str)) {
-            String strA = c.a(-526413225672482L, strArr);
+            String a2 = c.a(-526413225672482L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-526516304887586L, strArr));
             sb.append(str);
             sb.append(c.a(-526129757830946L, strArr));
             sb.append(runningAppProcessInfo2.mAppProcessInfoList.size());
-            zd.o(sb, c.a(-526168412536610L, strArr), i2, 3, strA);
+            zd.o(sb, c.a(-526168412536610L, strArr), i2, 3, a2);
         }
         return runningAppProcessInfo2;
     }
@@ -304,65 +304,65 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public AppConfig initProcess(String str, String str2, int i) {
-        ProcessRecord processRecordStartProcessLocked = BProcessManagerService.get().startProcessLocked(str, str2, i, -1, Binder.getCallingPid());
-        if (processRecordStartProcessLocked == null) {
+        ProcessRecord startProcessLocked = BProcessManagerService.get().startProcessLocked(str, str2, i, -1, Binder.getCallingPid());
+        if (startProcessLocked == null) {
             return null;
         }
-        return processRecordStartProcessLocked.getClientConfig();
+        return startProcessLocked.getClientConfig();
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public void onActivityCreated(int i, IBinder iBinder, IBinder iBinder2) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
         ActivityRecord activityRecord = (ActivityRecord) iBinder2;
-        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(processRecordFindProcessByPid.userId);
+        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(findProcessByPid.userId);
         synchronized (orCreateSpaceLocked.mStack) {
-            orCreateSpaceLocked.mStack.onActivityCreated(processRecordFindProcessByPid, i, iBinder, activityRecord);
+            orCreateSpaceLocked.mStack.onActivityCreated(findProcessByPid, i, iBinder, activityRecord);
         }
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public void onActivityDestroyed(IBinder iBinder) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(processRecordFindProcessByPid.userId);
+        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(findProcessByPid.userId);
         synchronized (orCreateSpaceLocked.mStack) {
-            orCreateSpaceLocked.mStack.onActivityDestroyed(processRecordFindProcessByPid.userId, iBinder);
+            orCreateSpaceLocked.mStack.onActivityDestroyed(findProcessByPid.userId, iBinder);
         }
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public void onActivityResumed(IBinder iBinder) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(processRecordFindProcessByPid.userId);
+        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(findProcessByPid.userId);
         synchronized (orCreateSpaceLocked.mStack) {
-            orCreateSpaceLocked.mStack.onActivityResumed(processRecordFindProcessByPid.userId, iBinder);
+            orCreateSpaceLocked.mStack.onActivityResumed(findProcessByPid.userId, iBinder);
         }
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public void onFinishActivity(IBinder iBinder) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(processRecordFindProcessByPid.userId);
+        UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(findProcessByPid.userId);
         synchronized (orCreateSpaceLocked.mStack) {
-            orCreateSpaceLocked.mStack.onFinishActivity(processRecordFindProcessByPid.userId, iBinder);
+            orCreateSpaceLocked.mStack.onFinishActivity(findProcessByPid.userId, iBinder);
         }
     }
 
     public void onPackageStopped(String str, int i) {
         UserSpace userSpace;
-        int iOnPackageStopped;
+        int onPackageStopped;
         synchronized (this.mUserSpace) {
             userSpace = this.mUserSpace.get(Integer.valueOf(i));
         }
@@ -370,17 +370,17 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
             return;
         }
         synchronized (userSpace.mActiveServices) {
-            iOnPackageStopped = userSpace.mActiveServices.onPackageStopped(str);
+            onPackageStopped = userSpace.mActiveServices.onPackageStopped(str);
         }
-        if (iOnPackageStopped > 0) {
+        if (onPackageStopped > 0) {
             String[] strArr = xa1.b;
-            String strA = c.a(-519244925255458L, strArr);
+            String a2 = c.a(-519244925255458L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-519348004470562L, strArr));
-            sb.append(iOnPackageStopped);
+            sb.append(onPackageStopped);
             sb.append(c.a(-519386659176226L, strArr));
             sb.append(str);
-            zd.o(sb, c.a(-519038766825250L, strArr), i, 3, strA);
+            zd.o(sb, c.a(-519038766825250L, strArr), i, 3, a2);
         }
     }
 
@@ -394,12 +394,12 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public UnbindRecord onServiceUnbind(Intent intent, int i) {
-        UnbindRecord unbindRecordOnServiceUnbind;
+        UnbindRecord onServiceUnbind;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            unbindRecordOnServiceUnbind = orCreateSpaceLocked.mActiveServices.onServiceUnbind(intent, i);
+            onServiceUnbind = orCreateSpaceLocked.mActiveServices.onServiceUnbind(intent, i);
         }
-        return unbindRecordOnServiceUnbind;
+        return onServiceUnbind;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
@@ -412,12 +412,12 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public IBinder peekService(Intent intent, String str, int i) {
-        IBinder iBinderPeekService;
+        IBinder peekService;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            iBinderPeekService = orCreateSpaceLocked.mActiveServices.peekService(intent, str, i);
+            peekService = orCreateSpaceLocked.mActiveServices.peekService(intent, str, i);
         }
-        return iBinderPeekService;
+        return peekService;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
@@ -437,14 +437,14 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
     public void scheduleBroadcastReceiver(Intent intent, PendingResultData pendingResultData, int i) {
         boolean z;
         String[] strArr = xa1.b;
-        List<ResolveInfo> listQueryBroadcastReceivers = BPackageManagerService.get().queryBroadcastReceivers(intent, PackageParser.PARSE_IS_PRIVILEGED, null, i);
-        if (listQueryBroadcastReceivers.isEmpty()) {
+        List<ResolveInfo> queryBroadcastReceivers = BPackageManagerService.get().queryBroadcastReceivers(intent, PackageParser.PARSE_IS_PRIVILEGED, null, i);
+        if (queryBroadcastReceivers.isEmpty()) {
             finishPhysicalBroadcastIfNeeded(pendingResultData);
             nz0.Q(c.a(-526189887373090L, strArr), 3, c.a(-526292966588194L, strArr));
             return;
         }
         ArrayList arrayList = new ArrayList();
-        for (ResolveInfo resolveInfo : listQueryBroadcastReceivers) {
+        for (ResolveInfo resolveInfo : queryBroadcastReceivers) {
             if (resolveInfo != null && resolveInfo.activityInfo != null) {
                 BProcessManagerService bProcessManagerService = BProcessManagerService.get();
                 ActivityInfo activityInfo = resolveInfo.activityInfo;
@@ -459,12 +459,12 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
         }
         if (arrayList.isEmpty()) {
             finishPhysicalBroadcastIfNeeded(pendingResultData);
-            String strA = c.a(-520383091588898L, strArr);
+            String a2 = c.a(-520383091588898L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.q(sb, c.a(-520486170804002L, strArr), intent);
             sb.append(c.a(-520202702962466L, strArr));
-            sb.append(listQueryBroadcastReceivers.size());
-            zd.o(sb, c.a(-520219882831650L, strArr), i, 3, strA);
+            sb.append(queryBroadcastReceivers.size());
+            zd.o(sb, c.a(-520219882831650L, strArr), i, 3, a2);
             return;
         }
         boolean z2 = pendingResultData.mOrderedHint;
@@ -482,23 +482,23 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
             ReceiverData receiverData2 = (ReceiverData) arrayList.get(i2);
             BProcessManagerService bProcessManagerService2 = BProcessManagerService.get();
             ActivityInfo activityInfo2 = receiverData2.activityInfo;
-            ProcessRecord processRecordFindProcessRecord = bProcessManagerService2.findProcessRecord(activityInfo2.packageName, activityInfo2.processName, i);
-            if (processRecordFindProcessRecord == null) {
+            ProcessRecord findProcessRecord = bProcessManagerService2.findProcessRecord(activityInfo2.packageName, activityInfo2.processName, i);
+            if (findProcessRecord == null) {
                 i2 = i4;
             } else {
                 try {
-                    processRecordFindProcessRecord.bActivityThread.scheduleReceiver(receiverData2);
+                    findProcessRecord.bActivityThread.scheduleReceiver(receiverData2);
                     i3++;
                     z = z2;
                 } catch (RemoteException e) {
-                    String strA2 = c.a(-520254242570018L, strArr);
+                    String a3 = c.a(-520254242570018L, strArr);
                     StringBuilder sb2 = new StringBuilder();
                     z = z2;
                     sb2.append(c.a(-520907077599010L, strArr));
                     sb2.append(receiverData2.activityInfo.packageName);
                     sb2.append(c.a(-521087466225442L, strArr));
                     sb2.append(receiverData2.activityInfo.name);
-                    nz0.P(strA2, sb2.toString(), e);
+                    nz0.P(a3, sb2.toString(), e);
                 }
                 i2 = i4;
                 z2 = z;
@@ -507,10 +507,10 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
         boolean z3 = z2;
         if (i3 == 0 && z3) {
             this.mBroadcastManager.cancelBroadcast(pendingResultData);
-            String strA3 = c.a(-521078876290850L, strArr);
+            String a4 = c.a(-521078876290850L, strArr);
             StringBuilder sb3 = new StringBuilder();
             zd.q(sb3, c.a(-520632199692066L, strArr), intent);
-            zd.o(sb3, c.a(-520859832958754L, strArr), i, 3, strA3);
+            zd.o(sb3, c.a(-520859832958754L, strArr), i, 3, a4);
         }
     }
 
@@ -519,10 +519,10 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
         for (ResolveInfo resolveInfo : BPackageManagerService.get().queryBroadcastReceivers(intent, PackageParser.PARSE_IS_PRIVILEGED, str, i)) {
             BProcessManagerService bProcessManagerService = BProcessManagerService.get();
             ActivityInfo activityInfo = resolveInfo.activityInfo;
-            ProcessRecord processRecordFindProcessRecord = bProcessManagerService.findProcessRecord(activityInfo.packageName, activityInfo.processName, i);
-            if (processRecordFindProcessRecord != null) {
+            ProcessRecord findProcessRecord = bProcessManagerService.findProcessRecord(activityInfo.packageName, activityInfo.processName, i);
+            if (findProcessRecord != null) {
                 try {
-                    processRecordFindProcessRecord.bActivityThread.bindApplication();
+                    findProcessRecord.bActivityThread.bindApplication();
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }
@@ -541,12 +541,12 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public int startActivities(int i, Intent[] intentArr, String[] strArr, IBinder iBinder, Bundle bundle) {
-        int iStartActivitiesLocked;
+        int startActivitiesLocked;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mStack) {
-            iStartActivitiesLocked = orCreateSpaceLocked.mStack.startActivitiesLocked(i, intentArr, strArr, iBinder, bundle);
+            startActivitiesLocked = orCreateSpaceLocked.mStack.startActivitiesLocked(i, intentArr, strArr, iBinder, bundle);
         }
-        return iStartActivitiesLocked;
+        return startActivitiesLocked;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
@@ -561,64 +561,64 @@ public class BActivityManagerService extends IBActivityManagerService.Stub imple
     public int startActivityAms(int i, Intent intent, String str, IBinder iBinder, String str2, int i2, int i3, Bundle bundle) {
         int i4;
         Intent intent2;
-        int iStartActivityLocked;
+        int startActivityLocked;
         if (intent == null) {
-            ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-            if (processRecordFindProcessByPid == null || processRecordFindProcessByPid.getPackageName() == null) {
+            ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+            if (findProcessByPid == null || findProcessByPid.getPackageName() == null) {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-519133256105762L, strArr), 5, c.a(-519236335320866L, strArr));
                 return 0;
             }
             String[] strArr2 = xa1.b;
             i4 = i;
-            ResolveInfo resolveInfoResolveActivity = this.mPms.resolveActivity(new Intent(c.a(-519970774728482L, strArr2)).addCategory(c.a(-519571342769954L, strArr2)).setPackage(processRecordFindProcessByPid.getPackageName()), 0, null, i4);
-            if (resolveInfoResolveActivity == null || resolveInfoResolveActivity.activityInfo == null) {
-                nz0.Q(c.a(-519713076690722L, strArr2), 5, c.a(-522564934975266L, strArr2) + processRecordFindProcessByPid.getPackageName());
+            ResolveInfo resolveActivity = this.mPms.resolveActivity(new Intent(c.a(-519970774728482L, strArr2)).addCategory(c.a(-519571342769954L, strArr2)).setPackage(findProcessByPid.getPackageName()), 0, null, i4);
+            if (resolveActivity == null || resolveActivity.activityInfo == null) {
+                nz0.Q(c.a(-519713076690722L, strArr2), 5, c.a(-522564934975266L, strArr2) + findProcessByPid.getPackageName());
                 return 0;
             }
-            ActivityInfo activityInfo = resolveInfoResolveActivity.activityInfo;
-            Intent intentMakeRestartActivityTask = Intent.makeRestartActivityTask(new ComponentName(activityInfo.packageName, activityInfo.name));
-            nz0.Q(c.a(-522719553797922L, strArr2), 5, c.a(-522272877199138L, strArr2) + processRecordFindProcessByPid.getPackageName());
-            intent2 = intentMakeRestartActivityTask;
+            ActivityInfo activityInfo = resolveActivity.activityInfo;
+            Intent makeRestartActivityTask = Intent.makeRestartActivityTask(new ComponentName(activityInfo.packageName, activityInfo.name));
+            nz0.Q(c.a(-522719553797922L, strArr2), 5, c.a(-522272877199138L, strArr2) + findProcessByPid.getPackageName());
+            intent2 = makeRestartActivityTask;
         } else {
             i4 = i;
             intent2 = intent;
         }
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mStack) {
-            iStartActivityLocked = orCreateSpaceLocked.mStack.startActivityLocked(i4, intent2, str, iBinder, str2, i2, i3, bundle);
+            startActivityLocked = orCreateSpaceLocked.mStack.startActivityLocked(i4, intent2, str, iBinder, str2, i2, i3, bundle);
         }
-        return iStartActivityLocked;
+        return startActivityLocked;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public ComponentName startService(Intent intent, String str, boolean z, int i) {
-        ComponentName componentNameStartService;
+        ComponentName startService;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            componentNameStartService = orCreateSpaceLocked.mActiveServices.startService(intent, str, z, i);
+            startService = orCreateSpaceLocked.mActiveServices.startService(intent, str, z, i);
         }
-        return componentNameStartService;
+        return startService;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public int stopService(Intent intent, String str, int i) {
-        int iStopService;
+        int stopService;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            iStopService = orCreateSpaceLocked.mActiveServices.stopService(intent, str, i);
+            stopService = orCreateSpaceLocked.mActiveServices.stopService(intent, str, i);
         }
-        return iStopService;
+        return stopService;
     }
 
     @Override // com.kos.engine.core.system.am.IBActivityManagerService
     public boolean stopServiceToken(ComponentName componentName, IBinder iBinder, int i, int i2) {
-        boolean zStopServiceToken;
+        boolean stopServiceToken;
         UserSpace orCreateSpaceLocked = getOrCreateSpaceLocked(i2);
         synchronized (orCreateSpaceLocked.mActiveServices) {
-            zStopServiceToken = orCreateSpaceLocked.mActiveServices.stopServiceToken(componentName, iBinder, i, i2);
+            stopServiceToken = orCreateSpaceLocked.mActiveServices.stopServiceToken(componentName, iBinder, i, i2);
         }
-        return zStopServiceToken;
+        return stopServiceToken;
     }
 
     @Override // com.kos.engine.core.system.ISystemService

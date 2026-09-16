@@ -14,7 +14,7 @@ public final class dd extends hh2 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         dd ddVar = new dd(this.h, (l10) obj);
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         ddVar.k(up2Var);
         return up2Var;
     }
@@ -23,6 +23,6 @@ public final class dd extends hh2 implements um0 {
     public final Object k(Object obj) {
         mz0.L(obj);
         ed.b(this.h);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

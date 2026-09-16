@@ -32,10 +32,10 @@ public final class ls1 extends md1 implements jo2, ss1, ey {
         if (ns1Var != null) {
             q7 q7Var = (q7) ns1Var;
             if (ms1Var == null) {
-                ms1.f764a.getClass();
+                ms1.f763a.getClass();
                 ms1Var = kx0.e;
             }
-            j8.f566a.a(q7Var.f943a, ms1Var);
+            j8.f565a.a(q7Var.f942a, ms1Var);
         }
     }
 
@@ -68,7 +68,7 @@ public final class ls1 extends md1 implements jo2, ss1, ey {
     @Override // androidx.emoji2.text.ss1
     public final void p(is1 is1Var, js1 js1Var, long j) {
         if (js1Var == js1.e) {
-            ?? r4 = is1Var.f547a;
+            ?? r4 = is1Var.f546a;
             int size = r4.size();
             for (int i = 0; i < size; i++) {
                 int i2 = ((ps1) r4.get(i)).i;
@@ -98,6 +98,6 @@ public final class ls1 extends md1 implements jo2, ss1, ey {
     @Override // androidx.emoji2.text.ss1
     public final long s() {
         int i = bn2.b;
-        return bn2.f159a;
+        return bn2.f158a;
     }
 }

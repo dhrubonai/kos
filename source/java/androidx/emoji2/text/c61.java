@@ -6,7 +6,7 @@ public final class c61 {
     public static final int b = 66305;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f185a;
+    public final int f184a;
 
     public static String a(int i) {
         StringBuilder sb = new StringBuilder("LineBreak(strategy=");
@@ -32,16 +32,16 @@ public final class c61 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof c61) {
-            return this.f185a == ((c61) obj).f185a;
+            return this.f184a == ((c61) obj).f184a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f185a);
+        return Integer.hashCode(this.f184a);
     }
 
     public final String toString() {
-        return a(this.f185a);
+        return a(this.f184a);
     }
 }

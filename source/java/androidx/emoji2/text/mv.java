@@ -30,14 +30,16 @@ public final /* synthetic */ class mv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$5;
         switch (this.d) {
             case 0:
-                int iIntValue = ((Integer) obj2).intValue();
-                return ComposableLambdaImpl.invoke$lambda$5((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.e, (lx) obj, iIntValue);
+                int intValue = ((Integer) obj2).intValue();
+                invoke$lambda$5 = ComposableLambdaImpl.invoke$lambda$5((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.e, (lx) obj, intValue);
+                return invoke$lambda$5;
             default:
                 ((Integer) obj2).intValue();
                 n6.d((i01) this.f, (sm0) this.g, (um0) this.h, (um0) this.i, (um0) this.j, (um0) this.k, (um0) this.l, (lx) obj, n6.k0(this.e | 1));
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

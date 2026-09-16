@@ -14,7 +14,6 @@ import com.kos.engine.entity.pm.InstalledModule;
 import com.kos.engine.entity.pm.XposedConfig;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,8 +32,8 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
         return sService;
     }
 
-    private void loadModuleStateLr() throws Throwable {
-        Parcel parcelObtain;
+    private void loadModuleStateLr() {
+        Parcel obtain;
         File xPModuleConf = BEnvironment.getXPModuleConf();
         if (!xPModuleConf.exists()) {
             this.mXposedConfig = new XposedConfig();
@@ -44,10 +43,10 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
         Parcel parcel = null;
         try {
             try {
-                parcelObtain = Parcel.obtain();
-                byte[] bArrM = wj1.M(xPModuleConf);
-                parcelObtain.unmarshall(bArrM, 0, bArrM.length);
-                parcelObtain.setDataPosition(0);
+                obtain = Parcel.obtain();
+                byte[] M = wj1.M(xPModuleConf);
+                obtain.unmarshall(M, 0, M.length);
+                obtain.setDataPosition(0);
             } catch (Throwable th) {
                 th = th;
             }
@@ -55,18 +54,18 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
             e = e;
         }
         try {
-            this.mXposedConfig = new XposedConfig(parcelObtain);
-            parcelObtain.recycle();
+            this.mXposedConfig = new XposedConfig(obtain);
+            obtain.recycle();
         } catch (Exception e2) {
             e = e2;
-            parcel = parcelObtain;
+            parcel = obtain;
             e.printStackTrace();
             if (parcel != null) {
                 parcel.recycle();
             }
         } catch (Throwable th2) {
             th = th2;
-            parcel = parcelObtain;
+            parcel = obtain;
             if (parcel != null) {
                 parcel.recycle();
             }
@@ -74,27 +73,27 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
         }
     }
 
-    private void saveModuleStateLw() throws IOException {
-        Parcel parcelObtain = Parcel.obtain();
+    private void saveModuleStateLw() {
+        Parcel obtain = Parcel.obtain();
         rg rgVar = new rg(BEnvironment.getXPModuleConf());
-        FileOutputStream fileOutputStreamG0 = null;
+        FileOutputStream fileOutputStream = null;
         try {
             try {
-                this.mXposedConfig.writeToParcel(parcelObtain, 0);
-                parcelObtain.setDataPosition(0);
-                fileOutputStreamG0 = rgVar.g0();
-                fileOutputStreamG0.write(parcelObtain.marshall());
-                rgVar.B(fileOutputStreamG0);
-                parcelObtain.recycle();
-                l8.F(fileOutputStreamG0);
+                this.mXposedConfig.writeToParcel(obtain, 0);
+                obtain.setDataPosition(0);
+                fileOutputStream = rgVar.g0();
+                fileOutputStream.write(obtain.marshall());
+                rgVar.B(fileOutputStream);
+                obtain.recycle();
+                l8.F(fileOutputStream);
             } catch (Exception unused) {
-                rgVar.z(fileOutputStreamG0);
-                parcelObtain.recycle();
-                l8.F(fileOutputStreamG0);
+                rgVar.z(fileOutputStream);
+                obtain.recycle();
+                l8.F(fileOutputStream);
             }
         } catch (Throwable th) {
-            parcelObtain.recycle();
-            l8.F(fileOutputStreamG0);
+            obtain.recycle();
+            l8.F(fileOutputStream);
             throw th;
         }
     }
@@ -102,13 +101,13 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
     @Override // com.kos.engine.core.system.pm.IBXposedManagerService
     public List<InstalledModule> getInstalledModules() {
         ArrayList arrayList;
-        InstalledModule installedModuleY;
+        InstalledModule Y;
         List<ApplicationInfo> installedApplications = this.mPms.getInstalledApplications(PackageParser.PARSE_IS_PRIVILEGED, -4);
         synchronized (this.mCacheModule) {
             try {
                 for (ApplicationInfo applicationInfo : installedApplications) {
-                    if (!this.mCacheModule.containsKey(applicationInfo.packageName) && (installedModuleY = az0.Y(applicationInfo)) != null) {
-                        this.mCacheModule.put(applicationInfo.packageName, installedModuleY);
+                    if (!this.mCacheModule.containsKey(applicationInfo.packageName) && (Y = az0.Y(applicationInfo)) != null) {
+                        this.mCacheModule.put(applicationInfo.packageName, Y);
                     }
                 }
                 arrayList = new ArrayList(this.mCacheModule.values());
@@ -198,7 +197,7 @@ public class BXposedManagerService extends IBXposedManagerService.Stub implement
     }
 
     @Override // com.kos.engine.core.system.ISystemService
-    public void systemReady() throws Throwable {
+    public void systemReady() {
         loadModuleStateLr();
         BPackageManagerService bPackageManagerService = BPackageManagerService.get();
         this.mPms = bPackageManagerService;

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class vs1 implements ld1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public nc f1241a;
+    public nc f1240a;
     public ao0 b;
     public boolean c;
     public final s6 d;
@@ -18,7 +18,7 @@ public final class vs1 implements ld1 {
     }
 
     public final um0 f() {
-        nc ncVar = this.f1241a;
+        nc ncVar = this.f1240a;
         if (ncVar != null) {
             return ncVar;
         }

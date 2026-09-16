@@ -10,24 +10,24 @@ import android.webkit.WebViewClient;
 public final class v4 extends WebViewClient {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ mf1 f1202a;
+    public final /* synthetic */ mf1 f1201a;
     public final /* synthetic */ sm0 b;
 
     public v4(mf1 mf1Var, sm0 sm0Var) {
-        this.f1202a = mf1Var;
+        this.f1201a = mf1Var;
         this.b = sm0Var;
     }
 
     @Override // android.webkit.WebViewClient
     public final void onPageFinished(WebView webView, String str) {
-        this.f1202a.setValue(Boolean.FALSE);
+        this.f1201a.setValue(Boolean.FALSE);
     }
 
     @Override // android.webkit.WebViewClient
     public final boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
         Uri url;
-        String string;
-        if (webResourceRequest == null || (url = webResourceRequest.getUrl()) == null || (string = url.toString()) == null || !eg2.Z(string, a.a.a.c.a(-217987329179426L, wj1.f1284a), false)) {
+        String uri;
+        if (webResourceRequest == null || (url = webResourceRequest.getUrl()) == null || (uri = url.toString()) == null || !eg2.Z(uri, a.a.a.c.a(-217987329179426L, wj1.f1283a), false)) {
             return false;
         }
         this.b.a();

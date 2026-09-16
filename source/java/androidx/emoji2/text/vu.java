@@ -57,7 +57,7 @@ public final class vu implements ViewTreeObserver.OnDrawListener, Runnable, Exec
         runnable.run();
         this.e = null;
         rm0 rm0Var = (rm0) this.g.j.getValue();
-        synchronized (rm0Var.f1019a) {
+        synchronized (rm0Var.f1018a) {
             z = rm0Var.b;
         }
         if (z) {

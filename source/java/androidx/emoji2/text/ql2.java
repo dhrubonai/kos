@@ -15,7 +15,7 @@ import android.view.View;
 public abstract class ql2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ThreadLocal f965a = new ThreadLocal();
+    public static final ThreadLocal f964a = new ThreadLocal();
     public static final int[] b = {-16842910};
     public static final int[] c = {R.attr.state_focused};
     public static final int[] d = {R.attr.state_pressed};
@@ -24,22 +24,22 @@ public abstract class ql2 {
     public static final int[] g = new int[1];
 
     public static void a(View view, Context context) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(gv1.h);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(gv1.h);
         try {
-            if (!typedArrayObtainStyledAttributes.hasValue(117)) {
+            if (!obtainStyledAttributes.hasValue(117)) {
                 Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
             }
         } finally {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 
     public static int b(Context context, int i) {
-        ColorStateList colorStateListD = d(context, i);
-        if (colorStateListD != null && colorStateListD.isStateful()) {
-            return colorStateListD.getColorForState(b, colorStateListD.getDefaultColor());
+        ColorStateList d2 = d(context, i);
+        if (d2 != null && d2.isStateful()) {
+            return d2.getColorForState(b, d2.getDefaultColor());
         }
-        ThreadLocal threadLocal = f965a;
+        ThreadLocal threadLocal = f964a;
         TypedValue typedValue = (TypedValue) threadLocal.get();
         if (typedValue == null) {
             typedValue = new TypedValue();
@@ -53,11 +53,11 @@ public abstract class ql2 {
     public static int c(Context context, int i) {
         int[] iArr = g;
         iArr[0] = i;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            return typedArrayObtainStyledAttributes.getColor(0, 0);
+            return obtainStyledAttributes.getColor(0, 0);
         } finally {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 
@@ -66,14 +66,14 @@ public abstract class ql2 {
         int resourceId;
         int[] iArr = g;
         iArr[0] = i;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            if (!typedArrayObtainStyledAttributes.hasValue(0) || (resourceId = typedArrayObtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = kx0.z(context, resourceId)) == null) {
-                colorStateList = typedArrayObtainStyledAttributes.getColorStateList(0);
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = kx0.z(context, resourceId)) == null) {
+                colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
             return colorStateList;
         } finally {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 }

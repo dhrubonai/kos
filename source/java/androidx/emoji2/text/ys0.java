@@ -15,7 +15,7 @@ public final class ys0 implements gg0 {
     public static final List h = jq2.i("connection", "host", "keep-alive", "proxy-connection", "te", "transfer-encoding", "encoding", "upgrade");
 
     /* renamed from: a, reason: collision with root package name */
-    public final vv1 f1400a;
+    public final vv1 f1399a;
     public final m21 b;
     public final xs0 c;
     public volatile et0 d;
@@ -24,7 +24,7 @@ public final class ys0 implements gg0 {
 
     public ys0(dj1 dj1Var, vv1 vv1Var, m21 m21Var, xs0 xs0Var) {
         lx0.x(xs0Var, "http2Connection");
-        this.f1400a = vv1Var;
+        this.f1399a = vv1Var;
         this.b = m21Var;
         this.c = xs0Var;
         List list = dj1Var.u;
@@ -45,7 +45,7 @@ public final class ys0 implements gg0 {
     }
 
     @Override // androidx.emoji2.text.gg0
-    public final b02 b(boolean z) throws NumberFormatException, IOException {
+    public final b02 b(boolean z) {
         dr0 dr0Var;
         et0 et0Var = this.d;
         if (et0Var == null) {
@@ -76,34 +76,34 @@ public final class ys0 implements gg0 {
                 jx0.m(i);
                 throw new tf2(i);
             }
-            Object objRemoveFirst = et0Var.g.removeFirst();
-            lx0.w(objRemoveFirst, "headersQueue.removeFirst()");
-            dr0Var = (dr0) objRemoveFirst;
+            Object removeFirst = et0Var.g.removeFirst();
+            lx0.w(removeFirst, "headersQueue.removeFirst()");
+            dr0Var = (dr0) removeFirst;
         }
         vu1 vu1Var = this.e;
         lx0.x(vu1Var, "protocol");
         ArrayList arrayList = new ArrayList(20);
         int size = dr0Var.size();
-        vf vfVarU = null;
+        vf vfVar = null;
         for (int i2 = 0; i2 < size; i2++) {
-            String strB = dr0Var.b(i2);
-            String strD = dr0Var.d(i2);
-            if (lx0.n(strB, ":status")) {
-                vfVarU = a01.U("HTTP/1.1 " + strD);
-            } else if (!h.contains(strB)) {
-                lx0.x(strB, "name");
-                lx0.x(strD, "value");
-                arrayList.add(strB);
-                arrayList.add(wf2.z0(strD).toString());
+            String b = dr0Var.b(i2);
+            String d = dr0Var.d(i2);
+            if (lx0.n(b, ":status")) {
+                vfVar = a01.U("HTTP/1.1 " + d);
+            } else if (!h.contains(b)) {
+                lx0.x(b, "name");
+                lx0.x(d, "value");
+                arrayList.add(b);
+                arrayList.add(wf2.z0(d).toString());
             }
         }
-        if (vfVarU == null) {
+        if (vfVar == null) {
             throw new ProtocolException("Expected ':status' header not present");
         }
         b02 b02Var = new b02();
         b02Var.b = vu1Var;
-        b02Var.c = vfVarU.e;
-        b02Var.d = (String) vfVarU.g;
+        b02Var.c = vfVar.e;
+        b02Var.d = (String) vfVar.g;
         String[] strArr = (String[]) arrayList.toArray(new String[0]);
         pm0 pm0Var = new pm0(1);
         ArrayList arrayList2 = pm0Var.d;
@@ -119,7 +119,7 @@ public final class ys0 implements gg0 {
 
     @Override // androidx.emoji2.text.gg0
     public final vv1 c() {
-        return this.f1400a;
+        return this.f1399a;
     }
 
     @Override // androidx.emoji2.text.gg0
@@ -132,7 +132,7 @@ public final class ys0 implements gg0 {
     }
 
     @Override // androidx.emoji2.text.gg0
-    public final void d(dv dvVar) throws IOException {
+    public final void d(dv dvVar) {
         int i;
         et0 et0Var;
         lx0.x(dvVar, "request");
@@ -146,23 +146,23 @@ public final class ys0 implements gg0 {
         io ioVar = cr0.g;
         mt0 mt0Var = (mt0) dvVar.e;
         lx0.x(mt0Var, "url");
-        String strB = mt0Var.b();
-        String strD = mt0Var.d();
-        if (strD != null) {
-            strB = strB + '?' + strD;
+        String b = mt0Var.b();
+        String d = mt0Var.d();
+        if (d != null) {
+            b = b + '?' + d;
         }
-        arrayList.add(new cr0(ioVar, strB));
-        String strA = ((dr0) dvVar.g).a("Host");
-        if (strA != null) {
-            arrayList.add(new cr0(cr0.i, strA));
+        arrayList.add(new cr0(ioVar, b));
+        String a2 = ((dr0) dvVar.g).a("Host");
+        if (a2 != null) {
+            arrayList.add(new cr0(cr0.i, a2));
         }
-        arrayList.add(new cr0(cr0.h, mt0Var.f767a));
+        arrayList.add(new cr0(cr0.h, mt0Var.f766a));
         int size = dr0Var.size();
         for (int i2 = 0; i2 < size; i2++) {
-            String strB2 = dr0Var.b(i2);
+            String b2 = dr0Var.b(i2);
             Locale locale = Locale.US;
             lx0.w(locale, "US");
-            String lowerCase = strB2.toLowerCase(locale);
+            String lowerCase = b2.toLowerCase(locale);
             lx0.w(lowerCase, "this as java.lang.String).toLowerCase(locale)");
             if (!g.contains(lowerCase) || (lowerCase.equals("te") && lx0.n(dr0Var.d(i2), "trailers"))) {
                 arrayList.add(new cr0(lowerCase, dr0Var.d(i2)));

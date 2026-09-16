@@ -126,12 +126,12 @@ public class IPhoneSubInfoProxy extends BinderInvocationStub {
         try {
             mz0.y(objArr);
         } catch (Throwable th) {
-            String strA = c.a(-1112663376674594L, strArr);
+            String a2 = c.a(-1112663376674594L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1112178045370146L, strArr), method);
             sb.append(c.a(-1112388498767650L, strArr));
             sb.append(th.getClass().getSimpleName());
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
         }
     }
 
@@ -150,8 +150,8 @@ public class IPhoneSubInfoProxy extends BinderInvocationStub {
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
     public Object getWho() {
-        IInterface iInterfaceAsInterface = BRIPhoneSubInfoStub.get().asInterface(BRServiceManager.get().getService(c.a(-1108969704800034L, xa1.b)));
-        return iInterfaceAsInterface != null ? iInterfaceAsInterface : BRTelephonyManager.get().sIPhoneSubInfo();
+        IInterface asInterface = BRIPhoneSubInfoStub.get().asInterface(BRServiceManager.get().getService(c.a(-1108969704800034L, xa1.b)));
+        return asInterface != null ? asInterface : BRTelephonyManager.get().sIPhoneSubInfo();
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
@@ -162,22 +162,22 @@ public class IPhoneSubInfoProxy extends BinderInvocationStub {
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
     public Object invoke(Object obj, Method method, Object[] objArr) {
-        Object objFallbackForRestrictedPhoneInfo = fallbackForRestrictedPhoneInfo(method);
-        if (objFallbackForRestrictedPhoneInfo == UNHANDLED) {
+        Object fallbackForRestrictedPhoneInfo = fallbackForRestrictedPhoneInfo(method);
+        if (fallbackForRestrictedPhoneInfo == UNHANDLED) {
             replaceCallingPackageSafely(method, objArr);
         }
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException e) {
-            if (objFallbackForRestrictedPhoneInfo == UNHANDLED) {
+            if (fallbackForRestrictedPhoneInfo == UNHANDLED) {
                 throw e;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1109124323622690L, strArr);
+            String a2 = c.a(-1109124323622690L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1111937527201570L, strArr), method);
-            zd.p(sb, c.a(-1112113620860706L, strArr), 5, strA);
-            return objFallbackForRestrictedPhoneInfo;
+            zd.p(sb, c.a(-1112113620860706L, strArr), 5, a2);
+            return fallbackForRestrictedPhoneInfo;
         }
     }
 

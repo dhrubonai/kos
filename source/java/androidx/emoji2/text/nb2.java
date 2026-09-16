@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class nb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ob2 f802a;
+    public final ob2 f801a;
     public final int[] b;
     public final int c;
     public Object[] d;
@@ -23,7 +23,7 @@ public final class nb2 {
     public boolean n;
 
     public nb2(ob2 ob2Var) {
-        this.f802a = ob2Var;
+        this.f801a = ob2Var;
         this.b = ob2Var.d;
         int i = ob2Var.e;
         this.c = i;
@@ -35,13 +35,13 @@ public final class nb2 {
     }
 
     public final t5 a(int i) {
-        ArrayList arrayList = this.f802a.l;
-        int iE = qb2.e(arrayList, i, this.c);
-        if (iE >= 0) {
-            return (t5) arrayList.get(iE);
+        ArrayList arrayList = this.f801a.l;
+        int e = qb2.e(arrayList, i, this.c);
+        if (e >= 0) {
+            return (t5) arrayList.get(e);
         }
         t5 t5Var = new t5(i);
-        arrayList.add(-(iE + 1), t5Var);
+        arrayList.add(-(e + 1), t5Var);
         return t5Var;
     }
 
@@ -51,14 +51,14 @@ public final class nb2 {
         if ((268435456 & i3) != 0) {
             return this.d[i2 >= iArr.length ? iArr.length : iArr[i2 + 4] + Integer.bitCount(i3 >> 29)];
         }
-        return kx.f663a;
+        return kx.f662a;
     }
 
     public final void c() {
         this.f = true;
-        ob2 ob2Var = this.f802a;
+        ob2 ob2Var = this.f801a;
         ob2Var.getClass();
-        if (this.f802a != ob2Var || ob2Var.h <= 0) {
+        if (this.f801a != ob2Var || ob2Var.h <= 0) {
             vx.c("Unexpected reader close()");
         }
         ob2Var.h--;
@@ -80,12 +80,12 @@ public final class nb2 {
             this.i = i2;
             int i3 = this.c;
             this.h = i2 < 0 ? i3 : qb2.a(iArr, i2) + i2;
-            int iB = this.j.b();
-            if (iB < 0) {
+            int b = this.j.b();
+            if (b < 0) {
                 this.l = 0;
                 this.m = 0;
             } else {
-                this.l = iB;
+                this.l = b;
                 this.m = i2 >= i3 - 1 ? this.e : iArr[((i2 + 1) * 5) + 4];
             }
         }
@@ -109,10 +109,10 @@ public final class nb2 {
 
     public final Object h(int i, int i2) {
         int[] iArr = this.b;
-        int iC = qb2.c(iArr, i);
+        int c = qb2.c(iArr, i);
         int i3 = i + 1;
-        int i4 = iC + i2;
-        return i4 < (i3 < this.c ? iArr[(i3 * 5) + 4] : this.e) ? this.d[i4] : kx.f663a;
+        int i4 = c + i2;
+        return i4 < (i3 < this.c ? iArr[(i3 * 5) + 4] : this.e) ? this.d[i4] : kx.f662a;
     }
 
     public final int i(int i) {
@@ -135,7 +135,7 @@ public final class nb2 {
         int i;
         if (this.k > 0 || (i = this.l) >= this.m) {
             this.n = false;
-            return kx.f663a;
+            return kx.f662a;
         }
         this.n = true;
         Object[] objArr = this.d;
@@ -148,7 +148,7 @@ public final class nb2 {
         int[] iArr = this.b;
         int i3 = iArr[i2 + 1] & 1073741824;
         if (i3 != 0) {
-            return i3 != 0 ? this.d[iArr[i2 + 4]] : kx.f663a;
+            return i3 != 0 ? this.d[iArr[i2 + 4]] : kx.f662a;
         }
         return null;
     }

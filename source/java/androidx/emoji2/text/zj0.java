@@ -24,38 +24,38 @@ public final class zj0 extends g01 implements um0 {
             case 0:
                 dp dpVar = (dp) obj;
                 ak0 ak0Var = this.f;
-                View viewL = lx0.l(ak0Var);
-                if (!viewL.isFocused() && !viewL.hasFocus()) {
-                    if (!bz0.c0(viewL, bz0.h0(dpVar.f266a), lx0.k(((v7) lx0.U(ak0Var)).getFocusOwner(), bz0.d0(ak0Var), viewL))) {
+                View l = lx0.l(ak0Var);
+                if (!l.isFocused() && !l.hasFocus()) {
+                    if (!bz0.c0(l, bz0.h0(dpVar.f265a), lx0.k(((v7) lx0.U(ak0Var)).getFocusOwner(), bz0.d0(ak0Var), l))) {
                         dpVar.b = true;
                     }
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 dp dpVar2 = (dp) obj;
                 ak0 ak0Var2 = this.f;
-                View viewL2 = lx0.l(ak0Var2);
-                if (viewL2.hasFocus()) {
+                View l2 = lx0.l(ak0Var2);
+                if (l2.hasFocus()) {
                     ek0 focusOwner = ((v7) lx0.U(ak0Var2)).getFocusOwner();
-                    View viewD0 = bz0.d0(ak0Var2);
-                    if (viewL2 instanceof ViewGroup) {
-                        Rect rectK = lx0.k(focusOwner, viewD0, viewL2);
-                        Integer numH0 = bz0.h0(dpVar2.f266a);
-                        int iIntValue = numH0 != null ? numH0.intValue() : 130;
+                    View d0 = bz0.d0(ak0Var2);
+                    if (l2 instanceof ViewGroup) {
+                        Rect k = lx0.k(focusOwner, d0, l2);
+                        Integer h0 = bz0.h0(dpVar2.f265a);
+                        int intValue = h0 != null ? h0.intValue() : 130;
                         FocusFinder focusFinder = FocusFinder.getInstance();
                         View view = ak0Var2.r;
-                        View viewFindNextFocus = view != null ? focusFinder.findNextFocus((ViewGroup) viewD0, view, iIntValue) : focusFinder.findNextFocusFromRect((ViewGroup) viewD0, rectK, iIntValue);
-                        if (viewFindNextFocus != null && lx0.j(viewL2, viewFindNextFocus)) {
-                            viewFindNextFocus.requestFocus(iIntValue, rectK);
+                        View findNextFocus = view != null ? focusFinder.findNextFocus((ViewGroup) d0, view, intValue) : focusFinder.findNextFocusFromRect((ViewGroup) d0, k, intValue);
+                        if (findNextFocus != null && lx0.j(l2, findNextFocus)) {
+                            findNextFocus.requestFocus(intValue, k);
                             dpVar2.b = true;
-                        } else if (!viewD0.requestFocus()) {
+                        } else if (!d0.requestFocus()) {
                             throw new IllegalStateException("host view did not take focus");
                         }
-                    } else if (!viewD0.requestFocus()) {
+                    } else if (!d0.requestFocus()) {
                         throw new IllegalStateException("host view did not take focus");
                     }
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

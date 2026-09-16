@@ -23,91 +23,58 @@ public abstract class gz extends View {
     public String i;
     public HashMap j;
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0080  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0057 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void a(java.lang.String r6) throws java.lang.IllegalAccessException, android.content.res.Resources.NotFoundException, java.lang.IllegalArgumentException {
-        /*
-            r5 = this;
-            android.content.Context r0 = r5.f
-            if (r6 == 0) goto L98
-            int r1 = r6.length()
-            if (r1 != 0) goto Lc
-            goto L98
-        Lc:
-            if (r0 != 0) goto L10
-            goto L98
-        L10:
-            java.lang.String r6 = r6.trim()
-            android.view.ViewParent r1 = r5.getParent()
-            boolean r1 = r1 instanceof androidx.constraintlayout.widget.ConstraintLayout
-            r2 = 0
-            if (r1 == 0) goto L24
-            android.view.ViewParent r1 = r5.getParent()
-            androidx.constraintlayout.widget.ConstraintLayout r1 = (androidx.constraintlayout.widget.ConstraintLayout) r1
-            goto L25
-        L24:
-            r1 = r2
-        L25:
-            boolean r3 = r5.isInEditMode()
-            if (r3 == 0) goto L4c
-            if (r1 == 0) goto L4c
-            if (r6 == 0) goto L40
-            java.util.HashMap r3 = r1.p
-            if (r3 == 0) goto L40
-            boolean r3 = r3.containsKey(r6)
-            if (r3 == 0) goto L40
-            java.util.HashMap r3 = r1.p
-            java.lang.Object r3 = r3.get(r6)
-            goto L41
-        L40:
-            r3 = r2
-        L41:
-            boolean r4 = r3 instanceof java.lang.Integer
-            if (r4 == 0) goto L4c
-            java.lang.Integer r3 = (java.lang.Integer) r3
-            int r3 = r3.intValue()
-            goto L4d
-        L4c:
-            r3 = 0
-        L4d:
-            if (r3 != 0) goto L55
-            if (r1 == 0) goto L55
-            int r3 = r5.f(r1, r6)
-        L55:
-            if (r3 != 0) goto L61
-            java.lang.Class<androidx.emoji2.text.zu1> r1 = androidx.emoji2.text.zu1.class
-            java.lang.reflect.Field r1 = r1.getField(r6)     // Catch: java.lang.Exception -> L61
-            int r3 = r1.getInt(r2)     // Catch: java.lang.Exception -> L61
-        L61:
-            if (r3 != 0) goto L71
-            android.content.res.Resources r1 = r0.getResources()
-            java.lang.String r2 = "id"
-            java.lang.String r0 = r0.getPackageName()
-            int r3 = r1.getIdentifier(r6, r2, r0)
-        L71:
-            if (r3 == 0) goto L80
-            java.util.HashMap r0 = r5.j
-            java.lang.Integer r1 = java.lang.Integer.valueOf(r3)
-            r0.put(r1, r6)
-            r5.b(r3)
-            goto L98
-        L80:
-            java.lang.StringBuilder r0 = new java.lang.StringBuilder
-            java.lang.String r1 = "Could not find id of \""
-            r0.<init>(r1)
-            r0.append(r6)
-            java.lang.String r6 = "\""
-            r0.append(r6)
-            java.lang.String r6 = r0.toString()
-            java.lang.String r0 = "ConstraintHelper"
-            android.util.Log.w(r0, r6)
-        L98:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.gz.a(java.lang.String):void");
+    public final void a(String str) {
+        int i;
+        HashMap hashMap;
+        Context context = this.f;
+        if (str == null || str.length() == 0 || context == null) {
+            return;
+        }
+        String trim = str.trim();
+        ConstraintLayout constraintLayout = getParent() instanceof ConstraintLayout ? (ConstraintLayout) getParent() : null;
+        if (isInEditMode() && constraintLayout != null) {
+            Object obj = (trim == null || (hashMap = constraintLayout.p) == null || !hashMap.containsKey(trim)) ? null : constraintLayout.p.get(trim);
+            if (obj instanceof Integer) {
+                i = ((Integer) obj).intValue();
+                if (i == 0 && constraintLayout != null) {
+                    i = f(constraintLayout, trim);
+                }
+                if (i == 0) {
+                    try {
+                        i = zu1.class.getField(trim).getInt(null);
+                    } catch (Exception unused) {
+                    }
+                }
+                if (i == 0) {
+                    i = context.getResources().getIdentifier(trim, "id", context.getPackageName());
+                }
+                if (i == 0) {
+                    this.j.put(Integer.valueOf(i), trim);
+                    b(i);
+                    return;
+                } else {
+                    Log.w("ConstraintHelper", "Could not find id of \"" + trim + "\"");
+                    return;
+                }
+            }
+        }
+        i = 0;
+        if (i == 0) {
+            i = f(constraintLayout, trim);
+        }
+        if (i == 0) {
+        }
+        if (i == 0) {
+        }
+        if (i == 0) {
+        }
     }
 
     public final void b(int i) {
@@ -129,7 +96,7 @@ public abstract class gz extends View {
         if (str == null || str.length() == 0 || this.f == null) {
             return;
         }
-        String strTrim = str.trim();
+        String trim = str.trim();
         ConstraintLayout constraintLayout = getParent() instanceof ConstraintLayout ? (ConstraintLayout) getParent() : null;
         if (constraintLayout == null) {
             Log.w("ConstraintHelper", "Parent not a ConstraintLayout");
@@ -139,7 +106,7 @@ public abstract class gz extends View {
         for (int i = 0; i < childCount; i++) {
             View childAt = constraintLayout.getChildAt(i);
             ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-            if ((layoutParams instanceof iz) && strTrim.equals(((iz) layoutParams).Y)) {
+            if ((layoutParams instanceof iz) && trim.equals(((iz) layoutParams).Y)) {
                 if (childAt.getId() == -1) {
                     Log.w("ConstraintHelper", "to use ConstraintTag view " + childAt.getClass().getSimpleName() + " must have an ID");
                 } else {
@@ -163,20 +130,20 @@ public abstract class gz extends View {
         }
     }
 
-    public final int f(ConstraintLayout constraintLayout, String str) throws Resources.NotFoundException {
+    public final int f(ConstraintLayout constraintLayout, String str) {
         Resources resources;
-        String resourceEntryName;
+        String str2;
         if (str != null && (resources = this.f.getResources()) != null) {
             int childCount = constraintLayout.getChildCount();
             for (int i = 0; i < childCount; i++) {
                 View childAt = constraintLayout.getChildAt(i);
                 if (childAt.getId() != -1) {
                     try {
-                        resourceEntryName = resources.getResourceEntryName(childAt.getId());
+                        str2 = resources.getResourceEntryName(childAt.getId());
                     } catch (Resources.NotFoundException unused) {
-                        resourceEntryName = null;
+                        str2 = null;
                     }
-                    if (str.equals(resourceEntryName)) {
+                    if (str.equals(str2)) {
                         return childAt.getId();
                     }
                 }
@@ -187,21 +154,21 @@ public abstract class gz extends View {
 
     public void g(AttributeSet attributeSet) {
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, av1.b);
-            int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+            TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, av1.b);
+            int indexCount = obtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
-                int index = typedArrayObtainStyledAttributes.getIndex(i);
+                int index = obtainStyledAttributes.getIndex(i);
                 if (index == 35) {
-                    String string = typedArrayObtainStyledAttributes.getString(index);
+                    String string = obtainStyledAttributes.getString(index);
                     this.h = string;
                     setIds(string);
                 } else if (index == 36) {
-                    String string2 = typedArrayObtainStyledAttributes.getString(index);
+                    String string2 = obtainStyledAttributes.getString(index);
                     this.i = string2;
                     setReferenceTags(string2);
                 }
             }
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 
@@ -247,13 +214,13 @@ public abstract class gz extends View {
         int i = 0;
         this.e = 0;
         while (true) {
-            int iIndexOf = str.indexOf(44, i);
-            if (iIndexOf == -1) {
+            int indexOf = str.indexOf(44, i);
+            if (indexOf == -1) {
                 a(str.substring(i));
                 return;
             } else {
-                a(str.substring(i, iIndexOf));
-                i = iIndexOf + 1;
+                a(str.substring(i, indexOf));
+                i = indexOf + 1;
             }
         }
     }
@@ -266,13 +233,13 @@ public abstract class gz extends View {
         int i = 0;
         this.e = 0;
         while (true) {
-            int iIndexOf = str.indexOf(44, i);
-            if (iIndexOf == -1) {
+            int indexOf = str.indexOf(44, i);
+            if (indexOf == -1) {
                 c(str.substring(i));
                 return;
             } else {
-                c(str.substring(i, iIndexOf));
-                i = iIndexOf + 1;
+                c(str.substring(i, indexOf));
+                i = indexOf + 1;
             }
         }
     }

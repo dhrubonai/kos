@@ -7,29 +7,29 @@ import java.util.List;
 public final class tm implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gl f1130a;
+    public final gl f1129a;
     public final boolean b;
 
     public tm(gl glVar, boolean z) {
-        this.f1130a = glVar;
+        this.f1129a = glVar;
         this.b = z;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final gb1 e(hb1 hb1Var, List list, long j) {
-        boolean zIsEmpty = list.isEmpty();
+        boolean isEmpty = list.isEmpty();
         re0 re0Var = re0.d;
-        if (zIsEmpty) {
+        if (isEmpty) {
             return hb1Var.P(vz.j(j), vz.i(j), re0Var, j7.z);
         }
-        long jA = this.b ? j : vz.a(j, 0, 0, 0, 0, 10);
+        long a2 = this.b ? j : vz.a(j, 0, 0, 0, 0, 10);
         if (list.size() == 1) {
             ab1 ab1Var = (ab1) list.get(0);
             ab1Var.t();
-            hr1 hr1VarQ = ab1Var.q(jA);
-            int iMax = Math.max(vz.j(j), hr1VarQ.d);
-            int iMax2 = Math.max(vz.i(j), hr1VarQ.e);
-            return hb1Var.P(iMax, iMax2, re0Var, new rm(hr1VarQ, ab1Var, hb1Var, iMax, iMax2, this));
+            hr1 q = ab1Var.q(a2);
+            int max = Math.max(vz.j(j), q.d);
+            int max2 = Math.max(vz.i(j), q.e);
+            return hb1Var.P(max, max2, re0Var, new rm(q, ab1Var, hb1Var, max, max2, this));
         }
         hr1[] hr1VarArr = new hr1[list.size()];
         ay1 ay1Var = new ay1();
@@ -40,10 +40,10 @@ public final class tm implements fb1 {
         for (int i = 0; i < size; i++) {
             ab1 ab1Var2 = (ab1) list.get(i);
             ab1Var2.t();
-            hr1 hr1VarQ2 = ab1Var2.q(jA);
-            hr1VarArr[i] = hr1VarQ2;
-            ay1Var.d = Math.max(ay1Var.d, hr1VarQ2.d);
-            ay1Var2.d = Math.max(ay1Var2.d, hr1VarQ2.e);
+            hr1 q2 = ab1Var2.q(a2);
+            hr1VarArr[i] = q2;
+            ay1Var.d = Math.max(ay1Var.d, q2.d);
+            ay1Var2.d = Math.max(ay1Var2.d, q2.e);
         }
         return hb1Var.P(ay1Var.d, ay1Var2.d, re0Var, new sm(hr1VarArr, list, hb1Var, ay1Var, ay1Var2, this, 0));
     }
@@ -56,14 +56,14 @@ public final class tm implements fb1 {
             return false;
         }
         tm tmVar = (tm) obj;
-        return this.f1130a.equals(tmVar.f1130a) && this.b == tmVar.b;
+        return this.f1129a.equals(tmVar.f1129a) && this.b == tmVar.b;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.b) + (this.f1130a.hashCode() * 31);
+        return Boolean.hashCode(this.b) + (this.f1129a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "BoxMeasurePolicy(alignment=" + this.f1130a + ", propagateMinConstraints=" + this.b + ')';
+        return "BoxMeasurePolicy(alignment=" + this.f1129a + ", propagateMinConstraints=" + this.b + ')';
     }
 }

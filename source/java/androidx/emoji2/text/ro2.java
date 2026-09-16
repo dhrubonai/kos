@@ -7,17 +7,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class ro2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final char f1024a;
+    public final char f1023a;
     public final String b;
     public boolean c = false;
     public CopyOnWriteArrayList d = new CopyOnWriteArrayList();
 
     public ro2(char c, String str) {
-        this.f1024a = c;
+        this.f1023a = c;
         this.b = str;
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof ro2) && ((ro2) obj).f1024a == this.f1024a;
+        return (obj instanceof ro2) && ((ro2) obj).f1023a == this.f1023a;
     }
 }

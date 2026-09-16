@@ -42,12 +42,12 @@ public abstract class f0 extends w implements List {
     @Override // java.util.Collection, java.util.List
     public final int hashCode() {
         Iterator<E> it = iterator();
-        int iHashCode = 1;
+        int i = 1;
         while (it.hasNext()) {
             Object next = it.next();
-            iHashCode = (iHashCode * 31) + (next != null ? next.hashCode() : 0);
+            i = (i * 31) + (next != null ? next.hashCode() : 0);
         }
-        return iHashCode;
+        return i;
     }
 
     @Override // java.util.List

@@ -78,7 +78,7 @@ public final class qr2 extends ru2 {
                         return;
                     }
                 }
-                if (!s80Var.j && this.d == 3 && this.f1034a == 1 && arrayList.size() > 0 && arrayList2.size() > 0) {
+                if (!s80Var.j && this.d == 3 && this.f1033a == 1 && arrayList.size() > 0 && arrayList2.size() > 0) {
                     o70 o70Var5 = (o70) arrayList.get(0);
                     int i6 = (((o70) arrayList2.get(0)).g + o70Var2.f) - (o70Var5.g + o70Var.f);
                     int i7 = s80Var.m;
@@ -117,7 +117,7 @@ public final class qr2 extends ru2 {
         tz tzVar4;
         o70 o70Var = this.k;
         tz tzVar5 = this.b;
-        boolean z = tzVar5.f1152a;
+        boolean z = tzVar5.f1151a;
         s80 s80Var = this.e;
         if (z) {
             s80Var.d(tzVar5.k());
@@ -136,10 +136,10 @@ public final class qr2 extends ru2 {
             int i = this.d;
             if (i != 3) {
                 if (i == 4 && (tzVar4 = this.b.T) != null && tzVar4.p0[1] == 1) {
-                    int iK = (tzVar4.k() - this.b.J.e()) - this.b.L.e();
+                    int k = (tzVar4.k() - this.b.J.e()) - this.b.L.e();
                     ru2.b(o70Var3, tzVar4.e.h, this.b.J.e());
                     ru2.b(o70Var2, tzVar4.e.i, -this.b.L.e());
-                    s80Var.d(iK);
+                    s80Var.d(k);
                     return;
                 }
                 if (i == 1) {
@@ -154,7 +154,7 @@ public final class qr2 extends ru2 {
         boolean z3 = s80Var.j;
         if (z3) {
             tz tzVar7 = this.b;
-            if (tzVar7.f1152a) {
+            if (tzVar7.f1151a) {
                 ez[] ezVarArr = tzVar7.Q;
                 ez ezVar = ezVarArr[2];
                 ez ezVar2 = ezVar.f;
@@ -163,13 +163,13 @@ public final class qr2 extends ru2 {
                         o70Var3.f = this.b.Q[2].e();
                         o70Var2.f = -this.b.Q[3].e();
                     } else {
-                        o70 o70VarH = ru2.h(this.b.Q[2]);
-                        if (o70VarH != null) {
-                            ru2.b(o70Var3, o70VarH, this.b.Q[2].e());
+                        o70 h = ru2.h(this.b.Q[2]);
+                        if (h != null) {
+                            ru2.b(o70Var3, h, this.b.Q[2].e());
                         }
-                        o70 o70VarH2 = ru2.h(this.b.Q[3]);
-                        if (o70VarH2 != null) {
-                            ru2.b(o70Var2, o70VarH2, -this.b.Q[3].e());
+                        o70 h2 = ru2.h(this.b.Q[3]);
+                        if (h2 != null) {
+                            ru2.b(o70Var2, h2, -this.b.Q[3].e());
                         }
                         o70Var3.b = true;
                         o70Var2.b = true;
@@ -182,9 +182,9 @@ public final class qr2 extends ru2 {
                     return;
                 }
                 if (ezVar2 != null) {
-                    o70 o70VarH3 = ru2.h(ezVar);
-                    if (o70VarH3 != null) {
-                        ru2.b(o70Var3, o70VarH3, this.b.Q[2].e());
+                    o70 h3 = ru2.h(ezVar);
+                    if (h3 != null) {
+                        ru2.b(o70Var3, h3, this.b.Q[2].e());
                         ru2.b(o70Var2, o70Var3, s80Var.g);
                         tz tzVar9 = this.b;
                         if (tzVar9.E) {
@@ -197,9 +197,9 @@ public final class qr2 extends ru2 {
                 }
                 ez ezVar3 = ezVarArr[3];
                 if (ezVar3.f != null) {
-                    o70 o70VarH4 = ru2.h(ezVar3);
-                    if (o70VarH4 != null) {
-                        ru2.b(o70Var2, o70VarH4, -this.b.Q[3].e());
+                    o70 h4 = ru2.h(ezVar3);
+                    if (h4 != null) {
+                        ru2.b(o70Var2, h4, -this.b.Q[3].e());
                         ru2.b(o70Var3, o70Var2, -s80Var.g);
                     }
                     tz tzVar10 = this.b;
@@ -211,9 +211,9 @@ public final class qr2 extends ru2 {
                 }
                 ez ezVar4 = ezVarArr[4];
                 if (ezVar4.f != null) {
-                    o70 o70VarH5 = ru2.h(ezVar4);
-                    if (o70VarH5 != null) {
-                        ru2.b(o70Var, o70VarH5, 0);
+                    o70 h5 = ru2.h(ezVar4);
+                    if (h5 != null) {
+                        ru2.b(o70Var, h5, 0);
                         ru2.b(o70Var3, o70Var, -this.b.a0);
                         ru2.b(o70Var2, o70Var3, s80Var.g);
                         return;
@@ -270,13 +270,13 @@ public final class qr2 extends ru2 {
                 o70Var3.f = this.b.Q[2].e();
                 o70Var2.f = -this.b.Q[3].e();
             } else {
-                o70 o70VarH6 = ru2.h(this.b.Q[2]);
-                o70 o70VarH7 = ru2.h(this.b.Q[3]);
-                if (o70VarH6 != null) {
-                    o70VarH6.b(this);
+                o70 h6 = ru2.h(this.b.Q[2]);
+                o70 h7 = ru2.h(this.b.Q[3]);
+                if (h6 != null) {
+                    h6.b(this);
                 }
-                if (o70VarH7 != null) {
-                    o70VarH7.b(this);
+                if (h7 != null) {
+                    h7.b(this);
                 }
                 this.j = 4;
             }
@@ -284,9 +284,9 @@ public final class qr2 extends ru2 {
                 c(o70Var, o70Var3, 1, this.l);
             }
         } else if (ezVar6 != null) {
-            o70 o70VarH8 = ru2.h(ezVar5);
-            if (o70VarH8 != null) {
-                ru2.b(o70Var3, o70VarH8, this.b.Q[2].e());
+            o70 h8 = ru2.h(ezVar5);
+            if (h8 != null) {
+                ru2.b(o70Var3, h8, this.b.Q[2].e());
                 c(o70Var2, o70Var3, 1, s80Var);
                 if (this.b.E) {
                     c(o70Var, o70Var3, 1, this.l);
@@ -298,7 +298,7 @@ public final class qr2 extends ru2 {
                         if (cs0Var.d == 3) {
                             cs0Var.e.k.add(s80Var);
                             arrayList2.add(this.b.d.e);
-                            s80Var.f844a = this;
+                            s80Var.f843a = this;
                         }
                     }
                 }
@@ -306,9 +306,9 @@ public final class qr2 extends ru2 {
         } else {
             ez ezVar7 = ezVarArr2[3];
             if (ezVar7.f != null) {
-                o70 o70VarH9 = ru2.h(ezVar7);
-                if (o70VarH9 != null) {
-                    ru2.b(o70Var2, o70VarH9, -this.b.Q[3].e());
+                o70 h9 = ru2.h(ezVar7);
+                if (h9 != null) {
+                    ru2.b(o70Var2, h9, -this.b.Q[3].e());
                     c(o70Var3, o70Var2, -1, s80Var);
                     if (this.b.E) {
                         c(o70Var, o70Var3, 1, this.l);
@@ -317,9 +317,9 @@ public final class qr2 extends ru2 {
             } else {
                 ez ezVar8 = ezVarArr2[4];
                 if (ezVar8.f != null) {
-                    o70 o70VarH10 = ru2.h(ezVar8);
-                    if (o70VarH10 != null) {
-                        ru2.b(o70Var, o70VarH10, 0);
+                    o70 h10 = ru2.h(ezVar8);
+                    if (h10 != null) {
+                        ru2.b(o70Var, h10, 0);
                         c(o70Var3, o70Var, -1, this.l);
                         c(o70Var2, o70Var3, 1, s80Var);
                     }
@@ -336,7 +336,7 @@ public final class qr2 extends ru2 {
                             if (cs0Var2.d == 3) {
                                 cs0Var2.e.k.add(s80Var);
                                 arrayList2.add(this.b.d.e);
-                                s80Var.f844a = this;
+                                s80Var.f843a = this;
                             }
                         }
                     }

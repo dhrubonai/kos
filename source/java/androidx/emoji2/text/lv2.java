@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class lv2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wv2 f715a;
+    public final wv2 f714a;
     public zv0[] b;
 
     public lv2() {
@@ -15,27 +15,27 @@ public abstract class lv2 {
     public final void a() {
         zv0[] zv0VarArr = this.b;
         if (zv0VarArr != null) {
-            zv0 zv0VarG = zv0VarArr[0];
-            zv0 zv0VarG2 = zv0VarArr[1];
-            wv2 wv2Var = this.f715a;
-            if (zv0VarG2 == null) {
-                zv0VarG2 = wv2Var.f1306a.g(2);
+            zv0 zv0Var = zv0VarArr[0];
+            zv0 zv0Var2 = zv0VarArr[1];
+            wv2 wv2Var = this.f714a;
+            if (zv0Var2 == null) {
+                zv0Var2 = wv2Var.f1305a.g(2);
             }
-            if (zv0VarG == null) {
-                zv0VarG = wv2Var.f1306a.g(1);
+            if (zv0Var == null) {
+                zv0Var = wv2Var.f1305a.g(1);
             }
-            g(zv0.a(zv0VarG, zv0VarG2));
-            zv0 zv0Var = this.b[mz0.t(16)];
-            if (zv0Var != null) {
-                f(zv0Var);
-            }
-            zv0 zv0Var2 = this.b[mz0.t(32)];
-            if (zv0Var2 != null) {
-                d(zv0Var2);
-            }
-            zv0 zv0Var3 = this.b[mz0.t(64)];
+            g(zv0.a(zv0Var, zv0Var2));
+            zv0 zv0Var3 = this.b[mz0.t(16)];
             if (zv0Var3 != null) {
-                h(zv0Var3);
+                f(zv0Var3);
+            }
+            zv0 zv0Var4 = this.b[mz0.t(32)];
+            if (zv0Var4 != null) {
+                d(zv0Var4);
+            }
+            zv0 zv0Var5 = this.b[mz0.t(64)];
+            if (zv0Var5 != null) {
+                h(zv0Var5);
             }
         }
     }
@@ -58,7 +58,7 @@ public abstract class lv2 {
     public abstract void g(zv0 zv0Var);
 
     public lv2(wv2 wv2Var) {
-        this.f715a = wv2Var;
+        this.f714a = wv2Var;
     }
 
     public void d(zv0 zv0Var) {

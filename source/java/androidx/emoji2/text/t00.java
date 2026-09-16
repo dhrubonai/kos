@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public interface t00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final s00 f1096a = s00.f1044a;
+    public static final s00 f1095a = s00.f1043a;
 }

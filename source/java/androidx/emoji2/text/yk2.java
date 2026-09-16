@@ -7,11 +7,11 @@ public final class yk2 {
     public static final yk2 d = new yk2(1, true);
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1392a;
+    public final int f1391a;
     public final boolean b;
 
     public yk2(int i, boolean z) {
-        this.f1392a = i;
+        this.f1391a = i;
         this.b = z;
     }
 
@@ -23,11 +23,11 @@ public final class yk2 {
             return false;
         }
         yk2 yk2Var = (yk2) obj;
-        return this.f1392a == yk2Var.f1392a && this.b == yk2Var.b;
+        return this.f1391a == yk2Var.f1391a && this.b == yk2Var.b;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.b) + (Integer.hashCode(this.f1392a) * 31);
+        return Boolean.hashCode(this.b) + (Integer.hashCode(this.f1391a) * 31);
     }
 
     public final String toString() {

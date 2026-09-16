@@ -19,7 +19,7 @@ public final class zb0 implements Drawable.Callback {
         un1 un1Var = ac0Var.j;
         un1Var.setValue(Integer.valueOf(((Number) un1Var.getValue()).intValue() + 1));
         Drawable drawable2 = ac0Var.i;
-        Object obj = bc0.f143a;
+        Object obj = bc0.f142a;
         ac0Var.k.setValue(new ib2((drawable2.getIntrinsicWidth() < 0 || drawable2.getIntrinsicHeight() < 0) ? 9205357640488583168L : mz0.c(drawable2.getIntrinsicWidth(), drawable2.getIntrinsicHeight())));
     }
 
@@ -28,7 +28,7 @@ public final class zb0 implements Drawable.Callback {
     public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
         lx0.x(drawable, "d");
         lx0.x(runnable, "what");
-        ((Handler) bc0.f143a.getValue()).postAtTime(runnable, j);
+        ((Handler) bc0.f142a.getValue()).postAtTime(runnable, j);
     }
 
     /* JADX WARN: Type inference failed for: r2v2, types: [androidx.emoji2.text.u11, java.lang.Object] */
@@ -36,6 +36,6 @@ public final class zb0 implements Drawable.Callback {
     public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
         lx0.x(drawable, "d");
         lx0.x(runnable, "what");
-        ((Handler) bc0.f143a.getValue()).removeCallbacks(runnable);
+        ((Handler) bc0.f142a.getValue()).removeCallbacks(runnable);
     }
 }

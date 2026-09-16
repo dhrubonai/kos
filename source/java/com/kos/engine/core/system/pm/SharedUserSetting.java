@@ -36,37 +36,37 @@ public final class SharedUserSetting implements Parcelable {
     }
 
     public static void loadSharedUsers() {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            byte[] bArrM = wj1.M(BEnvironment.getSharedUserConf());
-            parcelObtain.unmarshall(bArrM, 0, bArrM.length);
-            parcelObtain.setDataPosition(0);
-            HashMap hashMap = parcelObtain.readHashMap(SharedUserSetting.class.getClassLoader());
+            byte[] M = wj1.M(BEnvironment.getSharedUserConf());
+            obtain.unmarshall(M, 0, M.length);
+            obtain.setDataPosition(0);
+            HashMap readHashMap = obtain.readHashMap(SharedUserSetting.class.getClassLoader());
             Map<String, SharedUserSetting> map = sSharedUsers;
             synchronized (map) {
                 map.clear();
-                map.putAll(hashMap);
+                map.putAll(readHashMap);
             }
         } catch (Exception unused) {
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 
     public static void saveSharedUsers() {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         AtomicFile atomicFile = new AtomicFile(BEnvironment.getSharedUserConf());
-        FileOutputStream fileOutputStreamStartWrite = null;
+        FileOutputStream fileOutputStream = null;
         try {
-            parcelObtain.writeMap(sSharedUsers);
-            fileOutputStreamStartWrite = atomicFile.startWrite();
-            fileOutputStreamStartWrite.write(parcelObtain.marshall());
-            atomicFile.finishWrite(fileOutputStreamStartWrite);
+            obtain.writeMap(sSharedUsers);
+            fileOutputStream = atomicFile.startWrite();
+            fileOutputStream.write(obtain.marshall());
+            atomicFile.finishWrite(fileOutputStream);
         } catch (Exception e) {
             e.printStackTrace();
-            atomicFile.failWrite(fileOutputStreamStartWrite);
+            atomicFile.failWrite(fileOutputStream);
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 

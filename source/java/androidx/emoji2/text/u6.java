@@ -8,7 +8,7 @@ import android.view.autofill.AutofillId;
 public final class u6 extends fj {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gz0 f1161a;
+    public final gz0 f1160a;
     public final b72 b;
     public final v7 c;
     public final ax1 d;
@@ -18,19 +18,19 @@ public final class u6 extends fj {
     public boolean h;
 
     public u6(gz0 gz0Var, b72 b72Var, v7 v7Var, ax1 ax1Var, String str) {
-        this.f1161a = gz0Var;
+        this.f1160a = gz0Var;
         this.b = b72Var;
         this.c = v7Var;
         this.d = ax1Var;
         this.e = str;
         new Rect();
         v7Var.setImportantForAutofill(1);
-        r1 r1VarA = jz0.A(v7Var);
-        AutofillId autofillIdG = r1VarA != null ? ej.g(r1VarA.f990a) : null;
-        if (autofillIdG == null) {
+        r1 A = jz0.A(v7Var);
+        AutofillId g = A != null ? ej.g(A.f989a) : null;
+        if (g == null) {
             throw zd.c("Required value was null.");
         }
-        this.f = autofillIdG;
+        this.f = g;
         this.g = new re1();
     }
 }

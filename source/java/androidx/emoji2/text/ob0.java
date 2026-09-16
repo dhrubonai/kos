@@ -10,20 +10,20 @@ public final class ob0 extends db0 {
     public wm0 F;
 
     @Override // androidx.emoji2.text.db0
-    public final Object P0(cb0 cb0Var, cb0 cb0Var2) throws Throwable {
+    public final Object P0(cb0 cb0Var, cb0 cb0Var2) {
         l6 l6Var = this.B;
-        Object objA = ((m6) l6Var.f).a(vf1.e, new j6(l6Var, new a6(cb0Var, this, (l10) null, 12), null), cb0Var2);
-        up2 up2Var = up2.f1187a;
+        Object a2 = ((m6) l6Var.f).a(vf1.e, new j6(l6Var, new a6(cb0Var, this, (l10) null, 12), null), cb0Var2);
+        up2 up2Var = up2.f1186a;
         f30 f30Var = f30.d;
-        if (objA != f30Var) {
-            objA = up2Var;
+        if (a2 != f30Var) {
+            a2 = up2Var;
         }
-        return objA == f30Var ? objA : up2Var;
+        return a2 == f30Var ? a2 : up2Var;
     }
 
     @Override // androidx.emoji2.text.db0
     public final void Q0(long j) {
-        if (!this.q || lx0.n(this.E, mb0.f740a)) {
+        if (!this.q || lx0.n(this.E, mb0.f739a)) {
             return;
         }
         h50.G(w0(), null, new nb0(this, j, null, 0), 3);

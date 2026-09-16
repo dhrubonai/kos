@@ -9,7 +9,7 @@ import android.widget.EdgeEffect;
 public final class bf {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final bf f146a = new bf();
+    public static final bf f145a = new bf();
 
     public final EdgeEffect a(Context context, AttributeSet attributeSet) {
         try {

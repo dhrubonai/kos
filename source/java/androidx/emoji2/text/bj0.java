@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class bj0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f152a = Float.intBitsToFloat(1056964608);
+    public static final float f151a = Float.intBitsToFloat(1056964608);
 }

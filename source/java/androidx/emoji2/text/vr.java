@@ -16,14 +16,14 @@ public final class vr implements qy0, ur {
     public static final Map b;
 
     /* renamed from: a, reason: collision with root package name */
-    public final Class f1237a;
+    public final Class f1236a;
 
     static {
-        Map mapSingletonMap;
-        List listM0 = xs.m0(sm0.class, um0.class, Function2.class, wm0.class, xm0.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, tm0.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, vm0.class);
-        ArrayList arrayList = new ArrayList(ys.r0(listM0));
+        Map map;
+        List m0 = xs.m0(sm0.class, um0.class, Function2.class, wm0.class, xm0.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, tm0.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, ComposableLambda.class, vm0.class);
+        ArrayList arrayList = new ArrayList(ys.r0(m0));
         int i = 0;
-        for (Object obj : listM0) {
+        for (Object obj : m0) {
             int i2 = i + 1;
             if (i < 0) {
                 xs.q0();
@@ -34,52 +34,52 @@ public final class vr implements qy0, ur {
         }
         int size = arrayList.size();
         if (size == 0) {
-            mapSingletonMap = re0.d;
+            map = re0.d;
         } else if (size != 1) {
-            mapSingletonMap = new LinkedHashMap(ha1.T(arrayList.size()));
+            map = new LinkedHashMap(ha1.T(arrayList.size()));
             int size2 = arrayList.size();
             int i3 = 0;
             while (i3 < size2) {
                 Object obj2 = arrayList.get(i3);
                 i3++;
                 hn1 hn1Var = (hn1) obj2;
-                mapSingletonMap.put(hn1Var.d, hn1Var.e);
+                map.put(hn1Var.d, hn1Var.e);
             }
         } else {
             hn1 hn1Var2 = (hn1) arrayList.get(0);
             lx0.x(hn1Var2, "pair");
-            mapSingletonMap = Collections.singletonMap(hn1Var2.d, hn1Var2.e);
-            lx0.w(mapSingletonMap, "singletonMap(...)");
+            map = Collections.singletonMap(hn1Var2.d, hn1Var2.e);
+            lx0.w(map, "singletonMap(...)");
         }
-        b = mapSingletonMap;
+        b = map;
     }
 
     public vr(Class cls) {
-        this.f1237a = cls;
+        this.f1236a = cls;
     }
 
     @Override // androidx.emoji2.text.ur
     public final Class a() {
-        return this.f1237a;
+        return this.f1236a;
     }
 
     public final String b() {
-        String strF0;
-        Class cls = this.f1237a;
-        String strConcat = null;
+        String f0;
+        Class cls = this.f1236a;
+        String str = null;
         if (cls.isAnonymousClass()) {
             return null;
         }
         if (!cls.isLocalClass()) {
             if (!cls.isArray()) {
-                String strF02 = bz0.f0(cls.getName());
-                return strF02 == null ? cls.getSimpleName() : strF02;
+                String f02 = bz0.f0(cls.getName());
+                return f02 == null ? cls.getSimpleName() : f02;
             }
             Class<?> componentType = cls.getComponentType();
-            if (componentType.isPrimitive() && (strF0 = bz0.f0(componentType.getName())) != null) {
-                strConcat = strF0.concat("Array");
+            if (componentType.isPrimitive() && (f0 = bz0.f0(componentType.getName())) != null) {
+                str = f0.concat("Array");
             }
-            return strConcat == null ? "Array" : strConcat;
+            return str == null ? "Array" : str;
         }
         String simpleName = cls.getSimpleName();
         Method enclosingMethod = cls.getEnclosingMethod();
@@ -90,13 +90,13 @@ public final class vr implements qy0, ur {
         if (enclosingConstructor != null) {
             return wf2.t0(simpleName, enclosingConstructor.getName() + '$');
         }
-        int iG0 = wf2.g0(simpleName, '$', 0, 6);
-        if (iG0 == -1) {
+        int g0 = wf2.g0(simpleName, '$', 0, 6);
+        if (g0 == -1) {
             return simpleName;
         }
-        String strSubstring = simpleName.substring(iG0 + 1, simpleName.length());
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = simpleName.substring(g0 + 1, simpleName.length());
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public final boolean equals(Object obj) {
@@ -108,6 +108,6 @@ public final class vr implements qy0, ur {
     }
 
     public final String toString() {
-        return this.f1237a.toString() + " (Kotlin reflection is not available)";
+        return this.f1236a.toString() + " (Kotlin reflection is not available)";
     }
 }

@@ -7,15 +7,13 @@ import android.content.res.XmlResourceParser;
 import android.util.AttributeSet;
 import android.util.StateSet;
 import androidx.core.splashscreen.R;
-import java.io.IOException;
-import org.xmlpull.v1.XmlPullParserException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class we2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1275a;
+    public int f1274a;
     public r20 b;
     public int[][] c = new int[10][];
     public r20[] d = new r20[10];
@@ -27,7 +25,7 @@ public final class we2 {
     }
 
     public final void a(int[] iArr, r20 r20Var) {
-        int i = this.f1275a;
+        int i = this.f1274a;
         if (i == 0 || iArr.length == 0) {
             this.b = r20Var;
         }
@@ -42,10 +40,10 @@ public final class we2 {
             this.d = r20VarArr;
         }
         int[][] iArr4 = this.c;
-        int i3 = this.f1275a;
+        int i3 = this.f1274a;
         iArr4[i3] = iArr;
         this.d[i3] = r20Var;
-        this.f1275a = i3 + 1;
+        this.f1274a = i3 + 1;
     }
 
     public final r20 c(int[] iArr) {
@@ -55,7 +53,7 @@ public final class we2 {
         int i3 = 0;
         while (true) {
             i = -1;
-            if (i3 >= this.f1275a) {
+            if (i3 >= this.f1274a) {
                 i3 = -1;
                 break;
             }
@@ -68,7 +66,7 @@ public final class we2 {
             int[] iArr3 = StateSet.WILD_CARD;
             int[][] iArr4 = this.c;
             while (true) {
-                if (i2 >= this.f1275a) {
+                if (i2 >= this.f1274a) {
                     break;
                 }
                 if (StateSet.stateSetMatches(iArr4[i2], iArr3)) {
@@ -82,7 +80,7 @@ public final class we2 {
         return i3 < 0 ? this.b : this.d[i3];
     }
 
-    public final void d(Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
+    public final void d(Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) {
         int depth = xmlResourceParser.getDepth() + 1;
         while (true) {
             int next = xmlResourceParser.next();
@@ -96,9 +94,9 @@ public final class we2 {
             if (next == 2 && depth2 <= depth && xmlResourceParser.getName().equals("item")) {
                 Resources resources = context.getResources();
                 int[] iArr = fv1.s;
-                TypedArray typedArrayObtainAttributes = theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
-                r20 r20VarC = v92.c(typedArrayObtainAttributes, 5, new m(0.0f));
-                typedArrayObtainAttributes.recycle();
+                TypedArray obtainAttributes = theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
+                r20 c = v92.c(obtainAttributes, 5, new m(0.0f));
+                obtainAttributes.recycle();
                 int attributeCount = attributeSet.getAttributeCount();
                 int[] iArr2 = new int[attributeCount];
                 int i = 0;
@@ -113,7 +111,7 @@ public final class we2 {
                         i = i3;
                     }
                 }
-                a(StateSet.trimStateSet(iArr2, i), r20VarC);
+                a(StateSet.trimStateSet(iArr2, i), c);
             }
         }
     }

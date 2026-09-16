@@ -7,8 +7,8 @@ import java.util.LinkedHashMap;
 public final class ne1 extends s30 {
     public ne1(s30 s30Var) {
         lx0.x(s30Var, "initialExtras");
-        LinkedHashMap linkedHashMap = s30Var.f1049a;
+        LinkedHashMap linkedHashMap = s30Var.f1048a;
         lx0.x(linkedHashMap, "initialExtras");
-        this.f1049a.putAll(linkedHashMap);
+        this.f1048a.putAll(linkedHashMap);
     }
 }

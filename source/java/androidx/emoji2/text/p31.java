@@ -60,21 +60,21 @@ public final class p31 implements hb1 {
     }
 
     public final List b(int i, long j) {
-        Integer numValueOf = Integer.valueOf(i);
-        HashMap map = this.g;
-        List list = (List) map.get(numValueOf);
+        Integer valueOf = Integer.valueOf(i);
+        HashMap hashMap = this.g;
+        List list = (List) hashMap.get(valueOf);
         if (list != null) {
             return list;
         }
         n31 n31Var = this.f;
-        Object objC = n31Var.c(i);
-        List listR = this.e.r(objC, this.d.a(i, objC, n31Var.d(i)));
-        int size = listR.size();
+        Object c = n31Var.c(i);
+        List r = this.e.r(c, this.d.a(i, c, n31Var.d(i)));
+        int size = r.size();
         ArrayList arrayList = new ArrayList(size);
         for (int i2 = 0; i2 < size; i2++) {
-            arrayList.add(((ab1) listR.get(i2)).q(j));
+            arrayList.add(((ab1) r.get(i2)).q(j));
         }
-        map.put(Integer.valueOf(i), arrayList);
+        hashMap.put(Integer.valueOf(i), arrayList);
         return arrayList;
     }
 

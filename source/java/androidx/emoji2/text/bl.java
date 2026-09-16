@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class bl {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final xu1 f154a = new xu1(m8.r);
+    public static final xu1 f153a = new xu1(m8.r);
 }

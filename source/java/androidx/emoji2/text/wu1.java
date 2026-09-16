@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public abstract class wu1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final z41 f1303a;
+    public final z41 f1302a;
 
     public wu1(sm0 sm0Var) {
-        this.f1303a = new z41(sm0Var);
+        this.f1302a = new z41(sm0Var);
     }
 
     public abstract of a(Object obj);
 
     public mq2 b() {
-        return this.f1303a;
+        return this.f1302a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -23,12 +23,12 @@ public abstract class wu1 {
         if (mq2Var instanceof xc0) {
             if (ofVar.b) {
                 xc0Var = (xc0) mq2Var;
-                xc0Var.f1328a.setValue(ofVar.b());
+                xc0Var.f1327a.setValue(ofVar.b());
             }
         } else if (mq2Var instanceof kf2) {
-            if ((ofVar.f852a || ofVar.f != null) && !ofVar.b) {
+            if ((ofVar.f851a || ofVar.f != null) && !ofVar.b) {
                 kf2 kf2Var = (kf2) mq2Var;
-                if (lx0.n(ofVar.b(), kf2Var.f638a)) {
+                if (lx0.n(ofVar.b(), kf2Var.f637a)) {
                     xc0Var = kf2Var;
                 }
             }

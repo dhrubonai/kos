@@ -29,26 +29,26 @@ public final class g20 extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        tk2 tk2VarD;
+        tk2 d;
         ok0 ok0Var = (ok0) obj;
         h51 h51Var = this.e;
         if (h51Var.b() != ok0Var.a()) {
             h51Var.f.setValue(Boolean.valueOf(ok0Var.a()));
-            boolean zB = h51Var.b();
+            boolean b = h51Var.b();
             zg0 zg0Var = this.j;
             ak2 ak2Var = this.h;
-            if (zB && this.f) {
+            if (b && this.f) {
                 ex2.k(this.g, h51Var, ak2Var, this.i, zg0Var);
             } else {
                 ex2.j(h51Var);
             }
-            if (ok0Var.a() && (tk2VarD = h51Var.d()) != null) {
-                h50.G(this.l, null, new ga(this.m, ak2Var, h51Var, tk2VarD, zg0Var, null, 3), 3);
+            if (ok0Var.a() && (d = h51Var.d()) != null) {
+                h50.G(this.l, null, new ga(this.m, ak2Var, h51Var, d, zg0Var, null, 3), 3);
             }
             if (!ok0Var.a()) {
                 this.k.e(null);
             }
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class w21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1255a;
+    public final int f1254a;
     public final int b;
 
     public w21(int i, int i2) {
-        this.f1255a = i;
+        this.f1254a = i;
         this.b = i2;
         if (i < 0) {
             throw new IllegalArgumentException("negative start index");
@@ -27,16 +27,16 @@ public final class w21 {
             return false;
         }
         w21 w21Var = (w21) obj;
-        return this.f1255a == w21Var.f1255a && this.b == w21Var.b;
+        return this.f1254a == w21Var.f1254a && this.b == w21Var.b;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.b) + (Integer.hashCode(this.f1255a) * 31);
+        return Integer.hashCode(this.b) + (Integer.hashCode(this.f1254a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Interval(start=");
-        sb.append(this.f1255a);
+        sb.append(this.f1254a);
         sb.append(", end=");
         return zd.j(sb, this.b, ')');
     }

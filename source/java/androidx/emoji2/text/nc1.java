@@ -7,17 +7,17 @@ import android.util.SparseArray;
 public final class nc1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final SparseArray f804a;
+    public final SparseArray f803a;
     public hp2 b;
 
     public nc1(int i) {
-        this.f804a = new SparseArray(i);
+        this.f803a = new SparseArray(i);
     }
 
     public final void a(hp2 hp2Var, int i, int i2) {
-        int iA = hp2Var.a(i);
-        SparseArray sparseArray = this.f804a;
-        nc1 nc1Var = sparseArray == null ? null : (nc1) sparseArray.get(iA);
+        int a2 = hp2Var.a(i);
+        SparseArray sparseArray = this.f803a;
+        nc1 nc1Var = sparseArray == null ? null : (nc1) sparseArray.get(a2);
         if (nc1Var == null) {
             nc1Var = new nc1(1);
             sparseArray.put(hp2Var.a(i), nc1Var);

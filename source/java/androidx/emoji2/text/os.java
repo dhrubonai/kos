@@ -7,12 +7,12 @@ import java.lang.reflect.Method;
 public final class os {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Method f872a;
+    public final Method f871a;
     public final Method b;
     public final Method c;
 
     public /* synthetic */ os(Method method, Method method2, Method method3) {
-        this.f872a = method;
+        this.f871a = method;
         this.b = method2;
         this.c = method3;
     }

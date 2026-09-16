@@ -6,7 +6,7 @@ public final class s0 {
     public static final s0 c = new s0();
 
     /* renamed from: a, reason: collision with root package name */
-    public volatile Thread f1043a;
+    public volatile Thread f1042a;
     public volatile s0 b;
 
     public s0() {

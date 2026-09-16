@@ -42,7 +42,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
         I0(j00Var);
         this.I = j00Var;
         I0(new jh1(d52Var, gh1Var));
-        I0(new rk0(new qk0(1, sx0.f1091a, sx0.class, "onDispatchEventsCompleted", "onDispatchEventsCompleted(Landroidx/compose/ui/focus/FocusTargetNode;)V", 0, 0, 0), 3));
+        I0(new rk0(new qk0(1, sx0.f1090a, sx0.class, "onDispatchEventsCompleted", "onDispatchEventsCompleted(Landroidx/compose/ui/focus/FocusTargetNode;)V", 0, 0, 0), 3));
         en enVar = new en();
         enVar.r = j00Var;
         I0(enVar);
@@ -60,7 +60,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
 
     @Override // androidx.emoji2.text.dz0
     public final boolean C(KeyEvent keyEvent) {
-        long jD;
+        long d;
         if (!this.v) {
             return false;
         }
@@ -72,20 +72,20 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
         j00 j00Var = this.I;
         if (il1Var == il1Var2) {
             int i = (int) (j00Var.z & 4294967295L);
-            jD = jz0.d(0.0f, yy0.a(jz0.c(keyEvent.getKeyCode()), yy0.m) ? i : -i);
+            d = jz0.d(0.0f, yy0.a(jz0.c(keyEvent.getKeyCode()), yy0.m) ? i : -i);
         } else {
             int i2 = (int) (j00Var.z >> 32);
-            jD = jz0.d(yy0.a(jz0.c(keyEvent.getKeyCode()), yy0.m) ? i2 : -i2, 0.0f);
+            d = jz0.d(yy0.a(jz0.c(keyEvent.getKeyCode()), yy0.m) ? i2 : -i2, 0.0f);
         }
-        h50.G(w0(), null, new e52(this, jD, null, 1), 3);
+        h50.G(w0(), null, new e52(this, d, null, 1), 3);
         return true;
     }
 
     @Override // androidx.emoji2.text.db0
     public final Object P0(cb0 cb0Var, cb0 cb0Var2) {
         x52 x52Var = this.G;
-        Object objE = x52Var.e(vf1.e, new a6(cb0Var, x52Var, (l10) null, 19), cb0Var2);
-        return objE == f30.d ? objE : up2.f1187a;
+        Object e = x52Var.e(vf1.e, new a6(cb0Var, x52Var, (l10) null, 19), cb0Var2);
+        return e == f30.d ? e : up2.f1186a;
     }
 
     @Override // androidx.emoji2.text.db0
@@ -96,7 +96,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
     @Override // androidx.emoji2.text.db0
     public final boolean S0() {
         x52 x52Var = this.G;
-        if (x52Var.f1319a.a()) {
+        if (x52Var.f1318a.a()) {
             return true;
         }
         rl1 rl1Var = x52Var.b;
@@ -124,7 +124,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
     @Override // androidx.emoji2.text.db0, androidx.emoji2.text.ss1
     public final void p(is1 is1Var, js1 js1Var, long j) {
         long j2;
-        ?? r0 = is1Var.f547a;
+        ?? r0 = is1Var.f546a;
         int size = r0.size();
         int i = 0;
         while (true) {
@@ -138,7 +138,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
             i++;
         }
         if (js1Var == js1.e && is1Var.d == 6) {
-            ?? r12 = is1Var.f547a;
+            ?? r12 = is1Var.f546a;
             int size2 = r12.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 if (((ps1) r12.get(i2)).b()) {
@@ -151,7 +151,7 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
             int size3 = r12.size();
             int i3 = 0;
             while (true) {
-                j2 = zi1Var.f1442a;
+                j2 = zi1Var.f1441a;
                 if (i3 >= size3) {
                     break;
                 }
@@ -179,12 +179,12 @@ public final class h52 extends db0 implements xi1, jk0, dz0, w62 {
         }
         x xVar = this.K;
         if (xVar != null) {
-            wy0[] wy0VarArr = e72.f290a;
+            wy0[] wy0VarArr = e72.f289a;
             u62Var.d(t62.d, new x0(null, xVar));
         }
         e52 e52Var = this.L;
         if (e52Var != null) {
-            wy0[] wy0VarArr2 = e72.f290a;
+            wy0[] wy0VarArr2 = e72.f289a;
             u62Var.d(t62.e, e52Var);
         }
     }

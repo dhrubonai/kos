@@ -7,7 +7,7 @@ import java.util.List;
 public final class i21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f504a;
+    public final int f503a;
     public final h21[] b;
     public final l6 c;
     public final List d;
@@ -16,18 +16,18 @@ public final class i21 {
     public final int g;
 
     public i21(int i, h21[] h21VarArr, l6 l6Var, List list, int i2) {
-        this.f504a = i;
+        this.f503a = i;
         this.b = h21VarArr;
         this.c = l6Var;
         this.d = list;
         this.e = i2;
-        int iMax = 0;
+        int i3 = 0;
         for (h21 h21Var : h21VarArr) {
-            iMax = Math.max(iMax, h21Var.n);
+            i3 = Math.max(i3, h21Var.n);
         }
-        this.f = iMax;
-        int i3 = iMax + this.e;
-        this.g = i3 >= 0 ? i3 : 0;
+        this.f = i3;
+        int i4 = i3 + this.e;
+        this.g = i4 >= 0 ? i4 : 0;
     }
 
     public final h21[] a(int i, int i2, int i3) {
@@ -39,8 +39,8 @@ public final class i21 {
         while (i4 < length) {
             h21 h21Var = h21VarArr[i4];
             int i7 = i5 + 1;
-            int i8 = (int) ((bq0) this.d.get(i5)).f163a;
-            h21Var.a(i, ((int[]) this.c.f)[i6], i2, i3, this.f504a, i6);
+            int i8 = (int) ((bq0) this.d.get(i5)).f162a;
+            h21Var.a(i, ((int[]) this.c.f)[i6], i2, i3, this.f503a, i6);
             i6 += i8;
             i4++;
             i5 = i7;

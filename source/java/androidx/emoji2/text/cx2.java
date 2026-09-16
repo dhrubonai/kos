@@ -22,37 +22,37 @@ public final class cx2 extends g01 implements Function2 {
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) throws IOException {
+    public final Object invoke(Object obj, Object obj2) {
         switch (this.e) {
             case 0:
-                int iIntValue = ((Number) obj).intValue();
-                long jLongValue = ((Number) obj2).longValue();
+                int intValue = ((Number) obj).intValue();
+                long longValue = ((Number) obj2).longValue();
                 pv1 pv1Var = (pv1) this.f;
-                if (iIntValue == 1) {
+                if (intValue == 1) {
                     cy1 cy1Var = (cy1) this.g;
                     if (cy1Var.d != null) {
                         throw new IOException("bad zip: NTFS extra attribute tag 0x0001 repeated");
                     }
-                    if (jLongValue != 24) {
+                    if (longValue != 24) {
                         throw new IOException("bad zip: NTFS extra attribute tag 0x0001 size != 24");
                     }
                     cy1Var.d = Long.valueOf(pv1Var.f());
                     ((cy1) this.h).d = Long.valueOf(pv1Var.f());
                     ((cy1) this.i).d = Long.valueOf(pv1Var.f());
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
-                int iIntValue2 = ((Number) obj).intValue();
-                long jLongValue2 = ((Number) obj2).longValue();
+                int intValue2 = ((Number) obj).intValue();
+                long longValue2 = ((Number) obj2).longValue();
                 pv1 pv1Var2 = (pv1) this.f;
-                if (iIntValue2 == 21589) {
-                    if (jLongValue2 < 1) {
+                if (intValue2 == 21589) {
+                    if (longValue2 < 1) {
                         throw new IOException("bad zip: extended timestamp extra too short");
                     }
-                    byte b = pv1Var2.readByte();
-                    boolean z = (b & 1) == 1;
-                    boolean z2 = (b & 2) == 2;
-                    boolean z3 = (b & 4) == 4;
+                    byte readByte = pv1Var2.readByte();
+                    boolean z = (readByte & 1) == 1;
+                    boolean z2 = (readByte & 2) == 2;
+                    boolean z3 = (readByte & 4) == 4;
                     long j = z ? 5L : 1L;
                     if (z2) {
                         j += 4;
@@ -60,7 +60,7 @@ public final class cx2 extends g01 implements Function2 {
                     if (z3) {
                         j += 4;
                     }
-                    if (jLongValue2 < j) {
+                    if (longValue2 < j) {
                         throw new IOException("bad zip: extended timestamp extra too short");
                     }
                     if (z) {
@@ -73,11 +73,11 @@ public final class cx2 extends g01 implements Function2 {
                         ((cy1) this.i).d = Integer.valueOf(pv1Var2.e());
                     }
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 ((Number) obj2).intValue();
                 pz0.a((sm0) this.g, (nd1) this.h, (a41) this.i, (Function2) this.f, (lx) obj, n6.k0(1));
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

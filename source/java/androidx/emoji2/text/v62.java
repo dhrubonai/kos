@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public abstract class v62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final AtomicInteger f1207a = new AtomicInteger(0);
+    public static final AtomicInteger f1206a = new AtomicInteger(0);
 
     public static final nd1 a(nd1 nd1Var, boolean z, um0 um0Var) {
         return nd1Var.k(new AppendedSemanticsElement(um0Var, z));

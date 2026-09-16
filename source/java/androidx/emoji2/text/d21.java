@@ -7,7 +7,7 @@ import java.util.List;
 public final class d21 implements r31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final a21 f235a;
+    public final a21 f234a;
     public final p31 b;
     public final int c;
     public final /* synthetic */ p31 d;
@@ -22,7 +22,7 @@ public final class d21 implements r31 {
         this.f = i2;
         this.g = i3;
         this.h = j;
-        this.f235a = a21Var;
+        this.f234a = a21Var;
         this.b = p31Var;
         this.c = i;
     }
@@ -34,10 +34,10 @@ public final class d21 implements r31 {
 
     public final h21 b(int i, long j, int i2, int i3, int i4) {
         int i5;
-        a21 a21Var = this.f235a;
-        Object objC = a21Var.c(i);
-        Object objP = a21Var.b.p(i);
-        List listB = this.b.b(i, j);
+        a21 a21Var = this.f234a;
+        Object c = a21Var.c(i);
+        Object p = a21Var.b.p(i);
+        List b = this.b.b(i, j);
         if (vz.f(j)) {
             i5 = vz.j(j);
         } else {
@@ -49,6 +49,6 @@ public final class d21 implements r31 {
         int i6 = i5;
         q01 layoutDirection = this.d.e.getLayoutDirection();
         androidx.compose.foundation.lazy.layout.a aVar = this.e.k;
-        return new h21(i, objC, i6, i4, layoutDirection, this.f, this.g, listB, this.h, objP, aVar, j, i2, i3);
+        return new h21(i, c, i6, i4, layoutDirection, this.f, this.g, b, this.h, p, aVar, j, i2, i3);
     }
 }

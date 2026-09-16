@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class vh2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final v50 f1219a = new v50();
+    public static final v50 f1218a = new v50();
     public static final un0 b = new un0("sans-serif", "FontFamily.SansSerif");
     public static final un0 c = new un0("serif", "FontFamily.Serif");
     public static final un0 d = new un0("monospace", "FontFamily.Monospace");

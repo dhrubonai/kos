@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class a4 implements hi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final a4 f81a = new a4();
+    public static final a4 f80a = new a4();
 
     public final String toString() {
         return "Active";

@@ -34,10 +34,10 @@ public final class b50 extends g01 implements um0 {
             case 4:
                 this.f.get(((Number) obj).intValue());
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 this.f.get(((Number) obj).intValue());
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 this.f.get(((Number) obj).intValue());
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:

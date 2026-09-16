@@ -3,7 +3,6 @@ package androidx.emoji2.text;
 import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -20,7 +19,7 @@ import java.io.Serializable;
 public final class pf {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f902a;
+    public final Object f901a;
     public Object b;
     public Serializable c;
     public Object d;
@@ -28,7 +27,7 @@ public final class pf {
     public Object f;
 
     public pf(o oVar) {
-        this.f902a = oVar;
+        this.f901a = oVar;
         this.b = zw1.e;
         this.c = null;
         this.d = null;
@@ -40,17 +39,17 @@ public final class pf {
         int i;
         int i2 = vb1Var.d;
         int i3 = vb1Var.e;
-        int iOrdinal = vb1Var.ordinal();
-        if (iOrdinal == 0) {
+        int ordinal = vb1Var.ordinal();
+        if (ordinal == 0) {
             i = R.string.copy;
-        } else if (iOrdinal == 1) {
+        } else if (ordinal == 1) {
             i = R.string.paste;
-        } else if (iOrdinal == 2) {
+        } else if (ordinal == 2) {
             i = R.string.cut;
-        } else if (iOrdinal == 3) {
+        } else if (ordinal == 3) {
             i = R.string.selectAll;
         } else {
-            if (iOrdinal != 4) {
+            if (ordinal != 4) {
                 throw new mu();
             }
             i = Build.VERSION.SDK_INT <= 26 ? androidx.core.splashscreen.R.string.autofill : R.string.autofill;
@@ -80,41 +79,41 @@ public final class pf {
     }
 
     public static ColorStateList d(Context context, int i) {
-        int iC = ql2.c(context, androidx.core.splashscreen.R.attr.colorControlHighlight);
-        int iB = ql2.b(context, androidx.core.splashscreen.R.attr.colorButtonNormal);
+        int c = ql2.c(context, androidx.core.splashscreen.R.attr.colorControlHighlight);
+        int b = ql2.b(context, androidx.core.splashscreen.R.attr.colorButtonNormal);
         int[] iArr = ql2.b;
         int[] iArr2 = ql2.d;
-        int iB2 = tt.b(iC, i);
-        return new ColorStateList(new int[][]{iArr, iArr2, ql2.c, ql2.f}, new int[]{iB, iB2, tt.b(iC, i), i});
+        int b2 = tt.b(c, i);
+        return new ColorStateList(new int[][]{iArr, iArr2, ql2.c, ql2.f}, new int[]{b, b2, tt.b(c, i), i});
     }
 
-    public static LayerDrawable e(vz1 vz1Var, Context context, int i) throws Resources.NotFoundException {
+    public static LayerDrawable e(vz1 vz1Var, Context context, int i) {
         BitmapDrawable bitmapDrawable;
         BitmapDrawable bitmapDrawable2;
         BitmapDrawable bitmapDrawable3;
         int dimensionPixelSize = context.getResources().getDimensionPixelSize(i);
-        Drawable drawableC = vz1Var.c(context, androidx.core.splashscreen.R.drawable.abc_star_black_48dp);
-        Drawable drawableC2 = vz1Var.c(context, androidx.core.splashscreen.R.drawable.abc_star_half_black_48dp);
-        if ((drawableC instanceof BitmapDrawable) && drawableC.getIntrinsicWidth() == dimensionPixelSize && drawableC.getIntrinsicHeight() == dimensionPixelSize) {
-            bitmapDrawable = (BitmapDrawable) drawableC;
+        Drawable c = vz1Var.c(context, androidx.core.splashscreen.R.drawable.abc_star_black_48dp);
+        Drawable c2 = vz1Var.c(context, androidx.core.splashscreen.R.drawable.abc_star_half_black_48dp);
+        if ((c instanceof BitmapDrawable) && c.getIntrinsicWidth() == dimensionPixelSize && c.getIntrinsicHeight() == dimensionPixelSize) {
+            bitmapDrawable = (BitmapDrawable) c;
             bitmapDrawable2 = new BitmapDrawable(bitmapDrawable.getBitmap());
         } else {
-            Bitmap bitmapCreateBitmap = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmapCreateBitmap);
-            drawableC.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
-            drawableC.draw(canvas);
-            bitmapDrawable = new BitmapDrawable(bitmapCreateBitmap);
-            bitmapDrawable2 = new BitmapDrawable(bitmapCreateBitmap);
+            Bitmap createBitmap = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(createBitmap);
+            c.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
+            c.draw(canvas);
+            bitmapDrawable = new BitmapDrawable(createBitmap);
+            bitmapDrawable2 = new BitmapDrawable(createBitmap);
         }
         bitmapDrawable2.setTileModeX(Shader.TileMode.REPEAT);
-        if ((drawableC2 instanceof BitmapDrawable) && drawableC2.getIntrinsicWidth() == dimensionPixelSize && drawableC2.getIntrinsicHeight() == dimensionPixelSize) {
-            bitmapDrawable3 = (BitmapDrawable) drawableC2;
+        if ((c2 instanceof BitmapDrawable) && c2.getIntrinsicWidth() == dimensionPixelSize && c2.getIntrinsicHeight() == dimensionPixelSize) {
+            bitmapDrawable3 = (BitmapDrawable) c2;
         } else {
-            Bitmap bitmapCreateBitmap2 = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
-            Canvas canvas2 = new Canvas(bitmapCreateBitmap2);
-            drawableC2.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
-            drawableC2.draw(canvas2);
-            bitmapDrawable3 = new BitmapDrawable(bitmapCreateBitmap2);
+            Bitmap createBitmap2 = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
+            Canvas canvas2 = new Canvas(createBitmap2);
+            c2.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
+            c2.draw(canvas2);
+            bitmapDrawable3 = new BitmapDrawable(createBitmap2);
         }
         LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{bitmapDrawable, bitmapDrawable3, bitmapDrawable2});
         layerDrawable.setId(0, R.id.background);
@@ -124,11 +123,11 @@ public final class pf {
     }
 
     public static void g(Drawable drawable, int i, PorterDuff.Mode mode) {
-        Drawable drawableMutate = drawable.mutate();
+        Drawable mutate = drawable.mutate();
         if (mode == null) {
             mode = qf.b;
         }
-        drawableMutate.setColorFilter(qf.b(i, mode));
+        mutate.setColorFilter(qf.b(i, mode));
     }
 
     public ColorStateList f(Context context, int i) {
@@ -167,8 +166,8 @@ public final class pf {
         }
         int[][] iArr = new int[3][];
         int[] iArr2 = new int[3];
-        ColorStateList colorStateListD = ql2.d(context, androidx.core.splashscreen.R.attr.colorSwitchThumbNormal);
-        if (colorStateListD == null || !colorStateListD.isStateful()) {
+        ColorStateList d = ql2.d(context, androidx.core.splashscreen.R.attr.colorSwitchThumbNormal);
+        if (d == null || !d.isStateful()) {
             iArr[0] = ql2.b;
             iArr2[0] = ql2.b(context, androidx.core.splashscreen.R.attr.colorSwitchThumbNormal);
             iArr[1] = ql2.e;
@@ -178,18 +177,18 @@ public final class pf {
         } else {
             int[] iArr3 = ql2.b;
             iArr[0] = iArr3;
-            iArr2[0] = colorStateListD.getColorForState(iArr3, 0);
+            iArr2[0] = d.getColorForState(iArr3, 0);
             iArr[1] = ql2.e;
             iArr2[1] = ql2.c(context, androidx.core.splashscreen.R.attr.colorControlActivated);
             iArr[2] = ql2.f;
-            iArr2[2] = colorStateListD.getDefaultColor();
+            iArr2[2] = d.getDefaultColor();
         }
         return new ColorStateList(iArr, iArr2);
     }
 
     /* JADX WARN: Type inference failed for: r0v3, types: [int[], java.io.Serializable] */
     public pf() {
-        this.f902a = new int[]{androidx.core.splashscreen.R.drawable.abc_textfield_search_default_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_textfield_default_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_ab_share_pack_mtrl_alpha};
+        this.f901a = new int[]{androidx.core.splashscreen.R.drawable.abc_textfield_search_default_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_textfield_default_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_ab_share_pack_mtrl_alpha};
         this.b = new int[]{androidx.core.splashscreen.R.drawable.abc_ic_commit_search_api_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_seekbar_tick_mark_material, androidx.core.splashscreen.R.drawable.abc_ic_menu_share_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_ic_menu_copy_mtrl_am_alpha, androidx.core.splashscreen.R.drawable.abc_ic_menu_cut_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_ic_menu_selectall_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_ic_menu_paste_mtrl_am_alpha};
         this.c = new int[]{androidx.core.splashscreen.R.drawable.abc_textfield_activated_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_textfield_search_activated_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_cab_background_top_mtrl_alpha, androidx.core.splashscreen.R.drawable.abc_text_cursor_material, androidx.core.splashscreen.R.drawable.abc_text_select_handle_left_mtrl, androidx.core.splashscreen.R.drawable.abc_text_select_handle_middle_mtrl, androidx.core.splashscreen.R.drawable.abc_text_select_handle_right_mtrl};
         this.d = new int[]{androidx.core.splashscreen.R.drawable.abc_popup_background_mtrl_mult, androidx.core.splashscreen.R.drawable.abc_cab_background_internal_bg, androidx.core.splashscreen.R.drawable.abc_menu_hardkey_panel_mtrl_mult};
@@ -199,7 +198,7 @@ public final class pf {
 
     public pf(qi2 qi2Var) {
         lx0.x(qi2Var, "taskRunner");
-        this.f902a = qi2Var;
-        this.f = ps0.f925a;
+        this.f901a = qi2Var;
+        this.f = ps0.f924a;
     }
 }

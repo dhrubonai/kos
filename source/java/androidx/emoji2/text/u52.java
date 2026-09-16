@@ -31,7 +31,7 @@ public final class u52 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((u52) i((l10) obj2, (v52) obj)).k(up2.f1187a);
+        return ((u52) i((l10) obj2, (v52) obj)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -52,13 +52,13 @@ public final class u52 extends hh2 implements Function2 {
             long j2 = by1Var2.d;
             il1 il1Var2 = x52Var.d;
             long j3 = this.o;
-            float fC = x52Var.c(il1Var2 == il1Var ? fr2.b(j3) : fr2.c(j3));
+            float c = x52Var.c(il1Var2 == il1Var ? fr2.b(j3) : fr2.c(j3));
             this.l = x52Var;
             this.h = x52Var;
             this.i = by1Var2;
             this.j = j2;
             this.k = 1;
-            obj = yi0Var.a(t52Var, fC, this);
+            obj = yi0Var.a(t52Var, c, this);
             f30 f30Var = f30.d;
             if (obj == f30Var) {
                 return f30Var;
@@ -76,8 +76,8 @@ public final class u52 extends hh2 implements Function2 {
             x52Var2 = (x52) this.l;
             mz0.L(obj);
         }
-        float fC2 = x52Var2.c(((Number) obj).floatValue());
-        by1Var.d = x52Var.d == il1Var ? fr2.a(j, fC2, 0.0f, 2) : fr2.a(j, 0.0f, fC2, 1);
-        return up2.f1187a;
+        float c2 = x52Var2.c(((Number) obj).floatValue());
+        by1Var.d = x52Var.d == il1Var ? fr2.a(j, c2, 0.0f, 2) : fr2.a(j, 0.0f, c2, 1);
+        return up2.f1186a;
     }
 }

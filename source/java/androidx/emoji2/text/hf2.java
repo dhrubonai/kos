@@ -12,7 +12,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public final class hf2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public CharSequence f469a;
+    public CharSequence f468a;
     public final TextPaint b;
     public final int c;
     public int d;
@@ -27,48 +27,48 @@ public final class hf2 {
     public TextUtils.TruncateAt l = null;
 
     public hf2(CharSequence charSequence, TextPaint textPaint, int i) {
-        this.f469a = charSequence;
+        this.f468a = charSequence;
         this.b = textPaint;
         this.c = i;
         this.d = charSequence.length();
     }
 
     public final StaticLayout a() {
-        if (this.f469a == null) {
-            this.f469a = "";
+        if (this.f468a == null) {
+            this.f468a = "";
         }
-        int iMax = Math.max(0, this.c);
-        CharSequence charSequenceEllipsize = this.f469a;
+        int max = Math.max(0, this.c);
+        CharSequence charSequence = this.f468a;
         int i = this.f;
         TextPaint textPaint = this.b;
         if (i == 1) {
-            charSequenceEllipsize = TextUtils.ellipsize(charSequenceEllipsize, textPaint, iMax, this.l);
+            charSequence = TextUtils.ellipsize(charSequence, textPaint, max, this.l);
         }
-        int iMin = Math.min(charSequenceEllipsize.length(), this.d);
-        this.d = iMin;
+        int min = Math.min(charSequence.length(), this.d);
+        this.d = min;
         if (this.k && this.f == 1) {
             this.e = Layout.Alignment.ALIGN_OPPOSITE;
         }
-        StaticLayout.Builder builderObtain = StaticLayout.Builder.obtain(charSequenceEllipsize, 0, iMin, textPaint, iMax);
-        builderObtain.setAlignment(this.e);
-        builderObtain.setIncludePad(this.j);
-        builderObtain.setTextDirection(this.k ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR);
+        StaticLayout.Builder obtain = StaticLayout.Builder.obtain(charSequence, 0, min, textPaint, max);
+        obtain.setAlignment(this.e);
+        obtain.setIncludePad(this.j);
+        obtain.setTextDirection(this.k ? TextDirectionHeuristics.RTL : TextDirectionHeuristics.LTR);
         TextUtils.TruncateAt truncateAt = this.l;
         if (truncateAt != null) {
-            builderObtain.setEllipsize(truncateAt);
+            obtain.setEllipsize(truncateAt);
         }
-        builderObtain.setMaxLines(this.f);
+        obtain.setMaxLines(this.f);
         float f = this.g;
         if (f != 0.0f || this.h != 1.0f) {
-            builderObtain.setLineSpacing(f, this.h);
+            obtain.setLineSpacing(f, this.h);
         }
         if (this.f > 1) {
-            builderObtain.setHyphenationFrequency(this.i);
+            obtain.setHyphenationFrequency(this.i);
         }
         j4 j4Var = this.m;
         if (j4Var != null) {
-            builderObtain.setBreakStrategy(((TextInputLayout) j4Var.f561a).x.getBreakStrategy());
+            obtain.setBreakStrategy(((TextInputLayout) j4Var.f560a).x.getBreakStrategy());
         }
-        return builderObtain.build();
+        return obtain.build();
     }
 }

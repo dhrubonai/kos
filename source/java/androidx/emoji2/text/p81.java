@@ -15,9 +15,9 @@ public final class p81 extends g01 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
-        m81 m81VarR0 = this.e.i.a().R0();
-        lx0.u(m81VarR0);
-        m81VarR0.q(this.f);
-        return up2.f1187a;
+        m81 R0 = this.e.i.a().R0();
+        lx0.u(R0);
+        R0.q(this.f);
+        return up2.f1186a;
     }
 }

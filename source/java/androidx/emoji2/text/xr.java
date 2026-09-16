@@ -7,11 +7,11 @@ import java.lang.reflect.Method;
 public final class xr {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1352a;
+    public final int f1351a;
     public final Method b;
 
-    public xr(Method method, int i) throws SecurityException {
-        this.f1352a = i;
+    public xr(Method method, int i) {
+        this.f1351a = i;
         this.b = method;
         method.setAccessible(true);
     }
@@ -24,10 +24,10 @@ public final class xr {
             return false;
         }
         xr xrVar = (xr) obj;
-        return this.f1352a == xrVar.f1352a && this.b.getName().equals(xrVar.b.getName());
+        return this.f1351a == xrVar.f1351a && this.b.getName().equals(xrVar.b.getName());
     }
 
     public final int hashCode() {
-        return this.b.getName().hashCode() + (this.f1352a * 31);
+        return this.b.getName().hashCode() + (this.f1351a * 31);
     }
 }

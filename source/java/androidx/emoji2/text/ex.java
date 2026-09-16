@@ -7,17 +7,17 @@ import android.os.CancellationSignal;
 public final /* synthetic */ class ex implements CancellationSignal.OnCancelListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f333a;
+    public final /* synthetic */ int f332a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ ex(int i, Object obj) {
-        this.f333a = i;
+        this.f332a = i;
         this.b = obj;
     }
 
     @Override // android.os.CancellationSignal.OnCancelListener
     public final void onCancel() {
-        switch (this.f333a) {
+        switch (this.f332a) {
             case 0:
                 ((he2) this.b).c(null);
                 break;

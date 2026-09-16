@@ -8,9 +8,9 @@ public final class qw2 extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        hr1 hr1VarQ = ab1Var.q(xz.a(this.r != 1 ? 0 : vz.j(j), vz.h(j), this.r == 2 ? vz.i(j) : 0, vz.g(j)));
-        int iP = az0.p(hr1VarQ.d, vz.j(j), vz.h(j));
-        int iP2 = az0.p(hr1VarQ.e, vz.i(j), vz.g(j));
-        return hb1Var.P(iP, iP2, re0.d, new pw2(this, iP, hr1VarQ, iP2, hb1Var));
+        hr1 q = ab1Var.q(xz.a(this.r != 1 ? 0 : vz.j(j), vz.h(j), this.r == 2 ? vz.i(j) : 0, vz.g(j)));
+        int p = az0.p(q.d, vz.j(j), vz.h(j));
+        int p2 = az0.p(q.e, vz.i(j), vz.g(j));
+        return hb1Var.P(p, p2, re0.d, new pw2(this, p, q, p2, hb1Var));
     }
 }

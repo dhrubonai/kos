@@ -12,8 +12,8 @@ public final class u91 extends h50 {
         this.i = e4Var;
     }
 
-    public final void N(Object obj) throws Exception {
-        h4 h4Var = this.i.f283a;
+    public final void N(Object obj) {
+        h4 h4Var = this.i.f282a;
         if (h4Var == null) {
             throw new IllegalStateException("Launcher has not been initialized");
         }
@@ -26,10 +26,10 @@ public final class u91 extends h50 {
         if (obj2 == null) {
             throw new IllegalStateException(("Attempting to launch an unregistered ActivityResultLauncher with contract " + jmVar + " and input " + obj + ". You must ensure the ActivityResultLauncher is registered before calling launch().").toString());
         }
-        int iIntValue = ((Number) obj2).intValue();
+        int intValue = ((Number) obj2).intValue();
         arrayList.add(str);
         try {
-            xuVar.b(iIntValue, jmVar, obj);
+            xuVar.b(intValue, jmVar, obj);
         } catch (Exception e) {
             arrayList.remove(str);
             throw e;

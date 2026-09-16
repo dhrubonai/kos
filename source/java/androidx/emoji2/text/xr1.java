@@ -4,6 +4,6 @@ package androidx.emoji2.text;
 /* loaded from: classes.dex */
 public interface xr1 {
     static {
-        wr1 wr1Var = wr1.f1297a;
+        wr1 wr1Var = wr1.f1296a;
     }
 }

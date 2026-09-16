@@ -7,11 +7,11 @@ import java.util.LinkedHashMap;
 public final class vp1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f1235a;
+    public final boolean f1234a;
     public final LinkedHashMap b = new LinkedHashMap();
     public long c = 663904440;
 
     public vp1(boolean z) {
-        this.f1235a = z;
+        this.f1234a = z;
     }
 }

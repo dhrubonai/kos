@@ -66,35 +66,35 @@ public interface IBJobManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.am.IBJobManagerService
             public int cancel(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-545336851578658L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt();
+                    obtain.writeInterfaceToken(c.a(-545336851578658L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.am.IBJobManagerService
             public void cancelAll(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-545139283083042L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-545139283083042L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -104,36 +104,36 @@ public interface IBJobManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.am.IBJobManagerService
             public JobRecord queryJobRecord(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-544391958773538L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (JobRecord) _Parcel.readTypedObject(parcelObtain2, JobRecord.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-544391958773538L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (JobRecord) _Parcel.readTypedObject(obtain2, JobRecord.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.am.IBJobManagerService
             public JobInfo schedule(JobInfo jobInfo, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-544675426615074L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, jobInfo, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (JobInfo) _Parcel.readTypedObject(parcelObtain2, JobInfo.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-544675426615074L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, jobInfo, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (JobInfo) _Parcel.readTypedObject(obtain2, JobInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -146,30 +146,30 @@ public interface IBJobManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-543601684791074L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBJobManagerService)) ? new Proxy(iBinder) : (IBJobManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-543601684791074L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBJobManagerService)) ? new Proxy(iBinder) : (IBJobManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-543249497472802L, xa1.b);
+            String a2 = c.a(-543249497472802L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             if (i == 1) {
-                JobInfo jobInfoSchedule = schedule((JobInfo) _Parcel.readTypedObject(parcel, JobInfo.CREATOR), parcel.readInt());
+                JobInfo schedule = schedule((JobInfo) _Parcel.readTypedObject(parcel, JobInfo.CREATOR), parcel.readInt());
                 parcel2.writeNoException();
-                _Parcel.writeTypedObject(parcel2, jobInfoSchedule, 1);
+                _Parcel.writeTypedObject(parcel2, schedule, 1);
                 return true;
             }
             if (i == 2) {
-                JobRecord jobRecordQueryJobRecord = queryJobRecord(parcel.readString(), parcel.readInt(), parcel.readInt());
+                JobRecord queryJobRecord = queryJobRecord(parcel.readString(), parcel.readInt(), parcel.readInt());
                 parcel2.writeNoException();
-                _Parcel.writeTypedObject(parcel2, jobRecordQueryJobRecord, 1);
+                _Parcel.writeTypedObject(parcel2, queryJobRecord, 1);
                 return true;
             }
             if (i == 3) {
@@ -180,9 +180,9 @@ public interface IBJobManagerService extends IInterface {
             if (i != 4) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
-            int iCancel = cancel(parcel.readString(), parcel.readInt(), parcel.readInt());
+            int cancel = cancel(parcel.readString(), parcel.readInt(), parcel.readInt());
             parcel2.writeNoException();
-            parcel2.writeInt(iCancel);
+            parcel2.writeInt(cancel);
             return true;
         }
 

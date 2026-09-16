@@ -22,49 +22,49 @@ public final class cn1 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                float fFloatValue = ((Number) obj).floatValue();
+                float floatValue = ((Number) obj).floatValue();
                 o60 o60Var = ((dn1) this.f).b;
-                o60Var.r.h(o60Var.i(o60Var.j() + xa1.Q(o60Var.n() != 0 ? fFloatValue / o60Var.n() : 0.0f)));
-                return up2.f1187a;
+                o60Var.r.h(o60Var.i(o60Var.j() + xa1.Q(o60Var.n() != 0 ? floatValue / o60Var.n() : 0.0f)));
+                return up2.f1186a;
             case 1:
                 ((nc) ((vs1) this.f).f()).e((MotionEvent) obj);
-                return up2.f1187a;
+                return up2.f1186a;
             case 2:
                 ((ww1) this.f).a((ed0) obj);
-                return up2.f1187a;
+                return up2.f1186a;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 fz1 fz1Var = (fz1) obj;
                 lx0.x(fz1Var, "it");
                 return Boolean.valueOf(fz1Var.a() != ((fz1) this.f).a());
             case 4:
-                float fFloatValue2 = ((Number) obj).floatValue();
+                float floatValue2 = ((Number) obj).floatValue();
                 y42 y42Var = (y42) this.f;
-                rn1 rn1Var = y42Var.f1371a;
-                float fG = rn1Var.g() + fFloatValue2 + y42Var.e;
-                float fO = az0.o(fG, 0.0f, y42Var.d.g());
-                boolean z = fG == fO;
-                float fG2 = fO - rn1Var.g();
-                int iRound = Math.round(fG2);
-                rn1Var.h(rn1Var.g() + iRound);
-                y42Var.e = fG2 - iRound;
+                rn1 rn1Var = y42Var.f1370a;
+                float g = rn1Var.g() + floatValue2 + y42Var.e;
+                float o = az0.o(g, 0.0f, y42Var.d.g());
+                boolean z = g == o;
+                float g2 = o - rn1Var.g();
+                int round = Math.round(g2);
+                rn1Var.h(rn1Var.g() + round);
+                y42Var.e = g2 - round;
                 if (!z) {
-                    fFloatValue2 = fG2;
+                    floatValue2 = g2;
                 }
-                return Float.valueOf(fFloatValue2);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                return Float.valueOf(floatValue2);
+            case 5:
                 ((h52) this.f).I.w = (p01) obj;
-                return up2.f1187a;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                long j = ((zi1) obj).f1442a;
+                return up2.f1186a;
+            case 6:
+                long j = ((zi1) obj).f1441a;
                 x52 x52Var = (x52) this.f;
                 return new zi1(x52.a(x52Var, x52Var.h, j, x52Var.g));
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                e72.c((u62) obj, ((k12) this.f).f613a);
-                return up2.f1187a;
+                e72.c((u62) obj, ((k12) this.f).f612a);
+                return up2.f1186a;
             case 8:
                 ((List) obj).add((Float) ((f41) this.f).a());
                 return true;
-            case 9:
+            case pz0.b /* 9 */:
                 i02 i02Var = (i02) obj;
                 ShadowGraphicsLayerElement shadowGraphicsLayerElement = (ShadowGraphicsLayerElement) this.f;
                 i02Var.g(i02Var.r.a() * b10.d);
@@ -72,8 +72,8 @@ public final class cn1 extends g01 implements um0 {
                 i02Var.d(shadowGraphicsLayerElement.b);
                 i02Var.c(shadowGraphicsLayerElement.c);
                 i02Var.j(shadowGraphicsLayerElement.d);
-                return up2.f1187a;
-            case 10:
+                return up2.f1186a;
+            case pz0.d /* 10 */:
                 ((Number) obj).floatValue();
                 return Float.valueOf(((j70) this.f).c0(56));
             case 11:
@@ -100,7 +100,7 @@ public final class cn1 extends g01 implements um0 {
                     i02Var2.d |= 524288;
                     i02Var2.t = i;
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 12:
                 Throwable th = (Throwable) obj;
                 nh2 nh2Var = (nh2) this.f;
@@ -109,28 +109,28 @@ public final class cn1 extends g01 implements um0 {
                     ipVar.z(th);
                 }
                 nh2Var.f = null;
-                return up2.f1187a;
+                return up2.f1186a;
             case 13:
-                float[] fArr = ((ya1) obj).f1376a;
+                float[] fArr = ((ya1) obj).f1375a;
                 p01 p01Var = (p01) this.f;
                 if (p01Var.h()) {
                     az0.A(p01Var).f(p01Var, fArr);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                float fFloatValue3 = ((Number) obj).floatValue();
+                float floatValue3 = ((Number) obj).floatValue();
                 rj2 rj2Var = (rj2) this.f;
-                qn1 qn1Var = rj2Var.f1016a;
-                qn1 qn1Var2 = rj2Var.f1016a;
-                float fG3 = qn1Var.g() + fFloatValue3;
+                qn1 qn1Var = rj2Var.f1015a;
+                qn1 qn1Var2 = rj2Var.f1015a;
+                float g3 = qn1Var.g() + floatValue3;
                 qn1 qn1Var3 = rj2Var.b;
-                if (fG3 > qn1Var3.g()) {
-                    fFloatValue3 = qn1Var3.g() - qn1Var2.g();
-                } else if (fG3 < 0.0f) {
-                    fFloatValue3 = -qn1Var2.g();
+                if (g3 > qn1Var3.g()) {
+                    floatValue3 = qn1Var3.g() - qn1Var2.g();
+                } else if (g3 < 0.0f) {
+                    floatValue3 = -qn1Var2.g();
                 }
-                qn1Var2.h(qn1Var2.g() + fFloatValue3);
-                return Float.valueOf(fFloatValue3);
+                qn1Var2.h(qn1Var2.g() + floatValue3);
+                return Float.valueOf(floatValue3);
         }
     }
 

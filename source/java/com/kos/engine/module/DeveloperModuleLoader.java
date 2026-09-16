@@ -13,7 +13,6 @@ import com.kos.engine.entity.pm.DeveloperModuleInfo;
 import com.kos.engine.fake.frameworks.BDeveloperModuleManager;
 import dalvik.system.DexClassLoader;
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -59,21 +58,21 @@ public class DeveloperModuleLoader {
 
         @Override // java.lang.ClassLoader
         public Class<?> loadClass(String str, boolean z) {
-            Class<?> clsFindLoadedClass;
+            Class<?> findLoadedClass;
             synchronized (this) {
                 try {
-                    clsFindLoadedClass = findLoadedClass(str);
-                    if (clsFindLoadedClass == null) {
-                        clsFindLoadedClass = loadFromPreferredParent(str);
+                    findLoadedClass = findLoadedClass(str);
+                    if (findLoadedClass == null) {
+                        findLoadedClass = loadFromPreferredParent(str);
                     }
                     if (z) {
-                        resolveClass(clsFindLoadedClass);
+                        resolveClass(findLoadedClass);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
-            return clsFindLoadedClass;
+            return findLoadedClass;
         }
     }
 
@@ -100,7 +99,7 @@ public class DeveloperModuleLoader {
         }
     }
 
-    private void dispatchActivityCreated(LoadedModule loadedModule, Activity activity) throws IllegalAccessException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private void dispatchActivityCreated(LoadedModule loadedModule, Activity activity) {
         Object obj = loadedModule.instance;
         if (obj instanceof KosDeveloperModule) {
             ((KosDeveloperModule) obj).onActivityCreated(loadedModule.context, activity);
@@ -109,7 +108,7 @@ public class DeveloperModuleLoader {
         }
     }
 
-    private void dispatchAfterApplicationOnCreate(LoadedModule loadedModule, Application application) throws IllegalAccessException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private void dispatchAfterApplicationOnCreate(LoadedModule loadedModule, Application application) {
         Object obj = loadedModule.instance;
         if (obj instanceof KosDeveloperModule) {
             ((KosDeveloperModule) obj).afterApplicationOnCreate(loadedModule.context, application);
@@ -119,24 +118,24 @@ public class DeveloperModuleLoader {
         loadedModule.afterApplicationOnCreateDispatched = true;
     }
 
-    private void dispatchOnLoad(Object obj, ModuleContext moduleContext) throws IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private void dispatchOnLoad(Object obj, ModuleContext moduleContext) {
         if (obj instanceof KosDeveloperModule) {
             ((KosDeveloperModule) obj).onLoad(moduleContext);
             return;
         }
         Class<?> cls = obj.getClass();
         String[] strArr = xa1.b;
-        Method methodFindCompatibleMethod = findCompatibleMethod(cls, c.a(-980563067551522L, strArr), ModuleContext.class);
-        if (methodFindCompatibleMethod == null) {
-            methodFindCompatibleMethod = findCompatibleMethod(obj.getClass(), c.a(-980593132322594L, strArr), Object.class);
+        Method findCompatibleMethod = findCompatibleMethod(cls, c.a(-980563067551522L, strArr), ModuleContext.class);
+        if (findCompatibleMethod == null) {
+            findCompatibleMethod = findCompatibleMethod(obj.getClass(), c.a(-980593132322594L, strArr), Object.class);
         }
-        if (methodFindCompatibleMethod == null) {
+        if (findCompatibleMethod == null) {
             throw new NoSuchMethodException(c.a(-980640376962850L, strArr));
         }
-        methodFindCompatibleMethod.invoke(obj, moduleContext);
+        findCompatibleMethod.invoke(obj, moduleContext);
     }
 
-    private void dispatchPhaseCallback(LoadedModule loadedModule, String str, Application application) throws IllegalAccessException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private void dispatchPhaseCallback(LoadedModule loadedModule, String str, Application application) {
         String[] strArr = xa1.b;
         if (!c.a(-980253829906210L, strArr).equals(str)) {
             if (!c.a(-980468578271010L, strArr).equals(str) || application == null) {
@@ -153,7 +152,7 @@ public class DeveloperModuleLoader {
         }
     }
 
-    private Method findCompatibleMethod(Class<?> cls, String str, Class<?>... clsArr) throws SecurityException {
+    private Method findCompatibleMethod(Class<?> cls, String str, Class<?>... clsArr) {
         while (cls != null) {
             for (Method method : cls.getDeclaredMethods()) {
                 if (method.getName().equals(str)) {
@@ -179,37 +178,37 @@ public class DeveloperModuleLoader {
         return sLoader;
     }
 
-    private void invokeOptional(Object obj, String str, Object... objArr) throws IllegalAccessException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private void invokeOptional(Object obj, String str, Object... objArr) {
         Class<?>[] clsArr = new Class[objArr.length];
         for (int i = 0; i < objArr.length; i++) {
             clsArr[i] = objArr[i].getClass();
         }
-        Method methodFindCompatibleMethod = findCompatibleMethod(obj.getClass(), str, clsArr);
-        if (methodFindCompatibleMethod != null) {
-            methodFindCompatibleMethod.invoke(obj, objArr);
+        Method findCompatibleMethod = findCompatibleMethod(obj.getClass(), str, clsArr);
+        if (findCompatibleMethod != null) {
+            findCompatibleMethod.invoke(obj, objArr);
         }
     }
 
-    private LoadedModule loadModule(DeveloperModuleInfo developerModuleInfo) throws IllegalAccessException, NoSuchMethodException, InstantiationException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private LoadedModule loadModule(DeveloperModuleInfo developerModuleInfo) {
         String[] strArr = xa1.b;
-        String strDexPath = developerModuleInfo.dexPath();
-        if (strDexPath.length() == 0) {
+        String dexPath = developerModuleInfo.dexPath();
+        if (dexPath.length() == 0) {
             throw new IllegalStateException(c.a(-980043376508706L, strArr));
         }
         File file = new File(BEnvironment.getCacheDir(), c.a(-980150750691106L, strArr) + developerModuleInfo.packageName + c.a(-979716958994210L, strArr) + this.mTargetPackage);
         if (!file.exists() && !file.mkdirs()) {
             throw new IllegalStateException(c.a(-979708369059618L, strArr) + file);
         }
-        DexClassLoader dexClassLoader = new DexClassLoader(strDexPath, file.getAbsolutePath(), developerModuleInfo.nativeAllowed ? developerModuleInfo.nativeLibraryDir : null, new BridgeParentClassLoader(this.mTargetClassLoader, DeveloperModuleLoader.class.getClassLoader()));
-        Object objNewInstance = dexClassLoader.loadClass(developerModuleInfo.entryClass).newInstance();
+        DexClassLoader dexClassLoader = new DexClassLoader(dexPath, file.getAbsolutePath(), developerModuleInfo.nativeAllowed ? developerModuleInfo.nativeLibraryDir : null, new BridgeParentClassLoader(this.mTargetClassLoader, DeveloperModuleLoader.class.getClassLoader()));
+        Object newInstance = dexClassLoader.loadClass(developerModuleInfo.entryClass).newInstance();
         Bundle bundle = new Bundle();
         bundle.putString(c.a(-979850102980386L, strArr), developerModuleInfo.loadPhase);
         bundle.putStringArrayList(c.a(-979875872784162L, strArr), developerModuleInfo.targetPackages);
         bundle.putStringArrayList(c.a(-979910232522530L, strArr), developerModuleInfo.processNames);
         bundle.putBoolean(c.a(-980554477616930L, strArr), developerModuleInfo.nativeAllowed);
         ModuleContext moduleContext = new ModuleContext(this.mTargetPackage, this.mTargetProcess, this.mUserId, this.mTargetContext, this.mTargetClassLoader, dexClassLoader, developerModuleInfo.packageName, developerModuleInfo.sourceDir, developerModuleInfo.nativeAllowed ? developerModuleInfo.nativeLibraryDir : null, bundle);
-        dispatchOnLoad(objNewInstance, moduleContext);
-        return new LoadedModule(developerModuleInfo, objNewInstance, moduleContext);
+        dispatchOnLoad(newInstance, moduleContext);
+        return new LoadedModule(developerModuleInfo, newInstance, moduleContext);
     }
 
     private void loadPhase(String str, Application application) {
@@ -223,10 +222,10 @@ public class DeveloperModuleLoader {
             DeveloperModuleInfo developerModuleInfo = pendingModule.info;
             if (str.equals(developerModuleInfo.loadPhase) && (!developerModuleInfo.requiresEarlyApproval() || developerModuleInfo.earlyAllowed)) {
                 try {
-                    LoadedModule loadedModuleLoadModule = loadModule(developerModuleInfo);
-                    this.mLoadedModules.add(loadedModuleLoadModule);
+                    LoadedModule loadModule = loadModule(developerModuleInfo);
+                    this.mLoadedModules.add(loadModule);
                     this.mPendingModules.remove(pendingModule);
-                    dispatchPhaseCallback(loadedModuleLoadModule, str, application);
+                    dispatchPhaseCallback(loadModule, str, application);
                     BDeveloperModuleManager.get().recordModuleLoadResult(developerModuleInfo.packageName, true, null);
                     String[] strArr = xa1.b;
                     nz0.Q(c.a(-977084144041762L, strArr), 3, c.a(-977127093714722L, strArr) + developerModuleInfo.packageName + c.a(-980034786574114L, strArr) + this.mTargetPackage + c.a(-980009016770338L, strArr) + str);
@@ -239,19 +238,19 @@ public class DeveloperModuleLoader {
     }
 
     private void recordFailure(DeveloperModuleInfo developerModuleInfo, Throwable th) {
-        String strA;
+        String str;
         String[] strArr = xa1.b;
         StringBuilder sb = new StringBuilder();
         sb.append(th.getClass().getSimpleName());
         if (th.getMessage() == null) {
-            strA = c.a(-979111368605474L, strArr);
+            str = c.a(-979111368605474L, strArr);
         } else {
-            strA = c.a(-979098483703586L, strArr) + th.getMessage();
+            str = c.a(-979098483703586L, strArr) + th.getMessage();
         }
-        sb.append(strA);
-        String string = sb.toString();
-        nz0.P(c.a(-979094188736290L, strArr), c.a(-978656102072098L, strArr) + developerModuleInfo.packageName + c.a(-978750591352610L, strArr) + string, th);
-        BDeveloperModuleManager.get().recordModuleLoadResult(developerModuleInfo.packageName, false, string);
+        sb.append(str);
+        String sb2 = sb.toString();
+        nz0.P(c.a(-979094188736290L, strArr), c.a(-978656102072098L, strArr) + developerModuleInfo.packageName + c.a(-978750591352610L, strArr) + sb2, th);
+        BDeveloperModuleManager.get().recordModuleLoadResult(developerModuleInfo.packageName, false, sb2);
     }
 
     public synchronized void loadAfterApplicationCreate(Application application) {

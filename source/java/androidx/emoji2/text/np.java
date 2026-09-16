@@ -13,37 +13,37 @@ public final class np implements vb0 {
     public np() {
         k70 k70Var = h50.c;
         mp mpVar = new mp();
-        mpVar.f760a = k70Var;
+        mpVar.f759a = k70Var;
         mpVar.b = q01.d;
-        mpVar.c = ne0.f807a;
+        mpVar.c = ne0.f806a;
         mpVar.d = 0L;
         this.d = mpVar;
         this.e = new rg(this);
     }
 
     public static pa b(np npVar, long j, l8 l8Var, float f, int i) {
-        pa paVarE = npVar.e(l8Var);
-        Paint paint = paVarE.f896a;
+        pa e = npVar.e(l8Var);
+        Paint paint = e.f895a;
         if (f != 1.0f) {
             j = et.b(et.d(j) * f, j);
         }
         if (!et.c(bz0.g(paint.getColor()), j)) {
-            paVarE.e(j);
+            e.e(j);
         }
-        if (paVarE.c != null) {
-            paVarE.h(null);
+        if (e.c != null) {
+            e.h(null);
         }
-        if (!lx0.n(paVarE.d, null)) {
-            paVarE.f(null);
+        if (!lx0.n(e.d, null)) {
+            e.f(null);
         }
-        if (paVarE.b != i) {
-            paVarE.d(i);
+        if (e.b != i) {
+            e.d(i);
         }
         if (paint.isFilterBitmap()) {
-            return paVarE;
+            return e;
         }
-        paVarE.g(1);
-        return paVarE;
+        e.g(1);
+        return e;
     }
 
     @Override // androidx.emoji2.text.vb0
@@ -54,41 +54,41 @@ public final class np implements vb0 {
     @Override // androidx.emoji2.text.vb0
     public final void D(long j, long j2, long j3, float f, int i) {
         lp lpVar = this.d.c;
-        pa paVarV = this.g;
-        if (paVarV == null) {
-            paVarV = l8.v();
-            paVarV.l(1);
-            this.g = paVarV;
+        pa paVar = this.g;
+        if (paVar == null) {
+            paVar = l8.v();
+            paVar.l(1);
+            this.g = paVar;
         }
-        Paint paint = paVarV.f896a;
+        Paint paint = paVar.f895a;
         if (!et.c(bz0.g(paint.getColor()), j)) {
-            paVarV.e(j);
+            paVar.e(j);
         }
-        if (paVarV.c != null) {
-            paVarV.h(null);
+        if (paVar.c != null) {
+            paVar.h(null);
         }
-        if (!lx0.n(paVarV.d, null)) {
-            paVarV.f(null);
+        if (!lx0.n(paVar.d, null)) {
+            paVar.f(null);
         }
-        if (paVarV.b != 3) {
-            paVarV.d(3);
+        if (paVar.b != 3) {
+            paVar.d(3);
         }
         if (paint.getStrokeWidth() != f) {
-            paVarV.k(f);
+            paVar.k(f);
         }
         if (paint.getStrokeMiter() != 4.0f) {
             paint.setStrokeMiter(4.0f);
         }
-        if (paVarV.a() != i) {
-            paVarV.i(i);
+        if (paVar.a() != i) {
+            paVar.i(i);
         }
-        if (paVarV.b() != 0) {
-            paVarV.j(0);
+        if (paVar.b() != 0) {
+            paVar.j(0);
         }
         if (!paint.isFilterBitmap()) {
-            paVarV.g(1);
+            paVar.g(1);
         }
-        lpVar.s(j2, j3, paVarV);
+        lpVar.s(j2, j3, paVar);
     }
 
     @Override // androidx.emoji2.text.vb0
@@ -100,7 +100,7 @@ public final class np implements vb0 {
 
     @Override // androidx.emoji2.text.j70
     public final float U() {
-        return this.d.f760a.U();
+        return this.d.f759a.U();
     }
 
     @Override // androidx.emoji2.text.vb0
@@ -110,7 +110,7 @@ public final class np implements vb0 {
 
     @Override // androidx.emoji2.text.j70
     public final float a() {
-        return this.d.f760a.a();
+        return this.d.f759a.a();
     }
 
     @Override // androidx.emoji2.text.vb0
@@ -119,34 +119,34 @@ public final class np implements vb0 {
     }
 
     public final pa c(wj1 wj1Var, l8 l8Var, float f, ql qlVar, int i, int i2) {
-        pa paVarE = e(l8Var);
-        Paint paint = paVarE.f896a;
+        pa e = e(l8Var);
+        Paint paint = e.f895a;
         if (wj1Var != null) {
-            wj1Var.i(f, i(), paVarE);
+            wj1Var.i(f, i(), e);
         } else {
-            if (paVarE.c != null) {
-                paVarE.h(null);
+            if (e.c != null) {
+                e.h(null);
             }
-            long jG = bz0.g(paint.getColor());
+            long g = bz0.g(paint.getColor());
             long j = et.b;
-            if (!et.c(jG, j)) {
-                paVarE.e(j);
+            if (!et.c(g, j)) {
+                e.e(j);
             }
             if (paint.getAlpha() / 255.0f != f) {
-                paVarE.c(f);
+                e.c(f);
             }
         }
-        if (!lx0.n(paVarE.d, qlVar)) {
-            paVarE.f(qlVar);
+        if (!lx0.n(e.d, qlVar)) {
+            e.f(qlVar);
         }
-        if (paVarE.b != i) {
-            paVarE.d(i);
+        if (e.b != i) {
+            e.d(i);
         }
         if (paint.isFilterBitmap() == i2) {
-            return paVarE;
+            return e;
         }
-        paVarE.g(i2);
-        return paVarE;
+        e.g(i2);
+        return e;
     }
 
     public final void d(aa aaVar, ql qlVar) {
@@ -159,44 +159,44 @@ public final class np implements vb0 {
             if (paVar != null) {
                 return paVar;
             }
-            pa paVarV = l8.v();
-            paVarV.l(0);
-            this.f = paVarV;
-            return paVarV;
+            pa v = l8.v();
+            v.l(0);
+            this.f = v;
+            return v;
         }
         if (!(l8Var instanceof fg2)) {
             throw new mu();
         }
-        pa paVarV2 = this.g;
-        if (paVarV2 == null) {
-            paVarV2 = l8.v();
-            paVarV2.l(1);
-            this.g = paVarV2;
+        pa paVar2 = this.g;
+        if (paVar2 == null) {
+            paVar2 = l8.v();
+            paVar2.l(1);
+            this.g = paVar2;
         }
-        Paint paint = paVarV2.f896a;
+        Paint paint = paVar2.f895a;
         float strokeWidth = paint.getStrokeWidth();
         fg2 fg2Var = (fg2) l8Var;
         float f = fg2Var.n;
         if (strokeWidth != f) {
-            paVarV2.k(f);
+            paVar2.k(f);
         }
-        int iA = paVarV2.a();
+        int a2 = paVar2.a();
         int i = fg2Var.p;
-        if (iA != i) {
-            paVarV2.i(i);
+        if (a2 != i) {
+            paVar2.i(i);
         }
         float strokeMiter = paint.getStrokeMiter();
         float f2 = fg2Var.o;
         if (strokeMiter != f2) {
             paint.setStrokeMiter(f2);
         }
-        int iB = paVarV2.b();
+        int b = paVar2.b();
         int i2 = fg2Var.q;
-        if (iB == i2) {
-            return paVarV2;
+        if (b == i2) {
+            return paVar2;
         }
-        paVarV2.j(i2);
-        return paVarV2;
+        paVar2.j(i2);
+        return paVar2;
     }
 
     @Override // androidx.emoji2.text.vb0

@@ -7,11 +7,11 @@ import java.util.concurrent.ThreadFactory;
 public final /* synthetic */ class my implements ThreadFactory {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ String f777a;
+    public final /* synthetic */ String f776a;
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        Thread thread = new Thread(runnable, this.f777a);
+        Thread thread = new Thread(runnable, this.f776a);
         thread.setPriority(10);
         return thread;
     }

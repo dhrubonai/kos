@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class th1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public md1 f1121a;
+    public md1 f1120a;
     public int b;
     public sf1 c;
     public sf1 d;
@@ -14,7 +14,7 @@ public final class th1 {
 
     public th1(vh1 vh1Var, md1 md1Var, int i, sf1 sf1Var, sf1 sf1Var2, boolean z) {
         this.f = vh1Var;
-        this.f1121a = md1Var;
+        this.f1120a = md1Var;
         this.b = i;
         this.c = sf1Var;
         this.d = sf1Var2;

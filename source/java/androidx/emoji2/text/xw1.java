@@ -11,7 +11,7 @@ import java.util.List;
 public final class xw1 implements j32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashSet f1360a = new LinkedHashSet();
+    public final LinkedHashSet f1359a = new LinkedHashSet();
 
     public xw1(a12 a12Var) {
         a12Var.o("androidx.savedstate.Restarter", this);
@@ -19,9 +19,9 @@ public final class xw1 implements j32 {
 
     @Override // androidx.emoji2.text.j32
     public final Bundle a() {
-        Bundle bundleL = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
-        List listN0 = ws.N0(this.f1360a);
-        bundleL.putStringArrayList("classes_to_restore", listN0 instanceof ArrayList ? (ArrayList) listN0 : new ArrayList<>(listN0));
-        return bundleL;
+        Bundle l = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
+        List N0 = ws.N0(this.f1359a);
+        l.putStringArrayList("classes_to_restore", N0 instanceof ArrayList ? (ArrayList) N0 : new ArrayList<>(N0));
+        return l;
     }
 }

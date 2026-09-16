@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public abstract class i91 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final un1 f515a = az0.W(null);
+    public static final un1 f514a = az0.W(null);
 
     public static y72 a() {
-        return (y72) f515a.getValue();
+        return (y72) f514a.getValue();
     }
 }

@@ -17,20 +17,20 @@ public final class yt extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 sm0 sm0Var = this.f.L;
                 if (sm0Var != null) {
                     sm0Var.a();
                 }
                 break;
             default:
-                long j2 = ((zi1) obj).f1442a;
+                long j2 = ((zi1) obj).f1441a;
                 zt ztVar = this.f;
                 if (ztVar.x) {
                     ztVar.y.a();
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

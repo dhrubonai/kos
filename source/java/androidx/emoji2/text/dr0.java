@@ -17,12 +17,12 @@ public final class dr0 implements Iterable, ry0 {
         lx0.x(str, "name");
         String[] strArr = this.d;
         int length = strArr.length - 2;
-        int iX = pz0.x(length, 0, -2);
-        if (iX > length) {
+        int x = pz0.x(length, 0, -2);
+        if (x > length) {
             return null;
         }
         while (!str.equalsIgnoreCase(strArr[length])) {
-            if (length == iX) {
+            if (length == x) {
                 return null;
             }
             length -= 2;
@@ -77,18 +77,18 @@ public final class dr0 implements Iterable, ry0 {
         StringBuilder sb = new StringBuilder();
         int size = size();
         for (int i = 0; i < size; i++) {
-            String strB = b(i);
-            String strD = d(i);
-            sb.append(strB);
+            String b = b(i);
+            String d = d(i);
+            sb.append(b);
             sb.append(": ");
-            if (jq2.n(strB)) {
-                strD = "██";
+            if (jq2.n(b)) {
+                d = "██";
             }
-            sb.append(strD);
+            sb.append(d);
             sb.append("\n");
         }
-        String string = sb.toString();
-        lx0.w(string, "StringBuilder().apply(builderAction).toString()");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "StringBuilder().apply(builderAction).toString()");
+        return sb2;
     }
 }

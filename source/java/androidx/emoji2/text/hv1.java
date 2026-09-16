@@ -24,18 +24,18 @@ public abstract class hv1 extends ConstraintLayout {
         ua1 ua1Var = new ua1();
         this.v = ua1Var;
         hy1 hy1Var = new hy1(0.5f);
-        u92 u92VarF = ua1Var.e.f1059a.f();
-        u92VarF.e = hy1Var;
-        u92VarF.f = hy1Var;
-        u92VarF.g = hy1Var;
-        u92VarF.h = hy1Var;
-        ua1Var.setShapeAppearanceModel(u92VarF.a());
+        u92 f = ua1Var.e.f1058a.f();
+        f.e = hy1Var;
+        f.f = hy1Var;
+        f.g = hy1Var;
+        f.h = hy1Var;
+        ua1Var.setShapeAppearanceModel(f.a());
         this.v.n(ColorStateList.valueOf(-1));
         setBackground(this.v);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.q, R.attr.materialClockStyle, 0);
-        this.u = typedArrayObtainStyledAttributes.getDimensionPixelSize(0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.q, R.attr.materialClockStyle, 0);
+        this.u = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         this.t = new f7(18, this);
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 
     @Override // android.view.ViewGroup

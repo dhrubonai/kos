@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class vz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f1251a = pl2.b;
+    public static final long f1250a = pl2.b;
     public static final long b = bz0.h(4290007817L);
-    public static final long c = pl2.f914a;
+    public static final long c = pl2.f913a;
     public static final long d;
     public static final long e;
     public static final long f;

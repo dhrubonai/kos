@@ -91,27 +91,27 @@ public final class ud2 extends SpannableStringBuilder {
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanEnd(Object obj) {
-        td2 td2VarC;
-        if (d(obj) && (td2VarC = c(obj)) != null) {
-            obj = td2VarC;
+        td2 c;
+        if (d(obj) && (c = c(obj)) != null) {
+            obj = c;
         }
         return super.getSpanEnd(obj);
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanFlags(Object obj) {
-        td2 td2VarC;
-        if (d(obj) && (td2VarC = c(obj)) != null) {
-            obj = td2VarC;
+        td2 c;
+        if (d(obj) && (c = c(obj)) != null) {
+            obj = c;
         }
         return super.getSpanFlags(obj);
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanStart(Object obj) {
-        td2 td2VarC;
-        if (d(obj) && (td2VarC = c(obj)) != null) {
-            obj = td2VarC;
+        td2 c;
+        if (d(obj) && (c = c(obj)) != null) {
+            obj = c;
         }
         return super.getSpanStart(obj);
     }
@@ -145,18 +145,18 @@ public final class ud2 extends SpannableStringBuilder {
 
     @Override // android.text.SpannableStringBuilder, android.text.Spannable
     public final void removeSpan(Object obj) {
-        td2 td2VarC;
+        td2 td2Var;
         if (d(obj)) {
-            td2VarC = c(obj);
-            if (td2VarC != null) {
-                obj = td2VarC;
+            td2Var = c(obj);
+            if (td2Var != null) {
+                obj = td2Var;
             }
         } else {
-            td2VarC = null;
+            td2Var = null;
         }
         super.removeSpan(obj);
-        if (td2VarC != null) {
-            this.e.remove(td2VarC);
+        if (td2Var != null) {
+            this.e.remove(td2Var);
         }
     }
 

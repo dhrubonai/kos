@@ -79,30 +79,30 @@ public interface ISyncContext extends IInterface {
 
             @Override // android.content.ISyncContext
             public void onFinished(SyncResult syncResult) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    _Parcel.writeTypedObject(parcelObtain, syncResult, 0);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    _Parcel.writeTypedObject(obtain, syncResult, 0);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.content.ISyncContext
             public void sendHeartbeat() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -115,8 +115,8 @@ public interface ISyncContext extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof ISyncContext)) ? new Proxy(iBinder) : (ISyncContext) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof ISyncContext)) ? new Proxy(iBinder) : (ISyncContext) queryLocalInterface;
         }
 
         @Override // android.os.Binder

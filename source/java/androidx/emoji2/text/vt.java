@@ -39,8 +39,8 @@ public final class vt extends g01 implements um0 {
                     hr1 hr1Var = hr1VarArr[i];
                     int i3 = i2 + 1;
                     lx0.u(hr1Var);
-                    Object objT = hr1Var.t();
-                    x12 x12Var = objT instanceof x12 ? (x12) objT : null;
+                    Object t = hr1Var.t();
+                    x12 x12Var = t instanceof x12 ? (x12) t : null;
                     q01 layoutDirection = hb1Var.getLayoutDirection();
                     t30 t30Var = x12Var != null ? x12Var.c : null;
                     int i4 = this.f;
@@ -48,7 +48,7 @@ public final class vt extends g01 implements um0 {
                     i++;
                     i2 = i3;
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 al alVar = (al) obj;
                 rk0 rk0Var = (rk0) this.g;
@@ -56,10 +56,10 @@ public final class vt extends g01 implements um0 {
                 if (rk0Var != ((gk0) ((v7) lx0.U(rk0Var2)).getFocusOwner()).h) {
                     return Boolean.TRUE;
                 }
-                boolean zE = mz0.E(rk0Var2, (rk0) this.i, this.f, (pc) this.j);
-                Boolean boolValueOf = Boolean.valueOf(zE);
-                if (zE || !alVar.a()) {
-                    return boolValueOf;
+                boolean E = mz0.E(rk0Var2, (rk0) this.i, this.f, (pc) this.j);
+                Boolean valueOf = Boolean.valueOf(E);
+                if (E || !alVar.a()) {
+                    return valueOf;
                 }
                 return null;
             default:
@@ -69,10 +69,10 @@ public final class vt extends g01 implements um0 {
                 if (rk0Var3 != ((gk0) ((v7) lx0.U(rk0Var4)).getFocusOwner()).h) {
                     return Boolean.TRUE;
                 }
-                boolean zY = a01.Y(this.f, (pc) this.j, rk0Var4, (zw1) this.i);
-                Boolean boolValueOf2 = Boolean.valueOf(zY);
-                if (zY || !alVar2.a()) {
-                    return boolValueOf2;
+                boolean Y = a01.Y(this.f, (pc) this.j, rk0Var4, (zw1) this.i);
+                Boolean valueOf2 = Boolean.valueOf(Y);
+                if (Y || !alVar2.a()) {
+                    return valueOf2;
                 }
                 return null;
         }

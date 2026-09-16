@@ -35,10 +35,10 @@ public abstract class eg2 extends dg2 {
             return "";
         }
         if (length == 1) {
-            char cCharAt = str.charAt(0);
+            char charAt = str.charAt(0);
             char[] cArr = new char[i];
             for (int i3 = 0; i3 < i; i3++) {
-                cArr[i3] = cCharAt;
+                cArr[i3] = charAt;
             }
             return new String(cArr);
         }
@@ -52,17 +52,17 @@ public abstract class eg2 extends dg2 {
                 i2++;
             }
         }
-        String string = sb.toString();
-        lx0.u(string);
-        return string;
+        String sb2 = sb.toString();
+        lx0.u(sb2);
+        return sb2;
     }
 
     public static String X(String str, String str2, String str3) {
         lx0.x(str, "<this>");
         lx0.x(str2, "oldValue");
         lx0.x(str3, "newValue");
-        int iE0 = wf2.e0(str, str2, 0, false);
-        if (iE0 < 0) {
+        int e0 = wf2.e0(str, str2, 0, false);
+        if (e0 < 0) {
             return str;
         }
         int length = str2.length();
@@ -74,18 +74,18 @@ public abstract class eg2 extends dg2 {
         StringBuilder sb = new StringBuilder(length2);
         int i2 = 0;
         do {
-            sb.append((CharSequence) str, i2, iE0);
+            sb.append((CharSequence) str, i2, e0);
             sb.append(str3);
-            i2 = iE0 + length;
-            if (iE0 >= str.length()) {
+            i2 = e0 + length;
+            if (e0 >= str.length()) {
                 break;
             }
-            iE0 = wf2.e0(str, str2, iE0 + i, false);
-        } while (iE0 > 0);
+            e0 = wf2.e0(str, str2, e0 + i, false);
+        } while (e0 > 0);
         sb.append((CharSequence) str, i2, str.length());
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public static boolean Y(String str, String str2, int i, boolean z) {

@@ -5,21 +5,21 @@ package androidx.emoji2.text;
 public final class wv0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1304a;
+    public final int f1303a;
 
     public final boolean equals(Object obj) {
         if (obj instanceof wv0) {
-            return this.f1304a == ((wv0) obj).f1304a;
+            return this.f1303a == ((wv0) obj).f1303a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f1304a);
+        return Integer.hashCode(this.f1303a);
     }
 
     public final String toString() {
-        int i = this.f1304a;
+        int i = this.f1303a;
         return i == 1 ? "Touch" : i == 2 ? "Keyboard" : "Error";
     }
 }

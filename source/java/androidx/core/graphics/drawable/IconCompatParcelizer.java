@@ -23,38 +23,38 @@ public class IconCompatParcelizer {
         byte[] bArr = iconCompat.c;
         if (lr2Var.e(2)) {
             Parcel parcel = ((mr2) lr2Var).e;
-            int i2 = parcel.readInt();
-            if (i2 < 0) {
+            int readInt = parcel.readInt();
+            if (readInt < 0) {
                 bArr = null;
             } else {
-                byte[] bArr2 = new byte[i2];
+                byte[] bArr2 = new byte[readInt];
                 parcel.readByteArray(bArr2);
                 bArr = bArr2;
             }
         }
         iconCompat.c = bArr;
         iconCompat.d = lr2Var.f(iconCompat.d, 3);
-        int i3 = iconCompat.e;
+        int i2 = iconCompat.e;
         if (lr2Var.e(4)) {
+            i2 = ((mr2) lr2Var).e.readInt();
+        }
+        iconCompat.e = i2;
+        int i3 = iconCompat.f;
+        if (lr2Var.e(5)) {
             i3 = ((mr2) lr2Var).e.readInt();
         }
-        iconCompat.e = i3;
-        int i4 = iconCompat.f;
-        if (lr2Var.e(5)) {
-            i4 = ((mr2) lr2Var).e.readInt();
-        }
-        iconCompat.f = i4;
+        iconCompat.f = i3;
         iconCompat.g = (ColorStateList) lr2Var.f(iconCompat.g, 6);
-        String string = iconCompat.i;
+        String str = iconCompat.i;
         if (lr2Var.e(7)) {
-            string = ((mr2) lr2Var).e.readString();
+            str = ((mr2) lr2Var).e.readString();
         }
-        iconCompat.i = string;
-        String string2 = iconCompat.j;
+        iconCompat.i = str;
+        String str2 = iconCompat.j;
         if (lr2Var.e(8)) {
-            string2 = ((mr2) lr2Var).e.readString();
+            str2 = ((mr2) lr2Var).e.readString();
         }
-        iconCompat.j = string2;
+        iconCompat.j = str2;
         iconCompat.h = PorterDuff.Mode.valueOf(iconCompat.i);
         switch (iconCompat.f70a) {
             case -1:
@@ -68,7 +68,7 @@ public class IconCompatParcelizer {
             default:
                 return iconCompat;
             case 1:
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 Parcelable parcelable2 = iconCompat.d;
                 if (parcelable2 != null) {
                     iconCompat.b = parcelable2;
@@ -82,11 +82,11 @@ public class IconCompatParcelizer {
                 return iconCompat;
             case 2:
             case 4:
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                String str = new String(iconCompat.c, Charset.forName("UTF-16"));
-                iconCompat.b = str;
+            case 6:
+                String str3 = new String(iconCompat.c, Charset.forName("UTF-16"));
+                iconCompat.b = str3;
                 if (iconCompat.f70a == 2 && iconCompat.j == null) {
-                    iconCompat.j = str.split(":", -1)[0];
+                    iconCompat.j = str3.split(":", -1)[0];
                 }
                 return iconCompat;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
@@ -103,7 +103,7 @@ public class IconCompatParcelizer {
                 iconCompat.d = (Parcelable) iconCompat.b;
                 break;
             case 1:
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 iconCompat.d = (Parcelable) iconCompat.b;
                 break;
             case 2:
@@ -113,7 +113,7 @@ public class IconCompatParcelizer {
                 iconCompat.c = (byte[]) iconCompat.b;
                 break;
             case 4:
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 iconCompat.c = iconCompat.b.toString().getBytes(Charset.forName("UTF-16"));
                 break;
         }

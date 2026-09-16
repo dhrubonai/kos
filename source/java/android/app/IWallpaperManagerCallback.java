@@ -46,15 +46,15 @@ public interface IWallpaperManagerCallback extends IInterface {
 
             @Override // android.app.IWallpaperManagerCallback
             public void onWallpaperChanged() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -67,8 +67,8 @@ public interface IWallpaperManagerCallback extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IWallpaperManagerCallback)) ? new Proxy(iBinder) : (IWallpaperManagerCallback) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IWallpaperManagerCallback)) ? new Proxy(iBinder) : (IWallpaperManagerCallback) queryLocalInterface;
         }
 
         @Override // android.os.Binder

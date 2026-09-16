@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class tj {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f1124a;
+    public final float f1123a;
     public final float b;
     public final float c;
     public final int d;
@@ -16,9 +16,9 @@ public final class tj {
         float f = rg1Var.c;
         float f2 = rg1Var.d;
         float f3 = rg1Var.b;
-        int i = rg1Var.f1011a;
+        int i = rg1Var.f1010a;
         long j = rg1Var.e;
-        this.f1124a = f;
+        this.f1123a = f;
         this.b = f2;
         this.c = f3;
         this.d = i;
@@ -26,6 +26,6 @@ public final class tj {
     }
 
     public final String toString() {
-        return "BackEventCompat(touchX=" + this.f1124a + ", touchY=" + this.b + ", progress=" + this.c + ", swipeEdge=" + this.d + ", frameTimeMillis=" + this.e + ')';
+        return "BackEventCompat(touchX=" + this.f1123a + ", touchY=" + this.b + ", progress=" + this.c + ", swipeEdge=" + this.d + ", frameTimeMillis=" + this.e + ')';
     }
 }

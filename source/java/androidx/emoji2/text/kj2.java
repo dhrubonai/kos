@@ -8,7 +8,7 @@ import java.util.List;
 public final class kj2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final h51 f642a;
+    public final h51 f641a;
     public final uj2 b;
     public final ak2 c;
     public final boolean d;
@@ -23,7 +23,7 @@ public final class kj2 {
 
     public kj2(h51 h51Var, uj2 uj2Var, ak2 ak2Var, boolean z, boolean z2, zk2 zk2Var, zg0 zg0Var, sp2 sp2Var, f50 f50Var, um0 um0Var, int i) {
         iz0 iz0Var = h50.d;
-        this.f642a = h51Var;
+        this.f641a = h51Var;
         this.b = uj2Var;
         this.c = ak2Var;
         this.d = z;
@@ -38,9 +38,9 @@ public final class kj2 {
     }
 
     public final void a(List list) {
-        l6 l6Var = this.f642a.d;
-        ArrayList arrayListO0 = ws.O0(list);
-        arrayListO0.add(0, new qi0());
-        this.k.e(l6Var.i(arrayListO0));
+        l6 l6Var = this.f641a.d;
+        ArrayList O0 = ws.O0(list);
+        O0.add(0, new qi0());
+        this.k.e(l6Var.i(O0));
     }
 }

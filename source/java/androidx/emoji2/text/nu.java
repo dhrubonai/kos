@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class nu {
 
     /* renamed from: a, reason: collision with root package name */
-    public double f829a;
+    public double f828a;
     public double b;
 
     public nu(double d, double d2) {
-        this.f829a = d;
+        this.f828a = d;
         this.b = d2;
     }
 
@@ -21,14 +21,14 @@ public final class nu {
             return false;
         }
         nu nuVar = (nu) obj;
-        return Double.compare(this.f829a, nuVar.f829a) == 0 && Double.compare(this.b, nuVar.b) == 0;
+        return Double.compare(this.f828a, nuVar.f828a) == 0 && Double.compare(this.b, nuVar.b) == 0;
     }
 
     public final int hashCode() {
-        return Double.hashCode(this.b) + (Double.hashCode(this.f829a) * 31);
+        return Double.hashCode(this.b) + (Double.hashCode(this.f828a) * 31);
     }
 
     public final String toString() {
-        return "ComplexDouble(_real=" + this.f829a + ", _imaginary=" + this.b + ')';
+        return "ComplexDouble(_real=" + this.f828a + ", _imaginary=" + this.b + ')';
     }
 }

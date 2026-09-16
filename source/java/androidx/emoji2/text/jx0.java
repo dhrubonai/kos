@@ -27,18 +27,82 @@ public abstract /* synthetic */ class jx0 {
         return (Boolean.hashCode(z) + i) * i2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00aa A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x009d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00aa A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009d A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ long e(java.lang.String r28) {
-        /*
-            Method dump skipped, instructions count: 205
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.jx0.e(java.lang.String):long");
+    public static /* synthetic */ long e(String str) {
+        long j;
+        int i;
+        long j2;
+        long j3;
+        long j4;
+        long j5;
+        int length = str.length();
+        if (length == 0) {
+            throw new NumberFormatException("empty string");
+        }
+        int i2 = 16;
+        long j6 = 16;
+        int i3 = 0;
+        long j7 = Long.MIN_VALUE;
+        if (j6 >= 0) {
+            long j8 = (Long.MAX_VALUE / j6) << 1;
+            if ((((-1) - (j8 * j6)) ^ Long.MIN_VALUE) >= (j6 ^ Long.MIN_VALUE)) {
+                j = 0;
+                i = 1;
+            } else {
+                j = 0;
+                i = 0;
+            }
+            j2 = j8 + i;
+        } else if (Long.MAX_VALUE < (j6 ^ Long.MIN_VALUE)) {
+            j2 = 0;
+            j = 0;
+        } else {
+            j2 = 1;
+            j = 0;
+        }
+        if (str.charAt(0) == '+' && length > 1) {
+            i3 = 1;
+        }
+        long j9 = j;
+        while (i3 < length) {
+            long j10 = j7;
+            int digit = Character.digit(str.charAt(i3), i2);
+            if (digit == -1) {
+                throw new NumberFormatException(str.toString());
+            }
+            if (j9 >= j && j9 <= j2) {
+                if (j9 == j2) {
+                    if (j6 >= 0) {
+                        long j11 = (-1) - (((Long.MAX_VALUE / j6) << 1) * j6);
+                        j4 = j11 - ((j11 ^ j10) >= (j6 ^ j10) ? j6 : j);
+                    } else if (Long.MAX_VALUE < (j6 ^ j10)) {
+                        j3 = j6;
+                        j5 = -1;
+                        if (digit > ((int) j5)) {
+                        }
+                    } else {
+                        j4 = (-1) - j6;
+                    }
+                    j3 = j6;
+                    j5 = j4;
+                    if (digit > ((int) j5)) {
+                    }
+                } else {
+                    j3 = j6;
+                }
+                j9 = (j9 * j3) + digit;
+                i3++;
+                j7 = j10;
+                j6 = j3;
+                i2 = 16;
+            }
+            throw new NumberFormatException("Too large for unsigned long: ".concat(str.toString()));
+        }
+        return j9;
     }
 
     public static ClassCastException f(Object obj) {
@@ -102,8 +166,8 @@ public abstract /* synthetic */ class jx0 {
         sb.append(str);
     }
 
-    public static /* synthetic */ void p(AutoCloseable autoCloseable) throws Exception {
-        boolean zIsTerminated;
+    public static /* synthetic */ void p(AutoCloseable autoCloseable) {
+        boolean isTerminated;
         if (autoCloseable instanceof AutoCloseable) {
             autoCloseable.close();
             return;
@@ -124,14 +188,14 @@ public abstract /* synthetic */ class jx0 {
             }
         }
         ExecutorService executorService = (ExecutorService) autoCloseable;
-        if (executorService == ForkJoinPool.commonPool() || (zIsTerminated = executorService.isTerminated())) {
+        if (executorService == ForkJoinPool.commonPool() || (isTerminated = executorService.isTerminated())) {
             return;
         }
         executorService.shutdown();
         boolean z = false;
-        while (!zIsTerminated) {
+        while (!isTerminated) {
             try {
-                zIsTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
+                isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
             } catch (InterruptedException unused) {
                 if (!z) {
                     executorService.shutdownNow();
@@ -156,17 +220,81 @@ public abstract /* synthetic */ class jx0 {
         nz0.Q(str3, i, sb.toString());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00aa A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x009d A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00aa A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009d A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static /* synthetic */ long s(java.lang.String r28) {
-        /*
-            Method dump skipped, instructions count: 205
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.jx0.s(java.lang.String):long");
+    public static /* synthetic */ long s(String str) {
+        long j;
+        int i;
+        long j2;
+        long j3;
+        long j4;
+        long j5;
+        int length = str.length();
+        if (length == 0) {
+            throw new NumberFormatException("empty string");
+        }
+        int i2 = 10;
+        long j6 = 10;
+        int i3 = 0;
+        long j7 = Long.MIN_VALUE;
+        if (j6 >= 0) {
+            long j8 = (Long.MAX_VALUE / j6) << 1;
+            if ((((-1) - (j8 * j6)) ^ Long.MIN_VALUE) >= (j6 ^ Long.MIN_VALUE)) {
+                j = 0;
+                i = 1;
+            } else {
+                j = 0;
+                i = 0;
+            }
+            j2 = j8 + i;
+        } else if (Long.MAX_VALUE < (j6 ^ Long.MIN_VALUE)) {
+            j2 = 0;
+            j = 0;
+        } else {
+            j2 = 1;
+            j = 0;
+        }
+        if (str.charAt(0) == '+' && length > 1) {
+            i3 = 1;
+        }
+        long j9 = j;
+        while (i3 < length) {
+            long j10 = j7;
+            int digit = Character.digit(str.charAt(i3), i2);
+            if (digit == -1) {
+                throw new NumberFormatException(str.toString());
+            }
+            if (j9 >= j && j9 <= j2) {
+                if (j9 == j2) {
+                    if (j6 >= 0) {
+                        long j11 = (-1) - (((Long.MAX_VALUE / j6) << 1) * j6);
+                        j4 = j11 - ((j11 ^ j10) >= (j6 ^ j10) ? j6 : j);
+                    } else if (Long.MAX_VALUE < (j6 ^ j10)) {
+                        j3 = j6;
+                        j5 = -1;
+                        if (digit > ((int) j5)) {
+                        }
+                    } else {
+                        j4 = (-1) - j6;
+                    }
+                    j3 = j6;
+                    j5 = j4;
+                    if (digit > ((int) j5)) {
+                    }
+                } else {
+                    j3 = j6;
+                }
+                j9 = (j9 * j3) + digit;
+                i3++;
+                j7 = j10;
+                j6 = j3;
+                i2 = 10;
+            }
+            throw new NumberFormatException("Too large for unsigned long: ".concat(str.toString()));
+        }
+        return j9;
     }
 }

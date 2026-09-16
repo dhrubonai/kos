@@ -35,9 +35,9 @@ final class NestedScrollElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iHashCode = this.f56a.hashCode() * 31;
+        int hashCode = this.f56a.hashCode() * 31;
         gh1 gh1Var = this.b;
-        return iHashCode + (gh1Var != null ? gh1Var.hashCode() : 0);
+        return hashCode + (gh1Var != null ? gh1Var.hashCode() : 0);
     }
 
     @Override // androidx.emoji2.text.ud1
@@ -45,8 +45,8 @@ final class NestedScrollElement extends ud1 {
         jh1 jh1Var = (jh1) md1Var;
         jh1Var.r = this.f56a;
         gh1 gh1Var = jh1Var.s;
-        if (gh1Var.f419a == jh1Var) {
-            gh1Var.f419a = null;
+        if (gh1Var.f418a == jh1Var) {
+            gh1Var.f418a = null;
         }
         gh1 gh1Var2 = this.b;
         if (gh1Var2 == null) {
@@ -56,7 +56,7 @@ final class NestedScrollElement extends ud1 {
         }
         if (jh1Var.q) {
             gh1 gh1Var3 = jh1Var.s;
-            gh1Var3.f419a = jh1Var;
+            gh1Var3.f418a = jh1Var;
             gh1Var3.b = null;
             jh1Var.t = null;
             gh1Var3.c = new o(23, jh1Var);

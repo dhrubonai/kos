@@ -7,11 +7,11 @@ import android.util.SparseArray;
 public final class ox1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public SparseArray f878a;
+    public SparseArray f877a;
     public int b;
 
     public final nx1 a(int i) {
-        SparseArray sparseArray = this.f878a;
+        SparseArray sparseArray = this.f877a;
         nx1 nx1Var = (nx1) sparseArray.get(i);
         if (nx1Var != null) {
             return nx1Var;

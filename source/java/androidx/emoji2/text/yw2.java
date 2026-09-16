@@ -8,7 +8,7 @@ import android.text.TextUtils;
 public abstract class yw2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final String[] f1408a;
+    public static final String[] f1407a;
     public static final String[] b;
     public static final String[] c;
     public static boolean d;
@@ -18,7 +18,7 @@ public abstract class yw2 {
     static {
         xa1.B(-856859419492130L);
         String[] strArr = xa1.b;
-        f1408a = new String[]{a.a.a.c.a(-856898074197794L, strArr), a.a.a.c.a(-856945318838050L, strArr), a.a.a.c.a(-856988268511010L, strArr), a.a.a.c.a(-857026923216674L, strArr), a.a.a.c.a(-857044103085858L, strArr)};
+        f1407a = new String[]{a.a.a.c.a(-856898074197794L, strArr), a.a.a.c.a(-856945318838050L, strArr), a.a.a.c.a(-856988268511010L, strArr), a.a.a.c.a(-857026923216674L, strArr), a.a.a.c.a(-857044103085858L, strArr)};
         b = new String[]{a.a.a.c.a(-857039808118562L, strArr), a.a.a.c.a(-856528707010338L, strArr), a.a.a.c.a(-856563066748706L, strArr), a.a.a.c.a(-856648966094626L, strArr)};
         c = new String[]{a.a.a.c.a(-856679030865698L, strArr), a.a.a.c.a(-856661850996514L, strArr), a.a.a.c.a(-856691915767586L, strArr), a.a.a.c.a(-856734865440546L, strArr), a.a.a.c.a(-857374815567650L, strArr)};
         d = false;
@@ -45,17 +45,17 @@ public abstract class yw2 {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        String[] strArrSplit = str.split(a.a.a.c.a(-854157885062946L, strArr));
-        for (int i = 0; i < strArrSplit.length - 1; i++) {
-            if (strArrSplit[i].equalsIgnoreCase(a.a.a.c.a(-854149295128354L, strArr)) || strArrSplit[i].equalsIgnoreCase(a.a.a.c.a(-854205129703202L, strArr))) {
-                return strArrSplit[i] + a.a.a.c.a(-854239489441570L, strArr) + strArrSplit[i + 1];
+        String[] split = str.split(a.a.a.c.a(-854157885062946L, strArr));
+        for (int i = 0; i < split.length - 1; i++) {
+            if (split[i].equalsIgnoreCase(a.a.a.c.a(-854149295128354L, strArr)) || split[i].equalsIgnoreCase(a.a.a.c.a(-854205129703202L, strArr))) {
+                return split[i] + a.a.a.c.a(-854239489441570L, strArr) + split[i + 1];
             }
         }
         return str;
     }
 
     public static String c() {
-        String strD;
+        String d2;
         String[] strArr = xa1.b;
         String str = e;
         if (str != null) {
@@ -65,18 +65,18 @@ public abstract class yw2 {
             return null;
         }
         try {
-            strD = d(a.a.a.c.a(-860093529866018L, strArr));
-            e = strD;
+            d2 = d(a.a.a.c.a(-860093529866018L, strArr));
+            e = d2;
         } catch (Exception e2) {
             jx0.q(new StringBuilder(), a.a.a.c.a(-860475781955362L, strArr), e2, 5, a.a.a.c.a(-860419947380514L, strArr));
         }
-        if (!TextUtils.isEmpty(strD)) {
+        if (!TextUtils.isEmpty(d2)) {
             nz0.Q(a.a.a.c.a(-860196609081122L, strArr), 3, a.a.a.c.a(-860321163132706L, strArr) + e);
             return e;
         }
-        String strD2 = d(a.a.a.c.a(-859874486533922L, strArr));
-        e = strD2;
-        if (!TextUtils.isEmpty(strD2)) {
+        String d3 = d(a.a.a.c.a(-859874486533922L, strArr));
+        e = d3;
+        if (!TextUtils.isEmpty(d3)) {
             nz0.Q(a.a.a.c.a(-859981860716322L, strArr), 3, a.a.a.c.a(-860037695291170L, strArr) + e);
             return e;
         }
@@ -91,9 +91,9 @@ public abstract class yw2 {
                 }
             }
         }
-        String strA = a.a.a.c.a(-860617515876130L, strArr);
-        e = strA;
-        return strA;
+        String a2 = a.a.a.c.a(-860617515876130L, strArr);
+        e = a2;
+        return a2;
     }
 
     public static String d(String str) {
@@ -101,11 +101,11 @@ public abstract class yw2 {
         try {
             return (String) Class.forName(a.a.a.c.a(-854269554212642L, strArr)).getMethod(a.a.a.c.a(-853805697744674L, strArr), String.class).invoke(null, str);
         } catch (Exception e2) {
-            String strA = a.a.a.c.a(-853857237352226L, strArr);
+            String a2 = a.a.a.c.a(-853857237352226L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-853913071927074L, strArr));
             sb.append(str);
-            jx0.q(sb, a.a.a.c.a(-856794994982690L, strArr), e2, 5, strA);
+            jx0.q(sb, a.a.a.c.a(-856794994982690L, strArr), e2, 5, a2);
             return null;
         }
     }
@@ -181,7 +181,7 @@ public abstract class yw2 {
             return false;
         }
         String lowerCase = str.toLowerCase();
-        for (String str2 : f1408a) {
+        for (String str2 : f1407a) {
             if (lowerCase.contains(str2.toLowerCase())) {
                 return true;
             }

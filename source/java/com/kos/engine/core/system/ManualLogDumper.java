@@ -1,7 +1,6 @@
 package com.kos.engine.core.system;
 
 import android.app.ActivityManager;
-import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
@@ -76,15 +75,15 @@ final class ManualLogDumper {
             this.file = file;
             this.length = file.length();
             String name = file.getName();
-            StringBuilder sbK = jx0.k(str);
+            StringBuilder k = jx0.k(str);
             String[] strArr = xa1.b;
-            sbK.append(a.a.a.c.a(-560940467765026L, strArr));
-            String strReplaceFirst = name.substring(sbK.toString().length()).replaceFirst(a.a.a.c.a(-560931877830434L, strArr), a.a.a.c.a(-560979122470690L, strArr));
-            int iIndexOf = strReplaceFirst.indexOf(45);
-            int iLastIndexOf = strReplaceFirst.lastIndexOf(45);
-            this.pid = parseInt(iIndexOf > 0 ? strReplaceFirst.substring(0, iIndexOf) : a.a.a.c.a(-560966237568802L, strArr), -1);
-            this.processName = (iIndexOf < 0 || iLastIndexOf <= iIndexOf) ? a.a.a.c.a(-560970532536098L, strArr) : strReplaceFirst.substring(iIndexOf + 1, iLastIndexOf);
-            this.segment = parseInt(iLastIndexOf >= 0 ? strReplaceFirst.substring(iLastIndexOf + 1) : a.a.a.c.a(-561004892274466L, strArr), Integer.MAX_VALUE);
+            k.append(a.a.a.c.a(-560940467765026L, strArr));
+            String replaceFirst = name.substring(k.toString().length()).replaceFirst(a.a.a.c.a(-560931877830434L, strArr), a.a.a.c.a(-560979122470690L, strArr));
+            int indexOf = replaceFirst.indexOf(45);
+            int lastIndexOf = replaceFirst.lastIndexOf(45);
+            this.pid = parseInt(indexOf > 0 ? replaceFirst.substring(0, indexOf) : a.a.a.c.a(-560966237568802L, strArr), -1);
+            this.processName = (indexOf < 0 || lastIndexOf <= indexOf) ? a.a.a.c.a(-560970532536098L, strArr) : replaceFirst.substring(indexOf + 1, lastIndexOf);
+            this.segment = parseInt(lastIndexOf >= 0 ? replaceFirst.substring(lastIndexOf + 1) : a.a.a.c.a(-561004892274466L, strArr), Integer.MAX_VALUE);
         }
 
         private static int parseInt(String str, int i) {
@@ -109,17 +108,17 @@ final class ManualLogDumper {
     private ManualLogDumper() {
     }
 
-    private static void copySnapshot(SessionLogFile sessionLogFile, ZipOutputStream zipOutputStream, byte[] bArr) throws IOException {
+    private static void copySnapshot(SessionLogFile sessionLogFile, ZipOutputStream zipOutputStream, byte[] bArr) {
         long j = sessionLogFile.length;
         BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(sessionLogFile.file));
         while (j > 0) {
             try {
-                int i = bufferedInputStream.read(bArr, 0, (int) Math.min(bArr.length, j));
-                if (i < 0) {
+                int read = bufferedInputStream.read(bArr, 0, (int) Math.min(bArr.length, j));
+                if (read < 0) {
                     break;
                 }
-                zipOutputStream.write(bArr, 0, i);
-                j -= i;
+                zipOutputStream.write(bArr, 0, read);
+                j -= read;
             } catch (Throwable th) {
                 try {
                     bufferedInputStream.close();
@@ -143,18 +142,18 @@ final class ManualLogDumper {
                 ensureDirectory(file3);
                 deletePreviousDumps(file3);
                 File file4 = new File(context.getNoBackupFilesDir(), a.a.a.c.a(-561619072597794L, strArr));
-                String sessionId = readSessionId(new File(file4, a.a.a.c.a(-561696382009122L, strArr)));
-                List<SessionLogFile> listSnapshotSessionLogs = snapshotSessionLogs(new File(file4, a.a.a.c.a(-561765101485858L, strArr)), sessionId);
-                List<ProcessSnapshot> listSnapshotRunningProcesses = snapshotRunningProcesses();
-                long jCurrentTimeMillis = System.currentTimeMillis();
-                String string = UUID.randomUUID().toString();
-                String str = a.a.a.c.a(-561786576322338L, strArr) + timestampForFile(jCurrentTimeMillis) + a.a.a.c.a(-561309834952482L, strArr) + string.substring(0, 8);
+                String readSessionId = readSessionId(new File(file4, a.a.a.c.a(-561696382009122L, strArr)));
+                List<SessionLogFile> snapshotSessionLogs = snapshotSessionLogs(new File(file4, a.a.a.c.a(-561765101485858L, strArr)), readSessionId);
+                List<ProcessSnapshot> snapshotRunningProcesses = snapshotRunningProcesses();
+                long currentTimeMillis = System.currentTimeMillis();
+                String uuid = UUID.randomUUID().toString();
+                String str = a.a.a.c.a(-561786576322338L, strArr) + timestampForFile(currentTimeMillis) + a.a.a.c.a(-561309834952482L, strArr) + uuid.substring(0, 8);
                 File file5 = new File(file3, str + a.a.a.c.a(-561301245017890L, strArr));
                 file = new File(file3, str + a.a.a.c.a(-561339899723554L, strArr));
                 try {
                     file2 = file5;
                     try {
-                        writeDump(context, file2, str + a.a.a.c.a(-561378554429218L, strArr), string, jCurrentTimeMillis, sessionId, listSnapshotRunningProcesses, listSnapshotSessionLogs);
+                        writeDump(context, file2, str + a.a.a.c.a(-561378554429218L, strArr), uuid, currentTimeMillis, readSessionId, snapshotRunningProcesses, snapshotSessionLogs);
                         moveIntoPlace(file2, file);
                     } catch (Throwable th) {
                         th = th;
@@ -176,19 +175,19 @@ final class ManualLogDumper {
         return file;
     }
 
-    private static void deletePreviousDumps(File file) throws IOException {
-        File[] fileArrListFiles = file.listFiles(new k30(7));
-        if (fileArrListFiles == null) {
+    private static void deletePreviousDumps(File file) {
+        File[] listFiles = file.listFiles(new k30(7));
+        if (listFiles == null) {
             return;
         }
-        for (File file2 : fileArrListFiles) {
+        for (File file2 : listFiles) {
             if (!file2.delete() && file2.exists()) {
                 throw new IOException(a.a.a.c.a(-428122899103522L, xa1.b) + file2.getName());
             }
         }
     }
 
-    private static void ensureDirectory(File file) throws IOException {
+    private static void ensureDirectory(File file) {
         if (file.isDirectory() || file.mkdirs() || file.isDirectory()) {
             return;
         }
@@ -201,10 +200,10 @@ final class ManualLogDumper {
             return false;
         }
         String name = file.getName();
-        StringBuilder sbK = jx0.k(str);
+        StringBuilder k = jx0.k(str);
         String[] strArr = xa1.b;
-        sbK.append(a.a.a.c.a(-428298992762658L, strArr));
-        return name.startsWith(sbK.toString()) && file.getName().endsWith(a.a.a.c.a(-428359122304802L, strArr));
+        k.append(a.a.a.c.a(-428298992762658L, strArr));
+        return name.startsWith(k.toString()) && file.getName().endsWith(a.a.a.c.a(-428359122304802L, strArr));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -212,7 +211,7 @@ final class ManualLogDumper {
         return sessionLogFile.file.getName();
     }
 
-    private static void moveIntoPlace(File file, File file2) throws IOException {
+    private static void moveIntoPlace(File file, File file2) {
         if (file.renameTo(file2)) {
             return;
         }
@@ -222,11 +221,11 @@ final class ManualLogDumper {
             try {
                 byte[] bArr = new byte[65536];
                 while (true) {
-                    int i = fileInputStream.read(bArr);
-                    if (i < 0) {
+                    int read = fileInputStream.read(bArr);
+                    if (read < 0) {
                         break;
                     } else {
-                        fileOutputStream.write(bArr, 0, i);
+                        fileOutputStream.write(bArr, 0, read);
                     }
                 }
                 fileOutputStream.getFD().sync();
@@ -249,7 +248,7 @@ final class ManualLogDumper {
         }
     }
 
-    private static String readSessionId(File file) throws IOException {
+    private static String readSessionId(File file) {
         String[] strArr = xa1.b;
         if (!file.isFile()) {
             return a.a.a.c.a(-428144373940002L, strArr);
@@ -258,10 +257,10 @@ final class ManualLogDumper {
             FileInputStream fileInputStream = new FileInputStream(file);
             try {
                 byte[] bArr = new byte[(int) Math.min(file.length(), 256L)];
-                int i = fileInputStream.read(bArr);
-                String strA = i <= 0 ? a.a.a.c.a(-428131489038114L, strArr) : new String(bArr, 0, i, StandardCharsets.UTF_8).trim();
+                int read = fileInputStream.read(bArr);
+                String a2 = read <= 0 ? a.a.a.c.a(-428131489038114L, strArr) : new String(bArr, 0, read, StandardCharsets.UTF_8).trim();
                 fileInputStream.close();
-                return strA;
+                return a2;
             } finally {
             }
         } catch (IOException unused) {
@@ -269,11 +268,18 @@ final class ManualLogDumper {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:3:0x0008, code lost:
+    
+        r1 = android.app.Application.getProcessName();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private static String resolveProcessName(Context context) {
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses;
         String processName;
         String[] strArr = xa1.b;
-        if (Build.VERSION.SDK_INT >= 28 && (processName = Application.getProcessName()) != null && !processName.isEmpty()) {
+        if (Build.VERSION.SDK_INT >= 28 && processName != null && !processName.isEmpty()) {
             return processName;
         }
         Object systemService = context.getSystemService(a.a.a.c.a(-428535215963938L, strArr));
@@ -316,15 +322,17 @@ final class ManualLogDumper {
         if (str.isEmpty()) {
             return new ArrayList();
         }
-        File[] fileArrListFiles = file.listFiles(new FileFilter() { // from class: com.kos.engine.core.system.a
+        File[] listFiles = file.listFiles(new FileFilter() { // from class: com.kos.engine.core.system.a
             @Override // java.io.FileFilter
             public final boolean accept(File file2) {
-                return ManualLogDumper.lambda$snapshotSessionLogs$4(str, file2);
+                boolean lambda$snapshotSessionLogs$4;
+                lambda$snapshotSessionLogs$4 = ManualLogDumper.lambda$snapshotSessionLogs$4(str, file2);
+                return lambda$snapshotSessionLogs$4;
             }
         });
         ArrayList arrayList = new ArrayList();
-        if (fileArrListFiles != null) {
-            for (File file2 : fileArrListFiles) {
+        if (listFiles != null) {
+            for (File file2 : listFiles) {
                 arrayList.add(new SessionLogFile(file2, str));
             }
         }
@@ -347,7 +355,7 @@ final class ManualLogDumper {
         return simpleDateFormat.format(new Date(j));
     }
 
-    private static void writeDump(Context context, File file, String str, String str2, long j, String str3, List<ProcessSnapshot> list, List<SessionLogFile> list2) throws IOException {
+    private static void writeDump(Context context, File file, String str, String str2, long j, String str3, List<ProcessSnapshot> list, List<SessionLogFile> list2) {
         String[] strArr = xa1.b;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         long j2 = 0;
@@ -437,12 +445,12 @@ final class ManualLogDumper {
         }
     }
 
-    private static void writeLine(ZipOutputStream zipOutputStream, String str) throws IOException {
+    private static void writeLine(ZipOutputStream zipOutputStream, String str) {
         zipOutputStream.write(str.getBytes(StandardCharsets.UTF_8));
         zipOutputStream.write(10);
     }
 
-    private static void writePackageVersion(ZipOutputStream zipOutputStream, Context context) throws IOException {
+    private static void writePackageVersion(ZipOutputStream zipOutputStream, Context context) {
         String[] strArr = xa1.b;
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);

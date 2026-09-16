@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public final class ki1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f641a;
+    public final Context f640a;
     public CharSequence e;
     public CharSequence f;
     public int g;
@@ -27,7 +27,7 @@ public final class ki1 {
     public ki1(Context context, String str) {
         Notification notification = new Notification();
         this.l = notification;
-        this.f641a = context;
+        this.f640a = context;
         this.j = str;
         notification.when = System.currentTimeMillis();
         notification.audioStreamType = -1;

@@ -25,23 +25,23 @@ import java.util.List;
 public abstract class il0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final t81 f533a = new t81(2);
+    public static final t81 f532a = new t81(2);
     public static final jj b = new jj(5);
 
     public static bm0 a(Context context, List list) {
         String str;
-        Typeface typefaceC;
+        Typeface c;
         jz0.m("FontProvider.getFontFamilyResult");
         try {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < list.size(); i++) {
                 jl0 jl0Var = (jl0) list.get(i);
-                if (Build.VERSION.SDK_INT < 31 || (typefaceC = ap2.c((str = jl0Var.e))) == null || ap2.d(typefaceC) == null) {
-                    ProviderInfo providerInfoB = b(context.getPackageManager(), jl0Var, context.getResources());
-                    if (providerInfoB == null) {
+                if (Build.VERSION.SDK_INT < 31 || (c = ap2.c((str = jl0Var.e))) == null || ap2.d(c) == null) {
+                    ProviderInfo b2 = b(context.getPackageManager(), jl0Var, context.getResources());
+                    if (b2 == null) {
                         return new bm0();
                     }
-                    arrayList.add(c(context, jl0Var, providerInfoB.authority));
+                    arrayList.add(c(context, jl0Var, b2.authority));
                 } else {
                     arrayList.add(new cm0[]{new cm0(str, jl0Var.f)});
                 }
@@ -54,38 +54,38 @@ public abstract class il0 {
 
     public static ProviderInfo b(PackageManager packageManager, jl0 jl0Var, Resources resources) {
         jj jjVar = b;
-        t81 t81Var = f533a;
+        t81 t81Var = f532a;
         jz0.m("FontProvider.getProvider");
         try {
-            List listB0 = jl0Var.d;
-            String str = jl0Var.f583a;
+            List list = jl0Var.d;
+            String str = jl0Var.f582a;
             String str2 = jl0Var.b;
-            if (listB0 == null) {
-                listB0 = l8.b0(resources, 0);
+            if (list == null) {
+                list = l8.b0(resources, 0);
             }
             hl0 hl0Var = new hl0();
-            hl0Var.f475a = str;
+            hl0Var.f474a = str;
             hl0Var.b = str2;
-            hl0Var.c = listB0;
+            hl0Var.c = list;
             ProviderInfo providerInfo = (ProviderInfo) t81Var.d(hl0Var);
             if (providerInfo != null) {
                 return providerInfo;
             }
-            ProviderInfo providerInfoResolveContentProvider = packageManager.resolveContentProvider(str, 0);
-            if (providerInfoResolveContentProvider == null) {
+            ProviderInfo resolveContentProvider = packageManager.resolveContentProvider(str, 0);
+            if (resolveContentProvider == null) {
                 throw new PackageManager.NameNotFoundException("No package found for authority: " + str);
             }
-            if (!providerInfoResolveContentProvider.packageName.equals(str2)) {
+            if (!resolveContentProvider.packageName.equals(str2)) {
                 throw new PackageManager.NameNotFoundException("Found content provider " + str + ", but package was not " + str2);
             }
-            Signature[] signatureArr = packageManager.getPackageInfo(providerInfoResolveContentProvider.packageName, 64).signatures;
+            Signature[] signatureArr = packageManager.getPackageInfo(resolveContentProvider.packageName, 64).signatures;
             ArrayList arrayList = new ArrayList();
             for (Signature signature : signatureArr) {
                 arrayList.add(signature.toByteArray());
             }
             Collections.sort(arrayList, jjVar);
-            for (int i = 0; i < listB0.size(); i++) {
-                ArrayList arrayList2 = new ArrayList((Collection) listB0.get(i));
+            for (int i = 0; i < list.size(); i++) {
+                ArrayList arrayList2 = new ArrayList((Collection) list.get(i));
                 Collections.sort(arrayList2, jjVar);
                 if (arrayList.size() == arrayList2.size()) {
                     for (int i2 = 0; i2 < arrayList.size(); i2++) {
@@ -93,8 +93,8 @@ public abstract class il0 {
                             break;
                         }
                     }
-                    t81Var.g(hl0Var, providerInfoResolveContentProvider);
-                    return providerInfoResolveContentProvider;
+                    t81Var.g(hl0Var, resolveContentProvider);
+                    return resolveContentProvider;
                 }
             }
             Trace.endSection();
@@ -108,52 +108,52 @@ public abstract class il0 {
         jz0.m("FontProvider.query");
         try {
             ArrayList arrayList = new ArrayList();
-            Uri uriBuild = new Uri.Builder().scheme("content").authority(str).build();
-            Uri uriBuild2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
-            ContentProviderClient contentProviderClientAcquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(uriBuild);
-            Cursor cursorQuery = null;
+            Uri build = new Uri.Builder().scheme("content").authority(str).build();
+            Uri build2 = new Uri.Builder().scheme("content").authority(str).appendPath("file").build();
+            ContentProviderClient acquireUnstableContentProviderClient = context.getContentResolver().acquireUnstableContentProviderClient(build);
+            Cursor cursor = null;
             try {
                 String[] strArr = {"_id", "file_id", "font_ttc_index", "font_variation_settings", "font_weight", "font_italic", "result_code"};
                 jz0.m("ContentQueryWrapper.query");
                 try {
                     String[] strArr2 = {jl0Var.c};
-                    if (contentProviderClientAcquireUnstableContentProviderClient != null) {
+                    if (acquireUnstableContentProviderClient != null) {
                         try {
-                            cursorQuery = contentProviderClientAcquireUnstableContentProviderClient.query(uriBuild, strArr, "query = ?", strArr2, null, null);
+                            cursor = acquireUnstableContentProviderClient.query(build, strArr, "query = ?", strArr2, null, null);
                         } catch (RemoteException e) {
                             Log.w("FontsProvider", "Unable to query the content provider", e);
                         }
                     }
                     Trace.endSection();
-                    if (cursorQuery != null && cursorQuery.getCount() > 0) {
-                        int columnIndex = cursorQuery.getColumnIndex("result_code");
+                    if (cursor != null && cursor.getCount() > 0) {
+                        int columnIndex = cursor.getColumnIndex("result_code");
                         ArrayList arrayList2 = new ArrayList();
-                        int columnIndex2 = cursorQuery.getColumnIndex("_id");
-                        int columnIndex3 = cursorQuery.getColumnIndex("file_id");
-                        int columnIndex4 = cursorQuery.getColumnIndex("font_ttc_index");
-                        int columnIndex5 = cursorQuery.getColumnIndex("font_weight");
-                        int columnIndex6 = cursorQuery.getColumnIndex("font_italic");
-                        while (cursorQuery.moveToNext()) {
-                            int i = columnIndex != -1 ? cursorQuery.getInt(columnIndex) : 0;
-                            arrayList2.add(new cm0(columnIndex3 == -1 ? ContentUris.withAppendedId(uriBuild, cursorQuery.getLong(columnIndex2)) : ContentUris.withAppendedId(uriBuild2, cursorQuery.getLong(columnIndex3)), columnIndex4 != -1 ? cursorQuery.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursorQuery.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursorQuery.getInt(columnIndex6) == 1, i));
+                        int columnIndex2 = cursor.getColumnIndex("_id");
+                        int columnIndex3 = cursor.getColumnIndex("file_id");
+                        int columnIndex4 = cursor.getColumnIndex("font_ttc_index");
+                        int columnIndex5 = cursor.getColumnIndex("font_weight");
+                        int columnIndex6 = cursor.getColumnIndex("font_italic");
+                        while (cursor.moveToNext()) {
+                            int i = columnIndex != -1 ? cursor.getInt(columnIndex) : 0;
+                            arrayList2.add(new cm0(columnIndex3 == -1 ? ContentUris.withAppendedId(build, cursor.getLong(columnIndex2)) : ContentUris.withAppendedId(build2, cursor.getLong(columnIndex3)), columnIndex4 != -1 ? cursor.getInt(columnIndex4) : 0, columnIndex5 != -1 ? cursor.getInt(columnIndex5) : 400, columnIndex6 != -1 && cursor.getInt(columnIndex6) == 1, i));
                         }
                         arrayList = arrayList2;
                     }
-                    if (cursorQuery != null) {
-                        cursorQuery.close();
+                    if (cursor != null) {
+                        cursor.close();
                     }
-                    if (contentProviderClientAcquireUnstableContentProviderClient != null) {
-                        contentProviderClientAcquireUnstableContentProviderClient.close();
+                    if (acquireUnstableContentProviderClient != null) {
+                        acquireUnstableContentProviderClient.close();
                     }
                     return (cm0[]) arrayList.toArray(new cm0[0]);
                 } finally {
                 }
             } catch (Throwable th) {
-                if (cursorQuery != null) {
-                    cursorQuery.close();
+                if (cursor != null) {
+                    cursor.close();
                 }
-                if (contentProviderClientAcquireUnstableContentProviderClient != null) {
-                    contentProviderClientAcquireUnstableContentProviderClient.close();
+                if (acquireUnstableContentProviderClient != null) {
+                    acquireUnstableContentProviderClient.close();
                 }
                 throw th;
             }

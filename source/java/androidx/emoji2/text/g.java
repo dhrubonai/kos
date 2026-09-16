@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public abstract class g {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final p60 f395a = new p60();
+    public static final p60 f394a = new p60();
 
     public static final boolean a(bu0 bu0Var) {
-        int iOrdinal = bu0Var.e.ordinal();
-        if (iOrdinal == 0) {
+        int ordinal = bu0Var.e.ordinal();
+        if (ordinal == 0) {
             return false;
         }
-        if (iOrdinal == 1) {
+        if (ordinal == 1) {
             return true;
         }
-        if (iOrdinal == 2) {
-            return bu0Var.y.f1262a == null && (bu0Var.v instanceof h90);
+        if (ordinal == 2) {
+            return bu0Var.y.f1261a == null && (bu0Var.v instanceof h90);
         }
         throw new mu();
     }

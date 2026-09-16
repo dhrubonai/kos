@@ -5,15 +5,15 @@ package androidx.emoji2.text;
 public final class q11 implements mg2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final re1 f936a;
+    public final re1 f935a;
     public final /* synthetic */ r11 b;
     public final /* synthetic */ Object c;
 
     public q11(r11 r11Var, Object obj) {
         this.b = r11Var;
         this.c = obj;
-        int[] iArr = tw0.f1148a;
-        this.f936a = new re1();
+        int[] iArr = tw0.f1147a;
+        this.f935a = new re1();
     }
 
     @Override // androidx.emoji2.text.mg2
@@ -106,14 +106,14 @@ public final class q11 implements mg2 {
             if ((md1Var4.g & 262144) != 0) {
                 for (md1 md1Var5 = md1Var4; md1Var5 != null; md1Var5 = md1Var5.i) {
                     if ((md1Var5.f & 262144) != 0) {
-                        z60 z60VarM = md1Var5;
-                        ?? sf1Var2 = 0;
-                        while (z60VarM != 0) {
-                            if (z60VarM instanceof jo2) {
-                                jo2 jo2Var = (jo2) z60VarM;
-                                boolean zEquals = "androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode".equals(jo2Var.q());
+                        z60 z60Var = md1Var5;
+                        ?? r7 = 0;
+                        while (z60Var != 0) {
+                            if (z60Var instanceof jo2) {
+                                jo2 jo2Var = (jo2) z60Var;
+                                boolean equals = "androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode".equals(jo2Var.q());
                                 io2 io2Var2 = io2.e;
-                                if (zEquals) {
+                                if (equals) {
                                     n7Var.e(jo2Var);
                                     io2Var = io2Var2;
                                 } else {
@@ -125,36 +125,36 @@ public final class q11 implements mg2 {
                                 if (io2Var == io2Var2) {
                                     break;
                                 }
-                            } else if ((z60VarM.f & 262144) != 0 && (z60VarM instanceof z60)) {
-                                md1 md1Var6 = z60VarM.s;
+                            } else if ((z60Var.f & 262144) != 0 && (z60Var instanceof z60)) {
+                                md1 md1Var6 = z60Var.s;
                                 int i2 = 0;
-                                z60VarM = z60VarM;
-                                sf1Var2 = sf1Var2;
+                                z60Var = z60Var;
+                                r7 = r7;
                                 while (md1Var6 != null) {
                                     if ((md1Var6.f & 262144) != 0) {
                                         i2++;
-                                        sf1Var2 = sf1Var2;
+                                        r7 = r7;
                                         if (i2 == 1) {
-                                            z60VarM = md1Var6;
+                                            z60Var = md1Var6;
                                         } else {
-                                            if (sf1Var2 == 0) {
-                                                sf1Var2 = new sf1(new md1[16]);
+                                            if (r7 == 0) {
+                                                r7 = new sf1(new md1[16]);
                                             }
-                                            if (z60VarM != 0) {
-                                                sf1Var2.b(z60VarM);
-                                                z60VarM = 0;
+                                            if (z60Var != 0) {
+                                                r7.b(z60Var);
+                                                z60Var = 0;
                                             }
-                                            sf1Var2.b(md1Var6);
+                                            r7.b(md1Var6);
                                         }
                                     }
                                     md1Var6 = md1Var6.i;
-                                    z60VarM = z60VarM;
-                                    sf1Var2 = sf1Var2;
+                                    z60Var = z60Var;
+                                    r7 = r7;
                                 }
                                 if (i2 == 1) {
                                 }
                             }
-                            z60VarM = lx0.m(sf1Var2);
+                            z60Var = lx0.m(r7);
                         }
                     }
                 }
@@ -181,6 +181,6 @@ public final class q11 implements mg2 {
         e11Var2.s = true;
         ((v7) h11.a(e11Var)).x((e11) ((pf1) e11Var.n()).get(i), j);
         e11Var2.s = false;
-        this.f936a.a(i);
+        this.f935a.a(i);
     }
 }

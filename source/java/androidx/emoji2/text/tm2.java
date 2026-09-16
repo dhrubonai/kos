@@ -7,17 +7,17 @@ import android.view.ViewGroup;
 public final class tm2 extends ViewGroup.MarginLayoutParams {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1131a;
+    public int f1130a;
     public int b;
 
     public tm2(tm2 tm2Var) {
         super((ViewGroup.MarginLayoutParams) tm2Var);
-        this.f1131a = 0;
-        this.f1131a = tm2Var.f1131a;
+        this.f1130a = 0;
+        this.f1130a = tm2Var.f1130a;
     }
 
     public tm2(ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
-        this.f1131a = 0;
+        this.f1130a = 0;
     }
 }

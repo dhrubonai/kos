@@ -8,21 +8,21 @@ import java.util.Arrays;
 public final class x4 implements r20 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final r20 f1317a;
+    public final r20 f1316a;
     public final float b;
 
     public x4(float f, r20 r20Var) {
         while (r20Var instanceof x4) {
-            r20Var = ((x4) r20Var).f1317a;
+            r20Var = ((x4) r20Var).f1316a;
             f += ((x4) r20Var).b;
         }
-        this.f1317a = r20Var;
+        this.f1316a = r20Var;
         this.b = f;
     }
 
     @Override // androidx.emoji2.text.r20
     public final float a(RectF rectF) {
-        return Math.max(0.0f, this.f1317a.a(rectF) + this.b);
+        return Math.max(0.0f, this.f1316a.a(rectF) + this.b);
     }
 
     public final boolean equals(Object obj) {
@@ -33,10 +33,10 @@ public final class x4 implements r20 {
             return false;
         }
         x4 x4Var = (x4) obj;
-        return this.f1317a.equals(x4Var.f1317a) && this.b == x4Var.b;
+        return this.f1316a.equals(x4Var.f1316a) && this.b == x4Var.b;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.f1317a, Float.valueOf(this.b)});
+        return Arrays.hashCode(new Object[]{this.f1316a, Float.valueOf(this.b)});
     }
 }

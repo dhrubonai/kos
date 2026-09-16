@@ -13,23 +13,23 @@ import java.util.Objects;
 public final class gp2 extends fp2 {
     @Override // androidx.emoji2.text.fp2
     public final Font O(cm0 cm0Var) {
-        Font fontD;
-        Uri uri = cm0Var.f209a;
-        boolean zEquals = Objects.equals(uri.getScheme(), "systemfont");
+        Font d;
+        Uri uri = cm0Var.f208a;
+        boolean equals = Objects.equals(uri.getScheme(), "systemfont");
         String str = cm0Var.e;
-        String authority = zEquals ? uri.getAuthority() : null;
+        String authority = equals ? uri.getAuthority() : null;
         if (authority != null) {
-            Typeface typefaceCreate = Typeface.create(authority, 0);
-            Typeface typefaceCreate2 = Typeface.create(Typeface.DEFAULT, 0);
-            if (typefaceCreate == null || typefaceCreate.equals(typefaceCreate2)) {
-                typefaceCreate = null;
+            Typeface create = Typeface.create(authority, 0);
+            Typeface create2 = Typeface.create(Typeface.DEFAULT, 0);
+            if (create == null || create.equals(create2)) {
+                create = null;
             }
-            if (typefaceCreate != null && (fontD = ap2.d(typefaceCreate)) != null) {
+            if (create != null && (d = ap2.d(create)) != null) {
                 if (TextUtils.isEmpty(str)) {
-                    return fontD;
+                    return d;
                 }
                 try {
-                    return new Font.Builder(fontD).setFontVariationSettings(str).build();
+                    return new Font.Builder(d).setFontVariationSettings(str).build();
                 } catch (IOException unused) {
                     Log.e("TypefaceCompatApi31Impl", "Failed to clone Font instance. Fall back to provider font.");
                     return null;

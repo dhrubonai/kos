@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract /* synthetic */ class qj0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f959a = 0;
+    public static final /* synthetic */ int f958a = 0;
 
     static {
         ly0.I("kotlinx.coroutines.flow.defaultConcurrency", 16, 1, Integer.MAX_VALUE);

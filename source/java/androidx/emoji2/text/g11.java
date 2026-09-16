@@ -53,70 +53,68 @@ public final class g11 implements vb0 {
 
     public final void b() {
         np npVar = this.d;
-        lp lpVarD = npVar.e.D();
+        lp D = npVar.e.D();
         y60 y60Var = this.e;
         if (y60Var == null) {
             throw zd.c("Attempting to drawContent for a `null` node. This usually means that a call to ContentDrawScope#drawContent() has been captured inside a lambda, and is being invoked outside of the draw pass. Capturing the scope this way is unsupported - if you are trying to record drawContent with graphicsLayer.record(), make sure you are using the GraphicsLayer#record function within DrawScope, instead of the member function on GraphicsLayer.");
         }
         md1 md1Var = (md1) y60Var;
-        md1 md1VarM = md1Var.d.i;
-        if (md1VarM == null || (md1VarM.g & 4) == 0) {
-            md1VarM = null;
-        } else {
-            while (md1VarM != null) {
-                int i = md1VarM.f;
+        md1 md1Var2 = md1Var.d.i;
+        if (md1Var2 != null && (md1Var2.g & 4) != 0) {
+            while (md1Var2 != null) {
+                int i = md1Var2.f;
                 if ((i & 2) != 0) {
                     break;
                 } else if ((i & 4) != 0) {
                     break;
                 } else {
-                    md1VarM = md1VarM.i;
+                    md1Var2 = md1Var2.i;
                 }
             }
-            md1VarM = null;
         }
-        if (md1VarM == null) {
-            xh1 xh1VarR = lx0.R(y60Var, 4);
-            if (xh1VarR.T0() == md1Var.d) {
-                xh1VarR = xh1VarR.s;
-                lx0.u(xh1VarR);
+        md1Var2 = null;
+        if (md1Var2 == null) {
+            xh1 R = lx0.R(y60Var, 4);
+            if (R.T0() == md1Var.d) {
+                R = R.s;
+                lx0.u(R);
             }
-            xh1VarR.i1(lpVarD, (rp0) npVar.e.f);
+            R.i1(D, (rp0) npVar.e.f);
             return;
         }
         sf1 sf1Var = null;
-        while (md1VarM != null) {
-            if (md1VarM instanceof ub0) {
-                ub0 ub0Var = (ub0) md1VarM;
+        while (md1Var2 != null) {
+            if (md1Var2 instanceof ub0) {
+                ub0 ub0Var = (ub0) md1Var2;
                 rp0 rp0Var = (rp0) npVar.e.f;
-                xh1 xh1VarR2 = lx0.R(ub0Var, 4);
-                long jM = kx0.M(xh1VarR2.f);
-                e11 e11Var = xh1VarR2.r;
+                xh1 R2 = lx0.R(ub0Var, 4);
+                long M = kx0.M(R2.f);
+                e11 e11Var = R2.r;
                 e11Var.getClass();
-                ((v7) h11.a(e11Var)).getSharedDrawScope().c(lpVarD, jM, xh1VarR2, ub0Var, rp0Var);
-            } else if ((md1VarM.f & 4) != 0 && (md1VarM instanceof z60)) {
+                ((v7) h11.a(e11Var)).getSharedDrawScope().c(D, M, R2, ub0Var, rp0Var);
+            } else if ((md1Var2.f & 4) != 0 && (md1Var2 instanceof z60)) {
                 int i2 = 0;
-                for (md1 md1Var2 = ((z60) md1VarM).s; md1Var2 != null; md1Var2 = md1Var2.i) {
-                    if ((md1Var2.f & 4) != 0) {
+                for (md1 md1Var3 = ((z60) md1Var2).s; md1Var3 != null; md1Var3 = md1Var3.i) {
+                    if ((md1Var3.f & 4) != 0) {
                         i2++;
                         if (i2 == 1) {
-                            md1VarM = md1Var2;
+                            md1Var2 = md1Var3;
                         } else {
                             if (sf1Var == null) {
                                 sf1Var = new sf1(new md1[16]);
                             }
-                            if (md1VarM != null) {
-                                sf1Var.b(md1VarM);
-                                md1VarM = null;
+                            if (md1Var2 != null) {
+                                sf1Var.b(md1Var2);
+                                md1Var2 = null;
                             }
-                            sf1Var.b(md1Var2);
+                            sf1Var.b(md1Var3);
                         }
                     }
                 }
                 if (i2 == 1) {
                 }
             }
-            md1VarM = lx0.m(sf1Var);
+            md1Var2 = lx0.m(sf1Var);
         }
     }
 
@@ -132,11 +130,11 @@ public final class g11 implements vb0 {
         np npVar = this.d;
         rg rgVar = npVar.e;
         mp mpVar = ((np) rgVar.g).d;
-        j70 j70Var = mpVar.f760a;
+        j70 j70Var = mpVar.f759a;
         q01 q01Var2 = mpVar.b;
-        lp lpVarD = rgVar.D();
+        lp D = rgVar.D();
         rg rgVar2 = npVar.e;
-        long jM = rgVar2.M();
+        long M = rgVar2.M();
         rp0 rp0Var2 = (rp0) rgVar2.f;
         rgVar2.c0(xh1Var);
         rgVar2.d0(q01Var);
@@ -149,16 +147,16 @@ public final class g11 implements vb0 {
             lpVar.n();
             rgVar2.c0(j70Var);
             rgVar2.d0(q01Var2);
-            rgVar2.b0(lpVarD);
-            rgVar2.e0(jM);
+            rgVar2.b0(D);
+            rgVar2.e0(M);
             rgVar2.f = rp0Var2;
             this.e = ub0Var2;
         } catch (Throwable th) {
             lpVar.n();
             rgVar2.c0(j70Var);
             rgVar2.d0(q01Var2);
-            rgVar2.b0(lpVarD);
-            rgVar2.e0(jM);
+            rgVar2.b0(D);
+            rgVar2.e0(M);
             rgVar2.f = rp0Var2;
             throw th;
         }

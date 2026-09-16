@@ -10,14 +10,14 @@ public final class qu2 {
     public static int f;
 
     /* renamed from: a, reason: collision with root package name */
-    public ArrayList f981a;
+    public ArrayList f980a;
     public int b;
     public int c;
     public ArrayList d;
     public int e;
 
     public final void a(ArrayList arrayList) {
-        int size = this.f981a.size();
+        int size = this.f980a.size();
         if (this.e != -1 && size > 0) {
             for (int i = 0; i < arrayList.size(); i++) {
                 qu2 qu2Var = (qu2) arrayList.get(i);
@@ -32,9 +32,9 @@ public final class qu2 {
     }
 
     public final int b(s61 s61Var, int i) {
-        int iN;
-        int iN2;
-        ArrayList arrayList = this.f981a;
+        int n;
+        int n2;
+        ArrayList arrayList = this.f980a;
         if (arrayList.size() == 0) {
             return 0;
         }
@@ -68,27 +68,27 @@ public final class qu2 {
             this.d.add(f32Var);
         }
         if (i == 0) {
-            iN = s61.n(uzVar.I);
-            iN2 = s61.n(uzVar.K);
+            n = s61.n(uzVar.I);
+            n2 = s61.n(uzVar.K);
             s61Var.t();
         } else {
-            iN = s61.n(uzVar.J);
-            iN2 = s61.n(uzVar.L);
+            n = s61.n(uzVar.J);
+            n2 = s61.n(uzVar.L);
             s61Var.t();
         }
-        return iN2 - iN;
+        return n2 - n;
     }
 
     public final void c(int i, qu2 qu2Var) {
         int i2 = qu2Var.b;
-        ArrayList arrayList = this.f981a;
+        ArrayList arrayList = this.f980a;
         int size = arrayList.size();
         int i3 = 0;
         while (i3 < size) {
             Object obj = arrayList.get(i3);
             i3++;
             tz tzVar = (tz) obj;
-            ArrayList arrayList2 = qu2Var.f981a;
+            ArrayList arrayList2 = qu2Var.f980a;
             if (!arrayList2.contains(tzVar)) {
                 arrayList2.add(tzVar);
             }
@@ -108,15 +108,15 @@ public final class qu2 {
         sb.append(" [");
         sb.append(this.b);
         sb.append("] <");
-        String string = sb.toString();
-        ArrayList arrayList = this.f981a;
+        String sb2 = sb.toString();
+        ArrayList arrayList = this.f980a;
         int size = arrayList.size();
         int i2 = 0;
         while (i2 < size) {
             Object obj = arrayList.get(i2);
             i2++;
-            string = string + " " + ((tz) obj).h0;
+            sb2 = sb2 + " " + ((tz) obj).h0;
         }
-        return zd.h(string, " >");
+        return zd.h(sb2, " >");
     }
 }

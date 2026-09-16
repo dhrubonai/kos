@@ -26,12 +26,12 @@ public class MaterialDivider extends View {
         super(bz0.m0(context, attributeSet, R.attr.materialDividerStyle, R.style.Widget_MaterialComponents_MaterialDivider), attributeSet, R.attr.materialDividerStyle);
         Context context2 = getContext();
         this.d = new ua1();
-        TypedArray typedArrayP = lx0.P(context2, attributeSet, fv1.l, R.attr.materialDividerStyle, R.style.Widget_MaterialComponents_MaterialDivider, new int[0]);
-        this.e = typedArrayP.getDimensionPixelSize(3, getResources().getDimensionPixelSize(R.dimen.material_divider_thickness));
-        this.g = typedArrayP.getDimensionPixelOffset(2, 0);
-        this.h = typedArrayP.getDimensionPixelOffset(1, 0);
-        setDividerColor(a01.E(context2, typedArrayP, 0).getDefaultColor());
-        typedArrayP.recycle();
+        TypedArray P = lx0.P(context2, attributeSet, fv1.l, R.attr.materialDividerStyle, R.style.Widget_MaterialComponents_MaterialDivider, new int[0]);
+        this.e = P.getDimensionPixelSize(3, getResources().getDimensionPixelSize(R.dimen.material_divider_thickness));
+        this.g = P.getDimensionPixelOffset(2, 0);
+        this.h = P.getDimensionPixelOffset(1, 0);
+        setDividerColor(a01.E(context2, P, 0).getDefaultColor());
+        P.recycle();
     }
 
     public int getDividerColor() {

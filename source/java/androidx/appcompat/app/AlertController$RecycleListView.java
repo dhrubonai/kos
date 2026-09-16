@@ -11,8 +11,8 @@ import androidx.emoji2.text.gv1;
 public class AlertController$RecycleListView extends ListView {
     public AlertController$RecycleListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.q);
-        typedArrayObtainStyledAttributes.getDimensionPixelOffset(0, -1);
-        typedArrayObtainStyledAttributes.getDimensionPixelOffset(1, -1);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.q);
+        obtainStyledAttributes.getDimensionPixelOffset(0, -1);
+        obtainStyledAttributes.getDimensionPixelOffset(1, -1);
     }
 }

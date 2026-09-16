@@ -37,7 +37,7 @@ public final class OemContentProviderCompat implements IInjectHook {
             this.mBase = obj;
         }
 
-        private Object invokeBase(Method method, Object[] objArr) throws Throwable {
+        private Object invokeBase(Method method, Object[] objArr) {
             try {
                 return method.invoke(this.mBase, objArr);
             } catch (InvocationTargetException e) {
@@ -55,25 +55,25 @@ public final class OemContentProviderCompat implements IInjectHook {
                 return invokeBase(method, objArr);
             }
             Object[] objArr2 = objArr == null ? null : (Object[]) objArr.clone();
-            String strO = rj.o();
-            String strFindProviderAuthority = OemContentProviderCompat.findProviderAuthority(objArr2, strO, c01.X());
+            String o = rj.o();
+            String findProviderAuthority = OemContentProviderCompat.findProviderAuthority(objArr2, o, c01.X());
             if (OemContentProviderCompat.containsDeviceOriginAuthority(objArr2)) {
-                String strA = c.a(-926721357528866L, strArr);
+                String a2 = c.a(-926721357528866L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-926880271318818L, strArr));
-                sb.append(strO);
-                jx0.r(sb, c.a(-938291999424290L, strArr), strFindProviderAuthority, 5, strA);
+                sb.append(o);
+                jx0.r(sb, c.a(-938291999424290L, strArr), findProviderAuthority, 5, a2);
                 return null;
             }
-            int iNormalizeFirstGoogleCallingPackage = OemContentProviderCompat.normalizeFirstGoogleCallingPackage(objArr2, strO, c01.X());
-            if (iNormalizeFirstGoogleCallingPackage >= 0) {
-                String strA2 = c.a(-938296294391586L, strArr);
+            int normalizeFirstGoogleCallingPackage = OemContentProviderCompat.normalizeFirstGoogleCallingPackage(objArr2, o, c01.X());
+            if (normalizeFirstGoogleCallingPackage >= 0) {
+                String a3 = c.a(-938296294391586L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-938403668573986L, strArr));
-                sb2.append(strO);
+                sb2.append(o);
                 sb2.append(c.a(-938137380601634L, strArr));
-                sb2.append(strFindProviderAuthority);
-                zd.o(sb2, c.a(-938760150859554L, strArr), iNormalizeFirstGoogleCallingPackage, 3, strA2);
+                sb2.append(findProviderAuthority);
+                zd.o(sb2, c.a(-938760150859554L, strArr), normalizeFirstGoogleCallingPackage, 3, a3);
             }
             return invokeBase(method, objArr2);
         }
@@ -99,8 +99,8 @@ public final class OemContentProviderCompat implements IInjectHook {
     }
 
     private static Field findOplusProviderExtensionField(Object obj) {
-        for (Class<?> superclass = obj.getClass(); superclass != null && superclass != Object.class; superclass = superclass.getSuperclass()) {
-            for (Field field : superclass.getDeclaredFields()) {
+        for (Class<?> cls = obj.getClass(); cls != null && cls != Object.class; cls = cls.getSuperclass()) {
+            for (Field field : cls.getDeclaredFields()) {
                 if (!Modifier.isStatic(field.getModifiers())) {
                     try {
                         field.setAccessible(true);
@@ -134,7 +134,7 @@ public final class OemContentProviderCompat implements IInjectHook {
         return null;
     }
 
-    private static boolean hasOplusProviderMethod(Class<?> cls) throws SecurityException {
+    private static boolean hasOplusProviderMethod(Class<?> cls) {
         for (Method method : cls.getMethods()) {
             if (c.a(-939266957000482L, xa1.b).equals(method.getName())) {
                 return true;
@@ -183,8 +183,8 @@ public final class OemContentProviderCompat implements IInjectHook {
     public synchronized void injectHook() {
         Object obj;
         if (l8.S()) {
-            Object objE0 = c01.e0();
-            if (objE0 == null) {
+            Object e0 = c01.e0();
+            if (e0 == null) {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-938824575368994L, strArr), 5, c.a(-938914769682210L, strArr));
                 return;
@@ -192,78 +192,56 @@ public final class OemContentProviderCompat implements IInjectHook {
             if (isInstalled()) {
                 return;
             }
-            Field fieldFindOplusProviderExtensionField = findOplusProviderExtensionField(objE0);
-            if (fieldFindOplusProviderExtensionField == null) {
+            Field findOplusProviderExtensionField = findOplusProviderExtensionField(e0);
+            if (findOplusProviderExtensionField == null) {
                 String[] strArr2 = xa1.b;
                 nz0.Q(c.a(-938644186742562L, strArr2), 5, c.a(-937153833090850L, strArr2));
                 return;
             }
             try {
-                obj = fieldFindOplusProviderExtensionField.get(objE0);
+                obj = findOplusProviderExtensionField.get(e0);
             } catch (Throwable th) {
                 String[] strArr3 = xa1.b;
                 nz0.t(c.a(-941079433199394L, strArr3), c.a(-940637051567906L, strArr3), th);
             }
             if (obj == null) {
                 String[] strArr4 = xa1.b;
-                nz0.Q(c.a(-937304156946210L, strArr4), 5, c.a(-936913314922274L, strArr4) + fieldFindOplusProviderExtensionField.getName());
+                nz0.Q(c.a(-937304156946210L, strArr4), 5, c.a(-936913314922274L, strArr4) + findOplusProviderExtensionField.getName());
                 return;
             }
             if (isCompatProxy(obj)) {
-                this.mOwner = objE0;
-                this.mExtensionField = fieldFindOplusProviderExtensionField;
+                this.mOwner = e0;
+                this.mExtensionField = findOplusProviderExtensionField;
                 this.mProxy = obj;
                 return;
             }
-            Class[] clsArrM = mz0.m(obj.getClass());
-            if (clsArrM.length == 0) {
+            Class[] m = mz0.m(obj.getClass());
+            if (m.length == 0) {
                 String[] strArr5 = xa1.b;
                 nz0.Q(c.a(-937037868973858L, strArr5), 5, c.a(-937677819100962L, strArr5) + obj.getClass().getName());
                 return;
             }
-            Object objNewProxyInstance = Proxy.newProxyInstance(obj.getClass().getClassLoader(), clsArrM, new OplusProviderInvocationHandler(obj));
-            if (!fieldFindOplusProviderExtensionField.getType().isInstance(objNewProxyInstance)) {
+            Object newProxyInstance = Proxy.newProxyInstance(obj.getClass().getClassLoader(), m, new OplusProviderInvocationHandler(obj));
+            if (!findOplusProviderExtensionField.getType().isInstance(newProxyInstance)) {
                 String[] strArr6 = xa1.b;
-                nz0.Q(c.a(-937420121063202L, strArr6), 5, c.a(-937527495245602L, strArr6) + fieldFindOplusProviderExtensionField.getName() + c.a(-940589806927650L, strArr6) + fieldFindOplusProviderExtensionField.getType().getName() + c.a(-940624166666018L, strArr6) + Arrays.toString(clsArrM));
+                nz0.Q(c.a(-937420121063202L, strArr6), 5, c.a(-937527495245602L, strArr6) + findOplusProviderExtensionField.getName() + c.a(-940589806927650L, strArr6) + findOplusProviderExtensionField.getType().getName() + c.a(-940624166666018L, strArr6) + Arrays.toString(m));
                 return;
             }
-            fieldFindOplusProviderExtensionField.set(objE0, objNewProxyInstance);
-            this.mOwner = objE0;
-            this.mExtensionField = fieldFindOplusProviderExtensionField;
-            this.mProxy = objNewProxyInstance;
+            findOplusProviderExtensionField.set(e0, newProxyInstance);
+            this.mOwner = e0;
+            this.mExtensionField = findOplusProviderExtensionField;
+            this.mProxy = newProxyInstance;
             String[] strArr7 = xa1.b;
-            nz0.Q(c.a(-940083000786722L, strArr7), 3, c.a(-940190374969122L, strArr7) + fieldFindOplusProviderExtensionField.getName() + c.a(-941019303657250L, strArr7) + obj.getClass().getName());
+            nz0.Q(c.a(-940083000786722L, strArr7), 3, c.a(-940190374969122L, strArr7) + findOplusProviderExtensionField.getName() + c.a(-941019303657250L, strArr7) + obj.getClass().getName());
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0011  */
     @Override // com.kos.engine.fake.hook.IInjectHook
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public synchronized boolean isBadEnv() {
-        /*
-            r1 = this;
-            monitor-enter(r1)
-            boolean r0 = androidx.emoji2.text.l8.S()     // Catch: java.lang.Throwable -> Lf
-            if (r0 == 0) goto L11
-            boolean r0 = r1.isInstalled()     // Catch: java.lang.Throwable -> Lf
-            if (r0 != 0) goto L11
-            r0 = 1
-            goto L12
-        Lf:
-            r0 = move-exception
-            goto L14
-        L11:
-            r0 = 0
-        L12:
-            monitor-exit(r1)
-            return r0
-        L14:
-            monitor-exit(r1)     // Catch: java.lang.Throwable -> Lf
-            throw r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.OemContentProviderCompat.isBadEnv():boolean");
+        boolean z;
+        if (l8.S()) {
+            z = isInstalled() ? false : true;
+        }
+        return z;
     }
 }

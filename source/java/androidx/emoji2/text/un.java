@@ -21,22 +21,22 @@ public final class un implements lu2 {
         }
     }
 
-    public final Object b(n10 n10Var) throws Throwable {
-        tq tqVarL;
+    public final Object b(n10 n10Var) {
+        tq tqVar;
         Object obj = this.d;
         boolean z = true;
         if (obj == xn.p || obj == xn.l) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = vn.j;
             vn vnVar = this.f;
-            tq tqVar = (tq) atomicReferenceFieldUpdater.get(vnVar);
+            tq tqVar2 = (tq) atomicReferenceFieldUpdater.get(vnVar);
             while (true) {
                 vnVar.getClass();
                 if (vnVar.t(vn.e.get(vnVar), true)) {
                     this.d = xn.l;
-                    Throwable thN = vnVar.n();
-                    if (thN != null) {
-                        int i = de2.f249a;
-                        throw thN;
+                    Throwable n = vnVar.n();
+                    if (n != null) {
+                        int i = de2.f248a;
+                        throw n;
                     }
                     z = false;
                 } else {
@@ -44,97 +44,97 @@ public final class un implements lu2 {
                     long j = xn.b;
                     long j2 = andIncrement / j;
                     int i2 = (int) (andIncrement % j);
-                    if (tqVar.c != j2) {
-                        tqVarL = vnVar.l(j2, tqVar);
-                        if (tqVarL == null) {
+                    if (tqVar2.c != j2) {
+                        tqVar = vnVar.l(j2, tqVar2);
+                        if (tqVar == null) {
                             continue;
                         }
                     } else {
-                        tqVarL = tqVar;
+                        tqVar = tqVar2;
                     }
-                    Object objC = vnVar.C(tqVarL, i2, andIncrement, null);
+                    Object C = vnVar.C(tqVar, i2, andIncrement, null);
                     de0 de0Var = xn.m;
-                    if (objC == de0Var) {
+                    if (C == de0Var) {
                         throw new IllegalStateException("unreachable");
                     }
                     de0 de0Var2 = xn.o;
-                    if (objC == de0Var2) {
+                    if (C == de0Var2) {
                         if (andIncrement < vnVar.q()) {
-                            tqVarL.a();
+                            tqVar.a();
                         }
-                        tqVar = tqVarL;
+                        tqVar2 = tqVar;
                     } else {
-                        if (objC == xn.n) {
+                        if (C == xn.n) {
                             vn vnVar2 = this.f;
-                            ip ipVarR = xo2.r(xa1.E(n10Var));
+                            ip r = xo2.r(xa1.E(n10Var));
                             try {
-                                this.e = ipVarR;
-                                Object objC2 = vnVar2.C(tqVarL, i2, andIncrement, this);
-                                if (objC2 == de0Var) {
-                                    a(tqVarL, i2);
+                                this.e = r;
+                                Object C2 = vnVar2.C(tqVar, i2, andIncrement, this);
+                                if (C2 == de0Var) {
+                                    a(tqVar, i2);
                                 } else {
-                                    if (objC2 == de0Var2) {
+                                    if (C2 == de0Var2) {
                                         if (andIncrement < vnVar2.q()) {
-                                            tqVarL.a();
+                                            tqVar.a();
                                         }
-                                        tq tqVar2 = (tq) vn.j.get(vnVar2);
+                                        tq tqVar3 = (tq) vn.j.get(vnVar2);
                                         while (true) {
                                             if (vnVar2.t(vn.e.get(vnVar2), true)) {
                                                 ip ipVar = this.e;
                                                 lx0.u(ipVar);
                                                 this.e = null;
                                                 this.d = xn.l;
-                                                Throwable thN2 = vnVar.n();
-                                                if (thN2 == null) {
+                                                Throwable n2 = vnVar.n();
+                                                if (n2 == null) {
                                                     ipVar.g(Boolean.FALSE);
                                                 } else {
-                                                    ipVar.g(mz0.h(thN2));
+                                                    ipVar.g(mz0.h(n2));
                                                 }
                                             } else {
                                                 long andIncrement2 = vn.f.getAndIncrement(vnVar2);
                                                 long j3 = xn.b;
                                                 long j4 = andIncrement2 / j3;
                                                 int i3 = (int) (andIncrement2 % j3);
-                                                if (tqVar2.c != j4) {
-                                                    tq tqVarL2 = vnVar2.l(j4, tqVar2);
-                                                    if (tqVarL2 != null) {
-                                                        tqVar2 = tqVarL2;
+                                                if (tqVar3.c != j4) {
+                                                    tq l = vnVar2.l(j4, tqVar3);
+                                                    if (l != null) {
+                                                        tqVar3 = l;
                                                     }
                                                 }
-                                                Object objC3 = vnVar2.C(tqVar2, i3, andIncrement2, this);
-                                                if (objC3 == xn.m) {
-                                                    a(tqVar2, i3);
+                                                Object C3 = vnVar2.C(tqVar3, i3, andIncrement2, this);
+                                                if (C3 == xn.m) {
+                                                    a(tqVar3, i3);
                                                     break;
                                                 }
-                                                if (objC3 == xn.o) {
+                                                if (C3 == xn.o) {
                                                     if (andIncrement2 < vnVar2.q()) {
-                                                        tqVar2.a();
+                                                        tqVar3.a();
                                                     }
                                                 } else {
-                                                    if (objC3 == xn.n) {
+                                                    if (C3 == xn.n) {
                                                         throw new IllegalStateException("unexpected");
                                                     }
-                                                    tqVar2.a();
-                                                    this.d = objC3;
+                                                    tqVar3.a();
+                                                    this.d = C3;
                                                     this.e = null;
                                                 }
                                             }
                                         }
                                     } else {
-                                        tqVarL.a();
-                                        this.d = objC2;
+                                        tqVar.a();
+                                        this.d = C2;
                                         this.e = null;
                                     }
-                                    ipVarR.d(Boolean.TRUE, null);
+                                    r.d(Boolean.TRUE, null);
                                 }
-                                return ipVarR.r();
+                                return r.r();
                             } catch (Throwable th) {
-                                ipVarR.B();
+                                r.B();
                                 throw th;
                             }
                         }
-                        tqVarL.a();
-                        this.d = objC;
+                        tqVar.a();
+                        this.d = C;
                     }
                 }
             }
@@ -142,7 +142,7 @@ public final class un implements lu2 {
         return Boolean.valueOf(z);
     }
 
-    public final Object c() throws Throwable {
+    public final Object c() {
         Object obj = this.d;
         de0 de0Var = xn.p;
         if (obj == de0Var) {
@@ -152,8 +152,8 @@ public final class un implements lu2 {
         if (obj != xn.l) {
             return obj;
         }
-        Throwable thO = this.f.o();
-        int i = de2.f249a;
-        throw thO;
+        Throwable o = this.f.o();
+        int i = de2.f248a;
+        throw o;
     }
 }

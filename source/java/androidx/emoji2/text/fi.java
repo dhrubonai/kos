@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class fi extends ji {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final fi f365a = new fi();
+    public static final fi f364a = new fi();
 
     @Override // androidx.emoji2.text.ji
     public final fn1 a() {

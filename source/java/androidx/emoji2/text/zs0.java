@@ -25,43 +25,43 @@ public final class zs0 implements nd2 {
     }
 
     @Override // androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws IOException {
+    public final long v(long j, rn rnVar) {
         int i;
-        int i2;
+        int readInt;
         lx0.x(rnVar, "sink");
         do {
-            int i3 = this.h;
+            int i2 = this.h;
             zn znVar = this.d;
-            if (i3 == 0) {
+            if (i2 == 0) {
                 znVar.skip(this.i);
                 this.i = 0;
                 if ((this.f & 4) == 0) {
                     i = this.g;
-                    int iP = jq2.p(znVar);
-                    this.h = iP;
-                    this.e = iP;
-                    int i4 = znVar.readByte() & 255;
+                    int p = jq2.p(znVar);
+                    this.h = p;
+                    this.e = p;
+                    int readByte = znVar.readByte() & 255;
                     this.f = znVar.readByte() & 255;
                     Logger logger = at0.g;
                     if (logger.isLoggable(Level.FINE)) {
-                        io ioVar = ns0.f824a;
-                        logger.fine(ns0.a(true, this.g, this.e, i4, this.f));
+                        io ioVar = ns0.f823a;
+                        logger.fine(ns0.a(true, this.g, this.e, readByte, this.f));
                     }
-                    i2 = znVar.readInt() & Integer.MAX_VALUE;
-                    this.g = i2;
-                    if (i4 != 9) {
-                        throw new IOException(i4 + " != TYPE_CONTINUATION");
+                    readInt = znVar.readInt() & Integer.MAX_VALUE;
+                    this.g = readInt;
+                    if (readByte != 9) {
+                        throw new IOException(readByte + " != TYPE_CONTINUATION");
                     }
                 }
             } else {
-                long jV = znVar.v(Math.min(j, i3), rnVar);
-                if (jV != -1) {
-                    this.h -= (int) jV;
-                    return jV;
+                long v = znVar.v(Math.min(j, i2), rnVar);
+                if (v != -1) {
+                    this.h -= (int) v;
+                    return v;
                 }
             }
             return -1L;
-        } while (i2 == i);
+        } while (readInt == i);
         throw new IOException("TYPE_CONTINUATION streamId changed");
     }
 

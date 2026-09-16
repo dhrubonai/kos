@@ -76,15 +76,15 @@ public final class aj extends sn2 {
 
     @Override // androidx.emoji2.text.sn2
     public final String H(String str) {
-        String strH = super.H(str);
+        String H = super.H(str);
         for (int i = 0; i < this.D.size(); i++) {
             StringBuilder sb = new StringBuilder();
-            sb.append(strH);
+            sb.append(H);
             sb.append("\n");
             sb.append(((sn2) this.D.get(i)).H(str + "  "));
-            strH = sb.toString();
+            H = sb.toString();
         }
-        return strH;
+        return H;
     }
 
     public final void I(sn2 sn2Var) {
@@ -170,9 +170,9 @@ public final class aj extends sn2 {
         ajVar.D = new ArrayList();
         int size = this.D.size();
         for (int i = 0; i < size; i++) {
-            sn2 sn2VarClone = ((sn2) this.D.get(i)).clone();
-            ajVar.D.add(sn2VarClone);
-            sn2VarClone.l = ajVar;
+            sn2 clone = ((sn2) this.D.get(i)).clone();
+            ajVar.D.add(clone);
+            clone.l = ajVar;
         }
         return ajVar;
     }

@@ -5,15 +5,15 @@ package androidx.emoji2.text;
 public final class ml1 extends ol1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final zw1 f754a;
+    public final zw1 f753a;
 
     public ml1(zw1 zw1Var) {
-        this.f754a = zw1Var;
+        this.f753a = zw1Var;
     }
 
     @Override // androidx.emoji2.text.ol1
     public final zw1 a() {
-        return this.f754a;
+        return this.f753a;
     }
 
     public final boolean equals(Object obj) {
@@ -21,12 +21,12 @@ public final class ml1 extends ol1 {
             return true;
         }
         if (obj instanceof ml1) {
-            return lx0.n(this.f754a, ((ml1) obj).f754a);
+            return lx0.n(this.f753a, ((ml1) obj).f753a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f754a.hashCode();
+        return this.f753a.hashCode();
     }
 }

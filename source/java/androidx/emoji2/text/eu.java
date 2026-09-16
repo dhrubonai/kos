@@ -15,100 +15,49 @@ public final class eu extends e12 {
         this.B.a();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0056  */
     @Override // androidx.emoji2.text.e12
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void I0(androidx.emoji2.text.vt1 r19, long r20, float r22) {
-        /*
-            r18 = this;
-            r2 = r18
-            r3 = r19
-            androidx.emoji2.text.gf1 r0 = r2.B
-            java.lang.Object[] r1 = r0.b
-            java.lang.Object[] r4 = r0.c
-            long[] r5 = r0.f416a
-            int r6 = r5.length
-            int r6 = r6 + (-2)
-            if (r6 < 0) goto L5b
-            r8 = 0
-        L12:
-            r9 = r5[r8]
-            long r11 = ~r9
-            r13 = 7
-            long r11 = r11 << r13
-            long r11 = r11 & r9
-            r13 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r11 = r11 & r13
-            int r11 = (r11 > r13 ? 1 : (r11 == r13 ? 0 : -1))
-            if (r11 == 0) goto L56
-            int r11 = r8 - r6
-            int r11 = ~r11
-            int r11 = r11 >>> 31
-            r12 = 8
-            int r11 = 8 - r11
-            r13 = 0
-        L2c:
-            if (r13 >= r11) goto L54
-            r14 = 255(0xff, double:1.26E-321)
-            long r14 = r14 & r9
-            r16 = 128(0x80, double:6.3E-322)
-            int r14 = (r14 > r16 ? 1 : (r14 == r16 ? 0 : -1))
-            if (r14 >= 0) goto L50
-            int r14 = r8 << 3
-            int r14 = r14 + r13
-            r15 = r1[r14]
-            r14 = r4[r14]
-            androidx.emoji2.text.v02 r14 = (androidx.emoji2.text.v02) r14
-            androidx.emoji2.text.vt1 r15 = (androidx.emoji2.text.vt1) r15
-            androidx.emoji2.text.un1 r15 = r14.k
-            java.lang.Boolean r7 = java.lang.Boolean.TRUE
-            r15.setValue(r7)
-            androidx.emoji2.text.iu r7 = r14.i
-            androidx.emoji2.text.up2 r14 = androidx.emoji2.text.up2.f1187a
-            r7.U(r14)
-        L50:
-            long r9 = r9 >> r12
-            int r13 = r13 + 1
-            goto L2c
-        L54:
-            if (r11 != r12) goto L5b
-        L56:
-            if (r8 == r6) goto L5b
-            int r8 = r8 + 1
-            goto L12
-        L5b:
-            r4 = 0
-            boolean r1 = r2.s
-            if (r1 == 0) goto L68
-            long r5 = r3.f1242a
-            androidx.emoji2.text.zi1 r7 = new androidx.emoji2.text.zi1
-            r7.<init>(r5)
-            goto L69
-        L68:
-            r7 = r4
-        L69:
-            androidx.emoji2.text.v02 r5 = new androidx.emoji2.text.v02
-            r6 = r22
-            r5.<init>(r7, r6, r1)
-            r0.m(r3, r5)
-            androidx.emoji2.text.e30 r6 = r2.w0()
-            androidx.emoji2.text.a6 r0 = new androidx.emoji2.text.a6
-            r1 = r5
-            r5 = 7
-            r0.<init>(r1, r2, r3, r4, r5)
-            r1 = 3
-            androidx.emoji2.text.h50.G(r6, r4, r0, r1)
-            androidx.emoji2.text.ex2.I(r18)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.eu.I0(androidx.emoji2.text.vt1, long, float):void");
+    public final void I0(vt1 vt1Var, long j, float f) {
+        gf1 gf1Var = this.B;
+        Object[] objArr = gf1Var.b;
+        Object[] objArr2 = gf1Var.c;
+        long[] jArr = gf1Var.f415a;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i = 0;
+            while (true) {
+                long j2 = jArr[i];
+                if ((((~j2) << 7) & j2 & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i2 = 8 - ((~(i - length)) >>> 31);
+                    for (int i3 = 0; i3 < i2; i3++) {
+                        if ((255 & j2) < 128) {
+                            int i4 = (i << 3) + i3;
+                            Object obj = objArr[i4];
+                            v02 v02Var = (v02) objArr2[i4];
+                            v02Var.k.setValue(Boolean.TRUE);
+                            v02Var.i.U(up2.f1186a);
+                        }
+                        j2 >>= 8;
+                    }
+                    if (i2 != 8) {
+                        break;
+                    }
+                }
+                if (i == length) {
+                    break;
+                } else {
+                    i++;
+                }
+            }
+        }
+        boolean z = this.s;
+        v02 v02Var2 = new v02(z ? new zi1(vt1Var.f1241a) : null, f, z);
+        gf1Var.m(vt1Var, v02Var2);
+        h50.G(w0(), null, new a6(v02Var2, this, vt1Var, null, 7), 3);
+        ex2.I(this);
     }
 
     @Override // androidx.emoji2.text.e12
-    public final void J0(g11 g11Var) throws Throwable {
+    public final void J0(g11 g11Var) {
         np npVar;
         Object[] objArr;
         Object[] objArr2;
@@ -132,7 +81,7 @@ public final class eu extends e12 {
         gf1 gf1Var = euVar.B;
         Object[] objArr5 = gf1Var.b;
         Object[] objArr6 = gf1Var.c;
-        long[] jArr = gf1Var.f416a;
+        long[] jArr = gf1Var.f415a;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -150,59 +99,59 @@ public final class eu extends e12 {
                         int i9 = (i5 << 3) + i8;
                         Object obj = objArr5[i9];
                         v02 v02Var = (v02) objArr6[i9];
-                        long jB = et.b(f, euVar.u.c());
+                        long b = et.b(f, euVar.u.c());
                         ed edVar = v02Var.h;
                         if (v02Var.d == null) {
-                            long jI = npVar3.i();
-                            float f2 = w02.f1253a;
-                            v02Var.d = Float.valueOf(Math.max(ib2.d(jI), ib2.b(jI)) * 0.3f);
+                            long i10 = npVar3.i();
+                            float f2 = w02.f1252a;
+                            v02Var.d = Float.valueOf(Math.max(ib2.d(i10), ib2.b(i10)) * 0.3f);
                         }
-                        if (v02Var.f1201a == null) {
+                        if (v02Var.f1200a == null) {
                             i4 = i8;
-                            v02Var.f1201a = new zi1(npVar3.j0());
+                            v02Var.f1200a = new zi1(npVar3.j0());
                         } else {
                             i4 = i8;
                         }
                         if (v02Var.e == null) {
                             v02Var.e = new zi1(jz0.d(ib2.d(npVar3.i()) / 2.0f, ib2.b(npVar3.i()) / 2.0f));
                         }
-                        float fFloatValue = (!((Boolean) v02Var.k.getValue()).booleanValue() || ((Boolean) v02Var.j.getValue()).booleanValue()) ? ((Number) v02Var.f.d()).floatValue() : 1.0f;
+                        float floatValue = (!((Boolean) v02Var.k.getValue()).booleanValue() || ((Boolean) v02Var.j.getValue()).booleanValue()) ? ((Number) v02Var.f.d()).floatValue() : 1.0f;
                         Float f3 = v02Var.d;
                         lx0.u(f3);
-                        float f4 = fFloatValue;
-                        float fJ = oy0.J(f3.floatValue(), v02Var.b, ((Number) v02Var.g.d()).floatValue());
-                        zi1 zi1Var = v02Var.f1201a;
+                        float f4 = floatValue;
+                        float J = oy0.J(f3.floatValue(), v02Var.b, ((Number) v02Var.g.d()).floatValue());
+                        zi1 zi1Var = v02Var.f1200a;
                         lx0.u(zi1Var);
-                        float fD = zi1.d(zi1Var.f1442a);
+                        float d = zi1.d(zi1Var.f1441a);
                         zi1 zi1Var2 = v02Var.e;
                         lx0.u(zi1Var2);
-                        int i10 = i7;
-                        float fJ2 = oy0.J(fD, zi1.d(zi1Var2.f1442a), ((Number) edVar.d()).floatValue());
-                        zi1 zi1Var3 = v02Var.f1201a;
+                        int i11 = i7;
+                        float J2 = oy0.J(d, zi1.d(zi1Var2.f1441a), ((Number) edVar.d()).floatValue());
+                        zi1 zi1Var3 = v02Var.f1200a;
                         lx0.u(zi1Var3);
-                        float fE = zi1.e(zi1Var3.f1442a);
+                        float e = zi1.e(zi1Var3.f1441a);
                         zi1 zi1Var4 = v02Var.e;
                         lx0.u(zi1Var4);
-                        long jD = jz0.d(fJ2, oy0.J(fE, zi1.e(zi1Var4.f1442a), ((Number) edVar.d()).floatValue()));
-                        long jB2 = et.b(et.d(jB) * f4, jB);
+                        long d2 = jz0.d(J2, oy0.J(e, zi1.e(zi1Var4.f1441a), ((Number) edVar.d()).floatValue()));
+                        long b2 = et.b(et.d(b) * f4, b);
                         if (v02Var.c) {
-                            float fD2 = ib2.d(npVar3.i());
-                            float fB = ib2.b(npVar3.i());
+                            float d3 = ib2.d(npVar3.i());
+                            float b3 = ib2.b(npVar3.i());
                             rg rgVar2 = npVar3.e;
-                            long jM = rgVar2.M();
+                            long M = rgVar2.M();
                             rgVar2.D().f();
                             npVar2 = npVar3;
                             try {
-                                ((rg) ((p4) rgVar2.e).e).D().k(0.0f, 0.0f, fD2, fB, 1);
+                                ((rg) ((p4) rgVar2.e).e).D().k(0.0f, 0.0f, d3, b3, 1);
                                 i = i4;
-                                i2 = i10;
+                                i2 = i11;
                                 objArr4 = objArr6;
                                 i3 = 8;
                                 objArr3 = objArr5;
-                                j = jM;
+                                j = M;
                                 rgVar = rgVar2;
                                 try {
-                                    vb0.a0(fJ, 120, jB2, jD, g11Var2);
+                                    vb0.a0(J, 120, b2, d2, g11Var2);
                                     rgVar.D().n();
                                     rgVar.e0(j);
                                 } catch (Throwable th) {
@@ -214,16 +163,16 @@ public final class eu extends e12 {
                             } catch (Throwable th2) {
                                 th = th2;
                                 rgVar = rgVar2;
-                                j = jM;
+                                j = M;
                             }
                         } else {
                             npVar2 = npVar3;
                             i = i4;
-                            i2 = i10;
+                            i2 = i11;
                             objArr3 = objArr5;
                             objArr4 = objArr6;
                             i3 = 8;
-                            vb0.a0(fJ, 120, jB2, jD, g11Var);
+                            vb0.a0(J, 120, b2, d2, g11Var);
                         }
                     } else {
                         npVar2 = npVar3;
@@ -273,7 +222,7 @@ public final class eu extends e12 {
         v02 v02Var = (v02) this.B.g(vt1Var);
         if (v02Var != null) {
             v02Var.k.setValue(Boolean.TRUE);
-            v02Var.i.U(up2.f1187a);
+            v02Var.i.U(up2.f1186a);
         }
     }
 }

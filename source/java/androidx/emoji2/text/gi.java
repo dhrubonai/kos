@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class gi extends ji {
 
     /* renamed from: a, reason: collision with root package name */
-    public final fn1 f420a;
+    public final fn1 f419a;
     public final xf0 b;
 
     public gi(fn1 fn1Var, xf0 xf0Var) {
-        this.f420a = fn1Var;
+        this.f419a = fn1Var;
         this.b = xf0Var;
     }
 
     @Override // androidx.emoji2.text.ji
     public final fn1 a() {
-        return this.f420a;
+        return this.f419a;
     }
 
     public final boolean equals(Object obj) {
@@ -26,15 +26,15 @@ public final class gi extends ji {
             return false;
         }
         gi giVar = (gi) obj;
-        return lx0.n(this.f420a, giVar.f420a) && lx0.n(this.b, giVar.b);
+        return lx0.n(this.f419a, giVar.f419a) && lx0.n(this.b, giVar.b);
     }
 
     public final int hashCode() {
-        fn1 fn1Var = this.f420a;
+        fn1 fn1Var = this.f419a;
         return this.b.hashCode() + ((fn1Var == null ? 0 : fn1Var.hashCode()) * 31);
     }
 
     public final String toString() {
-        return "Error(painter=" + this.f420a + ", result=" + this.b + ')';
+        return "Error(painter=" + this.f419a + ", result=" + this.b + ')';
     }
 }

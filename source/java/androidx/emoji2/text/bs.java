@@ -8,17 +8,17 @@ import com.google.android.material.internal.CheckableImageButton;
 public final /* synthetic */ class bs implements ValueAnimator.AnimatorUpdateListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f164a;
+    public final /* synthetic */ int f163a;
     public final /* synthetic */ af0 b;
 
     public /* synthetic */ bs(af0 af0Var, int i) {
-        this.f164a = i;
+        this.f163a = i;
         this.b = af0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.f164a) {
+        switch (this.f163a) {
             case 0:
                 ds dsVar = (ds) this.b;
                 dsVar.getClass();
@@ -27,10 +27,10 @@ public final /* synthetic */ class bs implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 ds dsVar2 = (ds) this.b;
                 dsVar2.getClass();
-                float fFloatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 CheckableImageButton checkableImageButton = dsVar2.d;
-                checkableImageButton.setScaleX(fFloatValue);
-                checkableImageButton.setScaleY(fFloatValue);
+                checkableImageButton.setScaleX(floatValue);
+                checkableImageButton.setScaleY(floatValue);
                 break;
             default:
                 rc0 rc0Var = (rc0) this.b;

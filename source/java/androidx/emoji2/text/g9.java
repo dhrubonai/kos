@@ -7,12 +7,12 @@ import android.content.pm.PackageParser;
 public abstract class g9 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f406a;
+    public static final float f405a;
     public static final float b;
 
     static {
         float f = 25;
-        f406a = f;
+        f405a = f;
         b = (f * 2.0f) / 2.4142137f;
     }
 
@@ -35,17 +35,17 @@ public abstract class g9 {
             txVar.q();
             int i4 = i2 & 14;
             boolean z = i4 == 4;
-            Object objM = txVar.M();
-            if (z || objM == kx.f663a) {
-                objM = new r5(4, bj1Var);
-                txVar.i0(objM);
+            Object M = txVar.M();
+            if (z || M == kx.f662a) {
+                M = new r5(4, bj1Var);
+                txVar.i0(M);
             }
-            jm.c(bj1Var, dd0.f, l8.f0(-1653527038, new a9(j, v62.a(nd1Var, false, (um0) objM)), txVar), txVar, i4 | 432);
+            jm.c(bj1Var, dd0.f, l8.f0(-1653527038, new a9(j, v62.a(nd1Var, false, (um0) M)), txVar), txVar, i4 | 432);
         }
         long j2 = j;
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new b9(bj1Var, nd1Var, j2, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new b9(bj1Var, nd1Var, j2, i);
         }
     }
 
@@ -65,13 +65,13 @@ public abstract class g9 {
             txVar.S();
         } else {
             if (i4 != 0) {
-                nd1Var = kd1.f634a;
+                nd1Var = kd1.f633a;
             }
-            lz0.c(txVar, bz0.y(androidx.compose.foundation.layout.c.k(nd1Var, b, f406a), f9.f));
+            lz0.c(txVar, bz0.y(androidx.compose.foundation.layout.c.k(nd1Var, b, f405a), f9.f));
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new c9(nd1Var, i, i2);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new c9(nd1Var, i, i2);
         }
     }
 }

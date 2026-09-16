@@ -2,7 +2,6 @@ package androidx.emoji2.text;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import androidx.core.splashscreen.R;
 import java.util.Iterator;
@@ -21,10 +20,10 @@ public class qa1<S> extends j80 {
         this.s = new LinkedHashSet();
     }
 
-    public static boolean e(Context context, int i) throws Resources.NotFoundException {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(nz0.K(context, R.attr.materialCalendarStyle, na1.class.getCanonicalName()).data, new int[]{i});
-        boolean z = typedArrayObtainStyledAttributes.getBoolean(0, false);
-        typedArrayObtainStyledAttributes.recycle();
+    public static boolean e(Context context, int i) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(nz0.K(context, R.attr.materialCalendarStyle, na1.class.getCanonicalName()).data, new int[]{i});
+        boolean z = obtainStyledAttributes.getBoolean(0, false);
+        obtainStyledAttributes.recycle();
         return z;
     }
 

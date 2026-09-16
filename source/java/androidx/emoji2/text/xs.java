@@ -18,11 +18,11 @@ public abstract class xs extends lx0 {
         int i2 = 0;
         while (i2 <= i) {
             int i3 = (i2 + i) >>> 1;
-            int iP = wj1.p((Comparable) arrayList.get(i3), comparable);
-            if (iP < 0) {
+            int p = wj1.p((Comparable) arrayList.get(i3), comparable);
+            if (p < 0) {
                 i2 = i3 + 1;
             } else {
-                if (iP <= 0) {
+                if (p <= 0) {
                     return i3;
                 }
                 i = i3 - 1;

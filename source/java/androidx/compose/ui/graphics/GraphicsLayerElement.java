@@ -70,11 +70,11 @@ final class GraphicsLayerElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iB = zd.b(8.0f, zd.b(0.0f, zd.b(0.0f, zd.b(0.0f, zd.b(this.d, zd.b(0.0f, zd.b(0.0f, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f54a) * 31, 31), 31), 31), 31), 31), 31), 31), 31), 31);
+        int b = zd.b(8.0f, zd.b(0.0f, zd.b(0.0f, zd.b(0.0f, zd.b(this.d, zd.b(0.0f, zd.b(0.0f, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f54a) * 31, 31), 31), 31), 31), 31), 31), 31), 31), 31);
         int i = fn2.c;
-        int iD = jx0.d((this.f.hashCode() + jx0.b(iB, 31, this.e)) * 31, 961, this.g);
+        int d = jx0.d((this.f.hashCode() + jx0.b(b, 31, this.e)) * 31, 961, this.g);
         int i2 = et.l;
-        return jx0.a(3, jx0.a(0, jx0.b(jx0.b(iD, 31, this.h), 31, this.i), 31), 31);
+        return jx0.a(3, jx0.a(0, jx0.b(jx0.b(d, 31, this.h), 31, this.i), 31), 31);
     }
 
     @Override // androidx.emoji2.text.ud1

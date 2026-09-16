@@ -10,12 +10,12 @@ public final class en extends md1 implements xm, n01, jo2 {
     public static final zw1 I0(en enVar, xh1 xh1Var, sm0 sm0Var) {
         zw1 zw1Var;
         if (enVar.q && enVar.s) {
-            xh1 xh1VarS = lx0.S(enVar);
+            xh1 S = lx0.S(enVar);
             if (!xh1Var.T0().q) {
                 xh1Var = null;
             }
             if (xh1Var != null && (zw1Var = (zw1) sm0Var.a()) != null) {
-                float f = xh1VarS.K(xh1Var, false).f1459a;
+                float f = S.K(xh1Var, false).f1458a;
                 return zw1Var.i((Float.floatToRawIntBits(r4.b) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
             }
         }
@@ -29,8 +29,8 @@ public final class en extends md1 implements xm, n01, jo2 {
 
     @Override // androidx.emoji2.text.xm
     public final Object h0(xh1 xh1Var, sm0 sm0Var, n10 n10Var) {
-        Object objS = wj1.s(new dn(this, xh1Var, sm0Var, new ek(this, xh1Var, sm0Var), null), n10Var);
-        return objS == f30.d ? objS : up2.f1187a;
+        Object s = wj1.s(new dn(this, xh1Var, sm0Var, new ek(this, xh1Var, sm0Var), null), n10Var);
+        return s == f30.d ? s : up2.f1186a;
     }
 
     @Override // androidx.emoji2.text.jo2

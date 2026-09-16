@@ -7,7 +7,7 @@ public final class fn2 {
     public static final /* synthetic */ int c = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f371a;
+    public final long f370a;
 
     public static final boolean a(long j, long j2) {
         return j == j2;
@@ -27,16 +27,16 @@ public final class fn2 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof fn2) {
-            return this.f371a == ((fn2) obj).f371a;
+            return this.f370a == ((fn2) obj).f370a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f371a);
+        return Long.hashCode(this.f370a);
     }
 
     public final String toString() {
-        return d(this.f371a);
+        return d(this.f370a);
     }
 }

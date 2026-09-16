@@ -9,12 +9,12 @@ import android.content.res.Resources;
 public final class xz1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ColorStateList f1364a;
+    public final ColorStateList f1363a;
     public final Configuration b;
     public final int c;
 
     public xz1(ColorStateList colorStateList, Configuration configuration, Resources.Theme theme) {
-        this.f1364a = colorStateList;
+        this.f1363a = colorStateList;
         this.b = configuration;
         this.c = theme == null ? 0 : theme.hashCode();
     }

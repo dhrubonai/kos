@@ -13,13 +13,13 @@ import com.google.android.material.textfield.TextInputLayout;
 public abstract class af0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextInputLayout f99a;
+    public final TextInputLayout f98a;
     public final ze0 b;
     public final Context c;
     public final CheckableImageButton d;
 
     public af0(ze0 ze0Var) {
-        this.f99a = ze0Var.d;
+        this.f98a = ze0Var.d;
         this.b = ze0Var;
         this.c = ze0Var.getContext();
         this.d = ze0Var.j;

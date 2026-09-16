@@ -8,23 +8,31 @@ import java.util.function.Function;
 public final /* synthetic */ class c implements Function {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1476a;
+    public final /* synthetic */ int f1475a;
 
     public /* synthetic */ c(int i) {
-        this.f1476a = i;
+        this.f1475a = i;
     }
 
     @Override // java.util.function.Function
     public final Object apply(Object obj) {
-        switch (this.f1476a) {
+        String str;
+        String lambda$snapshotSessionLogs$8;
+        String str2;
+        String str3;
+        switch (this.f1475a) {
             case 0:
-                return ((ManualLogDumper.SessionLogFile) obj).processName;
+                str = ((ManualLogDumper.SessionLogFile) obj).processName;
+                return str;
             case 1:
-                return ManualLogDumper.lambda$snapshotSessionLogs$8((ManualLogDumper.SessionLogFile) obj);
+                lambda$snapshotSessionLogs$8 = ManualLogDumper.lambda$snapshotSessionLogs$8((ManualLogDumper.SessionLogFile) obj);
+                return lambda$snapshotSessionLogs$8;
             case 2:
-                return ((ManualLogDumper.ProcessSnapshot) obj).packageName;
+                str2 = ((ManualLogDumper.ProcessSnapshot) obj).packageName;
+                return str2;
             default:
-                return ((ManualLogDumper.ProcessSnapshot) obj).processName;
+                str3 = ((ManualLogDumper.ProcessSnapshot) obj).processName;
+                return str3;
         }
     }
 }

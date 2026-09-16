@@ -4,7 +4,7 @@ package androidx.emoji2.text;
 /* loaded from: classes.dex */
 public final class ey1 {
     public static String a(an0 an0Var) {
-        String string = an0Var.getClass().getGenericInterfaces()[0].toString();
-        return string.startsWith("kotlin.jvm.functions.") ? string.substring(21) : string;
+        String obj = an0Var.getClass().getGenericInterfaces()[0].toString();
+        return obj.startsWith("kotlin.jvm.functions.") ? obj.substring(21) : obj;
     }
 }

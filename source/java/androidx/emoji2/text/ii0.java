@@ -7,10 +7,10 @@ import java.io.File;
 public abstract class ii0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final File f526a;
+    public final File f525a;
 
     public ii0(File file) {
-        this.f526a = file;
+        this.f525a = file;
     }
 
     public abstract File a();

@@ -25,9 +25,9 @@ public final class sw2 extends g01 implements Function2 {
         switch (this.e) {
             case 0:
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Number) obj2).intValue();
+                int intValue = ((Number) obj2).intValue();
                 tx txVar = (tx) lxVar;
-                if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     t8.a(this.f.d, this.g, txVar, 0);
                 } else {
                     txVar.S();
@@ -35,9 +35,9 @@ public final class sw2 extends g01 implements Function2 {
                 break;
             default:
                 lx lxVar2 = (lx) obj;
-                int iIntValue2 = ((Number) obj2).intValue();
+                int intValue2 = ((Number) obj2).intValue();
                 tx txVar2 = (tx) lxVar2;
-                if (txVar2.P(iIntValue2 & 1, (iIntValue2 & 3) != 2)) {
+                if (txVar2.P(intValue2 & 1, (intValue2 & 3) != 2)) {
                     tw2 tw2Var = this.f;
                     v7 v7Var = tw2Var.d;
                     Object tag = v7Var.getTag(R.id.inspection_slot_table_set);
@@ -61,31 +61,31 @@ public final class sw2 extends g01 implements Function2 {
                         txVar2.c.b();
                         txVar2.H.b();
                         rb2 rb2Var = txVar2.I;
-                        ob2 ob2Var = rb2Var.f1001a;
+                        ob2 ob2Var = rb2Var.f1000a;
                         rb2Var.e = ob2Var.m;
                         rb2Var.f = ob2Var.n;
                     }
-                    boolean zH = txVar2.h(tw2Var);
-                    Object objM = txVar2.M();
-                    on onVar = kx.f663a;
-                    if (zH || objM == onVar) {
-                        objM = new rw2(tw2Var, l10Var, 0);
-                        txVar2.i0(objM);
+                    boolean h = txVar2.h(tw2Var);
+                    Object M = txVar2.M();
+                    on onVar = kx.f662a;
+                    if (h || M == onVar) {
+                        M = new rw2(tw2Var, l10Var, 0);
+                        txVar2.i0(M);
                     }
-                    bz0.n(txVar2, v7Var, (Function2) objM);
-                    boolean zH2 = txVar2.h(tw2Var);
-                    Object objM2 = txVar2.M();
-                    if (zH2 || objM2 == onVar) {
-                        objM2 = new rw2(tw2Var, l10Var, 1);
-                        txVar2.i0(objM2);
+                    bz0.n(txVar2, v7Var, (Function2) M);
+                    boolean h2 = txVar2.h(tw2Var);
+                    Object M2 = txVar2.M();
+                    if (h2 || M2 == onVar) {
+                        M2 = new rw2(tw2Var, l10Var, 1);
+                        txVar2.i0(M2);
                     }
-                    bz0.n(txVar2, v7Var, (Function2) objM2);
-                    wj1.c(iw0.f552a.a(set), l8.f0(-280240369, new sw2(tw2Var, this.g, 0), txVar2), txVar2, 56);
+                    bz0.n(txVar2, v7Var, (Function2) M2);
+                    wj1.c(iw0.f551a.a(set), l8.f0(-280240369, new sw2(tw2Var, this.g, 0), txVar2), txVar2, 56);
                 } else {
                     txVar2.S();
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

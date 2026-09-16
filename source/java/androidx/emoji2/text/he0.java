@@ -26,9 +26,9 @@ public final class he0 extends ex2 {
 
     @Override // androidx.emoji2.text.ex2
     public final void N(boolean z) {
-        boolean zD = qd0.d();
+        boolean d = qd0.d();
         ge0 ge0Var = this.l;
-        if (zD) {
+        if (d) {
             ge0Var.N(z);
         } else {
             ge0Var.n = z;

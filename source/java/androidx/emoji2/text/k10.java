@@ -12,7 +12,7 @@ import androidx.core.splashscreen.R;
 public final class k10 extends ContextWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f611a;
+    public int f610a;
     public Resources.Theme b;
     public LayoutInflater c;
     public Resources d;
@@ -25,7 +25,7 @@ public final class k10 extends ContextWrapper {
                 this.b.setTo(theme);
             }
         }
-        this.b.applyStyle(this.f611a, true);
+        this.b.applyStyle(this.f610a, true);
     }
 
     @Override // android.content.ContextWrapper
@@ -63,8 +63,8 @@ public final class k10 extends ContextWrapper {
         if (theme != null) {
             return theme;
         }
-        if (this.f611a == 0) {
-            this.f611a = R.style.Theme_AppCompat_Light;
+        if (this.f610a == 0) {
+            this.f610a = R.style.Theme_AppCompat_Light;
         }
         a();
         return this.b;
@@ -72,8 +72,8 @@ public final class k10 extends ContextWrapper {
 
     @Override // android.content.ContextWrapper, android.content.Context
     public final void setTheme(int i) {
-        if (this.f611a != i) {
-            this.f611a = i;
+        if (this.f610a != i) {
+            this.f610a = i;
             a();
         }
     }

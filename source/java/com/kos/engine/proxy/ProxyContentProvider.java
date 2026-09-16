@@ -227,19 +227,19 @@ public class ProxyContentProvider extends ContentProvider {
         }
         bundle.setClassLoader(AppConfig.class.getClassLoader());
         AppConfig appConfig = (AppConfig) bundle.getParcelable(c.a(-852538682392354L, strArr));
-        rj rjVarI = rj.i();
-        rjVarI.getClass();
+        rj i = rj.i();
+        i.getClass();
         synchronized (rj.h) {
             try {
-                AppConfig appConfig2 = rjVarI.c;
+                AppConfig appConfig2 = i.c;
                 if (appConfig2 != null && !appConfig2.packageName.equals(appConfig.packageName)) {
-                    throw new RuntimeException(c.a(-219589351980834L, strArr) + appConfig.processName + c.a(-217983034212130L, strArr) + rjVarI.c.processName);
+                    throw new RuntimeException(c.a(-219589351980834L, strArr) + appConfig.processName + c.a(-217983034212130L, strArr) + i.c.processName);
                 }
-                rjVarI.c = appConfig;
+                i.c = appConfig;
                 GmsCore.ensureGoogleDataDirs(appConfig.packageName, appConfig.userId);
-                IBinder iBinderAsBinder = rjVarI.asBinder();
+                IBinder asBinder = i.asBinder();
                 try {
-                    iBinderAsBinder.linkToDeath(new mj(rjVarI, iBinderAsBinder), 0);
+                    asBinder.linkToDeath(new mj(i, asBinder), 0);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }

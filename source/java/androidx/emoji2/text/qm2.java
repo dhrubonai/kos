@@ -11,7 +11,7 @@ public final class qm2 implements View.OnClickListener {
 
     public qm2(wm2 wm2Var) {
         this.e = wm2Var;
-        wm2Var.f1290a.getContext();
+        wm2Var.f1289a.getContext();
     }
 
     @Override // android.view.View.OnClickListener

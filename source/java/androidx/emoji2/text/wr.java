@@ -12,29 +12,29 @@ import java.util.Map;
 public final class wr {
 
     /* renamed from: a, reason: collision with root package name */
-    public final HashMap f1296a = new HashMap();
+    public final HashMap f1295a = new HashMap();
     public final HashMap b;
 
-    public wr(HashMap map) {
-        this.b = map;
-        for (Map.Entry entry : map.entrySet()) {
+    public wr(HashMap hashMap) {
+        this.b = hashMap;
+        for (Map.Entry entry : hashMap.entrySet()) {
             n51 n51Var = (n51) entry.getValue();
-            List arrayList = (List) this.f1296a.get(n51Var);
-            if (arrayList == null) {
-                arrayList = new ArrayList();
-                this.f1296a.put(n51Var, arrayList);
+            List list = (List) this.f1295a.get(n51Var);
+            if (list == null) {
+                list = new ArrayList();
+                this.f1295a.put(n51Var, list);
             }
-            arrayList.add((xr) entry.getKey());
+            list.add((xr) entry.getKey());
         }
     }
 
-    public static void a(List list, v51 v51Var, n51 n51Var, Object obj) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public static void a(List list, v51 v51Var, n51 n51Var, Object obj) {
         if (list != null) {
             for (int size = list.size() - 1; size >= 0; size--) {
                 xr xrVar = (xr) list.get(size);
                 Method method = xrVar.b;
                 try {
-                    int i = xrVar.f1352a;
+                    int i = xrVar.f1351a;
                     if (i == 0) {
                         method.invoke(obj, null);
                     } else if (i == 1) {

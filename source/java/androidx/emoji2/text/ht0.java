@@ -7,12 +7,12 @@ import android.net.Uri;
 public final class ht0 implements vh0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final th2 f489a;
+    public final th2 f488a;
     public final th2 b;
     public final boolean c;
 
     public ht0(th2 th2Var, th2 th2Var2, boolean z) {
-        this.f489a = th2Var;
+        this.f488a = th2Var;
         this.b = th2Var2;
         this.c = z;
     }
@@ -23,6 +23,6 @@ public final class ht0 implements vh0 {
         if (!lx0.n(uri.getScheme(), "http") && !lx0.n(uri.getScheme(), "https")) {
             return null;
         }
-        return new kt0(uri.toString(), gl1Var, this.f489a, this.b, this.c);
+        return new kt0(uri.toString(), gl1Var, this.f488a, this.b, this.c);
     }
 }

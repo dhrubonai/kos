@@ -218,15 +218,15 @@ public class ProxyPendingActivity extends Activity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         finish();
-        ProxyPendingRecord proxyPendingRecordCreate = ProxyPendingRecord.create(getIntent());
+        ProxyPendingRecord create = ProxyPendingRecord.create(getIntent());
         String[] strArr = xa1.b;
-        nz0.Q(c.a(-852023286316834L, strArr), 3, c.a(-851580904685346L, strArr) + proxyPendingRecordCreate);
-        Intent intent = proxyPendingRecordCreate.mTarget;
+        nz0.Q(c.a(-852023286316834L, strArr), 3, c.a(-851580904685346L, strArr) + create);
+        Intent intent = create.mTarget;
         if (intent == null) {
             return;
         }
         intent.addFlags(268435456);
-        proxyPendingRecordCreate.mTarget.setExtrasClassLoader(rj.i().b.getClassLoader());
-        startActivity(proxyPendingRecordCreate.mTarget);
+        create.mTarget.setExtrasClassLoader(rj.i().b.getClassLoader());
+        startActivity(create.mTarget);
     }
 }

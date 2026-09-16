@@ -7,11 +7,11 @@ public final class mk0 extends md1 implements lk0 {
 
     @Override // androidx.emoji2.text.md1
     public final void A0() {
-        this.r.f643a.b(this);
+        this.r.f642a.b(this);
     }
 
     @Override // androidx.emoji2.text.md1
     public final void B0() {
-        this.r.f643a.j(this);
+        this.r.f642a.j(this);
     }
 }

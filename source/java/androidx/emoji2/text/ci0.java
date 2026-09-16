@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class ci0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ny0 f198a;
+    public static final ny0 f197a;
 
     static {
         ny0 ny0Var;
@@ -18,7 +18,7 @@ public abstract class ci0 {
         } catch (ClassNotFoundException unused) {
             ny0Var = new ny0();
         }
-        f198a = ny0Var;
+        f197a = ny0Var;
         String str = zn1.e;
         String property = System.getProperty("java.io.tmpdir");
         lx0.w(property, "getProperty(...)");
@@ -48,11 +48,11 @@ public abstract class ci0 {
 
     public abstract List g(zn1 zn1Var);
 
-    public final n70 h(zn1 zn1Var) throws FileNotFoundException {
+    public final n70 h(zn1 zn1Var) {
         lx0.x(zn1Var, "path");
-        n70 n70VarI = i(zn1Var);
-        if (n70VarI != null) {
-            return n70VarI;
+        n70 i = i(zn1Var);
+        if (i != null) {
+            return i;
         }
         throw new FileNotFoundException("no such file: " + zn1Var);
     }

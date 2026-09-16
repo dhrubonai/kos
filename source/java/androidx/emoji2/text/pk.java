@@ -28,43 +28,43 @@ public abstract class pk extends FrameLayout {
     public PorterDuff.Mode k;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public pk(Context context, AttributeSet attributeSet) throws Resources.NotFoundException {
-        GradientDrawable gradientDrawable;
+    public pk(Context context, AttributeSet attributeSet) {
         super(bz0.m0(context, attributeSet, 0, 0), attributeSet);
+        GradientDrawable gradientDrawable;
         Context context2 = getContext();
-        TypedArray typedArrayObtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, fv1.u);
-        if (typedArrayObtainStyledAttributes.hasValue(6)) {
-            setElevation(typedArrayObtainStyledAttributes.getDimensionPixelSize(6, 0));
+        TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, fv1.u);
+        if (obtainStyledAttributes.hasValue(6)) {
+            setElevation(obtainStyledAttributes.getDimensionPixelSize(6, 0));
         }
-        this.e = typedArrayObtainStyledAttributes.getInt(2, 0);
-        if (typedArrayObtainStyledAttributes.hasValue(8) || typedArrayObtainStyledAttributes.hasValue(9)) {
+        this.e = obtainStyledAttributes.getInt(2, 0);
+        if (obtainStyledAttributes.hasValue(8) || obtainStyledAttributes.hasValue(9)) {
             this.d = v92.b(context2, attributeSet, 0, 0).a();
         }
-        this.f = typedArrayObtainStyledAttributes.getFloat(3, 1.0f);
-        setBackgroundTintList(a01.E(context2, typedArrayObtainStyledAttributes, 4));
-        setBackgroundTintMode(oy0.M(typedArrayObtainStyledAttributes.getInt(5, -1), PorterDuff.Mode.SRC_IN));
-        this.g = typedArrayObtainStyledAttributes.getFloat(1, 1.0f);
-        this.h = typedArrayObtainStyledAttributes.getDimensionPixelSize(0, -1);
-        this.i = typedArrayObtainStyledAttributes.getDimensionPixelSize(7, -1);
-        typedArrayObtainStyledAttributes.recycle();
+        this.f = obtainStyledAttributes.getFloat(3, 1.0f);
+        setBackgroundTintList(a01.E(context2, obtainStyledAttributes, 4));
+        setBackgroundTintMode(oy0.M(obtainStyledAttributes.getInt(5, -1), PorterDuff.Mode.SRC_IN));
+        this.g = obtainStyledAttributes.getFloat(1, 1.0f);
+        this.h = obtainStyledAttributes.getDimensionPixelSize(0, -1);
+        this.i = obtainStyledAttributes.getDimensionPixelSize(7, -1);
+        obtainStyledAttributes.recycle();
         setOnTouchListener(l);
         setFocusable(true);
         if (getBackground() == null) {
-            int iG = pz0.G(getBackgroundOverlayColorAlpha(), pz0.v(this, R.attr.colorSurface), pz0.v(this, R.attr.colorOnSurface));
+            int G = pz0.G(getBackgroundOverlayColorAlpha(), pz0.v(this, R.attr.colorSurface), pz0.v(this, R.attr.colorOnSurface));
             v92 v92Var = this.d;
             if (v92Var != null) {
-                int i = qk.f961a;
+                int i = qk.f960a;
                 ua1 ua1Var = new ua1(v92Var);
-                ua1Var.n(ColorStateList.valueOf(iG));
+                ua1Var.n(ColorStateList.valueOf(G));
                 gradientDrawable = ua1Var;
             } else {
                 Resources resources = getResources();
-                int i2 = qk.f961a;
+                int i2 = qk.f960a;
                 float dimension = resources.getDimension(R.dimen.mtrl_snackbar_background_corner_radius);
                 GradientDrawable gradientDrawable2 = new GradientDrawable();
                 gradientDrawable2.setShape(0);
                 gradientDrawable2.setCornerRadius(dimension);
-                gradientDrawable2.setColor(iG);
+                gradientDrawable2.setColor(G);
                 gradientDrawable = gradientDrawable2;
             }
             ColorStateList colorStateList = this.j;
@@ -144,11 +144,11 @@ public abstract class pk extends FrameLayout {
     public void setBackgroundTintList(ColorStateList colorStateList) {
         this.j = colorStateList;
         if (getBackground() != null) {
-            Drawable drawableMutate = getBackground().mutate();
-            drawableMutate.setTintList(colorStateList);
-            drawableMutate.setTintMode(this.k);
-            if (drawableMutate != getBackground()) {
-                super.setBackgroundDrawable(drawableMutate);
+            Drawable mutate = getBackground().mutate();
+            mutate.setTintList(colorStateList);
+            mutate.setTintMode(this.k);
+            if (mutate != getBackground()) {
+                super.setBackgroundDrawable(mutate);
             }
         }
     }
@@ -157,10 +157,10 @@ public abstract class pk extends FrameLayout {
     public void setBackgroundTintMode(PorterDuff.Mode mode) {
         this.k = mode;
         if (getBackground() != null) {
-            Drawable drawableMutate = getBackground().mutate();
-            drawableMutate.setTintMode(mode);
-            if (drawableMutate != getBackground()) {
-                super.setBackgroundDrawable(drawableMutate);
+            Drawable mutate = getBackground().mutate();
+            mutate.setTintMode(mode);
+            if (mutate != getBackground()) {
+                super.setBackgroundDrawable(mutate);
             }
         }
     }

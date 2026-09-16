@@ -15,6 +15,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.util.StateSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
@@ -50,6 +51,7 @@ import androidx.emoji2.text.v92;
 import androidx.emoji2.text.xe2;
 import androidx.emoji2.text.xo2;
 import androidx.emoji2.text.yd2;
+import androidx.emoji2.text.ye2;
 import androidx.emoji2.text.zd2;
 import androidx.emoji2.text.ze2;
 import java.util.Iterator;
@@ -101,51 +103,51 @@ public class MaterialButton extends mf implements Checkable, ia2 {
         this.x = -1;
         this.C = -1;
         Context context2 = getContext();
-        TypedArray typedArrayP = lx0.P(context2, attributeSet, fv1.i, androidx.core.splashscreen.R.attr.materialButtonStyle, androidx.core.splashscreen.R.style.Widget_MaterialComponents_Button, new int[0]);
-        this.q = typedArrayP.getDimensionPixelSize(13, 0);
-        int i = typedArrayP.getInt(16, -1);
+        TypedArray P = lx0.P(context2, attributeSet, fv1.i, androidx.core.splashscreen.R.attr.materialButtonStyle, androidx.core.splashscreen.R.style.Widget_MaterialComponents_Button, new int[0]);
+        this.q = P.getDimensionPixelSize(13, 0);
+        int i = P.getInt(16, -1);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.j = oy0.M(i, mode);
-        this.k = a01.E(getContext(), typedArrayP, 15);
-        this.l = a01.H(getContext(), typedArrayP, 11);
-        this.t = typedArrayP.getInteger(12, 1);
-        this.n = typedArrayP.getDimensionPixelSize(14, 0);
-        xe2 xe2VarB = xe2.b(context2, typedArrayP, 19);
-        v92 v92VarC = xe2VarB != null ? xe2VarB.c() : v92.b(context2, attributeSet, androidx.core.splashscreen.R.attr.materialButtonStyle, androidx.core.splashscreen.R.style.Widget_MaterialComponents_Button).a();
-        boolean z = typedArrayP.getBoolean(17, false);
-        ma1 ma1Var = new ma1(this, v92VarC);
+        this.k = a01.E(getContext(), P, 15);
+        this.l = a01.H(getContext(), P, 11);
+        this.t = P.getInteger(12, 1);
+        this.n = P.getDimensionPixelSize(14, 0);
+        xe2 b = xe2.b(context2, P, 19);
+        v92 c = b != null ? b.c() : v92.b(context2, attributeSet, androidx.core.splashscreen.R.attr.materialButtonStyle, androidx.core.splashscreen.R.style.Widget_MaterialComponents_Button).a();
+        boolean z = P.getBoolean(17, false);
+        ma1 ma1Var = new ma1(this, c);
         this.g = ma1Var;
-        ma1Var.f = typedArrayP.getDimensionPixelOffset(2, 0);
-        ma1Var.g = typedArrayP.getDimensionPixelOffset(3, 0);
-        ma1Var.h = typedArrayP.getDimensionPixelOffset(4, 0);
-        ma1Var.i = typedArrayP.getDimensionPixelOffset(5, 0);
-        if (typedArrayP.hasValue(9)) {
-            int dimensionPixelSize = typedArrayP.getDimensionPixelSize(9, -1);
+        ma1Var.f = P.getDimensionPixelOffset(2, 0);
+        ma1Var.g = P.getDimensionPixelOffset(3, 0);
+        ma1Var.h = P.getDimensionPixelOffset(4, 0);
+        ma1Var.i = P.getDimensionPixelOffset(5, 0);
+        if (P.hasValue(9)) {
+            int dimensionPixelSize = P.getDimensionPixelSize(9, -1);
             ma1Var.j = dimensionPixelSize;
             float f = dimensionPixelSize;
-            u92 u92VarF = ma1Var.b.f();
-            u92VarF.e = new m(f);
-            u92VarF.f = new m(f);
-            u92VarF.g = new m(f);
-            u92VarF.h = new m(f);
-            ma1Var.b = u92VarF.a();
+            u92 f2 = ma1Var.b.f();
+            f2.e = new m(f);
+            f2.f = new m(f);
+            f2.g = new m(f);
+            f2.h = new m(f);
+            ma1Var.b = f2.a();
             ma1Var.c = null;
             ma1Var.d();
             ma1Var.s = true;
         }
-        ma1Var.k = typedArrayP.getDimensionPixelSize(22, 0);
-        ma1Var.l = oy0.M(typedArrayP.getInt(8, -1), mode);
-        ma1Var.m = a01.E(getContext(), typedArrayP, 7);
-        ma1Var.n = a01.E(getContext(), typedArrayP, 21);
-        ma1Var.o = a01.E(getContext(), typedArrayP, 18);
-        ma1Var.t = typedArrayP.getBoolean(6, false);
-        ma1Var.w = typedArrayP.getDimensionPixelSize(10, 0);
-        ma1Var.u = typedArrayP.getBoolean(23, true);
+        ma1Var.k = P.getDimensionPixelSize(22, 0);
+        ma1Var.l = oy0.M(P.getInt(8, -1), mode);
+        ma1Var.m = a01.E(getContext(), P, 7);
+        ma1Var.n = a01.E(getContext(), P, 21);
+        ma1Var.o = a01.E(getContext(), P, 18);
+        ma1Var.t = P.getBoolean(6, false);
+        ma1Var.w = P.getDimensionPixelSize(10, 0);
+        ma1Var.u = P.getBoolean(23, true);
         int paddingStart = getPaddingStart();
         int paddingTop = getPaddingTop();
         int paddingEnd = getPaddingEnd();
         int paddingBottom = getPaddingBottom();
-        if (typedArrayP.hasValue(0)) {
+        if (P.hasValue(0)) {
             ma1Var.r = true;
             setSupportBackgroundTintList(ma1Var.m);
             setSupportBackgroundTintMode(ma1Var.l);
@@ -153,17 +155,17 @@ public class MaterialButton extends mf implements Checkable, ia2 {
             ma1Var.c();
         }
         setPaddingRelative(paddingStart + ma1Var.f, paddingTop + ma1Var.h, paddingEnd + ma1Var.g, paddingBottom + ma1Var.i);
-        setCheckedInternal(typedArrayP.getBoolean(1, false));
-        if (xe2VarB != null) {
+        setCheckedInternal(P.getBoolean(1, false));
+        if (b != null) {
             ma1Var.d = d();
             if (ma1Var.c != null) {
                 ma1Var.d();
             }
-            ma1Var.c = xe2VarB;
+            ma1Var.c = b;
             ma1Var.d();
         }
         setOpticalCenterEnabled(z);
-        typedArrayP.recycle();
+        P.recycle();
         setCompoundDrawablePadding(this.q);
         h(this.l != null);
     }
@@ -190,9 +192,9 @@ public class MaterialButton extends mf implements Checkable, ia2 {
     }
 
     private int getOpticalCenterShift() {
-        ua1 ua1VarA;
-        if (this.z && this.B && (ua1VarA = this.g.a(false)) != null) {
-            return (int) (ua1VarA.h() * 0.11f);
+        ua1 a2;
+        if (this.z && this.B && (a2 = this.g.a(false)) != null) {
+            return (int) (a2.h() * 0.11f);
         }
         return 0;
     }
@@ -202,22 +204,22 @@ public class MaterialButton extends mf implements Checkable, ia2 {
             return getLayout().getHeight();
         }
         TextPaint paint = getPaint();
-        String string = getText().toString();
+        String charSequence = getText().toString();
         if (getTransformationMethod() != null) {
-            string = getTransformationMethod().getTransformation(string, this).toString();
+            charSequence = getTransformationMethod().getTransformation(charSequence, this).toString();
         }
         Rect rect = new Rect();
-        paint.getTextBounds(string, 0, string.length(), rect);
+        paint.getTextBounds(charSequence, 0, charSequence.length(), rect);
         return Math.min(rect.height(), getLayout().getHeight());
     }
 
     private int getTextLayoutWidth() {
         int lineCount = getLineCount();
-        float fMax = 0.0f;
+        float f = 0.0f;
         for (int i = 0; i < lineCount; i++) {
-            fMax = Math.max(fMax, getLayout().getLineWidth(i));
+            f = Math.max(f, getLayout().getLineWidth(i));
         }
-        return (int) Math.ceil(fMax);
+        return (int) Math.ceil(f);
     }
 
     private void setCheckedInternal(boolean z) {
@@ -256,11 +258,11 @@ public class MaterialButton extends mf implements Checkable, ia2 {
             if (getParent() instanceof la1) {
                 la1 la1Var = (la1) getParent();
                 int i = (int) this.F;
-                int iIndexOfChild = la1Var.indexOfChild(this);
-                if (iIndexOfChild < 0) {
+                int indexOfChild = la1Var.indexOfChild(this);
+                if (indexOfChild < 0) {
                     return;
                 }
-                int i2 = iIndexOfChild - 1;
+                int i2 = indexOfChild - 1;
                 while (true) {
                     materialButton = null;
                     if (i2 < 0) {
@@ -276,11 +278,11 @@ public class MaterialButton extends mf implements Checkable, ia2 {
                 }
                 int childCount = la1Var.getChildCount();
                 while (true) {
-                    iIndexOfChild++;
-                    if (iIndexOfChild >= childCount) {
+                    indexOfChild++;
+                    if (indexOfChild >= childCount) {
                         break;
-                    } else if (la1Var.c(iIndexOfChild)) {
-                        materialButton = (MaterialButton) la1Var.getChildAt(iIndexOfChild);
+                    } else if (la1Var.c(indexOfChild)) {
+                        materialButton = (MaterialButton) la1Var.getChildAt(indexOfChild);
                         break;
                     }
                 }
@@ -304,33 +306,33 @@ public class MaterialButton extends mf implements Checkable, ia2 {
 
     public final zd2 d() {
         Context context = getContext();
-        TypedValue typedValueJ = nz0.J(context, androidx.core.splashscreen.R.attr.motionSpringFastSpatial);
+        TypedValue J2 = nz0.J(context, androidx.core.splashscreen.R.attr.motionSpringFastSpatial);
         int[] iArr = fv1.n;
-        TypedArray typedArrayObtainStyledAttributes = typedValueJ == null ? context.obtainStyledAttributes(null, iArr, 0, androidx.core.splashscreen.R.style.Motion_Material3_Spring_Standard_Fast_Spatial) : context.obtainStyledAttributes(typedValueJ.resourceId, iArr);
+        TypedArray obtainStyledAttributes = J2 == null ? context.obtainStyledAttributes(null, iArr, 0, androidx.core.splashscreen.R.style.Motion_Material3_Spring_Standard_Fast_Spatial) : context.obtainStyledAttributes(J2.resourceId, iArr);
         zd2 zd2Var = new zd2();
         try {
-            float f = typedArrayObtainStyledAttributes.getFloat(1, Float.MIN_VALUE);
+            float f = obtainStyledAttributes.getFloat(1, Float.MIN_VALUE);
             if (f == Float.MIN_VALUE) {
                 throw new IllegalArgumentException("A MaterialSpring style must have stiffness value.");
             }
-            float f2 = typedArrayObtainStyledAttributes.getFloat(0, Float.MIN_VALUE);
+            float f2 = obtainStyledAttributes.getFloat(0, Float.MIN_VALUE);
             if (f2 == Float.MIN_VALUE) {
                 throw new IllegalArgumentException("A MaterialSpring style must have a damping value.");
             }
             if (f <= 0.0f) {
                 throw new IllegalArgumentException("Spring stiffness constant must be positive.");
             }
-            zd2Var.f1434a = Math.sqrt(f);
+            zd2Var.f1433a = Math.sqrt(f);
             zd2Var.c = false;
             if (f2 < 0.0f) {
                 throw new IllegalArgumentException("Damping ratio must be non-negative");
             }
             zd2Var.b = f2;
             zd2Var.c = false;
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
             return zd2Var;
         } catch (Throwable th) {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
             throw th;
         }
     }
@@ -340,103 +342,70 @@ public class MaterialButton extends mf implements Checkable, ia2 {
         return (ma1Var == null || ma1Var.r) ? false : true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:46:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0071, code lost:
+    
+        if (r1 == 2) goto L33;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void f(boolean r9) {
-        /*
-            r8 = this;
-            androidx.emoji2.text.ze2 r0 = r8.D
-            if (r0 != 0) goto L6
-            goto L85
-        L6:
-            androidx.emoji2.text.yd2 r0 = r8.H
-            if (r0 != 0) goto L19
-            androidx.emoji2.text.yd2 r0 = new androidx.emoji2.text.yd2
-            androidx.emoji2.text.ia1 r1 = com.google.android.material.button.MaterialButton.K
-            r0.<init>(r8, r1)
-            r8.H = r0
-            androidx.emoji2.text.zd2 r1 = r8.d()
-            r0.j = r1
-        L19:
-            boolean r0 = r8.B
-            if (r0 == 0) goto L85
-            int r0 = r8.E
-            androidx.emoji2.text.ze2 r1 = r8.D
-            int[] r2 = r8.getDrawableState()
-            int[][] r3 = r1.c
-            r4 = 0
-            r5 = r4
-        L29:
-            int r6 = r1.f1437a
-            r7 = -1
-            if (r5 >= r6) goto L3a
-            r6 = r3[r5]
-            boolean r6 = android.util.StateSet.stateSetMatches(r6, r2)
-            if (r6 == 0) goto L37
-            goto L3b
-        L37:
-            int r5 = r5 + 1
-            goto L29
-        L3a:
-            r5 = r7
-        L3b:
-            if (r5 >= 0) goto L54
-            int[] r2 = android.util.StateSet.WILD_CARD
-            int[][] r3 = r1.c
-            r5 = r4
-        L42:
-            int r6 = r1.f1437a
-            if (r5 >= r6) goto L53
-            r6 = r3[r5]
-            boolean r6 = android.util.StateSet.stateSetMatches(r6, r2)
-            if (r6 == 0) goto L50
-            r7 = r5
-            goto L53
-        L50:
-            int r5 = r5 + 1
-            goto L42
-        L53:
-            r5 = r7
-        L54:
-            if (r5 >= 0) goto L59
-            androidx.emoji2.text.gz0 r1 = r1.b
-            goto L5d
-        L59:
-            androidx.emoji2.text.gz0[] r1 = r1.d
-            r1 = r1[r5]
-        L5d:
-            java.lang.Object r1 = r1.d
-            androidx.emoji2.text.ye2 r1 = (androidx.emoji2.text.ye2) r1
-            int r2 = r8.getWidth()
-            float r3 = r1.b
-            int r1 = r1.f1383a
-            r5 = 1
-            if (r1 != r5) goto L70
-            float r1 = (float) r2
-            float r3 = r3 * r1
-        L6e:
-            int r4 = (int) r3
-            goto L74
-        L70:
-            r2 = 2
-            if (r1 != r2) goto L74
-            goto L6e
-        L74:
-            int r0 = java.lang.Math.min(r0, r4)
-            androidx.emoji2.text.yd2 r1 = r8.H
-            float r0 = (float) r0
-            r1.a(r0)
-            if (r9 == 0) goto L85
-            androidx.emoji2.text.yd2 r9 = r8.H
-            r9.d()
-        L85:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.button.MaterialButton.f(boolean):void");
+    public final void f(boolean z) {
+        int i;
+        if (this.D == null) {
+            return;
+        }
+        if (this.H == null) {
+            yd2 yd2Var = new yd2(this, K);
+            this.H = yd2Var;
+            yd2Var.j = d();
+        }
+        if (this.B) {
+            int i2 = this.E;
+            ze2 ze2Var = this.D;
+            int[] drawableState = getDrawableState();
+            int[][] iArr = ze2Var.c;
+            int i3 = 0;
+            int i4 = 0;
+            while (true) {
+                i = -1;
+                if (i4 >= ze2Var.f1436a) {
+                    i4 = -1;
+                    break;
+                } else if (StateSet.stateSetMatches(iArr[i4], drawableState)) {
+                    break;
+                } else {
+                    i4++;
+                }
+            }
+            if (i4 < 0) {
+                int[] iArr2 = StateSet.WILD_CARD;
+                int[][] iArr3 = ze2Var.c;
+                int i5 = 0;
+                while (true) {
+                    if (i5 >= ze2Var.f1436a) {
+                        break;
+                    }
+                    if (StateSet.stateSetMatches(iArr3[i5], iArr2)) {
+                        i = i5;
+                        break;
+                    }
+                    i5++;
+                }
+                i4 = i;
+            }
+            ye2 ye2Var = (ye2) (i4 < 0 ? ze2Var.b : ze2Var.d[i4]).d;
+            int width = getWidth();
+            float f = ye2Var.b;
+            int i6 = ye2Var.f1382a;
+            if (i6 == 1) {
+                f *= width;
+            }
+            i3 = (int) f;
+            this.H.a(Math.min(i2, i3));
+            if (z) {
+                this.H.d();
+            }
+        }
     }
 
     public final void g() {
@@ -566,25 +535,25 @@ public class MaterialButton extends mf implements Checkable, ia2 {
     public final void h(boolean z) {
         Drawable drawable = this.l;
         if (drawable != null) {
-            Drawable drawableMutate = drawable.mutate();
-            this.l = drawableMutate;
-            drawableMutate.setTintList(this.k);
+            Drawable mutate = drawable.mutate();
+            this.l = mutate;
+            mutate.setTintList(this.k);
             PorterDuff.Mode mode = this.j;
             if (mode != null) {
                 this.l.setTintMode(mode);
             }
-            int intrinsicWidth = this.n;
-            if (intrinsicWidth == 0) {
-                intrinsicWidth = this.l.getIntrinsicWidth();
+            int i = this.n;
+            if (i == 0) {
+                i = this.l.getIntrinsicWidth();
             }
-            int intrinsicHeight = this.n;
-            if (intrinsicHeight == 0) {
-                intrinsicHeight = this.l.getIntrinsicHeight();
+            int i2 = this.n;
+            if (i2 == 0) {
+                i2 = this.l.getIntrinsicHeight();
             }
             Drawable drawable2 = this.l;
-            int i = this.o;
-            int i2 = this.p;
-            drawable2.setBounds(i, i2, intrinsicWidth + i, intrinsicHeight + i2);
+            int i3 = this.o;
+            int i4 = this.p;
+            drawable2.setBounds(i3, i4, i + i3, i2 + i4);
             this.l.setVisible(true, z);
         }
         if (z) {
@@ -595,8 +564,8 @@ public class MaterialButton extends mf implements Checkable, ia2 {
         Drawable drawable3 = compoundDrawablesRelative[0];
         Drawable drawable4 = compoundDrawablesRelative[1];
         Drawable drawable5 = compoundDrawablesRelative[2];
-        int i3 = this.t;
-        if (((i3 == 1 || i3 == 2) && drawable3 != this.l) || (((i3 == 3 || i3 == 4) && drawable5 != this.l) || ((i3 == 16 || i3 == 32) && drawable4 != this.l))) {
+        int i5 = this.t;
+        if (((i5 == 1 || i5 == 2) && drawable3 != this.l) || (((i5 == 3 || i5 == 4) && drawable5 != this.l) || ((i5 == 16 || i5 == 32) && drawable4 != this.l))) {
             g();
         }
     }
@@ -614,13 +583,13 @@ public class MaterialButton extends mf implements Checkable, ia2 {
                     h(false);
                     return;
                 }
-                int intrinsicHeight = this.n;
-                if (intrinsicHeight == 0) {
-                    intrinsicHeight = this.l.getIntrinsicHeight();
+                int i4 = this.n;
+                if (i4 == 0) {
+                    i4 = this.l.getIntrinsicHeight();
                 }
-                int iMax = Math.max(0, (((((i2 - getTextHeight()) - getPaddingTop()) - intrinsicHeight) - this.q) - getPaddingBottom()) / 2);
-                if (this.p != iMax) {
-                    this.p = iMax;
+                int max = Math.max(0, (((((i2 - getTextHeight()) - getPaddingTop()) - i4) - this.q) - getPaddingBottom()) / 2);
+                if (this.p != max) {
+                    this.p = max;
                     h(false);
                     return;
                 }
@@ -630,17 +599,17 @@ public class MaterialButton extends mf implements Checkable, ia2 {
         }
         this.p = 0;
         Layout.Alignment actualTextAlignment = getActualTextAlignment();
-        int i4 = this.t;
-        if (i4 == 1 || i4 == 3 || ((i4 == 2 && actualTextAlignment == Layout.Alignment.ALIGN_NORMAL) || (i4 == 4 && actualTextAlignment == Layout.Alignment.ALIGN_OPPOSITE))) {
+        int i5 = this.t;
+        if (i5 == 1 || i5 == 3 || ((i5 == 2 && actualTextAlignment == Layout.Alignment.ALIGN_NORMAL) || (i5 == 4 && actualTextAlignment == Layout.Alignment.ALIGN_OPPOSITE))) {
             this.o = 0;
             h(false);
             return;
         }
-        int intrinsicWidth = this.n;
-        if (intrinsicWidth == 0) {
-            intrinsicWidth = this.l.getIntrinsicWidth();
+        int i6 = this.n;
+        if (i6 == 0) {
+            i6 = this.l.getIntrinsicWidth();
         }
-        int textLayoutWidth = ((((i - getTextLayoutWidth()) - getPaddingEnd()) - intrinsicWidth) - this.q) - getPaddingStart();
+        int textLayoutWidth = ((((i - getTextLayoutWidth()) - getPaddingEnd()) - i6) - this.q) - getPaddingStart();
         if (actualTextAlignment == Layout.Alignment.ALIGN_CENTER) {
             textLayoutWidth /= 2;
         }
@@ -675,15 +644,15 @@ public class MaterialButton extends mf implements Checkable, ia2 {
 
     @Override // android.widget.TextView, android.view.View
     public final int[] onCreateDrawableState(int i) {
-        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 2);
+        int[] onCreateDrawableState = super.onCreateDrawableState(i + 2);
         ma1 ma1Var = this.g;
         if (ma1Var != null && ma1Var.t) {
-            View.mergeDrawableStates(iArrOnCreateDrawableState, I);
+            View.mergeDrawableStates(onCreateDrawableState, I);
         }
         if (this.r) {
-            View.mergeDrawableStates(iArrOnCreateDrawableState, J);
+            View.mergeDrawableStates(onCreateDrawableState, J);
         }
-        return iArrOnCreateDrawableState;
+        return onCreateDrawableState;
     }
 
     @Override // androidx.emoji2.text.mf, android.view.View
@@ -728,11 +697,11 @@ public class MaterialButton extends mf implements Checkable, ia2 {
                 i5 = 0;
             } else {
                 int iconPadding = getIconPadding();
-                int intrinsicWidth = this.n;
-                if (intrinsicWidth == 0) {
-                    intrinsicWidth = this.l.getIntrinsicWidth();
+                int i7 = this.n;
+                if (i7 == 0) {
+                    i7 = this.l.getIntrinsicWidth();
                 }
-                i5 = iconPadding + intrinsicWidth;
+                i5 = iconPadding + i7;
             }
             this.C = (getMeasuredWidth() - getTextLayoutWidth()) - i5;
         }
@@ -824,7 +793,7 @@ public class MaterialButton extends mf implements Checkable, ia2 {
         Log.w("MaterialButton", "MaterialButton manages its own background to control elevation, shape, color and states. Consider using backgroundTint, shapeAppearance and other attributes where available. A custom background will ignore these attributes and you should consider handling interaction states such as pressed, focused and disabled");
         ma1 ma1Var = this.g;
         ma1Var.r = true;
-        MaterialButton materialButton = ma1Var.f739a;
+        MaterialButton materialButton = ma1Var.f738a;
         materialButton.setSupportBackgroundTintList(ma1Var.m);
         materialButton.setSupportBackgroundTintMode(ma1Var.l);
         super.setBackgroundDrawable(drawable);
@@ -865,12 +834,12 @@ public class MaterialButton extends mf implements Checkable, ia2 {
             ma1Var.j = i;
             ma1Var.s = true;
             float f = i;
-            u92 u92VarF = ma1Var.b.f();
-            u92VarF.e = new m(f);
-            u92VarF.f = new m(f);
-            u92VarF.g = new m(f);
-            u92VarF.h = new m(f);
-            ma1Var.b = u92VarF.a();
+            u92 f2 = ma1Var.b.f();
+            f2.e = new m(f);
+            f2.f = new m(f);
+            f2.g = new m(f);
+            f2.h = new m(f);
+            ma1Var.b = f2.a();
             ma1Var.c = null;
             ma1Var.d();
         }
@@ -983,15 +952,15 @@ public class MaterialButton extends mf implements Checkable, ia2 {
             if (z) {
                 j4 j4Var = new j4(this);
                 ma1Var.e = j4Var;
-                ua1 ua1VarA = ma1Var.a(false);
-                if (ua1VarA != null) {
-                    ua1VarA.G = j4Var;
+                ua1 a2 = ma1Var.a(false);
+                if (a2 != null) {
+                    a2.G = j4Var;
                 }
             } else {
                 ma1Var.e = null;
-                ua1 ua1VarA2 = ma1Var.a(false);
-                if (ua1VarA2 != null) {
-                    ua1VarA2.G = null;
+                ua1 a3 = ma1Var.a(false);
+                if (a3 != null) {
+                    a3.G = null;
                 }
             }
             post(new f7(16, this));
@@ -1011,7 +980,7 @@ public class MaterialButton extends mf implements Checkable, ia2 {
     public void setRippleColor(ColorStateList colorStateList) {
         if (e()) {
             ma1 ma1Var = this.g;
-            MaterialButton materialButton = ma1Var.f739a;
+            MaterialButton materialButton = ma1Var.f738a;
             if (ma1Var.o != colorStateList) {
                 ma1Var.o = colorStateList;
                 if (materialButton.getBackground() instanceof RippleDrawable) {

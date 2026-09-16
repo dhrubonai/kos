@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class fa0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f352a;
+    public final long f351a;
 
     public static String a(long j) {
         if (j == 9205357640488583168L) {
@@ -16,16 +16,16 @@ public final class fa0 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof fa0) {
-            return this.f352a == ((fa0) obj).f352a;
+            return this.f351a == ((fa0) obj).f351a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f352a);
+        return Long.hashCode(this.f351a);
     }
 
     public final String toString() {
-        return a(this.f352a);
+        return a(this.f351a);
     }
 }

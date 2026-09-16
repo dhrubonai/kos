@@ -19,7 +19,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getFloat")
     public static class GetFloat extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -40,7 +40,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getFloatForUser")
     public static class GetFloatForUser extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -61,7 +61,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getInt")
     public static class GetInt extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -82,7 +82,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getIntForUser")
     public static class GetIntForUser extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -103,7 +103,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getLong")
     public static class GetLong extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             if (ISettingsProviderProxy.isAndroidIdRequest(objArr)) {
                 return Long.valueOf(VirtualAndroidId.getGoogleAwarePositiveLong());
             }
@@ -127,7 +127,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getLongForUser")
     public static class GetLongForUser extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             if (ISettingsProviderProxy.isAndroidIdRequest(objArr)) {
                 return Long.valueOf(VirtualAndroidId.getGoogleAwarePositiveLong());
             }
@@ -151,7 +151,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getString")
     public static class GetString extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String str;
             String[] strArr = xa1.b;
             try {
@@ -181,7 +181,7 @@ public class ISettingsProviderProxy extends ClassInvocationStub {
     @ProxyMethod("getStringForUser")
     public static class GetStringForUser extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String str;
             String[] strArr = xa1.b;
             try {

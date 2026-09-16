@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class c72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f72 f186a = new f72("ContentDescription", true, xy1.i);
+    public static final f72 f185a = new f72("ContentDescription", true, xy1.i);
     public static final f72 b = new f72("StateDescription", 0);
     public static final f72 c = new f72("ProgressBarRangeInfo", 0);
     public static final f72 d = new f72("PaneTitle", true, xy1.p);

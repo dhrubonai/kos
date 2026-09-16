@@ -10,7 +10,6 @@ import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
 import java.lang.reflect.Method;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -20,16 +19,16 @@ public class IDeviceIdentifiersPolicyProxy extends BinderInvocationStub {
     @ProxyMethod("getSerialForPackage")
     public static class x extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws NoSuchAlgorithmException {
-            String strX = c01.X();
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String X = c01.X();
             try {
                 String[] strArr = xa1.b;
                 MessageDigest messageDigest = MessageDigest.getInstance(c.a(-1370516033257250L, strArr));
-                messageDigest.update(strX.getBytes(c.a(-1370017817050914L, strArr)));
-                byte[] bArrDigest = messageDigest.digest();
-                char[] cArr = new char[bArrDigest.length * 2];
+                messageDigest.update(X.getBytes(c.a(-1370017817050914L, strArr)));
+                byte[] digest = messageDigest.digest();
+                char[] cArr = new char[digest.length * 2];
                 int i = 0;
-                for (byte b : bArrDigest) {
+                for (byte b : digest) {
                     int i2 = i + 1;
                     char[] cArr2 = xa1.d;
                     cArr[i] = cArr2[(b >>> 4) & 15];

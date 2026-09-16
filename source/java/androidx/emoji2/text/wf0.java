@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class wf0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1276a;
+    public final long f1275a;
     public final long b;
 
     public wf0(long j, long j2, int i) {
-        this.f1276a = j;
+        this.f1275a = j;
         this.b = j2;
     }
 
     public wf0(long j, long j2) {
-        this.f1276a = j;
+        this.f1275a = j;
         this.b = j2;
     }
 }

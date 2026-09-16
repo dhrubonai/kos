@@ -83,21 +83,21 @@ public final class VirtualPackageInstallerSession {
     private void assertMutable(String str) {
         assertUsable(str);
         if (this.sealed) {
-            StringBuilder sbK = jx0.k(str);
-            sbK.append(c.a(-356246621404962L, xa1.b));
-            throw new SecurityException(sbK.toString());
+            StringBuilder k = jx0.k(str);
+            k.append(c.a(-356246621404962L, xa1.b));
+            throw new SecurityException(k.toString());
         }
     }
 
     private void assertUsable(String str) {
         if (this.destroyed) {
-            StringBuilder sbK = jx0.k(str);
-            sbK.append(c.a(-356388355325730L, xa1.b));
-            throw new IllegalStateException(sbK.toString());
+            StringBuilder k = jx0.k(str);
+            k.append(c.a(-356388355325730L, xa1.b));
+            throw new IllegalStateException(k.toString());
         }
     }
 
-    private static void closeFailedWrite(ParcelFileDescriptor parcelFileDescriptor, VirtualFileBridge virtualFileBridge) throws IOException {
+    private static void closeFailedWrite(ParcelFileDescriptor parcelFileDescriptor, VirtualFileBridge virtualFileBridge) {
         if (virtualFileBridge != null) {
             virtualFileBridge.forceClose();
         } else {
@@ -127,7 +127,7 @@ public final class VirtualPackageInstallerSession {
         }
     }
 
-    private File resolveStageFile(String str) throws IOException {
+    private File resolveStageFile(String str) {
         String[] strArr = xa1.b;
         if (str == null || !str.equals(wj1.j(str))) {
             throw new IllegalArgumentException(zd.k(new StringBuilder(), c.a(-358046212701986L, strArr), str));
@@ -145,16 +145,16 @@ public final class VirtualPackageInstallerSession {
 
     private static boolean usesRevocableFileDescriptor() {
         String[] strArr = xa1.b;
-        String strA = c.a(-358415579889442L, strArr);
-        String strA2 = c.a(-357934543552290L, strArr);
+        String a2 = c.a(-358415579889442L, strArr);
+        String a3 = c.a(-357934543552290L, strArr);
         try {
-            fy1 fy1VarG = fy1.g(c.a(-875344958734114L, strArr));
-            fy1VarG.f(c.a(-875430858080034L, strArr), String.class, String.class);
-            strA2 = (String) fy1VarG.a(fy1VarG.b, strA, strA2);
+            fy1 g = fy1.g(c.a(-875344958734114L, strArr));
+            g.f(c.a(-875430858080034L, strArr), String.class, String.class);
+            a3 = (String) g.a(g.b, a2, a3);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return c.a(-357977493225250L, strArr).equals(strA2) || c.a(-357968903290658L, strArr).equalsIgnoreCase(strA2) || c.a(-358024737865506L, strArr).equalsIgnoreCase(strA2) || c.a(-358016147930914L, strArr).equalsIgnoreCase(strA2) || c.a(-357998968061730L, strArr).equalsIgnoreCase(strA2);
+        return c.a(-357977493225250L, strArr).equals(a3) || c.a(-357968903290658L, strArr).equalsIgnoreCase(a3) || c.a(-358024737865506L, strArr).equalsIgnoreCase(a3) || c.a(-358016147930914L, strArr).equalsIgnoreCase(a3) || c.a(-357998968061730L, strArr).equalsIgnoreCase(a3);
     }
 
     public synchronized void addChildSessionId(int i) {
@@ -211,7 +211,7 @@ public final class VirtualPackageInstallerSession {
         return this.activeCount == 0;
     }
 
-    public void destroy() throws IOException {
+    public void destroy() {
         ArrayList arrayList;
         synchronized (this) {
             this.destroyed = true;
@@ -234,9 +234,9 @@ public final class VirtualPackageInstallerSession {
             try {
                 String[] strArr = xa1.b;
                 assertMutable(c.a(-487543771643682L, strArr));
-                File fileResolveStageFile = resolveStageFile(c.a(-487599606218530L, strArr));
-                if (fileResolveStageFile.isFile()) {
-                    return ParcelFileDescriptor.open(fileResolveStageFile, 268435456);
+                File resolveStageFile = resolveStageFile(c.a(-487599606218530L, strArr));
+                if (resolveStageFile.isFile()) {
+                    return ParcelFileDescriptor.open(resolveStageFile, 268435456);
                 }
                 return null;
             } catch (Throwable th) {
@@ -290,62 +290,62 @@ public final class VirtualPackageInstallerSession {
     }
 
     public ParcelFileDescriptor openRead(String str) {
-        File fileResolveStageFile;
+        File resolveStageFile;
         synchronized (this) {
             String[] strArr = xa1.b;
             assertMutable(c.a(-484606014013218L, strArr));
-            fileResolveStageFile = resolveStageFile(str);
-            if (!fileResolveStageFile.isFile()) {
+            resolveStageFile = resolveStageFile(str);
+            if (!resolveStageFile.isFile()) {
                 throw new IOException(c.a(-487380562886434L, strArr) + str);
             }
         }
-        return ParcelFileDescriptor.open(fileResolveStageFile, 268435456);
+        return ParcelFileDescriptor.open(resolveStageFile, 268435456);
     }
 
-    public ParcelFileDescriptor openWrite(String str, long j, long j2) throws Throwable {
+    public ParcelFileDescriptor openWrite(String str, long j, long j2) {
         String[] strArr;
-        File fileResolveStageFile;
+        File resolveStageFile;
         synchronized (this) {
             strArr = xa1.b;
             assertMutable(c.a(-484103502839586L, strArr));
-            fileResolveStageFile = resolveStageFile(str);
+            resolveStageFile = resolveStageFile(str);
         }
-        ParcelFileDescriptor parcelFileDescriptorOpen = ParcelFileDescriptor.open(fileResolveStageFile, 939524096);
+        ParcelFileDescriptor open = ParcelFileDescriptor.open(resolveStageFile, 939524096);
         VirtualFileBridge virtualFileBridge = null;
         if (j == 0 && j2 >= 0) {
             try {
-                Os.ftruncate(parcelFileDescriptorOpen.getFileDescriptor(), j2);
+                Os.ftruncate(open.getFileDescriptor(), j2);
             } catch (ErrnoException e) {
                 e = e;
-                closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+                closeFailedWrite(open, virtualFileBridge);
                 throw new IOException(e);
             } catch (IOException e2) {
                 e = e2;
-                closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+                closeFailedWrite(open, virtualFileBridge);
                 throw e;
             } catch (RuntimeException e3) {
                 e = e3;
-                closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+                closeFailedWrite(open, virtualFileBridge);
                 throw e;
             }
         }
         if (j2 > 0) {
-            Os.posix_fallocate(parcelFileDescriptorOpen.getFileDescriptor(), 0L, j2);
+            Os.posix_fallocate(open.getFileDescriptor(), 0L, j2);
         }
         if (j > 0) {
-            Os.lseek(parcelFileDescriptorOpen.getFileDescriptor(), j, OsConstants.SEEK_SET);
+            Os.lseek(open.getFileDescriptor(), j, OsConstants.SEEK_SET);
         }
         if (usesRevocableFileDescriptor()) {
             synchronized (this) {
                 assertMutable(c.a(-484133567610658L, strArr));
             }
             nz0.Q(c.a(-484215171989282L, strArr), 3, c.a(-484318251204386L, strArr) + this.sessionId + c.a(-483970358853410L, strArr) + str + c.a(-484004718591778L, strArr));
-            return parcelFileDescriptorOpen;
+            return open;
         }
-        VirtualFileBridge virtualFileBridge2 = new VirtualFileBridge(parcelFileDescriptorOpen, this.sessionId + c.a(-484670438522658L, strArr) + Integer.toHexString(str.hashCode()), new VirtualFileBridge.CloseListener() { // from class: com.kos.engine.core.system.pm.installer.a
+        VirtualFileBridge virtualFileBridge2 = new VirtualFileBridge(open, this.sessionId + c.a(-484670438522658L, strArr) + Integer.toHexString(str.hashCode()), new VirtualFileBridge.CloseListener() { // from class: com.kos.engine.core.system.pm.installer.a
             @Override // com.kos.engine.core.system.pm.installer.VirtualFileBridge.CloseListener
             public final void onBridgeClosed(VirtualFileBridge virtualFileBridge3) {
-                this.f1480a.onBridgeClosed(virtualFileBridge3);
+                VirtualPackageInstallerSession.this.onBridgeClosed(virtualFileBridge3);
             }
         });
         try {
@@ -359,17 +359,17 @@ public final class VirtualPackageInstallerSession {
         } catch (ErrnoException e4) {
             e = e4;
             virtualFileBridge = virtualFileBridge2;
-            closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+            closeFailedWrite(open, virtualFileBridge);
             throw new IOException(e);
         } catch (IOException e5) {
             e = e5;
             virtualFileBridge = virtualFileBridge2;
-            closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+            closeFailedWrite(open, virtualFileBridge);
             throw e;
         } catch (RuntimeException e6) {
             e = e6;
             virtualFileBridge = virtualFileBridge2;
-            closeFailedWrite(parcelFileDescriptorOpen, virtualFileBridge);
+            closeFailedWrite(open, virtualFileBridge);
             throw e;
         }
     }
@@ -381,8 +381,8 @@ public final class VirtualPackageInstallerSession {
     public synchronized void removeAppMetadata() {
         String[] strArr = xa1.b;
         assertMutable(c.a(-487140044717858L, strArr));
-        File fileResolveStageFile = resolveStageFile(c.a(-487191584325410L, strArr));
-        if (fileResolveStageFile.exists() && !fileResolveStageFile.delete()) {
+        File resolveStageFile = resolveStageFile(c.a(-487191584325410L, strArr));
+        if (resolveStageFile.exists() && !resolveStageFile.delete()) {
             throw new IOException(c.a(-487264598769442L, strArr));
         }
     }
@@ -399,8 +399,8 @@ public final class VirtualPackageInstallerSession {
         if (str2 == null || str2.isEmpty()) {
             throw new IllegalStateException(c.a(-488166541901602L, strArr));
         }
-        File fileResolveStageFile = resolveStageFile(str + c.a(-487784289812258L, strArr));
-        if (!fileResolveStageFile.exists() && !fileResolveStageFile.createNewFile()) {
+        File resolveStageFile = resolveStageFile(str + c.a(-487784289812258L, strArr));
+        if (!resolveStageFile.exists() && !resolveStageFile.createNewFile()) {
             throw new IOException(c.a(-487805764648738L, strArr));
         }
     }
@@ -411,18 +411,18 @@ public final class VirtualPackageInstallerSession {
     }
 
     public synchronized float setProgress(float f, boolean z) {
-        float fConstrain;
+        float constrain;
         try {
             assertUsable(c.a(-485658281000738L, xa1.b));
             if (z) {
                 f += this.progress;
             }
-            fConstrain = constrain(f);
-            this.progress = fConstrain;
+            constrain = constrain(f);
+            this.progress = constrain;
         } catch (Throwable th) {
             throw th;
         }
-        return fConstrain;
+        return constrain;
     }
 
     public synchronized Bundle snapshot() {
@@ -465,21 +465,21 @@ public final class VirtualPackageInstallerSession {
         this.appLabel = str;
     }
 
-    public void write(String str, long j, long j2, ParcelFileDescriptor parcelFileDescriptor) throws IOException {
+    public void write(String str, long j, long j2, ParcelFileDescriptor parcelFileDescriptor) {
         String[] strArr;
-        File fileResolveStageFile;
+        File resolveStageFile;
         if (parcelFileDescriptor == null) {
             throw new IOException(c.a(-487960383471394L, xa1.b));
         }
         synchronized (this) {
             strArr = xa1.b;
             assertMutable(c.a(-488054872751906L, strArr));
-            fileResolveStageFile = resolveStageFile(str);
+            resolveStageFile = resolveStageFile(str);
         }
         try {
             FileInputStream fileInputStream = new FileInputStream(parcelFileDescriptor.getFileDescriptor());
             try {
-                RandomAccessFile randomAccessFile = new RandomAccessFile(fileResolveStageFile, c.a(-488097822424866L, strArr));
+                RandomAccessFile randomAccessFile = new RandomAccessFile(resolveStageFile, c.a(-488097822424866L, strArr));
                 if (j == 0 && j2 >= 0) {
                     try {
                         randomAccessFile.setLength(0L);
@@ -492,12 +492,12 @@ public final class VirtualPackageInstallerSession {
                     j2 = Long.MAX_VALUE;
                 }
                 while (j2 > 0) {
-                    int i = fileInputStream.read(bArr, 0, (int) Math.min(65536, j2));
-                    if (i < 0) {
+                    int read = fileInputStream.read(bArr, 0, (int) Math.min(65536, j2));
+                    if (read < 0) {
                         break;
                     }
-                    randomAccessFile.write(bArr, 0, i);
-                    j2 -= i;
+                    randomAccessFile.write(bArr, 0, read);
+                    j2 -= read;
                 }
                 randomAccessFile.close();
                 fileInputStream.close();

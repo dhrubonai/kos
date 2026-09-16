@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public interface ew2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final dw2 f332a = dw2.f276a;
+    public static final dw2 f331a = dw2.f275a;
 }

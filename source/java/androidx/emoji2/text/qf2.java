@@ -5,25 +5,25 @@ package androidx.emoji2.text;
 public final class qf2 extends sf2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final j30 f954a;
+    public final j30 f953a;
 
     public qf2(j30 j30Var) {
-        lx0.x(j30Var, a.a.a.c.a(-475350359490338L, wj1.f1284a));
-        this.f954a = j30Var;
+        lx0.x(j30Var, a.a.a.c.a(-475350359490338L, wj1.f1283a));
+        this.f953a = j30Var;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof qf2) && lx0.n(this.f954a, ((qf2) obj).f954a);
+        return (obj instanceof qf2) && lx0.n(this.f953a, ((qf2) obj).f953a);
     }
 
     public final int hashCode() {
-        return this.f954a.hashCode();
+        return this.f953a.hashCode();
     }
 
     public final String toString() {
-        return a.a.a.c.a(-475419078967074L, wj1.f1284a) + this.f954a + ')';
+        return a.a.a.c.a(-475419078967074L, wj1.f1283a) + this.f953a + ')';
     }
 }

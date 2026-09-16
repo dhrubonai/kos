@@ -7,24 +7,24 @@ import android.view.KeyEvent;
 public final class zy0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final KeyEvent f1463a;
+    public final KeyEvent f1462a;
 
     public /* synthetic */ zy0(KeyEvent keyEvent) {
-        this.f1463a = keyEvent;
+        this.f1462a = keyEvent;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof zy0) {
-            return lx0.n(this.f1463a, ((zy0) obj).f1463a);
+            return lx0.n(this.f1462a, ((zy0) obj).f1462a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1463a.hashCode();
+        return this.f1462a.hashCode();
     }
 
     public final String toString() {
-        return "KeyEvent(nativeKeyEvent=" + this.f1463a + ')';
+        return "KeyEvent(nativeKeyEvent=" + this.f1462a + ')';
     }
 }

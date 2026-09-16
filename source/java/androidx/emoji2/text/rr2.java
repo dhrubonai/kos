@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class rr2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1029a;
+    public int f1028a;
     public int b;
     public int c;
     public int d;
     public int e;
 
     public final boolean a() {
-        int i = this.f1029a;
+        int i = this.f1028a;
         int i2 = 2;
         if ((i & 7) != 0) {
             int i3 = this.d;

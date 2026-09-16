@@ -25,20 +25,20 @@ public final class n12 extends b11 {
                     return hb1Var.P(vz.j(j), vz.i(j), re0Var, vl1.t);
                 }
                 if (size == 1) {
-                    hr1 hr1VarQ = ((ab1) list.get(0)).q(j);
-                    return hb1Var.P(xz.g(hr1VarQ.d, j), xz.f(hr1VarQ.e, j), re0Var, new jb(hr1VarQ, 7));
+                    hr1 q = ((ab1) list.get(0)).q(j);
+                    return hb1Var.P(xz.g(q.d, j), xz.f(q.e, j), re0Var, new jb(q, 7));
                 }
                 ArrayList arrayList = new ArrayList(list.size());
                 int size2 = list.size();
-                int iMax = 0;
-                int iMax2 = 0;
-                for (int i = 0; i < size2; i++) {
-                    hr1 hr1VarQ2 = ((ab1) list.get(i)).q(j);
-                    iMax = Math.max(hr1VarQ2.d, iMax);
-                    iMax2 = Math.max(hr1VarQ2.e, iMax2);
-                    arrayList.add(hr1VarQ2);
+                int i = 0;
+                int i2 = 0;
+                for (int i3 = 0; i3 < size2; i3++) {
+                    hr1 q2 = ((ab1) list.get(i3)).q(j);
+                    i = Math.max(q2.d, i);
+                    i2 = Math.max(q2.e, i2);
+                    arrayList.add(q2);
                 }
-                return hb1Var.P(xz.g(iMax, j), xz.f(iMax2, j), re0Var, new m9(3, arrayList));
+                return hb1Var.P(xz.g(i, j), xz.f(i2, j), re0Var, new m9(3, arrayList));
             default:
                 throw new IllegalStateException("Undefined measure and it is required");
         }

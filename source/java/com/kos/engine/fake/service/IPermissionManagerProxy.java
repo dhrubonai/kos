@@ -34,40 +34,40 @@ public class IPermissionManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strFirstString = IPermissionManagerProxy.firstString(objArr, 0);
-            String strFirstString2 = IPermissionManagerProxy.firstString(objArr, 1);
-            if (gu2.e(strFirstString, rj.u(), strFirstString2)) {
-                String strA = c.a(-1113857377582882L, strArr);
+            String firstString = IPermissionManagerProxy.firstString(objArr, 0);
+            String firstString2 = IPermissionManagerProxy.firstString(objArr, 1);
+            if (gu2.e(firstString, rj.u(), firstString2)) {
+                String a2 = c.a(-1113857377582882L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-1113960456797986L, strArr));
-                sb.append(strFirstString);
-                jx0.r(sb, c.a(-1114797975420706L, strArr), strFirstString2, 3, strA);
+                sb.append(firstString);
+                jx0.r(sb, c.a(-1114797975420706L, strArr), firstString2, 3, a2);
                 return 0;
             }
-            if (gu2.d(strFirstString, rj.u(), strFirstString2)) {
-                String strA2 = c.a(-1114772205616930L, strArr);
+            if (gu2.d(firstString, rj.u(), firstString2)) {
+                String a3 = c.a(-1114772205616930L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-1114875284832034L, strArr));
-                sb2.append(strFirstString);
-                jx0.r(sb2, c.a(-1114570342154018L, strArr), strFirstString2, 3, strA2);
+                sb2.append(firstString);
+                jx0.r(sb2, c.a(-1114570342154018L, strArr), firstString2, 3, a3);
                 return 0;
             }
-            if (gu2.g(strFirstString, rj.u(), strFirstString2)) {
-                String strA3 = c.a(-1114613291826978L, strArr);
+            if (gu2.g(firstString, rj.u(), firstString2)) {
+                String a4 = c.a(-1114613291826978L, strArr);
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(c.a(-1113067103600418L, strArr));
-                sb3.append(strFirstString);
-                jx0.r(sb3, c.a(-1112753570987810L, strArr), strFirstString2, 3, strA3);
+                sb3.append(firstString);
+                jx0.r(sb3, c.a(-1112753570987810L, strArr), firstString2, 3, a4);
                 return 0;
             }
-            if (!gu2.f(strFirstString, rj.u(), strFirstString2)) {
+            if (!gu2.f(firstString, rj.u(), firstString2)) {
                 return method.invoke(obj, objArr);
             }
-            String strA4 = c.a(-1112796520660770L, strArr);
+            String a5 = c.a(-1112796520660770L, strArr);
             StringBuilder sb4 = new StringBuilder();
             sb4.append(c.a(-1112899599875874L, strArr));
-            sb4.append(strFirstString);
-            jx0.r(sb4, c.a(-1113646924185378L, strArr), strFirstString2, 3, strA4);
+            sb4.append(firstString);
+            jx0.r(sb4, c.a(-1113646924185378L, strArr), firstString2, 3, a5);
             return 0;
         }
     }
@@ -78,24 +78,24 @@ public class IPermissionManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strFirstString = IPermissionManagerProxy.firstString(objArr, 0);
-            HashSet hashSet = gu2.f440a;
-            if (gu2.e(strFirstString, rj.u(), null)) {
-                jx0.r(new StringBuilder(), c.a(-1113792953073442L, strArr), strFirstString, 3, c.a(-1113689873858338L, strArr));
+            String firstString = IPermissionManagerProxy.firstString(objArr, 0);
+            HashSet hashSet = gu2.f439a;
+            if (gu2.e(firstString, rj.u(), null)) {
+                jx0.r(new StringBuilder(), c.a(-1113792953073442L, strArr), firstString, 3, c.a(-1113689873858338L, strArr));
                 return 0;
             }
-            if (gu2.d(strFirstString, rj.u(), null)) {
-                jx0.r(new StringBuilder(), c.a(-1116361343516450L, strArr), strFirstString, 3, c.a(-1113509485231906L, strArr));
+            if (gu2.d(firstString, rj.u(), null)) {
+                jx0.r(new StringBuilder(), c.a(-1116361343516450L, strArr), firstString, 3, c.a(-1113509485231906L, strArr));
                 return 0;
             }
-            if (gu2.g(strFirstString, rj.u(), null)) {
-                jx0.r(new StringBuilder(), c.a(-1116155185086242L, strArr), strFirstString, 3, c.a(-1116052105871138L, strArr));
+            if (gu2.g(firstString, rj.u(), null)) {
+                jx0.r(new StringBuilder(), c.a(-1116155185086242L, strArr), firstString, 3, c.a(-1116052105871138L, strArr));
                 return 0;
             }
-            if (!gu2.f(strFirstString, rj.u(), null)) {
+            if (!gu2.f(firstString, rj.u(), null)) {
                 return method.invoke(obj, objArr);
             }
-            jx0.r(new StringBuilder(), c.a(-1117091487956770L, strArr), strFirstString, 3, c.a(-1116988408741666L, strArr));
+            jx0.r(new StringBuilder(), c.a(-1117091487956770L, strArr), firstString, 3, c.a(-1116988408741666L, strArr));
             return 0;
         }
     }
@@ -104,7 +104,7 @@ public class IPermissionManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getPermissionInfo")
     public static class GetPermissionInfo extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Throwable th) {
@@ -160,12 +160,12 @@ public class IPermissionManagerProxy extends BinderInvocationStub {
         String[] strArr = xa1.b;
         replaceSystemService(c.a(-1115734278291234L, strArr));
         BRActivityThread.getWithException()._set_sPermissionManager(obj2);
-        PackageManager packageManagerMPackageManager = BRContextImpl.get(BRActivityThread.get(c01.e0()).getSystemContext()).mPackageManager();
-        if (packageManagerMPackageManager != null) {
+        PackageManager mPackageManager = BRContextImpl.get(BRActivityThread.get(c01.e0()).getSystemContext()).mPackageManager();
+        if (mPackageManager != null) {
             try {
-                fy1 fy1VarG = fy1.g(c.a(-1115811587702562L, strArr));
-                fy1VarG.d(c.a(-1115991976328994L, strArr));
-                fy1VarG.h(packageManagerMPackageManager, obj2);
+                fy1 g = fy1.g(c.a(-1115811587702562L, strArr));
+                g.d(c.a(-1115991976328994L, strArr));
+                g.h(mPackageManager, obj2);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -181,14 +181,14 @@ public class IPermissionManagerProxy extends BinderInvocationStub {
     public void onBindMethod() {
         super.onBindMethod();
         String[] strArr = xa1.b;
-        String strA = c.a(-1115489465155362L, strArr);
+        String a2 = c.a(-1115489465155362L, strArr);
         Boolean bool = Boolean.TRUE;
-        addMethodHook(new ValueMethodProxy(strA, bool));
+        addMethodHook(new ValueMethodProxy(a2, bool));
         addMethodHook(new ValueMethodProxy(c.a(-1115622609141538L, strArr), bool));
         addMethodHook(new ValueMethodProxy(c.a(-1115631199076130L, strArr), bool));
-        String strA2 = c.a(-1115708508487458L, strArr);
+        String a3 = c.a(-1115708508487458L, strArr);
         Boolean bool2 = Boolean.FALSE;
-        addMethodHook(new ValueMethodProxy(strA2, bool2));
+        addMethodHook(new ValueMethodProxy(a3, bool2));
         addMethodHook(new ValueMethodProxy(c.a(-1109772863684386L, strArr), bool));
         addMethodHook(new ValueMethodProxy(c.a(-1109871647932194L, strArr), 0));
         addMethodHook(new ValueMethodProxy(c.a(-1109472215973666L, strArr), 0));

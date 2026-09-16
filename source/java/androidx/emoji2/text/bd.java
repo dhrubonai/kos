@@ -28,7 +28,7 @@ public final class bd extends hh2 implements um0 {
     public final Object e(Object obj) {
         long j = this.n;
         um0 um0Var = this.o;
-        return new bd(this.k, this.l, this.m, j, um0Var, (l10) obj).k(up2.f1187a);
+        return new bd(this.k, this.l, this.m, j, um0Var, (l10) obj).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -42,7 +42,7 @@ public final class bd extends hh2 implements um0 {
         try {
             if (i == 0) {
                 mz0.L(obj);
-                edVar.c.f = (oe) edVar.f300a.f1293a.e(this.l);
+                edVar.c.f = (oe) edVar.f299a.f1292a.e(this.l);
                 edVar.e.setValue(li2Var.c);
                 edVar.d.setValue(Boolean.TRUE);
                 ie ieVar2 = edVar.c;
@@ -53,9 +53,9 @@ public final class bd extends hh2 implements um0 {
                 this.h = ieVar3;
                 this.i = yx1Var2;
                 this.j = 1;
-                Object objM = pz0.m(ieVar3, li2Var, j, adVar, this);
+                Object m = pz0.m(ieVar3, li2Var, j, adVar, this);
                 f30 f30Var = f30.d;
-                if (objM == f30Var) {
+                if (m == f30Var) {
                     return f30Var;
                 }
                 ieVar = ieVar3;

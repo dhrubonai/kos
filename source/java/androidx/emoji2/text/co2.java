@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class co2 extends yn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f212a = 1;
+    public final /* synthetic */ int f211a = 1;
     public sn2 b;
 
     public /* synthetic */ co2() {
@@ -13,7 +13,7 @@ public final class co2 extends yn2 {
 
     @Override // androidx.emoji2.text.qn2
     public final void c(sn2 sn2Var) {
-        switch (this.f212a) {
+        switch (this.f211a) {
             case 0:
                 this.b.z();
                 sn2Var.x(this);
@@ -33,7 +33,7 @@ public final class co2 extends yn2 {
 
     @Override // androidx.emoji2.text.yn2, androidx.emoji2.text.qn2
     public void d(sn2 sn2Var) {
-        switch (this.f212a) {
+        switch (this.f211a) {
             case 1:
                 aj ajVar = (aj) this.b;
                 if (!ajVar.G) {

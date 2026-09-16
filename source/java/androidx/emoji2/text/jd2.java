@@ -15,6 +15,7 @@ public final class jd2 extends gz0 {
     /* JADX WARN: Type inference failed for: r4v0, types: [androidx.emoji2.text.id2] */
     @Override // androidx.emoji2.text.gz0
     public final void m() {
+        int ime;
         View view = this.e;
         WindowInsetsController windowInsetsController = view != null ? view.getWindowInsetsController() : null;
         if (windowInsetsController == null) {
@@ -33,18 +34,21 @@ public final class jd2 extends gz0 {
             ((InputMethodManager) view.getContext().getSystemService("input_method")).hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
         windowInsetsController.removeOnControllableInsetsChangedListener(r4);
-        windowInsetsController.hide(WindowInsets.Type.ime());
+        ime = WindowInsets.Type.ime();
+        windowInsetsController.hide(ime);
     }
 
     @Override // androidx.emoji2.text.gz0
     public final void s() {
+        int ime;
         View view = this.e;
         if (view != null && Build.VERSION.SDK_INT < 33) {
             ((InputMethodManager) view.getContext().getSystemService("input_method")).isActive();
         }
         WindowInsetsController windowInsetsController = view != null ? view.getWindowInsetsController() : null;
         if (windowInsetsController != null) {
-            windowInsetsController.show(WindowInsets.Type.ime());
+            ime = WindowInsets.Type.ime();
+            windowInsetsController.show(ime);
         }
         super.s();
     }

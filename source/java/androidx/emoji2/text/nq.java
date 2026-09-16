@@ -36,7 +36,7 @@ public final class nq extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((nq) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((nq) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     /* JADX WARN: Type inference failed for: r9v2, types: [androidx.emoji2.text.hh2, androidx.emoji2.text.wm0] */
@@ -50,9 +50,9 @@ public final class nq extends hh2 implements Function2 {
                     ?? r9 = this.k.h;
                     Object obj2 = this.j;
                     this.i = 1;
-                    Object objInvoke = r9.invoke(this.l, obj2, this);
+                    Object invoke = r9.invoke(this.l, obj2, this);
                     f30 f30Var = f30.d;
-                    if (objInvoke == f30Var) {
+                    if (invoke == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -61,7 +61,7 @@ public final class nq extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
@@ -72,9 +72,9 @@ public final class nq extends hh2 implements Function2 {
                     hj0 hj0Var = qqVar.g;
                     pq pqVar = new pq(cy1Var, e30Var, qqVar, this.l, 0);
                     this.i = 1;
-                    Object objJ = hj0Var.j(pqVar, this);
+                    Object j = hj0Var.j(pqVar, this);
                     f30 f30Var2 = f30.d;
-                    if (objJ == f30Var2) {
+                    if (j == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -83,7 +83,7 @@ public final class nq extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

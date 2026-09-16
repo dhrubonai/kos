@@ -12,7 +12,7 @@ import java.util.Locale;
 public final class u71 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final u71 f1164a = new u71();
+    public static final u71 f1163a = new u71();
 
     public final void a(EditorInfo editorInfo, t71 t71Var) {
         if (lx0.n(t71Var, t71.f)) {
@@ -22,7 +22,7 @@ public final class u71 {
         ArrayList arrayList = new ArrayList(ys.r0(t71Var));
         Iterator it = t71Var.d.iterator();
         while (it.hasNext()) {
-            arrayList.add(((s71) it.next()).f1056a);
+            arrayList.add(((s71) it.next()).f1055a);
         }
         Locale[] localeArr = (Locale[]) arrayList.toArray(new Locale[0]);
         editorInfo.hintLocales = new LocaleList((Locale[]) Arrays.copyOf(localeArr, localeArr.length));

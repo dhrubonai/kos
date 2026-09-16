@@ -12,13 +12,14 @@ import javax.net.ssl.SSLSocket;
 public final class p6 implements ed2 {
     @Override // androidx.emoji2.text.ed2
     public final boolean a() {
-        lr1 lr1Var = lr1.f707a;
+        lr1 lr1Var = lr1.f706a;
         return iz0.q() && Build.VERSION.SDK_INT >= 29;
     }
 
     @Override // androidx.emoji2.text.ed2
     public final String b(SSLSocket sSLSocket) {
-        String applicationProtocol = sSLSocket.getApplicationProtocol();
+        String applicationProtocol;
+        applicationProtocol = sSLSocket.getApplicationProtocol();
         if (applicationProtocol == null ? true : applicationProtocol.equals("")) {
             return null;
         }
@@ -26,12 +27,12 @@ public final class p6 implements ed2 {
     }
 
     @Override // androidx.emoji2.text.ed2
-    public final void c(SSLSocket sSLSocket, String str, List list) throws IOException {
+    public final void c(SSLSocket sSLSocket, String str, List list) {
         lx0.x(list, "protocols");
         try {
             SSLSockets.setUseSessionTickets(sSLSocket, true);
             SSLParameters sSLParameters = sSLSocket.getSSLParameters();
-            lr1 lr1Var = lr1.f707a;
+            lr1 lr1Var = lr1.f706a;
             sSLParameters.setApplicationProtocols((String[]) iz0.i(list).toArray(new String[0]));
             sSLSocket.setSSLParameters(sSLParameters);
         } catch (IllegalArgumentException e) {
@@ -41,6 +42,8 @@ public final class p6 implements ed2 {
 
     @Override // androidx.emoji2.text.ed2
     public final boolean e(SSLSocket sSLSocket) {
-        return SSLSockets.isSupportedSocket(sSLSocket);
+        boolean isSupportedSocket;
+        isSupportedSocket = SSLSockets.isSupportedSocket(sSLSocket);
+        return isSupportedSocket;
     }
 }

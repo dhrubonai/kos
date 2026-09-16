@@ -7,6 +7,6 @@ import android.view.ViewConfiguration;
 public abstract class hs {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f484a = ViewConfiguration.getTapTimeout();
+    public static final long f483a = ViewConfiguration.getTapTimeout();
     public static final /* synthetic */ int b = 0;
 }

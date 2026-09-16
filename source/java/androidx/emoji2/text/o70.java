@@ -11,7 +11,7 @@ public class o70 implements m70 {
     public int g;
 
     /* renamed from: a, reason: collision with root package name */
-    public ru2 f844a = null;
+    public ru2 f843a = null;
     public boolean b = false;
     public boolean c = false;
     public int e = 1;
@@ -39,7 +39,7 @@ public class o70 implements m70 {
             }
         }
         this.c = true;
-        ru2 ru2Var = this.f844a;
+        ru2 ru2Var = this.f843a;
         if (ru2Var != null) {
             ru2Var.a(this);
         }
@@ -70,7 +70,7 @@ public class o70 implements m70 {
             }
             d(o70Var.g + this.f);
         }
-        ru2 ru2Var2 = this.f844a;
+        ru2 ru2Var2 = this.f843a;
         if (ru2Var2 != null) {
             ru2Var2.a(this);
         }
@@ -127,10 +127,10 @@ public class o70 implements m70 {
             case 4:
                 str = "LEFT";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 str = "RIGHT";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 str = "TOP";
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:

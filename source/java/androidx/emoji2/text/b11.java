@@ -7,29 +7,29 @@ import java.util.List;
 public abstract class b11 implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f133a;
+    public final String f132a;
 
     public b11(String str) {
-        this.f133a = str;
+        this.f132a = str;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int f(fx0 fx0Var, List list, int i) {
-        throw new IllegalStateException(this.f133a.toString());
+        throw new IllegalStateException(this.f132a.toString());
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int g(fx0 fx0Var, List list, int i) {
-        throw new IllegalStateException(this.f133a.toString());
+        throw new IllegalStateException(this.f132a.toString());
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int i(fx0 fx0Var, List list, int i) {
-        throw new IllegalStateException(this.f133a.toString());
+        throw new IllegalStateException(this.f132a.toString());
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int j(fx0 fx0Var, List list, int i) {
-        throw new IllegalStateException(this.f133a.toString());
+        throw new IllegalStateException(this.f132a.toString());
     }
 }

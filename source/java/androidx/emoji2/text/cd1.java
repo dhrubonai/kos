@@ -42,17 +42,44 @@ public final class cd1 extends g01 implements Function2 {
         this.s = composableLambdaImpl;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
     @Override // kotlin.jvm.functions.Function2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r21, java.lang.Object r22) {
-        /*
-            Method dump skipped, instructions count: 219
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.cd1.invoke(java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2) {
+        lx lxVar = (lx) obj;
+        if ((((Number) obj2).intValue() & 3) == 2) {
+            tx txVar = (tx) lxVar;
+            if (txVar.B()) {
+                txVar.S();
+                return up2.f1186a;
+            }
+        }
+        nd1 a2 = v62.a(bz0.y(androidx.compose.foundation.layout.c.c, new f9(3, 6)), false, o90.D);
+        fb1 e = qm.e(dd0.e, false);
+        int A = jm.A(lxVar);
+        tx txVar2 = (tx) lxVar;
+        ap1 l = txVar2.l();
+        nd1 Q = bz0.Q(lxVar, a2);
+        hx.b.getClass();
+        hy hyVar = gx.b;
+        txVar2.b0();
+        if (txVar2.S) {
+            txVar2.k(hyVar);
+        } else {
+            txVar2.l0();
+        }
+        mz0.G(lxVar, e, gx.e);
+        mz0.G(lxVar, l, gx.d);
+        wc wcVar = gx.f;
+        if (txVar2.S || !lx0.n(txVar2.M(), Integer.valueOf(A))) {
+            zd.l(A, txVar2, A, wcVar);
+        }
+        mz0.G(lxVar, Q, gx.c);
+        ya2 ya2Var = this.g;
+        boolean z = ((za2) ya2Var.b.h.getValue()) != za2.d;
+        long j = this.e;
+        sm0 sm0Var = this.f;
+        id1.c(j, sm0Var, z, lxVar, 0);
+        id1.b(this.h, this.i, sm0Var, this.j, this.k, ya2Var, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, lxVar, 70);
+        txVar2.p(true);
+        return up2.f1186a;
     }
 }

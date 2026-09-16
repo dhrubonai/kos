@@ -55,7 +55,7 @@ public class WorkManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("enqueue")
     public static class Enqueue extends MethodHook {
-        private Object createMockWorkResult() throws ClassNotFoundException {
+        private Object createMockWorkResult() {
             String[] strArr = xa1.b;
             try {
                 Class.forName(c.a(-962674528763682L, strArr));
@@ -89,7 +89,7 @@ public class WorkManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("enqueueUniquePeriodicWork")
     public static class EnqueueUniquePeriodicWork extends MethodHook {
-        private Object createMockWorkResult() throws ClassNotFoundException {
+        private Object createMockWorkResult() {
             String[] strArr = xa1.b;
             try {
                 Class.forName(c.a(-961725340991266L, strArr));
@@ -120,7 +120,7 @@ public class WorkManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("enqueueUniqueWork")
     public static class EnqueueUniqueWork extends MethodHook {
-        private Object createMockWorkResult() throws ClassNotFoundException {
+        private Object createMockWorkResult() {
             String[] strArr = xa1.b;
             try {
                 Class.forName(c.a(-973824263864098L, strArr));
@@ -151,7 +151,7 @@ public class WorkManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("getWorkInfos")
     public static class GetWorkInfos extends MethodHook {
-        private Object createEmptyWorkInfoList() throws ClassNotFoundException {
+        private Object createEmptyWorkInfoList() {
             String[] strArr = xa1.b;
             try {
                 Class.forName(c.a(-972522888773410L, strArr));

@@ -27,7 +27,7 @@ public final class c8 extends g01 implements um0 {
                     d8 d8Var2 = this.f;
                     d8Var2.d.getSnapshotObserver().a(t42Var, d8Var2.P, new l7(1, t42Var, d8Var2));
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

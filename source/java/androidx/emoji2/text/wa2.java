@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class wa2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1271a = 22;
-    public static final vo2 b = lx0.g0(300, 0, zc0.f1430a, 2);
+    public static final float f1270a = 22;
+    public static final vo2 b = lx0.g0(300, 0, zc0.f1429a, 2);
 }

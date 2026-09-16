@@ -8,12 +8,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class t60 implements ThreadFactory {
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicInteger f1106a = new AtomicInteger(0);
+    public final AtomicInteger f1105a = new AtomicInteger(0);
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
         Thread thread = new Thread(runnable);
-        thread.setName("arch_disk_io_" + this.f1106a.getAndIncrement());
+        thread.setName("arch_disk_io_" + this.f1105a.getAndIncrement());
         return thread;
     }
 }

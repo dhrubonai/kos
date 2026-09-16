@@ -8,17 +8,17 @@ import android.text.style.CharacterStyle;
 public final class aj2 extends CharacterStyle {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f105a;
+    public final boolean f104a;
     public final boolean b;
 
     public aj2(boolean z, boolean z2) {
-        this.f105a = z;
+        this.f104a = z;
         this.b = z2;
     }
 
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(this.f105a);
+        textPaint.setUnderlineText(this.f104a);
         textPaint.setStrikeThruText(this.b);
     }
 }

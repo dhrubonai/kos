@@ -7,5 +7,5 @@ import java.util.LinkedHashMap;
 public final class gj {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashMap f421a = new LinkedHashMap();
+    public final LinkedHashMap f420a = new LinkedHashMap();
 }

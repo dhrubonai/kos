@@ -4,7 +4,6 @@ import a.a.a.c;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.RemoteException;
 import android.util.AtomicFile;
 import android.util.SparseArray;
 import androidx.emoji2.text.c01;
@@ -52,16 +51,16 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
         BLocationConfig bLocationConfig;
         synchronized (this.mLocationConfigs) {
             try {
-                HashMap<String, BLocationConfig> map = this.mLocationConfigs.get(i);
-                if (map == null) {
-                    map = new HashMap<>();
-                    this.mLocationConfigs.put(i, map);
+                HashMap<String, BLocationConfig> hashMap = this.mLocationConfigs.get(i);
+                if (hashMap == null) {
+                    hashMap = new HashMap<>();
+                    this.mLocationConfigs.put(i, hashMap);
                 }
-                bLocationConfig = map.get(str);
+                bLocationConfig = hashMap.get(str);
                 if (bLocationConfig == null) {
                     bLocationConfig = new BLocationConfig();
                     bLocationConfig.pattern = 0;
-                    map.put(str, bLocationConfig);
+                    hashMap.put(str, bLocationConfig);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -76,17 +75,17 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$addTask$1(IBinder iBinder) throws InterruptedException {
+    public void lambda$addTask$1(IBinder iBinder) {
         BLocation location;
-        long jCurrentTimeMillis = System.currentTimeMillis();
+        long currentTimeMillis = System.currentTimeMillis();
         BLocation bLocation = null;
         while (iBinder.pingBinder()) {
-            IInterface iInterfaceAsInterface = BRILocationListenerStub.get().asInterface(iBinder);
+            IInterface asInterface = BRILocationListenerStub.get().asInterface(iBinder);
             LocationRecord locationRecord = this.mLocationListeners.get(iBinder);
             if (locationRecord != null && (location = getLocation(locationRecord.userId, locationRecord.packageName)) != null) {
-                if (!location.equals(bLocation) || System.currentTimeMillis() - jCurrentTimeMillis >= 3000) {
-                    jCurrentTimeMillis = System.currentTimeMillis();
-                    c01.r.n.post(new v8(4, iInterfaceAsInterface, location));
+                if (!location.equals(bLocation) || System.currentTimeMillis() - currentTimeMillis >= 3000) {
+                    currentTimeMillis = System.currentTimeMillis();
+                    c01.r.n.post(new v8(4, asInterface, location));
                     bLocation = location;
                 } else {
                     try {
@@ -173,40 +172,40 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
         return i2;
     }
 
-    public void loadConfig() throws Throwable {
-        Parcel parcelObtain = Parcel.obtain();
+    public void loadConfig() {
+        Parcel obtain = Parcel.obtain();
         FileInputStream fileInputStream = null;
         try {
             try {
                 if (!BEnvironment.getFakeLocationConf().exists()) {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(null);
                     return;
                 }
                 FileInputStream fileInputStream2 = new FileInputStream(BEnvironment.getFakeLocationConf());
                 try {
-                    byte[] bArrN = wj1.N(fileInputStream2);
-                    parcelObtain.unmarshall(bArrN, 0, bArrN.length);
-                    parcelObtain.setDataPosition(0);
+                    byte[] N = wj1.N(fileInputStream2);
+                    obtain.unmarshall(N, 0, N.length);
+                    obtain.setDataPosition(0);
                     synchronized (this.mGlobalConfig) {
-                        this.mGlobalConfig.refresh(parcelObtain);
+                        this.mGlobalConfig.refresh(obtain);
                     }
                     synchronized (this.mLocationConfigs) {
                         try {
                             this.mLocationConfigs.clear();
-                            int i = parcelObtain.readInt();
-                            for (int i2 = 0; i2 < i; i2++) {
-                                int i3 = parcelObtain.readInt();
-                                HashMap<String, BLocationConfig> hashMap = parcelObtain.readHashMap(BLocationConfig.class.getClassLoader());
-                                this.mLocationConfigs.put(i3, hashMap);
+                            int readInt = obtain.readInt();
+                            for (int i = 0; i < readInt; i++) {
+                                int readInt2 = obtain.readInt();
+                                HashMap<String, BLocationConfig> readHashMap = obtain.readHashMap(BLocationConfig.class.getClassLoader());
+                                this.mLocationConfigs.put(readInt2, readHashMap);
                                 String[] strArr = xa1.b;
-                                nz0.Q(c.a(-547338306338594L, strArr), 3, c.a(-547441385553698L, strArr) + i3 + c.a(-547518694965026L, strArr) + hashMap);
+                                nz0.Q(c.a(-547338306338594L, strArr), 3, c.a(-547441385553698L, strArr) + readInt2 + c.a(-547518694965026L, strArr) + readHashMap);
                             }
                         } catch (Throwable th) {
                             throw th;
                         }
                     }
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream2);
                 } catch (Exception e) {
                     e = e;
@@ -215,12 +214,12 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
                     String[] strArr2 = xa1.b;
                     nz0.Q(c.a(-547531579866914L, strArr2), 3, c.a(-547084903268130L, strArr2));
                     wj1.t(BEnvironment.getFakeLocationConf());
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                 } catch (Throwable th2) {
                     th = th2;
                     fileInputStream = fileInputStream2;
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                     throw th;
                 }
@@ -241,7 +240,7 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
     }
 
     @Override // com.kos.engine.core.system.location.IBLocationManagerService
-    public void requestLocationUpdates(final IBinder iBinder, String str, int i) throws RemoteException {
+    public void requestLocationUpdates(final IBinder iBinder, String str, int i) {
         if (iBinder == null || !iBinder.pingBinder() || this.mLocationListeners.containsKey(iBinder)) {
             return;
         }
@@ -259,33 +258,33 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
     public void save() {
         synchronized (this.mGlobalConfig) {
             synchronized (this.mLocationConfigs) {
-                Parcel parcelObtain = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
                 AtomicFile atomicFile = new AtomicFile(BEnvironment.getFakeLocationConf());
-                FileOutputStream fileOutputStreamStartWrite = null;
+                FileOutputStream fileOutputStream = null;
                 try {
-                    this.mGlobalConfig.writeToParcel(parcelObtain, 0);
-                    parcelObtain.writeInt(this.mLocationConfigs.size());
+                    this.mGlobalConfig.writeToParcel(obtain, 0);
+                    obtain.writeInt(this.mLocationConfigs.size());
                     for (int i = 0; i < this.mLocationConfigs.size(); i++) {
-                        int iKeyAt = this.mLocationConfigs.keyAt(i);
-                        HashMap<String, BLocationConfig> mapValueAt = this.mLocationConfigs.valueAt(i);
-                        parcelObtain.writeInt(iKeyAt);
-                        parcelObtain.writeMap(mapValueAt);
+                        int keyAt = this.mLocationConfigs.keyAt(i);
+                        HashMap<String, BLocationConfig> valueAt = this.mLocationConfigs.valueAt(i);
+                        obtain.writeInt(keyAt);
+                        obtain.writeMap(valueAt);
                     }
-                    parcelObtain.setDataPosition(0);
-                    fileOutputStreamStartWrite = atomicFile.startWrite();
-                    fileOutputStreamStartWrite.write(parcelObtain.marshall());
-                    atomicFile.finishWrite(fileOutputStreamStartWrite);
-                    parcelObtain.recycle();
-                    l8.F(fileOutputStreamStartWrite);
+                    obtain.setDataPosition(0);
+                    fileOutputStream = atomicFile.startWrite();
+                    fileOutputStream.write(obtain.marshall());
+                    atomicFile.finishWrite(fileOutputStream);
+                    obtain.recycle();
+                    l8.F(fileOutputStream);
                 } catch (Throwable th) {
                     try {
                         th.printStackTrace();
-                        atomicFile.failWrite(fileOutputStreamStartWrite);
-                        parcelObtain.recycle();
-                        l8.F(fileOutputStreamStartWrite);
+                        atomicFile.failWrite(fileOutputStream);
+                        obtain.recycle();
+                        l8.F(fileOutputStream);
                     } catch (Throwable th2) {
-                        parcelObtain.recycle();
-                        l8.F(fileOutputStreamStartWrite);
+                        obtain.recycle();
+                        l8.F(fileOutputStream);
                         throw th2;
                     }
                 }
@@ -366,7 +365,7 @@ public class BLocationManagerService extends IBLocationManagerService.Stub imple
     }
 
     @Override // com.kos.engine.core.system.ISystemService
-    public void systemReady() throws Throwable {
+    public void systemReady() {
         loadConfig();
         Iterator<IBinder> it = this.mLocationListeners.keySet().iterator();
         while (it.hasNext()) {

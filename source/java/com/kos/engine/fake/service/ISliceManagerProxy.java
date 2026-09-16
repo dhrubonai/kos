@@ -68,9 +68,9 @@ public class ISliceManagerProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
@@ -119,12 +119,12 @@ public class ISliceManagerProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1002325666840354L, strArr);
+            String a2 = c.a(-1002325666840354L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1002390091349794L, strArr), method);
             sb.append(c.a(-1000882557828898L, strArr));
             sb.append(findMessage(th));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }

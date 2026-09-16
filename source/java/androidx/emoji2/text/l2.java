@@ -33,7 +33,7 @@ public final /* synthetic */ class l2 implements sm0 {
                 this.f.setValue(null);
                 Context context = this.g;
                 String string = context.getString(R.string.busy_signing_out);
-                lx0.w(string, a.a.a.c.a(-180028408217378L, wj1.f1284a));
+                lx0.w(string, a.a.a.c.a(-180028408217378L, wj1.f1283a));
                 l8.n(this.e, this.i, this.j, context, ad2Var, this.h, string, new g3(context, null, 0));
                 break;
             case 1:
@@ -53,7 +53,7 @@ public final /* synthetic */ class l2 implements sm0 {
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ l2(int i, Context context, e30 e30Var, mf1 mf1Var, mf1 mf1Var2, mf1 mf1Var3, ad2 ad2Var) {

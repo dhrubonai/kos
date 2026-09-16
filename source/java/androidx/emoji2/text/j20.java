@@ -35,12 +35,12 @@ public final class j20 extends g01 implements sm0 {
                 uj2Var.b(true);
                 uj2Var.k();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 uj2 uj2Var2 = this.f;
                 uj2Var2.d();
                 uj2Var2.k();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 uj2 uj2Var3 = this.f;
                 uj2Var3.l();
                 uj2Var3.k();
@@ -49,6 +49,6 @@ public final class j20 extends g01 implements sm0 {
                 this.f.m();
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

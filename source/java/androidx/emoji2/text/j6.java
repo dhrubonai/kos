@@ -16,7 +16,7 @@ public final class j6 extends hh2 implements wm0 {
 
     @Override // androidx.emoji2.text.wm0
     public final Object invoke(Object obj, Object obj2, Object obj3) {
-        return new j6(this.i, this.j, (l10) obj3).k(up2.f1187a);
+        return new j6(this.i, this.j, (l10) obj3).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -26,9 +26,9 @@ public final class j6 extends hh2 implements wm0 {
             mz0.L(obj);
             k6 k6Var = (k6) this.i.e;
             this.h = 1;
-            Object objInvoke = this.j.invoke(k6Var, this);
+            Object invoke = this.j.invoke(k6Var, this);
             f30 f30Var = f30.d;
-            if (objInvoke == f30Var) {
+            if (invoke == f30Var) {
                 return f30Var;
             }
         } else {
@@ -37,6 +37,6 @@ public final class j6 extends hh2 implements wm0 {
             }
             mz0.L(obj);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

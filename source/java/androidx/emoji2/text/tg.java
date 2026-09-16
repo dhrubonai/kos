@@ -16,7 +16,7 @@ public final class tg {
     public final int e;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         tg tgVar = new tg(0, R.string.language_system_default, a.a.a.c.a(-382716504850210L, strArr), a.a.a.c.a(-382763749490466L, strArr));
         g = tgVar;
         tg tgVar2 = new tg(1, R.string.language_english, a.a.a.c.a(-382750864588578L, strArr), a.a.a.c.a(-382785224326946L, strArr));

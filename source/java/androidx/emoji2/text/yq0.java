@@ -5,15 +5,15 @@ package androidx.emoji2.text;
 public final class yq0 implements ed0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ ed0[] f1396a;
+    public final /* synthetic */ ed0[] f1395a;
 
     public yq0(ed0[] ed0VarArr) {
-        this.f1396a = ed0VarArr;
+        this.f1395a = ed0VarArr;
     }
 
     @Override // androidx.emoji2.text.ed0
     public final void a(fd0 fd0Var) {
-        for (ed0 ed0Var : this.f1396a) {
+        for (ed0 ed0Var : this.f1395a) {
             ed0Var.a(fd0Var);
         }
     }

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class c10 extends e10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final c10 f178a = new c10();
+    public static final c10 f177a = new c10();
 
     public final String toString() {
         return "Closed";

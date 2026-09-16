@@ -8,7 +8,7 @@ import java.util.Map;
 public final class g21 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final i21 f397a;
+    public final i21 f396a;
     public int b;
     public boolean c;
     public float d;
@@ -26,7 +26,7 @@ public final class g21 implements gb1 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public g21(i21 i21Var, int i, boolean z, float f, gb1 gb1Var, boolean z2, e30 e30Var, int i2, um0 um0Var, List list, int i3, int i4, int i5, il1 il1Var, int i6, int i7) {
-        this.f397a = i21Var;
+        this.f396a = i21Var;
         this.b = i;
         this.c = z;
         this.d = f;

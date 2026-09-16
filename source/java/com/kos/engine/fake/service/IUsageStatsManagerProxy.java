@@ -106,8 +106,8 @@ public class IUsageStatsManagerProxy extends BinderInvocationStub {
 
     private static String findUsageStatsPermissionMessage(Throwable th) {
         String message;
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if ((cause instanceof SecurityException) && (message = cause.getMessage()) != null && message.contains(c.a(-1025192072724258L, xa1.b))) {
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if ((th2 instanceof SecurityException) && (message = th2.getMessage()) != null && message.contains(c.a(-1025192072724258L, xa1.b))) {
                 return message;
             }
         }
@@ -144,11 +144,11 @@ public class IUsageStatsManagerProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1026038181281570L, strArr);
+            String a2 = c.a(-1026038181281570L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1026691016310562L, strArr), method);
             sb.append(c.a(-1026824160296738L, strArr));
-            zd.p(sb, findUsageStatsPermissionMessage(th), 5, strA);
+            zd.p(sb, findUsageStatsPermissionMessage(th), 5, a2);
             return emptyUsageStatsResult(method);
         }
     }

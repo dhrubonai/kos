@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class kn {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ky f646a = new ky(j7.A);
+    public static final ky f645a = new ky(j7.A);
     public static final jn b = new jn();
 }

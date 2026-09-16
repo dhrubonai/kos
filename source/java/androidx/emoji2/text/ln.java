@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public final class ln {
 
     /* renamed from: a, reason: collision with root package name */
-    public um0 f699a;
+    public um0 f698a;
     public ip b;
 }

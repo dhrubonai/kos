@@ -7,7 +7,7 @@ import java.util.Map;
 public final class l11 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f669a;
+    public final /* synthetic */ int f668a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Map c;
     public final /* synthetic */ um0 d;
@@ -16,7 +16,7 @@ public final class l11 implements gb1 {
     public final /* synthetic */ um0 g;
 
     public l11(int i, int i2, Map map, um0 um0Var, m11 m11Var, r11 r11Var, um0 um0Var2) {
-        this.f669a = i;
+        this.f668a = i;
         this.b = i2;
         this.c = map;
         this.d = um0Var;
@@ -50,7 +50,7 @@ public final class l11 implements gb1 {
 
     @Override // androidx.emoji2.text.gb1
     public final int d() {
-        return this.f669a;
+        return this.f668a;
     }
 
     @Override // androidx.emoji2.text.gb1

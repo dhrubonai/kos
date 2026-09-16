@@ -11,9 +11,9 @@ public final class fm1 extends md1 implements w01 {
         if (Float.compare(this.r.b(hb1Var.getLayoutDirection()), f) < 0 || Float.compare(this.r.c(), f) < 0 || Float.compare(this.r.d(hb1Var.getLayoutDirection()), f) < 0 || Float.compare(this.r.a(), f) < 0) {
             throw new IllegalArgumentException("Padding must be non-negative");
         }
-        int iI0 = hb1Var.i0(this.r.d(hb1Var.getLayoutDirection())) + hb1Var.i0(this.r.b(hb1Var.getLayoutDirection()));
-        int iI02 = hb1Var.i0(this.r.a()) + hb1Var.i0(this.r.c());
-        hr1 hr1VarQ = ab1Var.q(xz.j(-iI0, -iI02, j));
-        return hb1Var.P(xz.g(hr1VarQ.d + iI0, j), xz.f(hr1VarQ.e + iI02, j), re0.d, new pc(hr1VarQ, hb1Var, this, 14));
+        int i0 = hb1Var.i0(this.r.d(hb1Var.getLayoutDirection())) + hb1Var.i0(this.r.b(hb1Var.getLayoutDirection()));
+        int i02 = hb1Var.i0(this.r.a()) + hb1Var.i0(this.r.c());
+        hr1 q = ab1Var.q(xz.j(-i0, -i02, j));
+        return hb1Var.P(xz.g(q.d + i0, j), xz.f(q.e + i02, j), re0.d, new pc(q, hb1Var, this, 14));
     }
 }

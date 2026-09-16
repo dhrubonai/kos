@@ -8,19 +8,19 @@ import android.os.RemoteException;
 public final class mj implements IBinder.DeathRecipient {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ IBinder f750a;
+    public final /* synthetic */ IBinder f749a;
     public final /* synthetic */ rj b;
 
     public mj(rj rjVar, IBinder iBinder) {
         this.b = rjVar;
-        this.f750a = iBinder;
+        this.f749a = iBinder;
     }
 
     @Override // android.os.IBinder.DeathRecipient
     public final void binderDied() {
         synchronized (rj.h) {
             try {
-                this.f750a.linkToDeath(this, 0);
+                this.f749a.linkToDeath(this, 0);
             } catch (RemoteException unused) {
             }
             this.b.c = null;

@@ -76,10 +76,10 @@ public final class SplashScreen {
             float dimension;
             ImageView imageView = (ImageView) view.findViewById(R.id.splashscreen_icon_view);
             if (this.hasBackground) {
-                Drawable drawableO = xo2.o(imageView.getContext(), R.drawable.icon_background);
+                Drawable o = xo2.o(imageView.getContext(), R.drawable.icon_background);
                 dimension = imageView.getResources().getDimension(R.dimen.splashscreen_icon_size_with_background) * SplashScreen.MASK_FACTOR;
-                if (drawableO != null) {
-                    imageView.setBackground(new MaskedDrawable(drawableO, dimension));
+                if (o != null) {
+                    imageView.setBackground(new MaskedDrawable(o, dimension));
                 }
             } else {
                 dimension = imageView.getResources().getDimension(R.dimen.splashscreen_icon_size_no_background) * SplashScreen.MASK_FACTOR;
@@ -102,7 +102,7 @@ public final class SplashScreen {
             splashScreenViewProvider.getView().postOnAnimation(new Runnable() { // from class: androidx.core.splashscreen.b
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SplashScreen.Impl.dispatchOnExitAnimation$lambda$3(splashScreenViewProvider, onExitAnimationListener);
+                    SplashScreen.Impl.dispatchOnExitAnimation$lambda$3(SplashScreenViewProvider.this, onExitAnimationListener);
                 }
             });
         }
@@ -174,19 +174,20 @@ public final class SplashScreen {
         public void setKeepOnScreenCondition(KeepOnScreenCondition keepOnScreenCondition) {
             lx0.x(keepOnScreenCondition, "keepOnScreenCondition");
             this.splashScreenWaitPredicate = keepOnScreenCondition;
-            final View viewFindViewById = this.activity.findViewById(android.R.id.content);
-            viewFindViewById.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: androidx.core.splashscreen.SplashScreen$Impl$setKeepOnScreenCondition$1
+            final View findViewById = this.activity.findViewById(android.R.id.content);
+            findViewById.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() { // from class: androidx.core.splashscreen.SplashScreen$Impl$setKeepOnScreenCondition$1
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public boolean onPreDraw() {
-                    if (this.this$0.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
+                    SplashScreenViewProvider splashScreenViewProvider;
+                    if (SplashScreen.Impl.this.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
                         return false;
                     }
-                    viewFindViewById.getViewTreeObserver().removeOnPreDrawListener(this);
-                    SplashScreenViewProvider splashScreenViewProvider = this.this$0.mSplashScreenViewProvider;
+                    findViewById.getViewTreeObserver().removeOnPreDrawListener(this);
+                    splashScreenViewProvider = SplashScreen.Impl.this.mSplashScreenViewProvider;
                     if (splashScreenViewProvider == null) {
                         return true;
                     }
-                    this.this$0.dispatchOnExitAnimation(splashScreenViewProvider);
+                    SplashScreen.Impl.this.dispatchOnExitAnimation(splashScreenViewProvider);
                     return true;
                 }
             });
@@ -216,10 +217,10 @@ public final class SplashScreen {
                     lx0.x(view2, "view");
                     if (view2.isAttachedToWindow()) {
                         view2.removeOnLayoutChangeListener(this);
-                        if (!this.this$0.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
-                            this.this$0.dispatchOnExitAnimation(splashScreenViewProvider);
+                        if (!SplashScreen.Impl.this.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
+                            SplashScreen.Impl.this.dispatchOnExitAnimation(splashScreenViewProvider);
                         } else {
-                            this.this$0.mSplashScreenViewProvider = splashScreenViewProvider;
+                            SplashScreen.Impl.this.mSplashScreenViewProvider = splashScreenViewProvider;
                         }
                     }
                 }
@@ -259,7 +260,7 @@ public final class SplashScreen {
                 @Override // android.view.ViewGroup.OnHierarchyChangeListener
                 public void onChildViewAdded(View view, View view2) {
                     if (wd2.l(view2)) {
-                        SplashScreen.Impl31 impl31 = this.this$0;
+                        SplashScreen.Impl31 impl31 = SplashScreen.Impl31.this;
                         impl31.setMDecorFitWindowInsets(impl31.computeDecorFitsWindow(wd2.g(view2)));
                         View decorView = activity.getWindow().getDecorView();
                         lx0.v(decorView, "null cannot be cast to non-null type android.view.ViewGroup");
@@ -308,11 +309,14 @@ public final class SplashScreen {
         }
 
         public final boolean computeDecorFitsWindow(SplashScreenView splashScreenView) {
+            WindowInsets build;
+            View rootView;
             lx0.x(splashScreenView, "child");
-            WindowInsets windowInsetsBuild = wp0.j().build();
-            lx0.w(windowInsetsBuild, "build(...)");
+            build = wp0.j().build();
+            lx0.w(build, "build(...)");
             Rect rect = new Rect(Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE, Integer.MAX_VALUE);
-            return (windowInsetsBuild == splashScreenView.getRootView().computeSystemWindowInsets(windowInsetsBuild, rect) && rect.isEmpty()) ? false : true;
+            rootView = splashScreenView.getRootView();
+            return (build == rootView.computeSystemWindowInsets(build, rect) && rect.isEmpty()) ? false : true;
         }
 
         public final ViewGroup.OnHierarchyChangeListener getHierarchyListener() {
@@ -343,18 +347,18 @@ public final class SplashScreen {
         public void setKeepOnScreenCondition(KeepOnScreenCondition keepOnScreenCondition) {
             lx0.x(keepOnScreenCondition, "keepOnScreenCondition");
             setSplashScreenWaitPredicate(keepOnScreenCondition);
-            final View viewFindViewById = getActivity().findViewById(android.R.id.content);
-            ViewTreeObserver viewTreeObserver = viewFindViewById.getViewTreeObserver();
+            final View findViewById = getActivity().findViewById(android.R.id.content);
+            ViewTreeObserver viewTreeObserver = findViewById.getViewTreeObserver();
             if (this.preDrawListener != null && viewTreeObserver.isAlive()) {
                 viewTreeObserver.removeOnPreDrawListener(this.preDrawListener);
             }
             ViewTreeObserver.OnPreDrawListener onPreDrawListener = new ViewTreeObserver.OnPreDrawListener() { // from class: androidx.core.splashscreen.SplashScreen$Impl31$setKeepOnScreenCondition$1
                 @Override // android.view.ViewTreeObserver.OnPreDrawListener
                 public boolean onPreDraw() {
-                    if (this.this$0.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
+                    if (SplashScreen.Impl31.this.getSplashScreenWaitPredicate().shouldKeepOnScreen()) {
                         return false;
                     }
-                    viewFindViewById.getViewTreeObserver().removeOnPreDrawListener(this);
+                    findViewById.getViewTreeObserver().removeOnPreDrawListener(this);
                     return true;
                 }
             };
@@ -369,11 +373,13 @@ public final class SplashScreen {
         /* JADX WARN: Type inference failed for: r1v0, types: [androidx.core.splashscreen.c] */
         @Override // androidx.core.splashscreen.SplashScreen.Impl
         public void setOnExitAnimationListener(final OnExitAnimationListener onExitAnimationListener) {
+            android.window.SplashScreen splashScreen;
             lx0.x(onExitAnimationListener, "exitAnimationListener");
-            getActivity().getSplashScreen().setOnExitAnimationListener(new SplashScreen.OnExitAnimationListener() { // from class: androidx.core.splashscreen.c
+            splashScreen = getActivity().getSplashScreen();
+            splashScreen.setOnExitAnimationListener(new SplashScreen.OnExitAnimationListener() { // from class: androidx.core.splashscreen.c
                 @Override // android.window.SplashScreen.OnExitAnimationListener
                 public final void onSplashScreenExit(SplashScreenView splashScreenView) {
-                    SplashScreen.Impl31.setOnExitAnimationListener$lambda$0(this.f73a, onExitAnimationListener, splashScreenView);
+                    SplashScreen.Impl31.setOnExitAnimationListener$lambda$0(SplashScreen.Impl31.this, onExitAnimationListener, splashScreenView);
                 }
             });
         }

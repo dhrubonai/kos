@@ -106,19 +106,19 @@ public class BPackageManager extends BlackManager<IBPackageManagerService> {
         Intent intent = new Intent(c.a(-304161553006370L, strArr));
         intent.addCategory(c.a(-304260337254178L, strArr));
         intent.setPackage(str);
-        List<ResolveInfo> listQueryIntentActivities = queryIntentActivities(intent, 0, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
-        if (listQueryIntentActivities == null || listQueryIntentActivities.size() <= 0) {
+        List<ResolveInfo> queryIntentActivities = queryIntentActivities(intent, 0, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
+        if (queryIntentActivities == null || queryIntentActivities.size() <= 0) {
             intent.removeCategory(c.a(-307150850244386L, strArr));
             intent.addCategory(c.a(-307309764034338L, strArr));
             intent.setPackage(str);
-            listQueryIntentActivities = queryIntentActivities(intent, 0, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
+            queryIntentActivities = queryIntentActivities(intent, 0, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
         }
-        if (listQueryIntentActivities == null || listQueryIntentActivities.size() <= 0) {
+        if (queryIntentActivities == null || queryIntentActivities.size() <= 0) {
             return null;
         }
         Intent intent2 = new Intent(intent);
         intent2.setFlags(268435456);
-        intent2.setClassName(listQueryIntentActivities.get(0).activityInfo.packageName, listQueryIntentActivities.get(0).activityInfo.name);
+        intent2.setClassName(queryIntentActivities.get(0).activityInfo.packageName, queryIntentActivities.get(0).activityInfo.name);
         return intent2;
     }
 

@@ -42,7 +42,7 @@ public final class ad1 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((ad1) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((ad1) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -53,9 +53,9 @@ public final class ad1 extends hh2 implements Function2 {
                 if (i == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objD = this.j.d(this);
+                    Object d = this.j.d(this);
                     f30 f30Var = f30.d;
-                    if (objD == f30Var) {
+                    if (d == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -64,15 +64,15 @@ public final class ad1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB = this.j.b(this);
+                    Object b = this.j.b(this);
                     f30 f30Var2 = f30.d;
-                    if (objB == f30Var2) {
+                    if (b == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -81,10 +81,10 @@ public final class ad1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 2:
                 int i3 = this.i;
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 if (i3 != 0) {
                     if (i3 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -95,25 +95,25 @@ public final class ad1 extends hh2 implements Function2 {
                 mz0.L(obj);
                 this.i = 1;
                 ya2 ya2Var = this.j;
-                Map map = ya2Var.b.d().f140a;
+                Map map = ya2Var.b.d().f139a;
                 za2 za2Var = za2.f;
                 if (!map.containsKey(za2Var)) {
                     za2Var = za2.e;
                 }
-                Object objA = ya2.a(ya2Var, za2Var, this);
+                Object a2 = ya2.a(ya2Var, za2Var, this);
                 f30 f30Var3 = f30.d;
-                if (objA != f30Var3) {
-                    objA = up2Var;
+                if (a2 != f30Var3) {
+                    a2 = up2Var;
                 }
-                return objA == f30Var3 ? f30Var3 : up2Var;
+                return a2 == f30Var3 ? f30Var3 : up2Var;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 int i4 = this.i;
                 if (i4 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB2 = this.j.b(this);
+                    Object b2 = this.j.b(this);
                     f30 f30Var4 = f30.d;
-                    if (objB2 == f30Var4) {
+                    if (b2 == f30Var4) {
                         return f30Var4;
                     }
                 } else {
@@ -122,10 +122,10 @@ public final class ad1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 4:
                 int i5 = this.i;
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 if (i5 != 0) {
                     if (i5 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -136,20 +136,20 @@ public final class ad1 extends hh2 implements Function2 {
                 mz0.L(obj);
                 this.i = 1;
                 m6 m6Var = this.j.b;
-                Object objB3 = androidx.compose.material3.internal.a.b(m6Var, za2.e, m6Var.k.g(), this);
+                Object b3 = androidx.compose.material3.internal.a.b(m6Var, za2.e, m6Var.k.g(), this);
                 f30 f30Var5 = f30.d;
-                if (objB3 != f30Var5) {
-                    objB3 = up2Var2;
+                if (b3 != f30Var5) {
+                    b3 = up2Var2;
                 }
-                return objB3 == f30Var5 ? f30Var5 : up2Var2;
+                return b3 == f30Var5 ? f30Var5 : up2Var2;
             default:
                 int i6 = this.i;
                 if (i6 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objD2 = this.j.d(this);
+                    Object d2 = this.j.d(this);
                     f30 f30Var6 = f30.d;
-                    if (objD2 == f30Var6) {
+                    if (d2 == f30Var6) {
                         return f30Var6;
                     }
                 } else {
@@ -158,7 +158,7 @@ public final class ad1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

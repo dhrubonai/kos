@@ -12,7 +12,7 @@ public final class rz {
     public static final SparseIntArray n;
 
     /* renamed from: a, reason: collision with root package name */
-    public float f1041a;
+    public float f1040a;
     public float b;
     public float c;
     public float d;
@@ -44,50 +44,50 @@ public final class rz {
     }
 
     public final void a(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.i);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.i);
+        int indexCount = obtainStyledAttributes.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i);
+            int index = obtainStyledAttributes.getIndex(i);
             switch (n.get(index)) {
                 case 1:
-                    this.f1041a = typedArrayObtainStyledAttributes.getFloat(index, this.f1041a);
+                    this.f1040a = obtainStyledAttributes.getFloat(index, this.f1040a);
                     break;
                 case 2:
-                    this.b = typedArrayObtainStyledAttributes.getFloat(index, this.b);
+                    this.b = obtainStyledAttributes.getFloat(index, this.b);
                     break;
                 case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                    this.c = typedArrayObtainStyledAttributes.getFloat(index, this.c);
+                    this.c = obtainStyledAttributes.getFloat(index, this.c);
                     break;
                 case 4:
-                    this.d = typedArrayObtainStyledAttributes.getFloat(index, this.d);
+                    this.d = obtainStyledAttributes.getFloat(index, this.d);
                     break;
-                case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                    this.e = typedArrayObtainStyledAttributes.getFloat(index, this.e);
+                case 5:
+                    this.e = obtainStyledAttributes.getFloat(index, this.e);
                     break;
-                case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                    this.f = typedArrayObtainStyledAttributes.getDimension(index, this.f);
+                case 6:
+                    this.f = obtainStyledAttributes.getDimension(index, this.f);
                     break;
                 case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                    this.g = typedArrayObtainStyledAttributes.getDimension(index, this.g);
+                    this.g = obtainStyledAttributes.getDimension(index, this.g);
                     break;
                 case 8:
-                    this.i = typedArrayObtainStyledAttributes.getDimension(index, this.i);
+                    this.i = obtainStyledAttributes.getDimension(index, this.i);
                     break;
-                case 9:
-                    this.j = typedArrayObtainStyledAttributes.getDimension(index, this.j);
+                case pz0.b /* 9 */:
+                    this.j = obtainStyledAttributes.getDimension(index, this.j);
                     break;
-                case 10:
-                    this.k = typedArrayObtainStyledAttributes.getDimension(index, this.k);
+                case pz0.d /* 10 */:
+                    this.k = obtainStyledAttributes.getDimension(index, this.k);
                     break;
                 case 11:
                     this.l = true;
-                    this.m = typedArrayObtainStyledAttributes.getDimension(index, this.m);
+                    this.m = obtainStyledAttributes.getDimension(index, this.m);
                     break;
                 case 12:
-                    this.h = sz.f(typedArrayObtainStyledAttributes, index, this.h);
+                    this.h = sz.f(obtainStyledAttributes, index, this.h);
                     break;
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 }

@@ -58,22 +58,22 @@ public interface IIntentReceiver extends IInterface {
 
             @Override // android.content.IIntentReceiver
             public void performReceive(Intent intent, int i, String str, Bundle bundle, boolean z, boolean z2, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeInt(z2 ? 1 : 0);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeInt(z2 ? 1 : 0);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -86,8 +86,8 @@ public interface IIntentReceiver extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IIntentReceiver)) ? new Proxy(iBinder) : (IIntentReceiver) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IIntentReceiver)) ? new Proxy(iBinder) : (IIntentReceiver) queryLocalInterface;
         }
 
         @Override // android.os.Binder

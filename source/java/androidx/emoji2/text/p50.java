@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class p50 implements zu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final p50 f888a = new p50();
+    public static final p50 f887a = new p50();
 
     @Override // androidx.emoji2.text.zu0
     public final y60 b(yw0 yw0Var) {

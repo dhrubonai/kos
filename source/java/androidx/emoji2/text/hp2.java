@@ -8,23 +8,23 @@ public final class hp2 {
     public static final ThreadLocal d = new ThreadLocal();
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f481a;
+    public final int f480a;
     public final s6 b;
     public volatile int c = 0;
 
     public hp2(s6 s6Var, int i) {
         this.b = s6Var;
-        this.f481a = i;
+        this.f480a = i;
     }
 
     public final int a(int i) {
-        lc1 lc1VarB = b();
-        int iA = lc1VarB.a(16);
-        if (iA == 0) {
+        lc1 b = b();
+        int a2 = b.a(16);
+        if (a2 == 0) {
             return 0;
         }
-        ByteBuffer byteBuffer = (ByteBuffer) lc1VarB.g;
-        int i2 = iA + lc1VarB.d;
+        ByteBuffer byteBuffer = (ByteBuffer) b.g;
+        int i2 = a2 + b.d;
         return byteBuffer.getInt((i * 4) + byteBuffer.getInt(i2) + i2 + 4);
     }
 
@@ -36,10 +36,10 @@ public final class hp2 {
             threadLocal.set(lc1Var);
         }
         mc1 mc1Var = (mc1) this.b.d;
-        int iA = mc1Var.a(6);
-        if (iA != 0) {
-            int i = iA + mc1Var.d;
-            int i2 = (this.f481a * 4) + ((ByteBuffer) mc1Var.g).getInt(i) + i + 4;
+        int a2 = mc1Var.a(6);
+        if (a2 != 0) {
+            int i = a2 + mc1Var.d;
+            int i2 = (this.f480a * 4) + ((ByteBuffer) mc1Var.g).getInt(i) + i + 4;
             int i3 = ((ByteBuffer) mc1Var.g).getInt(i2) + i2;
             ByteBuffer byteBuffer = (ByteBuffer) mc1Var.g;
             lc1Var.g = byteBuffer;
@@ -62,15 +62,15 @@ public final class hp2 {
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
         sb.append(", id:");
-        lc1 lc1VarB = b();
-        int iA = lc1VarB.a(4);
-        sb.append(Integer.toHexString(iA != 0 ? ((ByteBuffer) lc1VarB.g).getInt(iA + lc1VarB.d) : 0));
+        lc1 b = b();
+        int a2 = b.a(4);
+        sb.append(Integer.toHexString(a2 != 0 ? ((ByteBuffer) b.g).getInt(a2 + b.d) : 0));
         sb.append(", codepoints:");
-        lc1 lc1VarB2 = b();
-        int iA2 = lc1VarB2.a(16);
-        if (iA2 != 0) {
-            int i2 = iA2 + lc1VarB2.d;
-            i = ((ByteBuffer) lc1VarB2.g).getInt(((ByteBuffer) lc1VarB2.g).getInt(i2) + i2);
+        lc1 b2 = b();
+        int a3 = b2.a(16);
+        if (a3 != 0) {
+            int i2 = a3 + b2.d;
+            i = ((ByteBuffer) b2.g).getInt(((ByteBuffer) b2.g).getInt(i2) + i2);
         } else {
             i = 0;
         }

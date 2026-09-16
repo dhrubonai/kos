@@ -7,7 +7,7 @@ import android.view.WindowManager;
 public final class ye {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ye f1380a = new ye();
+    public static final ye f1379a = new ye();
 
     public final void a(WindowManager.LayoutParams layoutParams) {
         layoutParams.layoutInDisplayCutoutMode = 3;

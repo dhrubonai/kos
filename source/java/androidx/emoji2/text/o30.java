@@ -8,17 +8,17 @@ import java.util.Comparator;
 public final class o30 implements Comparator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f839a;
+    public final /* synthetic */ int f838a;
     public final /* synthetic */ p30 b;
 
     public /* synthetic */ o30(p30 p30Var, int i) {
-        this.f839a = i;
+        this.f838a = i;
         this.b = p30Var;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f839a) {
+        switch (this.f838a) {
             case 0:
                 p30 p30Var = this.b;
                 return wj1.p(Integer.valueOf(p30.a(p30Var, (File) obj)), Integer.valueOf(p30.a(p30Var, (File) obj2)));

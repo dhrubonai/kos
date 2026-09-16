@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function2;
 public abstract class pg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f905a;
+    public static final float f904a;
     public static final float b;
     public static final float c;
     public static final float d;
@@ -18,15 +18,15 @@ public abstract class pg1 {
     public static final float f;
 
     static {
-        float f2 = qg1.f956a;
-        f905a = qg1.c;
+        float f2 = qg1.f955a;
+        f904a = qg1.c;
         b = 8;
         c = 4;
         float f3 = qg1.b;
         float f4 = qg1.d;
         float f5 = 2;
         d = (f3 - f4) / f5;
-        e = (qg1.f956a - f4) / f5;
+        e = (qg1.f955a - f4) / f5;
         f = 12;
     }
 
@@ -50,14 +50,14 @@ public abstract class pg1 {
         } else {
             txVar.U();
             if ((i & 1) == 0 || txVar.y()) {
-                long jA = lt.a((kt) txVar.j(lt.f709a), j);
-                int i4 = gg1.f417a;
+                long a2 = lt.a((kt) txVar.j(lt.f708a), j);
+                int i4 = gg1.f416a;
                 WeakHashMap weakHashMap = bw2.v;
                 a61 a61Var = new a61(f32.d(txVar).g, pz0.f | 32);
                 i2 = i3 & (-58241);
-                nd1Var2 = kd1.f634a;
+                nd1Var2 = kd1.f633a;
                 wu2Var2 = a61Var;
-                j3 = jA;
+                j3 = a2;
             } else {
                 txVar.S();
                 j3 = j2;
@@ -71,9 +71,9 @@ public abstract class pg1 {
             wu2Var3 = wu2Var2;
             nd1Var3 = nd1Var2;
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new ig1(nd1Var3, j, j3, f2, wu2Var3, composableLambdaImpl2, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new ig1(nd1Var3, j, j3, f2, wu2Var3, composableLambdaImpl2, i);
         }
     }
 
@@ -116,7 +116,7 @@ public abstract class pg1 {
         } else {
             txVar2.U();
             if ((i & 1) == 0 || txVar2.y()) {
-                nd1Var2 = kd1.f634a;
+                nd1Var2 = kd1.f633a;
                 z4 = true;
                 z5 = true;
             } else {
@@ -127,38 +127,38 @@ public abstract class pg1 {
             }
             txVar2.q();
             txVar2.X(-103235253);
-            Object objM = txVar2.M();
-            on onVar = kx.f663a;
-            if (objM == onVar) {
-                objM = new se1();
-                txVar2.i0(objM);
+            Object M = txVar2.M();
+            on onVar = kx.f662a;
+            if (M == onVar) {
+                M = new se1();
+                txVar2.i0(M);
             }
-            se1 se1Var = (se1) objM;
+            se1 se1Var = (se1) M;
             txVar2.p(false);
             boolean z8 = z5;
-            ComposableLambdaImpl composableLambdaImplF0 = l8.f0(-1419576100, new lg1(hg1Var, z, z4, z5, function2), txVar2);
+            ComposableLambdaImpl f0 = l8.f0(-1419576100, new lg1(hg1Var, z, z4, z5, function2), txVar2);
             txVar2.X(-103209106);
             txVar2.p(false);
-            Object objM2 = txVar2.M();
-            if (objM2 == onVar) {
-                objM2 = new rn1(0);
-                txVar2.i0(objM2);
+            Object M2 = txVar2.M();
+            if (M2 == onVar) {
+                M2 = new rn1(0);
+                txVar2.i0(M2);
             }
-            rn1 rn1Var = (rn1) objM2;
+            rn1 rn1Var = (rn1) M2;
             nd1 nd1Var4 = nd1Var2;
             nd1Var3 = nd1Var4;
             boolean z9 = z4;
-            nd1 nd1VarA = a22.a(a22Var, androidx.compose.foundation.layout.c.b(androidx.compose.foundation.selection.a.a(nd1Var4, z, se1Var, z4, new k12(4), sm0Var), 0.0f, f905a, 1));
-            Object objM3 = txVar2.M();
-            if (objM3 == onVar) {
-                objM3 = new r5(26, rn1Var);
-                txVar2.i0(objM3);
+            nd1 a2 = a22.a(a22Var, androidx.compose.foundation.layout.c.b(androidx.compose.foundation.selection.a.a(nd1Var4, z, se1Var, z4, new k12(4), sm0Var), 0.0f, f904a, 1));
+            Object M3 = txVar2.M();
+            if (M3 == onVar) {
+                M3 = new r5(26, rn1Var);
+                txVar2.i0(M3);
             }
-            nd1 nd1VarE = androidx.compose.ui.layout.a.e(nd1VarA, (um0) objM3);
-            fb1 fb1VarE = qm.e(dd0.i, true);
-            int iHashCode = Long.hashCode(txVar2.T);
-            ap1 ap1VarL = txVar2.l();
-            nd1 nd1VarQ = bz0.Q(txVar2, nd1VarE);
+            nd1 e2 = androidx.compose.ui.layout.a.e(a2, (um0) M3);
+            fb1 e3 = qm.e(dd0.i, true);
+            int hashCode = Long.hashCode(txVar2.T);
+            ap1 l = txVar2.l();
+            nd1 Q = bz0.Q(txVar2, e2);
             hx.b.getClass();
             hy hyVar = gx.b;
             txVar2.b0();
@@ -167,38 +167,38 @@ public abstract class pg1 {
             } else {
                 txVar2.l0();
             }
-            mz0.G(txVar2, fb1VarE, gx.e);
-            mz0.G(txVar2, ap1VarL, gx.d);
+            mz0.G(txVar2, e3, gx.e);
+            mz0.G(txVar2, l, gx.d);
             wc wcVar = gx.f;
-            if (txVar2.S || !lx0.n(txVar2.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar2, iHashCode, wcVar);
+            if (txVar2.S || !lx0.n(txVar2.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar2, hashCode, wcVar);
             }
-            mz0.G(txVar2, nd1VarQ, gx.c);
+            mz0.G(txVar2, Q, gx.c);
             txVar = txVar2;
-            qe2 qe2VarA = gd.a(z ? 1.0f : 0.0f, lx0.g0(100, 0, null, 6), null, txVar, 48, 28);
-            long jD = jz0.d((rn1Var.g() - r2.i0(qg1.b)) / 2, ((j70) txVar.j(iy.h)).c0(f));
-            boolean zF = txVar.f(se1Var) | txVar.e(jD);
-            Object objM4 = txVar.M();
-            if (zF || objM4 == onVar) {
-                objM4 = new fa1(se1Var, jD);
-                txVar.i0(objM4);
+            qe2 a3 = gd.a(z ? 1.0f : 0.0f, lx0.g0(100, 0, null, 6), null, txVar, 48, 28);
+            long d2 = jz0.d((rn1Var.g() - r2.i0(qg1.b)) / 2, ((j70) txVar.j(iy.h)).c0(f));
+            boolean f2 = txVar.f(se1Var) | txVar.e(d2);
+            Object M4 = txVar.M();
+            if (f2 || M4 == onVar) {
+                M4 = new fa1(se1Var, d2);
+                txVar.i0(M4);
             }
-            ComposableLambdaImpl composableLambdaImplF02 = l8.f0(691730997, new x(11, (fa1) objM4), txVar);
-            ComposableLambdaImpl composableLambdaImplF03 = l8.f0(-474426875, new x5(18, qe2VarA, hg1Var), txVar);
-            boolean zF2 = txVar.f(qe2VarA);
-            Object objM5 = txVar.M();
-            if (zF2 || objM5 == onVar) {
-                objM5 = new jg1(0, qe2VarA);
-                txVar.i0(objM5);
+            ComposableLambdaImpl f02 = l8.f0(691730997, new x(11, (fa1) M4), txVar);
+            ComposableLambdaImpl f03 = l8.f0(-474426875, new x5(18, a3, hg1Var), txVar);
+            boolean f3 = txVar.f(a3);
+            Object M5 = txVar.M();
+            if (f3 || M5 == onVar) {
+                M5 = new jg1(0, a3);
+                txVar.i0(M5);
             }
-            c(composableLambdaImplF02, composableLambdaImplF03, composableLambdaImplF0, null, z8, (sm0) objM5, txVar, ((i4 >> 9) & 57344) | 438);
+            c(f02, f03, f0, null, z8, (sm0) M5, txVar, ((i4 >> 9) & 57344) | 438);
             txVar.p(true);
             z6 = z8;
             z7 = z9;
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new kg1(a22Var, z, sm0Var, function2, nd1Var3, z7, z6, hg1Var, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new kg1(a22Var, z, sm0Var, function2, nd1Var3, z7, z6, hg1Var, i);
         }
     }
 
@@ -236,16 +236,16 @@ public abstract class pg1 {
             int i3 = 458752 & i2;
             int i4 = 57344 & i2;
             boolean z4 = (i3 == 131072) | ((i2 & 7168) == 2048) | (i4 == 16384);
-            Object objM = txVar.M();
-            on onVar = kx.f663a;
-            if (z4 || objM == onVar) {
-                objM = new mg1(sm0Var, function22, z);
-                txVar.i0(objM);
+            Object M = txVar.M();
+            on onVar = kx.f662a;
+            if (z4 || M == onVar) {
+                M = new mg1(sm0Var, function22, z);
+                txVar.i0(M);
             }
-            fb1 fb1Var = (fb1) objM;
-            int iHashCode = Long.hashCode(txVar.T);
-            ap1 ap1VarL = txVar.l();
-            nd1 nd1VarQ = bz0.Q(txVar, kd1.f634a);
+            fb1 fb1Var = (fb1) M;
+            int hashCode = Long.hashCode(txVar.T);
+            ap1 l = txVar.l();
+            nd1 Q = bz0.Q(txVar, kd1.f633a);
             hx.b.getClass();
             hy hyVar = gx.b;
             txVar.b0();
@@ -258,64 +258,64 @@ public abstract class pg1 {
             wc wcVar = gx.e;
             mz0.G(txVar, fb1Var, wcVar);
             wc wcVar2 = gx.d;
-            mz0.G(txVar, ap1VarL, wcVar2);
+            mz0.G(txVar, l, wcVar2);
             wc wcVar3 = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar3);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar3);
             }
             wc wcVar4 = gx.c;
-            mz0.G(txVar, nd1VarQ, wcVar4);
+            mz0.G(txVar, Q, wcVar4);
             composableLambdaImpl.invoke((ComposableLambdaImpl) txVar, (tx) Integer.valueOf(i5 & 14));
             composableLambdaImpl2.invoke((ComposableLambdaImpl) txVar, (tx) Integer.valueOf((i5 >> 3) & 14));
-            nd1 nd1VarC = androidx.compose.ui.layout.a.c("icon");
+            nd1 c2 = androidx.compose.ui.layout.a.c("icon");
             gl glVar = dd0.e;
-            fb1 fb1VarE = qm.e(glVar, false);
-            int iHashCode2 = Long.hashCode(txVar.T);
-            ap1 ap1VarL2 = txVar.l();
-            nd1 nd1VarQ2 = bz0.Q(txVar, nd1VarC);
+            fb1 e2 = qm.e(glVar, false);
+            int hashCode2 = Long.hashCode(txVar.T);
+            ap1 l2 = txVar.l();
+            nd1 Q2 = bz0.Q(txVar, c2);
             txVar.b0();
             if (txVar.S) {
                 txVar.k(hyVar);
             } else {
                 txVar.l0();
             }
-            mz0.G(txVar, fb1VarE, wcVar);
-            mz0.G(txVar, ap1VarL2, wcVar2);
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode2))) {
-                zd.l(iHashCode2, txVar, iHashCode2, wcVar3);
+            mz0.G(txVar, e2, wcVar);
+            mz0.G(txVar, l2, wcVar2);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode2))) {
+                zd.l(hashCode2, txVar, hashCode2, wcVar3);
             }
-            mz0.G(txVar, nd1VarQ2, wcVar4);
+            mz0.G(txVar, Q2, wcVar4);
             composableLambdaImpl3.invoke((ComposableLambdaImpl) txVar, (tx) Integer.valueOf((i5 >> 6) & 14));
             txVar.p(true);
             txVar.X(1087198243);
             if (function2 != null) {
-                nd1 nd1VarC2 = androidx.compose.ui.layout.a.c("label");
+                nd1 c3 = androidx.compose.ui.layout.a.c("label");
                 boolean z5 = (i4 == 16384) | (i3 == 131072);
-                Object objM2 = txVar.M();
-                if (z5 || objM2 == onVar) {
+                Object M2 = txVar.M();
+                if (z5 || M2 == onVar) {
                     z2 = z;
-                    objM2 = new mf0(z2, sm0Var, 1);
-                    txVar.i0(objM2);
+                    M2 = new mf0(z2, sm0Var, 1);
+                    txVar.i0(M2);
                 } else {
                     z2 = z;
                 }
-                nd1 nd1VarK = androidx.compose.foundation.layout.a.k(androidx.compose.ui.graphics.a.a(nd1VarC2, (um0) objM2), b / 2, 0.0f, 2);
-                fb1 fb1VarE2 = qm.e(glVar, false);
-                int iHashCode3 = Long.hashCode(txVar.T);
-                ap1 ap1VarL3 = txVar.l();
-                nd1 nd1VarQ3 = bz0.Q(txVar, nd1VarK);
+                nd1 k = androidx.compose.foundation.layout.a.k(androidx.compose.ui.graphics.a.a(c3, (um0) M2), b / 2, 0.0f, 2);
+                fb1 e3 = qm.e(glVar, false);
+                int hashCode3 = Long.hashCode(txVar.T);
+                ap1 l3 = txVar.l();
+                nd1 Q3 = bz0.Q(txVar, k);
                 txVar.b0();
                 if (txVar.S) {
                     txVar.k(hyVar);
                 } else {
                     txVar.l0();
                 }
-                mz0.G(txVar, fb1VarE2, wcVar);
-                mz0.G(txVar, ap1VarL3, wcVar2);
-                if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode3))) {
-                    zd.l(iHashCode3, txVar, iHashCode3, wcVar3);
+                mz0.G(txVar, e3, wcVar);
+                mz0.G(txVar, l3, wcVar2);
+                if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode3))) {
+                    zd.l(hashCode3, txVar, hashCode3, wcVar3);
                 }
-                mz0.G(txVar, nd1VarQ3, wcVar4);
+                mz0.G(txVar, Q3, wcVar4);
                 function22 = function2;
                 function22.invoke(txVar, Integer.valueOf((i5 >> 9) & 14));
                 z3 = true;
@@ -328,9 +328,9 @@ public abstract class pg1 {
             txVar.p(false);
             txVar.p(z3);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new w00(composableLambdaImpl, composableLambdaImpl2, composableLambdaImpl3, function22, z2, sm0Var, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new w00(composableLambdaImpl, composableLambdaImpl2, composableLambdaImpl3, function22, z2, sm0Var, i);
         }
     }
 }

@@ -70,39 +70,39 @@ public abstract class kp0 {
     }
 
     public static String d(Intent intent) {
-        String string;
+        String sb;
         String[] strArr = xa1.b;
         if (intent == null) {
             return a.a.a.c.a(-1345021107388194L, strArr);
         }
-        StringBuilder sb = new StringBuilder();
-        zd.q(sb, a.a.a.c.a(-1345107006734114L, strArr), intent);
-        sb.append(a.a.a.c.a(-1345141366472482L, strArr));
-        sb.append(intent.getPackage());
-        sb.append(a.a.a.c.a(-1345171431243554L, strArr));
-        sb.append(intent.getComponent());
-        sb.append(a.a.a.c.a(-1345244445687586L, strArr));
+        StringBuilder sb2 = new StringBuilder();
+        zd.q(sb2, a.a.a.c.a(-1345107006734114L, strArr), intent);
+        sb2.append(a.a.a.c.a(-1345141366472482L, strArr));
+        sb2.append(intent.getPackage());
+        sb2.append(a.a.a.c.a(-1345171431243554L, strArr));
+        sb2.append(intent.getComponent());
+        sb2.append(a.a.a.c.a(-1345244445687586L, strArr));
         try {
             Uri data = intent.getData();
-            string = data == null ? null : data.toString();
+            sb = data == null ? null : data.toString();
         } catch (Throwable th) {
-            StringBuilder sb2 = new StringBuilder();
-            zd.r(sb2, a.a.a.c.a(-1344351092490018L, strArr), th);
-            sb2.append(a.a.a.c.a(-1344342502555426L, strArr));
-            string = sb2.toString();
+            StringBuilder sb3 = new StringBuilder();
+            zd.r(sb3, a.a.a.c.a(-1344351092490018L, strArr), th);
+            sb3.append(a.a.a.c.a(-1344342502555426L, strArr));
+            sb = sb3.toString();
         }
-        sb.append(string);
-        sb.append(a.a.a.c.a(-1344729049612066L, strArr));
-        sb.append(Integer.toHexString(intent.getFlags()));
+        sb2.append(sb);
+        sb2.append(a.a.a.c.a(-1344729049612066L, strArr));
+        sb2.append(Integer.toHexString(intent.getFlags()));
         try {
-            sb.append(a.a.a.c.a(-1344759114383138L, strArr));
-            sb.append(c(intent.getExtras()));
+            sb2.append(a.a.a.c.a(-1344759114383138L, strArr));
+            sb2.append(c(intent.getExtras()));
         } catch (Throwable th2) {
-            sb.append(a.a.a.c.a(-1344784884186914L, strArr));
-            sb.append(th2.getClass().getSimpleName());
-            sb.append('>');
+            sb2.append(a.a.a.c.a(-1344784884186914L, strArr));
+            sb2.append(th2.getClass().getSimpleName());
+            sb2.append('>');
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     public static String e(ServiceInfo serviceInfo) {
@@ -115,8 +115,8 @@ public abstract class kp0 {
         if (obj == null) {
             return a.a.a.c.a(-1344518596214562L, strArr);
         }
-        String strA = str == null ? a.a.a.c.a(-1344557250920226L, strArr) : str.toLowerCase();
-        if (strA.contains(a.a.a.c.a(-1344561545887522L, strArr)) || strA.contains(a.a.a.c.a(-1344535776083746L, strArr)) || strA.contains(a.a.a.c.a(-1344625970396962L, strArr)) || strA.contains(a.a.a.c.a(-1344604495560482L, strArr))) {
+        String a2 = str == null ? a.a.a.c.a(-1344557250920226L, strArr) : str.toLowerCase();
+        if (a2.contains(a.a.a.c.a(-1344561545887522L, strArr)) || a2.contains(a.a.a.c.a(-1344535776083746L, strArr)) || a2.contains(a.a.a.c.a(-1344625970396962L, strArr)) || a2.contains(a.a.a.c.a(-1344604495560482L, strArr))) {
             return obj.getClass().getSimpleName() + a.a.a.c.a(-1344634560331554L, strArr);
         }
         if (obj instanceof Bundle) {
@@ -135,7 +135,7 @@ public abstract class kp0 {
             return obj.getClass().getComponentType().getSimpleName() + a.a.a.c.a(-1344303847849762L, strArr);
         }
         String str2 = (String) obj;
-        if (strA.contains(a.a.a.c.a(-1344252308242210L, strArr)) || strA.contains(a.a.a.c.a(-1344286667980578L, strArr)) || str2.contains(a.a.a.c.a(-1344260898176802L, strArr))) {
+        if (a2.contains(a.a.a.c.a(-1344252308242210L, strArr)) || a2.contains(a.a.a.c.a(-1344286667980578L, strArr)) || str2.contains(a.a.a.c.a(-1344260898176802L, strArr))) {
             return k(str2);
         }
         if (str2.length() <= 96) {
@@ -190,9 +190,9 @@ public abstract class kp0 {
         if (str == null) {
             return null;
         }
-        int iIndexOf = str.indexOf(64);
-        if (iIndexOf > 0) {
-            return str.substring(0, 1) + a.a.a.c.a(-1344381157261090L, strArr) + str.substring(iIndexOf);
+        int indexOf = str.indexOf(64);
+        if (indexOf > 0) {
+            return str.substring(0, 1) + a.a.a.c.a(-1344381157261090L, strArr) + str.substring(indexOf);
         }
         if (str.length() <= 2) {
             return a.a.a.c.a(-1344333912620834L, strArr);

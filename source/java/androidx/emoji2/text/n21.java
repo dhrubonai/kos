@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class n21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ r21 f786a;
+    public final /* synthetic */ r21 f785a;
 
     public /* synthetic */ n21(r21 r21Var) {
-        this.f786a = r21Var;
+        this.f785a = r21Var;
     }
 
     public gz0 a() {
-        return new gz0(this.f786a.g());
+        return new gz0(this.f785a.g());
     }
 }

@@ -32,35 +32,40 @@ public final class vt2 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((vt2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((vt2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0040, code lost:
+    
+        if (androidx.emoji2.text.h50.M(r9, r0, r8) == r4) goto L15;
+     */
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object k(Object obj) {
         mf1 mf1Var;
         int i = this.i;
         f30 f30Var = f30.d;
         if (i == 0) {
             mz0.L(obj);
-            q60 q60Var = e90.f294a;
+            q60 q60Var = e90.f293a;
             a60 a60Var = a60.f;
             vy1 vy1Var = new vy1(this.j, this.k, this.l, (l10) null);
             this.i = 1;
-            if (h50.M(a60Var, vy1Var, this) != f30Var) {
+        } else {
+            if (i != 1) {
+                if (i != 2) {
+                    throw new IllegalStateException(a.a.a.c.a(-492362724949794L, wj1.f1283a));
+                }
+                mf1Var = this.h;
+                mz0.L(obj);
+                mf1Var.setValue((List) obj);
+                return up2.f1186a;
             }
-            return f30Var;
-        }
-        if (i != 1) {
-            if (i != 2) {
-                throw new IllegalStateException(a.a.a.c.a(-492362724949794L, wj1.f1284a));
-            }
-            mf1Var = this.h;
             mz0.L(obj);
-            mf1Var.setValue((List) obj);
-            return up2.f1187a;
         }
-        mz0.L(obj);
-        q60 q60Var2 = e90.f294a;
+        q60 q60Var2 = e90.f293a;
         a60 a60Var2 = a60.f;
         st2 st2Var = new st2(this.m, null, 5);
         mf1 mf1Var2 = this.n;
@@ -70,7 +75,7 @@ public final class vt2 extends hh2 implements Function2 {
         if (obj != f30Var) {
             mf1Var = mf1Var2;
             mf1Var.setValue((List) obj);
-            return up2.f1187a;
+            return up2.f1186a;
         }
         return f30Var;
     }

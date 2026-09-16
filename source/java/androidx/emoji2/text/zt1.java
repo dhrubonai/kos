@@ -47,9 +47,9 @@ public final class zt1 extends me0 {
         lx0.x(activity, "activity");
         if (Build.VERSION.SDK_INT < 29) {
             int i = kz1.e;
-            Fragment fragmentFindFragmentByTag = activity.getFragmentManager().findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag");
-            lx0.v(fragmentFindFragmentByTag, "null cannot be cast to non-null type androidx.lifecycle.ReportFragment");
-            ((kz1) fragmentFindFragmentByTag).d = this.this$0.k;
+            Fragment findFragmentByTag = activity.getFragmentManager().findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag");
+            lx0.v(findFragmentByTag, "null cannot be cast to non-null type androidx.lifecycle.ReportFragment");
+            ((kz1) findFragmentByTag).d = this.this$0.k;
         }
     }
 

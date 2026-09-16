@@ -45,11 +45,11 @@ public final class qp1 extends i0 implements Collection, sy0 {
         }
         Object[] objArr2 = this.j;
         Object obj2 = objArr2[i3];
-        Object[] objArrK = k(objArr2);
-        xh.z0(objArr2, objArrK, i3, i3 + 1, i4);
-        objArrK[i4 - 1] = null;
+        Object[] k = k(objArr2);
+        xh.z0(objArr2, k, i3, i3 + 1, i4);
+        k[i4 - 1] = null;
         this.i = objArr;
-        this.j = objArrK;
+        this.j = k;
         this.k = (i + i4) - 1;
         this.g = i2;
         return obj2;
@@ -64,54 +64,54 @@ public final class qp1 extends i0 implements Collection, sy0 {
     }
 
     public final Object[] C(Object[] objArr, int i, int i2, Object obj, r1 r1Var) {
-        int iC = pz0.C(i2, i);
-        Object[] objArrK = k(objArr);
+        int C = pz0.C(i2, i);
+        Object[] k = k(objArr);
         if (i != 0) {
-            Object obj2 = objArrK[iC];
+            Object obj2 = k[C];
             lx0.v(obj2, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-            objArrK[iC] = C((Object[]) obj2, i - 5, i2, obj, r1Var);
-            return objArrK;
+            k[C] = C((Object[]) obj2, i - 5, i2, obj, r1Var);
+            return k;
         }
-        if (objArrK != objArr) {
+        if (k != objArr) {
             ((AbstractList) this).modCount++;
         }
-        r1Var.f990a = objArrK[iC];
-        objArrK[iC] = obj;
-        return objArrK;
+        r1Var.f989a = k[C];
+        k[C] = obj;
+        return k;
     }
 
     public final void D(Collection collection, int i, Object[] objArr, int i2, Object[][] objArr2, int i3, Object[] objArr3) {
-        Object[] objArrM;
+        Object[] m;
         if (i3 < 1) {
             jt1.a("requires at least one nullBuffer");
         }
-        Object[] objArrK = k(objArr);
-        objArr2[0] = objArrK;
+        Object[] k = k(objArr);
+        objArr2[0] = k;
         int i4 = i & 31;
         int size = ((collection.size() + i) - 1) & 31;
         int i5 = (i2 - i4) + size;
         if (i5 < 32) {
-            xh.z0(objArrK, objArr3, size + 1, i4, i2);
+            xh.z0(k, objArr3, size + 1, i4, i2);
         } else {
             int i6 = i5 - 31;
             if (i3 == 1) {
-                objArrM = objArrK;
+                m = k;
             } else {
-                objArrM = m();
+                m = m();
                 i3--;
-                objArr2[i3] = objArrM;
+                objArr2[i3] = m;
             }
             int i7 = i2 - i6;
-            xh.z0(objArrK, objArr3, 0, i7, i2);
-            xh.z0(objArrK, objArrM, size + 1, i4, i7);
-            objArr3 = objArrM;
+            xh.z0(k, objArr3, 0, i7, i2);
+            xh.z0(k, m, size + 1, i4, i7);
+            objArr3 = m;
         }
         Iterator it = collection.iterator();
-        d(objArrK, i4, it);
+        d(k, i4, it);
         for (int i8 = 1; i8 < i3; i8++) {
-            Object[] objArrM2 = m();
-            d(objArrM2, 0, it);
-            objArr2[i8] = objArrM2;
+            Object[] m2 = m();
+            d(m2, 0, it);
+            objArr2[i8] = m2;
         }
         d(objArr3, 0, it);
     }
@@ -134,22 +134,22 @@ public final class qp1 extends i0 implements Collection, sy0 {
             return;
         }
         ((AbstractList) this).modCount++;
-        int iB = B();
-        if (i >= iB) {
-            h(this.i, i - iB, obj);
+        int B = B();
+        if (i >= B) {
+            h(this.i, i - B, obj);
             return;
         }
         r1 r1Var = new r1(null);
         Object[] objArr = this.i;
         lx0.u(objArr);
-        h(g(objArr, this.g, i, obj, r1Var), 0, r1Var.f990a);
+        h(g(objArr, this.g, i, obj, r1Var), 0, r1Var.f989a);
     }
 
     @Override // java.util.AbstractList, java.util.List
     public final boolean addAll(int i, Collection collection) {
         Collection collection2;
         qp1 qp1Var;
-        Object[] objArrM;
+        Object[] m;
         a01.s(i, this.k);
         if (i == this.k) {
             return addAll(collection);
@@ -164,49 +164,49 @@ public final class qp1 extends i0 implements Collection, sy0 {
             int i3 = i & 31;
             int size2 = ((collection.size() + i) - 1) & 31;
             Object[] objArr = this.j;
-            Object[] objArrK = k(objArr);
-            xh.z0(objArr, objArrK, size2 + 1, i3, E());
-            d(objArrK, i3, collection.iterator());
-            this.j = objArrK;
+            Object[] k = k(objArr);
+            xh.z0(objArr, k, size2 + 1, i3, E());
+            d(k, i3, collection.iterator());
+            this.j = k;
             this.k = collection.size() + this.k;
             return true;
         }
         Object[][] objArr2 = new Object[size][];
-        int iE = E();
+        int E = E();
         int size3 = collection.size() + this.k;
         if (size3 > 32) {
             size3 -= (size3 - 1) & (-32);
         }
         if (i >= B()) {
-            objArrM = m();
+            m = m();
             collection2 = collection;
-            D(collection2, i, this.j, iE, objArr2, size, objArrM);
+            D(collection2, i, this.j, E, objArr2, size, m);
             qp1Var = this;
             objArr2 = objArr2;
         } else {
             collection2 = collection;
             qp1Var = this;
-            if (size3 > iE) {
-                int i4 = size3 - iE;
-                Object[] objArrL = l(qp1Var.j, i4);
-                qp1Var.f(collection2, i, i4, objArr2, size, objArrL);
+            if (size3 > E) {
+                int i4 = size3 - E;
+                Object[] l = l(qp1Var.j, i4);
+                qp1Var.f(collection2, i, i4, objArr2, size, l);
                 objArr2 = objArr2;
-                objArrM = objArrL;
+                m = l;
             } else {
                 Object[] objArr3 = qp1Var.j;
-                objArrM = m();
-                int i5 = iE - size3;
-                xh.z0(objArr3, objArrM, 0, i5, iE);
+                m = m();
+                int i5 = E - size3;
+                xh.z0(objArr3, m, 0, i5, E);
                 int i6 = 32 - i5;
-                Object[] objArrL2 = l(qp1Var.j, i6);
+                Object[] l2 = l(qp1Var.j, i6);
                 int i7 = size - 1;
-                objArr2[i7] = objArrL2;
-                qp1Var.f(collection2, i, i6, objArr2, i7, objArrL2);
+                objArr2[i7] = l2;
+                qp1Var.f(collection2, i, i6, objArr2, i7, l2);
                 collection2 = collection2;
             }
         }
         qp1Var.i = s(qp1Var.i, i2, objArr2);
-        qp1Var.j = objArrM;
+        qp1Var.j = m;
         qp1Var.k = collection2.size() + qp1Var.k;
         return true;
     }
@@ -215,15 +215,15 @@ public final class qp1 extends i0 implements Collection, sy0 {
     public final Object b(int i) {
         a01.r(i, a());
         ((AbstractList) this).modCount++;
-        int iB = B();
-        if (i >= iB) {
-            return A(this.i, iB, this.g, i - iB);
+        int B = B();
+        if (i >= B) {
+            return A(this.i, B, this.g, i - B);
         }
         r1 r1Var = new r1(this.j[0]);
         Object[] objArr = this.i;
         lx0.u(objArr);
-        A(z(objArr, this.g, i, r1Var), iB, this.g, 0);
-        return r1Var.f990a;
+        A(z(objArr, this.g, i, r1Var), B, this.g, 0);
+        return r1Var.f989a;
     }
 
     public final l0 c() {
@@ -241,9 +241,9 @@ public final class qp1 extends i0 implements Collection, sy0 {
             } else if (objArr2.length == 0) {
                 pp1Var = sb2.e;
             } else {
-                Object[] objArrCopyOf = Arrays.copyOf(objArr2, this.k);
-                lx0.w(objArrCopyOf, "copyOf(...)");
-                pp1Var = new sb2(objArrCopyOf);
+                Object[] copyOf = Arrays.copyOf(objArr2, this.k);
+                lx0.w(copyOf, "copyOf(...)");
+                pp1Var = new sb2(copyOf);
             }
         }
         this.d = pp1Var;
@@ -259,48 +259,48 @@ public final class qp1 extends i0 implements Collection, sy0 {
             throw new IllegalStateException("root is null");
         }
         int i4 = i >> 5;
-        g0 g0VarJ = j(B() >> 5);
+        g0 j = j(B() >> 5);
         int i5 = i3;
-        Object[] objArrL = objArr2;
-        while (g0VarJ.d - 1 != i4) {
-            Object[] objArr3 = (Object[]) g0VarJ.previous();
-            xh.z0(objArr3, objArrL, 0, 32 - i2, 32);
-            objArrL = l(objArr3, i2);
+        Object[] objArr3 = objArr2;
+        while (j.d - 1 != i4) {
+            Object[] objArr4 = (Object[]) j.previous();
+            xh.z0(objArr4, objArr3, 0, 32 - i2, 32);
+            objArr3 = l(objArr4, i2);
             i5--;
-            objArr[i5] = objArrL;
+            objArr[i5] = objArr3;
         }
-        Object[] objArr4 = (Object[]) g0VarJ.previous();
-        int iB = i3 - (((B() >> 5) - 1) - i4);
-        if (iB < i3) {
-            objArr2 = objArr[iB];
+        Object[] objArr5 = (Object[]) j.previous();
+        int B = i3 - (((B() >> 5) - 1) - i4);
+        if (B < i3) {
+            objArr2 = objArr[B];
             lx0.u(objArr2);
         }
-        D(collection, i, objArr4, 32, objArr, iB, objArr2);
+        D(collection, i, objArr5, 32, objArr, B, objArr2);
     }
 
     public final Object[] g(Object[] objArr, int i, int i2, Object obj, r1 r1Var) {
         Object obj2;
-        int iC = pz0.C(i2, i);
+        int C = pz0.C(i2, i);
         if (i == 0) {
-            r1Var.f990a = objArr[31];
-            Object[] objArrK = k(objArr);
-            xh.z0(objArr, objArrK, iC + 1, iC, 31);
-            objArrK[iC] = obj;
-            return objArrK;
+            r1Var.f989a = objArr[31];
+            Object[] k = k(objArr);
+            xh.z0(objArr, k, C + 1, C, 31);
+            k[C] = obj;
+            return k;
         }
-        Object[] objArrK2 = k(objArr);
+        Object[] k2 = k(objArr);
         int i3 = i - 5;
-        Object obj3 = objArrK2[iC];
+        Object obj3 = k2[C];
         lx0.v(obj3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-        objArrK2[iC] = g((Object[]) obj3, i3, i2, obj, r1Var);
+        k2[C] = g((Object[]) obj3, i3, i2, obj, r1Var);
         while (true) {
-            iC++;
-            if (iC >= 32 || (obj2 = objArrK2[iC]) == null) {
+            C++;
+            if (C >= 32 || (obj2 = k2[C]) == null) {
                 break;
             }
-            objArrK2[iC] = g((Object[]) obj2, i3, 0, r1Var.f990a, r1Var);
+            k2[C] = g((Object[]) obj2, i3, 0, r1Var.f989a, r1Var);
         }
-        return objArrK2;
+        return k2;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -322,21 +322,21 @@ public final class qp1 extends i0 implements Collection, sy0 {
     }
 
     public final void h(Object[] objArr, int i, Object obj) {
-        int iE = E();
-        Object[] objArrK = k(this.j);
-        if (iE < 32) {
-            xh.z0(this.j, objArrK, i + 1, i, iE);
-            objArrK[i] = obj;
+        int E = E();
+        Object[] k = k(this.j);
+        if (E < 32) {
+            xh.z0(this.j, k, i + 1, i, E);
+            k[i] = obj;
             this.i = objArr;
-            this.j = objArrK;
+            this.j = k;
             this.k++;
             return;
         }
         Object[] objArr2 = this.j;
         Object obj2 = objArr2[31];
-        xh.z0(objArr2, objArrK, i + 1, i, 31);
-        objArrK[i] = obj;
-        t(objArr, objArrK, n(obj2));
+        xh.z0(objArr2, k, i + 1, i, 31);
+        k[i] = obj;
+        t(objArr, k, n(obj2));
     }
 
     public final boolean i(Object[] objArr) {
@@ -353,10 +353,10 @@ public final class qp1 extends i0 implements Collection, sy0 {
         if (objArr == null) {
             throw new IllegalStateException("Invalid root");
         }
-        int iB = B() >> 5;
-        a01.s(i, iB);
+        int B = B() >> 5;
+        a01.s(i, B);
         int i2 = this.g;
-        return i2 == 0 ? new sn(i, objArr) : new mo2(objArr, i, iB, i2 / 5);
+        return i2 == 0 ? new sn(i, objArr) : new mo2(objArr, i, B, i2 / 5);
     }
 
     public final Object[] k(Object[] objArr) {
@@ -366,13 +366,13 @@ public final class qp1 extends i0 implements Collection, sy0 {
         if (i(objArr)) {
             return objArr;
         }
-        Object[] objArrM = m();
+        Object[] m = m();
         int length = objArr.length;
         if (length > 32) {
             length = 32;
         }
-        xh.B0(objArr, objArrM, 0, length, 6);
-        return objArrM;
+        xh.B0(objArr, m, 0, length, 6);
+        return m;
     }
 
     public final Object[] l(Object[] objArr, int i) {
@@ -380,9 +380,9 @@ public final class qp1 extends i0 implements Collection, sy0 {
             xh.z0(objArr, objArr, i, 0, 32 - i);
             return objArr;
         }
-        Object[] objArrM = m();
-        xh.z0(objArr, objArrM, i, 0, 32 - i);
-        return objArrM;
+        Object[] m = m();
+        xh.z0(objArr, m, i, 0, 32 - i);
+        return m;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -411,46 +411,46 @@ public final class qp1 extends i0 implements Collection, sy0 {
         if (i2 == 0) {
             return objArr;
         }
-        int iC = pz0.C(i, i2);
-        Object obj = objArr[iC];
+        int C = pz0.C(i, i2);
+        Object obj = objArr[C];
         lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-        Object objO = o((Object[]) obj, i, i2 - 5);
-        if (iC < 31) {
-            int i3 = iC + 1;
+        Object o = o((Object[]) obj, i, i2 - 5);
+        if (C < 31) {
+            int i3 = C + 1;
             if (objArr[i3] != null) {
                 if (i(objArr)) {
                     Arrays.fill(objArr, i3, 32, (Object) null);
                 }
-                Object[] objArrM = m();
-                xh.z0(objArr, objArrM, 0, 0, i3);
-                objArr = objArrM;
+                Object[] m = m();
+                xh.z0(objArr, m, 0, 0, i3);
+                objArr = m;
             }
         }
-        if (objO == objArr[iC]) {
+        if (o == objArr[C]) {
             return objArr;
         }
-        Object[] objArrK = k(objArr);
-        objArrK[iC] = objO;
-        return objArrK;
+        Object[] k = k(objArr);
+        k[C] = o;
+        return k;
     }
 
     public final Object[] p(Object[] objArr, int i, int i2, r1 r1Var) {
-        Object[] objArrP;
-        int iC = pz0.C(i2 - 1, i);
+        Object[] p;
+        int C = pz0.C(i2 - 1, i);
         if (i == 5) {
-            r1Var.f990a = objArr[iC];
-            objArrP = null;
+            r1Var.f989a = objArr[C];
+            p = null;
         } else {
-            Object obj = objArr[iC];
+            Object obj = objArr[C];
             lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-            objArrP = p((Object[]) obj, i - 5, i2, r1Var);
+            p = p((Object[]) obj, i - 5, i2, r1Var);
         }
-        if (objArrP == null && iC == 0) {
+        if (p == null && C == 0) {
             return null;
         }
-        Object[] objArrK = k(objArr);
-        objArrK[iC] = objArrP;
-        return objArrK;
+        Object[] k = k(objArr);
+        k[C] = p;
+        return k;
     }
 
     public final void q(Object[] objArr, int i, int i2) {
@@ -466,17 +466,17 @@ public final class qp1 extends i0 implements Collection, sy0 {
         }
         r1 r1Var = new r1(null);
         lx0.u(objArr);
-        Object[] objArrP = p(objArr, i2, i, r1Var);
-        lx0.u(objArrP);
-        Object obj = r1Var.f990a;
+        Object[] p = p(objArr, i2, i, r1Var);
+        lx0.u(p);
+        Object obj = r1Var.f989a;
         lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
         this.j = (Object[]) obj;
         this.k = i;
-        if (objArrP[1] == null) {
-            this.i = (Object[]) objArrP[0];
+        if (p[1] == null) {
+            this.i = (Object[]) p[0];
             this.g = i2 - 5;
         } else {
-            this.i = objArrP;
+            this.i = p;
             this.g = i2;
         }
     }
@@ -491,18 +491,18 @@ public final class qp1 extends i0 implements Collection, sy0 {
         if (i2 == 0) {
             return (Object[]) it.next();
         }
-        Object[] objArrK = k(objArr);
-        int iC = pz0.C(i, i2);
+        Object[] k = k(objArr);
+        int C = pz0.C(i, i2);
         int i3 = i2 - 5;
-        objArrK[iC] = r((Object[]) objArrK[iC], i, i3, it);
+        k[C] = r((Object[]) k[C], i, i3, it);
         while (true) {
-            iC++;
-            if (iC >= 32 || !it.hasNext()) {
+            C++;
+            if (C >= 32 || !it.hasNext()) {
                 break;
             }
-            objArrK[iC] = r((Object[]) objArrK[iC], 0, i3, it);
+            k[C] = r((Object[]) k[C], 0, i3, it);
         }
-        return objArrK;
+        return k;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -511,17 +511,17 @@ public final class qp1 extends i0 implements Collection, sy0 {
     }
 
     public final Object[] s(Object[] objArr, int i, Object[][] objArr2) {
-        c0 c0VarE = h50.E(objArr2);
+        c0 E = h50.E(objArr2);
         int i2 = i >> 5;
         int i3 = this.g;
-        Object[] objArrR = i2 < (1 << i3) ? r(objArr, i, i3, c0VarE) : k(objArr);
-        while (c0VarE.hasNext()) {
+        Object[] r = i2 < (1 << i3) ? r(objArr, i, i3, E) : k(objArr);
+        while (E.hasNext()) {
             this.g += 5;
-            objArrR = n(objArrR);
+            r = n(r);
             int i4 = this.g;
-            r(objArrR, 1 << i4, i4, c0VarE);
+            r(r, 1 << i4, i4, E);
         }
-        return objArrR;
+        return r;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -532,16 +532,16 @@ public final class qp1 extends i0 implements Collection, sy0 {
             Object[] objArr = this.i;
             lx0.u(objArr);
             this.i = C(objArr, this.g, i, obj, r1Var);
-            return r1Var.f990a;
+            return r1Var.f989a;
         }
-        Object[] objArrK = k(this.j);
-        if (objArrK != this.j) {
+        Object[] k = k(this.j);
+        if (k != this.j) {
             ((AbstractList) this).modCount++;
         }
         int i2 = i & 31;
-        Object obj2 = objArrK[i2];
-        objArrK[i2] = obj;
-        this.j = objArrK;
+        Object obj2 = k[i2];
+        k[i2] = obj;
+        this.j = k;
         return obj2;
     }
 
@@ -568,144 +568,151 @@ public final class qp1 extends i0 implements Collection, sy0 {
     }
 
     public final Object[] u(int i, Object[] objArr, Object[] objArr2) {
-        int iC = pz0.C(a() - 1, i);
-        Object[] objArrK = k(objArr);
+        int C = pz0.C(a() - 1, i);
+        Object[] k = k(objArr);
         if (i == 5) {
-            objArrK[iC] = objArr2;
-            return objArrK;
+            k[C] = objArr2;
+            return k;
         }
-        objArrK[iC] = u(i - 5, (Object[]) objArrK[iC], objArr2);
-        return objArrK;
+        k[C] = u(i - 5, (Object[]) k[C], objArr2);
+        return k;
     }
 
     public final int v(um0 um0Var, Object[] objArr, int i, int i2, r1 r1Var, ArrayList arrayList, ArrayList arrayList2) {
         if (i(objArr)) {
             arrayList.add(objArr);
         }
-        Object obj = r1Var.f990a;
+        Object obj = r1Var.f989a;
         lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
         Object[] objArr2 = (Object[]) obj;
-        Object[] objArrM = objArr2;
+        Object[] objArr3 = objArr2;
         for (int i3 = 0; i3 < i; i3++) {
             Object obj2 = objArr[i3];
             if (!((Boolean) um0Var.e(obj2)).booleanValue()) {
                 if (i2 == 32) {
-                    objArrM = !arrayList.isEmpty() ? (Object[]) arrayList.remove(arrayList.size() - 1) : m();
+                    objArr3 = !arrayList.isEmpty() ? (Object[]) arrayList.remove(arrayList.size() - 1) : m();
                     i2 = 0;
                 }
-                objArrM[i2] = obj2;
+                objArr3[i2] = obj2;
                 i2++;
             }
         }
-        r1Var.f990a = objArrM;
-        if (objArr2 != objArrM) {
+        r1Var.f989a = objArr3;
+        if (objArr2 != objArr3) {
             arrayList2.add(objArr2);
         }
         return i2;
     }
 
     public final int w(um0 um0Var, Object[] objArr, int i, r1 r1Var) {
-        Object[] objArrK = objArr;
+        Object[] objArr2 = objArr;
         int i2 = i;
         boolean z = false;
         for (int i3 = 0; i3 < i; i3++) {
             Object obj = objArr[i3];
             if (((Boolean) um0Var.e(obj)).booleanValue()) {
                 if (!z) {
-                    objArrK = k(objArr);
+                    objArr2 = k(objArr);
                     z = true;
                     i2 = i3;
                 }
             } else if (z) {
-                objArrK[i2] = obj;
+                objArr2[i2] = obj;
                 i2++;
             }
         }
-        r1Var.f990a = objArrK;
+        r1Var.f989a = objArr2;
         return i2;
     }
 
     public final int x(um0 um0Var, int i, r1 r1Var) {
-        int iW = w(um0Var, this.j, i, r1Var);
-        if (iW == i) {
+        int w = w(um0Var, this.j, i, r1Var);
+        if (w == i) {
             return i;
         }
-        Object obj = r1Var.f990a;
+        Object obj = r1Var.f989a;
         lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
         Object[] objArr = (Object[]) obj;
-        Arrays.fill(objArr, iW, i, (Object) null);
+        Arrays.fill(objArr, w, i, (Object) null);
         this.j = objArr;
-        this.k -= i - iW;
-        return iW;
+        this.k -= i - w;
+        return w;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0046, code lost:
+    
+        if (r0 != r8) goto L6;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0016, code lost:
+    
+        if (x(r1, r8, r5) != r8) goto L6;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean y(um0 um0Var) {
-        Object[] objArrR;
+        Object[] r;
         int i;
         um0 um0Var2 = um0Var;
-        int iE = E();
-        Object[] objArrO = null;
+        int E = E();
+        Object[] objArr = null;
         r1 r1Var = new r1(null);
         boolean z = false;
         if (this.i != null) {
-            g0 g0VarJ = j(0);
-            int iW = 32;
-            while (iW == 32 && g0VarJ.hasNext()) {
-                iW = w(um0Var2, (Object[]) g0VarJ.next(), 32, r1Var);
+            g0 j = j(0);
+            int i2 = 32;
+            while (i2 == 32 && j.hasNext()) {
+                i2 = w(um0Var2, (Object[]) j.next(), 32, r1Var);
             }
-            if (iW == 32) {
-                int iX = x(um0Var2, iE, r1Var);
-                if (iX == 0) {
+            if (i2 == 32) {
+                int x = x(um0Var2, E, r1Var);
+                if (x == 0) {
                     q(this.i, this.k, this.g);
                 }
-                if (iX != iE) {
-                }
             } else {
-                int i2 = (g0VarJ.d - 1) << 5;
+                int i3 = (j.d - 1) << 5;
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
-                int iV = iW;
-                while (g0VarJ.hasNext()) {
-                    iV = v(um0Var2, (Object[]) g0VarJ.next(), 32, iV, r1Var, arrayList2, arrayList);
+                int i4 = i2;
+                while (j.hasNext()) {
+                    i4 = v(um0Var2, (Object[]) j.next(), 32, i4, r1Var, arrayList2, arrayList);
                     um0Var2 = um0Var;
                 }
-                int iV2 = v(um0Var, this.j, iE, iV, r1Var, arrayList2, arrayList);
-                Object obj = r1Var.f990a;
+                int v = v(um0Var, this.j, E, i4, r1Var, arrayList2, arrayList);
+                Object obj = r1Var.f989a;
                 lx0.v(obj, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-                Object[] objArr = (Object[]) obj;
-                Arrays.fill(objArr, iV2, 32, (Object) null);
+                Object[] objArr2 = (Object[]) obj;
+                Arrays.fill(objArr2, v, 32, (Object) null);
                 if (arrayList.isEmpty()) {
-                    objArrR = this.i;
-                    lx0.u(objArrR);
+                    r = this.i;
+                    lx0.u(r);
                 } else {
-                    objArrR = r(this.i, i2, this.g, arrayList.iterator());
+                    r = r(this.i, i3, this.g, arrayList.iterator());
                 }
-                int size = i2 + (arrayList.size() << 5);
+                int size = i3 + (arrayList.size() << 5);
                 if ((size & 31) != 0) {
                     jt1.a("invalid size");
                 }
                 if (size == 0) {
                     this.g = 0;
                 } else {
-                    int i3 = size - 1;
+                    int i5 = size - 1;
                     while (true) {
                         i = this.g;
-                        if ((i3 >> i) != 0) {
+                        if ((i5 >> i) != 0) {
                             break;
                         }
                         this.g = i - 5;
-                        Object[] objArr2 = objArrR[0];
-                        lx0.v(objArr2, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-                        objArrR = objArr2;
+                        Object[] objArr3 = r[0];
+                        lx0.v(objArr3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
+                        r = objArr3;
                     }
-                    objArrO = o(objArrR, i3, i);
+                    objArr = o(r, i5, i);
                 }
-                this.i = objArrO;
-                this.j = objArr;
-                this.k = size + iV2;
+                this.i = objArr;
+                this.j = objArr2;
+                this.k = size + v;
             }
-            z = true;
-        } else if (x(um0Var2, iE, r1Var) != iE) {
             z = true;
         }
         if (z) {
@@ -715,34 +722,34 @@ public final class qp1 extends i0 implements Collection, sy0 {
     }
 
     public final Object[] z(Object[] objArr, int i, int i2, r1 r1Var) {
-        int iC = pz0.C(i2, i);
+        int C = pz0.C(i2, i);
         if (i == 0) {
-            Object obj = objArr[iC];
-            Object[] objArrK = k(objArr);
-            xh.z0(objArr, objArrK, iC, iC + 1, 32);
-            objArrK[31] = r1Var.f990a;
-            r1Var.f990a = obj;
-            return objArrK;
+            Object obj = objArr[C];
+            Object[] k = k(objArr);
+            xh.z0(objArr, k, C, C + 1, 32);
+            k[31] = r1Var.f989a;
+            r1Var.f989a = obj;
+            return k;
         }
-        int iC2 = objArr[31] == null ? pz0.C(B() - 1, i) : 31;
-        Object[] objArrK2 = k(objArr);
+        int C2 = objArr[31] == null ? pz0.C(B() - 1, i) : 31;
+        Object[] k2 = k(objArr);
         int i3 = i - 5;
-        int i4 = iC + 1;
-        if (i4 <= iC2) {
+        int i4 = C + 1;
+        if (i4 <= C2) {
             while (true) {
-                Object obj2 = objArrK2[iC2];
+                Object obj2 = k2[C2];
                 lx0.v(obj2, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-                objArrK2[iC2] = z((Object[]) obj2, i3, 0, r1Var);
-                if (iC2 == i4) {
+                k2[C2] = z((Object[]) obj2, i3, 0, r1Var);
+                if (C2 == i4) {
                     break;
                 }
-                iC2--;
+                C2--;
             }
         }
-        Object obj3 = objArrK2[iC];
+        Object obj3 = k2[C];
         lx0.v(obj3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>");
-        objArrK2[iC] = z((Object[]) obj3, i3, i2, r1Var);
-        return objArrK2;
+        k2[C] = z((Object[]) obj3, i3, i2, r1Var);
+        return k2;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -753,11 +760,11 @@ public final class qp1 extends i0 implements Collection, sy0 {
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean add(Object obj) {
         ((AbstractList) this).modCount++;
-        int iE = E();
-        if (iE < 32) {
-            Object[] objArrK = k(this.j);
-            objArrK[iE] = obj;
-            this.j = objArrK;
+        int E = E();
+        if (E < 32) {
+            Object[] k = k(this.j);
+            k[E] = obj;
+            this.j = k;
             this.k = a() + 1;
         } else {
             t(this.i, this.j, n(obj));
@@ -771,29 +778,29 @@ public final class qp1 extends i0 implements Collection, sy0 {
             return false;
         }
         ((AbstractList) this).modCount++;
-        int iE = E();
+        int E = E();
         Iterator it = collection.iterator();
-        if (32 - iE >= collection.size()) {
-            Object[] objArrK = k(this.j);
-            d(objArrK, iE, it);
-            this.j = objArrK;
+        if (32 - E >= collection.size()) {
+            Object[] k = k(this.j);
+            d(k, E, it);
+            this.j = k;
             this.k = collection.size() + this.k;
             return true;
         }
-        int size = ((collection.size() + iE) - 1) / 32;
+        int size = ((collection.size() + E) - 1) / 32;
         Object[][] objArr = new Object[size][];
-        Object[] objArrK2 = k(this.j);
-        d(objArrK2, iE, it);
-        objArr[0] = objArrK2;
+        Object[] k2 = k(this.j);
+        d(k2, E, it);
+        objArr[0] = k2;
         for (int i = 1; i < size; i++) {
-            Object[] objArrM = m();
-            d(objArrM, 0, it);
-            objArr[i] = objArrM;
+            Object[] m = m();
+            d(m, 0, it);
+            objArr[i] = m;
         }
         this.i = s(this.i, B(), objArr);
-        Object[] objArrM2 = m();
-        d(objArrM2, 0, it);
-        this.j = objArrM2;
+        Object[] m2 = m();
+        d(m2, 0, it);
+        this.j = m2;
         this.k = collection.size() + this.k;
         return true;
     }

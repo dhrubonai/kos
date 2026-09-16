@@ -8,15 +8,15 @@ import android.window.OnBackAnimationCallback;
 public final class jj1 implements OnBackAnimationCallback {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ hj1 f582a;
+    public final /* synthetic */ hj1 f581a;
 
     public jj1(hj1 hj1Var) {
-        this.f582a = hj1Var;
+        this.f581a = hj1Var;
     }
 
     public final void onBackCancelled() {
-        hj1 hj1Var = this.f582a;
-        s6 s6Var = hj1Var.f1216a;
+        hj1 hj1Var = this.f581a;
+        s6 s6Var = hj1Var.f1215a;
         if (s6Var == null) {
             throw new IllegalStateException("This input is not added to any dispatcher.");
         }
@@ -26,17 +26,17 @@ public final class jj1 implements OnBackAnimationCallback {
         wg1 wg1Var = (wg1) s6Var.e;
         wg1Var.getClass();
         if (hj1Var.equals(wg1Var.h) && -1 == wg1Var.g) {
-            tg1 tg1VarC = wg1Var.f;
-            if (tg1VarC == null) {
-                tg1VarC = wg1Var.c(-1);
+            tg1 tg1Var = wg1Var.f;
+            if (tg1Var == null) {
+                tg1Var = wg1Var.c(-1);
             }
             wg1Var.f = null;
             wg1Var.g = 0;
             wg1Var.h = null;
-            if (tg1VarC != null) {
-                tg1VarC.a();
+            if (tg1Var != null) {
+                tg1Var.a();
             }
-            te2 te2Var = wg1Var.f1279a;
+            te2 te2Var = wg1Var.f1278a;
             te2Var.getClass();
             te2Var.i(null, xg1.e);
         }
@@ -44,14 +44,14 @@ public final class jj1 implements OnBackAnimationCallback {
     }
 
     public final void onBackInvoked() {
-        this.f582a.a();
+        this.f581a.a();
     }
 
     public final void onBackProgressed(BackEvent backEvent) {
         lx0.x(backEvent, "backEvent");
-        rg1 rg1VarG = nz0.g(backEvent);
-        hj1 hj1Var = this.f582a;
-        s6 s6Var = hj1Var.f1216a;
+        rg1 g = nz0.g(backEvent);
+        hj1 hj1Var = this.f581a;
+        s6 s6Var = hj1Var.f1215a;
         if (s6Var == null) {
             throw new IllegalStateException("This input is not added to any dispatcher.");
         }
@@ -59,15 +59,15 @@ public final class jj1 implements OnBackAnimationCallback {
             wg1 wg1Var = (wg1) s6Var.e;
             wg1Var.getClass();
             if (hj1Var.equals(wg1Var.h) && -1 == wg1Var.g) {
-                tg1 tg1VarC = wg1Var.f;
-                if (tg1VarC == null) {
-                    tg1VarC = wg1Var.c(-1);
+                tg1 tg1Var = wg1Var.f;
+                if (tg1Var == null) {
+                    tg1Var = wg1Var.c(-1);
                 }
-                if (tg1VarC != null) {
-                    tg1VarC.c(rg1VarG);
+                if (tg1Var != null) {
+                    tg1Var.c(g);
                 }
-                te2 te2Var = wg1Var.f1279a;
-                yg1 yg1Var = new yg1(rg1VarG);
+                te2 te2Var = wg1Var.f1278a;
+                yg1 yg1Var = new yg1(g);
                 te2Var.getClass();
                 te2Var.i(null, yg1Var);
             }
@@ -76,16 +76,16 @@ public final class jj1 implements OnBackAnimationCallback {
 
     public final void onBackStarted(BackEvent backEvent) {
         lx0.x(backEvent, "backEvent");
-        rg1 rg1VarG = nz0.g(backEvent);
-        hj1 hj1Var = this.f582a;
-        s6 s6Var = hj1Var.f1216a;
+        rg1 g = nz0.g(backEvent);
+        hj1 hj1Var = this.f581a;
+        s6 s6Var = hj1Var.f1215a;
         if (s6Var == null) {
             throw new IllegalStateException("This input is not added to any dispatcher.");
         }
         if (hj1Var.b) {
             return;
         }
-        s6Var.k(hj1Var, rg1VarG);
+        s6Var.k(hj1Var, g);
         hj1Var.b = true;
     }
 }

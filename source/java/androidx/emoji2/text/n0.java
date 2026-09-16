@@ -7,7 +7,7 @@ public final class n0 {
     public static final n0 c;
 
     /* renamed from: a, reason: collision with root package name */
-    public final Throwable f781a;
+    public final Throwable f780a;
 
     static {
         if (t0.g) {
@@ -20,6 +20,6 @@ public final class n0 {
     }
 
     public n0(Throwable th, boolean z) {
-        this.f781a = th;
+        this.f780a = th;
     }
 }

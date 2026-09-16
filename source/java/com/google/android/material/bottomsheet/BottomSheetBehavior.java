@@ -14,11 +14,13 @@ import android.util.SparseIntArray;
 import android.util.TypedValue;
 import android.view.AbsSavedState;
 import android.view.MotionEvent;
+import android.view.RoundedCorner;
 import android.view.VelocityTracker;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.WindowInsets;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.PathInterpolator;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
@@ -85,7 +87,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
     public VelocityTracker Z;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1469a;
+    public final int f1468a;
     public int a0;
     public boolean b;
     public int b0;
@@ -119,7 +121,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
     public boolean z;
 
     public BottomSheetBehavior() {
-        this.f1469a = 0;
+        this.f1468a = 0;
         this.b = true;
         this.k = -1;
         this.l = -1;
@@ -149,9 +151,9 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         ViewGroup viewGroup = (ViewGroup) view;
         int childCount = viewGroup.getChildCount();
         for (int i = 0; i < childCount; i++) {
-            View viewV = v(viewGroup.getChildAt(i));
-            if (viewV != null) {
-                return viewV;
+            View v = v(viewGroup.getChildAt(i));
+            if (v != null) {
+                return v;
             }
         }
         return null;
@@ -251,73 +253,47 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         return Math.abs(((f * this.S) + ((float) view.getTop())) - ((float) this.G)) / ((float) t()) > 0.5f;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0030, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0030, code lost:
     
         if (r3 != false) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0032, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0012, code lost:
+    
+        if (r1.o(r3.getLeft(), r0) != false) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0032, code lost:
     
         C(2);
         G(r4, true);
         r2.A.a(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x003f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x003f, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0012, code lost:
-    
-        if (r1.o(r3.getLeft(), r0) != false) goto L16;
-     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void E(android.view.View r3, int r4, boolean r5) {
-        /*
-            r2 = this;
-            int r0 = r2.y(r4)
-            androidx.emoji2.text.is2 r1 = r2.O
-            if (r1 == 0) goto L40
-            if (r5 == 0) goto L15
-            int r3 = r3.getLeft()
-            boolean r3 = r1.o(r3, r0)
-            if (r3 == 0) goto L40
-            goto L32
-        L15:
-            int r5 = r3.getLeft()
-            r1.r = r3
-            r3 = -1
-            r1.c = r3
-            r3 = 0
-            boolean r3 = r1.h(r5, r0, r3, r3)
-            if (r3 != 0) goto L30
-            int r5 = r1.f548a
-            if (r5 != 0) goto L30
-            android.view.View r5 = r1.r
-            if (r5 == 0) goto L30
-            r5 = 0
-            r1.r = r5
-        L30:
-            if (r3 == 0) goto L40
-        L32:
-            r3 = 2
-            r2.C(r3)
-            r3 = 1
-            r2.G(r4, r3)
-            androidx.emoji2.text.dk r3 = r2.A
-            r3.a(r4)
-            return
-        L40:
-            r2.C(r4)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.bottomsheet.BottomSheetBehavior.E(android.view.View, int, boolean):void");
+    public final void E(View view, int i, boolean z) {
+        int y = y(i);
+        is2 is2Var = this.O;
+        if (is2Var != null) {
+            if (!z) {
+                int left = view.getLeft();
+                is2Var.r = view;
+                is2Var.c = -1;
+                boolean h = is2Var.h(left, y, 0, 0);
+                if (!h && is2Var.f547a == 0 && is2Var.r != null) {
+                    is2Var.r = null;
+                }
+            }
+        }
+        C(i);
     }
 
-    public final void F() throws Resources.NotFoundException {
+    public final void F() {
         View view;
-        int iA;
+        int i;
         WeakReference weakReference = this.W;
         if (weakReference == null || (view = (View) weakReference.get()) == null) {
             return;
@@ -329,49 +305,49 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         es2.h(view, 1048576);
         es2.f(view, 0);
         SparseIntArray sparseIntArray = this.e0;
-        int i = sparseIntArray.get(0, -1);
-        if (i != -1) {
-            es2.h(view, i);
+        int i2 = sparseIntArray.get(0, -1);
+        if (i2 != -1) {
+            es2.h(view, i2);
             es2.f(view, 0);
             sparseIntArray.delete(0);
         }
         if (!this.b && this.N != 6) {
             String string = view.getResources().getString(R.string.bottomsheet_action_expand_halfway);
             em emVar = new em(6, this);
-            ArrayList arrayListD = es2.d(view);
-            int i2 = 0;
+            ArrayList d = es2.d(view);
+            int i3 = 0;
             while (true) {
-                if (i2 >= arrayListD.size()) {
-                    int i3 = 0;
-                    int i4 = -1;
+                if (i3 >= d.size()) {
+                    int i4 = 0;
+                    int i5 = -1;
                     while (true) {
                         int[] iArr = es2.c;
-                        if (i3 >= 32 || i4 != -1) {
+                        if (i4 >= 32 || i5 != -1) {
                             break;
                         }
-                        int i5 = iArr[i3];
+                        int i6 = iArr[i4];
                         boolean z = true;
-                        for (int i6 = 0; i6 < arrayListD.size(); i6++) {
-                            z &= ((n1) arrayListD.get(i6)).a() != i5;
+                        for (int i7 = 0; i7 < d.size(); i7++) {
+                            z &= ((n1) d.get(i7)).a() != i6;
                         }
                         if (z) {
-                            i4 = i5;
+                            i5 = i6;
                         }
-                        i3++;
+                        i4++;
                     }
-                    iA = i4;
+                    i = i5;
                 } else {
-                    if (TextUtils.equals(string, ((AccessibilityNodeInfo.AccessibilityAction) ((n1) arrayListD.get(i2)).f784a).getLabel())) {
-                        iA = ((n1) arrayListD.get(i2)).a();
+                    if (TextUtils.equals(string, ((AccessibilityNodeInfo.AccessibilityAction) ((n1) d.get(i3)).f783a).getLabel())) {
+                        i = ((n1) d.get(i3)).a();
                         break;
                     }
-                    i2++;
+                    i3++;
                 }
             }
-            if (iA != -1) {
-                n1 n1Var = new n1(null, iA, string, emVar, null);
-                View.AccessibilityDelegate accessibilityDelegateB = es2.b(view);
-                a1 a1Var = accessibilityDelegateB == null ? null : accessibilityDelegateB instanceof z0 ? ((z0) accessibilityDelegateB).f1413a : new a1(accessibilityDelegateB);
+            if (i != -1) {
+                n1 n1Var = new n1(null, i, string, emVar, null);
+                View.AccessibilityDelegate b = es2.b(view);
+                a1 a1Var = b == null ? null : b instanceof z0 ? ((z0) b).f1412a : new a1(b);
                 if (a1Var == null) {
                     a1Var = new a1();
                 }
@@ -380,20 +356,20 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                 es2.d(view).add(n1Var);
                 es2.f(view, 0);
             }
-            sparseIntArray.put(0, iA);
+            sparseIntArray.put(0, i);
         }
         if (this.I && this.N != 5) {
             es2.i(view, n1.l, new em(5, this));
         }
-        int i7 = this.N;
-        if (i7 == 3) {
+        int i8 = this.N;
+        if (i8 == 3) {
             es2.i(view, n1.k, new em(this.b ? 4 : 6, this));
             return;
         }
-        if (i7 == 4) {
+        if (i8 == 4) {
             es2.i(view, n1.j, new em(this.b ? 3 : 6, this));
         } else {
-            if (i7 != 6) {
+            if (i8 != 6) {
                 return;
             }
             es2.i(view, n1.k, new em(4, this));
@@ -425,10 +401,10 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         if (valueAnimator != null && valueAnimator.isRunning()) {
             valueAnimator.cancel();
         }
-        float fS = this.z ? s() : 1.0f;
+        float s = this.z ? s() : 1.0f;
         sa1 sa1Var = ua1Var.e;
-        if (sa1Var.j != fS) {
-            sa1Var.j = fS;
+        if (sa1Var.j != s) {
+            sa1Var.j = s;
             ua1Var.i = true;
             ua1Var.j = true;
             ua1Var.invalidateSelf();
@@ -541,7 +517,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
     }
 
     @Override // androidx.emoji2.text.q10
-    public final boolean g(CoordinatorLayout coordinatorLayout, View view, int i) throws Resources.NotFoundException {
+    public final boolean g(CoordinatorLayout coordinatorLayout, View view, int i) {
         if (coordinatorLayout.getFitsSystemWindows() && !view.getFitsSystemWindows()) {
             view.setFitsSystemWindows(true);
         }
@@ -555,11 +531,11 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                 int paddingEnd = view.getPaddingEnd();
                 int paddingBottom = view.getPaddingBottom();
                 pn0 pn0Var = new pn0();
-                pn0Var.f917a = paddingStart;
+                pn0Var.f916a = paddingStart;
                 pn0Var.b = paddingEnd;
                 pn0Var.c = paddingBottom;
                 a12 a12Var = new a12(10, cmVar, pn0Var);
-                Field field = es2.f320a;
+                Field field = es2.f319a;
                 wr2.i(view, a12Var);
                 if (view.isAttachedToWindow()) {
                     view.requestApplyInsets();
@@ -580,11 +556,11 @@ public class BottomSheetBehavior<V extends View> extends q10 {
             ua1 ua1Var = this.i;
             if (ua1Var != null) {
                 view.setBackground(ua1Var);
-                float elevation = this.H;
-                if (elevation == -1.0f) {
-                    elevation = view.getElevation();
+                float f = this.H;
+                if (f == -1.0f) {
+                    f = view.getElevation();
                 }
-                ua1Var.m(elevation);
+                ua1Var.m(f);
             } else {
                 ColorStateList colorStateList = this.j;
                 if (colorStateList != null) {
@@ -605,48 +581,48 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         this.V = coordinatorLayout.getHeight();
         int height = view.getHeight();
         this.T = height;
-        int iMin = this.V;
-        int i2 = iMin - height;
-        int i3 = this.w;
-        if (i2 < i3) {
+        int i2 = this.V;
+        int i3 = i2 - height;
+        int i4 = this.w;
+        if (i3 < i4) {
             boolean z2 = this.r;
-            int i4 = this.l;
+            int i5 = this.l;
             if (z2) {
-                if (i4 != -1) {
-                    iMin = Math.min(iMin, i4);
+                if (i5 != -1) {
+                    i2 = Math.min(i2, i5);
                 }
-                this.T = iMin;
+                this.T = i2;
             } else {
-                int iMin2 = iMin - i3;
-                if (i4 != -1) {
-                    iMin2 = Math.min(iMin2, i4);
+                int i6 = i2 - i4;
+                if (i5 != -1) {
+                    i6 = Math.min(i6, i5);
                 }
-                this.T = iMin2;
+                this.T = i6;
             }
         }
         this.D = Math.max(0, this.V - this.T);
         this.E = (int) ((1.0f - this.F) * this.V);
         r();
-        int i5 = this.N;
-        if (i5 == 3) {
-            int iX = x();
-            Field field2 = es2.f320a;
-            view.offsetTopAndBottom(iX);
-        } else if (i5 == 6) {
-            int i6 = this.E;
-            Field field3 = es2.f320a;
-            view.offsetTopAndBottom(i6);
-        } else if (this.I && i5 == 5) {
-            int i7 = this.V;
-            Field field4 = es2.f320a;
-            view.offsetTopAndBottom(i7);
-        } else if (i5 == 4) {
-            int i8 = this.G;
-            Field field5 = es2.f320a;
+        int i7 = this.N;
+        if (i7 == 3) {
+            int x = x();
+            Field field2 = es2.f319a;
+            view.offsetTopAndBottom(x);
+        } else if (i7 == 6) {
+            int i8 = this.E;
+            Field field3 = es2.f319a;
             view.offsetTopAndBottom(i8);
-        } else if (i5 == 1 || i5 == 2) {
+        } else if (this.I && i7 == 5) {
+            int i9 = this.V;
+            Field field4 = es2.f319a;
+            view.offsetTopAndBottom(i9);
+        } else if (i7 == 4) {
+            int i10 = this.G;
+            Field field5 = es2.f319a;
+            view.offsetTopAndBottom(i10);
+        } else if (i7 == 1 || i7 == 2) {
             int top3 = top2 - view.getTop();
-            Field field6 = es2.f320a;
+            Field field6 = es2.f319a;
             view.offsetTopAndBottom(top3);
         }
         G(this.N, false);
@@ -692,32 +668,32 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                 return;
             }
             if (i4 < x()) {
-                int iX = top2 - x();
-                iArr[1] = iX;
-                Field field = es2.f320a;
-                view.offsetTopAndBottom(-iX);
+                int x = top2 - x();
+                iArr[1] = x;
+                Field field = es2.f319a;
+                view.offsetTopAndBottom(-x);
                 C(3);
             } else {
                 if (!z) {
                     return;
                 }
                 iArr[1] = i2;
-                Field field2 = es2.f320a;
+                Field field2 = es2.f319a;
                 view.offsetTopAndBottom(-i2);
                 C(1);
             }
         } else if (i2 < 0) {
-            boolean zCanScrollVertically = view2.canScrollVertically(-1);
-            if (!this.R && !z2 && view2 == view3 && zCanScrollVertically) {
+            boolean canScrollVertically = view2.canScrollVertically(-1);
+            if (!this.R && !z2 && view2 == view3 && canScrollVertically) {
                 this.M = true;
                 return;
             }
-            if (!zCanScrollVertically) {
+            if (!canScrollVertically) {
                 int i5 = this.G;
                 if (i4 > i5 && !this.I) {
                     int i6 = top2 - i5;
                     iArr[1] = i6;
-                    Field field3 = es2.f320a;
+                    Field field3 = es2.f319a;
                     view.offsetTopAndBottom(-i6);
                     C(4);
                 } else {
@@ -725,7 +701,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                         return;
                     }
                     iArr[1] = i2;
-                    Field field4 = es2.f320a;
+                    Field field4 = es2.f319a;
                     view.offsetTopAndBottom(-i2);
                     C(1);
                 }
@@ -740,7 +716,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
     @Override // androidx.emoji2.text.q10
     public final void m(View view, Parcelable parcelable) {
         fm fmVar = (fm) parcelable;
-        int i = this.f1469a;
+        int i = this.f1468a;
         if (i != 0) {
             if (i == -1 || (i & 1) == 1) {
                 this.e = fmVar.g;
@@ -776,118 +752,76 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         return (i & 2) != 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00ae  */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0030, code lost:
+    
+        if (r4.getTop() <= r3.E) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0071, code lost:
+    
+        if (java.lang.Math.abs(r5 - r3.D) < java.lang.Math.abs(r5 - r3.G)) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0080, code lost:
+    
+        if (r5 < java.lang.Math.abs(r5 - r3.G)) goto L51;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0090, code lost:
+    
+        if (java.lang.Math.abs(r5 - r2) < java.lang.Math.abs(r5 - r3.G)) goto L50;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00ac, code lost:
+    
+        if (java.lang.Math.abs(r5 - r3.E) < java.lang.Math.abs(r5 - r3.G)) goto L50;
+     */
     @Override // androidx.emoji2.text.q10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void p(android.view.View r4, android.view.View r5, int r6) {
-        /*
-            r3 = this;
-            int r6 = r4.getTop()
-            int r0 = r3.x()
-            r1 = 3
-            if (r6 != r0) goto Lf
-            r3.C(r1)
-            return
-        Lf:
-            java.lang.ref.WeakReference r6 = r3.X
-            if (r6 == 0) goto Lb5
-            java.lang.Object r6 = r6.get()
-            if (r5 != r6) goto Lb5
-            boolean r5 = r3.R
-            if (r5 != 0) goto L1f
-            goto Lb5
-        L1f:
-            int r5 = r3.Q
-            r6 = 6
-            if (r5 <= 0) goto L34
-            boolean r5 = r3.b
-            if (r5 == 0) goto L2a
-            goto Laf
-        L2a:
-            int r5 = r4.getTop()
-            int r0 = r3.E
-            if (r5 <= r0) goto Laf
-            goto Lae
-        L34:
-            boolean r5 = r3.I
-            if (r5 == 0) goto L55
-            android.view.VelocityTracker r5 = r3.Z
-            if (r5 != 0) goto L3e
-            r5 = 0
-            goto L4d
-        L3e:
-            r0 = 1000(0x3e8, float:1.401E-42)
-            float r2 = r3.c
-            r5.computeCurrentVelocity(r0, r2)
-            android.view.VelocityTracker r5 = r3.Z
-            int r0 = r3.a0
-            float r5 = r5.getYVelocity(r0)
-        L4d:
-            boolean r5 = r3.D(r4, r5)
-            if (r5 == 0) goto L55
-            r1 = 5
-            goto Laf
-        L55:
-            int r5 = r3.Q
-            r0 = 4
-            if (r5 != 0) goto L93
-            int r5 = r4.getTop()
-            boolean r2 = r3.b
-            if (r2 == 0) goto L74
-            int r6 = r3.D
-            int r6 = r5 - r6
-            int r6 = java.lang.Math.abs(r6)
-            int r2 = r3.G
-            int r5 = r5 - r2
-            int r5 = java.lang.Math.abs(r5)
-            if (r6 >= r5) goto L97
-            goto Laf
-        L74:
-            int r2 = r3.E
-            if (r5 >= r2) goto L83
-            int r0 = r3.G
-            int r0 = r5 - r0
-            int r0 = java.lang.Math.abs(r0)
-            if (r5 >= r0) goto Lae
-            goto Laf
-        L83:
-            int r1 = r5 - r2
-            int r1 = java.lang.Math.abs(r1)
-            int r2 = r3.G
-            int r5 = r5 - r2
-            int r5 = java.lang.Math.abs(r5)
-            if (r1 >= r5) goto L97
-            goto Lae
-        L93:
-            boolean r5 = r3.b
-            if (r5 == 0) goto L99
-        L97:
-            r1 = r0
-            goto Laf
-        L99:
-            int r5 = r4.getTop()
-            int r1 = r3.E
-            int r1 = r5 - r1
-            int r1 = java.lang.Math.abs(r1)
-            int r2 = r3.G
-            int r5 = r5 - r2
-            int r5 = java.lang.Math.abs(r5)
-            if (r1 >= r5) goto L97
-        Lae:
-            r1 = r6
-        Laf:
-            r5 = 0
-            r3.E(r4, r1, r5)
-            r3.R = r5
-        Lb5:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.bottomsheet.BottomSheetBehavior.p(android.view.View, android.view.View, int):void");
+    public final void p(View view, View view2, int i) {
+        float yVelocity;
+        int i2 = 3;
+        if (view.getTop() == x()) {
+            C(3);
+            return;
+        }
+        WeakReference weakReference = this.X;
+        if (weakReference != null && view2 == weakReference.get() && this.R) {
+            if (this.Q > 0) {
+                if (!this.b) {
+                }
+                E(view, i2, false);
+                this.R = false;
+            }
+            if (this.I) {
+                VelocityTracker velocityTracker = this.Z;
+                if (velocityTracker == null) {
+                    yVelocity = 0.0f;
+                } else {
+                    velocityTracker.computeCurrentVelocity(1000, this.c);
+                    yVelocity = this.Z.getYVelocity(this.a0);
+                }
+                if (D(view, yVelocity)) {
+                    i2 = 5;
+                    E(view, i2, false);
+                    this.R = false;
+                }
+            }
+            if (this.Q == 0) {
+                int top2 = view.getTop();
+                if (!this.b) {
+                    int i3 = this.E;
+                    if (top2 < i3) {
+                    }
+                    i2 = 6;
+                }
+            } else {
+                if (!this.b) {
+                    int top3 = view.getTop();
+                }
+                i2 = 4;
+            }
+            E(view, i2, false);
+            this.R = false;
+        }
     }
 
     @Override // androidx.emoji2.text.q10
@@ -918,9 +852,9 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         }
         this.Z.addMovement(motionEvent);
         if (this.O != null && ((this.K || this.N == 1) && actionMasked == 2 && !this.P)) {
-            float fAbs = Math.abs(this.b0 - motionEvent.getY());
+            float abs = Math.abs(this.b0 - motionEvent.getY());
             is2 is2Var2 = this.O;
-            if (fAbs > is2Var2.b) {
+            if (abs > is2Var2.b) {
                 is2Var2.b(view, motionEvent.getPointerId(motionEvent.getActionIndex()));
             }
         }
@@ -928,94 +862,67 @@ public class BottomSheetBehavior<V extends View> extends q10 {
     }
 
     public final void r() {
-        int iT = t();
+        int t = t();
         if (this.b) {
-            this.G = Math.max(this.V - iT, this.D);
+            this.G = Math.max(this.V - t, this.D);
         } else {
-            this.G = this.V - iT;
+            this.G = this.V - t;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0061  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final float s() {
-        /*
-            r5 = this;
-            androidx.emoji2.text.ua1 r0 = r5.i
-            r1 = 0
-            if (r0 == 0) goto L89
-            java.lang.ref.WeakReference r0 = r5.W
-            if (r0 == 0) goto L89
-            java.lang.Object r0 = r0.get()
-            if (r0 == 0) goto L89
-            int r0 = android.os.Build.VERSION.SDK_INT
-            r2 = 31
-            if (r0 < r2) goto L89
-            java.lang.ref.WeakReference r0 = r5.W
-            java.lang.Object r0 = r0.get()
-            android.view.View r0 = (android.view.View) r0
-            boolean r2 = r5.z()
-            if (r2 == 0) goto L89
-            android.view.WindowInsets r0 = r0.getRootWindowInsets()
-            if (r0 == 0) goto L89
-            androidx.emoji2.text.ua1 r2 = r5.i
-            float[] r3 = r2.E
-            if (r3 == 0) goto L33
-            r2 = 3
-            r2 = r3[r2]
-            goto L41
-        L33:
-            androidx.emoji2.text.sa1 r3 = r2.e
-            androidx.emoji2.text.v92 r3 = r3.f1059a
-            androidx.emoji2.text.r20 r3 = r3.e
-            android.graphics.RectF r2 = r2.g()
-            float r2 = r3.a(r2)
-        L41:
-            android.view.RoundedCorner r3 = androidx.emoji2.text.b7.h(r0)
-            if (r3 == 0) goto L56
-            int r3 = androidx.emoji2.text.b7.c(r3)
-            float r3 = (float) r3
-            int r4 = (r3 > r1 ? 1 : (r3 == r1 ? 0 : -1))
-            if (r4 <= 0) goto L56
-            int r4 = (r2 > r1 ? 1 : (r2 == r1 ? 0 : -1))
-            if (r4 <= 0) goto L56
-            float r3 = r3 / r2
-            goto L57
-        L56:
-            r3 = r1
-        L57:
-            androidx.emoji2.text.ua1 r2 = r5.i
-            float[] r4 = r2.E
-            if (r4 == 0) goto L61
-            r2 = 0
-            r2 = r4[r2]
-            goto L6f
-        L61:
-            androidx.emoji2.text.sa1 r4 = r2.e
-            androidx.emoji2.text.v92 r4 = r4.f1059a
-            androidx.emoji2.text.r20 r4 = r4.f
-            android.graphics.RectF r2 = r2.g()
-            float r2 = r4.a(r2)
-        L6f:
-            android.view.RoundedCorner r0 = androidx.emoji2.text.b7.D(r0)
-            if (r0 == 0) goto L84
-            int r0 = androidx.emoji2.text.b7.c(r0)
-            float r0 = (float) r0
-            int r4 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
-            if (r4 <= 0) goto L84
-            int r4 = (r2 > r1 ? 1 : (r2 == r1 ? 0 : -1))
-            if (r4 <= 0) goto L84
-            float r1 = r0 / r2
-        L84:
-            float r0 = java.lang.Math.max(r3, r1)
-            return r0
-        L89:
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.bottomsheet.BottomSheetBehavior.s():float");
+        WeakReference weakReference;
+        WindowInsets rootWindowInsets;
+        RoundedCorner roundedCorner;
+        float f;
+        RoundedCorner roundedCorner2;
+        int radius;
+        int radius2;
+        float f2 = 0.0f;
+        if (this.i != null && (weakReference = this.W) != null && weakReference.get() != null && Build.VERSION.SDK_INT >= 31) {
+            View view = (View) this.W.get();
+            if (z() && (rootWindowInsets = view.getRootWindowInsets()) != null) {
+                ua1 ua1Var = this.i;
+                float[] fArr = ua1Var.E;
+                float a2 = fArr != null ? fArr[3] : ua1Var.e.f1058a.e.a(ua1Var.g());
+                roundedCorner = rootWindowInsets.getRoundedCorner(0);
+                if (roundedCorner != null) {
+                    radius2 = roundedCorner.getRadius();
+                    float f3 = radius2;
+                    if (f3 > 0.0f && a2 > 0.0f) {
+                        f = f3 / a2;
+                        ua1 ua1Var2 = this.i;
+                        float[] fArr2 = ua1Var2.E;
+                        float a3 = fArr2 == null ? fArr2[0] : ua1Var2.e.f1058a.f.a(ua1Var2.g());
+                        roundedCorner2 = rootWindowInsets.getRoundedCorner(1);
+                        if (roundedCorner2 != null) {
+                            radius = roundedCorner2.getRadius();
+                            float f4 = radius;
+                            if (f4 > 0.0f && a3 > 0.0f) {
+                                f2 = f4 / a3;
+                            }
+                        }
+                        return Math.max(f, f2);
+                    }
+                }
+                f = 0.0f;
+                ua1 ua1Var22 = this.i;
+                float[] fArr22 = ua1Var22.E;
+                if (fArr22 == null) {
+                }
+                roundedCorner2 = rootWindowInsets.getRoundedCorner(1);
+                if (roundedCorner2 != null) {
+                }
+                return Math.max(f, f2);
+            }
+        }
+        return 0.0f;
     }
 
     public final int t() {
@@ -1076,10 +983,10 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         return false;
     }
 
-    public BottomSheetBehavior(Context context, AttributeSet attributeSet) throws Resources.NotFoundException {
+    public BottomSheetBehavior(Context context, AttributeSet attributeSet) {
         int i;
         int i2 = 0;
-        this.f1469a = 0;
+        this.f1468a = 0;
         this.b = true;
         this.k = -1;
         this.l = -1;
@@ -1095,11 +1002,11 @@ public class BottomSheetBehavior<V extends View> extends q10 {
         this.e0 = new SparseIntArray();
         this.f0 = new dm(this, i2);
         this.h = context.getResources().getDimensionPixelSize(R.dimen.mtrl_min_touch_target_size);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.f385a);
-        if (typedArrayObtainStyledAttributes.hasValue(3)) {
-            this.j = a01.E(context, typedArrayObtainStyledAttributes, 3);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.f384a);
+        if (obtainStyledAttributes.hasValue(3)) {
+            this.j = a01.E(context, obtainStyledAttributes, 3);
         }
-        if (typedArrayObtainStyledAttributes.hasValue(22)) {
+        if (obtainStyledAttributes.hasValue(22)) {
             this.y = v92.b(context, attributeSet, R.attr.bottomSheetStyle, R.style.Widget_Design_BottomSheet_Modal).a();
         }
         v92 v92Var = this.y;
@@ -1116,24 +1023,24 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                 this.i.setTint(typedValue.data);
             }
         }
-        ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(s(), 1.0f);
-        this.B = valueAnimatorOfFloat;
-        valueAnimatorOfFloat.setDuration(500L);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(s(), 1.0f);
+        this.B = ofFloat;
+        ofFloat.setDuration(500L);
         this.B.addUpdateListener(new bm(i2, this));
-        this.H = typedArrayObtainStyledAttributes.getDimension(2, -1.0f);
-        if (typedArrayObtainStyledAttributes.hasValue(0)) {
-            this.k = typedArrayObtainStyledAttributes.getDimensionPixelSize(0, -1);
+        this.H = obtainStyledAttributes.getDimension(2, -1.0f);
+        if (obtainStyledAttributes.hasValue(0)) {
+            this.k = obtainStyledAttributes.getDimensionPixelSize(0, -1);
         }
-        if (typedArrayObtainStyledAttributes.hasValue(1)) {
-            this.l = typedArrayObtainStyledAttributes.getDimensionPixelSize(1, -1);
+        if (obtainStyledAttributes.hasValue(1)) {
+            this.l = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         }
-        TypedValue typedValuePeekValue = typedArrayObtainStyledAttributes.peekValue(10);
-        if (typedValuePeekValue != null && (i = typedValuePeekValue.data) == -1) {
+        TypedValue peekValue = obtainStyledAttributes.peekValue(10);
+        if (peekValue != null && (i = peekValue.data) == -1) {
             A(i);
         } else {
-            A(typedArrayObtainStyledAttributes.getDimensionPixelSize(10, -1));
+            A(obtainStyledAttributes.getDimensionPixelSize(10, -1));
         }
-        boolean z = typedArrayObtainStyledAttributes.getBoolean(9, false);
+        boolean z = obtainStyledAttributes.getBoolean(9, false);
         if (this.I != z) {
             this.I = z;
             if (!z && this.N == 5) {
@@ -1141,8 +1048,8 @@ public class BottomSheetBehavior<V extends View> extends q10 {
             }
             F();
         }
-        this.n = typedArrayObtainStyledAttributes.getBoolean(14, false);
-        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(7, true);
+        this.n = obtainStyledAttributes.getBoolean(14, false);
+        boolean z2 = obtainStyledAttributes.getBoolean(7, true);
         if (this.b != z2) {
             this.b = z2;
             if (this.W != null) {
@@ -1152,19 +1059,19 @@ public class BottomSheetBehavior<V extends View> extends q10 {
             G(this.N, true);
             F();
         }
-        this.J = typedArrayObtainStyledAttributes.getBoolean(13, false);
-        this.K = typedArrayObtainStyledAttributes.getBoolean(4, true);
-        this.L = typedArrayObtainStyledAttributes.getBoolean(5, true);
-        this.f1469a = typedArrayObtainStyledAttributes.getInt(11, 0);
-        float f = typedArrayObtainStyledAttributes.getFloat(8, 0.5f);
+        this.J = obtainStyledAttributes.getBoolean(13, false);
+        this.K = obtainStyledAttributes.getBoolean(4, true);
+        this.L = obtainStyledAttributes.getBoolean(5, true);
+        this.f1468a = obtainStyledAttributes.getInt(11, 0);
+        float f = obtainStyledAttributes.getFloat(8, 0.5f);
         if (f > 0.0f && f < 1.0f) {
             this.F = f;
             if (this.W != null) {
                 this.E = (int) ((1.0f - f) * this.V);
             }
-            TypedValue typedValuePeekValue2 = typedArrayObtainStyledAttributes.peekValue(6);
-            if (typedValuePeekValue2 != null && typedValuePeekValue2.type == 16) {
-                int i3 = typedValuePeekValue2.data;
+            TypedValue peekValue2 = obtainStyledAttributes.peekValue(6);
+            if (peekValue2 != null && peekValue2.type == 16) {
+                int i3 = peekValue2.data;
                 if (i3 >= 0) {
                     this.C = i3;
                     G(this.N, true);
@@ -1172,7 +1079,7 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                     throw new IllegalArgumentException("offset must be greater than or equal to 0");
                 }
             } else {
-                int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(6, 0);
+                int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(6, 0);
                 if (dimensionPixelOffset >= 0) {
                     this.C = dimensionPixelOffset;
                     G(this.N, true);
@@ -1180,16 +1087,16 @@ public class BottomSheetBehavior<V extends View> extends q10 {
                     throw new IllegalArgumentException("offset must be greater than or equal to 0");
                 }
             }
-            this.d = typedArrayObtainStyledAttributes.getInt(12, 500);
-            this.o = typedArrayObtainStyledAttributes.getBoolean(18, false);
-            this.p = typedArrayObtainStyledAttributes.getBoolean(19, false);
-            this.q = typedArrayObtainStyledAttributes.getBoolean(20, false);
-            this.r = typedArrayObtainStyledAttributes.getBoolean(21, true);
-            this.s = typedArrayObtainStyledAttributes.getBoolean(15, false);
-            this.t = typedArrayObtainStyledAttributes.getBoolean(16, false);
-            this.u = typedArrayObtainStyledAttributes.getBoolean(17, false);
-            this.x = typedArrayObtainStyledAttributes.getBoolean(24, true);
-            typedArrayObtainStyledAttributes.recycle();
+            this.d = obtainStyledAttributes.getInt(12, 500);
+            this.o = obtainStyledAttributes.getBoolean(18, false);
+            this.p = obtainStyledAttributes.getBoolean(19, false);
+            this.q = obtainStyledAttributes.getBoolean(20, false);
+            this.r = obtainStyledAttributes.getBoolean(21, true);
+            this.s = obtainStyledAttributes.getBoolean(15, false);
+            this.t = obtainStyledAttributes.getBoolean(16, false);
+            this.u = obtainStyledAttributes.getBoolean(17, false);
+            this.x = obtainStyledAttributes.getBoolean(24, true);
+            obtainStyledAttributes.recycle();
             this.c = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
             return;
         }

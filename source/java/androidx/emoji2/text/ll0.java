@@ -6,11 +6,11 @@ public final class ll0 {
     public static final on d = new on(23);
 
     /* renamed from: a, reason: collision with root package name */
-    public final pd0 f695a;
+    public final pd0 f694a;
     public int b = 0;
     public final w50 c = new w50();
 
     public ll0(pd0 pd0Var) {
-        this.f695a = pd0Var;
+        this.f694a = pd0Var;
     }
 }

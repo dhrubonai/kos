@@ -27,82 +27,54 @@ public final class e31 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((e31) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((e31) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0054, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0054, code lost:
     
         if (androidx.emoji2.text.ed.c(r6, r7, r8, r9, r12, 4) == r5) goto L22;
      */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object k(java.lang.Object r13) {
-        /*
-            r12 = this;
-            int r0 = r12.h
-            r1 = 0
-            r2 = 2
-            r3 = 1
-            androidx.emoji2.text.f31 r4 = r12.j
-            androidx.emoji2.text.f30 r5 = androidx.emoji2.text.f30.d
-            if (r0 == 0) goto L22
-            if (r0 == r3) goto L1e
-            if (r0 != r2) goto L16
-            androidx.emoji2.text.mz0.L(r13)     // Catch: java.lang.Throwable -> L13
-            goto L57
-        L13:
-            r0 = move-exception
-            r13 = r0
-            goto L5f
-        L16:
-            java.lang.IllegalStateException r13 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r13.<init>(r0)
-            throw r13
-        L1e:
-            androidx.emoji2.text.mz0.L(r13)     // Catch: java.lang.Throwable -> L13
-            goto L3a
-        L22:
-            androidx.emoji2.text.mz0.L(r13)
-            boolean r13 = r12.i     // Catch: java.lang.Throwable -> L13
-            if (r13 == 0) goto L3a
-            androidx.emoji2.text.ed r13 = r4.p     // Catch: java.lang.Throwable -> L13
-            java.lang.Float r0 = new java.lang.Float     // Catch: java.lang.Throwable -> L13
-            r6 = 0
-            r0.<init>(r6)     // Catch: java.lang.Throwable -> L13
-            r12.h = r3     // Catch: java.lang.Throwable -> L13
-            java.lang.Object r13 = r13.e(r12, r0)     // Catch: java.lang.Throwable -> L13
-            if (r13 != r5) goto L3a
-            goto L56
-        L3a:
-            androidx.emoji2.text.ed r6 = r4.p     // Catch: java.lang.Throwable -> L13
-            java.lang.Float r7 = new java.lang.Float     // Catch: java.lang.Throwable -> L13
-            r13 = 1065353216(0x3f800000, float:1.0)
-            r7.<init>(r13)     // Catch: java.lang.Throwable -> L13
-            androidx.emoji2.text.ri0 r8 = r12.k     // Catch: java.lang.Throwable -> L13
-            androidx.emoji2.text.d31 r9 = new androidx.emoji2.text.d31     // Catch: java.lang.Throwable -> L13
-            androidx.emoji2.text.rp0 r13 = r12.l     // Catch: java.lang.Throwable -> L13
-            r9.<init>(r13, r4, r1)     // Catch: java.lang.Throwable -> L13
-            r12.h = r2     // Catch: java.lang.Throwable -> L13
-            r11 = 4
-            r10 = r12
-            java.lang.Object r13 = androidx.emoji2.text.ed.c(r6, r7, r8, r9, r10, r11)     // Catch: java.lang.Throwable -> L13
-            if (r13 != r5) goto L57
-        L56:
-            return r5
-        L57:
-            int r13 = androidx.emoji2.text.f31.t
-            r4.d(r1)
-            androidx.emoji2.text.up2 r13 = androidx.emoji2.text.up2.f1187a
-            return r13
-        L5f:
-            int r0 = androidx.emoji2.text.f31.t
-            r4.d(r1)
-            throw r13
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.e31.k(java.lang.Object):java.lang.Object");
+    public final Object k(Object obj) {
+        int i = this.h;
+        int i2 = 0;
+        f31 f31Var = this.j;
+        f30 f30Var = f30.d;
+        try {
+            if (i == 0) {
+                mz0.L(obj);
+                if (this.i) {
+                    ed edVar = f31Var.p;
+                    Float f = new Float(0.0f);
+                    this.h = 1;
+                    if (edVar.e(this, f) == f30Var) {
+                        return f30Var;
+                    }
+                }
+            } else {
+                if (i != 1) {
+                    if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                    int i3 = f31.t;
+                    f31Var.d(false);
+                    return up2.f1186a;
+                }
+                mz0.L(obj);
+            }
+            ed edVar2 = f31Var.p;
+            Float f2 = new Float(1.0f);
+            ri0 ri0Var = this.k;
+            d31 d31Var = new d31(this.l, f31Var, i2);
+            this.h = 2;
+        } catch (Throwable th) {
+            int i4 = f31.t;
+            f31Var.d(false);
+            throw th;
+        }
     }
 }

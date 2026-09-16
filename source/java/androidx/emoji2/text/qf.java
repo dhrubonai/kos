@@ -15,21 +15,27 @@ public final class qf {
     public static qf c;
 
     /* renamed from: a, reason: collision with root package name */
-    public vz1 f953a;
+    public vz1 f952a;
 
     public static synchronized PorterDuffColorFilter b(int i, PorterDuff.Mode mode) {
-        return vz1.e(i, mode);
+        PorterDuffColorFilter e;
+        synchronized (qf.class) {
+            e = vz1.e(i, mode);
+        }
+        return e;
     }
 
     public static synchronized void c() {
-        if (c == null) {
-            qf qfVar = new qf();
-            c = qfVar;
-            qfVar.f953a = vz1.b();
-            vz1 vz1Var = c.f953a;
-            pf pfVar = new pf();
-            synchronized (vz1Var) {
-                vz1Var.e = pfVar;
+        synchronized (qf.class) {
+            if (c == null) {
+                qf qfVar = new qf();
+                c = qfVar;
+                qfVar.f952a = vz1.b();
+                vz1 vz1Var = c.f952a;
+                pf pfVar = new pf();
+                synchronized (vz1Var) {
+                    vz1Var.e = pfVar;
+                }
             }
         }
     }
@@ -46,20 +52,20 @@ public final class qf {
             drawable.setState(state);
         }
         boolean z = ryVar.b;
-        if (!z && !ryVar.f1040a) {
+        if (!z && !ryVar.f1039a) {
             drawable.clearColorFilter();
             return;
         }
-        PorterDuffColorFilter porterDuffColorFilterE = null;
+        PorterDuffColorFilter porterDuffColorFilter = null;
         ColorStateList colorStateList = z ? (ColorStateList) ryVar.c : null;
-        PorterDuff.Mode mode2 = ryVar.f1040a ? (PorterDuff.Mode) ryVar.d : vz1.f;
+        PorterDuff.Mode mode2 = ryVar.f1039a ? (PorterDuff.Mode) ryVar.d : vz1.f;
         if (colorStateList != null && mode2 != null) {
-            porterDuffColorFilterE = vz1.e(colorStateList.getColorForState(iArr, 0), mode2);
+            porterDuffColorFilter = vz1.e(colorStateList.getColorForState(iArr, 0), mode2);
         }
-        drawable.setColorFilter(porterDuffColorFilterE);
+        drawable.setColorFilter(porterDuffColorFilter);
     }
 
     public final synchronized Drawable a(Context context, int i) {
-        return this.f953a.c(context, i);
+        return this.f952a.c(context, i);
     }
 }

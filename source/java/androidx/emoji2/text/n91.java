@@ -40,18 +40,18 @@ public final class n91 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((n91) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((n91) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         ConcurrentHashMap.KeySetView keySetView;
         Integer num;
         int i = this.h;
         f30 f30Var = f30.d;
         t91 t91Var = this.k;
         int i2 = this.j;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         switch (i) {
             case 0:
                 int i3 = this.i;
@@ -64,7 +64,7 @@ public final class n91 extends hh2 implements Function2 {
                         }
                     } else {
                         if (i3 != 1) {
-                            throw new IllegalStateException(a.a.a.c.a(-279598635040546L, wj1.f1284a));
+                            throw new IllegalStateException(a.a.a.c.a(-279598635040546L, wj1.f1283a));
                         }
                         mz0.L(obj);
                     }
@@ -76,7 +76,7 @@ public final class n91 extends hh2 implements Function2 {
                 int i4 = this.i;
                 if (i4 == 0) {
                     mz0.L(obj);
-                    ip0 ip0Var = ip0.f540a;
+                    ip0 ip0Var = ip0.f539a;
                     this.i = 1;
                     obj = ip0Var.r(i2, this);
                     if (obj == f30Var) {
@@ -84,15 +84,15 @@ public final class n91 extends hh2 implements Function2 {
                     }
                 } else {
                     if (i4 != 1) {
-                        throw new IllegalStateException(a.a.a.c.a(-272859831353122L, wj1.f1284a));
+                        throw new IllegalStateException(a.a.a.c.a(-272859831353122L, wj1.f1283a));
                     }
                     mz0.L(obj);
                 }
                 lo0 lo0Var = (lo0) obj;
                 te2 te2Var = t91Var.e;
                 te2Var.getClass();
-                te2Var.i(null, en0.f310a);
-                if (!lo0Var.f701a) {
+                te2Var.i(null, en0.f309a);
+                if (!lo0Var.f700a) {
                     te2 te2Var2 = t91Var.e;
                     ln0 ln0Var = new ln0(lo0Var.b);
                     te2Var2.getClass();
@@ -100,7 +100,7 @@ public final class n91 extends hh2 implements Function2 {
                 }
                 return up2Var;
             default:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 h82 h82Var = t91Var.j;
                 keySetView = t91Var.k;
                 te2 te2Var3 = t91Var.e;
@@ -108,28 +108,28 @@ public final class n91 extends hh2 implements Function2 {
                 try {
                     if (i5 == 0) {
                         mz0.L(obj);
-                        mp0 mp0VarD = h82Var.d(i2);
+                        mp0 d = h82Var.d(i2);
                         c01 c01Var = c01.r;
                         if (BPackageManager.get().isServiceAvailable()) {
-                            ip0 ip0Var2 = ip0.f540a;
+                            ip0 ip0Var2 = ip0.f539a;
                             ip0Var2.getClass();
                             if (ip0.o(i2)) {
                                 mn0 mn0Var = (mn0) te2Var3.getValue();
-                                if ((mn0Var instanceof gn0) && ((gn0) mn0Var).f431a == i2) {
+                                if ((mn0Var instanceof gn0) && ((gn0) mn0Var).f430a == i2) {
                                     te2Var3.h(null);
                                 }
-                                if (mp0VarD == mp0.f) {
+                                if (d == mp0.f) {
                                     num = new Integer(i2);
                                 } else {
-                                    if (mp0VarD == mp0.d) {
+                                    if (d == mp0.d) {
                                         h82Var.h(i2, mp0.e);
                                     }
                                     ip0Var2.R(i2);
                                     num = new Integer(i2);
                                 }
                             } else {
-                                int iOrdinal = mp0VarD.ordinal();
-                                if (iOrdinal == 0) {
+                                int ordinal = d.ordinal();
+                                if (ordinal == 0) {
                                     mn0 mn0Var2 = (mn0) te2Var3.getValue();
                                     if (h82Var.b() == i2 && (mn0Var2 == null || (mn0Var2 instanceof en0))) {
                                         keySetView.remove(new Integer(i2));
@@ -137,12 +137,12 @@ public final class n91 extends hh2 implements Function2 {
                                         te2Var3.getClass();
                                         te2Var3.i(null, gn0Var);
                                     }
-                                } else if (iOrdinal == 1) {
+                                } else if (ordinal == 1) {
                                     this.i = 1;
                                     if (t91Var.i(i2, false, this) == f30Var) {
                                         return f30Var;
                                     }
-                                } else if (iOrdinal != 2) {
+                                } else if (ordinal != 2) {
                                     throw new mu();
                                 }
                             }

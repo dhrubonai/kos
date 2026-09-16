@@ -12,7 +12,7 @@ import java.util.BitSet;
 public final class x92 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ga2[] f1324a = new ga2[4];
+    public final ga2[] f1323a = new ga2[4];
     public final Matrix[] b = new Matrix[4];
     public final Matrix[] c = new Matrix[4];
     public final PointF d = new PointF();
@@ -27,7 +27,7 @@ public final class x92 {
 
     public x92() {
         for (int i = 0; i < 4; i++) {
-            this.f1324a[i] = new ga2();
+            this.f1323a[i] = new ga2();
             this.b[i] = new Matrix();
             this.c[i] = new Matrix();
         }
@@ -57,14 +57,14 @@ public final class x92 {
         while (true) {
             matrixArr = this.c;
             fArr2 = this.h;
-            ga2VarArr = this.f1324a;
+            ga2VarArr = this.f1323a;
             matrixArr2 = this.b;
             z = 0;
             if (i3 >= 4) {
                 break;
             }
             r20 trVar = fArr == null ? i3 != 1 ? i3 != 2 ? i3 != 3 ? v92Var.f : v92Var.e : v92Var.h : v92Var.g : new tr(fArr[i3]);
-            h50 h50Var = i3 != 1 ? i3 != 2 ? i3 != 3 ? v92Var.b : v92Var.f1210a : v92Var.d : v92Var.c;
+            h50 h50Var = i3 != 1 ? i3 != 2 ? i3 != 3 ? v92Var.b : v92Var.f1209a : v92Var.d : v92Var.c;
             ga2 ga2Var = ga2VarArr[i3];
             h50Var.getClass();
             h50Var.w(ga2Var, f, trVar.a(rectF));
@@ -101,7 +101,7 @@ public final class x92 {
             ga2 ga2Var3 = ga2VarArr[i5];
             ga2Var3.getClass();
             fArr2[z] = 0.0f;
-            fArr2[1] = ga2Var3.f410a;
+            fArr2[1] = ga2Var3.f409a;
             matrixArr2[i5].mapPoints(fArr2);
             if (i5 == 0) {
                 path.moveTo(fArr2[z], fArr2[1]);
@@ -112,7 +112,7 @@ public final class x92 {
             if (ra1Var != null) {
                 ga2 ga2Var4 = ga2VarArr[i5];
                 Matrix matrix = matrixArr2[i5];
-                ua1 ua1Var = ra1Var.f999a;
+                ua1 ua1Var = ra1Var.f998a;
                 f2 = 0.0f;
                 BitSet bitSet = ua1Var.h;
                 ga2Var4.getClass();
@@ -133,11 +133,11 @@ public final class x92 {
             ga2Var6.getClass();
             float[] fArr3 = this.i;
             fArr3[0] = f2;
-            fArr3[1] = ga2Var6.f410a;
+            fArr3[1] = ga2Var6.f409a;
             matrixArr2[i7].mapPoints(fArr3);
             Matrix[] matrixArr3 = matrixArr;
             ga2[] ga2VarArr2 = ga2VarArr;
-            float fMax = Math.max(((float) Math.hypot(fArr2[0] - fArr3[0], fArr2[1] - fArr3[1])) - 0.001f, f2);
+            float max = Math.max(((float) Math.hypot(fArr2[0] - fArr3[0], fArr2[1] - fArr3[1])) - 0.001f, f2);
             ga2 ga2Var7 = ga2VarArr2[i5];
             fArr2[0] = ga2Var7.b;
             fArr2[1] = ga2Var7.c;
@@ -150,14 +150,14 @@ public final class x92 {
             ga2 ga2Var8 = this.g;
             ga2Var8.d(0.0f, 270.0f, 0.0f);
             (i5 != 1 ? i5 != 2 ? i5 != 3 ? v92Var.j : v92Var.i : v92Var.l : v92Var.k).getClass();
-            ga2Var8.c(fMax, 0.0f);
+            ga2Var8.c(max, 0.0f);
             Path path4 = this.j;
             path4.reset();
             ga2Var8.b(matrixArr3[i5], path4);
             if (this.l && (b(path4, i5) || b(path4, i7))) {
                 path4.op(path4, path3, Path.Op.DIFFERENCE);
                 fArr2[0] = 0.0f;
-                fArr2[1] = ga2Var8.f410a;
+                fArr2[1] = ga2Var8.f409a;
                 matrixArr3[i5].mapPoints(fArr2);
                 path2.moveTo(fArr2[0], fArr2[1]);
                 ga2Var8.b(matrixArr3[i5], path2);
@@ -166,7 +166,7 @@ public final class x92 {
             }
             if (ra1Var != null) {
                 Matrix matrix2 = matrixArr3[i5];
-                ua1 ua1Var2 = ra1Var.f999a;
+                ua1 ua1Var2 = ra1Var.f998a;
                 z2 = false;
                 ua1Var2.h.set(i5 + 4, false);
                 fa2[] fa2VarArr2 = ua1Var2.g;
@@ -191,7 +191,7 @@ public final class x92 {
     public final boolean b(Path path, int i) {
         Path path2 = this.k;
         path2.reset();
-        this.f1324a[i].b(this.b[i], path2);
+        this.f1323a[i].b(this.b[i], path2);
         RectF rectF = new RectF();
         path.computeBounds(rectF, true);
         path2.computeBounds(rectF, true);

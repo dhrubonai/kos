@@ -8,7 +8,7 @@ import java.util.Map;
 public final class pm1 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f915a;
+    public final Object f914a;
     public final int b;
     public final int c;
     public final int d;
@@ -27,9 +27,12 @@ public final class pm1 implements gb1 {
     public final /* synthetic */ gb1 q;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public /* synthetic */ pm1(int i, int i2, int i3, int i4, int i5, j42 j42Var, gb1 gb1Var) {
+        this(r1, i, i2, i3, i4, i5, null, null, 0.0f, 0, false, j42Var, gb1Var, false, r1, r1);
         qe0 qe0Var = qe0.d;
-        this(qe0Var, i, i2, i3, i4, i5, null, null, 0.0f, 0, false, j42Var, gb1Var, false, qe0Var, qe0Var);
     }
 
     @Override // androidx.emoji2.text.gb1
@@ -63,7 +66,7 @@ public final class pm1 implements gb1 {
     }
 
     public pm1(List list, int i, int i2, int i3, int i4, int i5, ib1 ib1Var, ib1 ib1Var2, float f, int i6, boolean z, j42 j42Var, gb1 gb1Var, boolean z2, List list2, List list3) {
-        this.f915a = list;
+        this.f914a = list;
         this.b = i;
         this.c = i2;
         this.d = i3;

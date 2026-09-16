@@ -14,20 +14,25 @@ import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.content.pm.Signature;
+import android.content.pm.SigningInfo;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.SystemClock;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.fy1;
 import androidx.emoji2.text.gs1;
+import androidx.emoji2.text.gu2;
 import androidx.emoji2.text.jx0;
 import androidx.emoji2.text.kp0;
 import androidx.emoji2.text.l8;
+import androidx.emoji2.text.lt2;
 import androidx.emoji2.text.mt2;
 import androidx.emoji2.text.mz0;
 import androidx.emoji2.text.nz0;
@@ -54,11 +59,11 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
@@ -119,102 +124,125 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("checkPermission")
     public static class CheckPermission extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0016  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x0035  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x005f  */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x0019  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r10, java.lang.reflect.Method r11, java.lang.Object[] r12) {
-            /*
-                Method dump skipped, instructions count: 312
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.CheckPermission.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String[] strArr = xa1.b;
+            String str2 = null;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    if (objArr != null) {
+                        int i = 1;
+                        while (true) {
+                            if (i >= objArr.length) {
+                                break;
+                            }
+                            Object obj3 = objArr[i];
+                            if (obj3 instanceof String) {
+                                str2 = (String) obj3;
+                                break;
+                            }
+                            i++;
+                        }
+                    }
+                    if (!gu2.e(str, rj.u(), str2)) {
+                        String a2 = c.a(-612694823681826L, strArr);
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(c.a(-613309004005154L, strArr));
+                        sb.append(str);
+                        jx0.r(sb, c.a(-613029831130914L, strArr), str2, 3, a2);
+                        return 0;
+                    }
+                    if (gu2.d(str, rj.u(), str2)) {
+                        String a3 = c.a(-613072780803874L, strArr);
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(c.a(-613137205313314L, strArr));
+                        sb2.append(str);
+                        jx0.r(sb2, c.a(-611732751007522L, strArr), str2, 3, a3);
+                        return 0;
+                    }
+                    if (gu2.g(str, rj.u(), str2)) {
+                        String a4 = c.a(-611706981203746L, strArr);
+                        StringBuilder sb3 = new StringBuilder();
+                        sb3.append(c.a(-611840125189922L, strArr));
+                        sb3.append(str);
+                        jx0.r(sb3, c.a(-611509412708130L, strArr), str2, 3, a4);
+                        return 0;
+                    }
+                    if (gu2.f(str, rj.u(), str2)) {
+                        String a5 = c.a(-611552362381090L, strArr);
+                        StringBuilder sb4 = new StringBuilder();
+                        sb4.append(c.a(-612166542704418L, strArr));
+                        sb4.append(str);
+                        jx0.r(sb4, c.a(-612364111200034L, strArr), str2, 3, a5);
+                        return 0;
+                    }
+                    if (str2 != null) {
+                        c01 c01Var = c01.r;
+                        if (BPackageManager.get().getApplicationInfo(str2, 0, rj.u()) == null && !AppSystemEnv.isOpenPackage(str2)) {
+                            jx0.r(new StringBuilder(), c.a(-611973269176098L, strArr), str2, 3, c.a(-612407060872994L, strArr));
+                            return -1;
+                        }
+                    }
+                    return method.invoke(obj, objArr);
+                }
+            }
+            str = null;
+            if (objArr != null) {
+            }
+            if (!gu2.e(str, rj.u(), str2)) {
+            }
         }
     }
 
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("checkUidPermission")
     public static class CheckUidPermission extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0016  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x003f  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r7, java.lang.reflect.Method r8, java.lang.Object[] r9) {
-            /*
-                r6 = this;
-                java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-                r1 = 0
-                java.lang.Integer r2 = java.lang.Integer.valueOf(r1)
-                r3 = 0
-                if (r9 == 0) goto L16
-                int r4 = r9.length
-                if (r4 <= 0) goto L16
-                r1 = r9[r1]
-                boolean r4 = r1 instanceof java.lang.String
-                if (r4 == 0) goto L16
-                java.lang.String r1 = (java.lang.String) r1
-                goto L17
-            L16:
-                r1 = r3
-            L17:
-                java.util.HashSet r4 = androidx.emoji2.text.gu2.f440a
-                int r4 = androidx.emoji2.text.rj.u()
-                boolean r4 = androidx.emoji2.text.gu2.e(r1, r4, r3)
-                r5 = 3
-                if (r4 == 0) goto L3f
-                r7 = -612084938325794(0xfffdd34fdeadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r7, r0)
-                java.lang.StringBuilder r8 = new java.lang.StringBuilder
-                r8.<init>()
-                r3 = -614966861381410(0xfffdd0b0deadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r3, r0)
-                androidx.emoji2.text.jx0.r(r8, r9, r1, r5, r7)
-                return r2
-            L3f:
-                int r4 = androidx.emoji2.text.rj.u()
-                boolean r4 = androidx.emoji2.text.gu2.d(r1, r4, r3)
-                if (r4 == 0) goto L64
-                r7 = -614683393539874(0xfffdd0f2deadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r7, r0)
-                java.lang.StringBuilder r8 = new java.lang.StringBuilder
-                r8.<init>()
-                r3 = -614730638180130(0xfffdd0e7deadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r3, r0)
-                androidx.emoji2.text.jx0.r(r8, r9, r1, r5, r7)
-                return r2
-            L64:
-                int r4 = androidx.emoji2.text.rj.u()
-                boolean r4 = androidx.emoji2.text.gu2.g(r1, r4, r3)
-                if (r4 == 0) goto L89
-                r7 = -615520912162594(0xfffdd02fdeadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r7, r0)
-                java.lang.StringBuilder r8 = new java.lang.StringBuilder
-                r8.<init>()
-                r3 = -615654056148770(0xfffdd010deadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r3, r0)
-                androidx.emoji2.text.jx0.r(r8, r9, r1, r5, r7)
-                return r2
-            L89:
-                int r4 = androidx.emoji2.text.rj.u()
-                boolean r3 = androidx.emoji2.text.gu2.f(r1, r4, r3)
-                if (r3 == 0) goto Lae
-                r7 = -615319048699682(0xfffdd05edeadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r7, r0)
-                java.lang.StringBuilder r8 = new java.lang.StringBuilder
-                r8.<init>()
-                r3 = -615435012816674(0xfffdd043deadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r3, r0)
-                androidx.emoji2.text.jx0.r(r8, r9, r1, r5, r7)
-                return r2
-            Lae:
-                java.lang.Object r7 = r8.invoke(r7, r9)
-                return r7
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.CheckUidPermission.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String[] strArr = xa1.b;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    HashSet hashSet = gu2.f439a;
+                    if (!gu2.e(str, rj.u(), null)) {
+                        jx0.r(new StringBuilder(), c.a(-614966861381410L, strArr), str, 3, c.a(-612084938325794L, strArr));
+                        return 0;
+                    }
+                    if (gu2.d(str, rj.u(), null)) {
+                        jx0.r(new StringBuilder(), c.a(-614730638180130L, strArr), str, 3, c.a(-614683393539874L, strArr));
+                        return 0;
+                    }
+                    if (gu2.g(str, rj.u(), null)) {
+                        jx0.r(new StringBuilder(), c.a(-615654056148770L, strArr), str, 3, c.a(-615520912162594L, strArr));
+                        return 0;
+                    }
+                    if (!gu2.f(str, rj.u(), null)) {
+                        return method.invoke(obj, objArr);
+                    }
+                    jx0.r(new StringBuilder(), c.a(-615435012816674L, strArr), str, 3, c.a(-615319048699682L, strArr));
+                    return 0;
+                }
+            }
+            str = null;
+            HashSet hashSet2 = gu2.f439a;
+            if (!gu2.e(str, rj.u(), null)) {
+            }
         }
     }
 
@@ -242,9 +270,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             ComponentName componentName = (ComponentName) objArr[0];
-            int iR = mz0.R(objArr[1]);
+            int R = mz0.R(objArr[1]);
             c01 c01Var = c01.r;
-            ActivityInfo activityInfo = BPackageManager.get().getActivityInfo(componentName, iR, rj.u());
+            ActivityInfo activityInfo = BPackageManager.get().getActivityInfo(componentName, R, rj.u());
             if (activityInfo != null) {
                 return activityInfo;
             }
@@ -272,46 +300,46 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             String str = (String) objArr[0];
-            String strNormalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+            String normalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
             IPackageManagerProxy.replacePhysicalUserId(objArr);
-            if (c01.X().equals(str) && c01.X().equals(strNormalizeHostPackageForGoogleProcess)) {
+            if (c01.X().equals(str) && c01.X().equals(normalizeHostPackageForGoogleProcess)) {
                 return method.invoke(obj, objArr);
             }
-            int iR = mz0.R(objArr[1]);
-            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(strNormalizeHostPackageForGoogleProcess, iR, rj.u());
+            int R = mz0.R(objArr[1]);
+            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(normalizeHostPackageForGoogleProcess, R, rj.u());
             if (applicationInfo != null) {
-                ApplicationInfo applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller = IPackageManagerProxy.enrichPlayGamesSdkMetadataForGoogleCaller(applicationInfo, iR);
-                IPackageManagerProxy.rememberGoogleVerifierTargetPackage(applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller.packageName);
-                if (gs1.j(strNormalizeHostPackageForGoogleProcess)) {
+                ApplicationInfo enrichPlayGamesSdkMetadataForGoogleCaller = IPackageManagerProxy.enrichPlayGamesSdkMetadataForGoogleCaller(applicationInfo, R);
+                IPackageManagerProxy.rememberGoogleVerifierTargetPackage(enrichPlayGamesSdkMetadataForGoogleCaller.packageName);
+                if (gs1.j(normalizeHostPackageForGoogleProcess)) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-613979018903330L, strArr));
-                    sb.append(c.a(-1299425734573858L, strArr) + applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller.packageName + c.a(-1299515928887074L, strArr) + applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller.enabled + c.a(-1299528813788962L, strArr) + applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller.uid + c.a(-1299576058429218L, strArr) + iR);
+                    sb.append(c.a(-1299425734573858L, strArr) + enrichPlayGamesSdkMetadataForGoogleCaller.packageName + c.a(-1299515928887074L, strArr) + enrichPlayGamesSdkMetadataForGoogleCaller.enabled + c.a(-1299528813788962L, strArr) + enrichPlayGamesSdkMetadataForGoogleCaller.uid + c.a(-1299576058429218L, strArr) + R);
                     gs1.k(sb.toString());
                 }
-                return applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller;
+                return enrichPlayGamesSdkMetadataForGoogleCaller;
             }
-            if (c01.X().equals(str) && !str.equals(strNormalizeHostPackageForGoogleProcess)) {
+            if (c01.X().equals(str) && !str.equals(normalizeHostPackageForGoogleProcess)) {
                 nz0.Q(c.a(-613691256094498L, strArr), 5, c.a(-613755680603938L, strArr));
                 return method.invoke(obj, objArr);
             }
-            ApplicationInfo applicationInfoCreateSamsungKnoxGuardApplicationInfo = IPackageManagerProxy.createSamsungKnoxGuardApplicationInfo(strNormalizeHostPackageForGoogleProcess);
-            if (applicationInfoCreateSamsungKnoxGuardApplicationInfo != null) {
+            ApplicationInfo createSamsungKnoxGuardApplicationInfo = IPackageManagerProxy.createSamsungKnoxGuardApplicationInfo(normalizeHostPackageForGoogleProcess);
+            if (createSamsungKnoxGuardApplicationInfo != null) {
                 nz0.Q(c.a(-614077803151138L, strArr), 3, c.a(-614210947137314L, strArr));
-                return applicationInfoCreateSamsungKnoxGuardApplicationInfo;
+                return createSamsungKnoxGuardApplicationInfo;
             }
-            if (AppSystemEnv.isGmsPackage(strNormalizeHostPackageForGoogleProcess)) {
-                if (gs1.j(strNormalizeHostPackageForGoogleProcess)) {
+            if (AppSystemEnv.isGmsPackage(normalizeHostPackageForGoogleProcess)) {
+                if (gs1.j(normalizeHostPackageForGoogleProcess)) {
                     gs1.k(c.a(-608352611745570L, strArr));
                 }
                 return method.invoke(obj, objArr);
             }
-            if (AppSystemEnv.isOpenPackage(strNormalizeHostPackageForGoogleProcess)) {
-                if (gs1.j(strNormalizeHostPackageForGoogleProcess)) {
+            if (AppSystemEnv.isOpenPackage(normalizeHostPackageForGoogleProcess)) {
+                if (gs1.j(normalizeHostPackageForGoogleProcess)) {
                     gs1.k(c.a(-608563065143074L, strArr));
                 }
                 return method.invoke(obj, objArr);
             }
-            if (!gs1.j(strNormalizeHostPackageForGoogleProcess)) {
+            if (!gs1.j(normalizeHostPackageForGoogleProcess)) {
                 return null;
             }
             gs1.n(c.a(-608228057693986L, strArr));
@@ -325,8 +353,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         private Object createPlayStoreInstallSourceInfo(int i) {
             Object packageSigningInfo = getPackageSigningInfo(c.a(-607695481749282L, xa1.b), i);
             int packageSourceStore = getPackageSourceStore();
-            Object objCreatePlayStoreInstallSourceInfoFromParcel = createPlayStoreInstallSourceInfoFromParcel(packageSigningInfo, packageSourceStore);
-            return objCreatePlayStoreInstallSourceInfoFromParcel != null ? objCreatePlayStoreInstallSourceInfoFromParcel : createPlayStoreInstallSourceInfoFromConstructor(packageSigningInfo, packageSourceStore);
+            Object createPlayStoreInstallSourceInfoFromParcel = createPlayStoreInstallSourceInfoFromParcel(packageSigningInfo, packageSourceStore);
+            return createPlayStoreInstallSourceInfoFromParcel != null ? createPlayStoreInstallSourceInfoFromParcel : createPlayStoreInstallSourceInfoFromConstructor(packageSigningInfo, packageSourceStore);
         }
 
         private Object createPlayStoreInstallSourceInfoFromConstructor(Object obj, int i) {
@@ -344,56 +372,58 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                     return declaredConstructor2.newInstance(c.a(-609619627097890L, strArr), obj, null, c.a(-609190130368290L, strArr));
                 }
             } catch (Throwable th) {
-                String strA = c.a(-609241669975842L, strArr);
+                String a2 = c.a(-609241669975842L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.r(sb, c.a(-609306094485282L, strArr), th);
-                zd.s(sb, c.a(-610143613108002L, strArr), th, 5, strA);
+                zd.s(sb, c.a(-610143613108002L, strArr), th, 5, a2);
                 return null;
             }
         }
 
         private Object createPlayStoreInstallSourceInfoFromParcel(Object obj, int i) {
             String[] strArr = xa1.b;
-            Parcel parcelObtain = Parcel.obtain();
+            Parcel obtain = Parcel.obtain();
             try {
                 Object obj2 = Class.forName(c.a(-610564519903010L, strArr)).getField(c.a(-610689073954594L, strArr)).get(null);
                 if (!(obj2 instanceof Parcelable.Creator)) {
                     return null;
                 }
                 Parcelable parcelable = obj instanceof Parcelable ? (Parcelable) obj : null;
-                parcelObtain.writeString(c.a(-610723433692962L, strArr));
-                parcelObtain.writeParcelable(parcelable, 0);
-                parcelObtain.writeString(null);
-                parcelObtain.writeString(c.a(-610293936963362L, strArr));
-                writeString8Compat(parcelObtain, c.a(-610345476570914L, strArr));
-                parcelObtain.writeInt(i);
-                parcelObtain.setDataPosition(0);
-                return ((Parcelable.Creator) obj2).createFromParcel(parcelObtain);
+                obtain.writeString(c.a(-610723433692962L, strArr));
+                obtain.writeParcelable(parcelable, 0);
+                obtain.writeString(null);
+                obtain.writeString(c.a(-610293936963362L, strArr));
+                writeString8Compat(obtain, c.a(-610345476570914L, strArr));
+                obtain.writeInt(i);
+                obtain.setDataPosition(0);
+                return ((Parcelable.Creator) obj2).createFromParcel(obtain);
             } catch (Throwable th) {
                 try {
                     nz0.Q(c.a(-610465735655202L, strArr), 5, c.a(-611062736109346L, strArr) + th.getClass().getSimpleName() + c.a(-611290369376034L, strArr) + th.getMessage());
                     return null;
                 } finally {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                 }
             }
         }
 
         private Object getPackageSigningInfo(String str, int i) {
+            SigningInfo signingInfo;
             if (l8.U()) {
                 try {
                     c01 c01Var = c01.r;
                     PackageInfo packageInfo = BPackageManager.get().getPackageInfo(str, 134217792, i);
                     if (packageInfo != null) {
-                        return packageInfo.signingInfo;
+                        signingInfo = packageInfo.signingInfo;
+                        return signingInfo;
                     }
                 } catch (Throwable th) {
                     String[] strArr = xa1.b;
-                    String strA = c.a(-610212332584738L, strArr);
+                    String a2 = c.a(-610212332584738L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-609727001280290L, strArr));
                     sb.append(str);
-                    zd.s(sb, c.a(-621533866376994L, strArr), th, 5, strA);
+                    zd.s(sb, c.a(-621533866376994L, strArr), th, 5, a2);
                     return null;
                 }
             }
@@ -417,111 +447,45 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0012  */
         @Override // com.kos.engine.fake.hook.MethodHook
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public java.lang.Object hook(java.lang.Object r9, java.lang.reflect.Method r10, java.lang.Object[] r11) {
-            /*
-                r8 = this;
-                java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-                r1 = 0
-                r2 = 0
-                if (r11 == 0) goto L12
-                int r3 = r11.length
-                if (r3 <= 0) goto L12
-                r3 = r11[r1]
-                boolean r4 = r3 instanceof java.lang.String
-                if (r4 == 0) goto L12
-                java.lang.String r3 = (java.lang.String) r3
-                goto L13
-            L12:
-                r3 = r2
-            L13:
-                java.lang.String r4 = com.kos.engine.fake.service.IPackageManagerProxy.H(r3)
-                boolean r5 = androidx.emoji2.text.l8.V()
-                if (r5 == 0) goto Lfb
-                if (r4 != 0) goto L21
-                goto Lfb
-            L21:
-                java.lang.String r5 = androidx.emoji2.text.c01.X()
-                boolean r5 = r5.equals(r3)
-                if (r5 == 0) goto L3a
-                java.lang.String r5 = androidx.emoji2.text.c01.X()
-                boolean r5 = r5.equals(r4)
-                if (r5 == 0) goto L3a
-                java.lang.Object r9 = r10.invoke(r9, r11)
-                return r9
-            L3a:
-                int r5 = androidx.emoji2.text.rj.u()
-                com.kos.engine.fake.frameworks.BPackageManager r6 = com.kos.engine.fake.frameworks.BPackageManager.get()
-                android.content.pm.PackageInfo r1 = r6.getPackageInfo(r4, r1, r5)
-                java.lang.String r6 = androidx.emoji2.text.rj.o()
-                boolean r6 = r4.equals(r6)
-                r7 = 3
-                if (r1 != 0) goto L7a
-                if (r6 == 0) goto L54
-                goto L7a
-            L54:
-                boolean r1 = com.kos.engine.core.env.AppSystemEnv.isOpenPackage(r4)
-                if (r1 == 0) goto L5f
-                java.lang.Object r9 = r10.invoke(r9, r11)
-                return r9
-            L5f:
-                r9 = -607961769721634(0xfffdd70fdeadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r9, r0)
-                java.lang.StringBuilder r10 = new java.lang.StringBuilder
-                r10.<init>()
-                r5 = -607545157893922(0xfffdd770deadc0de, double:NaN)
-                java.lang.String r11 = a.a.a.c.a(r5, r0)
-                androidx.emoji2.text.jx0.r(r10, r11, r4, r7, r9)
-                return r2
-            L7a:
-                java.lang.Object r9 = r8.createPlayStoreInstallSourceInfo(r5)
-                if (r9 == 0) goto Ldf
-                r10 = -608833648082722(0xfffdd644deadc0de, double:NaN)
-                java.lang.String r10 = a.a.a.c.a(r10, r0)
-                java.lang.StringBuilder r11 = new java.lang.StringBuilder
-                r11.<init>()
-                r1 = -607300344758050(0xfffdd7a9deadc0de, double:NaN)
-                java.lang.String r1 = a.a.a.c.a(r1, r0)
-                r11.append(r1)
-                r11.append(r3)
-                r1 = -607381949136674(0xfffdd796deadc0de, double:NaN)
-                java.lang.String r1 = a.a.a.c.a(r1, r0)
-                r11.append(r1)
-                r11.append(r4)
-                r1 = -607420603842338(0xfffdd78ddeadc0de, double:NaN)
-                java.lang.String r1 = a.a.a.c.a(r1, r0)
-                r11.append(r1)
-                r1 = -606952452407074(0xfffdd7fadeadc0de, double:NaN)
-                java.lang.String r1 = a.a.a.c.a(r1, r0)
-                r11.append(r1)
-                r1 = -607003992014626(0xfffdd7eedeadc0de, double:NaN)
-                java.lang.String r0 = a.a.a.c.a(r1, r0)
-                r11.append(r0)
-                java.lang.String r0 = androidx.emoji2.text.gs1.b()
-                r11.append(r0)
-                java.lang.String r11 = r11.toString()
-                androidx.emoji2.text.nz0.Q(r10, r7, r11)
-                return r9
-            Ldf:
-                r9 = -607098481295138(0xfffdd7d8deadc0de, double:NaN)
-                java.lang.String r9 = a.a.a.c.a(r9, r0)
-                java.lang.StringBuilder r10 = new java.lang.StringBuilder
-                r10.<init>()
-                r5 = -607145725935394(0xfffdd7cddeadc0de, double:NaN)
-                java.lang.String r11 = a.a.a.c.a(r5, r0)
-                r0 = 5
-                androidx.emoji2.text.jx0.r(r10, r11, r4, r0, r9)
-                return r2
-            Lfb:
-                java.lang.Object r9 = r10.invoke(r9, r11)
-                return r9
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.GetInstallSourceInfo.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String[] strArr = xa1.b;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    String normalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+                    if (l8.V() || normalizeHostPackageForGoogleProcess == null) {
+                        return method.invoke(obj, objArr);
+                    }
+                    if (c01.X().equals(str) && c01.X().equals(normalizeHostPackageForGoogleProcess)) {
+                        return method.invoke(obj, objArr);
+                    }
+                    int u = rj.u();
+                    PackageInfo packageInfo = BPackageManager.get().getPackageInfo(normalizeHostPackageForGoogleProcess, 0, u);
+                    boolean equals = normalizeHostPackageForGoogleProcess.equals(rj.o());
+                    if (packageInfo == null && !equals) {
+                        if (AppSystemEnv.isOpenPackage(normalizeHostPackageForGoogleProcess)) {
+                            return method.invoke(obj, objArr);
+                        }
+                        jx0.r(new StringBuilder(), c.a(-607545157893922L, strArr), normalizeHostPackageForGoogleProcess, 3, c.a(-607961769721634L, strArr));
+                        return null;
+                    }
+                    Object createPlayStoreInstallSourceInfo = createPlayStoreInstallSourceInfo(u);
+                    if (createPlayStoreInstallSourceInfo == null) {
+                        jx0.r(new StringBuilder(), c.a(-607145725935394L, strArr), normalizeHostPackageForGoogleProcess, 5, c.a(-607098481295138L, strArr));
+                        return null;
+                    }
+                    nz0.Q(c.a(-608833648082722L, strArr), 3, c.a(-607300344758050L, strArr) + str + c.a(-607381949136674L, strArr) + normalizeHostPackageForGoogleProcess + c.a(-607420603842338L, strArr) + c.a(-606952452407074L, strArr) + c.a(-607003992014626L, strArr) + gs1.b());
+                    return createPlayStoreInstallSourceInfo;
+                }
+            }
+            str = null;
+            String normalizeHostPackageForGoogleProcess2 = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+            if (l8.V()) {
+            }
+            return method.invoke(obj, objArr);
         }
     }
 
@@ -530,11 +494,11 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public static class GetInstalledApplications extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            int iR = mz0.R(objArr[0]);
-            int iSanitizeBulkApplicationFlags = IPackageManagerProxy.sanitizeBulkApplicationFlags(iR);
+            int R = mz0.R(objArr[0]);
+            int sanitizeBulkApplicationFlags = IPackageManagerProxy.sanitizeBulkApplicationFlags(R);
             c01 c01Var = c01.r;
-            List<ApplicationInfo> installedApplications = BPackageManager.get().getInstalledApplications(iSanitizeBulkApplicationFlags, rj.u());
-            IPackageManagerProxy.enrichGoogleApplicationInfos(installedApplications, iR, iSanitizeBulkApplicationFlags);
+            List<ApplicationInfo> installedApplications = BPackageManager.get().getInstalledApplications(sanitizeBulkApplicationFlags, rj.u());
+            IPackageManagerProxy.enrichGoogleApplicationInfos(installedApplications, R, sanitizeBulkApplicationFlags);
             return vn1.a(installedApplications);
         }
     }
@@ -545,21 +509,21 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            int iR = mz0.R(objArr[0]);
-            int iSanitizeBulkPackageFlags = IPackageManagerProxy.sanitizeBulkPackageFlags(iR);
-            if (iSanitizeBulkPackageFlags != iR) {
-                String strA = c.a(-608936727297826L, strArr);
+            int R = mz0.R(objArr[0]);
+            int sanitizeBulkPackageFlags = IPackageManagerProxy.sanitizeBulkPackageFlags(R);
+            if (sanitizeBulkPackageFlags != R) {
+                String a2 = c.a(-608936727297826L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-609052691414818L, strArr));
                 sb.append(rj.o());
                 sb.append(c.a(-608696209129250L, strArr));
-                sb.append(iR);
-                zd.o(sb, c.a(-608726273900322L, strArr), iSanitizeBulkPackageFlags, 3, strA);
+                sb.append(R);
+                zd.o(sb, c.a(-608726273900322L, strArr), sanitizeBulkPackageFlags, 3, a2);
             }
             c01 c01Var = c01.r;
-            List<PackageInfo> installedPackages = BPackageManager.get().getInstalledPackages(iSanitizeBulkPackageFlags, rj.u());
-            IPackageManagerProxy.enrichGooglePackageInfos(installedPackages, iR, iSanitizeBulkPackageFlags);
-            int i = vn1.f1231a;
+            List<PackageInfo> installedPackages = BPackageManager.get().getInstalledPackages(sanitizeBulkPackageFlags, rj.u());
+            IPackageManagerProxy.enrichGooglePackageInfos(installedPackages, R, sanitizeBulkPackageFlags);
+            int i = vn1.f1230a;
             Class<?> returnType = method == null ? null : method.getReturnType();
             return (returnType == null || !c.a(-876534664675106L, strArr).equals(returnType.getName())) ? vn1.a(installedPackages) : returnType.getConstructor(List.class).newInstance(installedPackages);
         }
@@ -584,37 +548,37 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (objArr != null && objArr.length > 0) {
                 Object obj2 = objArr[0];
                 if (obj2 instanceof Number) {
-                    int iR = mz0.R(obj2);
-                    if (iR == c01.r.o && (hostUidGooglePackagesForVerifier = IPackageManagerProxy.getHostUidGooglePackagesForVerifier()) != null && hostUidGooglePackagesForVerifier.length > 0) {
-                        String strA = c.a(-621276168339234L, strArr);
+                    int R = mz0.R(obj2);
+                    if (R == c01.r.o && (hostUidGooglePackagesForVerifier = IPackageManagerProxy.getHostUidGooglePackagesForVerifier()) != null && hostUidGooglePackagesForVerifier.length > 0) {
+                        String a2 = c.a(-621276168339234L, strArr);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-621340592848674L, strArr));
-                        zd.p(sb, hostUidGooglePackagesForVerifier[0], 3, strA);
+                        zd.p(sb, hostUidGooglePackagesForVerifier[0], 3, a2);
                         return hostUidGooglePackagesForVerifier[0];
                     }
-                    int iNormalizeUidForVirtualLookup = IPackageManagerProxy.normalizeUidForVirtualLookup(iR);
-                    String[] strArrScopeGoogleSharedUidPackages = GetPackagesForUid.scopeGoogleSharedUidPackages(BPackageManager.get().getPackagesForUid(iNormalizeUidForVirtualLookup));
-                    if (strArrScopeGoogleSharedUidPackages != null && strArrScopeGoogleSharedUidPackages.length > 0) {
-                        String strA2 = c.a(-622126571863842L, strArr);
+                    int normalizeUidForVirtualLookup = IPackageManagerProxy.normalizeUidForVirtualLookup(R);
+                    String[] scopeGoogleSharedUidPackages = GetPackagesForUid.scopeGoogleSharedUidPackages(BPackageManager.get().getPackagesForUid(normalizeUidForVirtualLookup));
+                    if (scopeGoogleSharedUidPackages != null && scopeGoogleSharedUidPackages.length > 0) {
+                        String a3 = c.a(-622126571863842L, strArr);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(c.a(-622190996373282L, strArr));
-                        sb2.append(iR);
+                        sb2.append(R);
                         sb2.append(c.a(-622294075588386L, strArr));
-                        sb2.append(iNormalizeUidForVirtualLookup);
+                        sb2.append(normalizeUidForVirtualLookup);
                         sb2.append(c.a(-621782974480162L, strArr));
-                        zd.p(sb2, strArrScopeGoogleSharedUidPackages[0], 3, strA2);
-                        return strArrScopeGoogleSharedUidPackages[0];
+                        zd.p(sb2, scopeGoogleSharedUidPackages[0], 3, a3);
+                        return scopeGoogleSharedUidPackages[0];
                     }
-                    if (iR < 10000) {
+                    if (R < 10000) {
                         return method.invoke(obj, objArr);
                     }
                 }
             }
-            String strA3 = c.a(-621838809055010L, strArr);
+            String a4 = c.a(-621838809055010L, strArr);
             StringBuilder sb3 = new StringBuilder();
             sb3.append(c.a(-621886053695266L, strArr));
             sb3.append((objArr == null || objArr.length <= 0) ? null : objArr[0]);
-            nz0.Q(strA3, 3, sb3.toString());
+            nz0.Q(a4, 3, sb3.toString());
             return null;
         }
     }
@@ -623,19 +587,29 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getPackageInfo")
     public static class GetPackageInfo extends MethodHook {
         private boolean copyMissingSignatures(PackageInfo packageInfo, PackageInfo packageInfo2) {
+            SigningInfo signingInfo;
+            SigningInfo signingInfo2;
+            SigningInfo signingInfo3;
             boolean z = false;
             if (packageInfo != null && packageInfo2 != null && hasSignatureInfo(packageInfo2)) {
-                Signature[] signingInfoSignatures = packageInfo2.signatures;
-                if (!hasSignatures(signingInfoSignatures)) {
-                    signingInfoSignatures = getSigningInfoSignatures(packageInfo2);
+                Signature[] signatureArr = packageInfo2.signatures;
+                if (!hasSignatures(signatureArr)) {
+                    signatureArr = getSigningInfoSignatures(packageInfo2);
                 }
-                if (!hasSignatures(packageInfo.signatures) && hasSignatures(signingInfoSignatures)) {
-                    packageInfo.signatures = signingInfoSignatures;
+                if (!hasSignatures(packageInfo.signatures) && hasSignatures(signatureArr)) {
+                    packageInfo.signatures = signatureArr;
                     z = true;
                 }
-                if (l8.U() && packageInfo.signingInfo == null && packageInfo2.signingInfo != null) {
-                    packageInfo.signingInfo = packageInfo2.signingInfo;
-                    return true;
+                if (l8.U()) {
+                    signingInfo = packageInfo.signingInfo;
+                    if (signingInfo == null) {
+                        signingInfo2 = packageInfo2.signingInfo;
+                        if (signingInfo2 != null) {
+                            signingInfo3 = packageInfo2.signingInfo;
+                            packageInfo.signingInfo = signingInfo3;
+                            return true;
+                        }
+                    }
                 }
             }
             return z;
@@ -666,41 +640,76 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 c01 c01Var = c01.r;
                 if (copyMissingSignatures(packageInfo, BPackageManager.get().getPackageInfo(packageInfo.packageName, i2, rj.u()))) {
                     String[] strArr = xa1.b;
-                    String strA = c.a(-624239695773474L, strArr);
+                    String a2 = c.a(-624239695773474L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-622654852841250L, strArr));
-                    zd.p(sb, packageInfo.packageName, 3, strA);
+                    zd.p(sb, packageInfo.packageName, 3, a2);
                 }
             }
         }
 
         private Signature[] getSigningInfoSignatures(PackageInfo packageInfo) {
-            if (!l8.U() || packageInfo == null || packageInfo.signingInfo == null) {
+            SigningInfo signingInfo;
+            SigningInfo signingInfo2;
+            boolean hasMultipleSigners;
+            SigningInfo signingInfo3;
+            Signature[] signingCertificateHistory;
+            SigningInfo signingInfo4;
+            Signature[] apkContentsSigners;
+            SigningInfo signingInfo5;
+            if (!l8.U() || packageInfo == null) {
+                return null;
+            }
+            signingInfo = packageInfo.signingInfo;
+            if (signingInfo == null) {
                 return null;
             }
             try {
-                Signature[] apkContentsSigners = packageInfo.signingInfo.hasMultipleSigners() ? packageInfo.signingInfo.getApkContentsSigners() : packageInfo.signingInfo.getSigningCertificateHistory();
-                return hasSignatures(apkContentsSigners) ? apkContentsSigners : packageInfo.signingInfo.getApkContentsSigners();
+                signingInfo2 = packageInfo.signingInfo;
+                hasMultipleSigners = signingInfo2.hasMultipleSigners();
+                if (hasMultipleSigners) {
+                    signingInfo5 = packageInfo.signingInfo;
+                    signingCertificateHistory = signingInfo5.getApkContentsSigners();
+                } else {
+                    signingInfo3 = packageInfo.signingInfo;
+                    signingCertificateHistory = signingInfo3.getSigningCertificateHistory();
+                }
+                if (hasSignatures(signingCertificateHistory)) {
+                    return signingCertificateHistory;
+                }
+                signingInfo4 = packageInfo.signingInfo;
+                apkContentsSigners = signingInfo4.getApkContentsSigners();
+                return apkContentsSigners;
             } catch (Throwable unused) {
                 return null;
             }
         }
 
         private boolean hasCompleteSignatureInfo(PackageInfo packageInfo) {
+            SigningInfo signingInfo;
             if (packageInfo == null || !hasSignatures(packageInfo.signatures)) {
                 return false;
             }
-            return (l8.U() && packageInfo.signingInfo == null) ? false : true;
+            if (!l8.U()) {
+                return true;
+            }
+            signingInfo = packageInfo.signingInfo;
+            return signingInfo != null;
         }
 
         private boolean hasSignatureInfo(PackageInfo packageInfo) {
+            SigningInfo signingInfo;
             if (packageInfo == null) {
                 return false;
             }
             if (hasSignatures(packageInfo.signatures)) {
                 return true;
             }
-            return l8.U() && packageInfo.signingInfo != null;
+            if (!l8.U()) {
+                return false;
+            }
+            signingInfo = packageInfo.signingInfo;
+            return signingInfo != null;
         }
 
         private boolean hasSignatures(Signature[] signatureArr) {
@@ -708,11 +717,11 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         private Object invokeHostPackageInfo(Object obj, Method method, Object[] objArr) {
-            long jLongValue = ((Number) objArr[1]).longValue() & (-4194305);
+            long longValue = ((Number) objArr[1]).longValue() & (-4194305);
             if (objArr[1] instanceof Long) {
-                objArr[1] = Long.valueOf(jLongValue);
+                objArr[1] = Long.valueOf(longValue);
             } else {
-                objArr[1] = Integer.valueOf((int) jLongValue);
+                objArr[1] = Integer.valueOf((int) longValue);
             }
             if (objArr.length > 2 && (objArr[objArr.length - 1] instanceof Integer)) {
                 objArr[objArr.length - 1] = Integer.valueOf(c01.r.p);
@@ -724,26 +733,107 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (packageInfo == null || hasCompleteSignatureInfo(packageInfo)) {
                 return false;
             }
-            String strO = rj.o();
-            String strC = mt2.c();
-            if (GmsCore.isGoogleAppOrService(strO) || GmsCore.isGoogleAppOrService(strC) || IPackageManagerProxy.isGoogleVerifierPackage(strO) || IPackageManagerProxy.isGoogleVerifierPackage(strC)) {
+            String o = rj.o();
+            String c = mt2.c();
+            if (GmsCore.isGoogleAppOrService(o) || GmsCore.isGoogleAppOrService(c) || IPackageManagerProxy.isGoogleVerifierPackage(o) || IPackageManagerProxy.isGoogleVerifierPackage(c)) {
                 return gs1.m(i) || IPackageManagerProxy.isGoogleVerifierPackage(packageInfo.packageName);
             }
             return false;
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:46:0x01ce  */
         @Override // com.kos.engine.fake.hook.MethodHook
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public java.lang.Object hook(java.lang.Object r11, java.lang.reflect.Method r12, java.lang.Object[] r13) {
-            /*
-                Method dump skipped, instructions count: 574
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.GetPackageInfo.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            int i = 0;
+            String str = (String) objArr[0];
+            String normalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+            String[] strArr = xa1.b;
+            jx0.r(new StringBuilder(), c.a(-620438649716514L, strArr), normalizeHostPackageForGoogleProcess, 3, c.a(-622023492648738L, strArr));
+            int R = mz0.R(objArr[1]);
+            boolean j = gs1.j(normalizeHostPackageForGoogleProcess);
+            if (j) {
+                gs1.k(c.a(-620563203768098L, strArr) + gs1.b() + c.a(-620172361744162L, strArr) + str + c.a(-620245376188194L, strArr) + R + c.a(-620284030893858L, strArr) + gs1.m(R));
+            }
+            if (c01.X().equals(str) && c01.X().equals(normalizeHostPackageForGoogleProcess)) {
+                return invokeHostPackageInfo(obj, method, objArr);
+            }
+            PackageInfo packageInfo = BPackageManager.get().getPackageInfo(normalizeHostPackageForGoogleProcess, R, rj.u());
+            if (packageInfo == null) {
+                PackageInfo samsungKnoxGuardHostPackageInfo = IPackageManagerProxy.getSamsungKnoxGuardHostPackageInfo(obj, method, objArr, normalizeHostPackageForGoogleProcess);
+                if (samsungKnoxGuardHostPackageInfo != null) {
+                    return samsungKnoxGuardHostPackageInfo;
+                }
+                PackageInfo createSamsungKnoxGuardPackageInfo = IPackageManagerProxy.createSamsungKnoxGuardPackageInfo(normalizeHostPackageForGoogleProcess);
+                if (createSamsungKnoxGuardPackageInfo != null) {
+                    nz0.Q(c.a(-623969112833826L, strArr), 3, c.a(-623466601660194L, strArr));
+                    return createSamsungKnoxGuardPackageInfo;
+                }
+                if (AppSystemEnv.isGmsPackage(normalizeHostPackageForGoogleProcess)) {
+                    if (j) {
+                        gs1.k(c.a(-623672760090402L, strArr));
+                    }
+                    return invokeHostPackageInfo(obj, method, objArr);
+                }
+                if (AppSystemEnv.isOpenPackage(normalizeHostPackageForGoogleProcess)) {
+                    if (j) {
+                        gs1.k(c.a(-624398609563426L, strArr));
+                    }
+                    return invokeHostPackageInfo(obj, method, objArr);
+                }
+                if (j) {
+                    gs1.n(c.a(-624012062506786L, strArr));
+                }
+                return null;
+            }
+            gu2.a(packageInfo);
+            ensureGoogleVerifierSignatures(packageInfo, R);
+            packageInfo.applicationInfo = IPackageManagerProxy.enrichPlayGamesSdkMetadataForGoogleCaller(packageInfo.applicationInfo, R);
+            IPackageManagerProxy.rememberGoogleVerifierTargetPackage(packageInfo.packageName);
+            IPackageManagerProxy.rememberPlayGamesClientPackage(packageInfo.packageName, rj.u());
+            if (j) {
+                StringBuilder sb = new StringBuilder();
+                sb.append(c.a(-620344160436002L, strArr));
+                ApplicationInfo applicationInfo = packageInfo.applicationInfo;
+                Signature[] signatureArr = packageInfo.signatures;
+                int length = signatureArr == null ? 0 : signatureArr.length;
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(c.a(-1298948993204002L, strArr));
+                sb2.append(packageInfo.packageName);
+                sb2.append(c.a(-1298970468040482L, strArr));
+                sb2.append(packageInfo.versionCode);
+                sb2.append(c.a(-1299052072419106L, strArr));
+                sb2.append(applicationInfo != null ? Boolean.valueOf(applicationInfo.enabled) : null);
+                sb2.append(c.a(-1298583920983842L, strArr));
+                sb2.append(applicationInfo == null ? -1 : applicationInfo.uid);
+                sb2.append(c.a(-1298609690787618L, strArr));
+                sb2.append(length);
+                sb2.append(c.a(-1298687000198946L, strArr));
+                sb2.append(gs1.m(R));
+                sb2.append(c.a(-1298747129741090L, strArr));
+                sb2.append(R);
+                sb.append(sb2.toString());
+                gs1.k(sb.toString());
+            }
+            if (packageInfo.requestedPermissions != null && packageInfo.requestedPermissionsFlags != null) {
+                while (true) {
+                    String[] strArr2 = packageInfo.requestedPermissions;
+                    if (i >= strArr2.length) {
+                        break;
+                    }
+                    String str2 = strArr2[i];
+                    if (str2 != null) {
+                        if (!str2.equals(c.a(-621022765268770L, strArr)) && !str2.equals(c.a(-621160204222242L, strArr)) && !str2.equals(c.a(-620872441413410L, strArr)) && !str2.equals(c.a(-623797314141986L, strArr))) {
+                            String str3 = packageInfo.packageName;
+                            rj.u();
+                            if (!gu2.h(str3, str2)) {
+                            }
+                        }
+                        int[] iArr = packageInfo.requestedPermissionsFlags;
+                        iArr[i] = iArr[i] | 2;
+                    }
+                    i++;
+                }
+            }
+            return packageInfo;
         }
     }
 
@@ -751,32 +841,95 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getPackageInstaller")
     public static class GetPackageInstaller extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-            Object objInvoke = method.invoke(obj, objArr);
-            if (objInvoke == null) {
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Object invoke = method.invoke(obj, objArr);
+            if (invoke == null) {
                 return null;
             }
             String[] strArr = xa1.b;
             nz0.Q(c.a(-622964090486562L, strArr), 3, c.a(-623011335126818L, strArr));
-            return Proxy.newProxyInstance(objInvoke.getClass().getClassLoader(), mz0.m(objInvoke.getClass()), new PackageInstallerInvocation(objInvoke));
+            return Proxy.newProxyInstance(invoke.getClass().getClassLoader(), mz0.m(invoke.getClass()), new PackageInstallerInvocation(invoke));
         }
     }
 
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("getPackageUid")
     public static class GetPackageUid extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0011  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0032  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x0188  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x018d  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r11, java.lang.reflect.Method r12, java.lang.Object[] r13) {
-            /*
-                Method dump skipped, instructions count: 429
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.GetPackageUid.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String normalizeHostPackageForGoogleProcess;
+            String[] strArr = xa1.b;
+            int i = 0;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    normalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+                    if (!c01.X().equals(str) && c01.X().equals(normalizeHostPackageForGoogleProcess)) {
+                        return method.invoke(obj, objArr);
+                    }
+                    if (normalizeHostPackageForGoogleProcess != null) {
+                        if (objArr != null && objArr.length > 1) {
+                            i = mz0.R(objArr[1]);
+                        }
+                        int b = mt2.b();
+                        int callingUid = Binder.getCallingUid();
+                        String o = rj.o();
+                        c01 c01Var = c01.r;
+                        int i2 = c01Var.o;
+                        int i3 = c01Var.o;
+                        if (IPackageManagerProxy.shouldExposeUnscopedGmsSelfAsHostUid(o, normalizeHostPackageForGoogleProcess, b, callingUid, i2)) {
+                            zd.o(new StringBuilder(), c.a(-617535251824418L, strArr), i3, 3, c.a(-617470827314978L, strArr));
+                            return Integer.valueOf(i3);
+                        }
+                        if (IPackageManagerProxy.shouldExposeGmsAsHostUidForPlayStoreModuleRequest(normalizeHostPackageForGoogleProcess)) {
+                            zd.o(new StringBuilder(), c.a(-616139387453218L, strArr), i3, 3, c.a(-616092142812962L, strArr));
+                            return Integer.valueOf(i3);
+                        }
+                        ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(normalizeHostPackageForGoogleProcess, i, rj.u());
+                        if (applicationInfo != null) {
+                            IPackageManagerProxy.rememberGoogleVerifierTargetPackage(applicationInfo.packageName);
+                            if (c01.X().equals(str) && !c01.X().equals(normalizeHostPackageForGoogleProcess) && GmsCore.isGoogleAppOrService(normalizeHostPackageForGoogleProcess)) {
+                                String a2 = c.a(-615958998826786L, strArr);
+                                StringBuilder sb = new StringBuilder();
+                                sb.append(c.a(-616573179150114L, strArr));
+                                sb.append(str);
+                                sb.append(c.a(-616693438234402L, strArr));
+                                sb.append(normalizeHostPackageForGoogleProcess);
+                                zd.o(sb, c.a(-616732092940066L, strArr), i3, 3, a2);
+                                return Integer.valueOf(i3);
+                            }
+                            nz0.Q(c.a(-616757862743842L, strArr), 3, c.a(-616341250916130L, strArr) + str + c.a(-616444330131234L, strArr) + normalizeHostPackageForGoogleProcess + c.a(-616414265360162L, strArr) + applicationInfo.uid);
+                            return Integer.valueOf(applicationInfo.uid);
+                        }
+                        ApplicationInfo createSamsungKnoxGuardApplicationInfo = IPackageManagerProxy.createSamsungKnoxGuardApplicationInfo(normalizeHostPackageForGoogleProcess);
+                        if (createSamsungKnoxGuardApplicationInfo != null) {
+                            nz0.Q(c.a(-616470099935010L, strArr), 3, c.a(-616517344575266L, strArr) + createSamsungKnoxGuardApplicationInfo.uid);
+                            return Integer.valueOf(createSamsungKnoxGuardApplicationInfo.uid);
+                        }
+                    }
+                    if (!AppSystemEnv.isOpenPackage(normalizeHostPackageForGoogleProcess)) {
+                        return method.invoke(obj, objArr);
+                    }
+                    jx0.r(new StringBuilder(), c.a(-619034195410722L, strArr), normalizeHostPackageForGoogleProcess, 3, c.a(-619536706584354L, strArr));
+                    return -1;
+                }
+            }
+            str = null;
+            normalizeHostPackageForGoogleProcess = IPackageManagerProxy.normalizeHostPackageForGoogleProcess(str);
+            if (!c01.X().equals(str)) {
+            }
+            if (normalizeHostPackageForGoogleProcess != null) {
+            }
+            if (!AppSystemEnv.isOpenPackage(normalizeHostPackageForGoogleProcess)) {
+            }
         }
     }
 
@@ -785,11 +938,11 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public static class GetPackagesForUid extends MethodHook {
         /* JADX INFO: Access modifiers changed from: private */
         public static String[] scopeGoogleSharedUidPackages(String[] strArr) {
-            String strO = rj.o();
-            if (strArr != null && strArr.length > 1 && strO != null && GmsCore.isGoogleAppOrService(strO)) {
+            String o = rj.o();
+            if (strArr != null && strArr.length > 1 && o != null && GmsCore.isGoogleAppOrService(o)) {
                 for (String str : strArr) {
-                    if (strO.equals(str)) {
-                        return new String[]{strO};
+                    if (o.equals(str)) {
+                        return new String[]{o};
                     }
                 }
             }
@@ -799,42 +952,42 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            int iR = mz0.R(objArr[0]);
-            if (iR == c01.r.o) {
+            int R = mz0.R(objArr[0]);
+            if (R == c01.r.o) {
                 String[] hostUidGooglePackagesForVerifier = IPackageManagerProxy.getHostUidGooglePackagesForVerifier();
                 if (hostUidGooglePackagesForVerifier != null) {
-                    String strA = c.a(-617256078950178L, strArr);
+                    String a2 = c.a(-617256078950178L, strArr);
                     StringBuilder sb = new StringBuilder();
-                    sb.append(iR);
+                    sb.append(R);
                     sb.append(c.a(-617320503459618L, strArr));
                     sb.append(rj.q());
                     sb.append(c.a(-617372043067170L, strArr));
-                    zd.p(sb, Arrays.toString(hostUidGooglePackagesForVerifier), 3, strA);
+                    zd.p(sb, Arrays.toString(hostUidGooglePackagesForVerifier), 3, a2);
                     return hostUidGooglePackagesForVerifier;
                 }
                 String[] hostUidPlayStoreModulePackages = IPackageManagerProxy.getHostUidPlayStoreModulePackages();
                 if (hostUidPlayStoreModulePackages != null) {
-                    String strA2 = c.a(-616929661435682L, strArr);
+                    String a3 = c.a(-616929661435682L, strArr);
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(iR);
+                    sb2.append(R);
                     sb2.append(c.a(-617062805421858L, strArr));
                     sb2.append(rj.q());
                     sb2.append(c.a(-617045625552674L, strArr));
-                    zd.p(sb2, Arrays.toString(hostUidPlayStoreModulePackages), 3, strA2);
+                    zd.p(sb2, Arrays.toString(hostUidPlayStoreModulePackages), 3, a3);
                     return hostUidPlayStoreModulePackages;
                 }
             }
-            int iNormalizeUidForVirtualLookup = IPackageManagerProxy.normalizeUidForVirtualLookup(iR);
-            objArr[0] = Integer.valueOf(iNormalizeUidForVirtualLookup);
-            String[] strArrScopeGoogleSharedUidPackages = scopeGoogleSharedUidPackages(BPackageManager.get().getPackagesForUid(iNormalizeUidForVirtualLookup));
-            String strA3 = c.a(-617797244829474L, strArr);
+            int normalizeUidForVirtualLookup = IPackageManagerProxy.normalizeUidForVirtualLookup(R);
+            objArr[0] = Integer.valueOf(normalizeUidForVirtualLookup);
+            String[] scopeGoogleSharedUidPackages = scopeGoogleSharedUidPackages(BPackageManager.get().getPackagesForUid(normalizeUidForVirtualLookup));
+            String a4 = c.a(-617797244829474L, strArr);
             StringBuilder sb3 = new StringBuilder();
             sb3.append(objArr[0]);
             sb3.append(c.a(-617861669338914L, strArr));
             sb3.append(rj.q());
             sb3.append(c.a(-617913208946466L, strArr));
-            zd.p(sb3, Arrays.toString(strArrScopeGoogleSharedUidPackages), 3, strA3);
-            return strArrScopeGoogleSharedUidPackages;
+            zd.p(sb3, Arrays.toString(scopeGoogleSharedUidPackages), 3, a4);
+            return scopeGoogleSharedUidPackages;
         }
     }
 
@@ -844,9 +997,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             ComponentName componentName = (ComponentName) objArr[0];
-            int iR = mz0.R(objArr[1]);
+            int R = mz0.R(objArr[1]);
             c01 c01Var = c01.r;
-            ProviderInfo providerInfo = BPackageManager.get().getProviderInfo(componentName, iR, rj.u());
+            ProviderInfo providerInfo = BPackageManager.get().getProviderInfo(componentName, R, rj.u());
             if (providerInfo != null) {
                 return providerInfo;
             }
@@ -863,9 +1016,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             ComponentName componentName = (ComponentName) objArr[0];
-            int iR = mz0.R(objArr[1]);
+            int R = mz0.R(objArr[1]);
             c01 c01Var = c01.r;
-            ActivityInfo receiverInfo = BPackageManager.get().getReceiverInfo(componentName, iR, rj.u());
+            ActivityInfo receiverInfo = BPackageManager.get().getReceiverInfo(componentName, R, rj.u());
             if (receiverInfo != null) {
                 return receiverInfo;
             }
@@ -882,9 +1035,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             ComponentName componentName = (ComponentName) objArr[0];
-            int iR = mz0.R(objArr[1]);
+            int R = mz0.R(objArr[1]);
             c01 c01Var = c01.r;
-            ServiceInfo serviceInfo = BPackageManager.get().getServiceInfo(componentName, iR, rj.u());
+            ServiceInfo serviceInfo = BPackageManager.get().getServiceInfo(componentName, R, rj.u());
             if (serviceInfo != null) {
                 return serviceInfo;
             }
@@ -905,12 +1058,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (objArr != null && objArr.length > 1) {
                 Object obj2 = objArr[1];
                 if (obj2 instanceof Number) {
-                    long jLongValue = ((Number) obj2).longValue() & (-4194305);
+                    long longValue = ((Number) obj2).longValue() & (-4194305);
                     Class<?> cls = method.getParameterTypes()[1];
                     if (cls == Long.TYPE || cls == Long.class) {
-                        objArr[1] = Long.valueOf(jLongValue);
+                        objArr[1] = Long.valueOf(longValue);
                     } else {
-                        objArr[1] = Integer.valueOf((int) jLongValue);
+                        objArr[1] = Integer.valueOf((int) longValue);
                     }
                 }
             }
@@ -938,8 +1091,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         private boolean booleanMember(Object obj, String str, boolean z) {
-            Object objMember = member(obj, str);
-            return objMember instanceof Boolean ? ((Boolean) objMember).booleanValue() : z;
+            Object member = member(obj, str);
+            return member instanceof Boolean ? ((Boolean) member).booleanValue() : z;
         }
 
         private Bundle captureSessionParams(Object obj) {
@@ -952,13 +1105,13 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             bundle.putInt(c.a(-631111643447074L, strArr), intMember(obj, c.a(-630570477567778L, strArr), 0));
             bundle.putLong(c.a(-630660671880994L, strArr), longMember(obj, c.a(-630673556782882L, strArr), -1L));
             bundle.putString(c.a(-630768046063394L, strArr), stringMember(obj, c.a(-630785225932578L, strArr)));
-            Object objMember = member(obj, c.a(-629217562869538L, strArr));
-            if (objMember != null) {
-                bundle.putString(c.a(-629239037706018L, strArr), objMember.toString());
+            Object member = member(obj, c.a(-629217562869538L, strArr));
+            if (member != null) {
+                bundle.putString(c.a(-629239037706018L, strArr), member.toString());
             }
-            Object objMember2 = member(obj, c.a(-629264807509794L, strArr));
-            if (objMember2 instanceof Bitmap) {
-                bundle.putParcelable(c.a(-629299167248162L, strArr), (Bitmap) objMember2);
+            Object member2 = member(obj, c.a(-629264807509794L, strArr));
+            if (member2 instanceof Bitmap) {
+                bundle.putParcelable(c.a(-629299167248162L, strArr), (Bitmap) member2);
             }
             bundle.putBoolean(c.a(-629337821953826L, strArr), booleanMember(obj, c.a(-629415131365154L, strArr), false));
             bundle.putBoolean(c.a(-628929800060706L, strArr), booleanMember(obj, c.a(-628977044700962L, strArr), false));
@@ -971,26 +1124,26 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 return null;
             }
             try {
-                Object objNewInstanceWithoutPublicConstructor = newInstanceWithoutPublicConstructor(Class.forName(c.a(-628998519537442L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-629754433781538L, strArr), Integer.valueOf(bundle.getInt(c.a(-629780203585314L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-629878987833122L, strArr), Integer.valueOf(bundle.getInt(c.a(-629909052604194L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-629943412342562L, strArr), bundle.getString(c.a(-629999246917410L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-629509620645666L, strArr), bundle.getString(c.a(-629616994828066L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-629681419337506L, strArr), Float.valueOf(bundle.getFloat(c.a(-632520392720162L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632559047425826L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632589112196898L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632567637360418L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632597702131490L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632644946771746L, strArr), Integer.valueOf(bundle.getInt(c.a(-632683601477410L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632670716575522L, strArr), Integer.valueOf(bundle.getInt(c.a(-632743731019554L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632271284616994L, strArr), Long.valueOf(bundle.getLong(c.a(-632297054420770L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632327119191842L, strArr), bundle.getString(c.a(-632391543701282L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632477443047202L, strArr), bundle.getString(c.a(-633065853566754L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-633091623370530L, strArr), bundle.getParcelable(c.a(-633125983108898L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-633147457945378L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-633229062324002L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-633306371735330L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632778090757922L, strArr))));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632825335398178L, strArr), Integer.valueOf(bundle.getInt(c.a(-632894054874914L, strArr), -1)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-632954184417058L, strArr), bundle.getIntArray(c.a(-633022903893794L, strArr)));
-                setField(objNewInstanceWithoutPublicConstructor, c.a(-631433765994274L, strArr), Long.valueOf(bundle.getLong(c.a(-631511075405602L, strArr))));
-                return objNewInstanceWithoutPublicConstructor;
+                Object newInstanceWithoutPublicConstructor = newInstanceWithoutPublicConstructor(Class.forName(c.a(-628998519537442L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-629754433781538L, strArr), Integer.valueOf(bundle.getInt(c.a(-629780203585314L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-629878987833122L, strArr), Integer.valueOf(bundle.getInt(c.a(-629909052604194L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-629943412342562L, strArr), bundle.getString(c.a(-629999246917410L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-629509620645666L, strArr), bundle.getString(c.a(-629616994828066L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-629681419337506L, strArr), Float.valueOf(bundle.getFloat(c.a(-632520392720162L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632559047425826L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632589112196898L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632567637360418L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632597702131490L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632644946771746L, strArr), Integer.valueOf(bundle.getInt(c.a(-632683601477410L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632670716575522L, strArr), Integer.valueOf(bundle.getInt(c.a(-632743731019554L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632271284616994L, strArr), Long.valueOf(bundle.getLong(c.a(-632297054420770L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632327119191842L, strArr), bundle.getString(c.a(-632391543701282L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632477443047202L, strArr), bundle.getString(c.a(-633065853566754L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-633091623370530L, strArr), bundle.getParcelable(c.a(-633125983108898L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-633147457945378L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-633229062324002L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-633306371735330L, strArr), Boolean.valueOf(bundle.getBoolean(c.a(-632778090757922L, strArr))));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632825335398178L, strArr), Integer.valueOf(bundle.getInt(c.a(-632894054874914L, strArr), -1)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-632954184417058L, strArr), bundle.getIntArray(c.a(-633022903893794L, strArr)));
+                setField(newInstanceWithoutPublicConstructor, c.a(-631433765994274L, strArr), Long.valueOf(bundle.getLong(c.a(-631511075405602L, strArr))));
+                return newInstanceWithoutPublicConstructor;
             } catch (Throwable th) {
                 nz0.P(c.a(-631575499915042L, strArr), c.a(-631639924424482L, strArr), th);
                 return null;
@@ -1001,9 +1154,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             ArrayList arrayList = new ArrayList();
             if (bundleArr != null) {
                 for (Bundle bundle : bundleArr) {
-                    Object objCreateSessionInfo = createSessionInfo(bundle);
-                    if (objCreateSessionInfo != null) {
-                        arrayList.add(objCreateSessionInfo);
+                    Object createSessionInfo = createSessionInfo(bundle);
+                    if (createSessionInfo != null) {
+                        arrayList.add(createSessionInfo);
                     }
                 }
             }
@@ -1066,8 +1219,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         private int intMember(Object obj, String str, int i) {
-            Object objMember = member(obj, str);
-            return objMember instanceof Number ? ((Number) objMember).intValue() : i;
+            Object member = member(obj, str);
+            return member instanceof Number ? ((Number) member).intValue() : i;
         }
 
         private boolean isLocalNoOpMethod(String str) {
@@ -1081,17 +1234,17 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         private long longMember(Object obj, String str, long j) {
-            Object objMember = member(obj, str);
-            return objMember instanceof Number ? ((Number) objMember).longValue() : j;
+            Object member = member(obj, str);
+            return member instanceof Number ? ((Number) member).longValue() : j;
         }
 
         private Object member(Object obj, String str) {
             if (obj == null) {
                 return null;
             }
-            for (Class<?> superclass = obj.getClass(); superclass != null; superclass = superclass.getSuperclass()) {
+            for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
                 try {
-                    Field declaredField = superclass.getDeclaredField(str);
+                    Field declaredField = cls.getDeclaredField(str);
                     declaredField.setAccessible(true);
                     return declaredField.get(obj);
                 } catch (NoSuchFieldException unused) {
@@ -1102,7 +1255,7 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return null;
         }
 
-        private Object newInstanceWithoutPublicConstructor(Class<?> cls) throws IllegalAccessException, NoSuchFieldException, ClassNotFoundException, SecurityException, IllegalArgumentException {
+        private Object newInstanceWithoutPublicConstructor(Class<?> cls) {
             try {
                 Constructor<?> declaredConstructor = cls.getDeclaredConstructor(null);
                 declaredConstructor.setAccessible(true);
@@ -1120,9 +1273,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (obj == null) {
                 return;
             }
-            for (Class<?> superclass = obj.getClass(); superclass != null; superclass = superclass.getSuperclass()) {
+            for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
                 try {
-                    Field declaredField = superclass.getDeclaredField(str);
+                    Field declaredField = cls.getDeclaredField(str);
                     declaredField.setAccessible(true);
                     declaredField.set(obj, obj2);
                     return;
@@ -1134,44 +1287,180 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         private String stringMember(Object obj, String str) {
-            Object objMember = member(obj, str);
-            if (objMember == null) {
+            Object member = member(obj, str);
+            if (member == null) {
                 return null;
             }
-            return objMember.toString();
+            return member.toString();
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        /* JADX WARN: Code restructure failed: missing block: B:24:0x0091, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:22:0x0091, code lost:
         
             if (r0.equals(a.a.a.c.a(-618123662343970L, r11)) != false) goto L74;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:73:0x020e, code lost:
-        
-            if (r0.equals(a.a.a.c.a(-618029173063458L, r11)) != false) goto L74;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:74:0x0210, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:23:0x0210, code lost:
         
             r11 = com.kos.engine.fake.service.IPackageManagerProxy.extractDeletePackageName(r13);
             com.kos.engine.fake.service.IPackageManagerProxy.notifyPackageInstallerUninstall((android.content.IntentSender) findArgument(r13, android.content.IntentSender.class), r11, com.kos.engine.fake.service.IPackageManagerProxy.uninstallVirtualPackage(r11));
          */
-        /* JADX WARN: Code restructure failed: missing block: B:75:0x0229, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:24:0x0229, code lost:
         
             return defaultValue(r12.getReturnType());
          */
-        /* JADX WARN: Removed duplicated region for block: B:105:0x02b0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:86:0x0277  */
+        /* JADX WARN: Code restructure failed: missing block: B:69:0x020e, code lost:
+        
+            if (r0.equals(a.a.a.c.a(-618029173063458L, r11)) != false) goto L74;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:80:0x0277  */
+        /* JADX WARN: Removed duplicated region for block: B:82:0x02b0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
         @Override // java.lang.reflect.InvocationHandler
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object invoke(java.lang.Object r11, java.lang.reflect.Method r12, java.lang.Object[] r13) throws java.lang.Throwable {
-            /*
-                Method dump skipped, instructions count: 846
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.PackageInstallerInvocation.invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object invoke(Object obj, Method method, Object[] objArr) {
+            String[] strArr = xa1.b;
+            String name = method.getName();
+            BPackageInstallerManager bPackageInstallerManager = BPackageInstallerManager.get();
+            switch (name.hashCode()) {
+                case -663066834:
+                    if (name.equals(c.a(-620099347300130L, strArr))) {
+                        return createSessionInfo(bPackageInstallerManager.getSessionInfo(((Integer) objArr[0]).intValue()));
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                        nz0.Q(c.a(-618587518811938L, strArr), 3, c.a(-618651943321378L, strArr) + name + c.a(-630325664431906L, strArr));
+                        return defaultValue(method.getReturnType());
+                    }
+                    try {
+                        return method.invoke(this.mBase, objArr);
+                    } catch (Throwable th) {
+                        th = th;
+                        if (th.getCause() != null) {
+                            th = th.getCause();
+                        }
+                        if (!(th instanceof SecurityException) || !isPackageUidMismatch(th)) {
+                            throw th;
+                        }
+                        String a2 = c.a(-630458808418082L, strArr);
+                        StringBuilder sb = new StringBuilder();
+                        sb.append(c.a(-630523232927522L, strArr));
+                        sb.append(name);
+                        zd.s(sb, c.a(-630033606655778L, strArr), th, 5, a2);
+                        return vn1.c(method) ? vn1.a(new ArrayList()) : defaultValue(method.getReturnType());
+                    }
+                case -652885011:
+                    if (name.equals(c.a(-619231763906338L, strArr))) {
+                        bPackageInstallerManager.updateSessionAppIcon(((Integer) objArr[0]).intValue(), (Bitmap) objArr[1]);
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case -625596190:
+                    break;
+                case -403218424:
+                    if (name.equals(c.a(-619833059327778L, strArr))) {
+                        bPackageInstallerManager.registerCallback(asBinder(objArr != null ? objArr[0] : null), rj.u());
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case -298116903:
+                    if (name.equals(c.a(-619772929785634L, strArr))) {
+                        return emptySessionList(method);
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case -93516191:
+                    if (name.equals(c.a(-620017742921506L, strArr))) {
+                        bPackageInstallerManager.abandonSession(((Integer) objArr[0]).intValue());
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case -63461894:
+                    if (name.equals(c.a(-619223173971746L, strArr))) {
+                        Bundle captureSessionParams = captureSessionParams(objArr != null ? objArr[0] : null);
+                        int createSession = bPackageInstallerManager.createSession(captureSessionParams, findInstallerPackage(objArr), rj.u());
+                        nz0.Q(c.a(-618780792340258L, strArr), 3, c.a(-618828036980514L, strArr) + createSession + c.a(-618488734564130L, strArr) + captureSessionParams.getString(c.a(-618570338942754L, strArr)));
+                        return Integer.valueOf(createSession);
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 938656808:
+                    if (name.equals(c.a(-619631195864866L, strArr))) {
+                        return createSessionListResult(method, bPackageInstallerManager.getAllSessions(rj.u()));
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1096153408:
+                    if (name.equals(c.a(-618428605021986L, strArr))) {
+                        Integer num = (Integer) findArgument(objArr, Integer.class);
+                        IntentSender intentSender = (IntentSender) findArgument(objArr, IntentSender.class);
+                        if (num != null && intentSender != null) {
+                            bPackageInstallerManager.commitSession(num.intValue(), intentSender);
+                        }
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1170196863:
+                    if (name.equals(c.a(-618304050970402L, strArr))) {
+                        bPackageInstallerManager.setPermissionsResult(((Integer) objArr[0]).intValue(), ((Boolean) objArr[1]).booleanValue());
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1238099456:
+                    if (name.equals(c.a(-619906073771810L, strArr))) {
+                        int intValue = ((Integer) objArr[0]).intValue();
+                        Object obj2 = objArr[1];
+                        bPackageInstallerManager.updateSessionAppLabel(intValue, obj2 != null ? obj2.toString() : null);
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1316930297:
+                    break;
+                case 1568181855:
+                    if (name.equals(c.a(-619695620374306L, strArr))) {
+                        return createSessionListResult(method, bPackageInstallerManager.getMySessions(findInstallerPackage(objArr), rj.u()));
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1738611873:
+                    if (name.equals(c.a(-618256806330146L, strArr))) {
+                        bPackageInstallerManager.unregisterCallback(asBinder(objArr != null ? objArr[0] : null));
+                        return defaultValue(method.getReturnType());
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                case 1788161260:
+                    if (name.equals(c.a(-620082167430946L, strArr))) {
+                        int intValue2 = ((Integer) objArr[0]).intValue();
+                        if (bPackageInstallerManager.openSession(intValue2)) {
+                            return createSessionProxy(method.getReturnType(), intValue2);
+                        }
+                        return null;
+                    }
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+                default:
+                    if (!isLocalNoOpMethod(name)) {
+                    }
+                    break;
+            }
         }
     }
 
@@ -1215,7 +1504,7 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return null;
         }
 
-        private void dispatchEmptyChecksums(Object[] objArr) throws SecurityException {
+        private void dispatchEmptyChecksums(Object[] objArr) {
             if (objArr == null) {
                 return;
             }
@@ -1253,36 +1542,31 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        /* JADX WARN: Code restructure failed: missing block: B:105:0x02d9, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:101:0x02d9, code lost:
         
             if (r1.equals(a.a.a.c.a(-627980612288290L, r0)) == false) goto L157;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:107:0x02dd, code lost:
-        
-            r13 = androidx.emoji2.text.jx0.k(r1);
-            r13.append(a.a.a.c.a(-627658489741090L, r0));
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:108:0x02f6, code lost:
-        
-            throw new java.lang.UnsupportedOperationException(r13.toString());
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:134:0x0382, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:125:0x0382, code lost:
         
             if (r1.equals(a.a.a.c.a(-628843900714786L, r0)) != false) goto L135;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:136:0x0388, code lost:
-        
-            return defaultReturn(r13);
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:14:0x0051, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:13:0x0051, code lost:
         
             if (r1.equals(a.a.a.c.a(-628092281437986L, r0)) != false) goto L135;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:15:0x0388, code lost:
+        
+            return defaultReturn(r13);
          */
         /* JADX WARN: Code restructure failed: missing block: B:17:0x0062, code lost:
         
             if (r1.equals(a.a.a.c.a(-627040014450466L, r0)) != false) goto L57;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:40:0x0111, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:19:0x017d, code lost:
+        
+            return java.lang.Boolean.FALSE;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:41:0x0111, code lost:
         
             if (r1.equals(a.a.a.c.a(-628053626732322L, r0)) != false) goto L135;
          */
@@ -1290,37 +1574,364 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         
             if (r1.equals(a.a.a.c.a(-628646332219170L, r0)) != false) goto L135;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:53:0x0168, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:52:0x0168, code lost:
         
             if (r1.equals(a.a.a.c.a(-627907597844258L, r0)) == false) goto L157;
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:53:0x02dd, code lost:
+        
+            r13 = androidx.emoji2.text.jx0.k(r1);
+            r13.append(a.a.a.c.a(-627658489741090L, r0));
+         */
+        /* JADX WARN: Code restructure failed: missing block: B:54:0x02f6, code lost:
+        
+            throw new java.lang.UnsupportedOperationException(r13.toString());
          */
         /* JADX WARN: Code restructure failed: missing block: B:56:0x0179, code lost:
         
             if (r1.equals(a.a.a.c.a(-627220403076898L, r0)) != false) goto L57;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:58:0x017d, code lost:
-        
-            return java.lang.Boolean.FALSE;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:68:0x01d5, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:66:0x01d5, code lost:
         
             if (r1.equals(a.a.a.c.a(-628745116466978L, r0)) != false) goto L135;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:75:0x01ff, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:72:0x01ff, code lost:
         
             if (r1.equals(a.a.a.c.a(-628014972026658L, r0)) != false) goto L135;
          */
         @Override // java.lang.reflect.InvocationHandler
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object invoke(java.lang.Object r12, java.lang.reflect.Method r13, java.lang.Object[] r14) throws java.lang.SecurityException {
-            /*
-                Method dump skipped, instructions count: 1258
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.PackageInstallerSessionInvocation.invoke(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object invoke(Object obj, Method method, Object[] objArr) {
+            String[] strArr = xa1.b;
+            String name = method.getName();
+            BPackageInstallerManager bPackageInstallerManager = BPackageInstallerManager.get();
+            switch (name.hashCode()) {
+                case -2111685253:
+                    if (name.equals(c.a(-628886850387746L, strArr))) {
+                        return bPackageInstallerManager.openAppMetadataWrite(this.mSessionId);
+                    }
+                    String a2 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb = new StringBuilder();
+                    sb.append(c.a(-627392201768738L, strArr));
+                    sb.append(name);
+                    zd.p(sb, c.a(-627499575951138L, strArr), 3, a2);
+                    return defaultReturn(method);
+                case -2089724902:
+                    if (name.equals(c.a(-625042854657826L, strArr))) {
+                        bPackageInstallerManager.setClientProgress(this.mSessionId, ((Float) objArr[0]).floatValue(), false);
+                        return defaultReturn(method);
+                    }
+                    String a22 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(c.a(-627392201768738L, strArr));
+                    sb2.append(name);
+                    zd.p(sb2, c.a(-627499575951138L, strArr), 3, a22);
+                    return defaultReturn(method);
+                case -1972462260:
+                    if (name.equals(c.a(-628517483200290L, strArr))) {
+                        bPackageInstallerManager.removeAppMetadata(this.mSessionId);
+                        return defaultReturn(method);
+                    }
+                    String a222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22 = new StringBuilder();
+                    sb22.append(c.a(-627392201768738L, strArr));
+                    sb22.append(name);
+                    zd.p(sb22, c.a(-627499575951138L, strArr), 3, a222);
+                    return defaultReturn(method);
+                case -1776922004:
+                    if (name.equals(c.a(-624935480475426L, strArr))) {
+                        return c.a(-626778021445410L, strArr) + this.mSessionId + c.a(-626915460398882L, strArr);
+                    }
+                    String a2222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222 = new StringBuilder();
+                    sb222.append(c.a(-627392201768738L, strArr));
+                    sb222.append(name);
+                    zd.p(sb222, c.a(-627499575951138L, strArr), 3, a2222);
+                    return defaultReturn(method);
+                case -1772511108:
+                    if (name.equals(c.a(-624914005638946L, strArr))) {
+                        return this.mLocalBinder;
+                    }
+                    String a22222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222 = new StringBuilder();
+                    sb2222.append(c.a(-627392201768738L, strArr));
+                    sb2222.append(name);
+                    zd.p(sb2222, c.a(-627499575951138L, strArr), 3, a22222);
+                    return defaultReturn(method);
+                case -1477739738:
+                    break;
+                case -1354815177:
+                    if (name.equals(c.a(-625420811779874L, strArr))) {
+                        bPackageInstallerManager.commitSession(this.mSessionId, findIntentSender(objArr));
+                        return defaultReturn(method);
+                    }
+                    String a222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222 = new StringBuilder();
+                    sb22222.append(c.a(-627392201768738L, strArr));
+                    sb22222.append(name);
+                    zd.p(sb22222, c.a(-627499575951138L, strArr), 3, a222222);
+                    return defaultReturn(method);
+                case -1332116868:
+                    if (name.equals(c.a(-628272670064418L, strArr))) {
+                        String string = sessionInfo().getString(c.a(-627641309871906L, strArr));
+                        ArrayList arrayList = new ArrayList();
+                        if (string != null) {
+                            arrayList.add(string);
+                        }
+                        return arrayList;
+                    }
+                    String a2222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222 = new StringBuilder();
+                    sb222222.append(c.a(-627392201768738L, strArr));
+                    sb222222.append(name);
+                    zd.p(sb222222, c.a(-627499575951138L, strArr), 3, a2222222);
+                    return defaultReturn(method);
+                case -1295482945:
+                    if (name.equals(c.a(-625064329494306L, strArr))) {
+                        return Boolean.valueOf(obj == (objArr != null ? objArr[0] : null));
+                    }
+                    String a22222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222 = new StringBuilder();
+                    sb2222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222.append(name);
+                    zd.p(sb2222222, c.a(-627499575951138L, strArr), 3, a22222222);
+                    return defaultReturn(method);
+                case -1207841163:
+                    if (name.equals(c.a(-625450876550946L, strArr))) {
+                        bPackageInstallerManager.abandonSession(this.mSessionId);
+                        return defaultReturn(method);
+                    }
+                    String a222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222 = new StringBuilder();
+                    sb22222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222.append(name);
+                    zd.p(sb22222222, c.a(-627499575951138L, strArr), 3, a222222222);
+                    return defaultReturn(method);
+                case -1148999235:
+                    break;
+                case -945173823:
+                    if (name.equals(c.a(-627851763269410L, strArr))) {
+                        dispatchEmptyChecksums(objArr);
+                        return defaultReturn(method);
+                    }
+                    String a2222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222 = new StringBuilder();
+                    sb222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222.append(name);
+                    zd.p(sb222222222, c.a(-627499575951138L, strArr), 3, a2222222222);
+                    return defaultReturn(method);
+                case -905412714:
+                    if (name.equals(c.a(-625184588578594L, strArr))) {
+                        bPackageInstallerManager.addChildSessionId(this.mSessionId, ((Integer) objArr[0]).intValue());
+                        return defaultReturn(method);
+                    }
+                    String a22222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222 = new StringBuilder();
+                    sb2222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222.append(name);
+                    zd.p(sb2222222222, c.a(-627499575951138L, strArr), 3, a22222222222);
+                    return defaultReturn(method);
+                case -656427998:
+                    if (name.equals(c.a(-628203950587682L, strArr))) {
+                        return Integer.valueOf(sessionInfo().getInt(c.a(-627564000460578L, strArr), 0));
+                    }
+                    String a222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222 = new StringBuilder();
+                    sb22222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222.append(name);
+                    zd.p(sb22222222222, c.a(-627499575951138L, strArr), 3, a222222222222);
+                    return defaultReturn(method);
+                case -504709376:
+                    if (name.equals(c.a(-624729322045218L, strArr))) {
+                        return bPackageInstallerManager.openRead(this.mSessionId, (String) objArr[0]);
+                    }
+                    String a2222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222 = new StringBuilder();
+                    sb222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222.append(name);
+                    zd.p(sb222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222);
+                    return defaultReturn(method);
+                case -304749322:
+                    if (name.equals(c.a(-625360682237730L, strArr))) {
+                        bPackageInstallerManager.removeSplit(this.mSessionId, (String) objArr[0]);
+                        return defaultReturn(method);
+                    }
+                    String a22222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222 = new StringBuilder();
+                    sb2222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222.append(name);
+                    zd.p(sb2222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222);
+                    return defaultReturn(method);
+                case -218460432:
+                    if (name.equals(c.a(-628165295882018L, strArr))) {
+                        return Boolean.valueOf(sessionInfo().getBoolean(c.a(-626984179875618L, strArr), false));
+                    }
+                    String a222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222222 = new StringBuilder();
+                    sb22222222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222222.append(name);
+                    zd.p(sb22222222222222, c.a(-627499575951138L, strArr), 3, a222222222222222);
+                    return defaultReturn(method);
+                case -201459783:
+                    if (name.equals(c.a(-625485236289314L, strArr))) {
+                        return null;
+                    }
+                    String a2222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222222 = new StringBuilder();
+                    sb222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222222.append(name);
+                    zd.p(sb222222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222222);
+                    return defaultReturn(method);
+                case 3526141:
+                    break;
+                case 94756344:
+                    if (name.equals(c.a(-625446581583650L, strArr))) {
+                        bPackageInstallerManager.closeSession(this.mSessionId);
+                        return defaultReturn(method);
+                    }
+                    String a22222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222222 = new StringBuilder();
+                    sb2222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222222.append(name);
+                    zd.p(sb2222222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222222);
+                    return defaultReturn(method);
+                case 105134732:
+                    break;
+                case 113399775:
+                    if (name.equals(c.a(-624767976750882L, strArr))) {
+                        bPackageInstallerManager.write(this.mSessionId, (String) objArr[0], ((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue(), (ParcelFileDescriptor) objArr[3]);
+                        return defaultReturn(method);
+                    }
+                    String a222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222222222 = new StringBuilder();
+                    sb22222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222222222.append(name);
+                    zd.p(sb22222222222222222, c.a(-627499575951138L, strArr), 3, a222222222222222222);
+                    return defaultReturn(method);
+                case 147696667:
+                    if (name.equals(c.a(-624974135181090L, strArr))) {
+                        return Integer.valueOf(this.mSessionId);
+                    }
+                    String a2222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222222222 = new StringBuilder();
+                    sb222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222222222.append(name);
+                    zd.p(sb222222222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222222222);
+                    return defaultReturn(method);
+                case 182880225:
+                    break;
+                case 275410901:
+                    break;
+                case 281016602:
+                    if (name.equals(c.a(-628577612742434L, strArr))) {
+                        return null;
+                    }
+                    String a22222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222222222 = new StringBuilder();
+                    sb2222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222222222.append(name);
+                    zd.p(sb2222222222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222222222);
+                    return defaultReturn(method);
+                case 843007767:
+                    if (name.equals(c.a(-625605495373602L, strArr))) {
+                        return Boolean.valueOf(sessionInfo().getBoolean(c.a(-626906870464290L, strArr), false));
+                    }
+                    String a222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222222222222 = new StringBuilder();
+                    sb22222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222222222222.append(name);
+                    zd.p(sb22222222222222222222, c.a(-627499575951138L, strArr), 3, a222222222222222222222);
+                    return defaultReturn(method);
+                case 1098154016:
+                    break;
+                case 1280882667:
+                    break;
+                case 1343309457:
+                    if (name.equals(c.a(-628118051241762L, strArr))) {
+                        return Integer.valueOf(bPackageInstallerManager.getParentSessionId(this.mSessionId));
+                    }
+                    String a2222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222222222222 = new StringBuilder();
+                    sb222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222222222222.append(name);
+                    zd.p(sb222222222222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222222222222);
+                    return defaultReturn(method);
+                case 1480013337:
+                    if (name.equals(c.a(-624621947862818L, strArr))) {
+                        bPackageInstallerManager.setClientProgress(this.mSessionId, ((Float) objArr[0]).floatValue(), true);
+                        return defaultReturn(method);
+                    }
+                    String a22222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222222222222 = new StringBuilder();
+                    sb2222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222222222222.append(name);
+                    zd.p(sb2222222222222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222222222222);
+                    return defaultReturn(method);
+                case 1538891701:
+                    if (name.equals(c.a(-624703552241442L, strArr))) {
+                        return bPackageInstallerManager.openWrite(this.mSessionId, (String) objArr[0], ((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
+                    }
+                    String a222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222222222222222 = new StringBuilder();
+                    sb22222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222222222222222.append(name);
+                    zd.p(sb22222222222222222222222, c.a(-627499575951138L, strArr), 3, a222222222222222222222222);
+                    return defaultReturn(method);
+                case 1700336024:
+                    if (name.equals(c.a(-628461648625442L, strArr))) {
+                        return bPackageInstallerManager.getAppMetadataFd(this.mSessionId);
+                    }
+                    String a2222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222222222222222 = new StringBuilder();
+                    sb222222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222222222222222.append(name);
+                    zd.p(sb222222222222222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222222222222222);
+                    return defaultReturn(method);
+                case 1708586553:
+                    if (name.equals(c.a(-625244718120738L, strArr))) {
+                        bPackageInstallerManager.removeChildSessionId(this.mSessionId, ((Integer) objArr[0]).intValue());
+                        return defaultReturn(method);
+                    }
+                    String a22222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222222222222222 = new StringBuilder();
+                    sb2222222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222222222222222.append(name);
+                    zd.p(sb2222222222222222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222222222222222);
+                    return defaultReturn(method);
+                case 1909499820:
+                    break;
+                case 1938906702:
+                    break;
+                case 1960410514:
+                    if (name.equals(c.a(-624682077404962L, strArr))) {
+                        return bPackageInstallerManager.getNames(this.mSessionId);
+                    }
+                    String a222222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb22222222222222222222222222 = new StringBuilder();
+                    sb22222222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb22222222222222222222222222.append(name);
+                    zd.p(sb22222222222222222222222222, c.a(-627499575951138L, strArr), 3, a222222222222222222222222222);
+                    return defaultReturn(method);
+                case 2084207688:
+                    if (name.equals(c.a(-625137343938338L, strArr))) {
+                        return bPackageInstallerManager.getChildSessionIds(this.mSessionId);
+                    }
+                    String a2222222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb222222222222222222222222222 = new StringBuilder();
+                    sb222222222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb222222222222222222222222222.append(name);
+                    zd.p(sb222222222222222222222222222, c.a(-627499575951138L, strArr), 3, a2222222222222222222222222222);
+                    return defaultReturn(method);
+                default:
+                    String a22222222222222222222222222222 = c.a(-627276237651746L, strArr);
+                    StringBuilder sb2222222222222222222222222222 = new StringBuilder();
+                    sb2222222222222222222222222222.append(c.a(-627392201768738L, strArr));
+                    sb2222222222222222222222222222.append(name);
+                    zd.p(sb2222222222222222222222222222, c.a(-627499575951138L, strArr), 3, a22222222222222222222222222222);
+                    return defaultReturn(method);
+            }
         }
     }
 
@@ -1331,12 +1942,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         public Object hook(Object obj, Method method, Object[] objArr) {
             Intent intent = (Intent) mz0.p(objArr, Intent.class);
             String str = (String) mz0.p(objArr, String.class);
-            int iR = (objArr == null || objArr.length <= 2) ? 0 : mz0.R(objArr[2]);
+            int R = (objArr == null || objArr.length <= 2) ? 0 : mz0.R(objArr[2]);
             c01 c01Var = c01.r;
-            List<ResolveInfo> listQueryBroadcastReceivers = BPackageManager.get().queryBroadcastReceivers(intent, iR, str, rj.u());
+            List<ResolveInfo> queryBroadcastReceivers = BPackageManager.get().queryBroadcastReceivers(intent, R, str, rj.u());
             String[] strArr = xa1.b;
-            nz0.Q(c.a(-1061080819449634L, strArr), 3, c.a(-1061145243959074L, strArr) + listQueryBroadcastReceivers);
-            return vn1.a(listQueryBroadcastReceivers);
+            nz0.Q(c.a(-1061080819449634L, strArr), 3, c.a(-1061145243959074L, strArr) + queryBroadcastReceivers);
+            return vn1.a(queryBroadcastReceivers);
         }
     }
 
@@ -1345,27 +1956,95 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public static class QueryContentProviders extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            int iR = mz0.R(objArr[2]);
+            int R = mz0.R(objArr[2]);
             c01 c01Var = c01.r;
-            return vn1.a(BPackageManager.get().queryContentProviders(rj.q(), rj.r(), iR, rj.u()));
+            return vn1.a(BPackageManager.get().queryContentProviders(rj.q(), rj.r(), R, rj.u()));
         }
     }
 
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("queryIntentActivities")
     public static class QueryIntentActivities extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:31:0x00e3  */
+        /* JADX WARN: Removed duplicated region for block: B:33:0x00e7  */
+        /* JADX WARN: Removed duplicated region for block: B:36:0x00f3  */
+        /* JADX WARN: Removed duplicated region for block: B:38:0x0130  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r10, java.lang.reflect.Method r11, java.lang.Object[] r12) {
-            /*
-                Method dump skipped, instructions count: 391
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.QueryIntentActivities.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String scheme;
+            ApplicationInfo applicationInfo;
+            String[] strArr = xa1.b;
+            Intent intent = (Intent) objArr[0];
+            if (intent != null) {
+                ComponentName component = intent.getComponent();
+                if (IPackageManagerProxy.shouldHideFacebookPackage(component != null ? component.getPackageName() : intent.getPackage())) {
+                    nz0.Q(c.a(-1061244028206882L, strArr), 3, c.a(-1061858208530210L, strArr));
+                    return vn1.a(new ArrayList());
+                }
+                Uri data = intent.getData();
+                if (data != null && (scheme = data.getScheme()) != null && scheme.startsWith(c.a(-1062115906567970L, strArr)) && scheme.length() > 2) {
+                    nz0.Q(c.a(-1062094431731490L, strArr), 3, c.a(-1061677819903778L, strArr) + scheme);
+                    ResolveInfo resolveInfo = new ResolveInfo();
+                    ActivityInfo activityInfo = new ActivityInfo();
+                    resolveInfo.activityInfo = activityInfo;
+                    activityInfo.name = c.a(-1060290545467170L, strArr);
+                    String o = rj.o();
+                    activityInfo.packageName = o;
+                    c01 c01Var = c01.r;
+                    ApplicationInfo applicationInfo2 = BPackageManager.get().getApplicationInfo(o, 0, rj.u());
+                    if (applicationInfo2 != null) {
+                        applicationInfo = new ApplicationInfo(applicationInfo2);
+                    } else {
+                        ApplicationInfo applicationInfo3 = new ApplicationInfo();
+                        applicationInfo3.packageName = o;
+                        applicationInfo = applicationInfo3;
+                    }
+                    applicationInfo.enabled = true;
+                    activityInfo.applicationInfo = applicationInfo;
+                    activityInfo.enabled = true;
+                    activityInfo.exported = true;
+                    resolveInfo.isDefault = true;
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(resolveInfo);
+                    return vn1.a(arrayList);
+                }
+            }
+            if (objArr.length > 1) {
+                Object obj2 = objArr[1];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    int R = objArr.length > 2 ? mz0.R(objArr[2]) : 0;
+                    if (!IPackageManagerProxy.isGooglePreAddAccountProbe(intent)) {
+                        List buildGooglePreAddAccountResolves = IPackageManagerProxy.buildGooglePreAddAccountResolves(R);
+                        String a2 = c.a(-1060440869322530L, strArr);
+                        StringBuilder sb = new StringBuilder();
+                        zd.q(sb, c.a(-1059938358148898L, strArr), intent);
+                        sb.append(c.a(-1060762991869730L, strArr));
+                        sb.append(buildGooglePreAddAccountResolves.size());
+                        nz0.Q(a2, 3, sb.toString());
+                        return IPackageManagerProxy.asResolveListResult(method, buildGooglePreAddAccountResolves);
+                    }
+                    c01 c01Var2 = c01.r;
+                    List<ResolveInfo> queryIntentActivities = BPackageManager.get().queryIntentActivities(intent, R, str, rj.u());
+                    if (queryIntentActivities != null && !queryIntentActivities.isEmpty()) {
+                        return IPackageManagerProxy.asResolveListResult(method, queryIntentActivities);
+                    }
+                    if (IPackageManagerProxy.isExplicitOpenPackageQuery(intent)) {
+                        IPackageManagerProxy.replacePhysicalUserId(objArr);
+                        return method.invoke(obj, objArr);
+                    }
+                    nz0.Q(c.a(-1060801646575394L, strArr), 3, c.a(-1060917610692386L, strArr) + intent);
+                    return IPackageManagerProxy.asResolveListResult(method, new ArrayList());
+                }
+            }
+            str = null;
+            if (objArr.length > 2) {
+            }
+            if (!IPackageManagerProxy.isGooglePreAddAccountProbe(intent)) {
+            }
         }
     }
 
@@ -1391,12 +2070,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 if (!isGooglePackage(str)) {
                     arrayList.add(next);
                 } else if (!IPackageManagerProxy.isGoogleAuthenticatorService(serviceInfo)) {
-                    String strA = c.a(-1059564695994146L, strArr);
+                    String a2 = c.a(-1059564695994146L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-1058031392669474L, strArr));
                     sb.append(str);
                     sb.append(c.a(-1057760809729826L, strArr));
-                    zd.p(sb, serviceInfo == null ? null : serviceInfo.name, 3, strA);
+                    zd.p(sb, serviceInfo == null ? null : serviceInfo.name, 3, a2);
                 } else if (resolveInfo == null || googleAuthenticatorRank(str) < googleAuthenticatorRank(resolveInfo.serviceInfo.packageName)) {
                     resolveInfo = next;
                 }
@@ -1427,19 +2106,168 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return IPackageManagerProxy.isGooglePackageName(str);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:17:0x0029  */
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0011  */
+        /* JADX WARN: Removed duplicated region for block: B:14:0x0026  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x002c  */
+        /* JADX WARN: Removed duplicated region for block: B:21:0x0040  */
+        /* JADX WARN: Removed duplicated region for block: B:23:0x007f  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x00d6  */
+        /* JADX WARN: Removed duplicated region for block: B:32:0x0128  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r11, java.lang.reflect.Method r12, java.lang.Object[] r13) {
-            /*
-                Method dump skipped, instructions count: 915
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.QueryIntentServices.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Intent intent;
+            String str;
+            boolean i;
+            boolean h;
+            Object obj2;
+            String[] strArr = xa1.b;
+            int i2 = 0;
+            if (objArr != null && objArr.length > 0) {
+                Object obj3 = objArr[0];
+                if (obj3 instanceof Intent) {
+                    intent = (Intent) obj3;
+                    if (objArr != null && objArr.length > 1) {
+                        obj2 = objArr[1];
+                        if (obj2 instanceof String) {
+                            str = (String) obj2;
+                            if (objArr != null && objArr.length > 2) {
+                                i2 = mz0.R(objArr[2]);
+                            }
+                            i = gs1.i(intent);
+                            h = kp0.h(intent);
+                            if (h) {
+                                kp0.j(c.a(-1060569718341410L, strArr) + i2 + c.a(-1060737222065954L, strArr) + str + c.a(-1063554720612130L, strArr) + kp0.d(intent));
+                            }
+                            if (i) {
+                                gs1.k(c.a(-1063550425644834L, strArr) + gs1.b() + c.a(-1063717929369378L, strArr) + i2 + c.a(-1063756584075042L, strArr) + str + c.a(-1063275547737890L, strArr) + gs1.c(intent));
+                            }
+                            if (IPackageManagerProxy.isGoogleAccountAccessUi(intent)) {
+                                List<ResolveInfo> buildGoogleAccountAccessUiResolves = IPackageManagerProxy.buildGoogleAccountAccessUiResolves(i2);
+                                nz0.Q(c.a(-1063322792378146L, strArr), 3, c.a(-1063387216887586L, strArr) + buildGoogleAccountAccessUiResolves.size());
+                                if (h) {
+                                    kp0.j(c.a(-1064241915379490L, strArr) + buildGoogleAccountAccessUiResolves.size());
+                                }
+                                return asQueryResult(method, buildGoogleAccountAccessUiResolves);
+                            }
+                            if (IPackageManagerProxy.isGoogleGamesSignInService(intent)) {
+                                List<ResolveInfo> buildGoogleGamesSignInResolves = IPackageManagerProxy.buildGoogleGamesSignInResolves(i2);
+                                if (!buildGoogleGamesSignInResolves.isEmpty()) {
+                                    String a2 = c.a(-1063851073355554L, strArr);
+                                    StringBuilder sb = new StringBuilder();
+                                    zd.q(sb, c.a(-1063967037472546L, strArr), intent);
+                                    sb.append(c.a(-1062549698264866L, strArr));
+                                    sb.append(buildGoogleGamesSignInResolves.size());
+                                    nz0.Q(a2, 3, sb.toString());
+                                    if (h) {
+                                        kp0.j(c.a(-1062588352970530L, strArr) + buildGoogleGamesSignInResolves.size());
+                                    }
+                                    return asQueryResult(method, buildGoogleGamesSignInResolves);
+                                }
+                            }
+                            if (IPackageManagerProxy.isGoogleGamesProxyService(intent)) {
+                                List<ResolveInfo> buildGoogleGamesProxyResolves = IPackageManagerProxy.buildGoogleGamesProxyResolves(i2);
+                                if (!buildGoogleGamesProxyResolves.isEmpty()) {
+                                    String a3 = c.a(-1062257640488738L, strArr);
+                                    StringBuilder sb2 = new StringBuilder();
+                                    zd.q(sb2, c.a(-1062322064998178L, strArr), intent);
+                                    sb2.append(c.a(-1063112338980642L, strArr));
+                                    sb2.append(buildGoogleGamesProxyResolves.size());
+                                    nz0.Q(a3, 3, sb2.toString());
+                                    return asQueryResult(method, buildGoogleGamesProxyResolves);
+                                }
+                            }
+                            if (IPackageManagerProxy.isAdServicesMeasurementService(intent)) {
+                                nz0.Q(c.a(-1063133813817122L, strArr), 3, c.a(-1063198238326562L, strArr));
+                                if (h) {
+                                    kp0.l(c.a(-1056966240780066L, strArr));
+                                }
+                                return asQueryResult(method, new ArrayList());
+                            }
+                            List<ResolveInfo> filterGoogleAuthenticatorServices = filterGoogleAuthenticatorServices(intent, BPackageManager.get().queryIntentServices(intent, i2, rj.u()));
+                            if (filterGoogleAuthenticatorServices != null && !filterGoogleAuthenticatorServices.isEmpty()) {
+                                String a4 = c.a(-1056635528298274L, strArr);
+                                StringBuilder sb3 = new StringBuilder();
+                                sb3.append(c.a(-1056751492415266L, strArr));
+                                sb3.append(intent != null ? intent.getAction() : null);
+                                sb3.append(c.a(-1057460162019106L, strArr));
+                                sb3.append(getIntentPackage(intent));
+                                sb3.append(c.a(-1057541766397730L, strArr));
+                                sb3.append(filterGoogleAuthenticatorServices.size());
+                                nz0.Q(a4, 3, sb3.toString());
+                                if (h) {
+                                    kp0.j(c.a(-1057580421103394L, strArr) + filterGoogleAuthenticatorServices.size());
+                                }
+                                if (i) {
+                                    Iterator<ResolveInfo> it = filterGoogleAuthenticatorServices.iterator();
+                                    while (it.hasNext()) {
+                                        gs1.k(c.a(-1057211053915938L, strArr) + gs1.e(it.next()));
+                                    }
+                                }
+                                return asQueryResult(method, filterGoogleAuthenticatorServices);
+                            }
+                            if (isExplicitGooglePackageQuery(intent)) {
+                                if (i) {
+                                    gs1.n(c.a(-1057378557640482L, strArr));
+                                }
+                                nz0.Q(c.a(-1056038527844130L, strArr), 3, c.a(-1055553196539682L, strArr) + intent);
+                                if (h) {
+                                    kp0.l(c.a(-1056377830260514L, strArr));
+                                }
+                                return asQueryResult(method, new ArrayList());
+                            }
+                            if (IPackageManagerProxy.isExplicitOpenPackageQuery(intent)) {
+                                if (i) {
+                                    gs1.k(c.a(-1056566808821538L, strArr));
+                                }
+                                if (h) {
+                                    kp0.j(c.a(-1056218916470562L, strArr));
+                                }
+                                IPackageManagerProxy.replacePhysicalUserId(objArr);
+                                return method.invoke(obj, objArr);
+                            }
+                            if (i) {
+                                gs1.n(c.a(-1059186738872098L, strArr));
+                            }
+                            if (h) {
+                                kp0.l(c.a(-1058898976063266L, strArr));
+                            }
+                            nz0.Q(c.a(-1059676365143842L, strArr), 3, c.a(-1059723609784098L, strArr) + intent);
+                            return asQueryResult(method, new ArrayList());
+                        }
+                    }
+                    str = null;
+                    if (objArr != null) {
+                        i2 = mz0.R(objArr[2]);
+                    }
+                    i = gs1.i(intent);
+                    h = kp0.h(intent);
+                    if (h) {
+                    }
+                    if (i) {
+                    }
+                    if (IPackageManagerProxy.isGoogleAccountAccessUi(intent)) {
+                    }
+                }
+            }
+            intent = (Intent) mz0.p(objArr, Intent.class);
+            if (objArr != null) {
+                obj2 = objArr[1];
+                if (obj2 instanceof String) {
+                }
+            }
+            str = null;
+            if (objArr != null) {
+            }
+            i = gs1.i(intent);
+            h = kp0.h(intent);
+            if (h) {
+            }
+            if (i) {
+            }
+            if (IPackageManagerProxy.isGoogleAccountAccessUi(intent)) {
+            }
         }
     }
 
@@ -1458,15 +2286,15 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             String str = (String) objArr[0];
-            int iR = mz0.R(objArr[1]);
+            int R = mz0.R(objArr[1]);
             if (IPackageManagerProxy.shouldHideFacebookPackage(IPackageManagerProxy.getFacebookProviderPackage(str))) {
                 jx0.r(new StringBuilder(), c.a(-1057799464435490L, strArr), str, 3, c.a(-1057752219795234L, strArr));
                 return null;
             }
             c01 c01Var = c01.r;
-            ProviderInfo providerInfoResolveContentProvider = BPackageManager.get().resolveContentProvider(str, iR, rj.u());
-            if (providerInfoResolveContentProvider != null) {
-                return providerInfoResolveContentProvider;
+            ProviderInfo resolveContentProvider = BPackageManager.get().resolveContentProvider(str, R, rj.u());
+            if (resolveContentProvider != null) {
+                return resolveContentProvider;
             }
             if (isExplicitGoogleAuthority(str)) {
                 jx0.r(new StringBuilder(), c.a(-1058718587436834L, strArr), str, 3, c.a(-1058602623319842L, strArr));
@@ -1481,12 +2309,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (providerInfo == null || AppSystemEnv.isOpenPackage(providerInfo.packageName) || IPackageManagerProxy.isOpenAuthority(providerInfo.authority)) {
                 return providerInfo;
             }
-            String strA = c.a(-1058353515216674L, strArr);
+            String a2 = c.a(-1058353515216674L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1058469479333666L, strArr));
             sb.append(str);
             sb.append(c.a(-1070229099790114L, strArr));
-            zd.p(sb, providerInfo.packageName, 3, strA);
+            zd.p(sb, providerInfo.packageName, 3, a2);
             return null;
         }
     }
@@ -1498,25 +2326,25 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         public Object hook(Object obj, Method method, Object[] objArr) {
             Intent intent = (Intent) objArr[0];
             String str = (String) objArr[1];
-            int iR = mz0.R(objArr[2]);
+            int R = mz0.R(objArr[2]);
             String[] strArr = xa1.b;
             nz0.Q(c.a(-1070375128678178L, strArr), 5, c.a(-1070508272664354L, strArr) + intent);
             if (kp0.h(intent)) {
-                kp0.j(c.a(-1070521157566242L, strArr) + iR + c.a(-1069013624045346L, strArr) + str + c.a(-1069082343522082L, strArr) + kp0.d(intent));
+                kp0.j(c.a(-1070521157566242L, strArr) + R + c.a(-1069013624045346L, strArr) + str + c.a(-1069082343522082L, strArr) + kp0.d(intent));
             }
             if (IPackageManagerProxy.isGooglePreAddAccountProbe(intent)) {
-                ResolveInfo resolveInfoBuildGooglePreAddAccountResolveInfo = IPackageManagerProxy.buildGooglePreAddAccountResolveInfo(iR);
-                String strA = c.a(-1069129588162338L, strArr);
+                ResolveInfo buildGooglePreAddAccountResolveInfo = IPackageManagerProxy.buildGooglePreAddAccountResolveInfo(R);
+                String a2 = c.a(-1069129588162338L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.q(sb, c.a(-1069194012671778L, strArr), intent);
                 sb.append(c.a(-1068884775026466L, strArr));
-                sb.append(resolveInfoBuildGooglePreAddAccountResolveInfo != null);
-                nz0.Q(strA, 3, sb.toString());
+                sb.append(buildGooglePreAddAccountResolveInfo != null);
+                nz0.Q(a2, 3, sb.toString());
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-1068901954895650L, strArr));
-                sb2.append(resolveInfoBuildGooglePreAddAccountResolveInfo != null);
+                sb2.append(buildGooglePreAddAccountResolveInfo != null);
                 kp0.j(sb2.toString());
-                return resolveInfoBuildGooglePreAddAccountResolveInfo;
+                return buildGooglePreAddAccountResolveInfo;
             }
             if (intent != null && c.a(-1069705113780002L, strArr).equals(intent.getAction()) && intent.getData() != null) {
                 String scheme = intent.getData().getScheme();
@@ -1540,12 +2368,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 }
             }
             c01 c01Var = c01.r;
-            ResolveInfo resolveInfoResolveIntent = BPackageManager.get().resolveIntent(intent, str, iR, rj.u());
-            if (resolveInfoResolveIntent != null) {
+            ResolveInfo resolveIntent = BPackageManager.get().resolveIntent(intent, str, R, rj.u());
+            if (resolveIntent != null) {
                 if (kp0.h(intent)) {
-                    kp0.j(c.a(-1072917749317410L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveInfoResolveIntent));
+                    kp0.j(c.a(-1072917749317410L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveIntent));
                 }
-                return resolveInfoResolveIntent;
+                return resolveIntent;
             }
             if (IPackageManagerProxy.isExplicitOpenPackageQuery(intent)) {
                 if (kp0.h(intent)) {
@@ -1566,19 +2394,19 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public static class ResolveService extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            ResolveInfo resolveInfoBuildGoogleGamesProxyResolveInfo;
-            ResolveInfo resolveInfoBuildGoogleGamesSignInResolveInfo;
+            ResolveInfo buildGoogleGamesProxyResolveInfo;
+            ResolveInfo buildGoogleGamesSignInResolveInfo;
             String[] strArr = xa1.b;
             Intent intent = (Intent) objArr[0];
             String str = (String) objArr[1];
-            int iR = mz0.R(objArr[2]);
-            boolean zI = gs1.i(intent);
-            boolean zH = kp0.h(intent);
-            if (zH) {
-                kp0.j(c.a(-1070985014034210L, strArr) + iR + c.a(-1071113863053090L, strArr) + str + c.a(-1071182582529826L, strArr) + kp0.d(intent));
+            int R = mz0.R(objArr[2]);
+            boolean i = gs1.i(intent);
+            boolean h = kp0.h(intent);
+            if (h) {
+                kp0.j(c.a(-1070985014034210L, strArr) + R + c.a(-1071113863053090L, strArr) + str + c.a(-1071182582529826L, strArr) + kp0.d(intent));
             }
-            if (zI) {
-                gs1.k(c.a(-1071178287562530L, strArr) + gs1.b() + c.a(-1071856892395298L, strArr) + iR + c.a(-1071947086708514L, strArr) + str + c.a(-1072015806185250L, strArr) + gs1.c(intent));
+            if (i) {
+                gs1.k(c.a(-1071178287562530L, strArr) + gs1.b() + c.a(-1071856892395298L, strArr) + R + c.a(-1071947086708514L, strArr) + str + c.a(-1072015806185250L, strArr) + gs1.c(intent));
             }
             if (intent != null) {
                 ComponentName component = intent.getComponent();
@@ -1588,74 +2416,74 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 }
             }
             if (IPackageManagerProxy.isGoogleAccountAccessUi(intent)) {
-                ResolveInfo resolveInfoBuildGoogleAccountAccessUiResolveInfo = IPackageManagerProxy.buildGoogleAccountAccessUiResolveInfo(iR);
-                if (resolveInfoBuildGoogleAccountAccessUiResolveInfo != null) {
-                    String strA = c.a(-1071740928278306L, strArr);
+                ResolveInfo buildGoogleAccountAccessUiResolveInfo = IPackageManagerProxy.buildGoogleAccountAccessUiResolveInfo(R);
+                if (buildGoogleAccountAccessUiResolveInfo != null) {
+                    String a2 = c.a(-1071740928278306L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-1065758038834978L, strArr));
-                    sb.append(resolveInfoBuildGoogleAccountAccessUiResolveInfo.serviceInfo.packageName);
+                    sb.append(buildGoogleAccountAccessUiResolveInfo.serviceInfo.packageName);
                     sb.append(c.a(-1065427326353186L, strArr));
-                    zd.p(sb, resolveInfoBuildGoogleAccountAccessUiResolveInfo.serviceInfo.name, 3, strA);
-                    if (zH) {
-                        kp0.j(c.a(-1065487455895330L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveInfoBuildGoogleAccountAccessUiResolveInfo));
+                    zd.p(sb, buildGoogleAccountAccessUiResolveInfo.serviceInfo.name, 3, a2);
+                    if (h) {
+                        kp0.j(c.a(-1065487455895330L, strArr) + IPackageManagerProxy.describeResolveForSignIn(buildGoogleAccountAccessUiResolveInfo));
                     }
-                    return resolveInfoBuildGoogleAccountAccessUiResolveInfo;
+                    return buildGoogleAccountAccessUiResolveInfo;
                 }
                 nz0.Q(c.a(-1065650664652578L, strArr), 3, c.a(-1066264844975906L, strArr) + intent);
-                if (zH) {
+                if (h) {
                     kp0.l(c.a(-1065981377134370L, strArr));
                     return null;
                 }
             } else {
-                if (IPackageManagerProxy.isGoogleGamesSignInService(intent) && (resolveInfoBuildGoogleGamesSignInResolveInfo = IPackageManagerProxy.buildGoogleGamesSignInResolveInfo(iR)) != null) {
-                    nz0.Q(c.a(-1066204715433762L, strArr), 3, c.a(-1064602692632354L, strArr) + resolveInfoBuildGoogleGamesSignInResolveInfo.serviceInfo.packageName + c.a(-1064868980604706L, strArr) + resolveInfoBuildGoogleGamesSignInResolveInfo.serviceInfo.name + c.a(-1064860390670114L, strArr) + intent.getAction());
-                    if (zH) {
-                        kp0.j(c.a(-1064332109692706L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveInfoBuildGoogleGamesSignInResolveInfo));
+                if (IPackageManagerProxy.isGoogleGamesSignInService(intent) && (buildGoogleGamesSignInResolveInfo = IPackageManagerProxy.buildGoogleGamesSignInResolveInfo(R)) != null) {
+                    nz0.Q(c.a(-1066204715433762L, strArr), 3, c.a(-1064602692632354L, strArr) + buildGoogleGamesSignInResolveInfo.serviceInfo.packageName + c.a(-1064868980604706L, strArr) + buildGoogleGamesSignInResolveInfo.serviceInfo.name + c.a(-1064860390670114L, strArr) + intent.getAction());
+                    if (h) {
+                        kp0.j(c.a(-1064332109692706L, strArr) + IPackageManagerProxy.describeResolveForSignIn(buildGoogleGamesSignInResolveInfo));
                     }
-                    return resolveInfoBuildGoogleGamesSignInResolveInfo;
+                    return buildGoogleGamesSignInResolveInfo;
                 }
-                if (IPackageManagerProxy.isGoogleGamesProxyService(intent) && (resolveInfoBuildGoogleGamesProxyResolveInfo = IPackageManagerProxy.buildGoogleGamesProxyResolveInfo(iR)) != null) {
-                    nz0.Q(c.a(-1064503908384546L, strArr), 3, c.a(-1065169628315426L, strArr) + resolveInfoBuildGoogleGamesProxyResolveInfo.serviceInfo.packageName + c.a(-1065324247138082L, strArr) + resolveInfoBuildGoogleGamesProxyResolveInfo.serviceInfo.name + c.a(-1065384376680226L, strArr) + intent.getAction());
-                    return resolveInfoBuildGoogleGamesProxyResolveInfo;
+                if (IPackageManagerProxy.isGoogleGamesProxyService(intent) && (buildGoogleGamesProxyResolveInfo = IPackageManagerProxy.buildGoogleGamesProxyResolveInfo(R)) != null) {
+                    nz0.Q(c.a(-1064503908384546L, strArr), 3, c.a(-1065169628315426L, strArr) + buildGoogleGamesProxyResolveInfo.serviceInfo.packageName + c.a(-1065324247138082L, strArr) + buildGoogleGamesProxyResolveInfo.serviceInfo.name + c.a(-1065384376680226L, strArr) + intent.getAction());
+                    return buildGoogleGamesProxyResolveInfo;
                 }
                 if (IPackageManagerProxy.isAdServicesMeasurementService(intent)) {
                     nz0.Q(c.a(-1065405851516706L, strArr), 3, c.a(-1064972059819810L, strArr));
-                    if (zH) {
+                    if (h) {
                         kp0.l(c.a(-1067978536927010L, strArr));
                         return null;
                     }
                 } else {
                     c01 c01Var = c01.r;
-                    ResolveInfo resolveInfoResolveService = BPackageManager.get().resolveService(intent, iR, str, rj.u());
-                    if (IPackageManagerProxy.hasUsableServiceInfo(resolveInfoResolveService)) {
-                        if (zI) {
-                            gs1.k(c.a(-1067660709347106L, strArr) + gs1.e(resolveInfoResolveService));
+                    ResolveInfo resolveService = BPackageManager.get().resolveService(intent, R, str, rj.u());
+                    if (IPackageManagerProxy.hasUsableServiceInfo(resolveService)) {
+                        if (i) {
+                            gs1.k(c.a(-1067660709347106L, strArr) + gs1.e(resolveService));
                         }
-                        if (zH) {
-                            kp0.j(c.a(-1067858277842722L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveInfoResolveService));
+                        if (h) {
+                            kp0.j(c.a(-1067858277842722L, strArr) + IPackageManagerProxy.describeResolveForSignIn(resolveService));
                         }
-                        return resolveInfoResolveService;
+                        return resolveService;
                     }
-                    if (resolveInfoResolveService != null) {
+                    if (resolveService != null) {
                         nz0.Q(c.a(-1068541177642786L, strArr), 5, c.a(-1068588422283042L, strArr) + intent);
-                        if (zI) {
-                            gs1.n(c.a(-1068283479605026L, strArr) + gs1.e(resolveInfoResolveService));
+                        if (i) {
+                            gs1.n(c.a(-1068283479605026L, strArr) + gs1.e(resolveService));
                         }
                     }
                     if (IPackageManagerProxy.isExplicitOpenPackageQuery(intent)) {
-                        if (zI) {
+                        if (i) {
                             gs1.k(c.a(-1066810305822498L, strArr));
                         }
-                        if (zH) {
+                        if (h) {
                             kp0.j(c.a(-1066973514579746L, strArr));
                         }
                         return method.invoke(obj, objArr);
                     }
-                    if (zI) {
+                    if (i) {
                         gs1.n(c.a(-1066655686999842L, strArr));
                     }
                     nz0.Q(c.a(-1067428781113122L, strArr), 3, c.a(-1067493205622562L, strArr) + intent);
-                    if (zH) {
+                    if (h) {
                         kp0.l(c.a(-1067166788108066L, strArr));
                     }
                 }
@@ -1737,65 +2565,65 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static ResolveInfo buildGoogleAccountAccessUiResolveInfo(int i) {
         String[] strArr = xa1.b;
-        int iU = rj.u();
-        ResolveInfo resolveInfoFindGoogleAuthDelegateFromInstalledPackages = findGoogleAuthDelegateFromInstalledPackages(i, iU);
-        if (!hasServiceIdentity(resolveInfoFindGoogleAuthDelegateFromInstalledPackages)) {
+        int u = rj.u();
+        ResolveInfo findGoogleAuthDelegateFromInstalledPackages = findGoogleAuthDelegateFromInstalledPackages(i, u);
+        if (!hasServiceIdentity(findGoogleAuthDelegateFromInstalledPackages)) {
             nz0.Q(c.a(-1074266369048354L, strArr), 5, c.a(-1074330793557794L, strArr));
             return null;
         }
-        ResolveInfo resolveInfo = new ResolveInfo(resolveInfoFindGoogleAuthDelegateFromInstalledPackages);
-        ServiceInfo serviceInfo = new ServiceInfo(resolveInfoFindGoogleAuthDelegateFromInstalledPackages.serviceInfo);
+        ResolveInfo resolveInfo = new ResolveInfo(findGoogleAuthDelegateFromInstalledPackages);
+        ServiceInfo serviceInfo = new ServiceInfo(findGoogleAuthDelegateFromInstalledPackages.serviceInfo);
         resolveInfo.serviceInfo = serviceInfo;
         if (serviceInfo.applicationInfo == null) {
-            serviceInfo.applicationInfo = BPackageManager.get().getApplicationInfo(resolveInfo.serviceInfo.packageName, i, iU);
+            serviceInfo.applicationInfo = BPackageManager.get().getApplicationInfo(resolveInfo.serviceInfo.packageName, i, u);
         }
         if (resolveInfo.serviceInfo.applicationInfo != null) {
             resolveInfo.isDefault = true;
             return resolveInfo;
         }
-        String strA = c.a(-1075249916559138L, strArr);
+        String a2 = c.a(-1075249916559138L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-1075297161199394L, strArr));
         sb.append(resolveInfo.serviceInfo.packageName);
         sb.append(c.a(-1075030873227042L, strArr));
-        zd.p(sb, resolveInfo.serviceInfo.name, 5, strA);
+        zd.p(sb, resolveInfo.serviceInfo.name, 5, a2);
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static List<ResolveInfo> buildGoogleAccountAccessUiResolves(int i) {
         ArrayList arrayList = new ArrayList();
-        ResolveInfo resolveInfoBuildGoogleAccountAccessUiResolveInfo = buildGoogleAccountAccessUiResolveInfo(i);
-        if (resolveInfoBuildGoogleAccountAccessUiResolveInfo != null) {
-            arrayList.add(resolveInfoBuildGoogleAccountAccessUiResolveInfo);
+        ResolveInfo buildGoogleAccountAccessUiResolveInfo = buildGoogleAccountAccessUiResolveInfo(i);
+        if (buildGoogleAccountAccessUiResolveInfo != null) {
+            arrayList.add(buildGoogleAccountAccessUiResolveInfo);
         }
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static ResolveInfo buildGoogleGamesProxyResolveInfo(int i) {
-        ServiceInfo serviceInfoCreateFixedServiceInfo;
-        int iU = rj.u();
+        ServiceInfo createFixedServiceInfo;
+        int u = rj.u();
         int i2 = i | PackageParser.PARSE_IS_PRIVILEGED;
         BPackageManager bPackageManager = BPackageManager.get();
         String[] strArr = xa1.b;
-        ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-1075022283292450L, strArr), c.a(-1073488979967778L, strArr)), i2, iU);
+        ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-1075022283292450L, strArr), c.a(-1073488979967778L, strArr)), i2, u);
         if (serviceInfo == null) {
-            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(c.a(-1073222691995426L, strArr), i2, iU);
+            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(c.a(-1073222691995426L, strArr), i2, u);
             if (applicationInfo == null) {
                 nz0.Q(c.a(-1073321476243234L, strArr), 5, c.a(-1073385900752674L, strArr));
                 return null;
             }
-            serviceInfoCreateFixedServiceInfo = new ServiceInfo();
-            serviceInfoCreateFixedServiceInfo.packageName = c.a(-1074206239506210L, strArr);
-            serviceInfoCreateFixedServiceInfo.name = c.a(-1073772447809314L, strArr);
-            serviceInfoCreateFixedServiceInfo.applicationInfo = applicationInfo;
-            serviceInfoCreateFixedServiceInfo.exported = true;
+            createFixedServiceInfo = new ServiceInfo();
+            createFixedServiceInfo.packageName = c.a(-1074206239506210L, strArr);
+            createFixedServiceInfo.name = c.a(-1073772447809314L, strArr);
+            createFixedServiceInfo.applicationInfo = applicationInfo;
+            createFixedServiceInfo.exported = true;
         } else {
-            serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1076735975243554L, strArr), i2, iU);
+            createFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1076735975243554L, strArr), i2, u);
         }
         ResolveInfo resolveInfo = new ResolveInfo();
-        resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+        resolveInfo.serviceInfo = createFixedServiceInfo;
         resolveInfo.isDefault = true;
         return resolveInfo;
     }
@@ -1803,37 +2631,37 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static List<ResolveInfo> buildGoogleGamesProxyResolves(int i) {
         ArrayList arrayList = new ArrayList();
-        ResolveInfo resolveInfoBuildGoogleGamesProxyResolveInfo = buildGoogleGamesProxyResolveInfo(i);
-        if (resolveInfoBuildGoogleGamesProxyResolveInfo != null) {
-            arrayList.add(resolveInfoBuildGoogleGamesProxyResolveInfo);
+        ResolveInfo buildGoogleGamesProxyResolveInfo = buildGoogleGamesProxyResolveInfo(i);
+        if (buildGoogleGamesProxyResolveInfo != null) {
+            arrayList.add(buildGoogleGamesProxyResolveInfo);
         }
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static ResolveInfo buildGoogleGamesSignInResolveInfo(int i) {
-        ServiceInfo serviceInfoCreateFixedServiceInfo;
-        int iU = rj.u();
+        ServiceInfo createFixedServiceInfo;
+        int u = rj.u();
         int i2 = i | PackageParser.PARSE_IS_PRIVILEGED;
         BPackageManager bPackageManager = BPackageManager.get();
         String[] strArr = xa1.b;
-        ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-1076834759491362L, strArr), c.a(-1076950723608354L, strArr)), i2, iU);
+        ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-1076834759491362L, strArr), c.a(-1076950723608354L, strArr)), i2, u);
         if (serviceInfo == null) {
-            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(c.a(-1076680140668706L, strArr), i2, iU);
+            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(c.a(-1076680140668706L, strArr), i2, u);
             if (applicationInfo == null) {
                 nz0.Q(c.a(-1077345860599586L, strArr), 5, c.a(-1077393105239842L, strArr));
                 return null;
             }
-            serviceInfoCreateFixedServiceInfo = new ServiceInfo();
-            serviceInfoCreateFixedServiceInfo.packageName = c.a(-1077118227332898L, strArr);
-            serviceInfoCreateFixedServiceInfo.name = c.a(-1077234191449890L, strArr);
-            serviceInfoCreateFixedServiceInfo.applicationInfo = applicationInfo;
-            serviceInfoCreateFixedServiceInfo.exported = true;
+            createFixedServiceInfo = new ServiceInfo();
+            createFixedServiceInfo.packageName = c.a(-1077118227332898L, strArr);
+            createFixedServiceInfo.name = c.a(-1077234191449890L, strArr);
+            createFixedServiceInfo.applicationInfo = applicationInfo;
+            createFixedServiceInfo.exported = true;
         } else {
-            serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1075864096882466L, strArr), i2, iU);
+            createFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1075864096882466L, strArr), i2, u);
         }
         ResolveInfo resolveInfo = new ResolveInfo();
-        resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+        resolveInfo.serviceInfo = createFixedServiceInfo;
         resolveInfo.isDefault = true;
         return resolveInfo;
     }
@@ -1841,9 +2669,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static List<ResolveInfo> buildGoogleGamesSignInResolves(int i) {
         ArrayList arrayList = new ArrayList();
-        ResolveInfo resolveInfoBuildGoogleGamesSignInResolveInfo = buildGoogleGamesSignInResolveInfo(i);
-        if (resolveInfoBuildGoogleGamesSignInResolveInfo != null) {
-            arrayList.add(resolveInfoBuildGoogleGamesSignInResolveInfo);
+        ResolveInfo buildGoogleGamesSignInResolveInfo = buildGoogleGamesSignInResolveInfo(i);
+        if (buildGoogleGamesSignInResolveInfo != null) {
+            arrayList.add(buildGoogleGamesSignInResolveInfo);
         }
         return arrayList;
     }
@@ -1872,9 +2700,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static List<ResolveInfo> buildGooglePreAddAccountResolves(int i) {
         ArrayList arrayList = new ArrayList();
-        ResolveInfo resolveInfoBuildGooglePreAddAccountResolveInfo = buildGooglePreAddAccountResolveInfo(i);
-        if (resolveInfoBuildGooglePreAddAccountResolveInfo != null) {
-            arrayList.add(resolveInfoBuildGooglePreAddAccountResolveInfo);
+        ResolveInfo buildGooglePreAddAccountResolveInfo = buildGooglePreAddAccountResolveInfo(i);
+        if (buildGooglePreAddAccountResolveInfo != null) {
+            arrayList.add(buildGooglePreAddAccountResolveInfo);
         }
         return arrayList;
     }
@@ -1885,8 +2713,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         if (!c.a(-1086193493229346L, strArr).equals(rj.o()) || ((bool = (Boolean) mt2.g.get()) != null && bool.booleanValue())) {
             return false;
         }
-        String strQ = rj.q();
-        return c.a(-1086292277477154L, strArr).equals(strQ) || c.a(-1085858485780258L, strArr).equals(strQ);
+        String q = rj.q();
+        return c.a(-1086292277477154L, strArr).equals(q) || c.a(-1085858485780258L, strArr).equals(q);
     }
 
     private static ServiceInfo createFixedServiceInfo(ServiceInfo serviceInfo, String str, int i, int i2) {
@@ -1958,8 +2786,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Object deleteVirtualPackage(Method method, Object[] objArr) {
-        String strExtractDeletePackageName = extractDeletePackageName(objArr);
-        notifyDeleteObserver(objArr, strExtractDeletePackageName, uninstallVirtualPackage(strExtractDeletePackageName));
+        String extractDeletePackageName = extractDeletePackageName(objArr);
+        notifyDeleteObserver(objArr, extractDeletePackageName, uninstallVirtualPackage(extractDeletePackageName));
         return defaultValueForType(method.getReturnType());
     }
 
@@ -2031,11 +2859,11 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         int i4 = 0;
         for (int i5 = 0; i5 < list.size(); i5++) {
             ApplicationInfo applicationInfo2 = list.get(i5);
-            ApplicationInfo applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller = enrichPlayGamesSdkMetadataForGoogleCaller(applicationInfo2, i);
-            if (applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller != applicationInfo2) {
-                list.set(i5, applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller);
+            ApplicationInfo enrichPlayGamesSdkMetadataForGoogleCaller = enrichPlayGamesSdkMetadataForGoogleCaller(applicationInfo2, i);
+            if (enrichPlayGamesSdkMetadataForGoogleCaller != applicationInfo2) {
+                list.set(i5, enrichPlayGamesSdkMetadataForGoogleCaller);
                 i4++;
-                applicationInfo2 = applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller;
+                applicationInfo2 = enrichPlayGamesSdkMetadataForGoogleCaller;
             }
             if (applicationInfo2 != null && isGooglePackageName(applicationInfo2.packageName) && (applicationInfo = BPackageManager.get().getApplicationInfo(applicationInfo2.packageName, i, rj.u())) != null && (bundle = applicationInfo.metaData) != null) {
                 applicationInfo2.metaData = bundle;
@@ -2062,9 +2890,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         for (int i5 = 0; i5 < list.size(); i5++) {
             PackageInfo packageInfo2 = list.get(i5);
             if (packageInfo2 != null) {
-                ApplicationInfo applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller = enrichPlayGamesSdkMetadataForGoogleCaller(packageInfo2.applicationInfo, i);
-                if (applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller != packageInfo2.applicationInfo) {
-                    packageInfo2.applicationInfo = applicationInfoEnrichPlayGamesSdkMetadataForGoogleCaller;
+                ApplicationInfo enrichPlayGamesSdkMetadataForGoogleCaller = enrichPlayGamesSdkMetadataForGoogleCaller(packageInfo2.applicationInfo, i);
+                if (enrichPlayGamesSdkMetadataForGoogleCaller != packageInfo2.applicationInfo) {
+                    packageInfo2.applicationInfo = enrichPlayGamesSdkMetadataForGoogleCaller;
                     i4++;
                 }
                 if (isGooglePackageName(packageInfo2.packageName) && (packageInfo = BPackageManager.get().getPackageInfo(packageInfo2.packageName, i, rj.u())) != null) {
@@ -2130,9 +2958,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 return (String) obj;
             }
             try {
-                Object objInvoke = obj.getClass().getMethod(c.a(-1097987473424162L, strArr), null).invoke(obj, null);
-                if (objInvoke instanceof String) {
-                    return (String) objInvoke;
+                Object invoke = obj.getClass().getMethod(c.a(-1097987473424162L, strArr), null).invoke(obj, null);
+                if (invoke instanceof String) {
+                    return (String) invoke;
                 }
             } catch (Throwable th) {
                 nz0.P(c.a(-1098051897933602L, strArr), c.a(-1098116322443042L, strArr), th);
@@ -2148,16 +2976,16 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             String[] strArr = xa1.b;
             ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-1075361585708834L, strArr), str), i3, i2);
             if (serviceInfo != null) {
-                ServiceInfo serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1075460369956642L, strArr), i3, i2);
+                ServiceInfo createFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-1075460369956642L, strArr), i3, i2);
                 ResolveInfo resolveInfo = new ResolveInfo();
-                resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+                resolveInfo.serviceInfo = createFixedServiceInfo;
                 resolveInfo.isDefault = true;
-                String strA = c.a(-1075576334073634L, strArr);
+                String a2 = c.a(-1075576334073634L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-1076242054004514L, strArr));
-                sb.append(serviceInfoCreateFixedServiceInfo.packageName);
+                sb.append(createFixedServiceInfo.packageName);
                 sb.append(c.a(-1076388082892578L, strArr));
-                zd.p(sb, serviceInfoCreateFixedServiceInfo.name, 3, strA);
+                zd.p(sb, createFixedServiceInfo.name, 3, a2);
                 return resolveInfo;
             }
         }
@@ -2170,17 +2998,17 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             for (String str2 : KNOWN_GOOGLE_ACCOUNT_AUTHENTICATOR_SERVICES) {
                 ServiceInfo serviceInfo = BPackageManager.get().getServiceInfo(new ComponentName(str, str2), i3, i2);
                 if (serviceInfo != null && !isGoogleAuthDelegateService(serviceInfo.name)) {
-                    ServiceInfo serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, str, i3, i2);
+                    ServiceInfo createFixedServiceInfo = createFixedServiceInfo(serviceInfo, str, i3, i2);
                     ResolveInfo resolveInfo = new ResolveInfo();
-                    resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+                    resolveInfo.serviceInfo = createFixedServiceInfo;
                     resolveInfo.isDefault = true;
                     String[] strArr = xa1.b;
-                    String strA = c.a(-1087735386488610L, strArr);
+                    String a2 = c.a(-1087735386488610L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-1087799810998050L, strArr));
-                    sb.append(serviceInfoCreateFixedServiceInfo.packageName);
+                    sb.append(createFixedServiceInfo.packageName);
                     sb.append(c.a(-1087451918647074L, strArr));
-                    zd.p(sb, serviceInfoCreateFixedServiceInfo.name, 3, strA);
+                    zd.p(sb, createFixedServiceInfo.name, 3, a2);
                     return resolveInfo;
                 }
             }
@@ -2207,13 +3035,13 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     }
 
     private static String getFirstScopedPackageForUid(int i) {
-        String[] strArrScopeGoogleSharedUidPackages;
+        String[] scopeGoogleSharedUidPackages;
         c01 c01Var = c01.r;
         String[] packagesForUid = BPackageManager.get().getPackagesForUid(i);
-        if (packagesForUid == null || packagesForUid.length == 0 || (strArrScopeGoogleSharedUidPackages = GetPackagesForUid.scopeGoogleSharedUidPackages(packagesForUid)) == null || strArrScopeGoogleSharedUidPackages.length <= 0) {
+        if (packagesForUid == null || packagesForUid.length == 0 || (scopeGoogleSharedUidPackages = GetPackagesForUid.scopeGoogleSharedUidPackages(packagesForUid)) == null || scopeGoogleSharedUidPackages.length <= 0) {
             return null;
         }
-        return strArrScopeGoogleSharedUidPackages[0];
+        return scopeGoogleSharedUidPackages[0];
     }
 
     private static Signature[] getHostPackageSignatures() {
@@ -2223,11 +3051,11 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (context == null) {
                 return null;
             }
-            String strX = c01.X();
-            if (strX.length() == 0) {
-                strX = context.getPackageName();
+            String X = c01.X();
+            if (X.length() == 0) {
+                X = context.getPackageName();
             }
-            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(strX, 64);
+            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(X, 64);
             if (packageInfo == null || (signatureArr = packageInfo.signatures) == null || signatureArr.length <= 0) {
                 return null;
             }
@@ -2239,19 +3067,19 @@ public class IPackageManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String[] getHostUidGooglePackagesForVerifier() {
-        String strO = rj.o();
-        if (!c.a(-1089483438178082L, xa1.b).equals(strO)) {
+        String o = rj.o();
+        if (!c.a(-1089483438178082L, xa1.b).equals(o)) {
             return null;
         }
-        String scopedHostUidPackageForVerifier = getScopedHostUidPackageForVerifier(strO);
+        String scopedHostUidPackageForVerifier = getScopedHostUidPackageForVerifier(o);
         if (scopedHostUidPackageForVerifier != null) {
             return new String[]{scopedHostUidPackageForVerifier};
         }
         c01 c01Var = c01.r;
-        int iU = rj.u();
+        int u = rj.u();
         c01Var.getClass();
-        if (c01.b0(strO, iU)) {
-            return new String[]{strO};
+        if (c01.b0(o, u)) {
+            return new String[]{o};
         }
         return null;
     }
@@ -2263,10 +3091,10 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return null;
         }
         c01 c01Var = c01.r;
-        String strA = c.a(-1083036692266786L, strArr);
-        int iU = rj.u();
+        String a2 = c.a(-1083036692266786L, strArr);
+        int u = rj.u();
         c01Var.getClass();
-        if (c01.b0(strA, iU) && c01.b0(c.a(-1083088231874338L, strArr), rj.u())) {
+        if (c01.b0(a2, u) && c01.b0(c.a(-1083088231874338L, strArr), rj.u())) {
             return new String[]{c.a(-1083204195991330L, strArr), c.a(-1083874210889506L, strArr)};
         }
         return null;
@@ -2283,8 +3111,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     private static String getRecentGoogleVerifierTargetPackage(int i) {
         synchronized (IPackageManagerProxy.class) {
             if (sRecentGoogleVerifierTargetPackage != null && sRecentGoogleVerifierTargetUserId == i) {
-                long jElapsedRealtime = SystemClock.elapsedRealtime() - sRecentGoogleVerifierTargetAtMillis;
-                if (jElapsedRealtime >= 0 && jElapsedRealtime <= 1000) {
+                long elapsedRealtime = SystemClock.elapsedRealtime() - sRecentGoogleVerifierTargetAtMillis;
+                if (elapsedRealtime >= 0 && elapsedRealtime <= 1000) {
                     String str = sRecentGoogleVerifierTargetPackage;
                     if (isInstalledVerifierPackage(str, i)) {
                         return str;
@@ -2300,8 +3128,8 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     private static String getRecentNonGoogleVerifierTargetPackage(int i) {
         synchronized (IPackageManagerProxy.class) {
             if (sRecentNonGoogleVerifierTargetPackage != null && sRecentNonGoogleVerifierTargetUserId == i) {
-                long jElapsedRealtime = SystemClock.elapsedRealtime() - sRecentNonGoogleVerifierTargetAtMillis;
-                if (jElapsedRealtime >= 0 && jElapsedRealtime <= GMS_NON_GOOGLE_VERIFIER_TARGET_GRACE_MS) {
+                long elapsedRealtime = SystemClock.elapsedRealtime() - sRecentNonGoogleVerifierTargetAtMillis;
+                if (elapsedRealtime >= 0 && elapsedRealtime <= GMS_NON_GOOGLE_VERIFIER_TARGET_GRACE_MS) {
                     String str = sRecentNonGoogleVerifierTargetPackage;
                     if (isInstalledNonGoogleVirtualPackage(str, i)) {
                         return str;
@@ -2344,19 +3172,98 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     
         if (androidx.emoji2.text.c01.b0(r3, r1) != false) goto L11;
      */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0089  */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0043, code lost:
+    
+        if (com.kos.engine.core.GmsCore.isGoogleAppOrService(r4) != false) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0098, code lost:
+    
+        if (r11 <= 1000) goto L52;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x005e, code lost:
+    
+        if (r11 <= 1000) goto L31;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private static java.lang.String getScopedHostUidPackageForVerifierInner(java.lang.String r15) {
-        /*
-            Method dump skipped, instructions count: 314
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IPackageManagerProxy.getScopedHostUidPackageForVerifierInner(java.lang.String):java.lang.String");
+    private static String getScopedHostUidPackageForVerifierInner(String str) {
+        String str2;
+        String singleRunningNonGooglePackage;
+        String[] strArr = xa1.b;
+        int u = rj.u();
+        boolean canScopeHostUidToNonGoogleVerifierClient = canScopeHostUidToNonGoogleVerifierClient();
+        String c = mt2.c();
+        if (!canScopeHostUidToNonGoogleVerifierClient || !isInstalledNonGoogleVirtualPackage(c, u)) {
+            if (GmsCore.isGoogleAppOrService(c)) {
+                c01.r.getClass();
+            }
+            int b = mt2.b();
+            if (b > 0) {
+                str2 = getFirstScopedPackageForUid(b);
+                if (canScopeHostUidToNonGoogleVerifierClient && isInstalledNonGoogleVirtualPackage(str2, u)) {
+                    return str2;
+                }
+                if (str2 != null) {
+                }
+            }
+            str2 = null;
+            lt2 lt2Var = mt2.c;
+            if (lt2Var != null) {
+                long elapsedRealtime = SystemClock.elapsedRealtime() - mt2.d;
+                if (elapsedRealtime >= 0) {
+                }
+            }
+            lt2Var = null;
+            String str3 = lt2Var == null ? null : lt2Var.b;
+            if (canScopeHostUidToNonGoogleVerifierClient && isInstalledNonGoogleVirtualPackage(str3, u)) {
+                return str3;
+            }
+            if (str3 != null && str2 == null && GmsCore.isGoogleAppOrService(str3)) {
+                c01.r.getClass();
+                if (c01.b0(str3, u)) {
+                    str2 = str3;
+                }
+            }
+            lt2 lt2Var2 = mt2.c;
+            if (lt2Var2 != null) {
+                long elapsedRealtime2 = SystemClock.elapsedRealtime() - mt2.d;
+                if (elapsedRealtime2 >= 0) {
+                }
+            }
+            lt2Var2 = null;
+            int i = lt2Var2 == null ? -1 : lt2Var2.f711a;
+            if (i > 0) {
+                String firstScopedPackageForUid = getFirstScopedPackageForUid(i);
+                if (canScopeHostUidToNonGoogleVerifierClient && isInstalledNonGoogleVirtualPackage(firstScopedPackageForUid, u)) {
+                    return firstScopedPackageForUid;
+                }
+                if (firstScopedPackageForUid != null && str2 == null && GmsCore.isGoogleAppOrService(firstScopedPackageForUid)) {
+                    str2 = firstScopedPackageForUid;
+                }
+            }
+            String recentNonGoogleVerifierTargetPackage = canScopeHostUidToNonGoogleVerifierClient ? getRecentNonGoogleVerifierTargetPackage(u) : null;
+            if (recentNonGoogleVerifierTargetPackage != null && ((singleRunningNonGooglePackage = getSingleRunningNonGooglePackage()) == null || recentNonGoogleVerifierTargetPackage.equals(singleRunningNonGooglePackage))) {
+                logGoogleVerifierScopedPackage(c.a(-1083972995137314L, strArr), recentNonGoogleVerifierTargetPackage);
+                return recentNonGoogleVerifierTargetPackage;
+            }
+            if (c.a(-1083582153113378L, strArr).equals(c)) {
+                c01 c01Var = c01.r;
+                String a2 = c.a(-1083728182001442L, strArr);
+                c01Var.getClass();
+                if (c01.b0(a2, u)) {
+                    logGoogleVerifierScopedPackage(c.a(-1082224943447842L, strArr), c.a(-1082409627041570L, strArr));
+                    return c.a(-1082005900115746L, strArr);
+                }
+            }
+            String recentGoogleVerifierTargetPackage = getRecentGoogleVerifierTargetPackage(u);
+            if (recentGoogleVerifierTargetPackage == null || !str.equals(recentGoogleVerifierTargetPackage)) {
+                return str2 != null ? str2 : str;
+            }
+            logGoogleVerifierScopedPackage(c.a(-1082151929003810L, strArr), recentGoogleVerifierTargetPackage);
+            return recentGoogleVerifierTargetPackage;
+        }
+        return c;
     }
 
     private static String getSingleRunningNonGooglePackage() {
@@ -2368,9 +3275,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
                 for (ProcessRecord processRecord : runningProcessesAsUser) {
                     if (processRecord != null && (packageName = processRecord.getPackageName()) != null && !GmsCore.isGoogleAppOrService(packageName)) {
                         c01 c01Var = c01.r;
-                        int iU = rj.u();
+                        int u = rj.u();
                         c01Var.getClass();
-                        if (c01.b0(packageName, iU)) {
+                        if (c01.b0(packageName, u)) {
                             if (str == null || str.equals(packageName)) {
                                 str = packageName;
                             }
@@ -2421,7 +3328,7 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         return (resolveInfo == null || (serviceInfo = resolveInfo.serviceInfo) == null || serviceInfo.applicationInfo == null) ? false : true;
     }
 
-    private static boolean invokeCallback(Object obj, String str, Object... objArr) throws SecurityException {
+    private static boolean invokeCallback(Object obj, String str, Object... objArr) {
         for (Method method : obj.getClass().getMethods()) {
             if (str.equals(method.getName()) && method.getParameterTypes().length == objArr.length) {
                 try {
@@ -2499,12 +3406,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     }
 
     private static boolean isGoogleBulkPackageCaller() {
-        String strO = rj.o();
-        if (GmsCore.isGoogleAppOrService(strO)) {
+        String o = rj.o();
+        if (GmsCore.isGoogleAppOrService(o)) {
             return true;
         }
         String[] strArr = xa1.b;
-        return c.a(-1094336751222562L, strArr).equals(strO) || c.a(-1094457010306850L, strArr).equals(strO);
+        return c.a(-1094336751222562L, strArr).equals(o) || c.a(-1094457010306850L, strArr).equals(o);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2637,27 +3544,27 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public static String normalizeHostPackageForGoogleProcess(String str) {
         String[] strArr = xa1.b;
         if (str != null && c01.X().equals(str)) {
-            String strC = mt2.c();
-            if (GmsCore.isGoogleAppOrService(strC)) {
-                String strA = c.a(-1088852077985570L, strArr);
+            String c = mt2.c();
+            if (GmsCore.isGoogleAppOrService(c)) {
+                String a2 = c.a(-1088852077985570L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-1088916502495010L, strArr));
                 sb.append(str);
                 sb.append(c.a(-1089041056546594L, strArr));
-                sb.append(strC);
-                zd.p(sb, c.a(-1088547135307554L, strArr), 3, strA);
-                return strC;
+                sb.append(c);
+                zd.p(sb, c.a(-1088547135307554L, strArr), 3, a2);
+                return c;
             }
-            String strO = rj.o();
-            if (GmsCore.isGoogleAppOrService(strO)) {
-                String strA2 = c.a(-1088637329620770L, strArr);
+            String o = rj.o();
+            if (GmsCore.isGoogleAppOrService(o)) {
+                String a3 = c.a(-1088637329620770L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-1088701754130210L, strArr));
                 sb2.append(str);
                 sb2.append(c.a(-1089376063995682L, strArr));
-                sb2.append(strO);
-                zd.p(sb2, c.a(-1089431898570530L, strArr), 3, strA2);
-                return strO;
+                sb2.append(o);
+                zd.p(sb2, c.a(-1089431898570530L, strArr), 3, a3);
+                return o;
             }
         }
         return str;
@@ -2665,14 +3572,14 @@ public class IPackageManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static int normalizeUidForVirtualLookup(int i) {
-        int iR;
+        int r;
         if (i == c01.r.o) {
-            int iB = mt2.b();
-            if (iB > 0) {
-                return iB;
+            int b = mt2.b();
+            if (b > 0) {
+                return b;
             }
-            if (rj.n() != null && (iR = rj.r()) > 0) {
-                return iR;
+            if (rj.n() != null && (r = rj.r()) > 0) {
+                return r;
             }
         }
         return i;
@@ -2684,9 +3591,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return;
         }
         int i = z ? 1 : -1;
-        String strA = c.a(z ? -1092288051822370L : -1091841375223586L, strArr);
+        String a2 = c.a(z ? -1092288051822370L : -1091841375223586L, strArr);
         for (Object obj : objArr) {
-            if (obj != null && !(obj instanceof String) && !(obj instanceof Number) && !(obj instanceof Boolean) && (invokeCallback(obj, c.a(-1091922979602210L, strArr), str, Integer.valueOf(i)) || invokeCallback(obj, c.a(-1091987404111650L, strArr), str, Integer.valueOf(i), strA))) {
+            if (obj != null && !(obj instanceof String) && !(obj instanceof Number) && !(obj instanceof Boolean) && (invokeCallback(obj, c.a(-1091922979602210L, strArr), str, Integer.valueOf(i)) || invokeCallback(obj, c.a(-1091987404111650L, strArr), str, Integer.valueOf(i), a2))) {
                 return;
             }
         }
@@ -2694,7 +3601,7 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void notifyPackageInstallerUninstall(IntentSender intentSender, String str, boolean z) throws IntentSender.SendIntentException {
+    public static void notifyPackageInstallerUninstall(IntentSender intentSender, String str, boolean z) {
         String[] strArr = xa1.b;
         if (intentSender == null) {
             return;
@@ -2714,32 +3621,32 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     private static List<ResolveInfo> queryGoogleAuthenticatorServices(int i, int i2) {
         int i3 = i | PackageParser.PARSE_IS_PRIVILEGED;
         String[] strArr = xa1.b;
-        List<ResolveInfo> listQueryIntentServices = BPackageManager.get().queryIntentServices(new Intent(c.a(-1075898456620834L, strArr)), i3, i2);
-        if (listQueryIntentServices != null && !listQueryIntentServices.isEmpty()) {
-            return listQueryIntentServices;
+        List<ResolveInfo> queryIntentServices = BPackageManager.get().queryIntentServices(new Intent(c.a(-1075898456620834L, strArr)), i3, i2);
+        if (queryIntentServices != null && !queryIntentServices.isEmpty()) {
+            return queryIntentServices;
         }
         ArrayList arrayList = new ArrayList();
         for (String str : GOOGLE_AUTHENTICATOR_PACKAGES) {
             Intent intent = new Intent(c.a(-1076010125770530L, strArr));
             intent.setPackage(str);
-            List<ResolveInfo> listQueryIntentServices2 = BPackageManager.get().queryIntentServices(intent, i3, i2);
-            if (listQueryIntentServices2 != null) {
-                arrayList.addAll(listQueryIntentServices2);
+            List<ResolveInfo> queryIntentServices2 = BPackageManager.get().queryIntentServices(intent, i3, i2);
+            if (queryIntentServices2 != null) {
+                arrayList.addAll(queryIntentServices2);
             }
         }
-        return !arrayList.isEmpty() ? arrayList : listQueryIntentServices;
+        return !arrayList.isEmpty() ? arrayList : queryIntentServices;
     }
 
     public static void rememberGoogleVerifierClientPackage(String str, int i) {
-        boolean zEquals;
+        boolean equals;
         if (isInstalledNonGoogleVirtualPackage(str, i)) {
             synchronized (IPackageManagerProxy.class) {
-                zEquals = str.equals(sRecentNonGoogleVerifierTargetPackage);
+                equals = str.equals(sRecentNonGoogleVerifierTargetPackage);
                 sRecentNonGoogleVerifierTargetPackage = str;
                 sRecentNonGoogleVerifierTargetUserId = i;
                 sRecentNonGoogleVerifierTargetAtMillis = SystemClock.elapsedRealtime();
             }
-            if (zEquals) {
+            if (equals) {
                 return;
             }
             String[] strArr = xa1.b;
@@ -2749,29 +3656,29 @@ public class IPackageManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void rememberGoogleVerifierTargetPackage(String str) {
-        boolean zEquals;
-        int iU = rj.u();
+        boolean equals;
+        int u = rj.u();
         String[] strArr = xa1.b;
-        if (c.a(-1082860598607650L, strArr).equals(rj.o()) && isInstalledVerifierPackage(str, iU)) {
-            boolean zIsInstalledNonGoogleVirtualPackage = isInstalledNonGoogleVirtualPackage(str, iU);
-            if (!zIsInstalledNonGoogleVirtualPackage || canScopeHostUidToNonGoogleVerifierClient()) {
+        if (c.a(-1082860598607650L, strArr).equals(rj.o()) && isInstalledVerifierPackage(str, u)) {
+            boolean isInstalledNonGoogleVirtualPackage = isInstalledNonGoogleVirtualPackage(str, u);
+            if (!isInstalledNonGoogleVirtualPackage || canScopeHostUidToNonGoogleVerifierClient()) {
                 synchronized (IPackageManagerProxy.class) {
                     try {
-                        zEquals = str.equals(sRecentGoogleVerifierTargetPackage);
+                        equals = str.equals(sRecentGoogleVerifierTargetPackage);
                         sRecentGoogleVerifierTargetPackage = str;
-                        sRecentGoogleVerifierTargetUserId = iU;
-                        long jElapsedRealtime = SystemClock.elapsedRealtime();
-                        sRecentGoogleVerifierTargetAtMillis = jElapsedRealtime;
-                        if (zIsInstalledNonGoogleVirtualPackage) {
+                        sRecentGoogleVerifierTargetUserId = u;
+                        long elapsedRealtime = SystemClock.elapsedRealtime();
+                        sRecentGoogleVerifierTargetAtMillis = elapsedRealtime;
+                        if (isInstalledNonGoogleVirtualPackage) {
                             sRecentNonGoogleVerifierTargetPackage = str;
-                            sRecentNonGoogleVerifierTargetUserId = iU;
-                            sRecentNonGoogleVerifierTargetAtMillis = jElapsedRealtime;
+                            sRecentNonGoogleVerifierTargetUserId = u;
+                            sRecentNonGoogleVerifierTargetAtMillis = elapsedRealtime;
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
-                if (zEquals) {
+                if (equals) {
                     return;
                 }
                 jx0.r(new StringBuilder(), c.a(-1082474051551010L, strArr), str, 3, c.a(-1082959382855458L, strArr));
@@ -2847,10 +3754,10 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return false;
         }
         c01 c01Var = c01.r;
-        String strA = c.a(-1089268689813282L, strArr);
-        int iU = rj.u();
+        String a2 = c.a(-1089268689813282L, strArr);
+        int u = rj.u();
         c01Var.getClass();
-        return c01.b0(strA, iU);
+        return c01.b0(a2, u);
     }
 
     public static boolean shouldExposeUnscopedGmsSelfAsHostUid(String str, String str2, int i, int i2, int i3) {
@@ -2911,40 +3818,40 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean uninstallVirtualPackage(String str) {
         String[] strArr = xa1.b;
-        int iU = rj.u();
+        int u = rj.u();
         if (str == null || str.isEmpty()) {
             nz0.Q(c.a(-1099267373678370L, strArr), 5, c.a(-1099314618318626L, strArr));
             return false;
         }
         BPackageManager bPackageManager = BPackageManager.get();
-        if (!bPackageManager.isInstalled(str, iU)) {
-            String strA = c.a(-1098975315902242L, strArr);
+        if (!bPackageManager.isInstalled(str, u)) {
+            String a2 = c.a(-1098975315902242L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1099091280019234L, strArr));
-            sb.append(iU);
-            jx0.r(sb, c.a(-1097661055909666L, strArr), str, 5, strA);
+            sb.append(u);
+            jx0.r(sb, c.a(-1097661055909666L, strArr), str, 5, a2);
             return false;
         }
         try {
-            bPackageManager.uninstallPackageAsUser(str, iU);
-            boolean zIsInstalled = bPackageManager.isInstalled(str, iU);
-            boolean z = !zIsInstalled;
-            if (zIsInstalled) {
-                String strA2 = c.a(-1098227991592738L, strArr);
+            bPackageManager.uninstallPackageAsUser(str, u);
+            boolean isInstalled = bPackageManager.isInstalled(str, u);
+            boolean z = !isInstalled;
+            if (isInstalled) {
+                String a3 = c.a(-1098227991592738L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-1098275236232994L, strArr));
                 sb2.append(str);
-                zd.o(sb2, c.a(-1097957408653090L, strArr), iU, 5, strA2);
+                zd.o(sb2, c.a(-1097957408653090L, strArr), u, 5, a3);
                 return z;
             }
-            String strA3 = c.a(-1097399062904610L, strArr);
+            String a4 = c.a(-1097399062904610L, strArr);
             StringBuilder sb3 = new StringBuilder();
             sb3.append(c.a(-1097463487414050L, strArr));
             sb3.append(str);
-            zd.o(sb3, c.a(-1098193631854370L, strArr), iU, 3, strA3);
+            zd.o(sb3, c.a(-1098193631854370L, strArr), u, 3, a4);
             return z;
         } catch (Throwable th) {
-            nz0.P(c.a(-1097708300549922L, strArr), c.a(-1097772725059362L, strArr) + str + c.a(-1097368998133538L, strArr) + iU, th);
+            nz0.P(c.a(-1097708300549922L, strArr), c.a(-1097772725059362L, strArr) + str + c.a(-1097368998133538L, strArr) + u, th);
             return false;
         }
     }
@@ -2960,12 +3867,12 @@ public class IPackageManagerProxy extends BinderInvocationStub {
         String[] strArr = xa1.b;
         replaceSystemService(c.a(-1084372427095842L, strArr));
         disableFrameworkPackageInfoCache();
-        PackageManager packageManagerMPackageManager = BRContextImpl.get(BRActivityThread.get(c01.e0()).getSystemContext()).mPackageManager();
-        if (packageManagerMPackageManager != null) {
+        PackageManager mPackageManager = BRContextImpl.get(BRActivityThread.get(c01.e0()).getSystemContext()).mPackageManager();
+        if (mPackageManager != null) {
             try {
-                fy1 fy1VarG = fy1.g(c.a(-1084956542648098L, strArr));
-                fy1VarG.d(c.a(-1085136931274530L, strArr));
-                fy1VarG.h(packageManagerMPackageManager, obj2);
+                fy1 g = fy1.g(c.a(-1084956542648098L, strArr));
+                g.d(c.a(-1085136931274530L, strArr));
+                g.h(mPackageManager, obj2);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -2979,10 +3886,10 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             return super.invoke(obj, method, objArr);
         }
         if (!shouldAllowHostPackageEnumeration(method.getName())) {
-            String strA = c.a(-1096900846698274L, strArr);
+            String a2 = c.a(-1096900846698274L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1097033990684450L, strArr), 3, strA);
+            zd.p(sb, c.a(-1097033990684450L, strArr), 3, a2);
             return emptyPackageVisibilityResult(method);
         }
         try {
@@ -2993,10 +3900,10 @@ public class IPackageManagerProxy extends BinderInvocationStub {
             if (th.getCause() != null) {
                 th = th.getCause();
             }
-            String strA2 = c.a(-1097085530292002L, strArr);
+            String a3 = c.a(-1097085530292002L, strArr);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(method.getName());
-            zd.s(sb2, c.a(-1097201494408994L, strArr), th, 5, strA2);
+            zd.s(sb2, c.a(-1097201494408994L, strArr), th, 5, a3);
             return emptyPackageVisibilityResult(method);
         }
     }
@@ -3010,9 +3917,9 @@ public class IPackageManagerProxy extends BinderInvocationStub {
     public void onBindMethod() {
         super.onBindMethod();
         String[] strArr = xa1.b;
-        String strA = c.a(-1095848579710754L, strArr);
+        String a2 = c.a(-1095848579710754L, strArr);
         Boolean bool = Boolean.TRUE;
-        addMethodHook(new ValueMethodProxy(strA, bool));
+        addMethodHook(new ValueMethodProxy(a2, bool));
         addMethodHook(new ValueMethodProxy(c.a(-1098713322897186L, strArr), bool));
         addMethodHook(new ValueMethodProxy(c.a(-1098721912831778L, strArr), 0));
         addMethodHook(new ValueMethodProxy(c.a(-1098872236687138L, strArr), 0));

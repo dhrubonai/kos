@@ -74,28 +74,28 @@ public class dp1 extends AbstractMap implements lp1, Map, uy0 {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final void putAll(Map map) {
-        bp1 bp1VarBuild = null;
-        bp1 bp1Var = map instanceof bp1 ? (bp1) map : null;
-        if (bp1Var == null) {
+        bp1 bp1Var = null;
+        bp1 bp1Var2 = map instanceof bp1 ? (bp1) map : null;
+        if (bp1Var2 == null) {
             dp1 dp1Var = map instanceof dp1 ? (dp1) map : null;
             if (dp1Var != null) {
-                bp1VarBuild = dp1Var.build();
+                bp1Var = dp1Var.build();
             }
         } else {
-            bp1VarBuild = bp1Var;
+            bp1Var = bp1Var2;
         }
-        if (bp1VarBuild == null) {
+        if (bp1Var == null) {
             super.putAll(map);
             return;
         }
         i70 i70Var = new i70();
-        i70Var.f512a = 0;
+        i70Var.f511a = 0;
         int i = this.i;
         no2 no2Var = this.f;
-        no2 no2Var2 = bp1VarBuild.d;
+        no2 no2Var2 = bp1Var.d;
         lx0.v(no2Var2, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap.TrieNode<K of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap.PersistentHashMapBuilder, V of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableMap.PersistentHashMapBuilder>");
         this.f = no2Var.m(no2Var2, 0, i70Var, this);
-        int i2 = (bp1VarBuild.e + i) - i70Var.f512a;
+        int i2 = (bp1Var.e + i) - i70Var.f511a;
         if (i != i2) {
             b(i2);
         }
@@ -104,11 +104,11 @@ public class dp1 extends AbstractMap implements lp1, Map, uy0 {
     @Override // java.util.Map
     public final boolean remove(Object obj, Object obj2) {
         int i = this.i;
-        no2 no2VarO = this.f.o(obj != null ? obj.hashCode() : 0, obj, obj2, 0, this);
-        if (no2VarO == null) {
-            no2VarO = no2.e;
+        no2 o = this.f.o(obj != null ? obj.hashCode() : 0, obj, obj2, 0, this);
+        if (o == null) {
+            o = no2.e;
         }
-        this.f = no2VarO;
+        this.f = o;
         return i != this.i;
     }
 
@@ -125,11 +125,11 @@ public class dp1 extends AbstractMap implements lp1, Map, uy0 {
     @Override // java.util.AbstractMap, java.util.Map
     public Object remove(Object obj) {
         this.g = null;
-        no2 no2VarN = this.f.n(obj != null ? obj.hashCode() : 0, obj, 0, this);
-        if (no2VarN == null) {
-            no2VarN = no2.e;
+        no2 n = this.f.n(obj != null ? obj.hashCode() : 0, obj, 0, this);
+        if (n == null) {
+            n = no2.e;
         }
-        this.f = no2VarN;
+        this.f = n;
         return this.g;
     }
 }

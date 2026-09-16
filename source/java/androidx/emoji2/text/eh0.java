@@ -6,13 +6,11 @@ import android.util.Log;
 import com.kos.engine.core.env.BEnvironment;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -25,7 +23,7 @@ public abstract class eh0 {
         xa1.B(-130202492616482L);
     }
 
-    public static JSONObject a(String str, String str2, String str3, long j, long j2, long j3, ArrayList arrayList) throws JSONException {
+    public static JSONObject a(String str, String str2, String str3, long j, long j2, long j3, ArrayList arrayList) {
         JSONObject jSONObject = new JSONObject();
         String[] strArr = xa1.b;
         jSONObject.put(a.a.a.c.a(-129279074647842L, strArr), 3);
@@ -51,7 +49,7 @@ public abstract class eh0 {
         return jSONObject;
     }
 
-    public static void b(Uri uri, int i, String str, String str2) throws NumberFormatException {
+    public static void b(Uri uri, int i, String str, String str2) {
         String[] strArr;
         String[] strArr2 = xa1.b;
         if (uri != null && str != null) {
@@ -65,87 +63,86 @@ public abstract class eh0 {
                         Log.w(a.a.a.c.a(-116772129881890L, strArr2), a.a.a.c.a(-117403490074402L, strArr2) + uri);
                         return;
                     }
-                    String[] strArrSplit = fragment.split(a.a.a.c.a(-117588173668130L, strArr2));
-                    int length = strArrSplit.length;
+                    String[] split = fragment.split(a.a.a.c.a(-117588173668130L, strArr2));
+                    int length = split.length;
                     String str3 = null;
                     long j = 5183944;
                     int i2 = 0;
                     long j2 = 0;
-                    String strA = null;
                     String str4 = null;
+                    String str5 = null;
                     while (i2 < length) {
-                        String str5 = strArrSplit[i2];
-                        int iIndexOf = str5.indexOf(61);
-                        if (iIndexOf >= 1) {
-                            strArr = strArrSplit;
-                            String strSubstring = str5.substring(0, iIndexOf);
-                            String strDecode = Uri.decode(str5.substring(iIndexOf + 1));
-                            switch (strSubstring.hashCode()) {
+                        String str6 = split[i2];
+                        int indexOf = str6.indexOf(61);
+                        if (indexOf >= 1) {
+                            strArr = split;
+                            String substring = str6.substring(0, indexOf);
+                            String decode = Uri.decode(str6.substring(indexOf + 1));
+                            switch (substring.hashCode()) {
                                 case -1938933922:
-                                    if (!strSubstring.equals(a.a.a.c.a(-117579583733538L, strArr2))) {
+                                    if (!substring.equals(a.a.a.c.a(-117579583733538L, strArr2))) {
                                         break;
                                     } else {
-                                        str3 = strDecode;
+                                        str3 = decode;
                                         break;
                                     }
                                 case -833810928:
-                                    if (!strSubstring.equals(a.a.a.c.a(-117154381971234L, strArr2))) {
+                                    if (!substring.equals(a.a.a.c.a(-117154381971234L, strArr2))) {
                                         break;
                                     } else {
-                                        j = Long.parseLong(strDecode);
+                                        j = Long.parseLong(decode);
                                         break;
                                     }
                                 case -147132913:
-                                    if (!strSubstring.equals(a.a.a.c.a(-117120022232866L, strArr2))) {
+                                    if (!substring.equals(a.a.a.c.a(-117120022232866L, strArr2))) {
                                         break;
                                     } else {
-                                        strA = strDecode;
+                                        str4 = decode;
                                         break;
                                     }
                                 case -29832777:
-                                    if (!strSubstring.equals(a.a.a.c.a(-117167266873122L, strArr2))) {
+                                    if (!substring.equals(a.a.a.c.a(-117167266873122L, strArr2))) {
                                         break;
                                     } else {
                                         try {
-                                            j2 = Long.parseLong(strDecode);
+                                            j2 = Long.parseLong(decode);
                                             break;
                                         } catch (Exception unused) {
                                             break;
                                         }
                                     }
                                 case 716872355:
-                                    if (!strSubstring.equals(a.a.a.c.a(-117321885695778L, strArr2))) {
+                                    if (!substring.equals(a.a.a.c.a(-117321885695778L, strArr2))) {
                                         break;
                                     } else {
-                                        str4 = strDecode;
+                                        str5 = decode;
                                         break;
                                     }
                                 case 1991322732:
-                                    if (!strSubstring.equals(a.a.a.c.a(-128948362166050L, strArr2)) || strA != null) {
-                                        break;
-                                    } else {
-                                        strA = c(strDecode);
+                                    if (substring.equals(a.a.a.c.a(-128948362166050L, strArr2)) && str4 == null) {
+                                        str4 = c(decode);
                                         break;
                                     }
+                                    break;
                             }
                         } else {
-                            strArr = strArrSplit;
+                            strArr = split;
                         }
                         i2++;
-                        strArrSplit = strArr;
+                        split = strArr;
                     }
                     if (str3 == null) {
                         Log.w(a.a.a.c.a(-129012786675490L, strArr2), a.a.a.c.a(-129025671577378L, strArr2));
                         return;
                     }
-                    if (strA == null) {
-                        strA = a.a.a.c.a(-128690664128290L, strArr2);
+                    if (str4 == null) {
+                        str4 = a.a.a.c.a(-128690664128290L, strArr2);
                     }
-                    String str6 = strA;
                     String str7 = str4;
-                    long jCurrentTimeMillis = System.currentTimeMillis();
-                    long j3 = (j * 1000) + jCurrentTimeMillis;
-                    e(a(str3, str2, str6, j3, jCurrentTimeMillis, j2 > 0 ? j2 * 1000 : j3, d(str7)).toString(), i, str);
+                    String str8 = str5;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long j3 = (j * 1000) + currentTimeMillis;
+                    e(a(str3, str2, str7, j3, currentTimeMillis, j2 > 0 ? j2 * 1000 : j3, d(str8)).toString(), i, str);
                     Log.d(a.a.a.c.a(-128725023866658L, strArr2), a.a.a.c.a(-128789448376098L, strArr2) + str + a.a.a.c.a(-128888232623906L, strArr2) + i + a.a.a.c.a(-129468053208866L, strArr2) + str2);
                     return;
                 }
@@ -160,11 +157,11 @@ public abstract class eh0 {
     public static String c(String str) {
         try {
             String[] strArr = xa1.b;
-            String[] strArrSplit = str.split(a.a.a.c.a(-128390016417570L, strArr), 2);
-            if (strArrSplit.length < 2) {
+            String[] split = str.split(a.a.a.c.a(-128390016417570L, strArr), 2);
+            if (split.length < 2) {
                 return null;
             }
-            return new JSONObject(new String(Base64.decode(strArrSplit[1].replace('-', '+').replace('_', '/'), 0), StandardCharsets.UTF_8)).optString(a.a.a.c.a(-128368541581090L, strArr), null);
+            return new JSONObject(new String(Base64.decode(split[1].replace('-', '+').replace('_', '/'), 0), StandardCharsets.UTF_8)).optString(a.a.a.c.a(-128368541581090L, strArr), null);
         } catch (Exception unused) {
             return null;
         }
@@ -175,9 +172,9 @@ public abstract class eh0 {
         ArrayList arrayList = new ArrayList();
         if (str != null && str.length() > 0) {
             for (String str2 : str.split(a.a.a.c.a(-129730046213922L, strArr))) {
-                String strTrim = str2.trim();
-                if (strTrim.length() > 0) {
-                    arrayList.add(strTrim);
+                String trim = str2.trim();
+                if (trim.length() > 0) {
+                    arrayList.add(trim);
                 }
             }
         }
@@ -187,7 +184,7 @@ public abstract class eh0 {
         return arrayList;
     }
 
-    public static void e(String str, int i, String str2) throws IOException {
+    public static void e(String str, int i, String str2) {
         File dataDir = BEnvironment.getDataDir(str2, i);
         String[] strArr = xa1.b;
         File file = new File(dataDir, a.a.a.c.a(-128402901319458L, strArr));

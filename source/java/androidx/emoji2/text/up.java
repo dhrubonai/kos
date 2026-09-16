@@ -7,12 +7,12 @@ import com.google.android.material.carousel.CarouselLayoutManager;
 public final class up {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1184a;
+    public final int f1183a;
     public final /* synthetic */ int b;
     public final /* synthetic */ CarouselLayoutManager c;
 
     public up(int i) {
-        this.f1184a = i;
+        this.f1183a = i;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

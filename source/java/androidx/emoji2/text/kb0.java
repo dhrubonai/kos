@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class kb0 implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ sm0 f629a;
+    public final /* synthetic */ sm0 f628a;
     public final /* synthetic */ mf1 b;
     public final /* synthetic */ mf1 c;
     public final /* synthetic */ e30 d;
 
     public kb0(sm0 sm0Var, mf1 mf1Var, mf1 mf1Var2, e30 e30Var) {
-        this.f629a = sm0Var;
+        this.f628a = sm0Var;
         this.b = mf1Var;
         this.c = mf1Var2;
         this.d = e30Var;
@@ -26,7 +26,7 @@ public final class kb0 implements j90 {
                 h50.G(this.d, null, new jb0(fb0Var, null, 0), 3);
             }
             if (((Boolean) mf1Var.getValue()).booleanValue()) {
-                this.f629a.a();
+                this.f628a.a();
             }
             mf1Var.setValue(Boolean.FALSE);
         }

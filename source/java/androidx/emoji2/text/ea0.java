@@ -5,29 +5,29 @@ package androidx.emoji2.text;
 public final class ea0 implements s20 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f295a;
+    public final float f294a;
 
     public ea0(float f) {
-        this.f295a = f;
+        this.f294a = f;
     }
 
     @Override // androidx.emoji2.text.s20
     public final float a(long j, j70 j70Var) {
-        return j70Var.c0(this.f295a);
+        return j70Var.c0(this.f294a);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof ea0) && da0.a(this.f295a, ((ea0) obj).f295a);
+        return (obj instanceof ea0) && da0.a(this.f294a, ((ea0) obj).f294a);
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f295a);
+        return Float.hashCode(this.f294a);
     }
 
     public final String toString() {
-        return "CornerSize(size = " + this.f295a + ".dp)";
+        return "CornerSize(size = " + this.f294a + ".dp)";
     }
 }

@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 public abstract class xb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1327a;
+    public static final float f1326a;
     public static final float b;
     public static final float c = 12;
     public static final float d = 8;
@@ -18,7 +18,7 @@ public abstract class xb1 {
 
     static {
         float f2 = 48;
-        f1327a = f2;
+        f1326a = f2;
         b = f2;
     }
 
@@ -27,7 +27,7 @@ public abstract class xb1 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v6 */
     public static final void a(nd1 nd1Var, of1 of1Var, mf1 mf1Var, y42 y42Var, t92 t92Var, long j, float f2, float f3, ComposableLambdaImpl composableLambdaImpl, lx lxVar, int i) {
-        vo2 vo2VarG0;
+        vo2 g0;
         ?? r11;
         tx txVar;
         tx txVar2 = (tx) lxVar;
@@ -38,81 +38,81 @@ public abstract class xb1 {
             txVar = txVar2;
         } else {
             int i3 = ((i2 >> 3) & 14) | 48;
-            int i4 = xn2.f1347a;
+            int i4 = xn2.f1346a;
             boolean z = (((i3 & 14) ^ 6) > 4 && txVar2.f(of1Var)) || (i3 & 6) == 4;
-            Object objM = txVar2.M();
-            Object obj = kx.f663a;
-            if (z || objM == obj) {
-                objM = new tn2(of1Var, null, "DropDownMenu");
-                txVar2.i0(objM);
+            Object M = txVar2.M();
+            Object obj = kx.f662a;
+            if (z || M == obj) {
+                M = new tn2(of1Var, null, "DropDownMenu");
+                txVar2.i0(M);
             }
-            tn2 tn2Var = (tn2) objM;
+            tn2 tn2Var = (tn2) M;
             txVar2.X(1030875195);
             tn2Var.a(of1Var.c.getValue(), txVar2, 0);
             un1 un1Var = tn2Var.d;
             txVar2.p(false);
-            boolean zF = txVar2.f(tn2Var);
-            Object objM2 = txVar2.M();
-            if (zF || objM2 == obj) {
-                objM2 = new wn2(tn2Var, 0);
-                txVar2.i0(objM2);
+            boolean f4 = txVar2.f(tn2Var);
+            Object M2 = txVar2.M();
+            if (f4 || M2 == obj) {
+                M2 = new wn2(tn2Var, 0);
+                txVar2.i0(M2);
             }
-            bz0.k(tn2Var, (um0) objM2, txVar2);
-            wo2 wo2Var = qq2.f974a;
-            boolean zBooleanValue = ((Boolean) tn2Var.c()).booleanValue();
+            bz0.k(tn2Var, (um0) M2, txVar2);
+            wo2 wo2Var = qq2.f973a;
+            boolean booleanValue = ((Boolean) tn2Var.c()).booleanValue();
             txVar2.X(2139028452);
-            float f4 = zBooleanValue ? 1.0f : 0.8f;
+            float f5 = booleanValue ? 1.0f : 0.8f;
             txVar2.p(false);
-            Float fValueOf = Float.valueOf(f4);
-            boolean zBooleanValue2 = ((Boolean) un1Var.getValue()).booleanValue();
+            Float valueOf = Float.valueOf(f5);
+            boolean booleanValue2 = ((Boolean) un1Var.getValue()).booleanValue();
             txVar2.X(2139028452);
-            float f5 = zBooleanValue2 ? 1.0f : 0.8f;
+            float f6 = booleanValue2 ? 1.0f : 0.8f;
             txVar2.p(false);
-            Float fValueOf2 = Float.valueOf(f5);
-            nn2 nn2VarF = tn2Var.f();
+            Float valueOf2 = Float.valueOf(f6);
+            nn2 f7 = tn2Var.f();
             txVar2.X(1033023423);
             Object obj2 = Boolean.FALSE;
             Object obj3 = Boolean.TRUE;
-            if (nn2VarF.b(obj2, obj3)) {
-                vo2VarG0 = lx0.g0(120, 0, zc0.b, 2);
+            if (f7.b(obj2, obj3)) {
+                g0 = lx0.g0(120, 0, zc0.b, 2);
                 r11 = 0;
             } else {
-                vo2VarG0 = lx0.g0(1, 74, null, 4);
+                g0 = lx0.g0(1, 74, null, 4);
                 r11 = 0;
             }
             txVar2.p(r11);
-            pn2 pn2VarB = xn2.b(tn2Var, fValueOf, fValueOf2, vo2VarG0, txVar2);
-            boolean zBooleanValue3 = ((Boolean) tn2Var.c()).booleanValue();
+            pn2 b2 = xn2.b(tn2Var, valueOf, valueOf2, g0, txVar2);
+            boolean booleanValue3 = ((Boolean) tn2Var.c()).booleanValue();
             txVar2.X(-249413128);
-            float f6 = zBooleanValue3 ? 1.0f : 0.0f;
+            float f8 = booleanValue3 ? 1.0f : 0.0f;
             txVar2.p(r11);
-            Float fValueOf3 = Float.valueOf(f6);
-            boolean zBooleanValue4 = ((Boolean) un1Var.getValue()).booleanValue();
+            Float valueOf3 = Float.valueOf(f8);
+            boolean booleanValue4 = ((Boolean) un1Var.getValue()).booleanValue();
             txVar2.X(-249413128);
-            float f7 = zBooleanValue4 ? 1.0f : 0.0f;
+            float f9 = booleanValue4 ? 1.0f : 0.0f;
             txVar2.p(r11);
-            Float fValueOf4 = Float.valueOf(f7);
-            nn2 nn2VarF2 = tn2Var.f();
+            Float valueOf4 = Float.valueOf(f9);
+            nn2 f10 = tn2Var.f();
             txVar2.X(-1355418157);
-            vo2 vo2VarG02 = nn2VarF2.b(obj2, obj3) ? lx0.g0(30, r11, null, 6) : lx0.g0(75, r11, null, 6);
+            vo2 g02 = f10.b(obj2, obj3) ? lx0.g0(30, r11, null, 6) : lx0.g0(75, r11, null, 6);
             txVar2.p(r11);
-            pn2 pn2VarB2 = xn2.b(tn2Var, fValueOf3, fValueOf4, vo2VarG02, txVar2);
-            boolean zBooleanValue5 = ((Boolean) txVar2.j(hw0.f494a)).booleanValue();
-            boolean zG = txVar2.g(zBooleanValue5) | txVar2.f(pn2VarB) | ((i2 & 112) != 32 ? r11 : true) | txVar2.f(pn2VarB2);
-            Object objM3 = txVar2.M();
-            if (zG || objM3 == obj) {
-                i20 i20Var = new i20(zBooleanValue5, of1Var, mf1Var, pn2VarB, pn2VarB2);
+            pn2 b3 = xn2.b(tn2Var, valueOf3, valueOf4, g02, txVar2);
+            boolean booleanValue5 = ((Boolean) txVar2.j(hw0.f493a)).booleanValue();
+            boolean g = txVar2.g(booleanValue5) | txVar2.f(b2) | ((i2 & 112) != 32 ? r11 : true) | txVar2.f(b3);
+            Object M3 = txVar2.M();
+            if (g || M3 == obj) {
+                i20 i20Var = new i20(booleanValue5, of1Var, mf1Var, b2, b3);
                 txVar2.i0(i20Var);
-                objM3 = i20Var;
+                M3 = i20Var;
             }
             int i5 = i2 >> 9;
             int i6 = i2 >> 6;
             txVar = txVar2;
-            bh2.a(androidx.compose.ui.graphics.a.a(kd1.f634a, (um0) objM3), t92Var, j, 0L, f2, f3, null, l8.f0(1573559053, new o8(nd1Var, y42Var, composableLambdaImpl, 5), txVar2), txVar, (i5 & 896) | (i5 & 112) | 12582912 | (57344 & i6) | (458752 & i6) | (i6 & 3670016), 8);
+            bh2.a(androidx.compose.ui.graphics.a.a(kd1.f633a, (um0) M3), t92Var, j, 0L, f2, f3, null, l8.f0(1573559053, new o8(nd1Var, y42Var, composableLambdaImpl, 5), txVar2), txVar, (i5 & 896) | (i5 & 112) | 12582912 | (57344 & i6) | (458752 & i6) | (i6 & 3670016), 8);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new la(nd1Var, of1Var, mf1Var, y42Var, t92Var, j, f2, f3, composableLambdaImpl, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new la(nd1Var, of1Var, mf1Var, y42Var, t92Var, j, f2, f3, composableLambdaImpl, i);
         }
     }
 
@@ -152,11 +152,11 @@ public abstract class xb1 {
         if ((i2 & 38347923) == 38347922 && txVar.B()) {
             txVar.S();
         } else {
-            nd1 nd1VarH = androidx.compose.foundation.layout.a.h(androidx.compose.foundation.layout.c.m(androidx.compose.foundation.layout.c.c(androidx.compose.foundation.a.d(nd1Var, null, c12.a(true, 0.0f, txVar, 6, 6), z, null, sm0Var, 24), 1.0f), e, f, 8), dm1Var);
-            z12 z12VarA = y12.a(lh.f690a, dd0.o, txVar, 48);
-            int iHashCode = Long.hashCode(txVar.T);
-            ap1 ap1VarL = txVar.l();
-            nd1 nd1VarQ = bz0.Q(txVar, nd1VarH);
+            nd1 h = androidx.compose.foundation.layout.a.h(androidx.compose.foundation.layout.c.m(androidx.compose.foundation.layout.c.c(androidx.compose.foundation.a.d(nd1Var, null, c12.a(true, 0.0f, txVar, 6, 6), z, null, sm0Var, 24), 1.0f), e, f, 8), dm1Var);
+            z12 a2 = y12.a(lh.f689a, dd0.o, txVar, 48);
+            int hashCode = Long.hashCode(txVar.T);
+            ap1 l = txVar.l();
+            nd1 Q = bz0.Q(txVar, h);
             hx.b.getClass();
             hy hyVar = gx.b;
             txVar.b0();
@@ -165,19 +165,19 @@ public abstract class xb1 {
             } else {
                 txVar.l0();
             }
-            mz0.G(txVar, z12VarA, gx.e);
-            mz0.G(txVar, ap1VarL, gx.d);
+            mz0.G(txVar, a2, gx.e);
+            mz0.G(txVar, l, gx.d);
             wc wcVar = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar);
             }
-            mz0.G(txVar, nd1VarQ, gx.c);
-            pk2.a(((mp2) txVar.j(np2.f821a)).m, l8.f0(1065051884, new wb1(function22, sb1Var, z, function2), txVar), txVar, 48);
+            mz0.G(txVar, Q, gx.c);
+            pk2.a(((mp2) txVar.j(np2.f820a)).m, l8.f0(1065051884, new wb1(function22, sb1Var, z, function2), txVar), txVar, 48);
             txVar.p(true);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new c20(function2, sm0Var, nd1Var, function22, z, sb1Var, dm1Var, i, 1);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new c20(function2, sm0Var, nd1Var, function22, z, sb1Var, dm1Var, i, 1);
         }
     }
 }

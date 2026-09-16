@@ -10,19 +10,19 @@ import com.google.android.material.behavior.HideViewOnScrollBehavior;
 public final /* synthetic */ class pr0 implements AccessibilityManager.TouchExplorationStateChangeListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f923a;
+    public final /* synthetic */ int f922a;
     public final /* synthetic */ View b;
     public final /* synthetic */ q10 c;
 
     public /* synthetic */ pr0(q10 q10Var, View view, int i) {
-        this.f923a = i;
+        this.f922a = i;
         this.c = q10Var;
         this.b = view;
     }
 
     @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
     public final void onTouchExplorationStateChanged(boolean z) {
-        switch (this.f923a) {
+        switch (this.f922a) {
             case 0:
                 HideBottomViewOnScrollBehavior hideBottomViewOnScrollBehavior = (HideBottomViewOnScrollBehavior) this.c;
                 if (z && hideBottomViewOnScrollBehavior.j == 1) {

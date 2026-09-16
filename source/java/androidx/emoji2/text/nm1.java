@@ -7,12 +7,12 @@ import android.content.pm.PackageParser;
 public final class nm1 implements n31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final o60 f817a;
+    public final o60 f816a;
     public final lz0 b;
     public final vf c;
 
     public nm1(o60 o60Var, mm1 mm1Var, vf vfVar) {
-        this.f817a = o60Var;
+        this.f816a = o60Var;
         this.b = mm1Var;
         this.c = vfVar;
     }
@@ -29,8 +29,8 @@ public final class nm1 implements n31 {
 
     @Override // androidx.emoji2.text.n31
     public final Object c(int i) {
-        Object objF = this.c.f(i);
-        return objF == null ? this.b.s(i) : objF;
+        Object f = this.c.f(i);
+        return f == null ? this.b.s(i) : f;
     }
 
     @Override // androidx.emoji2.text.n31
@@ -41,11 +41,11 @@ public final class nm1 implements n31 {
         if ((i3 & 147) == 146 && txVar.B()) {
             txVar.S();
         } else {
-            ly0.a(obj, i, this.f817a.z, l8.f0(1142237095, new pm(i, 3, this), txVar), txVar, ((i3 >> 3) & 14) | 3072 | ((i3 << 3) & 112));
+            ly0.a(obj, i, this.f816a.z, l8.f0(1142237095, new pm(i, 3, this), txVar), txVar, ((i3 >> 3) & 14) | 3072 | ((i3 << 3) & 112));
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new o9(this, i, obj, i2, 6);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new o9(this, i, obj, i2, 6);
         }
     }
 

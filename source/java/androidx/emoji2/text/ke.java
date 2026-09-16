@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class ke extends oe {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f635a;
+    public float f634a;
 
     public ke(float f) {
-        this.f635a = f;
+        this.f634a = f;
     }
 
     @Override // androidx.emoji2.text.oe
     public final float a(int i) {
         if (i == 0) {
-            return this.f635a;
+            return this.f634a;
         }
         return 0.0f;
     }
@@ -31,25 +31,25 @@ public final class ke extends oe {
 
     @Override // androidx.emoji2.text.oe
     public final void d() {
-        this.f635a = 0.0f;
+        this.f634a = 0.0f;
     }
 
     @Override // androidx.emoji2.text.oe
     public final void e(int i, float f) {
         if (i == 0) {
-            this.f635a = f;
+            this.f634a = f;
         }
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof ke) && ((ke) obj).f635a == this.f635a;
+        return (obj instanceof ke) && ((ke) obj).f634a == this.f634a;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f635a);
+        return Float.hashCode(this.f634a);
     }
 
     public final String toString() {
-        return "AnimationVector1D: value = " + this.f635a;
+        return "AnimationVector1D: value = " + this.f634a;
     }
 }

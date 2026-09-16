@@ -7,7 +7,7 @@ import java.util.List;
 public final class p41 implements q31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f887a;
+    public final int f886a;
     public final List b;
     public final m5 c;
     public final q01 d;
@@ -30,7 +30,7 @@ public final class p41 implements q31 {
     public final int[] u;
 
     public p41(int i, List list, m5 m5Var, q01 q01Var, int i2, int i3, int i4, long j, Object obj, Object obj2, androidx.compose.foundation.lazy.layout.a aVar, long j2) {
-        this.f887a = i;
+        this.f886a = i;
         this.b = list;
         this.c = m5Var;
         this.d = q01Var;
@@ -44,16 +44,16 @@ public final class p41 implements q31 {
         this.l = j2;
         int size = list.size();
         int i5 = 0;
-        int iMax = 0;
-        for (int i6 = 0; i6 < size; i6++) {
-            hr1 hr1Var = (hr1) list.get(i6);
+        int i6 = 0;
+        for (int i7 = 0; i7 < size; i7++) {
+            hr1 hr1Var = (hr1) list.get(i7);
             i5 += hr1Var.e;
-            iMax = Math.max(iMax, hr1Var.d);
+            i6 = Math.max(i6, hr1Var.d);
         }
         this.n = i5;
-        int i7 = i5 + this.g;
-        this.o = i7 >= 0 ? i7 : 0;
-        this.p = iMax;
+        int i8 = i5 + this.g;
+        this.o = i8 >= 0 ? i8 : 0;
+        this.p = i6;
         this.u = new int[this.b.size() * 2];
     }
 
@@ -68,36 +68,36 @@ public final class p41 implements q31 {
             hr1 hr1Var = (hr1) list.get(i);
             int i2 = this.s - hr1Var.e;
             int i3 = this.t;
-            long jI = i(i);
-            f31 f31VarA = this.k.a(i, this.i);
+            long i4 = i(i);
+            f31 a2 = this.k.a(i, this.i);
             rp0 rp0Var = null;
             Object[] objArr = 0;
-            if (f31VarA != null) {
+            if (a2 != null) {
                 if (z) {
-                    f31VarA.r = jI;
+                    a2.r = i4;
                 } else {
-                    if (!nw0.b(f31VarA.r, f31.s)) {
-                        jI = f31VarA.r;
+                    if (!nw0.b(a2.r, f31.s)) {
+                        i4 = a2.r;
                     }
-                    long jD = nw0.d(jI, ((nw0) f31VarA.q.getValue()).f830a);
-                    int i4 = (int) (jI & 4294967295L);
-                    if (((i4 <= i2 && ((int) (jD & 4294967295L)) <= i2) || (i4 >= i3 && ((int) (jD & 4294967295L)) >= i3)) && ((Boolean) f31VarA.h.getValue()).booleanValue()) {
-                        h50.G(f31VarA.f341a, null, new c31(f31VarA, objArr == true ? 1 : 0, 1), 3);
+                    long d = nw0.d(i4, ((nw0) a2.q.getValue()).f829a);
+                    int i5 = (int) (i4 & 4294967295L);
+                    if (((i5 <= i2 && ((int) (d & 4294967295L)) <= i2) || (i5 >= i3 && ((int) (d & 4294967295L)) >= i3)) && ((Boolean) a2.h.getValue()).booleanValue()) {
+                        h50.G(a2.f340a, null, new c31(a2, objArr == true ? 1 : 0, 1), 3);
                     }
-                    jI = jD;
+                    i4 = d;
                 }
-                rp0Var = f31VarA.n;
+                rp0Var = a2.n;
             }
-            long jD2 = nw0.d(jI, this.h);
-            if (!z && f31VarA != null) {
-                f31VarA.m = jD2;
+            long d2 = nw0.d(i4, this.h);
+            if (!z && a2 != null) {
+                a2.m = d2;
             }
             if (rp0Var != null) {
                 gr1Var.getClass();
                 gr1.b(gr1Var, hr1Var);
-                hr1Var.h0(nw0.d(jD2, hr1Var.h), 0.0f, rp0Var);
+                hr1Var.h0(nw0.d(d2, hr1Var.h), 0.0f, rp0Var);
             } else {
-                gr1.n(gr1Var, hr1Var, jD2);
+                gr1.n(gr1Var, hr1Var, d2);
             }
         }
     }
@@ -134,7 +134,7 @@ public final class p41 implements q31 {
 
     @Override // androidx.emoji2.text.q31
     public final int getIndex() {
-        return this.f887a;
+        return this.f886a;
     }
 
     @Override // androidx.emoji2.text.q31
@@ -176,9 +176,9 @@ public final class p41 implements q31 {
             if (m5Var == null) {
                 throw new IllegalArgumentException("null horizontalAlignment when isVertical == true");
             }
-            int iA = m5Var.a(hr1Var.d, i2, this.d);
+            int a2 = m5Var.a(hr1Var.d, i2, this.d);
             int[] iArr = this.u;
-            iArr[i5] = iA;
+            iArr[i5] = a2;
             iArr[i5 + 1] = i;
             i += hr1Var.e;
         }

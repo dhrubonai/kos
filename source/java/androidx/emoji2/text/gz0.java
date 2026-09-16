@@ -33,19 +33,19 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
     }
 
     public static ug2 o(dw1 dw1Var, bu0 bu0Var, mb1 mb1Var, nb1 nb1Var) {
-        BitmapDrawable bitmapDrawable = new BitmapDrawable(bu0Var.f168a.getResources(), nb1Var.f801a);
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(bu0Var.f167a.getResources(), nb1Var.f800a);
         Map map = nb1Var.b;
         Object obj = map.get("coil#disk_cache_key");
         String str = obj instanceof String ? (String) obj : null;
         Object obj2 = map.get("coil#is_sampled");
         Boolean bool = obj2 instanceof Boolean ? (Boolean) obj2 : null;
         boolean z = false;
-        boolean zBooleanValue = bool != null ? bool.booleanValue() : false;
-        Bitmap.Config[] configArr = h.f447a;
+        boolean booleanValue = bool != null ? bool.booleanValue() : false;
+        Bitmap.Config[] configArr = h.f446a;
         if (dw1Var != null && dw1Var.g) {
             z = true;
         }
-        return new ug2(bitmapDrawable, bu0Var, d50.d, mb1Var, str, zBooleanValue, z);
+        return new ug2(bitmapDrawable, bu0Var, d50.d, mb1Var, str, booleanValue, z);
     }
 
     @Override // androidx.emoji2.text.c2
@@ -57,22 +57,22 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
         boolean z = view.getLayoutDirection() == 1;
         int i = swipeDismissBehavior.d;
         int width = (!(i == 0 && z) && (i != 1 || z)) ? view.getWidth() : -view.getWidth();
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         view.offsetLeftAndRight(width);
         view.setAlpha(0.0f);
         return true;
     }
 
     public xv1 b() {
-        x80 x80VarE;
+        x80 e;
         v80 v80Var = (v80) this.d;
         z80 z80Var = (z80) v80Var.d;
         synchronized (z80Var) {
             v80Var.a(true);
-            x80VarE = z80Var.e(((w80) v80Var.b).f1265a);
+            e = z80Var.e(((w80) v80Var.b).f1264a);
         }
-        if (x80VarE != null) {
-            return new xv1(x80VarE);
+        if (e != null) {
+            return new xv1(e);
         }
         return null;
     }
@@ -103,10 +103,10 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
             case 4:
                 str = "RESULT_NOT_WRITABLE";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -115,11 +115,11 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
             case 8:
                 str = "RESULT_PARSE_EXCEPTION";
                 break;
-            case 9:
+            case pz0.b /* 9 */:
             default:
                 str = "";
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
                 break;
             case 11:
@@ -134,13 +134,28 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
         ((ProfileInstallReceiver) this.d).setResultCode(i);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x00b1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x00b1, code lost:
     
         if (r7 != false) goto L44;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x0148, code lost:
+    
+        if (r0 != false) goto L98;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x014f, code lost:
+    
+        if (r7 == false) goto L102;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x0134, code lost:
+    
+        if (r1 <= 1) goto L87;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:94:0x0140, code lost:
+    
+        if (java.lang.Math.abs(r2 - r5) <= r9) goto L102;
+     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0156 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0156 A[RETURN] */
     /* JADX WARN: Type inference failed for: r9v11 */
     /* JADX WARN: Type inference failed for: r9v12 */
     /* JADX WARN: Type inference failed for: r9v13 */
@@ -152,14 +167,119 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
     /* JADX WARN: Type inference failed for: r9v9 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public androidx.emoji2.text.nb1 g(androidx.emoji2.text.bu0 r18, androidx.emoji2.text.mb1 r19, androidx.emoji2.text.hb2 r20, androidx.emoji2.text.b42 r21) {
-        /*
-            Method dump skipped, instructions count: 344
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.gz0.g(androidx.emoji2.text.bu0, androidx.emoji2.text.mb1, androidx.emoji2.text.hb2, androidx.emoji2.text.b42):androidx.emoji2.text.nb1");
+    public nb1 g(bu0 bu0Var, mb1 mb1Var, hb2 hb2Var, b42 b42Var) {
+        nb1 nb1Var;
+        ?? r9;
+        boolean equals;
+        nb1 nb1Var2;
+        if (bu0Var.n.d) {
+            ew1 ew1Var = (ew1) ((bw1) this.d).c.getValue();
+            if (ew1Var != null) {
+                nb1Var = ew1Var.f330a.d(mb1Var);
+                if (nb1Var == null) {
+                    em emVar = ew1Var.b;
+                    synchronized (emVar) {
+                        try {
+                            ArrayList arrayList = (ArrayList) ((LinkedHashMap) emVar.e).get(mb1Var);
+                            nb1Var2 = null;
+                            if (arrayList != null) {
+                                int size = arrayList.size();
+                                int i = 0;
+                                while (true) {
+                                    if (i >= size) {
+                                        break;
+                                    }
+                                    lw1 lw1Var = (lw1) arrayList.get(i);
+                                    Bitmap bitmap = (Bitmap) lw1Var.b.get();
+                                    nb1 nb1Var3 = bitmap != null ? new nb1(bitmap, lw1Var.c) : null;
+                                    if (nb1Var3 != null) {
+                                        nb1Var2 = nb1Var3;
+                                        break;
+                                    }
+                                    i++;
+                                }
+                                int i2 = emVar.d;
+                                emVar.d = i2 + 1;
+                                if (i2 >= 10) {
+                                    emVar.d();
+                                }
+                            }
+                        } catch (Throwable th) {
+                            throw th;
+                        }
+                    }
+                    nb1Var = nb1Var2;
+                }
+            } else {
+                nb1Var = null;
+            }
+            if (nb1Var != null) {
+                Bitmap bitmap2 = nb1Var.f800a;
+                Bitmap.Config config = bitmap2.getConfig();
+                if (config == null) {
+                    config = Bitmap.Config.ARGB_8888;
+                }
+                if (!ex2.J(config) || bu0Var.k) {
+                    Object obj = nb1Var.b.get("coil#is_sampled");
+                    Boolean bool = obj instanceof Boolean ? (Boolean) obj : null;
+                    boolean booleanValue = bool != null ? bool.booleanValue() : false;
+                    if (!lx0.n(hb2Var, hb2.c)) {
+                        String str = (String) mb1Var.e.get("coil#transformation_size");
+                        if (str != null) {
+                            equals = str.equals(hb2Var.toString());
+                            if (equals) {
+                                return nb1Var;
+                            }
+                        } else {
+                            int width = bitmap2.getWidth();
+                            int height = bitmap2.getHeight();
+                            jm jmVar = hb2Var.f465a;
+                            int i3 = jmVar instanceof q80 ? ((q80) jmVar).z : Integer.MAX_VALUE;
+                            jm jmVar2 = hb2Var.b;
+                            int i4 = jmVar2 instanceof q80 ? ((q80) jmVar2).z : Integer.MAX_VALUE;
+                            double r = jm.r(width, height, i3, i4, b42Var);
+                            boolean a2 = g.a(bu0Var);
+                            if (a2) {
+                                double d = r > 1.0d ? 1.0d : r;
+                                if (Math.abs(i3 - (d * width)) > 1.0d && Math.abs(i4 - (d * height)) > 1.0d) {
+                                    r9 = 1;
+                                }
+                                r9 = 1;
+                                equals = r9;
+                                if (equals) {
+                                }
+                            } else {
+                                if (i3 == Integer.MIN_VALUE || i3 == Integer.MAX_VALUE) {
+                                    r9 = 1;
+                                } else {
+                                    int abs = Math.abs(i3 - width);
+                                    r9 = 1;
+                                    r9 = 1;
+                                }
+                                if (i4 != Integer.MIN_VALUE && i4 != Integer.MAX_VALUE) {
+                                    r9 = r9;
+                                }
+                                equals = r9;
+                                if (equals) {
+                                }
+                            }
+                            if (r != 1.0d) {
+                            }
+                            if (r > 1.0d) {
+                            }
+                            equals = r9;
+                            if (equals) {
+                            }
+                        }
+                    }
+                }
+                equals = false;
+                if (equals) {
+                }
+            }
+        }
+        return null;
     }
 
     public il1 h() {
@@ -168,109 +288,98 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
 
     @Override // androidx.emoji2.text.xg
     public Object i(u42 u42Var, Float f, Float f2, um0 um0Var, xb2 xb2Var) {
-        float fFloatValue = f.floatValue();
-        float fFloatValue2 = f2.floatValue();
-        Object objB = cc2.b(u42Var, Math.signum(fFloatValue2) * Math.abs(fFloatValue), fFloatValue, bz0.a(0.0f, fFloatValue2), (be2) this.d, um0Var, xb2Var);
-        return objB == f30.d ? objB : (ee) objB;
+        float floatValue = f.floatValue();
+        float floatValue2 = f2.floatValue();
+        Object b = cc2.b(u42Var, Math.signum(floatValue2) * Math.abs(floatValue), floatValue, bz0.a(0.0f, floatValue2), (be2) this.d, um0Var, xb2Var);
+        return b == f30.d ? b : (ee) b;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /* JADX WARN: Type inference failed for: r6v4, types: [androidx.emoji2.text.hh2, kotlin.jvm.functions.Function2] */
     @Override // androidx.emoji2.text.hj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public java.lang.Object j(androidx.emoji2.text.jj0 r6, androidx.emoji2.text.l10 r7) throws java.lang.Throwable {
-        /*
-            r5 = this;
-            boolean r0 = r7 instanceof androidx.emoji2.text.b0
-            if (r0 == 0) goto L13
-            r0 = r7
-            androidx.emoji2.text.b0 r0 = (androidx.emoji2.text.b0) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.b0 r0 = new androidx.emoji2.text.b0
-            r0.<init>(r5, r7)
-        L18:
-            java.lang.Object r7 = r0.h
-            int r1 = r0.j
-            androidx.emoji2.text.up2 r2 = androidx.emoji2.text.up2.f1187a
-            r3 = 1
-            if (r1 == 0) goto L33
-            if (r1 != r3) goto L2b
-            androidx.emoji2.text.l22 r6 = r0.g
-            androidx.emoji2.text.mz0.L(r7)     // Catch: java.lang.Throwable -> L29
-            goto L56
-        L29:
-            r7 = move-exception
-            goto L60
-        L2b:
-            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
-            java.lang.String r7 = "call to 'resume' before 'invoke' with coroutine"
-            r6.<init>(r7)
-            throw r6
-        L33:
-            androidx.emoji2.text.mz0.L(r7)
-            androidx.emoji2.text.l22 r7 = new androidx.emoji2.text.l22
-            androidx.emoji2.text.v20 r1 = r0.e
-            androidx.emoji2.text.lx0.u(r1)
-            r7.<init>(r6, r1)
-            r0.g = r7     // Catch: java.lang.Throwable -> L5e
-            r0.j = r3     // Catch: java.lang.Throwable -> L5e
-            java.lang.Object r6 = r5.d     // Catch: java.lang.Throwable -> L5e
-            androidx.emoji2.text.hh2 r6 = (androidx.emoji2.text.hh2) r6     // Catch: java.lang.Throwable -> L5e
-            java.lang.Object r6 = r6.invoke(r7, r0)     // Catch: java.lang.Throwable -> L5e
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r6 != r0) goto L51
-            goto L52
-        L51:
-            r6 = r2
-        L52:
-            if (r6 != r0) goto L55
-            return r0
-        L55:
-            r6 = r7
-        L56:
-            r6.l()
-            return r2
-        L5a:
-            r4 = r7
-            r7 = r6
-            r6 = r4
-            goto L60
-        L5e:
-            r6 = move-exception
-            goto L5a
-        L60:
-            r6.l()
-            throw r7
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.gz0.j(androidx.emoji2.text.jj0, androidx.emoji2.text.l10):java.lang.Object");
+    public Object j(jj0 jj0Var, l10 l10Var) {
+        b0 b0Var;
+        int i;
+        Throwable th;
+        l22 l22Var;
+        if (l10Var instanceof b0) {
+            b0Var = (b0) l10Var;
+            int i2 = b0Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                b0Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = b0Var.h;
+                i = b0Var.j;
+                up2 up2Var = up2.f1186a;
+                if (i != 0) {
+                    mz0.L(obj);
+                    v20 v20Var = b0Var.e;
+                    lx0.u(v20Var);
+                    l22 l22Var2 = new l22(jj0Var, v20Var);
+                    try {
+                        b0Var.g = l22Var2;
+                        b0Var.j = 1;
+                        Object invoke = ((hh2) this.d).invoke(l22Var2, b0Var);
+                        f30 f30Var = f30.d;
+                        if (invoke != f30Var) {
+                            invoke = up2Var;
+                        }
+                        if (invoke == f30Var) {
+                            return f30Var;
+                        }
+                        l22Var = l22Var2;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        l22Var = l22Var2;
+                        l22Var.l();
+                        throw th;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    l22Var = b0Var.g;
+                    try {
+                        mz0.L(obj);
+                    } catch (Throwable th3) {
+                        th = th3;
+                        l22Var.l();
+                        throw th;
+                    }
+                }
+                l22Var.l();
+                return up2Var;
+            }
+        }
+        b0Var = new b0(this, l10Var);
+        Object obj2 = b0Var.h;
+        i = b0Var.j;
+        up2 up2Var2 = up2.f1186a;
+        if (i != 0) {
+        }
+        l22Var.l();
+        return up2Var2;
     }
 
     public k42 k(vs vsVar) {
-        long jF;
+        long f;
         g21 g21Var = (g21) this.d;
         lx0.x(vsVar, "padding");
-        float f = vsVar.f1240a;
-        float f2 = vsVar.b;
-        int iOrdinal = h().ordinal();
-        if (iOrdinal == 0) {
-            jF = g21Var.f() & 4294967295L;
+        float f2 = vsVar.f1239a;
+        float f3 = vsVar.b;
+        int ordinal = h().ordinal();
+        if (ordinal == 0) {
+            f = g21Var.f() & 4294967295L;
         } else {
-            if (iOrdinal != 1) {
+            if (ordinal != 1) {
                 throw new mu();
             }
-            jF = g21Var.f() >> 32;
+            f = g21Var.f() >> 32;
         }
-        return new k42(f, ((int) jF) - f2);
+        return new k42(f2, ((int) f) - f3);
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Iterable, java.lang.Object] */
@@ -292,7 +401,7 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
     }
 
     public mb1 n(bu0 bu0Var, Object obj, gl1 gl1Var, yf0 yf0Var) {
-        String strA;
+        String str;
         Map linkedHashMap;
         bu0Var.getClass();
         List list = bu0Var.f;
@@ -301,27 +410,27 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
         int i = 0;
         while (true) {
             if (i >= size) {
-                strA = null;
+                str = null;
                 break;
             }
             hn1 hn1Var = (hn1) list2.get(i);
             qz0 qz0Var = (qz0) hn1Var.d;
             if (((Class) hn1Var.e).isAssignableFrom(obj.getClass())) {
                 lx0.v(qz0Var, "null cannot be cast to non-null type coil.key.Keyer<kotlin.Any>");
-                strA = qz0Var.a(obj, gl1Var);
-                if (strA != null) {
+                str = qz0Var.a(obj, gl1Var);
+                if (str != null) {
                     break;
                 }
             }
             i++;
         }
-        if (strA == null) {
+        if (str == null) {
             return null;
         }
         Map map = bu0Var.x.d;
-        boolean zIsEmpty = map.isEmpty();
+        boolean isEmpty = map.isEmpty();
         re0 re0Var = re0.d;
-        if (zIsEmpty) {
+        if (isEmpty) {
             linkedHashMap = re0Var;
         } else {
             linkedHashMap = new LinkedHashMap();
@@ -332,17 +441,17 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
             }
         }
         if (list.isEmpty() && linkedHashMap.isEmpty()) {
-            return new mb1(strA, re0Var);
+            return new mb1(str, re0Var);
         }
-        LinkedHashMap linkedHashMapW = ha1.W(linkedHashMap);
+        LinkedHashMap W = ha1.W(linkedHashMap);
         if (!list.isEmpty()) {
             if (list.size() > 0) {
                 list.get(0).getClass();
                 throw new ClassCastException();
             }
-            linkedHashMapW.put("coil#transformation_size", gl1Var.d.toString());
+            W.put("coil#transformation_size", gl1Var.d.toString());
         }
-        return new mb1(strA, linkedHashMapW);
+        return new mb1(str, W);
     }
 
     public void p(View view, int i, boolean z) {
@@ -353,7 +462,7 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
 
     public dx0 r(l6 l6Var, v7 v7Var) {
         int i;
-        long jI;
+        long I;
         long j;
         boolean z;
         g81 g81Var = (g81) this.d;
@@ -363,25 +472,25 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
         int i2 = 0;
         while (i2 < size) {
             rs1 rs1Var = (rs1) list.get(i2);
-            long j2 = rs1Var.f1030a;
+            long j2 = rs1Var.f1029a;
             qs1 qs1Var = (qs1) g81Var.b(j2);
             if (qs1Var == null) {
                 i = i2;
                 j = rs1Var.b;
-                jI = rs1Var.d;
+                I = rs1Var.d;
                 z = false;
             } else {
-                long j3 = qs1Var.f976a;
+                long j3 = qs1Var.f975a;
                 boolean z2 = qs1Var.c;
                 i = i2;
-                jI = v7Var.I(qs1Var.b);
+                I = v7Var.I(qs1Var.b);
                 j = j3;
                 z = z2;
             }
-            long j4 = rs1Var.f1030a;
+            long j4 = rs1Var.f1029a;
             List list2 = list;
             int i3 = size;
-            g81Var2.e(j4, new ps1(j4, rs1Var.b, rs1Var.d, rs1Var.e, rs1Var.f, j, jI, z, rs1Var.g, rs1Var.i, rs1Var.j, rs1Var.k));
+            g81Var2.e(j4, new ps1(j4, rs1Var.b, rs1Var.d, rs1Var.e, rs1Var.f, j, I, z, rs1Var.g, rs1Var.i, rs1Var.j, rs1Var.k));
             boolean z3 = rs1Var.e;
             if (z3) {
                 g81Var.e(j2, new qs1(rs1Var.b, rs1Var.c, z3));
@@ -396,24 +505,24 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
     }
 
     public void s() {
-        View viewFindViewById;
-        View view = (View) this.d;
-        if (view == null) {
+        View view;
+        View view2 = (View) this.d;
+        if (view2 == null) {
             return;
         }
-        if (view.isInEditMode() || view.onCheckIsTextEditor()) {
-            view.requestFocus();
-            viewFindViewById = view;
+        if (view2.isInEditMode() || view2.onCheckIsTextEditor()) {
+            view2.requestFocus();
+            view = view2;
         } else {
-            viewFindViewById = view.getRootView().findFocus();
+            view = view2.getRootView().findFocus();
         }
-        if (viewFindViewById == null) {
-            viewFindViewById = view.getRootView().findViewById(R.id.content);
+        if (view == null) {
+            view = view2.getRootView().findViewById(R.id.content);
         }
-        if (viewFindViewById == null || !viewFindViewById.hasWindowFocus()) {
+        if (view == null || !view.hasWindowFocus()) {
             return;
         }
-        viewFindViewById.post(new hd2(viewFindViewById, 0));
+        view.post(new hd2(view, 0));
     }
 
     public void t(ak2 ak2Var, long j, boolean z, pt ptVar) {
@@ -423,7 +532,7 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
 
     public gz0(int i) {
         switch (i) {
-            case 10:
+            case pz0.d /* 10 */:
                 this.d = new g81((Object) null);
                 break;
             case 17:
@@ -442,12 +551,12 @@ public class gz0 implements ja1, gu1, jt, hj0, c2, xg {
     }
 
     public gz0(j70 j70Var) {
-        float f = xd2.f1332a;
+        float f = xd2.f1331a;
         wc0 wc0Var = new wc0();
-        wc0Var.f1272a = f;
-        float fA = j70Var.a();
-        float f2 = aj0.f104a;
-        wc0Var.b = fA * 386.0878f * 160.0f * 0.84f;
+        wc0Var.f1271a = f;
+        float a2 = j70Var.a();
+        float f2 = aj0.f103a;
+        wc0Var.b = a2 * 386.0878f * 160.0f * 0.84f;
         this.d = wc0Var;
     }
 

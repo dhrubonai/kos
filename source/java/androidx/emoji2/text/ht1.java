@@ -12,16 +12,22 @@ import java.util.Objects;
 public final class ht1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextPaint f490a;
+    public final TextPaint f489a;
     public final TextDirectionHeuristic b;
     public final int c;
     public final int d;
 
     public ht1(TextPaint textPaint, TextDirectionHeuristic textDirectionHeuristic, int i, int i2) {
+        PrecomputedText.Params.Builder breakStrategy;
+        PrecomputedText.Params.Builder hyphenationFrequency;
+        PrecomputedText.Params.Builder textDirection;
         if (Build.VERSION.SDK_INT >= 29) {
-            gt1.d(textPaint).setBreakStrategy(i).setHyphenationFrequency(i2).setTextDirection(textDirectionHeuristic).build();
+            breakStrategy = gt1.d(textPaint).setBreakStrategy(i);
+            hyphenationFrequency = breakStrategy.setHyphenationFrequency(i2);
+            textDirection = hyphenationFrequency.setTextDirection(textDirectionHeuristic);
+            textDirection.build();
         }
-        this.f490a = textPaint;
+        this.f489a = textPaint;
         this.b = textDirectionHeuristic;
         this.c = i;
         this.d = i2;
@@ -38,9 +44,9 @@ public final class ht1 {
         if (this.c != ht1Var.c || this.d != ht1Var.d) {
             return false;
         }
-        TextPaint textPaint = this.f490a;
+        TextPaint textPaint = this.f489a;
         float textSize = textPaint.getTextSize();
-        TextPaint textPaint2 = ht1Var.f490a;
+        TextPaint textPaint2 = ht1Var.f489a;
         if (textSize != textPaint2.getTextSize() || textPaint.getTextScaleX() != textPaint2.getTextScaleX() || textPaint.getTextSkewX() != textPaint2.getTextSkewX() || textPaint.getLetterSpacing() != textPaint2.getLetterSpacing() || !TextUtils.equals(textPaint.getFontFeatureSettings(), textPaint2.getFontFeatureSettings()) || textPaint.getFlags() != textPaint2.getFlags() || !textPaint.getTextLocales().equals(textPaint2.getTextLocales())) {
             return false;
         }
@@ -55,14 +61,15 @@ public final class ht1 {
     }
 
     public final int hashCode() {
-        TextPaint textPaint = this.f490a;
+        TextPaint textPaint = this.f489a;
         return Objects.hash(Float.valueOf(textPaint.getTextSize()), Float.valueOf(textPaint.getTextScaleX()), Float.valueOf(textPaint.getTextSkewX()), Float.valueOf(textPaint.getLetterSpacing()), Integer.valueOf(textPaint.getFlags()), textPaint.getTextLocales(), textPaint.getTypeface(), Boolean.valueOf(textPaint.isElegantTextHeight()), this.b, Integer.valueOf(this.c), Integer.valueOf(this.d));
     }
 
     public final String toString() {
+        String fontVariationSettings;
         StringBuilder sb = new StringBuilder("{");
         StringBuilder sb2 = new StringBuilder("textSize=");
-        TextPaint textPaint = this.f490a;
+        TextPaint textPaint = this.f489a;
         sb2.append(textPaint.getTextSize());
         sb.append(sb2.toString());
         sb.append(", textScaleX=" + textPaint.getTextScaleX());
@@ -73,7 +80,10 @@ public final class ht1 {
         sb.append(", textLocale=" + textPaint.getTextLocales());
         sb.append(", typeface=" + textPaint.getTypeface());
         if (i >= 26) {
-            sb.append(", variationSettings=" + textPaint.getFontVariationSettings());
+            StringBuilder sb3 = new StringBuilder(", variationSettings=");
+            fontVariationSettings = textPaint.getFontVariationSettings();
+            sb3.append(fontVariationSettings);
+            sb.append(sb3.toString());
         }
         sb.append(", textDir=" + this.b);
         sb.append(", breakStrategy=" + this.c);
@@ -83,9 +93,17 @@ public final class ht1 {
     }
 
     public ht1(PrecomputedText.Params params) {
-        this.f490a = params.getTextPaint();
-        this.b = params.getTextDirection();
-        this.c = params.getBreakStrategy();
-        this.d = params.getHyphenationFrequency();
+        TextPaint textPaint;
+        TextDirectionHeuristic textDirection;
+        int breakStrategy;
+        int hyphenationFrequency;
+        textPaint = params.getTextPaint();
+        this.f489a = textPaint;
+        textDirection = params.getTextDirection();
+        this.b = textDirection;
+        breakStrategy = params.getBreakStrategy();
+        this.c = breakStrategy;
+        hyphenationFrequency = params.getHyphenationFrequency();
+        this.d = hyphenationFrequency;
     }
 }

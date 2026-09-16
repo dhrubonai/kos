@@ -7,10 +7,10 @@ import com.kos.engine.entity.location.BCell;
 public abstract class np2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final jf2 f821a = new jf2(ka2.k);
+    public static final jf2 f820a = new jf2(ka2.k);
 
     public static final gl2 a(lx lxVar, int i) {
-        mp2 mp2Var = (mp2) ((tx) lxVar).j(f821a);
+        mp2 mp2Var = (mp2) ((tx) lxVar).j(f820a);
         switch (zd.w(i)) {
             case 0:
                 return mp2Var.j;
@@ -19,20 +19,20 @@ public abstract class np2 {
             case 2:
                 return mp2Var.l;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                return mp2Var.f761a;
+                return mp2Var.f760a;
             case 4:
                 return mp2Var.b;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return mp2Var.c;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return mp2Var.d;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return mp2Var.e;
             case 8:
                 return mp2Var.f;
-            case 9:
+            case pz0.b /* 9 */:
                 return mp2Var.m;
-            case 10:
+            case pz0.d /* 10 */:
                 return mp2Var.n;
             case 11:
                 return mp2Var.o;

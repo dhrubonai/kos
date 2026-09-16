@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class rf {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ sf f1007a;
+    public final /* synthetic */ sf f1006a;
 
     public rf(sf sfVar) {
-        this.f1007a = sfVar;
+        this.f1006a = sfVar;
     }
 }

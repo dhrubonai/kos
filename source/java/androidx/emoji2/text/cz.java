@@ -9,7 +9,7 @@ import org.conscrypt.Conscrypt;
 public final class cz implements ed2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final bz f228a = new bz();
+    public static final bz f227a = new bz();
 
     @Override // androidx.emoji2.text.ed2
     public final boolean a() {
@@ -30,7 +30,7 @@ public final class cz implements ed2 {
         lx0.x(list, "protocols");
         if (e(sSLSocket)) {
             Conscrypt.setUseSessionTickets(sSLSocket, true);
-            lr1 lr1Var = lr1.f707a;
+            lr1 lr1Var = lr1.f706a;
             Conscrypt.setApplicationProtocols(sSLSocket, (String[]) iz0.i(list).toArray(new String[0]));
         }
     }

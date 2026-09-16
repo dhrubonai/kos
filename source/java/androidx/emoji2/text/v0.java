@@ -11,32 +11,32 @@ public abstract class v0 {
     public sg2 g;
 
     public final w0 a() {
-        w0 w0VarC;
+        w0 w0Var;
         sg2 sg2Var;
         synchronized (this) {
             try {
-                w0[] w0VarArrD = this.d;
-                if (w0VarArrD == null) {
-                    w0VarArrD = d();
-                    this.d = w0VarArrD;
-                } else if (this.e >= w0VarArrD.length) {
-                    Object[] objArrCopyOf = Arrays.copyOf(w0VarArrD, w0VarArrD.length * 2);
-                    lx0.w(objArrCopyOf, "copyOf(...)");
-                    this.d = (w0[]) objArrCopyOf;
-                    w0VarArrD = (w0[]) objArrCopyOf;
+                w0[] w0VarArr = this.d;
+                if (w0VarArr == null) {
+                    w0VarArr = d();
+                    this.d = w0VarArr;
+                } else if (this.e >= w0VarArr.length) {
+                    Object[] copyOf = Arrays.copyOf(w0VarArr, w0VarArr.length * 2);
+                    lx0.w(copyOf, "copyOf(...)");
+                    this.d = (w0[]) copyOf;
+                    w0VarArr = (w0[]) copyOf;
                 }
                 int i = this.f;
                 do {
-                    w0VarC = w0VarArrD[i];
-                    if (w0VarC == null) {
-                        w0VarC = c();
-                        w0VarArrD[i] = w0VarC;
+                    w0Var = w0VarArr[i];
+                    if (w0Var == null) {
+                        w0Var = c();
+                        w0VarArr[i] = w0Var;
                     }
                     i++;
-                    if (i >= w0VarArrD.length) {
+                    if (i >= w0VarArr.length) {
                         i = 0;
                     }
-                } while (!w0VarC.a(this));
+                } while (!w0Var.a(this));
                 this.f = i;
                 this.e++;
                 sg2Var = this.g;
@@ -47,7 +47,7 @@ public abstract class v0 {
         if (sg2Var != null) {
             sg2Var.w(1);
         }
-        return w0VarC;
+        return w0Var;
     }
 
     public abstract w0 c();
@@ -57,7 +57,7 @@ public abstract class v0 {
     public final void e(w0 w0Var) {
         sg2 sg2Var;
         int i;
-        l10[] l10VarArrB;
+        l10[] b;
         synchronized (this) {
             try {
                 int i2 = this.e - 1;
@@ -67,14 +67,14 @@ public abstract class v0 {
                     this.f = 0;
                 }
                 lx0.v(w0Var, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
-                l10VarArrB = w0Var.b(this);
+                b = w0Var.b(this);
             } catch (Throwable th) {
                 throw th;
             }
         }
-        for (l10 l10Var : l10VarArrB) {
+        for (l10 l10Var : b) {
             if (l10Var != null) {
-                l10Var.g(up2.f1187a);
+                l10Var.g(up2.f1186a);
             }
         }
         if (sg2Var != null) {

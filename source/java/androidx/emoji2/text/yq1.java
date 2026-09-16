@@ -18,14 +18,14 @@ public final /* synthetic */ class yq1 implements um0 {
         i01 i01Var = (i01) obj;
         switch (this.d) {
             case 0:
-                Integer num = (Integer) this.e.get(i01Var.f501a);
+                Integer num = (Integer) this.e.get(i01Var.f500a);
                 if (num == null) {
                     break;
                 }
                 break;
             default:
-                lx0.x(i01Var, a.a.a.c.a(-384623470329634L, wj1.f1284a));
-                Integer num2 = (Integer) this.e.get(i01Var.f501a);
+                lx0.x(i01Var, a.a.a.c.a(-384623470329634L, wj1.f1283a));
+                Integer num2 = (Integer) this.e.get(i01Var.f500a);
                 if (num2 == null) {
                     break;
                 }

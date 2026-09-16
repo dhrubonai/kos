@@ -60,27 +60,27 @@ public interface INotificationSideChannel extends IInterface {
 
             @Override // android.support.v4.app.INotificationSideChannel
             public void cancel(String str, int i, String str2) {
-                Parcel parcelObtain = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str2);
-                    this.mRemote.transact(2, parcelObtain, null, 1);
+                    obtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeString(str2);
+                    this.mRemote.transact(2, obtain, null, 1);
                 } finally {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.support.v4.app.INotificationSideChannel
             public void cancelAll(String str) {
-                Parcel parcelObtain = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(3, parcelObtain, null, 1);
+                    obtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
+                    obtain.writeString(str);
+                    this.mRemote.transact(3, obtain, null, 1);
                 } finally {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -90,16 +90,16 @@ public interface INotificationSideChannel extends IInterface {
 
             @Override // android.support.v4.app.INotificationSideChannel
             public void notify(String str, int i, String str2, Notification notification) {
-                Parcel parcelObtain = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str2);
-                    _Parcel.writeTypedObject(parcelObtain, notification, 0);
-                    this.mRemote.transact(1, parcelObtain, null, 1);
+                    obtain.writeInterfaceToken(INotificationSideChannel.DESCRIPTOR);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeString(str2);
+                    _Parcel.writeTypedObject(obtain, notification, 0);
+                    this.mRemote.transact(1, obtain, null, 1);
                 } finally {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -112,8 +112,8 @@ public interface INotificationSideChannel extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(INotificationSideChannel.DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof INotificationSideChannel)) ? new Proxy(iBinder) : (INotificationSideChannel) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(INotificationSideChannel.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof INotificationSideChannel)) ? new Proxy(iBinder) : (INotificationSideChannel) queryLocalInterface;
         }
 
         @Override // android.os.Binder

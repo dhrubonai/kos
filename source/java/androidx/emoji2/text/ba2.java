@@ -28,7 +28,7 @@ public final class ba2 extends fa2 {
         float f3 = da2Var.b;
         float f4 = this.d;
         RectF rectF = new RectF(0.0f, 0.0f, (float) Math.hypot(f - f2, f3 - f4), 0.0f);
-        Matrix matrix2 = this.f354a;
+        Matrix matrix2 = this.f353a;
         matrix2.set(matrix);
         matrix2.preTranslate(f4, f2);
         matrix2.preRotate(b());

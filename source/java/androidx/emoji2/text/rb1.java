@@ -5,8 +5,8 @@ package androidx.emoji2.text;
 public abstract class rb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1000a = ld0.f686a;
-    public static final float b = jc1.f571a;
+    public static final float f999a = ld0.f685a;
+    public static final float b = jc1.f570a;
     public static final em1 c;
 
     static {

@@ -54,9 +54,9 @@ public class IStatusBarServiceProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
@@ -136,12 +136,12 @@ public class IStatusBarServiceProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-995711417204514L, strArr);
+            String a2 = c.a(-995711417204514L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-995827381321506L, strArr), method);
             sb.append(c.a(-994306962898722L, strArr));
             sb.append(findMessage(th));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }

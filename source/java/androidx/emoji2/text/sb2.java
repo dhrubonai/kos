@@ -34,13 +34,13 @@ public final class sb2 extends l0 {
             objArr2[i] = obj;
             return new sb2(objArr2);
         }
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, objArr.length);
-        lx0.w(objArrCopyOf, "copyOf(...)");
-        xh.z0(objArr, objArrCopyOf, i + 1, i, objArr.length - 1);
-        objArrCopyOf[i] = obj;
+        Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
+        lx0.w(copyOf, "copyOf(...)");
+        xh.z0(objArr, copyOf, i + 1, i, objArr.length - 1);
+        copyOf[i] = obj;
         Object[] objArr3 = new Object[32];
         objArr3[0] = objArr[31];
-        return new pp1(objArrCopyOf, objArr3, objArr.length + 1, 0);
+        return new pp1(copyOf, objArr3, objArr.length + 1, 0);
     }
 
     @Override // androidx.emoji2.text.l0
@@ -51,29 +51,29 @@ public final class sb2 extends l0 {
             objArr2[0] = obj;
             return new pp1(objArr, objArr2, objArr.length + 1, 0);
         }
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, objArr.length + 1);
-        lx0.w(objArrCopyOf, "copyOf(...)");
-        objArrCopyOf[objArr.length] = obj;
-        return new sb2(objArrCopyOf);
+        Object[] copyOf = Arrays.copyOf(objArr, objArr.length + 1);
+        lx0.w(copyOf, "copyOf(...)");
+        copyOf[objArr.length] = obj;
+        return new sb2(copyOf);
     }
 
     @Override // androidx.emoji2.text.l0
     public final l0 d(Collection collection) {
         Object[] objArr = this.d;
         if (collection.size() + objArr.length > 32) {
-            qp1 qp1VarE = e();
-            qp1VarE.addAll(collection);
-            return qp1VarE.c();
+            qp1 e2 = e();
+            e2.addAll(collection);
+            return e2.c();
         }
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, collection.size() + objArr.length);
-        lx0.w(objArrCopyOf, "copyOf(...)");
+        Object[] copyOf = Arrays.copyOf(objArr, collection.size() + objArr.length);
+        lx0.w(copyOf, "copyOf(...)");
         int length = objArr.length;
         Iterator it = collection.iterator();
         while (it.hasNext()) {
-            objArrCopyOf[length] = it.next();
+            copyOf[length] = it.next();
             length++;
         }
-        return new sb2(objArrCopyOf);
+        return new sb2(copyOf);
     }
 
     @Override // androidx.emoji2.text.l0
@@ -86,23 +86,23 @@ public final class sb2 extends l0 {
         Object[] objArr = this.d;
         int length = objArr.length;
         int length2 = objArr.length;
-        Object[] objArrCopyOf = objArr;
+        Object[] objArr2 = objArr;
         boolean z = false;
         for (int i = 0; i < length2; i++) {
             Object obj = objArr[i];
             if (((Boolean) k0Var.e(obj)).booleanValue()) {
                 if (!z) {
-                    objArrCopyOf = Arrays.copyOf(objArr, objArr.length);
-                    lx0.w(objArrCopyOf, "copyOf(...)");
+                    objArr2 = Arrays.copyOf(objArr, objArr.length);
+                    lx0.w(objArr2, "copyOf(...)");
                     z = true;
                     length = i;
                 }
             } else if (z) {
-                objArrCopyOf[length] = obj;
+                objArr2[length] = obj;
                 length++;
             }
         }
-        return length == objArr.length ? this : length == 0 ? e : new sb2(xh.D0(objArrCopyOf, 0, length));
+        return length == objArr.length ? this : length == 0 ? e : new sb2(xh.D0(objArr2, 0, length));
     }
 
     @Override // androidx.emoji2.text.l0
@@ -112,10 +112,10 @@ public final class sb2 extends l0 {
         if (objArr.length == 1) {
             return e;
         }
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, objArr.length - 1);
-        lx0.w(objArrCopyOf, "copyOf(...)");
-        xh.z0(objArr, objArrCopyOf, i, i + 1, objArr.length);
-        return new sb2(objArrCopyOf);
+        Object[] copyOf = Arrays.copyOf(objArr, objArr.length - 1);
+        lx0.w(copyOf, "copyOf(...)");
+        xh.z0(objArr, copyOf, i, i + 1, objArr.length);
+        return new sb2(copyOf);
     }
 
     @Override // java.util.List
@@ -128,10 +128,10 @@ public final class sb2 extends l0 {
     public final l0 h(int i, Object obj) {
         Object[] objArr = this.d;
         a01.r(i, objArr.length);
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, objArr.length);
-        lx0.w(objArrCopyOf, "copyOf(...)");
-        objArrCopyOf[i] = obj;
-        return new sb2(objArrCopyOf);
+        Object[] copyOf = Arrays.copyOf(objArr, objArr.length);
+        lx0.w(copyOf, "copyOf(...)");
+        copyOf[i] = obj;
+        return new sb2(copyOf);
     }
 
     @Override // androidx.emoji2.text.f0, java.util.List

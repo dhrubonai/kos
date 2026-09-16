@@ -24,9 +24,9 @@ public final class lj1 extends lz0 {
     }
 
     public final int hashCode() {
-        int iHashCode = this.e.hashCode() * 31;
+        int hashCode = this.e.hashCode() * 31;
         v51 v51Var = this.f;
-        return iHashCode + (v51Var == null ? 0 : v51Var.hashCode());
+        return hashCode + (v51Var == null ? 0 : v51Var.hashCode());
     }
 
     public final String toString() {

@@ -10,10 +10,10 @@ public final class zi2 {
     public static final zi2 d = new zi2(2);
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1443a;
+    public final int f1442a;
 
     public zi2(int i) {
-        this.f1443a = i;
+        this.f1442a = i;
     }
 
     public final boolean equals(Object obj) {
@@ -21,17 +21,17 @@ public final class zi2 {
             return true;
         }
         if (obj instanceof zi2) {
-            return this.f1443a == ((zi2) obj).f1443a;
+            return this.f1442a == ((zi2) obj).f1442a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1443a;
+        return this.f1442a;
     }
 
     public final String toString() {
-        int i = this.f1443a;
+        int i = this.f1442a;
         if (i == 0) {
             return "TextDecoration.None";
         }

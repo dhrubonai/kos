@@ -17,8 +17,8 @@ public final class b32 implements y22, m32 {
         this.e = a12Var;
         this.f = new x51(this, false);
         this.g = (a12) a12Var.f;
-        Object objD = z22Var.d("androidx.savedstate.SavedStateRegistry");
-        a12Var.m(objD instanceof Bundle ? (Bundle) objD : null);
+        Object d = z22Var.d("androidx.savedstate.SavedStateRegistry");
+        a12Var.m(d instanceof Bundle ? (Bundle) d : null);
         z22Var.e("androidx.savedstate.SavedStateRegistry", new t2(11, this));
     }
 

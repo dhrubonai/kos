@@ -17,7 +17,7 @@ public final class v42 extends g01 implements sm0 {
     public final Object a() {
         switch (this.e) {
             case 0:
-                return Float.valueOf(this.f.r.f1371a.g());
+                return Float.valueOf(this.f.r.f1370a.g());
             default:
                 return Float.valueOf(this.f.r.d.g());
         }

@@ -48,12 +48,12 @@ public final class bt1 extends y {
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.gravity = 8388659;
         et1 et1Var2 = this.m;
-        boolean zB = kb.b(view);
+        boolean b = kb.b(view);
         boolean z = et1Var2.b;
-        int i = et1Var2.f323a;
-        if (z && zB) {
+        int i = et1Var2.f322a;
+        if (z && b) {
             i |= 8192;
-        } else if (z && !zB) {
+        } else if (z && !b) {
             i &= -8193;
         }
         layoutParams.flags = i;
@@ -79,7 +79,7 @@ public final class bt1 extends y {
         setClipChildren(false);
         setElevation(j70Var.c0((float) 8));
         setOutlineProvider(new n80(2));
-        this.B = az0.W(aw.f125a);
+        this.B = az0.W(aw.f124a);
         this.D = new int[2];
     }
 
@@ -118,9 +118,9 @@ public final class bt1 extends y {
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new x(i, 13, this);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new x(i, 13, this);
         }
     }
 
@@ -219,12 +219,12 @@ public final class bt1 extends y {
         if (!lx0.n(this.m, et1Var)) {
             et1Var.getClass();
             this.m = et1Var;
-            boolean zB = kb.b(this.o);
+            boolean b = kb.b(this.o);
             boolean z = et1Var.b;
-            int i2 = et1Var.f323a;
-            if (z && zB) {
+            int i2 = et1Var.f322a;
+            if (z && b) {
                 i2 |= 8192;
-            } else if (z && !zB) {
+            } else if (z && !b) {
                 i2 &= -8193;
             }
             WindowManager.LayoutParams layoutParams = this.r;
@@ -232,10 +232,10 @@ public final class bt1 extends y {
             this.p.getClass();
             this.q.updateViewLayout(this, layoutParams);
         }
-        int iOrdinal = q01Var.ordinal();
-        if (iOrdinal != 0) {
+        int ordinal = q01Var.ordinal();
+        if (ordinal != 0) {
             i = 1;
-            if (iOrdinal != 1) {
+            if (ordinal != 1) {
                 throw new mu();
             }
         } else {
@@ -253,12 +253,12 @@ public final class bt1 extends y {
             if (parentLayoutCoordinates == null) {
                 return;
             }
-            long jK = parentLayoutCoordinates.k();
-            long jD = parentLayoutCoordinates.d(0L);
-            long jRound = (Math.round(Float.intBitsToFloat((int) (jD >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (jD & 4294967295L))) & 4294967295L);
-            int i = (int) (jRound >> 32);
-            int i2 = (int) (jRound & 4294967295L);
-            rw0 rw0Var = new rw0(i, i2, ((int) (jK >> 32)) + i, ((int) (jK & 4294967295L)) + i2);
+            long k = parentLayoutCoordinates.k();
+            long d = parentLayoutCoordinates.d(0L);
+            long round = (Math.round(Float.intBitsToFloat((int) (d >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (d & 4294967295L))) & 4294967295L);
+            int i = (int) (round >> 32);
+            int i2 = (int) (round & 4294967295L);
+            rw0 rw0Var = new rw0(i, i2, ((int) (k >> 32)) + i, ((int) (k & 4294967295L)) + i2);
             if (rw0Var.equals(this.w)) {
                 return;
             }
@@ -273,17 +273,17 @@ public final class bt1 extends y {
     }
 
     public final void o() {
-        uw0 uw0VarM0getPopupContentSizebOM6tXw;
+        uw0 m0getPopupContentSizebOM6tXw;
         rw0 rw0Var = this.w;
-        if (rw0Var == null || (uw0VarM0getPopupContentSizebOM6tXw = m0getPopupContentSizebOM6tXw()) == null) {
+        if (rw0Var == null || (m0getPopupContentSizebOM6tXw = m0getPopupContentSizebOM6tXw()) == null) {
             return;
         }
-        long j = uw0VarM0getPopupContentSizebOM6tXw.f1196a;
+        long j = m0getPopupContentSizebOM6tXw.f1195a;
         rw0 visibleDisplayBounds = getVisibleDisplayBounds();
-        long jB = (visibleDisplayBounds.b() & 4294967295L) | (visibleDisplayBounds.c() << 32);
+        long b = (visibleDisplayBounds.b() & 4294967295L) | (visibleDisplayBounds.c() << 32);
         by1 by1Var = new by1();
         by1Var.d = 0L;
-        this.z.c(this, vl1.o, new at1(by1Var, this, rw0Var, jB, j));
+        this.z.c(this, vl1.o, new at1(by1Var, this, rw0Var, b, j));
         long j2 = by1Var.d;
         WindowManager.LayoutParams layoutParams = this.r;
         layoutParams.x = (int) (j2 >> 32);
@@ -291,7 +291,7 @@ public final class bt1 extends y {
         boolean z = this.m.e;
         iz0 iz0Var = this.p;
         if (z) {
-            iz0Var.t(this, (int) (jB >> 32), (int) (jB & 4294967295L));
+            iz0Var.t(this, (int) (b >> 32), (int) (b & 4294967295L));
         }
         iz0Var.getClass();
         this.q.updateViewLayout(this, layoutParams);

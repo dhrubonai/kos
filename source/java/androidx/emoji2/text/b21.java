@@ -27,7 +27,7 @@ public final /* synthetic */ class b21 extends uu1 implements wy0, sm0 {
 
     @Override // androidx.emoji2.text.wo
     public final py0 b() {
-        dy1.f279a.getClass();
+        dy1.f278a.getClass();
         return this;
     }
 }

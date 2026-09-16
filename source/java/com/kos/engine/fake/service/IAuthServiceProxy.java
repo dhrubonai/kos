@@ -137,31 +137,31 @@ public class IAuthServiceProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
     }
 
-    private static Method findOnErrorMethod(Class<?> cls) throws SecurityException {
-        Class<?> superclass = cls;
+    private static Method findOnErrorMethod(Class<?> cls) {
+        Class<?> cls2 = cls;
         while (true) {
             int i = 0;
-            if (superclass == null) {
+            if (cls2 == null) {
                 Class<?>[] interfaces = cls.getInterfaces();
                 int length = interfaces.length;
                 while (i < length) {
-                    Method methodFindOnErrorMethod = findOnErrorMethod(interfaces[i]);
-                    if (methodFindOnErrorMethod != null) {
-                        return methodFindOnErrorMethod;
+                    Method findOnErrorMethod = findOnErrorMethod(interfaces[i]);
+                    if (findOnErrorMethod != null) {
+                        return findOnErrorMethod;
                     }
                     i++;
                 }
                 return null;
             }
-            Method[] declaredMethods = superclass.getDeclaredMethods();
+            Method[] declaredMethods = cls2.getDeclaredMethods();
             int length2 = declaredMethods.length;
             while (i < length2) {
                 Method method = declaredMethods[i];
@@ -170,7 +170,7 @@ public class IAuthServiceProxy extends BinderInvocationStub {
                 }
                 i++;
             }
-            superclass = superclass.getSuperclass();
+            cls2 = cls2.getSuperclass();
         }
     }
 
@@ -228,16 +228,16 @@ public class IAuthServiceProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void notifyAuthenticationError(Object[] objArr) {
-        Method methodFindOnErrorMethod;
+        Method findOnErrorMethod;
         if (objArr == null) {
             return;
         }
         for (Object obj : objArr) {
-            if (obj != null && (methodFindOnErrorMethod = findOnErrorMethod(obj.getClass())) != null) {
+            if (obj != null && (findOnErrorMethod = findOnErrorMethod(obj.getClass())) != null) {
                 try {
-                    methodFindOnErrorMethod.setAccessible(true);
-                    Object[] objArr2 = new Object[methodFindOnErrorMethod.getParameterTypes().length];
-                    Class<?>[] parameterTypes = methodFindOnErrorMethod.getParameterTypes();
+                    findOnErrorMethod.setAccessible(true);
+                    Object[] objArr2 = new Object[findOnErrorMethod.getParameterTypes().length];
+                    Class<?>[] parameterTypes = findOnErrorMethod.getParameterTypes();
                     if (parameterTypes.length == 3 && isIntType(parameterTypes[0]) && isIntType(parameterTypes[1]) && isIntType(parameterTypes[2])) {
                         objArr2[0] = 0;
                         objArr2[1] = 1;
@@ -248,17 +248,17 @@ public class IAuthServiceProxy extends BinderInvocationStub {
                                 objArr2[i] = 1;
                             } else {
                                 Class<?> cls = parameterTypes[i];
-                                if (cls == Long.TYPE || cls == Long.class) {
-                                    objArr2[i] = 0L;
-                                } else if (cls == String.class || CharSequence.class.isAssignableFrom(cls)) {
+                                if (cls != Long.TYPE && cls != Long.class) {
+                                    if (cls != String.class && !CharSequence.class.isAssignableFrom(cls)) {
+                                        objArr2[i] = null;
+                                    }
                                     objArr2[i] = c.a(-674439273529122L, xa1.b);
-                                } else {
-                                    objArr2[i] = null;
                                 }
+                                objArr2[i] = 0L;
                             }
                         }
                     }
-                    methodFindOnErrorMethod.invoke(obj, objArr2);
+                    findOnErrorMethod.invoke(obj, objArr2);
                     return;
                 } catch (Throwable unused) {
                     continue;
@@ -278,15 +278,15 @@ public class IAuthServiceProxy extends BinderInvocationStub {
             parcel.readStrongBinder();
             parcel.readLong();
             parcel.readInt();
-            IBinder strongBinder = parcel.readStrongBinder();
-            if (strongBinder == null) {
+            IBinder readStrongBinder = parcel.readStrongBinder();
+            if (readStrongBinder == null) {
                 return;
             }
             Method declaredMethod = Class.forName(c.a(-674843000454946L, strArr)).getDeclaredMethod(c.a(-675079223656226L, strArr), IBinder.class);
             declaredMethod.setAccessible(true);
-            Object objInvoke = declaredMethod.invoke(null, strongBinder);
-            if (objInvoke != null) {
-                notifyAuthenticationError(new Object[]{objInvoke});
+            Object invoke = declaredMethod.invoke(null, readStrongBinder);
+            if (invoke != null) {
+                notifyAuthenticationError(new Object[]{invoke});
             }
         } catch (Throwable unused) {
         }
@@ -375,11 +375,11 @@ public class IAuthServiceProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-663083379998498L, strArr);
+            String a2 = c.a(-663083379998498L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-663143509540642L, strArr), method);
             sb.append(c.a(-663886538882850L, strArr));
-            zd.p(sb, findMessage(th), 5, strA);
+            zd.p(sb, findMessage(th), 5, a2);
             return defaultValue(method);
         }
     }

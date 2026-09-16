@@ -9,7 +9,7 @@ import android.os.Build;
 public final class ql {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ColorFilter f963a;
+    public final ColorFilter f962a;
     public final long b;
     public final int c;
 
@@ -21,7 +21,7 @@ public final class ql {
         } else {
             porterDuffColorFilter = new PorterDuffColorFilter(bz0.i0(j), xo2.L(i));
         }
-        this.f963a = porterDuffColorFilter;
+        this.f962a = porterDuffColorFilter;
         this.b = j;
         this.c = i;
     }

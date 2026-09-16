@@ -7,7 +7,7 @@ import android.view.View;
 public final class g8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final g8 f404a = new g8();
+    public static final g8 f403a = new g8();
 
     public final boolean a(View view, ka0 ka0Var, yw ywVar) {
         throw null;

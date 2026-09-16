@@ -8,7 +8,7 @@ import android.view.ViewStructure;
 public final class e8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final e8 f291a = new e8();
+    public static final e8 f290a = new e8();
 
     public final void a(ViewStructure viewStructure, View view) {
         viewStructure.setClassName(view.getAccessibilityClassName().toString());

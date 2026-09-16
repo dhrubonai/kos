@@ -161,7 +161,7 @@ public class IActivityClientProxy extends ClassInvocationStub {
     public static void traceFacebookCaller(String str, IBinder iBinder, Object obj) {
         String[] strArr = xa1.b;
         if (c.a(-745065715744546L, strArr).equals(rj.o())) {
-            String strA = c.a(-745185974828834L, strArr);
+            String a2 = c.a(-745185974828834L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-743592541962018L, strArr));
             sb.append(str);
@@ -169,7 +169,7 @@ public class IActivityClientProxy extends ClassInvocationStub {
             sb.append(iBinder == null ? null : Integer.valueOf(System.identityHashCode(iBinder)));
             sb.append(c.a(-743708506079010L, strArr));
             sb.append(obj);
-            nz0.Q(strA, 4, sb.toString());
+            nz0.Q(a2, 4, sb.toString());
         }
     }
 
@@ -190,9 +190,9 @@ public class IActivityClientProxy extends ClassInvocationStub {
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
     public void inject(Object obj, Object obj2) {
-        Object objINTERFACE_SINGLETON = BRActivityClient.get(BRActivityClient.get().getInstance()).INTERFACE_SINGLETON();
-        BRSingleton.get(objINTERFACE_SINGLETON)._set_mInstance(obj2);
-        BRActivityClientActivityClientControllerSingleton.get(objINTERFACE_SINGLETON)._set_mKnownInstance(obj2);
+        Object INTERFACE_SINGLETON = BRActivityClient.get(BRActivityClient.get().getInstance()).INTERFACE_SINGLETON();
+        BRSingleton.get(INTERFACE_SINGLETON)._set_mInstance(obj2);
+        BRActivityClientActivityClientControllerSingleton.get(INTERFACE_SINGLETON)._set_mKnownInstance(obj2);
         String[] strArr = xa1.b;
         nz0.Q(c.a(-744863852281634L, strArr), 3, c.a(-744421470650146L, strArr));
     }
@@ -203,12 +203,12 @@ public class IActivityClientProxy extends ClassInvocationStub {
         boolean z = activityClientController != getProxyInvocation();
         if (z) {
             String[] strArr = xa1.b;
-            String strA = c.a(-745233219469090L, strArr);
+            String a2 = c.a(-745233219469090L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-745340593651490L, strArr));
             sb.append(describeObject(activityClientController));
             sb.append(c.a(-745048535875362L, strArr));
-            zd.p(sb, describeObject(getProxyInvocation()), 5, strA);
+            zd.p(sb, describeObject(getProxyInvocation()), 5, a2);
         }
         return z;
     }

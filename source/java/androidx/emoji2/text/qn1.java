@@ -10,9 +10,9 @@ public final class qn1 extends ef2 implements Parcelable, pc2, mf1, qe2 {
     public mc2 e;
 
     public qn1(float f) {
-        ec2 ec2VarK = kc2.k();
-        mc2 mc2Var = new mc2(f, ec2VarK.g());
-        if (!(ec2VarK instanceof bo0)) {
+        ec2 k = kc2.k();
+        mc2 mc2Var = new mc2(f, k.g());
+        if (!(k instanceof bo0)) {
             mc2Var.b = new mc2(f, 1);
         }
         this.e = mc2Var;
@@ -57,17 +57,17 @@ public final class qn1 extends ef2 implements Parcelable, pc2, mf1, qe2 {
     }
 
     public final void h(float f) {
-        ec2 ec2VarK;
+        ec2 k;
         mc2 mc2Var = (mc2) kc2.i(this.e);
         if (mc2Var.c == f) {
             return;
         }
         mc2 mc2Var2 = this.e;
         synchronized (kc2.c) {
-            ec2VarK = kc2.k();
-            ((mc2) kc2.o(mc2Var2, this, ec2VarK, mc2Var)).c = f;
+            k = kc2.k();
+            ((mc2) kc2.o(mc2Var2, this, k, mc2Var)).c = f;
         }
-        kc2.n(ec2VarK, this);
+        kc2.n(k, this);
     }
 
     @Override // androidx.emoji2.text.mf1

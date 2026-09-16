@@ -119,13 +119,13 @@ public class ActiveServices {
     }
 
     private ActivityManager.RunningServiceInfo copyRunningServiceInfo(ActivityManager.RunningServiceInfo runningServiceInfo) {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            runningServiceInfo.writeToParcel(parcelObtain, 0);
-            parcelObtain.setDataPosition(0);
-            return (ActivityManager.RunningServiceInfo) ActivityManager.RunningServiceInfo.CREATOR.createFromParcel(parcelObtain);
+            runningServiceInfo.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            return (ActivityManager.RunningServiceInfo) ActivityManager.RunningServiceInfo.CREATOR.createFromParcel(obtain);
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 
@@ -158,11 +158,17 @@ public class ActiveServices {
     }
 
     private void destroyRunningService(RunningServiceRecord runningServiceRecord, int i) {
+        Intent component;
         ServiceInfo serviceInfo = runningServiceRecord.mServiceInfo;
-        ProcessRecord processRecordFindProcessRecord = serviceInfo == null ? null : BProcessManagerService.get().findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
-        if (processRecordFindProcessRecord != null) {
+        ProcessRecord findProcessRecord = serviceInfo == null ? null : BProcessManagerService.get().findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
+        if (findProcessRecord != null) {
             try {
-                processRecordFindProcessRecord.bActivityThread.stopService(((runningServiceRecord.mRecordKey instanceof ComponentName) || runningServiceRecord.mIntent == null) ? new Intent().setComponent(runningServiceRecord.mComponent) : new Intent(runningServiceRecord.mIntent));
+                if (!(runningServiceRecord.mRecordKey instanceof ComponentName) && runningServiceRecord.mIntent != null) {
+                    component = new Intent(runningServiceRecord.mIntent);
+                    findProcessRecord.bActivityThread.stopService(component);
+                }
+                component = new Intent().setComponent(runningServiceRecord.mComponent);
+                findProcessRecord.bActivityThread.stopService(component);
             } catch (RemoteException unused) {
             }
         }
@@ -179,21 +185,21 @@ public class ActiveServices {
     }
 
     private RunningServiceRecord getOrCreateRunningServiceRecord(Intent intent, ServiceInfo serviceInfo) {
-        ComponentName componentNameResolvedServiceComponent = resolvedServiceComponent(intent, serviceInfo);
-        if (componentNameResolvedServiceComponent == null) {
+        ComponentName resolvedServiceComponent = resolvedServiceComponent(intent, serviceInfo);
+        if (resolvedServiceComponent == null) {
             throw new IllegalArgumentException(c.a(-511728732487458L, xa1.b));
         }
-        Object objServiceRecordKey = serviceRecordKey(intent, serviceInfo);
-        RunningServiceRecord runningServiceRecord = this.mRunningServiceRecords.get(objServiceRecordKey);
+        Object serviceRecordKey = serviceRecordKey(intent, serviceInfo);
+        RunningServiceRecord runningServiceRecord = this.mRunningServiceRecords.get(serviceRecordKey);
         if (runningServiceRecord != null) {
             return runningServiceRecord;
         }
         RunningServiceRecord runningServiceRecord2 = new RunningServiceRecord();
         runningServiceRecord2.mIntent = intent;
         runningServiceRecord2.mServiceInfo = serviceInfo;
-        runningServiceRecord2.mComponent = componentNameResolvedServiceComponent;
-        runningServiceRecord2.mRecordKey = objServiceRecordKey;
-        this.mRunningServiceRecords.put(objServiceRecordKey, runningServiceRecord2);
+        runningServiceRecord2.mComponent = resolvedServiceComponent;
+        runningServiceRecord2.mRecordKey = serviceRecordKey;
+        this.mRunningServiceRecords.put(serviceRecordKey, runningServiceRecord2);
         this.mRunningTokens.put(runningServiceRecord2, runningServiceRecord2);
         return runningServiceRecord2;
     }
@@ -229,16 +235,16 @@ public class ActiveServices {
         if (iBinder == null) {
             return;
         }
-        ConnectedServiceRecord connectedServiceRecordRemove = this.mConnectedServices.remove(iBinder);
-        if (connectedServiceRecordRemove == null) {
+        ConnectedServiceRecord remove = this.mConnectedServices.remove(iBinder);
+        if (remove == null) {
             Log.d(c.a(-518003679706914L, strArr), c.a(-518068104216354L, strArr) + identityOf(iBinder) + c.a(-518781068787490L, strArr) + str);
             return;
         }
-        RunningServiceRecord runningServiceRecord = connectedServiceRecordRemove.mRunningServiceRecord;
+        RunningServiceRecord runningServiceRecord = remove.mRunningServiceRecord;
         boolean z2 = runningServiceRecord != null && isGoogleAccountSetupService(runningServiceRecord.mServiceInfo);
         int i = runningServiceRecord == null ? -1 : runningServiceRecord.mBindCount.get();
         if (runningServiceRecord != null) {
-            if (runningServiceRecord.mConnectedServiceRecord == connectedServiceRecordRemove) {
+            if (runningServiceRecord.mConnectedServiceRecord == remove) {
                 runningServiceRecord.mConnectedServiceRecord = null;
             }
             if (runningServiceRecord.mBindCount.get() > 0) {
@@ -246,17 +252,17 @@ public class ActiveServices {
             }
         }
         if (z2) {
-            Log.d(c.a(-518806838591266L, strArr), c.a(-518888442969890L, strArr) + str + c.a(-518523370749730L, strArr) + runningServiceRecord.mServiceInfo.name + c.a(-518622154997538L, strArr) + describeServiceFilter(connectedServiceRecordRemove.mIntent) + c.a(-518647924801314L, strArr) + System.identityHashCode(runningServiceRecord) + c.a(-518673694605090L, strArr) + identityOf(iBinder) + c.a(-517045901999906L, strArr) + i + c.a(-517127506378530L, strArr) + runningServiceRecord.mBindCount.get() + c.a(-517204815789858L, strArr) + this.mConnectedServices.size());
+            Log.d(c.a(-518806838591266L, strArr), c.a(-518888442969890L, strArr) + str + c.a(-518523370749730L, strArr) + runningServiceRecord.mServiceInfo.name + c.a(-518622154997538L, strArr) + describeServiceFilter(remove.mIntent) + c.a(-518647924801314L, strArr) + System.identityHashCode(runningServiceRecord) + c.a(-518673694605090L, strArr) + identityOf(iBinder) + c.a(-517045901999906L, strArr) + i + c.a(-517127506378530L, strArr) + runningServiceRecord.mBindCount.get() + c.a(-517204815789858L, strArr) + this.mConnectedServices.size());
         }
-        if (z && connectedServiceRecordRemove.mDeathRecipient != null) {
+        if (z && remove.mDeathRecipient != null) {
             try {
-                iBinder.unlinkToDeath(connectedServiceRecordRemove.mDeathRecipient, 0);
+                iBinder.unlinkToDeath(remove.mDeathRecipient, 0);
             } catch (Throwable unused) {
             }
         }
-        connectedServiceRecordRemove.mIBinder = null;
-        connectedServiceRecordRemove.mDeathRecipient = null;
-        connectedServiceRecordRemove.mRunningServiceRecord = null;
+        remove.mIBinder = null;
+        remove.mDeathRecipient = null;
+        remove.mRunningServiceRecord = null;
     }
 
     private ResolveInfo resolveService(Intent intent, String str, int i) {
@@ -274,9 +280,9 @@ public class ActiveServices {
     }
 
     private static Object serviceRecordKey(Intent intent, ServiceInfo serviceInfo) {
-        ComponentName componentNameResolvedServiceComponent = resolvedServiceComponent(intent, serviceInfo);
-        if (isGmsIntentOperationService(componentNameResolvedServiceComponent)) {
-            return componentNameResolvedServiceComponent;
+        ComponentName resolvedServiceComponent = resolvedServiceComponent(intent, serviceInfo);
+        if (isGmsIntentOperationService(resolvedServiceComponent)) {
+            return resolvedServiceComponent;
         }
         if (intent == null) {
             intent = new Intent();
@@ -290,24 +296,24 @@ public class ActiveServices {
         if (intent == null) {
             return;
         }
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             i = -1;
         } else {
-            i = processRecordFindProcessByPid.uid;
+            i = findProcessByPid.uid;
             if (i <= 0) {
-                i = processRecordFindProcessByPid.buid;
+                i = findProcessByPid.buid;
             }
         }
-        if (processRecordFindProcessByPid != null && i > 0 && processRecordFindProcessByPid.getPackageName() != null && processRecordFindProcessByPid.getPackageName().length() > 0) {
+        if (findProcessByPid != null && i > 0 && findProcessByPid.getPackageName() != null && findProcessByPid.getPackageName().length() > 0) {
             intent.putExtra(c.a(-515435289263906L, strArr), i);
-            String strA = c.a(-515564138282786L, strArr);
-            int callingPid = processRecordFindProcessByPid.pid;
-            if (callingPid <= 0) {
-                callingPid = Binder.getCallingPid();
+            String a2 = c.a(-515564138282786L, strArr);
+            int i2 = findProcessByPid.pid;
+            if (i2 <= 0) {
+                i2 = Binder.getCallingPid();
             }
-            intent.putExtra(strA, callingPid);
-            intent.putExtra(c.a(-515619972857634L, strArr), processRecordFindProcessByPid.getPackageName());
+            intent.putExtra(a2, i2);
+            intent.putExtra(c.a(-515619972857634L, strArr), findProcessByPid.getPackageName());
             return;
         }
         int intExtra = intent.getIntExtra(c.a(-515126051618594L, strArr), -1);
@@ -319,36 +325,79 @@ public class ActiveServices {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0078 A[Catch: all -> 0x0056, TryCatch #0 {, blocks: (B:9:0x0023, B:11:0x0038, B:24:0x006d, B:25:0x0070, B:14:0x0044, B:16:0x004a, B:22:0x005e, B:21:0x005b, B:27:0x0078, B:28:0x0136), top: B:35:0x0023, inners: #1 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public android.content.Intent bindService(android.content.Intent r11, final android.os.IBinder r12, java.lang.String r13, int r14) {
-        /*
-            Method dump skipped, instructions count: 355
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.core.system.am.ActiveServices.bindService(android.content.Intent, android.os.IBinder, java.lang.String, int):android.content.Intent");
+    public Intent bindService(Intent intent, final IBinder iBinder, String str, int i) {
+        RunningServiceRecord orCreateRunningServiceRecord;
+        boolean z;
+        ResolveInfo resolveService = resolveService(intent, str, i);
+        if (resolveService == null) {
+            return intent;
+        }
+        ServiceInfo serviceInfo = resolveService.serviceInfo;
+        tagVirtualCaller(intent);
+        ProcessRecord startProcessLocked = BProcessManagerService.get().startProcessLocked(serviceInfo.packageName, serviceInfo.processName, i, -1, Binder.getCallingPid());
+        if (startProcessLocked == null) {
+            throw new RuntimeException(c.a(-516367297167138L, xa1.b) + serviceInfo.name);
+        }
+        synchronized (this.mRunningServiceRecords) {
+            orCreateRunningServiceRecord = getOrCreateRunningServiceRecord(intent, serviceInfo);
+            orCreateRunningServiceRecord.mServiceInfo = serviceInfo;
+            int i2 = orCreateRunningServiceRecord.mBindCount.get();
+            boolean isGoogleAccountSetupService = isGoogleAccountSetupService(serviceInfo);
+            if (iBinder != null) {
+                ConnectedServiceRecord connectedServiceRecord = this.mConnectedServices.get(iBinder);
+                if (connectedServiceRecord != null) {
+                    z = true;
+                } else {
+                    ConnectedServiceRecord connectedServiceRecord2 = new ConnectedServiceRecord();
+                    try {
+                        IBinder.DeathRecipient deathRecipient = new IBinder.DeathRecipient() { // from class: com.kos.engine.core.system.am.ActiveServices.1
+                            @Override // android.os.IBinder.DeathRecipient
+                            public void binderDied() {
+                                ActiveServices.this.removeConnectedService(iBinder, false, c.a(-505166022459170L, xa1.b));
+                            }
+                        };
+                        connectedServiceRecord2.mDeathRecipient = deathRecipient;
+                        iBinder.linkToDeath(deathRecipient, 0);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    connectedServiceRecord2.mIBinder = iBinder;
+                    connectedServiceRecord2.mIntent = intent;
+                    this.mConnectedServices.put(iBinder, connectedServiceRecord2);
+                    connectedServiceRecord = connectedServiceRecord2;
+                    z = false;
+                }
+                if (!z) {
+                    orCreateRunningServiceRecord.incrementBindCountAndGet();
+                }
+                connectedServiceRecord.mRunningServiceRecord = orCreateRunningServiceRecord;
+                orCreateRunningServiceRecord.mConnectedServiceRecord = connectedServiceRecord;
+            }
+            if (isGoogleAccountSetupService) {
+                String[] strArr = xa1.b;
+                Log.d(c.a(-516427426709282L, strArr), c.a(-514859763646242L, strArr) + i + c.a(-515044447239970L, strArr) + serviceInfo.name + c.a(-515074512011042L, strArr) + describeServiceFilter(intent) + c.a(-515100281814818L, strArr) + System.identityHashCode(orCreateRunningServiceRecord) + c.a(-514576295804706L, strArr) + identityOf(iBinder) + c.a(-514666490117922L, strArr) + Binder.getCallingPid() + c.a(-514687964954402L, strArr) + i2 + c.a(-514752389463842L, strArr) + orCreateRunningServiceRecord.mBindCount.get() + c.a(-514829698875170L, strArr) + this.mConnectedServices.size());
+            }
+        }
+        return createStubServiceIntent(intent, serviceInfo, startProcessLocked, orCreateRunningServiceRecord, 0);
     }
 
-    public RunningServiceInfo getRunningServiceInfo(String str, int i) throws SecurityException {
+    public RunningServiceInfo getRunningServiceInfo(String str, int i) {
         ActivityManager.RunningServiceInfo runningServiceInfo;
         List<ActivityManager.RunningServiceInfo> runningServices = ((ActivityManager) c01.s.getSystemService(c.a(-510551911448354L, xa1.b))).getRunningServices(Integer.MAX_VALUE);
-        HashMap map = new HashMap();
+        HashMap hashMap = new HashMap();
         for (ActivityManager.RunningServiceInfo runningServiceInfo2 : runningServices) {
-            map.put(Integer.valueOf(runningServiceInfo2.pid), runningServiceInfo2);
+            hashMap.put(Integer.valueOf(runningServiceInfo2.pid), runningServiceInfo2);
         }
         RunningServiceInfo runningServiceInfo3 = new RunningServiceInfo();
         Iterator<RunningServiceRecord> it = this.mRunningServiceRecords.values().iterator();
         while (it.hasNext()) {
             ServiceInfo serviceInfo = it.next().mServiceInfo;
-            ProcessRecord processRecordFindProcessRecord = BProcessManagerService.get().findProcessRecord(str, serviceInfo.processName, i);
-            if (processRecordFindProcessRecord != null && (runningServiceInfo = (ActivityManager.RunningServiceInfo) map.get(Integer.valueOf(processRecordFindProcessRecord.pid))) != null) {
-                ActivityManager.RunningServiceInfo runningServiceInfoCopyRunningServiceInfo = copyRunningServiceInfo(runningServiceInfo);
-                runningServiceInfoCopyRunningServiceInfo.process = processRecordFindProcessRecord.processName;
-                runningServiceInfoCopyRunningServiceInfo.service = new ComponentName(serviceInfo.packageName, serviceInfo.name);
-                runningServiceInfo3.mRunningServiceInfoList.add(runningServiceInfoCopyRunningServiceInfo);
+            ProcessRecord findProcessRecord = BProcessManagerService.get().findProcessRecord(str, serviceInfo.processName, i);
+            if (findProcessRecord != null && (runningServiceInfo = (ActivityManager.RunningServiceInfo) hashMap.get(Integer.valueOf(findProcessRecord.pid))) != null) {
+                ActivityManager.RunningServiceInfo copyRunningServiceInfo = copyRunningServiceInfo(runningServiceInfo);
+                copyRunningServiceInfo.process = findProcessRecord.processName;
+                copyRunningServiceInfo.service = new ComponentName(serviceInfo.packageName, serviceInfo.name);
+                runningServiceInfo3.mRunningServiceInfoList.add(copyRunningServiceInfo);
             }
         }
         return runningServiceInfo3;
@@ -410,75 +459,75 @@ public class ActiveServices {
         if (intent == null) {
             return;
         }
-        ProxyServiceRecord proxyServiceRecordCreate = ProxyServiceRecord.create(intent);
-        Intent intent2 = proxyServiceRecordCreate.mServiceIntent;
+        ProxyServiceRecord create = ProxyServiceRecord.create(intent);
+        Intent intent2 = create.mServiceIntent;
         if (intent2 != null) {
             intent = intent2;
         }
-        Object objServiceRecordKey = serviceRecordKey(intent, proxyServiceRecordCreate.mServiceInfo);
-        IBinder iBinder = proxyServiceRecordCreate.mToken;
-        RunningServiceRecord runningServiceRecordFindRunningServiceByToken = iBinder == null ? this.mRunningServiceRecords.get(objServiceRecordKey) : findRunningServiceByToken(iBinder);
-        if (runningServiceRecordFindRunningServiceByToken != null && isGoogleAccountSetupService(runningServiceRecordFindRunningServiceByToken.mServiceInfo)) {
+        Object serviceRecordKey = serviceRecordKey(intent, create.mServiceInfo);
+        IBinder iBinder = create.mToken;
+        RunningServiceRecord findRunningServiceByToken = iBinder == null ? this.mRunningServiceRecords.get(serviceRecordKey) : findRunningServiceByToken(iBinder);
+        if (findRunningServiceByToken != null && isGoogleAccountSetupService(findRunningServiceByToken.mServiceInfo)) {
             String[] strArr = xa1.b;
-            String strA = c.a(-517312189972258L, strArr);
+            String a2 = c.a(-517312189972258L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-516775319060258L, strArr));
             sb.append(i);
             sb.append(c.a(-516977182523170L, strArr));
-            sb.append(runningServiceRecordFindRunningServiceByToken.mServiceInfo.name);
+            sb.append(findRunningServiceByToken.mServiceInfo.name);
             sb.append(c.a(-517625722584866L, strArr));
             sb.append(describeServiceFilter(intent));
             sb.append(c.a(-517651492388642L, strArr));
-            sb.append(System.identityHashCode(runningServiceRecordFindRunningServiceByToken));
+            sb.append(System.identityHashCode(findRunningServiceByToken));
             sb.append(c.a(-517677262192418L, strArr));
-            sb.append(runningServiceRecordFindRunningServiceByToken.mBindCount.get());
+            sb.append(findRunningServiceByToken.mBindCount.get());
             sb.append(c.a(-517750276636450L, strArr));
-            sb.append(runningServiceRecordFindRunningServiceByToken.getActiveStartId());
+            sb.append(findRunningServiceByToken.getActiveStartId());
             sb.append(c.a(-517780341407522L, strArr));
-            sb.append(runningServiceRecordFindRunningServiceByToken.getActiveStartId() == 0 && runningServiceRecordFindRunningServiceByToken.mBindCount.get() <= 0);
-            Log.d(strA, sb.toString());
+            sb.append(findRunningServiceByToken.getActiveStartId() == 0 && findRunningServiceByToken.mBindCount.get() <= 0);
+            Log.d(a2, sb.toString());
         }
-        if (runningServiceRecordFindRunningServiceByToken == null || runningServiceRecordFindRunningServiceByToken.getActiveStartId() != 0 || runningServiceRecordFindRunningServiceByToken.mBindCount.get() > 0) {
+        if (findRunningServiceByToken == null || findRunningServiceByToken.getActiveStartId() != 0 || findRunningServiceByToken.mBindCount.get() > 0) {
             return;
         }
-        this.mRunningServiceRecords.remove(runningServiceRecordFindRunningServiceByToken.mRecordKey, runningServiceRecordFindRunningServiceByToken);
-        this.mRunningTokens.remove(runningServiceRecordFindRunningServiceByToken);
+        this.mRunningServiceRecords.remove(findRunningServiceByToken.mRecordKey, findRunningServiceByToken);
+        this.mRunningTokens.remove(findRunningServiceByToken);
     }
 
     public UnbindRecord onServiceUnbind(Intent intent, int i) {
         if (intent == null) {
             return null;
         }
-        ProxyServiceRecord proxyServiceRecordCreate = ProxyServiceRecord.create(intent);
-        ComponentName componentNameResolvedServiceComponent = resolvedServiceComponent(proxyServiceRecordCreate.mServiceIntent, proxyServiceRecordCreate.mServiceInfo);
-        RunningServiceRecord runningServiceRecordFindRunningServiceRecord = findRunningServiceRecord(proxyServiceRecordCreate.mServiceIntent, proxyServiceRecordCreate.mServiceInfo);
-        if (runningServiceRecordFindRunningServiceRecord == null) {
+        ProxyServiceRecord create = ProxyServiceRecord.create(intent);
+        ComponentName resolvedServiceComponent = resolvedServiceComponent(create.mServiceIntent, create.mServiceInfo);
+        RunningServiceRecord findRunningServiceRecord = findRunningServiceRecord(create.mServiceIntent, create.mServiceInfo);
+        if (findRunningServiceRecord == null) {
             return null;
         }
-        if (isGoogleAccountSetupService(proxyServiceRecordCreate.mServiceInfo)) {
+        if (isGoogleAccountSetupService(create.mServiceInfo)) {
             String[] strArr = xa1.b;
-            Log.d(c.a(-517857650818850L, strArr), c.a(-517372319514402L, strArr) + i + c.a(-517539823238946L, strArr) + proxyServiceRecordCreate.mServiceInfo.name + c.a(-511574113664802L, strArr) + describeServiceFilter(proxyServiceRecordCreate.mServiceIntent) + c.a(-511599883468578L, strArr) + System.identityHashCode(runningServiceRecordFindRunningServiceRecord) + c.a(-511625653272354L, strArr) + runningServiceRecordFindRunningServiceRecord.mBindCount.get() + c.a(-511715847585570L, strArr) + runningServiceRecordFindRunningServiceRecord.getActiveStartId());
+            Log.d(c.a(-517857650818850L, strArr), c.a(-517372319514402L, strArr) + i + c.a(-517539823238946L, strArr) + create.mServiceInfo.name + c.a(-511574113664802L, strArr) + describeServiceFilter(create.mServiceIntent) + c.a(-511599883468578L, strArr) + System.identityHashCode(findRunningServiceRecord) + c.a(-511625653272354L, strArr) + findRunningServiceRecord.mBindCount.get() + c.a(-511715847585570L, strArr) + findRunningServiceRecord.getActiveStartId());
         }
         UnbindRecord unbindRecord = new UnbindRecord();
-        unbindRecord.setComponentName(componentNameResolvedServiceComponent);
-        unbindRecord.setBindCount(runningServiceRecordFindRunningServiceRecord.mBindCount.get());
-        unbindRecord.setStartId(runningServiceRecordFindRunningServiceRecord.getActiveStartId());
+        unbindRecord.setComponentName(resolvedServiceComponent);
+        unbindRecord.setBindCount(findRunningServiceRecord.mBindCount.get());
+        unbindRecord.setStartId(findRunningServiceRecord.getActiveStartId());
         return unbindRecord;
     }
 
     public IBinder peekService(Intent intent, String str, int i) {
-        ResolveInfo resolveInfoResolveService = resolveService(intent, str, i);
-        if (resolveInfoResolveService == null) {
+        ResolveInfo resolveService = resolveService(intent, str, i);
+        if (resolveService == null) {
             return null;
         }
         BProcessManagerService bProcessManagerService = BProcessManagerService.get();
-        ServiceInfo serviceInfo = resolveInfoResolveService.serviceInfo;
-        ProcessRecord processRecordFindProcessRecord = bProcessManagerService.findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
-        if (processRecordFindProcessRecord == null) {
+        ServiceInfo serviceInfo = resolveService.serviceInfo;
+        ProcessRecord findProcessRecord = bProcessManagerService.findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
+        if (findProcessRecord == null) {
             return null;
         }
         try {
-            return processRecordFindProcessRecord.bActivityThread.peekService(intent);
+            return findProcessRecord.bActivityThread.peekService(intent);
         } catch (RemoteException e) {
             e.printStackTrace();
             return null;
@@ -487,74 +536,74 @@ public class ActiveServices {
 
     public ComponentName startService(Intent intent, String str, boolean z, int i) {
         String[] strArr = xa1.b;
-        ResolveInfo resolveInfoResolveService = resolveService(intent, str, i);
-        String string = null;
-        if (resolveInfoResolveService == null) {
+        ResolveInfo resolveService = resolveService(intent, str, i);
+        String str2 = null;
+        if (resolveService == null) {
             return null;
         }
-        ServiceInfo serviceInfo = resolveInfoResolveService.serviceInfo;
-        ProcessRecord processRecordStartProcessLocked = BProcessManagerService.get().startProcessLocked(serviceInfo.packageName, serviceInfo.processName, i, -1, Binder.getCallingPid());
-        if (processRecordStartProcessLocked == null) {
+        ServiceInfo serviceInfo = resolveService.serviceInfo;
+        ProcessRecord startProcessLocked = BProcessManagerService.get().startProcessLocked(serviceInfo.packageName, serviceInfo.processName, i, -1, Binder.getCallingPid());
+        if (startProcessLocked == null) {
             throw new RuntimeException(c.a(-504676396187426L, strArr) + serviceInfo.name);
         }
         RunningServiceRecord orCreateRunningServiceRecord = getOrCreateRunningServiceRecord(intent, serviceInfo);
         orCreateRunningServiceRecord.mServiceInfo = serviceInfo;
         orCreateRunningServiceRecord.mIntent = intent;
         int activeStartId = orCreateRunningServiceRecord.getActiveStartId();
-        int iBeginStart = orCreateRunningServiceRecord.beginStart();
-        Intent intentCreateStubServiceIntent = createStubServiceIntent(intent, serviceInfo, processRecordStartProcessLocked, orCreateRunningServiceRecord, iBeginStart);
-        String strA = c.a(-504805245206306L, strArr).equals(intent.getAction()) ? c.a(-505543979581218L, strArr) : c.a(-505578339319586L, strArr).equals(intent.getAction()) ? c.a(-505303461412642L, strArr) : null;
-        if (strA != null) {
-            string = UUID.randomUUID().toString();
-            intentCreateStubServiceIntent.putExtra(c.a(-505333526183714L, strArr), string);
-            String strA2 = c.a(-505470965137186L, strArr);
-            StringBuilder sbK = jx0.k(strA);
-            sbK.append(c.a(-503886122204962L, strArr));
-            sbK.append(string);
-            sbK.append(c.a(-504023561158434L, strArr));
-            sbK.append(i);
-            sbK.append(c.a(-504057920896802L, strArr));
-            sbK.append(iBeginStart);
-            sbK.append(c.a(-503606949330722L, strArr));
-            sbK.append(activeStartId);
-            sbK.append(c.a(-503654193970978L, strArr));
-            sbK.append(System.identityHashCode(orCreateRunningServiceRecord));
-            sbK.append(c.a(-503761568153378L, strArr));
-            sbK.append(System.identityHashCode(intent));
-            sbK.append(c.a(-504414403182370L, strArr));
-            sbK.append(serviceInfo.packageName);
-            sbK.append(c.a(-504440172986146L, strArr));
-            sbK.append(serviceInfo.name);
-            sbK.append(c.a(-504500302528290L, strArr));
-            sbK.append(serviceInfo.processName);
-            sbK.append(c.a(-504556137103138L, strArr));
-            sbK.append(processRecordStartProcessLocked.pid);
-            sbK.append(c.a(-504633446514466L, strArr));
-            sbK.append(processRecordStartProcessLocked.bpid);
-            zd.q(sbK, c.a(-504642036449058L, strArr), intent);
-            sbK.append(c.a(-504186769915682L, strArr));
-            sbK.append(intent.getCategories());
-            sbK.append(c.a(-504195359850274L, strArr));
-            sbK.append(Integer.toHexString(intent.getFlags()));
-            Log.d(strA2, sbK.toString());
+        int beginStart = orCreateRunningServiceRecord.beginStart();
+        Intent createStubServiceIntent = createStubServiceIntent(intent, serviceInfo, startProcessLocked, orCreateRunningServiceRecord, beginStart);
+        String a2 = c.a(-504805245206306L, strArr).equals(intent.getAction()) ? c.a(-505543979581218L, strArr) : c.a(-505578339319586L, strArr).equals(intent.getAction()) ? c.a(-505303461412642L, strArr) : null;
+        if (a2 != null) {
+            str2 = UUID.randomUUID().toString();
+            createStubServiceIntent.putExtra(c.a(-505333526183714L, strArr), str2);
+            String a3 = c.a(-505470965137186L, strArr);
+            StringBuilder k = jx0.k(a2);
+            k.append(c.a(-503886122204962L, strArr));
+            k.append(str2);
+            k.append(c.a(-504023561158434L, strArr));
+            k.append(i);
+            k.append(c.a(-504057920896802L, strArr));
+            k.append(beginStart);
+            k.append(c.a(-503606949330722L, strArr));
+            k.append(activeStartId);
+            k.append(c.a(-503654193970978L, strArr));
+            k.append(System.identityHashCode(orCreateRunningServiceRecord));
+            k.append(c.a(-503761568153378L, strArr));
+            k.append(System.identityHashCode(intent));
+            k.append(c.a(-504414403182370L, strArr));
+            k.append(serviceInfo.packageName);
+            k.append(c.a(-504440172986146L, strArr));
+            k.append(serviceInfo.name);
+            k.append(c.a(-504500302528290L, strArr));
+            k.append(serviceInfo.processName);
+            k.append(c.a(-504556137103138L, strArr));
+            k.append(startProcessLocked.pid);
+            k.append(c.a(-504633446514466L, strArr));
+            k.append(startProcessLocked.bpid);
+            zd.q(k, c.a(-504642036449058L, strArr), intent);
+            k.append(c.a(-504186769915682L, strArr));
+            k.append(intent.getCategories());
+            k.append(c.a(-504195359850274L, strArr));
+            k.append(Integer.toHexString(intent.getFlags()));
+            Log.d(a3, k.toString());
         }
-        String str2 = string;
+        String str3 = str2;
         try {
-            ComponentName componentNameStartService = c01.s.startService(intentCreateStubServiceIntent);
-            if (str2 != null) {
-                Log.d(c.a(-504268374294306L, strArr), strA + c.a(-504332798803746L, strArr) + str2 + c.a(-516079534358306L, strArr) + componentNameStartService + c.a(-516135368933154L, strArr) + intentCreateStubServiceIntent.getAction() + c.a(-516216973311778L, strArr) + System.identityHashCode(orCreateRunningServiceRecord) + c.a(-515757411811106L, strArr) + iBeginStart);
+            ComponentName startService = c01.s.startService(createStubServiceIntent);
+            if (str3 != null) {
+                Log.d(c.a(-504268374294306L, strArr), a2 + c.a(-504332798803746L, strArr) + str3 + c.a(-516079534358306L, strArr) + startService + c.a(-516135368933154L, strArr) + createStubServiceIntent.getAction() + c.a(-516216973311778L, strArr) + System.identityHashCode(orCreateRunningServiceRecord) + c.a(-515757411811106L, strArr) + beginStart);
             }
         } catch (Throwable th) {
-            if (str2 != null) {
-                String strA3 = c.a(-515787476582178L, strArr);
-                StringBuilder sbK2 = jx0.k(strA);
-                sbK2.append(c.a(-515851901091618L, strArr));
-                sbK2.append(str2);
-                sbK2.append(c.a(-516543390826274L, strArr));
-                sbK2.append(System.identityHashCode(orCreateRunningServiceRecord));
-                sbK2.append(c.a(-516633585139490L, strArr));
-                sbK2.append(iBeginStart);
-                Log.e(strA3, sbK2.toString(), th);
+            if (str3 != null) {
+                String a4 = c.a(-515787476582178L, strArr);
+                StringBuilder k2 = jx0.k(a2);
+                k2.append(c.a(-515851901091618L, strArr));
+                k2.append(str3);
+                k2.append(c.a(-516543390826274L, strArr));
+                k2.append(System.identityHashCode(orCreateRunningServiceRecord));
+                k2.append(c.a(-516633585139490L, strArr));
+                k2.append(beginStart);
+                Log.e(a4, k2.toString(), th);
             }
             th.printStackTrace();
         }
@@ -562,24 +611,24 @@ public class ActiveServices {
     }
 
     public int stopService(Intent intent, String str, int i) {
-        ResolveInfo resolveInfoResolveService = resolveService(intent, str, i);
-        if (resolveInfoResolveService == null) {
+        ResolveInfo resolveService = resolveService(intent, str, i);
+        if (resolveService == null) {
             return 0;
         }
         synchronized (this.mRunningServiceRecords) {
             try {
-                RunningServiceRecord runningServiceRecordFindRunningServiceRecord = findRunningServiceRecord(intent, resolveInfoResolveService.serviceInfo);
-                if (runningServiceRecordFindRunningServiceRecord == null) {
+                RunningServiceRecord findRunningServiceRecord = findRunningServiceRecord(intent, resolveService.serviceInfo);
+                if (findRunningServiceRecord == null) {
                     return 0;
                 }
-                if (!runningServiceRecordFindRunningServiceRecord.stopStartedState(-1)) {
+                if (!findRunningServiceRecord.stopStartedState(-1)) {
                     return 0;
                 }
-                if (runningServiceRecordFindRunningServiceRecord.mBindCount.get() <= 0) {
-                    destroyRunningService(runningServiceRecordFindRunningServiceRecord, i);
+                if (findRunningServiceRecord.mBindCount.get() <= 0) {
+                    destroyRunningService(findRunningServiceRecord, i);
                 } else {
                     String[] strArr = xa1.b;
-                    Log.d(c.a(-516732369387298L, strArr), c.a(-516247038082850L, strArr) + runningServiceRecordFindRunningServiceRecord.mComponent);
+                    Log.d(c.a(-516732369387298L, strArr), c.a(-516247038082850L, strArr) + findRunningServiceRecord.mComponent);
                 }
                 return 1;
             } catch (Throwable th) {
@@ -589,14 +638,14 @@ public class ActiveServices {
     }
 
     public boolean stopServiceToken(ComponentName componentName, IBinder iBinder, int i, int i2) {
-        RunningServiceRecord runningServiceRecordFindRunningServiceByToken = findRunningServiceByToken(iBinder);
-        if (runningServiceRecordFindRunningServiceByToken == null || componentName == null || !componentName.equals(runningServiceRecordFindRunningServiceByToken.mComponent) || !runningServiceRecordFindRunningServiceByToken.stopStartedState(i)) {
+        RunningServiceRecord findRunningServiceByToken = findRunningServiceByToken(iBinder);
+        if (findRunningServiceByToken == null || componentName == null || !componentName.equals(findRunningServiceByToken.mComponent) || !findRunningServiceByToken.stopStartedState(i)) {
             return false;
         }
-        if (runningServiceRecordFindRunningServiceByToken.mBindCount.get() > 0) {
+        if (findRunningServiceByToken.mBindCount.get() > 0) {
             return true;
         }
-        destroyRunningService(runningServiceRecordFindRunningServiceByToken, i2);
+        destroyRunningService(findRunningServiceByToken, i2);
         return true;
     }
 

@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class wc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f1272a;
+    public float f1271a;
     public float b;
 
     public zi0 a(float f) {
-        double dB = b(f);
-        double d = aj0.f104a;
+        double b = b(f);
+        double d = aj0.f103a;
         double d2 = d - 1.0d;
-        return new zi0(f, (float) (Math.exp((d / d2) * dB) * this.f1272a * this.b), (long) (Math.exp(dB / d2) * 1000.0d));
+        return new zi0(f, (float) (Math.exp((d / d2) * b) * this.f1271a * this.b), (long) (Math.exp(b / d2) * 1000.0d));
     }
 
     public double b(float f) {
-        float[] fArr = w9.f1266a;
-        return Math.log((Math.abs(f) * 0.35f) / (this.f1272a * this.b));
+        float[] fArr = w9.f1265a;
+        return Math.log((Math.abs(f) * 0.35f) / (this.f1271a * this.b));
     }
 }

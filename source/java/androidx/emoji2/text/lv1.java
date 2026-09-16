@@ -55,14 +55,14 @@ public final class lv1 extends ec2 {
 
     @Override // androidx.emoji2.text.ec2
     public final void n(df2 df2Var) {
-        q32 q32Var = kc2.f632a;
+        q32 q32Var = kc2.f631a;
         throw new IllegalStateException("Cannot modify a state object in a read-only snapshot");
     }
 
     @Override // androidx.emoji2.text.ec2
     public final ec2 u(um0 um0Var) {
         kc2.d(this);
-        return new ch1(this.b, this.f299a, kc2.l(um0Var, this.e, true), this);
+        return new ch1(this.b, this.f298a, kc2.l(um0Var, this.e, true), this);
     }
 
     @Override // androidx.emoji2.text.ec2

@@ -8,7 +8,7 @@ import java.util.Comparator;
 public final class pk0 implements Comparator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Rect f910a = new Rect();
+    public final Rect f909a = new Rect();
     public final Rect b = new Rect();
     public final boolean c;
     public final on d;
@@ -21,7 +21,7 @@ public final class pk0 implements Comparator {
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
         this.d.getClass();
-        Rect rect = this.f910a;
+        Rect rect = this.f909a;
         ((s1) obj).f(rect);
         Rect rect2 = this.b;
         ((s1) obj2).f(rect2);

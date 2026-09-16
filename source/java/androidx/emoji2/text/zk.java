@@ -1,10 +1,5 @@
 package androidx.emoji2.text;
 
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.SignatureException;
-import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -17,7 +12,7 @@ import javax.security.auth.x500.X500Principal;
 public final class zk implements uo2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashMap f1445a;
+    public final LinkedHashMap f1444a;
 
     public zk(X509Certificate... x509CertificateArr) {
         lx0.x(x509CertificateArr, "caCerts");
@@ -25,19 +20,19 @@ public final class zk implements uo2 {
         for (X509Certificate x509Certificate : x509CertificateArr) {
             X500Principal subjectX500Principal = x509Certificate.getSubjectX500Principal();
             lx0.w(subjectX500Principal, "caCert.subjectX500Principal");
-            Object linkedHashSet = linkedHashMap.get(subjectX500Principal);
-            if (linkedHashSet == null) {
-                linkedHashSet = new LinkedHashSet();
-                linkedHashMap.put(subjectX500Principal, linkedHashSet);
+            Object obj = linkedHashMap.get(subjectX500Principal);
+            if (obj == null) {
+                obj = new LinkedHashSet();
+                linkedHashMap.put(subjectX500Principal, obj);
             }
-            ((Set) linkedHashSet).add(x509Certificate);
+            ((Set) obj).add(x509Certificate);
         }
-        this.f1445a = linkedHashMap;
+        this.f1444a = linkedHashMap;
     }
 
     @Override // androidx.emoji2.text.uo2
-    public final X509Certificate a(X509Certificate x509Certificate) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, CertificateException, NoSuchProviderException {
-        Set set = (Set) this.f1445a.get(x509Certificate.getIssuerX500Principal());
+    public final X509Certificate a(X509Certificate x509Certificate) {
+        Set set = (Set) this.f1444a.get(x509Certificate.getIssuerX500Principal());
         Object obj = null;
         if (set == null) {
             return null;
@@ -60,12 +55,12 @@ public final class zk implements uo2 {
 
     public final boolean equals(Object obj) {
         if (obj != this) {
-            return (obj instanceof zk) && lx0.n(((zk) obj).f1445a, this.f1445a);
+            return (obj instanceof zk) && lx0.n(((zk) obj).f1444a, this.f1444a);
         }
         return true;
     }
 
     public final int hashCode() {
-        return this.f1445a.hashCode();
+        return this.f1444a.hashCode();
     }
 }

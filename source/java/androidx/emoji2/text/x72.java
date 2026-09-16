@@ -11,7 +11,7 @@ public final class x72 extends b82 {
     public final int e;
 
     public x72(String str, int i) {
-        lx0.x(str, a.a.a.c.a(-152751070920482L, wj1.f1284a));
+        lx0.x(str, a.a.a.c.a(-152751070920482L, wj1.f1283a));
         this.d = str;
         this.e = i;
     }
@@ -38,7 +38,7 @@ public final class x72 extends b82 {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-152806905495330L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-152325869158178L, strArr));
@@ -47,7 +47,7 @@ public final class x72 extends b82 {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-152794020593442L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-152794020593442L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeInt(this.e);
     }

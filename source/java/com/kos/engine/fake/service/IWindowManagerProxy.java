@@ -20,7 +20,7 @@ public class IWindowManagerProxy extends BinderInvocationStub {
     @ProxyMethod("openSession")
     public static class OpenSession extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalArgumentException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             IWindowSessionProxy iWindowSessionProxy = new IWindowSessionProxy((IInterface) method.invoke(obj, objArr));
             iWindowSessionProxy.injectHook();
             return iWindowSessionProxy.getProxyInvocation();

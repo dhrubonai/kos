@@ -19,101 +19,90 @@ public final class w52 extends hh2 implements Function2 {
     @Override // androidx.emoji2.text.lk
     public final l10 i(l10 l10Var, Object obj) {
         w52 w52Var = new w52(this.k, l10Var);
-        w52Var.j = ((fr2) obj).f379a;
+        w52Var.j = ((fr2) obj).f378a;
         return w52Var;
     }
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        long j = ((fr2) obj).f379a;
+        long j = ((fr2) obj).f378a;
         w52 w52Var = new w52(this.k, (l10) obj2);
         w52Var.j = j;
-        return w52Var.k(up2.f1187a);
+        return w52Var.k(up2.f1186a);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x006f  */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x003e, code lost:
+    
+        if (r15 == r5) goto L21;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x006f  */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object k(java.lang.Object r15) {
-        /*
-            r14 = this;
-            int r0 = r14.i
-            r1 = 3
-            r2 = 2
-            r3 = 1
-            androidx.emoji2.text.x52 r4 = r14.k
-            androidx.emoji2.text.f30 r5 = androidx.emoji2.text.f30.d
-            if (r0 == 0) goto L2f
-            if (r0 == r3) goto L29
-            if (r0 == r2) goto L21
-            if (r0 != r1) goto L19
-            long r0 = r14.h
-            long r2 = r14.j
-            androidx.emoji2.text.mz0.L(r15)
-            goto L71
-        L19:
-            java.lang.IllegalStateException r15 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r15.<init>(r0)
-            throw r15
-        L21:
-            long r2 = r14.h
-            long r6 = r14.j
-            androidx.emoji2.text.mz0.L(r15)
-            goto L57
-        L29:
-            long r6 = r14.j
-            androidx.emoji2.text.mz0.L(r15)
-            goto L41
-        L2f:
-            androidx.emoji2.text.mz0.L(r15)
-            long r6 = r14.j
-            androidx.emoji2.text.gh1 r15 = r4.f
-            r14.j = r6
-            r14.i = r3
-            java.lang.Object r15 = r15.b(r6, r14)
-            if (r15 != r5) goto L41
-            goto L6e
-        L41:
-            androidx.emoji2.text.fr2 r15 = (androidx.emoji2.text.fr2) r15
-            long r8 = r15.f379a
-            long r8 = androidx.emoji2.text.fr2.d(r6, r8)
-            r14.j = r6
-            r14.h = r8
-            r14.i = r2
-            java.lang.Object r15 = r4.b(r8, r14)
-            if (r15 != r5) goto L56
-            goto L6e
-        L56:
-            r2 = r8
-        L57:
-            androidx.emoji2.text.fr2 r15 = (androidx.emoji2.text.fr2) r15
-            long r11 = r15.f379a
-            androidx.emoji2.text.gh1 r8 = r4.f
-            long r9 = androidx.emoji2.text.fr2.d(r2, r11)
-            r14.j = r6
-            r14.h = r11
-            r14.i = r1
-            r13 = r14
-            java.lang.Object r15 = r8.a(r9, r11, r13)
-            if (r15 != r5) goto L6f
-        L6e:
-            return r5
-        L6f:
-            r2 = r6
-            r0 = r11
-        L71:
-            androidx.emoji2.text.fr2 r15 = (androidx.emoji2.text.fr2) r15
-            long r4 = r15.f379a
-            long r0 = androidx.emoji2.text.fr2.d(r0, r4)
-            long r0 = androidx.emoji2.text.fr2.d(r2, r0)
-            androidx.emoji2.text.fr2 r15 = new androidx.emoji2.text.fr2
-            r15.<init>(r0)
-            return r15
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.w52.k(java.lang.Object):java.lang.Object");
+    public final Object k(Object obj) {
+        long j;
+        long j2;
+        long j3;
+        long j4;
+        int i = this.i;
+        x52 x52Var = this.k;
+        f30 f30Var = f30.d;
+        if (i == 0) {
+            mz0.L(obj);
+            j = this.j;
+            gh1 gh1Var = x52Var.f;
+            this.j = j;
+            this.i = 1;
+            obj = gh1Var.b(j, this);
+        } else {
+            if (i != 1) {
+                if (i != 2) {
+                    if (i != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    j4 = this.h;
+                    j3 = this.j;
+                    mz0.L(obj);
+                    return new fr2(fr2.d(j3, fr2.d(j4, ((fr2) obj).f378a)));
+                }
+                j2 = this.h;
+                j = this.j;
+                mz0.L(obj);
+                long j5 = ((fr2) obj).f378a;
+                gh1 gh1Var2 = x52Var.f;
+                long d = fr2.d(j2, j5);
+                this.j = j;
+                this.h = j5;
+                this.i = 3;
+                obj = gh1Var2.a(d, j5, this);
+                if (obj != f30Var) {
+                    j3 = j;
+                    j4 = j5;
+                    return new fr2(fr2.d(j3, fr2.d(j4, ((fr2) obj).f378a)));
+                }
+                return f30Var;
+            }
+            j = this.j;
+            mz0.L(obj);
+        }
+        long d2 = fr2.d(j, ((fr2) obj).f378a);
+        this.j = j;
+        this.h = d2;
+        this.i = 2;
+        obj = x52Var.b(d2, this);
+        if (obj != f30Var) {
+            j2 = d2;
+            long j52 = ((fr2) obj).f378a;
+            gh1 gh1Var22 = x52Var.f;
+            long d3 = fr2.d(j2, j52);
+            this.j = j;
+            this.h = j52;
+            this.i = 3;
+            obj = gh1Var22.a(d3, j52, this);
+            if (obj != f30Var) {
+            }
+        }
+        return f30Var;
     }
 }

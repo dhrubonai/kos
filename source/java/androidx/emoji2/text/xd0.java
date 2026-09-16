@@ -11,13 +11,14 @@ import android.widget.EditText;
 public final class xd0 extends InputConnectionWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public final EditText f1331a;
+    public final EditText f1330a;
     public final on b;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public xd0(EditText editText, InputConnection inputConnection, EditorInfo editorInfo) {
-        on onVar = new on(14);
         super(inputConnection, false);
-        this.f1331a = editText;
+        on onVar = new on(14);
+        this.f1330a = editText;
         this.b = onVar;
         if (qd0.d()) {
             qd0.a().i(editorInfo);
@@ -26,14 +27,14 @@ public final class xd0 extends InputConnectionWrapper {
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean deleteSurroundingText(int i, int i2) {
-        Editable editableText = this.f1331a.getEditableText();
+        Editable editableText = this.f1330a.getEditableText();
         this.b.getClass();
         return on.k(this, editableText, i, i2, false) || super.deleteSurroundingText(i, i2);
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean deleteSurroundingTextInCodePoints(int i, int i2) {
-        Editable editableText = this.f1331a.getEditableText();
+        Editable editableText = this.f1330a.getEditableText();
         this.b.getClass();
         return on.k(this, editableText, i, i2, true) || super.deleteSurroundingTextInCodePoints(i, i2);
     }

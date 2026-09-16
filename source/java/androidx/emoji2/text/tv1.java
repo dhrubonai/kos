@@ -52,7 +52,7 @@ public final class tv1 implements Cloneable {
     }
 
     public final void b(vv1 vv1Var) {
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         if (this.k != null) {
             throw new IllegalStateException("Check failed.");
         }
@@ -60,20 +60,20 @@ public final class tv1 implements Cloneable {
         vv1Var.p.add(new rv1(this, this.i));
     }
 
-    public final IOException c(IOException iOException) throws IOException {
+    public final IOException c(IOException iOException) {
         IOException interruptedIOException;
-        Socket socketI;
-        byte[] bArr = jq2.f596a;
+        Socket i;
+        byte[] bArr = jq2.f595a;
         vv1 vv1Var = this.k;
         if (vv1Var != null) {
             synchronized (vv1Var) {
-                socketI = i();
+                i = i();
             }
             if (this.k == null) {
-                if (socketI != null) {
-                    jq2.c(socketI);
+                if (i != null) {
+                    jq2.c(i);
                 }
-            } else if (socketI != null) {
+            } else if (i != null) {
                 throw new IllegalStateException("Check failed.");
             }
         }
@@ -140,18 +140,18 @@ public final class tv1 implements Cloneable {
         boolean z = false;
         try {
             try {
-                c02 c02VarF = new m21(this, arrayList, 0, null, dvVar, dj1Var.y, dj1Var.z, dj1Var.A).f(this.e);
+                c02 f = new m21(this, arrayList, 0, null, dvVar, dj1Var.y, dj1Var.z, dj1Var.A).f(this.e);
                 if (this.p) {
-                    jq2.b(c02VarF);
+                    jq2.b(f);
                     throw new IOException("Canceled");
                 }
                 h(null);
-                return c02VarF;
+                return f;
             } catch (IOException e) {
                 z = true;
-                IOException iOExceptionH = h(e);
-                lx0.v(iOExceptionH, "null cannot be cast to non-null type kotlin.Throwable");
-                throw iOExceptionH;
+                IOException h = h(e);
+                lx0.v(h, "null cannot be cast to non-null type kotlin.Throwable");
+                throw h;
             }
         } catch (Throwable th) {
             if (!z) {
@@ -161,9 +161,16 @@ public final class tv1 implements Cloneable {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0022 A[Catch: all -> 0x0018, TryCatch #1 {all -> 0x0018, blocks: (B:48:0x0013, B:10:0x0022, B:12:0x0026, B:13:0x0028, B:15:0x002c, B:19:0x0035, B:21:0x0039, B:7:0x001c), top: B:47:0x0013 }] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0026 A[Catch: all -> 0x0018, TryCatch #1 {all -> 0x0018, blocks: (B:48:0x0013, B:10:0x0022, B:12:0x0026, B:13:0x0028, B:15:0x002c, B:19:0x0035, B:21:0x0039, B:7:0x001c), top: B:47:0x0013 }] */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x003d  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final IOException g(lr lrVar, boolean z, boolean z2, IOException iOException) {
         boolean z3;
         boolean z4;
+        boolean z5;
         lx0.x(lrVar, "exchange");
         if (lrVar.equals(this.q)) {
             synchronized (this) {
@@ -171,9 +178,6 @@ public final class tv1 implements Cloneable {
                 if (z) {
                     try {
                         if (!this.m) {
-                            if (z2 || !this.n) {
-                                z4 = false;
-                            }
                         }
                         if (z) {
                             this.m = false;
@@ -181,8 +185,8 @@ public final class tv1 implements Cloneable {
                         if (z2) {
                             this.n = false;
                         }
-                        boolean z5 = this.m;
-                        boolean z6 = (z5 || this.n) ? false : true;
+                        z5 = this.m;
+                        boolean z6 = z5 && !this.n;
                         if (!z5 && !this.n) {
                             if (!this.o) {
                                 z3 = true;
@@ -193,11 +197,23 @@ public final class tv1 implements Cloneable {
                     } catch (Throwable th) {
                         throw th;
                     }
-                } else {
-                    if (z2) {
-                    }
+                }
+                if (!z2 || !this.n) {
                     z4 = false;
                 }
+                if (z) {
+                }
+                if (z2) {
+                }
+                z5 = this.m;
+                if (z5) {
+                }
+                if (!z5) {
+                    if (!this.o) {
+                    }
+                }
+                z4 = z3;
+                z3 = z6;
             }
             if (z3) {
                 this.q = null;
@@ -234,7 +250,7 @@ public final class tv1 implements Cloneable {
     public final Socket i() {
         vv1 vv1Var = this.k;
         lx0.u(vv1Var);
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         ArrayList arrayList = vv1Var.p;
         int size = arrayList.size();
         int i = 0;
@@ -263,7 +279,7 @@ public final class tv1 implements Cloneable {
         wv1 wv1Var = this.f;
         ConcurrentLinkedQueue concurrentLinkedQueue = wv1Var.d;
         pi2 pi2Var = wv1Var.b;
-        byte[] bArr2 = jq2.f596a;
+        byte[] bArr2 = jq2.f595a;
         if (!vv1Var.j) {
             pi2Var.c(wv1Var.c, 0L);
             return null;

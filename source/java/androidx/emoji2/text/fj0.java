@@ -5,22 +5,21 @@ import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import java.io.IOException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class fj0 extends ActionMode.Callback2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final pf f367a;
+    public final pf f366a;
 
     public fj0(pf pfVar) {
-        this.f367a = pfVar;
+        this.f366a = pfVar;
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        pf pfVar = this.f367a;
+        pf pfVar = this.f366a;
         pfVar.getClass();
         lx0.u(menuItem);
         int itemId = menuItem.getItemId();
@@ -55,7 +54,7 @@ public final class fj0 extends ActionMode.Callback2 {
 
     @Override // android.view.ActionMode.Callback
     public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        pf pfVar = this.f367a;
+        pf pfVar = this.f366a;
         pfVar.getClass();
         if (menu == null) {
             throw new IllegalArgumentException("onCreateActionMode requires a non-null menu");
@@ -80,21 +79,21 @@ public final class fj0 extends ActionMode.Callback2 {
     }
 
     @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) throws IOException {
-        ((o) this.f367a.f902a).a();
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        ((o) this.f366a.f901a).a();
     }
 
     @Override // android.view.ActionMode.Callback2
     public final void onGetContentRect(ActionMode actionMode, View view, Rect rect) {
-        zw1 zw1Var = (zw1) this.f367a.b;
+        zw1 zw1Var = (zw1) this.f366a.b;
         if (rect != null) {
-            rect.set((int) zw1Var.f1459a, (int) zw1Var.b, (int) zw1Var.c, (int) zw1Var.d);
+            rect.set((int) zw1Var.f1458a, (int) zw1Var.b, (int) zw1Var.c, (int) zw1Var.d);
         }
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        pf pfVar = this.f367a;
+        pf pfVar = this.f366a;
         pfVar.getClass();
         if (actionMode == null || menu == null) {
             return false;

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 public final class ju2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f603a;
+    public boolean f602a;
     public boolean b;
     public int c;
     public int d;

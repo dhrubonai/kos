@@ -19,8 +19,8 @@ public final class MainActivity extends v71 {
 
     @Override // androidx.emoji2.text.zu, androidx.emoji2.text.yu, android.app.Activity
     public final void onCreate(Bundle bundle) {
-        SplashScreen splashScreenInstallSplashScreen = SplashScreen.Companion.installSplashScreen(this);
+        SplashScreen installSplashScreen = SplashScreen.Companion.installSplashScreen(this);
         super.onCreate(bundle);
-        av.a(this, new ComposableLambdaImpl(-1556509706, true, new y81(this, splashScreenInstallSplashScreen, 0)));
+        av.a(this, new ComposableLambdaImpl(-1556509706, true, new y81(this, installSplashScreen, 0)));
     }
 }

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector android:drawable="@drawable/ic_8_ball"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <target android:name="rotation_group" android:animation="@animator/spin_clockwise" />
+</animated-vector>

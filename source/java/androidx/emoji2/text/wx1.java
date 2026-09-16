@@ -21,7 +21,7 @@ public final class wx1 extends a1 {
     @Override // androidx.emoji2.text.a1
     public final boolean a(View view, AccessibilityEvent accessibilityEvent) {
         a1 a1Var = (a1) this.e.get(view);
-        return a1Var != null ? a1Var.a(view, accessibilityEvent) : this.f76a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
+        return a1Var != null ? a1Var.a(view, accessibilityEvent) : this.f75a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
     }
 
     @Override // androidx.emoji2.text.a1
@@ -42,13 +42,13 @@ public final class wx1 extends a1 {
 
     @Override // androidx.emoji2.text.a1
     public final void d(View view, s1 s1Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
         xx1 xx1Var = this.d;
         RecyclerView recyclerView = xx1Var.d;
         RecyclerView recyclerView2 = xx1Var.d;
-        boolean zU = recyclerView.u();
-        View.AccessibilityDelegate accessibilityDelegate = this.f76a;
-        if (zU || recyclerView2.getLayoutManager() == null) {
+        boolean u = recyclerView.u();
+        View.AccessibilityDelegate accessibilityDelegate = this.f75a;
+        if (u || recyclerView2.getLayoutManager() == null) {
             accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
             return;
         }
@@ -74,7 +74,7 @@ public final class wx1 extends a1 {
     @Override // androidx.emoji2.text.a1
     public final boolean f(ViewGroup viewGroup, View view, AccessibilityEvent accessibilityEvent) {
         a1 a1Var = (a1) this.e.get(viewGroup);
-        return a1Var != null ? a1Var.f(viewGroup, view, accessibilityEvent) : this.f76a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
+        return a1Var != null ? a1Var.f(viewGroup, view, accessibilityEvent) : this.f75a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
     }
 
     @Override // androidx.emoji2.text.a1

@@ -68,10 +68,10 @@ public class NavigationMenuItemView extends fm0 implements kc1 {
     }
 
     @Override // androidx.emoji2.text.kc1
-    public final void a(ub1 ub1Var) throws Resources.NotFoundException {
+    public final void a(ub1 ub1Var) {
         StateListDrawable stateListDrawable;
         this.E = ub1Var;
-        int i = ub1Var.f1167a;
+        int i = ub1Var.f1166a;
         if (i > 0) {
             setId(i);
         }
@@ -132,12 +132,12 @@ public class NavigationMenuItemView extends fm0 implements kc1 {
 
     @Override // android.view.ViewGroup, android.view.View
     public final int[] onCreateDrawableState(int i) {
-        int[] iArrOnCreateDrawableState = super.onCreateDrawableState(i + 1);
+        int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
         ub1 ub1Var = this.E;
         if (ub1Var != null && ub1Var.isCheckable() && this.E.isChecked()) {
-            View.mergeDrawableStates(iArrOnCreateDrawableState, J);
+            View.mergeDrawableStates(onCreateDrawableState, J);
         }
-        return iArrOnCreateDrawableState;
+        return onCreateDrawableState;
     }
 
     public void setCheckable(boolean z) {
@@ -159,7 +159,7 @@ public class NavigationMenuItemView extends fm0 implements kc1 {
         setPadding(i, getPaddingTop(), i, getPaddingBottom());
     }
 
-    public void setIcon(Drawable drawable) throws Resources.NotFoundException {
+    public void setIcon(Drawable drawable) {
         if (drawable != null) {
             if (this.G) {
                 Drawable.ConstantState constantState = drawable.getConstantState();
@@ -175,7 +175,7 @@ public class NavigationMenuItemView extends fm0 implements kc1 {
             if (this.H == null) {
                 Resources resources = getResources();
                 Resources.Theme theme = getContext().getTheme();
-                ThreadLocal threadLocal = zz1.f1464a;
+                ThreadLocal threadLocal = zz1.f1463a;
                 Drawable drawable2 = resources.getDrawable(androidx.core.splashscreen.R.drawable.navigation_empty_icon, theme);
                 this.H = drawable2;
                 if (drawable2 != null) {
@@ -196,7 +196,7 @@ public class NavigationMenuItemView extends fm0 implements kc1 {
         this.y = i;
     }
 
-    public void setIconTintList(ColorStateList colorStateList) throws Resources.NotFoundException {
+    public void setIconTintList(ColorStateList colorStateList) {
         this.F = colorStateList;
         this.G = colorStateList != null;
         ub1 ub1Var = this.E;

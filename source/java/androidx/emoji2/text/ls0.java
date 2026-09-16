@@ -28,9 +28,9 @@ public final class ls0 extends is0 {
         if (this.g) {
             return -1L;
         }
-        long jV = super.v(j, rnVar);
-        if (jV != -1) {
-            return jV;
+        long v = super.v(j, rnVar);
+        if (v != -1) {
+            return v;
         }
         this.g = true;
         b();

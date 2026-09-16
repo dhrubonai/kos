@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class sg2 extends oa2 implements re2 {
     @Override // androidx.emoji2.text.re2
     public final Object getValue() {
-        Integer numValueOf;
+        Integer valueOf;
         synchronized (this) {
             Object[] objArr = this.k;
             lx0.u(objArr);
-            numValueOf = Integer.valueOf(((Number) objArr[((int) ((this.l + ((int) ((o() + this.n) - this.l))) - 1)) & (objArr.length - 1)]).intValue());
+            valueOf = Integer.valueOf(((Number) objArr[((int) ((this.l + ((int) ((o() + this.n) - this.l))) - 1)) & (objArr.length - 1)]).intValue());
         }
-        return numValueOf;
+        return valueOf;
     }
 
     public final void w(int i) {

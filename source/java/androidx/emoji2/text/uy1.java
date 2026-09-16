@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class uy1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1199a = 48;
+    public static final float f1198a = 48;
 }

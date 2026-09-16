@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class h11 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final k70 f449a = ex2.e();
+    public static final k70 f448a = ex2.e();
 
     public static final tl1 a(e11 e11Var) {
         tl1 tl1Var = e11Var.p;

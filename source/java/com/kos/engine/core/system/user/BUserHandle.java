@@ -138,9 +138,9 @@ public final class BUserHandle implements Parcelable {
     }
 
     public static BUserHandle readFromParcel(Parcel parcel) {
-        int i = parcel.readInt();
-        if (i != -10000) {
-            return new BUserHandle(i);
+        int readInt = parcel.readInt();
+        if (readInt != -10000) {
+            return new BUserHandle(readInt);
         }
         return null;
     }

@@ -5,29 +5,29 @@ package androidx.emoji2.text;
 public final class xc0 implements mq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f1328a;
+    public final un1 f1327a;
 
     public xc0(un1 un1Var) {
-        this.f1328a = un1Var;
+        this.f1327a = un1Var;
     }
 
     @Override // androidx.emoji2.text.mq2
     public final Object a(ap1 ap1Var) {
-        return this.f1328a.getValue();
+        return this.f1327a.getValue();
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof xc0) && this.f1328a.equals(((xc0) obj).f1328a);
+        return (obj instanceof xc0) && this.f1327a.equals(((xc0) obj).f1327a);
     }
 
     public final int hashCode() {
-        return this.f1328a.hashCode();
+        return this.f1327a.hashCode();
     }
 
     public final String toString() {
-        return "DynamicValueHolder(state=" + this.f1328a + ')';
+        return "DynamicValueHolder(state=" + this.f1327a + ')';
     }
 }

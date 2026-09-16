@@ -18,7 +18,7 @@ public abstract class a {
         float f2 = (i & 32) != 0 ? 0.0f : f;
         long j = fn2.b;
         t92 t92Var2 = (i & 2048) != 0 ? wj1.e : t92Var;
-        long j2 = up0.f1185a;
+        long j2 = up0.f1184a;
         return nd1Var.k(new GraphicsLayerElement(1.0f, 1.0f, 1.0f, f2, j, t92Var2, false, j2, j2));
     }
 
@@ -29,7 +29,7 @@ public abstract class a {
         long j = fn2.b;
         t92 t92Var2 = (i & 2048) != 0 ? wj1.e : t92Var;
         boolean z = (i & 4096) == 0;
-        long j2 = up0.f1185a;
+        long j2 = up0.f1184a;
         return nd1Var.k(new GraphicsLayerElement(f4, f5, f6, 0.0f, j, t92Var2, z, j2, j2));
     }
 }

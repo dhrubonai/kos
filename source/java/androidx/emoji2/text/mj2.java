@@ -7,7 +7,7 @@ import java.util.List;
 public final class mj2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f751a;
+    public final ue f750a;
     public final long b;
     public final sk2 c;
     public final zg0 d;
@@ -18,10 +18,10 @@ public final class mj2 {
     public final tk2 i;
 
     public mj2(ak2 ak2Var, zg0 zg0Var, tk2 tk2Var, zk2 zk2Var) {
-        ue ueVar = ak2Var.f106a;
+        ue ueVar = ak2Var.f105a;
         long j = ak2Var.b;
-        sk2 sk2Var = tk2Var != null ? tk2Var.f1127a : null;
-        this.f751a = ueVar;
+        sk2 sk2Var = tk2Var != null ? tk2Var.f1126a : null;
+        this.f750a = ueVar;
         this.b = j;
         this.c = sk2Var;
         this.d = zg0Var;
@@ -48,12 +48,12 @@ public final class mj2 {
         if (sk2Var == null) {
             return null;
         }
-        int iD = al2.d(this.f);
+        int d = al2.d(this.f);
         zg0 zg0Var = this.d;
-        zg0Var.a(iD);
-        int iD2 = sk2Var.d(sk2Var.e(iD), true);
-        zg0Var.b(iD2);
-        return Integer.valueOf(iD2);
+        zg0Var.a(d);
+        int d2 = sk2Var.d(sk2Var.e(d), true);
+        zg0Var.b(d2);
+        return Integer.valueOf(d2);
     }
 
     public final Integer c() {
@@ -62,23 +62,23 @@ public final class mj2 {
         if (sk2Var == null) {
             return null;
         }
-        int iP = p();
+        int p = p();
         while (true) {
-            ue ueVar = this.f751a;
-            if (iP < ueVar.e.length()) {
+            ue ueVar = this.f750a;
+            if (p < ueVar.e.length()) {
                 int length2 = this.g.e.length() - 1;
-                if (iP <= length2) {
-                    length2 = iP;
+                if (p <= length2) {
+                    length2 = p;
                 }
-                long jK = sk2Var.k(length2);
+                long k = sk2Var.k(length2);
                 int i = al2.c;
-                int i2 = (int) (jK & 4294967295L);
-                if (i2 > iP) {
+                int i2 = (int) (k & 4294967295L);
+                if (i2 > p) {
                     this.d.b(i2);
                     length = i2;
                     break;
                 }
-                iP++;
+                p++;
             } else {
                 length = ueVar.e.length();
                 break;
@@ -93,25 +93,25 @@ public final class mj2 {
         if (sk2Var == null) {
             return null;
         }
-        int iP = p();
+        int p = p();
         while (true) {
-            if (iP <= 0) {
+            if (p <= 0) {
                 i = 0;
                 break;
             }
             int length = this.g.e.length() - 1;
-            if (iP <= length) {
-                length = iP;
+            if (p <= length) {
+                length = p;
             }
-            long jK = sk2Var.k(length);
+            long k = sk2Var.k(length);
             int i2 = al2.c;
-            int i3 = (int) (jK >> 32);
-            if (i3 < iP) {
+            int i3 = (int) (k >> 32);
+            if (i3 < p) {
                 this.d.b(i3);
                 i = i3;
                 break;
             }
-            iP--;
+            p--;
         }
         return Integer.valueOf(i);
     }
@@ -122,200 +122,179 @@ public final class mj2 {
     }
 
     public final int f(sk2 sk2Var, int i) {
-        int iP = p();
+        int p = p();
         zk2 zk2Var = this.e;
-        if (zk2Var.f1446a == null) {
-            zk2Var.f1446a = Float.valueOf(sk2Var.c(iP).f1459a);
+        if (zk2Var.f1445a == null) {
+            zk2Var.f1445a = Float.valueOf(sk2Var.c(p).f1458a);
         }
-        int iE = sk2Var.e(iP);
+        int e = sk2Var.e(p);
         je1 je1Var = sk2Var.b;
-        int i2 = iE + i;
+        int i2 = e + i;
         if (i2 < 0) {
             return 0;
         }
         if (i2 >= je1Var.f) {
             return this.g.e.length();
         }
-        float fB = je1Var.b(i2) - 1;
-        Float f = zk2Var.f1446a;
+        float b = je1Var.b(i2) - 1;
+        Float f = zk2Var.f1445a;
         lx0.u(f);
-        float fFloatValue = f.floatValue();
-        if ((e() && fFloatValue >= sk2Var.g(i2)) || (!e() && fFloatValue <= sk2Var.f(i2))) {
+        float floatValue = f.floatValue();
+        if ((e() && floatValue >= sk2Var.g(i2)) || (!e() && floatValue <= sk2Var.f(i2))) {
             return sk2Var.d(i2, true);
         }
-        int iE2 = je1Var.e(jz0.d(f.floatValue(), fB));
-        this.d.b(iE2);
-        return iE2;
+        int e2 = je1Var.e(jz0.d(f.floatValue(), b));
+        this.d.b(e2);
+        return e2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0013  */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0011, code lost:
+    
+        if (r7 == null) goto L9;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final int g(androidx.emoji2.text.tk2 r7, int r8) {
-        /*
-            r6 = this;
-            androidx.emoji2.text.p01 r0 = r7.b
-            androidx.emoji2.text.sk2 r1 = r7.f1127a
-            if (r0 == 0) goto L13
-            androidx.emoji2.text.p01 r7 = r7.c
-            if (r7 == 0) goto L10
-            r2 = 1
-            androidx.emoji2.text.zw1 r7 = r7.K(r0, r2)
-            goto L11
-        L10:
-            r7 = 0
-        L11:
-            if (r7 != 0) goto L15
-        L13:
-            androidx.emoji2.text.zw1 r7 = androidx.emoji2.text.zw1.e
-        L15:
-            androidx.emoji2.text.ak2 r0 = r6.h
-            long r2 = r0.b
-            int r0 = androidx.emoji2.text.al2.c
-            r4 = 4294967295(0xffffffff, double:2.1219957905E-314)
-            long r2 = r2 & r4
-            int r0 = (int) r2
-            androidx.emoji2.text.zg0 r2 = r6.d
-            r2.a(r0)
-            androidx.emoji2.text.zw1 r0 = r1.c(r0)
-            float r3 = r0.f1459a
-            float r0 = r0.b
-            long r4 = r7.d()
-            float r7 = androidx.emoji2.text.ib2.b(r4)
-            float r8 = (float) r8
-            float r7 = r7 * r8
-            float r7 = r7 + r0
-            long r7 = androidx.emoji2.text.jz0.d(r3, r7)
-            androidx.emoji2.text.je1 r0 = r1.b
-            int r7 = r0.e(r7)
-            r2.b(r7)
-            return r7
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mj2.g(androidx.emoji2.text.tk2, int):int");
+    public final int g(tk2 tk2Var, int i) {
+        zw1 zw1Var;
+        p01 p01Var = tk2Var.b;
+        sk2 sk2Var = tk2Var.f1126a;
+        if (p01Var != null) {
+            p01 p01Var2 = tk2Var.c;
+            zw1Var = p01Var2 != null ? p01Var2.K(p01Var, true) : null;
+        }
+        zw1Var = zw1.e;
+        long j = this.h.b;
+        int i2 = al2.c;
+        int i3 = (int) (j & 4294967295L);
+        zg0 zg0Var = this.d;
+        zg0Var.a(i3);
+        zw1 c = sk2Var.c(i3);
+        int e = sk2Var.b.e(jz0.d(c.f1458a, (ib2.b(zw1Var.d()) * i) + c.b));
+        zg0Var.b(e);
+        return e;
     }
 
     public final void h() {
         zk2 zk2Var = this.e;
-        zk2Var.f1446a = null;
+        zk2Var.f1445a = null;
         ue ueVar = this.g;
         if (ueVar.e.length() > 0) {
             if (e()) {
-                zk2Var.f1446a = null;
+                zk2Var.f1445a = null;
                 if (ueVar.e.length() > 0) {
                     String str = ueVar.e;
                     long j = this.f;
                     int i = al2.c;
-                    int iX = jz0.x((int) (j & 4294967295L), str);
-                    if (iX != -1) {
-                        o(iX, iX);
+                    int x = jz0.x((int) (j & 4294967295L), str);
+                    if (x != -1) {
+                        o(x, x);
                         return;
                     }
                     return;
                 }
                 return;
             }
-            zk2Var.f1446a = null;
+            zk2Var.f1445a = null;
             if (ueVar.e.length() > 0) {
                 String str2 = ueVar.e;
                 long j2 = this.f;
                 int i2 = al2.c;
-                int iS = jz0.s((int) (j2 & 4294967295L), str2);
-                if (iS != -1) {
-                    o(iS, iS);
+                int s = jz0.s((int) (j2 & 4294967295L), str2);
+                if (s != -1) {
+                    o(s, s);
                 }
             }
         }
     }
 
     public final void i() {
-        this.e.f1446a = null;
+        this.e.f1445a = null;
         ue ueVar = this.g;
         String str = ueVar.e;
         String str2 = ueVar.e;
         if (str.length() > 0) {
-            int iY = az0.y(str2, al2.d(this.f));
-            if (iY == al2.d(this.f) && iY != str2.length()) {
-                iY = az0.y(str2, iY + 1);
+            int y = az0.y(str2, al2.d(this.f));
+            if (y == al2.d(this.f) && y != str2.length()) {
+                y = az0.y(str2, y + 1);
             }
-            o(iY, iY);
+            o(y, y);
         }
     }
 
     public final void j() {
-        this.e.f1446a = null;
+        this.e.f1445a = null;
         ue ueVar = this.g;
         String str = ueVar.e;
         String str2 = ueVar.e;
         if (str.length() > 0) {
-            int iZ = az0.z(str2, al2.e(this.f));
-            if (iZ == al2.e(this.f) && iZ != 0) {
-                iZ = az0.z(str2, iZ - 1);
+            int z = az0.z(str2, al2.e(this.f));
+            if (z == al2.e(this.f) && z != 0) {
+                z = az0.z(str2, z - 1);
             }
-            o(iZ, iZ);
+            o(z, z);
         }
     }
 
     public final void k() {
         zk2 zk2Var = this.e;
-        zk2Var.f1446a = null;
+        zk2Var.f1445a = null;
         ue ueVar = this.g;
         if (ueVar.e.length() > 0) {
             if (e()) {
-                zk2Var.f1446a = null;
+                zk2Var.f1445a = null;
                 if (ueVar.e.length() > 0) {
                     String str = ueVar.e;
                     long j = this.f;
                     int i = al2.c;
-                    int iS = jz0.s((int) (j & 4294967295L), str);
-                    if (iS != -1) {
-                        o(iS, iS);
+                    int s = jz0.s((int) (j & 4294967295L), str);
+                    if (s != -1) {
+                        o(s, s);
                         return;
                     }
                     return;
                 }
                 return;
             }
-            zk2Var.f1446a = null;
+            zk2Var.f1445a = null;
             if (ueVar.e.length() > 0) {
                 String str2 = ueVar.e;
                 long j2 = this.f;
                 int i2 = al2.c;
-                int iX = jz0.x((int) (j2 & 4294967295L), str2);
-                if (iX != -1) {
-                    o(iX, iX);
+                int x = jz0.x((int) (j2 & 4294967295L), str2);
+                if (x != -1) {
+                    o(x, x);
                 }
             }
         }
     }
 
     public final void l() {
-        Integer numB;
-        this.e.f1446a = null;
-        if (this.g.e.length() <= 0 || (numB = b()) == null) {
+        Integer b;
+        this.e.f1445a = null;
+        if (this.g.e.length() <= 0 || (b = b()) == null) {
             return;
         }
-        int iIntValue = numB.intValue();
-        o(iIntValue, iIntValue);
+        int intValue = b.intValue();
+        o(intValue, intValue);
     }
 
     public final void m() {
-        Integer numValueOf = null;
-        this.e.f1446a = null;
+        Integer num = null;
+        this.e.f1445a = null;
         if (this.g.e.length() > 0) {
             sk2 sk2Var = this.c;
             if (sk2Var != null) {
-                int iE = al2.e(this.f);
+                int e = al2.e(this.f);
                 zg0 zg0Var = this.d;
-                zg0Var.a(iE);
-                int iH = sk2Var.h(sk2Var.e(iE));
-                zg0Var.b(iH);
-                numValueOf = Integer.valueOf(iH);
+                zg0Var.a(e);
+                int h = sk2Var.h(sk2Var.e(e));
+                zg0Var.b(h);
+                num = Integer.valueOf(h);
             }
-            if (numValueOf != null) {
-                int iIntValue = numValueOf.intValue();
-                o(iIntValue, iIntValue);
+            if (num != null) {
+                int intValue = num.intValue();
+                o(intValue, intValue);
             }
         }
     }

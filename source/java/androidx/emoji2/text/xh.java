@@ -28,17 +28,17 @@ public abstract class xh extends bz0 {
     public static byte[] C0(byte[] bArr, int i, int i2) {
         lx0.x(bArr, "<this>");
         bz0.B(i2, bArr.length);
-        byte[] bArrCopyOfRange = Arrays.copyOfRange(bArr, i, i2);
-        lx0.w(bArrCopyOfRange, "copyOfRange(...)");
-        return bArrCopyOfRange;
+        byte[] copyOfRange = Arrays.copyOfRange(bArr, i, i2);
+        lx0.w(copyOfRange, "copyOfRange(...)");
+        return copyOfRange;
     }
 
     public static Object[] D0(Object[] objArr, int i, int i2) {
         lx0.x(objArr, "<this>");
         bz0.B(i2, objArr.length);
-        Object[] objArrCopyOfRange = Arrays.copyOfRange(objArr, i, i2);
-        lx0.w(objArrCopyOfRange, "copyOfRange(...)");
-        return objArrCopyOfRange;
+        Object[] copyOfRange = Arrays.copyOfRange(objArr, i, i2);
+        lx0.w(copyOfRange, "copyOfRange(...)");
+        return copyOfRange;
     }
 
     public static void E0(Object[] objArr, int i, int i2) {
@@ -196,9 +196,9 @@ public abstract class xh extends bz0 {
 
     public static List t0(Object[] objArr) {
         lx0.x(objArr, "<this>");
-        List listAsList = Arrays.asList(objArr);
-        lx0.w(listAsList, "asList(...)");
-        return listAsList;
+        List asList = Arrays.asList(objArr);
+        lx0.w(asList, "asList(...)");
+        return asList;
     }
 
     public static boolean u0(Object obj, Object[] objArr) {

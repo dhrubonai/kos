@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class gk extends a01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public rd1 f424a;
+    public rd1 f423a;
 
     @Override // androidx.emoji2.text.a01
     public final Object D(xu1 xu1Var) {
-        if (xu1Var != this.f424a.getKey()) {
+        if (xu1Var != this.f423a.getKey()) {
             iv0.b("Check failed.");
         }
-        return this.f424a.getValue();
+        return this.f423a.getValue();
     }
 
     @Override // androidx.emoji2.text.a01
     public final boolean v(xu1 xu1Var) {
-        return xu1Var == this.f424a.getKey();
+        return xu1Var == this.f423a.getKey();
     }
 }

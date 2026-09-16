@@ -21,12 +21,12 @@ public final class iy0 implements pu0 {
     }
 
     public final void a(Throwable th) {
-        Throwable thC = c();
-        if (thC == null) {
+        Throwable c = c();
+        if (c == null) {
             f.set(this, th);
             return;
         }
-        if (th == thC) {
+        if (th == c) {
             return;
         }
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
@@ -81,11 +81,11 @@ public final class iy0 implements pu0 {
             }
             arrayList = (ArrayList) obj;
         }
-        Throwable thC = c();
-        if (thC != null) {
-            arrayList.add(0, thC);
+        Throwable c = c();
+        if (c != null) {
+            arrayList.add(0, c);
         }
-        if (th != null && !th.equals(thC)) {
+        if (th != null && !th.equals(c)) {
             arrayList.add(th);
         }
         atomicReferenceFieldUpdater.set(this, jm.k);

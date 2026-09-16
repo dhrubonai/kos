@@ -7,11 +7,11 @@ import android.graphics.drawable.BitmapDrawable;
 public final class l50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final BitmapDrawable f676a;
+    public final BitmapDrawable f675a;
     public final boolean b;
 
     public l50(BitmapDrawable bitmapDrawable, boolean z) {
-        this.f676a = bitmapDrawable;
+        this.f675a = bitmapDrawable;
         this.b = z;
     }
 
@@ -23,10 +23,10 @@ public final class l50 {
             return false;
         }
         l50 l50Var = (l50) obj;
-        return this.f676a.equals(l50Var.f676a) && this.b == l50Var.b;
+        return this.f675a.equals(l50Var.f675a) && this.b == l50Var.b;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.b) + (this.f676a.hashCode() * 31);
+        return Boolean.hashCode(this.b) + (this.f675a.hashCode() * 31);
     }
 }

@@ -15,9 +15,9 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public af2 d;
 
     public yc2(l0 l0Var) {
-        ec2 ec2VarK = kc2.k();
-        af2 af2Var = new af2(ec2VarK.g(), l0Var);
-        if (!(ec2VarK instanceof bo0)) {
+        ec2 k = kc2.k();
+        af2 af2Var = new af2(k.g(), l0Var);
+        if (!(k instanceof bo0)) {
             af2Var.b = new af2(1, l0Var);
         }
         this.d = af2Var;
@@ -32,8 +32,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final boolean add(Object obj) {
         int i;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -43,18 +43,18 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarC = l0Var.c(obj);
-            if (l0VarC.equals(l0Var)) {
+            l0 c = l0Var.c(obj);
+            if (c.equals(l0Var)) {
                 return false;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i, l0VarC, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i, c, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return true;
     }
 
@@ -76,19 +76,19 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
 
     @Override // java.util.List, java.util.Collection
     public final void clear() {
-        ec2 ec2VarK;
+        ec2 k;
         af2 af2Var = this.d;
         lx0.v(af2Var, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
         synchronized (kc2.c) {
-            ec2VarK = kc2.k();
-            af2 af2Var2 = (af2) kc2.w(af2Var, this, ec2VarK);
+            k = kc2.k();
+            af2 af2Var2 = (af2) kc2.w(af2Var, this, k);
             synchronized (bz0.l) {
                 af2Var2.c = sb2.e;
                 af2Var2.d++;
                 af2Var2.e++;
             }
         }
-        kc2.n(ec2VarK, this);
+        kc2.n(k, this);
     }
 
     @Override // java.util.List, java.util.Collection
@@ -104,8 +104,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final void d(int i, int i2) {
         int i3;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -115,20 +115,20 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            qp1 qp1VarE = l0Var.e();
-            qp1VarE.subList(i, i2).clear();
-            l0 l0VarC = qp1VarE.c();
-            if (lx0.n(l0VarC, l0Var)) {
+            qp1 e = l0Var.e();
+            e.subList(i, i2).clear();
+            l0 c = e.c();
+            if (lx0.n(c, l0Var)) {
                 return;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i3, l0VarC, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i3, c, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
     }
 
     @Override // android.os.Parcelable
@@ -170,8 +170,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final Object remove(int i) {
         int i2;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         Object obj = get(i);
         do {
             synchronized (bz0.l) {
@@ -182,18 +182,18 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarG = l0Var.g(i);
-            if (l0VarG.equals(l0Var)) {
+            l0 g = l0Var.g(i);
+            if (g.equals(l0Var)) {
                 break;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i2, l0VarG, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i2, g, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return obj;
     }
 
@@ -201,8 +201,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final boolean removeAll(Collection collection) {
         int i;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -212,18 +212,18 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarF = l0Var.f(new k0(0, collection));
-            if (lx0.n(l0VarF, l0Var)) {
+            l0 f = l0Var.f(new k0(0, collection));
+            if (lx0.n(f, l0Var)) {
                 return false;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i, l0VarF, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i, f, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return true;
     }
 
@@ -236,8 +236,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final Object set(int i, Object obj) {
         int i2;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         Object obj2 = get(i);
         do {
             synchronized (bz0.l) {
@@ -248,18 +248,18 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarH = l0Var.h(i, obj);
-            if (l0VarH.equals(l0Var)) {
+            l0 h = l0Var.h(i, obj);
+            if (h.equals(l0Var)) {
                 break;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i2, l0VarH, false);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i2, h, false);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return obj2;
     }
 
@@ -290,9 +290,9 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         l0 l0Var = bz0.K(this).c;
-        int iA = l0Var.a();
-        parcel.writeInt(iA);
-        for (int i2 = 0; i2 < iA; i2++) {
+        int a2 = l0Var.a();
+        parcel.writeInt(a2);
+        for (int i2 = 0; i2 < a2; i2++) {
             parcel.writeValue(l0Var.get(i2));
         }
     }
@@ -301,8 +301,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final boolean addAll(Collection collection) {
         int i;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -312,18 +312,18 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarD = l0Var.d(collection);
-            if (lx0.n(l0VarD, l0Var)) {
+            l0 d = l0Var.d(collection);
+            if (lx0.n(d, l0Var)) {
                 return false;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i, l0VarD, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i, d, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return true;
     }
 
@@ -345,8 +345,8 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
     public final void add(int i, Object obj) {
         int i2;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -356,26 +356,26 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            l0 l0VarB = l0Var.b(i, obj);
-            if (l0VarB.equals(l0Var)) {
+            l0 b = l0Var.b(i, obj);
+            if (b.equals(l0Var)) {
                 return;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i2, l0VarB, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i2, b, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
     }
 
     @Override // java.util.List, java.util.Collection
     public final boolean remove(Object obj) {
         int i;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         do {
             synchronized (bz0.l) {
                 af2 af2Var = this.d;
@@ -385,19 +385,19 @@ public final class yc2 implements Parcelable, df2, List, RandomAccess, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            int iIndexOf = l0Var.indexOf(obj);
-            l0 l0VarG = iIndexOf != -1 ? l0Var.g(iIndexOf) : l0Var;
-            if (l0VarG.equals(l0Var)) {
+            int indexOf = l0Var.indexOf(obj);
+            l0 g = indexOf != -1 ? l0Var.g(indexOf) : l0Var;
+            if (g.equals(l0Var)) {
                 return false;
             }
             af2 af2Var3 = this.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, this, ec2VarK), i, l0VarG, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, this, k), i, g, true);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zU);
+            kc2.n(k, this);
+        } while (!u);
         return true;
     }
 }

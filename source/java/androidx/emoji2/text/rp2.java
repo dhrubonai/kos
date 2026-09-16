@@ -7,16 +7,19 @@ public final class rp2 extends i42 {
     private volatile boolean threadLocalIsSet;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public rp2(l10 l10Var, v20 v20Var) {
+        super(l10Var, v20Var.n(r0) == null ? v20Var.B(r0) : v20Var);
         kp kpVar = kp.f;
-        super(l10Var, v20Var.n(kpVar) == null ? v20Var.B(kpVar) : v20Var);
         this.h = new ThreadLocal();
         if (l10Var.t().n(dd0.z) instanceof x20) {
             return;
         }
-        Object objL0 = bz0.l0(v20Var, null);
-        bz0.e0(v20Var, objL0);
-        l0(v20Var, objL0);
+        Object l0 = bz0.l0(v20Var, null);
+        bz0.e0(v20Var, l0);
+        l0(v20Var, l0);
     }
 
     public final boolean k0() {
@@ -39,19 +42,19 @@ public final class rp2 extends i42 {
             }
             this.h.remove();
         }
-        Object objF = xo2.F(obj);
+        Object F = xo2.F(obj);
         l10 l10Var = this.g;
-        v20 v20VarT = l10Var.t();
-        Object objL0 = bz0.l0(v20VarT, null);
-        rp2 rp2VarH0 = objL0 != bz0.m ? lx0.h0(l10Var, v20VarT, objL0) : null;
+        v20 t = l10Var.t();
+        Object l0 = bz0.l0(t, null);
+        rp2 h0 = l0 != bz0.m ? lx0.h0(l10Var, t, l0) : null;
         try {
-            this.g.g(objF);
-            if (rp2VarH0 == null || rp2VarH0.k0()) {
-                bz0.e0(v20VarT, objL0);
+            this.g.g(F);
+            if (h0 == null || h0.k0()) {
+                bz0.e0(t, l0);
             }
         } catch (Throwable th) {
-            if (rp2VarH0 == null || rp2VarH0.k0()) {
-                bz0.e0(v20VarT, objL0);
+            if (h0 == null || h0.k0()) {
+                bz0.e0(t, l0);
             }
             throw th;
         }

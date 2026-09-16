@@ -61,18 +61,18 @@ public interface IContentObserver extends IInterface {
 
             @Override // android.database.IContentObserver
             public void onChange(boolean z, Uri uri, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    _Parcel.writeTypedObject(parcelObtain, uri, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(z ? 1 : 0);
+                    _Parcel.writeTypedObject(obtain, uri, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -85,8 +85,8 @@ public interface IContentObserver extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IContentObserver)) ? new Proxy(iBinder) : (IContentObserver) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IContentObserver)) ? new Proxy(iBinder) : (IContentObserver) queryLocalInterface;
         }
 
         @Override // android.os.Binder

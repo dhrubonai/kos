@@ -122,9 +122,9 @@ public class SyncStatusInfo implements Parcelable {
     }
 
     public SyncStatusInfo(Parcel parcel) {
-        int i = parcel.readInt();
-        if (i != 2 && i != 1) {
-            Log.w("SyncStatusInfo", "Unknown version: " + i);
+        int readInt = parcel.readInt();
+        if (readInt != 2 && readInt != 1) {
+            Log.w("SyncStatusInfo", "Unknown version: " + readInt);
         }
         this.authorityId = parcel.readInt();
         this.totalElapsedTime = parcel.readLong();
@@ -141,17 +141,17 @@ public class SyncStatusInfo implements Parcelable {
         this.initialFailureTime = parcel.readLong();
         this.pending = parcel.readInt() != 0;
         this.initialize = parcel.readInt() != 0;
-        if (i == 1) {
+        if (readInt == 1) {
             this.periodicSyncTimes = null;
             return;
         }
-        int i2 = parcel.readInt();
-        if (i2 < 0) {
+        int readInt2 = parcel.readInt();
+        if (readInt2 < 0) {
             this.periodicSyncTimes = null;
             return;
         }
         this.periodicSyncTimes = new ArrayList<>();
-        for (int i3 = 0; i3 < i2; i3++) {
+        for (int i = 0; i < readInt2; i++) {
             this.periodicSyncTimes.add(Long.valueOf(parcel.readLong()));
         }
     }

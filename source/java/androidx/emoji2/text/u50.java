@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class u50 implements yi0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public j50 f1160a;
+    public j50 f1159a;
     public final u80 b = androidx.compose.foundation.gestures.a.b;
 
     public u50(j50 j50Var) {
-        this.f1160a = j50Var;
+        this.f1159a = j50Var;
     }
 
     @Override // androidx.emoji2.text.yi0

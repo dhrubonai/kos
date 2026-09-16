@@ -3,6 +3,7 @@ package com.kos.engine.app;
 import a.a.a.c;
 import android.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Insets;
 import android.graphics.drawable.ColorDrawable;
@@ -26,13 +27,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import androidx.emoji2.text.c01;
+import androidx.emoji2.text.eh0;
 import androidx.emoji2.text.ih0;
 import androidx.emoji2.text.jh0;
 import androidx.emoji2.text.xa1;
 import androidx.emoji2.text.zr;
 import com.kos.engine.app.FacebookWebViewActivity;
 import java.util.Iterator;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -60,17 +62,53 @@ public class FacebookWebViewActivity extends Activity {
         m = new String[]{c.a(-137628491071266L, strArr), c.a(-137684325646114L, strArr), c.a(-138332865707810L, strArr)};
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0062  */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x005f, code lost:
+    
+        if (r1.matches(a.a.a.c.a(-123257530498850L, r0)) != false) goto L35;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static void a(com.kos.engine.app.FacebookWebViewActivity r5, android.net.Uri r6) {
-        /*
-            Method dump skipped, instructions count: 349
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.app.FacebookWebViewActivity.a(com.kos.engine.app.FacebookWebViewActivity, android.net.Uri):void");
+    public static void a(FacebookWebViewActivity facebookWebViewActivity, Uri uri) {
+        String str;
+        String[] strArr = xa1.b;
+        if (facebookWebViewActivity.d) {
+            return;
+        }
+        facebookWebViewActivity.d = true;
+        Log.d(c.a(-130400061112098L, strArr), c.a(-130468780588834L, strArr) + uri.toString());
+        try {
+            String scheme = uri.getScheme();
+            if (scheme != null && scheme.startsWith(c.a(-123279005335330L, strArr)) && scheme.length() > 2) {
+                str = scheme.substring(2);
+            }
+        } catch (Exception unused) {
+        }
+        str = facebookWebViewActivity.g;
+        try {
+            eh0.b(uri, facebookWebViewActivity.e, facebookWebViewActivity.f, str);
+        } catch (Exception e) {
+            Log.w(c.a(-124524545851170L, strArr), c.a(-124593265327906L, strArr), e);
+        }
+        try {
+            Intent intent = new Intent(c.a(-124773653954338L, strArr));
+            intent.setPackage(c01.X());
+            intent.putExtra(c.a(-124374221995810L, strArr), uri.toString());
+            facebookWebViewActivity.sendBroadcast(intent);
+            Log.d(c.a(-124442941472546L, strArr), c.a(-124511660949282L, strArr) + facebookWebViewActivity.e + c.a(-125207445651234L, strArr) + facebookWebViewActivity.f);
+        } catch (Exception e2) {
+            Log.e(c.a(-125250395324194L, strArr), c.a(-125319114800930L, strArr), e2);
+        }
+        try {
+            String str2 = facebookWebViewActivity.f;
+            if (str2 != null && str2.length() > 0) {
+                c01.r.d0(facebookWebViewActivity.e, facebookWebViewActivity.f);
+                Log.d(c.a(-124966927482658L, strArr), c.a(-125035646959394L, strArr) + facebookWebViewActivity.f + c.a(-123489458732834L, strArr) + facebookWebViewActivity.e);
+            }
+        } catch (Exception e3) {
+            Log.w(c.a(-123528113438498L, strArr), c.a(-123596832915234L, strArr), e3);
+        }
+        facebookWebViewActivity.finish();
     }
 
     public final int b(int i) {
@@ -101,13 +139,13 @@ public class FacebookWebViewActivity extends Activity {
         }
         String[] strArr = xa1.b;
         if (scheme.startsWith(c.a(-126783698648866L, strArr))) {
-            boolean zEquals = c.a(-126753633877794L, strArr).equals(scheme);
-            String strReplaceFirst = str.replaceFirst(c.a(-126796583550754L, strArr), c.a(-126826648321826L, strArr));
+            boolean equals = c.a(-126753633877794L, strArr).equals(scheme);
+            String replaceFirst = str.replaceFirst(c.a(-126796583550754L, strArr), c.a(-126826648321826L, strArr));
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(this.l ? -126882482896674L : -126865303027490L, strArr));
-            sb.append(c.a(zEquals ? -126869597994786L : -126921137602338L, strArr));
-            String string = sb.toString();
-            this.j.setText(string + strReplaceFirst);
+            sb.append(c.a(equals ? -126869597994786L : -126921137602338L, strArr));
+            String sb2 = sb.toString();
+            this.j.setText(sb2 + replaceFirst);
         }
     }
 
@@ -121,7 +159,14 @@ public class FacebookWebViewActivity extends Activity {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0215, code lost:
+    
+        r3 = getWindow().getInsetsController();
+     */
     @Override // android.app.Activity
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onCreate(Bundle bundle) {
         WindowInsetsController insetsController;
         String[] strArr = xa1.b;
@@ -203,23 +248,26 @@ public class FacebookWebViewActivity extends Activity {
             public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
                 int systemWindowInsetTop;
                 int systemWindowInsetBottom;
+                int systemBars;
+                Insets insets;
                 String[] strArr2 = FacebookWebViewActivity.m;
                 if (Build.VERSION.SDK_INT >= 30) {
-                    Insets insets = windowInsets.getInsets(WindowInsets.Type.systemBars());
+                    systemBars = WindowInsets.Type.systemBars();
+                    insets = windowInsets.getInsets(systemBars);
                     systemWindowInsetTop = insets.top;
                     systemWindowInsetBottom = insets.bottom;
                 } else {
                     systemWindowInsetTop = windowInsets.getSystemWindowInsetTop();
                     systemWindowInsetBottom = windowInsets.getSystemWindowInsetBottom();
                 }
-                FacebookWebViewActivity facebookWebViewActivity = this.f364a;
+                FacebookWebViewActivity facebookWebViewActivity = FacebookWebViewActivity.this;
                 linearLayout2.setPadding(facebookWebViewActivity.b(12), facebookWebViewActivity.b(6) + systemWindowInsetTop, facebookWebViewActivity.b(4), facebookWebViewActivity.b(6));
                 frameLayout.setPadding(0, 0, 0, systemWindowInsetBottom);
                 return windowInsets;
             }
         });
         linearLayout.requestApplyInsets();
-        if (Build.VERSION.SDK_INT >= 30 && (insetsController = getWindow().getInsetsController()) != null) {
+        if (Build.VERSION.SDK_INT >= 30 && insetsController != null) {
             insetsController.setSystemBarsAppearance(0, 8);
         }
         WebSettings settings = this.h.getSettings();
@@ -245,7 +293,7 @@ public class FacebookWebViewActivity extends Activity {
             public final void onReceiveValue(Object obj) {
                 CookieManager cookieManager2 = cookieManager;
                 String[] strArr2 = FacebookWebViewActivity.m;
-                FacebookWebViewActivity facebookWebViewActivity = this.f418a;
+                FacebookWebViewActivity facebookWebViewActivity = FacebookWebViewActivity.this;
                 facebookWebViewActivity.getClass();
                 String[] strArr3 = xa1.b;
                 try {
@@ -254,15 +302,15 @@ public class FacebookWebViewActivity extends Activity {
                         Log.d(a.a.a.c.a(-127316274593570L, strArr3), a.a.a.c.a(-127384994070306L, strArr3) + facebookWebViewActivity.e + a.a.a.c.a(-127522433023778L, strArr3));
                     } else {
                         JSONObject jSONObject = new JSONObject(string);
-                        Iterator<String> itKeys = jSONObject.keys();
-                        while (itKeys.hasNext()) {
-                            String next = itKeys.next();
-                            String strOptString = jSONObject.optString(next, null);
-                            if (strOptString != null) {
-                                for (String str : strOptString.split(a.a.a.c.a(-127037101719330L, strArr3))) {
-                                    String strTrim = str.trim();
-                                    if (strTrim.length() > 0) {
-                                        cookieManager2.setCookie(next, strTrim);
+                        Iterator<String> keys = jSONObject.keys();
+                        while (keys.hasNext()) {
+                            String next = keys.next();
+                            String optString = jSONObject.optString(next, null);
+                            if (optString != null) {
+                                for (String str : optString.split(a.a.a.c.a(-127037101719330L, strArr3))) {
+                                    String trim = str.trim();
+                                    if (trim.length() > 0) {
+                                        cookieManager2.setCookie(next, trim);
                                     }
                                 }
                             }
@@ -297,7 +345,7 @@ public class FacebookWebViewActivity extends Activity {
     }
 
     @Override // android.app.Activity
-    public final void onPause() throws JSONException {
+    public final void onPause() {
         super.onPause();
         String[] strArr = xa1.b;
         try {

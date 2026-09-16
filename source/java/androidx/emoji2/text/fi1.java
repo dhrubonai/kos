@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class fi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final fi1 f366a = new fi1();
+    public static final fi1 f365a = new fi1();
 
     public final boolean equals(Object obj) {
         return obj instanceof fi1;

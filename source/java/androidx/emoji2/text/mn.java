@@ -17,13 +17,13 @@ public final class mn implements um0 {
     public final Object e(Object obj) {
         int i;
         ln lnVar = this.d;
-        lnVar.f699a = null;
+        lnVar.f698a = null;
         lnVar.b = null;
         wi wiVar = this.e.g;
         int i2 = this.f.d;
         do {
             i = wiVar.get();
         } while (!wiVar.compareAndSet(i, ((i >>> 27) & 15) == i2 ? i - 1 : i));
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

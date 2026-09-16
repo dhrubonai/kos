@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class or1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final rg f871a = new rg(2);
+    public static final rg f870a = new rg(2);
 }

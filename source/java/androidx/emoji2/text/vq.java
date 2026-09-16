@@ -7,12 +7,12 @@ import java.nio.charset.Charset;
 public abstract class vq {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Charset f1236a;
+    public static final Charset f1235a;
 
     static {
-        Charset charsetForName = Charset.forName("UTF-8");
-        lx0.w(charsetForName, "forName(...)");
-        f1236a = charsetForName;
+        Charset forName = Charset.forName("UTF-8");
+        lx0.w(forName, "forName(...)");
+        f1235a = forName;
         lx0.w(Charset.forName("UTF-16"), "forName(...)");
         lx0.w(Charset.forName("UTF-16BE"), "forName(...)");
         lx0.w(Charset.forName("UTF-16LE"), "forName(...)");

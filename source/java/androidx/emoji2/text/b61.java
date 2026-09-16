@@ -16,7 +16,7 @@ public final class b61 extends x20 implements x60 {
     /* JADX WARN: Multi-variable type inference failed */
     public b61(x20 x20Var, int i) {
         x60 x60Var = x20Var instanceof x60 ? (x60) x20Var : null;
-        this.f = x60Var == null ? s50.f1052a : x60Var;
+        this.f = x60Var == null ? s50.f1051a : x60Var;
         this.g = x20Var;
         this.h = i;
         this.i = new y71();
@@ -26,7 +26,7 @@ public final class b61 extends x20 implements x60 {
     @Override // androidx.emoji2.text.x20
     public final void D(v20 v20Var, Runnable runnable) {
         boolean z;
-        Runnable runnableG;
+        Runnable G;
         this.i.a(runnable);
         if (k.get(this) < this.h) {
             synchronized (this.j) {
@@ -38,10 +38,10 @@ public final class b61 extends x20 implements x60 {
                     z = true;
                 }
             }
-            if (!z || (runnableG = G()) == null) {
+            if (!z || (G = G()) == null) {
                 return;
             }
-            this.g.D(this, new u3(3, this, runnableG));
+            this.g.D(this, new u3(3, this, G));
         }
     }
 

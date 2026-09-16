@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class i00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final cn f500a;
+    public final cn f499a;
     public final ip b;
 
     public i00(cn cnVar, ip ipVar) {
-        this.f500a = cnVar;
+        this.f499a = cnVar;
         this.b = ipVar;
     }
 
@@ -19,13 +19,13 @@ public final class i00 {
             throw new ClassCastException();
         }
         StringBuilder sb = new StringBuilder("Request@");
-        int iHashCode = hashCode();
+        int hashCode = hashCode();
         ex2.m(16);
-        String string = Integer.toString(iHashCode, 16);
-        lx0.w(string, "toString(this, checkRadix(radix))");
-        sb.append(string);
+        String num = Integer.toString(hashCode, 16);
+        lx0.w(num, "toString(this, checkRadix(radix))");
+        sb.append(num);
         sb.append("(currentBounds()=");
-        sb.append(this.f500a.a());
+        sb.append(this.f499a.a());
         sb.append(", continuation=");
         sb.append(ipVar);
         sb.append(')');

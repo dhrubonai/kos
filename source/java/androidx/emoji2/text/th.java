@@ -57,11 +57,11 @@ public final class th implements Collection {
     @Override // java.util.Collection
     public final boolean remove(Object obj) {
         uh uhVar = this.d;
-        int iA = uhVar.a(obj);
-        if (iA < 0) {
+        int a2 = uhVar.a(obj);
+        if (a2 < 0) {
             return false;
         }
-        uhVar.g(iA);
+        uhVar.g(a2);
         return true;
     }
 

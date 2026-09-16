@@ -11,15 +11,15 @@ import java.util.Comparator;
 public final /* synthetic */ class jj implements Comparator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f581a;
+    public final /* synthetic */ int f580a;
 
     public /* synthetic */ jj(int i) {
-        this.f581a = i;
+        this.f580a = i;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f581a) {
+        switch (this.f580a) {
             case 0:
                 return ((File) obj).getName().compareTo(((File) obj2).getName());
             case 1:
@@ -33,12 +33,12 @@ public final /* synthetic */ class jj implements Comparator {
                     return 0;
                 }
                 gf1 gf1Var = nk0.d;
-                Object objG = gf1Var.g(view);
-                lx0.u(objG);
-                Rect rect = (Rect) objG;
-                Object objG2 = gf1Var.g(view2);
-                lx0.u(objG2);
-                Rect rect2 = (Rect) objG2;
+                Object g = gf1Var.g(view);
+                lx0.u(g);
+                Rect rect = (Rect) g;
+                Object g2 = gf1Var.g(view2);
+                lx0.u(g2);
+                Rect rect2 = (Rect) g2;
                 int i = rect.top - rect2.top;
                 return i == 0 ? rect.bottom - rect2.bottom : i;
             case 4:
@@ -48,15 +48,15 @@ public final /* synthetic */ class jj implements Comparator {
                     return 0;
                 }
                 gf1 gf1Var2 = nk0.d;
-                Object objG3 = gf1Var2.g(view3);
-                lx0.u(objG3);
-                Rect rect3 = (Rect) objG3;
-                Object objG4 = gf1Var2.g(view4);
-                lx0.u(objG4);
-                Rect rect4 = (Rect) objG4;
+                Object g3 = gf1Var2.g(view3);
+                lx0.u(g3);
+                Rect rect3 = (Rect) g3;
+                Object g4 = gf1Var2.g(view4);
+                lx0.u(g4);
+                Rect rect4 = (Rect) g4;
                 int i2 = rect3.left - rect4.left;
                 return i2 == 0 ? (rect3.right - rect4.right) * nk0.c : nk0.c * i2;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 byte[] bArr = (byte[]) obj;
                 byte[] bArr2 = (byte[]) obj2;
                 if (bArr.length != bArr2.length) {
@@ -70,7 +70,7 @@ public final /* synthetic */ class jj implements Comparator {
                     }
                 }
                 return 0;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 hn1 hn1Var = (hn1) obj;
                 hn1 hn1Var2 = (hn1) obj2;
                 return (((Number) hn1Var.e).intValue() - ((Number) hn1Var.d).intValue()) - (((Number) hn1Var2.e).intValue() - ((Number) hn1Var2.d).intValue());

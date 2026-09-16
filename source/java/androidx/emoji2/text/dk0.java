@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class dk0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gk0 f256a;
+    public final gk0 f255a;
     public final v7 b;
     public final hf1 c;
     public final hf1 d;
     public boolean e;
 
     public dk0(gk0 gk0Var, v7 v7Var) {
-        this.f256a = gk0Var;
+        this.f255a = gk0Var;
         this.b = v7Var;
-        int i = f42.f343a;
+        int i = f42.f342a;
         this.c = new hf1();
         this.d = new hf1();
     }

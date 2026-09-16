@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class qp {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f973a;
+    public final float f972a;
     public final float b;
     public final float c;
     public final float d;
     public final float e;
 
     public qp(float f, float f2, float f3, float f4, float f5, float f6) {
-        this.f973a = f;
+        this.f972a = f;
         this.b = f2;
         this.c = f3;
         this.d = f4;
@@ -27,10 +27,10 @@ public final class qp {
             return false;
         }
         qp qpVar = (qp) obj;
-        return da0.a(this.f973a, qpVar.f973a) && da0.a(this.b, qpVar.b) && da0.a(this.c, qpVar.c) && da0.a(this.d, qpVar.d) && da0.a(this.e, qpVar.e);
+        return da0.a(this.f972a, qpVar.f972a) && da0.a(this.b, qpVar.b) && da0.a(this.c, qpVar.c) && da0.a(this.d, qpVar.d) && da0.a(this.e, qpVar.e);
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.e) + zd.b(this.d, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f973a) * 31, 31), 31), 31);
+        return Float.hashCode(this.e) + zd.b(this.d, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f972a) * 31, 31), 31), 31);
     }
 }

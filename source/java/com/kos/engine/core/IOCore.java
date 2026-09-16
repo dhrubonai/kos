@@ -45,9 +45,9 @@ public class IOCore {
     }
 
     private File ensureAndroidUsbProbeTree(String str) {
-        File fileEnsureProbeDir = ensureProbeDir(str);
+        File ensureProbeDir = ensureProbeDir(str);
         String[] strArr = xa1.b;
-        File file = new File(fileEnsureProbeDir, c.a(-9840329113378L, strArr));
+        File file = new File(ensureProbeDir, c.a(-9840329113378L, strArr));
         ensureVirtualDir(file);
         ensureVirtualFile(new File(file, c.a(-9861803949858L, strArr)), c.a(-9354997808930L, strArr));
         ensureVirtualFile(new File(file, c.a(-9440897154850L, strArr)), c.a(-9466666958626L, strArr));
@@ -56,7 +56,7 @@ public class IOCore {
         ensureVirtualFile(new File(file, c.a(-12387244719906L, strArr)), c.a(-12464554131234L, strArr));
         ensureVirtualFile(new File(file, c.a(-12498913869602L, strArr)), c.a(-12537568575266L, strArr));
         ensureVirtualFile(new File(file, c.a(-12559043411746L, strArr)), c.a(-12593403150114L, strArr));
-        return fileEnsureProbeDir;
+        return ensureProbeDir;
     }
 
     private File ensureProbeDir(String str) {
@@ -75,10 +75,10 @@ public class IOCore {
         if (file == null) {
             return;
         }
-        StrictMode.ThreadPolicy threadPolicyAllowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
+        StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
         try {
             if (file.isDirectory()) {
-                StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+                StrictMode.setThreadPolicy(allowThreadDiskWrites);
                 return;
             }
             File parentFile = file.getParentFile();
@@ -86,20 +86,20 @@ public class IOCore {
                 wj1.D(parentFile.getAbsolutePath());
             }
             wj1.D(file.getAbsolutePath());
-            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+            StrictMode.setThreadPolicy(allowThreadDiskWrites);
         } catch (Throwable th) {
-            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+            StrictMode.setThreadPolicy(allowThreadDiskWrites);
             throw th;
         }
     }
 
     private File ensureVirtualFile(File file, String str) {
-        byte[] bArrM;
+        byte[] M;
         boolean z;
         if (file == null) {
             return null;
         }
-        StrictMode.ThreadPolicy threadPolicyAllowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
+        StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
         sCreatingGoogleProbeFile.set(Boolean.TRUE);
         try {
             File parentFile = file.getParentFile();
@@ -116,13 +116,13 @@ public class IOCore {
             boolean z2 = (file.exists() && file.length() == ((long) bytes.length)) ? false : true;
             if (!z2) {
                 try {
-                    bArrM = wj1.M(file);
-                    z = bArrM.length != bytes.length;
+                    M = wj1.M(file);
+                    z = M.length != bytes.length;
                 } catch (Throwable unused) {
                 }
                 if (!z) {
-                    for (int i = 0; i < bArrM.length; i++) {
-                        if (bArrM[i] != bytes[i]) {
+                    for (int i = 0; i < M.length; i++) {
+                        if (M[i] != bytes[i]) {
                             z2 = true;
                             break;
                         }
@@ -138,11 +138,11 @@ public class IOCore {
         } catch (IOException unused2) {
         } catch (Throwable th) {
             sCreatingGoogleProbeFile.remove();
-            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+            StrictMode.setThreadPolicy(allowThreadDiskWrites);
             throw th;
         }
         sCreatingGoogleProbeFile.remove();
-        StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+        StrictMode.setThreadPolicy(allowThreadDiskWrites);
         return file;
     }
 
@@ -185,21 +185,21 @@ public class IOCore {
     }
 
     private boolean isGoogleCheckinProcess() {
-        String strSafeAppPackageName = safeAppPackageName();
-        return strSafeAppPackageName == null || GmsCore.isGoogleAppOrService(strSafeAppPackageName);
+        String safeAppPackageName = safeAppPackageName();
+        return safeAppPackageName == null || GmsCore.isGoogleAppOrService(safeAppPackageName);
     }
 
     private void proc(Map<String, String> map) {
-        int iP = rj.p();
-        int iMyPid = Process.myPid();
+        int p = rj.p();
+        int myPid = Process.myPid();
         String[] strArr = xa1.b;
-        String strA = c.a(-24885599551266L, strArr);
-        String str = c.a(-24971498897186L, strArr) + iMyPid + c.a(-24950024060706L, strArr);
-        String absolutePath = new File(BEnvironment.getProcDir(iP), c.a(-25010153602850L, strArr)).getAbsolutePath();
-        StringBuilder sbK = jx0.k(str);
-        sbK.append(c.a(-18997199388450L, strArr));
-        map.put(sbK.toString(), absolutePath);
-        map.put(strA + c.a(-19031559126818L, strArr), absolutePath);
+        String a2 = c.a(-24885599551266L, strArr);
+        String str = c.a(-24971498897186L, strArr) + myPid + c.a(-24950024060706L, strArr);
+        String absolutePath = new File(BEnvironment.getProcDir(p), c.a(-25010153602850L, strArr)).getAbsolutePath();
+        StringBuilder k = jx0.k(str);
+        k.append(c.a(-18997199388450L, strArr));
+        map.put(k.toString(), absolutePath);
+        map.put(a2 + c.a(-19031559126818L, strArr), absolutePath);
     }
 
     private String readProcFile(String str) {
@@ -228,13 +228,13 @@ public class IOCore {
             return str;
         }
         String[] strArr = xa1.b;
-        File fileEnsureAndroidUsbProbeTree = ensureAndroidUsbProbeTree(str2.contains(c.a(-8938385981218L, strArr)) ? c.a(-8972745719586L, strArr) : c.a(-9634170683170L, strArr));
-        String strA = str.length() == str2.length() ? c.a(-9771609636642L, strArr) : str.substring(str2.length());
-        if (strA.length() == 0 || c.a(-9758724734754L, strArr).equals(strA)) {
-            return fileEnsureAndroidUsbProbeTree.getAbsolutePath();
+        File ensureAndroidUsbProbeTree = ensureAndroidUsbProbeTree(str2.contains(c.a(-8938385981218L, strArr)) ? c.a(-8972745719586L, strArr) : c.a(-9634170683170L, strArr));
+        String a2 = str.length() == str2.length() ? c.a(-9771609636642L, strArr) : str.substring(str2.length());
+        if (a2.length() == 0 || c.a(-9758724734754L, strArr).equals(a2)) {
+            return ensureAndroidUsbProbeTree.getAbsolutePath();
         }
-        File file = new File(fileEnsureAndroidUsbProbeTree, strA.startsWith(c.a(-9818854276898L, strArr)) ? strA.substring(1) : strA);
-        if (strA.endsWith(c.a(-9810264342306L, strArr)) || c.a(-9801674407714L, strArr).equals(file.getName())) {
+        File file = new File(ensureAndroidUsbProbeTree, a2.startsWith(c.a(-9818854276898L, strArr)) ? a2.substring(1) : a2);
+        if (a2.endsWith(c.a(-9810264342306L, strArr)) || c.a(-9801674407714L, strArr).equals(file.getName())) {
             ensureVirtualDir(file);
         } else if (!file.exists()) {
             ensureVirtualFile(file, defaultAndroidUsbFileContent(file.getName()));
@@ -250,8 +250,8 @@ public class IOCore {
         if (str.contains(c.a(-11820309036834L, strArr)) || !isGoogleCheckinProcess()) {
             return str;
         }
-        String strRedirectVirtualGoogleCheckinPath = redirectVirtualGoogleCheckinPath(str, c.a(-11910503350050L, strArr), new File(BEnvironment.getDataDir(c.a(-11974927859490L, strArr), safeUserId()), c.a(-12090891976482L, strArr)));
-        return !strRedirectVirtualGoogleCheckinPath.equals(str) ? strRedirectVirtualGoogleCheckinPath : redirectVirtualGoogleCheckinPath(str, c.a(-11575495900962L, strArr), new File(BEnvironment.getDeDataDir(c.a(-11639920410402L, strArr), safeUserId()), c.a(-11687165050658L, strArr)));
+        String redirectVirtualGoogleCheckinPath = redirectVirtualGoogleCheckinPath(str, c.a(-11910503350050L, strArr), new File(BEnvironment.getDataDir(c.a(-11974927859490L, strArr), safeUserId()), c.a(-12090891976482L, strArr)));
+        return !redirectVirtualGoogleCheckinPath.equals(str) ? redirectVirtualGoogleCheckinPath : redirectVirtualGoogleCheckinPath(str, c.a(-11575495900962L, strArr), new File(BEnvironment.getDeDataDir(c.a(-11639920410402L, strArr), safeUserId()), c.a(-11687165050658L, strArr)));
     }
 
     private String redirectVirtualGoogleDgCache(String str) {
@@ -302,8 +302,8 @@ public class IOCore {
         if (c.a(-9127364542242L, strArr).equals(str) || c.a(-9166019247906L, strArr).equals(str)) {
             return ensureProbeDir(c.a(-9140249444130L, strArr)).getAbsolutePath();
         }
-        String strRedirectAndroidUsbProbePath = redirectAndroidUsbProbePath(str, c.a(-9191789051682L, strArr));
-        return !strRedirectAndroidUsbProbePath.equals(str) ? strRedirectAndroidUsbProbePath : redirectAndroidUsbProbePath(str, c.a(-9333522972450L, strArr));
+        String redirectAndroidUsbProbePath = redirectAndroidUsbProbePath(str, c.a(-9191789051682L, strArr));
+        return !redirectAndroidUsbProbePath.equals(str) ? redirectAndroidUsbProbePath : redirectAndroidUsbProbePath(str, c.a(-9333522972450L, strArr));
     }
 
     private String safeAppPackageName() {
@@ -316,8 +316,8 @@ public class IOCore {
 
     private int safeAppPid() {
         try {
-            int iP = rj.p();
-            return iP > 0 ? iP : Process.myPid();
+            int p = rj.p();
+            return p > 0 ? p : Process.myPid();
         } catch (Throwable unused) {
             return Process.myPid();
         }
@@ -341,8 +341,8 @@ public class IOCore {
 
     private int safeVirtualUid() {
         try {
-            int iR = rj.r();
-            return iR > 0 ? iR : Process.myUid();
+            int r = rj.r();
+            return r > 0 ? r : Process.myUid();
         } catch (Throwable unused) {
             return Process.myUid();
         }
@@ -356,9 +356,9 @@ public class IOCore {
         StringBuilder sb = new StringBuilder(str.length());
         for (String str2 : str.split(c.a(-12979950206754L, strArr), -1)) {
             if (str2.length() != 0) {
-                String strSanitizeVirtualPaths = sanitizeVirtualPaths(str2);
-                if (!shouldDropMapsLine(strSanitizeVirtualPaths)) {
-                    sb.append(strSanitizeVirtualPaths);
+                String sanitizeVirtualPaths = sanitizeVirtualPaths(str2);
+                if (!shouldDropMapsLine(sanitizeVirtualPaths)) {
+                    sb.append(sanitizeVirtualPaths);
                     sb.append('\n');
                 }
             }
@@ -368,49 +368,47 @@ public class IOCore {
 
     private String sanitizeProcStatus(String str) {
         String[] strArr = xa1.b;
-        String strA = (str == null || str.length() == 0) ? c.a(-13143158964002L, strArr) : str;
-        String strSafeProcessName = safeProcessName();
-        if (strSafeProcessName == null || strSafeProcessName.length() == 0) {
-            strSafeProcessName = safeAppPackageName();
+        String a2 = (str == null || str.length() == 0) ? c.a(-13143158964002L, strArr) : str;
+        String safeProcessName = safeProcessName();
+        if (safeProcessName == null || safeProcessName.length() == 0) {
+            safeProcessName = safeAppPackageName();
         }
-        if (strSafeProcessName == null || strSafeProcessName.length() == 0) {
-            strSafeProcessName = c.a(-13147453931298L, strArr);
+        if (safeProcessName == null || safeProcessName.length() == 0) {
+            safeProcessName = c.a(-13147453931298L, strArr);
         }
-        if (strSafeProcessName.length() > 15) {
-            strSafeProcessName = strSafeProcessName.substring(0, 15);
+        if (safeProcessName.length() > 15) {
+            safeProcessName = safeProcessName.substring(0, 15);
         }
-        int iSafeVirtualUid = safeVirtualUid();
-        StringBuilder sb = new StringBuilder(strA.length() + 64);
+        int safeVirtualUid = safeVirtualUid();
+        StringBuilder sb = new StringBuilder(a2.length() + 64);
         boolean z = false;
         boolean z2 = false;
         boolean z3 = false;
-        for (String str2 : strA.split(c.a(-13164633800482L, strArr), -1)) {
+        for (String str2 : a2.split(c.a(-13164633800482L, strArr), -1)) {
             if (str2.startsWith(c.a(-12675007528738L, strArr))) {
                 sb.append(c.a(-12649237724962L, strArr));
-                sb.append(strSafeProcessName);
+                sb.append(safeProcessName);
                 sb.append('\n');
                 z = true;
             } else if (str2.startsWith(c.a(-12679302496034L, strArr))) {
-                sb.append(String.format(Locale.ENGLISH, c.a(-12735137070882L, strArr), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid)));
+                sb.append(String.format(Locale.ENGLISH, c.a(-12735137070882L, strArr), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid)));
                 z2 = true;
             } else if (str2.startsWith(c.a(-12795266613026L, strArr))) {
-                sb.append(String.format(Locale.ENGLISH, c.a(-12833921318690L, strArr), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid)));
+                sb.append(String.format(Locale.ENGLISH, c.a(-12833921318690L, strArr), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid)));
                 z3 = true;
-            } else {
-                if (str2.length() > 0) {
-                    sb.append(sanitizeVirtualPaths(str2));
-                    sb.append('\n');
-                }
+            } else if (str2.length() > 0) {
+                sb.append(sanitizeVirtualPaths(str2));
+                sb.append('\n');
             }
         }
         if (!z) {
-            sb.insert(0, c.a(-12894050860834L, strArr) + strSafeProcessName + c.a(-11292028059426L, strArr));
+            sb.insert(0, c.a(-12894050860834L, strArr) + safeProcessName + c.a(-11292028059426L, strArr));
         }
         if (!z2) {
-            sb.append(String.format(Locale.ENGLISH, c.a(-11283438124834L, strArr), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid)));
+            sb.append(String.format(Locale.ENGLISH, c.a(-11283438124834L, strArr), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid)));
         }
         if (!z3) {
-            sb.append(String.format(Locale.ENGLISH, c.a(-11343567666978L, strArr), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid), Integer.valueOf(iSafeVirtualUid)));
+            sb.append(String.format(Locale.ENGLISH, c.a(-11343567666978L, strArr), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid), Integer.valueOf(safeVirtualUid)));
         }
         return sb.toString();
     }
@@ -421,15 +419,15 @@ public class IOCore {
             return c.a(-11472416685858L, strArr);
         }
         String absolutePath = BEnvironment.getVirtualRoot().getAbsolutePath();
-        StringBuilder sbK = jx0.k(absolutePath);
-        sbK.append(c.a(-11459531783970L, strArr));
-        String strReplace = str.replace(sbK.toString(), c.a(-11476711653154L, strArr));
-        StringBuilder sbK2 = jx0.k(absolutePath);
-        sbK2.append(c.a(-11012855185186L, strArr));
-        String strReplace2 = strReplace.replace(sbK2.toString(), c.a(-11094459563810L, strArr));
-        StringBuilder sbK3 = jx0.k(absolutePath);
-        sbK3.append(c.a(-11158884073250L, strArr));
-        return strReplace2.replace(sbK3.toString(), c.a(-11223308582690L, strArr));
+        StringBuilder k = jx0.k(absolutePath);
+        k.append(c.a(-11459531783970L, strArr));
+        String replace = str.replace(k.toString(), c.a(-11476711653154L, strArr));
+        StringBuilder k2 = jx0.k(absolutePath);
+        k2.append(c.a(-11012855185186L, strArr));
+        String replace2 = replace.replace(k2.toString(), c.a(-11094459563810L, strArr));
+        StringBuilder k3 = jx0.k(absolutePath);
+        k3.append(c.a(-11158884073250L, strArr));
+        return replace2.replace(k3.toString(), c.a(-11223308582690L, strArr));
     }
 
     private boolean shouldDropMapsLine(String str) {
@@ -529,32 +527,32 @@ public class IOCore {
         if (TextUtils.isEmpty(str)) {
             return str;
         }
-        String strRedirectVirtualGoogleProbePath = redirectVirtualGoogleProbePath(str);
-        if (!strRedirectVirtualGoogleProbePath.equals(str)) {
-            return strRedirectVirtualGoogleProbePath;
+        String redirectVirtualGoogleProbePath = redirectVirtualGoogleProbePath(str);
+        if (!redirectVirtualGoogleProbePath.equals(str)) {
+            return redirectVirtualGoogleProbePath;
         }
-        String strRedirectVirtualGoogleCheckinPath = redirectVirtualGoogleCheckinPath(str);
-        if (!strRedirectVirtualGoogleCheckinPath.equals(str)) {
-            return strRedirectVirtualGoogleCheckinPath;
+        String redirectVirtualGoogleCheckinPath = redirectVirtualGoogleCheckinPath(str);
+        if (!redirectVirtualGoogleCheckinPath.equals(str)) {
+            return redirectVirtualGoogleCheckinPath;
         }
-        String strRedirectVirtualGoogleDgCache = redirectVirtualGoogleDgCache(str);
-        if (!strRedirectVirtualGoogleDgCache.equals(str)) {
-            return strRedirectVirtualGoogleDgCache;
+        String redirectVirtualGoogleDgCache = redirectVirtualGoogleDgCache(str);
+        if (!redirectVirtualGoogleDgCache.equals(str)) {
+            return redirectVirtualGoogleDgCache;
         }
         if (str.contains(c.a(-16673622081314L, xa1.b))) {
             return str;
         }
-        String strB = sBlackTree.b(str);
-        if (!TextUtils.isEmpty(strB)) {
-            return strB;
+        String b = sBlackTree.b(str);
+        if (!TextUtils.isEmpty(b)) {
+            return b;
         }
-        String strB2 = mTrieTree.b(str);
-        if (TextUtils.isEmpty(strB2)) {
+        String b2 = mTrieTree.b(str);
+        if (TextUtils.isEmpty(b2)) {
             return str;
         }
-        String str2 = this.mRedirectMap.get(strB2);
+        String str2 = this.mRedirectMap.get(b2);
         Objects.requireNonNull(str2);
-        return str.replace(strB2, str2);
+        return str.replace(b2, str2);
     }
 
     public File redirectPath(File file) {
@@ -568,26 +566,26 @@ public class IOCore {
         if (TextUtils.isEmpty(str)) {
             return str;
         }
-        String strB = mTrieTree.b(str);
-        if (TextUtils.isEmpty(strB)) {
+        String b = mTrieTree.b(str);
+        if (TextUtils.isEmpty(b)) {
             return str;
         }
-        String str2 = map.get(strB);
+        String str2 = map.get(b);
         Objects.requireNonNull(str2);
-        return str.replace(strB, str2);
+        return str.replace(b, str2);
     }
 
     private String redirectVirtualGoogleCheckinPath(String str, String str2, File file) {
-        int iIndexOf;
-        if (str.startsWith(str2) && (iIndexOf = str.indexOf(47, str2.length())) > str2.length()) {
-            String strSubstring = str.substring(iIndexOf);
+        int indexOf;
+        if (str.startsWith(str2) && (indexOf = str.indexOf(47, str2.length())) > str2.length()) {
+            String substring = str.substring(indexOf);
             String[] strArr = xa1.b;
-            if (c.a(-11721524789026L, strArr).equals(strSubstring) || strSubstring.startsWith(c.a(-11811719102242L, strArr))) {
+            if (c.a(-11721524789026L, strArr).equals(substring) || substring.startsWith(c.a(-11811719102242L, strArr))) {
                 ensureVirtualDir(file);
-                if (c.a(-23382360997666L, strArr).equals(strSubstring)) {
+                if (c.a(-23382360997666L, strArr).equals(substring)) {
                     return file.getAbsolutePath();
                 }
-                return new File(file, strSubstring.substring(c.a(-23421015703330L, strArr).length())).getAbsolutePath();
+                return new File(file, substring.substring(c.a(-23421015703330L, strArr).length())).getAbsolutePath();
             }
         }
         return str;

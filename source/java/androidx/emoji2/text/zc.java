@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class zc implements wu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1429a;
+    public final int f1428a;
     public final String b;
     public final un1 c = az0.W(zv0.e);
     public final un1 d = az0.W(Boolean.TRUE);
 
     public zc(int i, String str) {
-        this.f1429a = i;
+        this.f1428a = i;
         this.b = str;
     }
 
@@ -32,7 +32,7 @@ public final class zc implements wu2 {
 
     @Override // androidx.emoji2.text.wu2
     public final int d(j70 j70Var, q01 q01Var) {
-        return e().f1457a;
+        return e().f1456a;
     }
 
     public final zv0 e() {
@@ -44,28 +44,28 @@ public final class zc implements wu2 {
             return true;
         }
         if (obj instanceof zc) {
-            return this.f1429a == ((zc) obj).f1429a;
+            return this.f1428a == ((zc) obj).f1428a;
         }
         return false;
     }
 
     public final void f(wv2 wv2Var, int i) {
-        int i2 = this.f1429a;
+        int i2 = this.f1428a;
         if (i == 0 || (i & i2) != 0) {
-            this.c.setValue(wv2Var.f1306a.g(i2));
-            this.d.setValue(Boolean.valueOf(wv2Var.f1306a.q(i2)));
+            this.c.setValue(wv2Var.f1305a.g(i2));
+            this.d.setValue(Boolean.valueOf(wv2Var.f1305a.q(i2)));
         }
     }
 
     public final int hashCode() {
-        return this.f1429a;
+        return this.f1428a;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.b);
         sb.append('(');
-        sb.append(e().f1457a);
+        sb.append(e().f1456a);
         sb.append(", ");
         sb.append(e().b);
         sb.append(", ");

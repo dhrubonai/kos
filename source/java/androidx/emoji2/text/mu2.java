@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class mu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final lu2 f771a;
+    public final lu2 f770a;
 
     public mu2(lu2 lu2Var) {
-        this.f771a = lu2Var;
+        this.f770a = lu2Var;
     }
 
     public final String toString() {
-        return "WaiterEB(" + this.f771a + ')';
+        return "WaiterEB(" + this.f770a + ')';
     }
 }

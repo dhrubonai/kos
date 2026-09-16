@@ -7,7 +7,7 @@ import android.os.Build;
 public abstract class x81 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f72 f1323a = new f72("MagnifierPositionInRoot");
+    public static final f72 f1322a = new f72("MagnifierPositionInRoot");
 
     public static boolean a() {
         return Build.VERSION.SDK_INT >= 28;

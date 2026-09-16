@@ -5,19 +5,27 @@ package androidx.emoji2.text;
 public abstract class xx0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Integer f1362a;
+    public static final Integer f1361a;
 
     static {
+        Integer num;
         Object obj;
-        Integer num = null;
+        Integer num2 = null;
         try {
             obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
         } catch (Throwable unused) {
         }
-        Integer num2 = obj instanceof Integer ? (Integer) obj : null;
-        if (num2 != null && num2.intValue() > 0) {
-            num = num2;
+        if (obj instanceof Integer) {
+            num = (Integer) obj;
+            if (num != null && num.intValue() > 0) {
+                num2 = num;
+            }
+            f1361a = num2;
         }
-        f1362a = num;
+        num = null;
+        if (num != null) {
+            num2 = num;
+        }
+        f1361a = num2;
     }
 }

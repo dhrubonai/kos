@@ -7,11 +7,11 @@ public final class jn implements in {
 
     @Override // androidx.emoji2.text.in
     public final float a(float f, float f2, float f3) {
-        float fAbs = Math.abs((f2 + f) - f);
-        float f4 = (0.3f * f3) - (0.0f * fAbs);
+        float abs = Math.abs((f2 + f) - f);
+        float f4 = (0.3f * f3) - (0.0f * abs);
         float f5 = f3 - f4;
-        if ((fAbs <= f3) && f5 < fAbs) {
-            f4 = f3 - fAbs;
+        if ((abs <= f3) && f5 < abs) {
+            f4 = f3 - abs;
         }
         return f - f4;
     }

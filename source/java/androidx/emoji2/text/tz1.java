@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class tz1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final qe1 f1153a = new qe1();
+    public final qe1 f1152a = new qe1();
 }

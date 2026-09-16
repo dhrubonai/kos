@@ -40,9 +40,9 @@ public final class SuspendPointerInputElement extends ud1 {
 
     public final int hashCode() {
         Object obj = this.f57a;
-        int iHashCode = (obj != null ? obj.hashCode() : 0) * 31;
+        int hashCode = (obj != null ? obj.hashCode() : 0) * 31;
         Object obj2 = this.b;
-        return this.c.hashCode() + ((iHashCode + (obj2 != null ? obj2.hashCode() : 0)) * 961);
+        return this.c.hashCode() + ((hashCode + (obj2 != null ? obj2.hashCode() : 0)) * 961);
     }
 
     @Override // androidx.emoji2.text.ud1

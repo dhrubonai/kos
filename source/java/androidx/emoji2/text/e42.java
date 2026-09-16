@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class e42 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long[] f285a = {-9187201950435737345L, -1};
+    public static final long[] f284a = {-9187201950435737345L, -1};
 
     static {
         new gf1(0);

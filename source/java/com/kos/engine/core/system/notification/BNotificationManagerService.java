@@ -97,11 +97,11 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
             notificationText2 = processRecord.getPackageName();
         }
         Notification.Builder ticker = createHostBuilder(context).setSmallIcon(getHostSmallIcon(context)).setContentTitle(notificationText).setContentText(notificationText2).setTicker(notification.tickerText);
-        long jCurrentTimeMillis = notification.when;
-        if (jCurrentTimeMillis == 0) {
-            jCurrentTimeMillis = System.currentTimeMillis();
+        long j = notification.when;
+        if (j == 0) {
+            j = System.currentTimeMillis();
         }
-        Notification.Builder number = ticker.setWhen(jCurrentTimeMillis).setShowWhen(notification.when != 0).setOngoing((notification.flags & 2) != 0).setAutoCancel((notification.flags & 16) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setDefaults(notification.defaults).setPriority(notification.priority).setNumber(notification.number);
+        Notification.Builder number = ticker.setWhen(j).setShowWhen(notification.when != 0).setOngoing((notification.flags & 2) != 0).setAutoCancel((notification.flags & 16) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setDefaults(notification.defaults).setPriority(notification.priority).setNumber(notification.number);
         Bitmap bitmap = notification.largeIcon;
         if (bitmap != null) {
             number.setLargeIcon(bitmap);
@@ -136,12 +136,12 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
         if (i != 0) {
             number.setLights(i, notification.ledOnMS, notification.ledOffMS);
         }
-        Notification notificationBuild = number.build();
-        notificationBuild.flags = (notification.flags & 59) | notificationBuild.flags;
-        notificationBuild.contentIntent = null;
-        notificationBuild.deleteIntent = null;
-        notificationBuild.fullScreenIntent = null;
-        return notificationBuild;
+        Notification build = number.build();
+        build.flags = (notification.flags & 59) | build.flags;
+        build.contentIntent = null;
+        build.deleteIntent = null;
+        build.fullScreenIntent = null;
+        return build;
     }
 
     private Notification.Builder createHostBuilder(Context context) {
@@ -154,11 +154,18 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     @TargetApi(26)
     private void ensureRealNotificationChannelGroup(NotificationRecord notificationRecord, String str, int i) {
+        CharSequence charSequence;
         CharSequence name;
         synchronized (notificationRecord.mNotificationChannelGroups) {
             try {
-                NotificationChannelGroup notificationChannelGroupE = ej.e(notificationRecord.mNotificationChannelGroups.get(str));
-                name = (notificationChannelGroupE == null || TextUtils.isEmpty(notificationChannelGroupE.getName())) ? str : notificationChannelGroupE.getName();
+                NotificationChannelGroup e = ej.e(notificationRecord.mNotificationChannelGroups.get(str));
+                if (e != null) {
+                    name = e.getName();
+                    if (!TextUtils.isEmpty(name)) {
+                        charSequence = e.getName();
+                    }
+                }
+                charSequence = str;
             } catch (Throwable th) {
                 throw th;
             }
@@ -166,26 +173,28 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
         try {
             NotificationManager notificationManager = this.mRealNotificationManager;
             ej.l();
-            notificationManager.createNotificationChannelGroup(ej.d(name, getBlackGroupId(str, i)));
-        } catch (RuntimeException e) {
+            notificationManager.createNotificationChannelGroup(ej.d(charSequence, getBlackGroupId(str, i)));
+        } catch (RuntimeException e2) {
             String[] strArr = xa1.b;
-            nz0.P(c.a(-427203776102178L, strArr), c.a(-427358394924834L, strArr) + str, e);
+            nz0.P(c.a(-427203776102178L, strArr), c.a(-427358394924834L, strArr) + str, e2);
         }
     }
 
     @TargetApi(26)
     private void ensureVirtualAppChannel() {
+        NotificationChannel notificationChannel;
         NotificationManager notificationManager = this.mRealNotificationManager;
         String[] strArr = xa1.b;
-        if (notificationManager.getNotificationChannel(c.a(-429123626483490L, strArr)) != null) {
+        notificationChannel = notificationManager.getNotificationChannel(c.a(-429123626483490L, strArr));
+        if (notificationChannel != null) {
             return;
         }
         e40.p();
-        NotificationChannel notificationChannelE = e40.e(c.a(-429269655371554L, strArr), c.a(-428865928445730L, strArr));
-        notificationChannelE.enableLights(true);
-        notificationChannelE.setShowBadge(true);
-        notificationChannelE.setLockscreenVisibility(1);
-        this.mRealNotificationManager.createNotificationChannel(notificationChannelE);
+        NotificationChannel e = e40.e(c.a(-429269655371554L, strArr), c.a(-428865928445730L, strArr));
+        e.enableLights(true);
+        e.setShowBadge(true);
+        e.setLockscreenVisibility(1);
+        this.mRealNotificationManager.createNotificationChannel(e);
     }
 
     public static BNotificationManagerService get() {
@@ -194,9 +203,9 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     private String getAppLabel(ProcessRecord processRecord) {
         try {
-            CharSequence charSequenceLoadLabel = processRecord.info.loadLabel(c01.s.getPackageManager());
-            if (!TextUtils.isEmpty(charSequenceLoadLabel)) {
-                return charSequenceLoadLabel.toString();
+            CharSequence loadLabel = processRecord.info.loadLabel(c01.s.getPackageManager());
+            if (!TextUtils.isEmpty(loadLabel)) {
+                return loadLabel.toString();
             }
         } catch (Throwable unused) {
         }
@@ -233,13 +242,13 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     private NotificationRecord getNotificationRecord(String str, int i) {
         NotificationRecord notificationRecord;
-        String strJ = jx0.j(jx0.k(str), c.a(-427053452246818L, xa1.b), i);
+        String j = jx0.j(jx0.k(str), c.a(-427053452246818L, xa1.b), i);
         synchronized (this.mNotificationRecords) {
             try {
-                notificationRecord = this.mNotificationRecords.get(strJ);
+                notificationRecord = this.mNotificationRecords.get(j);
                 if (notificationRecord == null) {
                     notificationRecord = new NotificationRecord();
-                    this.mNotificationRecords.put(strJ, notificationRecord);
+                    this.mNotificationRecords.put(j, notificationRecord);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -278,17 +287,19 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     @TargetApi(26)
     private void handleNotificationChannel(NotificationChannel notificationChannel, int i) {
+        String group;
         NotificationChannelContext notificationChannelContext = BRNotificationChannel.get(notificationChannel);
         notificationChannelContext._set_mId(getBlackChannelId(notificationChannelContext.mId(), i));
-        notificationChannel.setGroup(getBlackGroupId(notificationChannel.getGroup(), i));
+        group = notificationChannel.getGroup();
+        notificationChannel.setGroup(getBlackGroupId(group, i));
     }
 
     private void handleNotificationGroup(NotificationChannelGroup notificationChannelGroup, int i) {
         NotificationChannelGroupContext notificationChannelGroupContext = BRNotificationChannelGroup.get(notificationChannelGroup);
         notificationChannelGroupContext._set_mId(getBlackGroupId(notificationChannelGroupContext.mId(), i));
-        List<NotificationChannel> listMChannels = notificationChannelGroupContext.mChannels();
-        if (listMChannels != null) {
-            Iterator<NotificationChannel> it = listMChannels.iterator();
+        List<NotificationChannel> mChannels = notificationChannelGroupContext.mChannels();
+        if (mChannels != null) {
+            Iterator<NotificationChannel> it = mChannels.iterator();
             while (it.hasNext()) {
                 createNotificationChannel(ej.b(it.next()), i);
             }
@@ -311,9 +322,9 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
     }
 
     private void removeNotificationRecord(String str, int i) {
-        String strJ = jx0.j(jx0.k(str), c.a(-427044862312226L, xa1.b), i);
+        String j = jx0.j(jx0.k(str), c.a(-427044862312226L, xa1.b), i);
         synchronized (this.mNotificationRecords) {
-            this.mNotificationRecords.remove(strJ);
+            this.mNotificationRecords.remove(j);
         }
     }
 
@@ -325,9 +336,9 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
     private void resetNotificationGroup(NotificationChannelGroup notificationChannelGroup) {
         NotificationChannelGroupContext notificationChannelGroupContext = BRNotificationChannelGroup.get(notificationChannelGroup);
         notificationChannelGroupContext._set_mId(getRealGroupId(notificationChannelGroupContext.mId()));
-        List<NotificationChannel> listMChannels = notificationChannelGroupContext.mChannels();
-        if (listMChannels != null) {
-            Iterator<NotificationChannel> it = listMChannels.iterator();
+        List<NotificationChannel> mChannels = notificationChannelGroupContext.mChannels();
+        if (mChannels != null) {
+            Iterator<NotificationChannel> it = mChannels.iterator();
             while (it.hasNext()) {
                 resetNotificationChannel(ej.b(it.next()));
             }
@@ -336,13 +347,13 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     public void cancelNotificationWithTag(int i, String str, int i2) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        int notificationId = getNotificationId(i2, i, str, processRecordFindProcessByPid.getPackageName());
+        int notificationId = getNotificationId(i2, i, str, findProcessByPid.getPackageName());
         this.mRealNotificationManager.cancel(notificationId);
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i2);
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i2);
         synchronized (notificationRecord.mIds) {
             notificationRecord.mIds.remove(Integer.valueOf(notificationId));
         }
@@ -351,12 +362,14 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     @TargetApi(26)
     public void createNotificationChannel(NotificationChannel notificationChannel, int i) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        String group;
+        String id;
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        String group = notificationChannel.getGroup();
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i);
+        group = notificationChannel.getGroup();
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i);
         if (group != null) {
             ensureRealNotificationChannelGroup(notificationRecord, group, i);
         }
@@ -375,39 +388,46 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
         resetNotificationChannel(notificationChannel);
         notificationChannel.setGroup(group);
         synchronized (notificationRecord.mNotificationChannels) {
-            notificationRecord.mNotificationChannels.put(notificationChannel.getId(), notificationChannel);
+            Map<String, NotificationChannel> map = notificationRecord.mNotificationChannels;
+            id = notificationChannel.getId();
+            map.put(id, notificationChannel);
         }
     }
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     @TargetApi(26)
     public void createNotificationChannelGroup(NotificationChannelGroup notificationChannelGroup, int i) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        String id;
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
         handleNotificationGroup(notificationChannelGroup, i);
         this.mRealNotificationManager.createNotificationChannelGroup(notificationChannelGroup);
         resetNotificationGroup(notificationChannelGroup);
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i);
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i);
         synchronized (notificationRecord.mNotificationChannelGroups) {
-            notificationRecord.mNotificationChannelGroups.put(notificationChannelGroup.getId(), notificationChannelGroup);
+            Map<String, NotificationChannelGroup> map = notificationRecord.mNotificationChannelGroups;
+            id = notificationChannelGroup.getId();
+            map.put(id, notificationChannelGroup);
         }
     }
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     @TargetApi(26)
     public void deleteNotificationChannel(String str, int i) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        String id;
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i);
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i);
         synchronized (notificationRecord.mNotificationChannels) {
             try {
-                NotificationChannel notificationChannelB = ej.b(notificationRecord.mNotificationChannels.remove(str));
-                if (notificationChannelB != null) {
-                    this.mRealNotificationManager.deleteNotificationChannel(getBlackChannelId(notificationChannelB.getId(), i));
+                NotificationChannel b = ej.b(notificationRecord.mNotificationChannels.remove(str));
+                if (b != null) {
+                    id = b.getId();
+                    this.mRealNotificationManager.deleteNotificationChannel(getBlackChannelId(id, i));
                 }
             } catch (Throwable th) {
                 throw th;
@@ -418,16 +438,18 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     @TargetApi(26)
     public void deleteNotificationChannelGroup(String str, int i) {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        String id;
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return;
         }
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i);
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i);
         synchronized (notificationRecord.mNotificationChannelGroups) {
             try {
-                NotificationChannelGroup notificationChannelGroupE = ej.e(notificationRecord.mNotificationChannelGroups.remove(str));
-                if (notificationChannelGroupE != null) {
-                    this.mRealNotificationManager.deleteNotificationChannelGroup(getBlackGroupId(notificationChannelGroupE.getId(), i));
+                NotificationChannelGroup e = ej.e(notificationRecord.mNotificationChannelGroups.remove(str));
+                if (e != null) {
+                    id = e.getId();
+                    this.mRealNotificationManager.deleteNotificationChannelGroup(getBlackGroupId(id, i));
                 }
             } catch (Throwable th) {
                 throw th;
@@ -437,15 +459,19 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     @SuppressLint({"NewApi"})
     public void deletePackageNotification(String str, int i) {
+        String id;
+        String id2;
         NotificationRecord notificationRecord = getNotificationRecord(str, i);
         if (l8.T()) {
             Iterator<NotificationChannelGroup> it = notificationRecord.mNotificationChannelGroups.values().iterator();
             while (it.hasNext()) {
-                this.mRealNotificationManager.deleteNotificationChannelGroup(getBlackGroupId(ej.e(it.next()).getId(), i));
+                id2 = ej.e(it.next()).getId();
+                this.mRealNotificationManager.deleteNotificationChannelGroup(getBlackGroupId(id2, i));
             }
             Iterator<NotificationChannel> it2 = notificationRecord.mNotificationChannels.values().iterator();
             while (it2.hasNext()) {
-                this.mRealNotificationManager.deleteNotificationChannel(getBlackChannelId(ej.b(it2.next()).getId(), i));
+                id = ej.b(it2.next()).getId();
+                this.mRealNotificationManager.deleteNotificationChannel(getBlackChannelId(id, i));
             }
         }
         Iterator<Integer> it3 = notificationRecord.mIds.iterator();
@@ -457,36 +483,36 @@ public class BNotificationManagerService extends IBNotificationManagerService.St
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     public void enqueueNotificationWithTag(int i, String str, Notification notification, int i2) {
-        ProcessRecord processRecordFindProcessByPid;
-        if (!isShowAppsNotificationEnabled() || notification == null || (processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null) {
+        ProcessRecord findProcessByPid;
+        if (!isShowAppsNotificationEnabled() || notification == null || (findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null) {
             return;
         }
-        int notificationId = getNotificationId(i2, i, str, processRecordFindProcessByPid.getPackageName());
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i2);
+        int notificationId = getNotificationId(i2, i, str, findProcessByPid.getPackageName());
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i2);
         synchronized (notificationRecord.mIds) {
             notificationRecord.mIds.add(Integer.valueOf(notificationId));
         }
         try {
-            this.mRealNotificationManager.notify(notificationId, buildHostNotification(processRecordFindProcessByPid, notification));
+            this.mRealNotificationManager.notify(notificationId, buildHostNotification(findProcessByPid, notification));
         } catch (Throwable th) {
             String[] strArr = xa1.b;
-            nz0.P(c.a(-427439999303458L, strArr), c.a(-427594618126114L, strArr) + processRecordFindProcessByPid.getPackageName(), th);
+            nz0.P(c.a(-427439999303458L, strArr), c.a(-427594618126114L, strArr) + findProcessByPid.getPackageName(), th);
         }
     }
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
     @TargetApi(26)
     public NotificationChannel getNotificationChannel(String str, int i) {
-        NotificationChannel notificationChannelB;
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null) {
+        NotificationChannel b;
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null) {
             return null;
         }
-        NotificationRecord notificationRecord = getNotificationRecord(processRecordFindProcessByPid.getPackageName(), i);
+        NotificationRecord notificationRecord = getNotificationRecord(findProcessByPid.getPackageName(), i);
         synchronized (notificationRecord.mNotificationChannels) {
-            notificationChannelB = ej.b(notificationRecord.mNotificationChannels.get(str));
+            b = ej.b(notificationRecord.mNotificationChannels.get(str));
         }
-        return notificationChannelB;
+        return b;
     }
 
     @Override // com.kos.engine.core.system.notification.IBNotificationManagerService

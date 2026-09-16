@@ -16,18 +16,18 @@ public final /* synthetic */ class k0 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        boolean zContains;
+        boolean contains;
         switch (this.d) {
             case 0:
-                zContains = this.e.contains(obj);
+                contains = this.e.contains(obj);
                 break;
             case 1:
-                zContains = this.e.contains(obj);
+                contains = this.e.contains(obj);
                 break;
             default:
-                zContains = ((List) obj).retainAll(this.e);
+                contains = ((List) obj).retainAll(this.e);
                 break;
         }
-        return Boolean.valueOf(zContains);
+        return Boolean.valueOf(contains);
     }
 }

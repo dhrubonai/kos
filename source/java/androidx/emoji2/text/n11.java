@@ -7,14 +7,14 @@ import java.util.Map;
 public final class n11 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f785a;
+    public final /* synthetic */ int f784a;
     public final /* synthetic */ gb1 b;
     public final /* synthetic */ r11 c;
     public final /* synthetic */ int d;
     public final /* synthetic */ gb1 e;
 
     public /* synthetic */ n11(gb1 gb1Var, r11 r11Var, int i, gb1 gb1Var2, int i2) {
-        this.f785a = i2;
+        this.f784a = i2;
         this.c = r11Var;
         this.d = i;
         this.e = gb1Var2;
@@ -23,14 +23,14 @@ public final class n11 implements gb1 {
 
     @Override // androidx.emoji2.text.gb1
     public final void a() {
-        switch (this.f785a) {
+        switch (this.f784a) {
             case 0:
                 int i = this.d;
                 r11 r11Var = this.c;
                 r11Var.h = i;
                 this.e.a();
                 gf1 gf1Var = r11Var.o;
-                long[] jArr = gf1Var.f416a;
+                long[] jArr = gf1Var.f415a;
                 int length = jArr.length - 2;
                 if (length >= 0) {
                     int i2 = 0;
@@ -75,28 +75,28 @@ public final class n11 implements gb1 {
 
     @Override // androidx.emoji2.text.gb1
     public final Map b() {
-        switch (this.f785a) {
+        switch (this.f784a) {
         }
         return this.b.b();
     }
 
     @Override // androidx.emoji2.text.gb1
     public final int c() {
-        switch (this.f785a) {
+        switch (this.f784a) {
         }
         return this.b.c();
     }
 
     @Override // androidx.emoji2.text.gb1
     public final int d() {
-        switch (this.f785a) {
+        switch (this.f784a) {
         }
         return this.b.d();
     }
 
     @Override // androidx.emoji2.text.gb1
     public final um0 e() {
-        switch (this.f785a) {
+        switch (this.f784a) {
         }
         return this.b.e();
     }

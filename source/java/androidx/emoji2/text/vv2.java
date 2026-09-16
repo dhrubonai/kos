@@ -6,30 +6,30 @@ import android.view.WindowInsets;
 /* loaded from: classes.dex */
 public abstract class vv2 {
     public static int a(int i) {
-        int iStatusBars;
+        int statusBars;
         int i2 = 0;
         for (int i3 = 1; i3 <= 512; i3 <<= 1) {
             if ((i & i3) != 0) {
                 if (i3 == 1) {
-                    iStatusBars = WindowInsets.Type.statusBars();
+                    statusBars = WindowInsets.Type.statusBars();
                 } else if (i3 == 2) {
-                    iStatusBars = WindowInsets.Type.navigationBars();
+                    statusBars = WindowInsets.Type.navigationBars();
                 } else if (i3 == 4) {
-                    iStatusBars = WindowInsets.Type.captionBar();
+                    statusBars = WindowInsets.Type.captionBar();
                 } else if (i3 == 8) {
-                    iStatusBars = WindowInsets.Type.ime();
+                    statusBars = WindowInsets.Type.ime();
                 } else if (i3 == 16) {
-                    iStatusBars = WindowInsets.Type.systemGestures();
+                    statusBars = WindowInsets.Type.systemGestures();
                 } else if (i3 == 32) {
-                    iStatusBars = WindowInsets.Type.mandatorySystemGestures();
+                    statusBars = WindowInsets.Type.mandatorySystemGestures();
                 } else if (i3 == 64) {
-                    iStatusBars = WindowInsets.Type.tappableElement();
+                    statusBars = WindowInsets.Type.tappableElement();
                 } else if (i3 == 128) {
-                    iStatusBars = WindowInsets.Type.displayCutout();
+                    statusBars = WindowInsets.Type.displayCutout();
                 } else if (i3 == 512) {
-                    iStatusBars = WindowInsets.Type.systemOverlays();
+                    statusBars = WindowInsets.Type.systemOverlays();
                 }
-                i2 |= iStatusBars;
+                i2 |= statusBars;
             }
         }
         return i2;

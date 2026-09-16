@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class ri2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final String f1014a;
+    public static final String f1013a;
     public static final long b;
     public static final int c;
     public static final int d;
@@ -15,19 +15,19 @@ public abstract class ri2 {
     public static final dd0 f;
 
     static {
-        String property;
-        int i = wh2.f1281a;
+        String str;
+        int i = wh2.f1280a;
         try {
-            property = System.getProperty("kotlinx.coroutines.scheduler.default.name");
+            str = System.getProperty("kotlinx.coroutines.scheduler.default.name");
         } catch (SecurityException unused) {
-            property = null;
+            str = null;
         }
-        if (property == null) {
-            property = "DefaultDispatcher";
+        if (str == null) {
+            str = "DefaultDispatcher";
         }
-        f1014a = property;
+        f1013a = str;
         b = ly0.I("kotlinx.coroutines.scheduler.resolution.ns", 100000L, 1L, Long.MAX_VALUE);
-        int i2 = wh2.f1281a;
+        int i2 = wh2.f1280a;
         if (i2 < 2) {
             i2 = 2;
         }

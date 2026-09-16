@@ -33,115 +33,278 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
     public x8(v7 v7Var, k7 k7Var) {
         this.d = v7Var;
         this.e = k7Var;
-        qe1 qe1Var = mw0.f774a;
+        qe1 qe1Var = mw0.f773a;
         lx0.v(qe1Var, "null cannot be cast to non-null type androidx.collection.IntObjectMap<V of androidx.collection.IntObjectMapKt.intObjectMapOf>");
         this.m = qe1Var;
         this.o = new qe1();
-        y62 y62VarA = v7Var.getSemanticsOwner().a();
+        y62 a2 = v7Var.getSemanticsOwner().a();
         lx0.v(qe1Var, "null cannot be cast to non-null type androidx.collection.IntObjectMap<V of androidx.collection.IntObjectMapKt.intObjectMapOf>");
-        this.p = new z62(y62VarA, qe1Var);
+        this.p = new z62(a2, qe1Var);
         this.r = new f7(3, this);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0080  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x007d -> B:17:0x0047). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x004f, code lost:
+    
+        if (r8 != r4) goto L20;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x007d, code lost:
+    
+        if (androidx.emoji2.text.kx0.r(r7.h, r0) == r4) goto L30;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x007f, code lost:
+    
+        return r4;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x003a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x007d -> B:11:0x0047). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object a(androidx.emoji2.text.n10 r8) throws java.lang.Throwable {
-        /*
-            r7 = this;
-            boolean r0 = r8 instanceof androidx.emoji2.text.w8
-            if (r0 == 0) goto L13
-            r0 = r8
-            androidx.emoji2.text.w8 r0 = (androidx.emoji2.text.w8) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.w8 r0 = new androidx.emoji2.text.w8
-            r0.<init>(r7, r8)
-        L18:
-            java.lang.Object r8 = r0.h
-            int r1 = r0.j
-            r2 = 2
-            r3 = 1
-            androidx.emoji2.text.f30 r4 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L3a
-            if (r1 == r3) goto L34
-            if (r1 != r2) goto L2c
-            androidx.emoji2.text.un r1 = r0.g
-            androidx.emoji2.text.mz0.L(r8)
-            goto L47
-        L2c:
-            java.lang.IllegalStateException r8 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r8.<init>(r0)
-            throw r8
-        L34:
-            androidx.emoji2.text.un r1 = r0.g
-            androidx.emoji2.text.mz0.L(r8)
-            goto L52
-        L3a:
-            androidx.emoji2.text.mz0.L(r8)
-            androidx.emoji2.text.vn r8 = r7.k
-            r8.getClass()
-            androidx.emoji2.text.un r1 = new androidx.emoji2.text.un
-            r1.<init>(r8)
-        L47:
-            r0.g = r1
-            r0.j = r3
-            java.lang.Object r8 = r1.b(r0)
-            if (r8 != r4) goto L52
-            goto L7f
-        L52:
-            java.lang.Boolean r8 = (java.lang.Boolean) r8
-            boolean r8 = r8.booleanValue()
-            if (r8 == 0) goto L80
-            r1.c()
-            boolean r8 = r7.h()
-            if (r8 == 0) goto L66
-            r7.i()
-        L66:
-            boolean r8 = r7.q
-            if (r8 != 0) goto L73
-            r7.q = r3
-            android.os.Handler r8 = r7.l
-            androidx.emoji2.text.f7 r5 = r7.r
-            r8.post(r5)
-        L73:
-            r0.g = r1
-            r0.j = r2
-            long r5 = r7.h
-            java.lang.Object r8 = androidx.emoji2.text.kx0.r(r5, r0)
-            if (r8 != r4) goto L47
-        L7f:
-            return r4
-        L80:
-            androidx.emoji2.text.up2 r8 = androidx.emoji2.text.up2.f1187a
-            return r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.x8.a(androidx.emoji2.text.n10):java.lang.Object");
+    public final Object a(n10 n10Var) {
+        w8 w8Var;
+        int i;
+        un unVar;
+        if (n10Var instanceof w8) {
+            w8Var = (w8) n10Var;
+            int i2 = w8Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                w8Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = w8Var.h;
+                i = w8Var.j;
+                f30 f30Var = f30.d;
+                if (i != 0) {
+                    mz0.L(obj);
+                    vn vnVar = this.k;
+                    vnVar.getClass();
+                    unVar = new un(vnVar);
+                } else if (i == 1) {
+                    unVar = w8Var.g;
+                    mz0.L(obj);
+                    if (!((Boolean) obj).booleanValue()) {
+                        return up2.f1186a;
+                    }
+                    unVar.c();
+                    if (h()) {
+                        i();
+                    }
+                    if (!this.q) {
+                        this.q = true;
+                        this.l.post(this.r);
+                    }
+                    w8Var.g = unVar;
+                    w8Var.j = 2;
+                } else {
+                    if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    unVar = w8Var.g;
+                    mz0.L(obj);
+                }
+                w8Var.g = unVar;
+                w8Var.j = 1;
+                obj = unVar.b(w8Var);
+            }
+        }
+        w8Var = new w8(this, n10Var);
+        Object obj2 = w8Var.h;
+        i = w8Var.j;
+        f30 f30Var2 = f30.d;
+        if (i != 0) {
+        }
+        w8Var.g = unVar;
+        w8Var.j = 1;
+        obj2 = unVar.b(w8Var);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00c7  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void d(androidx.emoji2.text.lw0 r35) {
-        /*
-            Method dump skipped, instructions count: 433
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.x8.d(androidx.emoji2.text.lw0):void");
+    public final void d(lw0 lw0Var) {
+        int[] iArr;
+        long[] jArr;
+        int[] iArr2;
+        long[] jArr2;
+        long j;
+        char c;
+        long j2;
+        int i;
+        long[] jArr3;
+        long[] jArr4;
+        long j3;
+        long j4;
+        lw0 lw0Var2 = lw0Var;
+        int[] iArr3 = lw0Var2.b;
+        long[] jArr5 = lw0Var2.f716a;
+        int length = jArr5.length - 2;
+        if (length < 0) {
+            return;
+        }
+        int i2 = 0;
+        while (true) {
+            long j5 = jArr5[i2];
+            char c2 = 7;
+            long j6 = -9187201950435737472L;
+            if ((((~j5) << 7) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
+                int i3 = 8;
+                int i4 = 8 - ((~(i2 - length)) >>> 31);
+                int i5 = 0;
+                while (i5 < i4) {
+                    if ((j5 & 255) < 128) {
+                        int i6 = iArr3[(i2 << 3) + i5];
+                        c = c2;
+                        z62 z62Var = (z62) this.o.b(i6);
+                        a72 a72Var = (a72) lw0Var2.b(i6);
+                        y62 y62Var = a72Var != null ? a72Var.f86a : null;
+                        if (y62Var == null) {
+                            throw zd.c("no value for specified key");
+                        }
+                        j2 = j6;
+                        int i7 = y62Var.g;
+                        u62 u62Var = y62Var.d;
+                        if (z62Var == null) {
+                            gf1 gf1Var = u62Var.d;
+                            Object[] objArr = gf1Var.b;
+                            long[] jArr6 = gf1Var.f415a;
+                            int length2 = jArr6.length - 2;
+                            iArr2 = iArr3;
+                            if (length2 >= 0) {
+                                int i8 = i3;
+                                int i9 = 0;
+                                while (true) {
+                                    long j7 = jArr6[i9];
+                                    j = j5;
+                                    if ((((~j7) << c) & j7 & j2) != j2) {
+                                        int i10 = 8 - ((~(i9 - length2)) >>> 31);
+                                        for (int i11 = 0; i11 < i10; i11++) {
+                                            if ((j7 & 255) < 128) {
+                                                j4 = j7;
+                                                f72 f72Var = (f72) objArr[(i9 << 3) + i11];
+                                                f72 f72Var2 = c72.f185a;
+                                                f72 f72Var3 = c72.A;
+                                                if (lx0.n(f72Var, f72Var3)) {
+                                                    List list = (List) jz0.D(u62Var, f72Var3);
+                                                    l(i7, String.valueOf(list != null ? (ue) ws.B0(list) : null));
+                                                }
+                                            } else {
+                                                j4 = j7;
+                                            }
+                                            j7 = j4 >> i8;
+                                        }
+                                        if (i10 != i8) {
+                                            break;
+                                        }
+                                    }
+                                    if (i9 == length2) {
+                                        break;
+                                    }
+                                    i9++;
+                                    j5 = j;
+                                    i8 = 8;
+                                }
+                            } else {
+                                j = j5;
+                            }
+                        } else {
+                            iArr2 = iArr3;
+                            j = j5;
+                            gf1 gf1Var2 = u62Var.d;
+                            Object[] objArr2 = gf1Var2.b;
+                            long[] jArr7 = gf1Var2.f415a;
+                            int length3 = jArr7.length - 2;
+                            if (length3 >= 0) {
+                                Object[] objArr3 = objArr2;
+                                jArr2 = jArr5;
+                                int i12 = 0;
+                                while (true) {
+                                    long j8 = jArr7[i12];
+                                    Object[] objArr4 = objArr3;
+                                    i = i5;
+                                    if ((((~j8) << c) & j8 & j2) != j2) {
+                                        int i13 = 8 - ((~(i12 - length3)) >>> 31);
+                                        int i14 = 0;
+                                        while (i14 < i13) {
+                                            if ((j8 & 255) < 128) {
+                                                jArr4 = jArr7;
+                                                f72 f72Var4 = (f72) objArr4[(i12 << 3) + i14];
+                                                f72 f72Var5 = c72.f185a;
+                                                j3 = j8;
+                                                f72 f72Var6 = c72.A;
+                                                if (lx0.n(f72Var4, f72Var6)) {
+                                                    List list2 = (List) jz0.D(z62Var.f1420a, f72Var6);
+                                                    ue ueVar = list2 != null ? (ue) ws.B0(list2) : null;
+                                                    List list3 = (List) jz0.D(u62Var, f72Var6);
+                                                    ue ueVar2 = list3 != null ? (ue) ws.B0(list3) : null;
+                                                    if (!lx0.n(ueVar, ueVar2)) {
+                                                        l(i7, String.valueOf(ueVar2));
+                                                    }
+                                                }
+                                            } else {
+                                                jArr4 = jArr7;
+                                                j3 = j8;
+                                            }
+                                            j8 = j3 >> 8;
+                                            i14++;
+                                            jArr7 = jArr4;
+                                        }
+                                        jArr3 = jArr7;
+                                        if (i13 != 8) {
+                                            break;
+                                        }
+                                    } else {
+                                        jArr3 = jArr7;
+                                    }
+                                    if (i12 == length3) {
+                                        break;
+                                    }
+                                    i12++;
+                                    i5 = i;
+                                    objArr3 = objArr4;
+                                    jArr7 = jArr3;
+                                }
+                                j5 = j >> 8;
+                                i5 = i + 1;
+                                jArr5 = jArr2;
+                                c2 = c;
+                                j6 = j2;
+                                iArr3 = iArr2;
+                                i3 = 8;
+                                lw0Var2 = lw0Var;
+                            }
+                        }
+                        jArr2 = jArr5;
+                    } else {
+                        iArr2 = iArr3;
+                        jArr2 = jArr5;
+                        j = j5;
+                        c = c2;
+                        j2 = j6;
+                    }
+                    i = i5;
+                    j5 = j >> 8;
+                    i5 = i + 1;
+                    jArr5 = jArr2;
+                    c2 = c;
+                    j6 = j2;
+                    iArr3 = iArr2;
+                    i3 = 8;
+                    lw0Var2 = lw0Var;
+                }
+                iArr = iArr3;
+                int i15 = i3;
+                jArr = jArr5;
+                if (i4 != i15) {
+                    return;
+                }
+            } else {
+                iArr = iArr3;
+                jArr = jArr5;
+            }
+            if (i2 == length) {
+                return;
+            }
+            i2++;
+            lw0Var2 = lw0Var;
+            jArr5 = jArr;
+            iArr3 = iArr;
+        }
     }
 
     @Override // androidx.emoji2.text.j60
@@ -176,7 +339,7 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
         if (uv0Var == null) {
             return;
         }
-        Object obj = uv0Var.f1194a;
+        Object obj = uv0Var.f1193a;
         if (Build.VERSION.SDK_INT < 29) {
             return;
         }
@@ -187,8 +350,8 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             d00 d00Var = (d00) arrayList.get(i);
-            int iOrdinal = d00Var.c.ordinal();
-            if (iOrdinal == 0) {
+            int ordinal = d00Var.c.ordinal();
+            if (ordinal == 0) {
                 kk2 kk2Var = d00Var.d;
                 if (kk2Var != null) {
                     ViewStructure viewStructure = (ViewStructure) kk2Var.e;
@@ -197,20 +360,20 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
                     }
                 }
             } else {
-                if (iOrdinal != 1) {
+                if (ordinal != 1) {
                     throw new mu();
                 }
-                AutofillId autofillIdB = uv0Var.b(d00Var.f230a);
-                if (autofillIdB != null && Build.VERSION.SDK_INT >= 29) {
-                    f00.e(v6.i(obj), autofillIdB);
+                AutofillId b = uv0Var.b(d00Var.f229a);
+                if (b != null && Build.VERSION.SDK_INT >= 29) {
+                    f00.e(v6.i(obj), b);
                 }
             }
         }
         if (Build.VERSION.SDK_INT >= 29) {
-            ContentCaptureSession contentCaptureSessionI = v6.i(obj);
-            r1 r1VarA = jz0.A(uv0Var.b);
-            Objects.requireNonNull(r1VarA);
-            f00.g(contentCaptureSessionI, ej.g(r1VarA.f990a), new long[]{Long.MIN_VALUE});
+            ContentCaptureSession i2 = v6.i(obj);
+            r1 A = jz0.A(uv0Var.b);
+            Objects.requireNonNull(A);
+            f00.g(i2, ej.g(A.f989a), new long[]{Long.MIN_VALUE});
         }
         arrayList.clear();
     }
@@ -218,30 +381,30 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
     public final void k(y62 y62Var, z62 z62Var) {
         x5 x5Var = new x5(2, z62Var, this);
         y62Var.getClass();
-        List listJ = y62.j(4, y62Var);
-        int size = listJ.size();
+        List j = y62.j(4, y62Var);
+        int size = j.size();
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
-            Object obj = listJ.get(i2);
+            Object obj = j.get(i2);
             if (g().a(((y62) obj).g)) {
                 x5Var.invoke(Integer.valueOf(i), obj);
                 i++;
             }
         }
-        List listJ2 = y62.j(4, y62Var);
-        int size2 = listJ2.size();
+        List j2 = y62.j(4, y62Var);
+        int size2 = j2.size();
         for (int i3 = 0; i3 < size2; i3++) {
-            y62 y62Var2 = (y62) listJ2.get(i3);
-            lw0 lw0VarG = g();
+            y62 y62Var2 = (y62) j2.get(i3);
+            lw0 g = g();
             int i4 = y62Var2.g;
-            if (lw0VarG.a(i4)) {
+            if (g.a(i4)) {
                 qe1 qe1Var = this.o;
                 if (qe1Var.a(i4)) {
-                    Object objB = qe1Var.b(i4);
-                    if (objB == null) {
+                    Object b = qe1Var.b(i4);
+                    if (b == null) {
                         throw zd.c("node not present in pruned tree before this change");
                     }
-                    k(y62Var2, (z62) objB);
+                    k(y62Var2, (z62) b);
                 } else {
                     continue;
                 }
@@ -253,21 +416,52 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
         uv0 uv0Var;
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 29 && (uv0Var = this.f) != null) {
-            AutofillId autofillIdB = uv0Var.b(i);
-            if (autofillIdB == null) {
+            AutofillId b = uv0Var.b(i);
+            if (b == null) {
                 throw zd.c("Invalid content capture ID");
             }
             if (i2 >= 29) {
-                f00.f(v6.i(uv0Var.f1194a), autofillIdB, str);
+                f00.f(v6.i(uv0Var.f1193a), b, str);
             }
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0195  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0075  */
+    /*  JADX ERROR: JadxRuntimeException in pass: IfRegionVisitor
+        jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r8v12 android.view.autofill.AutofillId, still in use, count: 2, list:
+          (r8v12 android.view.autofill.AutofillId) from 0x0097: IF  (r8v12 android.view.autofill.AutofillId) == (null android.view.autofill.AutofillId)  -> B:22:0x0075 A[HIDDEN] (LINE:152)
+          (r8v12 android.view.autofill.AutofillId) from 0x00a0: PHI (r8v4 android.view.autofill.AutofillId) = (r8v3 android.view.autofill.AutofillId), (r8v12 android.view.autofill.AutofillId) binds: [B:103:0x009a, B:42:0x0097] A[DONT_GENERATE, DONT_INLINE]
+        	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+        	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+        	at jadx.core.dex.visitors.regions.TernaryMod.makeTernaryInsn(TernaryMod.java:114)
+        	at jadx.core.dex.visitors.regions.TernaryMod.processRegion(TernaryMod.java:62)
+        	at jadx.core.dex.visitors.regions.TernaryMod.enterRegion(TernaryMod.java:45)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:67)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+        	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1117)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+        	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1117)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.lambda$traverseInternal$0(DepthRegionTraversal.java:68)
+        	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseInternal(DepthRegionTraversal.java:68)
+        	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverse(DepthRegionTraversal.java:19)
+        	at jadx.core.dex.visitors.regions.TernaryMod.process(TernaryMod.java:35)
+        	at jadx.core.dex.visitors.regions.IfRegionVisitor.process(IfRegionVisitor.java:34)
+        	at jadx.core.dex.visitors.regions.IfRegionVisitor.visit(IfRegionVisitor.java:30)
+        */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x01b2  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void m(int r19, androidx.emoji2.text.y62 r20) {
         /*
@@ -280,87 +474,47 @@ public final class x8 implements j60, View.OnAttachStateChangeListener {
     public final void n(y62 y62Var) {
         if (h()) {
             this.g.add(new d00(y62Var.g, this.n, e00.e, null));
-            List listJ = y62.j(4, y62Var);
-            int size = listJ.size();
+            List j = y62.j(4, y62Var);
+            int size = j.size();
             for (int i = 0; i < size; i++) {
-                n((y62) listJ.get(i));
+                n((y62) j.get(i));
             }
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0059  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public final void o() {
-        /*
-            r17 = this;
-            r0 = r17
-            androidx.emoji2.text.qe1 r1 = r0.o
-            r1.c()
-            androidx.emoji2.text.lw0 r2 = r0.g()
-            int[] r3 = r2.b
-            java.lang.Object[] r4 = r2.c
-            long[] r2 = r2.f717a
-            int r5 = r2.length
-            int r5 = r5 + (-2)
-            if (r5 < 0) goto L5e
-            r7 = 0
-        L17:
-            r8 = r2[r7]
-            long r10 = ~r8
-            r12 = 7
-            long r10 = r10 << r12
-            long r10 = r10 & r8
-            r12 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r10 = r10 & r12
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 == 0) goto L59
-            int r10 = r7 - r5
-            int r10 = ~r10
-            int r10 = r10 >>> 31
-            r11 = 8
-            int r10 = 8 - r10
-            r12 = 0
-        L31:
-            if (r12 >= r10) goto L57
-            r13 = 255(0xff, double:1.26E-321)
-            long r13 = r13 & r8
-            r15 = 128(0x80, double:6.3E-322)
-            int r13 = (r13 > r15 ? 1 : (r13 == r15 ? 0 : -1))
-            if (r13 >= 0) goto L53
-            int r13 = r7 << 3
-            int r13 = r13 + r12
-            r14 = r3[r13]
-            r13 = r4[r13]
-            androidx.emoji2.text.a72 r13 = (androidx.emoji2.text.a72) r13
-            androidx.emoji2.text.z62 r15 = new androidx.emoji2.text.z62
-            androidx.emoji2.text.y62 r13 = r13.f87a
-            androidx.emoji2.text.lw0 r6 = r0.g()
-            r15.<init>(r13, r6)
-            r1.g(r14, r15)
-        L53:
-            long r8 = r8 >> r11
-            int r12 = r12 + 1
-            goto L31
-        L57:
-            if (r10 != r11) goto L5e
-        L59:
-            if (r7 == r5) goto L5e
-            int r7 = r7 + 1
-            goto L17
-        L5e:
-            androidx.emoji2.text.z62 r1 = new androidx.emoji2.text.z62
-            androidx.emoji2.text.v7 r2 = r0.d
-            androidx.emoji2.text.b72 r2 = r2.getSemanticsOwner()
-            androidx.emoji2.text.y62 r2 = r2.a()
-            androidx.emoji2.text.lw0 r3 = r0.g()
-            r1.<init>(r2, r3)
-            r0.p = r1
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.x8.o():void");
+        qe1 qe1Var = this.o;
+        qe1Var.c();
+        lw0 g = g();
+        int[] iArr = g.b;
+        Object[] objArr = g.c;
+        long[] jArr = g.f716a;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i = 0;
+            while (true) {
+                long j = jArr[i];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i2 = 8 - ((~(i - length)) >>> 31);
+                    for (int i3 = 0; i3 < i2; i3++) {
+                        if ((255 & j) < 128) {
+                            int i4 = (i << 3) + i3;
+                            qe1Var.g(iArr[i4], new z62(((a72) objArr[i4]).f86a, g()));
+                        }
+                        j >>= 8;
+                    }
+                    if (i2 != 8) {
+                        break;
+                    }
+                }
+                if (i == length) {
+                    break;
+                } else {
+                    i++;
+                }
+            }
+        }
+        this.p = new z62(this.d.getSemanticsOwner().a(), g());
     }
 
     @Override // android.view.View.OnAttachStateChangeListener

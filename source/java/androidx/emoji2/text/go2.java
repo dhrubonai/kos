@@ -11,11 +11,14 @@ public final class go2 extends lf1 {
     public final long t;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public go2(lf1 lf1Var, um0 um0Var, um0 um0Var2, boolean z, boolean z2) {
-        um0 um0VarI;
-        um0 um0VarE;
-        q32 q32Var = kc2.f632a;
-        super(0L, ic2.h, kc2.l(um0Var, (lf1Var == null || (um0VarE = lf1Var.e()) == null) ? kc2.j.e : um0VarE, z), kc2.b(um0Var2, (lf1Var == null || (um0VarI = lf1Var.i()) == null) ? kc2.j.f : um0VarI));
+        super(0L, ic2.h, kc2.l(um0Var, (lf1Var == null || (r0 = lf1Var.e()) == null) ? kc2.j.e : r0, z), kc2.b(um0Var2, (lf1Var == null || (r9 = lf1Var.i()) == null) ? kc2.j.f : r9));
+        um0 i;
+        um0 e;
+        q32 q32Var = kc2.f631a;
         this.o = lf1Var;
         this.p = z;
         this.q = z2;
@@ -32,9 +35,9 @@ public final class go2 extends lf1 {
 
     @Override // androidx.emoji2.text.lf1
     public final lf1 C(um0 um0Var, um0 um0Var2) {
-        um0 um0VarL = kc2.l(um0Var, this.r, true);
-        um0 um0VarB = kc2.b(um0Var2, this.s);
-        return !this.p ? new go2(D().C(null, um0VarB), um0VarL, um0VarB, false, true) : D().C(um0VarL, um0VarB);
+        um0 l = kc2.l(um0Var, this.r, true);
+        um0 b = kc2.b(um0Var2, this.s);
+        return !this.p ? new go2(D().C(null, b), l, b, false, true) : D().C(l, b);
     }
 
     public final lf1 D() {
@@ -123,8 +126,8 @@ public final class go2 extends lf1 {
 
     @Override // androidx.emoji2.text.lf1, androidx.emoji2.text.ec2
     public final ec2 u(um0 um0Var) {
-        um0 um0VarL = kc2.l(um0Var, this.r, true);
-        return !this.p ? kc2.h(D().u(null), um0VarL, true) : D().u(um0VarL);
+        um0 l = kc2.l(um0Var, this.r, true);
+        return !this.p ? kc2.h(D().u(null), l, true) : D().u(l);
     }
 
     @Override // androidx.emoji2.text.lf1

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class qg {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f955a;
+    public final String f954a;
     public final gu0 b;
     public final boolean c;
     public final boolean d;
@@ -16,7 +16,7 @@ public final class qg {
         boolean z2 = (i & 8) == 0;
         sm0Var = (i & 16) != 0 ? new f4(2) : sm0Var;
         lx0.x(sm0Var, "onClick");
-        this.f955a = str;
+        this.f954a = str;
         this.b = gu0Var;
         this.c = z;
         this.d = z2;
@@ -31,14 +31,14 @@ public final class qg {
             return false;
         }
         qg qgVar = (qg) obj;
-        return lx0.n(this.f955a, qgVar.f955a) && lx0.n(this.b, qgVar.b) && this.c == qgVar.c && this.d == qgVar.d && lx0.n(this.e, qgVar.e);
+        return lx0.n(this.f954a, qgVar.f954a) && lx0.n(this.b, qgVar.b) && this.c == qgVar.c && this.d == qgVar.d && lx0.n(this.e, qgVar.e);
     }
 
     public final int hashCode() {
-        return this.e.hashCode() + jx0.d(jx0.d((this.b.hashCode() + (this.f955a.hashCode() * 31)) * 31, 31, this.c), 31, this.d);
+        return this.e.hashCode() + jx0.d(jx0.d((this.b.hashCode() + (this.f954a.hashCode() * 31)) * 31, 31, this.c), 31, this.d);
     }
 
     public final String toString() {
-        return "AppInfoActionSpec(text=" + this.f955a + ", icon=" + this.b + ", enabled=" + this.c + ", danger=" + this.d + ", onClick=" + this.e + ")";
+        return "AppInfoActionSpec(text=" + this.f954a + ", icon=" + this.b + ", enabled=" + this.c + ", danger=" + this.d + ", onClick=" + this.e + ")";
     }
 }

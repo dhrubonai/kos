@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class pg0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f904a;
+    public final long f903a;
     public final long b;
 
     public pg0(long j, long j2) {
         if (j2 == 0) {
-            this.f904a = 0L;
+            this.f903a = 0L;
             this.b = 1L;
         } else {
-            this.f904a = j;
+            this.f903a = j;
             this.b = j2;
         }
     }
 
     public final String toString() {
-        return this.f904a + "/" + this.b;
+        return this.f903a + "/" + this.b;
     }
 }

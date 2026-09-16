@@ -1,6 +1,5 @@
 package androidx.emoji2.text;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -11,7 +10,7 @@ public final class qg0 extends mg0 {
         this.d.mark(Integer.MAX_VALUE);
     }
 
-    public final void c(long j) throws IOException {
+    public final void c(long j) {
         int i = this.e;
         if (i > j) {
             this.e = 0;

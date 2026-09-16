@@ -25,7 +25,7 @@ public class bp2 extends ly0 {
     public static Method i = null;
     public static boolean j = false;
 
-    public static boolean M(Object obj, String str, int i2, boolean z) throws NoSuchMethodException, ClassNotFoundException, SecurityException {
+    public static boolean M(Object obj, String str, int i2, boolean z) {
         N();
         try {
             return ((Boolean) h.invoke(obj, str, Integer.valueOf(i2), Boolean.valueOf(z))).booleanValue();
@@ -34,7 +34,7 @@ public class bp2 extends ly0 {
         }
     }
 
-    public static void N() throws NoSuchMethodException, ClassNotFoundException, SecurityException {
+    public static void N() {
         Method method;
         Class<?> cls;
         Method method2;
@@ -62,34 +62,34 @@ public class bp2 extends ly0 {
     }
 
     @Override // androidx.emoji2.text.ly0
-    public Typeface j(Context context, rl0 rl0Var, Resources resources, int i2) throws IllegalAccessException, NoSuchMethodException, InstantiationException, ClassNotFoundException, SecurityException, ArrayIndexOutOfBoundsException, IllegalArgumentException, InvocationTargetException, NegativeArraySizeException {
+    public Typeface j(Context context, rl0 rl0Var, Resources resources, int i2) {
         N();
         try {
-            Object objNewInstance = g.newInstance(null);
-            for (sl0 sl0Var : rl0Var.f1018a) {
-                File fileD = oy0.D(context);
-                if (fileD == null) {
+            Object newInstance = g.newInstance(null);
+            for (sl0 sl0Var : rl0Var.f1017a) {
+                File D = oy0.D(context);
+                if (D == null) {
                     return null;
                 }
                 try {
-                    if (!oy0.u(fileD, resources, sl0Var.f)) {
+                    if (!oy0.u(D, resources, sl0Var.f)) {
                         return null;
                     }
-                    if (!M(objNewInstance, fileD.getPath(), sl0Var.b, sl0Var.c)) {
+                    if (!M(newInstance, D.getPath(), sl0Var.b, sl0Var.c)) {
                         return null;
                     }
-                    fileD.delete();
+                    D.delete();
                 } catch (RuntimeException unused) {
                     return null;
                 } finally {
-                    fileD.delete();
+                    D.delete();
                 }
             }
             N();
             try {
-                Object objNewInstance2 = Array.newInstance((Class<?>) f, 1);
-                Array.set(objNewInstance2, 0, objNewInstance);
-                return (Typeface) i.invoke(null, objNewInstance2);
+                Object newInstance2 = Array.newInstance((Class<?>) f, 1);
+                Array.set(newInstance2, 0, newInstance);
+                return (Typeface) i.invoke(null, newInstance2);
             } catch (IllegalAccessException | InvocationTargetException e) {
                 throw new RuntimeException(e);
             }
@@ -99,36 +99,49 @@ public class bp2 extends ly0 {
     }
 
     @Override // androidx.emoji2.text.ly0
-    public Typeface k(Context context, cm0[] cm0VarArr, int i2) throws IOException {
-        String str;
+    public Typeface k(Context context, cm0[] cm0VarArr, int i2) {
+        File file;
+        String readlink;
         if (cm0VarArr.length >= 1) {
             try {
-                ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor = context.getContentResolver().openFileDescriptor(q(cm0VarArr, i2).f209a, "r", null);
-                if (parcelFileDescriptorOpenFileDescriptor != null) {
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(q(cm0VarArr, i2).f208a, "r", null);
+                if (openFileDescriptor != null) {
                     try {
                         try {
-                            str = Os.readlink("/proc/self/fd/" + parcelFileDescriptorOpenFileDescriptor.getFd());
+                            readlink = Os.readlink("/proc/self/fd/" + openFileDescriptor.getFd());
                         } finally {
                         }
                     } catch (ErrnoException unused) {
                     }
-                    File file = OsConstants.S_ISREG(Os.stat(str).st_mode) ? new File(str) : null;
-                    if (file != null && file.canRead()) {
-                        Typeface typefaceCreateFromFile = Typeface.createFromFile(file);
-                        parcelFileDescriptorOpenFileDescriptor.close();
-                        return typefaceCreateFromFile;
-                    }
-                    FileInputStream fileInputStream = new FileInputStream(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor());
                     try {
-                        Typeface typefaceM = m(context, fileInputStream);
+                        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
+                            file = new File(readlink);
+                            if (file != null && file.canRead()) {
+                                Typeface createFromFile = Typeface.createFromFile(file);
+                                openFileDescriptor.close();
+                                return createFromFile;
+                            }
+                            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
+                            Typeface m = m(context, fileInputStream);
+                            fileInputStream.close();
+                            openFileDescriptor.close();
+                            return m;
+                        }
+                        Typeface m2 = m(context, fileInputStream);
                         fileInputStream.close();
-                        parcelFileDescriptorOpenFileDescriptor.close();
-                        return typefaceM;
+                        openFileDescriptor.close();
+                        return m2;
                     } finally {
                     }
-                }
-                if (parcelFileDescriptorOpenFileDescriptor != null) {
-                    parcelFileDescriptorOpenFileDescriptor.close();
+                    file = null;
+                    if (file != null) {
+                        Typeface createFromFile2 = Typeface.createFromFile(file);
+                        openFileDescriptor.close();
+                        return createFromFile2;
+                    }
+                    FileInputStream fileInputStream2 = new FileInputStream(openFileDescriptor.getFileDescriptor());
+                } else if (openFileDescriptor != null) {
+                    openFileDescriptor.close();
                     return null;
                 }
             } catch (IOException unused2) {

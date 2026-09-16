@@ -34,6 +34,9 @@ public class DaemonService extends Service {
     }
 
     public static boolean ensureHostNotificationChannel(Context context) {
+        NotificationChannel notificationChannel;
+        int importance;
+        Object valueOf;
         String[] strArr = xa1.b;
         boolean z = true;
         if (Build.VERSION.SDK_INT < 26) {
@@ -46,24 +49,30 @@ public class DaemonService extends Service {
                 return false;
             }
             String notificationChannelId = getNotificationChannelId(context);
-            NotificationChannel notificationChannel = notificationManager.getNotificationChannel(notificationChannelId);
+            notificationChannel = notificationManager.getNotificationChannel(notificationChannelId);
             if (notificationChannel == null) {
                 e40.p();
-                NotificationChannel notificationChannelC = ej.c(notificationChannelId, a.a.a.c.a(-554102879829794L, strArr));
-                notificationChannelC.setShowBadge(false);
-                notificationManager.createNotificationChannel(notificationChannelC);
+                NotificationChannel c = ej.c(notificationChannelId, a.a.a.c.a(-554102879829794L, strArr));
+                c.setShowBadge(false);
+                notificationManager.createNotificationChannel(c);
                 notificationChannel = notificationManager.getNotificationChannel(notificationChannelId);
             }
             if (notificationChannel == null) {
                 z = false;
             }
-            String strA = a.a.a.c.a(-554120059698978L, strArr);
+            String a2 = a.a.a.c.a(-554120059698978L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-553647613296418L, strArr));
             sb.append(z);
             sb.append(a.a.a.c.a(-553789347217186L, strArr));
-            sb.append(notificationChannel == null ? a.a.a.c.a(-553866656628514L, strArr) : Integer.valueOf(notificationChannel.getImportance()));
-            Log.i(strA, sb.toString());
+            if (notificationChannel == null) {
+                valueOf = a.a.a.c.a(-553866656628514L, strArr);
+            } else {
+                importance = notificationChannel.getImportance();
+                valueOf = Integer.valueOf(importance);
+            }
+            sb.append(valueOf);
+            Log.i(a2, sb.toString());
             return z;
         } catch (Throwable th) {
             Log.e(a.a.a.c.a(-552251748925218L, strArr), a.a.a.c.a(-552329058336546L, strArr), th);
@@ -76,8 +85,8 @@ public class DaemonService extends Service {
     }
 
     private void showNotification() {
-        CharSequence charSequenceSubSequence;
-        CharSequence charSequenceSubSequence2;
+        CharSequence charSequence;
+        CharSequence charSequence2;
         String[] strArr = xa1.b;
         try {
             if (!ensureHostNotificationChannel(this)) {
@@ -91,44 +100,44 @@ public class DaemonService extends Service {
             PendingIntent activity = PendingIntent.getActivity(this, 0, action, 201326592);
             ki1 ki1Var = new ki1(this, notificationChannelId);
             ki1Var.l.icon = R.drawable.sym_def_app_icon;
-            String strA = a.a.a.c.a(-552857339313954L, strArr);
-            if (strA == null) {
-                charSequenceSubSequence = strA;
+            String a2 = a.a.a.c.a(-552857339313954L, strArr);
+            if (a2 == null) {
+                charSequence = a2;
             } else {
-                int length = strA.length();
-                charSequenceSubSequence = strA;
+                int length = a2.length();
+                charSequence = a2;
                 if (length > 5120) {
-                    charSequenceSubSequence = strA.subSequence(0, 5120);
+                    charSequence = a2.subSequence(0, 5120);
                 }
             }
-            ki1Var.e = charSequenceSubSequence;
-            String strA2 = a.a.a.c.a(-552887404085026L, strArr);
-            if (strA2 == null) {
-                charSequenceSubSequence2 = strA2;
+            ki1Var.e = charSequence;
+            String a3 = a.a.a.c.a(-552887404085026L, strArr);
+            if (a3 == null) {
+                charSequence2 = a3;
             } else {
-                int length2 = strA2.length();
-                charSequenceSubSequence2 = strA2;
+                int length2 = a3.length();
+                charSequence2 = a3;
                 if (length2 > 5120) {
-                    charSequenceSubSequence2 = strA2.subSequence(0, 5120);
+                    charSequence2 = a3.subSequence(0, 5120);
                 }
             }
-            ki1Var.f = charSequenceSubSequence2;
+            ki1Var.f = charSequence2;
             ki1Var.g = -2;
             ki1Var.b.add(new ji1(a.a.a.c.a(-553016253103906L, strArr), activity));
             ki1Var.l.flags |= 2;
             rg rgVar = new rg(ki1Var);
             ((ki1) rgVar.f).getClass();
             Notification.Builder builder = (Notification.Builder) rgVar.e;
-            Notification notificationBuild = i >= 26 ? builder.build() : builder.build();
+            Notification build = i >= 26 ? builder.build() : builder.build();
             if (i >= 34) {
                 try {
-                    startForeground(NOTIFY_ID, notificationBuild, 1073741824);
+                    startForeground(NOTIFY_ID, build, 1073741824);
                 } catch (Exception e) {
                     Log.w(a.a.a.c.a(-553037727940386L, strArr), a.a.a.c.a(-552565281537826L, strArr), e);
-                    startForeground(NOTIFY_ID, notificationBuild);
+                    startForeground(NOTIFY_ID, build);
                 }
             } else {
-                startForeground(NOTIFY_ID, notificationBuild);
+                startForeground(NOTIFY_ID, build);
             }
             Log.i(a.a.a.c.a(-546737010917154L, strArr), a.a.a.c.a(-546814320328482L, strArr) + notificationChannelId);
         } catch (Throwable th) {

@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class a70 implements gd2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ik2 f86a;
+    public final ik2 f85a;
 
     public a70(ik2 ik2Var) {
-        this.f86a = ik2Var;
+        this.f85a = ik2Var;
     }
 
     public final void a() {
-        this.f86a.f531a.f();
+        this.f85a.f530a.f();
     }
 
     public final void b() {
-        ik2 ik2Var = this.f86a;
+        ik2 ik2Var = this.f85a;
         if (((nk2) ik2Var.b.get()) != null) {
-            ik2Var.f531a.b();
+            ik2Var.f530a.b();
         }
     }
 }

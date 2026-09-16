@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class zj2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public q01 f1444a;
+    public q01 f1443a;
     public j70 b;
     public bl0 c;
     public gl2 d;

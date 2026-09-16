@@ -38,8 +38,8 @@ public final class aw0 extends xu2 {
             if (!it.hasNext()) {
                 break;
             }
-            if ((((fv2) it.next()).f386a.d() & 8) != 0) {
-                this.f.setTranslationY(je.c(r0.f386a.c(), this.h, 0));
+            if ((((fv2) it.next()).f385a.d() & 8) != 0) {
+                this.f.setTranslationY(je.c(r0.f385a.c(), this.h, 0));
                 break;
             }
         }

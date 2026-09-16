@@ -47,9 +47,9 @@ final class BackgroundElement extends ud1 {
 
     public final int hashCode() {
         int i = et.l;
-        int iHashCode = Long.hashCode(this.f1a) * 31;
+        int hashCode = Long.hashCode(this.f1a) * 31;
         wj1 wj1Var = this.b;
-        return this.d.hashCode() + zd.b(this.c, (iHashCode + (wj1Var != null ? wj1Var.hashCode() : 0)) * 31, 31);
+        return this.d.hashCode() + zd.b(this.c, (hashCode + (wj1Var != null ? wj1Var.hashCode() : 0)) * 31, 31);
     }
 
     @Override // androidx.emoji2.text.ud1

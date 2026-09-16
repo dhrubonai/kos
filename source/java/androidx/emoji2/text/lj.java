@@ -8,15 +8,15 @@ import java.io.FilenameFilter;
 public final /* synthetic */ class lj implements FilenameFilter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f693a;
+    public final /* synthetic */ int f692a;
 
     public /* synthetic */ lj(int i) {
-        this.f693a = i;
+        this.f692a = i;
     }
 
     @Override // java.io.FilenameFilter
     public final boolean accept(File file, String str) {
-        switch (this.f693a) {
+        switch (this.f692a) {
             case 0:
                 return str != null && str.endsWith(a.a.a.c.a(-242842304921378L, xa1.b));
             default:

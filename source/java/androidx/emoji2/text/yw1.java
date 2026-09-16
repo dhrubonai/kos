@@ -2,7 +2,6 @@ package androidx.emoji2.text;
 
 import android.os.Bundle;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,7 +20,7 @@ public final class yw1 implements t51 {
     }
 
     @Override // androidx.emoji2.text.t51
-    public final void c(v51 v51Var, n51 n51Var) throws IllegalAccessException, NoSuchMethodException, InstantiationException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public final void c(v51 v51Var, n51 n51Var) {
         switch (this.d) {
             case 0:
                 m32 m32Var = (m32) this.e;
@@ -29,53 +28,53 @@ public final class yw1 implements t51 {
                     throw new AssertionError("Next event must be ON_CREATE");
                 }
                 v51Var.g().I(this);
-                Bundle bundleI = m32Var.f().i("androidx.savedstate.Restarter");
-                if (bundleI == null) {
+                Bundle i = m32Var.f().i("androidx.savedstate.Restarter");
+                if (i == null) {
                     return;
                 }
-                ArrayList<String> stringArrayList = bundleI.getStringArrayList("classes_to_restore");
+                ArrayList<String> stringArrayList = i.getStringArrayList("classes_to_restore");
                 if (stringArrayList == null) {
                     throw new IllegalStateException("SavedState with restored state for the component \"androidx.savedstate.Restarter\" must contain list of strings by the key \"classes_to_restore\"");
                 }
                 int size = stringArrayList.size();
-                int i = 0;
-                while (i < size) {
-                    String str = stringArrayList.get(i);
-                    i++;
+                int i2 = 0;
+                while (i2 < size) {
+                    String str = stringArrayList.get(i2);
+                    i2++;
                     String str2 = str;
                     try {
-                        Class<? extends U> clsAsSubclass = Class.forName(str2, false, yw1.class.getClassLoader()).asSubclass(i32.class);
-                        lx0.u(clsAsSubclass);
+                        Class<? extends U> asSubclass = Class.forName(str2, false, yw1.class.getClassLoader()).asSubclass(i32.class);
+                        lx0.u(asSubclass);
                         try {
-                            Constructor declaredConstructor = clsAsSubclass.getDeclaredConstructor(null);
+                            Constructor declaredConstructor = asSubclass.getDeclaredConstructor(null);
                             declaredConstructor.setAccessible(true);
                             try {
-                                Object objNewInstance = declaredConstructor.newInstance(null);
-                                lx0.u(objNewInstance);
+                                Object newInstance = declaredConstructor.newInstance(null);
+                                lx0.u(newInstance);
                                 if (!(m32Var instanceof xs2)) {
                                     throw new IllegalStateException(("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner. Received owner: " + m32Var).toString());
                                 }
-                                u81 u81VarD = ((xs2) m32Var).d();
-                                a12 a12VarF = m32Var.f();
-                                u81VarD.getClass();
-                                LinkedHashMap linkedHashMap = u81VarD.f1165a;
+                                u81 d = ((xs2) m32Var).d();
+                                a12 f = m32Var.f();
+                                d.getClass();
+                                LinkedHashMap linkedHashMap = d.f1164a;
                                 Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
                                 while (it.hasNext()) {
                                     String str3 = (String) it.next();
                                     lx0.x(str3, "key");
                                     ss2 ss2Var = (ss2) linkedHashMap.get(str3);
                                     if (ss2Var != null) {
-                                        n6.L(ss2Var, a12VarF, m32Var.g());
+                                        n6.L(ss2Var, f, m32Var.g());
                                     }
                                 }
                                 if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
-                                    a12VarF.q();
+                                    f.q();
                                 }
                             } catch (Exception e) {
                                 throw new RuntimeException("Failed to instantiate " + str2, e);
                             }
                         } catch (NoSuchMethodException e2) {
-                            throw new IllegalStateException("Class " + clsAsSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e2);
+                            throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e2);
                         }
                     } catch (ClassNotFoundException e3) {
                         throw new RuntimeException("Class " + str2 + " wasn't found", e3);
@@ -87,7 +86,7 @@ public final class yw1 implements t51 {
                 if (zuVar.h == null) {
                     uu uuVar = (uu) zuVar.getLastNonConfigurationInstance();
                     if (uuVar != null) {
-                        zuVar.h = uuVar.f1193a;
+                        zuVar.h = uuVar.f1192a;
                     }
                     if (zuVar.h == null) {
                         zuVar.h = new u81(2);

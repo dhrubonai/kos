@@ -11,7 +11,7 @@ public abstract class nr0 extends tz {
     public final void R(int i, qu2 qu2Var, ArrayList arrayList) {
         for (int i2 = 0; i2 < this.r0; i2++) {
             tz tzVar = this.q0[i2];
-            ArrayList arrayList2 = qu2Var.f981a;
+            ArrayList arrayList2 = qu2Var.f980a;
             if (!arrayList2.contains(tzVar)) {
                 arrayList2.add(tzVar);
             }

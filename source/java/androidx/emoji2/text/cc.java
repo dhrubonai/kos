@@ -7,12 +7,12 @@ import android.view.ActionMode;
 public final class cc implements hl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final v7 f191a;
+    public final v7 f190a;
     public ActionMode b;
     public final pf c = new pf(new o(4, this));
     public il2 d = il2.e;
 
     public cc(v7 v7Var) {
-        this.f191a = v7Var;
+        this.f190a = v7Var;
     }
 }

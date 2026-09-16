@@ -6,7 +6,7 @@ public final class k52 extends hh2 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         k52 k52Var = new k52(1, (l10) obj);
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         k52Var.k(up2Var);
         return up2Var;
     }
@@ -14,6 +14,6 @@ public final class k52 extends hh2 implements um0 {
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
         mz0.L(obj);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

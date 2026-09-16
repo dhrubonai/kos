@@ -17,7 +17,7 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
-        ContentCaptureSession contentCaptureSessionA;
+        ContentCaptureSession a2;
         vh1 vh1Var;
         char c;
         char c2;
@@ -28,20 +28,20 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                 if (i >= 30) {
                     o1.f(view);
                 }
-                if (i < 29 || (contentCaptureSessionA = f00.a(view)) == null) {
+                if (i < 29 || (a2 = f00.a(view)) == null) {
                     return null;
                 }
-                return new uv0(contentCaptureSessionA, view);
+                return new uv0(a2, view);
             default:
                 dk0 dk0Var = (dk0) this.e;
                 hf1 hf1Var = dk0Var.c;
                 hf1 hf1Var2 = dk0Var.d;
-                gk0 gk0Var = dk0Var.f256a;
+                gk0 gk0Var = dk0Var.f255a;
                 rk0 rk0Var = gk0Var.h;
                 ok0 ok0Var = ok0.g;
                 if (rk0Var == null) {
                     Object[] objArr = hf1Var2.b;
-                    long[] jArr = hf1Var2.f468a;
+                    long[] jArr = hf1Var2.f467a;
                     int length = jArr.length - 2;
                     if (length >= 0) {
                         int i2 = 0;
@@ -63,7 +63,7 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                                     c3 = c2;
                                 }
                                 c = c3;
-                                if (i3 == 8) {
+                                if (i3 != 8) {
                                 }
                             } else {
                                 c = c3;
@@ -78,15 +78,15 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                     if (hf1Var.c(rk0Var)) {
                         rk0Var.L0();
                     }
-                    ok0 ok0VarK0 = rk0Var.K0();
+                    ok0 K0 = rk0Var.K0();
                     if (!rk0Var.d.q) {
                         iv0.b("visitAncestors called on an unattached node");
                     }
                     md1 md1Var = rk0Var.d;
-                    e11 e11VarT = lx0.T(rk0Var);
+                    e11 T = lx0.T(rk0Var);
                     int i5 = 0;
-                    while (e11VarT != null) {
-                        if ((e11VarT.H.f.g & 5120) != 0) {
+                    while (T != null) {
+                        if ((T.H.f.g & 5120) != 0) {
                             while (md1Var != null) {
                                 int i6 = md1Var.f;
                                 if ((i6 & 5120) != 0) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                                     }
                                     if ((md1Var instanceof wj0) && hf1Var2.c(md1Var)) {
                                         if (i5 <= 1) {
-                                            ((wj0) md1Var).d0(ok0VarK0);
+                                            ((wj0) md1Var).d0(K0);
                                         } else {
                                             ((wj0) md1Var).d0(ok0.e);
                                         }
@@ -105,11 +105,11 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                                 md1Var = md1Var.h;
                             }
                         }
-                        e11VarT = e11VarT.u();
-                        md1Var = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+                        T = T.u();
+                        md1Var = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
                     }
                     Object[] objArr2 = hf1Var2.b;
-                    long[] jArr2 = hf1Var2.f468a;
+                    long[] jArr2 = hf1Var2.f467a;
                     int length2 = jArr2.length - 2;
                     if (length2 >= 0) {
                         int i7 = 0;
@@ -123,7 +123,7 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                                     }
                                     j2 >>= 8;
                                 }
-                                if (i8 == 8) {
+                                if (i8 != 8) {
                                 }
                             }
                             if (i7 != length2) {
@@ -138,7 +138,7 @@ public final /* synthetic */ class k7 extends bn0 implements sm0 {
                 hf1Var.b();
                 hf1Var2.b();
                 dk0Var.e = false;
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

@@ -26,7 +26,7 @@ public final class ds extends af0 {
         this.k = new as(this, 0);
         this.e = az0.c0(ze0Var.getContext(), R.attr.motionDurationShort3, 100);
         this.f = az0.c0(ze0Var.getContext(), R.attr.motionDurationShort3, 150);
-        this.g = az0.d0(ze0Var.getContext(), R.attr.motionEasingLinearInterpolator, je.f575a);
+        this.g = az0.d0(ze0Var.getContext(), R.attr.motionEasingLinearInterpolator, je.f574a);
         this.h = az0.d0(ze0Var.getContext(), R.attr.motionEasingEmphasizedInterpolator, je.d);
     }
 
@@ -66,7 +66,7 @@ public final class ds extends af0 {
     @Override // androidx.emoji2.text.af0
     public final void l(EditText editText) {
         this.i = editText;
-        this.f99a.setEndIconVisible(t());
+        this.f98a.setEndIconVisible(t());
     }
 
     @Override // androidx.emoji2.text.af0
@@ -79,26 +79,26 @@ public final class ds extends af0 {
 
     @Override // androidx.emoji2.text.af0
     public final void q() {
-        ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(0.8f, 1.0f);
-        valueAnimatorOfFloat.setInterpolator(this.h);
-        valueAnimatorOfFloat.setDuration(this.f);
-        valueAnimatorOfFloat.addUpdateListener(new bs(this, 1));
-        ValueAnimator valueAnimatorOfFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.8f, 1.0f);
+        ofFloat.setInterpolator(this.h);
+        ofFloat.setDuration(this.f);
+        ofFloat.addUpdateListener(new bs(this, 1));
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
         TimeInterpolator timeInterpolator = this.g;
-        valueAnimatorOfFloat2.setInterpolator(timeInterpolator);
+        ofFloat2.setInterpolator(timeInterpolator);
         int i = this.e;
-        valueAnimatorOfFloat2.setDuration(i);
-        valueAnimatorOfFloat2.addUpdateListener(new bs(this, 0));
+        ofFloat2.setDuration(i);
+        ofFloat2.addUpdateListener(new bs(this, 0));
         AnimatorSet animatorSet = new AnimatorSet();
         this.l = animatorSet;
-        animatorSet.playTogether(valueAnimatorOfFloat, valueAnimatorOfFloat2);
+        animatorSet.playTogether(ofFloat, ofFloat2);
         this.l.addListener(new cs(this, 0));
-        ValueAnimator valueAnimatorOfFloat3 = ValueAnimator.ofFloat(1.0f, 0.0f);
-        valueAnimatorOfFloat3.setInterpolator(timeInterpolator);
-        valueAnimatorOfFloat3.setDuration(i);
-        valueAnimatorOfFloat3.addUpdateListener(new bs(this, 0));
-        this.m = valueAnimatorOfFloat3;
-        valueAnimatorOfFloat3.addListener(new cs(this, 1));
+        ValueAnimator ofFloat3 = ValueAnimator.ofFloat(1.0f, 0.0f);
+        ofFloat3.setInterpolator(timeInterpolator);
+        ofFloat3.setDuration(i);
+        ofFloat3.addUpdateListener(new bs(this, 0));
+        this.m = ofFloat3;
+        ofFloat3.addListener(new cs(this, 1));
     }
 
     @Override // androidx.emoji2.text.af0

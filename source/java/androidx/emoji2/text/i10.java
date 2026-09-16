@@ -33,8 +33,8 @@ public final class i10 extends g01 implements Function2 {
             }
             i = R.string.selectAll;
         }
-        String strI0 = n6.i0(txVar, i);
+        String i0 = n6.i0(txVar, i);
         txVar.p(false);
-        return strI0;
+        return i0;
     }
 }

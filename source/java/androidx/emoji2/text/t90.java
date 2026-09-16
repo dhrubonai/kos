@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class t90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1110a = w90.f1267a;
+    public static final float f1109a = w90.f1266a;
 }

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 public abstract class j12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final boolean f557a = lx0.n(Build.DEVICE, "layoutlib");
+    public static final boolean f556a = lx0.n(Build.DEVICE, "layoutlib");
 
     public static final y02 a(ViewGroup viewGroup) {
         int childCount = viewGroup.getChildCount();

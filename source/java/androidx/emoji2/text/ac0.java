@@ -15,7 +15,7 @@ public final class ac0 extends fn1 implements ky1 {
         lx0.x(drawable, "drawable");
         this.i = drawable;
         this.j = az0.W(0);
-        Object obj = bc0.f143a;
+        Object obj = bc0.f142a;
         this.k = az0.W(new ib2((drawable.getIntrinsicWidth() < 0 || drawable.getIntrinsicHeight() < 0) ? 9205357640488583168L : mz0.c(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight())));
         this.l = az0.U(new o(9, this));
         if (drawable.getIntrinsicWidth() < 0 || drawable.getIntrinsicHeight() < 0) {
@@ -37,7 +37,7 @@ public final class ac0 extends fn1 implements ky1 {
 
     @Override // androidx.emoji2.text.fn1
     public final boolean c(ql qlVar) {
-        this.i.setColorFilter(qlVar != null ? qlVar.f963a : null);
+        this.i.setColorFilter(qlVar != null ? qlVar.f962a : null);
         return true;
     }
 
@@ -56,10 +56,10 @@ public final class ac0 extends fn1 implements ky1 {
     public final void e(q01 q01Var) {
         int i;
         lx0.x(q01Var, "layoutDirection");
-        int iOrdinal = q01Var.ordinal();
-        if (iOrdinal != 0) {
+        int ordinal = q01Var.ordinal();
+        if (ordinal != 0) {
             i = 1;
-            if (iOrdinal != 1) {
+            if (ordinal != 1) {
                 throw new mu();
             }
         } else {
@@ -82,23 +82,23 @@ public final class ac0 extends fn1 implements ky1 {
 
     @Override // androidx.emoji2.text.fn1
     public final long h() {
-        return ((ib2) this.k.getValue()).f518a;
+        return ((ib2) this.k.getValue()).f517a;
     }
 
     @Override // androidx.emoji2.text.fn1
     public final void i(g11 g11Var) {
         np npVar = g11Var.d;
-        lp lpVarD = npVar.e.D();
+        lp D = npVar.e.D();
         ((Number) this.j.getValue()).intValue();
-        int iQ = xa1.Q(ib2.d(npVar.i()));
-        int iQ2 = xa1.Q(ib2.b(npVar.i()));
+        int Q = xa1.Q(ib2.d(npVar.i()));
+        int Q2 = xa1.Q(ib2.b(npVar.i()));
         Drawable drawable = this.i;
-        drawable.setBounds(0, 0, iQ, iQ2);
+        drawable.setBounds(0, 0, Q, Q2);
         try {
-            lpVarD.f();
-            drawable.draw(x6.a(lpVarD));
+            D.f();
+            drawable.draw(x6.a(D));
         } finally {
-            lpVarD.n();
+            D.n();
         }
     }
 }

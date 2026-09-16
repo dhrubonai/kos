@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class fu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f383a;
+    public final String f382a;
     public final float b;
     public final float c;
     public final float d;
@@ -23,7 +23,7 @@ public final class fu0 {
     public fu0(String str, float f, float f2, boolean z, int i) {
         long j = et.k;
         z = (i & PackageParser.PARSE_IS_PRIVILEGED) != 0 ? false : z;
-        this.f383a = str;
+        this.f382a = str;
         this.b = f;
         this.c = f2;
         this.d = 24.0f;
@@ -33,10 +33,10 @@ public final class fu0 {
         this.h = z;
         ArrayList arrayList = new ArrayList();
         this.i = arrayList;
-        int i2 = uq2.f1189a;
+        int i2 = uq2.f1188a;
         ArrayList arrayList2 = new ArrayList();
         eu0 eu0Var = new eu0();
-        eu0Var.f324a = qe0.d;
+        eu0Var.f323a = qe0.d;
         eu0Var.b = arrayList2;
         this.j = eu0Var;
         arrayList.add(eu0Var);
@@ -58,7 +58,7 @@ public final class fu0 {
             if (arrayList.size() <= 1) {
                 eu0 eu0Var = this.j;
                 eu0Var.getClass();
-                gu0 gu0Var = new gu0(this.f383a, this.b, this.c, this.d, this.e, new tq2(eu0Var.f324a, eu0Var.b), this.f, this.g, this.h);
+                gu0 gu0Var = new gu0(this.f382a, this.b, this.c, this.d, this.e, new tq2(eu0Var.f323a, eu0Var.b), this.f, this.g, this.h);
                 this.k = true;
                 return gu0Var;
             }
@@ -68,7 +68,7 @@ public final class fu0 {
             eu0 eu0Var2 = (eu0) arrayList.remove(arrayList.size() - 1);
             ArrayList arrayList2 = ((eu0) arrayList.get(arrayList.size() - 1)).b;
             eu0Var2.getClass();
-            arrayList2.add(new tq2(eu0Var2.f324a, eu0Var2.b));
+            arrayList2.add(new tq2(eu0Var2.f323a, eu0Var2.b));
         }
     }
 }

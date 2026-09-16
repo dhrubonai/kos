@@ -258,9 +258,9 @@ public final class zp0 implements sp0 {
 
     @Override // androidx.emoji2.text.sp0
     public final void n(int i, int i2, long j) {
-        boolean zA = uw0.a(this.j, j);
+        boolean a2 = uw0.a(this.j, j);
         qs2 qs2Var = this.d;
-        if (zA) {
+        if (a2) {
             int i3 = this.h;
             if (i3 != i) {
                 qs2Var.offsetLeftAndRight(i - i3);
@@ -376,11 +376,11 @@ public final class zp0 implements sp0 {
             try {
                 op opVar = this.c;
                 yp0 yp0Var = y;
-                w6 w6Var = opVar.f867a;
-                Canvas canvas = w6Var.f1261a;
-                w6Var.f1261a = yp0Var;
+                w6 w6Var = opVar.f866a;
+                Canvas canvas = w6Var.f1260a;
+                w6Var.f1260a = yp0Var;
                 rb0Var.a(w6Var, qs2Var, qs2Var.getDrawingTime());
-                opVar.f867a.f1261a = canvas;
+                opVar.f866a.f1260a = canvas;
             } catch (ClassCastException unused) {
             }
         }

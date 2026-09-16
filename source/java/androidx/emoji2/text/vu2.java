@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class vu2 implements uu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final un1 f1243a = az0.W(new ws1(0));
+    public static final un1 f1242a = az0.W(new ws1(0));
 }

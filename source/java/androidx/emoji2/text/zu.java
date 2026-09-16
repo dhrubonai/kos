@@ -73,12 +73,12 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
             @Override // androidx.emoji2.text.t51
             public final void c(v51 v51Var, n51 n51Var) {
                 Window window;
-                View viewPeekDecorView;
+                View peekDecorView;
                 switch (i) {
                     case 0:
                         zu zuVar = this.e;
-                        if (n51Var == n51.ON_STOP && (window = zuVar.getWindow()) != null && (viewPeekDecorView = window.peekDecorView()) != null) {
-                            viewPeekDecorView.cancelPendingInputEvents();
+                        if (n51Var == n51.ON_STOP && (window = zuVar.getWindow()) != null && (peekDecorView = window.peekDecorView()) != null) {
+                            peekDecorView.cancelPendingInputEvents();
                             break;
                         }
                         break;
@@ -87,7 +87,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
                         if (n51Var == n51.ON_DESTROY) {
                             zuVar2.e.b = null;
                             if (!zuVar2.isChangingConfigurations()) {
-                                LinkedHashMap linkedHashMap = zuVar2.d().f1165a;
+                                LinkedHashMap linkedHashMap = zuVar2.d().f1164a;
                                 Iterator it = linkedHashMap.values().iterator();
                                 while (it.hasNext()) {
                                     ((ss2) it.next()).b();
@@ -115,12 +115,12 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
             @Override // androidx.emoji2.text.t51
             public final void c(v51 v51Var, n51 n51Var) {
                 Window window;
-                View viewPeekDecorView;
+                View peekDecorView;
                 switch (i2) {
                     case 0:
                         zu zuVar = this.e;
-                        if (n51Var == n51.ON_STOP && (window = zuVar.getWindow()) != null && (viewPeekDecorView = window.peekDecorView()) != null) {
-                            viewPeekDecorView.cancelPendingInputEvents();
+                        if (n51Var == n51.ON_STOP && (window = zuVar.getWindow()) != null && (peekDecorView = window.peekDecorView()) != null) {
+                            peekDecorView.cancelPendingInputEvents();
                             break;
                         }
                         break;
@@ -129,7 +129,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
                         if (n51Var == n51.ON_DESTROY) {
                             zuVar2.e.b = null;
                             if (!zuVar2.isChangingConfigurations()) {
-                                LinkedHashMap linkedHashMap = zuVar2.d().f1165a;
+                                LinkedHashMap linkedHashMap = zuVar2.d().f1164a;
                                 Iterator it = linkedHashMap.values().iterator();
                                 while (it.hasNext()) {
                                     ((ss2) it.next()).b();
@@ -155,7 +155,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
         if (zuVar != null) {
             tuVar.a(zuVar);
         }
-        u00Var.f1154a.add(tuVar);
+        u00Var.f1153a.add(tuVar);
         this.u = az0.U(new pu(this, 3));
         this.v = az0.U(new pu(this, 4));
     }
@@ -197,7 +197,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
     public final s30 c() {
         ne1 ne1Var = new ne1(r30.b);
         Application application = getApplication();
-        LinkedHashMap linkedHashMap = ne1Var.f1049a;
+        LinkedHashMap linkedHashMap = ne1Var.f1048a;
         if (application != null) {
             linkedHashMap.put(us2.d, getApplication());
         }
@@ -219,7 +219,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
         if (this.h == null) {
             uu uuVar = (uu) getLastNonConfigurationInstance();
             if (uuVar != null) {
-                this.h = uuVar.f1193a;
+                this.h = uuVar.f1192a;
             }
             if (this.h == null) {
                 this.h = new u81(2);
@@ -291,7 +291,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
         u00 u00Var = this.e;
         u00Var.getClass();
         u00Var.b = this;
-        Iterator it = u00Var.f1154a.iterator();
+        Iterator it = u00Var.f1153a.iterator();
         while (it.hasNext()) {
             ((tu) it.next()).a(this);
         }
@@ -409,13 +409,13 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
         uu uuVar;
         u81 u81Var = this.h;
         if (u81Var == null && (uuVar = (uu) getLastNonConfigurationInstance()) != null) {
-            u81Var = uuVar.f1193a;
+            u81Var = uuVar.f1192a;
         }
         if (u81Var == null) {
             return null;
         }
         uu uuVar2 = new uu();
-        uuVar2.f1193a = u81Var;
+        uuVar2.f1192a = u81Var;
         return uuVar2;
     }
 
@@ -459,7 +459,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
             }
             super.reportFullyDrawn();
             rm0 rm0Var = (rm0) this.j.getValue();
-            synchronized (rm0Var.f1019a) {
+            synchronized (rm0Var.f1018a) {
                 try {
                     rm0Var.b = true;
                     ArrayList arrayList = rm0Var.c;
@@ -497,7 +497,7 @@ public abstract class zu extends yu implements xs2, br0, m32, pj1, sg1, l4 {
     }
 
     @Override // android.app.Activity
-    public final void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4) throws IntentSender.SendIntentException {
+    public final void startIntentSenderForResult(IntentSender intentSender, int i, Intent intent, int i2, int i3, int i4) {
         lx0.x(intentSender, "intent");
         super.startIntentSenderForResult(intentSender, i, intent, i2, i3, i4);
     }

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class hr2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final px1 f483a = new px1();
+    public final px1 f482a = new px1();
     public final px1 b = new px1();
     public long c;
 }

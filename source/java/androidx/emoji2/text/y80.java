@@ -41,9 +41,9 @@ public final class y80 extends ci0 {
 
     @Override // androidx.emoji2.text.ci0
     public final List g(zn1 zn1Var) {
-        List<zn1> listG = this.b.g(zn1Var);
+        List<zn1> g = this.b.g(zn1Var);
         ArrayList arrayList = new ArrayList();
-        for (zn1 zn1Var2 : listG) {
+        for (zn1 zn1Var2 : g) {
             lx0.x(zn1Var2, "path");
             arrayList.add(zn1Var2);
         }
@@ -54,21 +54,21 @@ public final class y80 extends ci0 {
     @Override // androidx.emoji2.text.ci0
     public final n70 i(zn1 zn1Var) {
         lx0.x(zn1Var, "path");
-        n70 n70VarI = this.b.i(zn1Var);
-        if (n70VarI == null) {
+        n70 i = this.b.i(zn1Var);
+        if (i == null) {
             return null;
         }
-        zn1 zn1Var2 = (zn1) n70VarI.d;
+        zn1 zn1Var2 = (zn1) i.d;
         if (zn1Var2 == null) {
-            return n70VarI;
+            return i;
         }
-        boolean z = n70VarI.b;
-        boolean z2 = n70VarI.c;
-        Long l = (Long) n70VarI.e;
-        Long l2 = (Long) n70VarI.f;
-        Long l3 = (Long) n70VarI.g;
-        Long l4 = (Long) n70VarI.h;
-        Map map = (Map) n70VarI.i;
+        boolean z = i.b;
+        boolean z2 = i.c;
+        Long l = (Long) i.e;
+        Long l2 = (Long) i.f;
+        Long l3 = (Long) i.g;
+        Long l4 = (Long) i.h;
+        Map map = (Map) i.i;
         lx0.x(map, "extras");
         return new n70(z, z2, zn1Var2, l, l2, l3, l4, map);
     }
@@ -80,13 +80,13 @@ public final class y80 extends ci0 {
 
     @Override // androidx.emoji2.text.ci0
     public final gb2 k(zn1 zn1Var) {
-        zn1 zn1VarB = zn1Var.b();
+        zn1 b = zn1Var.b();
         ci0 ci0Var = this.b;
-        if (zn1VarB != null) {
+        if (b != null) {
             nh nhVar = new nh();
-            while (zn1VarB != null && !f(zn1VarB)) {
-                nhVar.addFirst(zn1VarB);
-                zn1VarB = zn1VarB.b();
+            while (b != null && !f(b)) {
+                nhVar.addFirst(b);
+                b = b.b();
             }
             Iterator<E> it = nhVar.iterator();
             while (it.hasNext()) {

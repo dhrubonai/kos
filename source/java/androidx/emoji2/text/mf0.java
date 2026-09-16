@@ -25,6 +25,6 @@ public final class mf0 extends g01 implements um0 {
                 ((i02) obj).b(this.f ? 1.0f : ((Number) this.g.a()).floatValue());
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

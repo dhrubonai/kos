@@ -550,15 +550,15 @@ public class BPackage implements Parcelable {
         public Activity(Parcel parcel) {
             super(parcel);
             this.info = (ActivityInfo) parcel.readParcelable(ActivityInfo.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add(new ActivityIntentInfo((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader())));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -587,15 +587,15 @@ public class BPackage implements Parcelable {
         public Instrumentation(Parcel parcel) {
             super(parcel);
             this.info = (InstrumentationInfo) parcel.readParcelable(InstrumentationInfo.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader()));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -624,15 +624,15 @@ public class BPackage implements Parcelable {
         public Permission(Parcel parcel) {
             super(parcel);
             this.info = (PermissionInfo) parcel.readParcelable(Permission.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader()));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -661,15 +661,15 @@ public class BPackage implements Parcelable {
         public PermissionGroup(Parcel parcel) {
             super(parcel);
             this.info = (PermissionGroupInfo) parcel.readParcelable(PermissionGroup.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader()));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -698,15 +698,15 @@ public class BPackage implements Parcelable {
         public Provider(Parcel parcel) {
             super(parcel);
             this.info = (ProviderInfo) parcel.readParcelable(ProviderInfo.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add(new ProviderIntentInfo((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader())));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -735,15 +735,15 @@ public class BPackage implements Parcelable {
         public Service(Parcel parcel) {
             super(parcel);
             this.info = (ServiceInfo) parcel.readParcelable(ServiceInfo.class.getClassLoader());
-            int i = parcel.readInt();
-            this.intents = new ArrayList<>(i);
+            int readInt = parcel.readInt();
+            this.intents = new ArrayList<>(readInt);
             while (true) {
-                int i2 = i - 1;
-                if (i <= 0) {
+                int i = readInt - 1;
+                if (readInt <= 0) {
                     return;
                 }
                 this.intents.add(new ServiceIntentInfo((IntentInfo) parcel.readParcelable(BPackage.class.getClassLoader())));
-                i = i2;
+                readInt = i;
             }
         }
     }
@@ -831,121 +831,121 @@ public class BPackage implements Parcelable {
         this.requestedPermissions = new ArrayList<>();
         this.configPreferences = null;
         this.reqFeatures = null;
-        int i = parcel.readInt();
-        this.activities = new ArrayList<>(i);
+        int readInt = parcel.readInt();
+        this.activities = new ArrayList<>(readInt);
         while (true) {
-            int i2 = i - 1;
-            if (i <= 0) {
+            int i = readInt - 1;
+            if (readInt <= 0) {
                 break;
             }
             Activity activity = new Activity(parcel);
             ArrayList<II> arrayList = activity.intents;
             int size = arrayList.size();
-            int i3 = 0;
-            while (i3 < size) {
-                Object obj = arrayList.get(i3);
-                i3++;
+            int i2 = 0;
+            while (i2 < size) {
+                Object obj = arrayList.get(i2);
+                i2++;
                 ((ActivityIntentInfo) obj).activity = activity;
             }
             activity.owner = this;
             this.activities.add(activity);
-            i = i2;
+            readInt = i;
         }
-        int i4 = parcel.readInt();
-        this.receivers = new ArrayList<>(i4);
+        int readInt2 = parcel.readInt();
+        this.receivers = new ArrayList<>(readInt2);
         while (true) {
-            int i5 = i4 - 1;
-            if (i4 <= 0) {
+            int i3 = readInt2 - 1;
+            if (readInt2 <= 0) {
                 break;
             }
             Activity activity2 = new Activity(parcel);
             ArrayList<II> arrayList2 = activity2.intents;
             int size2 = arrayList2.size();
-            int i6 = 0;
-            while (i6 < size2) {
-                Object obj2 = arrayList2.get(i6);
-                i6++;
+            int i4 = 0;
+            while (i4 < size2) {
+                Object obj2 = arrayList2.get(i4);
+                i4++;
                 ((ActivityIntentInfo) obj2).activity = activity2;
             }
             activity2.owner = this;
             this.receivers.add(activity2);
-            i4 = i5;
+            readInt2 = i3;
         }
-        int i7 = parcel.readInt();
-        this.providers = new ArrayList<>(i7);
+        int readInt3 = parcel.readInt();
+        this.providers = new ArrayList<>(readInt3);
         while (true) {
-            int i8 = i7 - 1;
-            if (i7 <= 0) {
+            int i5 = readInt3 - 1;
+            if (readInt3 <= 0) {
                 break;
             }
             Provider provider = new Provider(parcel);
             ArrayList<II> arrayList3 = provider.intents;
             int size3 = arrayList3.size();
-            int i9 = 0;
-            while (i9 < size3) {
-                Object obj3 = arrayList3.get(i9);
-                i9++;
+            int i6 = 0;
+            while (i6 < size3) {
+                Object obj3 = arrayList3.get(i6);
+                i6++;
                 ((ProviderIntentInfo) obj3).provider = provider;
             }
             provider.owner = this;
             this.providers.add(provider);
-            i7 = i8;
+            readInt3 = i5;
         }
-        int i10 = parcel.readInt();
-        this.services = new ArrayList<>(i10);
+        int readInt4 = parcel.readInt();
+        this.services = new ArrayList<>(readInt4);
         while (true) {
-            int i11 = i10 - 1;
-            if (i10 <= 0) {
+            int i7 = readInt4 - 1;
+            if (readInt4 <= 0) {
                 break;
             }
             Service service = new Service(parcel);
             ArrayList<II> arrayList4 = service.intents;
             int size4 = arrayList4.size();
-            int i12 = 0;
-            while (i12 < size4) {
-                Object obj4 = arrayList4.get(i12);
-                i12++;
+            int i8 = 0;
+            while (i8 < size4) {
+                Object obj4 = arrayList4.get(i8);
+                i8++;
                 ((ServiceIntentInfo) obj4).service = service;
             }
             service.owner = this;
             this.services.add(service);
-            i10 = i11;
+            readInt4 = i7;
         }
-        int i13 = parcel.readInt();
-        this.instrumentation = new ArrayList<>(i13);
+        int readInt5 = parcel.readInt();
+        this.instrumentation = new ArrayList<>(readInt5);
         while (true) {
-            int i14 = i13 - 1;
-            if (i13 <= 0) {
+            int i9 = readInt5 - 1;
+            if (readInt5 <= 0) {
                 break;
             }
             Instrumentation instrumentation = new Instrumentation(parcel);
             instrumentation.owner = this;
             this.instrumentation.add(instrumentation);
-            i13 = i14;
+            readInt5 = i9;
         }
-        int i15 = parcel.readInt();
-        this.permissions = new ArrayList<>(i15);
+        int readInt6 = parcel.readInt();
+        this.permissions = new ArrayList<>(readInt6);
         while (true) {
-            int i16 = i15 - 1;
-            if (i15 <= 0) {
+            int i10 = readInt6 - 1;
+            if (readInt6 <= 0) {
                 break;
             }
             Permission permission = new Permission(parcel);
             permission.owner = this;
             this.permissions.add(permission);
-            i15 = i16;
+            readInt6 = i10;
         }
-        int i17 = parcel.readInt();
-        this.permissionGroups = new ArrayList<>(i17);
+        int readInt7 = parcel.readInt();
+        this.permissionGroups = new ArrayList<>(readInt7);
         while (true) {
-            int i18 = i17 - 1;
-            if (i17 <= 0) {
+            int i11 = readInt7 - 1;
+            if (readInt7 <= 0) {
                 break;
             }
             PermissionGroup permissionGroup = new PermissionGroup(parcel);
             permissionGroup.owner = this;
             this.permissionGroups.add(permissionGroup);
-            i17 = i18;
+            readInt7 = i11;
         }
         parcel.readStringList(this.requestedPermissions);
         if (l8.U()) {

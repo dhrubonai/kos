@@ -19,7 +19,6 @@ import com.kos.engine.entity.pm.DeveloperModuleInfo;
 import com.kos.engine.entity.pm.DeveloperModuleSettings;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -34,7 +33,7 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     private DeveloperModuleConfig mConfig;
     private final Object mLock = new Object();
 
-    private void ensureConfigLocked() throws IOException {
+    private void ensureConfigLocked() {
         if (this.mConfig == null) {
             loadStateLr();
         }
@@ -53,8 +52,8 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
         return sService;
     }
 
-    private void loadStateLr() throws IOException {
-        Parcel parcelObtain;
+    private void loadStateLr() {
+        Parcel parcel;
         File developerModuleConf = BEnvironment.getDeveloperModuleConf();
         if (!developerModuleConf.exists()) {
             this.mConfig = new DeveloperModuleConfig();
@@ -62,13 +61,13 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
             return;
         }
         try {
-            parcelObtain = Parcel.obtain();
-            byte[] bArrM = wj1.M(developerModuleConf);
-            parcelObtain.unmarshall(bArrM, 0, bArrM.length);
-            parcelObtain.setDataPosition(0);
+            parcel = Parcel.obtain();
+            byte[] M = wj1.M(developerModuleConf);
+            parcel.unmarshall(M, 0, M.length);
+            parcel.setDataPosition(0);
             try {
-                this.mConfig = new DeveloperModuleConfig(parcelObtain);
-                parcelObtain.recycle();
+                this.mConfig = new DeveloperModuleConfig(parcel);
+                parcel.recycle();
             } catch (Throwable th) {
                 th = th;
                 try {
@@ -76,48 +75,48 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
                     nz0.P(a.a.a.c.a(-436334876573474L, strArr), a.a.a.c.a(-436450840690466L, strArr), th);
                     this.mConfig = new DeveloperModuleConfig();
                 } finally {
-                    if (parcelObtain != null) {
-                        parcelObtain.recycle();
+                    if (parcel != null) {
+                        parcel.recycle();
                     }
                 }
             }
         } catch (Throwable th2) {
             th = th2;
-            parcelObtain = null;
+            parcel = null;
         }
     }
 
-    private void saveStateLw() throws IOException {
+    private void saveStateLw() {
         if (this.mConfig == null) {
             this.mConfig = new DeveloperModuleConfig();
         }
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         rg rgVar = new rg(BEnvironment.getDeveloperModuleConf());
-        FileOutputStream fileOutputStreamG0 = null;
+        FileOutputStream fileOutputStream = null;
         try {
-            this.mConfig.writeToParcel(parcelObtain, 0);
-            parcelObtain.setDataPosition(0);
-            fileOutputStreamG0 = rgVar.g0();
-            fileOutputStreamG0.write(parcelObtain.marshall());
-            rgVar.B(fileOutputStreamG0);
-            parcelObtain.recycle();
-            l8.F(fileOutputStreamG0);
+            this.mConfig.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            fileOutputStream = rgVar.g0();
+            fileOutputStream.write(obtain.marshall());
+            rgVar.B(fileOutputStream);
+            obtain.recycle();
+            l8.F(fileOutputStream);
         } catch (Throwable th) {
             try {
-                rgVar.z(fileOutputStreamG0);
+                rgVar.z(fileOutputStream);
                 String[] strArr = xa1.b;
                 nz0.P(a.a.a.c.a(-436081473503010L, strArr), a.a.a.c.a(-436180257750818L, strArr), th);
-                parcelObtain.recycle();
-                l8.F(fileOutputStreamG0);
+                obtain.recycle();
+                l8.F(fileOutputStream);
             } catch (Throwable th2) {
-                parcelObtain.recycle();
-                l8.F(fileOutputStreamG0);
+                obtain.recycle();
+                l8.F(fileOutputStream);
                 throw th2;
             }
         }
     }
 
-    private List<DeveloperModuleInfo> scanModulesLocked(int i, boolean z) throws IOException, NumberFormatException {
+    private List<DeveloperModuleInfo> scanModulesLocked(int i, boolean z) {
         String[] strArr = xa1.b;
         ensureConfigLocked();
         PackageManager packageManager = c01.s.getPackageManager();
@@ -127,17 +126,17 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
             boolean z2 = false;
             for (ApplicationInfo applicationInfo : packageManager.getInstalledApplications(PackageParser.PARSE_IS_PRIVILEGED)) {
                 DeveloperModuleSettings developerModuleSettings = settingsForPackageLocked(applicationInfo.packageName);
-                DeveloperModuleInfo developerModuleInfoD = v70.d(packageManager, applicationInfo, developerModuleSettings);
-                if (developerModuleInfoD != null) {
-                    hashSet.add(developerModuleInfoD.packageName);
-                    if (developerModuleSettings.trusted && !developerModuleSettings.trustMatches(developerModuleInfoD)) {
+                DeveloperModuleInfo d = v70.d(packageManager, applicationInfo, developerModuleSettings);
+                if (d != null) {
+                    hashSet.add(d.packageName);
+                    if (developerModuleSettings.trusted && !developerModuleSettings.trustMatches(d)) {
                         developerModuleSettings.resetTrust();
                         v70.d(packageManager, applicationInfo, developerModuleSettings);
-                        developerModuleInfoD.trusted = false;
-                        developerModuleInfoD.enabled = false;
+                        d.trusted = false;
+                        d.enabled = false;
                         z2 = true;
                     }
-                    arrayList.add(developerModuleInfoD);
+                    arrayList.add(d);
                 }
             }
             if (z && this.mConfig.moduleState.keySet().retainAll(hashSet)) {
@@ -153,7 +152,7 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
         }
     }
 
-    private DeveloperModuleSettings settingsForPackageLocked(String str) throws IOException {
+    private DeveloperModuleSettings settingsForPackageLocked(String str) {
         ensureConfigLocked();
         DeveloperModuleSettings developerModuleSettings = this.mConfig.moduleState.get(str);
         if (developerModuleSettings != null) {
@@ -198,9 +197,9 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
         }
         synchronized (this.mLock) {
             try {
-                List<DeveloperModuleInfo> listScanModulesLocked = scanModulesLocked(i, true);
+                List<DeveloperModuleInfo> scanModulesLocked = scanModulesLocked(i, true);
                 arrayList = new ArrayList();
-                for (DeveloperModuleInfo developerModuleInfo : listScanModulesLocked) {
+                for (DeveloperModuleInfo developerModuleInfo : scanModulesLocked) {
                     if (developerModuleInfo.trusted && developerModuleInfo.enabled && !developerModuleInfo.quarantined && developerModuleInfo.targetsPackage(str) && developerModuleInfo.isTargetEnabled(str) && developerModuleInfo.matchesProcess(str2)) {
                         arrayList.add(developerModuleInfo);
                     }
@@ -214,11 +213,11 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
 
     @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
     public List<DeveloperModuleInfo> getInstalledModules(int i) {
-        List<DeveloperModuleInfo> listScanModulesLocked;
+        List<DeveloperModuleInfo> scanModulesLocked;
         synchronized (this.mLock) {
-            listScanModulesLocked = scanModulesLocked(i, true);
+            scanModulesLocked = scanModulesLocked(i, true);
         }
-        return listScanModulesLocked;
+        return scanModulesLocked;
     }
 
     @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
@@ -251,9 +250,9 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     public void setModuleEarlyAllowed(String str, boolean z) {
         synchronized (this.mLock) {
             try {
-                DeveloperModuleInfo developerModuleInfoFindModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
+                DeveloperModuleInfo findModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
                 DeveloperModuleSettings developerModuleSettings = settingsForPackageLocked(str);
-                if (developerModuleInfoFindModuleLocked != null && developerModuleSettings.trustMatches(developerModuleInfoFindModuleLocked) && developerModuleInfoFindModuleLocked.requiresEarlyApproval()) {
+                if (findModuleLocked != null && developerModuleSettings.trustMatches(findModuleLocked) && findModuleLocked.requiresEarlyApproval()) {
                     developerModuleSettings.earlyAllowed = z;
                     saveStateLw();
                 }
@@ -266,9 +265,9 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     public void setModuleEnabled(String str, boolean z) {
         synchronized (this.mLock) {
             try {
-                DeveloperModuleInfo developerModuleInfoFindModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
+                DeveloperModuleInfo findModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
                 DeveloperModuleSettings developerModuleSettings = settingsForPackageLocked(str);
-                if (developerModuleInfoFindModuleLocked != null && developerModuleSettings.trustMatches(developerModuleInfoFindModuleLocked)) {
+                if (findModuleLocked != null && developerModuleSettings.trustMatches(findModuleLocked)) {
                     developerModuleSettings.enabled = z;
                     saveStateLw();
                 }
@@ -281,9 +280,9 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     public void setModuleNativeAllowed(String str, boolean z) {
         synchronized (this.mLock) {
             try {
-                DeveloperModuleInfo developerModuleInfoFindModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
+                DeveloperModuleInfo findModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
                 DeveloperModuleSettings developerModuleSettings = settingsForPackageLocked(str);
-                if (developerModuleInfoFindModuleLocked != null && developerModuleSettings.trustMatches(developerModuleInfoFindModuleLocked) && developerModuleInfoFindModuleLocked.nativeCapable) {
+                if (findModuleLocked != null && developerModuleSettings.trustMatches(findModuleLocked) && findModuleLocked.nativeCapable) {
                     developerModuleSettings.nativeAllowed = z;
                     saveStateLw();
                 }
@@ -296,9 +295,9 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     public void setModuleTargetEnabled(String str, String str2, int i, boolean z) {
         synchronized (this.mLock) {
             try {
-                DeveloperModuleInfo developerModuleInfoFindModuleLocked = findModuleLocked(str, i);
+                DeveloperModuleInfo findModuleLocked = findModuleLocked(str, i);
                 DeveloperModuleSettings developerModuleSettings = settingsForPackageLocked(str);
-                if (developerModuleInfoFindModuleLocked != null && developerModuleSettings.trustMatches(developerModuleInfoFindModuleLocked) && developerModuleInfoFindModuleLocked.targetsPackage(str2)) {
+                if (findModuleLocked != null && developerModuleSettings.trustMatches(findModuleLocked) && findModuleLocked.targetsPackage(str2)) {
                     if (!z) {
                         developerModuleSettings.enabledTargets.remove(str2);
                     } else if (!developerModuleSettings.enabledTargets.contains(str2)) {
@@ -321,8 +320,8 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
                     saveStateLw();
                     return;
                 }
-                DeveloperModuleInfo developerModuleInfoFindModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
-                if (developerModuleInfoFindModuleLocked == null) {
+                DeveloperModuleInfo findModuleLocked = findModuleLocked(str, DEVELOPER_SPACE_USER_ID);
+                if (findModuleLocked == null) {
                     return;
                 }
                 developerModuleSettings.trusted = true;
@@ -330,8 +329,8 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
                 developerModuleSettings.nativeAllowed = false;
                 developerModuleSettings.earlyAllowed = false;
                 developerModuleSettings.quarantined = false;
-                developerModuleSettings.trustedCertificateSha256 = developerModuleInfoFindModuleLocked.certificateSha256;
-                developerModuleSettings.trustedVersionCode = developerModuleInfoFindModuleLocked.versionCode;
+                developerModuleSettings.trustedCertificateSha256 = findModuleLocked.certificateSha256;
+                developerModuleSettings.trustedVersionCode = findModuleLocked.versionCode;
                 developerModuleSettings.crashCount = 0;
                 developerModuleSettings.lastError = null;
                 developerModuleSettings.enabledTargets.clear();
@@ -343,7 +342,7 @@ public class BDeveloperModuleManagerService extends IBDeveloperModuleManagerServ
     }
 
     @Override // com.kos.engine.core.system.ISystemService
-    public void systemReady() throws IOException {
+    public void systemReady() {
         loadStateLr();
     }
 }

@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class el implements m5 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f308a;
+    public final float f307a;
 
     public el(float f) {
-        this.f308a = f;
+        this.f307a = f;
     }
 
     @Override // androidx.emoji2.text.m5
     public final int a(int i, int i2, q01 q01Var) {
         float f = (i2 - i) / 2.0f;
         q01 q01Var2 = q01.d;
-        float f2 = this.f308a;
+        float f2 = this.f307a;
         if (q01Var != q01Var2) {
             f2 *= -1;
         }
@@ -26,14 +26,14 @@ public final class el implements m5 {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof el) && Float.compare(this.f308a, ((el) obj).f308a) == 0;
+        return (obj instanceof el) && Float.compare(this.f307a, ((el) obj).f307a) == 0;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f308a);
+        return Float.hashCode(this.f307a);
     }
 
     public final String toString() {
-        return zd.i(new StringBuilder("Horizontal(bias="), this.f308a, ')');
+        return zd.i(new StringBuilder("Horizontal(bias="), this.f307a, ')');
     }
 }

@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class a {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final byte[] f74a;
+    public static final byte[] f73a;
 
     static {
         io ioVar = io.g;
-        f74a = on.h("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/").d;
+        f73a = on.h("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/").d;
         on.h("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_");
     }
 }

@@ -7,7 +7,7 @@ import java.util.LinkedHashSet;
 public abstract class tg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public lz0 f1119a;
+    public lz0 f1118a;
     public boolean b;
     public s6 c;
 

@@ -14,10 +14,10 @@ public final /* synthetic */ class pt implements x90, yc0, ch0, gk2 {
     public static final pt f = new pt(25);
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f927a;
+    public final /* synthetic */ int f926a;
 
     public /* synthetic */ pt(int i) {
-        this.f927a = i;
+        this.f926a = i;
     }
 
     @Override // androidx.emoji2.text.ch0
@@ -30,7 +30,7 @@ public final /* synthetic */ class pt implements x90, yc0, ch0, gk2 {
 
     @Override // androidx.emoji2.text.x90
     public double c(double d2) {
-        switch (this.f927a) {
+        switch (this.f926a) {
             case 0:
                 double d3 = d2 < 0.0d ? -d2 : d2;
                 return Math.copySign(d3 >= 0.0031308049535603718d ? (Math.pow(d3, 0.4166666666666667d) - 0.05213270142180095d) / 0.9478672985781991d : d3 / 0.07739938080495357d, d2);
@@ -38,16 +38,16 @@ public final /* synthetic */ class pt implements x90, yc0, ch0, gk2 {
                 double d4 = d2 < 0.0d ? -d2 : d2;
                 return Math.copySign(d4 >= 0.04045d ? Math.pow((0.9478672985781991d * d4) + 0.05213270142180095d, 2.4d) : d4 * 0.07739938080495357d, d2);
             case 2:
-                float[] fArr = qt.f977a;
+                float[] fArr = qt.f976a;
                 return qt.b(qt.c, d2);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                float[] fArr2 = qt.f977a;
+                float[] fArr2 = qt.f976a;
                 return qt.a(qt.c, d2);
             case 4:
-                float[] fArr3 = qt.f977a;
+                float[] fArr3 = qt.f976a;
                 return qt.d(qt.d, d2);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                float[] fArr4 = qt.f977a;
+            case 5:
+                float[] fArr4 = qt.f976a;
                 return qt.c(qt.d, d2);
             default:
                 return d2;

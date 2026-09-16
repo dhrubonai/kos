@@ -11,20 +11,20 @@ import javax.net.ssl.X509TrustManager;
 public final class za implements uo2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final X509TrustManager f1427a;
+    public final X509TrustManager f1426a;
     public final Method b;
 
     public za(X509TrustManager x509TrustManager, Method method) {
-        this.f1427a = x509TrustManager;
+        this.f1426a = x509TrustManager;
         this.b = method;
     }
 
     @Override // androidx.emoji2.text.uo2
-    public final X509Certificate a(X509Certificate x509Certificate) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final X509Certificate a(X509Certificate x509Certificate) {
         try {
-            Object objInvoke = this.b.invoke(this.f1427a, x509Certificate);
-            lx0.v(objInvoke, "null cannot be cast to non-null type java.security.cert.TrustAnchor");
-            return ((TrustAnchor) objInvoke).getTrustedCert();
+            Object invoke = this.b.invoke(this.f1426a, x509Certificate);
+            lx0.v(invoke, "null cannot be cast to non-null type java.security.cert.TrustAnchor");
+            return ((TrustAnchor) invoke).getTrustedCert();
         } catch (IllegalAccessException e) {
             throw new AssertionError("unable to get issues and signature", e);
         } catch (InvocationTargetException unused) {
@@ -40,14 +40,14 @@ public final class za implements uo2 {
             return false;
         }
         za zaVar = (za) obj;
-        return lx0.n(this.f1427a, zaVar.f1427a) && lx0.n(this.b, zaVar.b);
+        return lx0.n(this.f1426a, zaVar.f1426a) && lx0.n(this.b, zaVar.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1427a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1426a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "CustomTrustRootIndex(trustManager=" + this.f1427a + ", findByIssuerAndSignatureMethod=" + this.b + ')';
+        return "CustomTrustRootIndex(trustManager=" + this.f1426a + ", findByIssuerAndSignatureMethod=" + this.b + ')';
     }
 }

@@ -7,13 +7,13 @@ import java.util.LinkedHashMap;
 public final class fa1 implements yw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f353a;
+    public final long f352a;
     public final LinkedHashMap b = new LinkedHashMap();
     public final l6 c;
 
     public fa1(se1 se1Var, long j) {
-        this.f353a = j;
-        this.c = new l6(19, se1Var.f1067a, this);
+        this.f352a = j;
+        this.c = new l6(19, se1Var.f1066a, this);
     }
 
     @Override // androidx.emoji2.text.yw0

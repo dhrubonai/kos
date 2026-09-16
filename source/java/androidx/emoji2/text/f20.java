@@ -22,14 +22,14 @@ public final class f20 extends g01 implements um0 {
         int i = this.e;
         boolean z = false;
         up2 up2Var = null;
-        up2 up2Var2 = up2.f1187a;
+        up2 up2Var2 = up2.f1186a;
         h51 h51Var = this.f;
         switch (i) {
             case 0:
                 p01 p01Var = (p01) obj;
-                tk2 tk2VarD = h51Var.d();
-                if (tk2VarD != null) {
-                    tk2VarD.c = p01Var;
+                tk2 d = h51Var.d();
+                if (d != null) {
+                    d.c = p01Var;
                 }
                 return up2Var2;
             case 1:
@@ -40,9 +40,9 @@ public final class f20 extends g01 implements um0 {
             case 2:
                 List list = (List) obj;
                 if (h51Var.d() != null) {
-                    tk2 tk2VarD2 = h51Var.d();
-                    lx0.u(tk2VarD2);
-                    list.add(tk2VarD2.f1127a);
+                    tk2 d2 = h51Var.d();
+                    lx0.u(d2);
+                    list.add(d2.f1126a);
                     z = true;
                 }
                 return Boolean.valueOf(z);
@@ -51,9 +51,9 @@ public final class f20 extends g01 implements um0 {
                 nk2 nk2Var = h51Var.e;
                 f20 f20Var = h51Var.t;
                 if (nk2Var != null) {
-                    ak2 ak2VarI = h51Var.d.i(xs.m0(new d70(), new du(ueVar, 1)));
-                    nk2Var.a(null, ak2VarI);
-                    f20Var.e(ak2VarI);
+                    ak2 i2 = h51Var.d.i(xs.m0(new d70(), new du(ueVar, 1)));
+                    nk2Var.a(null, i2);
+                    f20Var.e(i2);
                     up2Var = up2Var2;
                 }
                 if (up2Var == null) {
@@ -63,35 +63,45 @@ public final class f20 extends g01 implements um0 {
                 }
                 return Boolean.TRUE;
             case 4:
-                int i2 = ((iu0) obj).f549a;
+                int i3 = ((iu0) obj).f548a;
                 rg rgVar = h51Var.r;
                 rgVar.getClass();
-                if (i2 == 7 || i2 == 2 || i2 == 6 || i2 == 5 || i2 == 3 || i2 == 4) {
+                if (i3 == 7) {
                     rgVar.K();
-                } else if (i2 != 1 && i2 != 0) {
+                } else if (i3 == 2) {
+                    rgVar.K();
+                } else if (i3 == 6) {
+                    rgVar.K();
+                } else if (i3 == 5) {
+                    rgVar.K();
+                } else if (i3 == 3) {
+                    rgVar.K();
+                } else if (i3 == 4) {
+                    rgVar.K();
+                } else if (i3 != 1 && i3 != 0) {
                     throw new IllegalStateException("invalid ImeAction");
                 }
-                if (i2 == 6) {
+                if (i3 == 6) {
                     ek0 ek0Var = (ek0) rgVar.g;
                     if (ek0Var == null) {
                         lx0.b0("focusManager");
                         throw null;
                     }
                     ((gk0) ek0Var).f(1);
-                } else if (i2 == 5) {
+                } else if (i3 == 5) {
                     ek0 ek0Var2 = (ek0) rgVar.g;
                     if (ek0Var2 == null) {
                         lx0.b0("focusManager");
                         throw null;
                     }
                     ((gk0) ek0Var2).f(2);
-                } else if (i2 == 7 && (gd2Var = (gd2) rgVar.e) != null) {
+                } else if (i3 == 7 && (gd2Var = (gd2) rgVar.e) != null) {
                     ((a70) gd2Var).a();
                 }
                 return up2Var2;
             default:
                 ak2 ak2Var = (ak2) obj;
-                String str2 = ak2Var.f106a.e;
+                String str2 = ak2Var.f105a.e;
                 ue ueVar2 = h51Var.j;
                 if (!lx0.n(str2, ueVar2 != null ? ueVar2.e : null)) {
                     h51Var.k.setValue(qq0.d);
@@ -101,7 +111,7 @@ public final class f20 extends g01 implements um0 {
                 h51Var.e(j);
                 h51Var.s.e(ak2Var);
                 pw1 pw1Var = h51Var.b;
-                dy dyVar = pw1Var.f931a;
+                dy dyVar = pw1Var.f930a;
                 if (dyVar != null) {
                     dyVar.r(pw1Var, null);
                 }

@@ -44,10 +44,10 @@ public class IRoleManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1111177317990178L, strArr);
+            String a2 = c.a(-1111177317990178L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1111237447532322L, strArr), 3, strA);
+            zd.p(sb, c.a(-1111237447532322L, strArr), 3, a2);
             return Boolean.FALSE;
         }
     }
@@ -119,9 +119,9 @@ public class IRoleManagerProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
@@ -154,11 +154,11 @@ public class IRoleManagerProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-1122932643479330L, strArr)).getMethod(c.a(-1123048607596322L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-1122932643479330L, strArr)).getMethod(c.a(-1123048607596322L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-1122644880670498L, strArr), th, 3, c.a(-1123134506942242L, strArr));
             return null;
@@ -171,10 +171,10 @@ public class IRoleManagerProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-1122799499493154L, strArr);
+            String a2 = c.a(-1122799499493154L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1122859629035298L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 
@@ -187,12 +187,12 @@ public class IRoleManagerProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1123499579162402L, strArr);
+            String a2 = c.a(-1123499579162402L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1123628428181282L, strArr), method);
             sb.append(c.a(-1123675672821538L, strArr));
             sb.append(findMessage(th));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }

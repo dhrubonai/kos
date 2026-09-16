@@ -7,7 +7,7 @@ import android.view.WindowInsets;
 /* loaded from: classes.dex */
 public abstract class ur2 {
     public static WindowInsets a(View view, WindowInsets windowInsets) {
-        int i = ks2.f654a;
+        int i = ks2.f653a;
         return view.dispatchApplyWindowInsets(windowInsets);
     }
 

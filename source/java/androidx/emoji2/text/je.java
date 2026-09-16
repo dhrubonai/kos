@@ -8,7 +8,7 @@ import android.view.animation.LinearInterpolator;
 public abstract class je {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final LinearInterpolator f575a = new LinearInterpolator();
+    public static final LinearInterpolator f574a = new LinearInterpolator();
     public static final oh0 b = new oh0(oh0.d);
     public static final oh0 c = new oh0();
     public static final oh0 d = new oh0(oh0.e);

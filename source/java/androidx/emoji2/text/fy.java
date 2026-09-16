@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public final class fy {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ fy f391a = new fy();
+    public static final /* synthetic */ fy f390a = new fy();
     public static final zo1 b = zo1.g;
 }

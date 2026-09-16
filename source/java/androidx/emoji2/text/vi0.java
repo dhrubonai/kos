@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class vi0 implements q00 {
     @Override // androidx.emoji2.text.q00
     public final long a(long j, long j2) {
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(1.0f) << 32) | (4294967295L & Float.floatToRawIntBits(1.0f));
-        int i = d42.f237a;
-        return jFloatToRawIntBits;
+        long floatToRawIntBits = (Float.floatToRawIntBits(1.0f) << 32) | (4294967295L & Float.floatToRawIntBits(1.0f));
+        int i = d42.f236a;
+        return floatToRawIntBits;
     }
 
     public final boolean equals(Object obj) {

@@ -5,24 +5,24 @@ package androidx.emoji2.text;
 public final class vf2 implements qe {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f1214a;
+    public final String f1213a;
 
     public /* synthetic */ vf2(String str) {
-        this.f1214a = str;
+        this.f1213a = str;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof vf2) {
-            return lx0.n(this.f1214a, ((vf2) obj).f1214a);
+            return lx0.n(this.f1213a, ((vf2) obj).f1213a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1214a.hashCode();
+        return this.f1213a.hashCode();
     }
 
     public final String toString() {
-        return "StringAnnotation(value=" + this.f1214a + ')';
+        return "StringAnnotation(value=" + this.f1213a + ')';
     }
 }

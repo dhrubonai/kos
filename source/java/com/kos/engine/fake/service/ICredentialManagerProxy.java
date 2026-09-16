@@ -56,9 +56,9 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                 }
             }
             ICredentialManagerProxy.rememberCredentialClient();
-            OnceRunnable onceRunnableOnce = ICredentialManagerProxy.once(new pt0(1, ICredentialManagerProxy.findCallback(objArr)));
-            ICredentialManagerProxy.seedVirtualGoogleSignInState(onceRunnableOnce);
-            ICredentialManagerProxy.scheduleSeedTimeout(onceRunnableOnce);
+            OnceRunnable once = ICredentialManagerProxy.once(new pt0(1, ICredentialManagerProxy.findCallback(objArr)));
+            ICredentialManagerProxy.seedVirtualGoogleSignInState(once);
+            ICredentialManagerProxy.scheduleSeedTimeout(once);
             nz0.Q(c.a(-692662819766050L, strArr), 3, c.a(-692216143167266L, strArr) + ICredentialManagerProxy.getCurrentVirtualPackage());
             return ICredentialManagerProxy.createCancellationSignal(method.getReturnType());
         }
@@ -68,7 +68,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     @ProxyMethod("executeCreateCredential")
     public static class ExecuteCreateCredential extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws SecurityException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (ICredentialManagerProxy.shouldKeepCredentialManagerInsideVirtual()) {
                 ICredentialManagerProxy.rememberCredentialClient();
@@ -93,7 +93,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     @ProxyMethod("executeGetCredential")
     public static class ExecuteGetCredential extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws SecurityException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String message;
             String[] strArr = xa1.b;
             if (ICredentialManagerProxy.shouldKeepCredentialManagerInsideVirtual()) {
@@ -128,7 +128,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     @ProxyMethod("executePrepareGetCredential")
     public static class ExecutePrepareGetCredential extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws SecurityException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (ICredentialManagerProxy.shouldKeepCredentialManagerInsideVirtual()) {
                 ICredentialManagerProxy.rememberCredentialClient();
@@ -195,7 +195,9 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                 return Proxy.newProxyInstance(cls.getClassLoader(), new Class[]{cls}, new InvocationHandler() { // from class: androidx.emoji2.text.qt0
                     @Override // java.lang.reflect.InvocationHandler
                     public final Object invoke(Object obj, Method method, Object[] objArr) {
-                        return ICredentialManagerProxy.lambda$createCancellationSignal$2(binder, obj, method, objArr);
+                        Object lambda$createCancellationSignal$2;
+                        lambda$createCancellationSignal$2 = ICredentialManagerProxy.lambda$createCancellationSignal$2(binder, obj, method, objArr);
+                        return lambda$createCancellationSignal$2;
                     }
                 });
             } catch (Throwable th) {
@@ -222,32 +224,32 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deliverNoCredential(Object obj) throws SecurityException {
+    public static void deliverNoCredential(Object obj) {
         String[] strArr = xa1.b;
         if (obj == null) {
             nz0.Q(c.a(-701961423961890L, strArr), 5, c.a(-701514747363106L, strArr));
             return;
         }
-        Method methodFindOnError = findOnError(obj.getClass());
-        if (methodFindOnError == null) {
+        Method findOnError = findOnError(obj.getClass());
+        if (findOnError == null) {
             nz0.Q(c.a(-702326496182050L, strArr), 5, c.a(-702429575397154L, strArr) + obj.getClass().getName());
             return;
         }
         try {
-            methodFindOnError.setAccessible(true);
+            findOnError.setAccessible(true);
         } catch (Throwable unused) {
         }
         try {
-            Class<?>[] parameterTypes = methodFindOnError.getParameterTypes();
+            Class<?>[] parameterTypes = findOnError.getParameterTypes();
             if (parameterTypes.length == 2) {
-                methodFindOnError.invoke(obj, c.a(-702103157882658L, strArr), null);
+                findOnError.invoke(obj, c.a(-702103157882658L, strArr), null);
                 return;
             }
             if (parameterTypes.length == 1) {
-                methodFindOnError.invoke(obj, c.a(-696270592294690L, strArr));
+                findOnError.invoke(obj, c.a(-696270592294690L, strArr));
                 return;
             }
-            nz0.Q(c.a(-696004304322338L, strArr), 5, c.a(-696107383537442L, strArr) + methodFindOnError);
+            nz0.Q(c.a(-696004304322338L, strArr), 5, c.a(-696107383537442L, strArr) + findOnError);
         } catch (Throwable th) {
             th = th;
             if (th.getCause() != null) {
@@ -258,31 +260,31 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deliverSuccess(Object obj) throws SecurityException {
+    public static void deliverSuccess(Object obj) {
         String[] strArr = xa1.b;
         if (obj == null) {
             nz0.Q(c.a(-696725858828066L, strArr), 5, c.a(-695179670601506L, strArr));
             return;
         }
-        Method methodFindOnSuccess = findOnSuccess(obj.getClass());
-        if (methodFindOnSuccess == null) {
+        Method findOnSuccess = findOnSuccess(obj.getClass());
+        if (findOnSuccess == null) {
             nz0.Q(c.a(-695424483737378L, strArr), 5, c.a(-694977807138594L, strArr) + obj.getClass().getName());
             return;
         }
         try {
-            methodFindOnSuccess.setAccessible(true);
+            findOnSuccess.setAccessible(true);
         } catch (Throwable unused) {
         }
         try {
-            Class<?>[] parameterTypes = methodFindOnSuccess.getParameterTypes();
+            Class<?>[] parameterTypes = findOnSuccess.getParameterTypes();
             if (parameterTypes.length == 0) {
-                methodFindOnSuccess.invoke(obj, null);
+                findOnSuccess.invoke(obj, null);
             } else {
                 if (parameterTypes.length != 1) {
-                    nz0.Q(c.a(-695742311317282L, strArr), 5, c.a(-695845390532386L, strArr) + methodFindOnSuccess);
+                    nz0.Q(c.a(-695742311317282L, strArr), 5, c.a(-695845390532386L, strArr) + findOnSuccess);
                     return;
                 }
-                methodFindOnSuccess.invoke(obj, null);
+                findOnSuccess.invoke(obj, null);
             }
             nz0.Q(c.a(-695454548508450L, strArr), 3, c.a(-695557627723554L, strArr));
         } catch (Throwable th) {
@@ -295,7 +297,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deliverSuccessAsync(Object obj) throws SecurityException {
+    public static void deliverSuccessAsync(Object obj) {
         if (obj == null) {
             deliverSuccess(null);
             return;
@@ -308,27 +310,27 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deliverVirtualGoogleCredential(Object[] objArr) throws SecurityException {
+    public static void deliverVirtualGoogleCredential(Object[] objArr) {
         String[] strArr = xa1.b;
-        Object objFindCallback = findCallback(objArr);
-        if (objFindCallback == null) {
+        Object findCallback = findCallback(objArr);
+        if (findCallback == null) {
             nz0.Q(c.a(-699255594565410L, strArr), 5, c.a(-698808917966626L, strArr));
             return;
         }
         String currentVirtualPackage = getCurrentVirtualPackage();
-        String strB = np0.b(currentVirtualPackage);
-        if (strB == null || strB.length() == 0) {
+        String b = np0.b(currentVirtualPackage);
+        if (b == null || b.length() == 0) {
             jx0.r(new StringBuilder(), c.a(-697563377450786L, strArr), currentVirtualPackage, 5, c.a(-697460298235682L, strArr));
-            deliverNoCredential(objFindCallback);
+            deliverNoCredential(findCallback);
             return;
         }
-        Account accountFindGoogleAccount = findGoogleAccount();
-        if (accountFindGoogleAccount == null) {
+        Account findGoogleAccount = findGoogleAccount();
+        if (findGoogleAccount == null) {
             nz0.Q(c.a(-697279909609250L, strArr), 5, c.a(-697932744638242L, strArr));
-            deliverNoCredential(objFindCallback);
+            deliverNoCredential(findCallback);
             return;
         }
-        requestGoogleToken(accountFindGoogleAccount, objFindCallback, currentVirtualPackage, strB, new String[]{zd.k(new StringBuilder(), c.a(-697653571764002L, strArr), strB), c.a(-697803895619362L, strArr) + strB + c.a(-697911269801762L, strArr), c.a(-568856092491554L, strArr), c.a(-568941991837474L, strArr)}, 0);
+        requestGoogleToken(findGoogleAccount, findCallback, currentVirtualPackage, b, new String[]{zd.k(new StringBuilder(), c.a(-697653571764002L, strArr), b), c.a(-697803895619362L, strArr) + b + c.a(-697911269801762L, strArr), c.a(-568856092491554L, strArr), c.a(-568941991837474L, strArr)}, 0);
     }
 
     private static String describeArgs(Object[] objArr) {
@@ -352,7 +354,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         return sb.toString();
     }
 
-    public static /* bridge */ /* synthetic */ void f(Object obj) throws SecurityException {
+    public static /* bridge */ /* synthetic */ void f(Object obj) {
         deliverSuccessAsync(obj);
     }
 
@@ -387,7 +389,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         }
     }
 
-    private static Method findOnError(Class<?> cls) throws SecurityException {
+    private static Method findOnError(Class<?> cls) {
         String[] strArr = xa1.b;
         if (cls == null) {
             return null;
@@ -405,7 +407,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         return null;
     }
 
-    private static Method findOnSuccess(Class<?> cls) throws SecurityException {
+    private static Method findOnSuccess(Class<?> cls) {
         String[] strArr = xa1.b;
         if (cls == null) {
             return null;
@@ -434,8 +436,8 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     public static String getCurrentVirtualPackage() {
         String[] strArr = xa1.b;
         try {
-            String strO = rj.o();
-            return strO != null ? strO : c.a(-703486137351970L, strArr);
+            String o = rj.o();
+            return o != null ? o : c.a(-703486137351970L, strArr);
         } catch (Throwable unused) {
             return c.a(-703520497090338L, strArr);
         }
@@ -454,7 +456,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         return (cls == Long.TYPE || cls == Long.class) ? 0L : null;
     }
 
-    private static boolean hasMethod(Class<?> cls, String str) throws SecurityException {
+    private static boolean hasMethod(Class<?> cls, String str) {
         if (cls == null) {
             return false;
         }
@@ -476,8 +478,8 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         if (str == null) {
             return false;
         }
-        int iIndexOf = str.indexOf(46);
-        return iIndexOf > 0 && str.lastIndexOf(46) > iIndexOf;
+        int indexOf = str.indexOf(46);
+        return indexOf > 0 && str.lastIndexOf(46) > indexOf;
     }
 
     private static boolean isUnhandledGetCredentialMethod(String str) {
@@ -535,12 +537,12 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
             if (th.getCause() != null) {
                 th = th.getCause();
             }
-            String strA = c.a(-568104473214754L, strArr);
+            String a2 = c.a(-568104473214754L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-570956331499298L, strArr));
             sb.append(str);
             zd.r(sb, c.a(-571162489929506L, strArr), th);
-            zd.s(sb, c.a(-570677158625058L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-570677158625058L, strArr), th, 5, a2);
             return false;
         }
     }
@@ -554,24 +556,24 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     public static void rememberCredentialClient() {
         String[] strArr = xa1.b;
         try {
-            String strO = rj.o();
-            if (strO != null && strO.length() != 0 && !c01.X().equals(strO)) {
-                mt2.b = mt2.a(rj.r(), strO);
+            String o = rj.o();
+            if (o != null && o.length() != 0 && !c01.X().equals(o)) {
+                mt2.b = mt2.a(rj.r(), o);
                 Account[] accountsAsUser = BAccountManager.get().getAccountsAsUser(c.a(-703554856828706L, strArr));
                 if (accountsAsUser != null) {
-                    int iU = rj.u();
+                    int u = rj.u();
                     for (Account account : accountsAsUser) {
-                        BAccountManager.get().setAccountVisibility(account, strO, 1, iU);
+                        BAccountManager.get().setAccountVisibility(account, o, 1, u);
                     }
                 }
-                nz0.Q(c.a(-703636461207330L, strArr), 3, c.a(-703189784608546L, strArr) + strO);
+                nz0.Q(c.a(-703636461207330L, strArr), 3, c.a(-703189784608546L, strArr) + o);
             }
         } catch (Throwable unused) {
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void requestGoogleToken(final Account account, final Object obj, final String str, final String str2, final String[] strArr, final int i) throws SecurityException {
+    public static void requestGoogleToken(final Account account, final Object obj, final String str, final String str2, final String[] strArr, final int i) {
         BAccountManager bAccountManager;
         String[] strArr2 = xa1.b;
         if (i >= strArr.length) {
@@ -580,7 +582,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
             return;
         }
         final String str3 = strArr[i];
-        Bundle bundleCreateGoogleTokenOptions = createGoogleTokenOptions(str, str2);
+        Bundle createGoogleTokenOptions = createGoogleTokenOptions(str, str2);
         try {
             bAccountManager = BAccountManager.get();
         } catch (Throwable th) {
@@ -591,9 +593,9 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                 private final AtomicBoolean recoveryLaunched = new AtomicBoolean(false);
 
                 @Override // android.accounts.IAccountManagerResponse
-                public void onError(int i2, String str4) throws SecurityException {
+                public void onError(int i2, String str4) {
                     String[] strArr3 = xa1.b;
-                    String strA = c.a(-691773761535778L, strArr3);
+                    String a2 = c.a(-691773761535778L, strArr3);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-692426596564770L, strArr3));
                     sb.append(str);
@@ -601,7 +603,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                     sb.append(str3);
                     sb.append(c.a(-692598395256610L, strArr3));
                     sb.append(i2);
-                    jx0.r(sb, c.a(-692632754994978L, strArr3), str4, 5, strA);
+                    jx0.r(sb, c.a(-692632754994978L, strArr3), str4, 5, a2);
                     if (this.recoveryLaunched.get()) {
                         ICredentialManagerProxy.deliverNoCredential(obj);
                     } else {
@@ -610,7 +612,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                 }
 
                 @Override // android.accounts.IAccountManagerResponse
-                public void onResult(Bundle bundle) throws SecurityException {
+                public void onResult(Bundle bundle) {
                     String[] strArr3 = xa1.b;
                     String string = bundle != null ? bundle.getString(c.a(-681551739371298L, strArr3)) : null;
                     gs1.l(c.a(-681577509175074L, strArr3) + str + c.a(-681208141987618L, strArr3) + str3, c.a(-681186667151138L, strArr3), string);
@@ -620,11 +622,11 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                             np0.a(obj, string);
                             return;
                         } catch (Throwable th2) {
-                            Throwable cause = th2;
-                            if (cause.getCause() != null) {
-                                cause = cause.getCause();
+                            Throwable th3 = th2;
+                            if (th3.getCause() != null) {
+                                th3 = th3.getCause();
                             }
-                            zd.s(new StringBuilder(), c.a(-680044205850402L, strArr3), cause, 5, c.a(-679941126635298L, strArr3));
+                            zd.s(new StringBuilder(), c.a(-680044205850402L, strArr3), th3, 5, c.a(-679941126635298L, strArr3));
                             ICredentialManagerProxy.deliverNoCredential(obj);
                             return;
                         }
@@ -634,36 +636,36 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                         if (this.recoveryLaunched.compareAndSet(false, true) && ICredentialManagerProxy.launchGoogleConsentRecovery(intent, str, str3)) {
                             return;
                         }
-                        String strA = c.a(-679670543695650L, strArr3);
+                        String a2 = c.a(-679670543695650L, strArr3);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-680323378724642L, strArr3));
                         sb.append(str);
                         sb.append(c.a(-680568191860514L, strArr3));
-                        zd.p(sb, str3, 5, strA);
+                        zd.p(sb, str3, 5, a2);
                         ICredentialManagerProxy.deliverNoCredential(obj);
                         return;
                     }
                     if (this.recoveryLaunched.get()) {
-                        String strA2 = c.a(-680048500817698L, strArr3);
+                        String a3 = c.a(-680048500817698L, strArr3);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(c.a(-680151580032802L, strArr3));
                         sb2.append(str);
                         sb2.append(c.a(-691988509900578L, strArr3));
-                        zd.p(sb2, str3, 5, strA2);
+                        zd.p(sb2, str3, 5, a3);
                         ICredentialManagerProxy.deliverNoCredential(obj);
                         return;
                     }
-                    String strA3 = c.a(-692035754540834L, strArr3);
+                    String a4 = c.a(-692035754540834L, strArr3);
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(c.a(-692138833755938L, strArr3));
                     sb3.append(str);
                     sb3.append(c.a(-691795236372258L, strArr3));
-                    zd.p(sb3, str3, 5, strA3);
+                    zd.p(sb3, str3, 5, a4);
                     ICredentialManagerProxy.requestGoogleToken(account, obj, str, str2, strArr, i + 1);
                 }
             };
             str3 = str3;
-            bAccountManager.getAuthToken(stub, account, str3, false, true, bundleCreateGoogleTokenOptions);
+            bAccountManager.getAuthToken(stub, account, str3, false, true, createGoogleTokenOptions);
         } catch (Throwable th2) {
             th = th2;
             str3 = str3;
@@ -685,7 +687,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
             return;
         }
         final String str3 = strArr[i];
-        Bundle bundleCreateGoogleTokenOptions = createGoogleTokenOptions(str, str2);
+        Bundle createGoogleTokenOptions = createGoogleTokenOptions(str, str2);
         try {
             bAccountManager = BAccountManager.get();
         } catch (Throwable th) {
@@ -696,7 +698,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                 @Override // android.accounts.IAccountManagerResponse
                 public void onError(int i2, String str4) {
                     String[] strArr3 = xa1.b;
-                    String strA = c.a(-680624026435362L, strArr3);
+                    String a2 = c.a(-680624026435362L, strArr3);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-680727105650466L, strArr3));
                     sb.append(str);
@@ -704,7 +706,7 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                     sb.append(str3);
                     sb.append(c.a(-681435775254306L, strArr3));
                     sb.append(i2);
-                    jx0.r(sb, c.a(-681470134992674L, strArr3), str4, 5, strA);
+                    jx0.r(sb, c.a(-681470134992674L, strArr3), str4, 5, a2);
                     ICredentialManagerProxy.requestGoogleTokenForSeed(account, str, str2, strArr, i + 1, runnable);
                 }
 
@@ -714,12 +716,12 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                     String string = bundle != null ? bundle.getString(c.a(-677767873183522L, strArr3)) : null;
                     gs1.l(c.a(-677793642987298L, strArr3) + str + c.a(-677372736192290L, strArr3) + str3, c.a(-677402800963362L, strArr3), string);
                     if (!ICredentialManagerProxy.isJwt(string)) {
-                        String strA = c.a(-678068520894242L, strArr3);
+                        String a2 = c.a(-678068520894242L, strArr3);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-680920379178786L, strArr3));
                         sb.append(str);
                         sb.append(c.a(-681126537608994L, strArr3));
-                        zd.p(sb, str3, 5, strA);
+                        zd.p(sb, str3, 5, a2);
                         ICredentialManagerProxy.requestGoogleTokenForSeed(account, str, str2, strArr, i + 1, runnable);
                         return;
                     }
@@ -727,17 +729,17 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
                         np0.c(rj.i().b, str, string);
                         nz0.Q(c.a(-677437160701730L, strArr3), 3, c.a(-677540239916834L, strArr3) + str + c.a(-678266089389858L, strArr3) + str3);
                     } catch (Throwable th2) {
-                        Throwable cause = th2;
-                        if (cause.getCause() != null) {
-                            cause = cause.getCause();
+                        Throwable th3 = th2;
+                        if (th3.getCause() != null) {
+                            th3 = th3.getCause();
                         }
-                        zd.s(new StringBuilder(), c.a(-677853772529442L, strArr3), cause, 5, c.a(-678300449128226L, strArr3));
+                        zd.s(new StringBuilder(), c.a(-677853772529442L, strArr3), th3, 5, c.a(-678300449128226L, strArr3));
                     }
                     ICredentialManagerProxy.runFinished(runnable);
                 }
             };
             str3 = str3;
-            bAccountManager.getAuthToken(stub, account, str3, false, true, bundleCreateGoogleTokenOptions);
+            bAccountManager.getAuthToken(stub, account, str3, false, true, createGoogleTokenOptions);
         } catch (Throwable th2) {
             th = th2;
             str3 = str3;
@@ -772,31 +774,31 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     public static void seedVirtualGoogleSignInState(Runnable runnable) {
         String[] strArr = xa1.b;
         String currentVirtualPackage = getCurrentVirtualPackage();
-        String strB = np0.b(currentVirtualPackage);
-        if (strB == null || strB.length() == 0) {
+        String b = np0.b(currentVirtualPackage);
+        if (b == null || b.length() == 0) {
             runFinished(runnable);
             return;
         }
-        Account accountFindGoogleAccount = findGoogleAccount();
-        if (accountFindGoogleAccount == null) {
+        Account findGoogleAccount = findGoogleAccount();
+        if (findGoogleAccount == null) {
             jx0.r(new StringBuilder(), c.a(-701308588932898L, strArr), currentVirtualPackage, 5, c.a(-700655753903906L, strArr));
             runFinished(runnable);
             return;
         }
-        String[] strArr2 = {zd.k(new StringBuilder(), c.a(-701038005993250L, strArr), strB), c.a(-701119610371874L, strArr) + strB + c.a(-699577717112610L, strArr), c.a(-699715156066082L, strArr), c.a(-699320019074850L, strArr)};
+        String[] strArr2 = {zd.k(new StringBuilder(), c.a(-701038005993250L, strArr), b), c.a(-701119610371874L, strArr) + b + c.a(-699577717112610L, strArr), c.a(-699715156066082L, strArr), c.a(-699320019074850L, strArr)};
         jx0.r(new StringBuilder(), c.a(-699508997635874L, strArr), currentVirtualPackage, 3, c.a(-699405918420770L, strArr));
-        requestGoogleTokenForSeed(accountFindGoogleAccount, currentVirtualPackage, strB, strArr2, 0, runnable);
+        requestGoogleTokenForSeed(findGoogleAccount, currentVirtualPackage, b, strArr2, 0, runnable);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean shouldKeepCredentialManagerInsideVirtual() {
-        String strO;
-        String strB;
+        String o;
+        String b;
         try {
-            if (!rj.B() || rj.n() == null || (strO = rj.o()) == null || strO.length() == 0 || strO.equals(c01.X()) || (strB = np0.b(strO)) == null) {
+            if (!rj.B() || rj.n() == null || (o = rj.o()) == null || o.length() == 0 || o.equals(c01.X()) || (b = np0.b(o)) == null) {
                 return false;
             }
-            return strB.length() > 0;
+            return b.length() > 0;
         } catch (Throwable unused) {
             return false;
         }
@@ -828,28 +830,28 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws SecurityException, RemoteException {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         String message;
         String message2;
         String[] strArr = xa1.b;
         String name = method.getName();
         if (shouldKeepCredentialManagerInsideVirtual()) {
-            String strA = c.a(-686954808229666L, strArr);
+            String a2 = c.a(-686954808229666L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-687057887444770L, strArr));
             sb.append(name);
             sb.append(c.a(-687160966659874L, strArr));
             sb.append(getCurrentVirtualPackage());
             sb.append(c.a(-686658455486242L, strArr));
-            zd.p(sb, describeArgs(objArr), 3, strA);
+            zd.p(sb, describeArgs(objArr), 3, a2);
             if (isUnhandledGetCredentialMethod(name)) {
                 rememberCredentialClient();
-                String strA2 = c.a(-686688520257314L, strArr);
+                String a3 = c.a(-686688520257314L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-686791599472418L, strArr));
                 sb2.append(name);
                 sb2.append(c.a(-689729357102882L, strArr));
-                zd.p(sb2, getCurrentVirtualPackage(), 5, strA2);
+                zd.p(sb2, getCurrentVirtualPackage(), 5, a3);
                 deliverVirtualGoogleCredential(objArr);
                 return createCancellationSignal(method.getReturnType());
             }
@@ -859,40 +861,40 @@ public class ICredentialManagerProxy extends BinderInvocationStub {
         } catch (RemoteException e) {
             Throwable cause = e.getCause();
             if ((cause instanceof SecurityException) && (message2 = cause.getMessage()) != null && (message2.contains(c.a(-690300587753250L, strArr)) || message2.contains(c.a(-690416551870242L, strArr)) || message2.contains(c.a(-690425141804834L, strArr)))) {
-                String strA3 = c.a(-689974170238754L, strArr);
+                String a4 = c.a(-689974170238754L, strArr);
                 StringBuilder sb3 = new StringBuilder();
                 zd.t(sb3, c.a(-690077249453858L, strArr), method);
-                jx0.r(sb3, c.a(-688638435409698L, strArr), message2, 5, strA3);
+                jx0.r(sb3, c.a(-688638435409698L, strArr), message2, 5, a4);
                 return getSafeDefaultValue(method.getReturnType());
             }
             String message3 = e.getMessage();
             if (message3 == null || !(message3.contains(c.a(-688805939134242L, strArr)) || message3.contains(c.a(-688303427960610L, strArr)) || message3.contains(c.a(-688363557502754L, strArr)) || message3.contains(c.a(-688440866914082L, strArr)))) {
                 throw e;
             }
-            String strA4 = c.a(-688470931685154L, strArr);
+            String a5 = c.a(-688470931685154L, strArr);
             StringBuilder sb4 = new StringBuilder();
             zd.t(sb4, c.a(-689123766714146L, strArr), method);
-            jx0.r(sb4, c.a(-688887543512866L, strArr), message3, 5, strA4);
+            jx0.r(sb4, c.a(-688887543512866L, strArr), message3, 5, a5);
             return getSafeDefaultValue(method.getReturnType());
         } catch (SecurityException e2) {
             String message4 = e2.getMessage();
             if (message4 == null || !(message4.contains(c.a(-689703587299106L, strArr)) || message4.contains(c.a(-689836731285282L, strArr)) || message4.contains(c.a(-689845321219874L, strArr)))) {
                 throw e2;
             }
-            String strA5 = c.a(-689926925598498L, strArr);
+            String a6 = c.a(-689926925598498L, strArr);
             StringBuilder sb5 = new StringBuilder();
             zd.t(sb5, c.a(-689480248999714L, strArr), method);
-            jx0.r(sb5, c.a(-689652047691554L, strArr), message4, 5, strA5);
+            jx0.r(sb5, c.a(-689652047691554L, strArr), message4, 5, a6);
             return getSafeDefaultValue(method.getReturnType());
         } catch (Throwable th) {
             Throwable cause2 = th.getCause();
             if (!(cause2 instanceof SecurityException) || (message = cause2.getMessage()) == null || (!message.contains(c.a(-688986327760674L, strArr)) && !message.contains(c.a(-689102291877666L, strArr)) && !message.contains(c.a(-700724473380642L, strArr)))) {
                 throw th;
             }
-            String strA6 = c.a(-700754538151714L, strArr);
+            String a7 = c.a(-700754538151714L, strArr);
             StringBuilder sb6 = new StringBuilder();
             zd.t(sb6, c.a(-700857617366818L, strArr), method);
-            jx0.r(sb6, c.a(-700505430048546L, strArr), message, 5, strA6);
+            jx0.r(sb6, c.a(-700505430048546L, strArr), message, 5, a7);
             return getSafeDefaultValue(method.getReturnType());
         }
     }

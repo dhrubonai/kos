@@ -15,12 +15,12 @@ public final class hc implements Choreographer.FrameCallback {
 
     @Override // android.view.Choreographer.FrameCallback
     public final void doFrame(long j) {
-        Object objH;
+        Object h;
         try {
-            objH = this.e.e(Long.valueOf(j));
+            h = this.e.e(Long.valueOf(j));
         } catch (Throwable th) {
-            objH = mz0.h(th);
+            h = mz0.h(th);
         }
-        this.d.g(objH);
+        this.d.g(h);
     }
 }

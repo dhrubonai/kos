@@ -7,12 +7,12 @@ import kotlin.jvm.functions.Function2;
 public final class f72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f348a;
+    public final String f347a;
     public final Function2 b;
     public final boolean c;
 
     public f72(String str, Function2 function2) {
-        this.f348a = str;
+        this.f347a = str;
         this.b = function2;
     }
 
@@ -21,7 +21,7 @@ public final class f72 {
     }
 
     public final String toString() {
-        return "AccessibilityKey: " + this.f348a;
+        return "AccessibilityKey: " + this.f347a;
     }
 
     public /* synthetic */ f72(String str) {

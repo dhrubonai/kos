@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class a8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final y62 f88a;
+    public final y62 f87a;
     public final int b;
     public final int c;
     public final int d;
@@ -13,7 +13,7 @@ public final class a8 {
     public final long f;
 
     public a8(y62 y62Var, int i, int i2, int i3, int i4, long j) {
-        this.f88a = y62Var;
+        this.f87a = y62Var;
         this.b = i;
         this.c = i2;
         this.d = i3;

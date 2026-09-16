@@ -5,7 +5,7 @@ package com.kos.Utils;
 public final class Downloader {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Downloader f1473a = new Downloader();
+    public static final Downloader f1472a = new Downloader();
 
     /* JADX INFO: Access modifiers changed from: private */
     public final native void nativeDownloadFile(String str, String str2, DownloadCallback downloadCallback);

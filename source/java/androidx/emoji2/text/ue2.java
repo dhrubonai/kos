@@ -7,11 +7,11 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class ue2 extends w0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicReference f1171a = new AtomicReference(null);
+    public final AtomicReference f1170a = new AtomicReference(null);
 
     @Override // androidx.emoji2.text.w0
     public final boolean a(v0 v0Var) {
-        AtomicReference atomicReference = this.f1171a;
+        AtomicReference atomicReference = this.f1170a;
         if (atomicReference.get() != null) {
             return false;
         }
@@ -21,7 +21,7 @@ public final class ue2 extends w0 {
 
     @Override // androidx.emoji2.text.w0
     public final l10[] b(v0 v0Var) {
-        this.f1171a.set(null);
-        return h50.f452a;
+        this.f1170a.set(null);
+        return h50.f451a;
     }
 }

@@ -9,21 +9,21 @@ public final class lb1 {
     public static final Pattern c = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f684a;
+    public final String f683a;
 
     public lb1(String str) {
-        this.f684a = str;
+        this.f683a = str;
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof lb1) && lx0.n(((lb1) obj).f684a, this.f684a);
+        return (obj instanceof lb1) && lx0.n(((lb1) obj).f683a, this.f683a);
     }
 
     public final int hashCode() {
-        return this.f684a.hashCode();
+        return this.f683a.hashCode();
     }
 
     public final String toString() {
-        return this.f684a;
+        return this.f683a;
     }
 }

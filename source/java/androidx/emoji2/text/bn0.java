@@ -11,7 +11,7 @@ public abstract class bn0 extends wo implements an0, py0, ym0 {
 
     @Override // androidx.emoji2.text.wo
     public final py0 b() {
-        dy1.f279a.getClass();
+        dy1.f278a.getClass();
         return this;
     }
 

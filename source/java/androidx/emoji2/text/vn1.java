@@ -14,7 +14,7 @@ import java.util.List;
 public abstract class vn1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f1231a = 0;
+    public static final /* synthetic */ int f1230a = 0;
 
     static {
         xa1.B(-875624131608354L);
@@ -25,17 +25,17 @@ public abstract class vn1 {
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        Object obj_new = BRParceledListSlice.get()._new(list);
-        if (obj_new != null) {
-            return obj_new;
+        Object _new = BRParceledListSlice.get()._new(list);
+        if (_new != null) {
+            return _new;
         }
-        Object obj_new2 = BRParceledListSlice.get()._new();
+        Object _new2 = BRParceledListSlice.get()._new();
         Iterator it = list.iterator();
         while (it.hasNext()) {
-            BRParceledListSlice.get(obj_new2).append(it.next());
+            BRParceledListSlice.get(_new2).append(it.next());
         }
-        BRParceledListSlice.get(obj_new2).setLastSlice(true);
-        return obj_new2;
+        BRParceledListSlice.get(_new2).setLastSlice(true);
+        return _new2;
     }
 
     public static List b(Bundle bundle) {

@@ -47,9 +47,9 @@ public class IFingerprintManagerProxy extends BinderInvocationStub {
     public void onBindMethod() {
         super.onBindMethod();
         String[] strArr = xa1.b;
-        String strA = c.a(-573529016909602L, strArr);
+        String a2 = c.a(-573529016909602L, strArr);
         Boolean bool = Boolean.FALSE;
-        addMethodHook(new ValueMethodProxy(strA, bool));
+        addMethodHook(new ValueMethodProxy(a2, bool));
         addMethodHook(new ValueMethodProxy(c.a(-573576261549858L, strArr), bool));
         addMethodHook(new PkgMethodProxy(c.a(-572030073323298L, strArr)));
         addMethodHook(new PkgMethodProxy(c.a(-572120267636514L, strArr)));

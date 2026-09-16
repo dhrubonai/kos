@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class bp implements hk0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final bp f162a = new bp();
+    public static final bp f161a = new bp();
     public static Boolean b;
 
     @Override // androidx.emoji2.text.hk0

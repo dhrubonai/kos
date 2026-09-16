@@ -23,62 +23,49 @@ public final class pj0 extends hh2 implements wm0 {
         pj0 pj0Var = new pj0(this.k, (l10) obj3);
         pj0Var.i = (jj0) obj;
         pj0Var.j = obj2;
-        return pj0Var.k(up2.f1187a);
+        return pj0Var.k(up2.f1186a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x003b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x003b, code lost:
     
         if (r0.b(r5, r4) == r3) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x003d, code lost:
+    
+        return r3;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x002f, code lost:
+    
+        if (r5 == r3) goto L15;
      */
     /* JADX WARN: Type inference failed for: r2v1, types: [androidx.emoji2.text.hh2, kotlin.jvm.functions.Function2] */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object k(java.lang.Object r5) {
-        /*
-            r4 = this;
-            int r0 = r4.h
-            r1 = 2
-            r2 = 1
-            androidx.emoji2.text.f30 r3 = androidx.emoji2.text.f30.d
-            if (r0 == 0) goto L1e
-            if (r0 == r2) goto L18
-            if (r0 != r1) goto L10
-            androidx.emoji2.text.mz0.L(r5)
-            goto L3e
-        L10:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r0)
-            throw r5
-        L18:
-            androidx.emoji2.text.jj0 r0 = r4.i
-            androidx.emoji2.text.mz0.L(r5)
-            goto L32
-        L1e:
-            androidx.emoji2.text.mz0.L(r5)
-            androidx.emoji2.text.jj0 r0 = r4.i
-            java.lang.Object r5 = r4.j
-            r4.i = r0
-            r4.h = r2
-            androidx.emoji2.text.hh2 r2 = r4.k
-            java.lang.Object r5 = r2.invoke(r5, r4)
-            if (r5 != r3) goto L32
-            goto L3d
-        L32:
-            r2 = 0
-            r4.i = r2
-            r4.h = r1
-            java.lang.Object r5 = r0.b(r5, r4)
-            if (r5 != r3) goto L3e
-        L3d:
-            return r3
-        L3e:
-            androidx.emoji2.text.up2 r5 = androidx.emoji2.text.up2.f1187a
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.pj0.k(java.lang.Object):java.lang.Object");
+    public final Object k(Object obj) {
+        jj0 jj0Var;
+        int i = this.h;
+        f30 f30Var = f30.d;
+        if (i == 0) {
+            mz0.L(obj);
+            jj0Var = this.i;
+            Object obj2 = this.j;
+            this.i = jj0Var;
+            this.h = 1;
+            obj = this.k.invoke(obj2, this);
+        } else {
+            if (i != 1) {
+                if (i != 2) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                mz0.L(obj);
+                return up2.f1186a;
+            }
+            jj0Var = this.i;
+            mz0.L(obj);
+        }
+        this.i = null;
+        this.h = 2;
     }
 }

@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class pf2 extends sf2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final pf2 f903a = new pf2();
+    public static final pf2 f902a = new pf2();
 }

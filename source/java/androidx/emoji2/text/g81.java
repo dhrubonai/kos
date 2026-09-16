@@ -46,8 +46,8 @@ public final class g81 implements Cloneable {
 
     public final Object b(long j) {
         Object obj;
-        int iR = lx0.r(this.e, this.g, j);
-        if (iR < 0 || (obj = this.f[iR]) == lx0.m) {
+        int r = lx0.r(this.e, this.g, j);
+        if (r < 0 || (obj = this.f[r]) == lx0.m) {
             return null;
         }
         return obj;
@@ -76,10 +76,10 @@ public final class g81 implements Cloneable {
         return lx0.r(this.e, this.g, j);
     }
 
-    public final Object clone() throws CloneNotSupportedException {
-        Object objClone = super.clone();
-        lx0.v(objClone, "null cannot be cast to non-null type androidx.collection.LongSparseArray<E of androidx.collection.LongSparseArray>");
-        g81 g81Var = (g81) objClone;
+    public final Object clone() {
+        Object clone = super.clone();
+        lx0.v(clone, "null cannot be cast to non-null type androidx.collection.LongSparseArray<E of androidx.collection.LongSparseArray>");
+        g81 g81Var = (g81) clone;
         g81Var.e = (long[]) this.e.clone();
         g81Var.f = (Object[]) this.f.clone();
         return g81Var;
@@ -114,12 +114,12 @@ public final class g81 implements Cloneable {
 
     public final void e(long j, Object obj) {
         Object obj2 = lx0.m;
-        int iR = lx0.r(this.e, this.g, j);
-        if (iR >= 0) {
-            this.f[iR] = obj;
+        int r = lx0.r(this.e, this.g, j);
+        if (r >= 0) {
+            this.f[r] = obj;
             return;
         }
-        int i = ~iR;
+        int i = ~r;
         int i2 = this.g;
         if (i < i2) {
             Object[] objArr = this.f;
@@ -166,12 +166,12 @@ public final class g81 implements Cloneable {
                 i7++;
             }
             int i9 = i6 / 8;
-            long[] jArrCopyOf = Arrays.copyOf(this.e, i9);
-            lx0.w(jArrCopyOf, "copyOf(...)");
-            this.e = jArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.f, i9);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.f = objArrCopyOf;
+            long[] copyOf = Arrays.copyOf(this.e, i9);
+            lx0.w(copyOf, "copyOf(...)");
+            this.e = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.f, i9);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.f = copyOf2;
         }
         int i10 = this.g;
         if (i10 - i != 0) {
@@ -187,13 +187,13 @@ public final class g81 implements Cloneable {
     }
 
     public final void f(long j) {
-        int iR = lx0.r(this.e, this.g, j);
-        if (iR >= 0) {
+        int r = lx0.r(this.e, this.g, j);
+        if (r >= 0) {
             Object[] objArr = this.f;
-            Object obj = objArr[iR];
+            Object obj = objArr[r];
             Object obj2 = lx0.m;
             if (obj != obj2) {
-                objArr[iR] = obj2;
+                objArr[r] = obj2;
                 this.d = true;
             }
         }
@@ -262,17 +262,17 @@ public final class g81 implements Cloneable {
             }
             sb.append(d(i2));
             sb.append('=');
-            Object objH = h(i2);
-            if (objH != sb) {
-                sb.append(objH);
+            Object h = h(i2);
+            if (h != sb) {
+                sb.append(h);
             } else {
                 sb.append("(this Map)");
             }
         }
         sb.append('}');
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public /* synthetic */ g81(Object obj) {

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class x12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f1315a = 0.0f;
+    public float f1314a = 0.0f;
     public boolean b = true;
     public t30 c = null;
 
@@ -17,16 +17,16 @@ public final class x12 {
             return false;
         }
         x12 x12Var = (x12) obj;
-        return Float.compare(this.f1315a, x12Var.f1315a) == 0 && this.b == x12Var.b && lx0.n(this.c, x12Var.c);
+        return Float.compare(this.f1314a, x12Var.f1314a) == 0 && this.b == x12Var.b && lx0.n(this.c, x12Var.c);
     }
 
     public final int hashCode() {
-        int iD = jx0.d(Float.hashCode(this.f1315a) * 31, 31, this.b);
+        int d = jx0.d(Float.hashCode(this.f1314a) * 31, 31, this.b);
         t30 t30Var = this.c;
-        return (iD + (t30Var == null ? 0 : t30Var.f1102a.hashCode())) * 31;
+        return (d + (t30Var == null ? 0 : t30Var.f1101a.hashCode())) * 31;
     }
 
     public final String toString() {
-        return "RowColumnParentData(weight=" + this.f1315a + ", fill=" + this.b + ", crossAxisAlignment=" + this.c + ", flowLayoutData=null)";
+        return "RowColumnParentData(weight=" + this.f1314a + ", fill=" + this.b + ", crossAxisAlignment=" + this.c + ", flowLayoutData=null)";
     }
 }

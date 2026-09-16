@@ -69,12 +69,12 @@ public class ITelephonyRegistryProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object invokeListenerOrIgnoreDenied(Object obj, Method method, Object[] objArr) throws Throwable {
+    public static Object invokeListenerOrIgnoreDenied(Object obj, Method method, Object[] objArr) {
         try {
             return method.invoke(obj, objArr);
         } catch (Throwable th) {
-            SecurityException securityExceptionFindSecurityException = findSecurityException(th);
-            if (securityExceptionFindSecurityException == null) {
+            SecurityException findSecurityException = findSecurityException(th);
+            if (findSecurityException == null) {
                 Throwable cause = th.getCause();
                 if (cause != null) {
                     throw cause;
@@ -82,12 +82,12 @@ public class ITelephonyRegistryProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1020025227067170L, strArr);
+            String a2 = c.a(-1020025227067170L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1018479038840610L, strArr), method);
             sb.append(c.a(-1018637952630562L, strArr));
-            sb.append(securityExceptionFindSecurityException.getMessage());
-            nz0.Q(strA, 5, sb.toString());
+            sb.append(findSecurityException.getMessage());
+            nz0.Q(a2, 5, sb.toString());
             return null;
         }
     }
@@ -111,17 +111,17 @@ public class ITelephonyRegistryProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (Throwable th) {
-            SecurityException securityExceptionFindSecurityException = findSecurityException(th);
-            if (securityExceptionFindSecurityException == null || !isListenerMethod(method)) {
+            SecurityException findSecurityException = findSecurityException(th);
+            if (findSecurityException == null || !isListenerMethod(method)) {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1020248565366562L, strArr);
+            String a2 = c.a(-1020248565366562L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1019801888767778L, strArr), method);
             sb.append(c.a(-1020029522034466L, strArr));
-            sb.append(securityExceptionFindSecurityException.getMessage());
-            nz0.Q(strA, 5, sb.toString());
+            sb.append(findSecurityException.getMessage());
+            nz0.Q(a2, 5, sb.toString());
             return null;
         }
     }

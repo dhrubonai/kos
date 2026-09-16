@@ -15,15 +15,15 @@ import kotlin.jvm.functions.Function2;
 public final /* synthetic */ class j4 implements ch0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ Object f561a;
+    public final /* synthetic */ Object f560a;
 
     public /* synthetic */ j4(Object obj) {
-        this.f561a = obj;
+        this.f560a = obj;
     }
 
     /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Iterable, java.lang.Object] */
     public void a() {
-        Function2 function2 = (Function2) this.f561a;
+        Function2 function2 = (Function2) this.f560a;
         synchronized (kc2.c) {
             ?? r2 = kc2.h;
             lx0.x(r2, "<this>");
@@ -45,18 +45,18 @@ public final /* synthetic */ class j4 implements ch0 {
 
     @Override // androidx.emoji2.text.ch0
     public boolean b(Activity activity) {
-        String str = (String) this.f561a;
+        String str = (String) this.f560a;
         int i = FacebookRedirectActivity.d;
         return str.equals(activity.getClass().getName());
     }
 
     public void c(Object obj) {
-        ((um0) ((mf1) this.f561a).getValue()).e(obj);
+        ((um0) ((mf1) this.f560a).getValue()).e(obj);
     }
 
     public boolean d(p4 p4Var, int i, Bundle bundle) {
-        k00 p4Var2;
-        sf sfVar = (sf) this.f561a;
+        k00 k00Var;
+        sf sfVar = (sf) this.f560a;
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 25 && (i & 1) != 0) {
             try {
@@ -72,15 +72,15 @@ public final /* synthetic */ class j4 implements ch0 {
         tv0 tv0Var = (tv0) p4Var.e;
         ClipData clipData = new ClipData(tv0Var.l(), new ClipData.Item(tv0Var.a()));
         if (i2 >= 31) {
-            p4Var2 = new p4(clipData, 2);
+            k00Var = new p4(clipData, 2);
         } else {
             l00 l00Var = new l00();
             l00Var.e = clipData;
             l00Var.f = 2;
-            p4Var2 = l00Var;
+            k00Var = l00Var;
         }
-        p4Var2.f(tv0Var.i());
-        p4Var2.setExtras(bundle);
-        return es2.g(sfVar, p4Var2.build()) == null;
+        k00Var.f(tv0Var.i());
+        k00Var.setExtras(bundle);
+        return es2.g(sfVar, k00Var.build()) == null;
     }
 }

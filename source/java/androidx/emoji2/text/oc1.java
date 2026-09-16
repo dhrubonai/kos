@@ -6,7 +6,7 @@ public final class oc1 {
     public static oc1 h;
 
     /* renamed from: a, reason: collision with root package name */
-    public final q01 f850a;
+    public final q01 f849a;
     public final gl2 b;
     public final k70 c;
     public final bl0 d;
@@ -15,7 +15,7 @@ public final class oc1 {
     public float g = Float.NaN;
 
     public oc1(q01 q01Var, gl2 gl2Var, k70 k70Var, bl0 bl0Var) {
-        this.f850a = q01Var;
+        this.f849a = q01Var;
         this.b = gl2Var;
         this.c = k70Var;
         this.d = bl0Var;

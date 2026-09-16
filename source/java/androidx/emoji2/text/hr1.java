@@ -6,7 +6,7 @@ public abstract class hr1 {
     public int d;
     public int e;
     public long f;
-    public long g = ir1.f544a;
+    public long g = ir1.f543a;
     public long h = 0;
 
     public hr1() {

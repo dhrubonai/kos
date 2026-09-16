@@ -54,13 +54,13 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
                     z = false;
                 } else {
                     byte b = bArr2[i10][i11];
-                    byte[] bArr4 = jq2.f596a;
+                    byte[] bArr4 = jq2.f595a;
                     int i13 = b & 255;
                     z = z2;
                     i3 = i13;
                 }
                 byte b2 = bArr[i7 + i12];
-                byte[] bArr5 = jq2.f596a;
+                byte[] bArr5 = jq2.f595a;
                 i4 = i3 - (b2 & 255);
                 if (i4 != 0) {
                     break;
@@ -106,17 +106,17 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
 
     public static final boolean g(zn1 zn1Var) {
         zn1 zn1Var2 = sz1.e;
-        io ioVarN = zn1Var.d;
-        int iJ = io.j(ioVarN, f.f337a);
-        if (iJ == -1) {
-            iJ = io.j(zn1Var.d, f.b);
+        io ioVar = zn1Var.d;
+        int j = io.j(ioVar, f.f336a);
+        if (j == -1) {
+            j = io.j(zn1Var.d, f.b);
         }
-        if (iJ != -1) {
-            ioVarN = io.n(ioVarN, iJ + 1, 0, 2);
-        } else if (zn1Var.f() != null && ioVarN.c() == 2) {
-            ioVarN = io.g;
+        if (j != -1) {
+            ioVar = io.n(ioVar, j + 1, 0, 2);
+        } else if (zn1Var.f() != null && ioVar.c() == 2) {
+            ioVar = io.g;
         }
-        return !eg2.T(ioVarN.p(), ".class", true);
+        return !eg2.T(ioVar.p(), ".class", true);
     }
 
     public static final void h(iz0 iz0Var) {
@@ -128,32 +128,32 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
             te2Var = uw1.x;
             obj = (op1) te2Var.getValue();
             np1Var = (np1) obj;
-            bp1 bp1VarB = np1Var.f;
-            x61 x61Var = (x61) bp1VarB.get(iz0Var);
+            bp1 bp1Var = np1Var.f;
+            x61 x61Var = (x61) bp1Var.get(iz0Var);
             if (x61Var != null) {
-                Object obj2 = x61Var.f1321a;
+                Object obj2 = x61Var.f1320a;
                 Object obj3 = x61Var.b;
-                no2 no2Var = bp1VarB.d;
-                no2 no2VarV = no2Var.v(iz0Var != null ? iz0Var.hashCode() : 0, 0, iz0Var);
-                if (no2Var != no2VarV) {
-                    bp1VarB = no2VarV == null ? bp1.f : new bp1(no2VarV, bp1VarB.e - 1);
+                no2 no2Var = bp1Var.d;
+                no2 v = no2Var.v(iz0Var != null ? iz0Var.hashCode() : 0, 0, iz0Var);
+                if (no2Var != v) {
+                    bp1Var = v == null ? bp1.f : new bp1(v, bp1Var.e - 1);
                 }
                 dd0 dd0Var = dd0.H;
                 if (obj2 != dd0Var) {
-                    Object obj4 = bp1VarB.get(obj2);
+                    Object obj4 = bp1Var.get(obj2);
                     lx0.u(obj4);
-                    bp1VarB = bp1VarB.b(obj2, new x61(((x61) obj4).f1321a, obj3));
+                    bp1Var = bp1Var.b(obj2, new x61(((x61) obj4).f1320a, obj3));
                 }
                 if (obj3 != dd0Var) {
-                    Object obj5 = bp1VarB.get(obj3);
+                    Object obj5 = bp1Var.get(obj3);
                     lx0.u(obj5);
-                    bp1VarB = bp1VarB.b(obj3, new x61(obj2, ((x61) obj5).b));
+                    bp1Var = bp1Var.b(obj3, new x61(obj2, ((x61) obj5).b));
                 }
                 Object obj6 = obj2 != dd0Var ? np1Var.d : obj3;
                 if (obj3 != dd0Var) {
                     obj2 = np1Var.e;
                 }
-                np1Var = new np1(obj6, obj2, bp1VarB);
+                np1Var = new np1(obj6, obj2, bp1Var);
             }
             if (obj == np1Var) {
                 return;
@@ -187,12 +187,12 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
     public static byte[] j(List list) {
         lx0.x(list, "protocols");
         rn rnVar = new rn();
-        ArrayList arrayListI = i(list);
-        int size = arrayListI.size();
-        int i = 0;
-        while (i < size) {
-            Object obj = arrayListI.get(i);
-            i++;
+        ArrayList i = i(list);
+        int size = i.size();
+        int i2 = 0;
+        while (i2 < size) {
+            Object obj = i.get(i2);
+            i2++;
             String str = (String) obj;
             rnVar.B(str.length());
             rnVar.H(str);
@@ -201,23 +201,25 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
     }
 
     public static Typeface k(String str, zl0 zl0Var, int i) {
+        Typeface create;
         if (i == 0 && lx0.n(zl0Var, zl0.f) && (str == null || str.length() == 0)) {
             return Typeface.DEFAULT;
         }
-        return Typeface.create(str == null ? Typeface.DEFAULT : Typeface.create(str, 0), zl0Var.d, i == 1);
+        create = Typeface.create(str == null ? Typeface.DEFAULT : Typeface.create(str, 0), zl0Var.d, i == 1);
+        return create;
     }
 
     public static Typeface l(String str, zl0 zl0Var, int i) {
         if (i == 0 && lx0.n(zl0Var, zl0.f) && (str == null || str.length() == 0)) {
             return Typeface.DEFAULT;
         }
-        int iW = xa1.w(zl0Var, i);
-        return (str == null || str.length() == 0) ? Typeface.defaultFromStyle(iW) : Typeface.create(str, iW);
+        int w = xa1.w(zl0Var, i);
+        return (str == null || str.length() == 0) ? Typeface.defaultFromStyle(w) : Typeface.create(str, w);
     }
 
     public static zn1 o(String str) {
         lx0.x(str, "<this>");
-        io ioVar = f.f337a;
+        io ioVar = f.f336a;
         rn rnVar = new rn();
         rnVar.H(str);
         return f.d(rnVar, false);
@@ -225,9 +227,9 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
 
     public static zn1 p(File file) {
         String str = zn1.e;
-        String string = file.toString();
-        lx0.w(string, "toString(...)");
-        return o(string);
+        String file2 = file.toString();
+        lx0.w(file2, "toString(...)");
+        return o(file2);
     }
 
     public static boolean q() {
@@ -237,7 +239,7 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
     @Override // androidx.emoji2.text.ar0
     public boolean a() {
         boolean z;
-        synchronized (xh0.f1339a) {
+        synchronized (xh0.f1338a) {
             try {
                 int i = xh0.c;
                 xh0.c = i + 1;
@@ -260,7 +262,7 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
 
     @Override // androidx.emoji2.text.ar0
     public boolean c(hb2 hb2Var) {
-        jm jmVar = hb2Var.f466a;
+        jm jmVar = hb2Var.f465a;
         if ((jmVar instanceof q80 ? ((q80) jmVar).z : Integer.MAX_VALUE) <= 100) {
             return false;
         }
@@ -299,10 +301,10 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
                     case 4:
                         str = "RESULT_NOT_WRITABLE";
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
                         break;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -311,11 +313,11 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
                     case 8:
                         str = "RESULT_PARSE_EXCEPTION";
                         break;
-                    case 9:
+                    case pz0.b /* 9 */:
                     default:
                         str = "";
                         break;
-                    case 10:
+                    case pz0.d /* 10 */:
                         str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
                         break;
                     case 11:
@@ -338,24 +340,24 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
             case 12:
                 return k(un0Var.e, zl0Var, i);
             default:
-                String strConcat = un0Var.e;
+                String str = un0Var.e;
                 int i2 = zl0Var.d / 100;
                 if (i2 >= 0 && i2 < 2) {
-                    strConcat = strConcat.concat("-thin");
+                    str = str.concat("-thin");
                 } else if (2 <= i2 && i2 < 4) {
-                    strConcat = strConcat.concat("-light");
+                    str = str.concat("-light");
                 } else if (i2 != 4) {
                     if (i2 == 5) {
-                        strConcat = strConcat.concat("-medium");
+                        str = str.concat("-medium");
                     } else if ((6 > i2 || i2 >= 8) && 8 <= i2 && i2 < 11) {
-                        strConcat = strConcat.concat("-black");
+                        str = str.concat("-black");
                     }
                 }
                 Typeface typeface = null;
-                if (strConcat.length() != 0) {
-                    Typeface typefaceL = l(strConcat, zl0Var, i);
-                    if (!lx0.n(typefaceL, Typeface.create(Typeface.DEFAULT, xa1.w(zl0Var, i))) && !lx0.n(typefaceL, l(null, zl0Var, i))) {
-                        typeface = typefaceL;
+                if (str.length() != 0) {
+                    Typeface l = l(str, zl0Var, i);
+                    if (!lx0.n(l, Typeface.create(Typeface.DEFAULT, xa1.w(zl0Var, i))) && !lx0.n(l, l(null, zl0Var, i))) {
+                        typeface = l;
                     }
                 }
                 return typeface == null ? l(un0Var.e, zl0Var, i) : typeface;
@@ -364,7 +366,7 @@ public class iz0 implements ar0, xr1, pt1, gu1 {
 
     public int n() {
         switch (this.d) {
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return 16;
             default:
                 return 8;

@@ -9,7 +9,7 @@ public final class jo {
     public static final jo o;
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f590a;
+    public final boolean f589a;
     public final boolean b;
     public final int c;
     public final int d;
@@ -31,7 +31,7 @@ public final class jo {
     }
 
     public jo(boolean z, boolean z2, int i, int i2, boolean z3, boolean z4, boolean z5, int i3, int i4, boolean z6, boolean z7, boolean z8, String str) {
-        this.f590a = z;
+        this.f589a = z;
         this.b = z2;
         this.c = i;
         this.d = i2;
@@ -52,7 +52,7 @@ public final class jo {
             return str;
         }
         StringBuilder sb = new StringBuilder();
-        if (this.f590a) {
+        if (this.f589a) {
             sb.append("no-cache, ");
         }
         if (this.b) {
@@ -104,9 +104,9 @@ public final class jo {
             return "";
         }
         sb.delete(sb.length() - 2, sb.length());
-        String string = sb.toString();
-        lx0.w(string, "StringBuilder().apply(builderAction).toString()");
-        this.m = string;
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "StringBuilder().apply(builderAction).toString()");
+        this.m = sb2;
+        return sb2;
     }
 }

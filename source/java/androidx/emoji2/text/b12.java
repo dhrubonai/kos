@@ -20,15 +20,15 @@ public final class b12 extends View {
     public sm0 h;
 
     private final void setRippleState(boolean z) {
-        long jCurrentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         Runnable runnable = this.g;
         if (runnable != null) {
             removeCallbacks(runnable);
             runnable.run();
         }
         Long l = this.f;
-        long jLongValue = jCurrentAnimationTimeMillis - (l != null ? l.longValue() : 0L);
-        if (z || jLongValue >= 5) {
+        long longValue = currentAnimationTimeMillis - (l != null ? l.longValue() : 0L);
+        if (z || longValue >= 5) {
             int[] iArr = z ? i : j;
             aq2 aq2Var = this.d;
             if (aq2Var != null) {
@@ -39,7 +39,7 @@ public final class b12 extends View {
             this.g = f7Var;
             postDelayed(f7Var, 50L);
         }
-        this.f = Long.valueOf(jCurrentAnimationTimeMillis);
+        this.f = Long.valueOf(currentAnimationTimeMillis);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -64,11 +64,11 @@ public final class b12 extends View {
         Integer num = aq2Var2.f;
         if (num == null || num.intValue() != i2) {
             aq2Var2.f = Integer.valueOf(i2);
-            zp2.f1452a.a(aq2Var2, i2);
+            zp2.f1451a.a(aq2Var2, i2);
         }
         e(f, j2, j3);
         if (z) {
-            aq2Var2.setHotspot(zi1.d(vt1Var.f1242a), zi1.e(vt1Var.f1242a));
+            aq2Var2.setHotspot(zi1.d(vt1Var.f1241a), zi1.e(vt1Var.f1241a));
         } else {
             aq2Var2.setHotspot(aq2Var2.getBounds().centerX(), aq2Var2.getBounds().centerY());
         }
@@ -112,11 +112,11 @@ public final class b12 extends View {
         if (f > 1.0f) {
             f = 1.0f;
         }
-        long jB = et.b(f, j3);
+        long b = et.b(f, j3);
         et etVar = aq2Var.e;
-        if (!(etVar == null ? false : et.c(etVar.f321a, jB))) {
-            aq2Var.e = new et(jB);
-            aq2Var.setColor(ColorStateList.valueOf(bz0.i0(jB)));
+        if (!(etVar == null ? false : et.c(etVar.f320a, b))) {
+            aq2Var.e = new et(b);
+            aq2Var.setColor(ColorStateList.valueOf(bz0.i0(b)));
         }
         Rect rect = new Rect(0, 0, xa1.Q(ib2.d(j2)), xa1.Q(ib2.b(j2)));
         setLeft(rect.left);

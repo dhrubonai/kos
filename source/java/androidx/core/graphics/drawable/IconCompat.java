@@ -120,10 +120,10 @@ public class IconCompat extends CustomVersionedParcelable {
             case 4:
                 str = "URI";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 str = "BITMAP_MASKABLE";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 str = "URI_MASKABLE";
                 break;
             default:
@@ -133,7 +133,7 @@ public class IconCompat extends CustomVersionedParcelable {
         sb.append(str);
         switch (this.f70a) {
             case 1:
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 sb.append(" size=");
                 sb.append(((Bitmap) this.b).getWidth());
                 sb.append("x");
@@ -155,7 +155,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 }
                 break;
             case 4:
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 sb.append(" uri=");
                 sb.append(this.b);
                 break;

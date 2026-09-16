@@ -23,8 +23,8 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
             e11Var.I.p.A.f();
             return;
         }
-        s5 s5VarG = e11Var.I.p.g();
-        if (s5VarG == null || (f11Var = ((eb1) s5VarG).A) == null) {
+        s5 g = e11Var.I.p.g();
+        if (g == null || (f11Var = ((eb1) g).A) == null) {
             return;
         }
         f11Var.f();
@@ -34,14 +34,14 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
 
     @Override // androidx.emoji2.text.ce1
     public final void B(boolean z) {
-        k81 k81VarC0 = C0();
-        e11 e11VarA0 = k81VarC0 != null ? k81VarC0.A0() : null;
-        if (lx0.n(e11VarA0, A0())) {
+        k81 C0 = C0();
+        e11 A0 = C0 != null ? C0.A0() : null;
+        if (lx0.n(A0, A0())) {
             this.l = z;
             return;
         }
-        if ((e11VarA0 != null ? e11VarA0.I.d : null) != a11.f) {
-            if ((e11VarA0 != null ? e11VarA0.I.d : null) != a11.g) {
+        if ((A0 != null ? A0.I.d : null) != a11.f) {
+            if ((A0 != null ? A0.I.d : null) != a11.g) {
                 return;
             }
         }
@@ -68,7 +68,7 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
     public final void G0(hf1 hf1Var) {
         e11 e11Var;
         Object[] objArr = hf1Var.b;
-        long[] jArr = hf1Var.f468a;
+        long[] jArr = hf1Var.f467a;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -116,17 +116,211 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0114  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0168  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0175  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void n0(androidx.emoji2.text.e11 r32, androidx.emoji2.text.as0 r33) {
-        /*
-            Method dump skipped, instructions count: 394
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.k81.n0(androidx.emoji2.text.e11, androidx.emoji2.text.as0):void");
+    public final void n0(e11 e11Var, as0 as0Var) {
+        char c;
+        long j;
+        long j2;
+        long j3;
+        gf1 gf1Var;
+        gf1 gf1Var2;
+        Object g;
+        long[] jArr;
+        long[] jArr2;
+        long j4;
+        int i;
+        char c2;
+        long j5;
+        long j6;
+        int i2;
+        int i3;
+        int i4;
+        gf1 gf1Var3 = this.q;
+        char c3 = 7;
+        long j7 = -9187201950435737472L;
+        int i5 = 8;
+        if (gf1Var3 != null) {
+            Object[] objArr = gf1Var3.c;
+            long[] jArr3 = gf1Var3.f415a;
+            int length = jArr3.length - 2;
+            if (length >= 0) {
+                int i6 = 0;
+                long j8 = 128;
+                while (true) {
+                    long j9 = jArr3[i6];
+                    j2 = 255;
+                    if ((((~j9) << c3) & j9 & j7) != j7) {
+                        int i7 = 8 - ((~(i6 - length)) >>> 31);
+                        int i8 = 0;
+                        while (i8 < i7) {
+                            if ((j9 & 255) < j8) {
+                                c2 = c3;
+                                hf1 hf1Var = (hf1) objArr[(i6 << 3) + i8];
+                                j5 = j7;
+                                Object[] objArr2 = hf1Var.b;
+                                long[] jArr4 = hf1Var.f467a;
+                                int length2 = jArr4.length - 2;
+                                if (length2 >= 0) {
+                                    j6 = j8;
+                                    int i9 = 0;
+                                    int i10 = i5;
+                                    while (true) {
+                                        int i11 = length2;
+                                        long j10 = jArr4[i9];
+                                        jArr2 = jArr3;
+                                        j4 = j9;
+                                        if ((((~j10) << c2) & j10 & j5) != j5) {
+                                            int i12 = 8 - ((~(i9 - i11)) >>> 31);
+                                            int i13 = 0;
+                                            while (i13 < i12) {
+                                                if ((j10 & 255) < j6) {
+                                                    int i14 = (i9 << 3) + i13;
+                                                    e11 e11Var2 = (e11) ((nu2) objArr2[i14]).get();
+                                                    i3 = i13;
+                                                    if (e11Var2 != null) {
+                                                        boolean I = e11Var2.I();
+                                                        i4 = i8;
+                                                        if (I) {
+                                                        }
+                                                    } else {
+                                                        i4 = i8;
+                                                    }
+                                                    hf1Var.l(i14);
+                                                } else {
+                                                    i3 = i13;
+                                                    i4 = i8;
+                                                }
+                                                j10 >>= i10;
+                                                i13 = i3 + 1;
+                                                i8 = i4;
+                                            }
+                                            i = i8;
+                                            if (i12 != i10) {
+                                                break;
+                                            }
+                                        } else {
+                                            i = i8;
+                                        }
+                                        length2 = i11;
+                                        if (i9 == length2) {
+                                            break;
+                                        }
+                                        i9++;
+                                        jArr3 = jArr2;
+                                        j9 = j4;
+                                        i8 = i;
+                                        i10 = 8;
+                                    }
+                                } else {
+                                    jArr2 = jArr3;
+                                    j4 = j9;
+                                    i = i8;
+                                    j6 = j8;
+                                }
+                                i2 = 8;
+                            } else {
+                                jArr2 = jArr3;
+                                j4 = j9;
+                                i = i8;
+                                c2 = c3;
+                                j5 = j7;
+                                j6 = j8;
+                                i2 = i5;
+                            }
+                            i5 = i2;
+                            j9 = j4 >> i2;
+                            c3 = c2;
+                            j7 = j5;
+                            j8 = j6;
+                            i8 = i + 1;
+                            jArr3 = jArr2;
+                        }
+                        jArr = jArr3;
+                        c = c3;
+                        j = j7;
+                        j3 = j8;
+                        if (i7 != i5) {
+                            break;
+                        }
+                    } else {
+                        jArr = jArr3;
+                        c = c3;
+                        j = j7;
+                        j3 = j8;
+                    }
+                    if (i6 == length) {
+                        break;
+                    }
+                    i6++;
+                    c3 = c;
+                    j7 = j;
+                    j8 = j3;
+                    jArr3 = jArr;
+                    i5 = 8;
+                }
+                gf1Var = this.q;
+                if (gf1Var != null) {
+                    long[] jArr5 = gf1Var.f415a;
+                    int length3 = jArr5.length - 2;
+                    if (length3 >= 0) {
+                        int i15 = 0;
+                        while (true) {
+                            long j11 = jArr5[i15];
+                            if ((((~j11) << c) & j11 & j) != j) {
+                                int i16 = 8 - ((~(i15 - length3)) >>> 31);
+                                for (int i17 = 0; i17 < i16; i17++) {
+                                    if ((j11 & j2) < j3) {
+                                        int i18 = (i15 << 3) + i17;
+                                        if (((hf1) gf1Var.c[i18]).g()) {
+                                            gf1Var.l(i18);
+                                        }
+                                    }
+                                    j11 >>= 8;
+                                }
+                                if (i16 != 8) {
+                                    break;
+                                }
+                            }
+                            if (i15 == length3) {
+                                break;
+                            } else {
+                                i15++;
+                            }
+                        }
+                    }
+                }
+                gf1Var2 = this.q;
+                if (gf1Var2 == null) {
+                    gf1Var2 = new gf1();
+                    this.q = gf1Var2;
+                }
+                g = gf1Var2.g(as0Var);
+                if (g == null) {
+                    g = new hf1();
+                    gf1Var2.m(as0Var, g);
+                }
+                ((hf1) g).j(new nu2(e11Var));
+            }
+        }
+        c = 7;
+        j = -9187201950435737472L;
+        j2 = 255;
+        j3 = 128;
+        gf1Var = this.q;
+        if (gf1Var != null) {
+        }
+        gf1Var2 = this.q;
+        if (gf1Var2 == null) {
+        }
+        g = gf1Var2.g(as0Var);
+        if (g == null) {
+        }
+        ((hf1) g).j(new nu2(e11Var));
     }
 
     public abstract int o0(xr0 xr0Var);
@@ -158,7 +352,7 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
         boolean Z = Z();
         hf1 hf1Var = (hf1) lfVar2.e;
         hf1 hf1Var2 = (hf1) lfVar2.f;
-        int i2 = lfVar2.f689a;
+        int i2 = lfVar2.f688a;
         for (int i3 = 0; i3 < i2; i3++) {
             byte b = ((byte[]) lfVar2.d)[i3];
             if (b == 3) {
@@ -174,7 +368,7 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
                 }
             }
         }
-        int i4 = lfVar2.f689a;
+        int i4 = lfVar2.f688a;
         int i5 = 0;
         for (int i6 = 0; i6 < i4; i6++) {
             byte[] bArr = (byte[]) lfVar2.d;
@@ -186,14 +380,14 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
             }
             bArr[i6] = 2;
         }
-        int i7 = lfVar2.f689a;
+        int i7 = lfVar2.f688a;
         for (int i8 = i7 - i5; i8 < i7; i8++) {
             ((as0[]) lfVar2.b)[i8] = null;
         }
-        lfVar2.f689a -= i5;
-        k81 k81VarC0 = C0();
+        lfVar2.f688a -= i5;
+        k81 C0 = C0();
         Object[] objArr = hf1Var2.b;
-        long[] jArr = hf1Var2.f468a;
+        long[] jArr = hf1Var2.f467a;
         int length = jArr.length - 2;
         char c3 = 7;
         long j7 = -9187201950435737472L;
@@ -212,25 +406,24 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
                             c2 = c3;
                             as0 as0Var3 = (as0) objArr[(i10 << 3) + i12];
                             j6 = j7;
-                            k81 k81Var = k81VarC0 == null ? this : k81VarC0;
+                            k81 k81Var = C0 == null ? this : C0;
                             i = i9;
                             k81 k81Var2 = k81Var;
                             while (true) {
                                 lf lfVar3 = k81Var2.p;
                                 if (lfVar3 != null) {
                                     z2 = Z;
-                                    if (!xh.u0(as0Var3, (as0[]) lfVar3.b)) {
-                                        break;
+                                    if (xh.u0(as0Var3, (as0[]) lfVar3.b)) {
                                         break;
                                     }
+                                } else {
+                                    z2 = Z;
+                                }
+                                k81 C02 = k81Var2.C0();
+                                if (C02 == null) {
                                     break;
                                 }
-                                z2 = Z;
-                                k81 k81VarC02 = k81Var2.C0();
-                                if (k81VarC02 == null) {
-                                    break;
-                                }
-                                k81Var2 = k81VarC02;
+                                k81Var2 = C02;
                                 Z = z2;
                             }
                             gf1 gf1Var2 = k81Var2.q;
@@ -280,7 +473,7 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
         }
         hf1Var2.b();
         Object[] objArr2 = hf1Var.b;
-        long[] jArr2 = hf1Var.f468a;
+        long[] jArr2 = hf1Var.f467a;
         int length2 = jArr2.length - 2;
         if (length2 >= 0) {
             int i13 = 0;
@@ -312,137 +505,72 @@ public abstract class k81 extends hr1 implements hb1, ce1 {
         hf1Var.b();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0051  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void r0(androidx.emoji2.text.gb1 r15) {
-        /*
-            r14 = this;
-            androidx.emoji2.text.gf1 r0 = r14.q
-            boolean r1 = r14.n
-            if (r1 == 0) goto L9
-        L6:
-            r1 = r14
-            goto Lbe
-        L9:
-            androidx.emoji2.text.um0 r1 = r15.e()
-            r2 = 0
-            if (r1 != 0) goto L5a
-            if (r0 == 0) goto L6
-            java.lang.Object[] r15 = r0.c
-            long[] r1 = r0.f416a
-            int r3 = r1.length
-            int r3 = r3 + (-2)
-            if (r3 < 0) goto L56
-            r4 = r2
-        L1c:
-            r5 = r1[r4]
-            long r7 = ~r5
-            r9 = 7
-            long r7 = r7 << r9
-            long r7 = r7 & r5
-            r9 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r7 = r7 & r9
-            int r7 = (r7 > r9 ? 1 : (r7 == r9 ? 0 : -1))
-            if (r7 == 0) goto L51
-            int r7 = r4 - r3
-            int r7 = ~r7
-            int r7 = r7 >>> 31
-            r8 = 8
-            int r7 = 8 - r7
-            r9 = r2
-        L36:
-            if (r9 >= r7) goto L4f
-            r10 = 255(0xff, double:1.26E-321)
-            long r10 = r10 & r5
-            r12 = 128(0x80, double:6.3E-322)
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 >= 0) goto L4b
-            int r10 = r4 << 3
-            int r10 = r10 + r9
-            r10 = r15[r10]
-            androidx.emoji2.text.hf1 r10 = (androidx.emoji2.text.hf1) r10
-            r14.G0(r10)
-        L4b:
-            long r5 = r5 >> r8
-            int r9 = r9 + 1
-            goto L36
-        L4f:
-            if (r7 != r8) goto L56
-        L51:
-            if (r4 == r3) goto L56
-            int r4 = r4 + 1
-            goto L1c
-        L56:
-            r0.a()
-            return
-        L5a:
-            androidx.emoji2.text.um0 r0 = r14.j
-            r3 = 1
-            if (r0 == r1) goto L61
-            r0 = r3
-            goto L62
-        L61:
-            r0 = r2
-        L62:
-            r4 = 0
-            if (r0 != 0) goto L9b
-            androidx.emoji2.text.h81 r1 = r14.E0()
-            boolean r1 = r1.d
-            if (r1 == 0) goto L9b
-            androidx.emoji2.text.p01 r0 = r14.y0()
-            long r4 = r0.p(r4)
-            long r4 = androidx.emoji2.text.jm.K(r4)
-            long r0 = r0.k()
-            androidx.emoji2.text.h81 r6 = r14.E0()
-            long r6 = r6.e
-            boolean r6 = androidx.emoji2.text.nw0.b(r4, r6)
-            if (r6 == 0) goto L96
-            androidx.emoji2.text.h81 r6 = r14.E0()
-            long r6 = r6.f
-            boolean r6 = androidx.emoji2.text.uw0.a(r0, r6)
-            if (r6 != 0) goto L97
-        L96:
-            r2 = r3
-        L97:
-            r3 = r4
-            r5 = r0
-            r0 = r2
-            goto La2
-        L9b:
-            r1 = 9223372034707292159(0x7fffffff7fffffff, double:NaN)
-            r5 = r4
-            r3 = r1
-        La2:
-            if (r0 == 0) goto L6
-            androidx.emoji2.text.jr1 r0 = r14.k
-            if (r0 == 0) goto Lad
-            r0.d = r15
-        Laa:
-            r1 = r14
-            r2 = r0
-            goto Lb5
-        Lad:
-            androidx.emoji2.text.jr1 r0 = new androidx.emoji2.text.jr1
-            r0.<init>(r15, r14)
-            r14.k = r0
-            goto Laa
-        Lb5:
-            r1.q0(r2, r3, r5)
-            androidx.emoji2.text.um0 r15 = r15.e()
-            r1.j = r15
-        Lbe:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.k81.r0(androidx.emoji2.text.gb1):void");
+    public final void r0(gb1 gb1Var) {
+        long j;
+        long j2;
+        gf1 gf1Var = this.q;
+        if (!this.n) {
+            um0 e = gb1Var.e();
+            if (e != null) {
+                boolean z = this.j != e;
+                if (z || !E0().d) {
+                    j = 0;
+                    j2 = 9223372034707292159L;
+                } else {
+                    p01 y0 = y0();
+                    long K = jm.K(y0.p(0L));
+                    long k = y0.k();
+                    j2 = K;
+                    j = k;
+                    z = (nw0.b(K, E0().e) && uw0.a(k, E0().f)) ? false : true;
+                }
+                if (z) {
+                    jr1 jr1Var = this.k;
+                    if (jr1Var != null) {
+                        jr1Var.d = gb1Var;
+                    } else {
+                        jr1Var = new jr1(gb1Var, this);
+                        this.k = jr1Var;
+                    }
+                    q0(jr1Var, j2, j);
+                    this.j = gb1Var.e();
+                }
+            } else if (gf1Var != null) {
+                Object[] objArr = gf1Var.c;
+                long[] jArr = gf1Var.f415a;
+                int length = jArr.length - 2;
+                if (length >= 0) {
+                    int i = 0;
+                    while (true) {
+                        long j3 = jArr[i];
+                        if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
+                            int i2 = 8 - ((~(i - length)) >>> 31);
+                            for (int i3 = 0; i3 < i2; i3++) {
+                                if ((255 & j3) < 128) {
+                                    G0((hf1) objArr[(i << 3) + i3]);
+                                }
+                                j3 >>= 8;
+                            }
+                            if (i2 != 8) {
+                                break;
+                            }
+                        }
+                        if (i == length) {
+                            break;
+                        } else {
+                            i++;
+                        }
+                    }
+                }
+                gf1Var.a();
+            }
+        }
     }
 
     public final int w0(xr0 xr0Var) {
-        int iO0;
-        if (z0() && (iO0 = o0(xr0Var)) != Integer.MIN_VALUE) {
-            return iO0 + ((int) (this.h & 4294967295L));
+        int o0;
+        if (z0() && (o0 = o0(xr0Var)) != Integer.MIN_VALUE) {
+            return o0 + ((int) (this.h & 4294967295L));
         }
         return Integer.MIN_VALUE;
     }

@@ -40,12 +40,12 @@ public class InitializationProvider extends ContentProvider {
         if (context.getApplicationContext() == null) {
             return true;
         }
-        rg rgVarJ = rg.J(context);
-        Context context2 = (Context) rgVarJ.g;
+        rg J = rg.J(context);
+        Context context2 = (Context) J.g;
         try {
             try {
                 jz0.m("Startup");
-                rgVarJ.x(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), PackageParser.PARSE_IS_PRIVILEGED).metaData);
+                J.x(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), PackageParser.PARSE_IS_PRIVILEGED).metaData);
                 return true;
             } catch (PackageManager.NameNotFoundException e) {
                 throw new mu(e);

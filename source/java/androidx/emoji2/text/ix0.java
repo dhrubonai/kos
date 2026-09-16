@@ -13,19 +13,19 @@ public final class ix0 extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        int iL = this.r == 1 ? ab1Var.l(vz.g(j)) : ab1Var.n(vz.g(j));
-        if (iL < 0) {
-            iL = 0;
+        int l = this.r == 1 ? ab1Var.l(vz.g(j)) : ab1Var.n(vz.g(j));
+        if (l < 0) {
+            l = 0;
         }
-        if (iL < 0) {
+        if (l < 0) {
             kv0.a("width must be >= 0");
         }
-        long jH = xz.h(iL, iL, 0, Integer.MAX_VALUE);
+        long h = xz.h(l, l, 0, Integer.MAX_VALUE);
         if (this.s) {
-            jH = xz.e(j, jH);
+            h = xz.e(j, h);
         }
-        hr1 hr1VarQ = ab1Var.q(jH);
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new jb(hr1VarQ, 5));
+        hr1 q = ab1Var.q(h);
+        return hb1Var.P(q.d, q.e, re0.d, new jb(q, 5));
     }
 
     @Override // androidx.emoji2.text.w01

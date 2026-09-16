@@ -11,7 +11,7 @@ public final class uz0 {
     public static final /* synthetic */ uz0[] g;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         uz0 uz0Var = new uz0(a.a.a.c.a(-202108835086114L, strArr), 0);
         d = uz0Var;
         uz0 uz0Var2 = new uz0(a.a.a.c.a(-202143194824482L, strArr), 1);

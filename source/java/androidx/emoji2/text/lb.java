@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class lb {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f683a;
+    public final long f682a;
 
     public lb(long j) {
-        this.f683a = j;
+        this.f682a = j;
     }
 
     public final long a() {
-        return Math.max(0L, this.f683a - System.nanoTime());
+        return Math.max(0L, this.f682a - System.nanoTime());
     }
 }

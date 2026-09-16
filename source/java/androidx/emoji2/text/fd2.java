@@ -15,7 +15,7 @@ public final class fd2 extends vi {
     }
 
     @Override // androidx.emoji2.text.vi
-    public final void j() throws IOException {
+    public final void j() {
         Socket socket = this.m;
         try {
             socket.close();
@@ -23,9 +23,9 @@ public final class fd2 extends vi {
             if (!n6.Y(e)) {
                 throw e;
             }
-            ej1.f307a.log(Level.WARNING, "Failed to close timed out socket " + socket, (Throwable) e);
+            ej1.f306a.log(Level.WARNING, "Failed to close timed out socket " + socket, (Throwable) e);
         } catch (Exception e2) {
-            ej1.f307a.log(Level.WARNING, "Failed to close timed out socket " + socket, (Throwable) e2);
+            ej1.f306a.log(Level.WARNING, "Failed to close timed out socket " + socket, (Throwable) e2);
         }
     }
 

@@ -11,7 +11,7 @@ public final class p72 implements jj0 {
 
     @Override // androidx.emoji2.text.jj0
     public final Object b(Object obj, l10 l10Var) {
-        Object objI = this.d.i(l10Var, obj);
-        return objI == f30.d ? objI : up2.f1187a;
+        Object i = this.d.i(l10Var, obj);
+        return i == f30.d ? i : up2.f1186a;
     }
 }

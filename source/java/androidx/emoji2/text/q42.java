@@ -8,19 +8,19 @@ import androidx.core.widget.NestedScrollView;
 public final class q42 implements r42 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ScrollFeedbackProvider f939a;
+    public final ScrollFeedbackProvider f938a;
 
     public q42(NestedScrollView nestedScrollView) {
-        this.f939a = ScrollFeedbackProvider.createProvider(nestedScrollView);
+        this.f938a = ScrollFeedbackProvider.createProvider(nestedScrollView);
     }
 
     @Override // androidx.emoji2.text.r42
     public final void onScrollLimit(int i, int i2, int i3, boolean z) {
-        this.f939a.onScrollLimit(i, i2, i3, z);
+        this.f938a.onScrollLimit(i, i2, i3, z);
     }
 
     @Override // androidx.emoji2.text.r42
     public final void onScrollProgress(int i, int i2, int i3, int i4) {
-        this.f939a.onScrollProgress(i, i2, i3, i4);
+        this.f938a.onScrollProgress(i, i2, i3, i4);
     }
 }

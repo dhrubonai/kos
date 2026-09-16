@@ -47,17 +47,17 @@ final class ProviderAttributionFixer {
             }
             Class<?> cls = Class.forName(c.a(-841582220820258L, strArr));
             Class cls2 = Integer.TYPE;
-            Object objNewInstance = cls.getConstructor(cls2).newInstance(Integer.valueOf(i));
-            invokeBuilder(cls, objNewInstance, c.a(-841195673763618L, strArr), new Class[]{String.class}, new Object[]{str});
-            Object objInvokeNoArg = invokeNoArg(obj, c.a(-841277278142242L, strArr));
-            if (objInvokeNoArg instanceof String) {
-                invokeBuilder(cls, objNewInstance, c.a(-841337407684386L, strArr), new Class[]{String.class}, new Object[]{objInvokeNoArg});
+            Object newInstance = cls.getConstructor(cls2).newInstance(Integer.valueOf(i));
+            invokeBuilder(cls, newInstance, c.a(-841195673763618L, strArr), new Class[]{String.class}, new Object[]{str});
+            Object invokeNoArg = invokeNoArg(obj, c.a(-841277278142242L, strArr));
+            if (invokeNoArg instanceof String) {
+                invokeBuilder(cls, newInstance, c.a(-841337407684386L, strArr), new Class[]{String.class}, new Object[]{invokeNoArg});
             }
-            Object objInvokeNoArg2 = invokeNoArg(obj, c.a(-842016012517154L, strArr));
-            if (objInvokeNoArg2 instanceof Integer) {
-                invokeBuilder(cls, objNewInstance, c.a(-842033192386338L, strArr), new Class[]{cls2}, new Object[]{objInvokeNoArg2});
+            Object invokeNoArg2 = invokeNoArg(obj, c.a(-842016012517154L, strArr));
+            if (invokeNoArg2 instanceof Integer) {
+                invokeBuilder(cls, newInstance, c.a(-842033192386338L, strArr), new Class[]{cls2}, new Object[]{invokeNoArg2});
             }
-            return cls.getMethod(c.a(-842119091732258L, strArr), null).invoke(objNewInstance, null);
+            return cls.getMethod(c.a(-842119091732258L, strArr), null).invoke(newInstance, null);
         } catch (Throwable unused) {
             return null;
         }
@@ -117,9 +117,9 @@ final class ProviderAttributionFixer {
             for (int i2 = 0; i2 < length; i2++) {
                 try {
                     Object obj2 = Array.get(obj, i2);
-                    Object objFixObject = fixObject(obj2, i, str, z, map);
-                    if (objFixObject != obj2) {
-                        Array.set(obj, i2, objFixObject);
+                    Object fixObject = fixObject(obj2, i, str, z, map);
+                    if (fixObject != obj2) {
+                        Array.set(obj, i2, fixObject);
                     }
                 } catch (Throwable unused) {
                 }
@@ -143,9 +143,9 @@ final class ProviderAttributionFixer {
         for (String str2 : (String[]) bundle.keySet().toArray(new String[0])) {
             try {
                 Object obj = bundle.get(str2);
-                Object objFixObject = fixObject(obj, i, str, z, map);
-                if (objFixObject != obj && (objFixObject instanceof Parcelable)) {
-                    bundle.putParcelable(str2, (Parcelable) objFixObject);
+                Object fixObject = fixObject(obj, i, str, z, map);
+                if (fixObject != obj && (fixObject instanceof Parcelable)) {
+                    bundle.putParcelable(str2, (Parcelable) fixObject);
                 }
             } catch (Throwable unused) {
             }
@@ -154,7 +154,7 @@ final class ProviderAttributionFixer {
 
     private static void fixDeclaredFields(Object obj, Class<?> cls, int i, String str, Map<Object, Boolean> map) {
         Object obj2;
-        Object objFixObject;
+        Object fixObject;
         for (Field field : cls.getDeclaredFields()) {
             String name = field.getName();
             try {
@@ -168,8 +168,8 @@ final class ProviderAttributionFixer {
                 } else {
                     String lowerCase = name.toLowerCase();
                     String[] strArr = xa1.b;
-                    if ((lowerCase.contains(c.a(-829693751344930L, strArr)) || name.toLowerCase().contains(c.a(-829809715461922L, strArr)) || field.getType().getName().contains(c.a(-829848370167586L, strArr))) && (objFixObject = fixObject((obj2 = field.get(obj)), i, str, false, map)) != obj2) {
-                        field.set(obj, objFixObject);
+                    if ((lowerCase.contains(c.a(-829693751344930L, strArr)) || name.toLowerCase().contains(c.a(-829809715461922L, strArr)) || field.getType().getName().contains(c.a(-829848370167586L, strArr))) && (fixObject = fixObject((obj2 = field.get(obj)), i, str, false, map)) != obj2) {
+                        field.set(obj, fixObject);
                     }
                 }
             } catch (Throwable unused) {
@@ -178,8 +178,8 @@ final class ProviderAttributionFixer {
     }
 
     private static void fixFields(Object obj, int i, String str, Map<Object, Boolean> map) {
-        for (Class<?> superclass = obj.getClass(); superclass != null && superclass != Object.class; superclass = superclass.getSuperclass()) {
-            fixDeclaredFields(obj, superclass, i, str, map);
+        for (Class<?> cls = obj.getClass(); cls != null && cls != Object.class; cls = cls.getSuperclass()) {
+            fixDeclaredFields(obj, cls, i, str, map);
         }
     }
 
@@ -202,9 +202,9 @@ final class ProviderAttributionFixer {
         while (listIterator.hasNext()) {
             try {
                 Object next = listIterator.next();
-                Object objFixObject = fixObject(next, i, str, z, map);
-                if (objFixObject != next) {
-                    listIterator.set(objFixObject);
+                Object fixObject = fixObject(next, i, str, z, map);
+                if (fixObject != next) {
+                    listIterator.set(fixObject);
                 }
             } catch (Throwable unused) {
             }
@@ -215,9 +215,9 @@ final class ProviderAttributionFixer {
         for (Object obj : map.keySet().toArray()) {
             try {
                 Object obj2 = map.get(obj);
-                Object objFixObject = fixObject(obj2, i, str, z, map2);
-                if (objFixObject != obj2) {
-                    map.put(obj, objFixObject);
+                Object fixObject = fixObject(obj2, i, str, z, map2);
+                if (fixObject != obj2) {
+                    map.put(obj, fixObject);
                 }
             } catch (Throwable unused) {
             }
@@ -232,7 +232,7 @@ final class ProviderAttributionFixer {
     }
 
     private static Object fixObject(Object obj, int i, String str, boolean z, Map<Object, Boolean> map) {
-        Object objCreateProviderAttributionSource;
+        Object createProviderAttributionSource;
         if (obj == null) {
             return null;
         }
@@ -240,9 +240,9 @@ final class ProviderAttributionFixer {
             map.put(obj, Boolean.TRUE);
             if (obj.getClass().getName().contains(c.a(-829633621802786L, xa1.b))) {
                 fixAttributionSource(obj, i, str, map);
-                if (z && (objCreateProviderAttributionSource = createProviderAttributionSource(obj, i, str)) != null) {
-                    fixAttributionSource(objCreateProviderAttributionSource, i, str, map);
-                    return objCreateProviderAttributionSource;
+                if (z && (createProviderAttributionSource = createProviderAttributionSource(obj, i, str)) != null) {
+                    fixAttributionSource(createProviderAttributionSource, i, str, map);
+                    return createProviderAttributionSource;
                 }
             } else {
                 if (obj instanceof Bundle) {
@@ -281,16 +281,16 @@ final class ProviderAttributionFixer {
             return c01.X();
         }
         try {
-            String strChoosePackageName = choosePackageName(BPackageManager.get().getPackagesForUid(i), str);
-            if (strChoosePackageName != null) {
-                return strChoosePackageName;
+            String choosePackageName = choosePackageName(BPackageManager.get().getPackagesForUid(i), str);
+            if (choosePackageName != null) {
+                return choosePackageName;
             }
         } catch (Throwable unused) {
         }
         try {
-            String strChoosePackageName2 = choosePackageName(c01.s.getPackageManager().getPackagesForUid(i), str);
-            if (strChoosePackageName2 != null) {
-                return strChoosePackageName2;
+            String choosePackageName2 = choosePackageName(c01.s.getPackageManager().getPackagesForUid(i), str);
+            if (choosePackageName2 != null) {
+                return choosePackageName2;
             }
         } catch (Throwable unused2) {
         }

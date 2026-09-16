@@ -8,7 +8,7 @@ public final class kj1 extends tg1 {
 
     public kj1(vj vjVar, lj1 lj1Var) {
         boolean z = vjVar.b;
-        this.f1119a = lj1Var;
+        this.f1118a = lj1Var;
         this.b = z;
         this.d = vjVar;
         this.e = true;

@@ -7,20 +7,20 @@ import java.util.LinkedHashMap;
 public abstract class s30 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashMap f1049a = new LinkedHashMap();
+    public final LinkedHashMap f1048a = new LinkedHashMap();
 
     public final boolean equals(Object obj) {
         if (obj instanceof s30) {
-            return lx0.n(this.f1049a, ((s30) obj).f1049a);
+            return lx0.n(this.f1048a, ((s30) obj).f1048a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1049a.hashCode();
+        return this.f1048a.hashCode();
     }
 
     public final String toString() {
-        return "CreationExtras(extras=" + this.f1049a + ')';
+        return "CreationExtras(extras=" + this.f1048a + ')';
     }
 }

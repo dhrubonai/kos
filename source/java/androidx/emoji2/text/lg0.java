@@ -19,7 +19,7 @@ public final class lg0 extends MediaDataSource {
     }
 
     @Override // android.media.MediaDataSource
-    public final int readAt(long j, byte[] bArr, int i, int i2) throws IOException {
+    public final int readAt(long j, byte[] bArr, int i, int i2) {
         if (i2 == 0) {
             return 0;
         }
@@ -39,10 +39,10 @@ public final class lg0 extends MediaDataSource {
             if (i2 > qg0Var.d.available()) {
                 i2 = qg0Var.d.available();
             }
-            int i3 = qg0Var.read(bArr, i, i2);
-            if (i3 >= 0) {
-                this.d += i3;
-                return i3;
+            int read = qg0Var.read(bArr, i, i2);
+            if (read >= 0) {
+                this.d += read;
+                return read;
             }
         } catch (IOException unused) {
         }

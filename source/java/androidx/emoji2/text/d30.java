@@ -1,6 +1,7 @@
 package androidx.emoji2.text;
 
 import java.io.Closeable;
+import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
@@ -95,19 +96,19 @@ public final class d30 implements Executor, Closeable {
         ni2 oi2Var;
         c30 c30Var;
         ri2.f.getClass();
-        long jNanoTime = System.nanoTime();
+        long nanoTime = System.nanoTime();
         if (runnable instanceof ni2) {
             oi2Var = (ni2) runnable;
-            oi2Var.d = jNanoTime;
+            oi2Var.d = nanoTime;
             oi2Var.e = z;
         } else {
-            oi2Var = new oi2(runnable, jNanoTime, z);
+            oi2Var = new oi2(runnable, nanoTime, z);
         }
         boolean z3 = oi2Var.e;
         AtomicLongFieldUpdater atomicLongFieldUpdater = l;
-        long jAddAndGet = z3 ? atomicLongFieldUpdater.addAndGet(this, 2097152L) : 0L;
-        Thread threadCurrentThread = Thread.currentThread();
-        b30 b30Var = threadCurrentThread instanceof b30 ? (b30) threadCurrentThread : null;
+        long addAndGet = z3 ? atomicLongFieldUpdater.addAndGet(this, 2097152L) : 0L;
+        Thread currentThread = Thread.currentThread();
+        b30 b30Var = currentThread instanceof b30 ? (b30) currentThread : null;
         if (b30Var == null || !lx0.n(b30Var.k, this)) {
             b30Var = null;
         }
@@ -129,7 +130,7 @@ public final class d30 implements Executor, Closeable {
         }
         boolean z4 = z2 && b30Var != null;
         if (z3) {
-            if (z4 || k() || j(jAddAndGet)) {
+            if (z4 || k() || j(addAndGet)) {
                 return;
             }
             k();
@@ -141,126 +142,83 @@ public final class d30 implements Executor, Closeable {
         k();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x008a  */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0088, code lost:
+    
+        if (r1 == null) goto L39;
+     */
     @Override // java.io.Closeable, java.lang.AutoCloseable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void close() throws java.lang.InterruptedException {
-        /*
-            r8 = this;
-            java.util.concurrent.atomic.AtomicIntegerFieldUpdater r0 = androidx.emoji2.text.d30.m
-            r1 = 0
-            r2 = 1
-            boolean r0 = r0.compareAndSet(r8, r1, r2)
-            if (r0 != 0) goto Lb
-            return
-        Lb:
-            java.lang.Thread r0 = java.lang.Thread.currentThread()
-            boolean r1 = r0 instanceof androidx.emoji2.text.b30
-            r3 = 0
-            if (r1 == 0) goto L17
-            androidx.emoji2.text.b30 r0 = (androidx.emoji2.text.b30) r0
-            goto L18
-        L17:
-            r0 = r3
-        L18:
-            if (r0 == 0) goto L23
-            androidx.emoji2.text.d30 r1 = r0.k
-            boolean r1 = androidx.emoji2.text.lx0.n(r1, r8)
-            if (r1 == 0) goto L23
-            goto L24
-        L23:
-            r0 = r3
-        L24:
-            androidx.emoji2.text.pz1 r1 = r8.j
-            monitor-enter(r1)
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r4 = androidx.emoji2.text.d30.l     // Catch: java.lang.Throwable -> Lc3
-            long r4 = r4.get(r8)     // Catch: java.lang.Throwable -> Lc3
-            r6 = 2097151(0x1fffff, double:1.0361303E-317)
-            long r4 = r4 & r6
-            int r4 = (int) r4
-            monitor-exit(r1)
-            if (r2 > r4) goto L78
-            r1 = r2
-        L36:
-            androidx.emoji2.text.pz1 r5 = r8.j
-            java.lang.Object r5 = r5.b(r1)
-            androidx.emoji2.text.lx0.u(r5)
-            androidx.emoji2.text.b30 r5 = (androidx.emoji2.text.b30) r5
-            if (r5 == r0) goto L73
-        L43:
-            java.lang.Thread$State r6 = r5.getState()
-            java.lang.Thread$State r7 = java.lang.Thread.State.TERMINATED
-            if (r6 == r7) goto L54
-            java.util.concurrent.locks.LockSupport.unpark(r5)
-            r6 = 10000(0x2710, double:4.9407E-320)
-            r5.join(r6)
-            goto L43
-        L54:
-            androidx.emoji2.text.ow2 r5 = r5.d
-            androidx.emoji2.text.yn0 r6 = r8.i
-            r5.getClass()
-            java.util.concurrent.atomic.AtomicReferenceFieldUpdater r7 = androidx.emoji2.text.ow2.b
-            java.lang.Object r7 = r7.getAndSet(r5, r3)
-            androidx.emoji2.text.ni2 r7 = (androidx.emoji2.text.ni2) r7
-            if (r7 == 0) goto L68
-            r6.a(r7)
-        L68:
-            androidx.emoji2.text.ni2 r7 = r5.b()
-            if (r7 != 0) goto L6f
-            goto L73
-        L6f:
-            r6.a(r7)
-            goto L68
-        L73:
-            if (r1 == r4) goto L78
-            int r1 = r1 + 1
-            goto L36
-        L78:
-            androidx.emoji2.text.yn0 r1 = r8.i
-            r1.b()
-            androidx.emoji2.text.yn0 r1 = r8.h
-            r1.b()
-        L82:
-            if (r0 == 0) goto L8a
-            androidx.emoji2.text.ni2 r1 = r0.a(r2)
-            if (r1 != 0) goto Lb2
-        L8a:
-            androidx.emoji2.text.yn0 r1 = r8.h
-            java.lang.Object r1 = r1.d()
-            androidx.emoji2.text.ni2 r1 = (androidx.emoji2.text.ni2) r1
-            if (r1 != 0) goto Lb2
-            androidx.emoji2.text.yn0 r1 = r8.i
-            java.lang.Object r1 = r1.d()
-            androidx.emoji2.text.ni2 r1 = (androidx.emoji2.text.ni2) r1
-            if (r1 != 0) goto Lb2
-            if (r0 == 0) goto La5
-            androidx.emoji2.text.c30 r1 = androidx.emoji2.text.c30.h
-            r0.h(r1)
-        La5:
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r0 = androidx.emoji2.text.d30.k
-            r1 = 0
-            r0.set(r8, r1)
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r0 = androidx.emoji2.text.d30.l
-            r0.set(r8, r1)
-            return
-        Lb2:
-            r1.run()     // Catch: java.lang.Throwable -> Lb6
-            goto L82
-        Lb6:
-            r1 = move-exception
-            java.lang.Thread r3 = java.lang.Thread.currentThread()
-            java.lang.Thread$UncaughtExceptionHandler r4 = r3.getUncaughtExceptionHandler()
-            r4.uncaughtException(r3, r1)
-            goto L82
-        Lc3:
-            r0 = move-exception
-            monitor-exit(r1)
-            throw r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.d30.close():void");
+    public final void close() {
+        int i;
+        ni2 ni2Var;
+        if (m.compareAndSet(this, 0, 1)) {
+            Thread currentThread = Thread.currentThread();
+            b30 b30Var = currentThread instanceof b30 ? (b30) currentThread : null;
+            if (b30Var == null || !lx0.n(b30Var.k, this)) {
+                b30Var = null;
+            }
+            synchronized (this.j) {
+                i = (int) (l.get(this) & 2097151);
+            }
+            if (1 <= i) {
+                int i2 = 1;
+                while (true) {
+                    Object b = this.j.b(i2);
+                    lx0.u(b);
+                    b30 b30Var2 = (b30) b;
+                    if (b30Var2 != b30Var) {
+                        while (b30Var2.getState() != Thread.State.TERMINATED) {
+                            LockSupport.unpark(b30Var2);
+                            b30Var2.join(10000L);
+                        }
+                        ow2 ow2Var = b30Var2.d;
+                        yn0 yn0Var = this.i;
+                        ow2Var.getClass();
+                        ni2 ni2Var2 = (ni2) ow2.b.getAndSet(ow2Var, null);
+                        if (ni2Var2 != null) {
+                            yn0Var.a(ni2Var2);
+                        }
+                        while (true) {
+                            ni2 b2 = ow2Var.b();
+                            if (b2 == null) {
+                                break;
+                            } else {
+                                yn0Var.a(b2);
+                            }
+                        }
+                    }
+                    if (i2 == i) {
+                        break;
+                    } else {
+                        i2++;
+                    }
+                }
+            }
+            this.i.b();
+            this.h.b();
+            while (true) {
+                if (b30Var != null) {
+                    ni2Var = b30Var.a(true);
+                }
+                ni2Var = (ni2) this.h.d();
+                if (ni2Var == null && (ni2Var = (ni2) this.i.d()) == null) {
+                    break;
+                }
+                try {
+                    ni2Var.run();
+                } catch (Throwable th) {
+                    Thread currentThread2 = Thread.currentThread();
+                    currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th);
+                }
+            }
+            if (b30Var != null) {
+                b30Var.h(c30.h);
+            }
+            k.set(this, 0L);
+            l.set(this, 0L);
+        }
     }
 
     @Override // java.util.concurrent.Executor
@@ -275,23 +233,23 @@ public final class d30 implements Executor, Closeable {
             long j2 = (2097152 + j) & (-2097152);
             if (i3 == i) {
                 if (i2 == 0) {
-                    Object objC = b30Var.c();
+                    Object c = b30Var.c();
                     while (true) {
-                        if (objC == n) {
+                        if (c == n) {
                             i3 = -1;
                             break;
                         }
-                        if (objC == null) {
+                        if (c == null) {
                             i3 = 0;
                             break;
                         }
-                        b30 b30Var2 = (b30) objC;
-                        int iB = b30Var2.b();
-                        if (iB != 0) {
-                            i3 = iB;
+                        b30 b30Var2 = (b30) c;
+                        int b = b30Var2.b();
+                        if (b != 0) {
+                            i3 = b;
                             break;
                         }
-                        objC = b30Var2.c();
+                        c = b30Var2.c();
                     }
                 } else {
                     i3 = i2;
@@ -312,11 +270,11 @@ public final class d30 implements Executor, Closeable {
         }
         int i2 = this.d;
         if (i < i2) {
-            int iB = b();
-            if (iB == 1 && i2 > 1) {
+            int b = b();
+            if (b == 1 && i2 > 1) {
                 b();
             }
-            if (iB > 0) {
+            if (b > 0) {
                 return true;
             }
         }
@@ -325,7 +283,7 @@ public final class d30 implements Executor, Closeable {
 
     public final boolean k() {
         de0 de0Var;
-        int iB;
+        int i;
         while (true) {
             long j = k.get(this);
             b30 b30Var = (b30) this.j.b((int) (2097151 & j));
@@ -333,26 +291,26 @@ public final class d30 implements Executor, Closeable {
                 b30Var = null;
             } else {
                 long j2 = (2097152 + j) & (-2097152);
-                Object objC = b30Var.c();
+                Object c = b30Var.c();
                 while (true) {
                     de0Var = n;
-                    if (objC == de0Var) {
-                        iB = -1;
+                    if (c == de0Var) {
+                        i = -1;
                         break;
                     }
-                    if (objC == null) {
-                        iB = 0;
+                    if (c == null) {
+                        i = 0;
                         break;
                     }
-                    b30 b30Var2 = (b30) objC;
-                    iB = b30Var2.b();
-                    if (iB != 0) {
+                    b30 b30Var2 = (b30) c;
+                    i = b30Var2.b();
+                    if (i != 0) {
                         break;
                     }
-                    objC = b30Var2.c();
+                    c = b30Var2.c();
                 }
-                if (iB >= 0) {
-                    if (k.compareAndSet(this, j, iB | j2)) {
+                if (i >= 0) {
+                    if (k.compareAndSet(this, j, i | j2)) {
                         b30Var.g(de0Var);
                     } else {
                         continue;
@@ -374,34 +332,34 @@ public final class d30 implements Executor, Closeable {
     public final String toString() {
         ArrayList arrayList = new ArrayList();
         pz1 pz1Var = this.j;
-        int iA = pz1Var.a();
+        int a2 = pz1Var.a();
         int i = 0;
         int i2 = 0;
         int i3 = 0;
         int i4 = 0;
         int i5 = 0;
-        for (int i6 = 1; i6 < iA; i6++) {
+        for (int i6 = 1; i6 < a2; i6++) {
             b30 b30Var = (b30) pz1Var.b(i6);
             if (b30Var != null) {
                 ow2 ow2Var = b30Var.d;
                 ow2Var.getClass();
                 int i7 = ow2.b.get(ow2Var) != null ? (ow2.c.get(ow2Var) - ow2.d.get(ow2Var)) + 1 : ow2.c.get(ow2Var) - ow2.d.get(ow2Var);
-                int iOrdinal = b30Var.f.ordinal();
-                if (iOrdinal == 0) {
+                int ordinal = b30Var.f.ordinal();
+                if (ordinal == 0) {
                     i++;
                     StringBuilder sb = new StringBuilder();
                     sb.append(i7);
                     sb.append('c');
                     arrayList.add(sb.toString());
-                } else if (iOrdinal == 1) {
+                } else if (ordinal == 1) {
                     i2++;
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(i7);
                     sb2.append('b');
                     arrayList.add(sb2.toString());
-                } else if (iOrdinal == 2) {
+                } else if (ordinal == 2) {
                     i3++;
-                } else if (iOrdinal == 3) {
+                } else if (ordinal == 3) {
                     i4++;
                     if (i7 > 0) {
                         StringBuilder sb3 = new StringBuilder();
@@ -410,7 +368,7 @@ public final class d30 implements Executor, Closeable {
                         arrayList.add(sb3.toString());
                     }
                 } else {
-                    if (iOrdinal != 4) {
+                    if (ordinal != 4) {
                         throw new mu();
                     }
                     i5++;

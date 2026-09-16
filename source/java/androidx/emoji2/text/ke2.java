@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class ke2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f636a;
+    public static final int f635a;
     public static final int b;
     public static final int c;
     public static final int d;
@@ -14,7 +14,7 @@ public abstract class ke2 {
 
     static {
         if (l8.V()) {
-            f636a = 4;
+            f635a = 4;
             b = 5;
             c = 6;
             d = 7;
@@ -22,7 +22,7 @@ public abstract class ke2 {
             f = 10;
             return;
         }
-        f636a = 3;
+        f635a = 3;
         b = 4;
         c = 5;
         d = 6;
@@ -35,7 +35,7 @@ public abstract class ke2 {
             return null;
         }
         int length = objArr.length;
-        int i = f636a;
+        int i = f635a;
         if (length < i) {
             return null;
         }

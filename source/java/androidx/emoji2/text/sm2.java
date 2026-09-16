@@ -45,10 +45,10 @@ public final class sm2 implements ic1 {
             if (parent2 instanceof ViewGroup) {
                 ((ViewGroup) parent2).removeView(toolbar.l);
             }
-            tm2 tm2VarG = Toolbar.g();
-            tm2VarG.f1131a = (toolbar.q & 112) | 8388611;
-            tm2VarG.b = 2;
-            toolbar.l.setLayoutParams(tm2VarG);
+            tm2 g = Toolbar.g();
+            g.f1130a = (toolbar.q & 112) | 8388611;
+            g.b = 2;
+            toolbar.l.setLayoutParams(g);
             toolbar.addView(toolbar.l);
         }
         for (int childCount = toolbar.getChildCount() - 1; childCount >= 0; childCount--) {

@@ -9,22 +9,22 @@ import android.widget.TextView;
 public final class zd0 implements InputFilter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextView f1432a;
+    public final TextView f1431a;
     public yd0 b;
 
     public zd0(TextView textView) {
-        this.f1432a = textView;
+        this.f1431a = textView;
     }
 
     @Override // android.text.InputFilter
     public final CharSequence filter(CharSequence charSequence, int i, int i2, Spanned spanned, int i3, int i4) {
-        TextView textView = this.f1432a;
+        TextView textView = this.f1431a;
         if (textView.isInEditMode()) {
             return charSequence;
         }
-        int iC = qd0.a().c();
-        if (iC != 0) {
-            if (iC == 1) {
+        int c = qd0.a().c();
+        if (c != 0) {
+            if (c == 1) {
                 if ((i4 == 0 && i3 == 0 && spanned.length() == 0 && charSequence == textView.getText()) || charSequence == null) {
                     return charSequence;
                 }
@@ -33,15 +33,15 @@ public final class zd0 implements InputFilter {
                 }
                 return qd0.a().g(0, charSequence.length(), 0, charSequence);
             }
-            if (iC != 3) {
+            if (c != 3) {
                 return charSequence;
             }
         }
-        qd0 qd0VarA = qd0.a();
+        qd0 a2 = qd0.a();
         if (this.b == null) {
             this.b = new yd0(textView, this);
         }
-        qd0VarA.h(this.b);
+        a2.h(this.b);
         return charSequence;
     }
 }

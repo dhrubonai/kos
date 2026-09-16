@@ -24,20 +24,20 @@ public interface j70 {
     }
 
     default int i0(float f) {
-        float fC0 = c0(f);
-        if (Float.isInfinite(fC0)) {
+        float c0 = c0(f);
+        if (Float.isInfinite(c0)) {
             return Integer.MAX_VALUE;
         }
-        return Math.round(fC0);
+        return Math.round(c0);
     }
 
     default long m0(long j) {
         if (j == 9205357640488583168L) {
             return 9205357640488583168L;
         }
-        float fC0 = c0(Float.intBitsToFloat((int) (j >> 32)));
-        float fC02 = c0(Float.intBitsToFloat((int) (j & 4294967295L)));
-        return (Float.floatToRawIntBits(fC02) & 4294967295L) | (Float.floatToRawIntBits(fC0) << 32);
+        float c0 = c0(Float.intBitsToFloat((int) (j >> 32)));
+        float c02 = c0(Float.intBitsToFloat((int) (j & 4294967295L)));
+        return (Float.floatToRawIntBits(c02) & 4294967295L) | (Float.floatToRawIntBits(c0) << 32);
     }
 
     default float p0(long j) {
@@ -48,12 +48,12 @@ public interface j70 {
     }
 
     default long u(float f) {
-        float[] fArr = vl0.f1228a;
+        float[] fArr = vl0.f1227a;
         if (U() < 1.03f) {
             return nz0.H(f / U(), 4294967296L);
         }
-        ul0 ul0VarA = vl0.a(U());
-        return nz0.H(ul0VarA != null ? ul0VarA.a(f) : f / U(), 4294967296L);
+        ul0 a2 = vl0.a(U());
+        return nz0.H(a2 != null ? a2.a(f) : f / U(), 4294967296L);
     }
 
     default long v(long j) {
@@ -64,23 +64,23 @@ public interface j70 {
     }
 
     default float y(long j) {
-        float fC;
-        float fU;
+        float c;
+        float U;
         if (!kl2.a(jl2.b(j), 4294967296L)) {
             kv0.b("Only Sp can convert to Px");
         }
-        float[] fArr = vl0.f1228a;
+        float[] fArr = vl0.f1227a;
         if (U() >= 1.03f) {
-            ul0 ul0VarA = vl0.a(U());
-            fC = jl2.c(j);
-            if (ul0VarA != null) {
-                return ul0VarA.b(fC);
+            ul0 a2 = vl0.a(U());
+            c = jl2.c(j);
+            if (a2 != null) {
+                return a2.b(c);
             }
-            fU = U();
+            U = U();
         } else {
-            fC = jl2.c(j);
-            fU = U();
+            c = jl2.c(j);
+            U = U();
         }
-        return fU * fC;
+        return U * c;
     }
 }

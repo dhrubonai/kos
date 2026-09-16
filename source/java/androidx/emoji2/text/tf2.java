@@ -9,7 +9,11 @@ public final class tf2 extends IOException {
     public final int d;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public tf2(int i) {
+        super("stream was reset: ".concat(r0));
         String str;
         zd.m(i, "errorCode");
         switch (i) {
@@ -25,10 +29,10 @@ public final class tf2 extends IOException {
             case 4:
                 str = "FLOW_CONTROL_ERROR";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 str = "SETTINGS_TIMEOUT";
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 str = "STREAM_CLOSED";
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -37,10 +41,10 @@ public final class tf2 extends IOException {
             case 8:
                 str = "REFUSED_STREAM";
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 str = "CANCEL";
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 str = "COMPRESSION_ERROR";
                 break;
             case 11:
@@ -59,7 +63,6 @@ public final class tf2 extends IOException {
                 str = "null";
                 break;
         }
-        super("stream was reset: ".concat(str));
         this.d = i;
     }
 }

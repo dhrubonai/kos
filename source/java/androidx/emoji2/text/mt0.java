@@ -12,7 +12,7 @@ public final class mt0 {
     public static final char[] j = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f767a;
+    public final String f766a;
     public final String b;
     public final String c;
     public final String d;
@@ -25,7 +25,7 @@ public final class mt0 {
     public mt0(String str, String str2, String str3, String str4, int i, ArrayList arrayList, ArrayList arrayList2, String str5, String str6) {
         lx0.x(str, "scheme");
         lx0.x(str4, "host");
-        this.f767a = str;
+        this.f766a = str;
         this.b = str2;
         this.c = str3;
         this.d = str4;
@@ -40,35 +40,35 @@ public final class mt0 {
         if (this.c.length() == 0) {
             return "";
         }
-        int length = this.f767a.length() + 3;
+        int length = this.f766a.length() + 3;
         String str = this.h;
-        String strSubstring = str.substring(wf2.g0(str, ':', length, 4) + 1, wf2.g0(str, '@', 0, 6));
-        lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-        return strSubstring;
+        String substring = str.substring(wf2.g0(str, ':', length, 4) + 1, wf2.g0(str, '@', 0, 6));
+        lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        return substring;
     }
 
     public final String b() {
-        int length = this.f767a.length() + 3;
+        int length = this.f766a.length() + 3;
         String str = this.h;
-        int iG0 = wf2.g0(str, '/', length, 4);
-        String strSubstring = str.substring(iG0, jq2.d(iG0, str.length(), str, "?#"));
-        lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-        return strSubstring;
+        int g0 = wf2.g0(str, '/', length, 4);
+        String substring = str.substring(g0, jq2.d(g0, str.length(), str, "?#"));
+        lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        return substring;
     }
 
     public final ArrayList c() {
-        int length = this.f767a.length() + 3;
+        int length = this.f766a.length() + 3;
         String str = this.h;
-        int iG0 = wf2.g0(str, '/', length, 4);
-        int iD = jq2.d(iG0, str.length(), str, "?#");
+        int g0 = wf2.g0(str, '/', length, 4);
+        int d = jq2.d(g0, str.length(), str, "?#");
         ArrayList arrayList = new ArrayList();
-        while (iG0 < iD) {
-            int i = iG0 + 1;
-            int iE = jq2.e(str, '/', i, iD);
-            String strSubstring = str.substring(i, iE);
-            lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-            arrayList.add(strSubstring);
-            iG0 = iE;
+        while (g0 < d) {
+            int i = g0 + 1;
+            int e = jq2.e(str, '/', i, d);
+            String substring = str.substring(i, e);
+            lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+            arrayList.add(substring);
+            g0 = e;
         }
         return arrayList;
     }
@@ -78,21 +78,21 @@ public final class mt0 {
             return null;
         }
         String str = this.h;
-        int iG0 = wf2.g0(str, '?', 0, 6) + 1;
-        String strSubstring = str.substring(iG0, jq2.e(str, '#', iG0, str.length()));
-        lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-        return strSubstring;
+        int g0 = wf2.g0(str, '?', 0, 6) + 1;
+        String substring = str.substring(g0, jq2.e(str, '#', g0, str.length()));
+        lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        return substring;
     }
 
     public final String e() {
         if (this.b.length() == 0) {
             return "";
         }
-        int length = this.f767a.length() + 3;
+        int length = this.f766a.length() + 3;
         String str = this.h;
-        String strSubstring = str.substring(length, jq2.d(length, str.length(), str, ":@"));
-        lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-        return strSubstring;
+        String substring = str.substring(length, jq2.d(length, str.length(), str, ":@"));
+        lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+        return substring;
     }
 
     public final boolean equals(Object obj) {
@@ -114,41 +114,41 @@ public final class mt0 {
     }
 
     public final URI g() {
-        String strSubstring;
-        String strReplaceAll;
+        String substring;
+        String str;
         lt0 lt0Var = new lt0(0);
         ArrayList arrayList = (ArrayList) lt0Var.h;
-        String str = this.f767a;
-        lt0Var.c = str;
+        String str2 = this.f766a;
+        lt0Var.c = str2;
         lt0Var.d = e();
         lt0Var.e = a();
         lt0Var.f = this.d;
-        lx0.x(str, "scheme");
-        int i = str.equals("http") ? 80 : str.equals("https") ? 443 : -1;
+        lx0.x(str2, "scheme");
+        int i = str2.equals("http") ? 80 : str2.equals("https") ? 443 : -1;
         int i2 = this.e;
         lt0Var.b = i2 != i ? i2 : -1;
         arrayList.clear();
         arrayList.addAll(c());
-        String strD = d();
-        lt0Var.i = strD != null ? on.p(on.f(strD, " \"'<>#", 0, 0, 211)) : null;
+        String d = d();
+        lt0Var.i = d != null ? on.p(on.f(d, " \"'<>#", 0, 0, 211)) : null;
         if (this.g == null) {
-            strSubstring = null;
+            substring = null;
         } else {
-            String str2 = this.h;
-            strSubstring = str2.substring(wf2.g0(str2, '#', 0, 6) + 1);
-            lx0.w(strSubstring, "this as java.lang.String).substring(startIndex)");
+            String str3 = this.h;
+            substring = str3.substring(wf2.g0(str3, '#', 0, 6) + 1);
+            lx0.w(substring, "this as java.lang.String).substring(startIndex)");
         }
-        lt0Var.g = strSubstring;
-        String str3 = (String) lt0Var.f;
-        if (str3 != null) {
-            Pattern patternCompile = Pattern.compile("[\"<>^`{|}]");
-            lx0.w(patternCompile, "compile(...)");
-            strReplaceAll = patternCompile.matcher(str3).replaceAll("");
-            lx0.w(strReplaceAll, "replaceAll(...)");
+        lt0Var.g = substring;
+        String str4 = (String) lt0Var.f;
+        if (str4 != null) {
+            Pattern compile = Pattern.compile("[\"<>^`{|}]");
+            lx0.w(compile, "compile(...)");
+            str = compile.matcher(str4).replaceAll("");
+            lx0.w(str, "replaceAll(...)");
         } else {
-            strReplaceAll = null;
+            str = null;
         }
-        lt0Var.f = strReplaceAll;
+        lt0Var.f = str;
         int size = arrayList.size();
         for (int i3 = 0; i3 < size; i3++) {
             arrayList.set(i3, on.f((String) arrayList.get(i3), "[]", 0, 0, 227));
@@ -157,24 +157,24 @@ public final class mt0 {
         if (arrayList2 != null) {
             int size2 = arrayList2.size();
             for (int i4 = 0; i4 < size2; i4++) {
-                String str4 = (String) arrayList2.get(i4);
-                arrayList2.set(i4, str4 != null ? on.f(str4, "\\^`{|}", 0, 0, 195) : null);
+                String str5 = (String) arrayList2.get(i4);
+                arrayList2.set(i4, str5 != null ? on.f(str5, "\\^`{|}", 0, 0, 195) : null);
             }
         }
-        String str5 = (String) lt0Var.g;
-        lt0Var.g = str5 != null ? on.f(str5, " \"#<>\\^`{|}", 0, 0, 163) : null;
-        String string = lt0Var.toString();
+        String str6 = (String) lt0Var.g;
+        lt0Var.g = str6 != null ? on.f(str6, " \"#<>\\^`{|}", 0, 0, 163) : null;
+        String lt0Var2 = lt0Var.toString();
         try {
-            return new URI(string);
+            return new URI(lt0Var2);
         } catch (URISyntaxException e) {
             try {
-                Pattern patternCompile2 = Pattern.compile("[\\u0000-\\u001F\\u007F-\\u009F\\p{javaWhitespace}]");
-                lx0.w(patternCompile2, "compile(...)");
-                String strReplaceAll2 = patternCompile2.matcher(string).replaceAll("");
-                lx0.w(strReplaceAll2, "replaceAll(...)");
-                URI uriCreate = URI.create(strReplaceAll2);
-                lx0.w(uriCreate, "{\n      // Unlikely edge…Unexpected!\n      }\n    }");
-                return uriCreate;
+                Pattern compile2 = Pattern.compile("[\\u0000-\\u001F\\u007F-\\u009F\\p{javaWhitespace}]");
+                lx0.w(compile2, "compile(...)");
+                String replaceAll = compile2.matcher(lt0Var2).replaceAll("");
+                lx0.w(replaceAll, "replaceAll(...)");
+                URI create = URI.create(replaceAll);
+                lx0.w(create, "{\n      // Unlikely edge…Unexpected!\n      }\n    }");
+                return create;
             } catch (Exception unused) {
                 throw new RuntimeException(e);
             }

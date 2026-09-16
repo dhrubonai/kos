@@ -39,13 +39,13 @@ public final class c31 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((c31) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((c31) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         f31 f31Var = this.j;
         f30 f30Var = f30.d;
         switch (i) {

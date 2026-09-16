@@ -1,92 +1,56 @@
-# KOS — Self-Hosted License System
+# KOS — Self-Hosted License System (full rebuild project)
 
-This repository contains the complete, re-buildable source state of the KOS app
-(v3.3-VStable, versionCode 24) plus a **new self-hosted license system** that
-replaces the legacy license server with a Cloudflare Worker owned by you.
+Complete, re-buildable source state of the KOS app (v3.3-VStable, versionCode 24)
+plus a self-hosted license backend (Cloudflare Worker + D1) owned by @dhrubonai.
+
+**START HERE if you are a new session:** [`worklog.md`](worklog.md) →
+[`analysis/FIX_PLAN.md`](analysis/FIX_PLAN.md) → [`analysis/CRASH_INVESTIGATION.md`](analysis/CRASH_INVESTIGATION.md)
 
 ## Repository layout
 
 ```
 kos/
+├── worklog.md                       # ← session log + all credentials/endpoints + next steps
 ├── app/
-│   ├── KOS.apk                          # pristine original APK (v3.3-VStable)
-│   ├── KOS-modded-aligned-signed.apk    # rebuilt APK with self-hosted licensing
-│   └── kos-release.keystore             # signing key for all future updates
+│   ├── KOS.apk                      # pristine original APK (v3.3-VStable) — CONTROL TEST BUILD
+│   ├── KOS-modded-aligned-signed.apk# session-1 rebuild (crashes; kept for diffing)
+│   ├── kos-release.keystore         # session-1 signing key   (alias kos / pass koslic2026)
+│   └── kos-release3.keystore        # round-4+ signing key   (alias kos / pass koslic2026)
 ├── analysis/
-│   ├── ANALYSIS_REPORT.md               # full APK architecture breakdown
-│   └── class_list.txt                   # all 6,777 classes inventoried
-├── source/
-│   ├── java/                            # full Java decompilation (jadx)
-│   └── smali-workspace/                 # apktool workspace = the rebuild source
-│       ├── smali/                       # original dalvik bytecode
-│       ├── smali_classes2/              # ADDED: com.kos.lic.LicBridge (new)
-│       └── res/values/strings.xml       # MODIFIED: kos_api_base resource
+│   ├── ANALYSIS_REPORT.md           # full APK architecture breakdown (session 1)
+│   ├── STARTUP_PATH.md              # traced cold-start execution order (verified)
+│   ├── CRASH_INVESTIGATION.md       # rounds 1-4 evidence, rule-outs, ranked hypotheses
+│   ├── FIX_PLAN.md                  # agreed round-4 strategy
+│   └── class_list.txt               # all 6,777 classes inventoried
+├── source/java/                     # FULL jadx 1.5.1 decompilation (5,335 files)
+├── smali/                           # FULL apktool 2.10.0 decode = rebuild workspace
+│   ├── smali/                       #   6,777 smali files
+│   ├── res/                         #   all resources (kos_api_base → workers.dev)
+│   ├── AndroidManifest.xml          #   decoded manifest (appComponentFactory, extractNativeLibs=false)
+│   └── apktool.yml                  #   decode metadata (minSdk 24 / targetSdk 36)
+├── native/                          # libkos.so complete technical map
+│   ├── NATIVE_LIB.md                #   decryptor chain, JNI_OnLoad, round-3 patch map, imports
+│   ├── libkos-original.so           #   pristine native lib
+│   ├── main_disasm.txt              #   disassembly of the DECRYPTED .main section
+│   ├── main_decrypted.bin           #   the decrypted blob itself
+│   ├── sections.txt / symbols.txt / plt_map.txt
 ├── license-backend/
-│   ├── worker.js                        # Cloudflare Worker (admin site + API)
-│   ├── wrangler.toml                    # deploy configuration
-│   └── DEPLOY.md                        # step-by-step deployment guide
-├── patch/
-│   ├── LicBridge.java                   # new app-side bridge class (source)
-│   ├── PATCH-NOTES.md                   # exact smali modifications explained
-│   └── BUILD.md                         # how to rebuild and sign the APK
-└── README.md
+│   ├── worker-d1.js                 # DEPLOYED worker source (fetched live from CF API)
+│   ├── worker.js / wrangler.toml / DEPLOY.md
+├── patch/                           # earlier-round smali/java patches + notes
+└── scripts/                         # native_analyze.py, reloc_analyze.py, disasm_range.py
 ```
 
-## What changed in the app (and nothing else)
+## Backend (deployed and live)
 
-Three surgical changes, all documented in `patch/PATCH-NOTES.md`:
+- Worker: https://kos-license.dhrubomohiuddinabdulkadir.workers.dev/
+- Admin password: `KOS-97D0509946` (login → Bearer token → `/api/admin/crashes`)
+- App protocol: `POST /api/validate {device,key}`, `POST /api/connect {device}`
+- Keys issued: lifetime `5CEZ-SRF6-QZA8-A2HB` + 5 monthly keys (see worklog)
 
-1. **`NativeBridge.validateLicense`** — license key activation now calls YOUR
-   worker (`/api/validate`); the original native path is kept as automatic
-   fallback.
-2. **`NativeBridge.getDataFromServer`** — connect/status flow now calls YOUR
-   worker (`/api/connect`); original native path kept as automatic fallback.
-3. **Startup integrity gate** — the native anti-tamper check is neutralized
-   (any repacked build would otherwise refuse to start; required for any
-   modification).
+## Status (2026-09-16)
 
-Everything else — the sandbox engine, Google services virtualization, UI,
-proxy components, GMS flows — is byte-for-byte identical to the original.
-
-## License flow (new)
-
-```
-App (license input)                Cloudflare Worker (yours)             Admin website
-  │  POST /api/validate {device,key}   │                                    │
-  │ ──────────────────────────────────►│ KV lookup + device binding         │
-  │  {valid, plan, expiry, message}    │                                    │
-  │ ◄──────────────────────────────────┤                                    │
-  │                                    │  ◄── create / revoke / extend ───  │
-  │  POST /api/connect {device}        │      (mobile-friendly UI)          │
-  │ ──────────────────────────────────►│                                    │
-  │  {bound, active, plan, expiry}     │                                    │
-  │ ◄──────────────────────────────────┤                                    │
-```
-
-- License keys: `XXXX-XXXX-XXXX-XXXX` (unambiguous alphabet)
-- Keys bind to the device on first activation
-- Plans: 1 day / 1 week / 1 month / 3 months / 1 year / lifetime
-- Admin website is served by the same worker at `/`
-
-## Changing the backend URL
-
-The app reads the worker URL from the string resource `kos_api_base`
-(`source/smali-workspace/res/values/strings.xml`). Update that one line,
-rebuild (see `patch/BUILD.md`), and every installation checks against the
-new endpoint. The compiled fallback constant lives in `patch/LicBridge.java`
-(`DEFAULT_API_BASE`).
-
-## Signing
-
-All builds are signed with `app/kos-release.keystore`. Keep this file safe:
-losing it means users must uninstall/reinstall to update. This keystore was
-created fresh — the original developer key was never available.
-
-## Rebuilding
-
-```bash
-java -jar apktool.jar b source/smali-workspace -o KOS-unsigned.apk
-java -jar uber-apk-signer.jar -a KOS-unsigned.apk \
-     --ks app/kos-release.keystore --ksAlias kos \
-     --ksPass <storepass> --ksKeyPass <keypass>
-```
+- Backend: live and verified.
+- App: still crashes on launch after rounds 1-3 (evidence + ranked hypotheses in
+  analysis/CRASH_INVESTIGATION.md). Round-4 plan: FIX_PLAN.md — starts with a
+  pristine-APK control test on the user's device, then disk-backed sync telemetry.

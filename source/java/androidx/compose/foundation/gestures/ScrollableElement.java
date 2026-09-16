@@ -59,15 +59,15 @@ final class ScrollableElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iHashCode = (this.b.hashCode() + (this.f11a.hashCode() * 31)) * 31;
+        int hashCode = (this.b.hashCode() + (this.f11a.hashCode() * 31)) * 31;
         rl1 rl1Var = this.c;
-        int iD = jx0.d(jx0.d((iHashCode + (rl1Var != null ? rl1Var.hashCode() : 0)) * 31, 31, this.d), 31, this.e);
+        int d = jx0.d(jx0.d((hashCode + (rl1Var != null ? rl1Var.hashCode() : 0)) * 31, 31, this.d), 31, this.e);
         yi0 yi0Var = this.f;
-        int iHashCode2 = (iD + (yi0Var != null ? yi0Var.hashCode() : 0)) * 31;
+        int hashCode2 = (d + (yi0Var != null ? yi0Var.hashCode() : 0)) * 31;
         se1 se1Var = this.g;
-        int iHashCode3 = (iHashCode2 + (se1Var != null ? se1Var.hashCode() : 0)) * 31;
+        int hashCode3 = (hashCode2 + (se1Var != null ? se1Var.hashCode() : 0)) * 31;
         in inVar = this.h;
-        return iHashCode3 + (inVar != null ? inVar.hashCode() : 0);
+        return hashCode3 + (inVar != null ? inVar.hashCode() : 0);
     }
 
     @Override // androidx.emoji2.text.ud1
@@ -89,10 +89,10 @@ final class ScrollableElement extends ud1 {
         yi0 yi0Var = this.f;
         yi0 yi0Var2 = yi0Var == null ? h52Var.F : yi0Var;
         gh1 gh1Var = h52Var.D;
-        i52 i52Var = x52Var.f1319a;
+        i52 i52Var = x52Var.f1318a;
         i52 i52Var2 = this.f11a;
         if (!lx0.n(i52Var, i52Var2)) {
-            x52Var.f1319a = i52Var2;
+            x52Var.f1318a = i52Var2;
             z5 = true;
         }
         rl1 rl1Var = this.c;

@@ -74,21 +74,21 @@ public final class nb implements ky1, z02, wu0 {
     }
 
     @Override // androidx.emoji2.text.wu0
-    public final void e(g11 g11Var) throws Throwable {
+    public final void e(g11 g11Var) {
         np npVar = g11Var.d;
         this.n = npVar.i();
         float f = this.g;
         this.o = Float.isNaN(f) ? xa1.Q(w02.a(g11Var, this.f, npVar.i())) : npVar.i0(f);
-        long j = ((et) this.h.getValue()).f321a;
+        long j = ((et) this.h.getValue()).f320a;
         float f2 = ((r02) this.i.getValue()).d;
         g11Var.b();
         this.e.a(g11Var, Float.isNaN(f) ? w02.a(g11Var, this.d, npVar.i()) : g11Var.c0(f), j);
-        lp lpVarD = npVar.e.D();
+        lp D = npVar.e.D();
         ((Boolean) this.m.getValue()).booleanValue();
         b12 b12Var = (b12) this.l.getValue();
         if (b12Var != null) {
             b12Var.e(f2, npVar.i(), j);
-            b12Var.draw(x6.a(lpVarD));
+            b12Var.draw(x6.a(D));
         }
     }
 

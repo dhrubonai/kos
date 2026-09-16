@@ -58,19 +58,19 @@ public interface IServiceConnection extends IInterface {
 
             @Override // android.app.IServiceConnection
             public void connected(ComponentName componentName, IBinder iBinder, IBinderSession iBinderSession, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    _Parcel.writeTypedObject(parcelObtain, componentName, 0);
-                    parcelObtain.writeStrongBinder(iBinder);
-                    parcelObtain.writeStrongInterface(iBinderSession);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    _Parcel.writeTypedObject(obtain, componentName, 0);
+                    obtain.writeStrongBinder(iBinder);
+                    obtain.writeStrongInterface(iBinderSession);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -87,8 +87,8 @@ public interface IServiceConnection extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IServiceConnection)) ? new Proxy(iBinder) : (IServiceConnection) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IServiceConnection)) ? new Proxy(iBinder) : (IServiceConnection) queryLocalInterface;
         }
 
         @Override // android.os.Binder

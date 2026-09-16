@@ -61,30 +61,30 @@ class Settings {
     }
 
     private void loadUidLP() {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            byte[] bArrM = wj1.M(BEnvironment.getUidConf());
-            parcelObtain.unmarshall(bArrM, 0, bArrM.length);
-            parcelObtain.setDataPosition(0);
-            this.mCurrUid = parcelObtain.readInt();
-            HashMap hashMap = parcelObtain.readHashMap(HashMap.class.getClassLoader());
+            byte[] M = wj1.M(BEnvironment.getUidConf());
+            obtain.unmarshall(M, 0, M.length);
+            obtain.setDataPosition(0);
+            this.mCurrUid = obtain.readInt();
+            HashMap readHashMap = obtain.readHashMap(HashMap.class.getClassLoader());
             synchronized (this.mAppIds) {
                 this.mAppIds.clear();
-                this.mAppIds.putAll(hashMap);
+                this.mAppIds.putAll(readHashMap);
             }
         } catch (Exception unused) {
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 
     private PackageParser.Package parserApk(String str) {
         try {
             new File(str);
-            PackageParser packageParserB = am1.b();
-            PackageParser.Package packageC = am1.c(packageParserB, new File(str));
-            am1.a(packageParserB, packageC);
-            return packageC;
+            PackageParser b = am1.b();
+            PackageParser.Package c = am1.c(b, new File(str));
+            am1.a(b, c);
+            return c;
         } catch (Throwable th) {
             th.printStackTrace();
             return null;
@@ -93,16 +93,16 @@ class Settings {
 
     private BPackageSettings reInstallBySystem(PackageInfo packageInfo, InstallOption installOption) {
         String[] strArr = xa1.b;
-        String strA = a.a.a.c.a(-376952658738978L, strArr);
+        String a2 = a.a.a.c.a(-376952658738978L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-376991313444642L, strArr));
-        zd.p(sb, packageInfo.packageName, 3, strA);
-        PackageParser.Package r6 = parserApk(packageInfo.applicationInfo.sourceDir);
-        if (r6 == null) {
+        zd.p(sb, packageInfo.packageName, 3, a2);
+        PackageParser.Package parserApk = parserApk(packageInfo.applicationInfo.sourceDir);
+        if (parserApk == null) {
             throw new RuntimeException(a.a.a.c.a(-377042853052194L, strArr));
         }
-        r6.applicationInfo = c01.s.getPackageManager().getPackageInfo(r6.packageName, 0).applicationInfo;
-        return getPackageLPw(r6.packageName, r6, installOption);
+        parserApk.applicationInfo = c01.s.getPackageManager().getPackageInfo(parserApk.packageName, 0).applicationInfo;
+        return getPackageLPw(parserApk.packageName, parserApk, installOption);
     }
 
     private BPackageSettings relinkStoragePlayStoreToHost(BPackageSettings bPackageSettings) {
@@ -116,52 +116,52 @@ class Settings {
                 }
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
                 if (applicationInfo != null && applicationInfo.sourceDir != null && new File(packageInfo.applicationInfo.sourceDir).isFile()) {
-                    BPackageSettings bPackageSettingsReInstallBySystem = reInstallBySystem(packageInfo, InstallOption.installBySystem());
-                    bPackageSettingsReInstallBySystem.appId = bPackageSettings.appId;
-                    bPackageSettingsReInstallBySystem.userState = bPackageSettings.userState;
-                    bPackageSettingsReInstallBySystem.pkg.mExtras = bPackageSettingsReInstallBySystem;
-                    nz0.Q(a.a.a.c.a(-377833127034658L, strArr), 3, a.a.a.c.a(-377854601871138L, strArr) + bPackageSettings.pkg.baseCodePath + a.a.a.c.a(-376493097238306L, strArr) + packageInfo.applicationInfo.sourceDir + a.a.a.c.a(-376527456976674L, strArr) + bPackageSettingsReInstallBySystem.getUserIds());
-                    return bPackageSettingsReInstallBySystem;
+                    BPackageSettings reInstallBySystem = reInstallBySystem(packageInfo, InstallOption.installBySystem());
+                    reInstallBySystem.appId = bPackageSettings.appId;
+                    reInstallBySystem.userState = bPackageSettings.userState;
+                    reInstallBySystem.pkg.mExtras = reInstallBySystem;
+                    nz0.Q(a.a.a.c.a(-377833127034658L, strArr), 3, a.a.a.c.a(-377854601871138L, strArr) + bPackageSettings.pkg.baseCodePath + a.a.a.c.a(-376493097238306L, strArr) + packageInfo.applicationInfo.sourceDir + a.a.a.c.a(-376527456976674L, strArr) + reInstallBySystem.getUserIds());
+                    return reInstallBySystem;
                 }
                 nz0.Q(a.a.a.c.a(-378082235137826L, strArr), 5, a.a.a.c.a(-378103709974306L, strArr));
                 return bPackageSettings;
             } catch (Throwable th) {
-                String strA = a.a.a.c.a(-376548931813154L, strArr);
+                String a2 = a.a.a.c.a(-376548931813154L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.r(sb, a.a.a.c.a(-376037830704930L, strArr), th);
-                zd.s(sb, a.a.a.c.a(-376905414098722L, strArr), th, 5, strA);
+                zd.s(sb, a.a.a.c.a(-376905414098722L, strArr), th, 5, a2);
             }
         }
         return bPackageSettings;
     }
 
     private void saveUidLP() {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         AtomicFile atomicFile = new AtomicFile(BEnvironment.getUidConf());
-        FileOutputStream fileOutputStreamStartWrite = null;
+        FileOutputStream fileOutputStream = null;
         try {
             try {
-                Set<String> setKeySet = this.mPackages.keySet();
+                Set<String> keySet = this.mPackages.keySet();
                 Iterator it = new HashSet(this.mAppIds.keySet()).iterator();
                 while (it.hasNext()) {
                     String str = (String) it.next();
-                    if (!setKeySet.contains(str)) {
+                    if (!keySet.contains(str)) {
                         this.mAppIds.remove(str);
                     }
                 }
-                parcelObtain.writeInt(this.mCurrUid);
-                parcelObtain.writeMap(this.mAppIds);
-                fileOutputStreamStartWrite = atomicFile.startWrite();
-                fileOutputStreamStartWrite.write(parcelObtain.marshall());
-                atomicFile.finishWrite(fileOutputStreamStartWrite);
-                parcelObtain.recycle();
+                obtain.writeInt(this.mCurrUid);
+                obtain.writeMap(this.mAppIds);
+                fileOutputStream = atomicFile.startWrite();
+                fileOutputStream.write(obtain.marshall());
+                atomicFile.finishWrite(fileOutputStream);
+                obtain.recycle();
             } catch (Exception e) {
                 e.printStackTrace();
-                atomicFile.failWrite(fileOutputStreamStartWrite);
-                parcelObtain.recycle();
+                atomicFile.failWrite(fileOutputStream);
+                obtain.recycle();
             }
         } catch (Throwable th) {
-            parcelObtain.recycle();
+            obtain.recycle();
             throw th;
         }
     }
@@ -169,35 +169,37 @@ class Settings {
     private void updatePackageLP(File file) {
         String[] strArr = xa1.b;
         String name = file.getName();
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            byte[] bArrM = wj1.M(BEnvironment.getPackageConf(name));
-            parcelObtain.unmarshall(bArrM, 0, bArrM.length);
-            parcelObtain.setDataPosition(0);
-            BPackageSettings bPackageSettings = new BPackageSettings(parcelObtain);
+            byte[] M = wj1.M(BEnvironment.getPackageConf(name));
+            obtain.unmarshall(M, 0, M.length);
+            obtain.setDataPosition(0);
+            BPackageSettings bPackageSettings = new BPackageSettings(obtain);
             bPackageSettings.pkg.mExtras = bPackageSettings;
-            BPackageSettings bPackageSettingsRelinkStoragePlayStoreToHost = relinkStoragePlayStoreToHost(bPackageSettings);
-            if (bPackageSettingsRelinkStoragePlayStoreToHost.installOption.isFlag(1)) {
+            BPackageSettings relinkStoragePlayStoreToHost = relinkStoragePlayStoreToHost(bPackageSettings);
+            if (relinkStoragePlayStoreToHost.installOption.isFlag(1)) {
                 PackageInfo packageInfo = c01.s.getPackageManager().getPackageInfo(name, PackageParser.PARSE_IS_PRIVILEGED);
                 String str = packageInfo.applicationInfo.sourceDir;
-                File file2 = new File(bPackageSettingsRelinkStoragePlayStoreToHost.pkg.baseCodePath);
+                File file2 = new File(relinkStoragePlayStoreToHost.pkg.baseCodePath);
                 if (!new File(str).isFile()) {
                     throw new IllegalStateException(a.a.a.c.a(-375672758484770L, strArr) + str);
                 }
-                if (!file2.isFile() || !str.equals(bPackageSettingsRelinkStoragePlayStoreToHost.pkg.baseCodePath)) {
-                    nz0.Q(a.a.a.c.a(-374199584702242L, strArr), 5, a.a.a.c.a(-374221059538722L, strArr) + name + a.a.a.c.a(-373881757122338L, strArr) + bPackageSettingsRelinkStoragePlayStoreToHost.pkg.baseCodePath + a.a.a.c.a(-373954771566370L, strArr) + file2.isFile() + a.a.a.c.a(-374036375944994L, strArr) + str);
-                    BProcessManagerService.get().killAllByPackageName(bPackageSettingsRelinkStoragePlayStoreToHost.pkg.packageName);
-                    BPackage bPackage = reInstallBySystem(packageInfo, bPackageSettingsRelinkStoragePlayStoreToHost.installOption).pkg;
-                    bPackageSettingsRelinkStoragePlayStoreToHost.pkg = bPackage;
-                    bPackage.mExtras = bPackageSettingsRelinkStoragePlayStoreToHost;
-                    nz0.Q(a.a.a.c.a(-374100800454434L, strArr), 3, a.a.a.c.a(-374689210973986L, strArr) + name + a.a.a.c.a(-374384268295970L, strArr) + bPackageSettingsRelinkStoragePlayStoreToHost.getUserIds());
+                if (file2.isFile()) {
+                    if (!str.equals(relinkStoragePlayStoreToHost.pkg.baseCodePath)) {
+                    }
                 }
+                nz0.Q(a.a.a.c.a(-374199584702242L, strArr), 5, a.a.a.c.a(-374221059538722L, strArr) + name + a.a.a.c.a(-373881757122338L, strArr) + relinkStoragePlayStoreToHost.pkg.baseCodePath + a.a.a.c.a(-373954771566370L, strArr) + file2.isFile() + a.a.a.c.a(-374036375944994L, strArr) + str);
+                BProcessManagerService.get().killAllByPackageName(relinkStoragePlayStoreToHost.pkg.packageName);
+                BPackage bPackage = reInstallBySystem(packageInfo, relinkStoragePlayStoreToHost.installOption).pkg;
+                relinkStoragePlayStoreToHost.pkg = bPackage;
+                bPackage.mExtras = relinkStoragePlayStoreToHost;
+                nz0.Q(a.a.a.c.a(-374100800454434L, strArr), 3, a.a.a.c.a(-374689210973986L, strArr) + name + a.a.a.c.a(-374384268295970L, strArr) + relinkStoragePlayStoreToHost.getUserIds());
             } else {
-                BPackage bPackage2 = bPackageSettingsRelinkStoragePlayStoreToHost.pkg;
+                BPackage bPackage2 = relinkStoragePlayStoreToHost.pkg;
                 bPackage2.applicationInfo = PackageManagerCompat.generateApplicationInfo(bPackage2, 0, BPackageUserState.create(), 0);
             }
-            bPackageSettingsRelinkStoragePlayStoreToHost.save();
-            this.mPackages.put(bPackageSettingsRelinkStoragePlayStoreToHost.pkg.packageName, bPackageSettingsRelinkStoragePlayStoreToHost);
+            relinkStoragePlayStoreToHost.save();
+            this.mPackages.put(relinkStoragePlayStoreToHost.pkg.packageName, relinkStoragePlayStoreToHost);
             nz0.Q(a.a.a.c.a(-374422923001634L, strArr), 3, a.a.a.c.a(-374513117314850L, strArr) + name);
         } catch (Throwable th) {
             try {
@@ -208,7 +210,7 @@ class Settings {
                 BPackageManagerService.get().onPackageUninstalled(name, true, -1, -1);
                 nz0.Q(a.a.a.c.a(-374586131758882L, strArr), 5, a.a.a.c.a(-374607606595362L, strArr) + name + a.a.a.c.a(-377566839062306L, strArr) + th.getClass().getSimpleName() + a.a.a.c.a(-377588313898786L, strArr) + th.getMessage());
             } finally {
-                parcelObtain.recycle();
+                obtain.recycle();
             }
         }
     }

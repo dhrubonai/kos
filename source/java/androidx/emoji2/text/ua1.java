@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -103,7 +104,7 @@ public class ua1 extends Drawable implements ia2 {
 
     public final void a(RectF rectF, Path path) {
         sa1 sa1Var = this.e;
-        this.v.a(sa1Var.f1059a, this.E, sa1Var.j, rectF, this.u, path);
+        this.v.a(sa1Var.f1058a, this.E, sa1Var.j, rectF, this.u, path);
         if (this.e.i != 1.0f) {
             Matrix matrix = this.k;
             matrix.reset();
@@ -119,16 +120,16 @@ public class ua1 extends Drawable implements ia2 {
         sa1 sa1Var = this.e;
         float f = sa1Var.n + 0.0f + sa1Var.m;
         kd0 kd0Var = sa1Var.c;
-        if (kd0Var == null || !kd0Var.f633a || tt.d(i, 255) != kd0Var.d) {
+        if (kd0Var == null || !kd0Var.f632a || tt.d(i, 255) != kd0Var.d) {
             return i;
         }
-        float fMin = (kd0Var.e <= 0.0f || f <= 0.0f) ? 0.0f : Math.min(((((float) Math.log1p(f / r4)) * 4.5f) + 2.0f) / 100.0f, 1.0f);
-        int iAlpha = Color.alpha(i);
-        int iG = pz0.G(fMin, tt.d(i, 255), kd0Var.b);
-        if (fMin > 0.0f && (i2 = kd0Var.c) != 0) {
-            iG = tt.b(tt.d(i2, kd0.f), iG);
+        float min = (kd0Var.e <= 0.0f || f <= 0.0f) ? 0.0f : Math.min(((((float) Math.log1p(f / r4)) * 4.5f) + 2.0f) / 100.0f, 1.0f);
+        int alpha = Color.alpha(i);
+        int G = pz0.G(min, tt.d(i, 255), kd0Var.b);
+        if (min > 0.0f && (i2 = kd0Var.c) != 0) {
+            G = tt.b(tt.d(i2, kd0.f), G);
         }
-        return tt.d(iG, iAlpha);
+        return tt.d(G, alpha);
     }
 
     public final void d(Canvas canvas) {
@@ -139,7 +140,7 @@ public class ua1 extends Drawable implements ia2 {
         Path path = this.l;
         r92 r92Var = this.t;
         if (i != 0) {
-            canvas.drawPath(path, r92Var.f997a);
+            canvas.drawPath(path, r92Var.f996a);
         }
         for (int i2 = 0; i2 < 4; i2++) {
             fa2 fa2Var = this.f[i2];
@@ -150,34 +151,142 @@ public class ua1 extends Drawable implements ia2 {
         }
         if (this.z) {
             double d = 0;
-            int iSin = (int) (Math.sin(Math.toRadians(d)) * this.e.p);
-            int iCos = (int) (Math.cos(Math.toRadians(d)) * this.e.p);
-            canvas.translate(-iSin, -iCos);
+            int sin = (int) (Math.sin(Math.toRadians(d)) * this.e.p);
+            int cos = (int) (Math.cos(Math.toRadians(d)) * this.e.p);
+            canvas.translate(-sin, -cos);
             canvas.drawPath(path, H);
-            canvas.translate(iSin, iCos);
+            canvas.translate(sin, cos);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0097 A[EDGE_INSN: B:64:0x0097->B:30:0x0097 BREAK  A[LOOP:1: B:21:0x007e->B:26:0x0088]] */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0093, code lost:
+    
+        if (r19.e.f1058a.d() != false) goto L43;
+     */
     @Override // android.graphics.drawable.Drawable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public void draw(android.graphics.Canvas r20) {
-        /*
-            Method dump skipped, instructions count: 500
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ua1.draw(android.graphics.Canvas):void");
+    public void draw(Canvas canvas) {
+        Paint paint;
+        PorterDuffColorFilter porterDuffColorFilter = this.w;
+        Paint paint2 = this.r;
+        paint2.setColorFilter(porterDuffColorFilter);
+        int alpha = paint2.getAlpha();
+        int i = this.e.l;
+        paint2.setAlpha(((i + (i >>> 7)) * alpha) >>> 8);
+        PorterDuffColorFilter porterDuffColorFilter2 = this.x;
+        Paint paint3 = this.s;
+        paint3.setColorFilter(porterDuffColorFilter2);
+        paint3.setStrokeWidth(this.e.k);
+        int alpha2 = paint3.getAlpha();
+        int i2 = this.e.l;
+        paint3.setAlpha(((i2 + (i2 >>> 7)) * alpha2) >>> 8);
+        Paint.Style style = this.e.q;
+        if (style == Paint.Style.FILL_AND_STROKE || style == Paint.Style.FILL) {
+            boolean z = this.i;
+            paint = paint2;
+            Path path = this.l;
+            if (z) {
+                a(g(), path);
+                this.i = false;
+            }
+            sa1 sa1Var = this.e;
+            sa1Var.getClass();
+            if (sa1Var.o > 0 && !sa1Var.f1058a.e(g())) {
+                float[] fArr = this.E;
+                if (fArr != null) {
+                    if (fArr.length > 1) {
+                        float f = fArr[0];
+                        for (int i3 = 1; i3 < fArr.length; i3++) {
+                            if (fArr[i3] != f) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (!path.isConvex() && Build.VERSION.SDK_INT < 29) {
+                    canvas.save();
+                    double d = 0;
+                    canvas.translate((int) (Math.sin(Math.toRadians(d)) * this.e.p), (int) (Math.cos(Math.toRadians(d)) * this.e.p));
+                    if (this.z) {
+                        RectF rectF = this.y;
+                        int width = (int) (rectF.width() - getBounds().width());
+                        int height = (int) (rectF.height() - getBounds().height());
+                        if (width < 0 || height < 0) {
+                            throw new IllegalStateException("Invalid shadow bounds. Check that the treatments result in a valid path.");
+                        }
+                        Bitmap createBitmap = Bitmap.createBitmap((this.e.o * 2) + ((int) rectF.width()) + width, (this.e.o * 2) + ((int) rectF.height()) + height, Bitmap.Config.ARGB_8888);
+                        Canvas canvas2 = new Canvas(createBitmap);
+                        float f2 = (getBounds().left - this.e.o) - width;
+                        float f3 = (getBounds().top - this.e.o) - height;
+                        canvas2.translate(-f2, -f3);
+                        d(canvas2);
+                        canvas.drawBitmap(createBitmap, f2, f3, (Paint) null);
+                        createBitmap.recycle();
+                        canvas.restore();
+                    } else {
+                        d(canvas);
+                        canvas.restore();
+                    }
+                }
+            }
+            e(canvas, paint, path, this.e.f1058a, this.E, g());
+        } else {
+            paint = paint2;
+        }
+        if (j()) {
+            if (this.j) {
+                v92 v92Var = this.e.f1058a;
+                u92 f4 = v92Var.f();
+                r20 r20Var = v92Var.e;
+                ra1 ra1Var = this.d;
+                f4.e = ra1Var.a(r20Var);
+                f4.f = ra1Var.a(v92Var.f);
+                f4.h = ra1Var.a(v92Var.h);
+                f4.g = ra1Var.a(v92Var.g);
+                this.B = f4.a();
+                float[] fArr2 = this.E;
+                if (fArr2 != null) {
+                    if (this.F == null) {
+                        this.F = new float[fArr2.length];
+                    }
+                    float i4 = i();
+                    int i5 = 0;
+                    while (true) {
+                        float[] fArr3 = this.E;
+                        if (i5 >= fArr3.length) {
+                            break;
+                        }
+                        this.F[i5] = Math.max(0.0f, fArr3[i5] - i4);
+                        i5++;
+                    }
+                } else {
+                    this.F = null;
+                }
+                v92 v92Var2 = this.B;
+                float[] fArr4 = this.F;
+                float f5 = this.e.j;
+                RectF g = g();
+                RectF rectF2 = this.o;
+                rectF2.set(g);
+                float i6 = i();
+                rectF2.inset(i6, i6);
+                this.v.a(v92Var2, fArr4, f5, rectF2, null, this.m);
+                this.j = false;
+            }
+            f(canvas);
+        }
+        paint.setAlpha(alpha);
+        paint3.setAlpha(alpha2);
     }
 
     public final void e(Canvas canvas, Paint paint, Path path, v92 v92Var, float[] fArr, RectF rectF) {
-        float fB = b(rectF, v92Var, fArr);
-        if (fB < 0.0f) {
+        float b = b(rectF, v92Var, fArr);
+        if (b < 0.0f) {
             canvas.drawPath(path, paint);
         } else {
-            float f = fB * this.e.j;
+            float f = b * this.e.j;
             canvas.drawRoundRect(rectF, f, f, paint);
         }
     }
@@ -185,11 +294,11 @@ public class ua1 extends Drawable implements ia2 {
     public void f(Canvas canvas) {
         v92 v92Var = this.B;
         float[] fArr = this.F;
-        RectF rectFG = g();
+        RectF g = g();
         RectF rectF = this.o;
-        rectF.set(rectFG);
-        float fI = i();
-        rectF.inset(fI, fI);
+        rectF.set(g);
+        float i = i();
+        rectF.inset(i, i);
         e(canvas, this.s, this.m, v92Var, fArr, rectF);
     }
 
@@ -218,19 +327,19 @@ public class ua1 extends Drawable implements ia2 {
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
         this.e.getClass();
-        RectF rectFG = g();
-        if (rectFG.isEmpty()) {
+        RectF g = g();
+        if (g.isEmpty()) {
             return;
         }
-        float fB = b(rectFG, this.e.f1059a, this.E);
-        if (fB >= 0.0f) {
-            outline.setRoundRect(getBounds(), fB * this.e.j);
+        float b = b(g, this.e.f1058a, this.E);
+        if (b >= 0.0f) {
+            outline.setRoundRect(getBounds(), b * this.e.j);
             return;
         }
         boolean z = this.i;
         Path path = this.l;
         if (z) {
-            a(rectFG, path);
+            a(g, path);
             this.i = false;
         }
         int i = Build.VERSION.SDK_INT;
@@ -263,9 +372,9 @@ public class ua1 extends Drawable implements ia2 {
         Rect bounds = getBounds();
         Region region = this.p;
         region.set(bounds);
-        RectF rectFG = g();
+        RectF g = g();
         Path path = this.l;
-        a(rectFG, path);
+        a(g, path);
         Region region2 = this.q;
         region2.setPath(path, region);
         region.op(region2, Region.Op.DIFFERENCE);
@@ -277,20 +386,20 @@ public class ua1 extends Drawable implements ia2 {
         if (fArr != null) {
             return (((fArr[3] + fArr[2]) - fArr[1]) - fArr[0]) / 2.0f;
         }
-        RectF rectFG = g();
-        v92 v92Var = this.e.f1059a;
+        RectF g = g();
+        v92 v92Var = this.e.f1058a;
         x92 x92Var = this.v;
         x92Var.getClass();
-        float fA = v92Var.e.a(rectFG);
-        v92 v92Var2 = this.e.f1059a;
+        float a2 = v92Var.e.a(g);
+        v92 v92Var2 = this.e.f1058a;
         x92Var.getClass();
-        float fA2 = v92Var2.h.a(rectFG) + fA;
-        v92 v92Var3 = this.e.f1059a;
+        float a3 = v92Var2.h.a(g) + a2;
+        v92 v92Var3 = this.e.f1058a;
         x92Var.getClass();
-        float fA3 = fA2 - v92Var3.g.a(rectFG);
-        v92 v92Var4 = this.e.f1059a;
+        float a4 = a3 - v92Var3.g.a(g);
+        v92 v92Var4 = this.e.f1058a;
         x92Var.getClass();
-        return (fA3 - v92Var4.f.a(rectFG)) / 2.0f;
+        return (a4 - v92Var4.f.a(g)) / 2.0f;
     }
 
     public final float i() {
@@ -363,12 +472,12 @@ public class ua1 extends Drawable implements ia2 {
             }
             zd2Var2.b = f;
             zd2Var2.c = false;
-            double d = zd2Var.f1434a;
+            double d = zd2Var.f1433a;
             float f2 = (float) (d * d);
             if (f2 <= 0.0f) {
                 throw new IllegalArgumentException("Spring stiffness constant must be positive.");
             }
-            zd2Var2.f1434a = Math.sqrt(f2);
+            zd2Var2.f1433a = Math.sqrt(f2);
             zd2Var2.c = false;
             yd2Var.j = zd2Var2;
             i++;
@@ -451,10 +560,10 @@ public class ua1 extends Drawable implements ia2 {
     }
 
     public final void q(int[] iArr, boolean z) {
-        v92 v92VarA;
+        v92 a2;
         int i;
-        RectF rectFG = g();
-        if (this.e.b == null || rectFG.isEmpty()) {
+        RectF g = g();
+        if (this.e.b == null || g.isEmpty()) {
             return;
         }
         boolean z2 = z | (this.C == null);
@@ -463,7 +572,7 @@ public class ua1 extends Drawable implements ia2 {
         }
         xe2 xe2Var = this.e.b;
         v92[] v92VarArr = xe2Var.d;
-        int i2 = xe2Var.f1334a;
+        int i2 = xe2Var.f1333a;
         int[][] iArr2 = xe2Var.c;
         we2 we2Var = xe2Var.h;
         we2 we2Var2 = xe2Var.g;
@@ -498,34 +607,34 @@ public class ua1 extends Drawable implements ia2 {
             i3 = i;
         }
         if (we2Var4 == null && we2Var3 == null && we2Var2 == null && we2Var == null) {
-            v92VarA = v92VarArr[i3];
+            a2 = v92VarArr[i3];
         } else {
-            u92 u92VarF = v92VarArr[i3].f();
+            u92 f = v92VarArr[i3].f();
             if (we2Var4 != null) {
-                u92VarF.e = we2Var4.c(iArr);
+                f.e = we2Var4.c(iArr);
             }
             if (we2Var3 != null) {
-                u92VarF.f = we2Var3.c(iArr);
+                f.f = we2Var3.c(iArr);
             }
             if (we2Var2 != null) {
-                u92VarF.h = we2Var2.c(iArr);
+                f.h = we2Var2.c(iArr);
             }
             if (we2Var != null) {
-                u92VarF.g = we2Var.c(iArr);
+                f.g = we2Var.c(iArr);
             }
-            v92VarA = u92VarF.a();
+            a2 = f.a();
         }
         int i5 = 0;
         while (i5 < 4) {
             this.v.getClass();
-            float fA = (i5 != 1 ? i5 != 2 ? i5 != 3 ? v92VarA.f : v92VarA.e : v92VarA.h : v92VarA.g).a(rectFG);
+            float a3 = (i5 != 1 ? i5 != 2 ? i5 != 3 ? a2.f : a2.e : a2.h : a2.g).a(g);
             if (z2) {
-                this.E[i5] = fA;
+                this.E[i5] = a3;
             }
             yd2[] yd2VarArr = this.D;
             yd2 yd2Var = yd2VarArr[i5];
             if (yd2Var != null) {
-                yd2Var.a(fA);
+                yd2Var.a(a3);
                 if (z2) {
                     yd2VarArr[i5].d();
                 }
@@ -546,8 +655,8 @@ public class ua1 extends Drawable implements ia2 {
         PorterDuff.Mode mode = sa1Var.g;
         if (colorStateList == null || mode == null) {
             int color = this.r.getColor();
-            int iC = c(color);
-            porterDuffColorFilter = iC != color ? new PorterDuffColorFilter(iC, PorterDuff.Mode.SRC_IN) : null;
+            int c = c(color);
+            porterDuffColorFilter = c != color ? new PorterDuffColorFilter(c, PorterDuff.Mode.SRC_IN) : null;
         } else {
             porterDuffColorFilter = new PorterDuffColorFilter(c(colorStateList.getColorForState(getState(), 0)), mode);
         }
@@ -585,7 +694,7 @@ public class ua1 extends Drawable implements ia2 {
     @Override // androidx.emoji2.text.ia2
     public final void setShapeAppearanceModel(v92 v92Var) {
         sa1 sa1Var = this.e;
-        sa1Var.f1059a = v92Var;
+        sa1Var.f1058a = v92Var;
         sa1Var.b = null;
         this.E = null;
         this.F = null;
@@ -637,7 +746,7 @@ public class ua1 extends Drawable implements ia2 {
         this.s = paint2;
         this.t = new r92();
         if (Looper.getMainLooper().getThread() == Thread.currentThread()) {
-            x92Var = w92.f1268a;
+            x92Var = w92.f1267a;
         } else {
             x92Var = new x92();
         }

@@ -15,7 +15,7 @@ import androidx.emoji2.text.q10;
 public class SwipeDismissBehavior<V extends View> extends q10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public is2 f1468a;
+    public is2 f1467a;
     public boolean b;
     public boolean c;
     public int d = 2;
@@ -25,19 +25,19 @@ public class SwipeDismissBehavior<V extends View> extends q10 {
 
     @Override // androidx.emoji2.text.q10
     public boolean f(CoordinatorLayout coordinatorLayout, View view, MotionEvent motionEvent) {
-        boolean zO = this.b;
+        boolean z = this.b;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 0) {
-            zO = coordinatorLayout.o(view, (int) motionEvent.getX(), (int) motionEvent.getY());
-            this.b = zO;
+            z = coordinatorLayout.o(view, (int) motionEvent.getX(), (int) motionEvent.getY());
+            this.b = z;
         } else if (actionMasked == 1 || actionMasked == 3) {
             this.b = false;
         }
-        if (zO) {
-            if (this.f1468a == null) {
-                this.f1468a = new is2(coordinatorLayout.getContext(), coordinatorLayout, this.g);
+        if (z) {
+            if (this.f1467a == null) {
+                this.f1467a = new is2(coordinatorLayout.getContext(), coordinatorLayout, this.g);
             }
-            if (!this.c && this.f1468a.p(motionEvent)) {
+            if (!this.c && this.f1467a.p(motionEvent)) {
                 return true;
             }
         }
@@ -59,13 +59,13 @@ public class SwipeDismissBehavior<V extends View> extends q10 {
 
     @Override // androidx.emoji2.text.q10
     public final boolean q(View view, MotionEvent motionEvent) {
-        if (this.f1468a == null) {
+        if (this.f1467a == null) {
             return false;
         }
         if (this.c && motionEvent.getActionMasked() == 3) {
             return true;
         }
-        this.f1468a.j(motionEvent);
+        this.f1467a.j(motionEvent);
         return true;
     }
 

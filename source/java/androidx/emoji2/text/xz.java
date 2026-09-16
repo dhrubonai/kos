@@ -35,99 +35,99 @@ public abstract class xz {
 
     public static final long d(long j, long j2) {
         int i = (int) (j2 >> 32);
-        int iJ = vz.j(j);
-        int iH = vz.h(j);
-        if (i < iJ) {
-            i = iJ;
+        int j3 = vz.j(j);
+        int h = vz.h(j);
+        if (i < j3) {
+            i = j3;
         }
-        if (i <= iH) {
-            iH = i;
+        if (i <= h) {
+            h = i;
         }
         int i2 = (int) (j2 & 4294967295L);
         int i3 = vz.i(j);
-        int iG = vz.g(j);
+        int g = vz.g(j);
         if (i2 < i3) {
             i2 = i3;
         }
-        if (i2 <= iG) {
-            iG = i2;
+        if (i2 <= g) {
+            g = i2;
         }
-        return (iH << 32) | (iG & 4294967295L);
+        return (h << 32) | (g & 4294967295L);
     }
 
     public static final long e(long j, long j2) {
-        int iJ = vz.j(j);
-        int iH = vz.h(j);
+        int j3 = vz.j(j);
+        int h = vz.h(j);
         int i = vz.i(j);
-        int iG = vz.g(j);
-        int iJ2 = vz.j(j2);
-        if (iJ2 < iJ) {
-            iJ2 = iJ;
+        int g = vz.g(j);
+        int j4 = vz.j(j2);
+        if (j4 < j3) {
+            j4 = j3;
         }
-        if (iJ2 > iH) {
-            iJ2 = iH;
+        if (j4 > h) {
+            j4 = h;
         }
-        int iH2 = vz.h(j2);
-        if (iH2 >= iJ) {
-            iJ = iH2;
+        int h2 = vz.h(j2);
+        if (h2 >= j3) {
+            j3 = h2;
         }
-        if (iJ <= iH) {
-            iH = iJ;
+        if (j3 <= h) {
+            h = j3;
         }
         int i2 = vz.i(j2);
         if (i2 < i) {
             i2 = i;
         }
-        if (i2 > iG) {
-            i2 = iG;
+        if (i2 > g) {
+            i2 = g;
         }
-        int iG2 = vz.g(j2);
-        if (iG2 >= i) {
-            i = iG2;
+        int g2 = vz.g(j2);
+        if (g2 >= i) {
+            i = g2;
         }
-        if (i <= iG) {
-            iG = i;
+        if (i <= g) {
+            g = i;
         }
-        return a(iJ2, iH, i2, iG);
+        return a(j4, h, i2, g);
     }
 
     public static final int f(int i, long j) {
         int i2 = vz.i(j);
-        int iG = vz.g(j);
+        int g = vz.g(j);
         if (i < i2) {
             i = i2;
         }
-        return i > iG ? iG : i;
+        return i > g ? g : i;
     }
 
     public static final int g(int i, long j) {
-        int iJ = vz.j(j);
-        int iH = vz.h(j);
-        if (i < iJ) {
-            i = iJ;
+        int j2 = vz.j(j);
+        int h = vz.h(j);
+        if (i < j2) {
+            i = j2;
         }
-        return i > iH ? iH : i;
+        return i > h ? h : i;
     }
 
     public static final long h(int i, int i2, int i3, int i4) {
         int i5 = i4 == Integer.MAX_VALUE ? i3 : i4;
-        int iC = c(i5);
+        int c = c(i5);
         int i6 = i2 == Integer.MAX_VALUE ? i : i2;
-        int iC2 = c(i6);
-        if (iC + iC2 > 31) {
+        int c2 = c(i6);
+        if (c + c2 > 31) {
             k(i6, i5);
         }
         int i7 = i2 + 1;
         int i8 = i4 + 1;
-        int i9 = iC2 - 13;
-        return ((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (iC2 + 2)) | ((i8 & (~(i8 >> 31))) << (iC2 + 33));
+        int i9 = c2 - 13;
+        return ((i7 & (~(i7 >> 31))) << 33) | ((i9 >> 1) + (i9 & 1)) | (i << 2) | (i3 << (c2 + 2)) | ((i8 & (~(i8 >> 31))) << (c2 + 33));
     }
 
     public static final boolean i(long j, long j2) {
-        int iJ = vz.j(j);
-        int iH = vz.h(j);
+        int j3 = vz.j(j);
+        int h = vz.h(j);
         int i = (int) (j2 >> 32);
-        if (iJ > i || i > iH) {
+        if (j3 > i || i > h) {
             return false;
         }
         int i2 = (int) (j2 & 4294967295L);
@@ -135,20 +135,20 @@ public abstract class xz {
     }
 
     public static final long j(int i, int i2, long j) {
-        int iJ = vz.j(j) + i;
-        if (iJ < 0) {
-            iJ = 0;
+        int j2 = vz.j(j) + i;
+        if (j2 < 0) {
+            j2 = 0;
         }
-        int iH = vz.h(j);
-        if (iH != Integer.MAX_VALUE && (iH = iH + i) < 0) {
-            iH = 0;
+        int h = vz.h(j);
+        if (h != Integer.MAX_VALUE && (h = h + i) < 0) {
+            h = 0;
         }
         int i3 = vz.i(j) + i2;
         if (i3 < 0) {
             i3 = 0;
         }
-        int iG = vz.g(j);
-        return a(iJ, iH, i3, (iG == Integer.MAX_VALUE || (iG = iG + i2) >= 0) ? iG : 0);
+        int g = vz.g(j);
+        return a(j2, h, i3, (g == Integer.MAX_VALUE || (g = g + i2) >= 0) ? g : 0);
     }
 
     public static final void k(int i, int i2) {

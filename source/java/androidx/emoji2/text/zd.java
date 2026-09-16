@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public abstract /* synthetic */ class zd {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int[] f1431a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48};
+    public static final /* synthetic */ int[] f1430a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48};
 
     public static float a(float f, float f2, float f3, float f4) {
         return ((f - f2) * f3) + f4;
@@ -130,8 +130,8 @@ public abstract /* synthetic */ class zd {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static /* synthetic */ void u(FileLock fileLock) throws Exception {
-        boolean zIsTerminated;
+    public static /* synthetic */ void u(FileLock fileLock) {
+        boolean isTerminated;
         if (fileLock instanceof AutoCloseable) {
             fileLock.close();
             return;
@@ -140,14 +140,14 @@ public abstract /* synthetic */ class zd {
             throw new IllegalArgumentException();
         }
         ExecutorService executorService = (ExecutorService) fileLock;
-        if (executorService == ForkJoinPool.commonPool() || (zIsTerminated = executorService.isTerminated())) {
+        if (executorService == ForkJoinPool.commonPool() || (isTerminated = executorService.isTerminated())) {
             return;
         }
         executorService.shutdown();
         boolean z = false;
-        while (!zIsTerminated) {
+        while (!isTerminated) {
             try {
-                zIsTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
+                isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
             } catch (InterruptedException unused) {
                 if (!z) {
                     executorService.shutdownNow();
@@ -170,15 +170,15 @@ public abstract /* synthetic */ class zd {
                 return "TOP";
             case 4:
                 return "RIGHT";
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return "BOTTOM";
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return "BASELINE";
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return "CENTER";
             case 8:
                 return "CENTER_X";
-            case 9:
+            case pz0.b /* 9 */:
                 return "CENTER_Y";
             default:
                 throw null;
@@ -194,7 +194,7 @@ public abstract /* synthetic */ class zd {
 
     public static /* synthetic */ int[] x(int i) {
         int[] iArr = new int[i];
-        System.arraycopy(f1431a, 0, iArr, 0, i);
+        System.arraycopy(f1430a, 0, iArr, 0, i);
         return iArr;
     }
 }

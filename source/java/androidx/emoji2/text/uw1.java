@@ -2,9 +2,11 @@ package androidx.emoji2.text;
 
 import android.util.Log;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.jvm.functions.Function2;
@@ -16,7 +18,7 @@ public final class uw1 extends xx {
     public static final AtomicReference y = new AtomicReference(Boolean.FALSE);
 
     /* renamed from: a, reason: collision with root package name */
-    public final nn f1197a;
+    public final nn f1196a;
     public final Object b;
     public cy0 c;
     public Throwable d;
@@ -42,7 +44,7 @@ public final class uw1 extends xx {
 
     public uw1(v20 v20Var) {
         nn nnVar = new nn(new t2(9, this));
-        this.f1197a = nnVar;
+        this.f1196a = nnVar;
         this.b = new Object();
         this.e = new ArrayList();
         this.g = new hf1();
@@ -83,7 +85,7 @@ public final class uw1 extends xx {
         }
     }
 
-    public final void A(Throwable th, dy dyVar) throws Throwable {
+    public final void A(Throwable th, dy dyVar) {
         if (!((Boolean) y.get()).booleanValue() || (th instanceof ax)) {
             synchronized (this.b) {
                 gz0 gz0Var = this.r;
@@ -123,13 +125,13 @@ public final class uw1 extends xx {
                 }
                 return z;
             }
-            List listW = w();
+            List w = w();
             g42 g42Var = new g42(this.g);
             this.g = new hf1();
             try {
-                int size = listW.size();
+                int size = w.size();
                 for (int i = 0; i < size; i++) {
-                    ((dy) listW.get(i)).x(g42Var);
+                    ((dy) w.get(i)).x(g42Var);
                     if (((qw1) this.t.getValue()).compareTo(qw1.e) <= 0) {
                         break;
                     }
@@ -172,26 +174,26 @@ public final class uw1 extends xx {
     }
 
     @Override // androidx.emoji2.text.xx
-    public final void a(dy dyVar, Function2 function2) throws Throwable {
+    public final void a(dy dyVar, Function2 function2) {
         qw1 qw1Var;
-        boolean zContains;
-        lf1 lf1VarC;
+        boolean contains;
+        lf1 C;
         boolean z = dyVar.w.F;
         synchronized (this.b) {
             qw1 qw1Var2 = (qw1) this.t.getValue();
             qw1Var = qw1.e;
-            zContains = qw1Var2.compareTo(qw1Var) > 0 ? true ^ w().contains(dyVar) : true;
+            contains = qw1Var2.compareTo(qw1Var) > 0 ? true ^ w().contains(dyVar) : true;
         }
         try {
             v vVar = new v(6, dyVar);
             ak akVar = new ak(5, dyVar, null);
-            ec2 ec2VarK = kc2.k();
-            lf1 lf1Var = ec2VarK instanceof lf1 ? (lf1) ec2VarK : null;
-            if (lf1Var == null || (lf1VarC = lf1Var.C(vVar, akVar)) == null) {
+            ec2 k = kc2.k();
+            lf1 lf1Var = k instanceof lf1 ? (lf1) k : null;
+            if (lf1Var == null || (C = lf1Var.C(vVar, akVar)) == null) {
                 throw new IllegalStateException("Cannot create a mutable snapshot of an read-only snapshot");
             }
             try {
-                ec2 ec2VarJ = lf1VarC.j();
+                ec2 j = C.j();
                 try {
                     dyVar.j(function2);
                     synchronized (this.b) {
@@ -225,13 +227,13 @@ public final class uw1 extends xx {
                         A(th2, dyVar);
                     }
                 } finally {
-                    ec2.q(ec2VarJ);
+                    ec2.q(j);
                 }
             } finally {
-                r(lf1VarC);
+                r(C);
             }
         } catch (Throwable th3) {
-            if (zContains) {
+            if (contains) {
                 synchronized (this.b) {
                 }
             }
@@ -271,17 +273,17 @@ public final class uw1 extends xx {
 
     @Override // androidx.emoji2.text.xx
     public final void j(dy dyVar) {
-        gp gpVarT;
+        gp gpVar;
         synchronized (this.b) {
             if (this.h.h(dyVar)) {
-                gpVarT = null;
+                gpVar = null;
             } else {
                 this.h.b(dyVar);
-                gpVarT = t();
+                gpVar = t();
             }
         }
-        if (gpVarT != null) {
-            ((ip) gpVarT).g(up2.f1187a);
+        if (gpVar != null) {
+            ((ip) gpVar).g(up2.f1186a);
         }
     }
 
@@ -335,11 +337,11 @@ public final class uw1 extends xx {
 
     public final gp t() {
         te2 te2Var = this.t;
-        int iCompareTo = ((qw1) te2Var.getValue()).compareTo(qw1.e);
+        int compareTo = ((qw1) te2Var.getValue()).compareTo(qw1.e);
         ArrayList arrayList = this.j;
         ArrayList arrayList2 = this.i;
         sf1 sf1Var = this.h;
-        if (iCompareTo <= 0) {
+        if (compareTo <= 0) {
             for (dy dyVar : w()) {
             }
             this.e.clear();
@@ -382,46 +384,17 @@ public final class uw1 extends xx {
     }
 
     public final boolean u() {
-        return !this.s && (this.f1197a.g.get() & 134217727) > 0;
+        return !this.s && (this.f1196a.g.get() & 134217727) > 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x001d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public final boolean v() {
-        /*
-            r2 = this;
-            java.lang.Object r0 = r2.b
-            monitor-enter(r0)
-            androidx.emoji2.text.hf1 r1 = r2.g     // Catch: java.lang.Throwable -> L1b
-            boolean r1 = r1.h()     // Catch: java.lang.Throwable -> L1b
-            if (r1 != 0) goto L1d
-            androidx.emoji2.text.sf1 r1 = r2.h     // Catch: java.lang.Throwable -> L1b
-            int r1 = r1.f     // Catch: java.lang.Throwable -> L1b
-            if (r1 == 0) goto L12
-            goto L1d
-        L12:
-            boolean r1 = r2.u()     // Catch: java.lang.Throwable -> L1b
-            if (r1 == 0) goto L19
-            goto L1d
-        L19:
-            r1 = 0
-            goto L1e
-        L1b:
-            r1 = move-exception
-            goto L20
-        L1d:
-            r1 = 1
-        L1e:
-            monitor-exit(r0)
-            return r1
-        L20:
-            monitor-exit(r0)
-            throw r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.uw1.v():boolean");
+        boolean z;
+        synchronized (this.b) {
+            if (!this.g.h() && this.h.f == 0) {
+                z = u();
+            }
+        }
+        return z;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, java.util.List] */
@@ -436,109 +409,202 @@ public final class uw1 extends xx {
         return arrayList2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x0139, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0139, code lost:
     
         r3 = r10.size();
         r4 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x013e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x013e, code lost:
     
-        if (r4 >= r3) goto L117;
+        if (r4 >= r3) goto L118;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:55:0x0148, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0148, code lost:
     
-        if (((androidx.emoji2.text.hn1) r10.get(r4)).e == null) goto L118;
+        if (((androidx.emoji2.text.hn1) r10.get(r4)).e == null) goto L117;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:56:0x014a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x014a, code lost:
     
         r4 = r4 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x014d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x014d, code lost:
     
         r3 = new java.util.ArrayList(r10.size());
         r4 = r10.size();
         r8 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x015b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x015b, code lost:
     
         if (r8 >= r4) goto L119;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x015d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x015d, code lost:
     
         r11 = (androidx.emoji2.text.hn1) r10.get(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:0x0165, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0165, code lost:
     
         if (r11.e != null) goto L120;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x0167, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x0167, code lost:
     
         r11 = (androidx.emoji2.text.ge1) r11.d;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x016e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x016e, code lost:
     
         r8 = r8 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0171, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x0171, code lost:
     
         r4 = r17.b;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0173, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0173, code lost:
     
         monitor-enter(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0174, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0174, code lost:
     
         androidx.emoji2.text.ct.u0(r3, r17.j);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0179, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0179, code lost:
     
         monitor-exit(r4);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x017a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x017a, code lost:
     
         r3 = new java.util.ArrayList(r10.size());
         r4 = r10.size();
         r8 = 0;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:70:0x0188, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x0188, code lost:
     
         if (r8 >= r4) goto L122;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x018a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x018a, code lost:
     
         r11 = r10.get(r8);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0193, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x0193, code lost:
     
         if (((androidx.emoji2.text.hn1) r11).e == null) goto L124;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0195, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x0195, code lost:
     
         r3.add(r11);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0198, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0198, code lost:
     
         r8 = r8 + 1;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x019b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x019b, code lost:
     
         r10 = r3;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.util.List y(java.util.List r18, androidx.emoji2.text.hf1 r19) {
-        /*
-            Method dump skipped, instructions count: 458
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.uw1.y(java.util.List, androidx.emoji2.text.hf1):java.util.List");
+    public final List y(List list, hf1 hf1Var) {
+        lf1 C;
+        ArrayList arrayList;
+        HashMap hashMap = new HashMap(list.size());
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            Object obj = list.get(i);
+            ((ge1) obj).getClass();
+            Object obj2 = hashMap.get(null);
+            if (obj2 == null) {
+                obj2 = new ArrayList();
+                hashMap.put(null, obj2);
+            }
+            ((ArrayList) obj2).add(obj);
+        }
+        for (Map.Entry entry : hashMap.entrySet()) {
+            dy dyVar = (dy) entry.getKey();
+            List list2 = (List) entry.getValue();
+            if (dyVar.w.F) {
+                vx.c("Check failed");
+            }
+            v vVar = new v(6, dyVar);
+            ak akVar = new ak(5, dyVar, hf1Var);
+            ec2 k = kc2.k();
+            lf1 lf1Var = k instanceof lf1 ? (lf1) k : null;
+            if (lf1Var == null || (C = lf1Var.C(vVar, akVar)) == null) {
+                throw new IllegalStateException("Cannot create a mutable snapshot of an read-only snapshot");
+            }
+            try {
+                ec2 j = C.j();
+                try {
+                    synchronized (this.b) {
+                        try {
+                            arrayList = new ArrayList(list2.size());
+                            int size2 = list2.size();
+                            for (int i2 = 0; i2 < size2; i2++) {
+                                ge1 ge1Var = (ge1) list2.get(i2);
+                                gf1 gf1Var = this.k;
+                                ge1Var.getClass();
+                                Object a2 = le1.a(gf1Var);
+                                arrayList.add(new hn1(ge1Var, a2));
+                            }
+                            int size3 = arrayList.size();
+                            int i3 = 0;
+                            while (true) {
+                                if (i3 >= size3) {
+                                    break;
+                                }
+                                hn1 hn1Var = (hn1) arrayList.get(i3);
+                                if (hn1Var.e == null) {
+                                    l6 l6Var = this.l;
+                                    ((ge1) hn1Var.d).getClass();
+                                    if (((gf1) l6Var.e).b(null)) {
+                                        ArrayList arrayList2 = new ArrayList(ys.r0(arrayList));
+                                        int size4 = arrayList.size();
+                                        int i4 = 0;
+                                        while (i4 < size4) {
+                                            Object obj3 = arrayList.get(i4);
+                                            i4++;
+                                            hn1 hn1Var2 = (hn1) obj3;
+                                            if (hn1Var2.e == null) {
+                                                l6 l6Var2 = this.l;
+                                                ((ge1) hn1Var2.d).getClass();
+                                                gf1 gf1Var2 = (gf1) l6Var2.e;
+                                                if (gf1Var2.i()) {
+                                                    ((gf1) l6Var2.f).a();
+                                                }
+                                            }
+                                            arrayList2.add(hn1Var2);
+                                        }
+                                        arrayList = arrayList2;
+                                    }
+                                }
+                                i3++;
+                            }
+                        } finally {
+                        }
+                    }
+                    int size5 = arrayList.size();
+                    int i5 = 0;
+                    while (true) {
+                        if (i5 >= size5) {
+                            break;
+                        }
+                        if (((hn1) arrayList.get(i5)).e != null) {
+                            break;
+                        }
+                        i5++;
+                    }
+                    dyVar.q(arrayList);
+                    ec2.q(j);
+                } catch (Throwable th) {
+                    ec2.q(j);
+                    throw th;
+                }
+            } finally {
+                r(C);
+            }
+        }
+        return ws.N0(hashMap.keySet());
     }
 
     public final dy z(dy dyVar, hf1 hf1Var) {
-        lf1 lf1VarC;
+        lf1 C;
         if (dyVar.w.F || dyVar.x == 3) {
             return null;
         }
@@ -546,13 +612,13 @@ public final class uw1 extends xx {
         if (linkedHashSet == null || !linkedHashSet.contains(dyVar)) {
             v vVar = new v(6, dyVar);
             ak akVar = new ak(5, dyVar, hf1Var);
-            ec2 ec2VarK = kc2.k();
-            lf1 lf1Var = ec2VarK instanceof lf1 ? (lf1) ec2VarK : null;
-            if (lf1Var == null || (lf1VarC = lf1Var.C(vVar, akVar)) == null) {
+            ec2 k = kc2.k();
+            lf1 lf1Var = k instanceof lf1 ? (lf1) k : null;
+            if (lf1Var == null || (C = lf1Var.C(vVar, akVar)) == null) {
                 throw new IllegalStateException("Cannot create a mutable snapshot of an read-only snapshot");
             }
             try {
-                ec2 ec2VarJ = lf1VarC.j();
+                ec2 j = C.j();
                 if (hf1Var != null) {
                     try {
                         if (hf1Var.h()) {
@@ -571,17 +637,17 @@ public final class uw1 extends xx {
                             }
                         }
                     } catch (Throwable th2) {
-                        ec2.q(ec2VarJ);
+                        ec2.q(j);
                         throw th2;
                     }
                 }
-                boolean zW = dyVar.w();
-                ec2.q(ec2VarJ);
-                if (zW) {
+                boolean w = dyVar.w();
+                ec2.q(j);
+                if (w) {
                     return dyVar;
                 }
             } finally {
-                r(lf1VarC);
+                r(C);
             }
         }
         return null;

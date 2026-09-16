@@ -124,17 +124,17 @@ public interface IBActivityThread extends IInterface {
 
             @Override // com.kos.engine.core.IBActivityThread
             public IBinder acquireContentProviderClient(ProviderInfo providerInfo) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-15346477186850L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, providerInfo, 0);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readStrongBinder();
+                    obtain.writeInterfaceToken(c.a(-15346477186850L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, providerInfo, 0);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readStrongBinder();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -145,45 +145,45 @@ public interface IBActivityThread extends IInterface {
 
             @Override // com.kos.engine.core.IBActivityThread
             public void bindApplication() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-14496073662242L, xa1.b));
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-14496073662242L, xa1.b));
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public void finishActivity(IBinder iBinder) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-13624195301154L, xa1.b));
-                    parcelObtain.writeStrongBinder(iBinder);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-13624195301154L, xa1.b));
+                    obtain.writeStrongBinder(iBinder);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public IBinder getActivityThread() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-14302800133922L, xa1.b));
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readStrongBinder();
+                    obtain.writeInterfaceToken(c.a(-14302800133922L, xa1.b));
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readStrongBinder();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -193,78 +193,78 @@ public interface IBActivityThread extends IInterface {
 
             @Override // com.kos.engine.core.IBActivityThread
             public void handleNewIntent(IBinder iBinder, Intent intent) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-13198993538850L, xa1.b));
-                    parcelObtain.writeStrongBinder(iBinder);
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-13198993538850L, xa1.b));
+                    obtain.writeStrongBinder(iBinder);
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public IBinder peekService(Intent intent) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-14972815032098L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readStrongBinder();
+                    obtain.writeInterfaceToken(c.a(-14972815032098L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readStrongBinder();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public void restartJobService(String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-15153203658530L, xa1.b));
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-15153203658530L, xa1.b));
+                    obtain.writeString(str);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public void scheduleReceiver(ReceiverData receiverData) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-13375087197986L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, receiverData, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_scheduleReceiver, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-13375087197986L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, receiverData, 0);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.IBActivityThread
             public void stopService(Intent intent) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-15097369083682L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-15097369083682L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -277,18 +277,18 @@ public interface IBActivityThread extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-14225490722594L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBActivityThread)) ? new Proxy(iBinder) : (IBActivityThread) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-14225490722594L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBActivityThread)) ? new Proxy(iBinder) : (IBActivityThread) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-13869008437026L, xa1.b);
+            String a2 = c.a(-13869008437026L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
@@ -306,14 +306,14 @@ public interface IBActivityThread extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 4:
-                    IBinder iBinderAcquireContentProviderClient = acquireContentProviderClient((ProviderInfo) _Parcel.readTypedObject(parcel, ProviderInfo.CREATOR));
+                    IBinder acquireContentProviderClient = acquireContentProviderClient((ProviderInfo) _Parcel.readTypedObject(parcel, ProviderInfo.CREATOR));
                     parcel2.writeNoException();
-                    parcel2.writeStrongBinder(iBinderAcquireContentProviderClient);
+                    parcel2.writeStrongBinder(acquireContentProviderClient);
                     return true;
                 case 5:
-                    IBinder iBinderPeekService = peekService((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR));
+                    IBinder peekService = peekService((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR));
                     parcel2.writeNoException();
-                    parcel2.writeStrongBinder(iBinderPeekService);
+                    parcel2.writeStrongBinder(peekService);
                     return true;
                 case 6:
                     stopService((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR));
@@ -327,7 +327,7 @@ public interface IBActivityThread extends IInterface {
                     handleNewIntent(parcel.readStrongBinder(), (Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR));
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_scheduleReceiver /* 9 */:
+                case 9:
                     scheduleReceiver((ReceiverData) _Parcel.readTypedObject(parcel, ReceiverData.CREATOR));
                     parcel2.writeNoException();
                     return true;

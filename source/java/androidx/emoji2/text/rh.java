@@ -62,12 +62,12 @@ public final class rh implements Set {
     @Override // java.util.Set, java.util.Collection
     public final int hashCode() {
         uh uhVar = this.d;
-        int iHashCode = 0;
-        for (int i = uhVar.f - 1; i >= 0; i--) {
-            Object objF = uhVar.f(i);
-            iHashCode += objF == null ? 0 : objF.hashCode();
+        int i = 0;
+        for (int i2 = uhVar.f - 1; i2 >= 0; i2--) {
+            Object f = uhVar.f(i2);
+            i += f == null ? 0 : f.hashCode();
         }
-        return iHashCode;
+        return i;
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -83,11 +83,11 @@ public final class rh implements Set {
     @Override // java.util.Set, java.util.Collection
     public final boolean remove(Object obj) {
         uh uhVar = this.d;
-        int iD = uhVar.d(obj);
-        if (iD < 0) {
+        int d = uhVar.d(obj);
+        if (d < 0) {
             return false;
         }
-        uhVar.g(iD);
+        uhVar.g(d);
         return true;
     }
 

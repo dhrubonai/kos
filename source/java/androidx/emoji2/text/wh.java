@@ -62,20 +62,20 @@ public final class wh implements Collection, Set, sy0, vy0 {
     @Override // java.util.Collection, java.util.Set
     public final boolean add(Object obj) {
         int i;
-        int iD;
+        int D;
         int i2 = this.f;
         if (obj == null) {
-            iD = kx0.D(this, null, 0);
+            D = kx0.D(this, null, 0);
             i = 0;
         } else {
-            int iHashCode = obj.hashCode();
-            i = iHashCode;
-            iD = kx0.D(this, obj, iHashCode);
+            int hashCode = obj.hashCode();
+            i = hashCode;
+            D = kx0.D(this, obj, hashCode);
         }
-        if (iD >= 0) {
+        if (D >= 0) {
             return false;
         }
-        int i3 = ~iD;
+        int i3 = ~D;
         int[] iArr = this.d;
         if (i2 >= iArr.length) {
             int i4 = 8;
@@ -122,7 +122,7 @@ public final class wh implements Collection, Set, sy0, vy0 {
         int size = collection.size() + this.f;
         int i = this.f;
         int[] iArr = this.d;
-        boolean zAdd = false;
+        boolean z = false;
         if (iArr.length < size) {
             Object[] objArr = this.e;
             int[] iArr2 = new int[size];
@@ -138,9 +138,9 @@ public final class wh implements Collection, Set, sy0, vy0 {
         }
         Iterator it = collection.iterator();
         while (it.hasNext()) {
-            zAdd |= add(it.next());
+            z |= add(it.next());
         }
-        return zAdd;
+        return z;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -216,11 +216,11 @@ public final class wh implements Collection, Set, sy0, vy0 {
 
     @Override // java.util.Collection, java.util.Set
     public final boolean remove(Object obj) {
-        int iD = obj == null ? kx0.D(this, null, 0) : kx0.D(this, obj, obj.hashCode());
-        if (iD < 0) {
+        int D = obj == null ? kx0.D(this, null, 0) : kx0.D(this, obj, obj.hashCode());
+        if (D < 0) {
             return false;
         }
-        a(iD);
+        a(D);
         return true;
     }
 
@@ -228,11 +228,11 @@ public final class wh implements Collection, Set, sy0, vy0 {
     public final boolean removeAll(Collection collection) {
         lx0.x(collection, "elements");
         Iterator it = collection.iterator();
-        boolean zRemove = false;
+        boolean z = false;
         while (it.hasNext()) {
-            zRemove |= remove(it.next());
+            z |= remove(it.next());
         }
-        return zRemove;
+        return z;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -277,9 +277,9 @@ public final class wh implements Collection, Set, sy0, vy0 {
             }
         }
         sb.append('}');
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     @Override // java.util.Collection, java.util.Set

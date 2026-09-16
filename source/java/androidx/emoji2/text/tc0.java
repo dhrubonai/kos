@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class tc0 implements z31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final tc0 f1114a = new tc0();
+    public static final tc0 f1113a = new tc0();
 
     @Override // androidx.emoji2.text.z31
     public final void a() {

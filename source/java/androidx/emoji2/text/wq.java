@@ -7,16 +7,16 @@ import android.graphics.PathMeasure;
 public final class wq {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wa f1295a;
+    public final wa f1294a;
     public final xa b;
     public final wa c;
 
     public wq() {
-        wa waVarA = ya.a();
+        wa a2 = ya.a();
         xa xaVar = new xa(new PathMeasure());
-        wa waVarA2 = ya.a();
-        this.f1295a = waVarA;
+        wa a3 = ya.a();
+        this.f1294a = a2;
         this.b = xaVar;
-        this.c = waVarA2;
+        this.c = a3;
     }
 }

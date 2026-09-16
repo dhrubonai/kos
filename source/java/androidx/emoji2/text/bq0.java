@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class bq0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f163a;
+    public final long f162a;
 
     public final boolean equals(Object obj) {
         if (obj instanceof bq0) {
-            return this.f163a == ((bq0) obj).f163a;
+            return this.f162a == ((bq0) obj).f162a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f163a);
+        return Long.hashCode(this.f162a);
     }
 
     public final String toString() {
-        return "GridItemSpan(packedValue=" + this.f163a + ')';
+        return "GridItemSpan(packedValue=" + this.f162a + ')';
     }
 }

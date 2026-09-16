@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class zi {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1440a;
+    public int f1439a;
     public int b;
     public float c;
     public float d;
@@ -21,7 +21,7 @@ public final class zi {
         }
         long j2 = this.g;
         if (j2 < 0 || j < j2) {
-            return l71.b((j - r0) / this.f1440a, 0.0f, 1.0f) * 0.5f;
+            return l71.b((j - r0) / this.f1439a, 0.0f, 1.0f) * 0.5f;
         }
         float f = this.h;
         return (l71.b((j - j2) / this.i, 0.0f, 1.0f) * f) + (1.0f - f);

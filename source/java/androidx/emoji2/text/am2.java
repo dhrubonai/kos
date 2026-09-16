@@ -34,7 +34,7 @@ public final class am2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((am2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((am2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -56,13 +56,13 @@ public final class am2 extends hh2 implements Function2 {
                             return f30Var;
                         }
                     }
-                    return up2.f1187a;
+                    return up2.f1186a;
                 }
                 if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 mz0.L(obj);
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
@@ -70,7 +70,7 @@ public final class am2 extends hh2 implements Function2 {
                     bm2 bm2Var2 = this.j;
                     ed edVar2 = bm2Var2.u;
                     if (edVar2 == null) {
-                        return up2.f1187a;
+                        return up2.f1186a;
                     }
                     Float f2 = new Float(this.k);
                     he heVar2 = bm2Var2.t ? androidx.compose.material3.a.f : androidx.compose.material3.a.g;
@@ -86,7 +86,7 @@ public final class am2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

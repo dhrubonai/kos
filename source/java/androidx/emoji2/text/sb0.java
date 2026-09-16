@@ -23,26 +23,27 @@ public final class sb0 extends l8 implements tb0 {
         if (f == 0.0f) {
             return edgeEffect.draw(canvas);
         }
-        int iSave = canvas.save();
+        int save = canvas.save();
         canvas.rotate(f);
-        boolean zDraw = edgeEffect.draw(canvas);
-        canvas.restoreToCount(iSave);
-        return zDraw;
+        boolean draw = edgeEffect.draw(canvas);
+        canvas.restoreToCount(save);
+        return draw;
     }
 
     public static boolean t0(float f, long j, EdgeEffect edgeEffect, Canvas canvas) {
-        int iSave = canvas.save();
+        int save = canvas.save();
         canvas.rotate(f);
         canvas.translate(zi1.d(j), zi1.e(j));
-        boolean zDraw = edgeEffect.draw(canvas);
-        canvas.restoreToCount(iSave);
-        return zDraw;
+        boolean draw = edgeEffect.draw(canvas);
+        canvas.restoreToCount(save);
+        return draw;
     }
 
     @Override // androidx.emoji2.text.tb0
     public final void g(g11 g11Var) {
+        RecordingCanvas beginRecording;
         float f;
-        boolean zS0;
+        boolean z;
         float f2;
         float f3;
         float f4;
@@ -50,239 +51,239 @@ public final class sb0 extends l8 implements tb0 {
             case 0:
                 em1 em1Var = ((pl1) this.q).b;
                 np npVar = g11Var.d;
-                long jI = npVar.i();
+                long i = npVar.i();
                 t9 t9Var = this.o;
-                t9Var.l(jI);
+                t9Var.l(i);
                 if (ib2.e(npVar.i())) {
                     g11Var.b();
                     return;
                 }
                 g11Var.b();
                 t9Var.f.getValue();
-                Canvas canvasA = x6.a(npVar.e.D());
+                Canvas a2 = x6.a(npVar.e.D());
                 cd0 cd0Var = this.p;
-                boolean zT0 = cd0.f(cd0Var.f) ? t0(270.0f, jz0.d(-ib2.b(npVar.i()), g11Var.c0(em1Var.b(g11Var.getLayoutDirection()))), cd0Var.c(), canvasA) : false;
+                boolean t0 = cd0.f(cd0Var.f) ? t0(270.0f, jz0.d(-ib2.b(npVar.i()), g11Var.c0(em1Var.b(g11Var.getLayoutDirection()))), cd0Var.c(), a2) : false;
                 if (cd0.f(cd0Var.d)) {
-                    zT0 = t0(0.0f, jz0.d(0.0f, g11Var.c0(em1Var.b)), cd0Var.e(), canvasA) || zT0;
+                    t0 = t0(0.0f, jz0.d(0.0f, g11Var.c0(em1Var.b)), cd0Var.e(), a2) || t0;
                 }
                 if (cd0.f(cd0Var.g)) {
-                    zT0 = t0(90.0f, jz0.d(0.0f, g11Var.c0(em1Var.d(g11Var.getLayoutDirection())) + (-((float) xa1.Q(ib2.d(npVar.i()))))), cd0Var.d(), canvasA) || zT0;
+                    t0 = t0(90.0f, jz0.d(0.0f, g11Var.c0(em1Var.d(g11Var.getLayoutDirection())) + (-((float) xa1.Q(ib2.d(npVar.i()))))), cd0Var.d(), a2) || t0;
                 }
                 if (cd0.f(cd0Var.e)) {
-                    zT0 = t0(180.0f, jz0.d(-ib2.d(npVar.i()), (-ib2.b(npVar.i())) + g11Var.c0(em1Var.d)), cd0Var.b(), canvasA) || zT0;
+                    t0 = t0(180.0f, jz0.d(-ib2.d(npVar.i()), (-ib2.b(npVar.i())) + g11Var.c0(em1Var.d)), cd0Var.b(), a2) || t0;
                 }
-                if (zT0) {
+                if (t0) {
                     t9Var.c();
                     return;
                 }
                 return;
             default:
                 np npVar2 = g11Var.d;
-                long jI2 = npVar2.i();
+                long i2 = npVar2.i();
                 t9 t9Var2 = this.o;
-                t9Var2.l(jI2);
+                t9Var2.l(i2);
                 if (ib2.e(npVar2.i())) {
                     g11Var.b();
                     return;
                 }
                 t9Var2.f.getValue();
-                float fC0 = g11Var.c0(js.f598a);
-                Canvas canvasA2 = x6.a(npVar2.e.D());
+                float c0 = g11Var.c0(js.f597a);
+                Canvas a3 = x6.a(npVar2.e.D());
                 cd0 cd0Var2 = this.p;
-                boolean z = cd0.f(cd0Var2.d) || cd0.g(cd0Var2.h) || cd0.f(cd0Var2.e) || cd0.g(cd0Var2.i);
-                boolean z2 = cd0.f(cd0Var2.f) || cd0.g(cd0Var2.j) || cd0.f(cd0Var2.g) || cd0.g(cd0Var2.k);
-                if (z && z2) {
-                    u0().setPosition(0, 0, canvasA2.getWidth(), canvasA2.getHeight());
-                } else if (z) {
-                    u0().setPosition(0, 0, (xa1.Q(fC0) * 2) + canvasA2.getWidth(), canvasA2.getHeight());
+                boolean z2 = cd0.f(cd0Var2.d) || cd0.g(cd0Var2.h) || cd0.f(cd0Var2.e) || cd0.g(cd0Var2.i);
+                boolean z3 = cd0.f(cd0Var2.f) || cd0.g(cd0Var2.j) || cd0.f(cd0Var2.g) || cd0.g(cd0Var2.k);
+                if (z2 && z3) {
+                    u0().setPosition(0, 0, a3.getWidth(), a3.getHeight());
+                } else if (z2) {
+                    u0().setPosition(0, 0, (xa1.Q(c0) * 2) + a3.getWidth(), a3.getHeight());
                 } else {
-                    if (!z2) {
+                    if (!z3) {
                         g11Var.b();
                         return;
                     }
-                    u0().setPosition(0, 0, canvasA2.getWidth(), (xa1.Q(fC0) * 2) + canvasA2.getHeight());
+                    u0().setPosition(0, 0, a3.getWidth(), (xa1.Q(c0) * 2) + a3.getHeight());
                 }
-                RecordingCanvas recordingCanvasBeginRecording = u0().beginRecording();
+                beginRecording = u0().beginRecording();
                 if (cd0.g(cd0Var2.j)) {
-                    EdgeEffect edgeEffectA = cd0Var2.j;
-                    if (edgeEffectA == null) {
-                        edgeEffectA = cd0Var2.a();
-                        cd0Var2.j = edgeEffectA;
+                    EdgeEffect edgeEffect = cd0Var2.j;
+                    if (edgeEffect == null) {
+                        edgeEffect = cd0Var2.a();
+                        cd0Var2.j = edgeEffect;
                     }
-                    s0(90.0f, edgeEffectA, recordingCanvasBeginRecording);
-                    edgeEffectA.finish();
+                    s0(90.0f, edgeEffect, beginRecording);
+                    edgeEffect.finish();
                 }
-                boolean zF = cd0.f(cd0Var2.f);
-                bf bfVar = bf.f146a;
-                if (zF) {
-                    EdgeEffect edgeEffectC = cd0Var2.c();
-                    zS0 = s0(270.0f, edgeEffectC, recordingCanvasBeginRecording);
+                boolean f5 = cd0.f(cd0Var2.f);
+                bf bfVar = bf.f145a;
+                if (f5) {
+                    EdgeEffect c = cd0Var2.c();
+                    z = s0(270.0f, c, beginRecording);
                     if (cd0.g(cd0Var2.f)) {
-                        float fE = zi1.e(t9Var2.b());
-                        EdgeEffect edgeEffectA2 = cd0Var2.j;
-                        if (edgeEffectA2 == null) {
-                            edgeEffectA2 = cd0Var2.a();
-                            cd0Var2.j = edgeEffectA2;
-                        }
-                        int i = Build.VERSION.SDK_INT;
-                        float fB = i >= 31 ? bfVar.b(edgeEffectC) : 0.0f;
-                        f = fC0;
-                        float f5 = 1 - fE;
-                        if (i >= 31) {
-                            bfVar.c(edgeEffectA2, fB, f5);
-                        } else {
-                            edgeEffectA2.onPull(fB, f5);
-                        }
-                    } else {
-                        f = fC0;
-                    }
-                } else {
-                    f = fC0;
-                    zS0 = false;
-                }
-                if (cd0.g(cd0Var2.h)) {
-                    EdgeEffect edgeEffectA3 = cd0Var2.h;
-                    if (edgeEffectA3 == null) {
-                        edgeEffectA3 = cd0Var2.a();
-                        cd0Var2.h = edgeEffectA3;
-                    }
-                    s0(180.0f, edgeEffectA3, recordingCanvasBeginRecording);
-                    edgeEffectA3.finish();
-                }
-                if (cd0.f(cd0Var2.d)) {
-                    EdgeEffect edgeEffectE = cd0Var2.e();
-                    boolean z3 = s0(0.0f, edgeEffectE, recordingCanvasBeginRecording) || zS0;
-                    if (cd0.g(cd0Var2.d)) {
-                        float fD = zi1.d(t9Var2.b());
-                        EdgeEffect edgeEffectA4 = cd0Var2.h;
-                        if (edgeEffectA4 == null) {
-                            edgeEffectA4 = cd0Var2.a();
-                            cd0Var2.h = edgeEffectA4;
-                        }
-                        int i2 = Build.VERSION.SDK_INT;
-                        float fB2 = i2 >= 31 ? bfVar.b(edgeEffectE) : 0.0f;
-                        if (i2 >= 31) {
-                            bfVar.c(edgeEffectA4, fB2, fD);
-                        } else {
-                            edgeEffectA4.onPull(fB2, fD);
-                        }
-                    }
-                    zS0 = z3;
-                }
-                if (cd0.g(cd0Var2.k)) {
-                    EdgeEffect edgeEffectA5 = cd0Var2.k;
-                    if (edgeEffectA5 == null) {
-                        edgeEffectA5 = cd0Var2.a();
-                        cd0Var2.k = edgeEffectA5;
-                    }
-                    s0(270.0f, edgeEffectA5, recordingCanvasBeginRecording);
-                    edgeEffectA5.finish();
-                }
-                if (cd0.f(cd0Var2.g)) {
-                    EdgeEffect edgeEffectD = cd0Var2.d();
-                    boolean z4 = s0(90.0f, edgeEffectD, recordingCanvasBeginRecording) || zS0;
-                    if (cd0.g(cd0Var2.g)) {
-                        float fE2 = zi1.e(t9Var2.b());
-                        EdgeEffect edgeEffectA6 = cd0Var2.k;
-                        if (edgeEffectA6 == null) {
-                            edgeEffectA6 = cd0Var2.a();
-                            cd0Var2.k = edgeEffectA6;
+                        float e = zi1.e(t9Var2.b());
+                        EdgeEffect edgeEffect2 = cd0Var2.j;
+                        if (edgeEffect2 == null) {
+                            edgeEffect2 = cd0Var2.a();
+                            cd0Var2.j = edgeEffect2;
                         }
                         int i3 = Build.VERSION.SDK_INT;
-                        float fB3 = i3 >= 31 ? bfVar.b(edgeEffectD) : 0.0f;
+                        float b = i3 >= 31 ? bfVar.b(c) : 0.0f;
+                        f = c0;
+                        float f6 = 1 - e;
                         if (i3 >= 31) {
-                            bfVar.c(edgeEffectA6, fB3, fE2);
+                            bfVar.c(edgeEffect2, b, f6);
                         } else {
-                            edgeEffectA6.onPull(fB3, fE2);
+                            edgeEffect2.onPull(b, f6);
+                        }
+                    } else {
+                        f = c0;
+                    }
+                } else {
+                    f = c0;
+                    z = false;
+                }
+                if (cd0.g(cd0Var2.h)) {
+                    EdgeEffect edgeEffect3 = cd0Var2.h;
+                    if (edgeEffect3 == null) {
+                        edgeEffect3 = cd0Var2.a();
+                        cd0Var2.h = edgeEffect3;
+                    }
+                    s0(180.0f, edgeEffect3, beginRecording);
+                    edgeEffect3.finish();
+                }
+                if (cd0.f(cd0Var2.d)) {
+                    EdgeEffect e2 = cd0Var2.e();
+                    boolean z4 = s0(0.0f, e2, beginRecording) || z;
+                    if (cd0.g(cd0Var2.d)) {
+                        float d = zi1.d(t9Var2.b());
+                        EdgeEffect edgeEffect4 = cd0Var2.h;
+                        if (edgeEffect4 == null) {
+                            edgeEffect4 = cd0Var2.a();
+                            cd0Var2.h = edgeEffect4;
+                        }
+                        int i4 = Build.VERSION.SDK_INT;
+                        float b2 = i4 >= 31 ? bfVar.b(e2) : 0.0f;
+                        if (i4 >= 31) {
+                            bfVar.c(edgeEffect4, b2, d);
+                        } else {
+                            edgeEffect4.onPull(b2, d);
                         }
                     }
-                    zS0 = z4;
+                    z = z4;
+                }
+                if (cd0.g(cd0Var2.k)) {
+                    EdgeEffect edgeEffect5 = cd0Var2.k;
+                    if (edgeEffect5 == null) {
+                        edgeEffect5 = cd0Var2.a();
+                        cd0Var2.k = edgeEffect5;
+                    }
+                    s0(270.0f, edgeEffect5, beginRecording);
+                    edgeEffect5.finish();
+                }
+                if (cd0.f(cd0Var2.g)) {
+                    EdgeEffect d2 = cd0Var2.d();
+                    boolean z5 = s0(90.0f, d2, beginRecording) || z;
+                    if (cd0.g(cd0Var2.g)) {
+                        float e3 = zi1.e(t9Var2.b());
+                        EdgeEffect edgeEffect6 = cd0Var2.k;
+                        if (edgeEffect6 == null) {
+                            edgeEffect6 = cd0Var2.a();
+                            cd0Var2.k = edgeEffect6;
+                        }
+                        int i5 = Build.VERSION.SDK_INT;
+                        float b3 = i5 >= 31 ? bfVar.b(d2) : 0.0f;
+                        if (i5 >= 31) {
+                            bfVar.c(edgeEffect6, b3, e3);
+                        } else {
+                            edgeEffect6.onPull(b3, e3);
+                        }
+                    }
+                    z = z5;
                 }
                 if (cd0.g(cd0Var2.i)) {
-                    EdgeEffect edgeEffectA7 = cd0Var2.i;
-                    if (edgeEffectA7 == null) {
-                        edgeEffectA7 = cd0Var2.a();
-                        cd0Var2.i = edgeEffectA7;
+                    EdgeEffect edgeEffect7 = cd0Var2.i;
+                    if (edgeEffect7 == null) {
+                        edgeEffect7 = cd0Var2.a();
+                        cd0Var2.i = edgeEffect7;
                     }
                     f2 = 0.0f;
-                    s0(0.0f, edgeEffectA7, recordingCanvasBeginRecording);
-                    edgeEffectA7.finish();
+                    s0(0.0f, edgeEffect7, beginRecording);
+                    edgeEffect7.finish();
                 } else {
                     f2 = 0.0f;
                 }
                 if (cd0.f(cd0Var2.e)) {
-                    EdgeEffect edgeEffectB = cd0Var2.b();
-                    boolean z5 = s0(180.0f, edgeEffectB, recordingCanvasBeginRecording) || zS0;
+                    EdgeEffect b4 = cd0Var2.b();
+                    boolean z6 = s0(180.0f, b4, beginRecording) || z;
                     if (cd0.g(cd0Var2.e)) {
-                        float fD2 = zi1.d(t9Var2.b());
-                        EdgeEffect edgeEffectA8 = cd0Var2.i;
-                        if (edgeEffectA8 == null) {
-                            edgeEffectA8 = cd0Var2.a();
-                            cd0Var2.i = edgeEffectA8;
+                        float d3 = zi1.d(t9Var2.b());
+                        EdgeEffect edgeEffect8 = cd0Var2.i;
+                        if (edgeEffect8 == null) {
+                            edgeEffect8 = cd0Var2.a();
+                            cd0Var2.i = edgeEffect8;
                         }
-                        int i4 = Build.VERSION.SDK_INT;
-                        float fB4 = i4 >= 31 ? bfVar.b(edgeEffectB) : f2;
-                        float f6 = 1 - fD2;
-                        if (i4 >= 31) {
-                            bfVar.c(edgeEffectA8, fB4, f6);
+                        int i6 = Build.VERSION.SDK_INT;
+                        float b5 = i6 >= 31 ? bfVar.b(b4) : f2;
+                        float f7 = 1 - d3;
+                        if (i6 >= 31) {
+                            bfVar.c(edgeEffect8, b5, f7);
                         } else {
-                            edgeEffectA8.onPull(fB4, f6);
+                            edgeEffect8.onPull(b5, f7);
                         }
                     }
-                    zS0 = z5;
+                    z = z6;
                 }
-                if (zS0) {
+                if (z) {
                     t9Var2.c();
                 }
-                float f7 = z2 ? f2 : f;
-                if (!z) {
+                float f8 = z3 ? f2 : f;
+                if (!z2) {
                     f2 = f;
                 }
                 q01 layoutDirection = g11Var.getLayoutDirection();
                 w6 w6Var = new w6();
-                w6Var.f1261a = recordingCanvasBeginRecording;
-                long jI3 = npVar2.i();
+                w6Var.f1260a = beginRecording;
+                long i7 = npVar2.i();
                 rg rgVar = npVar2.e;
                 mp mpVar = ((np) rgVar.g).d;
-                j70 j70Var = mpVar.f760a;
+                j70 j70Var = mpVar.f759a;
                 q01 q01Var = mpVar.b;
-                lp lpVarD = rgVar.D();
-                long jM = npVar2.e.M();
+                lp D = rgVar.D();
+                long M = npVar2.e.M();
                 rg rgVar2 = npVar2.e;
                 rp0 rp0Var = (rp0) rgVar2.f;
                 rgVar2.c0(g11Var);
                 rgVar2.d0(layoutDirection);
                 rgVar2.b0(w6Var);
-                rgVar2.e0(jI3);
+                rgVar2.e0(i7);
                 rgVar2.f = null;
                 w6Var.f();
                 try {
-                    ((p4) npVar2.e.e).F(f7, f2);
+                    ((p4) npVar2.e.e).F(f8, f2);
                     try {
                         g11Var.b();
                         w6Var.n();
                         rg rgVar3 = npVar2.e;
                         rgVar3.c0(j70Var);
                         rgVar3.d0(q01Var);
-                        rgVar3.b0(lpVarD);
-                        rgVar3.e0(jM);
+                        rgVar3.b0(D);
+                        rgVar3.e0(M);
                         rgVar3.f = rp0Var;
                         u0().endRecording();
-                        int iSave = canvasA2.save();
-                        canvasA2.translate(f3, f4);
-                        canvasA2.drawRenderNode(u0());
-                        canvasA2.restoreToCount(iSave);
+                        int save = a3.save();
+                        a3.translate(f3, f4);
+                        a3.drawRenderNode(u0());
+                        a3.restoreToCount(save);
                         return;
                     } finally {
-                        ((p4) npVar2.e.e).F(-f7, -f2);
+                        ((p4) npVar2.e.e).F(-f8, -f2);
                     }
                 } catch (Throwable th) {
                     w6Var.n();
                     rg rgVar4 = npVar2.e;
                     rgVar4.c0(j70Var);
                     rgVar4.d0(q01Var);
-                    rgVar4.b0(lpVarD);
-                    rgVar4.e0(jM);
+                    rgVar4.b0(D);
+                    rgVar4.e0(M);
                     rgVar4.f = rp0Var;
                     throw th;
                 }
@@ -294,9 +295,9 @@ public final class sb0 extends l8 implements tb0 {
         if (renderNode != null) {
             return renderNode;
         }
-        RenderNode renderNodeF = v6.f();
-        this.q = renderNodeF;
-        return renderNodeF;
+        RenderNode f = v6.f();
+        this.q = f;
+        return f;
     }
 
     public sb0(t9 t9Var, cd0 cd0Var, pl1 pl1Var) {

@@ -31,36 +31,36 @@ public final class dx2 extends g01 implements Function2 {
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) throws IOException {
-        int iIntValue = ((Number) obj).intValue();
-        long jLongValue = ((Number) obj2).longValue();
+    public final Object invoke(Object obj, Object obj2) {
+        int intValue = ((Number) obj).intValue();
+        long longValue = ((Number) obj2).longValue();
         pv1 pv1Var = this.h;
-        if (iIntValue == 1) {
+        if (intValue == 1) {
             yx1 yx1Var = this.e;
             if (yx1Var.d) {
                 throw new IOException("bad zip: zip64 extra repeated");
             }
             yx1Var.d = true;
-            if (jLongValue < this.f) {
+            if (longValue < this.f) {
                 throw new IOException("bad zip: zip64 extra too short");
             }
             by1 by1Var = this.g;
-            long jF = by1Var.d;
-            if (jF == 4294967295L) {
-                jF = pv1Var.f();
+            long j = by1Var.d;
+            if (j == 4294967295L) {
+                j = pv1Var.f();
             }
-            by1Var.d = jF;
+            by1Var.d = j;
             by1 by1Var2 = this.i;
             by1Var2.d = by1Var2.d == 4294967295L ? pv1Var.f() : 0L;
             by1 by1Var3 = this.j;
             by1Var3.d = by1Var3.d == 4294967295L ? pv1Var.f() : 0L;
-        } else if (iIntValue == 10) {
-            if (jLongValue < 4) {
+        } else if (intValue == 10) {
+            if (longValue < 4) {
                 throw new IOException("bad zip: NTFS extra too short");
             }
             pv1Var.skip(4L);
-            jz0.M(pv1Var, (int) (jLongValue - 4), new cx2(this.k, pv1Var, this.l, this.m));
+            jz0.M(pv1Var, (int) (longValue - 4), new cx2(this.k, pv1Var, this.l, this.m));
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

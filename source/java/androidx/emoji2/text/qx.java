@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 public final class qx extends xx {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f984a;
+    public final long f983a;
     public final boolean b;
     public final boolean c;
     public HashSet d;
@@ -21,7 +21,7 @@ public final class qx extends xx {
 
     public qx(tx txVar, long j, boolean z, boolean z2, p4 p4Var) {
         this.g = txVar;
-        this.f984a = j;
+        this.f983a = j;
         this.b = z;
         this.c = z2;
     }
@@ -54,7 +54,7 @@ public final class qx extends xx {
 
     @Override // androidx.emoji2.text.xx
     public final long f() {
-        return this.f984a;
+        return this.f983a;
     }
 
     @Override // androidx.emoji2.text.xx

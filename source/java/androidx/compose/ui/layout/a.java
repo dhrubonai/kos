@@ -10,8 +10,8 @@ import androidx.emoji2.text.wm0;
 /* loaded from: classes.dex */
 public abstract class a {
     public static final Object a(ab1 ab1Var) {
-        Object objT = ab1Var.t();
-        s01 s01Var = objT instanceof s01 ? (s01) objT : null;
+        Object t = ab1Var.t();
+        s01 s01Var = t instanceof s01 ? (s01) t : null;
         if (s01Var != null) {
             return s01Var.r;
         }

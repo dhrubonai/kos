@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class en0 extends mn0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final en0 f310a = new en0();
+    public static final en0 f309a = new en0();
 }

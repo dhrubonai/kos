@@ -9,12 +9,12 @@ public class fm2 {
     public static final em2 d = new em2();
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f369a;
+    public boolean f368a;
     public long b;
     public long c;
 
     public fm2 a() {
-        this.f369a = false;
+        this.f368a = false;
         return this;
     }
 
@@ -24,27 +24,27 @@ public class fm2 {
     }
 
     public long c() {
-        if (this.f369a) {
+        if (this.f368a) {
             return this.b;
         }
         throw new IllegalStateException("No deadline");
     }
 
     public fm2 d(long j) {
-        this.f369a = true;
+        this.f368a = true;
         this.b = j;
         return this;
     }
 
     public boolean e() {
-        return this.f369a;
+        return this.f368a;
     }
 
-    public void f() throws InterruptedIOException {
+    public void f() {
         if (Thread.currentThread().isInterrupted()) {
             throw new InterruptedIOException("interrupted");
         }
-        if (this.f369a && this.b - System.nanoTime() <= 0) {
+        if (this.f368a && this.b - System.nanoTime() <= 0) {
             throw new InterruptedIOException("deadline reached");
         }
     }

@@ -130,12 +130,13 @@ public abstract class cv extends Dialog implements v51, pj1, sg1, m32 {
 
     @Override // android.app.Dialog
     public final void onCreate(Bundle bundle) {
+        OnBackInvokedDispatcher onBackInvokedDispatcher;
         super.onCreate(bundle);
         if (Build.VERSION.SDK_INT >= 33) {
-            oj1 oj1VarA = a();
-            OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
+            oj1 a2 = a();
+            onBackInvokedDispatcher = getOnBackInvokedDispatcher();
             lx0.w(onBackInvokedDispatcher, "getOnBackInvokedDispatcher(...)");
-            oj1VarA.b(onBackInvokedDispatcher);
+            a2.b(onBackInvokedDispatcher);
         }
         this.e.m(bundle);
         x51 x51Var = this.d;
@@ -148,10 +149,10 @@ public abstract class cv extends Dialog implements v51, pj1, sg1, m32 {
 
     @Override // android.app.Dialog
     public final Bundle onSaveInstanceState() {
-        Bundle bundleOnSaveInstanceState = super.onSaveInstanceState();
-        lx0.w(bundleOnSaveInstanceState, "onSaveInstanceState(...)");
-        this.e.n(bundleOnSaveInstanceState);
-        return bundleOnSaveInstanceState;
+        Bundle onSaveInstanceState = super.onSaveInstanceState();
+        lx0.w(onSaveInstanceState, "onSaveInstanceState(...)");
+        this.e.n(onSaveInstanceState);
+        return onSaveInstanceState;
     }
 
     @Override // android.app.Dialog

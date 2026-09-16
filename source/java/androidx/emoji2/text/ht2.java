@@ -13,7 +13,7 @@ public class ht2 extends az0 {
     public static boolean k = true;
 
     @Override // androidx.emoji2.text.az0
-    public void g0(View view, int i2) throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public void g0(View view, int i2) {
         if (Build.VERSION.SDK_INT == 28) {
             super.g0(view, i2);
         } else if (k) {

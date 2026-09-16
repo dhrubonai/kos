@@ -28,11 +28,11 @@ public final class to2 implements Serializable {
 
     public final int hashCode() {
         Object obj = this.d;
-        int iHashCode = (obj == null ? 0 : obj.hashCode()) * 31;
+        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
         Object obj2 = this.e;
-        int iHashCode2 = (iHashCode + (obj2 == null ? 0 : obj2.hashCode())) * 31;
+        int hashCode2 = (hashCode + (obj2 == null ? 0 : obj2.hashCode())) * 31;
         Object obj3 = this.f;
-        return iHashCode2 + (obj3 != null ? obj3.hashCode() : 0);
+        return hashCode2 + (obj3 != null ? obj3.hashCode() : 0);
     }
 
     public final String toString() {

@@ -16,7 +16,7 @@ import java.util.List;
 public final class lf {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f689a;
+    public int f688a;
     public Object b;
     public Object c;
     public Object d;
@@ -25,7 +25,7 @@ public final class lf {
 
     public lf(View view) {
         qf qfVar;
-        this.f689a = -1;
+        this.f688a = -1;
         this.b = view;
         PorterDuff.Mode mode = qf.b;
         synchronized (qf.class) {
@@ -53,19 +53,19 @@ public final class lf {
                 ryVar.c = null;
                 ryVar.b = false;
                 ryVar.d = null;
-                ryVar.f1040a = false;
-                Field field = es2.f320a;
-                ColorStateList colorStateListC = wr2.c(view);
-                if (colorStateListC != null) {
+                ryVar.f1039a = false;
+                Field field = es2.f319a;
+                ColorStateList c = wr2.c(view);
+                if (c != null) {
                     ryVar.b = true;
-                    ryVar.c = colorStateListC;
+                    ryVar.c = c;
                 }
-                PorterDuff.Mode modeD = wr2.d(view);
-                if (modeD != null) {
-                    ryVar.f1040a = true;
-                    ryVar.d = modeD;
+                PorterDuff.Mode d = wr2.d(view);
+                if (d != null) {
+                    ryVar.f1039a = true;
+                    ryVar.d = d;
                 }
-                if (ryVar.b || ryVar.f1040a) {
+                if (ryVar.b || ryVar.f1039a) {
                     qf.d(background, ryVar, view.getDrawableState());
                     return;
                 }
@@ -99,63 +99,63 @@ public final class lf {
     }
 
     public boolean d() {
-        return this.f689a < ((List) this.d).size() || !((ArrayList) this.f).isEmpty();
+        return this.f688a < ((List) this.d).size() || !((ArrayList) this.f).isEmpty();
     }
 
     public void e(AttributeSet attributeSet, int i) {
-        ColorStateList colorStateListF;
+        ColorStateList f;
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = gv1.t;
-        rg rgVarV = rg.V(context, attributeSet, iArr, i);
-        TypedArray typedArray = (TypedArray) rgVarV.e;
+        rg V = rg.V(context, attributeSet, iArr, i);
+        TypedArray typedArray = (TypedArray) V.e;
         View view2 = (View) this.b;
-        es2.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) rgVarV.e, i);
+        es2.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) V.e, i);
         try {
             if (typedArray.hasValue(0)) {
-                this.f689a = typedArray.getResourceId(0, -1);
+                this.f688a = typedArray.getResourceId(0, -1);
                 qf qfVar = (qf) this.c;
                 Context context2 = view.getContext();
-                int i2 = this.f689a;
+                int i2 = this.f688a;
                 synchronized (qfVar) {
-                    colorStateListF = qfVar.f953a.f(context2, i2);
+                    f = qfVar.f952a.f(context2, i2);
                 }
-                if (colorStateListF != null) {
-                    h(colorStateListF);
+                if (f != null) {
+                    h(f);
                 }
             }
             if (typedArray.hasValue(1)) {
-                wr2.g(view, rgVarV.G(1));
+                wr2.g(view, V.G(1));
             }
             if (typedArray.hasValue(2)) {
                 wr2.h(view, fc0.b(typedArray.getInt(2, -1), null));
             }
-            rgVarV.X();
+            V.X();
         } catch (Throwable th) {
-            rgVarV.X();
+            V.X();
             throw th;
         }
     }
 
     public void f() {
-        this.f689a = -1;
+        this.f688a = -1;
         h(null);
         a();
     }
 
     public void g(int i) {
-        ColorStateList colorStateListF;
-        this.f689a = i;
+        ColorStateList colorStateList;
+        this.f688a = i;
         qf qfVar = (qf) this.c;
         if (qfVar != null) {
             Context context = ((View) this.b).getContext();
             synchronized (qfVar) {
-                colorStateListF = qfVar.f953a.f(context, i);
+                colorStateList = qfVar.f952a.f(context, i);
             }
         } else {
-            colorStateListF = null;
+            colorStateList = null;
         }
-        h(colorStateListF);
+        h(colorStateList);
         a();
     }
 
@@ -189,7 +189,7 @@ public final class lf {
         }
         ry ryVar = (ry) this.e;
         ryVar.d = mode;
-        ryVar.f1040a = true;
+        ryVar.f1039a = true;
         a();
     }
 
@@ -197,7 +197,7 @@ public final class lf {
         this.b = new as0[32];
         this.c = new float[32];
         this.d = new byte[32];
-        int i = f42.f343a;
+        int i = f42.f342a;
         this.e = new hf1();
         this.f = new hf1();
     }

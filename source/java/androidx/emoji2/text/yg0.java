@@ -10,7 +10,7 @@ public final class yg0 {
     public static final yg0 c;
 
     /* renamed from: a, reason: collision with root package name */
-    public final un2 f1385a;
+    public final un2 f1384a;
 
     static {
         LinkedHashMap linkedHashMap = null;
@@ -22,15 +22,15 @@ public final class yg0 {
     }
 
     public yg0(un2 un2Var) {
-        this.f1385a = un2Var;
+        this.f1384a = un2Var;
     }
 
     public final yg0 a(yg0 yg0Var) {
-        un2 un2Var = yg0Var.f1385a;
-        mh0 mh0Var = un2Var.f1182a;
-        un2 un2Var2 = this.f1385a;
+        un2 un2Var = yg0Var.f1384a;
+        mh0 mh0Var = un2Var.f1181a;
+        un2 un2Var2 = this.f1384a;
         if (mh0Var == null) {
-            mh0Var = un2Var2.f1182a;
+            mh0Var = un2Var2.f1181a;
         }
         mb2 mb2Var = un2Var.b;
         if (mb2Var == null) {
@@ -54,11 +54,11 @@ public final class yg0 {
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof yg0) && lx0.n(((yg0) obj).f1385a, this.f1385a);
+        return (obj instanceof yg0) && lx0.n(((yg0) obj).f1384a, this.f1384a);
     }
 
     public final int hashCode() {
-        return this.f1385a.hashCode();
+        return this.f1384a.hashCode();
     }
 
     public final String toString() {
@@ -69,8 +69,8 @@ public final class yg0 {
             return "ExitTransition.KeepUntilTransitionsFinished";
         }
         StringBuilder sb = new StringBuilder("ExitTransition: \nFade - ");
-        un2 un2Var = this.f1385a;
-        mh0 mh0Var = un2Var.f1182a;
+        un2 un2Var = this.f1384a;
+        mh0 mh0Var = un2Var.f1181a;
         sb.append(mh0Var != null ? mh0Var.toString() : null);
         sb.append(",\nSlide - ");
         mb2 mb2Var = un2Var.b;

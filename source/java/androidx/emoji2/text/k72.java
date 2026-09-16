@@ -16,7 +16,7 @@ public class k72 {
     private volatile /* synthetic */ int _availablePermits$volatile;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f624a;
+    public final int f623a;
     public final hp b;
     private volatile /* synthetic */ long deqIdx$volatile;
     private volatile /* synthetic */ long enqIdx$volatile;
@@ -24,7 +24,7 @@ public class k72 {
     private volatile /* synthetic */ Object tail$volatile;
 
     public k72(int i) {
-        this.f624a = i;
+        this.f623a = i;
         if (i <= 0) {
             throw new IllegalArgumentException(zd.f(i, "Semaphore should have at least 1 permit, but had ").toString());
         }
@@ -39,28 +39,28 @@ public class k72 {
     }
 
     public final boolean a(lu2 lu2Var) {
-        Object objV;
+        Object v;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
         n72 n72Var = (n72) atomicReferenceFieldUpdater.get(this);
         long andIncrement = f.getAndIncrement(this);
         i72 i72Var = i72.k;
         long j = andIncrement / m72.f;
         loop0: while (true) {
-            objV = kx0.v(n72Var, j, i72Var);
-            if (!pz0.D(objV)) {
-                c62 c62VarY = pz0.y(objV);
+            v = kx0.v(n72Var, j, i72Var);
+            if (!pz0.D(v)) {
+                c62 y = pz0.y(v);
                 while (true) {
                     c62 c62Var = (c62) atomicReferenceFieldUpdater.get(this);
-                    if (c62Var.c >= c62VarY.c) {
+                    if (c62Var.c >= y.c) {
                         break loop0;
                     }
-                    if (!c62VarY.i()) {
+                    if (!y.i()) {
                         break;
                     }
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, c62VarY)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, y)) {
                         if (atomicReferenceFieldUpdater.get(this) != c62Var) {
-                            if (c62VarY.e()) {
-                                c62VarY.d();
+                            if (y.e()) {
+                                y.d();
                             }
                         }
                     }
@@ -72,7 +72,7 @@ public class k72 {
                 break;
             }
         }
-        n72 n72Var2 = (n72) pz0.y(objV);
+        n72 n72Var2 = (n72) pz0.y(v);
         AtomicReferenceArray atomicReferenceArray = n72Var2.e;
         int i = (int) (andIncrement % m72.f);
         while (!atomicReferenceArray.compareAndSet(i, null, lu2Var)) {
@@ -84,7 +84,7 @@ public class k72 {
                         return false;
                     }
                 }
-                ((gp) lu2Var).d(up2.f1187a, this.b);
+                ((gp) lu2Var).d(up2.f1186a, this.b);
                 return true;
             }
         }
@@ -94,12 +94,12 @@ public class k72 {
 
     public final void b() {
         int i;
-        Object objV;
+        Object v;
         boolean z;
         do {
             AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = g;
             int andIncrement = atomicIntegerFieldUpdater.getAndIncrement(this);
-            int i2 = this.f624a;
+            int i2 = this.f623a;
             if (andIncrement >= i2) {
                 do {
                     i = atomicIntegerFieldUpdater.get(this);
@@ -118,23 +118,23 @@ public class k72 {
             long j = andIncrement2 / m72.f;
             j72 j72Var = j72.k;
             while (true) {
-                objV = kx0.v(n72Var, j, j72Var);
-                if (pz0.D(objV)) {
+                v = kx0.v(n72Var, j, j72Var);
+                if (pz0.D(v)) {
                     break;
                 }
-                c62 c62VarY = pz0.y(objV);
+                c62 y = pz0.y(v);
                 while (true) {
                     c62 c62Var = (c62) atomicReferenceFieldUpdater.get(this);
-                    if (c62Var.c >= c62VarY.c) {
+                    if (c62Var.c >= y.c) {
                         break;
                     }
-                    if (!c62VarY.i()) {
+                    if (!y.i()) {
                         break;
                     }
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, c62VarY)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, y)) {
                         if (atomicReferenceFieldUpdater.get(this) != c62Var) {
-                            if (c62VarY.e()) {
-                                c62VarY.d();
+                            if (y.e()) {
+                                y.d();
                             }
                         }
                     }
@@ -143,7 +143,7 @@ public class k72 {
                     }
                 }
             }
-            n72 n72Var2 = (n72) pz0.y(objV);
+            n72 n72Var2 = (n72) pz0.y(v);
             AtomicReferenceArray atomicReferenceArray = n72Var2.e;
             n72Var2.a();
             z = false;
@@ -151,7 +151,7 @@ public class k72 {
                 int i3 = (int) (andIncrement2 % m72.f);
                 Object andSet = atomicReferenceArray.getAndSet(i3, m72.b);
                 if (andSet == null) {
-                    int i4 = m72.f736a;
+                    int i4 = m72.f735a;
                     for (int i5 = 0; i5 < i4; i5++) {
                         if (atomicReferenceArray.get(i3) == m72.c) {
                             z = true;
@@ -176,9 +176,9 @@ public class k72 {
                         throw new IllegalStateException(("unexpected: " + andSet).toString());
                     }
                     gp gpVar = (gp) andSet;
-                    de0 de0VarH = gpVar.h(up2.f1187a, this.b);
-                    if (de0VarH != null) {
-                        gpVar.C(de0VarH);
+                    de0 h = gpVar.h(up2.f1186a, this.b);
+                    if (h != null) {
+                        gpVar.C(h);
                         z = true;
                         break;
                         break;

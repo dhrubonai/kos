@@ -32,12 +32,12 @@ public class AppBarLayout$ScrollingViewBehavior extends ys2 {
 
     @Override // androidx.emoji2.text.q10
     public boolean d(CoordinatorLayout coordinatorLayout, View view, View view2) {
-        if (((t10) view2.getLayoutParams()).f1099a instanceof AppBarLayout$BaseBehavior) {
+        if (((t10) view2.getLayoutParams()).f1098a instanceof AppBarLayout$BaseBehavior) {
             int bottom = view2.getBottom() - view.getTop();
             int i = this.b;
-            int iM = bottom - (i == 0 ? 0 : az0.m((int) (0.0f * i), 0, i));
-            Field field = es2.f320a;
-            view.offsetTopAndBottom(iM);
+            int m = bottom - (i == 0 ? 0 : az0.m((int) (0.0f * i), 0, i));
+            Field field = es2.f319a;
+            view.offsetTopAndBottom(m);
         }
         return false;
     }
@@ -66,9 +66,9 @@ public class AppBarLayout$ScrollingViewBehavior extends ys2 {
     public AppBarLayout$ScrollingViewBehavior(Context context, AttributeSet attributeSet) {
         new Rect();
         new Rect();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.r);
-        this.b = typedArrayObtainStyledAttributes.getDimensionPixelSize(0, 0);
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.r);
+        this.b = obtainStyledAttributes.getDimensionPixelSize(0, 0);
+        obtainStyledAttributes.recycle();
     }
 
     @Override // androidx.emoji2.text.q10

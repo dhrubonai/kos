@@ -9,7 +9,7 @@ import kotlin.jvm.functions.Function2;
 public abstract class l5 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f675a = 280;
+    public static final float f674a = 280;
     public static final float b = 560;
     public static final float c = 8;
     public static final float d = 12;
@@ -37,16 +37,16 @@ public abstract class l5 {
             txVar.S();
             nd1Var2 = nd1Var;
         } else {
-            ComposableLambdaImpl composableLambdaImplF0 = l8.f0(-2126308228, new b5(function2, function22, function23, j3, j4, j5, j2, composableLambdaImpl), txVar);
+            ComposableLambdaImpl f0 = l8.f0(-2126308228, new b5(function2, function22, function23, j3, j4, j5, j2, composableLambdaImpl), txVar);
             int i4 = i2 >> 12;
             int i5 = (i4 & 896) | (i4 & 112) | 12582918 | ((i2 >> 9) & 57344);
-            kd1 kd1Var = kd1.f634a;
-            bh2.a(kd1Var, t92Var, j, 0L, f2, 0.0f, null, composableLambdaImplF0, txVar, i5, 104);
+            kd1 kd1Var = kd1.f633a;
+            bh2.a(kd1Var, t92Var, j, 0L, f2, 0.0f, null, f0, txVar, i5, 104);
             nd1Var2 = kd1Var;
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new c5(composableLambdaImpl, nd1Var2, function2, function22, function23, t92Var, j, f2, j2, j3, j4, j5, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new c5(composableLambdaImpl, nd1Var2, function2, function22, function23, t92Var, j, f2, j2, j3, j4, j5, i);
         }
     }
 
@@ -56,15 +56,15 @@ public abstract class l5 {
         if ((i & 147) == 146 && txVar.B()) {
             txVar.S();
         } else {
-            Object objM = txVar.M();
-            if (objM == kx.f663a) {
-                objM = new n9(8);
-                txVar.i0(objM);
+            Object M = txVar.M();
+            if (M == kx.f662a) {
+                M = new n9(8);
+                txVar.i0(M);
             }
-            fb1 fb1Var = (fb1) objM;
-            int iHashCode = Long.hashCode(txVar.T);
-            ap1 ap1VarL = txVar.l();
-            nd1 nd1VarQ = bz0.Q(txVar, kd1.f634a);
+            fb1 fb1Var = (fb1) M;
+            int hashCode = Long.hashCode(txVar.T);
+            ap1 l = txVar.l();
+            nd1 Q = bz0.Q(txVar, kd1.f633a);
             hx.b.getClass();
             hy hyVar = gx.b;
             txVar.b0();
@@ -74,18 +74,18 @@ public abstract class l5 {
                 txVar.l0();
             }
             mz0.G(txVar, fb1Var, gx.e);
-            mz0.G(txVar, ap1VarL, gx.d);
+            mz0.G(txVar, l, gx.d);
             wc wcVar = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar);
             }
-            mz0.G(txVar, nd1VarQ, gx.c);
+            mz0.G(txVar, Q, gx.c);
             composableLambdaImpl.invoke((ComposableLambdaImpl) txVar, (tx) 6);
             txVar.p(true);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new e5(composableLambdaImpl, i, 0);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new e5(composableLambdaImpl, i, 0);
         }
     }
 
@@ -154,9 +154,9 @@ public abstract class l5 {
         } else {
             d(sm0Var, nd1Var, l80Var, l8.f0(-1852840226, new g5(function22, function23, function24, t92Var, j, f2, j2, j3, j4, function25, composableLambdaImpl2), txVar), txVar, (i3 & 14) | 3072 | ((i3 >> 3) & 112) | ((i5 >> 3) & 896));
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new h5(sm0Var, composableLambdaImpl, nd1Var, function2, function22, function23, function24, t92Var, j, j2, j3, j4, f2, l80Var, i, i2);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new h5(sm0Var, composableLambdaImpl, nd1Var, function2, function22, function23, function24, t92Var, j, j2, j3, j4, f2, l80Var, i, i2);
         }
     }
 
@@ -183,9 +183,9 @@ public abstract class l5 {
         } else {
             bz0.j(sm0Var, l80Var, l8.f0(905289008, new j5(nd1Var, composableLambdaImpl), txVar), txVar, (i2 & 14) | 384 | ((i2 >> 3) & 112), 0);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new k5(sm0Var, nd1Var, l80Var, composableLambdaImpl, i, 0);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new k5(sm0Var, nd1Var, l80Var, composableLambdaImpl, i, 0);
         }
     }
 }

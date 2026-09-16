@@ -121,91 +121,105 @@ public class HookManager {
         iInjectHook.injectHook();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0248 A[Catch: all -> 0x0017, TryCatch #0 {all -> 0x0017, blocks: (B:3:0x0001, B:8:0x0007, B:10:0x0010, B:13:0x02c4, B:17:0x001a, B:19:0x0138, B:20:0x0140, B:22:0x01ad, B:23:0x01ce, B:27:0x01d8, B:31:0x01f0, B:34:0x01fc, B:37:0x0210, B:38:0x0218, B:40:0x021e, B:45:0x023e, B:50:0x0248, B:51:0x0258, B:53:0x025e, B:54:0x0276, B:56:0x027c, B:59:0x0298, B:61:0x02a4, B:62:0x029c, B:64:0x01dc), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x025e A[Catch: all -> 0x0017, TryCatch #0 {all -> 0x0017, blocks: (B:3:0x0001, B:8:0x0007, B:10:0x0010, B:13:0x02c4, B:17:0x001a, B:19:0x0138, B:20:0x0140, B:22:0x01ad, B:23:0x01ce, B:27:0x01d8, B:31:0x01f0, B:34:0x01fc, B:37:0x0210, B:38:0x0218, B:40:0x021e, B:45:0x023e, B:50:0x0248, B:51:0x0258, B:53:0x025e, B:54:0x0276, B:56:0x027c, B:59:0x0298, B:61:0x02a4, B:62:0x029c, B:64:0x01dc), top: B:2:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x027c A[Catch: all -> 0x0017, TryCatch #0 {all -> 0x0017, blocks: (B:3:0x0001, B:8:0x0007, B:10:0x0010, B:13:0x02c4, B:17:0x001a, B:19:0x0138, B:20:0x0140, B:22:0x01ad, B:23:0x01ce, B:27:0x01d8, B:31:0x01f0, B:34:0x01fc, B:37:0x0210, B:38:0x0218, B:40:0x021e, B:45:0x023e, B:50:0x0248, B:51:0x0258, B:53:0x025e, B:54:0x0276, B:56:0x027c, B:59:0x0298, B:61:0x02a4, B:62:0x029c, B:64:0x01dc), top: B:2:0x0001 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public synchronized void init() {
+        boolean z;
         try {
             if (this.mInitialized) {
                 return;
             }
             c01 c01Var = c01.r;
-            if (c01Var.a0() || c01Var.c0()) {
-                addInjector(new IDisplayManagerProxy());
-                addInjector(new OsStub());
-                addInjector(new IActivityManagerProxy());
-                addInjector(new IPackageManagerProxy());
-                addInjector(new ITelephonyManagerProxy());
-                addInjector(new ISubProxy());
-                addInjector(new HCallbackProxy());
-                addInjector(new IAppOpsManagerProxy());
-                addInjector(new IClipboardProxy());
-                addInjector(new INotificationManagerProxy());
-                addInjector(new IAlarmManagerProxy());
-                addInjector(new IBackupManagerProxy());
-                addInjector(new IAppWidgetManagerProxy());
-                addInjector(new IStatsManagerProxy());
-                addInjector(new IStatusBarServiceProxy());
-                addInjector(new IUiModeManagerProxy());
-                addInjector(new IBluetoothManagerProxy());
-                addInjector(new ContentServiceStub());
-                addInjector(new IWindowManagerProxy());
-                addInjector(new IInputMethodManagerProxy());
-                addInjector(new ITextServicesManagerProxy());
-                addInjector(new ITrustManagerProxy());
-                addInjector(new IUserManagerProxy());
-                addInjector(new RestrictionsManagerStub());
-                addInjector(new IMediaSessionManagerProxy());
-                addInjector(new ILocationManagerProxy());
-                addInjector(new IStorageManagerProxy());
-                addInjector(new ILauncherAppsProxy());
-                addInjector(new IJobServiceProxy());
-                addInjector(new IAccessibilityManagerProxy());
-                addInjector(new ITelephonyRegistryProxy());
-                addInjector(new IUsageStatsManagerProxy());
-                addInjector(new IDevicePolicyManagerProxy());
-                addInjector(new IAccountManagerProxy());
-                addInjector(new IConnectivityManagerProxy());
-                if (l8.S()) {
-                    addInjector(new OemContentProviderCompat());
+            if (!c01Var.a0()) {
+                if (c01Var.c0()) {
                 }
-                addInjector(new IWebViewUpdateServiceProxy());
-                addInjector(new IPhoneSubInfoProxy());
-                addInjector(new IMediaRouterServiceProxy());
-                addInjector(new IPowerManagerProxy());
-                addInjector(new IMediaProjectionManagerProxy());
-                addInjector(new IContextHubServiceProxy());
-                addInjector(new IVibratorServiceProxy());
-                addInjector(new IPersistentDataBlockServiceProxy());
-                addInjector(new ILockSettingsProxy());
-                addInjector(new ICredentialManagerProxy());
-                addInjector(AppInstrumentation.get());
-                addInjector(new IWifiManagerProxy());
-                addInjector(new IWifiScannerProxy());
-                if (l8.W()) {
-                    addInjector(new IActivityClientProxy(null));
-                    addInjector(new IDomainVerificationManagerProxy());
-                    addInjector(new IVpnManagerProxy());
-                    addInjector(new IUwbAdapterProxy());
-                }
-                int i = Build.VERSION.SDK_INT;
-                if (i >= 33 || (i >= 31 && Build.VERSION.PREVIEW_SDK_INT == 1)) {
-                    addInjector(new ILocaleManagerProxy());
-                    addInjector(new ISafetyCenterManagerProxy());
-                }
-                if (i >= 34) {
-                    addInjector(new IGrammaticalInflectionManagerProxy());
-                }
-                if (i >= 35) {
-                    addInjector(new IAdvancedProtectionServiceProxy());
-                    addInjector(new ISupervisionManagerProxy());
-                }
-                if (i >= 36) {
-                    addInjector(new IAppFunctionManagerProxy());
-                }
-                if (l8.V()) {
-                    addInjector(new IPermissionManagerProxy());
-                    addInjector(new IAuthServiceProxy());
-                    addInjector(new ITetheringConnectorProxy());
-                }
-                if (i >= 29 || (i >= 28 && Build.VERSION.PREVIEW_SDK_INT == 1)) {
+                injectAll();
+                this.mInitialized = true;
+            }
+            addInjector(new IDisplayManagerProxy());
+            addInjector(new OsStub());
+            addInjector(new IActivityManagerProxy());
+            addInjector(new IPackageManagerProxy());
+            addInjector(new ITelephonyManagerProxy());
+            addInjector(new ISubProxy());
+            addInjector(new HCallbackProxy());
+            addInjector(new IAppOpsManagerProxy());
+            addInjector(new IClipboardProxy());
+            addInjector(new INotificationManagerProxy());
+            addInjector(new IAlarmManagerProxy());
+            addInjector(new IBackupManagerProxy());
+            addInjector(new IAppWidgetManagerProxy());
+            addInjector(new IStatsManagerProxy());
+            addInjector(new IStatusBarServiceProxy());
+            addInjector(new IUiModeManagerProxy());
+            addInjector(new IBluetoothManagerProxy());
+            addInjector(new ContentServiceStub());
+            addInjector(new IWindowManagerProxy());
+            addInjector(new IInputMethodManagerProxy());
+            addInjector(new ITextServicesManagerProxy());
+            addInjector(new ITrustManagerProxy());
+            addInjector(new IUserManagerProxy());
+            addInjector(new RestrictionsManagerStub());
+            addInjector(new IMediaSessionManagerProxy());
+            addInjector(new ILocationManagerProxy());
+            addInjector(new IStorageManagerProxy());
+            addInjector(new ILauncherAppsProxy());
+            addInjector(new IJobServiceProxy());
+            addInjector(new IAccessibilityManagerProxy());
+            addInjector(new ITelephonyRegistryProxy());
+            addInjector(new IUsageStatsManagerProxy());
+            addInjector(new IDevicePolicyManagerProxy());
+            addInjector(new IAccountManagerProxy());
+            addInjector(new IConnectivityManagerProxy());
+            if (l8.S()) {
+                addInjector(new OemContentProviderCompat());
+            }
+            addInjector(new IWebViewUpdateServiceProxy());
+            addInjector(new IPhoneSubInfoProxy());
+            addInjector(new IMediaRouterServiceProxy());
+            addInjector(new IPowerManagerProxy());
+            addInjector(new IMediaProjectionManagerProxy());
+            addInjector(new IContextHubServiceProxy());
+            addInjector(new IVibratorServiceProxy());
+            addInjector(new IPersistentDataBlockServiceProxy());
+            addInjector(new ILockSettingsProxy());
+            addInjector(new ICredentialManagerProxy());
+            addInjector(AppInstrumentation.get());
+            addInjector(new IWifiManagerProxy());
+            addInjector(new IWifiScannerProxy());
+            if (l8.W()) {
+                addInjector(new IActivityClientProxy(null));
+                addInjector(new IDomainVerificationManagerProxy());
+                addInjector(new IVpnManagerProxy());
+                addInjector(new IUwbAdapterProxy());
+            }
+            int i = Build.VERSION.SDK_INT;
+            if (i >= 33 || (i >= 31 && Build.VERSION.PREVIEW_SDK_INT == 1)) {
+                addInjector(new ILocaleManagerProxy());
+                addInjector(new ISafetyCenterManagerProxy());
+            }
+            if (i >= 34) {
+                addInjector(new IGrammaticalInflectionManagerProxy());
+            }
+            if (i >= 35) {
+                addInjector(new IAdvancedProtectionServiceProxy());
+                addInjector(new ISupervisionManagerProxy());
+            }
+            if (i >= 36) {
+                addInjector(new IAppFunctionManagerProxy());
+            }
+            if (l8.V()) {
+                addInjector(new IPermissionManagerProxy());
+                addInjector(new IAuthServiceProxy());
+                addInjector(new ITetheringConnectorProxy());
+            }
+            if (i < 29 && (i < 28 || Build.VERSION.PREVIEW_SDK_INT != 1)) {
+                z = false;
+                if (z) {
                     addInjector(new IActivityTaskManagerProxy());
                     addInjector(new IRoleManagerProxy());
                 }
@@ -219,14 +233,30 @@ public class HookManager {
                     addInjector(new IDeviceIdentifiersPolicyProxy());
                     addInjector(new IStorageStatsManagerProxy());
                 }
-                if (i >= 25 || Build.VERSION.PREVIEW_SDK_INT == 1) {
+                if (i < 25 || Build.VERSION.PREVIEW_SDK_INT == 1) {
                     addInjector(new IShortcutManagerProxy());
                 }
                 addInjector(new INetworkManagementServiceProxy());
                 addInjector(new IFingerprintManagerProxy());
                 addInjector(new IGraphicsStatsProxy());
                 addInjector(new IJobServiceProxy());
+                injectAll();
+                this.mInitialized = true;
             }
+            z = true;
+            if (z) {
+            }
+            if (l8.U()) {
+            }
+            if (l8.T()) {
+            }
+            if (i < 25) {
+            }
+            addInjector(new IShortcutManagerProxy());
+            addInjector(new INetworkManagementServiceProxy());
+            addInjector(new IFingerprintManagerProxy());
+            addInjector(new IGraphicsStatsProxy());
+            addInjector(new IJobServiceProxy());
             injectAll();
             this.mInitialized = true;
         } catch (Throwable th) {

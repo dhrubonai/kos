@@ -8,5 +8,5 @@ import android.os.Looper;
 public abstract class n4 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Handler f790a = new Handler(Looper.getMainLooper());
+    public static final Handler f789a = new Handler(Looper.getMainLooper());
 }

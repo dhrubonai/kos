@@ -61,8 +61,8 @@ public class BUserInfo implements Parcelable {
 
     public BUserInfo(Parcel parcel) {
         this.id = parcel.readInt();
-        int i = parcel.readInt();
-        this.status = i == -1 ? null : BUserStatus.values()[i];
+        int readInt = parcel.readInt();
+        this.status = readInt == -1 ? null : BUserStatus.values()[readInt];
         this.name = parcel.readString();
         this.createTime = parcel.readLong();
     }

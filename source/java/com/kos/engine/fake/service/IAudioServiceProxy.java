@@ -11,7 +11,6 @@ import black.android.os.ServiceManagerStatic;
 import com.kos.engine.fake.hook.BinderInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -173,8 +172,8 @@ public class IAudioServiceProxy extends BinderInvocationStub {
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
-    public Object getWho() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        Object objInvoke;
+    public Object getWho() {
+        Object invoke;
         ServiceManagerStatic serviceManagerStatic = BRServiceManager.get();
         String[] strArr = xa1.b;
         IBinder service = serviceManagerStatic.getService(c.a(-666399094751010L, strArr));
@@ -184,25 +183,25 @@ public class IAudioServiceProxy extends BinderInvocationStub {
         }
         try {
             try {
-                fy1 fy1VarG = fy1.g(c.a(-667185073766178L, strArr));
-                objInvoke = fy1VarG.a(fy1VarG.b, c.a(-667309627817762L, strArr), service);
+                fy1 g = fy1.g(c.a(-667185073766178L, strArr));
+                invoke = g.a(g.b, c.a(-667309627817762L, strArr), service);
             } catch (Exception e) {
                 nz0.Q(c.a(-667395527163682L, strArr), 3, c.a(-666905900891938L, strArr) + e.getMessage());
                 try {
-                    fy1 fy1VarG2 = fy1.g(c.a(-667120649256738L, strArr));
-                    objInvoke = fy1VarG2.a(fy1VarG2.b, c.a(-661159234649890L, strArr), service);
+                    fy1 g2 = fy1.g(c.a(-667120649256738L, strArr));
+                    invoke = g2.a(g2.b, c.a(-661159234649890L, strArr), service);
                 } catch (Exception e2) {
                     nz0.Q(c.a(-661245133995810L, strArr), 3, c.a(-661305263537954L, strArr) + e2.getMessage());
                     try {
-                        objInvoke = Class.forName(c.a(-660849997004578L, strArr)).getMethod(c.a(-660991730925346L, strArr), IBinder.class).invoke(null, service);
+                        invoke = Class.forName(c.a(-660849997004578L, strArr)).getMethod(c.a(-660991730925346L, strArr), IBinder.class).invoke(null, service);
                     } catch (Exception e3) {
                         nz0.t(c.a(-661077630271266L, strArr), c.a(-661687515627298L, strArr), e3);
                     }
                 }
             }
-            if (objInvoke != null) {
+            if (invoke != null) {
                 nz0.Q(c.a(-661902263992098L, strArr), 3, c.a(-661412637720354L, strArr));
-                return (IInterface) objInvoke;
+                return (IInterface) invoke;
             }
             nz0.s(c.a(-661627386085154L, strArr), c.a(-660038248185634L, strArr));
             return null;

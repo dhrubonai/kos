@@ -1,6 +1,8 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
+import android.widget.Toast;
+import androidx.core.splashscreen.R;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -42,103 +44,69 @@ public final class l92 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((l92) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((l92) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x00a5, code lost:
     
         if (androidx.emoji2.text.n92.k(r11.k, r1, r11.i, r11.q, r11.s, r11.r, r6, r11.j, false, r11) == r10) goto L20;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00a7, code lost:
+    
+        return r10;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x004a, code lost:
+    
+        if (r0 == r10) goto L20;
      */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object k(java.lang.Object r12) throws java.lang.Throwable {
-        /*
-            r11 = this;
-            java.lang.String[] r0 = androidx.emoji2.text.wj1.f1284a
-            int r1 = r11.h
-            r2 = 0
-            r3 = 2
-            r4 = 1
-            int r5 = r11.j
-            androidx.emoji2.text.f30 r10 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L2a
-            if (r1 == r4) goto L25
-            if (r1 != r3) goto L16
-            androidx.emoji2.text.mz0.L(r12)
-            goto La8
-        L16:
-            java.lang.IllegalStateException r1 = new java.lang.IllegalStateException
-            r2 = -504599086776098(0xfffe3511deadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r2, r0)
-            r1.<init>(r0)
-            throw r1
-        L25:
-            androidx.emoji2.text.mz0.L(r12)
-            r0 = r12
-            goto L4d
-        L2a:
-            androidx.emoji2.text.mz0.L(r12)
-            r6 = -504478827691810(0xfffe352ddeadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r6, r0)
-            r11.h = r4
-            androidx.emoji2.text.dh r1 = r11.i
-            r1.getClass()
-            androidx.emoji2.text.q60 r1 = androidx.emoji2.text.e90.f294a
-            androidx.emoji2.text.a60 r1 = androidx.emoji2.text.a60.f
-            androidx.emoji2.text.bh r4 = new androidx.emoji2.text.bh
-            r4.<init>(r0, r5, r2)
-            java.lang.Object r0 = androidx.emoji2.text.h50.M(r1, r4, r11)
-            if (r0 != r10) goto L4d
-            goto La7
-        L4d:
-            java.lang.Boolean r0 = (java.lang.Boolean) r0
-            boolean r0 = r0.booleanValue()
-            int r1 = androidx.emoji2.text.n92.f799a
-            java.lang.Boolean r1 = java.lang.Boolean.FALSE
-            androidx.emoji2.text.mf1 r4 = r11.n
-            r4.setValue(r1)
-            androidx.emoji2.text.mf1 r4 = r11.o
-            r4.setValue(r2)
-            androidx.emoji2.text.mf1 r6 = r11.p
-            if (r0 == 0) goto L80
-            r6.setValue(r1)
-            androidx.emoji2.text.h82 r0 = r11.k
-            androidx.emoji2.text.bh0 r2 = r11.l
-            r0.g(r5, r2)
-            int r0 = r0.b()
-            if (r0 != r5) goto La8
-            androidx.emoji2.text.mf1 r0 = r11.q
-            r0.setValue(r1)
-            androidx.emoji2.text.mf1 r0 = r11.r
-            r0.setValue(r2)
-            goto La8
-        L80:
-            r0 = 2131689651(0x7f0f00b3, float:1.9008323E38)
-            android.content.Context r1 = r11.m
-            java.lang.String r0 = r1.getString(r0)
-            r2 = 0
-            android.widget.Toast r0 = android.widget.Toast.makeText(r1, r0, r2)
-            r0.show()
-            r11.h = r3
-            r8 = 0
-            androidx.emoji2.text.h82 r0 = r11.k
-            androidx.emoji2.text.dh r2 = r11.i
-            androidx.emoji2.text.mf1 r3 = r11.q
-            androidx.emoji2.text.mf1 r4 = r11.s
-            androidx.emoji2.text.mf1 r5 = r11.r
-            int r7 = r11.j
-            r9 = r11
-            java.lang.Object r0 = androidx.emoji2.text.n92.k(r0, r1, r2, r3, r4, r5, r6, r7, r8, r9)
-            if (r0 != r10) goto La8
-        La7:
-            return r10
-        La8:
-            androidx.emoji2.text.up2 r0 = androidx.emoji2.text.up2.f1187a
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.l92.k(java.lang.Object):java.lang.Object");
+    public final Object k(Object obj) {
+        Object M;
+        String[] strArr = wj1.f1283a;
+        int i = this.h;
+        int i2 = this.j;
+        f30 f30Var = f30.d;
+        if (i == 0) {
+            mz0.L(obj);
+            String a2 = a.a.a.c.a(-504478827691810L, strArr);
+            this.h = 1;
+            this.i.getClass();
+            q60 q60Var = e90.f293a;
+            M = h50.M(a60.f, new bh(a2, i2, (l10) null), this);
+        } else {
+            if (i != 1) {
+                if (i != 2) {
+                    throw new IllegalStateException(a.a.a.c.a(-504599086776098L, strArr));
+                }
+                mz0.L(obj);
+                return up2.f1186a;
+            }
+            mz0.L(obj);
+            M = obj;
+        }
+        boolean booleanValue = ((Boolean) M).booleanValue();
+        int i3 = n92.f798a;
+        Boolean bool = Boolean.FALSE;
+        this.n.setValue(bool);
+        this.o.setValue(null);
+        mf1 mf1Var = this.p;
+        if (booleanValue) {
+            mf1Var.setValue(bool);
+            h82 h82Var = this.k;
+            bh0 bh0Var = this.l;
+            h82Var.g(i2, bh0Var);
+            if (h82Var.b() == i2) {
+                this.q.setValue(bool);
+                this.r.setValue(bh0Var);
+            }
+        } else {
+            Context context = this.m;
+            Toast.makeText(context, context.getString(R.string.facebook_uninstall_failed), 0).show();
+            this.h = 2;
+        }
+        return up2.f1186a;
     }
 }

@@ -9,11 +9,13 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.WindowManager;
+import android.view.accessibility.AccessibilityManager;
 import androidx.core.splashscreen.R;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -46,7 +48,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             }
 
             @Override // java.lang.Runnable
-            public final void run() throws Resources.NotFoundException {
+            public final void run() {
                 switch (i) {
                     case 0:
                         this.e.c(false);
@@ -66,7 +68,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             }
 
             @Override // java.lang.Runnable
-            public final void run() throws Resources.NotFoundException {
+            public final void run() {
                 switch (i2) {
                     case 0:
                         this.e.c(false);
@@ -80,7 +82,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
         this.d = view;
         this.e = charSequence;
         ViewConfiguration viewConfiguration = ViewConfiguration.get(view.getContext());
-        Method method = hs2.f487a;
+        Method method = hs2.f486a;
         this.f = Build.VERSION.SDK_INT >= 28 ? f90.j(viewConfiguration) : viewConfiguration.getScaledTouchSlop() / 2;
         this.m = true;
         view.setOnLongClickListener(this);
@@ -107,7 +109,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             if (an2Var != null) {
                 View view2 = an2Var.b;
                 if (view2.getParent() != null) {
-                    ((WindowManager) an2Var.f113a.getSystemService("window")).removeView(view2);
+                    ((WindowManager) an2Var.f112a.getSystemService("window")).removeView(view2);
                 }
                 this.k = null;
                 this.m = true;
@@ -122,7 +124,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
         view.removeCallbacks(this.h);
     }
 
-    public final void c(boolean z) throws Resources.NotFoundException {
+    public final void c(boolean z) {
         int height;
         int i;
         int i2;
@@ -143,12 +145,12 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             this.l = z;
             an2 an2Var = new an2(view.getContext());
             this.k = an2Var;
-            int width = this.i;
-            int i6 = this.j;
+            int i6 = this.i;
+            int i7 = this.j;
             boolean z2 = this.l;
             View view2 = an2Var.b;
             ViewParent parent = view2.getParent();
-            Context context = an2Var.f113a;
+            Context context = an2Var.f112a;
             if (parent != null && view2.getParent() != null) {
                 ((WindowManager) context.getSystemService("window")).removeView(view2);
             }
@@ -158,12 +160,12 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             layoutParams.token = applicationWindowToken;
             int dimensionPixelOffset = context.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
             if (view.getWidth() < dimensionPixelOffset) {
-                width = view.getWidth() / 2;
+                i6 = view.getWidth() / 2;
             }
             if (view.getHeight() >= dimensionPixelOffset) {
                 int dimensionPixelOffset2 = context.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
-                height = i6 + dimensionPixelOffset2;
-                i = i6 - dimensionPixelOffset2;
+                height = i7 + dimensionPixelOffset2;
+                i = i7 - dimensionPixelOffset2;
             } else {
                 height = view.getHeight();
                 i = 0;
@@ -192,14 +194,14 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
                 Rect rect = an2Var.e;
                 rootView.getWindowVisibleDisplayFrame(rect);
                 if (rect.left >= 0 || rect.top >= 0) {
-                    i2 = width;
+                    i2 = i6;
                     i3 = i;
                     i4 = 0;
                     i5 = 1;
                 } else {
                     Resources resources = context.getResources();
                     i5 = 1;
-                    i2 = width;
+                    i2 = i6;
                     i3 = i;
                     int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
                     int dimensionPixelSize = identifier != 0 ? resources.getDimensionPixelSize(identifier) : 0;
@@ -211,26 +213,26 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
                 rootView.getLocationOnScreen(iArr);
                 int[] iArr2 = an2Var.f;
                 view.getLocationOnScreen(iArr2);
-                int i7 = iArr2[i4] - iArr[i4];
-                iArr2[i4] = i7;
+                int i8 = iArr2[i4] - iArr[i4];
+                iArr2[i4] = i8;
                 iArr2[i5] = iArr2[i5] - iArr[i5];
-                layoutParams.x = (i7 + i2) - (rootView.getWidth() / 2);
-                int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, i4);
-                view2.measure(iMakeMeasureSpec, iMakeMeasureSpec);
+                layoutParams.x = (i8 + i2) - (rootView.getWidth() / 2);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, i4);
+                view2.measure(makeMeasureSpec, makeMeasureSpec);
                 int measuredHeight = view2.getMeasuredHeight();
-                int i8 = iArr2[i5];
-                int i9 = ((i8 + i3) - dimensionPixelOffset3) - measuredHeight;
-                int i10 = i8 + height + dimensionPixelOffset3;
+                int i9 = iArr2[i5];
+                int i10 = ((i9 + i3) - dimensionPixelOffset3) - measuredHeight;
+                int i11 = i9 + height + dimensionPixelOffset3;
                 if (z2) {
-                    if (i9 >= 0) {
-                        layoutParams.y = i9;
-                    } else {
+                    if (i10 >= 0) {
                         layoutParams.y = i10;
+                    } else {
+                        layoutParams.y = i11;
                     }
-                } else if (measuredHeight + i10 <= rect.height()) {
-                    layoutParams.y = i10;
+                } else if (measuredHeight + i11 <= rect.height()) {
+                    layoutParams.y = i11;
                 } else {
-                    layoutParams.y = i9;
+                    layoutParams.y = i10;
                 }
             }
             ((WindowManager) context.getSystemService("window")).addView(view2, layoutParams);
@@ -238,7 +240,7 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
             if (this.l) {
                 j2 = 2500;
             } else {
-                Field field = es2.f320a;
+                Field field = es2.f319a;
                 if ((view.getWindowSystemUiVisibility() & 1) == i5) {
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                     j = 3000;
@@ -254,77 +256,47 @@ public final class zm2 implements View.OnLongClickListener, View.OnHoverListener
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0066  */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0064, code lost:
+    
+        if (java.lang.Math.abs(r5 - r3.j) <= r2) goto L30;
+     */
     @Override // android.view.View.OnHoverListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean onHover(android.view.View r4, android.view.MotionEvent r5) {
-        /*
-            r3 = this;
-            androidx.emoji2.text.an2 r4 = r3.k
-            r0 = 0
-            if (r4 == 0) goto La
-            boolean r4 = r3.l
-            if (r4 == 0) goto La
-            goto L6f
-        La:
-            android.view.View r4 = r3.d
-            android.content.Context r1 = r4.getContext()
-            java.lang.String r2 = "accessibility"
-            java.lang.Object r1 = r1.getSystemService(r2)
-            android.view.accessibility.AccessibilityManager r1 = (android.view.accessibility.AccessibilityManager) r1
-            boolean r2 = r1.isEnabled()
-            if (r2 == 0) goto L25
-            boolean r1 = r1.isTouchExplorationEnabled()
-            if (r1 == 0) goto L25
-            goto L6f
-        L25:
-            int r1 = r5.getAction()
-            r2 = 7
-            if (r1 == r2) goto L38
-            r4 = 10
-            if (r1 == r4) goto L31
-            goto L6f
-        L31:
-            r4 = 1
-            r3.m = r4
-            r3.a()
-            return r0
-        L38:
-            boolean r4 = r4.isEnabled()
-            if (r4 == 0) goto L6f
-            androidx.emoji2.text.an2 r4 = r3.k
-            if (r4 != 0) goto L6f
-            float r4 = r5.getX()
-            int r4 = (int) r4
-            float r5 = r5.getY()
-            int r5 = (int) r5
-            boolean r1 = r3.m
-            if (r1 != 0) goto L66
-            int r1 = r3.i
-            int r1 = r4 - r1
-            int r1 = java.lang.Math.abs(r1)
-            int r2 = r3.f
-            if (r1 > r2) goto L66
-            int r1 = r3.j
-            int r1 = r5 - r1
-            int r1 = java.lang.Math.abs(r1)
-            if (r1 <= r2) goto L6f
-        L66:
-            r3.i = r4
-            r3.j = r5
-            r3.m = r0
-            b(r3)
-        L6f:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.zm2.onHover(android.view.View, android.view.MotionEvent):boolean");
+    public final boolean onHover(View view, MotionEvent motionEvent) {
+        if (this.k == null || !this.l) {
+            View view2 = this.d;
+            AccessibilityManager accessibilityManager = (AccessibilityManager) view2.getContext().getSystemService("accessibility");
+            if (!accessibilityManager.isEnabled() || !accessibilityManager.isTouchExplorationEnabled()) {
+                int action = motionEvent.getAction();
+                if (action != 7) {
+                    if (action == 10) {
+                        this.m = true;
+                        a();
+                        return false;
+                    }
+                } else if (view2.isEnabled() && this.k == null) {
+                    int x = (int) motionEvent.getX();
+                    int y = (int) motionEvent.getY();
+                    if (!this.m) {
+                        int abs = Math.abs(x - this.i);
+                        int i = this.f;
+                        if (abs <= i) {
+                        }
+                    }
+                    this.i = x;
+                    this.j = y;
+                    this.m = false;
+                    b(this);
+                }
+            }
+        }
+        return false;
     }
 
     @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) throws Resources.NotFoundException {
+    public final boolean onLongClick(View view) {
         this.i = view.getWidth() / 2;
         this.j = view.getHeight() / 2;
         c(true);

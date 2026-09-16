@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ul {
 
     /* renamed from: a, reason: collision with root package name */
-    public aa f1179a = null;
+    public aa f1178a = null;
     public w6 b = null;
     public np c = null;
     public wa d = null;
@@ -18,21 +18,21 @@ public final class ul {
             return false;
         }
         ul ulVar = (ul) obj;
-        return lx0.n(this.f1179a, ulVar.f1179a) && lx0.n(this.b, ulVar.b) && lx0.n(this.c, ulVar.c) && lx0.n(this.d, ulVar.d);
+        return lx0.n(this.f1178a, ulVar.f1178a) && lx0.n(this.b, ulVar.b) && lx0.n(this.c, ulVar.c) && lx0.n(this.d, ulVar.d);
     }
 
     public final int hashCode() {
-        aa aaVar = this.f1179a;
-        int iHashCode = (aaVar == null ? 0 : aaVar.hashCode()) * 31;
+        aa aaVar = this.f1178a;
+        int hashCode = (aaVar == null ? 0 : aaVar.hashCode()) * 31;
         w6 w6Var = this.b;
-        int iHashCode2 = (iHashCode + (w6Var == null ? 0 : w6Var.hashCode())) * 31;
+        int hashCode2 = (hashCode + (w6Var == null ? 0 : w6Var.hashCode())) * 31;
         np npVar = this.c;
-        int iHashCode3 = (iHashCode2 + (npVar == null ? 0 : npVar.hashCode())) * 31;
+        int hashCode3 = (hashCode2 + (npVar == null ? 0 : npVar.hashCode())) * 31;
         wa waVar = this.d;
-        return iHashCode3 + (waVar != null ? waVar.hashCode() : 0);
+        return hashCode3 + (waVar != null ? waVar.hashCode() : 0);
     }
 
     public final String toString() {
-        return "BorderCache(imageBitmap=" + this.f1179a + ", canvas=" + this.b + ", canvasDrawScope=" + this.c + ", borderPath=" + this.d + ')';
+        return "BorderCache(imageBitmap=" + this.f1178a + ", canvas=" + this.b + ", canvasDrawScope=" + this.c + ", borderPath=" + this.d + ')';
     }
 }

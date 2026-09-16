@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class i11 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final e11 f502a;
+    public final e11 f501a;
     public boolean b;
     public boolean c;
     public boolean e;
@@ -24,15 +24,15 @@ public final class i11 {
     public final eb1 p = new eb1(this);
 
     public i11(e11 e11Var) {
-        this.f502a = e11Var;
+        this.f501a = e11Var;
     }
 
     public final xh1 a() {
-        return this.f502a.H.d;
+        return this.f501a.H.d;
     }
 
     public final void b() {
-        a11 a11Var = this.f502a.I.d;
+        a11 a11Var = this.f501a.I.d;
         a11 a11Var2 = a11.f;
         a11 a11Var3 = a11.g;
         if (a11Var == a11Var2 || a11Var == a11Var3) {
@@ -58,7 +58,7 @@ public final class i11 {
             i11 i11Var = r81Var.i;
             i11Var.d = a11.e;
             eb1 eb1Var = i11Var.p;
-            e11 e11Var = i11Var.f502a;
+            e11 e11Var = i11Var.f501a;
             i11Var.e = false;
             wl1 snapshotObserver = ((v7) h11.a(e11Var)).getSnapshotObserver();
             p81 p81Var = new p81(r81Var, j);
@@ -84,8 +84,8 @@ public final class i11 {
         int i2 = this.l;
         this.l = i;
         if ((i2 == 0) != (i == 0)) {
-            e11 e11VarU = this.f502a.u();
-            i11 i11Var = e11VarU != null ? e11VarU.I : null;
+            e11 u = this.f501a.u();
+            i11 i11Var = u != null ? u.I : null;
             if (i11Var != null) {
                 if (i == 0) {
                     i11Var.d(i11Var.l - 1);
@@ -100,8 +100,8 @@ public final class i11 {
         int i2 = this.o;
         this.o = i;
         if ((i2 == 0) != (i == 0)) {
-            e11 e11VarU = this.f502a.u();
-            i11 i11Var = e11VarU != null ? e11VarU.I : null;
+            e11 u = this.f501a.u();
+            i11 i11Var = u != null ? u.I : null;
             if (i11Var != null) {
                 if (i == 0) {
                     i11Var.e(i11Var.o - 1);
@@ -172,41 +172,41 @@ public final class i11 {
         eb1 eb1Var = this.p;
         i11 i11Var = eb1Var.i;
         Object obj = eb1Var.u;
-        e11 e11Var = this.f502a;
+        e11 e11Var = this.f501a;
         if ((obj != null || i11Var.a().t() != null) && eb1Var.t) {
             eb1Var.t = false;
             eb1Var.u = i11Var.a().t();
-            e11 e11VarU = e11Var.u();
-            if (e11VarU != null) {
-                e11.W(e11VarU, false, 7);
+            e11 u = e11Var.u();
+            if (u != null) {
+                e11.W(u, false, 7);
             }
         }
         r81 r81Var = this.q;
         if (r81Var != null) {
             i11 i11Var2 = r81Var.i;
             if (r81Var.z == null) {
-                m81 m81VarR0 = i11Var2.a().R0();
-                lx0.u(m81VarR0);
-                if (m81VarR0.r.t() == null) {
+                m81 R0 = i11Var2.a().R0();
+                lx0.u(R0);
+                if (R0.r.t() == null) {
                     return;
                 }
             }
             if (r81Var.y) {
                 r81Var.y = false;
-                m81 m81VarR02 = i11Var2.a().R0();
-                lx0.u(m81VarR02);
-                r81Var.z = m81VarR02.r.t();
+                m81 R02 = i11Var2.a().R0();
+                lx0.u(R02);
+                r81Var.z = R02.r.t();
                 if (lz0.y(e11Var)) {
-                    e11 e11VarU2 = e11Var.u();
-                    if (e11VarU2 != null) {
-                        e11.W(e11VarU2, false, 7);
+                    e11 u2 = e11Var.u();
+                    if (u2 != null) {
+                        e11.W(u2, false, 7);
                         return;
                     }
                     return;
                 }
-                e11 e11VarU3 = e11Var.u();
-                if (e11VarU3 != null) {
-                    e11.U(e11VarU3, false, 7);
+                e11 u3 = e11Var.u();
+                if (u3 != null) {
+                    e11.U(u3, false, 7);
                 }
             }
         }

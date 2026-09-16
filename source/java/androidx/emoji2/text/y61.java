@@ -20,6 +20,7 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
     public final z61 h;
 
     public y61(Object[] objArr, int i, int i2, y61 y61Var, z61 z61Var) {
+        int i3;
         lx0.x(objArr, "backing");
         lx0.x(z61Var, "root");
         this.d = objArr;
@@ -27,7 +28,8 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
         this.f = i2;
         this.g = y61Var;
         this.h = z61Var;
-        ((AbstractList) this).modCount = ((AbstractList) z61Var).modCount;
+        i3 = ((AbstractList) z61Var).modCount;
+        ((AbstractList) this).modCount = i3;
     }
 
     @Override // androidx.emoji2.text.i0
@@ -122,7 +124,9 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
     }
 
     public final void f() {
-        if (((AbstractList) this.h).modCount != ((AbstractList) this).modCount) {
+        int i;
+        i = ((AbstractList) this.h).modCount;
+        if (i != ((AbstractList) this).modCount) {
             throw new ConcurrentModificationException();
         }
     }
@@ -144,17 +148,17 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
     }
 
     public final Object h(int i) {
-        Object objH;
+        Object h;
         ((AbstractList) this).modCount++;
         y61 y61Var = this.g;
         if (y61Var != null) {
-            objH = y61Var.h(i);
+            h = y61Var.h(i);
         } else {
             z61 z61Var = z61.g;
-            objH = this.h.h(i);
+            h = this.h.h(i);
         }
         this.f--;
-        return objH;
+        return h;
     }
 
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
@@ -162,12 +166,12 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
         f();
         Object[] objArr = this.d;
         int i = this.f;
-        int iHashCode = 1;
-        for (int i2 = 0; i2 < i; i2++) {
-            Object obj = objArr[this.e + i2];
-            iHashCode = (iHashCode * 31) + (obj != null ? obj.hashCode() : 0);
+        int i2 = 1;
+        for (int i3 = 0; i3 < i; i3++) {
+            Object obj = objArr[this.e + i3];
+            i2 = (i2 * 31) + (obj != null ? obj.hashCode() : 0);
         }
-        return iHashCode;
+        return i2;
     }
 
     public final void i(int i, int i2) {
@@ -207,19 +211,19 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
     }
 
     public final int j(int i, int i2, Collection collection, boolean z) {
-        int iJ;
+        int j;
         y61 y61Var = this.g;
         if (y61Var != null) {
-            iJ = y61Var.j(i, i2, collection, z);
+            j = y61Var.j(i, i2, collection, z);
         } else {
             z61 z61Var = z61.g;
-            iJ = this.h.j(i, i2, collection, z);
+            j = this.h.j(i, i2, collection, z);
         }
-        if (iJ > 0) {
+        if (j > 0) {
             ((AbstractList) this).modCount++;
         }
-        this.f -= iJ;
-        return iJ;
+        this.f -= j;
+        return j;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -242,11 +246,11 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
     public final boolean remove(Object obj) {
         g();
         f();
-        int iIndexOf = indexOf(obj);
-        if (iIndexOf >= 0) {
-            b(iIndexOf);
+        int indexOf = indexOf(obj);
+        if (indexOf >= 0) {
+            b(indexOf);
         }
-        return iIndexOf >= 0;
+        return indexOf >= 0;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -294,9 +298,9 @@ public final class y61 extends i0 implements RandomAccess, Serializable {
         int i = this.f;
         int i2 = this.e;
         if (length < i) {
-            Object[] objArrCopyOfRange = Arrays.copyOfRange(this.d, i2, i + i2, objArr.getClass());
-            lx0.w(objArrCopyOfRange, "copyOfRange(...)");
-            return objArrCopyOfRange;
+            Object[] copyOfRange = Arrays.copyOfRange(this.d, i2, i + i2, objArr.getClass());
+            lx0.w(copyOfRange, "copyOfRange(...)");
+            return copyOfRange;
         }
         xh.z0(this.d, objArr, 0, i2, i + i2);
         int i3 = this.f;

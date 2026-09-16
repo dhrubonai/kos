@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public abstract class pc1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final String f898a;
+    public static final String f897a;
     public static final String b;
 
     static {
-        String strW = eg2.W(10, "H");
-        f898a = strW;
-        b = strW + '\n' + strW;
+        String W = eg2.W(10, "H");
+        f897a = W;
+        b = W + '\n' + W;
     }
 }

@@ -1,5 +1,9 @@
 package androidx.emoji2.text;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
@@ -33,14 +37,14 @@ public class vn implements jq {
         if (i2 < 0) {
             throw new IllegalArgumentException(zd.g("Invalid channel capacity: ", i2, ", should be >=0").toString());
         }
-        tq tqVar = xn.f1346a;
+        tq tqVar = xn.f1345a;
         this.bufferEnd$volatile = i2 != 0 ? i2 != Integer.MAX_VALUE ? i2 : Long.MAX_VALUE : 0L;
         this.completedExpandBuffersAndPauseFlag$volatile = g.get(this);
         tq tqVar2 = new tq(0L, null, this, 3);
         this.sendSegment$volatile = tqVar2;
         this.receiveSegment$volatile = tqVar2;
         if (w()) {
-            tqVar2 = xn.f1346a;
+            tqVar2 = xn.f1345a;
             lx0.v(tqVar2, "null cannot be cast to non-null type kotlinx.coroutines.channels.ChannelSegment<E of kotlinx.coroutines.channels.BufferedChannel>");
         }
         this.bufferEndSegment$volatile = tqVar2;
@@ -52,37 +56,37 @@ public class vn implements jq {
             throw new IllegalStateException(("Unexpected waiter: " + obj).toString());
         }
         gp gpVar = (gp) obj;
-        tq tqVar = xn.f1346a;
-        de0 de0VarH = gpVar.h(up2.f1187a, null);
-        if (de0VarH == null) {
+        tq tqVar = xn.f1345a;
+        de0 h2 = gpVar.h(up2.f1186a, null);
+        if (h2 == null) {
             return false;
         }
-        gpVar.C(de0VarH);
+        gpVar.C(h2);
         return true;
     }
 
     public static final tq b(vn vnVar, long j2, tq tqVar) {
-        Object objV;
+        Object v;
         vn vnVar2;
-        tq tqVar2 = xn.f1346a;
+        tq tqVar2 = xn.f1345a;
         wn wnVar = wn.k;
         loop0: while (true) {
-            objV = kx0.v(tqVar, j2, wnVar);
-            if (!pz0.D(objV)) {
-                c62 c62VarY = pz0.y(objV);
+            v = kx0.v(tqVar, j2, wnVar);
+            if (!pz0.D(v)) {
+                c62 y = pz0.y(v);
                 while (true) {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = i;
                     c62 c62Var = (c62) atomicReferenceFieldUpdater.get(vnVar);
-                    if (c62Var.c >= c62VarY.c) {
+                    if (c62Var.c >= y.c) {
                         break loop0;
                     }
-                    if (!c62VarY.i()) {
+                    if (!y.i()) {
                         break;
                     }
-                    while (!atomicReferenceFieldUpdater.compareAndSet(vnVar, c62Var, c62VarY)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(vnVar, c62Var, y)) {
                         if (atomicReferenceFieldUpdater.get(vnVar) != c62Var) {
-                            if (c62VarY.e()) {
-                                c62VarY.d();
+                            if (y.e()) {
+                                y.d();
                             }
                         }
                     }
@@ -94,16 +98,16 @@ public class vn implements jq {
                 break;
             }
         }
-        boolean zD = pz0.D(objV);
+        boolean D = pz0.D(v);
         AtomicLongFieldUpdater atomicLongFieldUpdater = f;
-        if (zD) {
+        if (D) {
             vnVar.u();
             if (tqVar.c * xn.b < atomicLongFieldUpdater.get(vnVar)) {
                 tqVar.a();
                 return null;
             }
         } else {
-            tq tqVar3 = (tq) pz0.y(objV);
+            tq tqVar3 = (tq) pz0.y(v);
             long j3 = tqVar3.c;
             if (j3 <= j2) {
                 return tqVar3;
@@ -138,8 +142,8 @@ public class vn implements jq {
         if (z) {
             return vnVar.D(tqVar, i2, obj, j2, obj2, z);
         }
-        Object objK = tqVar.k(i2);
-        if (objK == null) {
+        Object k2 = tqVar.k(i2);
+        if (k2 == null) {
             if (vnVar.f(j2)) {
                 if (tqVar.j(i2, null, xn.d)) {
                     return 1;
@@ -152,9 +156,9 @@ public class vn implements jq {
                     return 2;
                 }
             }
-        } else if (objK instanceof lu2) {
+        } else if (k2 instanceof lu2) {
             tqVar.m(i2, null);
-            if (vnVar.A(objK, obj)) {
+            if (vnVar.A(k2, obj)) {
                 tqVar.n(i2, xn.i);
                 return 0;
             }
@@ -182,12 +186,12 @@ public class vn implements jq {
                 throw new IllegalStateException(("Unexpected receiver type: " + obj).toString());
             }
             gp gpVar = (gp) obj;
-            tq tqVar = xn.f1346a;
-            de0 de0VarH = gpVar.h(obj2, null);
-            if (de0VarH == null) {
+            tq tqVar = xn.f1345a;
+            de0 h2 = gpVar.h(obj2, null);
+            if (h2 == null) {
                 return false;
             }
-            gpVar.C(de0VarH);
+            gpVar.C(h2);
             return true;
         }
         un unVar = (un) obj;
@@ -197,40 +201,40 @@ public class vn implements jq {
         unVar.d = obj2;
         Boolean bool = Boolean.TRUE;
         unVar.f.getClass();
-        tq tqVar2 = xn.f1346a;
-        de0 de0VarH2 = ipVar.h(bool, null);
-        if (de0VarH2 == null) {
+        tq tqVar2 = xn.f1345a;
+        de0 h3 = ipVar.h(bool, null);
+        if (h3 == null) {
             return false;
         }
-        ipVar.C(de0VarH2);
+        ipVar.C(h3);
         return true;
     }
 
     public final Object C(tq tqVar, int i2, long j2, Object obj) {
         AtomicReferenceArray atomicReferenceArray = tqVar.f;
-        Object objK = tqVar.k(i2);
+        Object k2 = tqVar.k(i2);
         AtomicLongFieldUpdater atomicLongFieldUpdater = e;
-        if (objK == null) {
+        if (k2 == null) {
             if (j2 >= (atomicLongFieldUpdater.get(this) & 1152921504606846975L)) {
                 if (obj == null) {
                     return xn.n;
                 }
-                if (tqVar.j(i2, objK, obj)) {
+                if (tqVar.j(i2, k2, obj)) {
                     k();
                     return xn.m;
                 }
             }
-        } else if (objK == xn.d && tqVar.j(i2, objK, xn.i)) {
+        } else if (k2 == xn.d && tqVar.j(i2, k2, xn.i)) {
             k();
             Object obj2 = atomicReferenceArray.get(i2 * 2);
             tqVar.m(i2, null);
             return obj2;
         }
         while (true) {
-            Object objK2 = tqVar.k(i2);
-            if (objK2 == null || objK2 == xn.e) {
+            Object k3 = tqVar.k(i2);
+            if (k3 == null || k3 == xn.e) {
                 if (j2 < (atomicLongFieldUpdater.get(this) & 1152921504606846975L)) {
-                    if (tqVar.j(i2, objK2, xn.h)) {
+                    if (tqVar.j(i2, k3, xn.h)) {
                         k();
                         return xn.o;
                     }
@@ -238,29 +242,29 @@ public class vn implements jq {
                     if (obj == null) {
                         return xn.n;
                     }
-                    if (tqVar.j(i2, objK2, obj)) {
+                    if (tqVar.j(i2, k3, obj)) {
                         k();
                         return xn.m;
                     }
                 }
-            } else if (objK2 != xn.d) {
+            } else if (k3 != xn.d) {
                 de0 de0Var = xn.j;
-                if (objK2 == de0Var) {
+                if (k3 == de0Var) {
                     return xn.o;
                 }
-                if (objK2 == xn.h) {
+                if (k3 == xn.h) {
                     return xn.o;
                 }
-                if (objK2 == xn.l) {
+                if (k3 == xn.l) {
                     k();
                     return xn.o;
                 }
-                if (objK2 != xn.g && tqVar.j(i2, objK2, xn.f)) {
-                    boolean z = objK2 instanceof mu2;
+                if (k3 != xn.g && tqVar.j(i2, k3, xn.f)) {
+                    boolean z = k3 instanceof mu2;
                     if (z) {
-                        objK2 = ((mu2) objK2).f771a;
+                        k3 = ((mu2) k3).f770a;
                     }
-                    if (B(objK2)) {
+                    if (B(k3)) {
                         tqVar.n(i2, xn.i);
                         k();
                         Object obj3 = atomicReferenceArray.get(i2 * 2);
@@ -274,7 +278,7 @@ public class vn implements jq {
                     }
                     return xn.o;
                 }
-            } else if (tqVar.j(i2, objK2, xn.i)) {
+            } else if (tqVar.j(i2, k3, xn.i)) {
                 k();
                 Object obj4 = atomicReferenceArray.get(i2 * 2);
                 tqVar.m(i2, null);
@@ -285,8 +289,8 @@ public class vn implements jq {
 
     public final int D(tq tqVar, int i2, Object obj, long j2, Object obj2, boolean z) {
         while (true) {
-            Object objK = tqVar.k(i2);
-            if (objK == null) {
+            Object k2 = tqVar.k(i2);
+            if (k2 == null) {
                 if (!f(j2) || z) {
                     if (z) {
                         if (tqVar.j(i2, null, xn.j)) {
@@ -305,26 +309,26 @@ public class vn implements jq {
                     break;
                 }
             } else {
-                if (objK != xn.e) {
+                if (k2 != xn.e) {
                     de0 de0Var = xn.k;
-                    if (objK == de0Var) {
+                    if (k2 == de0Var) {
                         tqVar.m(i2, null);
                         return 5;
                     }
-                    if (objK == xn.h) {
+                    if (k2 == xn.h) {
                         tqVar.m(i2, null);
                         return 5;
                     }
-                    if (objK == xn.l) {
+                    if (k2 == xn.l) {
                         tqVar.m(i2, null);
                         u();
                         return 4;
                     }
                     tqVar.m(i2, null);
-                    if (objK instanceof mu2) {
-                        objK = ((mu2) objK).f771a;
+                    if (k2 instanceof mu2) {
+                        k2 = ((mu2) k2).f770a;
                     }
-                    if (A(objK, obj)) {
+                    if (A(k2, obj)) {
                         tqVar.n(i2, xn.i);
                         return 0;
                     }
@@ -333,7 +337,7 @@ public class vn implements jq {
                     }
                     return 5;
                 }
-                if (tqVar.j(i2, objK, xn.d)) {
+                if (tqVar.j(i2, k2, xn.d)) {
                     break;
                 }
             }
@@ -424,18 +428,18 @@ public class vn implements jq {
             long j5 = andIncrement / j4;
             int i2 = (int) (andIncrement % j4);
             if (tqVar2.c != j5) {
-                tq tqVarL = l(j5, tqVar2);
-                if (tqVarL == null) {
+                tq l2 = l(j5, tqVar2);
+                if (l2 == null) {
                     continue;
                 } else {
-                    tqVar = tqVarL;
+                    tqVar = l2;
                 }
             } else {
                 tqVar = tqVar2;
             }
-            Object objC = C(tqVar, i2, andIncrement, obj);
+            Object C = C(tqVar, i2, andIncrement, obj);
             tq tqVar3 = tqVar;
-            if (objC == xn.m) {
+            if (C == xn.m) {
                 lu2 lu2Var = obj instanceof lu2 ? (lu2) obj : null;
                 if (lu2Var != null) {
                     lu2Var.a(tqVar3, i2);
@@ -444,12 +448,12 @@ public class vn implements jq {
                 tqVar3.h();
                 return sqVar;
             }
-            if (objC != xn.o) {
-                if (objC == xn.n) {
+            if (C != xn.o) {
+                if (C == xn.n) {
                     throw new IllegalStateException("unexpected");
                 }
                 tqVar3.a();
-                return objC;
+                return C;
             }
             if (andIncrement < q()) {
                 tqVar3.a();
@@ -471,8 +475,18 @@ public class vn implements jq {
         return j2 < g.get(this) || j2 < f.get(this) + ((long) this.d);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x003c A[LOOP:2: B:17:0x003c->B:39:?, LOOP_START] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006e A[LOOP:3: B:22:0x006e->B:30:?, LOOP_LABEL: LOOP:3: B:22:0x006e->B:30:?, LOOP_START] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x004c A[LOOP:5: B:40:0x004c->B:48:?, LOOP_START] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x002f A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean g(Throwable th, boolean z) {
         vn vnVar;
+        de0 de0Var;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         boolean z2;
         long j2;
         long j3;
@@ -481,109 +495,385 @@ public class vn implements jq {
         long j5;
         long j6;
         AtomicLongFieldUpdater atomicLongFieldUpdater = e;
-        if (!z) {
-            vnVar = this;
-            break;
+        if (z) {
+            do {
+                j6 = atomicLongFieldUpdater.get(this);
+                if (((int) (j6 >> 60)) == 0) {
+                    tq tqVar = xn.f1345a;
+                    vnVar = this;
+                }
+            } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j6, (j6 & 1152921504606846975L) + (1 << 60)));
+            de0Var = xn.s;
+            while (true) {
+                atomicReferenceFieldUpdater = l;
+                if (!atomicReferenceFieldUpdater.compareAndSet(this, de0Var, th)) {
+                    z2 = true;
+                    break;
+                }
+                if (atomicReferenceFieldUpdater.get(this) != de0Var) {
+                    z2 = false;
+                    break;
+                }
+            }
+            if (z) {
+                do {
+                    j2 = atomicLongFieldUpdater.get(this);
+                    int i2 = (int) (j2 >> 60);
+                    if (i2 == 0) {
+                        j3 = j2 & 1152921504606846975L;
+                        j4 = 2;
+                    } else {
+                        if (i2 != 1) {
+                            break;
+                        }
+                        j3 = j2 & 1152921504606846975L;
+                        j4 = 3;
+                    }
+                } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j2, (j4 << 60) + j3));
+            } else {
+                do {
+                    j5 = atomicLongFieldUpdater.get(this);
+                } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j5, (3 << 60) + (j5 & 1152921504606846975L)));
+            }
+            u();
+            if (z2) {
+                loop3: while (true) {
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = m;
+                    obj = atomicReferenceFieldUpdater2.get(this);
+                    de0 de0Var2 = obj == null ? xn.q : xn.r;
+                    while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, de0Var2)) {
+                        if (atomicReferenceFieldUpdater2.get(this) != obj) {
+                            break;
+                        }
+                    }
+                }
+                if (obj != null) {
+                    xo2.c(1, obj);
+                    ((um0) obj).e(n());
+                    return z2;
+                }
+            }
+            return z2;
         }
-        do {
-            j6 = atomicLongFieldUpdater.get(this);
-            if (((int) (j6 >> 60)) != 0) {
-                vnVar = this;
-                break;
-            }
-            tq tqVar = xn.f1346a;
-            vnVar = this;
-        } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j6, (j6 & 1152921504606846975L) + (1 << 60)));
-        de0 de0Var = xn.s;
+        vnVar = this;
+        de0Var = xn.s;
         while (true) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = l;
-            if (atomicReferenceFieldUpdater.compareAndSet(this, de0Var, th)) {
-                z2 = true;
-                break;
-            }
-            if (atomicReferenceFieldUpdater.get(this) != de0Var) {
-                z2 = false;
-                break;
+            atomicReferenceFieldUpdater = l;
+            if (!atomicReferenceFieldUpdater.compareAndSet(this, de0Var, th)) {
             }
         }
         if (z) {
-            do {
-                j5 = atomicLongFieldUpdater.get(this);
-            } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j5, (3 << 60) + (j5 & 1152921504606846975L)));
-        } else {
-            do {
-                j2 = atomicLongFieldUpdater.get(this);
-                int i2 = (int) (j2 >> 60);
-                if (i2 == 0) {
-                    j3 = j2 & 1152921504606846975L;
-                    j4 = 2;
-                } else {
-                    if (i2 != 1) {
-                        break;
-                    }
-                    j3 = j2 & 1152921504606846975L;
-                    j4 = 3;
-                }
-            } while (!atomicLongFieldUpdater.compareAndSet(vnVar, j2, (j4 << 60) + j3));
         }
         u();
         if (z2) {
-            loop3: while (true) {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = m;
-                obj = atomicReferenceFieldUpdater2.get(this);
-                de0 de0Var2 = obj == null ? xn.q : xn.r;
-                while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, de0Var2)) {
-                    if (atomicReferenceFieldUpdater2.get(this) != obj) {
-                        break;
-                    }
-                }
-            }
-            if (obj != null) {
-                xo2.c(1, obj);
-                ((um0) obj).e(n());
-                return z2;
-            }
         }
         return z2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x008d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x008d, code lost:
     
         r1 = (androidx.emoji2.text.tq) ((androidx.emoji2.text.oy) androidx.emoji2.text.oy.b.get(r1));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final androidx.emoji2.text.tq h(long r13) {
-        /*
-            Method dump skipped, instructions count: 306
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.h(long):androidx.emoji2.text.tq");
+    public final tq h(long j2) {
+        Object obj;
+        long j3;
+        Object obj2 = k.get(this);
+        tq tqVar = (tq) i.get(this);
+        if (tqVar.c > ((tq) obj2).c) {
+            obj2 = tqVar;
+        }
+        tq tqVar2 = (tq) j.get(this);
+        if (tqVar2.c > ((tq) obj2).c) {
+            obj2 = tqVar2;
+        }
+        oy oyVar = (oy) obj2;
+        loop0: while (true) {
+            oyVar.getClass();
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = oy.f878a;
+            Object obj3 = atomicReferenceFieldUpdater.get(oyVar);
+            de0 de0Var = kx0.b;
+            obj = null;
+            if (obj3 == de0Var) {
+                break;
+            }
+            oy oyVar2 = (oy) obj3;
+            if (oyVar2 == null) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(oyVar, null, de0Var)) {
+                    if (atomicReferenceFieldUpdater.get(oyVar) != null) {
+                        break;
+                    }
+                }
+                break loop0;
+            }
+            oyVar = oyVar2;
+        }
+        tq tqVar3 = (tq) oyVar;
+        if (v()) {
+            tq tqVar4 = tqVar3;
+            loop2: do {
+                int i2 = xn.b - 1;
+                while (true) {
+                    if (-1 >= i2) {
+                        break;
+                    }
+                    j3 = (tqVar4.c * xn.b) + i2;
+                    if (j3 < f.get(this)) {
+                        break loop2;
+                    }
+                    while (true) {
+                        Object k2 = tqVar4.k(i2);
+                        if (k2 != null && k2 != xn.e) {
+                            if (k2 == xn.d) {
+                                break loop2;
+                            }
+                        } else {
+                            if (tqVar4.j(i2, k2, xn.l)) {
+                                tqVar4.h();
+                                break;
+                            }
+                        }
+                    }
+                    i2--;
+                }
+            } while (tqVar4 != null);
+            j3 = -1;
+            if (j3 != -1) {
+                j(j3);
+            }
+        }
+        loop5: for (tq tqVar5 = tqVar3; tqVar5 != null; tqVar5 = (tq) ((oy) oy.b.get(tqVar5))) {
+            for (int i3 = xn.b - 1; -1 < i3; i3--) {
+                if ((tqVar5.c * xn.b) + i3 < j2) {
+                    break loop5;
+                }
+                while (true) {
+                    Object k3 = tqVar5.k(i3);
+                    if (k3 != null && k3 != xn.e) {
+                        if (!(k3 instanceof mu2)) {
+                            if (!(k3 instanceof lu2)) {
+                                break;
+                            }
+                            if (tqVar5.j(i3, k3, xn.l)) {
+                                obj = xo2.D(obj, k3);
+                                tqVar5.l(i3, true);
+                                break;
+                            }
+                        } else {
+                            if (tqVar5.j(i3, k3, xn.l)) {
+                                obj = xo2.D(obj, ((mu2) k3).f770a);
+                                tqVar5.l(i3, true);
+                                break;
+                            }
+                        }
+                    } else {
+                        if (tqVar5.j(i3, k3, xn.l)) {
+                            tqVar5.h();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (obj != null) {
+            if (!(obj instanceof ArrayList)) {
+                z((lu2) obj, true);
+                return tqVar3;
+            }
+            ArrayList arrayList = (ArrayList) obj;
+            for (int size = arrayList.size() - 1; -1 < size; size--) {
+                z((lu2) arrayList.get(size), true);
+            }
+        }
+        return tqVar3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0177, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0177, code lost:
     
         return r11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:46:0x00c2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x00c2, code lost:
     
         d(r1, r4, r7);
      */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x0160  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0163 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0163 A[RETURN] */
     @Override // androidx.emoji2.text.o72
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public java.lang.Object i(androidx.emoji2.text.l10 r23, java.lang.Object r24) throws java.lang.Throwable {
-        /*
-            Method dump skipped, instructions count: 381
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.i(androidx.emoji2.text.l10, java.lang.Object):java.lang.Object");
+    public Object i(l10 l10Var, Object obj) {
+        Object r;
+        Object obj2;
+        vn vnVar;
+        tq tqVar;
+        int i2;
+        vn vnVar2 = this;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = i;
+        tq tqVar2 = (tq) atomicReferenceFieldUpdater.get(vnVar2);
+        while (true) {
+            AtomicLongFieldUpdater atomicLongFieldUpdater = e;
+            long andIncrement = atomicLongFieldUpdater.getAndIncrement(vnVar2);
+            long j2 = andIncrement & 1152921504606846975L;
+            boolean t = vnVar2.t(andIncrement, false);
+            int i3 = xn.b;
+            long j3 = i3;
+            long j4 = j2 / j3;
+            int i4 = (int) (j2 % j3);
+            long j5 = tqVar2.c;
+            f30 f30Var = f30.d;
+            up2 up2Var = up2.f1186a;
+            if (j5 != j4) {
+                tq b = b(vnVar2, j4, tqVar2);
+                if (b != null) {
+                    tqVar2 = b;
+                } else if (t) {
+                    Object y = y(l10Var, obj);
+                    if (y == f30Var) {
+                        return y;
+                    }
+                }
+            }
+            int e2 = e(vnVar2, tqVar2, i4, obj, j2, null, t);
+            if (e2 == 0) {
+                tqVar2.a();
+                return up2Var;
+            }
+            if (e2 == 1) {
+                break;
+            }
+            if (e2 != 2) {
+                AtomicLongFieldUpdater atomicLongFieldUpdater2 = f;
+                if (e2 == 3) {
+                    ip r2 = xo2.r(xa1.E(l10Var));
+                    Object obj3 = obj;
+                    try {
+                        int e3 = e(vnVar2, tqVar2, i4, obj3, j2, r2, false);
+                        try {
+                            if (e3 != 0) {
+                                if (e3 == 1) {
+                                    r2.g(up2Var);
+                                } else if (e3 != 2) {
+                                    if (e3 != 4) {
+                                        String str = "unexpected";
+                                        if (e3 != 5) {
+                                            throw new IllegalStateException("unexpected");
+                                        }
+                                        tqVar2.a();
+                                        tq tqVar3 = (tq) atomicReferenceFieldUpdater.get(vnVar2);
+                                        while (true) {
+                                            long andIncrement2 = atomicLongFieldUpdater.getAndIncrement(vnVar2);
+                                            long j6 = andIncrement2 & 1152921504606846975L;
+                                            boolean t2 = vnVar2.t(andIncrement2, false);
+                                            int i5 = xn.b;
+                                            long j7 = i5;
+                                            String str2 = str;
+                                            long j8 = j6 / j7;
+                                            int i6 = (int) (j6 % j7);
+                                            if (tqVar3.c != j8) {
+                                                tq b2 = b(vnVar2, j8, tqVar3);
+                                                if (b2 != null) {
+                                                    i2 = i5;
+                                                    tqVar = b2;
+                                                } else {
+                                                    if (t2) {
+                                                        break;
+                                                    }
+                                                    str = str2;
+                                                }
+                                            } else {
+                                                tqVar = tqVar3;
+                                                i2 = i5;
+                                            }
+                                            int e4 = e(vnVar2, tqVar, i6, obj3, j6, r2, t2);
+                                            Object obj4 = obj3;
+                                            vnVar = vnVar2;
+                                            tq tqVar4 = tqVar;
+                                            obj2 = obj4;
+                                            if (e4 == 0) {
+                                                tqVar4.a();
+                                                break;
+                                            }
+                                            if (e4 == 1) {
+                                                break;
+                                            }
+                                            if (e4 != 2) {
+                                                if (e4 == 3) {
+                                                    throw new IllegalStateException(str2);
+                                                }
+                                                if (e4 != 4) {
+                                                    if (e4 == 5) {
+                                                        tqVar4.a();
+                                                    }
+                                                    tqVar3 = tqVar4;
+                                                    vnVar2 = vnVar;
+                                                    str = str2;
+                                                    obj3 = obj2;
+                                                } else if (j6 < atomicLongFieldUpdater2.get(vnVar)) {
+                                                    tqVar4.a();
+                                                }
+                                            } else if (t2) {
+                                                tqVar4.h();
+                                            } else {
+                                                r2.a(tqVar4, i6 + i2);
+                                            }
+                                        }
+                                    } else {
+                                        obj2 = obj3;
+                                        vnVar = vnVar2;
+                                        if (j2 < atomicLongFieldUpdater2.get(vnVar)) {
+                                            tqVar2.a();
+                                        }
+                                    }
+                                    d(vnVar, obj2, r2);
+                                } else {
+                                    r2.a(tqVar2, i4 + i3);
+                                }
+                                r = r2.r();
+                                if (r != f30Var) {
+                                    r = up2Var;
+                                }
+                                if (r != f30Var) {
+                                    return r;
+                                }
+                            } else {
+                                tqVar2.a();
+                            }
+                            r2.g(up2Var);
+                            r = r2.r();
+                            if (r != f30Var) {
+                            }
+                            if (r != f30Var) {
+                            }
+                        } catch (Throwable th) {
+                            th = th;
+                            r2.B();
+                            throw th;
+                        }
+                    } catch (Throwable th2) {
+                        th = th2;
+                    }
+                } else if (e2 == 4) {
+                    if (j2 < atomicLongFieldUpdater2.get(vnVar2)) {
+                        tqVar2.a();
+                    }
+                    Object y2 = y(l10Var, obj);
+                    if (y2 == f30Var) {
+                        return y2;
+                    }
+                } else if (e2 == 5) {
+                    tqVar2.a();
+                }
+            } else if (t) {
+                tqVar2.h();
+                Object y3 = y(l10Var, obj);
+                if (y3 == f30Var) {
+                    return y3;
+                }
+            }
+        }
     }
 
     @Override // androidx.emoji2.text.mw1
@@ -604,13 +894,15 @@ public class vn implements jq {
                 long j5 = j3 / j4;
                 int i2 = (int) (j3 % j4);
                 if (tqVar.c != j5) {
-                    tq tqVarL = l(j5, tqVar);
-                    if (tqVarL != null) {
-                        tqVar = tqVarL;
+                    tq l2 = l(j5, tqVar);
+                    if (l2 != null) {
+                        tqVar = l2;
                     }
                 }
                 tq tqVar2 = tqVar;
-                if (C(tqVar2, i2, j3, null) != xn.o || j3 < q()) {
+                if (C(tqVar2, i2, j3, null) != xn.o) {
+                    tqVar2.a();
+                } else if (j3 < q()) {
                     tqVar2.a();
                 }
                 tqVar = tqVar2;
@@ -618,48 +910,151 @@ public class vn implements jq {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x018e, code lost:
-    
-        s(r15);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:103:0x0191, code lost:
-    
-        return;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public final void k() {
-        /*
-            Method dump skipped, instructions count: 402
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.k():void");
+        Object v;
+        if (w()) {
+            return;
+        }
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = k;
+        tq tqVar = (tq) atomicReferenceFieldUpdater.get(this);
+        loop0: while (true) {
+            long andIncrement = g.getAndIncrement(this);
+            long j2 = andIncrement / xn.b;
+            if (q() <= andIncrement) {
+                if (tqVar.c < j2 && tqVar.b() != null) {
+                    x(j2, tqVar);
+                }
+                s(this);
+                return;
+            }
+            if (tqVar.c != j2) {
+                wn wnVar = wn.k;
+                while (true) {
+                    v = kx0.v(tqVar, j2, wnVar);
+                    if (!pz0.D(v)) {
+                        c62 y = pz0.y(v);
+                        while (true) {
+                            c62 c62Var = (c62) atomicReferenceFieldUpdater.get(this);
+                            if (c62Var.c >= y.c) {
+                                break;
+                            }
+                            if (!y.i()) {
+                                break;
+                            }
+                            while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, y)) {
+                                if (atomicReferenceFieldUpdater.get(this) != c62Var) {
+                                    if (y.e()) {
+                                        y.d();
+                                    }
+                                }
+                            }
+                            if (c62Var.e()) {
+                                c62Var.d();
+                            }
+                        }
+                    } else {
+                        break;
+                    }
+                }
+                tq tqVar2 = null;
+                if (pz0.D(v)) {
+                    u();
+                    x(j2, tqVar);
+                    s(this);
+                } else {
+                    tq tqVar3 = (tq) pz0.y(v);
+                    long j3 = tqVar3.c;
+                    if (j3 > j2) {
+                        long j4 = j3 * xn.b;
+                        if (g.compareAndSet(this, 1 + andIncrement, j4)) {
+                            AtomicLongFieldUpdater atomicLongFieldUpdater = h;
+                            if ((atomicLongFieldUpdater.addAndGet(this, j4 - andIncrement) & 4611686018427387904L) != 0) {
+                                while ((atomicLongFieldUpdater.get(this) & 4611686018427387904L) != 0) {
+                                }
+                            }
+                        } else {
+                            s(this);
+                        }
+                    } else {
+                        tqVar2 = tqVar3;
+                    }
+                }
+                if (tqVar2 == null) {
+                    continue;
+                } else {
+                    tqVar = tqVar2;
+                }
+            }
+            int i2 = (int) (andIncrement % xn.b);
+            Object k2 = tqVar.k(i2);
+            boolean z = k2 instanceof lu2;
+            AtomicLongFieldUpdater atomicLongFieldUpdater2 = f;
+            if (!z || andIncrement < atomicLongFieldUpdater2.get(this) || !tqVar.j(i2, k2, xn.g)) {
+                while (true) {
+                    Object k3 = tqVar.k(i2);
+                    if (!(k3 instanceof lu2)) {
+                        if (k3 != xn.j) {
+                            if (k3 != null) {
+                                if (k3 == xn.d || k3 == xn.h || k3 == xn.i || k3 == xn.k || k3 == xn.l) {
+                                    break loop0;
+                                }
+                                if (k3 != xn.f) {
+                                    throw new IllegalStateException(("Unexpected cell state: " + k3).toString());
+                                }
+                            } else if (tqVar.j(i2, k3, xn.e)) {
+                                break loop0;
+                            }
+                        } else {
+                            break;
+                        }
+                    } else if (andIncrement < atomicLongFieldUpdater2.get(this)) {
+                        if (tqVar.j(i2, k3, new mu2((lu2) k3))) {
+                            break loop0;
+                        }
+                    } else if (tqVar.j(i2, k3, xn.g)) {
+                        if (B(k3)) {
+                            tqVar.n(i2, xn.d);
+                            break;
+                        } else {
+                            tqVar.n(i2, xn.j);
+                            tqVar.h();
+                        }
+                    }
+                }
+            } else if (B(k2)) {
+                tqVar.n(i2, xn.d);
+                break;
+            } else {
+                tqVar.n(i2, xn.j);
+                tqVar.h();
+                s(this);
+            }
+        }
+        s(this);
     }
 
     public final tq l(long j2, tq tqVar) {
-        Object objV;
+        Object v;
         long j3;
-        tq tqVar2 = xn.f1346a;
+        tq tqVar2 = xn.f1345a;
         wn wnVar = wn.k;
         loop0: while (true) {
-            objV = kx0.v(tqVar, j2, wnVar);
-            if (!pz0.D(objV)) {
-                c62 c62VarY = pz0.y(objV);
+            v = kx0.v(tqVar, j2, wnVar);
+            if (!pz0.D(v)) {
+                c62 y = pz0.y(v);
                 while (true) {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
                     c62 c62Var = (c62) atomicReferenceFieldUpdater.get(this);
-                    if (c62Var.c >= c62VarY.c) {
+                    if (c62Var.c >= y.c) {
                         break loop0;
                     }
-                    if (!c62VarY.i()) {
+                    if (!y.i()) {
                         break;
                     }
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, c62VarY)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, y)) {
                         if (atomicReferenceFieldUpdater.get(this) != c62Var) {
-                            if (c62VarY.e()) {
-                                c62VarY.d();
+                            if (y.e()) {
+                                y.d();
                             }
                         }
                     }
@@ -671,14 +1066,14 @@ public class vn implements jq {
                 break;
             }
         }
-        if (pz0.D(objV)) {
+        if (pz0.D(v)) {
             u();
             if (tqVar.c * xn.b < q()) {
                 tqVar.a();
                 return null;
             }
         } else {
-            tq tqVar3 = (tq) pz0.y(objV);
+            tq tqVar3 = (tq) pz0.y(v);
             long j4 = tqVar3.c;
             if (!w() && j2 <= g.get(this) / xn.b) {
                 while (true) {
@@ -717,100 +1112,100 @@ public class vn implements jq {
     }
 
     @Override // androidx.emoji2.text.mw1
-    public final Object m(hh2 hh2Var) throws Throwable {
-        tq tqVarL;
+    public final Object m(hh2 hh2Var) {
+        tq tqVar;
         vn vnVar = this;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
-        tq tqVar = (tq) atomicReferenceFieldUpdater.get(vnVar);
+        tq tqVar2 = (tq) atomicReferenceFieldUpdater.get(vnVar);
         while (true) {
             AtomicLongFieldUpdater atomicLongFieldUpdater = e;
             if (vnVar.t(atomicLongFieldUpdater.get(vnVar), true)) {
-                Throwable thO = o();
-                int i2 = de2.f249a;
-                throw thO;
+                Throwable o = o();
+                int i2 = de2.f248a;
+                throw o;
             }
             AtomicLongFieldUpdater atomicLongFieldUpdater2 = f;
             long andIncrement = atomicLongFieldUpdater2.getAndIncrement(vnVar);
             long j2 = xn.b;
             long j3 = andIncrement / j2;
             int i3 = (int) (andIncrement % j2);
-            if (tqVar.c != j3) {
-                tq tqVarL2 = vnVar.l(j3, tqVar);
-                if (tqVarL2 == null) {
+            if (tqVar2.c != j3) {
+                tq l2 = vnVar.l(j3, tqVar2);
+                if (l2 == null) {
                     continue;
                 } else {
-                    tqVar = tqVarL2;
+                    tqVar2 = l2;
                 }
             }
-            Object objC = vnVar.C(tqVar, i3, andIncrement, null);
+            Object C = vnVar.C(tqVar2, i3, andIncrement, null);
             de0 de0Var = xn.m;
-            if (objC == de0Var) {
+            if (C == de0Var) {
                 throw new IllegalStateException("unexpected");
             }
             de0 de0Var2 = xn.o;
-            if (objC != de0Var2) {
-                if (objC != xn.n) {
-                    tqVar.a();
-                    return objC;
+            if (C != de0Var2) {
+                if (C != xn.n) {
+                    tqVar2.a();
+                    return C;
                 }
-                ip ipVarR = xo2.r(xa1.E(hh2Var));
+                ip r = xo2.r(xa1.E(hh2Var));
                 vn vnVar2 = this;
                 try {
-                    Object objC2 = vnVar2.C(tqVar, i3, andIncrement, ipVarR);
-                    if (objC2 == de0Var) {
-                        ipVarR.a(tqVar, i3);
-                    } else if (objC2 == de0Var2) {
+                    Object C2 = vnVar2.C(tqVar2, i3, andIncrement, r);
+                    if (C2 == de0Var) {
+                        r.a(tqVar2, i3);
+                    } else if (C2 == de0Var2) {
                         if (andIncrement < vnVar2.q()) {
-                            tqVar.a();
+                            tqVar2.a();
                         }
-                        tq tqVar2 = (tq) atomicReferenceFieldUpdater.get(vnVar2);
+                        tq tqVar3 = (tq) atomicReferenceFieldUpdater.get(vnVar2);
                         while (true) {
                             if (vnVar2.t(atomicLongFieldUpdater.get(vnVar2), true)) {
-                                ipVarR.g(mz0.h(vnVar2.o()));
+                                r.g(mz0.h(vnVar2.o()));
                                 break;
                             }
                             long andIncrement2 = atomicLongFieldUpdater2.getAndIncrement(vnVar2);
                             long j4 = xn.b;
                             long j5 = andIncrement2 / j4;
                             int i4 = (int) (andIncrement2 % j4);
-                            if (tqVar2.c != j5) {
-                                tqVarL = vnVar2.l(j5, tqVar2);
-                                if (tqVarL == null) {
+                            if (tqVar3.c != j5) {
+                                tqVar = vnVar2.l(j5, tqVar3);
+                                if (tqVar == null) {
                                 }
                             } else {
-                                tqVarL = tqVar2;
+                                tqVar = tqVar3;
                             }
-                            Object objC3 = vnVar2.C(tqVarL, i4, andIncrement2, ipVarR);
-                            if (objC3 == xn.m) {
-                                ipVarR.a(tqVarL, i4);
+                            Object C3 = vnVar2.C(tqVar, i4, andIncrement2, r);
+                            if (C3 == xn.m) {
+                                r.a(tqVar, i4);
                                 break;
                             }
-                            if (objC3 == xn.o) {
+                            if (C3 == xn.o) {
                                 if (andIncrement2 < q()) {
-                                    tqVarL.a();
+                                    tqVar.a();
                                 }
                                 vnVar2 = this;
-                                tqVar2 = tqVarL;
+                                tqVar3 = tqVar;
                             } else {
-                                if (objC3 == xn.n) {
+                                if (C3 == xn.n) {
                                     throw new IllegalStateException("unexpected");
                                 }
-                                tqVarL.a();
-                                ipVarR.d(objC3, null);
+                                tqVar.a();
+                                r.d(C3, null);
                             }
                         }
                     } else {
-                        tqVar.a();
-                        ipVarR.d(objC2, null);
+                        tqVar2.a();
+                        r.d(C2, null);
                     }
-                    return ipVarR.r();
+                    return r.r();
                 } catch (Throwable th) {
-                    ipVarR.B();
+                    r.B();
                     throw th;
                 }
             }
             if (andIncrement < q()) {
-                tqVar.a();
+                tqVar2.a();
             }
             vnVar = this;
         }
@@ -821,182 +1216,317 @@ public class vn implements jq {
     }
 
     public final Throwable o() {
-        Throwable thN = n();
-        return thN == null ? new rs("Channel was closed") : thN;
+        Throwable n = n();
+        return n == null ? new rs("Channel was closed") : n;
     }
 
     public final Throwable p() {
-        Throwable thN = n();
-        return thN == null ? new ss("Channel was closed") : thN;
+        Throwable n = n();
+        return n == null ? new ss("Channel was closed") : n;
     }
 
     public final long q() {
         return e.get(this) & 1152921504606846975L;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0068  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00be A[SYNTHETIC] */
     @Override // androidx.emoji2.text.o72
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public java.lang.Object r(java.lang.Object r16) {
-        /*
-            r15 = this;
-            androidx.emoji2.text.sq r8 = androidx.emoji2.text.l8.b
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r9 = androidx.emoji2.text.vn.e
-            long r1 = r9.get(r15)
-            r10 = 0
-            boolean r3 = r15.t(r1, r10)
-            r11 = 1
-            r12 = 1152921504606846975(0xfffffffffffffff, double:1.2882297539194265E-231)
-            if (r3 == 0) goto L17
-            r1 = r10
-            goto L1d
-        L17:
-            long r1 = r1 & r12
-            boolean r1 = r15.f(r1)
-            r1 = r1 ^ r11
-        L1d:
-            if (r1 == 0) goto L20
-            return r8
-        L20:
-            androidx.emoji2.text.de0 r6 = androidx.emoji2.text.xn.j
-            java.util.concurrent.atomic.AtomicReferenceFieldUpdater r1 = androidx.emoji2.text.vn.i
-            java.lang.Object r1 = r1.get(r15)
-            androidx.emoji2.text.tq r1 = (androidx.emoji2.text.tq) r1
-        L2a:
-            long r2 = r9.getAndIncrement(r15)
-            long r4 = r2 & r12
-            boolean r7 = r15.t(r2, r10)
-            int r14 = androidx.emoji2.text.xn.b
-            long r2 = (long) r14
-            long r12 = r4 / r2
-            long r2 = r4 % r2
-            int r2 = (int) r2
-            long r10 = r1.c
-            int r3 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r3 == 0) goto L5d
-            androidx.emoji2.text.tq r3 = b(r15, r12, r1)
-            if (r3 != 0) goto L5c
-            if (r7 == 0) goto L54
-            java.lang.Throwable r1 = r15.p()
-            androidx.emoji2.text.rq r2 = new androidx.emoji2.text.rq
-            r2.<init>(r1)
-            return r2
-        L54:
-            r10 = 0
-            r11 = 1
-        L56:
-            r12 = 1152921504606846975(0xfffffffffffffff, double:1.2882297539194265E-231)
-            goto L2a
-        L5c:
-            r1 = r3
-        L5d:
-            r0 = r15
-            r3 = r16
-            int r10 = e(r0, r1, r2, r3, r4, r6, r7)
-            androidx.emoji2.text.up2 r3 = androidx.emoji2.text.up2.f1187a
-            if (r10 == 0) goto Lbe
-            r11 = 1
-            if (r10 == r11) goto Lbd
-            r3 = 2
-            if (r10 == r3) goto L9c
-            r2 = 3
-            if (r10 == r2) goto L94
-            r2 = 4
-            if (r10 == r2) goto L7d
-            r2 = 5
-            if (r10 == r2) goto L78
-            goto L7b
-        L78:
-            r1.a()
-        L7b:
-            r10 = 0
-            goto L56
-        L7d:
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r2 = androidx.emoji2.text.vn.f
-            long r2 = r2.get(r15)
-            int r2 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1))
-            if (r2 >= 0) goto L8a
-            r1.a()
-        L8a:
-            java.lang.Throwable r1 = r15.p()
-            androidx.emoji2.text.rq r2 = new androidx.emoji2.text.rq
-            r2.<init>(r1)
-            return r2
-        L94:
-            java.lang.IllegalStateException r1 = new java.lang.IllegalStateException
-            java.lang.String r2 = "unexpected"
-            r1.<init>(r2)
-            throw r1
-        L9c:
-            if (r7 == 0) goto Lab
-            r1.h()
-            java.lang.Throwable r1 = r15.p()
-            androidx.emoji2.text.rq r2 = new androidx.emoji2.text.rq
-            r2.<init>(r1)
-            return r2
-        Lab:
-            boolean r3 = r6 instanceof androidx.emoji2.text.lu2
-            if (r3 == 0) goto Lb2
-            androidx.emoji2.text.lu2 r6 = (androidx.emoji2.text.lu2) r6
-            goto Lb3
-        Lb2:
-            r6 = 0
-        Lb3:
-            if (r6 == 0) goto Lb9
-            int r2 = r2 + r14
-            r6.a(r1, r2)
-        Lb9:
-            r1.h()
-            return r8
-        Lbd:
-            return r3
-        Lbe:
-            r1.a()
-            return r3
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.r(java.lang.Object):java.lang.Object");
+    public Object r(Object obj) {
+        sq sqVar = l8.b;
+        AtomicLongFieldUpdater atomicLongFieldUpdater = e;
+        boolean z = false;
+        long j2 = 1152921504606846975L;
+        if (t(atomicLongFieldUpdater.get(this), false) ? false : !f(r1 & 1152921504606846975L)) {
+            return sqVar;
+        }
+        be0 be0Var = xn.j;
+        tq tqVar = (tq) i.get(this);
+        while (true) {
+            long andIncrement = atomicLongFieldUpdater.getAndIncrement(this);
+            long j3 = andIncrement & j2;
+            boolean t = t(andIncrement, z);
+            int i2 = xn.b;
+            long j4 = i2;
+            long j5 = j3 / j4;
+            int i3 = (int) (j3 % j4);
+            if (tqVar.c != j5) {
+                tq b = b(this, j5, tqVar);
+                if (b != null) {
+                    tqVar = b;
+                } else {
+                    if (t) {
+                        return new rq(p());
+                    }
+                    z = false;
+                    j2 = 1152921504606846975L;
+                }
+            }
+            int e2 = e(this, tqVar, i3, obj, j3, be0Var, t);
+            up2 up2Var = up2.f1186a;
+            if (e2 == 0) {
+                tqVar.a();
+                return up2Var;
+            }
+            if (e2 == 1) {
+                return up2Var;
+            }
+            if (e2 == 2) {
+                if (t) {
+                    tqVar.h();
+                    return new rq(p());
+                }
+                lu2 lu2Var = be0Var instanceof lu2 ? (lu2) be0Var : null;
+                if (lu2Var != null) {
+                    lu2Var.a(tqVar, i3 + i2);
+                }
+                tqVar.h();
+                return sqVar;
+            }
+            if (e2 == 3) {
+                throw new IllegalStateException("unexpected");
+            }
+            if (e2 == 4) {
+                if (j3 < f.get(this)) {
+                    tqVar.a();
+                }
+                return new rq(p());
+            }
+            if (e2 == 5) {
+                tqVar.a();
+            }
+            z = false;
+            j2 = 1152921504606846975L;
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00a2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x00a2, code lost:
     
         r0 = (androidx.emoji2.text.tq) ((androidx.emoji2.text.oy) androidx.emoji2.text.oy.b.get(r0));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean t(long r14, boolean r16) {
-        /*
-            Method dump skipped, instructions count: 368
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.t(long, boolean):boolean");
+    public final boolean t(long j2, boolean z) {
+        int i2 = (int) (j2 >> 60);
+        if (i2 != 0 && i2 != 1) {
+            AtomicLongFieldUpdater atomicLongFieldUpdater = f;
+            if (i2 == 2) {
+                h(1152921504606846975L & j2);
+                if (z) {
+                    while (true) {
+                        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
+                        tq tqVar = (tq) atomicReferenceFieldUpdater.get(this);
+                        long j3 = atomicLongFieldUpdater.get(this);
+                        if (q() <= j3) {
+                            break;
+                        }
+                        long j4 = xn.b;
+                        long j5 = j3 / j4;
+                        if (tqVar.c != j5 && (tqVar = l(j5, tqVar)) == null) {
+                            if (((tq) atomicReferenceFieldUpdater.get(this)).c < j5) {
+                                break;
+                            }
+                        } else {
+                            tqVar.a();
+                            int i3 = (int) (j3 % j4);
+                            while (true) {
+                                Object k2 = tqVar.k(i3);
+                                if (k2 == null || k2 == xn.e) {
+                                    if (tqVar.j(i3, k2, xn.h)) {
+                                        k();
+                                        break;
+                                    }
+                                } else {
+                                    if (k2 == xn.d) {
+                                        break;
+                                    }
+                                    if (k2 != xn.j) {
+                                        if (k2 != xn.l) {
+                                            if (k2 != xn.i) {
+                                                if (k2 != xn.h) {
+                                                    if (k2 == xn.g) {
+                                                        break;
+                                                    }
+                                                    if (k2 != xn.f && j3 == atomicLongFieldUpdater.get(this)) {
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            f.compareAndSet(this, j3, j3 + 1);
+                        }
+                    }
+                }
+            } else {
+                if (i2 != 3) {
+                    throw new IllegalStateException(zd.f(i2, "unexpected close status: ").toString());
+                }
+                tq h2 = h(1152921504606846975L & j2);
+                Object obj = null;
+                loop0: do {
+                    int i4 = xn.b - 1;
+                    while (true) {
+                        if (-1 >= i4) {
+                            break;
+                        }
+                        long j6 = (h2.c * xn.b) + i4;
+                        while (true) {
+                            Object k3 = h2.k(i4);
+                            if (k3 == xn.i) {
+                                break loop0;
+                            }
+                            if (k3 == xn.d) {
+                                if (j6 < atomicLongFieldUpdater.get(this)) {
+                                    break loop0;
+                                }
+                                if (h2.j(i4, k3, xn.l)) {
+                                    h2.m(i4, null);
+                                    h2.h();
+                                    break;
+                                }
+                            } else if (k3 != xn.e && k3 != null) {
+                                if (!(k3 instanceof lu2) && !(k3 instanceof mu2)) {
+                                    de0 de0Var = xn.g;
+                                    if (k3 == de0Var || k3 == xn.f) {
+                                        break loop0;
+                                    }
+                                    if (k3 != de0Var) {
+                                        break;
+                                    }
+                                } else {
+                                    if (j6 < atomicLongFieldUpdater.get(this)) {
+                                        break loop0;
+                                    }
+                                    lu2 lu2Var = k3 instanceof mu2 ? ((mu2) k3).f770a : (lu2) k3;
+                                    if (h2.j(i4, k3, xn.l)) {
+                                        obj = xo2.D(obj, lu2Var);
+                                        h2.m(i4, null);
+                                        h2.h();
+                                        break;
+                                    }
+                                }
+                            } else if (h2.j(i4, k3, xn.l)) {
+                                h2.h();
+                                break;
+                            }
+                        }
+                        i4--;
+                    }
+                } while (h2 != null);
+                if (obj != null) {
+                    if (obj instanceof ArrayList) {
+                        ArrayList arrayList = (ArrayList) obj;
+                        for (int size = arrayList.size() - 1; -1 < size; size--) {
+                            z((lu2) arrayList.get(size), false);
+                        }
+                    } else {
+                        z((lu2) obj, false);
+                    }
+                }
+            }
+            return true;
+        }
+        return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x0194, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0194, code lost:
     
         r16 = r7;
         r3 = (androidx.emoji2.text.tq) r3.b();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x019d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x019d, code lost:
     
         if (r3 != null) goto L79;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.String toString() {
-        /*
-            Method dump skipped, instructions count: 457
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.toString():java.lang.String");
+    public final String toString() {
+        boolean z;
+        String str;
+        StringBuilder sb = new StringBuilder();
+        int i2 = (int) (e.get(this) >> 60);
+        if (i2 == 2) {
+            sb.append("closed,");
+        } else if (i2 == 3) {
+            sb.append("cancelled,");
+        }
+        sb.append("capacity=" + this.d + ',');
+        sb.append("data=[");
+        int i3 = 0;
+        boolean z2 = true;
+        List m0 = xs.m0(j.get(this), i.get(this), k.get(this));
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : m0) {
+            if (((tq) obj) != xn.f1345a) {
+                arrayList.add(obj);
+            }
+        }
+        Iterator it = arrayList.iterator();
+        if (!it.hasNext()) {
+            throw new NoSuchElementException();
+        }
+        Object next = it.next();
+        if (it.hasNext()) {
+            long j2 = ((tq) next).c;
+            do {
+                Object next2 = it.next();
+                long j3 = ((tq) next2).c;
+                if (j2 > j3) {
+                    next = next2;
+                    j2 = j3;
+                }
+            } while (it.hasNext());
+        }
+        tq tqVar = (tq) next;
+        long j4 = f.get(this);
+        long q = q();
+        loop2: while (true) {
+            int i4 = xn.b;
+            int i5 = i3;
+            while (true) {
+                if (i5 >= i4) {
+                    break;
+                }
+                long j5 = (tqVar.c * xn.b) + i5;
+                if (j5 >= q && j5 >= j4) {
+                    break loop2;
+                }
+                Object k2 = tqVar.k(i5);
+                boolean z3 = z2;
+                Object obj2 = tqVar.f.get(i5 * 2);
+                if (k2 instanceof gp) {
+                    str = (j5 >= j4 || j5 < q) ? (j5 >= q || j5 < j4) ? "cont" : "send" : "receive";
+                } else if (k2 instanceof mu2) {
+                    str = "EB(" + k2 + ')';
+                } else if (lx0.n(k2, xn.f) || lx0.n(k2, xn.g)) {
+                    str = "resuming_sender";
+                } else {
+                    if (k2 != null && !k2.equals(xn.e) && !k2.equals(xn.i) && !k2.equals(xn.h) && !k2.equals(xn.k) && !k2.equals(xn.j) && !k2.equals(xn.l)) {
+                        str = k2.toString();
+                    }
+                    i5++;
+                    z2 = z3;
+                }
+                if (obj2 != null) {
+                    sb.append("(" + str + ',' + obj2 + "),");
+                } else {
+                    sb.append(str + ',');
+                }
+                i5++;
+                z2 = z3;
+            }
+            z2 = z;
+            i3 = 0;
+        }
+        if (wf2.k0(sb) == ',') {
+            lx0.w(sb.deleteCharAt(sb.length() - 1), "deleteCharAt(...)");
+        }
+        sb.append("]");
+        return sb.toString();
     }
 
     public final boolean u() {
@@ -1012,76 +1542,54 @@ public class vn implements jq {
         return j2 == 0 || j2 == Long.MAX_VALUE;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0011, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0011, code lost:
     
         continue;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void x(long r5, androidx.emoji2.text.tq r7) {
-        /*
-            r4 = this;
-        L0:
-            long r0 = r7.c
-            int r0 = (r0 > r5 ? 1 : (r0 == r5 ? 0 : -1))
-            if (r0 >= 0) goto L11
-            androidx.emoji2.text.oy r0 = r7.b()
-            androidx.emoji2.text.tq r0 = (androidx.emoji2.text.tq) r0
-            if (r0 != 0) goto Lf
-            goto L11
-        Lf:
-            r7 = r0
-            goto L0
-        L11:
-            boolean r5 = r7.c()
-            if (r5 == 0) goto L22
-            androidx.emoji2.text.oy r5 = r7.b()
-            androidx.emoji2.text.tq r5 = (androidx.emoji2.text.tq) r5
-            if (r5 != 0) goto L20
-            goto L22
-        L20:
-            r7 = r5
-            goto L11
-        L22:
-            java.util.concurrent.atomic.AtomicReferenceFieldUpdater r5 = androidx.emoji2.text.vn.k
-            java.lang.Object r6 = r5.get(r4)
-            androidx.emoji2.text.c62 r6 = (androidx.emoji2.text.c62) r6
-            long r0 = r6.c
-            long r2 = r7.c
-            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r0 < 0) goto L33
-            goto L49
-        L33:
-            boolean r0 = r7.i()
-            if (r0 != 0) goto L3a
-            goto L11
-        L3a:
-            boolean r0 = r5.compareAndSet(r4, r6, r7)
-            if (r0 == 0) goto L4a
-            boolean r5 = r6.e()
-            if (r5 == 0) goto L49
-            r6.d()
-        L49:
-            return
-        L4a:
-            java.lang.Object r0 = r5.get(r4)
-            if (r0 == r6) goto L3a
-            boolean r5 = r7.e()
-            if (r5 == 0) goto L22
-            r7.d()
-            goto L22
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vn.x(long, androidx.emoji2.text.tq):void");
+    public final void x(long j2, tq tqVar) {
+        tq tqVar2;
+        tq tqVar3;
+        while (tqVar.c < j2 && (tqVar3 = (tq) tqVar.b()) != null) {
+            tqVar = tqVar3;
+        }
+        while (true) {
+            if (!tqVar.c() || (tqVar2 = (tq) tqVar.b()) == null) {
+                while (true) {
+                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = k;
+                    c62 c62Var = (c62) atomicReferenceFieldUpdater.get(this);
+                    if (c62Var.c >= tqVar.c) {
+                        return;
+                    }
+                    if (!tqVar.i()) {
+                        break;
+                    }
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, c62Var, tqVar)) {
+                        if (atomicReferenceFieldUpdater.get(this) != c62Var) {
+                            if (tqVar.e()) {
+                                tqVar.d();
+                            }
+                        }
+                    }
+                    if (c62Var.e()) {
+                        c62Var.d();
+                        return;
+                    }
+                    return;
+                }
+            }
+            tqVar = tqVar2;
+        }
     }
 
     public final Object y(l10 l10Var, Object obj) {
         ip ipVar = new ip(1, xa1.E(l10Var));
         ipVar.s();
         ipVar.g(mz0.h(p()));
-        Object objR = ipVar.r();
-        return objR == f30.d ? objR : up2.f1187a;
+        Object r = ipVar.r();
+        return r == f30.d ? r : up2.f1186a;
     }
 
     public final void z(lu2 lu2Var, boolean z) {
@@ -1097,11 +1605,11 @@ public class vn implements jq {
         lx0.u(ipVar);
         unVar.e = null;
         unVar.d = xn.l;
-        Throwable thN = unVar.f.n();
-        if (thN == null) {
+        Throwable n = unVar.f.n();
+        if (n == null) {
             ipVar.g(Boolean.FALSE);
         } else {
-            ipVar.g(mz0.h(thN));
+            ipVar.g(mz0.h(n));
         }
     }
 }

@@ -10,19 +10,21 @@ import javax.net.ssl.SSLSocket;
 public final class by0 extends lr1 {
     public static final boolean c;
 
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0019, code lost:
+    
+        if (r0.intValue() >= 9) goto L10;
+     */
     static {
         String property = System.getProperty("java.specification.version");
-        Integer numR = property != null ? dg2.R(property) : null;
+        Integer R = property != null ? dg2.R(property) : null;
         boolean z = false;
-        if (numR == null) {
+        if (R == null) {
             try {
                 SSLSocket.class.getMethod("getApplicationProtocol", null);
-                z = true;
             } catch (NoSuchMethodException unused) {
             }
-        } else if (numR.intValue() >= 9) {
-            z = true;
         }
+        z = true;
         c = z;
     }
 
@@ -50,8 +52,9 @@ public final class by0 extends lr1 {
 
     @Override // androidx.emoji2.text.lr1
     public final String f(SSLSocket sSLSocket) {
+        String applicationProtocol;
         try {
-            String applicationProtocol = sSLSocket.getApplicationProtocol();
+            applicationProtocol = sSLSocket.getApplicationProtocol();
             if (applicationProtocol == null ? true : applicationProtocol.equals("")) {
                 return null;
             }

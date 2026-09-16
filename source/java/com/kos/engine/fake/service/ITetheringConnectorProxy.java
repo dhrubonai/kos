@@ -28,12 +28,12 @@ public class ITetheringConnectorProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strO = rj.o();
-            Object objFindIntResultListener = ITetheringConnectorProxy.findIntResultListener(objArr);
-            if (!ITetheringConnectorProxy.isVirtualGmsSupportQuery(strO, c01.X(), objArr) || objFindIntResultListener == null) {
+            String o = rj.o();
+            Object findIntResultListener = ITetheringConnectorProxy.findIntResultListener(objArr);
+            if (!ITetheringConnectorProxy.isVirtualGmsSupportQuery(o, c01.X(), objArr) || findIntResultListener == null) {
                 return ITetheringConnectorProxy.invokeBase(obj, method, objArr);
             }
-            if (ITetheringConnectorProxy.a(objFindIntResultListener)) {
+            if (ITetheringConnectorProxy.a(findIntResultListener)) {
                 nz0.Q(c.a(-1019157643673378L, strArr), 3, c.a(-1018710967074594L, strArr));
                 return null;
             }
@@ -58,13 +58,13 @@ public class ITetheringConnectorProxy extends BinderInvocationStub {
     }
 
     private static boolean deliverResult(Object obj, int i) {
-        Method methodFindOnResultMethod;
-        if (obj == null || (methodFindOnResultMethod = findOnResultMethod(obj.getClass())) == null) {
+        Method findOnResultMethod;
+        if (obj == null || (findOnResultMethod = findOnResultMethod(obj.getClass())) == null) {
             return false;
         }
         try {
-            methodFindOnResultMethod.setAccessible(true);
-            methodFindOnResultMethod.invoke(obj, Integer.valueOf(i));
+            findOnResultMethod.setAccessible(true);
+            findOnResultMethod.invoke(obj, Integer.valueOf(i));
             return true;
         } catch (Throwable th) {
             String[] strArr = xa1.b;
@@ -89,7 +89,7 @@ public class ITetheringConnectorProxy extends BinderInvocationStub {
         return null;
     }
 
-    private static Method findOnResultMethod(Class<?> cls) throws SecurityException {
+    private static Method findOnResultMethod(Class<?> cls) {
         for (Method method : cls.getMethods()) {
             if (isIntResultMethod(method)) {
                 return method;
@@ -107,7 +107,7 @@ public class ITetheringConnectorProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object invokeBase(Object obj, Method method, Object[] objArr) throws Throwable {
+    public static Object invokeBase(Object obj, Method method, Object[] objArr) {
         try {
             return method.invoke(obj, objArr);
         } catch (InvocationTargetException e) {

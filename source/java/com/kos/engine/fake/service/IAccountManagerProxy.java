@@ -110,36 +110,22 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("createRequestAccountAccessIntentSenderAsUser")
     public static class createRequestAccountAccessIntentSenderAsUser extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0010  */
         @Override // com.kos.engine.fake.hook.MethodHook
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
-        */
-        public java.lang.Object hook(java.lang.Object r3, java.lang.reflect.Method r4, java.lang.Object[] r5) {
-            /*
-                r2 = this;
-                r3 = 0
-                if (r5 == 0) goto L10
-                int r4 = r5.length
-                if (r4 <= 0) goto L10
-                r4 = 0
-                r4 = r5[r4]
-                boolean r0 = r4 instanceof android.accounts.Account
-                if (r0 == 0) goto L10
-                android.accounts.Account r4 = (android.accounts.Account) r4
-                goto L11
-            L10:
-                r4 = r3
-            L11:
-                int r0 = com.kos.engine.fake.service.IAccountManagerProxy.f(r5)
-                r1 = 1
-                java.lang.String r5 = com.kos.engine.fake.service.IAccountManagerProxy.d(r5, r1)
-                java.lang.String r5 = com.kos.engine.fake.service.IAccountManagerProxy.n(r0, r5)
-                com.kos.engine.fake.service.IAccountManagerProxy.h(r4, r5, r0)
-                return r3
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IAccountManagerProxy.createRequestAccountAccessIntentSenderAsUser.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Account account;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof Account) {
+                    account = (Account) obj2;
+                    int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
+                    IAccountManagerProxy.grantGoogleAccountAccess(account, IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 1)), userIdArg);
+                    return null;
+                }
+            }
+            account = null;
+            int userIdArg2 = IAccountManagerProxy.getUserIdArg(objArr);
+            IAccountManagerProxy.grantGoogleAccountAccess(account, IAccountManagerProxy.n(userIdArg2, IAccountManagerProxy.getStringArg(objArr, 1)), userIdArg2);
+            return null;
         }
     }
 
@@ -171,25 +157,25 @@ public class IAccountManagerProxy extends BinderInvocationStub {
             String[] strArr = xa1.b;
             Account account = (Account) objArr[0];
             int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
-            String strN = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 1));
-            if (IAccountManagerProxy.grantGoogleAccountAccess(account, strN, userIdArg)) {
-                String strA = c.a(-732060554772258L, strArr);
+            String n = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 1));
+            if (IAccountManagerProxy.grantGoogleAccountAccess(account, n, userIdArg)) {
+                String a2 = c.a(-732060554772258L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-732116389347106L, strArr));
-                sb.append(strN);
-                zd.o(sb, c.a(-731759907061538L, strArr), userIdArg, 3, strA);
+                sb.append(n);
+                zd.o(sb, c.a(-731759907061538L, strArr), userIdArg, 3, a2);
                 return 1;
             }
-            int accountVisibility = BAccountManager.get().getAccountVisibility(account, strN, userIdArg);
-            String strA2 = c.a(-731794266799906L, strArr);
+            int accountVisibility = BAccountManager.get().getAccountVisibility(account, n, userIdArg);
+            String a3 = c.a(-731794266799906L, strArr);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(c.a(-731918820851490L, strArr));
             sb2.append(account == null ? null : account.type);
             sb2.append(c.a(-730385517526818L, strArr));
-            sb2.append(strN);
+            sb2.append(n);
             sb2.append(c.a(-730484301774626L, strArr));
             sb2.append(userIdArg);
-            zd.o(sb2, c.a(-730518661512994L, strArr), accountVisibility, 3, strA2);
+            zd.o(sb2, c.a(-730518661512994L, strArr), accountVisibility, 3, a3);
             return Integer.valueOf(accountVisibility);
         }
     }
@@ -200,11 +186,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String stringArg = IAccountManagerProxy.getStringArg(objArr, 0);
-            String strNormalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 1));
+            String normalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 1));
             int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
-            Account[] accountsByTypeForPackage = BAccountManager.get().getAccountsByTypeForPackage(stringArg, strNormalizePackageName, userIdArg);
-            IAccountManagerProxy.grantGoogleAccountAccess(accountsByTypeForPackage, strNormalizePackageName, userIdArg);
-            IAccountManagerProxy.logAccountResult(c.a(-737261760167714L, xa1.b), stringArg, strNormalizePackageName, accountsByTypeForPackage);
+            Account[] accountsByTypeForPackage = BAccountManager.get().getAccountsByTypeForPackage(stringArg, normalizePackageName, userIdArg);
+            IAccountManagerProxy.grantGoogleAccountAccess(accountsByTypeForPackage, normalizePackageName, userIdArg);
+            IAccountManagerProxy.logAccountResult(c.a(-737261760167714L, xa1.b), stringArg, normalizePackageName, accountsByTypeForPackage);
             return accountsByTypeForPackage;
         }
     }
@@ -215,22 +201,22 @@ public class IAccountManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
-            String strN = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 0));
+            String n = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 0));
             String stringArg = IAccountManagerProxy.getStringArg(objArr, 1);
-            Map accountsAndVisibilityForPackage = BAccountManager.get().getAccountsAndVisibilityForPackage(strN, stringArg);
+            Map accountsAndVisibilityForPackage = BAccountManager.get().getAccountsAndVisibilityForPackage(n, stringArg);
             String[] strArr = xa1.b;
             if (c.a(-737347659513634L, strArr).equals(stringArg) || stringArg == null) {
                 IAccountManagerProxy.grantRecentGoogleClientAccess(accountsAndVisibilityForPackage, userIdArg);
             }
-            String strA = c.a(-737360544415522L, strArr);
+            String a2 = c.a(-737360544415522L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-737485098467106L, strArr));
             sb.append(stringArg);
             sb.append(c.a(-731600993271586L, strArr));
-            sb.append(strN);
+            sb.append(n);
             sb.append(c.a(-731682597650210L, strArr));
             sb.append(accountsAndVisibilityForPackage == null ? -1 : accountsAndVisibilityForPackage.size());
-            nz0.Q(strA, 3, sb.toString());
+            nz0.Q(a2, 3, sb.toString());
             return accountsAndVisibilityForPackage;
         }
     }
@@ -238,44 +224,34 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("getAccountsAsUser")
     public static class getAccountsAsUser extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0010  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r5, java.lang.reflect.Method r6, java.lang.Object[] r7) {
-            /*
-                r4 = this;
-                r5 = 0
-                if (r7 == 0) goto L10
-                int r6 = r7.length
-                if (r6 <= 0) goto L10
-                r6 = 0
-                r6 = r7[r6]
-                boolean r0 = r6 instanceof java.lang.String
-                if (r0 == 0) goto L10
-                java.lang.String r6 = (java.lang.String) r6
-                goto L11
-            L10:
-                r6 = r5
-            L11:
-                com.kos.engine.fake.frameworks.BAccountManager r0 = com.kos.engine.fake.frameworks.BAccountManager.get()
-                android.accounts.Account[] r0 = r0.getAccountsAsUser(r6)
-                java.lang.String[] r1 = androidx.emoji2.text.xa1.b
-                r2 = -731721252355874(0xfffd6680deadc0de, double:NaN)
-                java.lang.String r2 = a.a.a.c.a(r2, r1)
-                boolean r2 = r2.equals(r6)
-                if (r2 == 0) goto L31
-                int r7 = com.kos.engine.fake.service.IAccountManagerProxy.f(r7)
-                com.kos.engine.fake.service.IAccountManagerProxy.j(r0, r7)
-            L31:
-                r2 = -731184381443874(0xfffd66fddeadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r2, r1)
-                com.kos.engine.fake.service.IAccountManagerProxy.m(r7, r6, r5, r0)
-                return r0
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IAccountManagerProxy.getAccountsAsUser.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            String str;
+            String[] strArr;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof String) {
+                    str = (String) obj2;
+                    Account[] accountsAsUser = BAccountManager.get().getAccountsAsUser(str);
+                    strArr = xa1.b;
+                    if (c.a(-731721252355874L, strArr).equals(str)) {
+                        IAccountManagerProxy.grantRecentGoogleClientAccess(accountsAsUser, IAccountManagerProxy.getUserIdArg(objArr));
+                    }
+                    IAccountManagerProxy.logAccountResult(c.a(-731184381443874L, strArr), str, null, accountsAsUser);
+                    return accountsAsUser;
+                }
+            }
+            str = null;
+            Account[] accountsAsUser2 = BAccountManager.get().getAccountsAsUser(str);
+            strArr = xa1.b;
+            if (c.a(-731721252355874L, strArr).equals(str)) {
+            }
+            IAccountManagerProxy.logAccountResult(c.a(-731184381443874L, strArr), str, null, accountsAsUser2);
+            return accountsAsUser2;
         }
     }
 
@@ -295,11 +271,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String stringArg = IAccountManagerProxy.getStringArg(objArr, 0);
-            String strNormalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 1));
+            String normalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 1));
             int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
-            Account[] accountsByTypeForPackage = BAccountManager.get().getAccountsByTypeForPackage(stringArg, strNormalizePackageName, userIdArg);
-            IAccountManagerProxy.grantGoogleAccountAccess(accountsByTypeForPackage, strNormalizePackageName, userIdArg);
-            IAccountManagerProxy.logAccountResult(c.a(-731244510986018L, xa1.b), stringArg, strNormalizePackageName, accountsByTypeForPackage);
+            Account[] accountsByTypeForPackage = BAccountManager.get().getAccountsByTypeForPackage(stringArg, normalizePackageName, userIdArg);
+            IAccountManagerProxy.grantGoogleAccountAccess(accountsByTypeForPackage, normalizePackageName, userIdArg);
+            IAccountManagerProxy.logAccountResult(c.a(-731244510986018L, xa1.b), stringArg, normalizePackageName, accountsByTypeForPackage);
             return accountsByTypeForPackage;
         }
     }
@@ -309,11 +285,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     public static class getAccountsForPackage extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            String strNormalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 0));
+            String normalizePackageName = IAccountManagerProxy.normalizePackageName(IAccountManagerProxy.getStringArg(objArr, 0));
             int userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
-            Account[] accountsForPackage = BAccountManager.get().getAccountsForPackage(strNormalizePackageName, IAccountManagerProxy.b(objArr), userIdArg);
-            IAccountManagerProxy.grantGoogleAccountAccess(accountsForPackage, strNormalizePackageName, userIdArg);
-            IAccountManagerProxy.logAccountResult(c.a(-731399129808674L, xa1.b), null, strNormalizePackageName, accountsForPackage);
+            Account[] accountsForPackage = BAccountManager.get().getAccountsForPackage(normalizePackageName, IAccountManagerProxy.b(objArr), userIdArg);
+            IAccountManagerProxy.grantGoogleAccountAccess(accountsForPackage, normalizePackageName, userIdArg);
+            IAccountManagerProxy.logAccountResult(c.a(-731399129808674L, xa1.b), null, normalizePackageName, accountsForPackage);
             return accountsForPackage;
         }
     }
@@ -361,11 +337,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
                     BAccountManager.get().setAccountVisibility(account, recentNonGoogleVirtualClient, 1, userIdArg);
                     packagesAndVisibilityForAccount.put(recentNonGoogleVirtualClient, 1);
                     String[] strArr = xa1.b;
-                    String strA = c.a(-730527251447586L, strArr);
+                    String a2 = c.a(-730527251447586L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-730084869816098L, strArr));
                     sb.append(recentNonGoogleVirtualClient);
-                    zd.o(sb, c.a(-730329682951970L, strArr), userIdArg, 3, strA);
+                    zd.o(sb, c.a(-730329682951970L, strArr), userIdArg, 3, a2);
                 }
             }
             return packagesAndVisibilityForAccount;
@@ -393,52 +369,36 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("hasAccountAccess")
     public static class hasAccountAccess extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x000f  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0023  */
+        /* JADX WARN: Removed duplicated region for block: B:13:0x0026  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r4, java.lang.reflect.Method r5, java.lang.Object[] r6) {
-            /*
-                r3 = this;
-                r4 = 0
-                if (r6 == 0) goto Lf
-                int r5 = r6.length
-                if (r5 <= 0) goto Lf
-                r5 = r6[r4]
-                boolean r0 = r5 instanceof android.accounts.Account
-                if (r0 == 0) goto Lf
-                android.accounts.Account r5 = (android.accounts.Account) r5
-                goto L10
-            Lf:
-                r5 = 0
-            L10:
-                int r0 = com.kos.engine.fake.service.IAccountManagerProxy.f(r6)
-                r1 = 1
-                java.lang.String r6 = com.kos.engine.fake.service.IAccountManagerProxy.d(r6, r1)
-                java.lang.String r6 = com.kos.engine.fake.service.IAccountManagerProxy.n(r0, r6)
-                boolean r2 = com.kos.engine.fake.service.IAccountManagerProxy.h(r5, r6, r0)
-                if (r2 == 0) goto L26
-                java.lang.Boolean r4 = java.lang.Boolean.TRUE
-                return r4
-            L26:
-                if (r5 == 0) goto L3b
-                if (r6 != 0) goto L2b
-                goto L3b
-            L2b:
-                com.kos.engine.fake.frameworks.BAccountManager r2 = com.kos.engine.fake.frameworks.BAccountManager.get()
-                int r5 = r2.getAccountVisibility(r5, r6, r0)
-                if (r5 != r1) goto L36
-                r4 = r1
-            L36:
-                java.lang.Boolean r4 = java.lang.Boolean.valueOf(r4)
-                return r4
-            L3b:
-                java.lang.Boolean r4 = java.lang.Boolean.FALSE
-                return r4
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IAccountManagerProxy.hasAccountAccess.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Account account;
+            int userIdArg;
+            String n;
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof Account) {
+                    account = (Account) obj2;
+                    userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
+                    n = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 1));
+                    if (!IAccountManagerProxy.grantGoogleAccountAccess(account, n, userIdArg)) {
+                        return Boolean.TRUE;
+                    }
+                    if (account == null || n == null) {
+                        return Boolean.FALSE;
+                    }
+                    return Boolean.valueOf(BAccountManager.get().getAccountVisibility(account, n, userIdArg) == 1);
+                }
+            }
+            account = null;
+            userIdArg = IAccountManagerProxy.getUserIdArg(objArr);
+            n = IAccountManagerProxy.n(userIdArg, IAccountManagerProxy.getStringArg(objArr, 1));
+            if (!IAccountManagerProxy.grantGoogleAccountAccess(account, n, userIdArg)) {
+            }
         }
     }
 
@@ -610,13 +570,13 @@ public class IAccountManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String getRecentNonGoogleVirtualClient(int i) {
-        String strD = mt2.d();
-        if (strD == null || strD.length() <= 0 || GmsCore.isGoogleAppOrService(strD)) {
+        String d = mt2.d();
+        if (d == null || d.length() <= 0 || GmsCore.isGoogleAppOrService(d)) {
             return null;
         }
         c01.r.getClass();
-        if (c01.b0(strD, i)) {
-            return strD;
+        if (c01.b0(d, i)) {
+            return d;
         }
         return null;
     }
@@ -649,9 +609,9 @@ public class IAccountManagerProxy extends BinderInvocationStub {
                         try {
                             Method declaredMethod = obj.getClass().getDeclaredMethod(c.a(-733422059405090L, strArr), null);
                             declaredMethod.setAccessible(true);
-                            Object objInvoke = declaredMethod.invoke(obj, null);
-                            if (objInvoke instanceof Integer) {
-                                return ((Integer) objInvoke).intValue();
+                            Object invoke = declaredMethod.invoke(obj, null);
+                            if (invoke instanceof Integer) {
+                                return ((Integer) invoke).intValue();
                             }
                             continue;
                         } catch (Throwable unused) {
@@ -690,11 +650,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
         }
         BAccountManager.get().setAccountVisibility(account, str, 1, i);
         String[] strArr = xa1.b;
-        String strA = c.a(-733512253718306L, strArr);
+        String a2 = c.a(-733512253718306L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-733636807769890L, strArr));
         sb.append(str);
-        zd.o(sb, c.a(-734302527700770L, strArr), i, 3, strA);
+        zd.o(sb, c.a(-734302527700770L, strArr), i, 3, a2);
         return true;
     }
 
@@ -707,13 +667,13 @@ public class IAccountManagerProxy extends BinderInvocationStub {
         if (c01.b0(recentNonGoogleVirtualClient, i)) {
             BAccountManager.get().setAccountVisibility(account, recentNonGoogleVirtualClient, 1, i);
             String[] strArr = xa1.b;
-            String strA = c.a(-734336887439138L, strArr);
+            String a2 = c.a(-734336887439138L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-734461441490722L, strArr));
             sb.append(recentNonGoogleVirtualClient);
             sb.append(c.a(-734070599466786L, strArr));
             sb.append(str);
-            zd.o(sb, c.a(-734096369270562L, strArr), i, 3, strA);
+            zd.o(sb, c.a(-734096369270562L, strArr), i, 3, a2);
         }
     }
 
@@ -748,13 +708,13 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     public static void logAccountResult(String str, String str2, String str3, Account[] accountArr) {
         int length = accountArr == null ? -1 : accountArr.length;
         String[] strArr = xa1.b;
-        String strA = c.a(-732318252810018L, strArr);
-        StringBuilder sbK = jx0.k(str);
-        sbK.append(c.a(-732442806861602L, strArr));
-        sbK.append(str2);
-        sbK.append(c.a(-732477166599970L, strArr));
-        sbK.append(str3);
-        zd.o(sbK, c.a(-732490051501858L, strArr), length, 3, strA);
+        String a2 = c.a(-732318252810018L, strArr);
+        StringBuilder k = jx0.k(str);
+        k.append(c.a(-732442806861602L, strArr));
+        k.append(str2);
+        k.append(c.a(-732477166599970L, strArr));
+        k.append(str3);
+        zd.o(k, c.a(-732490051501858L, strArr), length, 3, a2);
     }
 
     public static /* bridge */ /* synthetic */ String n(int i, String str) {
@@ -762,36 +722,36 @@ public class IAccountManagerProxy extends BinderInvocationStub {
     }
 
     private static String normalizeAccountAccessPackageName(String str, int i) {
-        String strNormalizePackageName = normalizePackageName(str);
+        String normalizePackageName = normalizePackageName(str);
         String recentNonGoogleVirtualClient = getRecentNonGoogleVirtualClient(i);
-        if (!isRecentVirtualClient(recentNonGoogleVirtualClient, strNormalizePackageName, i)) {
-            return strNormalizePackageName;
+        if (!isRecentVirtualClient(recentNonGoogleVirtualClient, normalizePackageName, i)) {
+            return normalizePackageName;
         }
         String[] strArr = xa1.b;
-        String strA = c.a(-730810719289122L, strArr);
+        String a2 = c.a(-730810719289122L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-733666872540962L, strArr));
-        sb.append(strNormalizePackageName);
-        jx0.r(sb, c.a(-733795721559842L, strArr), recentNonGoogleVirtualClient, 3, strA);
+        sb.append(normalizePackageName);
+        jx0.r(sb, c.a(-733795721559842L, strArr), recentNonGoogleVirtualClient, 3, a2);
         return recentNonGoogleVirtualClient;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static String normalizePackageName(String str) {
-        String strO = rj.o();
-        if (strO == null || strO.length() == 0) {
+        String o = rj.o();
+        if (o == null || o.length() == 0) {
             return str;
         }
         if (str != null && str.length() != 0 && !c01.X().equals(str)) {
             return str;
         }
         String[] strArr = xa1.b;
-        String strA = c.a(-731167201574690L, strArr);
+        String a2 = c.a(-731167201574690L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-730673280335650L, strArr));
         sb.append(str);
-        jx0.r(sb, c.a(-730823604191010L, strArr), strO, 3, strA);
-        return strO;
+        jx0.r(sb, c.a(-730823604191010L, strArr), o, 3, a2);
+        return o;
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
@@ -862,11 +822,11 @@ public class IAccountManagerProxy extends BinderInvocationStub {
                         BAccountManager.get().setAccountVisibility(account, recentNonGoogleVirtualClient, 1, i);
                         map.put(obj, 1);
                         String[] strArr = xa1.b;
-                        String strA = c.a(-734130729008930L, strArr);
+                        String a2 = c.a(-734130729008930L, strArr);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-732606015618850L, strArr));
                         sb.append(recentNonGoogleVirtualClient);
-                        zd.o(sb, c.a(-732764929408802L, strArr), i, 3, strA);
+                        zd.o(sb, c.a(-732764929408802L, strArr), i, 3, a2);
                     }
                 }
             }

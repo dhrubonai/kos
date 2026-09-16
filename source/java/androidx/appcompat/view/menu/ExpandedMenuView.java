@@ -19,15 +19,15 @@ public final class ExpandedMenuView extends ListView implements pb1, AdapterView
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        rg rgVarV = rg.V(context, attributeSet, d, R.attr.listViewStyle);
-        TypedArray typedArray = (TypedArray) rgVarV.e;
+        rg V = rg.V(context, attributeSet, d, R.attr.listViewStyle);
+        TypedArray typedArray = (TypedArray) V.e;
         if (typedArray.hasValue(0)) {
-            setBackgroundDrawable(rgVarV.H(0));
+            setBackgroundDrawable(V.H(0));
         }
         if (typedArray.hasValue(1)) {
-            setDivider(rgVarV.H(1));
+            setDivider(V.H(1));
         }
-        rgVarV.X();
+        V.X();
     }
 
     @Override // androidx.emoji2.text.pb1

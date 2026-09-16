@@ -14,6 +14,7 @@ import com.kos.engine.core.system.pm.BPackage;
 import com.kos.engine.core.system.pm.BPackage.IntentInfo;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -97,12 +98,12 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                 break;
             }
             if (z) {
-                String strA = a.a.a.c.a(-359059824983842L, strArr);
+                String a2 = a.a.a.c.a(-359059824983842L, strArr);
                 StringBuilder sb = new StringBuilder();
                 str3 = action;
                 sb.append(a.a.a.c.a(-359141429362466L, strArr));
                 sb.append(f);
-                nz0.Q(strA, 2, sb.toString());
+                nz0.Q(a2, 2, sb.toString());
             } else {
                 str3 = action;
             }
@@ -110,29 +111,29 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                 if (allowFilterResult(f, list3)) {
                     Uri uri2 = data;
                     String str5 = str3;
-                    int iMatch = f.intentFilter.match(str5, str, str2, uri2, fastImmutableArraySet, a.a.a.c.a(-353094115409698L, strArr));
+                    int match = f.intentFilter.match(str5, str, str2, uri2, fastImmutableArraySet, a.a.a.c.a(-353094115409698L, strArr));
                     str3 = str5;
-                    if (iMatch >= 0) {
+                    if (match >= 0) {
                         if (z) {
-                            String strA2 = a.a.a.c.a(-353158539919138L, strArr);
+                            String a3 = a.a.a.c.a(-353158539919138L, strArr);
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(a.a.a.c.a(-353789900111650L, strArr));
-                            sb2.append(Integer.toHexString(iMatch));
+                            sb2.append(Integer.toHexString(match));
                             sb2.append(a.a.a.c.a(-353875799457570L, strArr));
                             uri = uri2;
                             sb2.append(f.intentFilter.hasCategory(a.a.a.c.a(-353948813901602L, strArr)));
-                            nz0.Q(strA2, 2, sb2.toString());
+                            nz0.Q(a3, 2, sb2.toString());
                         } else {
                             uri = uri2;
                         }
                         if (!z2 || f.intentFilter.hasCategory(a.a.a.c.a(-353536497041186L, strArr))) {
-                            R rNewResult = newResult(f, iMatch, i);
+                            R newResult = newResult(f, match, i);
                             if (z) {
-                                nz0.Q(a.a.a.c.a(-353673935994658L, strArr), 2, a.a.a.c.a(-353755540373282L, strArr) + rNewResult);
+                                nz0.Q(a.a.a.c.a(-353673935994658L, strArr), 2, a.a.a.c.a(-353755540373282L, strArr) + newResult);
                             }
                             list2 = list;
-                            if (rNewResult != null) {
-                                list2.add(rNewResult);
+                            if (newResult != null) {
+                                list2.add(newResult);
                             }
                         } else {
                             list2 = list;
@@ -142,7 +143,7 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                         list2 = list3;
                         uri = uri2;
                         if (z) {
-                            jx0.r(new StringBuilder(), a.a.a.c.a(-351904409468706L, strArr), iMatch != -4 ? iMatch != -3 ? iMatch != -2 ? iMatch != -1 ? a.a.a.c.a(-352308136394530L, strArr) : a.a.a.c.a(-352269481688866L, strArr) : a.a.a.c.a(-352282366590754L, strArr) : a.a.a.c.a(-352213647114018L, strArr) : a.a.a.c.a(-352192172277538L, strArr), 2, a.a.a.c.a(-352389740773154L, strArr));
+                            jx0.r(new StringBuilder(), a.a.a.c.a(-351904409468706L, strArr), match != -4 ? match != -3 ? match != -2 ? match != -1 ? a.a.a.c.a(-352308136394530L, strArr) : a.a.a.c.a(-352269481688866L, strArr) : a.a.a.c.a(-352282366590754L, strArr) : a.a.a.c.a(-352213647114018L, strArr) : a.a.a.c.a(-352192172277538L, strArr), 2, a.a.a.c.a(-352389740773154L, strArr));
                         }
                     }
                     i2++;
@@ -154,11 +155,11 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                     nz0.Q(a.a.a.c.a(-353424827891490L, strArr), 2, a.a.a.c.a(-352956676456226L, strArr));
                 }
             } else if (z) {
-                String strA3 = a.a.a.c.a(-359231623675682L, strArr);
+                String a4 = a.a.a.c.a(-359231623675682L, strArr);
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(a.a.a.c.a(-353265914101538L, strArr));
                 sb3.append(str4);
-                zd.p(sb3, a.a.a.c.a(-353411942989602L, strArr), 2, strA3);
+                zd.p(sb3, a.a.a.c.a(-353411942989602L, strArr), 2, a4);
             }
             list2 = list3;
             uri = data;
@@ -195,29 +196,29 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
     }
 
     public static boolean filterEquals(IntentFilter intentFilter, IntentFilter intentFilter2) {
-        int iCountActions = intentFilter.countActions();
-        if (iCountActions != intentFilter2.countActions()) {
+        int countActions = intentFilter.countActions();
+        if (countActions != intentFilter2.countActions()) {
             return false;
         }
-        for (int i = 0; i < iCountActions; i++) {
+        for (int i = 0; i < countActions; i++) {
             if (!intentFilter2.hasAction(intentFilter.getAction(i))) {
                 return false;
             }
         }
-        int iCountCategories = intentFilter.countCategories();
-        if (iCountCategories != intentFilter2.countCategories()) {
+        int countCategories = intentFilter.countCategories();
+        if (countCategories != intentFilter2.countCategories()) {
             return false;
         }
-        for (int i2 = 0; i2 < iCountCategories; i2++) {
+        for (int i2 = 0; i2 < countCategories; i2++) {
             if (!intentFilter2.hasCategory(intentFilter.getCategory(i2))) {
                 return false;
             }
         }
-        int iCountDataSchemes = intentFilter.countDataSchemes();
-        if (iCountDataSchemes != intentFilter2.countDataSchemes()) {
+        int countDataSchemes = intentFilter.countDataSchemes();
+        if (countDataSchemes != intentFilter2.countDataSchemes()) {
             return false;
         }
-        for (int i3 = 0; i3 < iCountDataSchemes; i3++) {
+        for (int i3 = 0; i3 < countDataSchemes; i3++) {
             if (!intentFilter2.hasDataScheme(intentFilter.getDataScheme(i3))) {
                 return false;
             }
@@ -246,61 +247,60 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
     }
 
     private final int register_mime_types(F f, String str) {
-        String strIntern;
-        Iterator<String> itTypesIterator = f.intentFilter.typesIterator();
-        if (itTypesIterator == null) {
+        String str2;
+        Iterator<String> typesIterator = f.intentFilter.typesIterator();
+        if (typesIterator == null) {
             return 0;
         }
         int i = 0;
-        while (itTypesIterator.hasNext()) {
-            String next = itTypesIterator.next();
+        while (typesIterator.hasNext()) {
+            String next = typesIterator.next();
             i++;
-            int iIndexOf = next.indexOf(47);
-            if (iIndexOf > 0) {
-                strIntern = next.substring(0, iIndexOf).intern();
+            int indexOf = next.indexOf(47);
+            if (indexOf > 0) {
+                str2 = next.substring(0, indexOf).intern();
             } else {
-                StringBuilder sbK = jx0.k(next);
-                sbK.append(a.a.a.c.a(-359085594787618L, xa1.b));
-                String string = sbK.toString();
-                strIntern = next;
-                next = string;
+                StringBuilder k = jx0.k(next);
+                k.append(a.a.a.c.a(-359085594787618L, xa1.b));
+                String sb = k.toString();
+                str2 = next;
+                next = sb;
             }
             addFilter(this.mTypeToFilter, next, f);
-            if (iIndexOf > 0) {
-                addFilter(this.mBaseTypeToFilter, strIntern, f);
+            if (indexOf > 0) {
+                addFilter(this.mBaseTypeToFilter, str2, f);
             } else {
-                addFilter(this.mWildTypeToFilter, strIntern, f);
+                addFilter(this.mWildTypeToFilter, str2, f);
             }
         }
         return i;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private final void remove_all_objects(ArrayMap<String, F[]> arrayMap, String str, Object obj) {
-        BPackage.IntentInfo[] intentInfoArr = (BPackage.IntentInfo[]) arrayMap.get(str);
-        if (intentInfoArr != null) {
-            int length = intentInfoArr.length - 1;
-            while (length >= 0 && intentInfoArr[length] == null) {
+        F[] fArr = arrayMap.get(str);
+        if (fArr != null) {
+            int length = fArr.length - 1;
+            while (length >= 0 && fArr[length] == null) {
                 length--;
             }
             int i = length;
             while (length >= 0) {
-                if (intentInfoArr[length] == obj) {
+                if (fArr[length] == obj) {
                     int i2 = i - length;
                     if (i2 > 0) {
-                        System.arraycopy(intentInfoArr, length + 1, intentInfoArr, length, i2);
+                        System.arraycopy(fArr, length + 1, fArr, length, i2);
                     }
-                    intentInfoArr[i] = null;
+                    fArr[i] = null;
                     i--;
                 }
                 length--;
             }
             if (i < 0) {
                 arrayMap.remove(str);
-            } else if (i < intentInfoArr.length / 2) {
-                BPackage.IntentInfo[] intentInfoArrNewArray = newArray(i + 2);
-                System.arraycopy(intentInfoArr, 0, intentInfoArrNewArray, 0, i + 1);
-                arrayMap.put(str, intentInfoArrNewArray);
+            } else if (i < fArr.length / 2) {
+                F[] newArray = newArray(i + 2);
+                System.arraycopy(fArr, 0, newArray, 0, i + 1);
+                arrayMap.put(str, newArray);
             }
         }
     }
@@ -318,30 +318,30 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
     }
 
     private final int unregister_mime_types(F f, String str) {
-        String strIntern;
-        Iterator<String> itTypesIterator = f.intentFilter.typesIterator();
-        if (itTypesIterator == null) {
+        String str2;
+        Iterator<String> typesIterator = f.intentFilter.typesIterator();
+        if (typesIterator == null) {
             return 0;
         }
         int i = 0;
-        while (itTypesIterator.hasNext()) {
-            String next = itTypesIterator.next();
+        while (typesIterator.hasNext()) {
+            String next = typesIterator.next();
             i++;
-            int iIndexOf = next.indexOf(47);
-            if (iIndexOf > 0) {
-                strIntern = next.substring(0, iIndexOf).intern();
+            int indexOf = next.indexOf(47);
+            if (indexOf > 0) {
+                str2 = next.substring(0, indexOf).intern();
             } else {
-                StringBuilder sbK = jx0.k(next);
-                sbK.append(a.a.a.c.a(-359081299820322L, xa1.b));
-                String string = sbK.toString();
-                strIntern = next;
-                next = string;
+                StringBuilder k = jx0.k(next);
+                k.append(a.a.a.c.a(-359081299820322L, xa1.b));
+                String sb = k.toString();
+                str2 = next;
+                next = sb;
             }
             remove_all_objects(this.mTypeToFilter, next, f);
-            if (iIndexOf > 0) {
-                remove_all_objects(this.mBaseTypeToFilter, strIntern, f);
+            if (indexOf > 0) {
+                remove_all_objects(this.mBaseTypeToFilter, str2, f);
             } else {
-                remove_all_objects(this.mWildTypeToFilter, strIntern, f);
+                remove_all_objects(this.mWildTypeToFilter, str2, f);
             }
         }
         return i;
@@ -349,15 +349,15 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
 
     public void addFilter(F f) {
         this.mFilters.add(f);
-        Iterator<String> itSchemesIterator = f.intentFilter.schemesIterator();
+        Iterator<String> schemesIterator = f.intentFilter.schemesIterator();
         ArrayMap<String, F[]> arrayMap = this.mSchemeToFilter;
         String[] strArr = xa1.b;
-        int iRegister_intent_filter = register_intent_filter(f, itSchemesIterator, arrayMap, a.a.a.c.a(-357333248130850L, strArr));
-        int iRegister_mime_types = register_mime_types(f, a.a.a.c.a(-356796377218850L, strArr));
-        if (iRegister_intent_filter == 0 && iRegister_mime_types == 0) {
+        int register_intent_filter = register_intent_filter(f, schemesIterator, arrayMap, a.a.a.c.a(-357333248130850L, strArr));
+        int register_mime_types = register_mime_types(f, a.a.a.c.a(-356796377218850L, strArr));
+        if (register_intent_filter == 0 && register_mime_types == 0) {
             register_intent_filter(f, f.intentFilter.actionsIterator(), this.mActionToFilter, a.a.a.c.a(-356869391662882L, strArr));
         }
-        if (iRegister_mime_types != 0) {
+        if (register_mime_types != 0) {
             register_intent_filter(f, f.intentFilter.actionsIterator(), this.mTypedActionToFilter, a.a.a.c.a(-356950996041506L, strArr));
         }
     }
@@ -382,31 +382,31 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
         String str5;
         int i;
         String str6;
-        IntentResolver<F, R> intentResolver = this;
+        IntentResolver intentResolver = this;
         PrintWriter printWriter2 = printWriter;
         ArrayMap<String, F[]> arrayMap2 = arrayMap;
         String str7 = str4;
-        StringBuilder sbK = jx0.k(str3);
+        StringBuilder k = jx0.k(str3);
         String[] strArr = xa1.b;
-        sbK.append(a.a.a.c.a(-360021897658146L, strArr));
-        String string = sbK.toString();
-        StringBuilder sbK2 = jx0.k(str3);
-        sbK2.append(a.a.a.c.a(-360086322167586L, strArr));
-        String string2 = sbK2.toString();
+        k.append(a.a.a.c.a(-360021897658146L, strArr));
+        String sb = k.toString();
+        StringBuilder k2 = jx0.k(str3);
+        k2.append(a.a.a.c.a(-360086322167586L, strArr));
+        String sb2 = k2.toString();
         ArrayMap arrayMap3 = new ArrayMap();
         String str8 = str2;
         int i2 = 0;
         boolean z3 = false;
         PrintWriterPrinter printWriterPrinter = null;
         while (i2 < arrayMap2.size()) {
-            F[] fArrValueAt = arrayMap2.valueAt(i2);
-            int length = fArrValueAt.length;
+            F[] valueAt = arrayMap2.valueAt(i2);
+            int length = valueAt.length;
             if (!z2 || z) {
                 str5 = str8;
                 int i3 = 0;
                 boolean z4 = false;
                 while (i3 < length) {
-                    F f = fArrValueAt[i3];
+                    F f = valueAt[i3];
                     if (f == null) {
                         break;
                     }
@@ -417,20 +417,20 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                             str5 = null;
                         }
                         if (!z4) {
-                            printWriter2.print(string);
+                            printWriter2.print(sb);
                             printWriter2.print(arrayMap2.keyAt(i2));
                             printWriter2.println(a.a.a.c.a(-359566631124770L, strArr));
                             z4 = true;
                         }
-                        intentResolver.dumpFilter(printWriter2, string2, f);
+                        intentResolver.dumpFilter(printWriter2, sb2, f);
                         if (z) {
                             if (printWriterPrinter == null) {
                                 printWriterPrinter = new PrintWriterPrinter(printWriter2);
                             }
                             IntentFilter intentFilter = f.intentFilter;
-                            StringBuilder sbK3 = jx0.k(string2);
-                            sbK3.append(a.a.a.c.a(-359558041190178L, strArr));
-                            intentFilter.dump(printWriterPrinter, sbK3.toString());
+                            StringBuilder k3 = jx0.k(sb2);
+                            k3.append(a.a.a.c.a(-359558041190178L, strArr));
+                            intentFilter.dump(printWriterPrinter, k3.toString());
                         }
                         z3 = true;
                     }
@@ -444,20 +444,20 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                 arrayMap3.clear();
                 int i4 = 0;
                 while (i4 < length) {
-                    F f2 = fArrValueAt[i4];
+                    F f2 = valueAt[i4];
                     if (f2 == null) {
                         break;
                     }
                     if (str7 == null || intentResolver.isPackageForFilter(str7, f2)) {
-                        Object objFilterToLabel = intentResolver.filterToLabel(f2);
+                        Object filterToLabel = intentResolver.filterToLabel(f2);
                         i = i4;
-                        int iIndexOfKey = arrayMap3.indexOfKey(objFilterToLabel);
-                        if (iIndexOfKey < 0) {
+                        int indexOfKey = arrayMap3.indexOfKey(filterToLabel);
+                        if (indexOfKey < 0) {
                             str6 = str8;
-                            arrayMap3.put(objFilterToLabel, new MutableInt(1));
+                            arrayMap3.put(filterToLabel, new MutableInt(1));
                         } else {
                             str6 = str8;
-                            ((MutableInt) arrayMap3.valueAt(iIndexOfKey)).value++;
+                            ((MutableInt) arrayMap3.valueAt(indexOfKey)).value++;
                         }
                     } else {
                         i = i4;
@@ -476,12 +476,12 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
                         str5 = null;
                     }
                     if (!z5) {
-                        printWriter2.print(string);
+                        printWriter2.print(sb);
                         printWriter2.print(arrayMap2.keyAt(i2));
                         printWriter2.println(a.a.a.c.a(-360056257396514L, strArr));
                         z5 = true;
                     }
-                    intentResolver.dumpFilterLabel(printWriter2, string2, arrayMap3.keyAt(i5), ((MutableInt) arrayMap3.valueAt(i5)).value);
+                    intentResolver.dumpFilterLabel(printWriter2, sb2, arrayMap3.keyAt(i5), ((MutableInt) arrayMap3.valueAt(i5)).value);
                     i5++;
                     z3 = true;
                 }
@@ -540,28 +540,256 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
 
     public abstract F[] newArray(int i);
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0116 A[PHI: r1 r2
-      0x0116: PHI (r1v38 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[]) = 
-      (r1v34 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[])
-      (r1v47 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[])
-     binds: [B:32:0x014f, B:24:0x00ef] A[DONT_GENERATE, DONT_INLINE]
-      0x0116: PHI (r2v20 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[]) = 
-      (r2v17 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[])
-      (r2v26 F extends com.kos.engine.core.system.pm.BPackage$IntentInfo[])
-     binds: [B:32:0x014f, B:24:0x00ef] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0189  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x01af  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01ef  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0189  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x01f3  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0230 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0275  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0282  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x02a5  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x027f  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x022a  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public java.util.List<R> queryIntent(android.content.Intent r19, java.lang.String r20, boolean r21, int r22) {
-        /*
-            Method dump skipped, instructions count: 768
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.core.system.pm.IntentResolver.queryIntent(android.content.Intent, java.lang.String, boolean, int):java.util.List");
+    public List<R> queryIntent(Intent intent, String str, boolean z, int i) {
+        Intent intent2;
+        boolean z2;
+        int i2;
+        F[] fArr;
+        F[] fArr2;
+        F[] fArr3;
+        F[] fArr4;
+        boolean z3;
+        F[] fArr5;
+        F[] fArr6;
+        boolean z4;
+        F[] fArr7;
+        int indexOf;
+        F[] fArr8;
+        F[] fArr9;
+        F[] fArr10;
+        F[] fArr11;
+        F[] fArr12;
+        String[] strArr = xa1.b;
+        String scheme = intent.getScheme();
+        ArrayList arrayList = new ArrayList();
+        boolean z5 = (intent.getFlags() & 8) != 0;
+        if (z5) {
+            String a2 = a.a.a.c.a(-359553746222882L, strArr);
+            StringBuilder sb = new StringBuilder();
+            sb.append(a.a.a.c.a(-359618170732322L, strArr));
+            sb.append(str);
+            sb.append(a.a.a.c.a(-359686890209058L, strArr));
+            sb.append(scheme);
+            sb.append(a.a.a.c.a(-359725544914722L, strArr));
+            z2 = z;
+            sb.append(z2);
+            sb.append(a.a.a.c.a(-359802854326050L, strArr));
+            i2 = i;
+            sb.append(i2);
+            sb.append(a.a.a.c.a(-360374084976418L, strArr));
+            intent2 = intent;
+            sb.append(intent2);
+            nz0.Q(a2, 2, sb.toString());
+        } else {
+            intent2 = intent;
+            z2 = z;
+            i2 = i;
+        }
+        if (str != null && (indexOf = str.indexOf(47)) > 0) {
+            String substring = str.substring(0, indexOf);
+            if (!substring.equals(a.a.a.c.a(-360429919551266L, strArr))) {
+                if (str.length() == indexOf + 2 && str.charAt(indexOf + 1) == '*') {
+                    fArr8 = this.mBaseTypeToFilter.get(substring);
+                    if (z5) {
+                        String a3 = a.a.a.c.a(-360133566807842L, strArr);
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(a.a.a.c.a(-360215171186466L, strArr));
+                        zd.p(sb2, Arrays.toString(fArr8), 2, a3);
+                    }
+                    fArr9 = this.mWildTypeToFilter.get(substring);
+                    if (z5) {
+                        String a4 = a.a.a.c.a(-360271005761314L, strArr);
+                        StringBuilder sb3 = new StringBuilder();
+                        fArr10 = fArr8;
+                        fArr11 = fArr9;
+                        sb3.append(a.a.a.c.a(-360352610139938L, strArr));
+                        zd.p(sb3, Arrays.toString(fArr11), 2, a4);
+                        F[] fArr13 = fArr10;
+                        F[] fArr14 = fArr11;
+                        F[] fArr15 = this.mWildTypeToFilter.get(a.a.a.c.a(-358763472240418L, strArr));
+                        if (z5) {
+                        }
+                        fArr2 = fArr15;
+                        fArr = fArr12;
+                    }
+                    fArr10 = fArr8;
+                    fArr11 = fArr9;
+                    F[] fArr132 = fArr10;
+                    F[] fArr142 = fArr11;
+                    F[] fArr152 = this.mWildTypeToFilter.get(a.a.a.c.a(-358763472240418L, strArr));
+                    if (z5) {
+                    }
+                    fArr2 = fArr152;
+                    fArr = fArr12;
+                } else {
+                    fArr8 = this.mTypeToFilter.get(str);
+                    if (z5) {
+                        String a5 = a.a.a.c.a(-360421329616674L, strArr);
+                        StringBuilder sb4 = new StringBuilder();
+                        sb4.append(a.a.a.c.a(-360485754126114L, strArr));
+                        zd.p(sb4, Arrays.toString(fArr8), 2, a5);
+                    }
+                    fArr9 = this.mWildTypeToFilter.get(substring);
+                    if (z5) {
+                        String a6 = a.a.a.c.a(-360558768570146L, strArr);
+                        StringBuilder sb5 = new StringBuilder();
+                        fArr10 = fArr8;
+                        fArr11 = fArr9;
+                        sb5.append(a.a.a.c.a(-360623193079586L, strArr));
+                        zd.p(sb5, Arrays.toString(fArr11), 2, a6);
+                        F[] fArr1322 = fArr10;
+                        F[] fArr1422 = fArr11;
+                        F[] fArr1522 = this.mWildTypeToFilter.get(a.a.a.c.a(-358763472240418L, strArr));
+                        if (z5) {
+                            fArr12 = fArr1322;
+                            fArr3 = fArr1422;
+                        } else {
+                            String a7 = a.a.a.c.a(-358754882305826L, strArr);
+                            StringBuilder sb6 = new StringBuilder();
+                            fArr12 = fArr1322;
+                            fArr3 = fArr1422;
+                            sb6.append(a.a.a.c.a(-358819306815266L, strArr));
+                            zd.p(sb6, Arrays.toString(fArr1522), 2, a7);
+                        }
+                        fArr2 = fArr1522;
+                        fArr = fArr12;
+                    }
+                    fArr10 = fArr8;
+                    fArr11 = fArr9;
+                    F[] fArr13222 = fArr10;
+                    F[] fArr14222 = fArr11;
+                    F[] fArr15222 = this.mWildTypeToFilter.get(a.a.a.c.a(-358763472240418L, strArr));
+                    if (z5) {
+                    }
+                    fArr2 = fArr15222;
+                    fArr = fArr12;
+                }
+                if (scheme != null) {
+                    F[] fArr16 = this.mSchemeToFilter.get(scheme);
+                    if (z5) {
+                        F[] fArr17 = fArr;
+                        fArr5 = fArr16;
+                        String a8 = a.a.a.c.a(-358527249039138L, strArr);
+                        StringBuilder sb7 = new StringBuilder();
+                        z3 = z5;
+                        fArr4 = fArr17;
+                        sb7.append(a.a.a.c.a(-358608853417762L, strArr));
+                        zd.p(sb7, Arrays.toString(fArr5), 2, a8);
+                    } else {
+                        fArr4 = fArr;
+                        fArr5 = fArr16;
+                        z3 = z5;
+                    }
+                } else {
+                    fArr4 = fArr;
+                    z3 = z5;
+                    fArr5 = null;
+                }
+                if (str == null || scheme != null || intent2.getAction() == null) {
+                    fArr6 = fArr4;
+                } else {
+                    F[] fArr18 = this.mActionToFilter.get(intent2.getAction());
+                    if (z3) {
+                        String a9 = a.a.a.c.a(-358617443352354L, strArr);
+                        StringBuilder sb8 = new StringBuilder();
+                        fArr7 = fArr18;
+                        sb8.append(a.a.a.c.a(-358681867861794L, strArr));
+                        zd.p(sb8, Arrays.toString(fArr7), 2, a9);
+                    } else {
+                        fArr7 = fArr18;
+                    }
+                    fArr6 = fArr7;
+                }
+                FastImmutableArraySet<String> fastIntentCategories = getFastIntentCategories(intent2);
+                if (fArr6 != null) {
+                    z4 = z3;
+                    buildResolveList(intent2, fastIntentCategories, z4, z2, str, scheme, fArr6, arrayList, i2);
+                } else {
+                    z4 = z3;
+                }
+                if (fArr3 != null) {
+                    buildResolveList(intent, fastIntentCategories, z4, z, str, scheme, fArr3, arrayList, i);
+                }
+                if (fArr2 != null) {
+                    buildResolveList(intent, fastIntentCategories, z4, z, str, scheme, fArr2, arrayList, i);
+                }
+                if (fArr5 != null) {
+                    buildResolveList(intent, fastIntentCategories, z4, z, str, scheme, fArr5, arrayList, i);
+                }
+                filterResults(arrayList);
+                if (z4) {
+                    nz0.Q(a.a.a.c.a(-359308933087010L, strArr), 2, a.a.a.c.a(-359390537465634L, strArr));
+                    for (int i3 = 0; i3 < arrayList.size(); i3++) {
+                        nz0.Q(a.a.a.c.a(-359437782105890L, strArr), 2, a.a.a.c.a(-359519386484514L, strArr) + arrayList.get(i3));
+                    }
+                }
+                return arrayList;
+            }
+            if (intent2.getAction() != null) {
+                fArr = this.mTypedActionToFilter.get(intent2.getAction());
+                if (z5) {
+                    String a10 = a.a.a.c.a(-358892321259298L, strArr);
+                    StringBuilder sb9 = new StringBuilder();
+                    sb9.append(a.a.a.c.a(-358956745768738L, strArr));
+                    zd.p(sb9, Arrays.toString(fArr), 2, a10);
+                }
+                fArr2 = null;
+                fArr3 = null;
+                if (scheme != null) {
+                }
+                if (str == null) {
+                }
+                fArr6 = fArr4;
+                FastImmutableArraySet<String> fastIntentCategories2 = getFastIntentCategories(intent2);
+                if (fArr6 != null) {
+                }
+                if (fArr3 != null) {
+                }
+                if (fArr2 != null) {
+                }
+                if (fArr5 != null) {
+                }
+                filterResults(arrayList);
+                if (z4) {
+                }
+                return arrayList;
+            }
+        }
+        fArr = null;
+        fArr2 = null;
+        fArr3 = null;
+        if (scheme != null) {
+        }
+        if (str == null) {
+        }
+        fArr6 = fArr4;
+        FastImmutableArraySet<String> fastIntentCategories22 = getFastIntentCategories(intent2);
+        if (fArr6 != null) {
+        }
+        if (fArr3 != null) {
+        }
+        if (fArr2 != null) {
+        }
+        if (fArr5 != null) {
+        }
+        filterResults(arrayList);
+        if (z4) {
+        }
+        return arrayList;
     }
 
     public List<R> queryIntentFromList(Intent intent, String str, boolean z, ArrayList<F[]> arrayList, int i) {
@@ -583,15 +811,15 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
     }
 
     public void removeFilterInternal(F f) {
-        Iterator<String> itSchemesIterator = f.intentFilter.schemesIterator();
+        Iterator<String> schemesIterator = f.intentFilter.schemesIterator();
         ArrayMap<String, F[]> arrayMap = this.mSchemeToFilter;
         String[] strArr = xa1.b;
-        int iUnregister_intent_filter = unregister_intent_filter(f, itSchemesIterator, arrayMap, a.a.a.c.a(-357002535649058L, strArr));
-        int iUnregister_mime_types = unregister_mime_types(f, a.a.a.c.a(-359815739227938L, strArr));
-        if (iUnregister_intent_filter == 0 && iUnregister_mime_types == 0) {
+        int unregister_intent_filter = unregister_intent_filter(f, schemesIterator, arrayMap, a.a.a.c.a(-357002535649058L, strArr));
+        int unregister_mime_types = unregister_mime_types(f, a.a.a.c.a(-359815739227938L, strArr));
+        if (unregister_intent_filter == 0 && unregister_mime_types == 0) {
             unregister_intent_filter(f, f.intentFilter.actionsIterator(), this.mActionToFilter, a.a.a.c.a(-359905933541154L, strArr));
         }
-        if (iUnregister_mime_types != 0) {
+        if (unregister_mime_types != 0) {
             unregister_intent_filter(f, f.intentFilter.actionsIterator(), this.mTypedActionToFilter, a.a.a.c.a(-359970358050594L, strArr));
         }
     }
@@ -600,28 +828,27 @@ public abstract class IntentResolver<F extends BPackage.IntentInfo, R> {
         Collections.sort(list, mResolvePrioritySorter);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     private final void addFilter(ArrayMap<String, F[]> arrayMap, String str, F f) {
-        BPackage.IntentInfo[] intentInfoArr = (BPackage.IntentInfo[]) arrayMap.get(str);
-        if (intentInfoArr == null) {
-            BPackage.IntentInfo[] intentInfoArrNewArray = newArray(2);
-            arrayMap.put(str, intentInfoArrNewArray);
-            intentInfoArrNewArray[0] = f;
+        F[] fArr = arrayMap.get(str);
+        if (fArr == null) {
+            F[] newArray = newArray(2);
+            arrayMap.put(str, newArray);
+            newArray[0] = f;
             return;
         }
-        int length = intentInfoArr.length;
+        int length = fArr.length;
         int i = length;
-        while (i > 0 && intentInfoArr[i - 1] == null) {
+        while (i > 0 && fArr[i - 1] == null) {
             i--;
         }
         if (i < length) {
-            intentInfoArr[i] = f;
+            fArr[i] = f;
             return;
         }
-        BPackage.IntentInfo[] intentInfoArrNewArray2 = newArray((length * 3) / 2);
-        System.arraycopy(intentInfoArr, 0, intentInfoArrNewArray2, 0, length);
-        intentInfoArrNewArray2[length] = f;
-        arrayMap.put(str, intentInfoArrNewArray2);
+        F[] newArray2 = newArray((length * 3) / 2);
+        System.arraycopy(fArr, 0, newArray2, 0, length);
+        newArray2[length] = f;
+        arrayMap.put(str, newArray2);
     }
 
     public void filterResults(List<R> list) {

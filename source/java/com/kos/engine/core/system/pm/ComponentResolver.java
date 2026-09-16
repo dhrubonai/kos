@@ -91,6 +91,7 @@ public class ComponentResolver {
             return str.equals(activityIntentInfo.activity.owner.packageName);
         }
 
+        /* JADX WARN: Can't rename method to resolve collision */
         @Override // com.kos.engine.core.system.pm.IntentResolver
         public BPackage.ActivityIntentInfo[] newArray(int i) {
             return new BPackage.ActivityIntentInfo[i];
@@ -98,14 +99,14 @@ public class ComponentResolver {
 
         @Override // com.kos.engine.core.system.pm.IntentResolver
         public ResolveInfo newResult(BPackage.ActivityIntentInfo activityIntentInfo, int i, int i2) {
-            ActivityInfo activityInfoGenerateActivityInfo;
+            ActivityInfo generateActivityInfo;
             BPackage.Activity activity = activityIntentInfo.activity;
             BPackageSettings bPackageSettings = activity.owner.mExtras;
-            if (bPackageSettings == null || (activityInfoGenerateActivityInfo = PackageManagerCompat.generateActivityInfo(activity, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
+            if (bPackageSettings == null || (generateActivityInfo = PackageManagerCompat.generateActivityInfo(activity, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
                 return null;
             }
             ResolveInfo resolveInfo = new ResolveInfo();
-            resolveInfo.activityInfo = activityInfoGenerateActivityInfo;
+            resolveInfo.activityInfo = generateActivityInfo;
             if ((this.mFlags & 64) != 0) {
                 resolveInfo.filter = activityIntentInfo.intentFilter;
             }
@@ -203,14 +204,14 @@ public class ComponentResolver {
 
         @Override // com.kos.engine.core.system.pm.IntentResolver
         public ResolveInfo newResult(BPackage.ProviderIntentInfo providerIntentInfo, int i, int i2) {
-            ProviderInfo providerInfoGenerateProviderInfo;
+            ProviderInfo generateProviderInfo;
             BPackage.Provider provider = providerIntentInfo.provider;
             BPackageSettings bPackageSettings = provider.owner.mExtras;
-            if (bPackageSettings == null || (providerInfoGenerateProviderInfo = PackageManagerCompat.generateProviderInfo(provider, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
+            if (bPackageSettings == null || (generateProviderInfo = PackageManagerCompat.generateProviderInfo(provider, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
                 return null;
             }
             ResolveInfo resolveInfo = new ResolveInfo();
-            resolveInfo.providerInfo = providerInfoGenerateProviderInfo;
+            resolveInfo.providerInfo = generateProviderInfo;
             if ((this.mFlags & 64) != 0) {
                 resolveInfo.filter = providerIntentInfo.intentFilter;
             }
@@ -296,14 +297,14 @@ public class ComponentResolver {
 
         @Override // com.kos.engine.core.system.pm.IntentResolver
         public ResolveInfo newResult(BPackage.ServiceIntentInfo serviceIntentInfo, int i, int i2) {
-            ServiceInfo serviceInfoGenerateServiceInfo;
+            ServiceInfo generateServiceInfo;
             BPackage.Service service = serviceIntentInfo.service;
             BPackageSettings bPackageSettings = service.owner.mExtras;
-            if (bPackageSettings == null || (serviceInfoGenerateServiceInfo = PackageManagerCompat.generateServiceInfo(service, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
+            if (bPackageSettings == null || (generateServiceInfo = PackageManagerCompat.generateServiceInfo(service, this.mFlags, bPackageSettings.readUserState(i2), i2)) == null) {
                 return null;
             }
             ResolveInfo resolveInfo = new ResolveInfo();
-            resolveInfo.serviceInfo = serviceInfoGenerateServiceInfo;
+            resolveInfo.serviceInfo = generateServiceInfo;
             if ((this.mFlags & 64) != 0) {
                 resolveInfo.filter = serviceIntentInfo.intentFilter;
             }
@@ -353,24 +354,24 @@ public class ComponentResolver {
             this.mProviders.addProvider(provider);
             String str = provider.info.authority;
             if (str != null) {
-                String[] strArrSplit = str.split(a.a.a.c.a(-461327291268898L, strArr));
+                String[] split = str.split(a.a.a.c.a(-461327291268898L, strArr));
                 provider.info.authority = null;
-                int length = strArrSplit.length;
+                int length = split.length;
                 int i3 = 0;
                 while (i3 < length) {
-                    String str2 = strArrSplit[i3];
+                    String str2 = split[i3];
                     if (this.mProvidersByAuthority.containsKey(str2)) {
                         BPackage.Provider provider2 = this.mProvidersByAuthority.get(str2);
                         ComponentName componentName = (provider2 == null || provider2.getComponentName() == null) ? null : provider2.getComponentName();
                         String packageName = componentName != null ? componentName.getPackageName() : a.a.a.c.a(-461378830876450L, strArr);
-                        String strA = a.a.a.c.a(-461370240941858L, strArr);
+                        String a2 = a.a.a.c.a(-461370240941858L, strArr);
                         StringBuilder sb = new StringBuilder();
                         i = i2;
                         sb.append(a.a.a.c.a(-461430370484002L, strArr));
                         sb.append(str2);
                         sb.append(a.a.a.c.a(-459884182257442L, strArr));
                         sb.append(bPackage.applicationInfo.packageName);
-                        jx0.r(sb, a.a.a.c.a(-459961491668770L, strArr), packageName, 5, strA);
+                        jx0.r(sb, a.a.a.c.a(-459961491668770L, strArr), packageName, 5, a2);
                     } else {
                         this.mProvidersByAuthority.put(str2, provider);
                         ProviderInfo providerInfo2 = provider.info;
@@ -423,10 +424,10 @@ public class ComponentResolver {
             this.mProviders.removeProvider(provider);
             String str = provider.info.authority;
             if (str != null) {
-                String[] strArrSplit = str.split(a.a.a.c.a(-461275751661346L, strArr));
-                for (int i3 = 0; i3 < strArrSplit.length; i3++) {
-                    if (this.mProvidersByAuthority.get(strArrSplit[i3]) == provider) {
-                        this.mProvidersByAuthority.remove(strArrSplit[i3]);
+                String[] split = str.split(a.a.a.c.a(-461275751661346L, strArr));
+                for (int i3 = 0; i3 < split.length; i3++) {
+                    if (this.mProvidersByAuthority.get(split[i3]) == provider) {
+                        this.mProvidersByAuthority.remove(split[i3]);
                     }
                 }
                 this.mProvidersByAuthority.remove(provider.info.authority);
@@ -485,11 +486,11 @@ public class ComponentResolver {
     }
 
     public List<ResolveInfo> queryActivities(Intent intent, String str, int i, int i2) {
-        List<ResolveInfo> listQueryIntent;
+        List<ResolveInfo> queryIntent;
         synchronized (this.mLock) {
-            listQueryIntent = this.mActivities.queryIntent(intent, str, i, i2);
+            queryIntent = this.mActivities.queryIntent(intent, str, i, i2);
         }
-        return listQueryIntent;
+        return queryIntent;
     }
 
     public ProviderInfo queryProvider(String str, int i, int i2) {
@@ -507,27 +508,27 @@ public class ComponentResolver {
     }
 
     public List<ResolveInfo> queryProviders(Intent intent, String str, int i, int i2) {
-        List<ResolveInfo> listQueryIntent;
+        List<ResolveInfo> queryIntent;
         synchronized (this.mLock) {
-            listQueryIntent = this.mProviders.queryIntent(intent, str, i, i2);
+            queryIntent = this.mProviders.queryIntent(intent, str, i, i2);
         }
-        return listQueryIntent;
+        return queryIntent;
     }
 
     public List<ResolveInfo> queryReceivers(Intent intent, String str, int i, int i2) {
-        List<ResolveInfo> listQueryIntent;
+        List<ResolveInfo> queryIntent;
         synchronized (this.mLock) {
-            listQueryIntent = this.mReceivers.queryIntent(intent, str, i, i2);
+            queryIntent = this.mReceivers.queryIntent(intent, str, i, i2);
         }
-        return listQueryIntent;
+        return queryIntent;
     }
 
     public List<ResolveInfo> queryServices(Intent intent, String str, int i, int i2) {
-        List<ResolveInfo> listQueryIntent;
+        List<ResolveInfo> queryIntent;
         synchronized (this.mLock) {
-            listQueryIntent = this.mServices.queryIntent(intent, str, i, i2);
+            queryIntent = this.mServices.queryIntent(intent, str, i, i2);
         }
-        return listQueryIntent;
+        return queryIntent;
     }
 
     public void removeAllComponents(BPackage bPackage) {
@@ -537,39 +538,39 @@ public class ComponentResolver {
     }
 
     public List<ResolveInfo> queryActivities(Intent intent, String str, int i, List<BPackage.Activity> list, int i2) {
-        List<ResolveInfo> listQueryIntentForPackage;
+        List<ResolveInfo> queryIntentForPackage;
         synchronized (this.mLock) {
-            listQueryIntentForPackage = this.mActivities.queryIntentForPackage(intent, str, i, list, i2);
+            queryIntentForPackage = this.mActivities.queryIntentForPackage(intent, str, i, list, i2);
         }
-        return listQueryIntentForPackage;
+        return queryIntentForPackage;
     }
 
     public List<ResolveInfo> queryProviders(Intent intent, String str, int i, List<BPackage.Provider> list, int i2) {
-        List<ResolveInfo> listQueryIntentForPackage;
+        List<ResolveInfo> queryIntentForPackage;
         synchronized (this.mLock) {
-            listQueryIntentForPackage = this.mProviders.queryIntentForPackage(intent, str, i, list, i2);
+            queryIntentForPackage = this.mProviders.queryIntentForPackage(intent, str, i, list, i2);
         }
-        return listQueryIntentForPackage;
+        return queryIntentForPackage;
     }
 
     public List<ResolveInfo> queryReceivers(Intent intent, String str, int i, List<BPackage.Activity> list, int i2) {
-        List<ResolveInfo> listQueryIntentForPackage;
+        List<ResolveInfo> queryIntentForPackage;
         synchronized (this.mLock) {
-            listQueryIntentForPackage = this.mReceivers.queryIntentForPackage(intent, str, i, list, i2);
+            queryIntentForPackage = this.mReceivers.queryIntentForPackage(intent, str, i, list, i2);
         }
-        return listQueryIntentForPackage;
+        return queryIntentForPackage;
     }
 
     public List<ResolveInfo> queryServices(Intent intent, String str, int i, List<BPackage.Service> list, int i2) {
-        List<ResolveInfo> listQueryIntentForPackage;
+        List<ResolveInfo> queryIntentForPackage;
         synchronized (this.mLock) {
-            listQueryIntentForPackage = this.mServices.queryIntentForPackage(intent, str, i, list, i2);
+            queryIntentForPackage = this.mServices.queryIntentForPackage(intent, str, i, list, i2);
         }
-        return listQueryIntentForPackage;
+        return queryIntentForPackage;
     }
 
     public List<ProviderInfo> queryProviders(String str, String str2, int i, int i2) {
-        ProviderInfo providerInfoGenerateProviderInfo;
+        ProviderInfo generateProviderInfo;
         Bundle bundle;
         ArrayList arrayList = new ArrayList();
         synchronized (this.mLock) {
@@ -579,8 +580,8 @@ public class ComponentResolver {
                     BPackageSettings bPackageSettings = provider.owner.mExtras;
                     if (bPackageSettings != null) {
                         ProviderInfo providerInfo = provider.info;
-                        if (providerInfo.authority != null && ((str == null || providerInfo.processName.equals(str)) && ((str2 == null || ((bundle = provider.metaData) != null && bundle.containsKey(str2))) && (providerInfoGenerateProviderInfo = PackageManagerCompat.generateProviderInfo(provider, i, bPackageSettings.readUserState(i2), i2)) != null))) {
-                            arrayList.add(providerInfoGenerateProviderInfo);
+                        if (providerInfo.authority != null && ((str == null || providerInfo.processName.equals(str)) && ((str2 == null || ((bundle = provider.metaData) != null && bundle.containsKey(str2))) && (generateProviderInfo = PackageManagerCompat.generateProviderInfo(provider, i, bPackageSettings.readUserState(i2), i2)) != null))) {
+                            arrayList.add(generateProviderInfo);
                         }
                     }
                 }

@@ -20,58 +20,58 @@ public final /* synthetic */ class lf2 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
-        Object next;
-        Object next2;
+        Object obj;
+        Object obj2;
         switch (this.d) {
             case 0:
                 this.f.setValue(Boolean.FALSE);
                 mf1 mf1Var = this.g;
                 sf2 sf2Var = (sf2) mf1Var.getValue();
                 boolean z = sf2Var instanceof rf2;
-                Object qf2Var = pf2.f903a;
+                Object obj3 = pf2.f902a;
                 if (z) {
                     Iterator it = this.e.iterator();
                     while (true) {
                         if (it.hasNext()) {
-                            next = it.next();
-                            if (lx0.n(((j30) next).d, ((rf2) sf2Var).b)) {
+                            obj = it.next();
+                            if (lx0.n(((j30) obj).d, ((rf2) sf2Var).b)) {
                             }
                         } else {
-                            next = null;
+                            obj = null;
                         }
                     }
-                    j30 j30Var = (j30) next;
+                    j30 j30Var = (j30) obj;
                     if (j30Var != null) {
-                        qf2Var = new qf2(j30Var);
+                        obj3 = new qf2(j30Var);
                     }
                 }
-                mf1Var.setValue(qf2Var);
+                mf1Var.setValue(obj3);
                 break;
             default:
                 this.f.setValue(Boolean.FALSE);
                 mf1 mf1Var2 = this.g;
                 sf2 sf2Var2 = (sf2) mf1Var2.getValue();
                 boolean z2 = sf2Var2 instanceof rf2;
-                Object qf2Var2 = pf2.f903a;
+                Object obj4 = pf2.f902a;
                 if (z2) {
                     Iterator it2 = this.e.iterator();
                     while (true) {
                         if (it2.hasNext()) {
-                            next2 = it2.next();
-                            if (lx0.n(((j30) next2).d, ((rf2) sf2Var2).b)) {
+                            obj2 = it2.next();
+                            if (lx0.n(((j30) obj2).d, ((rf2) sf2Var2).b)) {
                             }
                         } else {
-                            next2 = null;
+                            obj2 = null;
                         }
                     }
-                    j30 j30Var2 = (j30) next2;
+                    j30 j30Var2 = (j30) obj2;
                     if (j30Var2 != null) {
-                        qf2Var2 = new qf2(j30Var2);
+                        obj4 = new qf2(j30Var2);
                     }
                 }
-                mf1Var2.setValue(qf2Var2);
+                mf1Var2.setValue(obj4);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

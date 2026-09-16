@@ -8,13 +8,13 @@ import androidx.core.widget.NestedScrollView;
 public final class s42 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final r42 f1051a;
+    public final r42 f1050a;
 
     public s42(NestedScrollView nestedScrollView) {
         if (Build.VERSION.SDK_INT >= 35) {
-            this.f1051a = new q42(nestedScrollView);
+            this.f1050a = new q42(nestedScrollView);
         } else {
-            this.f1051a = new f32(1);
+            this.f1050a = new f32(1);
         }
     }
 }

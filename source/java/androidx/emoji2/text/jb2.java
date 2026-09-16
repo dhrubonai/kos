@@ -9,149 +9,133 @@ public final class jb2 extends md1 implements w01 {
     public float u;
     public boolean v;
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0043  */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0040, code lost:
+    
+        if (r5 != Integer.MAX_VALUE) goto L24;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final long I0(androidx.emoji2.text.hb1 r8) {
-        /*
-            r7 = this;
-            float r0 = r7.t
-            r1 = 2143289344(0x7fc00000, float:NaN)
-            boolean r0 = androidx.emoji2.text.da0.a(r0, r1)
-            r2 = 2147483647(0x7fffffff, float:NaN)
-            r3 = 0
-            if (r0 != 0) goto L18
-            float r0 = r7.t
-            int r0 = r8.i0(r0)
-            if (r0 >= 0) goto L19
-            r0 = r3
-            goto L19
-        L18:
-            r0 = r2
-        L19:
-            float r4 = r7.u
-            boolean r4 = androidx.emoji2.text.da0.a(r4, r1)
-            if (r4 != 0) goto L2b
-            float r4 = r7.u
-            int r4 = r8.i0(r4)
-            if (r4 >= 0) goto L2c
-            r4 = r3
-            goto L2c
-        L2b:
-            r4 = r2
-        L2c:
-            float r5 = r7.r
-            boolean r5 = androidx.emoji2.text.da0.a(r5, r1)
-            if (r5 != 0) goto L43
-            float r5 = r7.r
-            int r5 = r8.i0(r5)
-            if (r5 <= r0) goto L3d
-            r5 = r0
-        L3d:
-            if (r5 >= 0) goto L40
-            r5 = r3
-        L40:
-            if (r5 == r2) goto L43
-            goto L44
-        L43:
-            r5 = r3
-        L44:
-            float r6 = r7.s
-            boolean r1 = androidx.emoji2.text.da0.a(r6, r1)
-            if (r1 != 0) goto L5b
-            float r1 = r7.s
-            int r8 = r8.i0(r1)
-            if (r8 <= r4) goto L55
-            r8 = r4
-        L55:
-            if (r8 >= 0) goto L58
-            r8 = r3
-        L58:
-            if (r8 == r2) goto L5b
-            r3 = r8
-        L5b:
-            long r0 = androidx.emoji2.text.xz.a(r5, r0, r3, r4)
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.jb2.I0(androidx.emoji2.text.hb1):long");
+    public final long I0(hb1 hb1Var) {
+        int i;
+        int i2;
+        int i3;
+        int i4 = 0;
+        if (da0.a(this.t, Float.NaN)) {
+            i = Integer.MAX_VALUE;
+        } else {
+            i = hb1Var.i0(this.t);
+            if (i < 0) {
+                i = 0;
+            }
+        }
+        if (da0.a(this.u, Float.NaN)) {
+            i2 = Integer.MAX_VALUE;
+        } else {
+            i2 = hb1Var.i0(this.u);
+            if (i2 < 0) {
+                i2 = 0;
+            }
+        }
+        if (!da0.a(this.r, Float.NaN)) {
+            i3 = hb1Var.i0(this.r);
+            if (i3 > i) {
+                i3 = i;
+            }
+            if (i3 < 0) {
+                i3 = 0;
+            }
+        }
+        i3 = 0;
+        if (!da0.a(this.s, Float.NaN)) {
+            int i0 = hb1Var.i0(this.s);
+            if (i0 > i2) {
+                i0 = i2;
+            }
+            if (i0 < 0) {
+                i0 = 0;
+            }
+            if (i0 != Integer.MAX_VALUE) {
+                i4 = i0;
+            }
+        }
+        return xz.a(i3, i, i4, i2);
     }
 
     @Override // androidx.emoji2.text.w01
     public final int c(k81 k81Var, ab1 ab1Var, int i) {
-        long jI0 = I0(k81Var);
-        return vz.f(jI0) ? vz.h(jI0) : xz.g(ab1Var.l(i), jI0);
+        long I0 = I0(k81Var);
+        return vz.f(I0) ? vz.h(I0) : xz.g(ab1Var.l(i), I0);
     }
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        int iJ;
-        int iH;
+        int j2;
+        int h;
         int i;
-        int iG;
-        long jA;
-        long jI0 = I0(hb1Var);
+        int g;
+        long a2;
+        long I0 = I0(hb1Var);
         if (this.v) {
-            jA = xz.e(j, jI0);
+            a2 = xz.e(j, I0);
         } else {
             if (da0.a(this.r, Float.NaN)) {
-                iJ = vz.j(j);
-                int iH2 = vz.h(jI0);
-                if (iJ > iH2) {
-                    iJ = iH2;
+                j2 = vz.j(j);
+                int h2 = vz.h(I0);
+                if (j2 > h2) {
+                    j2 = h2;
                 }
             } else {
-                iJ = vz.j(jI0);
+                j2 = vz.j(I0);
             }
             if (da0.a(this.t, Float.NaN)) {
-                iH = vz.h(j);
-                int iJ2 = vz.j(jI0);
-                if (iH < iJ2) {
-                    iH = iJ2;
+                h = vz.h(j);
+                int j3 = vz.j(I0);
+                if (h < j3) {
+                    h = j3;
                 }
             } else {
-                iH = vz.h(jI0);
+                h = vz.h(I0);
             }
             if (da0.a(this.s, Float.NaN)) {
                 i = vz.i(j);
-                int iG2 = vz.g(jI0);
-                if (i > iG2) {
-                    i = iG2;
+                int g2 = vz.g(I0);
+                if (i > g2) {
+                    i = g2;
                 }
             } else {
-                i = vz.i(jI0);
+                i = vz.i(I0);
             }
             if (da0.a(this.u, Float.NaN)) {
-                iG = vz.g(j);
-                int i2 = vz.i(jI0);
-                if (iG < i2) {
-                    iG = i2;
+                g = vz.g(j);
+                int i2 = vz.i(I0);
+                if (g < i2) {
+                    g = i2;
                 }
             } else {
-                iG = vz.g(jI0);
+                g = vz.g(I0);
             }
-            jA = xz.a(iJ, iH, i, iG);
+            a2 = xz.a(j2, h, i, g);
         }
-        hr1 hr1VarQ = ab1Var.q(jA);
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new jb(hr1VarQ, 9));
+        hr1 q = ab1Var.q(a2);
+        return hb1Var.P(q.d, q.e, re0.d, new jb(q, 9));
     }
 
     @Override // androidx.emoji2.text.w01
     public final int e(k81 k81Var, ab1 ab1Var, int i) {
-        long jI0 = I0(k81Var);
-        return vz.f(jI0) ? vz.h(jI0) : xz.g(ab1Var.n(i), jI0);
+        long I0 = I0(k81Var);
+        return vz.f(I0) ? vz.h(I0) : xz.g(ab1Var.n(i), I0);
     }
 
     @Override // androidx.emoji2.text.w01
     public final int h(k81 k81Var, ab1 ab1Var, int i) {
-        long jI0 = I0(k81Var);
-        return vz.e(jI0) ? vz.g(jI0) : xz.f(ab1Var.c(i), jI0);
+        long I0 = I0(k81Var);
+        return vz.e(I0) ? vz.g(I0) : xz.f(ab1Var.c(i), I0);
     }
 
     @Override // androidx.emoji2.text.w01
     public final int j(k81 k81Var, ab1 ab1Var, int i) {
-        long jI0 = I0(k81Var);
-        return vz.e(jI0) ? vz.g(jI0) : xz.f(ab1Var.N(i), jI0);
+        long I0 = I0(k81Var);
+        return vz.e(I0) ? vz.g(I0) : xz.f(ab1Var.N(i), I0);
     }
 }

@@ -5,7 +5,6 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -22,6 +21,7 @@ import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.os.Parcelable;
 import android.text.Editable;
+import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -205,7 +205,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         FrameLayout frameLayout = new FrameLayout(context2);
         this.d = frameLayout;
         frameLayout.setAddStatesFromChildren(true);
-        LinearInterpolator linearInterpolator = je.f575a;
+        LinearInterpolator linearInterpolator = je.f574a;
         tsVar.R = linearInterpolator;
         tsVar.j(false);
         tsVar.Q = linearInterpolator;
@@ -217,63 +217,63 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         lx0.t(context2, attributeSet, androidx.core.splashscreen.R.attr.textInputStyle, androidx.core.splashscreen.R.style.Widget_Design_TextInputLayout);
         int[] iArr = fv1.x;
         lx0.z(context2, attributeSet, iArr, androidx.core.splashscreen.R.attr.textInputStyle, androidx.core.splashscreen.R.style.Widget_Design_TextInputLayout, 22, 20, 40, 45, 50);
-        TypedArray typedArrayObtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr, androidx.core.splashscreen.R.attr.textInputStyle, androidx.core.splashscreen.R.style.Widget_Design_TextInputLayout);
-        rg rgVar = new rg(context2, typedArrayObtainStyledAttributes);
+        TypedArray obtainStyledAttributes = context2.obtainStyledAttributes(attributeSet, iArr, androidx.core.splashscreen.R.attr.textInputStyle, androidx.core.splashscreen.R.style.Widget_Design_TextInputLayout);
+        rg rgVar = new rg(context2, obtainStyledAttributes);
         le2 le2Var = new le2(this, rgVar);
         this.e = le2Var;
-        this.G = typedArrayObtainStyledAttributes.getBoolean(48, true);
-        setHint(typedArrayObtainStyledAttributes.getText(4));
-        this.B0 = typedArrayObtainStyledAttributes.getBoolean(47, true);
-        this.A0 = typedArrayObtainStyledAttributes.getBoolean(42, true);
-        if (typedArrayObtainStyledAttributes.hasValue(6)) {
-            setMinEms(typedArrayObtainStyledAttributes.getInt(6, -1));
-        } else if (typedArrayObtainStyledAttributes.hasValue(3)) {
-            setMinWidth(typedArrayObtainStyledAttributes.getDimensionPixelSize(3, -1));
+        this.G = obtainStyledAttributes.getBoolean(48, true);
+        setHint(obtainStyledAttributes.getText(4));
+        this.B0 = obtainStyledAttributes.getBoolean(47, true);
+        this.A0 = obtainStyledAttributes.getBoolean(42, true);
+        if (obtainStyledAttributes.hasValue(6)) {
+            setMinEms(obtainStyledAttributes.getInt(6, -1));
+        } else if (obtainStyledAttributes.hasValue(3)) {
+            setMinWidth(obtainStyledAttributes.getDimensionPixelSize(3, -1));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(5)) {
-            setMaxEms(typedArrayObtainStyledAttributes.getInt(5, -1));
-        } else if (typedArrayObtainStyledAttributes.hasValue(2)) {
-            setMaxWidth(typedArrayObtainStyledAttributes.getDimensionPixelSize(2, -1));
+        if (obtainStyledAttributes.hasValue(5)) {
+            setMaxEms(obtainStyledAttributes.getInt(5, -1));
+        } else if (obtainStyledAttributes.hasValue(2)) {
+            setMaxWidth(obtainStyledAttributes.getDimensionPixelSize(2, -1));
         }
         this.P = v92.b(context2, attributeSet, androidx.core.splashscreen.R.attr.textInputStyle, androidx.core.splashscreen.R.style.Widget_Design_TextInputLayout).a();
         this.R = context2.getResources().getDimensionPixelOffset(androidx.core.splashscreen.R.dimen.mtrl_textinput_box_label_cutout_padding);
-        this.T = typedArrayObtainStyledAttributes.getDimensionPixelOffset(9, 0);
+        this.T = obtainStyledAttributes.getDimensionPixelOffset(9, 0);
         this.g = getResources().getDimensionPixelSize(androidx.core.splashscreen.R.dimen.m3_multiline_hint_filled_text_extra_space);
-        this.V = typedArrayObtainStyledAttributes.getDimensionPixelSize(16, context2.getResources().getDimensionPixelSize(androidx.core.splashscreen.R.dimen.mtrl_textinput_box_stroke_width_default));
-        this.W = typedArrayObtainStyledAttributes.getDimensionPixelSize(17, context2.getResources().getDimensionPixelSize(androidx.core.splashscreen.R.dimen.mtrl_textinput_box_stroke_width_focused));
+        this.V = obtainStyledAttributes.getDimensionPixelSize(16, context2.getResources().getDimensionPixelSize(androidx.core.splashscreen.R.dimen.mtrl_textinput_box_stroke_width_default));
+        this.W = obtainStyledAttributes.getDimensionPixelSize(17, context2.getResources().getDimensionPixelSize(androidx.core.splashscreen.R.dimen.mtrl_textinput_box_stroke_width_focused));
         this.U = this.V;
-        float dimension = typedArrayObtainStyledAttributes.getDimension(13, -1.0f);
-        float dimension2 = typedArrayObtainStyledAttributes.getDimension(12, -1.0f);
-        float dimension3 = typedArrayObtainStyledAttributes.getDimension(10, -1.0f);
-        float dimension4 = typedArrayObtainStyledAttributes.getDimension(11, -1.0f);
-        u92 u92VarF = this.P.f();
+        float dimension = obtainStyledAttributes.getDimension(13, -1.0f);
+        float dimension2 = obtainStyledAttributes.getDimension(12, -1.0f);
+        float dimension3 = obtainStyledAttributes.getDimension(10, -1.0f);
+        float dimension4 = obtainStyledAttributes.getDimension(11, -1.0f);
+        u92 f = this.P.f();
         if (dimension >= 0.0f) {
-            u92VarF.e = new m(dimension);
+            f.e = new m(dimension);
         }
         if (dimension2 >= 0.0f) {
-            u92VarF.f = new m(dimension2);
+            f.f = new m(dimension2);
         }
         if (dimension3 >= 0.0f) {
-            u92VarF.g = new m(dimension3);
+            f.g = new m(dimension3);
         }
         if (dimension4 >= 0.0f) {
-            u92VarF.h = new m(dimension4);
+            f.h = new m(dimension4);
         }
-        this.P = u92VarF.a();
-        ColorStateList colorStateListF = a01.F(context2, rgVar, 7);
-        if (colorStateListF != null) {
-            int defaultColor = colorStateListF.getDefaultColor();
+        this.P = f.a();
+        ColorStateList F = a01.F(context2, rgVar, 7);
+        if (F != null) {
+            int defaultColor = F.getDefaultColor();
             this.s0 = defaultColor;
             this.b0 = defaultColor;
-            if (colorStateListF.isStateful()) {
-                this.t0 = colorStateListF.getColorForState(new int[]{-16842910}, -1);
-                this.u0 = colorStateListF.getColorForState(new int[]{R.attr.state_focused, R.attr.state_enabled}, -1);
-                this.v0 = colorStateListF.getColorForState(new int[]{R.attr.state_hovered, R.attr.state_enabled}, -1);
+            if (F.isStateful()) {
+                this.t0 = F.getColorForState(new int[]{-16842910}, -1);
+                this.u0 = F.getColorForState(new int[]{R.attr.state_focused, R.attr.state_enabled}, -1);
+                this.v0 = F.getColorForState(new int[]{R.attr.state_hovered, R.attr.state_enabled}, -1);
             } else {
                 this.u0 = this.s0;
-                ColorStateList colorStateListZ = kx0.z(context2, androidx.core.splashscreen.R.color.mtrl_filled_background_color);
-                this.t0 = colorStateListZ.getColorForState(new int[]{-16842910}, -1);
-                this.v0 = colorStateListZ.getColorForState(new int[]{R.attr.state_hovered}, -1);
+                ColorStateList z = kx0.z(context2, androidx.core.splashscreen.R.color.mtrl_filled_background_color);
+                this.t0 = z.getColorForState(new int[]{-16842910}, -1);
+                this.v0 = z.getColorForState(new int[]{R.attr.state_hovered}, -1);
             }
         } else {
             this.b0 = 0;
@@ -282,41 +282,41 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             this.u0 = 0;
             this.v0 = 0;
         }
-        if (typedArrayObtainStyledAttributes.hasValue(1)) {
-            ColorStateList colorStateListG = rgVar.G(1);
-            this.n0 = colorStateListG;
-            this.m0 = colorStateListG;
+        if (obtainStyledAttributes.hasValue(1)) {
+            ColorStateList G = rgVar.G(1);
+            this.n0 = G;
+            this.m0 = G;
         }
-        ColorStateList colorStateListF2 = a01.F(context2, rgVar, 14);
-        this.q0 = typedArrayObtainStyledAttributes.getColor(14, 0);
+        ColorStateList F2 = a01.F(context2, rgVar, 14);
+        this.q0 = obtainStyledAttributes.getColor(14, 0);
         this.o0 = context2.getColor(androidx.core.splashscreen.R.color.mtrl_textinput_default_box_stroke_color);
         this.w0 = context2.getColor(androidx.core.splashscreen.R.color.mtrl_textinput_disabled_color);
         this.p0 = context2.getColor(androidx.core.splashscreen.R.color.mtrl_textinput_hovered_box_stroke_color);
-        if (colorStateListF2 != null) {
-            setBoxStrokeColorStateList(colorStateListF2);
+        if (F2 != null) {
+            setBoxStrokeColorStateList(F2);
         }
-        if (typedArrayObtainStyledAttributes.hasValue(15)) {
+        if (obtainStyledAttributes.hasValue(15)) {
             setBoxStrokeErrorColor(a01.F(context2, rgVar, 15));
         }
-        if (typedArrayObtainStyledAttributes.getResourceId(50, -1) != -1) {
-            setHintTextAppearance(typedArrayObtainStyledAttributes.getResourceId(50, 0));
+        if (obtainStyledAttributes.getResourceId(50, -1) != -1) {
+            setHintTextAppearance(obtainStyledAttributes.getResourceId(50, 0));
         }
         this.E = rgVar.G(24);
         this.F = rgVar.G(25);
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(40, 0);
-        CharSequence text = typedArrayObtainStyledAttributes.getText(35);
-        int i = typedArrayObtainStyledAttributes.getInt(34, 1);
-        boolean z = typedArrayObtainStyledAttributes.getBoolean(36, false);
-        int resourceId2 = typedArrayObtainStyledAttributes.getResourceId(45, 0);
-        boolean z2 = typedArrayObtainStyledAttributes.getBoolean(44, false);
-        CharSequence text2 = typedArrayObtainStyledAttributes.getText(43);
-        int resourceId3 = typedArrayObtainStyledAttributes.getResourceId(58, 0);
-        CharSequence text3 = typedArrayObtainStyledAttributes.getText(57);
-        boolean z3 = typedArrayObtainStyledAttributes.getBoolean(18, false);
-        setCounterMaxLength(typedArrayObtainStyledAttributes.getInt(19, -1));
-        this.u = typedArrayObtainStyledAttributes.getResourceId(22, 0);
-        this.t = typedArrayObtainStyledAttributes.getResourceId(20, 0);
-        setBoxBackgroundMode(typedArrayObtainStyledAttributes.getInt(8, 0));
+        int resourceId = obtainStyledAttributes.getResourceId(40, 0);
+        CharSequence text = obtainStyledAttributes.getText(35);
+        int i = obtainStyledAttributes.getInt(34, 1);
+        boolean z2 = obtainStyledAttributes.getBoolean(36, false);
+        int resourceId2 = obtainStyledAttributes.getResourceId(45, 0);
+        boolean z3 = obtainStyledAttributes.getBoolean(44, false);
+        CharSequence text2 = obtainStyledAttributes.getText(43);
+        int resourceId3 = obtainStyledAttributes.getResourceId(58, 0);
+        CharSequence text3 = obtainStyledAttributes.getText(57);
+        boolean z4 = obtainStyledAttributes.getBoolean(18, false);
+        setCounterMaxLength(obtainStyledAttributes.getInt(19, -1));
+        this.u = obtainStyledAttributes.getResourceId(22, 0);
+        this.t = obtainStyledAttributes.getResourceId(20, 0);
+        setBoxBackgroundMode(obtainStyledAttributes.getInt(8, 0));
         setErrorContentDescription(text);
         setErrorAccessibilityLiveRegion(i);
         setCounterOverflowTextAppearance(this.t);
@@ -325,28 +325,28 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         setCounterTextAppearance(this.u);
         setPlaceholderText(text3);
         setPlaceholderTextAppearance(resourceId3);
-        if (typedArrayObtainStyledAttributes.hasValue(41)) {
+        if (obtainStyledAttributes.hasValue(41)) {
             setErrorTextColor(rgVar.G(41));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(46)) {
+        if (obtainStyledAttributes.hasValue(46)) {
             setHelperTextColor(rgVar.G(46));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(51)) {
+        if (obtainStyledAttributes.hasValue(51)) {
             setHintTextColor(rgVar.G(51));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(23)) {
+        if (obtainStyledAttributes.hasValue(23)) {
             setCounterTextColor(rgVar.G(23));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(21)) {
+        if (obtainStyledAttributes.hasValue(21)) {
             setCounterOverflowTextColor(rgVar.G(21));
         }
-        if (typedArrayObtainStyledAttributes.hasValue(59)) {
+        if (obtainStyledAttributes.hasValue(59)) {
             setPlaceholderTextColor(rgVar.G(59));
         }
         ze0 ze0Var = new ze0(this, rgVar);
         this.f = ze0Var;
-        boolean z4 = typedArrayObtainStyledAttributes.getBoolean(0, true);
-        setHintMaxLines(typedArrayObtainStyledAttributes.getInt(49, 1));
+        boolean z5 = obtainStyledAttributes.getBoolean(0, true);
+        setHintMaxLines(obtainStyledAttributes.getInt(49, 1));
         rgVar.X();
         setImportantForAccessibility(2);
         if (Build.VERSION.SDK_INT >= 26) {
@@ -355,10 +355,10 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         frameLayout.addView(le2Var);
         frameLayout.addView(ze0Var);
         addView(frameLayout);
-        setEnabled(z4);
-        setHelperTextEnabled(z2);
-        setErrorEnabled(z);
-        setCounterEnabled(z3);
+        setEnabled(z5);
+        setHelperTextEnabled(z3);
+        setErrorEnabled(z2);
+        setCounterEnabled(z4);
         setHelperText(text2);
     }
 
@@ -367,7 +367,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (!(editText instanceof AutoCompleteTextView) || editText.getInputType() != 0) {
             return this.J;
         }
-        int iV = pz0.v(this.h, androidx.core.splashscreen.R.attr.colorControlHighlight);
+        int v = pz0.v(this.h, androidx.core.splashscreen.R.attr.colorControlHighlight);
         int i = this.S;
         int[][] iArr = G0;
         if (i != 2) {
@@ -376,19 +376,19 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             }
             ua1 ua1Var = this.J;
             int i2 = this.b0;
-            return new RippleDrawable(new ColorStateList(iArr, new int[]{pz0.G(0.1f, iV, i2), i2}), ua1Var, ua1Var);
+            return new RippleDrawable(new ColorStateList(iArr, new int[]{pz0.G(0.1f, v, i2), i2}), ua1Var, ua1Var);
         }
         Context context = getContext();
         ua1 ua1Var2 = this.J;
-        TypedValue typedValueK = nz0.K(context, androidx.core.splashscreen.R.attr.colorSurface, "TextInputLayout");
-        int i3 = typedValueK.resourceId;
-        int color = i3 != 0 ? context.getColor(i3) : typedValueK.data;
-        ua1 ua1Var3 = new ua1(ua1Var2.e.f1059a);
-        int iG = pz0.G(0.1f, iV, color);
-        ua1Var3.n(new ColorStateList(iArr, new int[]{iG, 0}));
+        TypedValue K = nz0.K(context, androidx.core.splashscreen.R.attr.colorSurface, "TextInputLayout");
+        int i3 = K.resourceId;
+        int color = i3 != 0 ? context.getColor(i3) : K.data;
+        ua1 ua1Var3 = new ua1(ua1Var2.e.f1058a);
+        int G = pz0.G(0.1f, v, color);
+        ua1Var3.n(new ColorStateList(iArr, new int[]{G, 0}));
         ua1Var3.setTint(color);
-        ColorStateList colorStateList = new ColorStateList(iArr, new int[]{iG, color});
-        ua1 ua1Var4 = new ua1(ua1Var2.e.f1059a);
+        ColorStateList colorStateList = new ColorStateList(iArr, new int[]{G, color});
+        ua1 ua1Var4 = new ua1(ua1Var2.e.f1058a);
         ua1Var4.setTint(-1);
         return new LayerDrawable(new Drawable[]{new RippleDrawable(colorStateList, ua1Var3, ua1Var4), ua1Var2});
     }
@@ -595,7 +595,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (ua1Var == null) {
             return;
         }
-        v92 v92Var = ua1Var.e.f1059a;
+        v92 v92Var = ua1Var.e.f1058a;
         v92 v92Var2 = this.P;
         if (v92Var != v92Var2) {
             ua1Var.setShapeAppearanceModel(v92Var2);
@@ -604,19 +604,19 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             ua1 ua1Var2 = this.J;
             ua1Var2.e.k = i;
             ua1Var2.invalidateSelf();
-            ColorStateList colorStateListValueOf = ColorStateList.valueOf(i2);
+            ColorStateList valueOf = ColorStateList.valueOf(i2);
             sa1 sa1Var = ua1Var2.e;
-            if (sa1Var.e != colorStateListValueOf) {
-                sa1Var.e = colorStateListValueOf;
+            if (sa1Var.e != valueOf) {
+                sa1Var.e = valueOf;
                 ua1Var2.onStateChange(ua1Var2.getState());
             }
         }
-        int iB = this.b0;
+        int i3 = this.b0;
         if (this.S == 1) {
-            iB = tt.b(this.b0, pz0.u(getContext(), androidx.core.splashscreen.R.attr.colorSurface, 0));
+            i3 = tt.b(this.b0, pz0.u(getContext(), androidx.core.splashscreen.R.attr.colorSurface, 0));
         }
-        this.b0 = iB;
-        this.J.n(ColorStateList.valueOf(iB));
+        this.b0 = i3;
+        this.J.n(ColorStateList.valueOf(i3));
         ua1 ua1Var3 = this.N;
         if (ua1Var3 != null && this.O != null) {
             if (this.U > -1 && this.a0 != 0) {
@@ -682,10 +682,10 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         viewStructure.setChildCount(frameLayout.getChildCount());
         for (int i2 = 0; i2 < frameLayout.getChildCount(); i2++) {
             View childAt = frameLayout.getChildAt(i2);
-            ViewStructure viewStructureNewChild = viewStructure.newChild(i2);
-            childAt.dispatchProvideAutofillStructure(viewStructureNewChild, i);
+            ViewStructure newChild = viewStructure.newChild(i2);
+            childAt.dispatchProvideAutofillStructure(newChild, i);
             if (childAt == this.h) {
-                viewStructureNewChild.setHint(getHint());
+                newChild.setHint(getHint());
             }
         }
     }
@@ -707,7 +707,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (z) {
             TextPaint textPaint = tsVar.O;
             RectF rectF = tsVar.e;
-            int iSave = canvas2.save();
+            int save = canvas2.save();
             if (tsVar.C != null && rectF.width() > 0.0f && rectF.height() > 0.0f) {
                 textPaint.setTextSize(tsVar.G);
                 float f = tsVar.q;
@@ -746,11 +746,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                     if (i >= 31) {
                         textPaint.setShadowLayer(tsVar.H, tsVar.I, tsVar.J, tsVar.K);
                     }
-                    String strTrim = tsVar.d0.toString().trim();
-                    if (strTrim.endsWith("…")) {
-                        strTrim = strTrim.substring(0, strTrim.length() - 1);
+                    String trim = tsVar.d0.toString().trim();
+                    if (trim.endsWith("…")) {
+                        trim = trim.substring(0, trim.length() - 1);
                     }
-                    String str = strTrim;
+                    String str = trim;
                     textPaint.setAlpha(alpha);
                     canvas2 = canvas;
                     canvas2.drawText(str, 0, Math.min(tsVar.Z.getLineEnd(0), str.length()), 0.0f, f11, (Paint) textPaint);
@@ -758,7 +758,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                     canvas2.translate(f, f2);
                     tsVar.Z.draw(canvas2);
                 }
-                canvas2.restoreToCount(iSave);
+                canvas2.restoreToCount(save);
             }
         }
         if (this.O == null || (ua1Var = this.N) == null) {
@@ -769,71 +769,54 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             Rect bounds = this.O.getBounds();
             Rect bounds2 = this.N.getBounds();
             float f12 = tsVar.b;
-            int iCenterX = bounds2.centerX();
-            bounds.left = je.c(f12, iCenterX, bounds2.left);
-            bounds.right = je.c(f12, iCenterX, bounds2.right);
+            int centerX = bounds2.centerX();
+            bounds.left = je.c(f12, centerX, bounds2.left);
+            bounds.right = je.c(f12, centerX, bounds2.right);
             this.O.draw(canvas2);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0034  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x004d  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void drawableStateChanged() {
-        /*
-            r4 = this;
-            boolean r0 = r4.D0
-            if (r0 == 0) goto L5
-            return
-        L5:
-            r0 = 1
-            r4.D0 = r0
-            super.drawableStateChanged()
-            int[] r1 = r4.getDrawableState()
-            r2 = 0
-            androidx.emoji2.text.ts r3 = r4.z0
-            if (r3 == 0) goto L2f
-            r3.M = r1
-            android.content.res.ColorStateList r1 = r3.k
-            if (r1 == 0) goto L20
-            boolean r1 = r1.isStateful()
-            if (r1 != 0) goto L2a
-        L20:
-            android.content.res.ColorStateList r1 = r3.j
-            if (r1 == 0) goto L2f
-            boolean r1 = r1.isStateful()
-            if (r1 == 0) goto L2f
-        L2a:
-            r3.j(r2)
-            r1 = r0
-            goto L30
-        L2f:
-            r1 = r2
-        L30:
-            android.widget.EditText r3 = r4.h
-            if (r3 == 0) goto L45
-            boolean r3 = r4.isLaidOut()
-            if (r3 == 0) goto L41
-            boolean r3 = r4.isEnabled()
-            if (r3 == 0) goto L41
-            goto L42
-        L41:
-            r0 = r2
-        L42:
-            r4.w(r0, r2)
-        L45:
-            r4.t()
-            r4.z()
-            if (r1 == 0) goto L50
-            r4.invalidate()
-        L50:
-            r4.D0 = r2
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.textfield.TextInputLayout.drawableStateChanged():void");
+        boolean z;
+        ColorStateList colorStateList;
+        if (this.D0) {
+            return;
+        }
+        this.D0 = true;
+        super.drawableStateChanged();
+        int[] drawableState = getDrawableState();
+        ts tsVar = this.z0;
+        if (tsVar != null) {
+            tsVar.M = drawableState;
+            ColorStateList colorStateList2 = tsVar.k;
+            if ((colorStateList2 != null && colorStateList2.isStateful()) || ((colorStateList = tsVar.j) != null && colorStateList.isStateful())) {
+                tsVar.j(false);
+                z = true;
+                if (this.h != null) {
+                    w(isLaidOut() && isEnabled(), false);
+                }
+                t();
+                z();
+                if (z) {
+                    invalidate();
+                }
+                this.D0 = false;
+            }
+        }
+        z = false;
+        if (this.h != null) {
+        }
+        t();
+        z();
+        if (z) {
+        }
+        this.D0 = false;
     }
 
     public final int e() {
@@ -861,7 +844,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     public final lh0 f() {
         lh0 lh0Var = new lh0();
         lh0Var.f = az0.c0(getContext(), androidx.core.splashscreen.R.attr.motionDurationShort2, 87);
-        lh0Var.g = az0.d0(getContext(), androidx.core.splashscreen.R.attr.motionEasingLinearInterpolator, je.f575a);
+        lh0Var.g = az0.d0(getContext(), androidx.core.splashscreen.R.attr.motionEasingLinearInterpolator, je.f574a);
         return lh0Var;
     }
 
@@ -1159,7 +1142,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         return this.f0;
     }
 
-    public final ua1 h(boolean z) throws Resources.NotFoundException {
+    public final ua1 h(boolean z) {
         float dimensionPixelOffset = getResources().getDimensionPixelOffset(androidx.core.splashscreen.R.dimen.mtrl_shape_corner_size_small_component);
         float f = z ? dimensionPixelOffset : 0.0f;
         float dimensionPixelOffset2 = getResources().getDimensionPixelOffset(androidx.core.splashscreen.R.dimen.m3_comp_outlined_autocomplete_menu_container_elevation);
@@ -1178,7 +1161,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         m mVar3 = new m(dimensionPixelOffset);
         m mVar4 = new m(dimensionPixelOffset);
         v92 v92Var = new v92();
-        v92Var.f1210a = t12Var;
+        v92Var.f1209a = t12Var;
         v92Var.b = t12Var2;
         v92Var.c = t12Var3;
         v92Var.d = t12Var4;
@@ -1192,12 +1175,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         v92Var.l = dd0Var4;
         Context context = getContext();
         Paint paint = ua1.H;
-        TypedValue typedValueK = nz0.K(context, androidx.core.splashscreen.R.attr.colorSurface, ua1.class.getSimpleName());
-        int i2 = typedValueK.resourceId;
-        ColorStateList colorStateListValueOf = ColorStateList.valueOf(i2 != 0 ? context.getColor(i2) : typedValueK.data);
+        TypedValue K = nz0.K(context, androidx.core.splashscreen.R.attr.colorSurface, ua1.class.getSimpleName());
+        int i2 = K.resourceId;
+        ColorStateList valueOf = ColorStateList.valueOf(i2 != 0 ? context.getColor(i2) : K.data);
         ua1 ua1Var = new ua1();
         ua1Var.k(context);
-        ua1Var.n(colorStateListValueOf);
+        ua1Var.n(valueOf);
         ua1Var.m(dimensionPixelOffset2);
         ua1Var.setShapeAppearanceModel(v92Var);
         sa1 sa1Var = ua1Var.e;
@@ -1274,19 +1257,109 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00cb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void l() {
-        /*
-            Method dump skipped, instructions count: 285
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.textfield.TextInputLayout.l():void");
+        float f;
+        float f2;
+        float f3;
+        RectF rectF;
+        float f4;
+        int i;
+        float f5;
+        int i2;
+        if (g()) {
+            int width = this.h.getWidth();
+            int gravity = this.h.getGravity();
+            ts tsVar = this.z0;
+            boolean c = tsVar.c(tsVar.B);
+            tsVar.D = c;
+            Rect rect = tsVar.d;
+            if (gravity != 17 && (gravity & 7) != 1) {
+                if ((gravity & 8388613) == 8388613 || (gravity & 5) == 5) {
+                    if (c) {
+                        i2 = rect.left;
+                        f3 = i2;
+                    } else {
+                        f = rect.right;
+                        f2 = tsVar.a0;
+                    }
+                } else if (c) {
+                    f = rect.right;
+                    f2 = tsVar.a0;
+                } else {
+                    i2 = rect.left;
+                    f3 = i2;
+                }
+                float max = Math.max(f3, rect.left);
+                rectF = this.e0;
+                rectF.left = max;
+                rectF.top = rect.top;
+                if (gravity != 17 || (gravity & 7) == 1) {
+                    f4 = (width / 2.0f) + (tsVar.a0 / 2.0f);
+                } else if ((gravity & 8388613) == 8388613 || (gravity & 5) == 5) {
+                    if (tsVar.D) {
+                        f5 = tsVar.a0;
+                        f4 = f5 + max;
+                    } else {
+                        i = rect.right;
+                        f4 = i;
+                    }
+                } else if (tsVar.D) {
+                    i = rect.right;
+                    f4 = i;
+                } else {
+                    f5 = tsVar.a0;
+                    f4 = f5 + max;
+                }
+                rectF.right = Math.min(f4, rect.right);
+                rectF.bottom = tsVar.f() + rect.top;
+                if (tsVar.Z != null && !tsVar.o()) {
+                    StaticLayout staticLayout = tsVar.Z;
+                    float lineWidth = (tsVar.i / tsVar.h) * staticLayout.getLineWidth(staticLayout.getLineCount() - 1);
+                    if (tsVar.D) {
+                        rectF.right = rectF.left + lineWidth;
+                    } else {
+                        rectF.left = rectF.right - lineWidth;
+                    }
+                }
+                if (rectF.width() > 0.0f || rectF.height() <= 0.0f) {
+                }
+                float f6 = rectF.left;
+                float f7 = this.R;
+                rectF.left = f6 - f7;
+                rectF.right += f7;
+                rectF.offset(-getPaddingLeft(), ((-getPaddingTop()) - (rectF.height() / 2.0f)) + this.U);
+                rectF.top = 0.0f;
+                d40 d40Var = (d40) this.J;
+                d40Var.getClass();
+                d40Var.t(rectF.left, rectF.top, rectF.right, rectF.bottom);
+                return;
+            }
+            f = width / 2.0f;
+            f2 = tsVar.a0 / 2.0f;
+            f3 = f - f2;
+            float max2 = Math.max(f3, rect.left);
+            rectF = this.e0;
+            rectF.left = max2;
+            rectF.top = rect.top;
+            if (gravity != 17) {
+            }
+            f4 = (width / 2.0f) + (tsVar.a0 / 2.0f);
+            rectF.right = Math.min(f4, rect.right);
+            rectF.bottom = tsVar.f() + rect.top;
+            if (tsVar.Z != null) {
+                StaticLayout staticLayout2 = tsVar.Z;
+                float lineWidth2 = (tsVar.i / tsVar.h) * staticLayout2.getLineWidth(staticLayout2.getLineCount() - 1);
+                if (tsVar.D) {
+                }
+            }
+            if (rectF.width() > 0.0f) {
+            }
+        }
     }
 
     public final void n(jg jgVar, int i) {
@@ -1314,24 +1387,24 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
     public final void onGlobalLayout() {
-        int iMax;
+        int max;
         ze0 ze0Var = this.f;
         ze0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
         boolean z = false;
         this.F0 = false;
-        if (this.h != null && this.h.getMeasuredHeight() < (iMax = Math.max(ze0Var.getMeasuredHeight(), this.e.getMeasuredHeight()))) {
-            this.h.setMinimumHeight(iMax);
+        if (this.h != null && this.h.getMeasuredHeight() < (max = Math.max(ze0Var.getMeasuredHeight(), this.e.getMeasuredHeight()))) {
+            this.h.setMinimumHeight(max);
             z = true;
         }
-        boolean zS = s();
-        if (z || zS) {
+        boolean s = s();
+        if (z || s) {
             this.h.post(new f7(21, this));
         }
     }
 
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        float fDescent;
+        float descent;
         int i5;
         int compoundPaddingTop;
         super.onLayout(z, i, i2, i3, i4);
@@ -1368,11 +1441,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                     tsVar.f = gravity;
                     tsVar.j(false);
                 }
-                Rect rectD = d(rect);
-                int i9 = rectD.left;
-                int i10 = rectD.top;
-                int i11 = rectD.right;
-                int i12 = rectD.bottom;
+                Rect d = d(rect);
+                int i9 = d.left;
+                int i10 = d.top;
+                int i11 = d.right;
+                int i12 = d.bottom;
                 Rect rect2 = tsVar.d;
                 if (rect2.left != i9 || rect2.top != i10 || rect2.right != i11 || rect2.bottom != i12) {
                     rect2.set(i9, i10, i11, i12);
@@ -1385,12 +1458,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                     textPaint.setTextSize(tsVar.h);
                     textPaint.setTypeface(tsVar.v);
                     textPaint.setLetterSpacing(tsVar.X);
-                    fDescent = -textPaint.ascent();
+                    descent = -textPaint.ascent();
                 } else {
                     textPaint.setTextSize(tsVar.h);
                     textPaint.setTypeface(tsVar.v);
                     textPaint.setLetterSpacing(tsVar.X);
-                    fDescent = tsVar.l * (textPaint.descent() + (-textPaint.ascent()));
+                    descent = tsVar.l * (textPaint.descent() + (-textPaint.ascent()));
                 }
                 int compoundPaddingLeft = this.h.getCompoundPaddingLeft() + rect.left;
                 Rect rect3 = this.d0;
@@ -1406,11 +1479,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                     }
                     compoundPaddingTop = (this.h.getCompoundPaddingTop() + rect.top) - i5;
                 } else {
-                    compoundPaddingTop = (int) (rect.centerY() - (fDescent / 2.0f));
+                    compoundPaddingTop = (int) (rect.centerY() - (descent / 2.0f));
                 }
                 rect3.top = compoundPaddingTop;
                 rect3.right = rect.right - this.h.getCompoundPaddingRight();
-                int compoundPaddingBottom = (this.S != 1 || this.h.getMinLines() > 1) ? rect.bottom - this.h.getCompoundPaddingBottom() : (int) (rect3.top + fDescent);
+                int compoundPaddingBottom = (this.S != 1 || this.h.getMinLines() > 1) ? rect.bottom - this.h.getCompoundPaddingBottom() : (int) (rect3.top + descent);
                 rect3.bottom = compoundPaddingBottom;
                 int i13 = rect3.left;
                 int i14 = rect3.top;
@@ -1464,11 +1537,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         EditText editText2 = this.h;
         Rect rect = this.c0;
         u70.a(this, editText2, rect);
-        Rect rectD = d(rect);
-        int i3 = rectD.left;
-        int i4 = rectD.top;
-        int i5 = rectD.right;
-        int i6 = rectD.bottom;
+        Rect d = d(rect);
+        int i3 = d.left;
+        int i4 = d.top;
+        int i5 = d.right;
+        int i6 = d.bottom;
         Rect rect2 = tsVar.d;
         if (rect2.left != i3 || rect2.top != i4 || rect2.right != i5 || rect2.bottom != i6) {
             rect2.set(i3, i4, i5, i6);
@@ -1503,11 +1576,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             hf2Var.g = lineSpacingExtra;
             hf2Var.h = lineSpacingMultiplier;
             hf2Var.m = new j4(this);
-            f = (this.S == 1 ? tsVar.f() + this.T + this.g : 0.0f) + hf2Var.a().getHeight();
+            r3 = (this.S == 1 ? tsVar.f() + this.T + this.g : 0.0f) + hf2Var.a().getHeight();
         }
-        float fMax = Math.max(f, f);
-        if (this.h.getMeasuredHeight() < fMax) {
-            this.h.setMinimumHeight(Math.round(fMax));
+        float max = Math.max(f, r3);
+        if (this.h.getMeasuredHeight() < max) {
+            this.h.setMinimumHeight(Math.round(max));
         }
     }
 
@@ -1533,12 +1606,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (z != this.Q) {
             r20 r20Var = this.P.e;
             RectF rectF = this.e0;
-            float fA = r20Var.a(rectF);
-            float fA2 = this.P.f.a(rectF);
-            float fA3 = this.P.h.a(rectF);
-            float fA4 = this.P.g.a(rectF);
+            float a2 = r20Var.a(rectF);
+            float a3 = this.P.f.a(rectF);
+            float a4 = this.P.h.a(rectF);
+            float a5 = this.P.g.a(rectF);
             v92 v92Var = this.P;
-            h50 h50Var = v92Var.f1210a;
+            h50 h50Var = v92Var.f1209a;
             h50 h50Var2 = v92Var.b;
             h50 h50Var3 = v92Var.d;
             h50 h50Var4 = v92Var.c;
@@ -1546,12 +1619,12 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             dd0 dd0Var2 = new dd0(0);
             dd0 dd0Var3 = new dd0(0);
             dd0 dd0Var4 = new dd0(0);
-            m mVar = new m(fA2);
-            m mVar2 = new m(fA);
-            m mVar3 = new m(fA4);
-            m mVar4 = new m(fA3);
+            m mVar = new m(a3);
+            m mVar2 = new m(a2);
+            m mVar3 = new m(a5);
+            m mVar4 = new m(a4);
             v92 v92Var2 = new v92();
-            v92Var2.f1210a = h50Var2;
+            v92Var2.f1209a = h50Var2;
             v92Var2.b = h50Var;
             v92Var2.c = h50Var3;
             v92Var2.d = h50Var4;
@@ -1600,7 +1673,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             jg jgVar = this.s;
             String string = getContext().getString(androidx.core.splashscreen.R.string.character_counter_pattern, Integer.valueOf(length), Integer.valueOf(this.p));
             ilVar.getClass();
-            cm cmVar = dj2.f254a;
+            cm cmVar = dj2.f253a;
             jgVar.setText(string != null ? ilVar.c(string).toString() : null);
         }
         if (this.h == null || z == this.q) {
@@ -1627,74 +1700,191 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public final void r() {
-        /*
-            r4 = this;
-            android.content.res.ColorStateList r0 = r4.E
-            if (r0 == 0) goto L5
-            goto L26
-        L5:
-            android.content.Context r0 = r4.getContext()
-            r1 = 2130903297(0x7f030101, float:1.7413408E38)
-            android.util.TypedValue r1 = androidx.emoji2.text.nz0.J(r0, r1)
-            r2 = 0
-            if (r1 != 0) goto L15
-        L13:
-            r0 = r2
-            goto L26
-        L15:
-            int r3 = r1.resourceId
-            if (r3 == 0) goto L1e
-            android.content.res.ColorStateList r0 = androidx.emoji2.text.kx0.z(r0, r3)
-            goto L26
-        L1e:
-            int r0 = r1.data
-            if (r0 == 0) goto L13
-            android.content.res.ColorStateList r0 = android.content.res.ColorStateList.valueOf(r0)
-        L26:
-            android.widget.EditText r1 = r4.h
-            if (r1 == 0) goto L51
-            android.graphics.drawable.Drawable r1 = androidx.emoji2.text.wp0.d(r1)
-            if (r1 != 0) goto L31
-            goto L51
-        L31:
-            android.widget.EditText r1 = r4.h
-            android.graphics.drawable.Drawable r1 = androidx.emoji2.text.wp0.d(r1)
-            android.graphics.drawable.Drawable r1 = r1.mutate()
-            boolean r2 = r4.o()
-            if (r2 != 0) goto L49
-            androidx.emoji2.text.jg r2 = r4.s
-            if (r2 == 0) goto L4e
-            boolean r2 = r4.q
-            if (r2 == 0) goto L4e
-        L49:
-            android.content.res.ColorStateList r2 = r4.F
-            if (r2 == 0) goto L4e
-            r0 = r2
-        L4e:
-            r1.setTintList(r0)
-        L51:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.textfield.TextInputLayout.r():void");
+        Drawable textCursorDrawable;
+        Drawable textCursorDrawable2;
+        ColorStateList colorStateList;
+        ColorStateList colorStateList2 = this.E;
+        if (colorStateList2 == null) {
+            Context context = getContext();
+            TypedValue J = nz0.J(context, androidx.core.splashscreen.R.attr.colorControlActivated);
+            if (J != null) {
+                int i = J.resourceId;
+                if (i != 0) {
+                    colorStateList2 = kx0.z(context, i);
+                } else {
+                    int i2 = J.data;
+                    if (i2 != 0) {
+                        colorStateList2 = ColorStateList.valueOf(i2);
+                    }
+                }
+            }
+            colorStateList2 = null;
+        }
+        EditText editText = this.h;
+        if (editText != null) {
+            textCursorDrawable = editText.getTextCursorDrawable();
+            if (textCursorDrawable == null) {
+                return;
+            }
+            textCursorDrawable2 = this.h.getTextCursorDrawable();
+            Drawable mutate = textCursorDrawable2.mutate();
+            if ((o() || (this.s != null && this.q)) && (colorStateList = this.F) != null) {
+                colorStateList2 = colorStateList;
+            }
+            mutate.setTintList(colorStateList2);
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00a8  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00ff  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00ab  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final boolean s() {
-        /*
-            Method dump skipped, instructions count: 304
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.google.android.material.textfield.TextInputLayout.s():boolean");
+        boolean z;
+        ze0 ze0Var;
+        Drawable[] compoundDrawablesRelative;
+        ColorDrawable colorDrawable;
+        Drawable drawable;
+        ColorDrawable colorDrawable2;
+        if (this.h == null) {
+            return false;
+        }
+        CheckableImageButton checkableImageButton = null;
+        boolean z2 = true;
+        if (getStartIconDrawable() != null || (getPrefixText() != null && getPrefixTextView().getVisibility() == 0)) {
+            le2 le2Var = this.e;
+            if (le2Var.getMeasuredWidth() > 0) {
+                int measuredWidth = le2Var.getMeasuredWidth() - this.h.getPaddingLeft();
+                if (this.g0 == null || this.h0 != measuredWidth) {
+                    ColorDrawable colorDrawable3 = new ColorDrawable();
+                    this.g0 = colorDrawable3;
+                    this.h0 = measuredWidth;
+                    colorDrawable3.setBounds(0, 0, measuredWidth, 1);
+                }
+                Drawable[] compoundDrawablesRelative2 = this.h.getCompoundDrawablesRelative();
+                Drawable drawable2 = compoundDrawablesRelative2[0];
+                ColorDrawable colorDrawable4 = this.g0;
+                if (drawable2 != colorDrawable4) {
+                    this.h.setCompoundDrawablesRelative(colorDrawable4, compoundDrawablesRelative2[1], compoundDrawablesRelative2[2], compoundDrawablesRelative2[3]);
+                    z = true;
+                    ze0Var = this.f;
+                    if ((!ze0Var.e() || ((ze0Var.l != 0 && ze0Var.d()) || ze0Var.s != null)) && ze0Var.getMeasuredWidth() > 0) {
+                        int measuredWidth2 = ze0Var.t.getMeasuredWidth() - this.h.getPaddingRight();
+                        if (!ze0Var.e()) {
+                            checkableImageButton = ze0Var.f;
+                        } else if (ze0Var.l != 0 && ze0Var.d()) {
+                            checkableImageButton = ze0Var.j;
+                        }
+                        if (checkableImageButton != null) {
+                            measuredWidth2 = ((ViewGroup.MarginLayoutParams) checkableImageButton.getLayoutParams()).getMarginStart() + checkableImageButton.getMeasuredWidth() + measuredWidth2;
+                        }
+                        compoundDrawablesRelative = this.h.getCompoundDrawablesRelative();
+                        colorDrawable = this.j0;
+                        if (colorDrawable == null && this.k0 != measuredWidth2) {
+                            this.k0 = measuredWidth2;
+                            colorDrawable.setBounds(0, 0, measuredWidth2, 1);
+                            this.h.setCompoundDrawablesRelative(compoundDrawablesRelative[0], compoundDrawablesRelative[1], this.j0, compoundDrawablesRelative[3]);
+                            return true;
+                        }
+                        if (colorDrawable == null) {
+                            ColorDrawable colorDrawable5 = new ColorDrawable();
+                            this.j0 = colorDrawable5;
+                            this.k0 = measuredWidth2;
+                            colorDrawable5.setBounds(0, 0, measuredWidth2, 1);
+                        }
+                        drawable = compoundDrawablesRelative[2];
+                        colorDrawable2 = this.j0;
+                        if (drawable != colorDrawable2) {
+                            this.l0 = drawable;
+                            this.h.setCompoundDrawablesRelative(compoundDrawablesRelative[0], compoundDrawablesRelative[1], colorDrawable2, compoundDrawablesRelative[3]);
+                            return true;
+                        }
+                    } else if (this.j0 != null) {
+                        Drawable[] compoundDrawablesRelative3 = this.h.getCompoundDrawablesRelative();
+                        if (compoundDrawablesRelative3[2] == this.j0) {
+                            this.h.setCompoundDrawablesRelative(compoundDrawablesRelative3[0], compoundDrawablesRelative3[1], this.l0, compoundDrawablesRelative3[3]);
+                        } else {
+                            z2 = z;
+                        }
+                        this.j0 = null;
+                        return z2;
+                    }
+                    return z;
+                }
+                z = false;
+                ze0Var = this.f;
+                if (ze0Var.e()) {
+                }
+                int measuredWidth22 = ze0Var.t.getMeasuredWidth() - this.h.getPaddingRight();
+                if (!ze0Var.e()) {
+                }
+                if (checkableImageButton != null) {
+                }
+                compoundDrawablesRelative = this.h.getCompoundDrawablesRelative();
+                colorDrawable = this.j0;
+                if (colorDrawable == null) {
+                }
+                if (colorDrawable == null) {
+                }
+                drawable = compoundDrawablesRelative[2];
+                colorDrawable2 = this.j0;
+                if (drawable != colorDrawable2) {
+                }
+                return z;
+            }
+        }
+        if (this.g0 != null) {
+            Drawable[] compoundDrawablesRelative4 = this.h.getCompoundDrawablesRelative();
+            this.h.setCompoundDrawablesRelative(null, compoundDrawablesRelative4[1], compoundDrawablesRelative4[2], compoundDrawablesRelative4[3]);
+            this.g0 = null;
+            z = true;
+            ze0Var = this.f;
+            if (ze0Var.e()) {
+            }
+            int measuredWidth222 = ze0Var.t.getMeasuredWidth() - this.h.getPaddingRight();
+            if (!ze0Var.e()) {
+            }
+            if (checkableImageButton != null) {
+            }
+            compoundDrawablesRelative = this.h.getCompoundDrawablesRelative();
+            colorDrawable = this.j0;
+            if (colorDrawable == null) {
+            }
+            if (colorDrawable == null) {
+            }
+            drawable = compoundDrawablesRelative[2];
+            colorDrawable2 = this.j0;
+            if (drawable != colorDrawable2) {
+            }
+            return z;
+        }
+        z = false;
+        ze0Var = this.f;
+        if (ze0Var.e()) {
+        }
+        int measuredWidth2222 = ze0Var.t.getMeasuredWidth() - this.h.getPaddingRight();
+        if (!ze0Var.e()) {
+        }
+        if (checkableImageButton != null) {
+        }
+        compoundDrawablesRelative = this.h.getCompoundDrawablesRelative();
+        colorDrawable = this.j0;
+        if (colorDrawable == null) {
+        }
+        if (colorDrawable == null) {
+        }
+        drawable = compoundDrawablesRelative[2];
+        colorDrawable2 = this.j0;
+        if (drawable != colorDrawable2) {
+        }
+        return z;
     }
 
     public void setBoxBackgroundColor(int i) {
@@ -1736,20 +1926,20 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     }
 
     public void setBoxCornerFamily(int i) {
-        u92 u92VarF = this.P.f();
+        u92 f = this.P.f();
         r20 r20Var = this.P.e;
-        u92VarF.f1166a = ly0.i(i);
-        u92VarF.e = r20Var;
+        f.f1165a = ly0.i(i);
+        f.e = r20Var;
         r20 r20Var2 = this.P.f;
-        u92VarF.b = ly0.i(i);
-        u92VarF.f = r20Var2;
+        f.b = ly0.i(i);
+        f.f = r20Var2;
         r20 r20Var3 = this.P.h;
-        u92VarF.d = ly0.i(i);
-        u92VarF.h = r20Var3;
+        f.d = ly0.i(i);
+        f.h = r20Var3;
         r20 r20Var4 = this.P.g;
-        u92VarF.c = ly0.i(i);
-        u92VarF.g = r20Var4;
-        this.P = u92VarF.a();
+        f.c = ly0.i(i);
+        f.g = r20Var4;
+        this.P = f.a();
         c();
     }
 
@@ -1916,11 +2106,11 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     public void setEndIconDrawable(int i) {
         ze0 ze0Var = this.f;
-        Drawable drawableO = i != 0 ? xo2.o(ze0Var.getContext(), i) : null;
+        Drawable o = i != 0 ? xo2.o(ze0Var.getContext(), i) : null;
         TextInputLayout textInputLayout = ze0Var.d;
         CheckableImageButton checkableImageButton = ze0Var.j;
-        checkableImageButton.setImageDrawable(drawableO);
-        if (drawableO != null) {
+        checkableImageButton.setImageDrawable(o);
+        if (o != null) {
             l8.C(textInputLayout, checkableImageButton, ze0Var.n, ze0Var.o);
             l8.e0(textInputLayout, checkableImageButton, ze0Var.n);
         }
@@ -2148,9 +2338,9 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     }
 
     public void setHelperText(CharSequence charSequence) {
-        boolean zIsEmpty = TextUtils.isEmpty(charSequence);
+        boolean isEmpty = TextUtils.isEmpty(charSequence);
         bv0 bv0Var = this.n;
-        if (zIsEmpty) {
+        if (isEmpty) {
             if (bv0Var.x) {
                 setHelperTextEnabled(false);
                 return;
@@ -2287,7 +2477,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     public void setHintTextAppearance(int i) {
         ts tsVar = this.z0;
-        TextInputLayout textInputLayout = tsVar.f1140a;
+        TextInputLayout textInputLayout = tsVar.f1139a;
         yi2 yi2Var = new yi2(textInputLayout.getContext(), i);
         ColorStateList colorStateList = yi2Var.k;
         if (colorStateList != null) {
@@ -2297,7 +2487,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (f != 0.0f) {
             tsVar.i = f;
         }
-        ColorStateList colorStateList2 = yi2Var.f1390a;
+        ColorStateList colorStateList2 = yi2Var.f1389a;
         if (colorStateList2 != null) {
             tsVar.V = colorStateList2;
         }
@@ -2430,9 +2620,9 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             jgVar.setId(androidx.core.splashscreen.R.id.textinput_placeholder);
             this.x.setImportantForAccessibility(1);
             this.x.setAccessibilityLiveRegion(1);
-            lh0 lh0VarF = f();
-            this.A = lh0VarF;
-            lh0VarF.e = 67L;
+            lh0 f = f();
+            this.A = f;
+            f.e = 67L;
             this.B = f();
             setPlaceholderTextAppearance(this.z);
             setPlaceholderTextColor(this.y);
@@ -2487,7 +2677,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     public void setShapeAppearanceModel(v92 v92Var) {
         ua1 ua1Var = this.J;
-        if (ua1Var == null || ua1Var.e.f1059a == v92Var) {
+        if (ua1Var == null || ua1Var.e.f1058a == v92Var) {
             return;
         }
         this.P = v92Var;
@@ -2615,14 +2805,14 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (editText == null || this.S != 0 || (background = editText.getBackground()) == null) {
             return;
         }
-        int[] iArr = fc0.f356a;
-        Drawable drawableMutate = background.mutate();
+        int[] iArr = fc0.f355a;
+        Drawable mutate = background.mutate();
         if (o()) {
-            drawableMutate.setColorFilter(qf.b(getErrorCurrentTextColors(), PorterDuff.Mode.SRC_IN));
+            mutate.setColorFilter(qf.b(getErrorCurrentTextColors(), PorterDuff.Mode.SRC_IN));
         } else if (this.q && (jgVar = this.s) != null) {
-            drawableMutate.setColorFilter(qf.b(jgVar.getCurrentTextColor(), PorterDuff.Mode.SRC_IN));
+            mutate.setColorFilter(qf.b(jgVar.getCurrentTextColor(), PorterDuff.Mode.SRC_IN));
         } else {
-            drawableMutate.clearColorFilter();
+            mutate.clearColorFilter();
             this.h.refreshDrawableState();
         }
     }
@@ -2642,9 +2832,9 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (this.S != 1) {
             FrameLayout frameLayout = this.d;
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) frameLayout.getLayoutParams();
-            int iE = e();
-            if (iE != layoutParams.topMargin) {
-                layoutParams.topMargin = iE;
+            int e = e();
+            if (e != layoutParams.topMargin) {
+                layoutParams.topMargin = e;
                 frameLayout.requestLayout();
             }
         }
@@ -2653,7 +2843,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
     public final void w(boolean z, boolean z2) {
         ColorStateList colorStateList;
         jg jgVar;
-        boolean zIsEnabled = isEnabled();
+        boolean isEnabled = isEnabled();
         EditText editText = this.h;
         boolean z3 = (editText == null || TextUtils.isEmpty(editText.getText())) ? false : true;
         EditText editText2 = this.h;
@@ -2663,7 +2853,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
         if (colorStateList2 != null) {
             tsVar.k(colorStateList2);
         }
-        if (!zIsEnabled) {
+        if (!isEnabled) {
             ColorStateList colorStateList3 = this.m0;
             tsVar.k(ColorStateList.valueOf(colorStateList3 != null ? colorStateList3.getColorForState(new int[]{-16842910}, this.w0) : this.w0));
         } else if (o()) {
@@ -2812,9 +3002,9 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             if (!textInputLayout.o() || checkableImageButton.getDrawable() == null) {
                 l8.C(textInputLayout, checkableImageButton, ze0Var.n, ze0Var.o);
             } else {
-                Drawable drawableMutate = checkableImageButton.getDrawable().mutate();
-                drawableMutate.setTint(textInputLayout.getErrorCurrentTextColors());
-                checkableImageButton.setImageDrawable(drawableMutate);
+                Drawable mutate = checkableImageButton.getDrawable().mutate();
+                mutate.setTint(textInputLayout.getErrorCurrentTextColors());
+                checkableImageButton.setImageDrawable(mutate);
             }
         }
         le2 le2Var = this.e;

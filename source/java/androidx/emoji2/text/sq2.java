@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class sq2 extends a02 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f1081a = 0;
+    public static final /* synthetic */ int f1080a = 0;
 }

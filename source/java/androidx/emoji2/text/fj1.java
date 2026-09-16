@@ -9,11 +9,11 @@ public final class fj1 extends mt {
     public static final float[] g;
 
     static {
-        float[] fArrJ = xa1.J(new float[]{0.818933f, 0.032984544f, 0.0482003f, 0.36186674f, 0.9293119f, 0.26436627f, -0.12885971f, 0.03614564f, 0.6338517f}, xa1.o((float[]) p4.f.e, new float[]{0.964212f, 1.0f, 0.8251883f}, new float[]{0.95042855f, 1.0f, 1.0889004f}));
-        d = fArrJ;
+        float[] J = xa1.J(new float[]{0.818933f, 0.032984544f, 0.0482003f, 0.36186674f, 0.9293119f, 0.26436627f, -0.12885971f, 0.03614564f, 0.6338517f}, xa1.o((float[]) p4.f.e, new float[]{0.964212f, 1.0f, 0.8251883f}, new float[]{0.95042855f, 1.0f, 1.0889004f}));
+        d = J;
         float[] fArr = {0.21045426f, 1.9779985f, 0.025904037f, 0.7936178f, -2.4285922f, 0.78277177f, -0.004072047f, 0.4505937f, -0.80867577f};
         e = fArr;
-        f = xa1.F(fArrJ);
+        f = xa1.F(J);
         g = xa1.F(fArr);
     }
 
@@ -91,10 +91,10 @@ public final class fj1 extends mt {
         float f6 = (fArr[6] * f4) + (fArr[3] * f3) + (fArr[0] * f2);
         float f7 = (fArr[7] * f4) + (fArr[4] * f3) + (fArr[1] * f2);
         float f8 = (fArr[8] * f4) + (fArr[5] * f3) + (fArr[2] * f2);
-        float fX = oy0.x(f6);
-        float fX2 = oy0.x(f7);
-        float fX3 = oy0.x(f8);
+        float x = oy0.x(f6);
+        float x2 = oy0.x(f7);
+        float x3 = oy0.x(f8);
         float[] fArr2 = e;
-        return bz0.b((fArr2[6] * fX3) + (fArr2[3] * fX2) + (fArr2[0] * fX), (fArr2[7] * fX3) + (fArr2[4] * fX2) + (fArr2[1] * fX), (fArr2[8] * fX3) + (fArr2[5] * fX2) + (fArr2[2] * fX), f5, mtVar);
+        return bz0.b((fArr2[6] * x3) + (fArr2[3] * x2) + (fArr2[0] * x), (fArr2[7] * x3) + (fArr2[4] * x2) + (fArr2[1] * x), (fArr2[8] * x3) + (fArr2[5] * x2) + (fArr2[2] * x), f5, mtVar);
     }
 }

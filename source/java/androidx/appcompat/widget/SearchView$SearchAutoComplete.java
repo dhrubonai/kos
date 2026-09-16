@@ -47,13 +47,13 @@ public class SearchView$SearchAutoComplete extends kf {
 
     @Override // androidx.emoji2.text.kf, android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         if (this.i) {
             t7 t7Var = this.j;
             removeCallbacks(t7Var);
             post(t7Var);
         }
-        return inputConnectionOnCreateInputConnection;
+        return onCreateInputConnection;
     }
 
     @Override // android.view.View

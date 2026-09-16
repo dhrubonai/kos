@@ -18,7 +18,7 @@ public final class nc extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        boolean zDispatchTouchEvent;
+        boolean dispatchTouchEvent;
         switch (this.e) {
             case 0:
                 tl1 tl1Var = (tl1) obj;
@@ -30,7 +30,7 @@ public final class nc extends g01 implements um0 {
                     js2Var.setImportantForAccessibility(0);
                 }
                 js2Var.removeAllViewsInLayout();
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 MotionEvent motionEvent = (MotionEvent) obj;
                 int actionMasked = motionEvent.getActionMasked();
@@ -41,15 +41,15 @@ public final class nc extends g01 implements um0 {
                     case 2:
                     case BCell.NETWORK_TYPE_UMTS /* 3 */:
                     case 4:
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                        zDispatchTouchEvent = js2Var2.dispatchTouchEvent(motionEvent);
+                    case 5:
+                    case 6:
+                        dispatchTouchEvent = js2Var2.dispatchTouchEvent(motionEvent);
                         break;
                     default:
-                        zDispatchTouchEvent = js2Var2.dispatchGenericMotionEvent(motionEvent);
+                        dispatchTouchEvent = js2Var2.dispatchGenericMotionEvent(motionEvent);
                         break;
                 }
-                return Boolean.valueOf(zDispatchTouchEvent);
+                return Boolean.valueOf(dispatchTouchEvent);
         }
     }
 }

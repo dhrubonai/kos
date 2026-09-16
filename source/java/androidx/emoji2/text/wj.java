@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class wj {
 
     /* renamed from: a, reason: collision with root package name */
-    public final s6 f1283a;
+    public final s6 f1282a;
     public final oj1 b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public wj(s6 s6Var, oj1 oj1Var) {
-        this.f1283a = s6Var;
+        this.f1282a = s6Var;
         this.b = oj1Var;
         if ((s6Var == null ? oj1Var : s6Var) == null) {
             throw new IllegalArgumentException("At least one dispatcher (NavigationEventDispatcher or OnBackPressedDispatcher) must be non-null.");

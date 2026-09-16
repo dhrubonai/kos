@@ -19,8 +19,8 @@ public final class l22 extends n10 implements jj0 {
     @Override // androidx.emoji2.text.jj0
     public final Object b(Object obj, l10 l10Var) {
         try {
-            Object objM = m(l10Var, obj);
-            return objM == f30.d ? objM : up2.f1187a;
+            Object m = m(l10Var, obj);
+            return m == f30.d ? m : up2.f1186a;
         } catch (Throwable th) {
             this.j = new ca0(l10Var.t(), th);
             throw th;
@@ -43,9 +43,9 @@ public final class l22 extends n10 implements jj0 {
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        Throwable thA = h02.a(obj);
-        if (thA != null) {
-            this.j = new ca0(t(), thA);
+        Throwable a2 = h02.a(obj);
+        if (a2 != null) {
+            this.j = new ca0(t(), a2);
         }
         l10 l10Var = this.k;
         if (l10Var != null) {
@@ -55,27 +55,27 @@ public final class l22 extends n10 implements jj0 {
     }
 
     public final Object m(l10 l10Var, Object obj) {
-        v20 v20VarT = l10Var.t();
-        xo2.j(v20VarT);
+        v20 t = l10Var.t();
+        xo2.j(t);
         v20 v20Var = this.j;
-        if (v20Var != v20VarT) {
+        if (v20Var != t) {
             if (v20Var instanceof ca0) {
                 throw new IllegalStateException(xf2.P("\n            Flow exception transparency is violated:\n                Previous 'emit' call has thrown exception " + ((ca0) v20Var).e + ", but then emission attempt of value '" + obj + "' has been detected.\n                Emissions from 'catch' blocks are prohibited in order to avoid unspecified behaviour, 'Flow.catch' operator can be used instead.\n                For a more detailed explanation, please refer to Flow documentation.\n            ").toString());
             }
-            if (((Number) v20VarT.A(0, new f2(11, this))).intValue() != this.i) {
-                throw new IllegalStateException(("Flow invariant is violated:\n\t\tFlow was collected in " + this.h + ",\n\t\tbut emission happened in " + v20VarT + ".\n\t\tPlease refer to 'flow' documentation or use 'flowOn' instead").toString());
+            if (((Number) t.A(0, new f2(11, this))).intValue() != this.i) {
+                throw new IllegalStateException(("Flow invariant is violated:\n\t\tFlow was collected in " + this.h + ",\n\t\tbut emission happened in " + t + ".\n\t\tPlease refer to 'flow' documentation or use 'flowOn' instead").toString());
             }
-            this.j = v20VarT;
+            this.j = t;
         }
         this.k = l10Var;
-        wm0 wm0Var = n22.f787a;
+        wm0 wm0Var = n22.f786a;
         jj0 jj0Var = this.g;
         lx0.v(jj0Var, "null cannot be cast to non-null type kotlinx.coroutines.flow.FlowCollector<kotlin.Any?>");
-        Object objInvoke = wm0Var.invoke(jj0Var, obj, this);
-        if (!lx0.n(objInvoke, f30.d)) {
+        Object invoke = wm0Var.invoke(jj0Var, obj, this);
+        if (!lx0.n(invoke, f30.d)) {
             this.k = null;
         }
-        return objInvoke;
+        return invoke;
     }
 
     @Override // androidx.emoji2.text.n10, androidx.emoji2.text.l10

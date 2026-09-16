@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public final class e80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f292a;
+    public final String f291a;
     public final String b;
     public final long c;
     public long d = 0;
@@ -18,7 +18,7 @@ public final class e80 {
     public final TreeMap i;
 
     public e80(String str, String str2, long j, int i, int i2, int i3, int[] iArr, TreeMap treeMap) {
-        this.f292a = str;
+        this.f291a = str;
         this.b = str2;
         this.c = j;
         this.e = i;

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class se0 extends a01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final se0 f1066a = new se0();
+    public static final se0 f1065a = new se0();
 
     @Override // androidx.emoji2.text.a01
     public final Object D(xu1 xu1Var) {

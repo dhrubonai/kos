@@ -22,7 +22,7 @@ public final class bt0 implements gb2 {
 
     /* JADX WARN: Finally extract failed */
     public final void b(boolean z) {
-        long jMin;
+        long min;
         boolean z2;
         et0 et0Var = this.g;
         synchronized (et0Var) {
@@ -48,14 +48,14 @@ public final class bt0 implements gb2 {
             }
             et0Var.l.k();
             et0Var.b();
-            jMin = Math.min(et0Var.f - et0Var.e, this.e.e);
-            et0Var.e += jMin;
-            z2 = z && jMin == this.e.e;
+            min = Math.min(et0Var.f - et0Var.e, this.e.e);
+            et0Var.e += min;
+            z2 = z && min == this.e.e;
         }
         this.g.l.h();
         try {
             et0 et0Var2 = this.g;
-            et0Var2.b.k(et0Var2.f322a, z2, this.e, jMin);
+            et0Var2.b.k(et0Var2.f321a, z2, this.e, min);
         } finally {
             this.g.l.k();
         }
@@ -65,7 +65,7 @@ public final class bt0 implements gb2 {
     public final void close() {
         boolean z;
         et0 et0Var = this.g;
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         synchronized (et0Var) {
             if (this.f) {
                 return;
@@ -80,7 +80,7 @@ public final class bt0 implements gb2 {
                         b(true);
                     }
                 } else if (z) {
-                    et0Var2.b.k(et0Var2.f322a, true, null, 0L);
+                    et0Var2.b.k(et0Var2.f321a, true, null, 0L);
                 }
             }
             synchronized (this.g) {
@@ -94,7 +94,7 @@ public final class bt0 implements gb2 {
     @Override // androidx.emoji2.text.gb2, java.io.Flushable
     public final void flush() {
         et0 et0Var = this.g;
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         synchronized (et0Var) {
             et0Var.b();
         }
@@ -106,7 +106,7 @@ public final class bt0 implements gb2 {
 
     @Override // androidx.emoji2.text.gb2
     public final void g(long j, rn rnVar) {
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         rn rnVar2 = this.e;
         rnVar2.g(j, rnVar);
         while (rnVar2.e >= 16384) {

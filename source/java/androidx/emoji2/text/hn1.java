@@ -26,9 +26,9 @@ public final class hn1 implements Serializable {
 
     public final int hashCode() {
         Object obj = this.d;
-        int iHashCode = (obj == null ? 0 : obj.hashCode()) * 31;
+        int hashCode = (obj == null ? 0 : obj.hashCode()) * 31;
         Object obj2 = this.e;
-        return iHashCode + (obj2 != null ? obj2.hashCode() : 0);
+        return hashCode + (obj2 != null ? obj2.hashCode() : 0);
     }
 
     public final String toString() {

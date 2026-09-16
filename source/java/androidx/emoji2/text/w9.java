@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class w9 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float[] f1266a;
+    public static final float[] f1265a;
 
     static {
         float f;
@@ -18,7 +18,7 @@ public abstract class w9 {
         float f8;
         float f9;
         float[] fArr = new float[101];
-        f1266a = fArr;
+        f1265a = fArr;
         float[] fArr2 = new float[101];
         float f10 = 0.0f;
         int i = 0;
@@ -77,19 +77,19 @@ public abstract class w9 {
     public static v9 a(float f) {
         float f2 = 0.0f;
         float f3 = 1.0f;
-        float fO = az0.o(f, 0.0f, 1.0f);
+        float o = az0.o(f, 0.0f, 1.0f);
         float f4 = 100;
-        int i = (int) (f4 * fO);
+        int i = (int) (f4 * o);
         if (i < 100) {
             float f5 = i / f4;
             int i2 = i + 1;
             float f6 = i2 / f4;
-            float[] fArr = f1266a;
+            float[] fArr = f1265a;
             float f7 = fArr[i];
             float f8 = (fArr[i2] - f7) / (f6 - f5);
-            float fA = zd.a(fO, f5, f8, f7);
+            float a2 = zd.a(o, f5, f8, f7);
             f2 = f8;
-            f3 = fA;
+            f3 = a2;
         }
         return new v9(f3, f2);
     }

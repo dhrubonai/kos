@@ -7,33 +7,33 @@ import java.util.Arrays;
 public final class pe1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int[] f901a;
+    public int[] f900a;
     public int b;
 
     public pe1(int i) {
-        this.f901a = i == 0 ? tw0.f1148a : new int[i];
+        this.f900a = i == 0 ? tw0.f1147a : new int[i];
     }
 
     public final void a(int i) {
         b(this.b + 1);
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         int i2 = this.b;
         iArr[i2] = i;
         this.b = i2 + 1;
     }
 
     public final void b(int i) {
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         if (iArr.length < i) {
-            int[] iArrCopyOf = Arrays.copyOf(iArr, Math.max(i, (iArr.length * 3) / 2));
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.f901a = iArrCopyOf;
+            int[] copyOf = Arrays.copyOf(iArr, Math.max(i, (iArr.length * 3) / 2));
+            lx0.w(copyOf, "copyOf(...)");
+            this.f900a = copyOf;
         }
     }
 
     public final int c(int i) {
         if (i >= 0 && i < this.b) {
-            return this.f901a[i];
+            return this.f900a[i];
         }
         lz0.M("Index must be between 0 and size");
         throw null;
@@ -45,7 +45,7 @@ public final class pe1 {
             lz0.M("Index must be between 0 and size");
             throw null;
         }
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         int i3 = iArr[i];
         if (i != i2 - 1) {
             xh.w0(i, i + 1, i2, iArr, iArr);
@@ -58,7 +58,7 @@ public final class pe1 {
             lz0.M("Index must be between 0 and size");
             throw null;
         }
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         int i3 = iArr[i];
         iArr[i] = i2;
     }
@@ -69,11 +69,11 @@ public final class pe1 {
             int i = pe1Var.b;
             int i2 = this.b;
             if (i == i2) {
-                int[] iArr = this.f901a;
-                int[] iArr2 = pe1Var.f901a;
-                qw0 qw0VarL0 = az0.l0(0, i2);
-                int i3 = qw0VarL0.d;
-                int i4 = qw0VarL0.e;
+                int[] iArr = this.f900a;
+                int[] iArr2 = pe1Var.f900a;
+                qw0 l0 = az0.l0(0, i2);
+                int i3 = l0.d;
+                int i4 = l0.e;
                 if (i3 > i4) {
                     return true;
                 }
@@ -90,19 +90,19 @@ public final class pe1 {
     }
 
     public final int hashCode() {
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         int i = this.b;
-        int iHashCode = 0;
-        for (int i2 = 0; i2 < i; i2++) {
-            iHashCode += Integer.hashCode(iArr[i2]) * 31;
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            i2 += Integer.hashCode(iArr[i3]) * 31;
         }
-        return iHashCode;
+        return i2;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append((CharSequence) "[");
-        int[] iArr = this.f901a;
+        int[] iArr = this.f900a;
         int i = this.b;
         int i2 = 0;
         while (true) {
@@ -121,9 +121,9 @@ public final class pe1 {
             sb.append(i3);
             i2++;
         }
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public /* synthetic */ pe1() {

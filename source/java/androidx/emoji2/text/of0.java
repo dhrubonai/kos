@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 public abstract class of0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final wo2 f853a;
+    public static final wo2 f852a;
     public static final be2 b;
     public static final be2 c;
     public static final be2 d;
@@ -15,37 +15,37 @@ public abstract class of0 {
     static {
         o90 o90Var = o90.i;
         o90 o90Var2 = o90.j;
-        wo2 wo2Var = qq2.f974a;
-        f853a = new wo2(o90Var, o90Var2);
+        wo2 wo2Var = qq2.f973a;
+        f852a = new wo2(o90Var, o90Var2);
         b = lx0.a0(5, null);
-        Object obj = ku2.f659a;
+        Object obj = ku2.f658a;
         c = lx0.a0(1, new nw0(jm.e(1, 1)));
         d = lx0.a0(1, new uw0(kx0.d(1, 1)));
     }
 
     public static rf0 a(vo2 vo2Var, int i) {
-        ri0 ri0VarA0 = vo2Var;
+        ri0 ri0Var = vo2Var;
         if ((i & 1) != 0) {
-            ri0VarA0 = lx0.a0(5, null);
+            ri0Var = lx0.a0(5, null);
         }
-        return new rf0(new un2(new mh0(ri0VarA0), (mb2) null, (c42) null, (LinkedHashMap) null, 62));
+        return new rf0(new un2(new mh0(ri0Var), (mb2) null, (c42) null, (LinkedHashMap) null, 62));
     }
 
     public static yg0 b(vo2 vo2Var, int i) {
-        ri0 ri0VarA0 = vo2Var;
+        ri0 ri0Var = vo2Var;
         if ((i & 1) != 0) {
-            ri0VarA0 = lx0.a0(5, null);
+            ri0Var = lx0.a0(5, null);
         }
-        return new yg0(new un2(new mh0(ri0VarA0), (mb2) null, (c42) null, (LinkedHashMap) null, 62));
+        return new yg0(new un2(new mh0(ri0Var), (mb2) null, (c42) null, (LinkedHashMap) null, 62));
     }
 
     public static rf0 c(um0 um0Var) {
-        Object obj = ku2.f659a;
+        Object obj = ku2.f658a;
         return new rf0(new un2((mh0) null, new mb2(new nf0(um0Var, 0), lx0.a0(1, new nw0(jm.e(1, 1)))), (c42) null, (LinkedHashMap) null, 61));
     }
 
     public static yg0 d(um0 um0Var) {
-        Object obj = ku2.f659a;
+        Object obj = ku2.f658a;
         return new yg0(new un2((mh0) null, new mb2(new nf0(um0Var, 1), lx0.a0(1, new nw0(jm.e(1, 1)))), (c42) null, (LinkedHashMap) null, 61));
     }
 }

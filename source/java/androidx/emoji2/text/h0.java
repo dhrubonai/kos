@@ -15,11 +15,11 @@ public abstract class h0 implements Map, ry0 {
 
     @Override // java.util.Map
     public boolean containsValue(Object obj) {
-        Set setEntrySet = entrySet();
-        if (setEntrySet.isEmpty()) {
+        Set entrySet = entrySet();
+        if (entrySet.isEmpty()) {
             return false;
         }
-        Iterator it = setEntrySet.iterator();
+        Iterator it = entrySet.iterator();
         while (it.hasNext()) {
             if (lx0.n(((Map.Entry) it.next()).getValue(), obj)) {
                 return true;
@@ -45,11 +45,11 @@ public abstract class h0 implements Map, ry0 {
         if (((bp1) this).e != map.size()) {
             return false;
         }
-        Set<Map.Entry> setEntrySet = map.entrySet();
-        if ((setEntrySet instanceof Collection) && setEntrySet.isEmpty()) {
+        Set<Map.Entry> entrySet = map.entrySet();
+        if ((entrySet instanceof Collection) && entrySet.isEmpty()) {
             return true;
         }
-        for (Map.Entry entry : setEntrySet) {
+        for (Map.Entry entry : entrySet) {
             if (entry != null) {
                 Object key = entry.getKey();
                 Object value = entry.getValue();

@@ -18,10 +18,14 @@ public class mg0 extends InputStream implements DataInput {
     public byte[] g;
     public final int h;
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public mg0(byte[] bArr) {
+        this(r0, 0);
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr);
         ByteOrder byteOrder = ByteOrder.BIG_ENDIAN;
-        this(byteArrayInputStream, 0);
         this.h = bArr.length;
     }
 
@@ -30,22 +34,22 @@ public class mg0 extends InputStream implements DataInput {
         return this.d.available();
     }
 
-    public final void b(int i) throws IOException {
+    public final void b(int i) {
         int i2 = 0;
         while (i2 < i) {
             int i3 = i - i2;
             DataInputStream dataInputStream = this.d;
-            int iSkip = (int) dataInputStream.skip(i3);
-            if (iSkip <= 0) {
+            int skip = (int) dataInputStream.skip(i3);
+            if (skip <= 0) {
                 if (this.g == null) {
                     this.g = new byte[8192];
                 }
-                iSkip = dataInputStream.read(this.g, 0, Math.min(8192, i3));
-                if (iSkip == -1) {
+                skip = dataInputStream.read(this.g, 0, Math.min(8192, i3));
+                if (skip == -1) {
                     throw new EOFException(zd.g("Reached EOF while skipping ", i, " bytes."));
                 }
             }
-            i2 += iSkip;
+            i2 += skip;
         }
         this.e += i2;
     }
@@ -68,11 +72,11 @@ public class mg0 extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final byte readByte() throws IOException {
+    public final byte readByte() {
         this.e++;
-        int i = this.d.read();
-        if (i >= 0) {
-            return (byte) i;
+        int read = this.d.read();
+        if (read >= 0) {
+            return (byte) read;
         }
         throw new EOFException();
     }
@@ -94,28 +98,28 @@ public class mg0 extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final void readFully(byte[] bArr, int i, int i2) throws IOException {
+    public final void readFully(byte[] bArr, int i, int i2) {
         this.e += i2;
         this.d.readFully(bArr, i, i2);
     }
 
     @Override // java.io.DataInput
-    public final int readInt() throws IOException {
+    public final int readInt() {
         this.e += 4;
         DataInputStream dataInputStream = this.d;
-        int i = dataInputStream.read();
-        int i2 = dataInputStream.read();
-        int i3 = dataInputStream.read();
-        int i4 = dataInputStream.read();
-        if ((i | i2 | i3 | i4) < 0) {
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        int read3 = dataInputStream.read();
+        int read4 = dataInputStream.read();
+        if ((read | read2 | read3 | read4) < 0) {
             throw new EOFException();
         }
         ByteOrder byteOrder = this.f;
         if (byteOrder == ByteOrder.LITTLE_ENDIAN) {
-            return (i4 << 24) + (i3 << 16) + (i2 << 8) + i;
+            return (read4 << 24) + (read3 << 16) + (read2 << 8) + read;
         }
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
-            return (i << 24) + (i2 << 16) + (i3 << 8) + i4;
+            return (read << 24) + (read2 << 16) + (read3 << 8) + read4;
         }
         throw new IOException("Invalid byte order: " + this.f);
     }
@@ -127,51 +131,51 @@ public class mg0 extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final long readLong() throws IOException {
+    public final long readLong() {
         long j;
         long j2;
         this.e += 8;
         DataInputStream dataInputStream = this.d;
-        int i = dataInputStream.read();
-        int i2 = dataInputStream.read();
-        int i3 = dataInputStream.read();
-        int i4 = dataInputStream.read();
-        int i5 = dataInputStream.read();
-        int i6 = dataInputStream.read();
-        int i7 = dataInputStream.read();
-        int i8 = dataInputStream.read();
-        if ((i | i2 | i3 | i4 | i5 | i6 | i7 | i8) < 0) {
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        int read3 = dataInputStream.read();
+        int read4 = dataInputStream.read();
+        int read5 = dataInputStream.read();
+        int read6 = dataInputStream.read();
+        int read7 = dataInputStream.read();
+        int read8 = dataInputStream.read();
+        if ((read | read2 | read3 | read4 | read5 | read6 | read7 | read8) < 0) {
             throw new EOFException();
         }
         ByteOrder byteOrder = this.f;
         if (byteOrder == ByteOrder.LITTLE_ENDIAN) {
-            j = (i8 << 56) + (i7 << 48) + (i6 << 40) + (i5 << 32) + (i4 << 24) + (i3 << 16) + (i2 << 8);
-            j2 = i;
+            j = (read8 << 56) + (read7 << 48) + (read6 << 40) + (read5 << 32) + (read4 << 24) + (read3 << 16) + (read2 << 8);
+            j2 = read;
         } else {
             if (byteOrder != ByteOrder.BIG_ENDIAN) {
                 throw new IOException("Invalid byte order: " + this.f);
             }
-            j = (i << 56) + (i2 << 48) + (i3 << 40) + (i4 << 32) + (i5 << 24) + (i6 << 16) + (i7 << 8);
-            j2 = i8;
+            j = (read << 56) + (read2 << 48) + (read3 << 40) + (read4 << 32) + (read5 << 24) + (read6 << 16) + (read7 << 8);
+            j2 = read8;
         }
         return j + j2;
     }
 
     @Override // java.io.DataInput
-    public final short readShort() throws IOException {
+    public final short readShort() {
         this.e += 2;
         DataInputStream dataInputStream = this.d;
-        int i = dataInputStream.read();
-        int i2 = dataInputStream.read();
-        if ((i | i2) < 0) {
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        if ((read | read2) < 0) {
             throw new EOFException();
         }
         ByteOrder byteOrder = this.f;
         if (byteOrder == ByteOrder.LITTLE_ENDIAN) {
-            return (short) ((i2 << 8) + i);
+            return (short) ((read2 << 8) + read);
         }
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
-            return (short) ((i << 8) + i2);
+            return (short) ((read << 8) + read2);
         }
         throw new IOException("Invalid byte order: " + this.f);
     }
@@ -189,20 +193,20 @@ public class mg0 extends InputStream implements DataInput {
     }
 
     @Override // java.io.DataInput
-    public final int readUnsignedShort() throws IOException {
+    public final int readUnsignedShort() {
         this.e += 2;
         DataInputStream dataInputStream = this.d;
-        int i = dataInputStream.read();
-        int i2 = dataInputStream.read();
-        if ((i | i2) < 0) {
+        int read = dataInputStream.read();
+        int read2 = dataInputStream.read();
+        if ((read | read2) < 0) {
             throw new EOFException();
         }
         ByteOrder byteOrder = this.f;
         if (byteOrder == ByteOrder.LITTLE_ENDIAN) {
-            return (i2 << 8) + i;
+            return (read2 << 8) + read;
         }
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
-            return (i << 8) + i2;
+            return (read << 8) + read2;
         }
         throw new IOException("Invalid byte order: " + this.f);
     }
@@ -224,14 +228,14 @@ public class mg0 extends InputStream implements DataInput {
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) throws IOException {
-        int i3 = this.d.read(bArr, i, i2);
-        this.e += i3;
-        return i3;
+    public final int read(byte[] bArr, int i, int i2) {
+        int read = this.d.read(bArr, i, i2);
+        this.e += read;
+        return read;
     }
 
     @Override // java.io.DataInput
-    public final void readFully(byte[] bArr) throws IOException {
+    public final void readFully(byte[] bArr) {
         this.e += bArr.length;
         this.d.readFully(bArr);
     }

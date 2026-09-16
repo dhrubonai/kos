@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class bn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f159a;
+    public static final long f158a;
     public static final /* synthetic */ int b = 0;
 
     static {
         long j = 0;
-        f159a = (j << 45) | (j << 15) | j | (j << 30) | Long.MIN_VALUE;
+        f158a = (j << 45) | (j << 15) | j | (j << 30) | Long.MIN_VALUE;
     }
 }

@@ -1,135 +1,118 @@
 package androidx.emoji2.text;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
+import android.util.AttributeSet;
+import android.util.StateSet;
+import android.util.TypedValue;
+import androidx.core.splashscreen.R;
+
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class ze2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1437a;
+    public int f1436a;
     public gz0 b;
     public int[][] c;
     public gz0[] d;
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00a9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void a(android.content.Context r12, android.content.res.XmlResourceParser r13, android.util.AttributeSet r14, android.content.res.Resources.Theme r15) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException {
-        /*
-            r11 = this;
-            int r0 = r13.getDepth()
-            r1 = 1
-            int r0 = r0 + r1
-        L6:
-            int r2 = r13.next()
-            if (r2 == r1) goto Lca
-            int r3 = r13.getDepth()
-            if (r3 >= r0) goto L15
-            r4 = 3
-            if (r2 == r4) goto Lca
-        L15:
-            r4 = 2
-            if (r2 != r4) goto L6
-            if (r3 > r0) goto L6
-            java.lang.String r2 = r13.getName()
-            java.lang.String r3 = "item"
-            boolean r2 = r2.equals(r3)
-            if (r2 != 0) goto L27
-            goto L6
-        L27:
-            android.content.res.Resources r2 = r12.getResources()
-            int[] r3 = androidx.emoji2.text.fv1.v
-            r5 = 0
-            if (r15 != 0) goto L35
-            android.content.res.TypedArray r2 = r2.obtainAttributes(r14, r3)
-            goto L39
-        L35:
-            android.content.res.TypedArray r2 = r15.obtainStyledAttributes(r14, r3, r5, r5)
-        L39:
-            android.util.TypedValue r3 = r2.peekValue(r5)
-            if (r3 != 0) goto L40
-            goto L69
-        L40:
-            int r6 = r3.type
-            r7 = 5
-            if (r6 != r7) goto L5a
-            androidx.emoji2.text.ye2 r6 = new androidx.emoji2.text.ye2
-            int r3 = r3.data
-            android.content.res.Resources r7 = r2.getResources()
-            android.util.DisplayMetrics r7 = r7.getDisplayMetrics()
-            int r3 = android.util.TypedValue.complexToDimensionPixelSize(r3, r7)
-            float r3 = (float) r3
-            r6.<init>(r4, r3)
-            goto L6a
-        L5a:
-            r4 = 6
-            if (r6 != r4) goto L69
-            androidx.emoji2.text.ye2 r6 = new androidx.emoji2.text.ye2
-            r4 = 1065353216(0x3f800000, float:1.0)
-            float r3 = r3.getFraction(r4, r4)
-            r6.<init>(r1, r3)
-            goto L6a
-        L69:
-            r6 = 0
-        L6a:
-            r2.recycle()
-            int r2 = r14.getAttributeCount()
-            int[] r3 = new int[r2]
-            r4 = r5
-            r7 = r4
-        L75:
-            if (r4 >= r2) goto L90
-            int r8 = r14.getAttributeNameResource(r4)
-            r9 = 2130904425(0x7f030569, float:1.7415696E38)
-            if (r8 == r9) goto L8d
-            int r9 = r7 + 1
-            boolean r10 = r14.getAttributeBooleanValue(r4, r5)
-            if (r10 == 0) goto L89
-            goto L8a
-        L89:
-            int r8 = -r8
-        L8a:
-            r3[r7] = r8
-            r7 = r9
-        L8d:
-            int r4 = r4 + 1
-            goto L75
-        L90:
-            int[] r2 = android.util.StateSet.trimStateSet(r3, r7)
-            androidx.emoji2.text.gz0 r3 = new androidx.emoji2.text.gz0
-            r3.<init>()
-            r3.d = r6
-            int r4 = r11.f1437a
-            if (r4 == 0) goto La2
-            int r6 = r2.length
-            if (r6 != 0) goto La4
-        La2:
-            r11.b = r3
-        La4:
-            int[][] r6 = r11.c
-            int r7 = r6.length
-            if (r4 < r7) goto Lbb
-            int r7 = r4 + 10
-            int[][] r8 = new int[r7][]
-            java.lang.System.arraycopy(r6, r5, r8, r5, r4)
-            r11.c = r8
-            androidx.emoji2.text.gz0[] r6 = new androidx.emoji2.text.gz0[r7]
-            androidx.emoji2.text.gz0[] r7 = r11.d
-            java.lang.System.arraycopy(r7, r5, r6, r5, r4)
-            r11.d = r6
-        Lbb:
-            int[][] r4 = r11.c
-            int r5 = r11.f1437a
-            r4[r5] = r2
-            androidx.emoji2.text.gz0[] r2 = r11.d
-            r2[r5] = r3
-            int r5 = r5 + r1
-            r11.f1437a = r5
-            goto L6
-        Lca:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ze2.a(android.content.Context, android.content.res.XmlResourceParser, android.util.AttributeSet, android.content.res.Resources$Theme):void");
+    public final void a(Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) {
+        ye2 ye2Var;
+        int attributeCount;
+        int i;
+        int i2;
+        int[][] iArr;
+        int depth = xmlResourceParser.getDepth() + 1;
+        while (true) {
+            int next = xmlResourceParser.next();
+            if (next == 1) {
+                return;
+            }
+            int depth2 = xmlResourceParser.getDepth();
+            if (depth2 < depth && next == 3) {
+                return;
+            }
+            if (next == 2 && depth2 <= depth && xmlResourceParser.getName().equals("item")) {
+                Resources resources = context.getResources();
+                int[] iArr2 = fv1.v;
+                TypedArray obtainAttributes = theme == null ? resources.obtainAttributes(attributeSet, iArr2) : theme.obtainStyledAttributes(attributeSet, iArr2, 0, 0);
+                TypedValue peekValue = obtainAttributes.peekValue(0);
+                if (peekValue != null) {
+                    int i3 = peekValue.type;
+                    if (i3 == 5) {
+                        ye2Var = new ye2(2, TypedValue.complexToDimensionPixelSize(peekValue.data, obtainAttributes.getResources().getDisplayMetrics()));
+                    } else if (i3 == 6) {
+                        ye2Var = new ye2(1, peekValue.getFraction(1.0f, 1.0f));
+                    }
+                    obtainAttributes.recycle();
+                    attributeCount = attributeSet.getAttributeCount();
+                    int[] iArr3 = new int[attributeCount];
+                    int i4 = 0;
+                    for (i = 0; i < attributeCount; i++) {
+                        int attributeNameResource = attributeSet.getAttributeNameResource(i);
+                        if (attributeNameResource != R.attr.widthChange) {
+                            int i5 = i4 + 1;
+                            if (!attributeSet.getAttributeBooleanValue(i, false)) {
+                                attributeNameResource = -attributeNameResource;
+                            }
+                            iArr3[i4] = attributeNameResource;
+                            i4 = i5;
+                        }
+                    }
+                    int[] trimStateSet = StateSet.trimStateSet(iArr3, i4);
+                    gz0 gz0Var = new gz0();
+                    gz0Var.d = ye2Var;
+                    i2 = this.f1436a;
+                    if (i2 != 0 || trimStateSet.length == 0) {
+                        this.b = gz0Var;
+                    }
+                    iArr = this.c;
+                    if (i2 >= iArr.length) {
+                        int i6 = i2 + 10;
+                        int[][] iArr4 = new int[i6][];
+                        System.arraycopy(iArr, 0, iArr4, 0, i2);
+                        this.c = iArr4;
+                        gz0[] gz0VarArr = new gz0[i6];
+                        System.arraycopy(this.d, 0, gz0VarArr, 0, i2);
+                        this.d = gz0VarArr;
+                    }
+                    int[][] iArr5 = this.c;
+                    int i7 = this.f1436a;
+                    iArr5[i7] = trimStateSet;
+                    this.d[i7] = gz0Var;
+                    this.f1436a = i7 + 1;
+                }
+                ye2Var = null;
+                obtainAttributes.recycle();
+                attributeCount = attributeSet.getAttributeCount();
+                int[] iArr32 = new int[attributeCount];
+                int i42 = 0;
+                while (i < attributeCount) {
+                }
+                int[] trimStateSet2 = StateSet.trimStateSet(iArr32, i42);
+                gz0 gz0Var2 = new gz0();
+                gz0Var2.d = ye2Var;
+                i2 = this.f1436a;
+                if (i2 != 0) {
+                }
+                this.b = gz0Var2;
+                iArr = this.c;
+                if (i2 >= iArr.length) {
+                }
+                int[][] iArr52 = this.c;
+                int i72 = this.f1436a;
+                iArr52[i72] = trimStateSet2;
+                this.d[i72] = gz0Var2;
+                this.f1436a = i72 + 1;
+            }
+        }
     }
 }

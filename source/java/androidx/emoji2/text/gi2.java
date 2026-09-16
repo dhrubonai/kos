@@ -34,7 +34,7 @@ public final class gi2 extends f02 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((gi2) i((l10) obj2, (nh2) obj)).k(up2.f1187a);
+        return ((gi2) i((l10) obj2, (nh2) obj)).k(up2.f1186a);
     }
 
     /* JADX WARN: Type inference failed for: r0v5, types: [androidx.emoji2.text.g01, androidx.emoji2.text.um0] */
@@ -58,7 +58,7 @@ public final class gi2 extends f02 implements Function2 {
         }
         ps1 ps1Var = (ps1) obj;
         e30 e30Var = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         tt1 tt1Var = this.l;
         if (ps1Var == null) {
             h50.G(e30Var, null, new di2(tt1Var, null, 7), 3);

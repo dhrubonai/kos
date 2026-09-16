@@ -19,6 +19,7 @@ public final class s7 extends g01 implements sm0 {
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
         int actionMasked;
+        h7 h7Var;
         switch (this.e) {
             case 0:
                 v7 v7Var = this.f;
@@ -27,9 +28,10 @@ public final class s7 extends g01 implements sm0 {
                     v7Var.w0 = SystemClock.uptimeMillis();
                     v7Var.post(v7Var.B0);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                return this.f.get_viewTreeOwners();
+                h7Var = this.f.get_viewTreeOwners();
+                return h7Var;
         }
     }
 }

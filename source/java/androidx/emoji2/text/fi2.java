@@ -17,7 +17,7 @@ public final class fi2 extends f02 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((fi2) i((l10) obj2, (nh2) obj)).k(up2.f1187a);
+        return ((fi2) i((l10) obj2, (nh2) obj)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -33,8 +33,8 @@ public final class fi2 extends f02 implements Function2 {
         mz0.L(obj);
         nh2 nh2Var = (nh2) this.g;
         this.f = 1;
-        Object objE = ji2.e(nh2Var, js1.e, this);
+        Object e = ji2.e(nh2Var, js1.e, this);
         f30 f30Var = f30.d;
-        return objE == f30Var ? f30Var : objE;
+        return e == f30Var ? f30Var : e;
     }
 }

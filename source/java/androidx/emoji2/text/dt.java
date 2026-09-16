@@ -8,17 +8,17 @@ import java.util.List;
 public final class dt implements q72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f270a;
+    public final /* synthetic */ int f269a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ dt(int i, Object obj) {
-        this.f270a = i;
+        this.f269a = i;
         this.b = obj;
     }
 
     @Override // androidx.emoji2.text.q72
     public final Iterator iterator() {
-        switch (this.f270a) {
+        switch (this.f269a) {
             case 0:
                 return ((List) this.b).iterator();
             default:

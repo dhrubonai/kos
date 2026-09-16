@@ -7,7 +7,7 @@ import android.graphics.Paint;
 public abstract /* synthetic */ class qa {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int[] f947a;
+    public static final /* synthetic */ int[] f946a;
     public static final /* synthetic */ int[] b;
 
     static {
@@ -28,7 +28,7 @@ public abstract /* synthetic */ class qa {
             iArr[Paint.Cap.SQUARE.ordinal()] = 3;
         } catch (NoSuchFieldError unused4) {
         }
-        f947a = iArr;
+        f946a = iArr;
         int[] iArr2 = new int[Paint.Join.values().length];
         try {
             iArr2[Paint.Join.MITER.ordinal()] = 1;

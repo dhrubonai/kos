@@ -14,63 +14,39 @@ public final class vr0 implements List, ry0 {
     public final ue1 e = new ue1(16);
     public int f = -1;
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x003d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
     
-        androidx.emoji2.text.lz0.M("Index must be between 0 and size");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0043, code lost:
-    
-        throw null;
+        return r0;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final long a() {
-        /*
-            r7 = this;
-            r0 = 2139095040(0x7f800000, float:Infinity)
-            r1 = 0
-            long r0 = androidx.emoji2.text.bz0.m(r0, r1, r1)
-            int r2 = r7.f
-            int r2 = r2 + 1
-            int r3 = androidx.emoji2.text.xs.l0(r7)
-            if (r2 > r3) goto L44
-        L11:
-            androidx.emoji2.text.ue1 r4 = r7.e
-            if (r2 < 0) goto L3a
-            int r5 = r4.b
-            if (r2 >= r5) goto L3d
-            long[] r4 = r4.f1170a
-            r5 = r4[r2]
-            int r4 = androidx.emoji2.text.kx0.o(r5, r0)
-            if (r4 >= 0) goto L24
-            r0 = r5
-        L24:
-            float r4 = androidx.emoji2.text.kx0.C(r0)
-            r5 = 0
-            int r4 = (r4 > r5 ? 1 : (r4 == r5 ? 0 : -1))
-            if (r4 >= 0) goto L34
-            boolean r4 = androidx.emoji2.text.kx0.F(r0)
-            if (r4 == 0) goto L34
-            goto L39
-        L34:
-            if (r2 == r3) goto L39
-            int r2 = r2 + 1
-            goto L11
-        L39:
-            return r0
-        L3a:
-            r4.getClass()
-        L3d:
-            java.lang.String r0 = "Index must be between 0 and size"
-            androidx.emoji2.text.lz0.M(r0)
-            r0 = 0
-            throw r0
-        L44:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vr0.a():long");
+        long m = bz0.m(Float.POSITIVE_INFINITY, false, false);
+        int i = this.f + 1;
+        int l0 = xs.l0(this);
+        if (i > l0) {
+            return m;
+        }
+        while (true) {
+            ue1 ue1Var = this.e;
+            if (i < 0) {
+                ue1Var.getClass();
+                break;
+            }
+            if (i >= ue1Var.b) {
+                break;
+            }
+            long j = ue1Var.f1169a[i];
+            if (kx0.o(j, m) < 0) {
+                m = j;
+            }
+            if ((kx0.C(m) >= 0.0f || !kx0.F(m)) && i != l0) {
+                i++;
+            }
+        }
+        lz0.M("Index must be between 0 and size");
+        throw null;
     }
 
     @Override // java.util.List
@@ -106,7 +82,7 @@ public final class vr0 implements List, ry0 {
                 }
                 if (i2 != i) {
                     if (i2 < i3) {
-                        long[] jArr = ue1Var.f1170a;
+                        long[] jArr = ue1Var.f1169a;
                         xh.y0(jArr, jArr, i, i2, i3);
                     }
                     ue1Var.b -= i2 - i;
@@ -146,9 +122,9 @@ public final class vr0 implements List, ry0 {
 
     @Override // java.util.List
     public final Object get(int i) {
-        Object objE = this.d.e(i);
-        lx0.v(objE, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
-        return (md1) objE;
+        Object e = this.d.e(i);
+        lx0.v(e, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
+        return (md1) e;
     }
 
     @Override // java.util.List
@@ -157,11 +133,11 @@ public final class vr0 implements List, ry0 {
             return -1;
         }
         md1 md1Var = (md1) obj;
-        int iL0 = xs.l0(this);
-        if (iL0 >= 0) {
+        int l0 = xs.l0(this);
+        if (l0 >= 0) {
             int i = 0;
             while (!lx0.n(this.d.e(i), md1Var)) {
-                if (i != iL0) {
+                if (i != l0) {
                     i++;
                 }
             }
@@ -186,9 +162,9 @@ public final class vr0 implements List, ry0 {
             return -1;
         }
         md1 md1Var = (md1) obj;
-        for (int iL0 = xs.l0(this); -1 < iL0; iL0--) {
-            if (lx0.n(this.d.e(iL0), md1Var)) {
-                return iL0;
+        for (int l0 = xs.l0(this); -1 < l0; l0--) {
+            if (lx0.n(this.d.e(l0), md1Var)) {
+                return l0;
             }
         }
         return -1;

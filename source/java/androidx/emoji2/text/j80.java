@@ -37,19 +37,19 @@ public class j80 extends km0 implements DialogInterface.OnCancelListener, Dialog
         this.q = true;
         this.p = true;
         if (this.o >= 0) {
-            om0 om0VarB = b();
+            om0 b = b();
             int i = this.o;
             if (i < 0) {
                 throw new IllegalArgumentException(zd.f(i, "Bad id: "));
             }
-            synchronized (om0VarB.f862a) {
+            synchronized (b.f861a) {
             }
             this.o = -1;
             return;
         }
         dk dkVar = new dk(b());
         qm0 qm0Var = new qm0();
-        qm0Var.f967a = 3;
+        qm0Var.f966a = 3;
         qm0Var.b = this;
         ((ArrayList) dkVar.d).add(qm0Var);
         qm0Var.c = 0;
@@ -77,7 +77,7 @@ public class j80 extends km0 implements DialogInterface.OnCancelListener, Dialog
                 int size = arrayList.size();
                 for (int i2 = 0; i2 < size; i2++) {
                     qm0 qm0Var2 = (qm0) arrayList.get(i2);
-                    switch (qm0Var2.f967a) {
+                    switch (qm0Var2.f966a) {
                         case 0:
                             str = "NULL";
                             break;
@@ -93,10 +93,10 @@ public class j80 extends km0 implements DialogInterface.OnCancelListener, Dialog
                         case 4:
                             str = "HIDE";
                             break;
-                        case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                        case 5:
                             str = "SHOW";
                             break;
-                        case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                        case 6:
                             str = "DETACH";
                             break;
                         case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -105,14 +105,14 @@ public class j80 extends km0 implements DialogInterface.OnCancelListener, Dialog
                         case 8:
                             str = "SET_PRIMARY_NAV";
                             break;
-                        case 9:
+                        case pz0.b /* 9 */:
                             str = "UNSET_PRIMARY_NAV";
                             break;
-                        case 10:
+                        case pz0.d /* 10 */:
                             str = "OP_SET_MAX_LIFECYCLE";
                             break;
                         default:
-                            str = "cmd=" + qm0Var2.f967a;
+                            str = "cmd=" + qm0Var2.f966a;
                             break;
                     }
                     printWriter.print("  ");
@@ -142,7 +142,7 @@ public class j80 extends km0 implements DialogInterface.OnCancelListener, Dialog
         }
         dkVar.c = true;
         dkVar.b = -1;
-        synchronized (om0Var.f862a) {
+        synchronized (om0Var.f861a) {
         }
     }
 

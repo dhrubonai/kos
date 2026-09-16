@@ -19,7 +19,7 @@ public final class yo0 extends hh2 implements um0 {
     public final Object e(Object obj) {
         String str = this.i;
         int i = this.j;
-        return new yo0(this.h, str, i, (l10) obj).k(up2.f1187a);
+        return new yo0(this.h, str, i, (l10) obj).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk

@@ -35,17 +35,17 @@ public interface IPackageInstallObserver extends IInterface {
 
             @Override // android.content.pm.IPackageInstallObserver
             public void packageInstalled(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(IPackageInstallObserver.DESCRIPTOR);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(IPackageInstallObserver.DESCRIPTOR);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -58,8 +58,8 @@ public interface IPackageInstallObserver extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(IPackageInstallObserver.DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IPackageInstallObserver)) ? new Proxy(iBinder) : (IPackageInstallObserver) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IPackageInstallObserver.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IPackageInstallObserver)) ? new Proxy(iBinder) : (IPackageInstallObserver) queryLocalInterface;
         }
 
         @Override // android.os.Binder

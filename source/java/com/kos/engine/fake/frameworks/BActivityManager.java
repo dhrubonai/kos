@@ -192,10 +192,10 @@ public class BActivityManager extends BlackManager<IBActivityManagerService> {
     }
 
     public void onActivityResumed(IBinder iBinder) {
-        Activity activityM;
+        Activity m;
         try {
-            if (c.a(-304969006858018L, xa1.b).equals(rj.o()) && (activityM = rj.m(iBinder)) != null) {
-                activityM.getWindow().getDecorView().clearFocus();
+            if (c.a(-304969006858018L, xa1.b).equals(rj.o()) && (m = rj.m(iBinder)) != null) {
+                m.getWindow().getDecorView().clearFocus();
             }
         } catch (Throwable unused) {
         }

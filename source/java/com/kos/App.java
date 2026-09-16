@@ -40,19 +40,19 @@ public final class App extends Application {
     @Override // android.content.ContextWrapper
     public final void attachBaseContext(Context context) {
         lx0.x(context, "base");
-        Context contextW = ex2.W(context);
-        super.attachBaseContext(contextW);
+        Context W = ex2.W(context);
+        super.attachBaseContext(W);
         Thread.setDefaultUncaughtExceptionHandler(new si2());
         try {
-            p30.f886a.getClass();
-            p30.h(contextW);
+            p30.f885a.getClass();
+            p30.h(W);
         } catch (Throwable th) {
             Log.e("KOS_App", "Failed to initialize persistent crash recording.", th);
         }
         try {
-            c01.r.V(contextW, new jf(contextW));
+            c01.r.V(W, new jf(W));
         } catch (Exception e) {
-            Toast.makeText(contextW, contextW.getString(R.string.error_sandbox_create_failed), 0).show();
+            Toast.makeText(W, W.getString(R.string.error_sandbox_create_failed), 0).show();
             e.printStackTrace();
         }
     }
@@ -61,59 +61,59 @@ public final class App extends Application {
     public final void onCreate() {
         boolean z;
         super.onCreate();
-        p30.f886a.getClass();
-        String[] strArr = wj1.f1284a;
+        p30.f885a.getClass();
+        String[] strArr = wj1.f1283a;
         Context context = p30.f;
         if (context == null) {
             z = false;
         } else {
-            File[] fileArrListFiles = new File(p30.j(context), c.a(-254056464531234L, strArr)).listFiles(new k30(2));
-            if (fileArrListFiles != null) {
-                int iT = ha1.T(fileArrListFiles.length);
-                if (iT < 16) {
-                    iT = 16;
+            File[] listFiles = new File(p30.j(context), c.a(-254056464531234L, strArr)).listFiles(new k30(2));
+            if (listFiles != null) {
+                int T = ha1.T(listFiles.length);
+                if (T < 16) {
+                    T = 16;
                 }
-                LinkedHashMap linkedHashMap = new LinkedHashMap(iT);
-                for (File file : fileArrListFiles) {
+                LinkedHashMap linkedHashMap = new LinkedHashMap(T);
+                for (File file : listFiles) {
                     linkedHashMap.put(file, Long.valueOf(file.lastModified()));
                 }
-                Set setEntrySet = linkedHashMap.entrySet();
-                if (setEntrySet != null) {
-                    List listK0 = ws.K0(setEntrySet, new tk0(10));
-                    ArrayList arrayList = new ArrayList(ys.r0(listK0));
-                    Iterator it = listK0.iterator();
+                Set entrySet = linkedHashMap.entrySet();
+                if (entrySet != null) {
+                    List K0 = ws.K0(entrySet, new tk0(10));
+                    ArrayList arrayList = new ArrayList(ys.r0(K0));
+                    Iterator it = K0.iterator();
                     while (it.hasNext()) {
                         arrayList.add((File) ((Map.Entry) it.next()).getKey());
                     }
-                    ArrayList arrayListO0 = ws.O0(arrayList);
-                    long jCurrentTimeMillis = System.currentTimeMillis();
-                    for (File file2 : ws.N0(arrayListO0)) {
+                    ArrayList O0 = ws.O0(arrayList);
+                    long currentTimeMillis = System.currentTimeMillis();
+                    for (File file2 : ws.N0(O0)) {
                         String name = file2.getName();
                         lx0.w(name, c.a(-254146658844450L, strArr));
-                        if (!eg2.Z(name, p30.h + '-', false) && jCurrentTimeMillis - file2.lastModified() > 86400000) {
+                        if (!eg2.Z(name, p30.h + '-', false) && currentTimeMillis - file2.lastModified() > 86400000) {
                             file2.delete();
-                            arrayListO0.remove(file2);
+                            O0.remove(file2);
                         }
                     }
-                    int size = arrayListO0.size();
-                    long length = 0;
+                    int size = O0.size();
+                    long j = 0;
                     int i = 0;
                     while (i < size) {
-                        Object obj = arrayListO0.get(i);
+                        Object obj = O0.get(i);
                         i++;
-                        length += ((File) obj).length();
+                        j += ((File) obj).length();
                     }
-                    int size2 = arrayListO0.size();
+                    int size2 = O0.size();
                     int i2 = 0;
                     while (i2 < size2) {
-                        Object obj2 = arrayListO0.get(i2);
+                        Object obj2 = O0.get(i2);
                         i2++;
                         File file3 = (File) obj2;
-                        if (length > 67108864) {
+                        if (j > 67108864) {
                             String name2 = file3.getName();
                             lx0.w(name2, c.a(-254219673288482L, strArr));
-                            if (!eg2.Z(name2, p30.h + '-', false) && jCurrentTimeMillis - file3.lastModified() >= 300000) {
-                                length -= file3.length();
+                            if (!eg2.Z(name2, p30.h + '-', false) && currentTimeMillis - file3.lastModified() >= 300000) {
+                                j -= file3.length();
                                 file3.delete();
                             }
                         }

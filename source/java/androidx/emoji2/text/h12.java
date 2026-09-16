@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class h12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final jf2 f450a = new jf2(hy.G);
+    public static final jf2 f449a = new jf2(hy.G);
     public static final r02 b = new r02(0.16f, 0.24f, 0.08f, 0.24f);
     public static final r02 c = new r02(0.08f, 0.12f, 0.04f, 0.12f);
 }

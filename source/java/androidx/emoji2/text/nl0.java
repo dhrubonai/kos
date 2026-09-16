@@ -7,17 +7,17 @@ import java.util.ArrayList;
 public final class nl0 implements c00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f815a;
+    public final /* synthetic */ int f814a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ nl0(int i, Object obj) {
-        this.f815a = i;
+        this.f814a = i;
         this.b = obj;
     }
 
     @Override // androidx.emoji2.text.c00
     public final void accept(Object obj) {
-        switch (this.f815a) {
+        switch (this.f814a) {
             case 0:
                 ol0 ol0Var = (ol0) obj;
                 if (ol0Var == null) {

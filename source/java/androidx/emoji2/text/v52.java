@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class v52 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ x52 f1204a;
+    public final /* synthetic */ x52 f1203a;
 
     public v52(x52 x52Var) {
-        this.f1204a = x52Var;
+        this.f1203a = x52Var;
     }
 }

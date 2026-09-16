@@ -8,18 +8,18 @@ import android.window.OnBackAnimationCallback;
 public final class vc1 implements OnBackAnimationCallback {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ e30 f1211a;
+    public final /* synthetic */ e30 f1210a;
     public final /* synthetic */ ed b;
     public final /* synthetic */ sm0 c;
 
     public vc1(sm0 sm0Var, ed edVar, e30 e30Var) {
-        this.f1211a = e30Var;
+        this.f1210a = e30Var;
         this.b = edVar;
         this.c = sm0Var;
     }
 
     public final void onBackCancelled() {
-        h50.G(this.f1211a, null, new tc1(this.b, null, 0), 3);
+        h50.G(this.f1210a, null, new tc1(this.b, null, 0), 3);
     }
 
     public final void onBackInvoked() {
@@ -27,10 +27,10 @@ public final class vc1 implements OnBackAnimationCallback {
     }
 
     public final void onBackProgressed(BackEvent backEvent) {
-        h50.G(this.f1211a, null, new uc1(this.b, backEvent, null, 0), 3);
+        h50.G(this.f1210a, null, new uc1(this.b, backEvent, null, 0), 3);
     }
 
     public final void onBackStarted(BackEvent backEvent) {
-        h50.G(this.f1211a, null, new uc1(this.b, backEvent, null, 1), 3);
+        h50.G(this.f1210a, null, new uc1(this.b, backEvent, null, 1), 3);
     }
 }

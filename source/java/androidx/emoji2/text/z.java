@@ -29,28 +29,28 @@ public abstract class z extends jy0 implements l10, e30 {
             i0(obj);
         } else {
             lu luVar = (lu) obj;
-            h0(luVar.f713a, lu.b.get(luVar) != 0);
+            h0(luVar.f712a, lu.b.get(luVar) != 0);
         }
     }
 
     @Override // androidx.emoji2.text.l10
     public final void g(Object obj) {
-        Throwable thA = h02.a(obj);
-        if (thA != null) {
-            obj = new lu(thA, false);
+        Throwable a2 = h02.a(obj);
+        if (a2 != null) {
+            obj = new lu(a2, false);
         }
-        Object objV = V(obj);
-        if (objV == jm.h) {
+        Object V = V(obj);
+        if (V == jm.h) {
             return;
         }
-        x(objV);
+        x(V);
     }
 
     public final void j0(h30 h30Var, z zVar, Function2 function2) {
-        Object objInvoke;
-        int iOrdinal = h30Var.ordinal();
-        up2 up2Var = up2.f1187a;
-        if (iOrdinal == 0) {
+        Object invoke;
+        int ordinal = h30Var.ordinal();
+        up2 up2Var = up2.f1186a;
+        if (ordinal == 0) {
             try {
                 l8.j0(xa1.E(xa1.s(zVar, this, function2)), up2Var);
                 return;
@@ -58,31 +58,31 @@ public abstract class z extends jy0 implements l10, e30 {
                 g(mz0.h(th));
             }
         }
-        if (iOrdinal != 1) {
-            if (iOrdinal == 2) {
+        if (ordinal != 1) {
+            if (ordinal == 2) {
                 lx0.x(function2, "<this>");
                 xa1.E(xa1.s(zVar, this, function2)).g(up2Var);
                 return;
             }
-            if (iOrdinal != 3) {
+            if (ordinal != 3) {
                 throw new mu();
             }
             try {
                 v20 v20Var = this.f;
-                Object objL0 = bz0.l0(v20Var, null);
+                Object l0 = bz0.l0(v20Var, null);
                 try {
                     if (function2 instanceof lk) {
                         xo2.c(2, function2);
-                        objInvoke = function2.invoke(zVar, this);
+                        invoke = function2.invoke(zVar, this);
                     } else {
-                        objInvoke = xa1.V(function2, zVar, this);
+                        invoke = xa1.V(function2, zVar, this);
                     }
-                    bz0.e0(v20Var, objL0);
-                    if (objInvoke != f30.d) {
-                        g(objInvoke);
+                    bz0.e0(v20Var, l0);
+                    if (invoke != f30.d) {
+                        g(invoke);
                     }
                 } catch (Throwable th) {
-                    bz0.e0(v20Var, objL0);
+                    bz0.e0(v20Var, l0);
                     throw th;
                 }
             } catch (Throwable th2) {

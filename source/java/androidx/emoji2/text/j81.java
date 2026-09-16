@@ -7,7 +7,7 @@ import java.util.Map;
 public final class j81 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f567a;
+    public final /* synthetic */ int f566a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Map c;
     public final /* synthetic */ um0 d;
@@ -15,7 +15,7 @@ public final class j81 implements gb1 {
     public final /* synthetic */ k81 f;
 
     public j81(int i, int i2, Map map, um0 um0Var, um0 um0Var2, k81 k81Var) {
-        this.f567a = i;
+        this.f566a = i;
         this.b = i2;
         this.c = map;
         this.d = um0Var;
@@ -40,7 +40,7 @@ public final class j81 implements gb1 {
 
     @Override // androidx.emoji2.text.gb1
     public final int d() {
-        return this.f567a;
+        return this.f566a;
     }
 
     @Override // androidx.emoji2.text.gb1

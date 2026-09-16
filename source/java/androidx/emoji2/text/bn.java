@@ -9,10 +9,10 @@ public final class bn extends md1 {
     public final void A0() {
         an anVar = this.r;
         if (anVar != null) {
-            anVar.f111a.j(this);
+            anVar.f110a.j(this);
         }
         if (anVar != null) {
-            anVar.f111a.b(this);
+            anVar.f110a.b(this);
         }
         this.r = anVar;
     }
@@ -22,7 +22,7 @@ public final class bn extends md1 {
         an anVar = this.r;
         if (anVar != null) {
             lx0.v(anVar, "null cannot be cast to non-null type androidx.compose.foundation.relocation.BringIntoViewRequesterImpl");
-            anVar.f111a.j(this);
+            anVar.f110a.j(this);
         }
     }
 

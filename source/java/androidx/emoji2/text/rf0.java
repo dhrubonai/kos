@@ -9,18 +9,18 @@ public final class rf0 {
     public static final rf0 b = new rf0(new un2((mh0) null, (mb2) null, (c42) null, (LinkedHashMap) null, 63));
 
     /* renamed from: a, reason: collision with root package name */
-    public final un2 f1008a;
+    public final un2 f1007a;
 
     public rf0(un2 un2Var) {
-        this.f1008a = un2Var;
+        this.f1007a = un2Var;
     }
 
     public final rf0 a(rf0 rf0Var) {
-        un2 un2Var = rf0Var.f1008a;
-        mh0 mh0Var = un2Var.f1182a;
-        un2 un2Var2 = this.f1008a;
+        un2 un2Var = rf0Var.f1007a;
+        mh0 mh0Var = un2Var.f1181a;
+        un2 un2Var2 = this.f1007a;
         if (mh0Var == null) {
-            mh0Var = un2Var2.f1182a;
+            mh0Var = un2Var2.f1181a;
         }
         mb2 mb2Var = un2Var.b;
         if (mb2Var == null) {
@@ -42,11 +42,11 @@ public final class rf0 {
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof rf0) && lx0.n(((rf0) obj).f1008a, this.f1008a);
+        return (obj instanceof rf0) && lx0.n(((rf0) obj).f1007a, this.f1007a);
     }
 
     public final int hashCode() {
-        return this.f1008a.hashCode();
+        return this.f1007a.hashCode();
     }
 
     public final String toString() {
@@ -54,8 +54,8 @@ public final class rf0 {
             return "EnterTransition.None";
         }
         StringBuilder sb = new StringBuilder("EnterTransition: \nFade - ");
-        un2 un2Var = this.f1008a;
-        mh0 mh0Var = un2Var.f1182a;
+        un2 un2Var = this.f1007a;
+        mh0 mh0Var = un2Var.f1181a;
         sb.append(mh0Var != null ? mh0Var.toString() : null);
         sb.append(",\nSlide - ");
         mb2 mb2Var = un2Var.b;

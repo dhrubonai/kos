@@ -49,13 +49,13 @@ final class ClickableElement extends ud1 {
 
     public final int hashCode() {
         se1 se1Var = this.f3a;
-        int iHashCode = (se1Var != null ? se1Var.hashCode() : 0) * 31;
+        int hashCode = (se1Var != null ? se1Var.hashCode() : 0) * 31;
         zu0 zu0Var = this.b;
-        int iD = jx0.d((iHashCode + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 31, this.c);
+        int d = jx0.d((hashCode + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 31, this.c);
         String str = this.d;
-        int iHashCode2 = (iD + (str != null ? str.hashCode() : 0)) * 31;
+        int hashCode2 = (d + (str != null ? str.hashCode() : 0)) * 31;
         k12 k12Var = this.e;
-        return this.f.hashCode() + ((iHashCode2 + (k12Var != null ? Integer.hashCode(k12Var.f613a) : 0)) * 31);
+        return this.f.hashCode() + ((hashCode2 + (k12Var != null ? Integer.hashCode(k12Var.f612a) : 0)) * 31);
     }
 
     @Override // androidx.emoji2.text.ud1

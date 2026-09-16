@@ -49,9 +49,9 @@ public final class w91 implements Map.Entry, ty0 {
     @Override // java.util.Map.Entry
     public final int hashCode() {
         Object key = getKey();
-        int iHashCode = key != null ? key.hashCode() : 0;
+        int hashCode = key != null ? key.hashCode() : 0;
         Object value = getValue();
-        return iHashCode ^ (value != null ? value.hashCode() : 0);
+        return hashCode ^ (value != null ? value.hashCode() : 0);
     }
 
     @Override // java.util.Map.Entry

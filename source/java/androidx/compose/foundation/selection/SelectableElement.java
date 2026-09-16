@@ -48,9 +48,9 @@ final class SelectableElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iHashCode = Boolean.hashCode(this.f32a) * 31;
+        int hashCode = Boolean.hashCode(this.f32a) * 31;
         se1 se1Var = this.b;
-        return this.e.hashCode() + jx0.a(this.d.f613a, jx0.d((iHashCode + (se1Var != null ? se1Var.hashCode() : 0)) * 961, 31, this.c), 31);
+        return this.e.hashCode() + jx0.a(this.d.f612a, jx0.d((hashCode + (se1Var != null ? se1Var.hashCode() : 0)) * 961, 31, this.c), 31);
     }
 
     @Override // androidx.emoji2.text.ud1

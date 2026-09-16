@@ -5,27 +5,27 @@ package androidx.emoji2.text;
 public final class y90 extends ba0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f1374a;
+    public final String f1373a;
 
     public y90(String str) {
-        a.a.a.c.a(-392779613224738L, wj1.f1284a);
-        this.f1374a = str;
+        a.a.a.c.a(-392779613224738L, wj1.f1283a);
+        this.f1373a = str;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof y90) && lx0.n(this.f1374a, ((y90) obj).f1374a);
+        return (obj instanceof y90) && lx0.n(this.f1373a, ((y90) obj).f1373a);
     }
 
     public final int hashCode() {
-        return this.f1374a.hashCode();
+        return this.f1373a.hashCode();
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(a.a.a.c.a(-393398088515362L, wj1.f1284a));
-        return jx0.i(sb, this.f1374a, ')');
+        sb.append(a.a.a.c.a(-393398088515362L, wj1.f1283a));
+        return jx0.i(sb, this.f1373a, ')');
     }
 }

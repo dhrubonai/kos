@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 public class sa1 extends Drawable.ConstantState {
 
     /* renamed from: a, reason: collision with root package name */
-    public v92 f1059a;
+    public v92 f1058a;
     public xe2 b;
     public kd0 c;
     public ColorStateList d;
@@ -43,7 +43,7 @@ public class sa1 extends Drawable.ConstantState {
         this.o = 0;
         this.p = 0;
         this.q = Paint.Style.FILL_AND_STROKE;
-        this.f1059a = v92Var;
+        this.f1058a = v92Var;
         this.c = null;
     }
 
@@ -74,7 +74,7 @@ public class sa1 extends Drawable.ConstantState {
         this.o = 0;
         this.p = 0;
         this.q = Paint.Style.FILL_AND_STROKE;
-        this.f1059a = sa1Var.f1059a;
+        this.f1058a = sa1Var.f1058a;
         this.b = sa1Var.b;
         this.c = sa1Var.c;
         this.k = sa1Var.k;

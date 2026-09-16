@@ -17,7 +17,7 @@ public class EmojiCompatInitializer implements hv0 {
 
     @Override // androidx.emoji2.text.hv0
     public final Object b(Context context) {
-        Object objY;
+        Object obj;
         ll0 ll0Var = new ll0(new p4(context));
         ll0Var.b = 1;
         if (qd0.k == null) {
@@ -30,19 +30,19 @@ public class EmojiCompatInitializer implements hv0 {
                 }
             }
         }
-        rg rgVarJ = rg.J(context);
-        rgVarJ.getClass();
+        rg J = rg.J(context);
+        J.getClass();
         synchronized (rg.i) {
             try {
-                objY = ((HashMap) rgVarJ.e).get(ProcessLifecycleInitializer.class);
-                if (objY == null) {
-                    objY = rgVarJ.y(ProcessLifecycleInitializer.class, new HashSet());
+                obj = ((HashMap) J.e).get(ProcessLifecycleInitializer.class);
+                if (obj == null) {
+                    obj = J.y(ProcessLifecycleInitializer.class, new HashSet());
                 }
             } finally {
             }
         }
-        lz0 lz0VarG = ((v51) objY).g();
-        lz0VarG.g(new rd0(this, lz0VarG));
+        lz0 g = ((v51) obj).g();
+        g.g(new rd0(this, g));
         return Boolean.TRUE;
     }
 }

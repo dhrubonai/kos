@@ -64,11 +64,11 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
                 return ITelephonyManagerProxy.d(method.invoke(obj, objArr), method.getName());
             } catch (Throwable unused) {
                 String[] strArr = xa1.b;
-                String strA = c.a(-1017327987605282L, strArr);
+                String a2 = c.a(-1017327987605282L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.t(sb, c.a(-1017426771853090L, strArr), method);
                 sb.append(c.a(-1017568505773858L, strArr));
-                nz0.Q(strA, 5, sb.toString());
+                nz0.Q(a2, 5, sb.toString());
                 return Integer.valueOf(ITelephonyManagerProxy.NETWORK_TYPE_LTE);
             }
         }
@@ -198,9 +198,9 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static String getVirtualImei() {
         String str = c.a(-1016580663295778L, xa1.b) + tail(digitsOnly(VirtualAndroidId.getDecimal()), 12);
-        StringBuilder sbK = jx0.k(str);
-        sbK.append(luhnCheckDigit(str));
-        return sbK.toString();
+        StringBuilder k = jx0.k(str);
+        k.append(luhnCheckDigit(str));
+        return k.toString();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -213,8 +213,8 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static String getVirtualSubscriberId() {
         String[] strArr = xa1.b;
-        String strDigitsOnly = digitsOnly(VirtualAndroidId.getDecimal());
-        return zd.k(new StringBuilder(), c.a(-1016181231337250L, strArr), strDigitsOnly.length() >= 9 ? strDigitsOnly.substring(strDigitsOnly.length() - 9) : String.format(Locale.ENGLISH, c.a(-1016138281664290L, strArr), strDigitsOnly).replace(' ', '0'));
+        String digitsOnly = digitsOnly(VirtualAndroidId.getDecimal());
+        return zd.k(new StringBuilder(), c.a(-1016181231337250L, strArr), digitsOnly.length() >= 9 ? digitsOnly.substring(digitsOnly.length() - 9) : String.format(Locale.ENGLISH, c.a(-1016138281664290L, strArr), digitsOnly).replace(' ', '0'));
     }
 
     private static boolean isMeidMethod(String str) {
@@ -248,11 +248,11 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
         boolean z = true;
         int i = 0;
         for (int length = str.length() - 1; length >= 0; length--) {
-            int iCharAt = str.charAt(length) - '0';
-            if (z && (iCharAt = iCharAt * 2) > 9) {
-                iCharAt -= 9;
+            int charAt = str.charAt(length) - '0';
+            if (z && (charAt = charAt * 2) > 9) {
+                charAt -= 9;
             }
-            i += iCharAt;
+            i += charAt;
             z = !z;
         }
         return (char) (((10 - (i % 10)) % 10) + 48);
@@ -263,12 +263,12 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
             return obj;
         }
         Integer num = (Integer) obj;
-        int iIntValue = num.intValue();
-        if (iIntValue > 0) {
+        int intValue = num.intValue();
+        if (intValue > 0) {
             return num;
         }
         String[] strArr = xa1.b;
-        nz0.Q(c.a(-1019612910206754L, strArr), 5, c.a(-1019711694454562L, strArr) + str + c.a(-1019260722888482L, strArr) + iIntValue + c.a(-1019307967528738L, strArr));
+        nz0.Q(c.a(-1019612910206754L, strArr), 5, c.a(-1019711694454562L, strArr) + str + c.a(-1019260722888482L, strArr) + intValue + c.a(-1019307967528738L, strArr));
         return Integer.valueOf(NETWORK_TYPE_LTE);
     }
 
@@ -288,11 +288,11 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
             return str;
         }
         String[] strArr = xa1.b;
-        String strA = c.a(-1016159756500770L, strArr);
+        String a2 = c.a(-1016159756500770L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-1016808296562466L, strArr));
         sb.append(name);
-        jx0.r(sb, c.a(-1017031634861858L, strArr), str, 5, strA);
+        jx0.r(sb, c.a(-1017031634861858L, strArr), str, 5, a2);
         return fallbackRestrictedPhoneIdentifier(method);
     }
 
@@ -320,29 +320,29 @@ public class ITelephonyManagerProxy extends BinderInvocationStub {
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         String[] strArr = xa1.b;
         try {
-            Object objInvoke = super.invoke(obj, method, objArr);
-            Object objSanitizeRestrictedPhoneIdentifier = sanitizeRestrictedPhoneIdentifier(method, objInvoke);
-            return objSanitizeRestrictedPhoneIdentifier != UNHANDLED ? objSanitizeRestrictedPhoneIdentifier : objInvoke;
+            Object invoke = super.invoke(obj, method, objArr);
+            Object sanitizeRestrictedPhoneIdentifier = sanitizeRestrictedPhoneIdentifier(method, invoke);
+            return sanitizeRestrictedPhoneIdentifier != UNHANDLED ? sanitizeRestrictedPhoneIdentifier : invoke;
         } catch (SecurityException e) {
             if (method.getName() != null && method.getName().contains(c.a(-1018144031391522L, strArr)) && method.getReturnType() == String.class) {
-                String strA = c.a(-1017598570544930L, strArr);
+                String a2 = c.a(-1017598570544930L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.t(sb, c.a(-1017714534661922L, strArr), method);
-                zd.p(sb, c.a(-1017856268582690L, strArr), 5, strA);
+                zd.p(sb, c.a(-1017856268582690L, strArr), 5, a2);
                 return getVirtualSubscriberId();
             }
-            Object objFallbackRestrictedPhoneIdentifier = fallbackRestrictedPhoneIdentifier(method);
-            if (objFallbackRestrictedPhoneIdentifier == UNHANDLED) {
+            Object fallbackRestrictedPhoneIdentifier = fallbackRestrictedPhoneIdentifier(method);
+            if (fallbackRestrictedPhoneIdentifier == UNHANDLED) {
                 throw e;
             }
-            String strA2 = c.a(-1016314375323426L, strArr);
+            String a3 = c.a(-1016314375323426L, strArr);
             StringBuilder sb2 = new StringBuilder();
             zd.t(sb2, c.a(-1016413159571234L, strArr), method);
-            zd.p(sb2, c.a(-1016005137678114L, strArr), 5, strA2);
-            return objFallbackRestrictedPhoneIdentifier;
+            zd.p(sb2, c.a(-1016005137678114L, strArr), 5, a3);
+            return fallbackRestrictedPhoneIdentifier;
         }
     }
 

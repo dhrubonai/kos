@@ -16,7 +16,7 @@ public final class sh0 extends hx1 {
     public static final int[] y = new int[0];
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1068a;
+    public final int f1067a;
     public final StateListDrawable b;
     public final Drawable c;
     public final int d;
@@ -41,8 +41,8 @@ public final class sh0 extends hx1 {
     public final int[] t = new int[2];
 
     public sh0(RecyclerView recyclerView, StateListDrawable stateListDrawable, Drawable drawable, StateListDrawable stateListDrawable2, Drawable drawable2, int i, int i2, int i3) {
-        ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.u = valueAnimatorOfFloat;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.u = ofFloat;
         this.v = 0;
         t7 t7Var = new t7(5, this);
         this.w = t7Var;
@@ -55,11 +55,11 @@ public final class sh0 extends hx1 {
         this.e = Math.max(i, drawable.getIntrinsicWidth());
         this.h = Math.max(i, stateListDrawable2.getIntrinsicWidth());
         this.i = Math.max(i, drawable2.getIntrinsicWidth());
-        this.f1068a = i3;
+        this.f1067a = i3;
         stateListDrawable.setAlpha(255);
         drawable.setAlpha(255);
-        valueAnimatorOfFloat.addListener(new rh0(this));
-        valueAnimatorOfFloat.addUpdateListener(new bm(1 == true ? 1 : 0, this));
+        ofFloat.addListener(new rh0(this));
+        ofFloat.addUpdateListener(new bm(1 == true ? 1 : 0, this));
         RecyclerView recyclerView2 = this.n;
         if (recyclerView2 == recyclerView) {
             return;
@@ -142,7 +142,7 @@ public final class sh0 extends hx1 {
                 int i7 = this.m;
                 Drawable drawable = this.c;
                 drawable.setBounds(0, 0, i6, i7);
-                Field field = es2.f320a;
+                Field field = es2.f319a;
                 if (recyclerView2.getLayoutDirection() == 1) {
                     drawable.draw(canvas);
                     canvas.translate(i3, i5);
@@ -182,7 +182,7 @@ public final class sh0 extends hx1 {
     }
 
     public final boolean d(float f, float f2) {
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         int layoutDirection = this.n.getLayoutDirection();
         int i = this.d;
         if (layoutDirection != 1 ? f >= this.l - i : f <= i) {

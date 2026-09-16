@@ -31,17 +31,17 @@ public final class c3 extends hh2 implements Function2 {
                 return new c3((wk0) this.j, l10Var, 3);
             case 4:
                 return new c3((qo0) this.j, l10Var, 4);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new c3((hu) this.j, l10Var, 5);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return new c3((w81) this.j, l10Var, 6);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return new c3((dn0) this.j, this.i, l10Var);
             case 8:
                 return new c3((t91) this.j, l10Var, 8);
-            case 9:
+            case pz0.b /* 9 */:
                 return new c3((sn1) this.j, l10Var, 9);
-            case 10:
+            case pz0.d /* 10 */:
                 return new c3((gz1) this.j, l10Var, 10);
             case 11:
                 return new c3(this.i, (au2) this.j, l10Var);
@@ -55,39 +55,37 @@ public final class c3 extends hh2 implements Function2 {
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) throws Throwable {
+    public final Object invoke(Object obj, Object obj2) {
         e30 e30Var = (e30) obj;
         l10 l10Var = (l10) obj2;
         switch (this.h) {
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                ((c3) i(l10Var, e30Var)).k(up2.f1187a);
+            case 6:
+                ((c3) i(l10Var, e30Var)).k(up2.f1186a);
                 break;
-            case 9:
-                ((c3) i(l10Var, e30Var)).k(up2.f1187a);
+            case pz0.b /* 9 */:
+                ((c3) i(l10Var, e30Var)).k(up2.f1186a);
                 break;
         }
-        return ((c3) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((c3) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:151:0x02ff, code lost:
-    
-        if (androidx.emoji2.text.ly0.v(r4).k(new androidx.emoji2.text.ao0(r2), r16) == r7) goto L152;
-     */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Path cross not found for [B:145:0x02dc, B:148:0x02e5], limit reached: 240 */
-    /* JADX WARN: Path cross not found for [B:148:0x02e5, B:145:0x02dc], limit reached: 240 */
-    /* JADX WARN: Removed duplicated region for block: B:143:0x02d8  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x02dc  */
-    /* JADX WARN: Removed duplicated region for block: B:150:0x02e9  */
+    /* JADX WARN: Removed duplicated region for block: B:156:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:161:0x02e9  */
     /* JADX WARN: Type inference failed for: r0v88, types: [androidx.emoji2.text.hh2, kotlin.jvm.functions.Function2] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:149:0x02e7 -> B:143:0x02d8). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:151:0x02ff -> B:153:0x0302). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:140:0x02e7 -> B:134:0x02d8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:142:0x02ff -> B:132:0x0302). Please report as a decompilation issue!!! */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object k(java.lang.Object r17) throws java.lang.Throwable {
+    public final java.lang.Object k(java.lang.Object r17) {
         /*
             Method dump skipped, instructions count: 1114
             To view this dump add '--comments-level debug' option

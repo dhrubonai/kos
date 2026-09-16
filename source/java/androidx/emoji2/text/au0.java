@@ -11,7 +11,7 @@ import java.util.List;
 public final class au0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f120a;
+    public final Context f119a;
     public p60 b;
     public Object c;
     public ki2 d;
@@ -29,8 +29,8 @@ public final class au0 {
     public b42 p;
 
     public au0(Context context) {
-        this.f120a = context;
-        this.b = g.f395a;
+        this.f119a = context;
+        this.b = g.f394a;
         this.c = null;
         this.d = null;
         this.e = null;
@@ -63,13 +63,13 @@ public final class au0 {
         ft1 ft1Var2 = ft1Var;
         fi1 fi1Var = p60Var.e;
         pm0 pm0Var = this.g;
-        dr0 dr0VarD = pm0Var != null ? pm0Var.d() : null;
-        if (dr0VarD == null) {
-            dr0VarD = h.c;
+        dr0 d = pm0Var != null ? pm0Var.d() : null;
+        if (d == null) {
+            d = h.c;
         } else {
-            Bitmap.Config[] configArr = h.f447a;
+            Bitmap.Config[] configArr = h.f446a;
         }
-        dr0 dr0Var = dr0VarD;
+        dr0 dr0Var = d;
         LinkedHashMap linkedHashMap = this.h;
         xh2 xh2Var = linkedHashMap != null ? new xh2(l8.o0(linkedHashMap)) : null;
         if (xh2Var == null) {
@@ -83,50 +83,50 @@ public final class au0 {
         no noVar = p60Var3.i;
         no noVar2 = p60Var3.j;
         no noVar3 = p60Var3.k;
-        x20 x20Var = p60Var3.f890a;
+        x20 x20Var = p60Var3.f889a;
         x20 x20Var2 = p60Var3.b;
         x20 x20Var3 = p60Var3.c;
         x20 x20Var4 = p60Var3.d;
-        lz0 lz0VarG = this.n;
-        Context context = this.f120a;
-        if (lz0VarG == null) {
-            Object baseContext = context;
+        lz0 lz0Var = this.n;
+        Context context = this.f119a;
+        if (lz0Var == null) {
+            Object obj3 = context;
             while (true) {
-                if (baseContext instanceof v51) {
-                    lz0VarG = ((v51) baseContext).g();
+                if (obj3 instanceof v51) {
+                    lz0Var = ((v51) obj3).g();
                     break;
                 }
-                if (!(baseContext instanceof ContextWrapper)) {
-                    lz0VarG = null;
+                if (!(obj3 instanceof ContextWrapper)) {
+                    lz0Var = null;
                     break;
                 }
-                baseContext = ((ContextWrapper) baseContext).getBaseContext();
+                obj3 = ((ContextWrapper) obj3).getBaseContext();
             }
-            if (lz0VarG == null) {
-                lz0VarG = wn0.e;
+            if (lz0Var == null) {
+                lz0Var = wn0.e;
             }
         }
-        lz0 lz0Var = lz0VarG;
-        kb2 h90Var = this.l;
-        if (h90Var == null && (h90Var = this.o) == null) {
-            h90Var = new h90(context);
+        lz0 lz0Var2 = lz0Var;
+        kb2 kb2Var = this.l;
+        if (kb2Var == null && (kb2Var = this.o) == null) {
+            kb2Var = new h90(context);
         }
-        kb2 kb2Var = h90Var;
+        kb2 kb2Var2 = kb2Var;
         b42 b42Var = this.m;
         if (b42Var == null && (b42Var = this.p) == null) {
             b42Var = b42.e;
         }
         b42 b42Var2 = b42Var;
         u81 u81Var = this.k;
-        pn1 pn1Var = u81Var != null ? new pn1(l8.o0(u81Var.f1165a)) : null;
+        pn1 pn1Var = u81Var != null ? new pn1(l8.o0(u81Var.f1164a)) : null;
         if (pn1Var == null) {
             pn1Var = pn1.e;
         }
-        return new bu0(context, obj2, ki2Var, config, ft1Var2, this.f, fi1Var, dr0Var, xh2Var2, this.i, z, false, this.j, noVar, noVar2, noVar3, x20Var, x20Var2, x20Var3, x20Var4, lz0Var, kb2Var, b42Var2, pn1Var, new w60(this.l, this.m, this.e), this.b);
+        return new bu0(context, obj2, ki2Var, config, ft1Var2, this.f, fi1Var, dr0Var, xh2Var2, this.i, z, false, this.j, noVar, noVar2, noVar3, x20Var, x20Var2, x20Var3, x20Var4, lz0Var2, kb2Var2, b42Var2, pn1Var, new w60(this.l, this.m, this.e), this.b);
     }
 
     public au0(bu0 bu0Var, Context context) {
-        this.f120a = context;
+        this.f119a = context;
         this.b = bu0Var.z;
         this.c = bu0Var.b;
         this.d = bu0Var.c;
@@ -134,13 +134,13 @@ public final class au0 {
         this.e = w60Var.c;
         this.f = bu0Var.f;
         this.g = bu0Var.h.c();
-        this.h = ha1.W(bu0Var.i.f1340a);
+        this.h = ha1.W(bu0Var.i.f1339a);
         this.i = bu0Var.j;
         this.j = bu0Var.m;
         this.k = new u81(bu0Var.x);
-        this.l = w60Var.f1262a;
+        this.l = w60Var.f1261a;
         this.m = w60Var.b;
-        if (bu0Var.f168a == context) {
+        if (bu0Var.f167a == context) {
             this.n = bu0Var.u;
             this.o = bu0Var.v;
             this.p = bu0Var.w;

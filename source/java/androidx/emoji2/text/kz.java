@@ -2,7 +2,6 @@ package androidx.emoji2.text;
 
 import android.content.Context;
 import android.content.pm.PackageParser;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.util.Xml;
@@ -95,17 +94,17 @@ public final class kz implements wg, zq2 {
         return this.d;
     }
 
-    public kz(Context context, XmlResourceParser xmlResourceParser) throws Resources.NotFoundException {
+    public kz(Context context, XmlResourceParser xmlResourceParser) {
         this.f = new ArrayList();
         this.e = -1;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.h);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.h);
+        int indexCount = obtainStyledAttributes.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i);
+            int index = obtainStyledAttributes.getIndex(i);
             if (index == 0) {
-                this.d = typedArrayObtainStyledAttributes.getResourceId(index, this.d);
+                this.d = obtainStyledAttributes.getResourceId(index, this.d);
             } else if (index == 1) {
-                int resourceId = typedArrayObtainStyledAttributes.getResourceId(index, this.e);
+                int resourceId = obtainStyledAttributes.getResourceId(index, this.e);
                 this.e = resourceId;
                 String resourceTypeName = context.getResources().getResourceTypeName(resourceId);
                 context.getResources().getResourceName(resourceId);
@@ -114,7 +113,7 @@ public final class kz implements wg, zq2 {
                 }
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 
     public kz() {

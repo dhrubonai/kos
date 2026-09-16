@@ -7,17 +7,17 @@ import java.util.concurrent.ThreadFactory;
 public final /* synthetic */ class iq2 implements ThreadFactory {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ String f543a;
+    public final /* synthetic */ String f542a;
     public final /* synthetic */ boolean b;
 
     public /* synthetic */ iq2(String str, boolean z) {
-        this.f543a = str;
+        this.f542a = str;
         this.b = z;
     }
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        String str = this.f543a;
+        String str = this.f542a;
         lx0.x(str, "$name");
         Thread thread = new Thread(runnable, str);
         thread.setDaemon(this.b);

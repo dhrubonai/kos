@@ -18,9 +18,9 @@ public final class uj1 implements ViewTreeObserver.OnPreDrawListener, View.OnAtt
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public final boolean onPreDraw() {
-        boolean zIsAlive = this.e.isAlive();
+        boolean isAlive = this.e.isAlive();
         View view = this.d;
-        if (zIsAlive) {
+        if (isAlive) {
             this.e.removeOnPreDrawListener(this);
         } else {
             view.getViewTreeObserver().removeOnPreDrawListener(this);
@@ -37,9 +37,9 @@ public final class uj1 implements ViewTreeObserver.OnPreDrawListener, View.OnAtt
 
     @Override // android.view.View.OnAttachStateChangeListener
     public final void onViewDetachedFromWindow(View view) {
-        boolean zIsAlive = this.e.isAlive();
+        boolean isAlive = this.e.isAlive();
         View view2 = this.d;
-        if (zIsAlive) {
+        if (isAlive) {
             this.e.removeOnPreDrawListener(this);
         } else {
             view2.getViewTreeObserver().removeOnPreDrawListener(this);

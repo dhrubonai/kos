@@ -26,7 +26,7 @@ public final /* synthetic */ class xp1 implements um0 {
                 break;
             case 1:
                 String str = (String) obj;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 lx0.x(str, a.a.a.c.a(-69394345639714L, strArr));
                 String upperCase = str.toUpperCase(Locale.ROOT);
                 lx0.w(upperCase, a.a.a.c.a(-69372870803234L, strArr));
@@ -35,11 +35,11 @@ public final /* synthetic */ class xp1 implements um0 {
                 break;
             default:
                 j30 j30Var = (j30) obj;
-                lx0.x(j30Var, a.a.a.c.a(-483167199969058L, wj1.f1284a));
+                lx0.x(j30Var, a.a.a.c.a(-483167199969058L, wj1.f1283a));
                 this.e.setValue(Boolean.TRUE);
                 this.f.setValue(new qf2(j30Var));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

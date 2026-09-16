@@ -8,7 +8,7 @@ public final class y42 implements i52 {
     public static final a12 i = new a12(3, xy1.g, vl1.w);
 
     /* renamed from: a, reason: collision with root package name */
-    public final rn1 f1371a;
+    public final rn1 f1370a;
     public float e;
     public final rn1 b = new rn1(0);
     public final se1 c = new se1();
@@ -18,7 +18,7 @@ public final class y42 implements i52 {
     public final t70 h = az0.u(new x42(this, 0));
 
     public y42(int i2) {
-        this.f1371a = new rn1(i2);
+        this.f1370a = new rn1(i2);
     }
 
     @Override // androidx.emoji2.text.i52
@@ -43,7 +43,7 @@ public final class y42 implements i52 {
 
     @Override // androidx.emoji2.text.i52
     public final Object e(vf1 vf1Var, Function2 function2, l10 l10Var) {
-        Object objE = this.f.e(vf1Var, function2, l10Var);
-        return objE == f30.d ? objE : up2.f1187a;
+        Object e = this.f.e(vf1Var, function2, l10Var);
+        return e == f30.d ? e : up2.f1186a;
     }
 }

@@ -32,9 +32,9 @@ public final class rw1 extends hh2 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((rw1) i((l10) obj2, (qw1) obj)).k(up2.f1187a);
+                return ((rw1) i((l10) obj2, (qw1) obj)).k(up2.f1186a);
             default:
-                return ((rw1) i((l10) obj2, (ra2) obj)).k(up2.f1187a);
+                return ((rw1) i((l10) obj2, (ra2) obj)).k(up2.f1186a);
         }
     }
 

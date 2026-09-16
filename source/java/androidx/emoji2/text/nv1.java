@@ -25,9 +25,9 @@ public final class nv1 implements yn {
             throw new IllegalStateException("closed");
         }
         rn rnVar = this.e;
-        long jB = rnVar.b();
-        if (jB > 0) {
-            this.d.g(jB, rnVar);
+        long b = rnVar.b();
+        if (b > 0) {
+            this.d.g(b, rnVar);
         }
         return this;
     }
@@ -65,19 +65,19 @@ public final class nv1 implements yn {
             if (z) {
                 i++;
             }
-            b62 b62VarS = rnVar.s(i);
-            byte[] bArr = b62VarS.f137a;
-            int i2 = b62VarS.c + i;
+            b62 s = rnVar.s(i);
+            byte[] bArr = s.f136a;
+            int i2 = s.c + i;
             while (j != 0) {
                 long j2 = 10;
                 i2--;
-                bArr[i2] = b.f129a[(int) (j % j2)];
+                bArr[i2] = b.f128a[(int) (j % j2)];
                 j /= j2;
             }
             if (z) {
                 bArr[i2 - 1] = 45;
             }
-            b62VarS.c += i;
+            s.c += i;
             rnVar.e += i;
         }
         b();
@@ -85,7 +85,7 @@ public final class nv1 implements yn {
     }
 
     @Override // androidx.emoji2.text.gb2, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws Throwable {
+    public final void close() {
         gb2 gb2Var = this.d;
         if (this.f) {
             return;
@@ -174,9 +174,9 @@ public final class nv1 implements yn {
         if (this.f) {
             throw new IllegalStateException("closed");
         }
-        int iWrite = this.e.write(byteBuffer);
+        int write = this.e.write(byteBuffer);
         b();
-        return iWrite;
+        return write;
     }
 
     @Override // androidx.emoji2.text.yn

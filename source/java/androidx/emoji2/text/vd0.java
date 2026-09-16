@@ -7,7 +7,7 @@ import android.text.Editable;
 public final class vd0 extends Editable.Factory {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Object f1212a = new Object();
+    public static final Object f1211a = new Object();
     public static volatile vd0 b;
     public static Class c;
 

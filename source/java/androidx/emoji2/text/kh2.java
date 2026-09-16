@@ -9,6 +9,6 @@ public final class kh2 implements PointerInputEventHandler {
 
     @Override // androidx.compose.ui.input.pointer.PointerInputEventHandler
     public final Object invoke(ts1 ts1Var, l10 l10Var) {
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

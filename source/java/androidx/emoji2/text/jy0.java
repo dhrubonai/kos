@@ -24,8 +24,8 @@ public class jy0 implements cy0, xn1 {
     public static jr X(x71 x71Var) {
         while (x71Var.h()) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = x71.e;
-            x71 x71VarE = x71Var.e();
-            if (x71VarE == null) {
+            x71 e2 = x71Var.e();
+            if (e2 == null) {
                 Object obj = atomicReferenceFieldUpdater.get(x71Var);
                 while (true) {
                     x71Var = (x71) obj;
@@ -35,7 +35,7 @@ public class jy0 implements cy0, xn1 {
                     obj = atomicReferenceFieldUpdater.get(x71Var);
                 }
             } else {
-                x71Var = x71VarE;
+                x71Var = e2;
             }
         }
         while (true) {
@@ -69,22 +69,97 @@ public class jy0 implements cy0, xn1 {
         return kx0.H(this, v20Var);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0064, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003a, code lost:
     
-        r0 = r10;
+        if (r0 == androidx.emoji2.text.jm.h) goto L75;
      */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x003e A[PHI: r0
-      0x003e: PHI (r0v1 java.lang.Object) = (r0v0 java.lang.Object), (r0v13 java.lang.Object) binds: [B:3:0x0008, B:16:0x003a] A[DONT_GENERATE, DONT_INLINE]] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean D(java.lang.Object r10) {
-        /*
-            Method dump skipped, instructions count: 266
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.jy0.D(java.lang.Object):boolean");
+    public final boolean D(Object obj) {
+        de0 de0Var;
+        Object obj2 = jm.g;
+        if (N()) {
+            do {
+                Object obj3 = d.get(this);
+                if (obj3 instanceof pu0) {
+                    if (obj3 instanceof iy0) {
+                        if (iy0.e.get((iy0) obj3) != 0) {
+                        }
+                    }
+                    obj2 = f0(obj3, new lu(J(obj), false));
+                }
+                obj2 = jm.g;
+                break;
+            } while (obj2 == jm.i);
+        }
+        if (obj2 == jm.g) {
+            Throwable th = null;
+            loop1: while (true) {
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d;
+                Object obj4 = atomicReferenceFieldUpdater.get(this);
+                if (!(obj4 instanceof iy0)) {
+                    if (!(obj4 instanceof pu0)) {
+                        de0Var = jm.j;
+                        break;
+                    }
+                    if (th == null) {
+                        th = J(obj);
+                    }
+                    pu0 pu0Var = (pu0) obj4;
+                    if (pu0Var.b()) {
+                        zh1 O = O(pu0Var);
+                        if (O != null) {
+                            iy0 iy0Var = new iy0(O, th);
+                            while (!atomicReferenceFieldUpdater.compareAndSet(this, pu0Var, iy0Var)) {
+                                if (atomicReferenceFieldUpdater.get(this) != pu0Var) {
+                                    break;
+                                }
+                            }
+                            Y(O, th);
+                            de0Var = jm.g;
+                            break loop1;
+                        }
+                        continue;
+                    } else {
+                        Object f0 = f0(obj4, new lu(th, false));
+                        if (f0 == jm.g) {
+                            throw new IllegalStateException(("Cannot happen in " + obj4).toString());
+                        }
+                        if (f0 != jm.i) {
+                            obj2 = f0;
+                            break;
+                        }
+                    }
+                } else {
+                    synchronized (obj4) {
+                        if (iy0.g.get((iy0) obj4) == jm.k) {
+                            de0Var = jm.j;
+                        } else {
+                            boolean d2 = ((iy0) obj4).d();
+                            if (th == null) {
+                                th = J(obj);
+                            }
+                            ((iy0) obj4).a(th);
+                            Throwable c = d2 ? null : ((iy0) obj4).c();
+                            if (c != null) {
+                                Y(((iy0) obj4).d, c);
+                            }
+                            de0Var = jm.g;
+                        }
+                    }
+                }
+            }
+            obj2 = de0Var;
+        }
+        if (obj2 != jm.g && obj2 != jm.h) {
+            if (obj2 == jm.j) {
+                return false;
+            }
+            v(obj2);
+            return true;
+        }
+        return true;
     }
 
     public void E(CancellationException cancellationException) {
@@ -120,7 +195,7 @@ public class jy0 implements cy0, xn1 {
         }
         mu muVar = null;
         lu luVar = obj instanceof lu ? (lu) obj : null;
-        Throwable th = luVar != null ? luVar.f713a : null;
+        Throwable th = luVar != null ? luVar.f712a : null;
         if (pu0Var instanceof fy0) {
             try {
                 ((fy0) pu0Var).k(th);
@@ -135,15 +210,15 @@ public class jy0 implements cy0, xn1 {
             list.d(new a71(1), 1);
             Object obj2 = x71.d.get(list);
             lx0.v(obj2, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode");
-            for (x71 x71VarG = (x71) obj2; !x71VarG.equals(list); x71VarG = x71VarG.g()) {
-                if (x71VarG instanceof fy0) {
+            for (x71 x71Var = (x71) obj2; !x71Var.equals(list); x71Var = x71Var.g()) {
+                if (x71Var instanceof fy0) {
                     try {
-                        ((fy0) x71VarG).k(th);
+                        ((fy0) x71Var).k(th);
                     } catch (Throwable th3) {
                         if (muVar != null) {
                             h50.i(muVar, th3);
                         } else {
-                            muVar = new mu("Exception in completion handler " + x71VarG + " for " + this, th3);
+                            muVar = new mu("Exception in completion handler " + x71Var + " for " + this, th3);
                         }
                     }
                 }
@@ -158,52 +233,52 @@ public class jy0 implements cy0, xn1 {
     /* JADX WARN: Type inference failed for: r1v11, types: [java.lang.Throwable] */
     /* JADX WARN: Type inference failed for: r1v7, types: [java.lang.Throwable] */
     public final Throwable J(Object obj) {
-        CancellationException cancellationExceptionC;
+        CancellationException cancellationException;
         if (obj instanceof Throwable) {
             return (Throwable) obj;
         }
         jy0 jy0Var = (jy0) ((xn1) obj);
         Object obj2 = d.get(jy0Var);
         if (obj2 instanceof iy0) {
-            cancellationExceptionC = ((iy0) obj2).c();
+            cancellationException = ((iy0) obj2).c();
         } else if (obj2 instanceof lu) {
-            cancellationExceptionC = ((lu) obj2).f713a;
+            cancellationException = ((lu) obj2).f712a;
         } else {
             if (obj2 instanceof pu0) {
                 throw new IllegalStateException(("Cannot be cancelling child in this state: " + obj2).toString());
             }
-            cancellationExceptionC = null;
+            cancellationException = null;
         }
-        CancellationException cancellationException = cancellationExceptionC instanceof CancellationException ? cancellationExceptionC : null;
-        return cancellationException == null ? new dy0("Parent job is ".concat(e0(obj2)), cancellationExceptionC, jy0Var) : cancellationException;
+        CancellationException cancellationException2 = cancellationException instanceof CancellationException ? cancellationException : null;
+        return cancellationException2 == null ? new dy0("Parent job is ".concat(e0(obj2)), cancellationException, jy0Var) : cancellationException2;
     }
 
     public final Object K(iy0 iy0Var, Object obj) {
-        Throwable thL;
+        Throwable L;
         lu luVar = obj instanceof lu ? (lu) obj : null;
-        Throwable th = luVar != null ? luVar.f713a : null;
+        Throwable th = luVar != null ? luVar.f712a : null;
         synchronized (iy0Var) {
             iy0Var.d();
-            ArrayList arrayListE = iy0Var.e(th);
-            thL = L(iy0Var, arrayListE);
-            if (thL != null && arrayListE.size() > 1) {
-                Set setNewSetFromMap = Collections.newSetFromMap(new IdentityHashMap(arrayListE.size()));
-                int size = arrayListE.size();
+            ArrayList e2 = iy0Var.e(th);
+            L = L(iy0Var, e2);
+            if (L != null && e2.size() > 1) {
+                Set newSetFromMap = Collections.newSetFromMap(new IdentityHashMap(e2.size()));
+                int size = e2.size();
                 int i = 0;
                 while (i < size) {
-                    Object obj2 = arrayListE.get(i);
+                    Object obj2 = e2.get(i);
                     i++;
                     Throwable th2 = (Throwable) obj2;
-                    if (th2 != thL && th2 != thL && !(th2 instanceof CancellationException) && setNewSetFromMap.add(th2)) {
-                        h50.i(thL, th2);
+                    if (th2 != L && th2 != L && !(th2 instanceof CancellationException) && newSetFromMap.add(th2)) {
+                        h50.i(L, th2);
                     }
                 }
             }
         }
-        if (thL != null && thL != th) {
-            obj = new lu(thL, false);
+        if (L != null && L != th) {
+            obj = new lu(L, false);
         }
-        if (thL != null && (F(thL) || P(thL))) {
+        if (L != null && (F(L) || P(L))) {
             lx0.v(obj, "null cannot be cast to non-null type kotlinx.coroutines.CompletedExceptionally");
             lu.b.compareAndSet((lu) obj, 0, 1);
         }
@@ -301,12 +376,12 @@ public class jy0 implements cy0, xn1 {
             return;
         }
         cy0Var.start();
-        ir irVarQ = cy0Var.q(this);
-        atomicReferenceFieldUpdater.set(this, irVarQ);
+        ir q = cy0Var.q(this);
+        atomicReferenceFieldUpdater.set(this, q);
         if (d.get(this) instanceof pu0) {
             return;
         }
-        irVarQ.a();
+        q.a();
         atomicReferenceFieldUpdater.set(this, ei1Var);
     }
 
@@ -314,7 +389,7 @@ public class jy0 implements cy0, xn1 {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         ei1 ei1Var;
         boolean z2;
-        boolean zD;
+        boolean d2;
         fy0Var.g = this;
         loop0: while (true) {
             atomicReferenceFieldUpdater = d;
@@ -334,17 +409,17 @@ public class jy0 implements cy0, xn1 {
                 } else {
                     if (fy0Var.j()) {
                         iy0 iy0Var = pu0Var instanceof iy0 ? (iy0) pu0Var : null;
-                        Throwable thC = iy0Var != null ? iy0Var.c() : null;
-                        if (thC == null) {
-                            zD = list.d(fy0Var, 5);
+                        Throwable c = iy0Var != null ? iy0Var.c() : null;
+                        if (c == null) {
+                            d2 = list.d(fy0Var, 5);
                         } else if (z) {
-                            fy0Var.k(thC);
+                            fy0Var.k(c);
                             return ei1Var;
                         }
                     } else {
-                        zD = list.d(fy0Var, 1);
+                        d2 = list.d(fy0Var, 1);
                     }
-                    if (zD) {
+                    if (d2) {
                         break;
                     }
                 }
@@ -367,7 +442,7 @@ public class jy0 implements cy0, xn1 {
         if (z) {
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             lu luVar = obj2 instanceof lu ? (lu) obj2 : null;
-            fy0Var.k(luVar != null ? luVar.f713a : null);
+            fy0Var.k(luVar != null ? luVar.f712a : null);
         }
         return ei1Var;
     }
@@ -377,31 +452,31 @@ public class jy0 implements cy0, xn1 {
     }
 
     public final boolean U(Object obj) {
-        Object objF0;
+        Object f0;
         do {
-            objF0 = f0(d.get(this), obj);
-            if (objF0 == jm.g) {
+            f0 = f0(d.get(this), obj);
+            if (f0 == jm.g) {
                 return false;
             }
-            if (objF0 == jm.h) {
+            if (f0 == jm.h) {
                 return true;
             }
-        } while (objF0 == jm.i);
-        v(objF0);
+        } while (f0 == jm.i);
+        v(f0);
         return true;
     }
 
     public final Object V(Object obj) {
-        Object objF0;
+        Object f0;
         do {
-            objF0 = f0(d.get(this), obj);
-            if (objF0 == jm.g) {
+            f0 = f0(d.get(this), obj);
+            if (f0 == jm.g) {
                 String str = "Job " + this + " is already complete or completing, but is being completed with " + obj;
                 lu luVar = obj instanceof lu ? (lu) obj : null;
-                throw new IllegalStateException(str, luVar != null ? luVar.f713a : null);
+                throw new IllegalStateException(str, luVar != null ? luVar.f712a : null);
             }
-        } while (objF0 == jm.i);
-        return objF0;
+        } while (f0 == jm.i);
+        return f0;
     }
 
     public String W() {
@@ -413,15 +488,15 @@ public class jy0 implements cy0, xn1 {
         Object obj = x71.d.get(zh1Var);
         lx0.v(obj, "null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeLinkedListNode");
         mu muVar = null;
-        for (x71 x71VarG = (x71) obj; !x71VarG.equals(zh1Var); x71VarG = x71VarG.g()) {
-            if ((x71VarG instanceof fy0) && ((fy0) x71VarG).j()) {
+        for (x71 x71Var = (x71) obj; !x71Var.equals(zh1Var); x71Var = x71Var.g()) {
+            if ((x71Var instanceof fy0) && ((fy0) x71Var).j()) {
                 try {
-                    ((fy0) x71VarG).k(th);
+                    ((fy0) x71Var).k(th);
                 } catch (Throwable th2) {
                     if (muVar != null) {
                         h50.i(muVar, th2);
                     } else {
-                        muVar = new mu("Exception in completion handler " + x71VarG + " for " + this, th2);
+                        muVar = new mu("Exception in completion handler " + x71Var + " for " + this, th2);
                     }
                 }
             }
@@ -481,10 +556,10 @@ public class jy0 implements cy0, xn1 {
             }
             break;
         }
-        x71 x71VarG = fy0Var.g();
+        x71 g = fy0Var.g();
         do {
             atomicReferenceFieldUpdater = d;
-            if (atomicReferenceFieldUpdater.compareAndSet(this, fy0Var, x71VarG)) {
+            if (atomicReferenceFieldUpdater.compareAndSet(this, fy0Var, g)) {
                 return;
             }
         } while (atomicReferenceFieldUpdater.get(this) == fy0Var);
@@ -542,13 +617,13 @@ public class jy0 implements cy0, xn1 {
             return obj2;
         }
         pu0 pu0Var2 = (pu0) obj;
-        zh1 zh1VarO = O(pu0Var2);
-        if (zh1VarO == null) {
+        zh1 O = O(pu0Var2);
+        if (O == null) {
             return jm.i;
         }
         iy0 iy0Var = pu0Var2 instanceof iy0 ? (iy0) pu0Var2 : null;
         if (iy0Var == null) {
-            iy0Var = new iy0(zh1VarO, null);
+            iy0Var = new iy0(O, null);
         }
         synchronized (iy0Var) {
             AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = iy0.e;
@@ -564,22 +639,22 @@ public class jy0 implements cy0, xn1 {
                     }
                 }
             }
-            boolean zD = iy0Var.d();
+            boolean d2 = iy0Var.d();
             lu luVar = obj2 instanceof lu ? (lu) obj2 : null;
             if (luVar != null) {
-                iy0Var.a(luVar.f713a);
+                iy0Var.a(luVar.f712a);
             }
-            Throwable thC = zD ? null : iy0Var.c();
-            if (thC != null) {
-                Y(zh1VarO, thC);
+            Throwable c = d2 ? null : iy0Var.c();
+            if (c != null) {
+                Y(O, c);
             }
-            jr jrVarX = X(zh1VarO);
-            if (jrVarX != null && g0(iy0Var, jrVarX, obj2)) {
+            jr X = X(O);
+            if (X != null && g0(iy0Var, X, obj2)) {
                 return jm.h;
             }
-            zh1VarO.d(new a71(2), 2);
-            jr jrVarX2 = X(zh1VarO);
-            return (jrVarX2 == null || !g0(iy0Var, jrVarX2, obj2)) ? K(iy0Var, obj2) : jm.h;
+            O.d(new a71(2), 2);
+            jr X2 = X(O);
+            return (X2 == null || !g0(iy0Var, X2, obj2)) ? K(iy0Var, obj2) : jm.h;
         }
     }
 
@@ -614,23 +689,23 @@ public class jy0 implements cy0, xn1 {
             if (!(obj instanceof lu)) {
                 return new dy0(getClass().getSimpleName().concat(" has completed normally"), null, this);
             }
-            Throwable th = ((lu) obj).f713a;
+            Throwable th = ((lu) obj).f712a;
             cancellationException = th instanceof CancellationException ? (CancellationException) th : null;
             return cancellationException == null ? new dy0(G(), th, this) : cancellationException;
         }
-        Throwable thC = ((iy0) obj).c();
-        if (thC == null) {
+        Throwable c = ((iy0) obj).c();
+        if (c == null) {
             throw new IllegalStateException(("Job is still new or active: " + this).toString());
         }
-        String strConcat = getClass().getSimpleName().concat(" is cancelling");
-        cancellationException = thC instanceof CancellationException ? (CancellationException) thC : null;
+        String concat = getClass().getSimpleName().concat(" is cancelling");
+        cancellationException = c instanceof CancellationException ? (CancellationException) c : null;
         if (cancellationException != null) {
             return cancellationException;
         }
-        if (strConcat == null) {
-            strConcat = G();
+        if (concat == null) {
+            concat = G();
         }
-        return new dy0(strConcat, thC, this);
+        return new dy0(concat, c, this);
     }
 
     @Override // androidx.emoji2.text.v20
@@ -662,25 +737,25 @@ public class jy0 implements cy0, xn1 {
                 if (!z) {
                     Object obj2 = atomicReferenceFieldUpdater.get(this);
                     lu luVar = obj2 instanceof lu ? (lu) obj2 : null;
-                    jrVar.k(luVar != null ? luVar.f713a : null);
+                    jrVar.k(luVar != null ? luVar.f712a : null);
                     return ei1Var;
                 }
                 zh1 list = ((pu0) obj).getList();
                 if (list == null) {
                     c0((fy0) obj);
                 } else if (!list.d(jrVar, 7)) {
-                    boolean zD = list.d(jrVar, 3);
+                    boolean d2 = list.d(jrVar, 3);
                     Object obj3 = atomicReferenceFieldUpdater.get(this);
                     if (obj3 instanceof iy0) {
-                        thC = ((iy0) obj3).c();
+                        r4 = ((iy0) obj3).c();
                     } else {
                         lu luVar2 = obj3 instanceof lu ? (lu) obj3 : null;
                         if (luVar2 != null) {
-                            thC = luVar2.f713a;
+                            r4 = luVar2.f712a;
                         }
                     }
-                    jrVar.k(thC);
-                    if (zD) {
+                    jrVar.k(r4);
+                    if (d2) {
                         break loop0;
                     }
                     return ei1Var;
@@ -697,13 +772,13 @@ public class jy0 implements cy0, xn1 {
 
     @Override // androidx.emoji2.text.cy0
     public final boolean start() {
-        int iD0;
+        int d0;
         do {
-            iD0 = d0(d.get(this));
-            if (iD0 == 0) {
+            d0 = d0(d.get(this));
+            if (d0 == 0) {
                 return false;
             }
-        } while (iD0 != 1);
+        } while (d0 != 1);
         return true;
     }
 
@@ -722,7 +797,7 @@ public class jy0 implements cy0, xn1 {
         do {
             obj = d.get(this);
             boolean z = obj instanceof pu0;
-            up2Var = up2.f1187a;
+            up2Var = up2.f1186a;
             if (!z) {
                 xo2.j(n10Var.t());
                 return up2Var;
@@ -732,25 +807,25 @@ public class jy0 implements cy0, xn1 {
         ipVar.s();
         int i = 1;
         ipVar.w(new cp(i, xo2.v(this, true, new hr(ipVar, i))));
-        Object objR = ipVar.r();
+        Object r = ipVar.r();
         f30 f30Var = f30.d;
-        if (objR != f30Var) {
-            objR = up2Var;
+        if (r != f30Var) {
+            r = up2Var;
         }
-        return objR == f30Var ? objR : up2Var;
+        return r == f30Var ? r : up2Var;
     }
 
     public void x(Object obj) {
         v(obj);
     }
 
-    public final Object y(n10 n10Var) throws Throwable {
+    public final Object y(n10 n10Var) {
         Object obj;
         do {
             obj = d.get(this);
             if (!(obj instanceof pu0)) {
                 if (obj instanceof lu) {
-                    throw ((lu) obj).f713a;
+                    throw ((lu) obj).f712a;
                 }
                 return jm.O(obj);
             }

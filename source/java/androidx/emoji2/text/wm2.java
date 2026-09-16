@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 public final class wm2 implements m50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Toolbar f1290a;
+    public Toolbar f1289a;
     public int b;
     public View c;
     public Drawable d;
@@ -27,7 +27,7 @@ public final class wm2 implements m50 {
 
     public final void a(int i) {
         View view;
-        Toolbar toolbar = this.f1290a;
+        Toolbar toolbar = this.f1289a;
         int i2 = this.b ^ i;
         this.b = i;
         if (i2 != 0) {
@@ -69,7 +69,7 @@ public final class wm2 implements m50 {
     }
 
     public final void b() {
-        Toolbar toolbar = this.f1290a;
+        Toolbar toolbar = this.f1289a;
         if ((this.b & 4) != 0) {
             if (TextUtils.isEmpty(this.j)) {
                 toolbar.setNavigationContentDescription(this.l);
@@ -84,9 +84,14 @@ public final class wm2 implements m50 {
         int i = this.b;
         if ((i & 2) == 0) {
             drawable = null;
-        } else if ((i & 1) == 0 || (drawable = this.e) == null) {
+        } else if ((i & 1) != 0) {
+            drawable = this.e;
+            if (drawable == null) {
+                drawable = this.d;
+            }
+        } else {
             drawable = this.d;
         }
-        this.f1290a.setLogo(drawable);
+        this.f1289a.setLogo(drawable);
     }
 }

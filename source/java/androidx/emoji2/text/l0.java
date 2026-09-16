@@ -33,9 +33,9 @@ public abstract class l0 extends f0 implements List, Collection, ry0 {
     }
 
     public l0 d(Collection collection) {
-        qp1 qp1VarE = e();
-        qp1VarE.addAll(collection);
-        return qp1VarE.c();
+        qp1 e = e();
+        e.addAll(collection);
+        return e.c();
     }
 
     public abstract qp1 e();

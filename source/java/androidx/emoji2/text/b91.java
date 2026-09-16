@@ -22,16 +22,16 @@ public final /* synthetic */ class b91 implements sm0 {
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
         int i = this.d;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         Context context = this.e;
         switch (i) {
             case 0:
                 int i2 = MainActivity.x;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 lx0.x(context, a.a.a.c.a(-392835447799586L, strArr));
                 Context applicationContext = context.getApplicationContext();
                 lx0.u(applicationContext);
-                new h82(applicationContext).f460a.edit().putBoolean(a.a.a.c.a(-333573489049378L, strArr), false).commit();
+                new h82(applicationContext).f459a.edit().putBoolean(a.a.a.c.a(-333573489049378L, strArr), false).commit();
                 l8.i0(applicationContext);
                 throw null;
             case 1:
@@ -46,10 +46,10 @@ public final /* synthetic */ class b91 implements sm0 {
                 }
                 return up2Var;
             case 2:
-                bz0.T(context, a.a.a.c.a(-51162209468194L, wj1.f1284a));
+                bz0.T(context, a.a.a.c.a(-51162209468194L, wj1.f1283a));
                 return up2Var;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                bz0.T(context, a.a.a.c.a(-51273878617890L, wj1.f1284a));
+                bz0.T(context, a.a.a.c.a(-51273878617890L, wj1.f1283a));
                 return up2Var;
             default:
                 Toast.makeText(context, context.getString(R.string.report_sent_successfully), 0).show();

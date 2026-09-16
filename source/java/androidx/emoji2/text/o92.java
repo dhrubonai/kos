@@ -13,7 +13,7 @@ public abstract class o92 extends wj1 {
 
     @Override // androidx.emoji2.text.wj1
     public final void i(float f, long j, pa paVar) {
-        Paint paint = paVar.f896a;
+        Paint paint = paVar.f895a;
         kk2 kk2Var = this.j;
         if (kk2Var == null || !ib2.a(this.k, j)) {
             if (ib2.e(j)) {
@@ -31,9 +31,9 @@ public abstract class o92 extends wj1 {
                 this.k = j;
             }
         }
-        long jG = bz0.g(paint.getColor());
+        long g = bz0.g(paint.getColor());
         long j2 = et.b;
-        if (!et.c(jG, j2)) {
+        if (!et.c(g, j2)) {
             paVar.e(j2);
         }
         if (!lx0.n(paVar.c, kk2Var != null ? (Shader) kk2Var.e : null)) {

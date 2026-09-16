@@ -77,37 +77,37 @@ public interface IAccountAuthenticator extends IInterface {
 
             @Override // android.accounts.IAccountAuthenticator
             public void addAccount(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, String str, String str2, String[] strArr, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeStringArray(strArr);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeStringArray(strArr);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void addAccountFromCredentials(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_addAccountFromCredentials, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(10, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -118,100 +118,100 @@ public interface IAccountAuthenticator extends IInterface {
 
             @Override // android.accounts.IAccountAuthenticator
             public void confirmCredentials(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void editProperties(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    obtain.writeString(str);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void getAccountCredentialsForCloning(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_getAccountCredentialsForCloning, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void getAccountRemovalAllowed(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void getAuthToken(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account, String str, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void getAuthTokenLabel(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    obtain.writeString(str);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -221,36 +221,36 @@ public interface IAccountAuthenticator extends IInterface {
 
             @Override // android.accounts.IAccountAuthenticator
             public void hasFeatures(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account, String[] strArr) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeStringArray(strArr);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeStringArray(strArr);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.accounts.IAccountAuthenticator
             public void updateCredentials(IAccountAuthenticatorResponse iAccountAuthenticatorResponse, Account account, String str, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeStrongInterface(iAccountAuthenticatorResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeStrongInterface(iAccountAuthenticatorResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -263,8 +263,8 @@ public interface IAccountAuthenticator extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IAccountAuthenticator)) ? new Proxy(iBinder) : (IAccountAuthenticator) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IAccountAuthenticator)) ? new Proxy(iBinder) : (IAccountAuthenticator) queryLocalInterface;
         }
 
         @Override // android.os.Binder
@@ -309,11 +309,11 @@ public interface IAccountAuthenticator extends IInterface {
                     getAccountRemovalAllowed(IAccountAuthenticatorResponse.Stub.asInterface(parcel.readStrongBinder()), (Account) _Parcel.readTypedObject(parcel, Account.CREATOR));
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_getAccountCredentialsForCloning /* 9 */:
+                case 9:
                     getAccountCredentialsForCloning(IAccountAuthenticatorResponse.Stub.asInterface(parcel.readStrongBinder()), (Account) _Parcel.readTypedObject(parcel, Account.CREATOR));
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_addAccountFromCredentials /* 10 */:
+                case 10:
                     addAccountFromCredentials(IAccountAuthenticatorResponse.Stub.asInterface(parcel.readStrongBinder()), (Account) _Parcel.readTypedObject(parcel, Account.CREATOR), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR));
                     parcel2.writeNoException();
                     return true;

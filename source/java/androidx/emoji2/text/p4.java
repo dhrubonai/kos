@@ -55,14 +55,14 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     public void B(float f2, float f3, float f4, float f5) {
         rg rgVar = (rg) this.e;
-        lp lpVarD = rgVar.D();
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (rgVar.M() >> 32)) - (f4 + f2);
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(Float.intBitsToFloat((int) (rgVar.M() & 4294967295L)) - (f5 + f3)) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
-        if (!(Float.intBitsToFloat((int) (jFloatToRawIntBits >> 32)) >= 0.0f && Float.intBitsToFloat((int) (jFloatToRawIntBits & 4294967295L)) >= 0.0f)) {
+        lp D = rgVar.D();
+        float intBitsToFloat = Float.intBitsToFloat((int) (rgVar.M() >> 32)) - (f4 + f2);
+        long floatToRawIntBits = (Float.floatToRawIntBits(Float.intBitsToFloat((int) (rgVar.M() & 4294967295L)) - (f5 + f3)) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
+        if (!(Float.intBitsToFloat((int) (floatToRawIntBits >> 32)) >= 0.0f && Float.intBitsToFloat((int) (floatToRawIntBits & 4294967295L)) >= 0.0f)) {
             lv0.a("Width and height must be greater than or equal to zero");
         }
-        rgVar.e0(jFloatToRawIntBits);
-        lpVarD.l(f2, f3);
+        rgVar.e0(floatToRawIntBits);
+        D.l(f2, f3);
     }
 
     public boolean C(int i, int i2, Bundle bundle) {
@@ -77,12 +77,12 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
     }
 
     public void E(float f2, float f3, long j) {
-        lp lpVarD = ((rg) this.e).D();
+        lp D = ((rg) this.e).D();
         int i = (int) (j >> 32);
         int i2 = (int) (j & 4294967295L);
-        lpVarD.l(Float.intBitsToFloat(i), Float.intBitsToFloat(i2));
-        lpVarD.c(f2, f3);
-        lpVarD.l(-Float.intBitsToFloat(i), -Float.intBitsToFloat(i2));
+        D.l(Float.intBitsToFloat(i), Float.intBitsToFloat(i2));
+        D.c(f2, f3);
+        D.l(-Float.intBitsToFloat(i), -Float.intBitsToFloat(i2));
     }
 
     public void F(float f2, float f3) {
@@ -102,29 +102,33 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     @Override // androidx.emoji2.text.m00
     public ClipData b() {
-        return ((ContentInfo) this.e).getClip();
+        ClipData clip;
+        clip = ((ContentInfo) this.e).getClip();
+        return clip;
     }
 
     @Override // androidx.emoji2.text.k00
     public n00 build() {
-        return new n00(new p4(((ContentInfo.Builder) this.e).build()));
+        ContentInfo build;
+        build = ((ContentInfo.Builder) this.e).build();
+        return new n00(new p4(build));
     }
 
     @Override // androidx.emoji2.text.jt
     public long c() {
         c70 c70Var = (c70) this.e;
-        long jC = c70Var.w.c();
-        if (jC != 16) {
-            return jC;
+        long c = c70Var.w.c();
+        if (c != 16) {
+            return c;
         }
         x02 x02Var = (x02) xa1.t(c70Var, c12.b);
         if (x02Var != null) {
-            long j = x02Var.f1313a;
+            long j = x02Var.f1312a;
             if (j != 16) {
                 return j;
             }
         }
-        return ((et) xa1.t(c70Var, g00.f396a)).f321a;
+        return ((et) xa1.t(c70Var, g00.f395a)).f320a;
     }
 
     @Override // androidx.emoji2.text.gg2
@@ -144,7 +148,7 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     @Override // androidx.emoji2.text.gj1
     public wv2 g(View view, wv2 wv2Var) {
-        tv2 tv2Var = wv2Var.f1306a;
+        tv2 tv2Var = wv2Var.f1305a;
         CoordinatorLayout coordinatorLayout = (CoordinatorLayout) this.e;
         if (!Objects.equals(coordinatorLayout.q, wv2Var)) {
             coordinatorLayout.q = wv2Var;
@@ -155,8 +159,8 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
                 int childCount = coordinatorLayout.getChildCount();
                 for (int i = 0; i < childCount; i++) {
                     View childAt = coordinatorLayout.getChildAt(i);
-                    Field field = es2.f320a;
-                    if (childAt.getFitsSystemWindows() && ((t10) childAt.getLayoutParams()).f1099a != null && tv2Var.o()) {
+                    Field field = es2.f319a;
+                    if (childAt.getFitsSystemWindows() && ((t10) childAt.getLayoutParams()).f1098a != null && tv2Var.o()) {
                         break;
                     }
                 }
@@ -173,8 +177,8 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     @Override // androidx.emoji2.text.xg
     public Object i(u42 u42Var, Float f2, Float f3, um0 um0Var, xb2 xb2Var) {
-        Object objA = cc2.a(u42Var, f2.floatValue(), bz0.a(0.0f, f3.floatValue()), (j50) this.e, um0Var, xb2Var);
-        return objA == f30.d ? objA : (ee) objA;
+        Object a2 = cc2.a(u42Var, f2.floatValue(), bz0.a(0.0f, f3.floatValue()), (j50) this.e, um0Var, xb2Var);
+        return a2 == f30.d ? a2 : (ee) a2;
     }
 
     @Override // androidx.emoji2.text.tb1
@@ -224,7 +228,9 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     @Override // androidx.emoji2.text.m00
     public int n() {
-        return ((ContentInfo) this.e).getFlags();
+        int flags;
+        flags = ((ContentInfo) this.e).getFlags();
+        return flags;
     }
 
     @Override // androidx.emoji2.text.m00
@@ -234,7 +240,9 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
 
     @Override // androidx.emoji2.text.m00
     public int r() {
-        return ((ContentInfo) this.e).getSource();
+        int source;
+        source = ((ContentInfo) this.e).getSource();
+        return source;
     }
 
     @Override // androidx.emoji2.text.pd0
@@ -253,7 +261,7 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
         switch (this.d) {
             case 0:
                 return "Bradford";
-            case 15:
+            case pz0.f /* 15 */:
                 return "ContentInfoCompat{" + ((ContentInfo) this.e) + "}";
             case 20:
                 return ((md2) this.e).toString();
@@ -282,112 +290,104 @@ public class p4 implements hc1, gg, tb1, k00, m00, gj1, xg, jt, pd0, gg2 {
     }
 
     public qe2 z() {
-        qd0 qd0VarA = qd0.a();
-        if (qd0VarA.c() == 1) {
+        qd0 a2 = qd0.a();
+        if (a2.c() == 1) {
             return new ku0(true);
         }
-        un1 un1VarW = az0.W(Boolean.FALSE);
-        qd0VarA.h(new y50(un1VarW, this));
-        return un1VarW;
+        un1 W = az0.W(Boolean.FALSE);
+        a2.h(new y50(W, this));
+        return W;
     }
 
     public /* synthetic */ p4(int i, boolean z) {
         this.d = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002a A[PHI: r10
-      0x002a: PHI (r10v1 int) = (r10v0 int), (r10v5 int), (r10v6 int) binds: [B:5:0x001a, B:10:0x0023, B:12:0x0026] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0033  */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x002c, code lost:
+    
+        if (r7 == 1) goto L18;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0041 A[LOOP:1: B:14:0x003f->B:15:0x0041, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public p4(int[] r21, float[] r22, float[][] r23) {
-        /*
-            r20 = this;
-            r0 = r20
-            r1 = r22
-            r2 = 8
-            r0.d = r2
-            r0.<init>()
-            int r2 = r1.length
-            r3 = 1
-            int r2 = r2 - r3
-            androidx.emoji2.text.eh[][] r4 = new androidx.emoji2.text.eh[r2][]
-            r5 = 0
-            r7 = r3
-            r8 = r7
-            r6 = r5
-        L14:
-            if (r6 >= r2) goto L6d
-            r9 = r21[r6]
-            r10 = 3
-            r11 = 2
-            if (r9 == 0) goto L2a
-            if (r9 == r3) goto L33
-            if (r9 == r11) goto L31
-            if (r9 == r10) goto L2c
-            r10 = 4
-            if (r9 == r10) goto L2a
-            r10 = 5
-            if (r9 == r10) goto L2a
-            r13 = r8
-            goto L35
-        L2a:
-            r13 = r10
-            goto L35
-        L2c:
-            if (r7 != r3) goto L33
-            goto L31
-        L2f:
-            r13 = r7
-            goto L35
-        L31:
-            r7 = r11
-            goto L2f
-        L33:
-            r7 = r3
-            goto L2f
-        L35:
-            r8 = r23[r6]
-            int r9 = r8.length
-            int r9 = r9 / r11
-            int r8 = r8.length
-            int r8 = r8 % r11
-            int r8 = r8 + r9
-            androidx.emoji2.text.eh[] r9 = new androidx.emoji2.text.eh[r8]
-            r10 = r5
-        L3f:
-            if (r10 >= r8) goto L67
-            int r11 = r10 * 2
-            androidx.emoji2.text.eh r12 = new androidx.emoji2.text.eh
-            r14 = r1[r6]
-            int r15 = r6 + 1
-            r16 = r15
-            r15 = r1[r16]
-            r17 = r23[r6]
-            r18 = r16
-            r16 = r17[r11]
-            int r19 = r11 + 1
-            r17 = r17[r19]
-            r18 = r23[r18]
-            r11 = r18[r11]
-            r19 = r18[r19]
-            r18 = r11
-            r12.<init>(r13, r14, r15, r16, r17, r18, r19)
-            r9[r10] = r12
-            int r10 = r10 + 1
-            goto L3f
-        L67:
-            r4[r6] = r9
-            int r6 = r6 + 1
-            r8 = r13
-            goto L14
-        L6d:
-            r0.e = r4
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.p4.<init>(int[], float[], float[][]):void");
+    public p4(int[] iArr, float[] fArr, float[][] fArr2) {
+        int i;
+        int length;
+        int i2;
+        this.d = 8;
+        int length2 = fArr.length - 1;
+        eh[][] ehVarArr = new eh[length2][];
+        int i3 = 1;
+        int i4 = 1;
+        int i5 = 0;
+        while (i5 < length2) {
+            int i6 = iArr[i5];
+            int i7 = 3;
+            if (i6 != 0) {
+                if (i6 != 1) {
+                    if (i6 != 2) {
+                        if (i6 != 3) {
+                            i7 = 4;
+                            if (i6 != 4) {
+                                i7 = 5;
+                                if (i6 != 5) {
+                                    i = i4;
+                                    float[] fArr3 = fArr2[i5];
+                                    length = (fArr3.length % 2) + (fArr3.length / 2);
+                                    eh[] ehVarArr2 = new eh[length];
+                                    for (i2 = 0; i2 < length; i2++) {
+                                        int i8 = i2 * 2;
+                                        float f2 = fArr[i5];
+                                        int i9 = i5 + 1;
+                                        float f3 = fArr[i9];
+                                        float[] fArr4 = fArr2[i5];
+                                        float f4 = fArr4[i8];
+                                        int i10 = i8 + 1;
+                                        float f5 = fArr4[i10];
+                                        float[] fArr5 = fArr2[i9];
+                                        ehVarArr2[i2] = new eh(i, f2, f3, f4, f5, fArr5[i8], fArr5[i10]);
+                                    }
+                                    ehVarArr[i5] = ehVarArr2;
+                                    i5++;
+                                    i4 = i;
+                                }
+                            }
+                        }
+                    }
+                    i3 = 2;
+                    i = i3;
+                    float[] fArr32 = fArr2[i5];
+                    length = (fArr32.length % 2) + (fArr32.length / 2);
+                    eh[] ehVarArr22 = new eh[length];
+                    while (i2 < length) {
+                    }
+                    ehVarArr[i5] = ehVarArr22;
+                    i5++;
+                    i4 = i;
+                }
+                i3 = 1;
+                i = i3;
+                float[] fArr322 = fArr2[i5];
+                length = (fArr322.length % 2) + (fArr322.length / 2);
+                eh[] ehVarArr222 = new eh[length];
+                while (i2 < length) {
+                }
+                ehVarArr[i5] = ehVarArr222;
+                i5++;
+                i4 = i;
+            }
+            i = i7;
+            float[] fArr3222 = fArr2[i5];
+            length = (fArr3222.length % 2) + (fArr3222.length / 2);
+            eh[] ehVarArr2222 = new eh[length];
+            while (i2 < length) {
+            }
+            ehVarArr[i5] = ehVarArr2222;
+            i5++;
+            i4 = i;
+        }
+        this.e = ehVarArr;
     }
 
     public p4(u81 u81Var, vs2 vs2Var, s30 s30Var) {

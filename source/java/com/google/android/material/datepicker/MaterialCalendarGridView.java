@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import androidx.emoji2.text.es2;
@@ -33,7 +32,7 @@ final class MaterialCalendarGridView extends GridView {
     }
 
     @Override // android.widget.GridView, android.widget.AdapterView
-    public final Adapter getAdapter() {
+    public final ListAdapter getAdapter() {
         return (wd1) super.getAdapter();
     }
 
@@ -97,7 +96,8 @@ final class MaterialCalendarGridView extends GridView {
     }
 
     @Override // android.widget.GridView, android.widget.AdapterView
-    public final ListAdapter getAdapter() {
+    /* renamed from: getAdapter, reason: avoid collision after fix types in other method */
+    public final ListAdapter getAdapter2() {
         return (wd1) super.getAdapter();
     }
 

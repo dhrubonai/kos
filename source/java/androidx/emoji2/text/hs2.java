@@ -13,12 +13,12 @@ import java.lang.reflect.Method;
 public abstract class hs2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Method f487a;
+    public static final Method f486a;
 
     static {
         if (Build.VERSION.SDK_INT == 25) {
             try {
-                f487a = ViewConfiguration.class.getDeclaredMethod("getScaledScrollFactor", null);
+                f486a = ViewConfiguration.class.getDeclaredMethod("getScaledScrollFactor", null);
             } catch (Exception unused) {
                 Log.i("ViewConfigCompat", "Could not find method getScaledScrollFactor() on ViewConfiguration");
             }
@@ -27,7 +27,7 @@ public abstract class hs2 {
 
     public static float a(ViewConfiguration viewConfiguration, Context context) {
         Method method;
-        if (Build.VERSION.SDK_INT >= 25 && (method = f487a) != null) {
+        if (Build.VERSION.SDK_INT >= 25 && (method = f486a) != null) {
             try {
                 return ((Integer) method.invoke(viewConfiguration, null)).intValue();
             } catch (Exception unused) {

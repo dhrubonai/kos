@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class b62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final byte[] f137a;
+    public final byte[] f136a;
     public int b;
     public int c;
     public boolean d;
@@ -14,7 +14,7 @@ public final class b62 {
     public b62 g;
 
     public b62() {
-        this.f137a = new byte[8192];
+        this.f136a = new byte[8192];
         this.e = true;
         this.d = false;
     }
@@ -47,12 +47,12 @@ public final class b62 {
 
     public final b62 c() {
         this.d = true;
-        return new b62(this.f137a, this.b, this.c, true);
+        return new b62(this.f136a, this.b, this.c, true);
     }
 
     public final void d(b62 b62Var, int i) {
         lx0.x(b62Var, "sink");
-        byte[] bArr = b62Var.f137a;
+        byte[] bArr = b62Var.f136a;
         if (!b62Var.e) {
             throw new IllegalStateException("only owner can write");
         }
@@ -72,14 +72,14 @@ public final class b62 {
         }
         int i5 = b62Var.c;
         int i6 = this.b;
-        xh.v0(i5, i6, i6 + i, this.f137a, bArr);
+        xh.v0(i5, i6, i6 + i, this.f136a, bArr);
         b62Var.c += i;
         this.b += i;
     }
 
     public b62(byte[] bArr, int i, int i2, boolean z) {
         lx0.x(bArr, "data");
-        this.f137a = bArr;
+        this.f136a = bArr;
         this.b = i;
         this.c = i2;
         this.d = z;

@@ -25,9 +25,9 @@ public final class ke0 implements TransformationMethod {
         if (charSequence == null || qd0.a().c() != 1) {
             return charSequence;
         }
-        qd0 qd0VarA = qd0.a();
-        qd0VarA.getClass();
-        return qd0VarA.g(0, charSequence.length(), 0, charSequence);
+        qd0 a2 = qd0.a();
+        a2.getClass();
+        return a2.g(0, charSequence.length(), 0, charSequence);
     }
 
     @Override // android.text.method.TransformationMethod

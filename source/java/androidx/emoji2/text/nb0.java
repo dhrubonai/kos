@@ -39,13 +39,13 @@ public final class nb0 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((nb0) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((nb0) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         long j = this.l;
         f30 f30Var = f30.d;
         ob0 ob0Var = this.k;
@@ -77,11 +77,11 @@ public final class nb0 extends hh2 implements Function2 {
                 mz0.L(obj);
                 e30 e30Var2 = (e30) this.j;
                 wm0 wm0Var2 = ob0Var.F;
-                float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) * 1.0f;
-                long jFloatToRawIntBits = (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * 1.0f) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
+                float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) * 1.0f;
+                long floatToRawIntBits = (Float.floatToRawIntBits(Float.intBitsToFloat((int) (j & 4294967295L)) * 1.0f) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
                 il1 il1Var = ob0Var.C;
-                ib0 ib0Var = mb0.f740a;
-                Float f = new Float(il1Var == il1.d ? fr2.c(jFloatToRawIntBits) : fr2.b(jFloatToRawIntBits));
+                ib0 ib0Var = mb0.f739a;
+                Float f = new Float(il1Var == il1.d ? fr2.c(floatToRawIntBits) : fr2.b(floatToRawIntBits));
                 this.i = 1;
                 return wm0Var2.invoke(e30Var2, f, this) == f30Var ? f30Var : up2Var;
         }

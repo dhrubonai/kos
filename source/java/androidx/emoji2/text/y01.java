@@ -10,12 +10,12 @@ public final class y01 extends xh1 {
     public x01 T;
 
     static {
-        pa paVarV = l8.v();
+        pa v = l8.v();
         int i = et.l;
-        paVarV.e(et.h);
-        paVarV.k(1.0f);
-        paVarV.l(1);
-        U = paVarV;
+        v.e(et.h);
+        v.k(1.0f);
+        v.l(1);
+        U = v;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -112,9 +112,9 @@ public final class y01 extends xh1 {
             return jz0.h(this, xr0Var);
         }
         ye1 ye1Var = x01Var.w;
-        int iD = ye1Var.d(xr0Var);
-        if (iD >= 0) {
-            return ye1Var.c[iD];
+        int d = ye1Var.d(xr0Var);
+        if (d >= 0) {
+            return ye1Var.c[d];
         }
         return Integer.MIN_VALUE;
     }

@@ -15,20 +15,18 @@ public class ey0 extends jy0 {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = jy0.e;
         ir irVar = (ir) atomicReferenceFieldUpdater.get(this);
         jr jrVar = irVar instanceof jr ? (jr) irVar : null;
-        if (jrVar == null) {
-            z = false;
-            break;
-        }
-        jy0 jy0VarI = jrVar.i();
-        while (!jy0VarI.M()) {
-            ir irVar2 = (ir) atomicReferenceFieldUpdater.get(jy0VarI);
-            jr jrVar2 = irVar2 instanceof jr ? (jr) irVar2 : null;
-            if (jrVar2 == null) {
-                z = false;
-                break;
+        if (jrVar != null) {
+            jy0 i = jrVar.i();
+            while (!i.M()) {
+                ir irVar2 = (ir) atomicReferenceFieldUpdater.get(i);
+                jr jrVar2 = irVar2 instanceof jr ? (jr) irVar2 : null;
+                if (jrVar2 != null) {
+                    i = jrVar2.i();
+                }
             }
-            jy0VarI = jrVar2.i();
+            this.f = z;
         }
+        z = false;
         this.f = z;
     }
 

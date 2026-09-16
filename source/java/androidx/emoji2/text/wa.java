@@ -8,12 +8,12 @@ import android.graphics.RectF;
 public final class wa {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Path f1269a;
+    public final Path f1268a;
     public RectF b;
     public float[] c;
 
     public wa(Path path) {
-        this.f1269a = path;
+        this.f1268a = path;
     }
 
     public static void a(wa waVar, q12 q12Var) {
@@ -22,7 +22,7 @@ public final class wa {
         }
         RectF rectF = waVar.b;
         lx0.u(rectF);
-        float f = q12Var.f937a;
+        float f = q12Var.f936a;
         long j = q12Var.h;
         long j2 = q12Var.g;
         long j3 = q12Var.f;
@@ -41,7 +41,7 @@ public final class wa {
         fArr[5] = Float.intBitsToFloat((int) (j2 & 4294967295L));
         fArr[6] = Float.intBitsToFloat((int) (j >> 32));
         fArr[7] = Float.intBitsToFloat((int) (j & 4294967295L));
-        Path path = waVar.f1269a;
+        Path path = waVar.f1268a;
         RectF rectF2 = waVar.b;
         lx0.u(rectF2);
         float[] fArr2 = waVar.c;
@@ -55,7 +55,7 @@ public final class wa {
         }
         RectF rectF = this.b;
         lx0.u(rectF);
-        this.f1269a.computeBounds(rectF, true);
+        this.f1268a.computeBounds(rectF, true);
         return new zw1(rectF.left, rectF.top, rectF.right, rectF.bottom);
     }
 
@@ -64,14 +64,14 @@ public final class wa {
         if (!(waVar instanceof wa)) {
             throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
         }
-        Path path = waVar.f1269a;
+        Path path = waVar.f1268a;
         if (waVar2 instanceof wa) {
-            return this.f1269a.op(path, waVar2.f1269a, op);
+            return this.f1268a.op(path, waVar2.f1268a, op);
         }
         throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
     }
 
     public final void d() {
-        this.f1269a.reset();
+        this.f1268a.reset();
     }
 }

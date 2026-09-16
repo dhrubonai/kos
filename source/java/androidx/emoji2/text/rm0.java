@@ -8,13 +8,13 @@ import java.util.concurrent.Executor;
 public final class rm0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f1019a;
+    public final Object f1018a;
     public boolean b;
     public final ArrayList c;
 
     public rm0(Executor executor, pu puVar) {
         lx0.x(executor, "executor");
-        this.f1019a = new Object();
+        this.f1018a = new Object();
         this.c = new ArrayList();
     }
 }

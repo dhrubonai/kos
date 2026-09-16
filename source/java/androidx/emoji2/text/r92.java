@@ -12,7 +12,7 @@ public final class r92 {
     public static final float[] l = {0.0f, 0.0f, 0.5f, 1.0f};
 
     /* renamed from: a, reason: collision with root package name */
-    public final Paint f997a;
+    public final Paint f996a;
     public final Paint b;
     public final Paint c;
     public final int d;
@@ -25,7 +25,7 @@ public final class r92 {
         Paint paint = new Paint();
         this.h = paint;
         Paint paint2 = new Paint();
-        this.f997a = paint2;
+        this.f996a = paint2;
         this.d = tt.d(-16777216, 68);
         this.e = tt.d(-16777216, 20);
         this.f = tt.d(-16777216, 0);

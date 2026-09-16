@@ -8,7 +8,7 @@ import android.text.TextDirectionHeuristics;
 public abstract class vk2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final vi2 f1227a = new vi2();
+    public static final vi2 f1226a = new vi2();
     public static final long b;
 
     static {

@@ -7,7 +7,7 @@ import java.io.Serializable;
 public final class pv0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f929a;
+    public final /* synthetic */ int f928a;
     public final as0 b;
     public final as0 c;
     public final as0 d;
@@ -15,7 +15,7 @@ public final class pv0 {
     public final Serializable f;
 
     public pv0(String str) {
-        this.f929a = 1;
+        this.f928a = 1;
         this.f = str;
         this.b = new as0(1, null);
         this.c = new as0(0, null);
@@ -24,31 +24,31 @@ public final class pv0 {
     }
 
     public final as0 a() {
-        switch (this.f929a) {
+        switch (this.f928a) {
         }
         return this.e;
     }
 
     public final as0 b() {
-        switch (this.f929a) {
+        switch (this.f928a) {
         }
         return this.b;
     }
 
     public final as0 c() {
-        switch (this.f929a) {
+        switch (this.f928a) {
         }
         return this.d;
     }
 
     public final as0 d() {
-        switch (this.f929a) {
+        switch (this.f928a) {
         }
         return this.c;
     }
 
     public final String toString() {
-        switch (this.f929a) {
+        switch (this.f928a) {
             case 0:
                 return xh.N0((pv0[]) this.f, 57, null);
             default:
@@ -62,7 +62,7 @@ public final class pv0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public pv0(pv0[] pv0VarArr) {
-        this.f929a = 0;
+        this.f928a = 0;
         this.f = pv0VarArr;
         int length = pv0VarArr.length;
         as0[] as0VarArr = new as0[length];

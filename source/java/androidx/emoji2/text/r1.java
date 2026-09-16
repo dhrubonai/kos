@@ -9,10 +9,10 @@ public final class r1 {
     public static r1 b;
 
     /* renamed from: a, reason: collision with root package name */
-    public Object f990a;
+    public Object f989a;
 
     public r1() {
-        this.f990a = new Object();
+        this.f989a = new Object();
         new Handler(Looper.getMainLooper(), new tb2(this));
     }
 }

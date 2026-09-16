@@ -11,13 +11,13 @@ public final class ho2 extends ec2 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ho2(ec2 ec2Var, um0 um0Var, boolean z, boolean z2) {
-        um0 um0VarE;
         super(0L, ic2.h);
-        q32 q32Var = kc2.f632a;
+        um0 e;
+        q32 q32Var = kc2.f631a;
         this.e = ec2Var;
         this.f = z;
         this.g = z2;
-        this.h = kc2.l(um0Var, (ec2Var == null || (um0VarE = ec2Var.e()) == null) ? kc2.j.e : um0VarE, z);
+        this.h = kc2.l(um0Var, (ec2Var == null || (e = ec2Var.e()) == null) ? kc2.j.e : e, z);
         this.i = a01.w();
     }
 
@@ -80,8 +80,8 @@ public final class ho2 extends ec2 {
 
     @Override // androidx.emoji2.text.ec2
     public final ec2 u(um0 um0Var) {
-        um0 um0VarL = kc2.l(um0Var, this.h, true);
-        return !this.f ? kc2.h(v().u(null), um0VarL, true) : v().u(um0VarL);
+        um0 l = kc2.l(um0Var, this.h, true);
+        return !this.f ? kc2.h(v().u(null), l, true) : v().u(l);
     }
 
     public final ec2 v() {

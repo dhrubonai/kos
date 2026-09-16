@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class bl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f155a;
+    public final long f154a;
     public final long b;
 
     public bl2(long j, long j2) {
-        this.f155a = j;
+        this.f154a = j;
         this.b = j2;
     }
 
@@ -21,17 +21,17 @@ public final class bl2 {
             return false;
         }
         bl2 bl2Var = (bl2) obj;
-        return et.c(this.f155a, bl2Var.f155a) && et.c(this.b, bl2Var.b);
+        return et.c(this.f154a, bl2Var.f154a) && et.c(this.b, bl2Var.b);
     }
 
     public final int hashCode() {
         int i = et.l;
-        return Long.hashCode(this.b) + (Long.hashCode(this.f155a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f154a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("SelectionColors(selectionHandleColor=");
-        jx0.o(this.f155a, sb, ", selectionBackgroundColor=");
+        jx0.o(this.f154a, sb, ", selectionBackgroundColor=");
         sb.append((Object) et.i(this.b));
         sb.append(')');
         return sb.toString();

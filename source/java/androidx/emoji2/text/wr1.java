@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class wr1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ wr1 f1297a = new wr1();
+    public static final /* synthetic */ wr1 f1296a = new wr1();
 }

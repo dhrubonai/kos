@@ -11,23 +11,23 @@ import android.view.View;
 public final class ae0 implements KeyListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final KeyListener f95a;
+    public final KeyListener f94a;
     public final on b;
 
     public ae0(KeyListener keyListener) {
         on onVar = new on(15);
-        this.f95a = keyListener;
+        this.f94a = keyListener;
         this.b = onVar;
     }
 
     @Override // android.text.method.KeyListener
     public final void clearMetaKeyState(View view, Editable editable, int i) {
-        this.f95a.clearMetaKeyState(view, editable, i);
+        this.f94a.clearMetaKeyState(view, editable, i);
     }
 
     @Override // android.text.method.KeyListener
     public final int getInputType() {
-        return this.f95a.getInputType();
+        return this.f94a.getInputType();
     }
 
     @Override // android.text.method.KeyListener
@@ -40,16 +40,16 @@ public final class ae0 implements KeyListener {
         } else {
             z = false;
         }
-        return z || this.f95a.onKeyDown(view, editable, i, keyEvent);
+        return z || this.f94a.onKeyDown(view, editable, i, keyEvent);
     }
 
     @Override // android.text.method.KeyListener
     public final boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
-        return this.f95a.onKeyOther(view, editable, keyEvent);
+        return this.f94a.onKeyOther(view, editable, keyEvent);
     }
 
     @Override // android.text.method.KeyListener
     public final boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
-        return this.f95a.onKeyUp(view, editable, i, keyEvent);
+        return this.f94a.onKeyUp(view, editable, i, keyEvent);
     }
 }

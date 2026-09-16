@@ -14,7 +14,7 @@ public final /* synthetic */ class pt0 implements Runnable {
     }
 
     @Override // java.lang.Runnable
-    public final void run() throws SecurityException {
+    public final void run() {
         switch (this.d) {
             case 0:
                 ICredentialManagerProxy.deliverSuccess(this.e);

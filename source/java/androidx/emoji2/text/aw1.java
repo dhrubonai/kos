@@ -6,10 +6,13 @@ public final class aw1 extends a0 implements y20 {
     public final /* synthetic */ bw1 e;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public aw1(bw1 bw1Var) {
+        super(r0);
         dd0 dd0Var = dd0.B;
         this.e = bw1Var;
-        super(dd0Var);
     }
 
     @Override // androidx.emoji2.text.y20

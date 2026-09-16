@@ -29,9 +29,9 @@ public final class di2 extends hh2 implements Function2 {
                 return new di2(this.i, l10Var, 3);
             case 4:
                 return new di2(this.i, l10Var, 4);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new di2(this.i, l10Var, 5);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return new di2(this.i, l10Var, 6);
             default:
                 return new di2(this.i, l10Var, 7);
@@ -45,42 +45,42 @@ public final class di2 extends hh2 implements Function2 {
         switch (this.h) {
             case 0:
                 di2 di2Var = (di2) i(l10Var, e30Var);
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 di2Var.k(up2Var);
                 return up2Var;
             case 1:
                 di2 di2Var2 = (di2) i(l10Var, e30Var);
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 di2Var2.k(up2Var2);
                 return up2Var2;
             case 2:
                 di2 di2Var3 = (di2) i(l10Var, e30Var);
-                up2 up2Var3 = up2.f1187a;
+                up2 up2Var3 = up2.f1186a;
                 di2Var3.k(up2Var3);
                 return up2Var3;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 di2 di2Var4 = (di2) i(l10Var, e30Var);
-                up2 up2Var4 = up2.f1187a;
+                up2 up2Var4 = up2.f1186a;
                 di2Var4.k(up2Var4);
                 return up2Var4;
             case 4:
                 di2 di2Var5 = (di2) i(l10Var, e30Var);
-                up2 up2Var5 = up2.f1187a;
+                up2 up2Var5 = up2.f1186a;
                 di2Var5.k(up2Var5);
                 return up2Var5;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 di2 di2Var6 = (di2) i(l10Var, e30Var);
-                up2 up2Var6 = up2.f1187a;
+                up2 up2Var6 = up2.f1186a;
                 di2Var6.k(up2Var6);
                 return up2Var6;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 di2 di2Var7 = (di2) i(l10Var, e30Var);
-                up2 up2Var7 = up2.f1187a;
+                up2 up2Var7 = up2.f1186a;
                 di2Var7.k(up2Var7);
                 return up2Var7;
             default:
                 di2 di2Var8 = (di2) i(l10Var, e30Var);
-                up2 up2Var8 = up2.f1187a;
+                up2 up2Var8 = up2.f1186a;
                 di2Var8.k(up2Var8);
                 return up2Var8;
         }
@@ -119,13 +119,13 @@ public final class di2 extends hh2 implements Function2 {
                 tt1Var5.e = true;
                 tt1Var5.g.e(null);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 mz0.L(obj);
                 tt1 tt1Var6 = this.i;
                 tt1Var6.e = true;
                 tt1Var6.g.e(null);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 mz0.L(obj);
                 tt1 tt1Var7 = this.i;
                 tt1Var7.e = true;
@@ -138,6 +138,6 @@ public final class di2 extends hh2 implements Function2 {
                 tt1Var8.g.e(null);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

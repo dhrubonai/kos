@@ -52,7 +52,7 @@ public final class hf0 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((hf0) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((hf0) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: ConstInlineVisitor
@@ -64,7 +64,7 @@ public final class hf0 extends hh2 implements Function2 {
         	at jadx.core.dex.visitors.ConstInlineVisitor.process(ConstInlineVisitor.java:55)
         	at jadx.core.dex.visitors.ConstInlineVisitor.visit(ConstInlineVisitor.java:47)
         */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:48:0x00ea -> B:25:0x0097). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x00ea -> B:7:0x0097). Please report as a decompilation issue!!! */
     @Override // androidx.emoji2.text.lk
     public final java.lang.Object k(java.lang.Object r18) {
         /*

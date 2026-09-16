@@ -11,7 +11,7 @@ public final class fs1 {
     public static final /* synthetic */ fs1[] g;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         fs1 fs1Var = new fs1(a.a.a.c.a(-319206823444258L, strArr), 0);
         d = fs1Var;
         fs1 fs1Var2 = new fs1(a.a.a.c.a(-319241183182626L, strArr), 1);

@@ -19,8 +19,8 @@ public final class fk2 extends a1 {
 
     @Override // androidx.emoji2.text.a1
     public final void d(View view, s1 s1Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
-        this.f76a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
+        this.f75a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
         TextInputLayout textInputLayout = this.d;
         EditText editText = textInputLayout.getEditText();
         CharSequence text = editText != null ? editText.getText() : null;
@@ -29,12 +29,12 @@ public final class fk2 extends a1 {
         CharSequence placeholderText = textInputLayout.getPlaceholderText();
         int counterMaxLength = textInputLayout.getCounterMaxLength();
         CharSequence counterOverflowDescription = textInputLayout.getCounterOverflowDescription();
-        boolean zIsEmpty = TextUtils.isEmpty(text);
-        boolean zIsEmpty2 = TextUtils.isEmpty(hint);
+        boolean isEmpty = TextUtils.isEmpty(text);
+        boolean isEmpty2 = TextUtils.isEmpty(hint);
         boolean z = textInputLayout.y0;
-        boolean zIsEmpty3 = TextUtils.isEmpty(error);
-        boolean z2 = (zIsEmpty3 && TextUtils.isEmpty(counterOverflowDescription)) ? false : true;
-        String string = !zIsEmpty2 ? hint.toString() : "";
+        boolean isEmpty3 = TextUtils.isEmpty(error);
+        boolean z2 = (isEmpty3 && TextUtils.isEmpty(counterOverflowDescription)) ? false : true;
+        String charSequence = !isEmpty2 ? hint.toString() : "";
         le2 le2Var = textInputLayout.e;
         jg jgVar = le2Var.e;
         if (jgVar.getVisibility() == 0) {
@@ -43,32 +43,32 @@ public final class fk2 extends a1 {
         } else {
             accessibilityNodeInfo.setTraversalAfter(le2Var.g);
         }
-        if (!zIsEmpty) {
+        if (!isEmpty) {
             s1Var.k(text);
-        } else if (!TextUtils.isEmpty(string)) {
-            s1Var.k(string);
+        } else if (!TextUtils.isEmpty(charSequence)) {
+            s1Var.k(charSequence);
             if (!z && placeholderText != null) {
-                s1Var.k(string + ", " + ((Object) placeholderText));
+                s1Var.k(charSequence + ", " + ((Object) placeholderText));
             }
         } else if (placeholderText != null) {
             s1Var.k(placeholderText);
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!TextUtils.isEmpty(charSequence)) {
             int i = Build.VERSION.SDK_INT;
             if (i < 26) {
-                if (!zIsEmpty) {
-                    string = ((Object) text) + ", " + string;
+                if (!isEmpty) {
+                    charSequence = ((Object) text) + ", " + charSequence;
                 }
-                s1Var.k(string);
+                s1Var.k(charSequence);
             } else if (i >= 26) {
-                accessibilityNodeInfo.setHintText(string);
+                accessibilityNodeInfo.setHintText(charSequence);
             } else {
-                accessibilityNodeInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.HINT_TEXT_KEY", string);
+                accessibilityNodeInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.HINT_TEXT_KEY", charSequence);
             }
             if (i >= 26) {
-                accessibilityNodeInfo.setShowingHintText(zIsEmpty);
+                accessibilityNodeInfo.setShowingHintText(isEmpty);
             } else {
-                s1Var.h(4, zIsEmpty);
+                s1Var.h(4, isEmpty);
             }
         }
         if (text == null || text.length() != counterMaxLength) {
@@ -76,7 +76,7 @@ public final class fk2 extends a1 {
         }
         accessibilityNodeInfo.setMaxTextLength(counterMaxLength);
         if (z2) {
-            if (zIsEmpty3) {
+            if (isEmpty3) {
                 error = counterOverflowDescription;
             }
             accessibilityNodeInfo.setError(error);

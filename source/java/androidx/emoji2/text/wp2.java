@@ -10,7 +10,7 @@ public final class wp2 implements Parcelable {
     public final String d;
 
     public wp2(String str) {
-        lx0.x(str, a.a.a.c.a(-163359640141602L, wj1.f1284a));
+        lx0.x(str, a.a.a.c.a(-163359640141602L, wj1.f1283a));
         this.d = str;
     }
 
@@ -32,13 +32,13 @@ public final class wp2 implements Parcelable {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(a.a.a.c.a(-163501374062370L, wj1.f1284a));
+        sb.append(a.a.a.c.a(-163501374062370L, wj1.f1283a));
         return jx0.i(sb, this.d, ')');
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-163445539487522L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-163445539487522L, wj1.f1283a));
         parcel.writeString(this.d);
     }
 }

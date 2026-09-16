@@ -2,18 +2,27 @@ package androidx.emoji2.text;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import androidx.core.splashscreen.R;
 import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -82,7 +91,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
         }
         xp xpVar = (xp) arrayList.remove(i);
         qb1 qb1Var2 = xpVar.b;
-        ec1 ec1Var = xpVar.f1350a;
+        ec1 ec1Var = xpVar.f1349a;
         xf xfVar = ec1Var.y;
         CopyOnWriteArrayList copyOnWriteArrayList = qb1Var2.r;
         Iterator it = copyOnWriteArrayList.iterator();
@@ -128,7 +137,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
     }
 
     @Override // androidx.emoji2.text.ic1
-    public final boolean b(kg2 kg2Var) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final boolean b(kg2 kg2Var) {
         ArrayList arrayList = this.k;
         int size = arrayList.size();
         int i = 0;
@@ -137,7 +146,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
             i++;
             xp xpVar = (xp) obj;
             if (kg2Var == xpVar.b) {
-                xpVar.f1350a.f.requestFocus();
+                xpVar.f1349a.f.requestFocus();
                 return true;
             }
         }
@@ -165,8 +174,8 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
             xp[] xpVarArr = (xp[]) arrayList.toArray(new xp[size]);
             for (int i = size - 1; i >= 0; i--) {
                 xp xpVar = xpVarArr[i];
-                if (xpVar.f1350a.y.isShowing()) {
-                    xpVar.f1350a.dismiss();
+                if (xpVar.f1349a.y.isShowing()) {
+                    xpVar.f1349a.dismiss();
                 }
             }
         }
@@ -175,11 +184,11 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
     @Override // androidx.emoji2.text.ab2
     public final boolean e() {
         ArrayList arrayList = this.k;
-        return arrayList.size() > 0 && ((xp) arrayList.get(0)).f1350a.y.isShowing();
+        return arrayList.size() > 0 && ((xp) arrayList.get(0)).f1349a.y.isShowing();
     }
 
     @Override // androidx.emoji2.text.ab2
-    public final void f() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void f() {
         if (e()) {
             return;
         }
@@ -213,7 +222,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
         while (i < size) {
             Object obj = arrayList.get(i);
             i++;
-            ListAdapter adapter = ((xp) obj).f1350a.f.getAdapter();
+            ListAdapter adapter = ((xp) obj).f1349a.f.getAdapter();
             if (adapter instanceof HeaderViewListAdapter) {
                 adapter = ((HeaderViewListAdapter) adapter).getWrappedAdapter();
             }
@@ -227,7 +236,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((xp) arrayList.get(arrayList.size() - 1)).f1350a.f;
+        return ((xp) arrayList.get(arrayList.size() - 1)).f1349a.f;
     }
 
     @Override // androidx.emoji2.text.ic1
@@ -236,7 +245,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
     }
 
     @Override // androidx.emoji2.text.yb1
-    public final void l(qb1 qb1Var) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void l(qb1 qb1Var) {
         qb1Var.b(this, this.e);
         if (e()) {
             u(qb1Var);
@@ -270,7 +279,7 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
                 break;
             }
             xpVar = (xp) arrayList.get(i);
-            if (!xpVar.f1350a.y.isShowing()) {
+            if (!xpVar.f1349a.y.isShowing()) {
                 break;
             } else {
                 i++;
@@ -320,19 +329,239 @@ public final class yp extends yb1 implements View.OnKeyListener, PopupWindow.OnD
         this.w = i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:59:0x011c  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0175  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:96:0x01e8  */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0173, code lost:
+    
+        if (((r9.getWidth() + r11[0]) + r5) > r10.right) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0175, code lost:
+    
+        r9 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0178, code lost:
+    
+        r9 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x017d, code lost:
+    
+        if ((r11[0] - r5) < 0) goto L73;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x011c  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x01e8  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void u(androidx.emoji2.text.qb1 r18) throws java.lang.IllegalAccessException, java.lang.IllegalArgumentException, java.lang.reflect.InvocationTargetException {
-        /*
-            Method dump skipped, instructions count: 582
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.yp.u(androidx.emoji2.text.qb1):void");
+    public final void u(qb1 qb1Var) {
+        boolean z;
+        int i;
+        xp xpVar;
+        View view;
+        int i2;
+        int i3;
+        int i4;
+        int width;
+        MenuItem menuItem;
+        ob1 ob1Var;
+        int i5;
+        int firstVisiblePosition;
+        Context context = this.e;
+        LayoutInflater from = LayoutInflater.from(context);
+        ob1 ob1Var2 = new ob1(qb1Var, from, this.h, R.layout.abc_cascading_menu_item_layout);
+        if (!e() && this.x) {
+            ob1Var2.c = true;
+        } else if (e()) {
+            int size = qb1Var.f.size();
+            int i6 = 0;
+            while (true) {
+                if (i6 >= size) {
+                    z = false;
+                    break;
+                }
+                MenuItem item = qb1Var.getItem(i6);
+                if (item.isVisible() && item.getIcon() != null) {
+                    z = true;
+                    break;
+                }
+                i6++;
+            }
+            ob1Var2.c = z;
+        }
+        int m = yb1.m(ob1Var2, context, this.f);
+        ec1 ec1Var = new ec1(context, this.g);
+        ec1Var.B = this.n;
+        ec1Var.p = this;
+        ec1Var.y.setOnDismissListener(this);
+        ec1Var.o = this.q;
+        ec1Var.m = this.p;
+        ec1Var.x = true;
+        ec1Var.y.setFocusable(true);
+        ec1Var.y.setInputMethodMode(2);
+        ec1Var.a(ob1Var2);
+        Drawable background = ec1Var.y.getBackground();
+        if (background != null) {
+            Rect rect = ec1Var.v;
+            background.getPadding(rect);
+            ec1Var.g = rect.left + rect.right + m;
+        } else {
+            ec1Var.g = m;
+        }
+        ec1Var.m = this.p;
+        ArrayList arrayList = this.k;
+        if (arrayList.size() > 0) {
+            xpVar = (xp) arrayList.get(arrayList.size() - 1);
+            qb1 qb1Var2 = xpVar.b;
+            int size2 = qb1Var2.f.size();
+            int i7 = 0;
+            while (true) {
+                if (i7 >= size2) {
+                    menuItem = null;
+                    break;
+                }
+                menuItem = qb1Var2.getItem(i7);
+                if (menuItem.hasSubMenu() && qb1Var == menuItem.getSubMenu()) {
+                    break;
+                } else {
+                    i7++;
+                }
+            }
+            if (menuItem == null) {
+                i = 1;
+            } else {
+                dc1 dc1Var = xpVar.f1349a.f;
+                ListAdapter adapter = dc1Var.getAdapter();
+                if (adapter instanceof HeaderViewListAdapter) {
+                    HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
+                    i5 = headerViewListAdapter.getHeadersCount();
+                    ob1Var = (ob1) headerViewListAdapter.getWrappedAdapter();
+                } else {
+                    ob1Var = (ob1) adapter;
+                    i5 = 0;
+                }
+                int count = ob1Var.getCount();
+                i = 1;
+                int i8 = 0;
+                while (true) {
+                    if (i8 >= count) {
+                        i8 = -1;
+                        break;
+                    } else if (menuItem == ob1Var.getItem(i8)) {
+                        break;
+                    } else {
+                        i8++;
+                    }
+                }
+                if (i8 != -1 && (firstVisiblePosition = (i8 + i5) - dc1Var.getFirstVisiblePosition()) >= 0 && firstVisiblePosition < dc1Var.getChildCount()) {
+                    view = dc1Var.getChildAt(firstVisiblePosition);
+                    if (view == null) {
+                        int i9 = Build.VERSION.SDK_INT;
+                        xf xfVar = ec1Var.y;
+                        if (i9 <= 28) {
+                            Method method = ec1.C;
+                            if (method != null) {
+                                try {
+                                    method.invoke(xfVar, Boolean.FALSE);
+                                } catch (Exception unused) {
+                                    Log.i("MenuPopupWindow", "Could not invoke setTouchModal() on PopupWindow. Oh well.");
+                                }
+                            }
+                        } else {
+                            cc1.a(xfVar, false);
+                        }
+                        bc1.a(ec1Var.y, null);
+                        dc1 dc1Var2 = ((xp) arrayList.get(arrayList.size() - 1)).f1349a.f;
+                        int[] iArr = new int[2];
+                        dc1Var2.getLocationOnScreen(iArr);
+                        Rect rect2 = new Rect();
+                        this.r.getWindowVisibleDisplayFrame(rect2);
+                        if (this.s == i) {
+                        }
+                        boolean z2 = i2 == 1;
+                        this.s = i2;
+                        if (Build.VERSION.SDK_INT >= 26) {
+                            ec1Var.o = view;
+                            i4 = 0;
+                            i3 = 0;
+                        } else {
+                            int[] iArr2 = new int[2];
+                            this.q.getLocationOnScreen(iArr2);
+                            int[] iArr3 = new int[2];
+                            view.getLocationOnScreen(iArr3);
+                            if ((this.p & 7) == 5) {
+                                iArr2[0] = this.q.getWidth() + iArr2[0];
+                                iArr3[0] = view.getWidth() + iArr3[0];
+                            }
+                            i3 = iArr3[0] - iArr2[0];
+                            i4 = iArr3[1] - iArr2[1];
+                        }
+                        if ((this.p & 5) != 5) {
+                            if (z2) {
+                                width = i3 + view.getWidth();
+                                ec1Var.h = width;
+                                ec1Var.l = true;
+                                ec1Var.k = true;
+                                ec1Var.i = i4;
+                                ec1Var.j = true;
+                            }
+                            width = i3 - m;
+                            ec1Var.h = width;
+                            ec1Var.l = true;
+                            ec1Var.k = true;
+                            ec1Var.i = i4;
+                            ec1Var.j = true;
+                        } else if (z2) {
+                            width = i3 + m;
+                            ec1Var.h = width;
+                            ec1Var.l = true;
+                            ec1Var.k = true;
+                            ec1Var.i = i4;
+                            ec1Var.j = true;
+                        } else {
+                            m = view.getWidth();
+                            width = i3 - m;
+                            ec1Var.h = width;
+                            ec1Var.l = true;
+                            ec1Var.k = true;
+                            ec1Var.i = i4;
+                            ec1Var.j = true;
+                        }
+                    } else {
+                        if (this.t) {
+                            ec1Var.h = this.v;
+                        }
+                        if (this.u) {
+                            ec1Var.i = this.w;
+                            ec1Var.j = true;
+                        }
+                        Rect rect3 = this.d;
+                        ec1Var.w = rect3 != null ? new Rect(rect3) : null;
+                    }
+                    arrayList.add(new xp(ec1Var, qb1Var, this.s));
+                    ec1Var.f();
+                    dc1 dc1Var3 = ec1Var.f;
+                    dc1Var3.setOnKeyListener(this);
+                    if (xpVar == null || !this.y || qb1Var.l == null) {
+                        return;
+                    }
+                    FrameLayout frameLayout = (FrameLayout) from.inflate(R.layout.abc_popup_menu_header_item_layout, (ViewGroup) dc1Var3, false);
+                    TextView textView = (TextView) frameLayout.findViewById(android.R.id.title);
+                    frameLayout.setEnabled(false);
+                    textView.setText(qb1Var.l);
+                    dc1Var3.addHeaderView(frameLayout, null, false);
+                    ec1Var.f();
+                    return;
+                }
+            }
+        } else {
+            i = 1;
+            xpVar = null;
+        }
+        view = null;
+        if (view == null) {
+        }
+        arrayList.add(new xp(ec1Var, qb1Var, this.s));
+        ec1Var.f();
+        dc1 dc1Var32 = ec1Var.f;
+        dc1Var32.setOnKeyListener(this);
+        if (xpVar == null) {
+        }
     }
 }

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class vk {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1226a;
+    public int f1225a;
     public int b;
     public int c;
     public int d;

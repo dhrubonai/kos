@@ -14,7 +14,7 @@ public final class ow2 {
     public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(ow2.class, "blockingTasksInBuffer$volatile");
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicReferenceArray f877a = new AtomicReferenceArray(PackageParser.PARSE_IS_PRIVILEGED);
+    public final AtomicReferenceArray f876a = new AtomicReferenceArray(PackageParser.PARSE_IS_PRIVILEGED);
     private volatile /* synthetic */ int blockingTasksInBuffer$volatile;
     private volatile /* synthetic */ int consumerIndex$volatile;
     private volatile /* synthetic */ Object lastScheduledTask$volatile;
@@ -30,7 +30,7 @@ public final class ow2 {
         }
         int i = atomicIntegerFieldUpdater.get(this) & 127;
         while (true) {
-            AtomicReferenceArray atomicReferenceArray = this.f877a;
+            AtomicReferenceArray atomicReferenceArray = this.f876a;
             if (atomicReferenceArray.get(i) == null) {
                 atomicReferenceArray.lazySet(i, ni2Var);
                 atomicIntegerFieldUpdater.incrementAndGet(this);
@@ -49,7 +49,7 @@ public final class ow2 {
                 return null;
             }
             int i2 = i & 127;
-            if (atomicIntegerFieldUpdater.compareAndSet(this, i, i + 1) && (ni2Var = (ni2) this.f877a.getAndSet(i2, null)) != null) {
+            if (atomicIntegerFieldUpdater.compareAndSet(this, i, i + 1) && (ni2Var = (ni2) this.f876a.getAndSet(i2, null)) != null) {
                 if (ni2Var.e) {
                     e.decrementAndGet(this);
                 }
@@ -60,7 +60,7 @@ public final class ow2 {
 
     public final ni2 c(int i, boolean z) {
         int i2 = i & 127;
-        AtomicReferenceArray atomicReferenceArray = this.f877a;
+        AtomicReferenceArray atomicReferenceArray = this.f876a;
         ni2 ni2Var = (ni2) atomicReferenceArray.get(i2);
         if (ni2Var != null && ni2Var.e == z) {
             while (!atomicReferenceArray.compareAndSet(i2, ni2Var, null)) {

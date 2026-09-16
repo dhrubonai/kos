@@ -29,7 +29,7 @@ public final class z10 extends g01 implements sm0 {
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 return new l41((um0) this.f.getValue());
             case 4:
-                return new zi1(((zi1) this.f.getValue()).f1442a);
+                return new zi1(((zi1) this.f.getValue()).f1441a);
             default:
                 return (r02) this.f.getValue();
         }

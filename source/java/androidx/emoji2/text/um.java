@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class um {
 
     /* renamed from: a, reason: collision with root package name */
-    public final j70 f1181a;
+    public final j70 f1180a;
     public final long b;
 
     public um(pg2 pg2Var, long j) {
-        this.f1181a = pg2Var;
+        this.f1180a = pg2Var;
         this.b = j;
     }
 
@@ -21,14 +21,14 @@ public final class um {
             return false;
         }
         um umVar = (um) obj;
-        return lx0.n(this.f1181a, umVar.f1181a) && vz.b(this.b, umVar.b);
+        return lx0.n(this.f1180a, umVar.f1180a) && vz.b(this.b, umVar.b);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (this.f1181a.hashCode() * 31);
+        return Long.hashCode(this.b) + (this.f1180a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "BoxWithConstraintsScopeImpl(density=" + this.f1181a + ", constraints=" + ((Object) vz.l(this.b)) + ')';
+        return "BoxWithConstraintsScopeImpl(density=" + this.f1180a + ", constraints=" + ((Object) vz.l(this.b)) + ')';
     }
 }

@@ -31,7 +31,7 @@ public class qb1 implements Menu {
     public static final int[] u = {1, 4, 5, 3, 2, 0};
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f949a;
+    public final Context f948a;
     public final Resources b;
     public boolean c;
     public final boolean d;
@@ -53,9 +53,9 @@ public class qb1 implements Menu {
     public boolean t = false;
 
     public qb1(Context context) {
-        boolean zP;
-        boolean z = false;
-        this.f949a = context;
+        boolean z;
+        boolean z2 = false;
+        this.f948a = context;
         Resources resources = context.getResources();
         this.b = resources;
         this.f = new ArrayList();
@@ -66,19 +66,19 @@ public class qb1 implements Menu {
         this.k = true;
         if (resources.getConfiguration().keyboard != 1) {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-            Method method = hs2.f487a;
+            Method method = hs2.f486a;
             if (Build.VERSION.SDK_INT >= 28) {
-                zP = f90.p(viewConfiguration);
+                z = f90.p(viewConfiguration);
             } else {
                 Resources resources2 = context.getResources();
                 int identifier = resources2.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
-                zP = identifier != 0 && resources2.getBoolean(identifier);
+                z = identifier != 0 && resources2.getBoolean(identifier);
             }
-            if (zP) {
-                z = true;
+            if (z) {
+                z2 = true;
             }
         }
-        this.d = z;
+        this.d = z2;
     }
 
     public final ub1 a(int i, int i2, int i3, CharSequence charSequence) {
@@ -115,23 +115,23 @@ public class qb1 implements Menu {
     @Override // android.view.Menu
     public final int addIntentOptions(int i, int i2, int i3, ComponentName componentName, Intent[] intentArr, Intent intent, int i4, MenuItem[] menuItemArr) {
         int i5;
-        PackageManager packageManager = this.f949a.getPackageManager();
-        List<ResolveInfo> listQueryIntentActivityOptions = packageManager.queryIntentActivityOptions(componentName, intentArr, intent, 0);
-        int size = listQueryIntentActivityOptions != null ? listQueryIntentActivityOptions.size() : 0;
+        PackageManager packageManager = this.f948a.getPackageManager();
+        List<ResolveInfo> queryIntentActivityOptions = packageManager.queryIntentActivityOptions(componentName, intentArr, intent, 0);
+        int size = queryIntentActivityOptions != null ? queryIntentActivityOptions.size() : 0;
         if ((i4 & 1) == 0) {
             removeGroup(i);
         }
         for (int i6 = 0; i6 < size; i6++) {
-            ResolveInfo resolveInfo = listQueryIntentActivityOptions.get(i6);
+            ResolveInfo resolveInfo = queryIntentActivityOptions.get(i6);
             int i7 = resolveInfo.specificIndex;
             Intent intent2 = new Intent(i7 < 0 ? intent : intentArr[i7]);
             ActivityInfo activityInfo = resolveInfo.activityInfo;
             intent2.setComponent(new ComponentName(activityInfo.applicationInfo.packageName, activityInfo.name));
-            ub1 ub1VarA = a(i, i2, i3, resolveInfo.loadLabel(packageManager));
-            ub1VarA.setIcon(resolveInfo.loadIcon(packageManager));
-            ub1VarA.g = intent2;
+            ub1 a2 = a(i, i2, i3, resolveInfo.loadLabel(packageManager));
+            a2.setIcon(resolveInfo.loadIcon(packageManager));
+            a2.g = intent2;
             if (menuItemArr != null && (i5 = resolveInfo.specificIndex) >= 0) {
-                menuItemArr[i5] = ub1VarA;
+                menuItemArr[i5] = a2;
             }
         }
         return size;
@@ -189,7 +189,7 @@ public class qb1 implements Menu {
 
     public boolean d(ub1 ub1Var) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.r;
-        boolean zJ = false;
+        boolean z = false;
         if (!copyOnWriteArrayList.isEmpty() && this.s == ub1Var) {
             s();
             Iterator it = copyOnWriteArrayList.iterator();
@@ -199,18 +199,18 @@ public class qb1 implements Menu {
                 if (ic1Var == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    zJ = ic1Var.j(ub1Var);
-                    if (zJ) {
+                    z = ic1Var.j(ub1Var);
+                    if (z) {
                         break;
                     }
                 }
             }
             r();
-            if (zJ) {
+            if (z) {
                 this.s = null;
             }
         }
-        return zJ;
+        return z;
     }
 
     public boolean e(qb1 qb1Var, MenuItem menuItem) {
@@ -219,7 +219,7 @@ public class qb1 implements Menu {
         if (p4Var == null || (z3Var = ((ActionMenuView) p4Var.e).B) == null) {
             return false;
         }
-        Iterator it = ((CopyOnWriteArrayList) ((pm2) z3Var).f916a.J.d).iterator();
+        Iterator it = ((CopyOnWriteArrayList) ((pm2) z3Var).f915a.J.d).iterator();
         if (!it.hasNext()) {
             return false;
         }
@@ -229,7 +229,7 @@ public class qb1 implements Menu {
 
     public boolean f(ub1 ub1Var) {
         CopyOnWriteArrayList copyOnWriteArrayList = this.r;
-        boolean zC = false;
+        boolean z = false;
         if (copyOnWriteArrayList.isEmpty()) {
             return false;
         }
@@ -241,31 +241,31 @@ public class qb1 implements Menu {
             if (ic1Var == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                zC = ic1Var.c(ub1Var);
-                if (zC) {
+                z = ic1Var.c(ub1Var);
+                if (z) {
                     break;
                 }
             }
         }
         r();
-        if (zC) {
+        if (z) {
             this.s = ub1Var;
         }
-        return zC;
+        return z;
     }
 
     @Override // android.view.Menu
     public final MenuItem findItem(int i) {
-        MenuItem menuItemFindItem;
+        MenuItem findItem;
         ArrayList arrayList = this.f;
         int size = arrayList.size();
         for (int i2 = 0; i2 < size; i2++) {
             ub1 ub1Var = (ub1) arrayList.get(i2);
-            if (ub1Var.f1167a == i) {
+            if (ub1Var.f1166a == i) {
                 return ub1Var;
             }
-            if (ub1Var.hasSubMenu() && (menuItemFindItem = ub1Var.o.findItem(i)) != null) {
-                return menuItemFindItem;
+            if (ub1Var.hasSubMenu() && (findItem = ub1Var.o.findItem(i)) != null) {
+                return findItem;
             }
         }
         return null;
@@ -285,12 +285,12 @@ public class qb1 implements Menu {
         if (size == 1) {
             return (ub1) arrayList.get(0);
         }
-        boolean zM = m();
+        boolean m = m();
         for (int i2 = 0; i2 < size; i2++) {
             ub1 ub1Var = (ub1) arrayList.get(i2);
-            char c = zM ? ub1Var.j : ub1Var.h;
+            char c = m ? ub1Var.j : ub1Var.h;
             char[] cArr = keyData.meta;
-            if ((c == cArr[0] && (metaState & 2) == 0) || ((c == cArr[2] && (metaState & 2) != 0) || (zM && c == '\b' && i == 67))) {
+            if ((c == cArr[0] && (metaState & 2) == 0) || ((c == cArr[2] && (metaState & 2) != 0) || (m && c == '\b' && i == 67))) {
                 return ub1Var;
             }
         }
@@ -303,7 +303,7 @@ public class qb1 implements Menu {
     }
 
     public final void h(List list, int i, KeyEvent keyEvent) {
-        boolean zM = m();
+        boolean m = m();
         int modifiers = keyEvent.getModifiers();
         KeyCharacterMap.KeyData keyData = new KeyCharacterMap.KeyData();
         if (keyEvent.getKeyData(keyData) || i == 67) {
@@ -314,10 +314,10 @@ public class qb1 implements Menu {
                 if (ub1Var.hasSubMenu()) {
                     ub1Var.o.h(list, i, keyEvent);
                 }
-                char c = zM ? ub1Var.j : ub1Var.h;
-                if ((modifiers & 69647) == ((zM ? ub1Var.k : ub1Var.i) & 69647) && c != 0) {
+                char c = m ? ub1Var.j : ub1Var.h;
+                if ((modifiers & 69647) == ((m ? ub1Var.k : ub1Var.i) & 69647) && c != 0) {
                     char[] cArr = keyData.meta;
-                    if ((c == cArr[0] || c == cArr[2] || (zM && c == '\b' && i == 67)) && ub1Var.isEnabled()) {
+                    if ((c == cArr[0] || c == cArr[2] || (m && c == '\b' && i == 67)) && ub1Var.isEnabled()) {
                         list.add(ub1Var);
                     }
                 }
@@ -338,28 +338,28 @@ public class qb1 implements Menu {
     }
 
     public final void i() {
-        ArrayList arrayListK = k();
+        ArrayList k = k();
         if (this.k) {
             CopyOnWriteArrayList copyOnWriteArrayList = this.r;
             Iterator it = copyOnWriteArrayList.iterator();
-            boolean zD = false;
+            boolean z = false;
             while (it.hasNext()) {
                 WeakReference weakReference = (WeakReference) it.next();
                 ic1 ic1Var = (ic1) weakReference.get();
                 if (ic1Var == null) {
                     copyOnWriteArrayList.remove(weakReference);
                 } else {
-                    zD |= ic1Var.d();
+                    z |= ic1Var.d();
                 }
             }
             ArrayList arrayList = this.i;
             ArrayList arrayList2 = this.j;
-            if (zD) {
+            if (z) {
                 arrayList.clear();
                 arrayList2.clear();
-                int size = arrayListK.size();
+                int size = k.size();
                 for (int i = 0; i < size; i++) {
-                    ub1 ub1Var = (ub1) arrayListK.get(i);
+                    ub1 ub1Var = (ub1) k.get(i);
                     if ((ub1Var.x & 32) == 32) {
                         arrayList.add(ub1Var);
                     } else {
@@ -443,8 +443,13 @@ public class qb1 implements Menu {
         r();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0059  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final boolean p(MenuItem menuItem, yb1 yb1Var, int i) {
-        boolean zExpandActionView;
+        boolean z;
         ub1 ub1Var = (ub1) menuItem;
         if (ub1Var == null || !ub1Var.isEnabled()) {
             return false;
@@ -455,53 +460,56 @@ public class qb1 implements Menu {
             Intent intent = ub1Var.g;
             if (intent != null) {
                 try {
-                    qb1Var.f949a.startActivity(intent);
-                    zExpandActionView = true;
+                    qb1Var.f948a.startActivity(intent);
                 } catch (ActivityNotFoundException e) {
                     Log.e("MenuItemImpl", "Can't find activity to handle intent; ignoring", e);
                 }
             }
-            zExpandActionView = false;
-        } else {
-            zExpandActionView = true;
-        }
-        if ((ub1Var.y & 8) != 0 && ub1Var.z != null) {
-            zExpandActionView |= ub1Var.expandActionView();
-            if (zExpandActionView) {
-                c(true);
-            }
-        } else if (ub1Var.hasSubMenu()) {
-            if ((i & 4) == 0) {
-                c(false);
-            }
-            if (!ub1Var.hasSubMenu()) {
-                kg2 kg2Var = new kg2(this.f949a, this, ub1Var);
-                ub1Var.o = kg2Var;
-                kg2Var.setHeaderTitle(ub1Var.e);
-            }
-            kg2 kg2Var2 = ub1Var.o;
-            CopyOnWriteArrayList copyOnWriteArrayList = this.r;
-            if (!copyOnWriteArrayList.isEmpty()) {
-                zB = yb1Var != null ? yb1Var.b(kg2Var2) : false;
-                Iterator it = copyOnWriteArrayList.iterator();
-                while (it.hasNext()) {
-                    WeakReference weakReference = (WeakReference) it.next();
-                    ic1 ic1Var = (ic1) weakReference.get();
-                    if (ic1Var == null) {
-                        copyOnWriteArrayList.remove(weakReference);
-                    } else if (!zB) {
-                        zB = ic1Var.b(kg2Var2);
+            z = false;
+            if ((ub1Var.y & 8) == 0 && ub1Var.z != null) {
+                z |= ub1Var.expandActionView();
+                if (z) {
+                    c(true);
+                }
+            } else if (!ub1Var.hasSubMenu()) {
+                if ((i & 4) == 0) {
+                    c(false);
+                }
+                if (!ub1Var.hasSubMenu()) {
+                    kg2 kg2Var = new kg2(this.f948a, this, ub1Var);
+                    ub1Var.o = kg2Var;
+                    kg2Var.setHeaderTitle(ub1Var.e);
+                }
+                kg2 kg2Var2 = ub1Var.o;
+                CopyOnWriteArrayList copyOnWriteArrayList = this.r;
+                if (!copyOnWriteArrayList.isEmpty()) {
+                    r0 = yb1Var != null ? yb1Var.b(kg2Var2) : false;
+                    Iterator it = copyOnWriteArrayList.iterator();
+                    while (it.hasNext()) {
+                        WeakReference weakReference = (WeakReference) it.next();
+                        ic1 ic1Var = (ic1) weakReference.get();
+                        if (ic1Var == null) {
+                            copyOnWriteArrayList.remove(weakReference);
+                        } else if (!r0) {
+                            r0 = ic1Var.b(kg2Var2);
+                        }
                     }
                 }
-            }
-            zExpandActionView |= zB;
-            if (!zExpandActionView) {
+                z |= r0;
+                if (!z) {
+                    c(true);
+                }
+            } else if ((i & 1) == 0) {
                 c(true);
             }
-        } else if ((i & 1) == 0) {
-            c(true);
+            return z;
         }
-        return zExpandActionView;
+        z = true;
+        if ((ub1Var.y & 8) == 0) {
+        }
+        if (!ub1Var.hasSubMenu()) {
+        }
+        return z;
     }
 
     @Override // android.view.Menu
@@ -511,12 +519,12 @@ public class qb1 implements Menu {
 
     @Override // android.view.Menu
     public final boolean performShortcut(int i, KeyEvent keyEvent, int i2) {
-        ub1 ub1VarG = g(i, keyEvent);
-        boolean zP = ub1VarG != null ? p(ub1VarG, null, i2) : false;
+        ub1 g = g(i, keyEvent);
+        boolean p = g != null ? p(g, null, i2) : false;
         if ((i2 & 2) != 0) {
             c(true);
         }
-        return zP;
+        return p;
     }
 
     public final void q(int i, CharSequence charSequence, int i2, View view) {
@@ -529,7 +537,7 @@ public class qb1 implements Menu {
                 this.l = charSequence;
             }
             if (i2 > 0) {
-                this.f949a.getDrawable(i2);
+                this.f948a.getDrawable(i2);
             }
         }
         o(false);
@@ -584,7 +592,7 @@ public class qb1 implements Menu {
             if (i2 >= size) {
                 i2 = -1;
                 break;
-            } else if (((ub1) arrayList.get(i2)).f1167a == i) {
+            } else if (((ub1) arrayList.get(i2)).f1166a == i) {
                 break;
             } else {
                 i2++;
@@ -685,10 +693,10 @@ public class qb1 implements Menu {
 
     @Override // android.view.Menu
     public final SubMenu addSubMenu(int i, int i2, int i3, CharSequence charSequence) {
-        ub1 ub1VarA = a(i, i2, i3, charSequence);
-        kg2 kg2Var = new kg2(this.f949a, this, ub1VarA);
-        ub1VarA.o = kg2Var;
-        kg2Var.setHeaderTitle(ub1VarA.e);
+        ub1 a2 = a(i, i2, i3, charSequence);
+        kg2 kg2Var = new kg2(this.f948a, this, a2);
+        a2.o = kg2Var;
+        kg2Var.setHeaderTitle(a2.e);
         return kg2Var;
     }
 

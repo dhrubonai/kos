@@ -29,14 +29,21 @@ public final class eo extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((eo) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((eo) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x00b8, code lost:
+    
+        if ((r0 instanceof androidx.emoji2.text.bk0) != false) goto L44;
+     */
     @Override // androidx.emoji2.text.lk
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object k(Object obj) {
-        Object objE;
+        Object e;
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         if (i == 0) {
             mz0.L(obj);
             ed edVar = this.i;
@@ -52,7 +59,7 @@ public final class eo extends hh2 implements Function2 {
                     xw0 vt1Var = da0.a(f3, foVar.b) ? new vt1(0L) : da0.a(f3, foVar.d) ? new ds0() : da0.a(f3, foVar.c) ? new bk0() : null;
                     this.h = 2;
                     vo2 vo2Var2 = jd0.b;
-                    vo2 vo2Var3 = jd0.f573a;
+                    vo2 vo2Var3 = jd0.f572a;
                     xw0 xw0Var = this.m;
                     if (xw0Var != null) {
                         if ((xw0Var instanceof vt1) || (xw0Var instanceof fb0) || (xw0Var instanceof ds0) || (xw0Var instanceof bk0)) {
@@ -62,15 +69,15 @@ public final class eo extends hh2 implements Function2 {
                         if (!(vt1Var instanceof vt1) && !(vt1Var instanceof fb0)) {
                             if (vt1Var instanceof ds0) {
                                 vo2Var = jd0.c;
-                            } else if (vt1Var instanceof bk0) {
                             }
                         }
                         vo2Var = vo2Var2;
                     }
-                    if (vo2Var == null ? (objE = edVar.e(this, new da0(f2))) != f30Var : (objE = ed.c(edVar, new da0(f2), vo2Var, null, this, 12)) != f30Var) {
-                        objE = up2Var;
+                    if (vo2Var == null ? (e = edVar.e(this, new da0(f2))) != f30Var : (e = ed.c(edVar, new da0(f2), vo2Var, null, this, 12)) != f30Var) {
+                        e = up2Var;
                     }
-                    if (objE == f30Var) {
+                    if (e != f30Var) {
+                        return up2Var;
                     }
                 } else {
                     da0 da0Var = new da0(f2);
@@ -80,12 +87,12 @@ public final class eo extends hh2 implements Function2 {
                 }
                 return f30Var;
             }
-            return up2Var;
+        } else {
+            if (i != 1 && i != 2) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            mz0.L(obj);
         }
-        if (i != 1 && i != 2) {
-            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        mz0.L(obj);
         return up2Var;
     }
 }

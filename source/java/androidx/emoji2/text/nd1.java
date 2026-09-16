@@ -10,6 +10,6 @@ public interface nd1 {
     boolean b(um0 um0Var);
 
     default nd1 k(nd1 nd1Var) {
-        return nd1Var == kd1.f634a ? this : new cu(this, nd1Var);
+        return nd1Var == kd1.f633a ? this : new cu(this, nd1Var);
     }
 }

@@ -56,7 +56,7 @@ public class FileProvider extends ContentProvider {
             this.mAuthority = str;
         }
 
-        public void addRoot(String str, File file) throws IOException {
+        public void addRoot(String str, File file) {
             String[] strArr = xa1.b;
             if (TextUtils.isEmpty(str)) {
                 throw new IllegalArgumentException(c.a(-301176550735650L, strArr));
@@ -69,17 +69,17 @@ public class FileProvider extends ContentProvider {
         }
 
         @Override // com.kos.engine.fake.provider.FileProvider.PathStrategy
-        public File getFileForUri(Uri uri) throws IOException {
+        public File getFileForUri(Uri uri) {
             String[] strArr = xa1.b;
             String encodedPath = uri.getEncodedPath();
-            int iIndexOf = encodedPath.indexOf(47, 1);
-            String strDecode = Uri.decode(encodedPath.substring(1, iIndexOf));
-            String strDecode2 = Uri.decode(encodedPath.substring(iIndexOf + 1));
-            File file = this.mRoots.get(strDecode);
+            int indexOf = encodedPath.indexOf(47, 1);
+            String decode = Uri.decode(encodedPath.substring(1, indexOf));
+            String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
+            File file = this.mRoots.get(decode);
             if (file == null) {
                 throw new IllegalArgumentException(c.a(-299119261400866L, strArr) + uri);
             }
-            File file2 = new File(file, strDecode2);
+            File file2 = new File(file, decode2);
             try {
                 File canonicalFile = file2.getCanonicalFile();
                 if (canonicalFile.getPath().startsWith(file.getPath())) {
@@ -92,7 +92,7 @@ public class FileProvider extends ContentProvider {
         }
 
         @Override // com.kos.engine.fake.provider.FileProvider.PathStrategy
-        public Uri getUriForFile(File file) throws IOException {
+        public Uri getUriForFile(File file) {
             String[] strArr = xa1.b;
             try {
                 String canonicalPath = file.getCanonicalPath();
@@ -196,53 +196,53 @@ public class FileProvider extends ContentProvider {
         throw new IllegalArgumentException(zd.k(new StringBuilder(), c.a(-302078493867810L, strArr), str));
     }
 
-    private static PathStrategy parsePathStrategy(Context context, String str) throws XmlPullParserException, IOException {
+    private static PathStrategy parsePathStrategy(Context context, String str) {
         String[] strArr = xa1.b;
         SimplePathStrategy simplePathStrategy = new SimplePathStrategy(str);
-        ProviderInfo providerInfoResolveContentProvider = context.getPackageManager().resolveContentProvider(str, PackageParser.PARSE_IS_PRIVILEGED);
-        if (providerInfoResolveContentProvider == null) {
+        ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, PackageParser.PARSE_IS_PRIVILEGED);
+        if (resolveContentProvider == null) {
             throw new IllegalArgumentException(zd.k(new StringBuilder(), c.a(-303057746411298L, strArr), str));
         }
-        XmlResourceParser xmlResourceParserLoadXmlMetaData = providerInfoResolveContentProvider.loadXmlMetaData(context.getPackageManager(), c.a(-301653292105506L, strArr));
-        if (xmlResourceParserLoadXmlMetaData == null) {
+        XmlResourceParser loadXmlMetaData = resolveContentProvider.loadXmlMetaData(context.getPackageManager(), c.a(-301653292105506L, strArr));
+        if (loadXmlMetaData == null) {
             throw new IllegalArgumentException(c.a(-301292514852642L, strArr));
         }
         while (true) {
-            int next = xmlResourceParserLoadXmlMetaData.next();
+            int next = loadXmlMetaData.next();
             if (next == 1) {
                 return simplePathStrategy;
             }
             if (next == 2) {
-                String name = xmlResourceParserLoadXmlMetaData.getName();
-                File externalStorageDirectory = null;
-                String attributeValue = xmlResourceParserLoadXmlMetaData.getAttributeValue(null, c.a(-301472903479074L, strArr));
-                String attributeValue2 = xmlResourceParserLoadXmlMetaData.getAttributeValue(null, c.a(-301528738053922L, strArr));
+                String name = loadXmlMetaData.getName();
+                File file = null;
+                String attributeValue = loadXmlMetaData.getAttributeValue(null, c.a(-301472903479074L, strArr));
+                String attributeValue2 = loadXmlMetaData.getAttributeValue(null, c.a(-301528738053922L, strArr));
                 if (c.a(-302117148573474L, strArr).equals(name)) {
-                    externalStorageDirectory = DEVICE_ROOT;
+                    file = DEVICE_ROOT;
                 } else if (c.a(-302142918377250L, strArr).equals(name)) {
-                    externalStorageDirectory = context.getFilesDir();
+                    file = context.getFilesDir();
                 } else if (c.a(-302172983148322L, strArr).equals(name)) {
-                    externalStorageDirectory = context.getCacheDir();
+                    file = context.getCacheDir();
                 } else if (c.a(-302254587526946L, strArr).equals(name)) {
-                    externalStorageDirectory = Environment.getExternalStorageDirectory();
+                    file = Environment.getExternalStorageDirectory();
                 } else if (c.a(-302263177461538L, strArr).equals(name)) {
                     File[] externalFilesDirs = context.getExternalFilesDirs(null);
                     if (externalFilesDirs.length > 0) {
-                        externalStorageDirectory = externalFilesDirs[0];
+                        file = externalFilesDirs[0];
                     }
                 } else if (c.a(-301833680731938L, strArr).equals(name)) {
                     File[] externalCacheDirs = context.getExternalCacheDirs();
                     if (externalCacheDirs.length > 0) {
-                        externalStorageDirectory = externalCacheDirs[0];
+                        file = externalCacheDirs[0];
                     }
                 } else if (c.a(-301885220339490L, strArr).equals(name)) {
                     File[] externalMediaDirs = context.getExternalMediaDirs();
                     if (externalMediaDirs.length > 0) {
-                        externalStorageDirectory = externalMediaDirs[0];
+                        file = externalMediaDirs[0];
                     }
                 }
-                if (externalStorageDirectory != null) {
-                    simplePathStrategy.addRoot(attributeValue, buildPath(externalStorageDirectory, attributeValue2));
+                if (file != null) {
+                    simplePathStrategy.addRoot(attributeValue, buildPath(file, attributeValue2));
                 }
             }
         }
@@ -269,9 +269,9 @@ public class FileProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public String getType(Uri uri) {
         File fileForUri = this.mStrategy.getFileForUri(uri);
-        int iLastIndexOf = fileForUri.getName().lastIndexOf(46);
-        if (iLastIndexOf >= 0) {
-            String mimeTypeFromExtension = MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileForUri.getName().substring(iLastIndexOf + 1));
+        int lastIndexOf = fileForUri.getName().lastIndexOf(46);
+        if (lastIndexOf >= 0) {
+            String mimeTypeFromExtension = MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileForUri.getName().substring(lastIndexOf + 1));
             if (mimeTypeFromExtension != null) {
                 return mimeTypeFromExtension;
             }
@@ -317,10 +317,10 @@ public class FileProvider extends ContentProvider {
             }
             i2 = i;
         }
-        String[] strArrCopyOf = copyOf(strArr3, i2);
-        Object[] objArrCopyOf = copyOf(objArr, i2);
-        MatrixCursor matrixCursor = new MatrixCursor(strArrCopyOf, 1);
-        matrixCursor.addRow(objArrCopyOf);
+        String[] copyOf = copyOf(strArr3, i2);
+        Object[] copyOf2 = copyOf(objArr, i2);
+        MatrixCursor matrixCursor = new MatrixCursor(copyOf, 1);
+        matrixCursor.addRow(copyOf2);
         return matrixCursor;
     }
 

@@ -5,22 +5,22 @@ package androidx.emoji2.text;
 public final class f82 implements ed0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f351a;
+    public final int f350a;
     public final int b;
 
     public f82(int i, int i2) {
-        this.f351a = i;
+        this.f350a = i;
         this.b = i2;
     }
 
     @Override // androidx.emoji2.text.ed0
     public final void a(fd0 fd0Var) {
-        int iP = az0.p(this.f351a, 0, fd0Var.f357a.b());
-        int iP2 = az0.p(this.b, 0, fd0Var.f357a.b());
-        if (iP < iP2) {
-            fd0Var.f(iP, iP2);
+        int p = az0.p(this.f350a, 0, fd0Var.f356a.b());
+        int p2 = az0.p(this.b, 0, fd0Var.f356a.b());
+        if (p < p2) {
+            fd0Var.f(p, p2);
         } else {
-            fd0Var.f(iP2, iP);
+            fd0Var.f(p2, p);
         }
     }
 
@@ -32,16 +32,16 @@ public final class f82 implements ed0 {
             return false;
         }
         f82 f82Var = (f82) obj;
-        return this.f351a == f82Var.f351a && this.b == f82Var.b;
+        return this.f350a == f82Var.f350a && this.b == f82Var.b;
     }
 
     public final int hashCode() {
-        return (this.f351a * 31) + this.b;
+        return (this.f350a * 31) + this.b;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("SetSelectionCommand(start=");
-        sb.append(this.f351a);
+        sb.append(this.f350a);
         sb.append(", end=");
         return zd.j(sb, this.b, ')');
     }

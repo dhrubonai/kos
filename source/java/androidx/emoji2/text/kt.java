@@ -23,7 +23,7 @@ public final class kt {
     public qh2 R;
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f655a;
+    public final long f654a;
     public final long b;
     public final long c;
     public final long d;
@@ -51,7 +51,7 @@ public final class kt {
     public final long z;
 
     public kt(long j, long j2, long j3, long j4, long j5, long j6, long j7, long j8, long j9, long j10, long j11, long j12, long j13, long j14, long j15, long j16, long j17, long j18, long j19, long j20, long j21, long j22, long j23, long j24, long j25, long j26, long j27, long j28, long j29, long j30, long j31, long j32, long j33, long j34, long j35, long j36) {
-        this.f655a = j;
+        this.f654a = j;
         this.b = j2;
         this.c = j3;
         this.d = j4;
@@ -91,7 +91,7 @@ public final class kt {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("ColorScheme(primary=");
-        jx0.o(this.f655a, sb, "onPrimary=");
+        jx0.o(this.f654a, sb, "onPrimary=");
         jx0.o(this.b, sb, "primaryContainer=");
         jx0.o(this.c, sb, "onPrimaryContainer=");
         jx0.o(this.d, sb, "inversePrimary=");

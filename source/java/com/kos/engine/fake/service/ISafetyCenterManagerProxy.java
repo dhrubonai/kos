@@ -85,11 +85,11 @@ public class ISafetyCenterManagerProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-1121674218061602L, strArr)).getMethod(c.a(-1122443017207586L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-1121674218061602L, strArr)).getMethod(c.a(-1122443017207586L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-1122589046095650L, strArr), th, 3, c.a(-1122528916553506L, strArr));
             return null;
@@ -102,10 +102,10 @@ public class ISafetyCenterManagerProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-1122181024202530L, strArr);
+            String a2 = c.a(-1122181024202530L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1122241153744674L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 

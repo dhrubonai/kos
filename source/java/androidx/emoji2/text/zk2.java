@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class zk2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Float f1446a;
+    public Float f1445a;
 }

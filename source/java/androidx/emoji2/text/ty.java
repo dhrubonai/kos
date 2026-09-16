@@ -10,25 +10,25 @@ import javax.net.ssl.SSLSocket;
 public final class ty {
 
     /* renamed from: a, reason: collision with root package name */
-    public final List f1150a;
+    public final List f1149a;
     public int b;
     public boolean c;
     public boolean d;
 
     public ty(List list) {
         lx0.x(list, "connectionSpecs");
-        this.f1150a = list;
+        this.f1149a = list;
     }
 
     /* JADX WARN: Type inference failed for: r1v3, types: [java.io.Serializable, java.lang.String[]] */
-    public final sy a(SSLSocket sSLSocket) throws UnknownServiceException {
+    public final sy a(SSLSocket sSLSocket) {
         sy syVar;
         int i;
         boolean z;
         String[] enabledCipherSuites;
         String[] enabledProtocols;
         int i2 = this.b;
-        List list = this.f1150a;
+        List list = this.f1149a;
         int size = list.size();
         while (true) {
             if (i2 >= size) {
@@ -50,9 +50,9 @@ public final class ty {
             sb.append(", supported protocols=");
             String[] enabledProtocols2 = sSLSocket.getEnabledProtocols();
             lx0.u(enabledProtocols2);
-            String string = Arrays.toString(enabledProtocols2);
-            lx0.w(string, "toString(this)");
-            sb.append(string);
+            String arrays = Arrays.toString(enabledProtocols2);
+            lx0.w(arrays, "toString(this)");
+            sb.append(arrays);
             throw new UnknownServiceException(sb.toString());
         }
         int i3 = this.b;
@@ -90,7 +90,7 @@ public final class ty {
         String[] supportedCipherSuites = sSLSocket.getSupportedCipherSuites();
         lx0.w(supportedCipherSuites, "supportedCipherSuites");
         tk0 tk0Var = sr.c;
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         int length = supportedCipherSuites.length;
         while (true) {
             if (i >= length) {
@@ -106,13 +106,13 @@ public final class ty {
             lx0.w(enabledCipherSuites, "cipherSuitesIntersection");
             String str = supportedCipherSuites[i];
             lx0.w(str, "supportedCipherSuites[indexOfFallbackScsv]");
-            Object[] objArrCopyOf = Arrays.copyOf(enabledCipherSuites, enabledCipherSuites.length + 1);
-            lx0.w(objArrCopyOf, "copyOf(this, newSize)");
-            enabledCipherSuites = (String[]) objArrCopyOf;
+            Object[] copyOf = Arrays.copyOf(enabledCipherSuites, enabledCipherSuites.length + 1);
+            lx0.w(copyOf, "copyOf(this, newSize)");
+            enabledCipherSuites = (String[]) copyOf;
             enabledCipherSuites[enabledCipherSuites.length - 1] = str;
         }
         ry ryVar = new ry();
-        ryVar.f1040a = syVar.f1093a;
+        ryVar.f1039a = syVar.f1092a;
         ryVar.c = strArr;
         ryVar.d = r1;
         ryVar.b = syVar.b;
@@ -120,12 +120,12 @@ public final class ty {
         ryVar.c((String[]) Arrays.copyOf(enabledCipherSuites, enabledCipherSuites.length));
         lx0.w(enabledProtocols, "tlsVersionsIntersection");
         ryVar.e((String[]) Arrays.copyOf(enabledProtocols, enabledProtocols.length));
-        sy syVarA = ryVar.a();
-        if (syVarA.c() != null) {
-            sSLSocket.setEnabledProtocols(syVarA.d);
+        sy a2 = ryVar.a();
+        if (a2.c() != null) {
+            sSLSocket.setEnabledProtocols(a2.d);
         }
-        if (syVarA.a() != null) {
-            sSLSocket.setEnabledCipherSuites(syVarA.c);
+        if (a2.a() != null) {
+            sSLSocket.setEnabledCipherSuites(a2.c);
         }
         return syVar;
     }

@@ -10,27 +10,27 @@ public class tv2 {
     public static final wv2 b;
 
     /* renamed from: a, reason: collision with root package name */
-    public final wv2 f1147a;
+    public final wv2 f1146a;
 
     static {
         int i = Build.VERSION.SDK_INT;
-        b = (i >= 34 ? new kv2() : i >= 31 ? new jv2() : i >= 30 ? new iv2() : i >= 29 ? new hv2() : new gv2()).b().f1306a.a().f1306a.b().f1306a.c();
+        b = (i >= 34 ? new kv2() : i >= 31 ? new jv2() : i >= 30 ? new iv2() : i >= 29 ? new hv2() : new gv2()).b().f1305a.a().f1305a.b().f1305a.c();
     }
 
     public tv2(wv2 wv2Var) {
-        this.f1147a = wv2Var;
+        this.f1146a = wv2Var;
     }
 
     public wv2 a() {
-        return this.f1147a;
+        return this.f1146a;
     }
 
     public wv2 b() {
-        return this.f1147a;
+        return this.f1146a;
     }
 
     public wv2 c() {
-        return this.f1147a;
+        return this.f1146a;
     }
 
     public boolean equals(Object obj) {

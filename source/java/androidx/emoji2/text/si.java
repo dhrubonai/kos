@@ -8,14 +8,14 @@ public final class si extends Thread {
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
         ReentrantLock reentrantLock;
-        vi viVarO;
+        vi o;
         while (true) {
             try {
                 ReentrantLock reentrantLock2 = vi.h;
                 reentrantLock = vi.h;
                 reentrantLock.lock();
                 try {
-                    viVarO = j42.o();
+                    o = j42.o();
                 } catch (Throwable th) {
                     reentrantLock.unlock();
                     throw th;
@@ -23,14 +23,14 @@ public final class si extends Thread {
             } catch (InterruptedException unused) {
                 continue;
             }
-            if (viVarO == vi.l) {
+            if (o == vi.l) {
                 vi.l = null;
                 reentrantLock.unlock();
                 return;
             } else {
                 reentrantLock.unlock();
-                if (viVarO != null) {
-                    viVarO.j();
+                if (o != null) {
+                    o.j();
                 }
             }
         }

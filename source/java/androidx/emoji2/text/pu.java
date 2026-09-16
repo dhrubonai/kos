@@ -21,7 +21,7 @@ public final /* synthetic */ class pu implements sm0 {
         switch (this.d) {
             case 0:
                 this.e.reportFullyDrawn();
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 zu zuVar = this.e;
                 return new rm0(zuVar.i, new pu(zuVar, 0));

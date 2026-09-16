@@ -43,9 +43,9 @@ public final class pm0 implements pe {
         }
         int length = str.length();
         for (int i = 0; i < length; i++) {
-            char cCharAt = str.charAt(i);
-            if ('!' > cCharAt || cCharAt >= 127) {
-                throw new IllegalArgumentException(jq2.f("Unexpected char %#04x at %d in header name: %s", Integer.valueOf(cCharAt), Integer.valueOf(i), str).toString());
+            char charAt = str.charAt(i);
+            if ('!' > charAt || charAt >= 127) {
+                throw new IllegalArgumentException(jq2.f("Unexpected char %#04x at %d in header name: %s", Integer.valueOf(charAt), Integer.valueOf(i), str).toString());
             }
         }
         a(str, str2);
@@ -140,9 +140,9 @@ public final class pm0 implements pe {
     }
 
     public pm0(float f, float f2, oe oeVar) {
-        qw0 qw0VarL0 = az0.l0(0, oeVar.b());
-        ArrayList arrayList = new ArrayList(ys.r0(qw0VarL0));
-        Iterator it = qw0VarL0.iterator();
+        qw0 l0 = az0.l0(0, oeVar.b());
+        ArrayList arrayList = new ArrayList(ys.r0(l0));
+        Iterator it = l0.iterator();
         while (true) {
             pw0 pw0Var = (pw0) it;
             if (pw0Var.f) {

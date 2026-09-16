@@ -7,15 +7,15 @@ import android.widget.AbsListView;
 public final class g71 implements AbsListView.OnScrollListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ i71 f402a;
+    public final /* synthetic */ i71 f401a;
 
     public g71(i71 i71Var) {
-        this.f402a = i71Var;
+        this.f401a = i71Var;
     }
 
     @Override // android.widget.AbsListView.OnScrollListener
     public final void onScrollStateChanged(AbsListView absListView, int i) {
-        i71 i71Var = this.f402a;
+        i71 i71Var = this.f401a;
         e71 e71Var = i71Var.q;
         xf xfVar = i71Var.y;
         if (i != 1 || xfVar.getInputMethodMode() == 2 || xfVar.getContentView() == null) {

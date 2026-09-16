@@ -9,18 +9,18 @@ import java.lang.reflect.Method;
 /* loaded from: classes.dex */
 public final class ep2 extends dp2 {
     @Override // androidx.emoji2.text.dp2
-    public final Typeface P(Object obj) throws ArrayIndexOutOfBoundsException, IllegalArgumentException, NegativeArraySizeException {
+    public final Typeface P(Object obj) {
         try {
-            Object objNewInstance = Array.newInstance((Class<?>) this.k, 1);
-            Array.set(objNewInstance, 0, obj);
-            return (Typeface) this.q.invoke(null, objNewInstance, "sans-serif", -1, -1);
+            Object newInstance = Array.newInstance((Class<?>) this.k, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) this.q.invoke(null, newInstance, "sans-serif", -1, -1);
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override // androidx.emoji2.text.dp2
-    public final Method S(Class cls) throws NoSuchMethodException, SecurityException {
+    public final Method S(Class cls) {
         Class<?> cls2 = Array.newInstance((Class<?>) cls, 1).getClass();
         Class cls3 = Integer.TYPE;
         Method declaredMethod = Typeface.class.getDeclaredMethod("createFromFamiliesWithDefault", cls2, String.class, cls3, cls3);

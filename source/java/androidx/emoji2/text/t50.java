@@ -38,11 +38,16 @@ public final class t50 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((t50) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((t50) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:66:0x020e  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x023a  */
     /* JADX WARN: Type inference failed for: r7v6, types: [java.lang.Object, java.util.List] */
     @Override // androidx.emoji2.text.lk
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object k(Object obj) {
         zx1 zx1Var;
         ie ieVar;
@@ -50,8 +55,9 @@ public final class t50 extends hh2 implements Function2 {
         f30 f30Var;
         float f2;
         zx1 zx1Var2;
-        Object objB;
+        Object b;
         float f3;
+        float floatValue;
         int i = this.h;
         f30 f30Var2 = f30.d;
         float f4 = this.k;
@@ -65,61 +71,60 @@ public final class t50 extends hh2 implements Function2 {
                         zx1Var = new zx1();
                         zx1Var.d = f4;
                         zx1 zx1Var3 = new zx1();
-                        ie ieVarA = bz0.a(0.0f, f4);
+                        ie a2 = bz0.a(0.0f, f4);
                         try {
                             u50 u50Var = (u50) obj2;
-                            j50 j50Var = u50Var.f1160a;
+                            j50 j50Var = u50Var.f1159a;
                             pc pcVar = new pc(zx1Var3, (t52) this.n, zx1Var, u50Var);
                             this.i = zx1Var;
-                            this.l = ieVarA;
+                            this.l = a2;
                             this.j = 1;
-                            if (pz0.o(ieVarA, j50Var, false, pcVar, this) == f30Var2) {
+                            if (pz0.o(a2, j50Var, false, pcVar, this) == f30Var2) {
                                 return f30Var2;
                             }
                         } catch (CancellationException unused) {
-                            ieVar = ieVarA;
+                            ieVar = a2;
                             zx1Var.d = ((Number) ieVar.a()).floatValue();
                             f4 = zx1Var.d;
                             return new Float(f4);
                         }
-                        f4 = zx1Var.d;
                     }
-                } else {
-                    if (i2 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    ieVar = (ie) this.l;
-                    zx1Var = this.i;
-                    try {
-                        mz0.L(obj);
-                    } catch (CancellationException unused2) {
-                        zx1Var.d = ((Number) ieVar.a()).floatValue();
-                        f4 = zx1Var.d;
-                        return new Float(f4);
-                    }
-                    f4 = zx1Var.d;
+                    return new Float(f4);
                 }
+                if (i2 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                ieVar = (ie) this.l;
+                zx1Var = this.i;
+                try {
+                    mz0.L(obj);
+                } catch (CancellationException unused2) {
+                    zx1Var.d = ((Number) ieVar.a()).floatValue();
+                    f4 = zx1Var.d;
+                    return new Float(f4);
+                }
+                f4 = zx1Var.d;
                 return new Float(f4);
             default:
                 um0 um0Var = (um0) obj2;
                 yb2 yb2Var = (yb2) this.l;
-                l6 l6Var = yb2Var.f1378a;
+                l6 l6Var = yb2Var.f1377a;
                 int i3 = this.j;
                 if (i3 == 0) {
                     mz0.L(obj);
                     j50 j50Var2 = yb2Var.b;
-                    wo2 wo2Var = qq2.f974a;
-                    float f5 = ((ke) new s6(j50Var2.f563a).r(new ke(0.0f), new ke(f4))).f635a;
+                    wo2 wo2Var = qq2.f973a;
+                    float f5 = ((ke) new s6(j50Var2.f562a).r(new ke(0.0f), new ke(f4))).f634a;
                     o60 o60Var = (o60) l6Var.e;
                     un1 un1Var = o60Var.o;
-                    int iM = ((pm1) un1Var.getValue()).c + o60Var.m();
-                    if (iM == 0) {
+                    int m = ((pm1) un1Var.getValue()).c + o60Var.m();
+                    if (m == 0) {
                         f2 = 0.0f;
                         f = 0.0f;
                         f30Var = f30Var2;
                     } else {
                         int i4 = f4 < 0.0f ? o60Var.d + 1 : o60Var.d;
-                        int iP = az0.p(((int) (f5 / iM)) + i4, 0, o60Var.l());
+                        int p = az0.p(((int) (f5 / m)) + i4, 0, o60Var.l());
                         o60Var.m();
                         int i5 = ((pm1) un1Var.getValue()).c;
                         f = 0.0f;
@@ -133,25 +138,25 @@ public final class t50 extends hh2 implements Function2 {
                         if (j4 > 2147483647L) {
                             j4 = 2147483647L;
                         }
-                        int iAbs = Math.abs((az0.p(az0.p(iP, i7, (int) j4), 0, o60Var.l()) - i6) * iM) - iM;
-                        if (iAbs < 0) {
-                            iAbs = 0;
+                        int abs = Math.abs((az0.p(az0.p(p, i7, (int) j4), 0, o60Var.l()) - i6) * m) - m;
+                        if (abs < 0) {
+                            abs = 0;
                         }
-                        f2 = iAbs == 0 ? iAbs : Math.signum(f4) * iAbs;
+                        f2 = abs == 0 ? abs : Math.signum(f4) * abs;
                     }
                     if (Float.isNaN(f2)) {
                         throw new IllegalStateException("calculateApproachOffset returned NaN. Please use a valid value.");
                     }
                     zx1Var2 = new zx1();
-                    float fSignum = Math.signum(f4) * Math.abs(f2);
-                    zx1Var2.d = fSignum;
-                    um0Var.e(new Float(fSignum));
+                    float signum = Math.signum(f4) * Math.abs(f2);
+                    zx1Var2.d = signum;
+                    um0Var.e(new Float(signum));
                     float f6 = zx1Var2.d;
                     vb2 vb2Var = new vb2(zx1Var2, um0Var, 1);
                     this.i = zx1Var2;
                     this.j = 1;
-                    objB = yb2.b(yb2Var, this.n, f6, this.k, vb2Var, this);
-                    if (objB == f30Var) {
+                    b = yb2.b(yb2Var, this.n, f6, this.k, vb2Var, this);
+                    if (b == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -167,25 +172,25 @@ public final class t50 extends hh2 implements Function2 {
                     f = 0.0f;
                     f30Var = f30Var2;
                     zx1Var2 = zx1Var4;
-                    objB = obj;
+                    b = obj;
                 }
-                ie ieVar2 = (ie) objB;
-                float fFloatValue = ((Number) ieVar2.a()).floatValue();
+                ie ieVar2 = (ie) b;
+                float floatValue2 = ((Number) ieVar2.a()).floatValue();
                 o60 o60Var2 = (o60) l6Var.e;
                 j42 j42Var = o60Var2.k().m;
-                ?? r7 = o60Var2.k().f915a;
+                ?? r7 = o60Var2.k().f914a;
                 int size = r7.size();
                 int i8 = 0;
                 float f7 = Float.NEGATIVE_INFINITY;
                 float f8 = Float.POSITIVE_INFINITY;
                 while (i8 < size) {
                     ib1 ib1Var = (ib1) r7.get(i8);
-                    pm1 pm1VarK = o60Var2.k();
-                    float f9 = fFloatValue;
-                    il1 il1Var = pm1VarK.e;
+                    pm1 k = o60Var2.k();
+                    float f9 = floatValue2;
+                    il1 il1Var = k.e;
                     o60 o60Var3 = o60Var2;
                     il1 il1Var2 = il1.d;
-                    pm1VarK.f();
+                    k.f();
                     int i9 = o60Var3.k().f;
                     int i10 = o60Var3.k().d;
                     int i11 = o60Var3.k().b;
@@ -200,10 +205,10 @@ public final class t50 extends hh2 implements Function2 {
                         f8 = f10;
                     }
                     i8++;
-                    fFloatValue = f9;
+                    floatValue2 = f9;
                     o60Var2 = o60Var3;
                 }
-                float f11 = fFloatValue;
+                float f11 = floatValue2;
                 o60 o60Var4 = o60Var2;
                 if (f7 == Float.NEGATIVE_INFINITY) {
                     f7 = f8;
@@ -220,34 +225,43 @@ public final class t50 extends hh2 implements Function2 {
                         f8 = f7;
                     }
                 }
-                if (o60Var4.b()) {
-                    f3 = f8;
-                } else if (z || mz0.u(o60Var4)) {
+                if (!o60Var4.b()) {
+                    if (!z && !mz0.u(o60Var4)) {
+                        f3 = f;
+                        f7 = f3;
+                        floatValue = ((Number) ((g10) l6Var.f).invoke(Float.valueOf(f11), Float.valueOf(f7), Float.valueOf(f3))).floatValue();
+                        if (floatValue != f7 && floatValue != f3 && floatValue != f) {
+                            throw new IllegalStateException(("Final Snapping Offset Should Be one of " + f7 + ", " + f3 + " or 0.0").toString());
+                        }
+                        if (floatValue != Float.POSITIVE_INFINITY || floatValue == Float.NEGATIVE_INFINITY) {
+                            floatValue = f;
+                        }
+                        if (!Float.isNaN(floatValue)) {
+                            throw new IllegalStateException("calculateSnapOffset returned NaN. Please use a valid value.");
+                        }
+                        zx1Var2.d = floatValue;
+                        float f12 = f;
+                        ie A = bz0.A(ieVar2, f12, f12, 30);
+                        be2 be2Var = yb2Var.c;
+                        vb2 vb2Var2 = new vb2(zx1Var2, um0Var, 0);
+                        this.i = null;
+                        this.j = 2;
+                        Object b2 = cc2.b(this.n, floatValue, floatValue, A, be2Var, vb2Var2, this);
+                        return b2 == f30Var ? f30Var : b2;
+                    }
                     f7 = f;
-                    f3 = f8;
-                } else {
-                    f3 = f;
-                    f7 = f3;
                 }
-                float fFloatValue2 = ((Number) ((g10) l6Var.f).invoke(Float.valueOf(f11), Float.valueOf(f7), Float.valueOf(f3))).floatValue();
-                if (fFloatValue2 != f7 && fFloatValue2 != f3 && fFloatValue2 != f) {
+                f3 = f8;
+                floatValue = ((Number) ((g10) l6Var.f).invoke(Float.valueOf(f11), Float.valueOf(f7), Float.valueOf(f3))).floatValue();
+                if (floatValue != f7) {
                     throw new IllegalStateException(("Final Snapping Offset Should Be one of " + f7 + ", " + f3 + " or 0.0").toString());
                 }
-                if (fFloatValue2 == Float.POSITIVE_INFINITY || fFloatValue2 == Float.NEGATIVE_INFINITY) {
-                    fFloatValue2 = f;
+                if (floatValue != Float.POSITIVE_INFINITY) {
                 }
-                if (Float.isNaN(fFloatValue2)) {
-                    throw new IllegalStateException("calculateSnapOffset returned NaN. Please use a valid value.");
+                floatValue = f;
+                if (!Float.isNaN(floatValue)) {
                 }
-                zx1Var2.d = fFloatValue2;
-                float f12 = f;
-                ie ieVarA2 = bz0.A(ieVar2, f12, f12, 30);
-                be2 be2Var = yb2Var.c;
-                vb2 vb2Var2 = new vb2(zx1Var2, um0Var, 0);
-                this.i = null;
-                this.j = 2;
-                Object objB2 = cc2.b(this.n, fFloatValue2, fFloatValue2, ieVarA2, be2Var, vb2Var2, this);
-                return objB2 == f30Var ? f30Var : objB2;
+                break;
         }
     }
 

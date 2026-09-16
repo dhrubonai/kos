@@ -11,21 +11,21 @@ import java.util.List;
 public abstract class o32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final List f840a = xs.m0(Application.class, c32.class);
+    public static final List f839a = xs.m0(Application.class, c32.class);
     public static final List b = lx0.M(c32.class);
 
     public static final Constructor a(Class cls, List list) {
         lx0.x(list, "signature");
-        c0 c0VarE = h50.E(cls.getConstructors());
-        while (c0VarE.hasNext()) {
-            Constructor constructor = (Constructor) c0VarE.next();
+        c0 E = h50.E(cls.getConstructors());
+        while (E.hasNext()) {
+            Constructor constructor = (Constructor) E.next();
             Class<?>[] parameterTypes = constructor.getParameterTypes();
             lx0.w(parameterTypes, "getParameterTypes(...)");
-            List listS0 = xh.S0(parameterTypes);
-            if (list.equals(listS0)) {
+            List S0 = xh.S0(parameterTypes);
+            if (list.equals(S0)) {
                 return constructor;
             }
-            if (list.size() == listS0.size() && listS0.containsAll(list)) {
+            if (list.size() == S0.size() && S0.containsAll(list)) {
                 throw new UnsupportedOperationException("Class " + cls.getSimpleName() + " must have parameters in the proper order: " + list);
             }
         }

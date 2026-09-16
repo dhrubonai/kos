@@ -1,6 +1,7 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
+import android.content.pm.PackageParser;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Point;
@@ -22,6 +23,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewStructure;
 import android.view.ViewTreeObserver;
+import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AnimationUtils;
 import android.view.autofill.AutofillId;
@@ -34,14 +36,17 @@ import android.view.translation.ViewTranslationRequest;
 import androidx.compose.ui.semantics.EmptySemanticsElement;
 import androidx.core.splashscreen.R;
 import androidx.emoji2.text.md1;
+import androidx.emoji2.text.v7;
 import androidx.emoji2.text.wm;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import kotlin.jvm.functions.Function2;
@@ -142,16 +147,16 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     /* JADX WARN: Type inference failed for: r1v35, types: [androidx.emoji2.text.d7] */
     /* JADX WARN: Type inference failed for: r1v36, types: [androidx.emoji2.text.e7] */
     public v7(Context context, v20 v20Var) {
+        super(context);
         s6 s6Var;
         u6 u6Var;
-        super(context);
         final v7 v7Var = this;
         v7Var.d = 9205357640488583168L;
         v7Var.e = true;
         v7Var.f = new g11();
-        l70 l70VarF = lx0.f(context);
+        l70 f = lx0.f(context);
         dd0 dd0Var = dd0.X;
-        v7Var.g = new un1(l70VarF, dd0Var);
+        v7Var.g = new un1(f, dd0Var);
         int i = Build.VERSION.SDK_INT;
         boolean z = i >= 35;
         v7Var.i = z;
@@ -168,7 +173,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             }
 
             public final int hashCode() {
-                return this.f64a.hashCode();
+                return v7.this.hashCode();
             }
 
             @Override // androidx.emoji2.text.ud1
@@ -180,8 +185,8 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         v7Var.k = v20Var;
         v7Var.l = new q9(new m7(3, v7Var, v7.class, "startDrag", "startDrag-12SF9DM(Landroidx/compose/ui/draganddrop/DragAndDropTransferData;JLkotlin/jvm/functions/Function1;)Z", 0, 0));
         v7Var.m = new a51();
-        nd1 nd1VarA = androidx.compose.ui.input.key.a.a(new p7(v7Var, 0));
-        nd1 nd1VarA2 = androidx.compose.ui.input.rotary.a.a();
+        nd1 a2 = androidx.compose.ui.input.key.a.a(new p7(v7Var, 0));
+        nd1 a3 = androidx.compose.ui.input.rotary.a.a();
         v7Var.n = new op();
         v7Var.o = new kc(ViewConfiguration.get(context));
         bw0 bw0Var = new bw0();
@@ -190,9 +195,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         e11Var.d0(n12.c);
         e11Var.a0(v7Var.getDensity());
         e11Var.f0(v7Var.getViewConfiguration());
-        e11Var.e0(androidx.compose.ui.layout.b.b(bw0Var).k(emptySemanticsElement).k(nd1VarA2).k(nd1VarA).k(((gk0) v7Var.getFocusOwner()).e).k(v7Var.getDragAndDropManager().c).k(ud1Var));
+        e11Var.e0(androidx.compose.ui.layout.b.b(bw0Var).k(emptySemanticsElement).k(a3).k(a2).k(((gk0) v7Var.getFocusOwner()).e).k(v7Var.getDragAndDropManager().c).k(ud1Var));
         v7Var.q = e11Var;
-        qe1 qe1Var = mw0.f774a;
+        qe1 qe1Var = mw0.f773a;
         v7Var.r = new qe1();
         v7Var.getLayoutNodes();
         v7Var.s = new ax1();
@@ -222,29 +227,29 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             s6Var = new s6();
             s6Var.d = v7Var;
             s6Var.e = autofillTree;
-            AutofillManager autofillManagerF = i1.f(v7Var.getContext().getSystemService(i1.j()));
-            if (autofillManagerF == null) {
+            AutofillManager f2 = i1.f(v7Var.getContext().getSystemService(i1.j()));
+            if (f2 == null) {
                 throw new IllegalStateException("Autofill service could not be located.");
             }
-            s6Var.f = autofillManagerF;
+            s6Var.f = f2;
             v7Var.setImportantForAutofill(1);
-            r1 r1VarA = jz0.A(v7Var);
-            AutofillId autofillIdG = r1VarA != null ? ej.g(r1VarA.f990a) : null;
-            if (autofillIdG == null) {
+            r1 A = jz0.A(v7Var);
+            AutofillId g = A != null ? ej.g(A.f989a) : null;
+            if (g == null) {
                 throw zd.c("Required value was null.");
             }
-            s6Var.g = autofillIdG;
+            s6Var.g = g;
         } else {
             s6Var = null;
         }
         v7Var.H = s6Var;
         if (h()) {
-            AutofillManager autofillManagerF2 = i1.f(context.getSystemService(i1.j()));
-            if (autofillManagerF2 == null) {
+            AutofillManager f3 = i1.f(context.getSystemService(i1.j()));
+            if (f3 == null) {
                 throw zd.c("Autofill service could not be located.");
             }
             v7Var = this;
-            u6Var = new u6(new gz0(autofillManagerF2), getSemanticsOwner(), this, getRectManager(), context.getPackageName());
+            u6Var = new u6(new gz0(f3), getSemanticsOwner(), this, getRectManager(), context.getPackageName());
         } else {
             u6Var = null;
         }
@@ -257,8 +262,8 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         long j = Integer.MAX_VALUE;
         v7Var.S = (j & 4294967295L) | (j << 32);
         v7Var.T = new int[]{0, 0};
-        float[] fArrA = ya1.a();
-        v7Var.U = fArrA;
+        float[] a4 = ya1.a();
+        v7Var.U = a4;
         v7Var.V = ya1.a();
         v7Var.W = ya1.a();
         v7Var.a0 = -1L;
@@ -268,19 +273,19 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         v7Var.g0 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: androidx.emoji2.text.c7
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
-                this.d.M();
+                v7.this.M();
             }
         };
         v7Var.h0 = new ViewTreeObserver.OnScrollChangedListener() { // from class: androidx.emoji2.text.d7
             @Override // android.view.ViewTreeObserver.OnScrollChangedListener
             public final void onScrollChanged() {
-                this.f240a.M();
+                v7.this.M();
             }
         };
         v7Var.i0 = new ViewTreeObserver.OnTouchModeChangeListener() { // from class: androidx.emoji2.text.e7
             @Override // android.view.ViewTreeObserver.OnTouchModeChangeListener
             public final void onTouchModeChanged(boolean z2) {
-                this.d.s0.f1405a.setValue(new wv0(z2 ? 1 : 2));
+                v7.this.s0.f1404a.setValue(new wv0(z2 ? 1 : 2));
             }
         };
         lk2 lk2Var = new lk2(v7Var.getView(), v7Var);
@@ -305,12 +310,12 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         v7Var.B0 = new t7(i2, v7Var);
         v7Var.C0 = new f7(i2, v7Var);
         v7Var.E0 = new s7(v7Var, i2);
-        v7Var.F0 = i < 29 ? new l6(fArrA) : new to();
+        v7Var.F0 = i < 29 ? new l6(a4) : new to();
         v7Var.addOnAttachStateChangeListener(v7Var.w);
         v7Var.setWillNotDraw(false);
         v7Var.setFocusable(true);
         if (i >= 26) {
-            k8.f625a.a(v7Var, 1, false);
+            k8.f624a.a(v7Var, 1, false);
         }
         v7Var.setFocusableInTouchMode(true);
         v7Var.setClipChildren(false);
@@ -318,7 +323,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         v7Var.setOnDragListener(v7Var.getDragAndDropManager());
         v7Var.getRoot().d(v7Var);
         if (i >= 29) {
-            f8.f349a.a(v7Var);
+            f8.f348a.a(v7Var);
         }
         if (z) {
             View view = new View(context);
@@ -332,20 +337,20 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     }
 
     public static final void a(v7 v7Var, int i, AccessibilityNodeInfo accessibilityNodeInfo, String str) {
-        int iD;
+        int d;
         d8 d8Var = v7Var.v;
         if (lx0.n(str, d8Var.G)) {
-            int iD2 = d8Var.E.d(i);
-            if (iD2 != -1) {
-                accessibilityNodeInfo.getExtras().putInt(str, iD2);
+            int d2 = d8Var.E.d(i);
+            if (d2 != -1) {
+                accessibilityNodeInfo.getExtras().putInt(str, d2);
                 return;
             }
             return;
         }
-        if (!lx0.n(str, d8Var.H) || (iD = d8Var.F.d(i)) == -1) {
+        if (!lx0.n(str, d8Var.H) || (d = d8Var.F.d(i)) == -1) {
             return;
         }
-        accessibilityNodeInfo.getExtras().putInt(str, iD);
+        accessibilityNodeInfo.getExtras().putInt(str, d);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -385,7 +390,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         return j | (j << 32);
     }
 
-    public static View m(View view, int i) throws NoSuchMethodException, SecurityException {
+    public static View m(View view, int i) {
         if (Build.VERSION.SDK_INT < 29) {
             Method declaredMethod = View.class.getDeclaredMethod("getAccessibilityViewId", null);
             declaredMethod.setAccessible(true);
@@ -396,9 +401,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                 ViewGroup viewGroup = (ViewGroup) view;
                 int childCount = viewGroup.getChildCount();
                 for (int i2 = 0; i2 < childCount; i2++) {
-                    View viewM = m(viewGroup.getChildAt(i2), i);
-                    if (viewM != null) {
-                        return viewM;
+                    View m = m(viewGroup.getChildAt(i2), i);
+                    if (m != null) {
+                        return m;
                     }
                 }
             }
@@ -408,9 +413,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     public static void p(e11 e11Var) {
         e11Var.D();
-        sf1 sf1VarZ = e11Var.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        sf1 z = e11Var.z();
+        Object[] objArr = z.d;
+        int i = z.f;
         for (int i2 = 0; i2 < i; i2++) {
             p((e11) objArr[i2]);
         }
@@ -421,7 +426,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (!z) {
             int pointerCount = motionEvent.getPointerCount();
             for (int i = 1; i < pointerCount; i++) {
-                z = (Float.floatToRawIntBits(motionEvent.getX(i)) & Integer.MAX_VALUE) >= 2139095040 || (Float.floatToRawIntBits(motionEvent.getY(i)) & Integer.MAX_VALUE) >= 2139095040 || (Build.VERSION.SDK_INT >= 29 && !ae1.f96a.a(motionEvent, i));
+                z = (Float.floatToRawIntBits(motionEvent.getX(i)) & Integer.MAX_VALUE) >= 2139095040 || (Float.floatToRawIntBits(motionEvent.getY(i)) & Integer.MAX_VALUE) >= 2139095040 || (Build.VERSION.SDK_INT >= 29 && !ae1.f95a.a(motionEvent, i));
                 if (z) {
                     break;
                 }
@@ -455,13 +460,13 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         x8 x8Var = this.w;
         x8Var.j = true;
         if (x8Var.h()) {
-            x8Var.k.r(up2.f1187a);
+            x8Var.k.r(up2.f1186a);
         }
     }
 
     public final void B(e11 e11Var, boolean z, boolean z2, boolean z3) {
-        e11 e11VarU;
-        e11 e11VarU2;
+        e11 u;
+        e11 u2;
         cb1 cb1Var = this.R;
         if (!z) {
             if (cb1Var.p(e11Var, z2) && z3) {
@@ -476,13 +481,13 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (e11Var2 == null) {
             iv0.b("Error: requestLookaheadRemeasure cannot be called on a node outside LookaheadScope");
         }
-        int iOrdinal = i11Var.d.ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
+        int ordinal = i11Var.d.ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
                 return;
             }
-            if (iOrdinal != 2 && iOrdinal != 3) {
-                if (iOrdinal != 4) {
+            if (ordinal != 2 && ordinal != 3) {
+                if (ordinal != 4) {
                     throw new mu();
                 }
                 if (!i11Var.e || z2) {
@@ -491,9 +496,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                     if (e11Var.S) {
                         return;
                     }
-                    if ((lx0.n(e11Var.K(), Boolean.TRUE) || cb1.h(e11Var)) && ((e11VarU = e11Var.u()) == null || !e11VarU.I.e)) {
+                    if ((lx0.n(e11Var.K(), Boolean.TRUE) || cb1.h(e11Var)) && ((u = e11Var.u()) == null || !u.I.e)) {
                         rgVar.r(e11Var, tx0.d);
-                    } else if ((e11Var.J() || cb1.i(e11Var)) && ((e11VarU2 = e11Var.u()) == null || !e11VarU2.q())) {
+                    } else if ((e11Var.J() || cb1.i(e11Var)) && ((u2 = e11Var.u()) == null || !u2.q())) {
                         rgVar.r(e11Var, tx0.f);
                     }
                     if (cb1Var.d || !z3) {
@@ -514,15 +519,15 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         cb1 cb1Var = this.R;
         if (!z) {
             cb1Var.getClass();
-            int iOrdinal = i11Var.d.ordinal();
-            if (iOrdinal == 0 || iOrdinal == 1 || iOrdinal == 2 || iOrdinal == 3) {
+            int ordinal = i11Var.d.ordinal();
+            if (ordinal == 0 || ordinal == 1 || ordinal == 2 || ordinal == 3) {
                 return;
             }
-            if (iOrdinal != 4) {
+            if (ordinal != 4) {
                 throw new mu();
             }
-            e11 e11VarU = e11Var.u();
-            boolean z3 = e11VarU == null || e11VarU.J();
+            e11 u = e11Var.u();
+            boolean z3 = u == null || u.J();
             if (!z2) {
                 if (e11Var.q()) {
                     return;
@@ -535,7 +540,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             eb1Var.y = true;
             eb1Var.z = true;
             if (!e11Var.S && eb1Var.w && z3) {
-                if ((e11VarU == null || !e11VarU.p()) && (e11VarU == null || !e11VarU.q())) {
+                if ((u == null || !u.p()) && (u == null || !u.q())) {
                     cb1Var.b.r(e11Var, tx0Var);
                 }
                 if (cb1Var.d) {
@@ -547,16 +552,16 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             return;
         }
         rg rgVar = cb1Var.b;
-        int iOrdinal2 = i11Var.d.ordinal();
-        if (iOrdinal2 != 0) {
-            if (iOrdinal2 == 1) {
+        int ordinal2 = i11Var.d.ordinal();
+        if (ordinal2 != 0) {
+            if (ordinal2 == 1) {
                 return;
             }
-            if (iOrdinal2 != 2) {
-                if (iOrdinal2 == 3) {
+            if (ordinal2 != 2) {
+                if (ordinal2 == 3) {
                     return;
                 }
-                if (iOrdinal2 != 4) {
+                if (ordinal2 != 4) {
                     throw new mu();
                 }
             }
@@ -572,10 +577,10 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (e11Var.S) {
             return;
         }
-        e11 e11VarU2 = e11Var.u();
-        if (lx0.n(e11Var.K(), Boolean.TRUE) && ((e11VarU2 == null || !e11VarU2.I.e) && (e11VarU2 == null || !e11VarU2.I.f))) {
+        e11 u2 = e11Var.u();
+        if (lx0.n(e11Var.K(), Boolean.TRUE) && ((u2 == null || !u2.I.e) && (u2 == null || !u2.I.f))) {
             rgVar.r(e11Var, tx0.e);
-        } else if (e11Var.J() && ((e11VarU2 == null || !e11VarU2.p()) && (e11VarU2 == null || !e11VarU2.q()))) {
+        } else if (e11Var.J() && ((u2 == null || !u2.p()) && (u2 == null || !u2.q()))) {
             rgVar.r(e11Var, tx0Var);
         }
         if (cb1Var.d) {
@@ -604,9 +609,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (this.b0) {
             return;
         }
-        long jCurrentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        if (jCurrentAnimationTimeMillis != this.a0) {
-            this.a0 = jCurrentAnimationTimeMillis;
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        if (currentAnimationTimeMillis != this.a0) {
+            this.a0 = currentAnimationTimeMillis;
             so soVar = this.F0;
             float[] fArr = this.V;
             soVar.b(this, fArr);
@@ -636,9 +641,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         wj1.y(fArr, this.W);
         float x = motionEvent.getX();
         float y = motionEvent.getY();
-        long jB = ya1.b((Float.floatToRawIntBits(x) << 32) | (Float.floatToRawIntBits(y) & 4294967295L), fArr);
-        float rawX = motionEvent.getRawX() - Float.intBitsToFloat((int) (jB >> 32));
-        float rawY = motionEvent.getRawY() - Float.intBitsToFloat((int) (jB & 4294967295L));
+        long b = ya1.b((Float.floatToRawIntBits(x) << 32) | (Float.floatToRawIntBits(y) & 4294967295L), fArr);
+        float rawX = motionEvent.getRawX() - Float.intBitsToFloat((int) (b >> 32));
+        float rawY = motionEvent.getRawY() - Float.intBitsToFloat((int) (b & 4294967295L));
         this.c0 = (Float.floatToRawIntBits(rawX) << 32) | (Float.floatToRawIntBits(rawY) & 4294967295L);
     }
 
@@ -656,11 +661,11 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (e11Var != null) {
             while (e11Var != null && e11Var.r() == c11.d) {
                 if (!this.Q) {
-                    e11 e11VarU = e11Var.u();
-                    if (e11VarU == null) {
+                    e11 u = e11Var.u();
+                    if (u == null) {
                         break;
                     }
-                    long j = e11VarU.H.c.g;
+                    long j = u.H.c.g;
                     if (vz.f(j) && vz.e(j)) {
                         break;
                     }
@@ -681,9 +686,9 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     public final long I(long j) {
         E();
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.c0 >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.c0 & 4294967295L));
-        return ya1.b((Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32), this.W);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (this.c0 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (this.c0 & 4294967295L));
+        return ya1.b((Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32), this.W);
     }
 
     public final int J(MotionEvent motionEvent) {
@@ -692,19 +697,19 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             this.G0 = false;
             int metaState = motionEvent.getMetaState();
             this.m.getClass();
-            vu2.f1243a.setValue(new ws1(metaState));
+            vu2.f1242a.setValue(new ws1(metaState));
         }
         zd1 zd1Var = this.E;
-        l6 l6VarA = zd1Var.a(motionEvent, this);
+        l6 a2 = zd1Var.a(motionEvent, this);
         lr lrVar = this.F;
-        if (l6VarA == null) {
-            if (!lrVar.f705a) {
+        if (a2 == null) {
+            if (!lrVar.f704a) {
                 ((g81) ((gz0) lrVar.d).d).a();
                 ((sr0) lrVar.c).c();
             }
             return 0;
         }
-        List list = (List) l6VarA.e;
+        List list = (List) a2.e;
         int size = list.size() - 1;
         if (size >= 0) {
             while (true) {
@@ -718,244 +723,204 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                 }
                 size = i;
             }
-            obj = null;
-        } else {
-            obj = null;
         }
+        obj = null;
         rs1 rs1Var = (rs1) obj;
         if (rs1Var != null) {
             this.d = rs1Var.d;
         }
-        int iC = lrVar.c(l6VarA, this, s(motionEvent));
-        l6VarA.f = null;
+        int c = lrVar.c(a2, this, s(motionEvent));
+        a2.f = null;
         int actionMasked = motionEvent.getActionMasked();
-        if ((actionMasked != 0 && actionMasked != 5) || (iC & 1) != 0) {
-            return iC;
+        if ((actionMasked != 0 && actionMasked != 5) || (c & 1) != 0) {
+            return c;
         }
         int pointerId = motionEvent.getPointerId(motionEvent.getActionIndex());
         zd1Var.c.delete(pointerId);
         zd1Var.b.delete(pointerId);
-        return iC;
+        return c;
     }
 
     public final void K(MotionEvent motionEvent, int i, long j, boolean z) {
         int actionMasked = motionEvent.getActionMasked();
-        int actionIndex = -1;
+        int i2 = -1;
         if (actionMasked != 1) {
             if (actionMasked == 6) {
-                actionIndex = motionEvent.getActionIndex();
+                i2 = motionEvent.getActionIndex();
             }
         } else if (i != 9 && i != 10) {
-            actionIndex = 0;
+            i2 = 0;
         }
-        int pointerCount = motionEvent.getPointerCount() - (actionIndex >= 0 ? 1 : 0);
+        int pointerCount = motionEvent.getPointerCount() - (i2 >= 0 ? 1 : 0);
         if (pointerCount == 0) {
             return;
         }
         MotionEvent.PointerProperties[] pointerPropertiesArr = new MotionEvent.PointerProperties[pointerCount];
-        for (int i2 = 0; i2 < pointerCount; i2++) {
-            pointerPropertiesArr[i2] = new MotionEvent.PointerProperties();
+        for (int i3 = 0; i3 < pointerCount; i3++) {
+            pointerPropertiesArr[i3] = new MotionEvent.PointerProperties();
         }
         MotionEvent.PointerCoords[] pointerCoordsArr = new MotionEvent.PointerCoords[pointerCount];
-        for (int i3 = 0; i3 < pointerCount; i3++) {
-            pointerCoordsArr[i3] = new MotionEvent.PointerCoords();
+        for (int i4 = 0; i4 < pointerCount; i4++) {
+            pointerCoordsArr[i4] = new MotionEvent.PointerCoords();
         }
-        int i4 = 0;
-        while (i4 < pointerCount) {
-            int i5 = ((actionIndex < 0 || i4 < actionIndex) ? 0 : 1) + i4;
-            motionEvent.getPointerProperties(i5, pointerPropertiesArr[i4]);
-            MotionEvent.PointerCoords pointerCoords = pointerCoordsArr[i4];
-            motionEvent.getPointerCoords(i5, pointerCoords);
+        int i5 = 0;
+        while (i5 < pointerCount) {
+            int i6 = ((i2 < 0 || i5 < i2) ? 0 : 1) + i5;
+            motionEvent.getPointerProperties(i6, pointerPropertiesArr[i5]);
+            MotionEvent.PointerCoords pointerCoords = pointerCoordsArr[i5];
+            motionEvent.getPointerCoords(i6, pointerCoords);
             float f = pointerCoords.x;
-            long jV = v((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
-            pointerCoords.x = Float.intBitsToFloat((int) (jV >> 32));
-            pointerCoords.y = Float.intBitsToFloat((int) (jV & 4294967295L));
-            i4++;
+            long v = v((Float.floatToRawIntBits(pointerCoords.y) & 4294967295L) | (Float.floatToRawIntBits(f) << 32));
+            pointerCoords.x = Float.intBitsToFloat((int) (v >> 32));
+            pointerCoords.y = Float.intBitsToFloat((int) (v & 4294967295L));
+            i5++;
         }
-        MotionEvent motionEventObtain = MotionEvent.obtain(motionEvent.getDownTime() == motionEvent.getEventTime() ? j : motionEvent.getDownTime(), j, i, pointerCount, pointerPropertiesArr, pointerCoordsArr, motionEvent.getMetaState(), z ? 0 : motionEvent.getButtonState(), motionEvent.getXPrecision(), motionEvent.getYPrecision(), motionEvent.getDeviceId(), motionEvent.getEdgeFlags(), motionEvent.getSource(), motionEvent.getFlags());
-        l6 l6VarA = this.E.a(motionEventObtain, this);
-        lx0.u(l6VarA);
-        this.F.c(l6VarA, this, true);
-        motionEventObtain.recycle();
+        MotionEvent obtain = MotionEvent.obtain(motionEvent.getDownTime() == motionEvent.getEventTime() ? j : motionEvent.getDownTime(), j, i, pointerCount, pointerPropertiesArr, pointerCoordsArr, motionEvent.getMetaState(), z ? 0 : motionEvent.getButtonState(), motionEvent.getXPrecision(), motionEvent.getYPrecision(), motionEvent.getDeviceId(), motionEvent.getEdgeFlags(), motionEvent.getSource(), motionEvent.getFlags());
+        l6 a2 = this.E.a(obtain, this);
+        lx0.u(a2);
+        this.F.c(a2, this, true);
+        obtain.recycle();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void L(kotlin.jvm.functions.Function2 r5, androidx.emoji2.text.n10 r6) {
-        /*
-            r4 = this;
-            boolean r0 = r6 instanceof androidx.emoji2.text.u7
-            if (r0 == 0) goto L13
-            r0 = r6
-            androidx.emoji2.text.u7 r0 = (androidx.emoji2.text.u7) r0
-            int r1 = r0.i
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.i = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.u7 r0 = new androidx.emoji2.text.u7
-            r0.<init>(r4, r6)
-        L18:
-            java.lang.Object r6 = r0.g
-            int r1 = r0.i
-            r2 = 1
-            if (r1 == 0) goto L2d
-            if (r1 == r2) goto L29
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r6 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r6)
-            throw r5
-        L29:
-            androidx.emoji2.text.mz0.L(r6)
-            goto L49
-        L2d:
-            androidx.emoji2.text.mz0.L(r6)
-            androidx.emoji2.text.p7 r6 = new androidx.emoji2.text.p7
-            r1 = 2
-            r6.<init>(r4, r1)
-            r0.i = r2
-            androidx.emoji2.text.ha r1 = new androidx.emoji2.text.ha
-            r2 = 0
-            java.util.concurrent.atomic.AtomicReference r3 = r4.l0
-            r1.<init>(r6, r3, r5, r2)
-            java.lang.Object r5 = androidx.emoji2.text.wj1.s(r1, r0)
-            androidx.emoji2.text.f30 r6 = androidx.emoji2.text.f30.d
-            if (r5 != r6) goto L49
-            return
-        L49:
-            androidx.emoji2.text.mu r5 = new androidx.emoji2.text.mu
-            r5.<init>()
-            throw r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v7.L(kotlin.jvm.functions.Function2, androidx.emoji2.text.n10):void");
+    public final void L(Function2 function2, n10 n10Var) {
+        u7 u7Var;
+        int i;
+        if (n10Var instanceof u7) {
+            u7Var = (u7) n10Var;
+            int i2 = u7Var.i;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                u7Var.i = i2 - Integer.MIN_VALUE;
+                Object obj = u7Var.g;
+                i = u7Var.i;
+                if (i != 0) {
+                    mz0.L(obj);
+                    p7 p7Var = new p7(this, 2);
+                    u7Var.i = 1;
+                    if (wj1.s(new ha(p7Var, this.l0, function2, null), u7Var) == f30.d) {
+                        return;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                }
+                throw new mu();
+            }
+        }
+        u7Var = new u7(this, n10Var);
+        Object obj2 = u7Var.g;
+        i = u7Var.i;
+        if (i != 0) {
+        }
+        throw new mu();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a1  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0086  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0078  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void M() {
-        /*
-            r18 = this;
-            r0 = r18
-            int[] r1 = r0.T
-            r0.getLocationOnScreen(r1)
-            long r2 = r0.S
-            r4 = 32
-            long r5 = r2 >> r4
-            int r5 = (int) r5
-            r6 = 4294967295(0xffffffff, double:2.1219957905E-314)
-            long r2 = r2 & r6
-            int r2 = (int) r2
-            r3 = 0
-            r8 = r1[r3]
-            r9 = 1
-            if (r5 != r8) goto L27
-            r10 = r1[r9]
-            if (r2 != r10) goto L27
-            long r10 = r0.a0
-            r12 = 0
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 >= 0) goto L44
-        L27:
-            r1 = r1[r9]
-            long r10 = (long) r8
-            long r10 = r10 << r4
-            long r12 = (long) r1
-            long r12 = r12 & r6
-            long r10 = r10 | r12
-            r0.S = r10
-            r1 = 2147483647(0x7fffffff, float:NaN)
-            if (r5 == r1) goto L44
-            if (r2 == r1) goto L44
-            androidx.emoji2.text.e11 r1 = r0.getRoot()
-            androidx.emoji2.text.i11 r1 = r1.I
-            androidx.emoji2.text.eb1 r1 = r1.p
-            r1.r0()
-            r1 = r9
-            goto L45
-        L44:
-            r1 = r3
-        L45:
-            r0.E()
-            android.view.View r2 = r0.I0
-            if (r2 != 0) goto L52
-            android.view.View r2 = r0.getRootView()
-            r0.I0 = r2
-        L52:
-            androidx.emoji2.text.ax1 r5 = r0.getRectManager()
-            long r10 = r0.S
-            long r12 = r0.c0
-            long r12 = androidx.emoji2.text.jm.K(r12)
-            int r8 = r2.getWidth()
-            int r2 = r2.getHeight()
-            r5.getClass()
-            float[] r14 = r0.V
-            int r15 = androidx.emoji2.text.pz0.f(r14)
-            androidx.emoji2.text.zl2 r3 = r5.b
-            r15 = r15 & 2
-            if (r15 != 0) goto L78
-        L75:
-            r16 = r6
-            goto L7a
-        L78:
-            r14 = 0
-            goto L75
-        L7a:
-            long r6 = r3.c
-            boolean r6 = androidx.emoji2.text.nw0.b(r12, r6)
-            if (r6 != 0) goto L86
-            r3.c = r12
-            r6 = r9
-            goto L87
-        L86:
-            r6 = 0
-        L87:
-            long r12 = r3.d
-            boolean r7 = androidx.emoji2.text.nw0.b(r10, r12)
-            if (r7 != 0) goto L92
-            r3.d = r10
-            r6 = r9
-        L92:
-            if (r14 == 0) goto L95
-            r6 = r9
-        L95:
-            long r7 = (long) r8
-            long r7 = r7 << r4
-            long r10 = (long) r2
-            long r10 = r10 & r16
-            long r7 = r7 | r10
-            long r10 = r3.e
-            int r2 = (r7 > r10 ? 1 : (r7 == r10 ? 0 : -1))
-            if (r2 == 0) goto La4
-            r3.e = r7
-            r6 = r9
-        La4:
-            if (r6 != 0) goto Lad
-            boolean r2 = r5.e
-            if (r2 == 0) goto Lab
-            goto Lad
-        Lab:
-            r3 = 0
-            goto Lae
-        Lad:
-            r3 = r9
-        Lae:
-            r5.e = r3
-            androidx.emoji2.text.cb1 r2 = r0.R
-            r2.a(r1)
-            androidx.emoji2.text.ax1 r1 = r0.getRectManager()
-            r1.b()
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v7.M():void");
+        boolean z;
+        View view;
+        long j;
+        long K;
+        float[] fArr;
+        int f;
+        zl2 zl2Var;
+        boolean z2;
+        long j2;
+        int[] iArr = this.T;
+        getLocationOnScreen(iArr);
+        long j3 = this.S;
+        int i = (int) (j3 >> 32);
+        int i2 = (int) (j3 & 4294967295L);
+        int i3 = iArr[0];
+        if (i != i3 || i2 != iArr[1] || this.a0 < 0) {
+            this.S = (i3 << 32) | (iArr[1] & 4294967295L);
+            if (i != Integer.MAX_VALUE && i2 != Integer.MAX_VALUE) {
+                getRoot().I.p.r0();
+                z = true;
+                E();
+                view = this.I0;
+                if (view == null) {
+                    view = getRootView();
+                    this.I0 = view;
+                }
+                ax1 rectManager = getRectManager();
+                j = this.S;
+                K = jm.K(this.c0);
+                int width = view.getWidth();
+                int height = view.getHeight();
+                rectManager.getClass();
+                fArr = this.V;
+                f = pz0.f(fArr);
+                zl2Var = rectManager.b;
+                if ((f & 2) != 0) {
+                    fArr = null;
+                }
+                if (nw0.b(K, zl2Var.c)) {
+                    zl2Var.c = K;
+                    z2 = true;
+                } else {
+                    z2 = false;
+                }
+                if (!nw0.b(j, zl2Var.d)) {
+                    zl2Var.d = j;
+                    z2 = true;
+                }
+                if (fArr != null) {
+                    z2 = true;
+                }
+                j2 = (width << 32) | (height & 4294967295L);
+                if (j2 != zl2Var.e) {
+                    zl2Var.e = j2;
+                    z2 = true;
+                }
+                rectManager.e = !z2 || rectManager.e;
+                this.R.a(z);
+                getRectManager().b();
+            }
+        }
+        z = false;
+        E();
+        view = this.I0;
+        if (view == null) {
+        }
+        ax1 rectManager2 = getRectManager();
+        j = this.S;
+        K = jm.K(this.c0);
+        int width2 = view.getWidth();
+        int height2 = view.getHeight();
+        rectManager2.getClass();
+        fArr = this.V;
+        f = pz0.f(fArr);
+        zl2Var = rectManager2.b;
+        if ((f & 2) != 0) {
+        }
+        if (nw0.b(K, zl2Var.c)) {
+        }
+        if (!nw0.b(j, zl2Var.d)) {
+        }
+        if (fArr != null) {
+        }
+        j2 = (width2 << 32) | (height2 & 4294967295L);
+        if (j2 != zl2Var.e) {
+        }
+        rectManager2.e = !z2 || rectManager2.e;
+        this.R.a(z);
+        getRectManager().b();
     }
 
     public final void N(float f) {
@@ -982,58 +947,84 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     @Override // android.view.View
     public final void autofill(SparseArray sparseArray) {
-        u62 u62VarX;
+        boolean isText;
+        boolean isDate;
+        boolean isList;
+        boolean isToggle;
+        CharSequence textValue;
+        boolean isText2;
+        boolean isDate2;
+        boolean isList2;
+        boolean isToggle2;
+        u62 x;
         um0 um0Var;
+        CharSequence textValue2;
         if (h()) {
             u6 u6Var = this.I;
             if (u6Var != null) {
                 int size = sparseArray.size();
                 for (int i = 0; i < size; i++) {
-                    int iKeyAt = sparseArray.keyAt(i);
-                    AutofillValue autofillValueG = i1.g(sparseArray.get(iKeyAt));
-                    if (autofillValueG.isText()) {
-                        e11 e11Var = (e11) u6Var.b.c.b(iKeyAt);
-                        if (e11Var != null && (u62VarX = e11Var.x()) != null) {
-                            Object objG = u62VarX.d.g(t62.g);
-                            if (objG == null) {
-                                objG = null;
+                    int keyAt = sparseArray.keyAt(i);
+                    AutofillValue g = i1.g(sparseArray.get(keyAt));
+                    isText2 = g.isText();
+                    if (isText2) {
+                        e11 e11Var = (e11) u6Var.b.c.b(keyAt);
+                        if (e11Var != null && (x = e11Var.x()) != null) {
+                            Object g2 = x.d.g(t62.g);
+                            if (g2 == null) {
+                                g2 = null;
                             }
-                            x0 x0Var = (x0) objG;
+                            x0 x0Var = (x0) g2;
                             if (x0Var != null && (um0Var = (um0) x0Var.b) != null) {
+                                textValue2 = g.getTextValue();
                             }
                         }
-                    } else if (autofillValueG.isDate()) {
-                        Log.w("ComposeAutofillManager", "Auto filling Date fields is not yet supported.");
-                    } else if (autofillValueG.isList()) {
-                        Log.w("ComposeAutofillManager", "Auto filling dropdown lists is not yet supported.");
-                    } else if (autofillValueG.isToggle()) {
-                        Log.w("ComposeAutofillManager", "Auto filling toggle fields are not yet supported.");
+                    } else {
+                        isDate2 = g.isDate();
+                        if (isDate2) {
+                            Log.w("ComposeAutofillManager", "Auto filling Date fields is not yet supported.");
+                        } else {
+                            isList2 = g.isList();
+                            if (isList2) {
+                                Log.w("ComposeAutofillManager", "Auto filling dropdown lists is not yet supported.");
+                            } else {
+                                isToggle2 = g.isToggle();
+                                if (isToggle2) {
+                                    Log.w("ComposeAutofillManager", "Auto filling toggle fields are not yet supported.");
+                                }
+                            }
+                        }
                     }
                 }
             }
             s6 s6Var = this.H;
             if (s6Var != null) {
                 gj gjVar = (gj) s6Var.e;
-                if (gjVar.f421a.isEmpty()) {
+                if (gjVar.f420a.isEmpty()) {
                     return;
                 }
                 int size2 = sparseArray.size();
                 for (int i2 = 0; i2 < size2; i2++) {
-                    int iKeyAt2 = sparseArray.keyAt(i2);
-                    AutofillValue autofillValueG2 = i1.g(sparseArray.get(iKeyAt2));
-                    if (autofillValueG2.isText()) {
-                        autofillValueG2.getTextValue().toString();
-                        if (gjVar.f421a.get(Integer.valueOf(iKeyAt2)) != null) {
+                    int keyAt2 = sparseArray.keyAt(i2);
+                    AutofillValue g3 = i1.g(sparseArray.get(keyAt2));
+                    isText = g3.isText();
+                    if (isText) {
+                        textValue = g3.getTextValue();
+                        textValue.toString();
+                        if (gjVar.f420a.get(Integer.valueOf(keyAt2)) != null) {
                             throw new ClassCastException();
                         }
                     } else {
-                        if (autofillValueG2.isDate()) {
+                        isDate = g3.isDate();
+                        if (isDate) {
                             throw new ii1("An operation is not implemented: b/138604541: Add onFill() callback for date");
                         }
-                        if (autofillValueG2.isList()) {
+                        isList = g3.isList();
+                        if (isList) {
                             throw new ii1("An operation is not implemented: b/138604541: Add onFill() callback for list");
                         }
-                        if (autofillValueG2.isToggle()) {
+                        isToggle = g3.isToggle();
+                        if (isToggle) {
                             throw new ii1("An operation is not implemented: b/138604541:  Add onFill() callback for toggle");
                         }
                     }
@@ -1061,11 +1052,11 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         kc2.k().m();
         this.C = true;
         op opVar = this.n;
-        w6 w6Var = opVar.f867a;
-        Canvas canvas2 = w6Var.f1261a;
-        w6Var.f1261a = canvas;
+        w6 w6Var = opVar.f866a;
+        Canvas canvas2 = w6Var.f1260a;
+        w6Var.f1260a = canvas;
         getRoot().i(w6Var, null);
-        opVar.f867a.f1261a = canvas2;
+        opVar.f866a.f1260a = canvas2;
         ArrayList arrayList = this.A;
         if (!arrayList.isEmpty()) {
             int size = arrayList.size();
@@ -1105,7 +1096,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         o12 o12Var;
         int size;
         vh1 vh1Var2;
-        md1 md1VarM;
+        md1 md1Var;
         vh1 vh1Var3;
         if (this.D0) {
             f7 f7Var = this.C0;
@@ -1131,50 +1122,50 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                 if (gk0Var.d.e) {
                     System.out.println((Object) "FocusRelatedWarning: Dispatching indirect touch event while the focus system is invalidated.");
                 } else {
-                    rk0 rk0VarK = xo2.k(gk0Var.c);
-                    if (rk0VarK != null) {
-                        if (!rk0VarK.d.q) {
+                    rk0 k = xo2.k(gk0Var.c);
+                    if (k != null) {
+                        if (!k.d.q) {
                             iv0.b("visitAncestors called on an unattached node");
                         }
-                        md1 md1Var = rk0VarK.d;
-                        e11 e11VarT = lx0.T(rk0VarK);
-                        while (e11VarT != null) {
-                            if ((e11VarT.H.f.g & 2097152) != 0) {
-                                while (md1Var != null) {
-                                    if ((md1Var.f & 2097152) != 0) {
-                                        md1 md1VarM2 = md1Var;
+                        md1 md1Var2 = k.d;
+                        e11 T = lx0.T(k);
+                        while (T != null) {
+                            if ((T.H.f.g & 2097152) != 0) {
+                                while (md1Var2 != null) {
+                                    if ((md1Var2.f & 2097152) != 0) {
+                                        md1 md1Var3 = md1Var2;
                                         sf1 sf1Var = null;
-                                        while (md1VarM2 != null) {
-                                            if ((md1VarM2.f & 2097152) != 0 && (md1VarM2 instanceof z60)) {
+                                        while (md1Var3 != null) {
+                                            if ((md1Var3.f & 2097152) != 0 && (md1Var3 instanceof z60)) {
                                                 int i = 0;
-                                                for (md1 md1Var2 = ((z60) md1VarM2).s; md1Var2 != null; md1Var2 = md1Var2.i) {
-                                                    if ((md1Var2.f & 2097152) != 0) {
+                                                for (md1 md1Var4 = ((z60) md1Var3).s; md1Var4 != null; md1Var4 = md1Var4.i) {
+                                                    if ((md1Var4.f & 2097152) != 0) {
                                                         i++;
                                                         if (i == 1) {
-                                                            md1VarM2 = md1Var2;
+                                                            md1Var3 = md1Var4;
                                                         } else {
                                                             if (sf1Var == null) {
                                                                 sf1Var = new sf1(new md1[16]);
                                                             }
-                                                            if (md1VarM2 != null) {
-                                                                sf1Var.b(md1VarM2);
-                                                                md1VarM2 = null;
+                                                            if (md1Var3 != null) {
+                                                                sf1Var.b(md1Var3);
+                                                                md1Var3 = null;
                                                             }
-                                                            sf1Var.b(md1Var2);
+                                                            sf1Var.b(md1Var4);
                                                         }
                                                     }
                                                 }
                                                 if (i == 1) {
                                                 }
                                             }
-                                            md1VarM2 = lx0.m(sf1Var);
+                                            md1Var3 = lx0.m(sf1Var);
                                         }
                                     }
-                                    md1Var = md1Var.h;
+                                    md1Var2 = md1Var2.h;
                                 }
                             }
-                            e11VarT = e11VarT.u();
-                            md1Var = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+                            T = T.u();
+                            md1Var2 = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
                         }
                     }
                 }
@@ -1189,7 +1180,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         Context context = getContext();
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 26) {
-            Method method = hs2.f487a;
+            Method method = hs2.f486a;
             ot.f(viewConfiguration);
         } else {
             hs2.a(viewConfiguration, context);
@@ -1207,59 +1198,59 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             System.out.println((Object) "FocusRelatedWarning: Dispatching rotary event while the focus system is invalidated.");
             return false;
         }
-        rk0 rk0VarK2 = xo2.k(gk0Var2.c);
-        if (rk0VarK2 != null) {
-            if (!rk0VarK2.d.q) {
+        rk0 k2 = xo2.k(gk0Var2.c);
+        if (k2 != null) {
+            if (!k2.d.q) {
                 iv0.b("visitAncestors called on an unattached node");
             }
-            md1 md1Var3 = rk0VarK2.d;
-            e11 e11VarT2 = lx0.T(rk0VarK2);
+            md1 md1Var5 = k2.d;
+            e11 T2 = lx0.T(k2);
             loop0: while (true) {
-                if (e11VarT2 == null) {
-                    md1VarM = null;
+                if (T2 == null) {
+                    md1Var = null;
                     break;
                 }
-                if ((e11VarT2.H.f.g & 16384) != 0) {
-                    while (md1Var3 != null) {
-                        if ((md1Var3.f & 16384) != 0) {
-                            md1VarM = md1Var3;
+                if ((T2.H.f.g & 16384) != 0) {
+                    while (md1Var5 != null) {
+                        if ((md1Var5.f & 16384) != 0) {
+                            md1Var = md1Var5;
                             sf1 sf1Var2 = null;
-                            while (md1VarM != null) {
-                                if (md1VarM instanceof o12) {
+                            while (md1Var != null) {
+                                if (md1Var instanceof o12) {
                                     break loop0;
                                 }
-                                if ((md1VarM.f & 16384) != 0 && (md1VarM instanceof z60)) {
+                                if ((md1Var.f & 16384) != 0 && (md1Var instanceof z60)) {
                                     int i3 = 0;
-                                    for (md1 md1Var4 = ((z60) md1VarM).s; md1Var4 != null; md1Var4 = md1Var4.i) {
-                                        if ((md1Var4.f & 16384) != 0) {
+                                    for (md1 md1Var6 = ((z60) md1Var).s; md1Var6 != null; md1Var6 = md1Var6.i) {
+                                        if ((md1Var6.f & 16384) != 0) {
                                             i3++;
                                             if (i3 == 1) {
-                                                md1VarM = md1Var4;
+                                                md1Var = md1Var6;
                                             } else {
                                                 if (sf1Var2 == null) {
                                                     sf1Var2 = new sf1(new md1[16]);
                                                 }
-                                                if (md1VarM != null) {
-                                                    sf1Var2.b(md1VarM);
-                                                    md1VarM = null;
+                                                if (md1Var != null) {
+                                                    sf1Var2.b(md1Var);
+                                                    md1Var = null;
                                                 }
-                                                sf1Var2.b(md1Var4);
+                                                sf1Var2.b(md1Var6);
                                             }
                                         }
                                     }
                                     if (i3 == 1) {
                                     }
                                 }
-                                md1VarM = lx0.m(sf1Var2);
+                                md1Var = lx0.m(sf1Var2);
                             }
                         }
-                        md1Var3 = md1Var3.h;
+                        md1Var5 = md1Var5.h;
                     }
                 }
-                e11VarT2 = e11VarT2.u();
-                md1Var3 = (e11VarT2 == null || (vh1Var3 = e11VarT2.H) == null) ? null : vh1Var3.e;
+                T2 = T2.u();
+                md1Var5 = (T2 == null || (vh1Var3 = T2.H) == null) ? null : vh1Var3.e;
             }
-            o12Var = (o12) md1VarM;
+            o12Var = (o12) md1Var;
         } else {
             o12Var = null;
         }
@@ -1268,51 +1259,51 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             if (!o12Var2.d.q) {
                 iv0.b("visitAncestors called on an unattached node");
             }
-            md1 md1Var5 = o12Var2.d.h;
-            e11 e11VarT3 = lx0.T(o12Var);
+            md1 md1Var7 = o12Var2.d.h;
+            e11 T3 = lx0.T(o12Var);
             ArrayList arrayList = null;
-            while (e11VarT3 != null) {
-                if ((e11VarT3.H.f.g & 16384) != 0) {
-                    while (md1Var5 != null) {
-                        if ((md1Var5.f & 16384) != 0) {
-                            md1 md1VarM3 = md1Var5;
+            while (T3 != null) {
+                if ((T3.H.f.g & 16384) != 0) {
+                    while (md1Var7 != null) {
+                        if ((md1Var7.f & 16384) != 0) {
+                            md1 md1Var8 = md1Var7;
                             sf1 sf1Var3 = null;
-                            while (md1VarM3 != null) {
-                                if (md1VarM3 instanceof o12) {
+                            while (md1Var8 != null) {
+                                if (md1Var8 instanceof o12) {
                                     if (arrayList == null) {
                                         arrayList = new ArrayList();
                                     }
-                                    arrayList.add(md1VarM3);
-                                } else if ((md1VarM3.f & 16384) != 0 && (md1VarM3 instanceof z60)) {
+                                    arrayList.add(md1Var8);
+                                } else if ((md1Var8.f & 16384) != 0 && (md1Var8 instanceof z60)) {
                                     int i4 = 0;
-                                    for (md1 md1Var6 = ((z60) md1VarM3).s; md1Var6 != null; md1Var6 = md1Var6.i) {
-                                        if ((md1Var6.f & 16384) != 0) {
+                                    for (md1 md1Var9 = ((z60) md1Var8).s; md1Var9 != null; md1Var9 = md1Var9.i) {
+                                        if ((md1Var9.f & 16384) != 0) {
                                             i4++;
                                             if (i4 == 1) {
-                                                md1VarM3 = md1Var6;
+                                                md1Var8 = md1Var9;
                                             } else {
                                                 if (sf1Var3 == null) {
                                                     sf1Var3 = new sf1(new md1[16]);
                                                 }
-                                                if (md1VarM3 != null) {
-                                                    sf1Var3.b(md1VarM3);
-                                                    md1VarM3 = null;
+                                                if (md1Var8 != null) {
+                                                    sf1Var3.b(md1Var8);
+                                                    md1Var8 = null;
                                                 }
-                                                sf1Var3.b(md1Var6);
+                                                sf1Var3.b(md1Var9);
                                             }
                                         }
                                     }
                                     if (i4 == 1) {
                                     }
                                 }
-                                md1VarM3 = lx0.m(sf1Var3);
+                                md1Var8 = lx0.m(sf1Var3);
                             }
                         }
-                        md1Var5 = md1Var5.h;
+                        md1Var7 = md1Var7.h;
                     }
                 }
-                e11VarT3 = e11VarT3.u();
-                md1Var5 = (e11VarT3 == null || (vh1Var2 = e11VarT3.H) == null) ? null : vh1Var2.e;
+                T3 = T3.u();
+                md1Var7 = (T3 == null || (vh1Var2 = T3.H) == null) ? null : vh1Var2.e;
             }
             if (arrayList != null && arrayList.size() - 1 >= 0) {
                 while (true) {
@@ -1324,62 +1315,62 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                     size = i5;
                 }
             }
-            md1 md1VarM4 = o12Var2.d;
+            md1 md1Var10 = o12Var2.d;
             sf1 sf1Var4 = null;
-            while (md1VarM4 != null) {
-                if (md1VarM4 instanceof o12) {
-                } else if ((md1VarM4.f & 16384) != 0 && (md1VarM4 instanceof z60)) {
+            while (md1Var10 != null) {
+                if (md1Var10 instanceof o12) {
+                } else if ((md1Var10.f & 16384) != 0 && (md1Var10 instanceof z60)) {
                     int i6 = 0;
-                    for (md1 md1Var7 = ((z60) md1VarM4).s; md1Var7 != null; md1Var7 = md1Var7.i) {
-                        if ((md1Var7.f & 16384) != 0) {
+                    for (md1 md1Var11 = ((z60) md1Var10).s; md1Var11 != null; md1Var11 = md1Var11.i) {
+                        if ((md1Var11.f & 16384) != 0) {
                             i6++;
                             if (i6 == 1) {
-                                md1VarM4 = md1Var7;
+                                md1Var10 = md1Var11;
                             } else {
                                 if (sf1Var4 == null) {
                                     sf1Var4 = new sf1(new md1[16]);
                                 }
-                                if (md1VarM4 != null) {
-                                    sf1Var4.b(md1VarM4);
-                                    md1VarM4 = null;
+                                if (md1Var10 != null) {
+                                    sf1Var4.b(md1Var10);
+                                    md1Var10 = null;
                                 }
-                                sf1Var4.b(md1Var7);
+                                sf1Var4.b(md1Var11);
                             }
                         }
                     }
                     if (i6 == 1) {
                     }
                 }
-                md1VarM4 = lx0.m(sf1Var4);
+                md1Var10 = lx0.m(sf1Var4);
             }
             if (!super.dispatchGenericMotionEvent(motionEvent)) {
-                md1 md1VarM5 = o12Var2.d;
+                md1 md1Var12 = o12Var2.d;
                 sf1 sf1Var5 = null;
-                while (md1VarM5 != null) {
-                    if (md1VarM5 instanceof o12) {
-                    } else if ((md1VarM5.f & 16384) != 0 && (md1VarM5 instanceof z60)) {
+                while (md1Var12 != null) {
+                    if (md1Var12 instanceof o12) {
+                    } else if ((md1Var12.f & 16384) != 0 && (md1Var12 instanceof z60)) {
                         int i7 = 0;
-                        for (md1 md1Var8 = ((z60) md1VarM5).s; md1Var8 != null; md1Var8 = md1Var8.i) {
-                            if ((md1Var8.f & 16384) != 0) {
+                        for (md1 md1Var13 = ((z60) md1Var12).s; md1Var13 != null; md1Var13 = md1Var13.i) {
+                            if ((md1Var13.f & 16384) != 0) {
                                 i7++;
                                 if (i7 == 1) {
-                                    md1VarM5 = md1Var8;
+                                    md1Var12 = md1Var13;
                                 } else {
                                     if (sf1Var5 == null) {
                                         sf1Var5 = new sf1(new md1[16]);
                                     }
-                                    if (md1VarM5 != null) {
-                                        sf1Var5.b(md1VarM5);
-                                        md1VarM5 = null;
+                                    if (md1Var12 != null) {
+                                        sf1Var5.b(md1Var12);
+                                        md1Var12 = null;
                                     }
-                                    sf1Var5.b(md1Var8);
+                                    sf1Var5.b(md1Var13);
                                 }
                             }
                         }
                         if (i7 == 1) {
                         }
                     }
-                    md1VarM5 = lx0.m(sf1Var5);
+                    md1Var12 = lx0.m(sf1Var5);
                 }
                 if (arrayList != null) {
                     int size2 = arrayList.size();
@@ -1391,18 +1382,96 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0158  */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0155, code lost:
+    
+        if (t(r24) == false) goto L69;
+     */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean dispatchHoverEvent(android.view.MotionEvent r24) {
-        /*
-            Method dump skipped, instructions count: 353
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v7.dispatchHoverEvent(android.view.MotionEvent):boolean");
+    public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
+        int i;
+        boolean z = this.D0;
+        f7 f7Var = this.C0;
+        if (z) {
+            removeCallbacks(f7Var);
+            f7Var.run();
+        }
+        if (!r(motionEvent) && isAttachedToWindow()) {
+            d8 d8Var = this.v;
+            v7 v7Var = d8Var.d;
+            AccessibilityManager accessibilityManager = d8Var.g;
+            if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled()) {
+                int action = motionEvent.getAction();
+                if (action == 7 || action == 9) {
+                    float x = motionEvent.getX();
+                    float y = motionEvent.getY();
+                    v7Var.w(true);
+                    vr0 vr0Var = new vr0();
+                    vh1 vh1Var = v7Var.getRoot().H;
+                    xh1 xh1Var = vh1Var.d;
+                    i02 i02Var = xh1.N;
+                    vh1Var.d.Y0(xh1.R, xh1Var.Q0((Float.floatToRawIntBits(x) << 32) | (Float.floatToRawIntBits(y) & 4294967295L)), vr0Var, 1, true);
+                    for (int l0 = xs.l0(vr0Var); -1 < l0; l0--) {
+                        Object e = vr0Var.d.e(l0);
+                        lx0.v(e, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
+                        e11 T = lx0.T((md1) e);
+                        if (v7Var.getAndroidViewsHandler$ui_release().getLayoutNodeToHolder().get(T) != null) {
+                            break;
+                        }
+                        if (T.H.d(8)) {
+                            int A = d8Var.A(T.e);
+                            y62 b = lz0.b(T, false);
+                            if (h50.D(b)) {
+                                if (!b.k().d.c(c72.z)) {
+                                    i = A;
+                                    break;
+                                }
+                            } else {
+                                continue;
+                            }
+                        }
+                    }
+                    i = Integer.MIN_VALUE;
+                    v7Var.getAndroidViewsHandler$ui_release().dispatchGenericMotionEvent(motionEvent);
+                    int i2 = d8Var.e;
+                    if (i2 != i) {
+                        d8Var.e = i;
+                        d8.E(d8Var, i, PackageParser.PARSE_IS_PRIVILEGED, null, 12);
+                        d8.E(d8Var, i2, PackageParser.PARSE_COLLECT_CERTIFICATES, null, 12);
+                    }
+                } else if (action == 10) {
+                    int i3 = d8Var.e;
+                    if (i3 == Integer.MIN_VALUE) {
+                        v7Var.getAndroidViewsHandler$ui_release().dispatchGenericMotionEvent(motionEvent);
+                    } else if (i3 != Integer.MIN_VALUE) {
+                        d8Var.e = Integer.MIN_VALUE;
+                        d8.E(d8Var, Integer.MIN_VALUE, PackageParser.PARSE_IS_PRIVILEGED, null, 12);
+                        d8.E(d8Var, i3, PackageParser.PARSE_COLLECT_CERTIFICATES, null, 12);
+                    }
+                }
+            }
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked != 7) {
+                if (actionMasked == 10 && s(motionEvent)) {
+                    if (motionEvent.getToolType(0) != 3 || motionEvent.getButtonState() == 0) {
+                        MotionEvent motionEvent2 = this.v0;
+                        if (motionEvent2 != null) {
+                            motionEvent2.recycle();
+                        }
+                        this.v0 = MotionEvent.obtainNoHistory(motionEvent);
+                        this.D0 = true;
+                        postDelayed(f7Var, 8L);
+                        return false;
+                    }
+                }
+                if ((o(motionEvent) & 1) != 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -1412,7 +1481,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         }
         int metaState = keyEvent.getMetaState();
         this.m.getClass();
-        vu2.f1243a.setValue(new ws1(metaState));
+        vu2.f1242a.setValue(new ws1(metaState));
         return ((gk0) getFocusOwner()).d(keyEvent, hy.r) || super.dispatchKeyEvent(keyEvent);
     }
 
@@ -1424,50 +1493,50 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             if (gk0Var.d.e) {
                 System.out.println((Object) "FocusRelatedWarning: Dispatching intercepted soft keyboard event while the focus system is invalidated.");
             } else {
-                rk0 rk0VarK = xo2.k(gk0Var.c);
-                if (rk0VarK != null) {
-                    if (!rk0VarK.d.q) {
+                rk0 k = xo2.k(gk0Var.c);
+                if (k != null) {
+                    if (!k.d.q) {
                         iv0.b("visitAncestors called on an unattached node");
                     }
-                    md1 md1Var = rk0VarK.d;
-                    e11 e11VarT = lx0.T(rk0VarK);
-                    while (e11VarT != null) {
-                        if ((e11VarT.H.f.g & 131072) != 0) {
+                    md1 md1Var = k.d;
+                    e11 T = lx0.T(k);
+                    while (T != null) {
+                        if ((T.H.f.g & 131072) != 0) {
                             while (md1Var != null) {
                                 if ((md1Var.f & 131072) != 0) {
-                                    md1 md1VarM = md1Var;
+                                    md1 md1Var2 = md1Var;
                                     sf1 sf1Var = null;
-                                    while (md1VarM != null) {
-                                        if ((md1VarM.f & 131072) != 0 && (md1VarM instanceof z60)) {
+                                    while (md1Var2 != null) {
+                                        if ((md1Var2.f & 131072) != 0 && (md1Var2 instanceof z60)) {
                                             int i = 0;
-                                            for (md1 md1Var2 = ((z60) md1VarM).s; md1Var2 != null; md1Var2 = md1Var2.i) {
-                                                if ((md1Var2.f & 131072) != 0) {
+                                            for (md1 md1Var3 = ((z60) md1Var2).s; md1Var3 != null; md1Var3 = md1Var3.i) {
+                                                if ((md1Var3.f & 131072) != 0) {
                                                     i++;
                                                     if (i == 1) {
-                                                        md1VarM = md1Var2;
+                                                        md1Var2 = md1Var3;
                                                     } else {
                                                         if (sf1Var == null) {
                                                             sf1Var = new sf1(new md1[16]);
                                                         }
-                                                        if (md1VarM != null) {
-                                                            sf1Var.b(md1VarM);
-                                                            md1VarM = null;
+                                                        if (md1Var2 != null) {
+                                                            sf1Var.b(md1Var2);
+                                                            md1Var2 = null;
                                                         }
-                                                        sf1Var.b(md1Var2);
+                                                        sf1Var.b(md1Var3);
                                                     }
                                                 }
                                             }
                                             if (i == 1) {
                                             }
                                         }
-                                        md1VarM = lx0.m(sf1Var);
+                                        md1Var2 = lx0.m(sf1Var);
                                     }
                                 }
                                 md1Var = md1Var.h;
                             }
                         }
-                        e11VarT = e11VarT.u();
-                        md1Var = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+                        T = T.u();
+                        md1Var = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
                     }
                 }
             }
@@ -1478,7 +1547,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchProvideStructure(ViewStructure viewStructure) {
         if (Build.VERSION.SDK_INT < 28) {
-            e8.f291a.a(viewStructure, getView());
+            e8.f290a.a(viewStructure, getView());
         } else {
             super.dispatchProvideStructure(viewStructure);
         }
@@ -1498,27 +1567,27 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             }
         }
         if (!r(motionEvent) && isAttachedToWindow() && (motionEvent.getActionMasked() != 2 || t(motionEvent))) {
-            int iO = o(motionEvent);
-            if ((iO & 2) != 0) {
+            int o = o(motionEvent);
+            if ((o & 2) != 0) {
                 getParent().requestDisallowInterceptTouchEvent(true);
             }
-            if ((iO & 1) != 0) {
+            if ((o & 1) != 0) {
                 return true;
             }
         }
         return false;
     }
 
-    public final View findViewByAccessibilityIdTraversal(int i) throws IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public final View findViewByAccessibilityIdTraversal(int i) {
         try {
             if (Build.VERSION.SDK_INT < 29) {
                 return m(this, i);
             }
             Method declaredMethod = View.class.getDeclaredMethod("findViewByAccessibilityIdTraversal", Integer.TYPE);
             declaredMethod.setAccessible(true);
-            Object objInvoke = declaredMethod.invoke(this, Integer.valueOf(i));
-            if (objInvoke instanceof View) {
-                return (View) objInvoke;
+            Object invoke = declaredMethod.invoke(this, Integer.valueOf(i));
+            if (invoke instanceof View) {
+                return (View) invoke;
             }
             return null;
         } catch (NoSuchMethodException unused) {
@@ -1528,40 +1597,40 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final View focusSearch(View view, int i) {
-        zw1 zw1VarV;
+        zw1 v;
         if (view == null || this.R.c) {
             return super.focusSearch(view, i);
         }
         Object obj = yj0.f.get();
         lx0.u(obj);
-        View viewB = ((yj0) obj).b(i, view, this);
+        View b = ((yj0) obj).b(i, view, this);
         if (view == this) {
-            rk0 rk0VarK = xo2.k(((gk0) getFocusOwner()).c);
-            zw1VarV = rk0VarK != null ? xo2.l(rk0VarK) : null;
-            if (zw1VarV == null) {
-                zw1VarV = bz0.v(view, this);
+            rk0 k = xo2.k(((gk0) getFocusOwner()).c);
+            v = k != null ? xo2.l(k) : null;
+            if (v == null) {
+                v = bz0.v(view, this);
             }
         } else {
-            zw1VarV = bz0.v(view, this);
+            v = bz0.v(view, this);
         }
-        vj0 vj0VarJ0 = bz0.j0(i);
-        int i2 = vj0VarJ0 != null ? vj0VarJ0.f1223a : 6;
+        vj0 j0 = bz0.j0(i);
+        int i2 = j0 != null ? j0.f1222a : 6;
         cy1 cy1Var = new cy1();
-        if (((gk0) getFocusOwner()).e(i2, zw1VarV, new n7(cy1Var, 0)) != null) {
+        if (((gk0) getFocusOwner()).e(i2, v, new n7(cy1Var, 0)) != null) {
             Object obj2 = cy1Var.d;
             if (obj2 != null) {
-                if (viewB != null) {
+                if (b != null) {
                     if (i2 == 1 || i2 == 2) {
                         return super.focusSearch(view, i);
                     }
-                    if (a01.L(xo2.l((rk0) obj2), bz0.v(viewB, this), zw1VarV, i2)) {
+                    if (a01.L(xo2.l((rk0) obj2), bz0.v(b, this), v, i2)) {
                     }
                 }
                 return this;
             }
-            if (viewB == null) {
+            if (b == null) {
             }
-            return viewB;
+            return b;
         }
         return view;
     }
@@ -1608,15 +1677,15 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     public zw1 getEmbeddedViewFocusRect() {
         if (isFocused()) {
-            rk0 rk0VarK = xo2.k(((gk0) getFocusOwner()).c);
-            if (rk0VarK != null) {
-                return xo2.l(rk0VarK);
+            rk0 k = xo2.k(((gk0) getFocusOwner()).c);
+            if (k != null) {
+                return xo2.l(k);
             }
             return null;
         }
-        View viewFindFocus = findFocus();
-        if (viewFindFocus != null) {
-            return bz0.v(viewFindFocus, this);
+        View findFocus = findFocus();
+        if (findFocus != null) {
+            return bz0.v(findFocus, this);
         }
         return null;
     }
@@ -1629,7 +1698,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     public final void getFocusedRect(Rect rect) {
         zw1 embeddedViewFocusRect = getEmbeddedViewFocusRect();
         if (embeddedViewFocusRect != null) {
-            rect.left = Math.round(embeddedViewFocusRect.f1459a);
+            rect.left = Math.round(embeddedViewFocusRect.f1458a);
             rect.top = Math.round(embeddedViewFocusRect.b);
             rect.right = Math.round(embeddedViewFocusRect.c);
             rect.bottom = Math.round(embeddedViewFocusRect.d);
@@ -1734,7 +1803,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     }
 
     public boolean getShowLayoutBounds() {
-        return Build.VERSION.SDK_INT >= 30 ? af.f98a.a(this) : this.N;
+        return Build.VERSION.SDK_INT >= 30 ? af.f97a.a(this) : this.N;
     }
 
     public wl1 getSnapshotObserver() {
@@ -1782,7 +1851,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     public final sl1 l(Function2 function2, wh1 wh1Var, rp0 rp0Var) {
         sf1 sf1Var;
-        Reference referencePoll;
+        Reference poll;
         Object obj;
         if (rp0Var != null) {
             return new tp0(rp0Var, null, this, function2, wh1Var);
@@ -1791,11 +1860,11 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             a12 a12Var = this.x0;
             ReferenceQueue referenceQueue = (ReferenceQueue) a12Var.f;
             sf1Var = (sf1) a12Var.e;
-            referencePoll = referenceQueue.poll();
-            if (referencePoll != null) {
-                sf1Var.j(referencePoll);
+            poll = referenceQueue.poll();
+            if (poll != null) {
+                sf1Var.j(poll);
             }
-        } while (referencePoll != null);
+        } while (poll != null);
         while (true) {
             int i = sf1Var.f;
             if (i == 0) {
@@ -1844,22 +1913,174 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         this.R.f(e11Var, z);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00be A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00cf A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0103 A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x010d A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0128 A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0140 A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0152 A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0155 A[Catch: all -> 0x002b, TryCatch #1 {all -> 0x002b, blocks: (B:5:0x0018, B:7:0x0021, B:25:0x00b6, B:27:0x00be, B:28:0x00c1, B:30:0x00c5, B:32:0x00cb, B:34:0x00cf, B:35:0x00d5, B:38:0x00dd, B:41:0x00e5, B:42:0x00f1, B:44:0x00f7, B:46:0x00fd, B:48:0x0103, B:49:0x0109, B:51:0x010d, B:52:0x0111, B:57:0x0124, B:59:0x0128, B:60:0x012f, B:66:0x0140, B:67:0x014a, B:69:0x0152, B:70:0x0155, B:76:0x015c), top: B:4:0x0018 }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x00d4  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x009b  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x004e A[Catch: all -> 0x0076, TryCatch #0 {all -> 0x0076, blocks: (B:90:0x0034, B:92:0x003e, B:97:0x004e, B:100:0x007d, B:102:0x0081, B:13:0x0093, B:21:0x00a6, B:23:0x00ac, B:103:0x0056, B:109:0x0062, B:112:0x006a), top: B:89:0x0034 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final int o(android.view.MotionEvent r17) {
-        /*
-            Method dump skipped, instructions count: 373
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v7.o(android.view.MotionEvent):int");
+    public final int o(MotionEvent motionEvent) {
+        boolean z;
+        int actionMasked;
+        MotionEvent motionEvent2;
+        v7 v7Var;
+        MotionEvent motionEvent3;
+        int pointerId;
+        int action;
+        boolean z2;
+        sr0 sr0Var;
+        removeCallbacks(this.B0);
+        try {
+            F(motionEvent);
+            this.b0 = true;
+            w(false);
+            Trace.beginSection("AndroidOwner:onTouch");
+            try {
+                int actionMasked2 = motionEvent.getActionMasked();
+                MotionEvent motionEvent4 = this.v0;
+                boolean z3 = motionEvent4 != null && motionEvent4.getToolType(0) == 3;
+                lr lrVar = this.F;
+                if (motionEvent4 != null) {
+                    try {
+                        if (motionEvent4.getSource() == motionEvent.getSource() && motionEvent4.getToolType(0) == motionEvent.getToolType(0)) {
+                            z = false;
+                            if (z) {
+                                if (motionEvent4.getButtonState() != 0 || (actionMasked = motionEvent4.getActionMasked()) == 0 || actionMasked == 2 || actionMasked == 6) {
+                                    motionEvent2 = motionEvent4;
+                                    if (!lrVar.f704a) {
+                                        ((g81) ((gz0) lrVar.d).d).a();
+                                        ((sr0) lrVar.c).c();
+                                    }
+                                } else if (motionEvent4.getActionMasked() != 10 && z3) {
+                                    K(motionEvent4, 10, motionEvent4.getEventTime(), true);
+                                    motionEvent2 = motionEvent4;
+                                }
+                                boolean z4 = motionEvent.getToolType(0) != 3;
+                                if (z3 && z4 && actionMasked2 != 3 && actionMasked2 != 9 && s(motionEvent)) {
+                                    v7Var = this;
+                                    v7Var.K(motionEvent, 9, motionEvent.getEventTime(), true);
+                                } else {
+                                    v7Var = this;
+                                }
+                                if (motionEvent2 != null) {
+                                    motionEvent2.recycle();
+                                }
+                                motionEvent3 = v7Var.v0;
+                                if (motionEvent3 != null && motionEvent3.getAction() == 10) {
+                                    MotionEvent motionEvent5 = v7Var.v0;
+                                    pointerId = motionEvent5 == null ? motionEvent5.getPointerId(0) : -1;
+                                    action = motionEvent.getAction();
+                                    zd1 zd1Var = v7Var.E;
+                                    if (action == 9 || motionEvent.getHistorySize() != 0) {
+                                        if (motionEvent.getAction() == 0 && motionEvent.getHistorySize() == 0) {
+                                            MotionEvent motionEvent6 = v7Var.v0;
+                                            float x = motionEvent6 == null ? motionEvent6.getX() : Float.NaN;
+                                            MotionEvent motionEvent7 = v7Var.v0;
+                                            z2 = x == motionEvent.getX() || (motionEvent7 != null ? motionEvent7.getY() : Float.NaN) != motionEvent.getY();
+                                            MotionEvent motionEvent8 = v7Var.v0;
+                                            boolean z5 = (motionEvent8 == null ? motionEvent8.getEventTime() : -1L) == motionEvent.getEventTime();
+                                            if (!z2 || z5) {
+                                                if (pointerId >= 0) {
+                                                    zd1Var.c.delete(pointerId);
+                                                    zd1Var.b.delete(pointerId);
+                                                }
+                                                sr0Var = (sr0) lrVar.c;
+                                                if (sr0Var.d) {
+                                                    sr0Var.g.f198a.g();
+                                                } else {
+                                                    sr0Var.d = true;
+                                                }
+                                            }
+                                        }
+                                    } else if (pointerId >= 0) {
+                                        zd1Var.c.delete(pointerId);
+                                        zd1Var.b.delete(pointerId);
+                                    }
+                                }
+                                v7Var.v0 = MotionEvent.obtainNoHistory(motionEvent);
+                                int J = J(motionEvent);
+                                Trace.endSection();
+                                v7Var.b0 = false;
+                                return J;
+                            }
+                        }
+                        z = true;
+                        if (z) {
+                        }
+                    } catch (Throwable th) {
+                        th = th;
+                        Trace.endSection();
+                        throw th;
+                    }
+                }
+                motionEvent2 = motionEvent4;
+                if (motionEvent.getToolType(0) != 3) {
+                }
+                if (z3) {
+                }
+                v7Var = this;
+                if (motionEvent2 != null) {
+                }
+                motionEvent3 = v7Var.v0;
+                if (motionEvent3 != null) {
+                    MotionEvent motionEvent52 = v7Var.v0;
+                    if (motionEvent52 == null) {
+                    }
+                    action = motionEvent.getAction();
+                    zd1 zd1Var2 = v7Var.E;
+                    if (action == 9) {
+                    }
+                    if (motionEvent.getAction() == 0) {
+                        MotionEvent motionEvent62 = v7Var.v0;
+                        if (motionEvent62 == null) {
+                        }
+                        MotionEvent motionEvent72 = v7Var.v0;
+                        if (motionEvent72 != null) {
+                        }
+                        if (x == motionEvent.getX()) {
+                        }
+                        MotionEvent motionEvent82 = v7Var.v0;
+                        if ((motionEvent82 == null ? motionEvent82.getEventTime() : -1L) == motionEvent.getEventTime()) {
+                        }
+                        if (!z2) {
+                        }
+                        if (pointerId >= 0) {
+                        }
+                        sr0Var = (sr0) lrVar.c;
+                        if (sr0Var.d) {
+                        }
+                    }
+                }
+                v7Var.v0 = MotionEvent.obtainNoHistory(motionEvent);
+                int J2 = J(motionEvent);
+                Trace.endSection();
+                v7Var.b0 = false;
+                return J2;
+            } catch (Throwable th2) {
+                th = th2;
+            }
+        } catch (Throwable th3) {
+            this.b0 = false;
+            throw th3;
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        lz0 lz0VarG;
+        lz0 g;
         v51 v51Var;
         s6 s6Var;
         super.onAttachedToWindow();
@@ -1895,32 +2116,32 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                 ze1Var.a(this);
             }
         }
-        this.m.f83a.setValue(Boolean.valueOf(hasWindowFocus()));
+        this.m.f82a.setValue(Boolean.valueOf(hasWindowFocus()));
         this.m.getClass();
         this.m.getClass();
         q(getRoot());
         p(getRoot());
-        getSnapshotObserver().f1288a.d();
+        getSnapshotObserver().f1287a.d();
         if (h() && (s6Var = this.H) != null) {
-            dj djVar = dj.f252a;
+            dj djVar = dj.f251a;
             djVar.getClass();
             ((AutofillManager) s6Var.f).registerCallback(i1.e(djVar));
         }
-        v51 v51VarT = pz0.t(this);
-        m32 m32VarC = a01.C(this);
+        v51 t = pz0.t(this);
+        m32 C = a01.C(this);
         h7 viewTreeOwners = getViewTreeOwners();
-        if (viewTreeOwners == null || (v51VarT != null && m32VarC != null && (v51VarT != (v51Var = viewTreeOwners.f457a) || m32VarC != v51Var))) {
-            if (v51VarT == null) {
+        if (viewTreeOwners == null || (t != null && C != null && (t != (v51Var = viewTreeOwners.f456a) || C != v51Var))) {
+            if (t == null) {
                 throw new IllegalStateException("Composed into the View which doesn't propagate ViewTreeLifecycleOwner!");
             }
-            if (m32VarC == null) {
+            if (C == null) {
                 throw new IllegalStateException("Composed into the View which doesn't propagateViewTreeSavedStateRegistryOwner!");
             }
-            if (viewTreeOwners != null && (lz0VarG = viewTreeOwners.f457a.g()) != null) {
-                lz0VarG.I(this);
+            if (viewTreeOwners != null && (g = viewTreeOwners.f456a.g()) != null) {
+                g.I(this);
             }
-            v51VarT.g().g(this);
-            h7 h7Var = new h7(v51VarT, m32VarC);
+            t.g().g(this);
+            h7 h7Var = new h7(t, C);
             set_viewTreeOwners(h7Var);
             um0 um0Var = this.f0;
             if (um0Var != null) {
@@ -1928,19 +2149,19 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             }
             this.f0 = null;
         }
-        this.s0.f1405a.setValue(new wv0(isInTouchMode() ? 1 : 2));
+        this.s0.f1404a.setValue(new wv0(isInTouchMode() ? 1 : 2));
         h7 viewTreeOwners2 = getViewTreeOwners();
-        lz0 lz0VarG2 = viewTreeOwners2 != null ? viewTreeOwners2.f457a.g() : null;
-        if (lz0VarG2 == null) {
+        lz0 g2 = viewTreeOwners2 != null ? viewTreeOwners2.f456a.g() : null;
+        if (g2 == null) {
             throw zd.c("No lifecycle owner exists");
         }
-        lz0VarG2.g(this);
-        lz0VarG2.g(this.w);
+        g2.g(this);
+        g2.g(this.w);
         getViewTreeObserver().addOnGlobalLayoutListener(this.g0);
         getViewTreeObserver().addOnScrollChangedListener(this.h0);
         getViewTreeObserver().addOnTouchModeChangeListener(this.i0);
         if (Build.VERSION.SDK_INT >= 31) {
-            i8.f513a.b(this);
+            i8.f512a.b(this);
         }
         u6 u6Var = this.I;
         if (u6Var != null) {
@@ -1974,9 +2195,19 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         this.G.e(configuration);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00fb  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x005a  */
     @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         int i;
+        int i2;
+        int i3;
         c82 c82Var = (c82) this.l0.get();
         cb cbVar = (cb) (c82Var != null ? c82Var.b : null);
         if (cbVar == null) {
@@ -1984,87 +2215,132 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             if (lk2Var.d) {
                 ju0 ju0Var = lk2Var.h;
                 ak2 ak2Var = lk2Var.g;
-                int i2 = ju0Var.e;
-                boolean z = ju0Var.f601a;
-                if (i2 == 1) {
-                    i = z ? 6 : 0;
-                } else if (i2 == 0) {
-                    i = 1;
-                } else if (i2 == 2) {
-                    i = 2;
-                } else if (i2 == 6) {
-                    i = 5;
-                } else if (i2 == 5) {
-                    i = 7;
-                } else if (i2 == 3) {
-                    i = 3;
-                } else if (i2 == 4) {
-                    i = 4;
-                } else {
-                    if (i2 != 7) {
-                        throw new IllegalStateException("invalid ImeAction");
+                int i4 = ju0Var.e;
+                boolean z = ju0Var.f600a;
+                if (i4 != 1) {
+                    if (i4 == 0) {
+                        i = 1;
+                    } else if (i4 == 2) {
+                        i = 2;
+                    } else if (i4 == 6) {
+                        i = 5;
+                    } else if (i4 == 5) {
+                        i = 7;
+                    } else if (i4 == 3) {
+                        i = 3;
+                    } else if (i4 == 4) {
+                        i = 4;
+                    } else {
+                        if (i4 != 7) {
+                            throw new IllegalStateException("invalid ImeAction");
+                        }
+                        i = 6;
                     }
-                }
-                editorInfo.imeOptions = i;
-                int i3 = ju0Var.d;
-                if (i3 == 1) {
-                    editorInfo.inputType = 1;
-                } else if (i3 == 2) {
-                    editorInfo.inputType = 1;
-                    editorInfo.imeOptions = Integer.MIN_VALUE | i;
-                } else if (i3 == 3) {
-                    editorInfo.inputType = 2;
-                } else if (i3 == 4) {
-                    editorInfo.inputType = 3;
-                } else if (i3 == 5) {
-                    editorInfo.inputType = 17;
-                } else if (i3 == 6) {
-                    editorInfo.inputType = 33;
-                } else if (i3 == 7) {
-                    editorInfo.inputType = 129;
-                } else if (i3 == 8) {
-                    editorInfo.inputType = 18;
-                } else {
-                    if (i3 != 9) {
-                        throw new IllegalStateException("Invalid Keyboard Type");
+                    editorInfo.imeOptions = i;
+                    i2 = ju0Var.d;
+                    if (i2 == 1) {
                     }
-                    editorInfo.inputType = 8194;
+                    if (!z) {
+                    }
+                    i3 = editorInfo.inputType;
+                    if ((i3 & 1) == 1) {
+                    }
+                    long j = ak2Var.b;
+                    int i5 = al2.c;
+                    editorInfo.initialSelStart = (int) (j >> 32);
+                    editorInfo.initialSelEnd = (int) (j & 4294967295L);
+                    lx0.X(editorInfo, ak2Var.f105a.e);
+                    editorInfo.imeOptions |= 33554432;
+                    if (qd0.d()) {
+                    }
+                    vw1 vw1Var = new vw1(lk2Var.g, new kk2(0, lk2Var), lk2Var.h.c);
+                    lk2Var.i.add(new WeakReference(vw1Var));
+                    return vw1Var;
                 }
                 if (!z) {
-                    int i4 = editorInfo.inputType;
-                    if ((i4 & 1) == 1) {
-                        editorInfo.inputType = i4 | 131072;
-                        if (i2 == 1) {
-                            editorInfo.imeOptions |= 1073741824;
+                    i = 0;
+                    editorInfo.imeOptions = i;
+                    i2 = ju0Var.d;
+                    if (i2 == 1) {
+                        editorInfo.inputType = 1;
+                    } else if (i2 == 2) {
+                        editorInfo.inputType = 1;
+                        editorInfo.imeOptions = Integer.MIN_VALUE | i;
+                    } else if (i2 == 3) {
+                        editorInfo.inputType = 2;
+                    } else if (i2 == 4) {
+                        editorInfo.inputType = 3;
+                    } else if (i2 == 5) {
+                        editorInfo.inputType = 17;
+                    } else if (i2 == 6) {
+                        editorInfo.inputType = 33;
+                    } else if (i2 == 7) {
+                        editorInfo.inputType = 129;
+                    } else if (i2 == 8) {
+                        editorInfo.inputType = 18;
+                    } else {
+                        if (i2 != 9) {
+                            throw new IllegalStateException("Invalid Keyboard Type");
+                        }
+                        editorInfo.inputType = 8194;
+                    }
+                    if (!z) {
+                        int i6 = editorInfo.inputType;
+                        if ((i6 & 1) == 1) {
+                            editorInfo.inputType = i6 | 131072;
+                            if (i4 == 1) {
+                                editorInfo.imeOptions |= 1073741824;
+                            }
                         }
                     }
-                }
-                int i5 = editorInfo.inputType;
-                if ((i5 & 1) == 1) {
-                    int i6 = ju0Var.b;
-                    if (i6 == 1) {
-                        editorInfo.inputType = i5 | 4096;
-                    } else if (i6 == 2) {
-                        editorInfo.inputType = i5 | 8192;
-                    } else if (i6 == 3) {
-                        editorInfo.inputType = i5 | 16384;
+                    i3 = editorInfo.inputType;
+                    if ((i3 & 1) == 1) {
+                        int i7 = ju0Var.b;
+                        if (i7 == 1) {
+                            editorInfo.inputType = i3 | 4096;
+                        } else if (i7 == 2) {
+                            editorInfo.inputType = i3 | 8192;
+                        } else if (i7 == 3) {
+                            editorInfo.inputType = i3 | 16384;
+                        }
+                        if (ju0Var.c) {
+                            editorInfo.inputType |= 32768;
+                        }
                     }
-                    if (ju0Var.c) {
-                        editorInfo.inputType |= 32768;
+                    long j2 = ak2Var.b;
+                    int i52 = al2.c;
+                    editorInfo.initialSelStart = (int) (j2 >> 32);
+                    editorInfo.initialSelEnd = (int) (j2 & 4294967295L);
+                    lx0.X(editorInfo, ak2Var.f105a.e);
+                    editorInfo.imeOptions |= 33554432;
+                    if (qd0.d()) {
+                        qd0.a().i(editorInfo);
                     }
+                    vw1 vw1Var2 = new vw1(lk2Var.g, new kk2(0, lk2Var), lk2Var.h.c);
+                    lk2Var.i.add(new WeakReference(vw1Var2));
+                    return vw1Var2;
                 }
-                long j = ak2Var.b;
-                int i7 = al2.c;
-                editorInfo.initialSelStart = (int) (j >> 32);
-                editorInfo.initialSelEnd = (int) (j & 4294967295L);
-                lx0.X(editorInfo, ak2Var.f106a.e);
+                i = 6;
+                editorInfo.imeOptions = i;
+                i2 = ju0Var.d;
+                if (i2 == 1) {
+                }
+                if (!z) {
+                }
+                i3 = editorInfo.inputType;
+                if ((i3 & 1) == 1) {
+                }
+                long j22 = ak2Var.b;
+                int i522 = al2.c;
+                editorInfo.initialSelStart = (int) (j22 >> 32);
+                editorInfo.initialSelEnd = (int) (j22 & 4294967295L);
+                lx0.X(editorInfo, ak2Var.f105a.e);
                 editorInfo.imeOptions |= 33554432;
                 if (qd0.d()) {
-                    qd0.a().i(editorInfo);
                 }
-                vw1 vw1Var = new vw1(lk2Var.g, new kk2(0, lk2Var), lk2Var.h.c);
-                lk2Var.i.add(new WeakReference(vw1Var));
-                return vw1Var;
+                vw1 vw1Var22 = new vw1(lk2Var.g, new kk2(0, lk2Var), lk2Var.h.c);
+                lk2Var.i.add(new WeakReference(vw1Var22));
+                return vw1Var22;
             }
         } else {
             c82 c82Var2 = (c82) cbVar.g.get();
@@ -2074,10 +2350,10 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                     if (vv0Var.e) {
                         return null;
                     }
-                    ww1 ww1VarA = vv0Var.f1244a.a(editorInfo);
+                    ww1 a2 = vv0Var.f1243a.a(editorInfo);
                     r5 r5Var = new r5(20, vv0Var);
                     int i8 = Build.VERSION.SDK_INT;
-                    InputConnection ri1Var = i8 >= 34 ? new ri1(ww1VarA, r5Var) : i8 >= 25 ? new qi1(ww1VarA, r5Var) : new pi1(ww1VarA, r5Var);
+                    InputConnection ri1Var = i8 >= 34 ? new ri1(a2, r5Var) : i8 >= 25 ? new qi1(a2, r5Var) : new pi1(a2, r5Var);
                     vv0Var.d.b(new nu2(ri1Var));
                     return ri1Var;
                 }
@@ -2089,22 +2365,28 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     @Override // android.view.View
     public final void onCreateVirtualViewTranslationRequests(long[] jArr, int[] iArr, Consumer consumer) {
         y62 y62Var;
-        String strA;
+        AutofillId autofillId;
+        String a2;
+        TranslationRequestValue forText;
+        ViewTranslationRequest build;
         x8 x8Var = this.w;
         x8Var.getClass();
         for (long j : jArr) {
             a72 a72Var = (a72) x8Var.g().b((int) j);
-            if (a72Var != null && (y62Var = a72Var.f87a) != null) {
+            if (a72Var != null && (y62Var = a72Var.f86a) != null) {
                 b7.r();
-                ViewTranslationRequest.Builder builderN = b7.n(x8Var.d.getAutofillId(), y62Var.g);
-                Object objG = y62Var.d.d.g(c72.A);
-                if (objG == null) {
-                    objG = null;
+                autofillId = x8Var.d.getAutofillId();
+                ViewTranslationRequest.Builder n = b7.n(autofillId, y62Var.g);
+                Object g = y62Var.d.d.g(c72.A);
+                if (g == null) {
+                    g = null;
                 }
-                List list = (List) objG;
-                if (list != null && (strA = k71.a(list, "\n", null, 62)) != null) {
-                    builderN.setValue("android:text", TranslationRequestValue.forText(new ue(strA)));
-                    consumer.accept(builderN.build());
+                List list = (List) g;
+                if (list != null && (a2 = k71.a(list, "\n", null, 62)) != null) {
+                    forText = TranslationRequestValue.forText(new ue(a2));
+                    n.setValue("android:text", forText);
+                    build = n.build();
+                    consumer.accept(build);
                 }
             }
         }
@@ -2130,7 +2412,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                 ze1Var.i(this);
             }
         }
-        cd2 cd2Var = getSnapshotObserver().f1288a;
+        cd2 cd2Var = getSnapshotObserver().f1287a;
         j4 j4Var = cd2Var.h;
         if (j4Var != null) {
             j4Var.a();
@@ -2138,14 +2420,14 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         cd2Var.a();
         this.m.getClass();
         h7 viewTreeOwners = getViewTreeOwners();
-        lz0 lz0VarG = viewTreeOwners != null ? viewTreeOwners.f457a.g() : null;
-        if (lz0VarG == null) {
+        lz0 g = viewTreeOwners != null ? viewTreeOwners.f456a.g() : null;
+        if (g == null) {
             throw zd.c("No lifecycle owner exists");
         }
-        lz0VarG.I(this.w);
-        lz0VarG.I(this);
+        g.I(this.w);
+        g.I(this);
         if (h() && (s6Var = this.H) != null) {
-            dj djVar = dj.f252a;
+            dj djVar = dj.f251a;
             djVar.getClass();
             ((AutofillManager) s6Var.f).unregisterCallback(i1.e(djVar));
         }
@@ -2153,7 +2435,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         getViewTreeObserver().removeOnScrollChangedListener(this.h0);
         getViewTreeObserver().removeOnTouchModeChangeListener(this.i0);
         if (i >= 31) {
-            i8.f513a.a(this);
+            i8.f512a.a(this);
         }
         u6 u6Var = this.I;
         if (u6Var != null) {
@@ -2190,17 +2472,17 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             if (!isAttachedToWindow()) {
                 q(getRoot());
             }
-            long jK = k(i);
-            long jK2 = k(i2);
-            long jW = ex2.w((int) (jK >>> 32), (int) (jK & 4294967295L), (int) (jK2 >>> 32), (int) (4294967295L & jK2));
+            long k = k(i);
+            long k2 = k(i2);
+            long w = ex2.w((int) (k >>> 32), (int) (k & 4294967295L), (int) (k2 >>> 32), (int) (4294967295L & k2));
             vz vzVar = this.P;
             if (vzVar == null) {
-                this.P = new vz(jW);
+                this.P = new vz(w);
                 this.Q = false;
-            } else if (!vz.b(vzVar.f1250a, jW)) {
+            } else if (!vz.b(vzVar.f1249a, w)) {
                 this.Q = true;
             }
-            cb1Var.q(jW);
+            cb1Var.q(w);
             cb1Var.l();
             setMeasuredDimension(getRoot().I.p.d, getRoot().I.p.e);
             if (this.O != null) {
@@ -2213,18 +2495,72 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x00a2  */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void onProvideAutofillVirtualStructure(android.view.ViewStructure r12, int r13) {
-        /*
-            Method dump skipped, instructions count: 273
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v7.onProvideAutofillVirtualStructure(android.view.ViewStructure, int):void");
+    public final void onProvideAutofillVirtualStructure(ViewStructure viewStructure, int i) {
+        if (!h() || viewStructure == null) {
+            return;
+        }
+        u6 u6Var = this.I;
+        if (u6Var != null) {
+            e11 e11Var = u6Var.b.f137a;
+            AutofillId autofillId = u6Var.f;
+            String str = u6Var.e;
+            ax1 ax1Var = u6Var.d;
+            ly0.C(viewStructure, e11Var, autofillId, str, ax1Var);
+            Object[] objArr = ui1.f1175a;
+            ze1 ze1Var = new ze1(2);
+            ze1Var.a(e11Var);
+            ze1Var.a(viewStructure);
+            while (ze1Var.h()) {
+                Object j = ze1Var.j(ze1Var.b - 1);
+                lx0.v(j, "null cannot be cast to non-null type android.view.ViewStructure");
+                ViewStructure viewStructure2 = (ViewStructure) j;
+                Object j2 = ze1Var.j(ze1Var.b - 1);
+                lx0.v(j2, "null cannot be cast to non-null type androidx.compose.ui.semantics.SemanticsInfo");
+                pf1 pf1Var = (pf1) ((e11) j2).n();
+                int i2 = pf1Var.d.f;
+                for (int i3 = 0; i3 < i2; i3++) {
+                    e11 e11Var2 = (e11) pf1Var.get(i3);
+                    if (!e11Var2.S && e11Var2.I() && e11Var2.J()) {
+                        u62 x = e11Var2.x();
+                        if (x != null) {
+                            gf1 gf1Var = x.d;
+                            if (gf1Var.b(t62.g) || gf1Var.b(c72.q) || gf1Var.b(c72.r)) {
+                                ViewStructure newChild = viewStructure2.newChild(viewStructure2.addChildCount(1));
+                                ly0.C(newChild, e11Var2, u6Var.f, str, ax1Var);
+                                ze1Var.a(e11Var2);
+                                ze1Var.a(newChild);
+                            }
+                        }
+                        ze1Var.a(e11Var2);
+                        ze1Var.a(viewStructure2);
+                    }
+                }
+            }
+        }
+        s6 s6Var = this.H;
+        if (s6Var != null) {
+            gj gjVar = (gj) s6Var.e;
+            LinkedHashMap linkedHashMap = gjVar.f420a;
+            LinkedHashMap linkedHashMap2 = gjVar.f420a;
+            if (linkedHashMap.isEmpty()) {
+                return;
+            }
+            int addChildCount = viewStructure.addChildCount(linkedHashMap2.size());
+            Iterator it = linkedHashMap2.entrySet().iterator();
+            if (it.hasNext()) {
+                Map.Entry entry = (Map.Entry) it.next();
+                int intValue = ((Number) entry.getKey()).intValue();
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                ViewStructure newChild2 = viewStructure.newChild(addChildCount);
+                newChild2.setAutofillId((AutofillId) s6Var.g, intValue);
+                newChild2.setId(intValue, ((v7) s6Var.d).getContext().getPackageName(), null, null);
+                newChild2.setAutofillType(1);
+                throw null;
+            }
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2261,12 +2597,12 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             n42 n42Var = (n42) (i == 0 ? null : sf1Var.d[i - 1]);
             if (n42Var != null) {
                 rw0 rw0Var = n42Var.c;
-                dx dxVar = new dx(n42Var.f792a, rw0Var, wj1.g(coroutineContext), gz0Var, this);
+                dx dxVar = new dx(n42Var.f791a, rw0Var, wj1.g(coroutineContext), gz0Var, this);
                 xh1 xh1Var = n42Var.d;
-                long j = (rw0Var.f1038a << 32) | (rw0Var.b & 4294967295L);
-                ScrollCaptureTarget scrollCaptureTargetJ = b7.j(this, mz0.M(h50.J(az0.A(xh1Var).K(xh1Var, true))), new Point((int) (j >> 32), (int) (j & 4294967295L)), dxVar);
-                scrollCaptureTargetJ.setScrollBounds(mz0.M(rw0Var));
-                consumer.accept(scrollCaptureTargetJ);
+                long j = (rw0Var.f1037a << 32) | (rw0Var.b & 4294967295L);
+                ScrollCaptureTarget j2 = b7.j(this, mz0.M(h50.J(az0.A(xh1Var).K(xh1Var, true))), new Point((int) (j >> 32), (int) (j & 4294967295L)), dxVar);
+                j2.setScrollBounds(mz0.M(rw0Var));
+                consumer.accept(j2);
             }
         }
     }
@@ -2287,22 +2623,22 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     @Override // android.view.View
     public final void onWindowFocusChanged(boolean z) {
-        boolean zC;
-        this.m.f83a.setValue(Boolean.valueOf(z));
+        boolean C;
+        this.m.f82a.setValue(Boolean.valueOf(z));
         this.G0 = true;
         super.onWindowFocusChanged(z);
-        if (!z || Build.VERSION.SDK_INT >= 30 || getShowLayoutBounds() == (zC = ex2.C())) {
+        if (!z || Build.VERSION.SDK_INT >= 30 || getShowLayoutBounds() == (C = ex2.C())) {
             return;
         }
-        setShowLayoutBounds(zC);
+        setShowLayoutBounds(C);
         p(getRoot());
     }
 
     public final void q(e11 e11Var) {
         this.R.p(e11Var, false);
-        sf1 sf1VarZ = e11Var.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        sf1 z = e11Var.z();
+        Object[] objArr = z.d;
+        int i = z.f;
         for (int i2 = 0; i2 < i; i2++) {
             q((e11) objArr[i2]);
         }
@@ -2313,15 +2649,15 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (isFocused()) {
             return true;
         }
-        int iOrdinal = ((gk0) getFocusOwner()).c.K0().ordinal();
-        if (iOrdinal == 0 || iOrdinal == 1 || iOrdinal == 2) {
+        int ordinal = ((gk0) getFocusOwner()).c.K0().ordinal();
+        if (ordinal == 0 || ordinal == 1 || ordinal == 2) {
             return super.requestFocus(i, rect);
         }
-        if (iOrdinal != 3) {
+        if (ordinal != 3) {
             throw new mu();
         }
-        vj0 vj0VarJ0 = bz0.j0(i);
-        int i2 = vj0VarJ0 != null ? vj0VarJ0.f1223a : 7;
+        vj0 j0 = bz0.j0(i);
+        int i2 = j0 != null ? j0.f1222a : 7;
         return lx0.n(((gk0) getFocusOwner()).e(i2, rect != null ? mz0.P(rect) : null, new r7(i2, 0)), Boolean.TRUE);
     }
 
@@ -2392,44 +2728,44 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
             if ((md1Var4.g & 16) != 0) {
                 for (md1 md1Var5 = md1Var4; md1Var5 != null; md1Var5 = md1Var5.i) {
                     if ((md1Var5.f & 16) != 0) {
-                        z60 z60VarM = md1Var5;
-                        ?? sf1Var2 = 0;
-                        while (z60VarM != 0) {
-                            if (z60VarM instanceof ss1) {
-                                ss1 ss1Var = (ss1) z60VarM;
+                        z60 z60Var = md1Var5;
+                        ?? r5 = 0;
+                        while (z60Var != 0) {
+                            if (z60Var instanceof ss1) {
+                                ss1 ss1Var = (ss1) z60Var;
                                 if (ss1Var instanceof oh2) {
                                     ((oh2) ss1Var).K0();
                                 }
-                            } else if ((z60VarM.f & 16) != 0 && (z60VarM instanceof z60)) {
-                                md1 md1Var6 = z60VarM.s;
+                            } else if ((z60Var.f & 16) != 0 && (z60Var instanceof z60)) {
+                                md1 md1Var6 = z60Var.s;
                                 int i2 = 0;
-                                z60VarM = z60VarM;
-                                sf1Var2 = sf1Var2;
+                                z60Var = z60Var;
+                                r5 = r5;
                                 while (md1Var6 != null) {
                                     if ((md1Var6.f & 16) != 0) {
                                         i2++;
-                                        sf1Var2 = sf1Var2;
+                                        r5 = r5;
                                         if (i2 == 1) {
-                                            z60VarM = md1Var6;
+                                            z60Var = md1Var6;
                                         } else {
-                                            if (sf1Var2 == 0) {
-                                                sf1Var2 = new sf1(new md1[16]);
+                                            if (r5 == 0) {
+                                                r5 = new sf1(new md1[16]);
                                             }
-                                            if (z60VarM != 0) {
-                                                sf1Var2.b(z60VarM);
-                                                z60VarM = 0;
+                                            if (z60Var != 0) {
+                                                r5.b(z60Var);
+                                                z60Var = 0;
                                             }
-                                            sf1Var2.b(md1Var6);
+                                            r5.b(md1Var6);
                                         }
                                     }
                                     md1Var6 = md1Var6.i;
-                                    z60VarM = z60VarM;
-                                    sf1Var2 = sf1Var2;
+                                    z60Var = z60Var;
+                                    r5 = r5;
                                 }
                                 if (i2 == 1) {
                                 }
                             }
-                            z60VarM = lx0.m(sf1Var2);
+                            z60Var = lx0.m(r5);
                         }
                     }
                 }
@@ -2474,20 +2810,20 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     public final void u(float[] fArr) {
         E();
         ya1.e(fArr, this.V);
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (this.c0 >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (this.c0 & 4294967295L));
+        float intBitsToFloat = Float.intBitsToFloat((int) (this.c0 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (this.c0 & 4294967295L));
         float[] fArr2 = this.U;
         ya1.d(fArr2);
-        ya1.f(fArr2, fIntBitsToFloat, fIntBitsToFloat2);
+        ya1.f(fArr2, intBitsToFloat, intBitsToFloat2);
         l8.Z(fArr, fArr2);
     }
 
     public final long v(long j) {
         E();
-        long jB = ya1.b(j, this.V);
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (this.c0 >> 32)) + Float.intBitsToFloat((int) (jB >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (this.c0 & 4294967295L)) + Float.intBitsToFloat((int) (jB & 4294967295L));
-        return (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
+        long b = ya1.b(j, this.V);
+        float intBitsToFloat = Float.intBitsToFloat((int) (this.c0 >> 32)) + Float.intBitsToFloat((int) (b >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (this.c0 & 4294967295L)) + Float.intBitsToFloat((int) (b & 4294967295L));
+        return (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
     }
 
     public final void w(boolean z) {
@@ -2566,7 +2902,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
     public final void z() {
         u6 u6Var;
         if (this.J) {
-            cd2 cd2Var = getSnapshotObserver().f1288a;
+            cd2 cd2Var = getSnapshotObserver().f1287a;
             synchronized (cd2Var.g) {
                 try {
                     sf1 sf1Var = cd2Var.f;
@@ -2598,7 +2934,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
         if (h() && (u6Var = this.I) != null) {
             re1 re1Var = u6Var.g;
             if (re1Var.d == 0 && u6Var.h) {
-                ((AutofillManager) u6Var.f1161a.d).commit();
+                ((AutofillManager) u6Var.f1160a.d).commit();
                 u6Var.h = false;
             }
             if (re1Var.d != 0) {
@@ -2614,7 +2950,7 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
                     ze1Var.m(i6);
                     throw null;
                 }
-                Object[] objArr2 = ze1Var.f1436a;
+                Object[] objArr2 = ze1Var.f1435a;
                 Object obj = objArr2[i6];
                 objArr2[i6] = null;
                 if (sm0Var != null) {
@@ -2665,10 +3001,10 @@ public final class v7 extends ViewGroup implements tl1, m12, za1, j60, kl1 {
 
     @Override // android.view.ViewGroup
     public final void addView(View view, int i, int i2) {
-        ViewGroup.LayoutParams layoutParamsGenerateDefaultLayoutParams = generateDefaultLayoutParams();
-        layoutParamsGenerateDefaultLayoutParams.width = i;
-        layoutParamsGenerateDefaultLayoutParams.height = i2;
-        addViewInLayout(view, -1, layoutParamsGenerateDefaultLayoutParams, true);
+        ViewGroup.LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
+        generateDefaultLayoutParams.width = i;
+        generateDefaultLayoutParams.height = i2;
+        addViewInLayout(view, -1, generateDefaultLayoutParams, true);
     }
 
     @Override // android.view.ViewGroup

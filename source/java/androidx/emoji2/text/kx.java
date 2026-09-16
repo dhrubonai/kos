@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class kx {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final on f663a = new on(5);
+    public static final on f662a = new on(5);
 }

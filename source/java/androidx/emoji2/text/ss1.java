@@ -21,7 +21,7 @@ public interface ss1 extends y60 {
 
     default long s() {
         int i = bn2.b;
-        return bn2.f159a;
+        return bn2.f158a;
     }
 
     default void L() {

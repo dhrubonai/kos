@@ -17,26 +17,26 @@ public final class q81 extends g01 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
-        m81 m81VarR0;
+        m81 R0;
         i11 i11Var = this.e.i;
-        gr1 placementScope = null;
-        if (lz0.y(i11Var.f502a) || i11Var.c) {
+        gr1 gr1Var = null;
+        if (lz0.y(i11Var.f501a) || i11Var.c) {
             xh1 xh1Var = i11Var.a().t;
             if (xh1Var != null) {
-                placementScope = xh1Var.o;
+                gr1Var = xh1Var.o;
             }
         } else {
             xh1 xh1Var2 = i11Var.a().t;
-            if (xh1Var2 != null && (m81VarR0 = xh1Var2.R0()) != null) {
-                placementScope = m81VarR0.o;
+            if (xh1Var2 != null && (R0 = xh1Var2.R0()) != null) {
+                gr1Var = R0.o;
             }
         }
-        if (placementScope == null) {
-            placementScope = ((v7) this.f).getPlacementScope();
+        if (gr1Var == null) {
+            gr1Var = ((v7) this.f).getPlacementScope();
         }
-        m81 m81VarR02 = i11Var.a().R0();
-        lx0.u(m81VarR02);
-        gr1.h(placementScope, m81VarR02, this.g);
-        return up2.f1187a;
+        m81 R02 = i11Var.a().R0();
+        lx0.u(R02);
+        gr1.h(gr1Var, R02, this.g);
+        return up2.f1186a;
     }
 }

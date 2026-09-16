@@ -8,7 +8,7 @@ import java.util.Arrays;
 public final class dw2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ dw2 f276a = new dw2();
+    public static final /* synthetic */ dw2 f275a = new dw2();
     public static final fw2 b;
     public static final fw2 c;
     public static final fw2 d;

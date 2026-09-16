@@ -31,19 +31,19 @@ public final class n81 implements p01 {
 
     public final long a() {
         m81 m81Var = this.d;
-        m81 m81VarE = jz0.E(m81Var);
-        return zi1.f(b(m81VarE.u, 0L), m81Var.r.c1(m81VarE.r, 0L));
+        m81 E = jz0.E(m81Var);
+        return zi1.f(b(E.u, 0L), m81Var.r.c1(E.r, 0L));
     }
 
     public final long b(p01 p01Var, long j) {
         boolean z = p01Var instanceof n81;
         m81 m81Var = this.d;
         if (!z) {
-            m81 m81VarE = jz0.E(m81Var);
-            xh1 xh1Var = m81VarE.r;
-            long jB = b(m81VarE.u, j);
-            long j2 = m81VarE.s;
-            long jF = zi1.f(jB, (4294967295L & Float.floatToRawIntBits((int) (j2 & 4294967295L))) | (Float.floatToRawIntBits((int) (j2 >> 32)) << 32));
+            m81 E = jz0.E(m81Var);
+            xh1 xh1Var = E.r;
+            long b = b(E.u, j);
+            long j2 = E.s;
+            long f = zi1.f(b, (4294967295L & Float.floatToRawIntBits((int) (j2 & 4294967295L))) | (Float.floatToRawIntBits((int) (j2 >> 32)) << 32));
             if (!xh1Var.T0().q) {
                 iv0.b("LayoutCoordinate operations are only valid when isAttached is true");
             }
@@ -52,27 +52,27 @@ public final class n81 implements p01 {
             if (xh1Var2 != null) {
                 xh1Var = xh1Var2;
             }
-            return zi1.g(jF, xh1Var.c1(p01Var, 0L));
+            return zi1.g(f, xh1Var.c1(p01Var, 0L));
         }
         m81 m81Var2 = ((n81) p01Var).d;
         xh1 xh1Var3 = m81Var2.r;
         xh1Var3.d1();
-        m81 m81VarR0 = m81Var.r.P0(xh1Var3).R0();
-        if (m81VarR0 != null) {
-            long jC = nw0.c(nw0.d(m81Var2.L0(m81VarR0, false), jm.K(j)), m81Var.L0(m81VarR0, false));
-            return (Float.floatToRawIntBits((int) (jC >> 32)) << 32) | (Float.floatToRawIntBits((int) (jC & 4294967295L)) & 4294967295L);
+        m81 R0 = m81Var.r.P0(xh1Var3).R0();
+        if (R0 != null) {
+            long c = nw0.c(nw0.d(m81Var2.L0(R0, false), jm.K(j)), m81Var.L0(R0, false));
+            return (Float.floatToRawIntBits((int) (c >> 32)) << 32) | (Float.floatToRawIntBits((int) (c & 4294967295L)) & 4294967295L);
         }
-        m81 m81VarE2 = jz0.E(m81Var2);
-        long jD = nw0.d(nw0.d(m81Var2.L0(m81VarE2, false), m81VarE2.s), jm.K(j));
-        m81 m81VarE3 = jz0.E(m81Var);
-        long jC2 = nw0.c(jD, nw0.d(m81Var.L0(m81VarE3, false), m81VarE3.s));
-        long jFloatToRawIntBits = Float.floatToRawIntBits((int) (jC2 >> 32));
-        long jFloatToRawIntBits2 = Float.floatToRawIntBits((int) (jC2 & 4294967295L)) & 4294967295L;
-        xh1 xh1Var4 = m81VarE3.r.t;
+        m81 E2 = jz0.E(m81Var2);
+        long d = nw0.d(nw0.d(m81Var2.L0(E2, false), E2.s), jm.K(j));
+        m81 E3 = jz0.E(m81Var);
+        long c2 = nw0.c(d, nw0.d(m81Var.L0(E3, false), E3.s));
+        long floatToRawIntBits = Float.floatToRawIntBits((int) (c2 >> 32));
+        long floatToRawIntBits2 = Float.floatToRawIntBits((int) (c2 & 4294967295L)) & 4294967295L;
+        xh1 xh1Var4 = E3.r.t;
         lx0.u(xh1Var4);
-        xh1 xh1Var5 = m81VarE2.r.t;
+        xh1 xh1Var5 = E2.r.t;
         lx0.u(xh1Var5);
-        return xh1Var4.c1(xh1Var5, jFloatToRawIntBits2 | (jFloatToRawIntBits << 32));
+        return xh1Var4.c1(xh1Var5, floatToRawIntBits2 | (floatToRawIntBits << 32));
     }
 
     @Override // androidx.emoji2.text.p01
@@ -113,14 +113,14 @@ public final class n81 implements p01 {
 
     @Override // androidx.emoji2.text.p01
     public final p01 z() {
-        m81 m81VarR0;
+        m81 R0;
         if (!h()) {
             iv0.b("LayoutCoordinate operations are only valid when isAttached is true");
         }
         xh1 xh1Var = this.d.r.r.H.d.t;
-        if (xh1Var == null || (m81VarR0 = xh1Var.R0()) == null) {
+        if (xh1Var == null || (R0 = xh1Var.R0()) == null) {
             return null;
         }
-        return m81VarR0.u;
+        return R0.u;
     }
 }

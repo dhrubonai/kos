@@ -61,9 +61,9 @@ public final class d4 extends jm {
             case 0:
                 String str = (String) obj;
                 lx0.x(str, "input");
-                Intent intentPutExtra = new Intent("androidx.activity.result.contract.action.REQUEST_PERMISSIONS").putExtra("androidx.activity.result.contract.extra.PERMISSIONS", new String[]{str});
-                lx0.w(intentPutExtra, "putExtra(...)");
-                return intentPutExtra;
+                Intent putExtra = new Intent("androidx.activity.result.contract.action.REQUEST_PERMISSIONS").putExtra("androidx.activity.result.contract.extra.PERMISSIONS", new String[]{str});
+                lx0.w(putExtra, "putExtra(...)");
+                return putExtra;
             default:
                 Intent intent = (Intent) obj;
                 lx0.x(intent, "input");

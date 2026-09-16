@@ -29,7 +29,7 @@ import java.util.LinkedHashSet;
 public class HideViewOnScrollBehavior<V extends View> extends q10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public lx0 f1467a;
+    public lx0 f1466a;
     public AccessibilityManager b;
     public pr0 c;
     public int e;
@@ -64,7 +64,7 @@ public class HideViewOnScrollBehavior<V extends View> extends q10 {
             int absoluteGravity = Gravity.getAbsoluteGravity(i2, i);
             r((absoluteGravity == 3 || absoluteGravity == 19) ? 2 : 0);
         }
-        this.i = this.f1467a.H(view, marginLayoutParams);
+        this.i = this.f1466a.H(view, marginLayoutParams);
         this.e = az0.c0(view.getContext(), R.attr.motionDurationLong2, 225);
         this.f = az0.c0(view.getContext(), R.attr.motionDurationMedium4, 175);
         this.g = az0.d0(view.getContext(), R.attr.motionEasingEmphasizedInterpolator, je.d);
@@ -96,7 +96,7 @@ public class HideViewOnScrollBehavior<V extends View> extends q10 {
             if (it.hasNext()) {
                 throw jx0.g(it);
             }
-            this.k = this.f1467a.J(view, this.i).setInterpolator(this.h).setDuration(this.f).setListener(new l3(3, this));
+            this.k = this.f1466a.J(view, this.i).setInterpolator(this.h).setDuration(this.f).setListener(new l3(3, this));
         }
     }
 
@@ -106,17 +106,17 @@ public class HideViewOnScrollBehavior<V extends View> extends q10 {
     }
 
     public final void r(int i) {
-        lx0 lx0Var = this.f1467a;
+        lx0 lx0Var = this.f1466a;
         if (lx0Var == null || lx0Var.I() != i) {
             if (i == 0) {
-                this.f1467a = new qr0(2);
+                this.f1466a = new qr0(2);
             } else if (i == 1) {
-                this.f1467a = new qr0(0);
+                this.f1466a = new qr0(0);
             } else {
                 if (i != 2) {
                     throw new IllegalArgumentException(zd.g("Invalid view edge position value: ", i, ". Must be 0, 1 or 2."));
                 }
-                this.f1467a = new qr0(1);
+                this.f1466a = new qr0(1);
             }
         }
     }
@@ -135,8 +135,8 @@ public class HideViewOnScrollBehavior<V extends View> extends q10 {
         if (it.hasNext()) {
             throw jx0.g(it);
         }
-        this.f1467a.getClass();
-        this.k = this.f1467a.J(view, 0).setInterpolator(this.g).setDuration(this.e).setListener(new l3(3, this));
+        this.f1466a.getClass();
+        this.k = this.f1466a.J(view, 0).setInterpolator(this.g).setDuration(this.e).setListener(new l3(3, this));
     }
 
     public HideViewOnScrollBehavior(Context context, AttributeSet attributeSet) {

@@ -9,7 +9,7 @@ public abstract class fa2 {
     public static final Matrix b = new Matrix();
 
     /* renamed from: a, reason: collision with root package name */
-    public final Matrix f354a = new Matrix();
+    public final Matrix f353a = new Matrix();
 
     public abstract void a(Matrix matrix, r92 r92Var, int i, Canvas canvas);
 }

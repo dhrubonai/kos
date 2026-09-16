@@ -12,18 +12,18 @@ import java.util.Map;
 public final /* synthetic */ class su implements j32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1086a;
+    public final /* synthetic */ int f1085a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ su(int i, Object obj) {
-        this.f1086a = i;
+        this.f1085a = i;
         this.b = obj;
     }
 
     @Override // androidx.emoji2.text.j32
     public final Bundle a() {
         hn1[] hn1VarArr;
-        switch (this.f1086a) {
+        switch (this.f1085a) {
             case 0:
                 zu zuVar = (zu) this.b;
                 Bundle bundle = new Bundle();
@@ -36,9 +36,9 @@ public final /* synthetic */ class su implements j32 {
                 bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", new Bundle(xuVar.g));
                 return bundle;
             case 1:
-                Map mapC = ((z22) this.b).c();
+                Map c = ((z22) this.b).c();
                 Bundle bundle2 = new Bundle();
-                for (Map.Entry entry : mapC.entrySet()) {
+                for (Map.Entry entry : c.entrySet()) {
                     String str = (String) entry.getKey();
                     List list = (List) entry.getValue();
                     bundle2.putParcelableArrayList(str, list instanceof ArrayList ? (ArrayList) list : new ArrayList<>(list));

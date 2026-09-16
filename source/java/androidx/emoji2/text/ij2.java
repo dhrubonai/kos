@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class ij2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final String f529a = eg2.W(10, "H");
+    public static final String f528a = eg2.W(10, "H");
 
     public static final long a(gl2 gl2Var, j70 j70Var, bl0 bl0Var, String str, int i) {
-        ra raVarD = pz0.d(str, gl2Var, xz.b(0, 0, 15), j70Var, bl0Var, i, 64);
-        return kx0.d(mz0.g(raVarD.f998a.b()), mz0.g(raVarD.b()));
+        ra d = pz0.d(str, gl2Var, xz.b(0, 0, 15), j70Var, bl0Var, i, 64);
+        return kx0.d(mz0.g(d.f997a.b()), mz0.g(d.b()));
     }
 }

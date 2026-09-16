@@ -37,17 +37,17 @@ public final class f52 extends hh2 implements Function2 {
         switch (this.h) {
             case 0:
                 f52 f52Var = (f52) i((l10) obj2, (v52) obj);
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 f52Var.k(up2Var);
                 return up2Var;
             case 1:
                 f52 f52Var2 = (f52) i((l10) obj2, (v52) obj);
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 f52Var2.k(up2Var2);
                 return up2Var2;
             default:
                 f52 f52Var3 = (f52) i((l10) obj2, (e30) obj);
-                up2 up2Var3 = up2.f1187a;
+                up2 up2Var3 = up2.f1186a;
                 f52Var3.k(up2Var3);
                 return up2Var3;
         }
@@ -58,12 +58,12 @@ public final class f52 extends hh2 implements Function2 {
         switch (this.h) {
             case 0:
                 mz0.L(obj);
-                x52 x52Var = ((v52) this.i).f1204a;
+                x52 x52Var = ((v52) this.i).f1203a;
                 x52.a(x52Var, x52Var.h, this.j, 1);
                 break;
             case 1:
                 mz0.L(obj);
-                x52 x52Var2 = ((v52) this.i).f1204a;
+                x52 x52Var2 = ((v52) this.i).f1203a;
                 x52.a(x52Var2, x52Var2.h, this.j, 1);
                 break;
             default:
@@ -75,7 +75,7 @@ public final class f52 extends hh2 implements Function2 {
                 mf1Var.setValue(new vt1(this.j));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

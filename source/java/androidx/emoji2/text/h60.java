@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class h60 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f454a;
+    public int f453a;
     public boolean b;
     public Object c;
 }

@@ -34,11 +34,11 @@ public final class s extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((s) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((s) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         switch (this.h) {
             case 0:
                 int i = this.i;
@@ -47,9 +47,9 @@ public final class s extends hh2 implements Function2 {
                     se1 se1Var = this.j.t;
                     if (se1Var != null) {
                         this.i = 1;
-                        Object objB = se1Var.b(this.k, this);
+                        Object b = se1Var.b(this.k, this);
                         f30 f30Var = f30.d;
-                        if (objB == f30Var) {
+                        if (b == f30Var) {
                             return f30Var;
                         }
                     }
@@ -59,7 +59,7 @@ public final class s extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
@@ -68,9 +68,9 @@ public final class s extends hh2 implements Function2 {
                     if (se1Var2 != null) {
                         wt1 wt1Var = new wt1(this.k);
                         this.i = 1;
-                        Object objB2 = se1Var2.b(wt1Var, this);
+                        Object b2 = se1Var2.b(wt1Var, this);
                         f30 f30Var2 = f30.d;
-                        if (objB2 == f30Var2) {
+                        if (b2 == f30Var2) {
                             return f30Var2;
                         }
                     }
@@ -80,7 +80,7 @@ public final class s extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

@@ -37,14 +37,14 @@ public final class y91 implements Map, Serializable, uy0 {
         }
         Object[] objArr = new Object[i];
         int[] iArr = new int[i];
-        int iHighestOneBit = Integer.highestOneBit((i < 1 ? 1 : i) * 3);
+        int highestOneBit = Integer.highestOneBit((i < 1 ? 1 : i) * 3);
         this.d = objArr;
         this.e = null;
         this.f = iArr;
-        this.g = new int[iHighestOneBit];
+        this.g = new int[highestOneBit];
         this.h = 2;
         this.i = 0;
-        this.j = Integer.numberOfLeadingZeros(iHighestOneBit) + 1;
+        this.j = Integer.numberOfLeadingZeros(highestOneBit) + 1;
     }
 
     public final int a(Object obj) {
@@ -188,13 +188,13 @@ public final class y91 implements Map, Serializable, uy0 {
 
     public final boolean e(Map.Entry entry) {
         lx0.x(entry, "entry");
-        int iG = g(entry.getKey());
-        if (iG < 0) {
+        int g = g(entry.getKey());
+        if (g < 0) {
             return false;
         }
         Object[] objArr = this.e;
         lx0.u(objArr);
-        return lx0.n(objArr[iG], entry.getValue());
+        return lx0.n(objArr[g], entry.getValue());
     }
 
     @Override // java.util.Map
@@ -221,13 +221,13 @@ public final class y91 implements Map, Serializable, uy0 {
     }
 
     public final void f(int i) {
-        Object[] objArrCopyOf;
-        Object[] objArr = this.d;
-        int length = objArr.length;
+        Object[] objArr;
+        Object[] objArr2 = this.d;
+        int length = objArr2.length;
         int i2 = this.i;
         int i3 = length - i2;
         int i4 = i2 - this.l;
-        if (i3 < i && i3 + i4 >= i && i4 >= objArr.length / 4) {
+        if (i3 < i && i3 + i4 >= i && i4 >= objArr2.length / 4) {
             c(true);
             return;
         }
@@ -235,8 +235,8 @@ public final class y91 implements Map, Serializable, uy0 {
         if (i5 < 0) {
             throw new OutOfMemoryError();
         }
-        if (i5 > objArr.length) {
-            int length2 = objArr.length;
+        if (i5 > objArr2.length) {
+            int length2 = objArr2.length;
             int i6 = length2 + (length2 >> 1);
             if (i6 - i5 < 0) {
                 i6 = i5;
@@ -244,23 +244,23 @@ public final class y91 implements Map, Serializable, uy0 {
             if (i6 - 2147483639 > 0) {
                 i6 = i5 > 2147483639 ? Integer.MAX_VALUE : 2147483639;
             }
-            Object[] objArrCopyOf2 = Arrays.copyOf(objArr, i6);
-            lx0.w(objArrCopyOf2, "copyOf(...)");
-            this.d = objArrCopyOf2;
-            Object[] objArr2 = this.e;
-            if (objArr2 != null) {
-                objArrCopyOf = Arrays.copyOf(objArr2, i6);
-                lx0.w(objArrCopyOf, "copyOf(...)");
+            Object[] copyOf = Arrays.copyOf(objArr2, i6);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] objArr3 = this.e;
+            if (objArr3 != null) {
+                objArr = Arrays.copyOf(objArr3, i6);
+                lx0.w(objArr, "copyOf(...)");
             } else {
-                objArrCopyOf = null;
+                objArr = null;
             }
-            this.e = objArrCopyOf;
-            int[] iArrCopyOf = Arrays.copyOf(this.f, i6);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.f = iArrCopyOf;
-            int iHighestOneBit = Integer.highestOneBit((i6 >= 1 ? i6 : 1) * 3);
-            if (iHighestOneBit > this.g.length) {
-                j(iHighestOneBit);
+            this.e = objArr;
+            int[] copyOf2 = Arrays.copyOf(this.f, i6);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.f = copyOf2;
+            int highestOneBit = Integer.highestOneBit((i6 >= 1 ? i6 : 1) * 3);
+            if (highestOneBit > this.g.length) {
+                j(highestOneBit);
             }
         }
     }
@@ -289,13 +289,13 @@ public final class y91 implements Map, Serializable, uy0 {
 
     @Override // java.util.Map
     public final Object get(Object obj) {
-        int iG = g(obj);
-        if (iG < 0) {
+        int g = g(obj);
+        if (g < 0) {
             return null;
         }
         Object[] objArr = this.e;
         lx0.u(objArr);
-        return objArr[iG];
+        return objArr[g];
     }
 
     public final int h(Object obj) {
@@ -328,13 +328,13 @@ public final class y91 implements Map, Serializable, uy0 {
             v91Var.d = i2 + 1;
             v91Var.e = i2;
             Object obj = y91Var.d[i2];
-            int iHashCode = obj != null ? obj.hashCode() : 0;
+            int hashCode = obj != null ? obj.hashCode() : 0;
             Object[] objArr = y91Var.e;
             lx0.u(objArr);
             Object obj2 = objArr[v91Var.e];
-            int iHashCode2 = obj2 != null ? obj2.hashCode() : 0;
+            int hashCode2 = obj2 != null ? obj2.hashCode() : 0;
             v91Var.c();
-            i += iHashCode ^ iHashCode2;
+            i += hashCode ^ hashCode2;
         }
         return i;
     }
@@ -348,7 +348,7 @@ public final class y91 implements Map, Serializable, uy0 {
         return this.l == 0;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0032, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0032, code lost:
     
         r3[r0] = r6;
         r5.f[r2] = r0;
@@ -356,158 +356,93 @@ public final class y91 implements Map, Serializable, uy0 {
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void j(int r6) {
-        /*
-            r5 = this;
-            int r0 = r5.k
-            int r0 = r0 + 1
-            r5.k = r0
-            int r0 = r5.i
-            int r1 = r5.l
-            r2 = 0
-            if (r0 <= r1) goto L10
-            r5.c(r2)
-        L10:
-            int[] r0 = new int[r6]
-            r5.g = r0
-            int r6 = java.lang.Integer.numberOfLeadingZeros(r6)
-            int r6 = r6 + 1
-            r5.j = r6
-        L1c:
-            int r6 = r5.i
-            if (r2 >= r6) goto L50
-            int r6 = r2 + 1
-            java.lang.Object[] r0 = r5.d
-            r0 = r0[r2]
-            int r0 = r5.i(r0)
-            int r1 = r5.h
-        L2c:
-            int[] r3 = r5.g
-            r4 = r3[r0]
-            if (r4 != 0) goto L3a
-            r3[r0] = r6
-            int[] r1 = r5.f
-            r1[r2] = r0
-            r2 = r6
-            goto L1c
-        L3a:
-            int r1 = r1 + (-1)
-            if (r1 < 0) goto L48
-            int r4 = r0 + (-1)
-            if (r0 != 0) goto L46
-            int r0 = r3.length
-            int r0 = r0 + (-1)
-            goto L2c
-        L46:
-            r0 = r4
-            goto L2c
-        L48:
-            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
-            java.lang.String r0 = "This cannot happen with fixed magic multiplier and grow-only hash array. Have object hashCodes changed?"
-            r6.<init>(r0)
-            throw r6
-        L50:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.y91.j(int):void");
+    public final void j(int i) {
+        this.k++;
+        int i2 = 0;
+        if (this.i > this.l) {
+            c(false);
+        }
+        this.g = new int[i];
+        this.j = Integer.numberOfLeadingZeros(i) + 1;
+        while (i2 < this.i) {
+            int i3 = i2 + 1;
+            int i4 = i(this.d[i2]);
+            int i5 = this.h;
+            while (true) {
+                int[] iArr = this.g;
+                if (iArr[i4] == 0) {
+                    break;
+                }
+                i5--;
+                if (i5 < 0) {
+                    throw new IllegalStateException("This cannot happen with fixed magic multiplier and grow-only hash array. Have object hashCodes changed?");
+                }
+                i4 = i4 == 0 ? iArr.length - 1 : i4 - 1;
+            }
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0068 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[LOOP:0: B:9:0x0024->B:33:?, LOOP_END, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0068 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:25:? A[LOOP:0: B:8:0x0024->B:25:?, LOOP_END, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void k(int r12) {
-        /*
-            r11 = this;
-            java.lang.Object[] r0 = r11.d
-            java.lang.String r1 = "<this>"
-            androidx.emoji2.text.lx0.x(r0, r1)
-            r1 = 0
-            r0[r12] = r1
-            java.lang.Object[] r0 = r11.e
-            if (r0 == 0) goto L10
-            r0[r12] = r1
-        L10:
-            int[] r0 = r11.f
-            r0 = r0[r12]
-            int r1 = r11.h
-            int r1 = r1 * 2
-            int[] r2 = r11.g
-            int r2 = r2.length
-            int r2 = r2 / 2
-            if (r1 <= r2) goto L20
-            r1 = r2
-        L20:
-            r2 = 0
-            r3 = r1
-            r4 = r2
-            r1 = r0
-        L24:
-            int r5 = r0 + (-1)
-            if (r0 != 0) goto L2e
-            int[] r0 = r11.g
-            int r0 = r0.length
-            int r0 = r0 + (-1)
-            goto L2f
-        L2e:
-            r0 = r5
-        L2f:
-            int r4 = r4 + 1
-            int r5 = r11.h
-            r6 = -1
-            if (r4 <= r5) goto L3b
-            int[] r0 = r11.g
-            r0[r1] = r2
-            goto L6c
-        L3b:
-            int[] r5 = r11.g
-            r7 = r5[r0]
-            if (r7 != 0) goto L44
-            r5[r1] = r2
-            goto L6c
-        L44:
-            if (r7 >= 0) goto L4b
-            r5[r1] = r6
-        L48:
-            r1 = r0
-            r4 = r2
-            goto L65
-        L4b:
-            java.lang.Object[] r5 = r11.d
-            int r8 = r7 + (-1)
-            r5 = r5[r8]
-            int r5 = r11.i(r5)
-            int r5 = r5 - r0
-            int[] r9 = r11.g
-            int r10 = r9.length
-            int r10 = r10 + (-1)
-            r5 = r5 & r10
-            if (r5 < r4) goto L65
-            r9[r1] = r7
-            int[] r4 = r11.f
-            r4[r8] = r1
-            goto L48
-        L65:
-            int r3 = r3 + r6
-            if (r3 >= 0) goto L24
-            int[] r0 = r11.g
-            r0[r1] = r6
-        L6c:
-            int[] r0 = r11.f
-            r0[r12] = r6
-            int r12 = r11.l
-            int r12 = r12 + r6
-            r11.l = r12
-            int r12 = r11.k
-            int r12 = r12 + 1
-            r11.k = r12
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.y91.k(int):void");
+    public final void k(int i) {
+        Object[] objArr = this.d;
+        lx0.x(objArr, "<this>");
+        objArr[i] = null;
+        Object[] objArr2 = this.e;
+        if (objArr2 != null) {
+            objArr2[i] = null;
+        }
+        int i2 = this.f[i];
+        int i3 = this.h * 2;
+        int length = this.g.length / 2;
+        if (i3 > length) {
+            i3 = length;
+        }
+        int i4 = i3;
+        int i5 = 0;
+        int i6 = i2;
+        while (true) {
+            i2 = i2 == 0 ? this.g.length - 1 : i2 - 1;
+            i5++;
+            if (i5 > this.h) {
+                this.g[i6] = 0;
+                break;
+            }
+            int[] iArr = this.g;
+            int i7 = iArr[i2];
+            if (i7 == 0) {
+                iArr[i6] = 0;
+                break;
+            }
+            if (i7 < 0) {
+                iArr[i6] = -1;
+            } else {
+                int i8 = i7 - 1;
+                int i9 = i(this.d[i8]) - i2;
+                int[] iArr2 = this.g;
+                if ((i9 & (iArr2.length - 1)) >= i5) {
+                    iArr2[i6] = i7;
+                    this.f[i8] = i6;
+                }
+                i4--;
+                if (i4 >= 0) {
+                    this.g[i6] = -1;
+                    break;
+                }
+            }
+            i6 = i2;
+            i5 = 0;
+            i4--;
+            if (i4 >= 0) {
+            }
+        }
+        this.f[i] = -1;
+        this.l--;
+        this.k++;
     }
 
     @Override // java.util.Map
@@ -524,7 +459,7 @@ public final class y91 implements Map, Serializable, uy0 {
     @Override // java.util.Map
     public final Object put(Object obj, Object obj2) {
         b();
-        int iA = a(obj);
+        int a2 = a(obj);
         Object[] objArr = this.e;
         if (objArr == null) {
             int length = this.d.length;
@@ -534,11 +469,11 @@ public final class y91 implements Map, Serializable, uy0 {
             objArr = new Object[length];
             this.e = objArr;
         }
-        if (iA >= 0) {
-            objArr[iA] = obj2;
+        if (a2 >= 0) {
+            objArr[a2] = obj2;
             return null;
         }
-        int i = (-iA) - 1;
+        int i = (-a2) - 1;
         Object obj3 = objArr[i];
         objArr[i] = obj2;
         return obj3;
@@ -548,13 +483,13 @@ public final class y91 implements Map, Serializable, uy0 {
     public final void putAll(Map map) {
         lx0.x(map, "from");
         b();
-        Set<Map.Entry> setEntrySet = map.entrySet();
-        if (setEntrySet.isEmpty()) {
+        Set<Map.Entry> entrySet = map.entrySet();
+        if (entrySet.isEmpty()) {
             return;
         }
-        f(setEntrySet.size());
-        for (Map.Entry entry : setEntrySet) {
-            int iA = a(entry.getKey());
+        f(entrySet.size());
+        for (Map.Entry entry : entrySet) {
+            int a2 = a(entry.getKey());
             Object[] objArr = this.e;
             if (objArr == null) {
                 int length = this.d.length;
@@ -564,10 +499,10 @@ public final class y91 implements Map, Serializable, uy0 {
                 objArr = new Object[length];
                 this.e = objArr;
             }
-            if (iA >= 0) {
-                objArr[iA] = entry.getValue();
+            if (a2 >= 0) {
+                objArr[a2] = entry.getValue();
             } else {
-                int i = (-iA) - 1;
+                int i = (-a2) - 1;
                 if (!lx0.n(entry.getValue(), objArr[i])) {
                     objArr[i] = entry.getValue();
                 }
@@ -578,14 +513,14 @@ public final class y91 implements Map, Serializable, uy0 {
     @Override // java.util.Map
     public final Object remove(Object obj) {
         b();
-        int iG = g(obj);
-        if (iG < 0) {
+        int g = g(obj);
+        if (g < 0) {
             return null;
         }
         Object[] objArr = this.e;
         lx0.u(objArr);
-        Object obj2 = objArr[iG];
-        k(iG);
+        Object obj2 = objArr[g];
+        k(g);
         return obj2;
     }
 
@@ -629,9 +564,9 @@ public final class y91 implements Map, Serializable, uy0 {
             i++;
         }
         sb.append("}");
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     @Override // java.util.Map

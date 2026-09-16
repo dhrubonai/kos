@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class ye2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1383a;
+    public final int f1382a;
     public final float b;
 
     public ye2(int i, float f) {
-        this.f1383a = i;
+        this.f1382a = i;
         this.b = f;
     }
 }

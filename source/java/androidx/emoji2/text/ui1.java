@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class ui1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Object[] f1176a = new Object[0];
+    public static final Object[] f1175a = new Object[0];
     public static final ze1 b = new ze1(0);
 }

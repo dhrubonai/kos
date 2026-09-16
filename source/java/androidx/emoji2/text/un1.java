@@ -12,9 +12,9 @@ public final class un1 extends ef2 implements Parcelable, pc2 {
 
     public un1(Object obj, rc2 rc2Var) {
         this.e = rc2Var;
-        ec2 ec2VarK = kc2.k();
-        qc2 qc2Var = new qc2(ec2VarK.g(), obj);
-        if (!(ec2VarK instanceof bo0)) {
+        ec2 k = kc2.k();
+        qc2 qc2Var = new qc2(k.g(), obj);
+        if (!(k instanceof bo0)) {
             qc2Var.b = new qc2(1, obj);
         }
         this.f = qc2Var;
@@ -56,17 +56,17 @@ public final class un1 extends ef2 implements Parcelable, pc2 {
 
     @Override // androidx.emoji2.text.mf1
     public final void setValue(Object obj) {
-        ec2 ec2VarK;
+        ec2 k;
         qc2 qc2Var = (qc2) kc2.i(this.f);
         if (this.e.j(qc2Var.c, obj)) {
             return;
         }
         qc2 qc2Var2 = this.f;
         synchronized (kc2.c) {
-            ec2VarK = kc2.k();
-            ((qc2) kc2.o(qc2Var2, this, ec2VarK, qc2Var)).c = obj;
+            k = kc2.k();
+            ((qc2) kc2.o(qc2Var2, this, k, qc2Var)).c = obj;
         }
-        kc2.n(ec2VarK, this);
+        kc2.n(k, this);
     }
 
     public final String toString() {

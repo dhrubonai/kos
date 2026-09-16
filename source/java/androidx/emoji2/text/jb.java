@@ -33,21 +33,21 @@ public final class jb extends g01 implements um0 {
             case 4:
                 gr1.j((gr1) obj, this.f, 0, 0);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 gr1 gr1Var = (gr1) obj;
-                q01 q01VarD = gr1Var.d();
+                q01 d = gr1Var.d();
                 q01 q01Var = q01.d;
                 hr1 hr1Var = this.f;
-                if (q01VarD == q01Var || gr1Var.e() == 0) {
+                if (d == q01Var || gr1Var.e() == 0) {
                     gr1.b(gr1Var, hr1Var);
                     hr1Var.g0(nw0.d(0L, hr1Var.h), 0.0f, null);
                 } else {
-                    long jE = ((gr1Var.e() - hr1Var.d) - r1) << 32;
+                    long e = ((gr1Var.e() - hr1Var.d) - r1) << 32;
                     gr1.b(gr1Var, hr1Var);
-                    hr1Var.g0(nw0.d((((int) 0) & 4294967295L) | jE, hr1Var.h), 0.0f, null);
+                    hr1Var.g0(nw0.d((((int) 0) & 4294967295L) | e, hr1Var.h), 0.0f, null);
                 }
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 gr1.j((gr1) obj, this.f, 0, 0);
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -56,10 +56,10 @@ public final class jb extends g01 implements um0 {
             case 8:
                 ((gr1) obj).f(this.f, 0, 0, 0.0f);
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 gr1.j((gr1) obj, this.f, 0, 0);
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 gr1.j((gr1) obj, this.f, 0, 0);
                 break;
             case 11:
@@ -69,6 +69,6 @@ public final class jb extends g01 implements um0 {
                 gr1.j((gr1) obj, this.f, 0, 0);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -31,16 +31,16 @@ public final /* synthetic */ class k82 implements sm0 {
             case 4:
                 this.e.setValue(Boolean.FALSE);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 this.e.setValue(Boolean.FALSE);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 this.e.setValue(Boolean.TRUE);
                 break;
             default:
                 this.e.setValue(Boolean.FALSE);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

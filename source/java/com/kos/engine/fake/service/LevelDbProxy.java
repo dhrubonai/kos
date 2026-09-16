@@ -56,7 +56,7 @@ public class LevelDbProxy extends ClassInvocationStub {
     @ProxyMethod("nativeOpen")
     public static class NativeOpen extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -77,7 +77,7 @@ public class LevelDbProxy extends ClassInvocationStub {
     @ProxyMethod("open")
     public static class Open extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             try {
                 return method.invoke(obj, objArr);

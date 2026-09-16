@@ -5,30 +5,30 @@ package androidx.emoji2.text;
 public abstract class de2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f249a = 0;
+    public static final /* synthetic */ int f248a = 0;
 
     static {
-        Object objH;
-        Object objH2;
+        Object h;
+        Object h2;
         Exception exc = new Exception();
         String simpleName = ex2.class.getSimpleName();
         StackTraceElement stackTraceElement = exc.getStackTrace()[0];
         new StackTraceElement("_COROUTINE.".concat(simpleName), "_", stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
         try {
-            objH = lk.class.getCanonicalName();
+            h = lk.class.getCanonicalName();
         } catch (Throwable th) {
-            objH = mz0.h(th);
+            h = mz0.h(th);
         }
-        if (h02.a(objH) != null) {
-            objH = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
+        if (h02.a(h) != null) {
+            h = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
         }
         try {
-            objH2 = de2.class.getCanonicalName();
+            h2 = de2.class.getCanonicalName();
         } catch (Throwable th2) {
-            objH2 = mz0.h(th2);
+            h2 = mz0.h(th2);
         }
-        if (h02.a(objH2) != null) {
-            objH2 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (h02.a(h2) != null) {
+            h2 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
     }
 }

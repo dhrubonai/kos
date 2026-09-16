@@ -7,6 +7,6 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class u00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final CopyOnWriteArraySet f1154a = new CopyOnWriteArraySet();
+    public final CopyOnWriteArraySet f1153a = new CopyOnWriteArraySet();
     public volatile zu b;
 }

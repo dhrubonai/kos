@@ -13,10 +13,10 @@ public class ActivityChooserView$InnerLayout extends LinearLayout {
     public static final int[] d = {R.attr.background};
 
     public ActivityChooserView$InnerLayout(Context context, AttributeSet attributeSet) {
-        int resourceId;
         super(context, attributeSet);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, d);
-        setBackgroundDrawable((!typedArrayObtainStyledAttributes.hasValue(0) || (resourceId = typedArrayObtainStyledAttributes.getResourceId(0, 0)) == 0) ? typedArrayObtainStyledAttributes.getDrawable(0) : xo2.o(context, resourceId));
-        typedArrayObtainStyledAttributes.recycle();
+        int resourceId;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, d);
+        setBackgroundDrawable((!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0) ? obtainStyledAttributes.getDrawable(0) : xo2.o(context, resourceId));
+        obtainStyledAttributes.recycle();
     }
 }

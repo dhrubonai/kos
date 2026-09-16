@@ -7,14 +7,14 @@ import android.content.pm.PackageParser;
 public class ys1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object[] f1401a;
+    public final Object[] f1400a;
     public int b;
 
     public ys1(int i) {
         if (i <= 0) {
             throw new IllegalArgumentException("The max pool size must be > 0");
         }
-        this.f1401a = new Object[i];
+        this.f1400a = new Object[i];
     }
 
     public Object a() {
@@ -23,7 +23,7 @@ public class ys1 {
             return null;
         }
         int i2 = i - 1;
-        Object[] objArr = this.f1401a;
+        Object[] objArr = this.f1400a;
         Object obj = objArr[i2];
         lx0.v(obj, "null cannot be cast to non-null type T of androidx.core.util.Pools.SimplePool");
         objArr[i2] = null;
@@ -33,7 +33,7 @@ public class ys1 {
 
     public void b(vh vhVar) {
         int i = this.b;
-        Object[] objArr = this.f1401a;
+        Object[] objArr = this.f1400a;
         if (i < objArr.length) {
             objArr[i] = vhVar;
             this.b = i + 1;
@@ -47,7 +47,7 @@ public class ys1 {
         int i = this.b;
         int i2 = 0;
         while (true) {
-            objArr = this.f1401a;
+            objArr = this.f1400a;
             if (i2 >= i) {
                 z = false;
                 break;
@@ -71,6 +71,6 @@ public class ys1 {
     }
 
     public ys1() {
-        this.f1401a = new Object[PackageParser.PARSE_COLLECT_CERTIFICATES];
+        this.f1400a = new Object[PackageParser.PARSE_COLLECT_CERTIFICATES];
     }
 }

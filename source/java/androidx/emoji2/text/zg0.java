@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class zg0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1439a;
+    public int f1438a;
     public int b;
 
     public /* synthetic */ zg0(int i, int i2) {
-        this.f1439a = i;
+        this.f1438a = i;
         this.b = i2;
     }
 
     public int a(int i) {
-        if (i >= 0 && i <= this.f1439a) {
+        if (i >= 0 && i <= this.f1438a) {
             wj1.Q(i, this.b, i);
         }
         return i;
@@ -22,7 +22,7 @@ public final class zg0 {
 
     public int b(int i) {
         if (i >= 0 && i <= this.b) {
-            wj1.R(i, this.f1439a, i);
+            wj1.R(i, this.f1438a, i);
         }
         return i;
     }

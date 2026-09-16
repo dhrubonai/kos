@@ -11,6 +11,6 @@ public final class e implements j60 {
 
     @Override // androidx.emoji2.text.j60
     public final void e(v51 v51Var) {
-        this.d.g(up2.f1187a);
+        this.d.g(up2.f1186a);
     }
 }

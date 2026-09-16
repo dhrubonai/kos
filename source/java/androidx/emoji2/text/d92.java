@@ -37,24 +37,24 @@ public final class d92 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((d92) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((d92) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         int i2 = this.l;
         h82 h82Var = this.k;
         f30 f30Var = f30.d;
         Context context = this.j;
         switch (i) {
             case 0:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 int i3 = this.i;
                 if (i3 == 0) {
                     mz0.L(obj);
-                    q60 q60Var = e90.f294a;
+                    q60 q60Var = e90.f293a;
                     a60 a60Var = a60.f;
                     e3 e3Var = new e3(i2, context, h82Var, (l10) null);
                     this.i = 1;
@@ -75,7 +75,7 @@ public final class d92 extends hh2 implements Function2 {
                 int i4 = this.i;
                 if (i4 == 0) {
                     mz0.L(obj);
-                    q60 q60Var2 = e90.f294a;
+                    q60 q60Var2 = e90.f293a;
                     a60 a60Var2 = a60.f;
                     e3 e3Var2 = new e3(h82Var, i2, context, (l10) null);
                     this.i = 1;
@@ -85,7 +85,7 @@ public final class d92 extends hh2 implements Function2 {
                     }
                 } else {
                     if (i4 != 1) {
-                        throw new IllegalStateException(a.a.a.c.a(-507605563883298L, wj1.f1284a));
+                        throw new IllegalStateException(a.a.a.c.a(-507605563883298L, wj1.f1283a));
                     }
                     mz0.L(obj);
                 }

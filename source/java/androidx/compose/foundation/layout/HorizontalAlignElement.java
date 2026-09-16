@@ -35,7 +35,7 @@ public final class HorizontalAlignElement extends ud1 {
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f16a.f308a);
+        return Float.hashCode(this.f16a.f307a);
     }
 
     @Override // androidx.emoji2.text.ud1

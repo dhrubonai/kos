@@ -20,18 +20,18 @@ public final class tn0 implements Iterator, ry0 {
     }
 
     public void a() {
-        Object objE;
+        Object e;
         h70 h70Var = (h70) this.g;
         if (this.e == -2) {
-            objE = ((sm0) h70Var.b).a();
+            e = ((sm0) h70Var.b).a();
         } else {
             um0 um0Var = (um0) h70Var.c;
             Object obj = this.f;
             lx0.u(obj);
-            objE = um0Var.e(obj);
+            e = um0Var.e(obj);
         }
-        this.f = objE;
-        this.e = objE == null ? 0 : 1;
+        this.f = e;
+        this.e = e == null ? 0 : 1;
     }
 
     @Override // java.util.Iterator

@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class b41 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f136a = xz.b(0, 0, 5);
+    public static final long f135a = xz.b(0, 0, 5);
     public static final /* synthetic */ int b = 0;
 }

@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class ky0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Integer f666a;
+    public final Integer f665a;
     public final Object b;
 
     public ky0(Integer num, Object obj) {
-        this.f666a = num;
+        this.f665a = num;
         this.b = obj;
     }
 
@@ -21,16 +21,16 @@ public final class ky0 {
             return false;
         }
         ky0 ky0Var = (ky0) obj;
-        return this.f666a.equals(ky0Var.f666a) && lx0.n(this.b, ky0Var.b);
+        return this.f665a.equals(ky0Var.f665a) && lx0.n(this.b, ky0Var.b);
     }
 
     public final int hashCode() {
-        int iHashCode = this.f666a.hashCode() * 31;
+        int hashCode = this.f665a.hashCode() * 31;
         Object obj = this.b;
-        return (obj instanceof Enum ? ((Enum) obj).ordinal() : obj != null ? obj.hashCode() : 0) + iHashCode;
+        return (obj instanceof Enum ? ((Enum) obj).ordinal() : obj != null ? obj.hashCode() : 0) + hashCode;
     }
 
     public final String toString() {
-        return "JoinedKey(left=" + this.f666a + ", right=" + this.b + ')';
+        return "JoinedKey(left=" + this.f665a + ", right=" + this.b + ')';
     }
 }

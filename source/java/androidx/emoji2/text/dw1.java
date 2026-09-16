@@ -8,7 +8,7 @@ import java.util.List;
 public final class dw1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final bu0 f275a;
+    public final bu0 f274a;
     public final List b;
     public final int c;
     public final bu0 d;
@@ -17,7 +17,7 @@ public final class dw1 {
     public final boolean g;
 
     public dw1(bu0 bu0Var, List list, int i, bu0 bu0Var2, hb2 hb2Var, yf0 yf0Var, boolean z) {
-        this.f275a = bu0Var;
+        this.f274a = bu0Var;
         this.b = list;
         this.c = i;
         this.d = bu0Var2;
@@ -27,9 +27,9 @@ public final class dw1 {
     }
 
     public final void a(bu0 bu0Var, if0 if0Var) {
-        Context context = bu0Var.f168a;
-        bu0 bu0Var2 = this.f275a;
-        if (context != bu0Var2.f168a) {
+        Context context = bu0Var.f167a;
+        bu0 bu0Var2 = this.f274a;
+        if (context != bu0Var2.f167a) {
             throw new IllegalStateException(("Interceptor '" + if0Var + "' cannot modify the request's context.").toString());
         }
         if (bu0Var.b == dd0.T) {
@@ -47,82 +47,63 @@ public final class dw1 {
         throw new IllegalStateException(("Interceptor '" + if0Var + "' cannot modify the request's size resolver. Use `Interceptor.Chain.withSize` instead.").toString());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object b(androidx.emoji2.text.bu0 r12, androidx.emoji2.text.n10 r13) {
-        /*
-            r11 = this;
-            boolean r0 = r13 instanceof androidx.emoji2.text.cw1
-            if (r0 == 0) goto L13
-            r0 = r13
-            androidx.emoji2.text.cw1 r0 = (androidx.emoji2.text.cw1) r0
-            int r1 = r0.k
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.k = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.cw1 r0 = new androidx.emoji2.text.cw1
-            r0.<init>(r11, r13)
-        L18:
-            java.lang.Object r13 = r0.i
-            int r1 = r0.k
-            r2 = 1
-            if (r1 == 0) goto L31
-            if (r1 != r2) goto L29
-            androidx.emoji2.text.if0 r12 = r0.h
-            androidx.emoji2.text.dw1 r0 = r0.g
-            androidx.emoji2.text.mz0.L(r13)
-            goto L70
-        L29:
-            java.lang.IllegalStateException r12 = new java.lang.IllegalStateException
-            java.lang.String r13 = "call to 'resume' before 'invoke' with coroutine"
-            r12.<init>(r13)
-            throw r12
-        L31:
-            androidx.emoji2.text.mz0.L(r13)
-            java.util.List r13 = r11.b
-            int r1 = r11.c
-            if (r1 <= 0) goto L45
-            int r3 = r1 + (-1)
-            java.lang.Object r3 = r13.get(r3)
-            androidx.emoji2.text.if0 r3 = (androidx.emoji2.text.if0) r3
-            r11.a(r12, r3)
-        L45:
-            java.lang.Object r13 = r13.get(r1)
-            androidx.emoji2.text.if0 r13 = (androidx.emoji2.text.if0) r13
-            int r6 = r1 + 1
-            androidx.emoji2.text.dw1 r3 = new androidx.emoji2.text.dw1
-            androidx.emoji2.text.yf0 r9 = r11.f
-            boolean r10 = r11.g
-            androidx.emoji2.text.bu0 r4 = r11.f275a
-            java.util.List r5 = r11.b
-            androidx.emoji2.text.hb2 r8 = r11.e
-            r7 = r12
-            r3.<init>(r4, r5, r6, r7, r8, r9, r10)
-            r0.g = r11
-            r0.h = r13
-            r0.k = r2
-            java.lang.Object r12 = r13.d(r3, r0)
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r12 != r0) goto L6c
-            return r0
-        L6c:
-            r0 = r13
-            r13 = r12
-            r12 = r0
-            r0 = r11
-        L70:
-            androidx.emoji2.text.cu0 r13 = (androidx.emoji2.text.cu0) r13
-            androidx.emoji2.text.bu0 r1 = r13.a()
-            r0.a(r1, r12)
-            return r13
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dw1.b(androidx.emoji2.text.bu0, androidx.emoji2.text.n10):java.lang.Object");
+    public final Object b(bu0 bu0Var, n10 n10Var) {
+        cw1 cw1Var;
+        int i;
+        if0 if0Var;
+        dw1 dw1Var;
+        if (n10Var instanceof cw1) {
+            cw1Var = (cw1) n10Var;
+            int i2 = cw1Var.k;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                cw1Var.k = i2 - Integer.MIN_VALUE;
+                Object obj = cw1Var.i;
+                i = cw1Var.k;
+                if (i != 0) {
+                    mz0.L(obj);
+                    List list = this.b;
+                    int i3 = this.c;
+                    if (i3 > 0) {
+                        a(bu0Var, (if0) list.get(i3 - 1));
+                    }
+                    if0 if0Var2 = (if0) list.get(i3);
+                    dw1 dw1Var2 = new dw1(this.f274a, this.b, i3 + 1, bu0Var, this.e, this.f, this.g);
+                    cw1Var.g = this;
+                    cw1Var.h = if0Var2;
+                    cw1Var.k = 1;
+                    Object d = if0Var2.d(dw1Var2, cw1Var);
+                    f30 f30Var = f30.d;
+                    if (d == f30Var) {
+                        return f30Var;
+                    }
+                    obj = d;
+                    if0Var = if0Var2;
+                    dw1Var = this;
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    if0Var = cw1Var.h;
+                    dw1Var = cw1Var.g;
+                    mz0.L(obj);
+                }
+                cu0 cu0Var = (cu0) obj;
+                dw1Var.a(cu0Var.a(), if0Var);
+                return cu0Var;
+            }
+        }
+        cw1Var = new cw1(this, n10Var);
+        Object obj2 = cw1Var.i;
+        i = cw1Var.k;
+        if (i != 0) {
+        }
+        cu0 cu0Var2 = (cu0) obj2;
+        dw1Var.a(cu0Var2.a(), if0Var);
+        return cu0Var2;
     }
 }

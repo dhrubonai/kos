@@ -3,6 +3,7 @@ package androidx.emoji2.text;
 import android.graphics.Typeface;
 import android.util.SparseArray;
 import com.kos.engine.entity.location.BCell;
+import java.io.InterruptedIOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -12,6 +13,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.concurrent.SynchronousQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -44,14 +49,14 @@ public final class s6 implements bj, ar2 {
     @Override // androidx.emoji2.text.yq2
     public long b(oe oeVar, oe oeVar2, oe oeVar3) {
         Iterator it = az0.l0(0, oeVar.b()).iterator();
-        long jMax = 0;
+        long j = 0;
         while (true) {
             pw0 pw0Var = (pw0) it;
             if (!pw0Var.f) {
-                return jMax;
+                return j;
             }
-            int iNextInt = pw0Var.nextInt();
-            jMax = Math.max(jMax, ((pe) this.d).get(iNextInt).c(oeVar.a(iNextInt), oeVar2.a(iNextInt), oeVar3.a(iNextInt)));
+            int nextInt = pw0Var.nextInt();
+            j = Math.max(j, ((pe) this.d).get(nextInt).c(oeVar.a(nextInt), oeVar2.a(nextInt), oeVar3.a(nextInt)));
         }
     }
 
@@ -71,32 +76,32 @@ public final class s6 implements bj, ar2 {
     }
 
     public dv f() {
-        Map mapUnmodifiableMap;
+        Map unmodifiableMap;
         mt0 mt0Var = (mt0) this.d;
         if (mt0Var == null) {
             throw new IllegalStateException("url == null");
         }
         String str = (String) this.e;
-        dr0 dr0VarD = ((pm0) this.f).d();
+        dr0 d = ((pm0) this.f).d();
         LinkedHashMap linkedHashMap = (LinkedHashMap) this.g;
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         lx0.x(linkedHashMap, "<this>");
         if (linkedHashMap.isEmpty()) {
-            mapUnmodifiableMap = re0.d;
+            unmodifiableMap = re0.d;
         } else {
-            mapUnmodifiableMap = Collections.unmodifiableMap(new LinkedHashMap(linkedHashMap));
-            lx0.w(mapUnmodifiableMap, "{\n    Collections.unmodi…(LinkedHashMap(this))\n  }");
+            unmodifiableMap = Collections.unmodifiableMap(new LinkedHashMap(linkedHashMap));
+            lx0.w(unmodifiableMap, "{\n    Collections.unmodi…(LinkedHashMap(this))\n  }");
         }
-        return new dv(mt0Var, str, dr0VarD, (n6) null, mapUnmodifiableMap);
+        return new dv(mt0Var, str, d, (n6) null, unmodifiableMap);
     }
 
     public void g(jo joVar) {
         lx0.x(joVar, "cacheControl");
-        String string = joVar.toString();
-        if (string.length() == 0) {
+        String joVar2 = joVar.toString();
+        if (joVar2.length() == 0) {
             ((pm0) this.f).p("Cache-Control");
         } else {
-            u("Cache-Control", string);
+            u("Cache-Control", joVar2);
         }
     }
 
@@ -110,8 +115,8 @@ public final class s6 implements bj, ar2 {
             lx0.b0("velocityVector");
             throw null;
         }
-        int iB = oeVar4.b();
-        for (int i = 0; i < iB; i++) {
+        int b = oeVar4.b();
+        for (int i = 0; i < b; i++) {
             oe oeVar5 = (oe) this.f;
             if (oeVar5 == null) {
                 lx0.b0("velocityVector");
@@ -137,8 +142,8 @@ public final class s6 implements bj, ar2 {
             lx0.b0("valueVector");
             throw null;
         }
-        int iB = oeVar4.b();
-        for (int i = 0; i < iB; i++) {
+        int b = oeVar4.b();
+        for (int i = 0; i < b; i++) {
             oe oeVar5 = (oe) this.e;
             if (oeVar5 == null) {
                 lx0.b0("valueVector");
@@ -179,15 +184,15 @@ public final class s6 implements bj, ar2 {
         if (wg1Var.g != 0) {
             return;
         }
-        tg1 tg1VarC = wg1Var.c(-1);
-        wg1Var.f = tg1VarC;
+        tg1 c = wg1Var.c(-1);
+        wg1Var.f = c;
         wg1Var.g = -1;
         wg1Var.h = vg1Var;
         if (rg1Var != null) {
-            if (tg1VarC != null) {
-                tg1VarC.d(rg1Var);
+            if (c != null) {
+                c.d(rg1Var);
             }
-            te2 te2Var = wg1Var.f1279a;
+            te2 te2Var = wg1Var.f1278a;
             yg1 yg1Var = new yg1(rg1Var);
             te2Var.getClass();
             te2Var.i(null, yg1Var);
@@ -204,8 +209,8 @@ public final class s6 implements bj, ar2 {
             lx0.b0("endVelocityVector");
             throw null;
         }
-        int iB = oeVar4.b();
-        for (int i = 0; i < iB; i++) {
+        int b = oeVar4.b();
+        for (int i = 0; i < b; i++) {
             oe oeVar5 = (oe) this.g;
             if (oeVar5 == null) {
                 lx0.b0("endVelocityVector");
@@ -224,7 +229,7 @@ public final class s6 implements bj, ar2 {
     /* JADX WARN: Type inference failed for: r1v0, types: [java.lang.Object, java.util.Collection, java.util.List] */
     public void m(is1 is1Var, boolean z) {
         vs1 vs1Var = (vs1) this.g;
-        ?? r1 = is1Var.f547a;
+        ?? r1 = is1Var.f546a;
         int size = r1.size();
         for (int i = 0; i < size; i++) {
             if (((ps1) r1.get(i)).b()) {
@@ -275,20 +280,20 @@ public final class s6 implements bj, ar2 {
             throw null;
         }
         int i = 0;
-        for (int iB = oeVar3.b(); i < iB; iB = iB) {
+        for (int b = oeVar3.b(); i < b; b = b) {
             oe oeVar4 = (oe) this.g;
             if (oeVar4 == null) {
                 lx0.b0("targetVector");
                 throw null;
             }
             gz0 gz0Var = (gz0) this.d;
-            float fA = oeVar.a(i);
-            float fA2 = oeVar2.a(i);
+            float a2 = oeVar.a(i);
+            float a3 = oeVar2.a(i);
             wc0 wc0Var = (wc0) gz0Var.d;
-            double dB = wc0Var.b(fA2);
-            double d = aj0.f104a;
-            float f = wc0Var.f1272a * wc0Var.b;
-            oeVar4.e(i, (Math.signum(fA2) * ((float) (Math.exp((d / (d - 1.0d)) * dB) * f))) + fA);
+            double b2 = wc0Var.b(a3);
+            double d = aj0.f103a;
+            float f = wc0Var.f1271a * wc0Var.b;
+            oeVar4.e(i, (Math.signum(a3) * ((float) (Math.exp((d / (d - 1.0d)) * b2) * f))) + a2);
             i++;
         }
         oe oeVar5 = (oe) this.g;
@@ -308,8 +313,8 @@ public final class s6 implements bj, ar2 {
             lx0.b0("velocityVector");
             throw null;
         }
-        int iB = oeVar3.b();
-        for (int i = 0; i < iB; i++) {
+        int b = oeVar3.b();
+        for (int i = 0; i < b; i++) {
             oe oeVar4 = (oe) this.f;
             if (oeVar4 == null) {
                 lx0.b0("velocityVector");
@@ -318,9 +323,9 @@ public final class s6 implements bj, ar2 {
             gz0 gz0Var = (gz0) this.d;
             oeVar.getClass();
             long j2 = j / 1000000;
-            zi0 zi0VarA = ((wc0) gz0Var.d).a(oeVar2.a(i));
-            long j3 = zi0VarA.c;
-            oeVar4.e(i, (((Math.signum(zi0VarA.f1441a) * w9.a(j3 > 0 ? j2 / j3 : 1.0f).b) * zi0VarA.b) / j3) * 1000.0f);
+            zi0 a2 = ((wc0) gz0Var.d).a(oeVar2.a(i));
+            long j3 = a2.c;
+            oeVar4.e(i, (((Math.signum(a2.f1440a) * w9.a(j3 > 0 ? j2 / j3 : 1.0f).b) * a2.b) / j3) * 1000.0f);
         }
         oe oeVar5 = (oe) this.f;
         if (oeVar5 != null) {
@@ -332,27 +337,27 @@ public final class s6 implements bj, ar2 {
 
     public ss2 t(vr vrVar, String str) {
         ss2 ss2Var;
-        boolean zIsInstance;
-        ss2 ss2VarA;
+        boolean isInstance;
+        ss2 a2;
         lx0.x(str, "key");
         synchronized (((f32) this.g)) {
             try {
                 u81 u81Var = (u81) this.d;
                 u81Var.getClass();
-                ss2Var = (ss2) u81Var.f1165a.get(str);
-                Class clsT = vrVar.f1237a;
+                ss2Var = (ss2) u81Var.f1164a.get(str);
+                Class cls = vrVar.f1236a;
                 Map map = vr.b;
                 lx0.v(map, "null cannot be cast to non-null type kotlin.collections.Map<K of kotlin.collections.MapsKt__MapsKt.get, V of kotlin.collections.MapsKt__MapsKt.get>");
-                Integer num = (Integer) map.get(clsT);
+                Integer num = (Integer) map.get(cls);
                 if (num != null) {
-                    zIsInstance = xo2.y(num.intValue(), ss2Var);
+                    isInstance = xo2.y(num.intValue(), ss2Var);
                 } else {
-                    if (clsT.isPrimitive()) {
-                        clsT = ly0.t(dy1.a(clsT));
+                    if (cls.isPrimitive()) {
+                        cls = ly0.t(dy1.a(cls));
                     }
-                    zIsInstance = clsT.isInstance(ss2Var);
+                    isInstance = cls.isInstance(ss2Var);
                 }
-                if (zIsInstance) {
+                if (isInstance) {
                     vs2 vs2Var = (vs2) this.e;
                     if (vs2Var instanceof n32) {
                         n32 n32Var = (n32) vs2Var;
@@ -367,22 +372,22 @@ public final class s6 implements bj, ar2 {
                     lx0.v(ss2Var, "null cannot be cast to non-null type T of androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel");
                 } else {
                     ne1 ne1Var = new ne1((s30) this.f);
-                    ne1Var.f1049a.put(p4.g, str);
+                    ne1Var.f1048a.put(p4.g, str);
                     vs2 vs2Var2 = (vs2) this.e;
                     try {
                         try {
-                            ss2VarA = vs2Var2.c(vrVar, ne1Var);
+                            a2 = vs2Var2.c(vrVar, ne1Var);
                         } catch (AbstractMethodError unused) {
-                            ss2VarA = vs2Var2.a(ly0.s(vrVar));
+                            a2 = vs2Var2.a(ly0.s(vrVar));
                         }
                     } catch (AbstractMethodError unused2) {
-                        ss2VarA = vs2Var2.b(ly0.s(vrVar), ne1Var);
+                        a2 = vs2Var2.b(ly0.s(vrVar), ne1Var);
                     }
-                    ss2Var = ss2VarA;
+                    ss2Var = a2;
                     u81 u81Var2 = (u81) this.d;
                     u81Var2.getClass();
                     lx0.x(ss2Var, "viewModel");
-                    ss2 ss2Var2 = (ss2) u81Var2.f1165a.put(str, ss2Var);
+                    ss2 ss2Var2 = (ss2) u81Var2.f1164a.put(str, ss2Var);
                     if (ss2Var2 != null) {
                         ss2Var2.b();
                     }
@@ -419,17 +424,83 @@ public final class s6 implements bj, ar2 {
         this.e = str;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0065  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public void w() {
-        /*
-            Method dump skipped, instructions count: 246
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.s6.w():void");
+        int size;
+        int i;
+        ThreadPoolExecutor threadPoolExecutor;
+        byte[] bArr = jq2.f595a;
+        ArrayList arrayList = new ArrayList();
+        synchronized (this) {
+            try {
+                Iterator it = ((ArrayDeque) this.e).iterator();
+                lx0.w(it, "readyAsyncCalls.iterator()");
+                while (it.hasNext()) {
+                    qv1 qv1Var = (qv1) it.next();
+                    if (((ArrayDeque) this.f).size() >= 64) {
+                        break;
+                    }
+                    if (qv1Var.e.get() < 5) {
+                        it.remove();
+                        qv1Var.e.incrementAndGet();
+                        arrayList.add(qv1Var);
+                        ((ArrayDeque) this.f).add(qv1Var);
+                    }
+                }
+                synchronized (this) {
+                    ((ArrayDeque) this.f).size();
+                    ((ArrayDeque) this.g).size();
+                }
+                size = arrayList.size();
+                boolean z = false;
+                for (i = 0; i < size; i++) {
+                    qv1 qv1Var2 = (qv1) arrayList.get(i);
+                    synchronized (this) {
+                        try {
+                            if (((ThreadPoolExecutor) this.d) == null) {
+                                TimeUnit timeUnit = TimeUnit.SECONDS;
+                                SynchronousQueue synchronousQueue = new SynchronousQueue();
+                                String str = jq2.f + " Dispatcher";
+                                lx0.x(str, "name");
+                                this.d = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, timeUnit, synchronousQueue, new iq2(str, z));
+                            }
+                            threadPoolExecutor = (ThreadPoolExecutor) this.d;
+                            lx0.u(threadPoolExecutor);
+                        } finally {
+                        }
+                    }
+                    qv1Var2.getClass();
+                    tv1 tv1Var = qv1Var2.f;
+                    byte[] bArr2 = jq2.f595a;
+                    try {
+                        try {
+                            threadPoolExecutor.execute(qv1Var2);
+                        } catch (RejectedExecutionException e) {
+                            InterruptedIOException interruptedIOException = new InterruptedIOException("executor rejected");
+                            interruptedIOException.initCause(e);
+                            tv1Var.h(interruptedIOException);
+                            m10 m10Var = qv1Var2.d;
+                            if (!tv1Var.p) {
+                                ((ip) m10Var.f).g(mz0.h(interruptedIOException));
+                            }
+                            tv1Var.d.d.o(qv1Var2);
+                        }
+                    } catch (Throwable th) {
+                        tv1Var.d.d.o(qv1Var2);
+                        throw th;
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        size = arrayList.size();
+        boolean z2 = false;
+        while (i < size) {
+        }
     }
 
     public void x(is1 is1Var) {
@@ -487,41 +558,41 @@ public final class s6 implements bj, ar2 {
         this.g = typeface;
         this.d = mc1Var;
         this.f = new nc1(1024);
-        int iA = mc1Var.a(6);
-        if (iA != 0) {
-            int i5 = iA + mc1Var.d;
+        int a2 = mc1Var.a(6);
+        if (a2 != 0) {
+            int i5 = a2 + mc1Var.d;
             i = ((ByteBuffer) mc1Var.g).getInt(((ByteBuffer) mc1Var.g).getInt(i5) + i5);
         } else {
             i = 0;
         }
         this.e = new char[i * 2];
-        int iA2 = mc1Var.a(6);
-        if (iA2 != 0) {
-            int i6 = iA2 + mc1Var.d;
+        int a3 = mc1Var.a(6);
+        if (a3 != 0) {
+            int i6 = a3 + mc1Var.d;
             i2 = ((ByteBuffer) mc1Var.g).getInt(((ByteBuffer) mc1Var.g).getInt(i6) + i6);
         } else {
             i2 = 0;
         }
         for (int i7 = 0; i7 < i2; i7++) {
             hp2 hp2Var = new hp2(this, i7);
-            lc1 lc1VarB = hp2Var.b();
-            int iA3 = lc1VarB.a(4);
-            Character.toChars(iA3 != 0 ? ((ByteBuffer) lc1VarB.g).getInt(iA3 + lc1VarB.d) : 0, (char[]) this.e, i7 * 2);
-            lc1 lc1VarB2 = hp2Var.b();
-            int iA4 = lc1VarB2.a(16);
-            if (iA4 != 0) {
-                int i8 = iA4 + lc1VarB2.d;
-                i3 = ((ByteBuffer) lc1VarB2.g).getInt(((ByteBuffer) lc1VarB2.g).getInt(i8) + i8);
+            lc1 b = hp2Var.b();
+            int a4 = b.a(4);
+            Character.toChars(a4 != 0 ? ((ByteBuffer) b.g).getInt(a4 + b.d) : 0, (char[]) this.e, i7 * 2);
+            lc1 b2 = hp2Var.b();
+            int a5 = b2.a(16);
+            if (a5 != 0) {
+                int i8 = a5 + b2.d;
+                i3 = ((ByteBuffer) b2.g).getInt(((ByteBuffer) b2.g).getInt(i8) + i8);
             } else {
                 i3 = 0;
             }
             az0.j("invalid metadata codepoint length", i3 > 0);
             nc1 nc1Var = (nc1) this.f;
-            lc1 lc1VarB3 = hp2Var.b();
-            int iA5 = lc1VarB3.a(16);
-            if (iA5 != 0) {
-                int i9 = iA5 + lc1VarB3.d;
-                i4 = ((ByteBuffer) lc1VarB3.g).getInt(((ByteBuffer) lc1VarB3.g).getInt(i9) + i9);
+            lc1 b3 = hp2Var.b();
+            int a6 = b3.a(16);
+            if (a6 != 0) {
+                int i9 = a6 + b3.d;
+                i4 = ((ByteBuffer) b3.g).getInt(((ByteBuffer) b3.g).getInt(i9) + i9);
             } else {
                 i4 = 0;
             }

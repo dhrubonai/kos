@@ -11,22 +11,22 @@ import java.util.Random;
 public final class ec extends ThreadLocal {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f298a;
+    public final /* synthetic */ int f297a;
 
     public /* synthetic */ ec(int i) {
-        this.f298a = i;
+        this.f297a = i;
     }
 
     @Override // java.lang.ThreadLocal
     public final Object initialValue() {
-        switch (this.f298a) {
+        switch (this.f297a) {
             case 0:
                 Choreographer choreographer = Choreographer.getInstance();
-                Looper looperMyLooper = Looper.myLooper();
-                if (looperMyLooper == null) {
+                Looper myLooper = Looper.myLooper();
+                if (myLooper == null) {
                     throw new IllegalStateException("no Looper on this thread");
                 }
-                gc gcVar = new gc(choreographer, ex2.p(looperMyLooper));
+                gc gcVar = new gc(choreographer, ex2.p(myLooper));
                 return kx0.H(gcVar, gcVar.o);
             case 1:
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss 'GMT'", Locale.US);

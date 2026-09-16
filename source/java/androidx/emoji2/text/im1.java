@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class im1 implements b31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final um0 f535a;
+    public final um0 f534a;
     public final xm0 b;
 
     public im1(um0 um0Var, xm0 xm0Var) {
-        this.f535a = um0Var;
+        this.f534a = um0Var;
         this.b = xm0Var;
     }
 
     @Override // androidx.emoji2.text.b31
     public final um0 getKey() {
-        return this.f535a;
+        return this.f534a;
     }
 }

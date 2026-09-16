@@ -9,17 +9,17 @@ public abstract class fb2 {
 
     public static final qe2 a(long j, vo2 vo2Var, lx lxVar, int i) {
         tx txVar = (tx) lxVar;
-        boolean zF = txVar.f(et.f(j));
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
-            mt mtVarF = et.f(j);
+        boolean f = txVar.f(et.f(j));
+        Object M = txVar.M();
+        if (f || M == kx.f662a) {
+            mt f2 = et.f(j);
             j7 j7Var = j7.C;
-            r5 r5Var = new r5(10, mtVarF);
-            wo2 wo2Var = qq2.f974a;
+            r5 r5Var = new r5(10, f2);
+            wo2 wo2Var = qq2.f973a;
             wo2 wo2Var2 = new wo2(j7Var, r5Var);
             txVar.i0(wo2Var2);
-            objM = wo2Var2;
+            M = wo2Var2;
         }
-        return gd.b(new et(j), (wo2) objM, vo2Var, null, "ColorAnimation", txVar, (i << 3) & 896, 8);
+        return gd.b(new et(j), (wo2) M, vo2Var, null, "ColorAnimation", txVar, (i << 3) & 896, 8);
     }
 }

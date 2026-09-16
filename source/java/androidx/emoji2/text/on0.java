@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class on0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f863a = 0;
+    public final /* synthetic */ int f862a = 0;
     public int b;
     public int c;
     public int d;
@@ -31,7 +31,7 @@ public final class on0 {
     }
 
     public String toString() {
-        switch (this.f863a) {
+        switch (this.f862a) {
             case 0:
                 return "";
             case 1:

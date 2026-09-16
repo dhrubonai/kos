@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class zx {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wx f1460a;
+    public final wx f1459a;
 
     public zx(wx wxVar) {
-        this.f1460a = wxVar;
+        this.f1459a = wxVar;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof zx) {
-            return lx0.n(this.f1460a, ((zx) obj).f1460a);
+            return lx0.n(this.f1459a, ((zx) obj).f1459a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1460a.hashCode() * 31;
+        return this.f1459a.hashCode() * 31;
     }
 }

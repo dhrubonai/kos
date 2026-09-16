@@ -36,25 +36,25 @@ public final class q20 extends hh2 implements Function2 {
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) throws Exception {
+    public final Object invoke(Object obj, Object obj2) {
         e30 e30Var = (e30) obj;
         l10 l10Var = (l10) obj2;
         switch (this.h) {
             case 0:
                 q20 q20Var = (q20) i(l10Var, e30Var);
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 q20Var.k(up2Var);
                 return up2Var;
             default:
                 q20 q20Var2 = (q20) i(l10Var, e30Var);
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 q20Var2.k(up2Var2);
                 return up2Var2;
         }
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Exception {
+    public final Object k(Object obj) {
         switch (this.h) {
             case 0:
                 mz0.L(obj);
@@ -67,7 +67,7 @@ public final class q20 extends hh2 implements Function2 {
             default:
                 mf1 mf1Var = (mf1) this.l;
                 mf1 mf1Var2 = (mf1) this.k;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 Context context = (Context) this.i;
                 mz0.L(obj);
                 if (Build.VERSION.SDK_INT < 33 || kx0.n(context, a.a.a.c.a(-262195427557154L, strArr)) == 0) {
@@ -85,7 +85,7 @@ public final class q20 extends hh2 implements Function2 {
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

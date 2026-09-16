@@ -7,6 +7,8 @@ import android.os.Looper;
 /* loaded from: classes.dex */
 public abstract class ny {
     public static Handler a(Looper looper) {
-        return Handler.createAsync(looper);
+        Handler createAsync;
+        createAsync = Handler.createAsync(looper);
+        return createAsync;
     }
 }

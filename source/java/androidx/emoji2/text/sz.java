@@ -32,7 +32,7 @@ public final class sz {
     public static final SparseIntArray f;
 
     /* renamed from: a, reason: collision with root package name */
-    public final HashMap f1094a = new HashMap();
+    public final HashMap f1093a = new HashMap();
     public final boolean b = true;
     public final HashMap c = new HashMap();
 
@@ -218,50 +218,50 @@ public final class sz {
         sparseIntArray2.append(94, 97);
     }
 
-    public static int[] c(jk jkVar, String str) throws IllegalAccessException, IllegalArgumentException {
-        int iIntValue;
-        String[] strArrSplit = str.split(",");
+    public static int[] c(jk jkVar, String str) {
+        int i;
+        String[] split = str.split(",");
         Context context = jkVar.getContext();
-        int[] iArr = new int[strArrSplit.length];
-        int i = 0;
+        int[] iArr = new int[split.length];
         int i2 = 0;
-        while (i < strArrSplit.length) {
-            String strTrim = strArrSplit[i].trim();
+        int i3 = 0;
+        while (i2 < split.length) {
+            String trim = split[i2].trim();
             Object obj = null;
             try {
-                iIntValue = zu1.class.getField(strTrim).getInt(null);
+                i = zu1.class.getField(trim).getInt(null);
             } catch (Exception unused) {
-                iIntValue = 0;
+                i = 0;
             }
-            if (iIntValue == 0) {
-                iIntValue = context.getResources().getIdentifier(strTrim, "id", context.getPackageName());
+            if (i == 0) {
+                i = context.getResources().getIdentifier(trim, "id", context.getPackageName());
             }
-            if (iIntValue == 0 && jkVar.isInEditMode() && (jkVar.getParent() instanceof ConstraintLayout)) {
+            if (i == 0 && jkVar.isInEditMode() && (jkVar.getParent() instanceof ConstraintLayout)) {
                 ConstraintLayout constraintLayout = (ConstraintLayout) jkVar.getParent();
-                if (strTrim != null) {
-                    HashMap map = constraintLayout.p;
-                    if (map != null && map.containsKey(strTrim)) {
-                        obj = constraintLayout.p.get(strTrim);
+                if (trim != null) {
+                    HashMap hashMap = constraintLayout.p;
+                    if (hashMap != null && hashMap.containsKey(trim)) {
+                        obj = constraintLayout.p.get(trim);
                     }
                 } else {
                     constraintLayout.getClass();
                 }
                 if (obj != null && (obj instanceof Integer)) {
-                    iIntValue = ((Integer) obj).intValue();
+                    i = ((Integer) obj).intValue();
                 }
             }
-            iArr[i2] = iIntValue;
-            i++;
+            iArr[i3] = i;
             i2++;
+            i3++;
         }
-        return i2 != strArrSplit.length ? Arrays.copyOf(iArr, i2) : iArr;
+        return i3 != split.length ? Arrays.copyOf(iArr, i3) : iArr;
     }
 
     public static nz d(Context context, AttributeSet attributeSet, boolean z) {
         int i;
         int i2;
         nz nzVar = new nz();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, z ? av1.c : av1.f124a);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, z ? av1.c : av1.f123a);
         String[] strArr = kx0.c;
         qz qzVar = nzVar.b;
         rz rzVar = nzVar.e;
@@ -271,7 +271,7 @@ public final class sz {
         SparseIntArray sparseIntArray = e;
         if (z) {
             mz mzVar = new mz();
-            mzVar.f778a = new int[10];
+            mzVar.f777a = new int[10];
             mzVar.b = new int[10];
             mzVar.c = 0;
             mzVar.d = new int[10];
@@ -287,19 +287,18 @@ public final class sz {
             ozVar.getClass();
             rzVar.getClass();
             int i3 = 0;
-            for (int indexCount = typedArrayObtainStyledAttributes.getIndexCount(); i3 < indexCount; indexCount = i2) {
-                int index = typedArrayObtainStyledAttributes.getIndex(i3);
+            for (int indexCount = obtainStyledAttributes.getIndexCount(); i3 < indexCount; indexCount = i2) {
+                int index = obtainStyledAttributes.getIndex(i3);
                 int i4 = i3;
                 switch (f.get(index)) {
                     case 2:
                         i2 = indexCount;
-                        mzVar.b(2, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.I));
+                        mzVar.b(2, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.I));
                         continue;
-                        i3 = i4 + 1;
                     case BCell.NETWORK_TYPE_UMTS /* 3 */:
                     case 4:
-                    case 9:
-                    case 10:
+                    case pz0.b /* 9 */:
+                    case pz0.d /* 10 */:
                     case 25:
                     case 26:
                     case 29:
@@ -322,234 +321,233 @@ public final class sz {
                         sb.append(sparseIntArray.get(index));
                         Log.w("ConstraintSet", sb.toString());
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         i2 = indexCount;
-                        mzVar.c(5, typedArrayObtainStyledAttributes.getString(index));
+                        mzVar.c(5, obtainStyledAttributes.getString(index));
                         continue;
-                        i3 = i4 + 1;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         i2 = indexCount;
-                        mzVar.b(6, typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, ozVar.C));
+                        mzVar.b(6, obtainStyledAttributes.getDimensionPixelOffset(index, ozVar.C));
                         break;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                         i2 = indexCount;
-                        mzVar.b(7, typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, ozVar.D));
+                        mzVar.b(7, obtainStyledAttributes.getDimensionPixelOffset(index, ozVar.D));
                         break;
                     case 8:
                         i2 = indexCount;
-                        mzVar.b(8, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.J));
+                        mzVar.b(8, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.J));
                         break;
                     case 11:
                         i2 = indexCount;
-                        mzVar.b(11, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.P));
+                        mzVar.b(11, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.P));
                         break;
                     case 12:
                         i2 = indexCount;
-                        mzVar.b(12, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.Q));
+                        mzVar.b(12, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.Q));
                         break;
                     case 13:
                         i2 = indexCount;
-                        mzVar.b(13, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.M));
+                        mzVar.b(13, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.M));
                         break;
                     case 14:
                         i2 = indexCount;
-                        mzVar.b(14, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.O));
+                        mzVar.b(14, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.O));
                         break;
-                    case 15:
+                    case pz0.f /* 15 */:
                         i2 = indexCount;
-                        mzVar.b(15, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.R));
+                        mzVar.b(15, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.R));
                         break;
                     case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                         i2 = indexCount;
-                        mzVar.b(16, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.N));
+                        mzVar.b(16, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.N));
                         break;
                     case 17:
                         i2 = indexCount;
-                        mzVar.b(17, typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, ozVar.d));
+                        mzVar.b(17, obtainStyledAttributes.getDimensionPixelOffset(index, ozVar.d));
                         break;
                     case 18:
                         i2 = indexCount;
-                        mzVar.b(18, typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, ozVar.e));
+                        mzVar.b(18, obtainStyledAttributes.getDimensionPixelOffset(index, ozVar.e));
                         break;
                     case 19:
                         i2 = indexCount;
-                        mzVar.a(19, typedArrayObtainStyledAttributes.getFloat(index, ozVar.f));
+                        mzVar.a(19, obtainStyledAttributes.getFloat(index, ozVar.f));
                         break;
                     case 20:
                         i2 = indexCount;
-                        mzVar.a(20, typedArrayObtainStyledAttributes.getFloat(index, ozVar.w));
+                        mzVar.a(20, obtainStyledAttributes.getFloat(index, ozVar.w));
                         break;
                     case 21:
                         i2 = indexCount;
-                        mzVar.b(21, typedArrayObtainStyledAttributes.getLayoutDimension(index, ozVar.c));
+                        mzVar.b(21, obtainStyledAttributes.getLayoutDimension(index, ozVar.c));
                         break;
                     case 22:
                         i2 = indexCount;
-                        mzVar.b(22, iArr[typedArrayObtainStyledAttributes.getInt(index, qzVar.f986a)]);
+                        mzVar.b(22, iArr[obtainStyledAttributes.getInt(index, qzVar.f985a)]);
                         break;
                     case 23:
                         i2 = indexCount;
-                        mzVar.b(23, typedArrayObtainStyledAttributes.getLayoutDimension(index, ozVar.b));
+                        mzVar.b(23, obtainStyledAttributes.getLayoutDimension(index, ozVar.b));
                         break;
                     case 24:
                         i2 = indexCount;
-                        mzVar.b(24, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.F));
+                        mzVar.b(24, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.F));
                         break;
                     case 27:
                         i2 = indexCount;
-                        mzVar.b(27, typedArrayObtainStyledAttributes.getInt(index, ozVar.E));
+                        mzVar.b(27, obtainStyledAttributes.getInt(index, ozVar.E));
                         break;
                     case 28:
                         i2 = indexCount;
-                        mzVar.b(28, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.G));
+                        mzVar.b(28, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.G));
                         break;
                     case 31:
                         i2 = indexCount;
-                        mzVar.b(31, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.K));
+                        mzVar.b(31, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.K));
                         break;
                     case 34:
                         i2 = indexCount;
-                        mzVar.b(34, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.H));
+                        mzVar.b(34, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.H));
                         break;
                     case 37:
                         i2 = indexCount;
-                        mzVar.a(37, typedArrayObtainStyledAttributes.getFloat(index, ozVar.x));
+                        mzVar.a(37, obtainStyledAttributes.getFloat(index, ozVar.x));
                         break;
                     case 38:
                         i2 = indexCount;
-                        int resourceId = typedArrayObtainStyledAttributes.getResourceId(index, nzVar.f833a);
-                        nzVar.f833a = resourceId;
+                        int resourceId = obtainStyledAttributes.getResourceId(index, nzVar.f832a);
+                        nzVar.f832a = resourceId;
                         mzVar.b(38, resourceId);
                         break;
                     case 39:
                         i2 = indexCount;
-                        mzVar.a(39, typedArrayObtainStyledAttributes.getFloat(index, ozVar.U));
+                        mzVar.a(39, obtainStyledAttributes.getFloat(index, ozVar.U));
                         break;
                     case 40:
                         i2 = indexCount;
-                        mzVar.a(40, typedArrayObtainStyledAttributes.getFloat(index, ozVar.T));
+                        mzVar.a(40, obtainStyledAttributes.getFloat(index, ozVar.T));
                         break;
                     case 41:
                         i2 = indexCount;
-                        mzVar.b(41, typedArrayObtainStyledAttributes.getInt(index, ozVar.V));
+                        mzVar.b(41, obtainStyledAttributes.getInt(index, ozVar.V));
                         break;
                     case 42:
                         i2 = indexCount;
-                        mzVar.b(42, typedArrayObtainStyledAttributes.getInt(index, ozVar.W));
+                        mzVar.b(42, obtainStyledAttributes.getInt(index, ozVar.W));
                         break;
                     case 43:
                         i2 = indexCount;
-                        mzVar.a(43, typedArrayObtainStyledAttributes.getFloat(index, qzVar.c));
+                        mzVar.a(43, obtainStyledAttributes.getFloat(index, qzVar.c));
                         break;
                     case 44:
                         i2 = indexCount;
                         mzVar.d(44, true);
-                        mzVar.a(44, typedArrayObtainStyledAttributes.getDimension(index, rzVar.m));
+                        mzVar.a(44, obtainStyledAttributes.getDimension(index, rzVar.m));
                         break;
                     case 45:
                         i2 = indexCount;
-                        mzVar.a(45, typedArrayObtainStyledAttributes.getFloat(index, rzVar.b));
+                        mzVar.a(45, obtainStyledAttributes.getFloat(index, rzVar.b));
                         break;
                     case 46:
                         i2 = indexCount;
-                        mzVar.a(46, typedArrayObtainStyledAttributes.getFloat(index, rzVar.c));
+                        mzVar.a(46, obtainStyledAttributes.getFloat(index, rzVar.c));
                         break;
                     case 47:
                         i2 = indexCount;
-                        mzVar.a(47, typedArrayObtainStyledAttributes.getFloat(index, rzVar.d));
+                        mzVar.a(47, obtainStyledAttributes.getFloat(index, rzVar.d));
                         break;
                     case 48:
                         i2 = indexCount;
-                        mzVar.a(48, typedArrayObtainStyledAttributes.getFloat(index, rzVar.e));
+                        mzVar.a(48, obtainStyledAttributes.getFloat(index, rzVar.e));
                         break;
                     case 49:
                         i2 = indexCount;
-                        mzVar.a(49, typedArrayObtainStyledAttributes.getDimension(index, rzVar.f));
+                        mzVar.a(49, obtainStyledAttributes.getDimension(index, rzVar.f));
                         break;
                     case ProxyManifest.FREE_COUNT /* 50 */:
                         i2 = indexCount;
-                        mzVar.a(50, typedArrayObtainStyledAttributes.getDimension(index, rzVar.g));
+                        mzVar.a(50, obtainStyledAttributes.getDimension(index, rzVar.g));
                         break;
                     case 51:
                         i2 = indexCount;
-                        mzVar.a(51, typedArrayObtainStyledAttributes.getDimension(index, rzVar.i));
+                        mzVar.a(51, obtainStyledAttributes.getDimension(index, rzVar.i));
                         break;
                     case 52:
                         i2 = indexCount;
-                        mzVar.a(52, typedArrayObtainStyledAttributes.getDimension(index, rzVar.j));
+                        mzVar.a(52, obtainStyledAttributes.getDimension(index, rzVar.j));
                         break;
                     case 53:
                         i2 = indexCount;
-                        mzVar.a(53, typedArrayObtainStyledAttributes.getDimension(index, rzVar.k));
+                        mzVar.a(53, obtainStyledAttributes.getDimension(index, rzVar.k));
                         break;
                     case 54:
                         i2 = indexCount;
-                        mzVar.b(54, typedArrayObtainStyledAttributes.getInt(index, ozVar.X));
+                        mzVar.b(54, obtainStyledAttributes.getInt(index, ozVar.X));
                         break;
                     case 55:
                         i2 = indexCount;
-                        mzVar.b(55, typedArrayObtainStyledAttributes.getInt(index, ozVar.Y));
+                        mzVar.b(55, obtainStyledAttributes.getInt(index, ozVar.Y));
                         break;
                     case 56:
                         i2 = indexCount;
-                        mzVar.b(56, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.Z));
+                        mzVar.b(56, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.Z));
                         break;
                     case 57:
                         i2 = indexCount;
-                        mzVar.b(57, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.a0));
+                        mzVar.b(57, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.a0));
                         break;
                     case 58:
                         i2 = indexCount;
-                        mzVar.b(58, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.b0));
+                        mzVar.b(58, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.b0));
                         break;
                     case 59:
                         i2 = indexCount;
-                        mzVar.b(59, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.c0));
+                        mzVar.b(59, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.c0));
                         break;
                     case 60:
                         i2 = indexCount;
-                        mzVar.a(60, typedArrayObtainStyledAttributes.getFloat(index, rzVar.f1041a));
+                        mzVar.a(60, obtainStyledAttributes.getFloat(index, rzVar.f1040a));
                         break;
                     case 62:
                         i2 = indexCount;
-                        mzVar.b(62, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.A));
+                        mzVar.b(62, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.A));
                         break;
                     case 63:
                         i2 = indexCount;
-                        mzVar.a(63, typedArrayObtainStyledAttributes.getFloat(index, ozVar.B));
+                        mzVar.a(63, obtainStyledAttributes.getFloat(index, ozVar.B));
                         break;
                     case PackageParser.PARSE_IS_SYSTEM_DIR /* 64 */:
                         i2 = indexCount;
-                        mzVar.b(64, f(typedArrayObtainStyledAttributes, index, pzVar.f934a));
+                        mzVar.b(64, f(obtainStyledAttributes, index, pzVar.f933a));
                         break;
                     case 65:
                         i2 = indexCount;
-                        if (typedArrayObtainStyledAttributes.peekValue(index).type == 3) {
-                            mzVar.c(65, typedArrayObtainStyledAttributes.getString(index));
+                        if (obtainStyledAttributes.peekValue(index).type == 3) {
+                            mzVar.c(65, obtainStyledAttributes.getString(index));
                             break;
                         } else {
-                            mzVar.c(65, strArr[typedArrayObtainStyledAttributes.getInteger(index, 0)]);
+                            mzVar.c(65, strArr[obtainStyledAttributes.getInteger(index, 0)]);
                             break;
                         }
                     case 66:
                         i2 = indexCount;
-                        mzVar.b(66, typedArrayObtainStyledAttributes.getInt(index, 0));
+                        mzVar.b(66, obtainStyledAttributes.getInt(index, 0));
                         break;
                     case 67:
                         i2 = indexCount;
-                        mzVar.a(67, typedArrayObtainStyledAttributes.getFloat(index, pzVar.e));
+                        mzVar.a(67, obtainStyledAttributes.getFloat(index, pzVar.e));
                         break;
                     case 68:
                         i2 = indexCount;
-                        mzVar.a(68, typedArrayObtainStyledAttributes.getFloat(index, qzVar.d));
+                        mzVar.a(68, obtainStyledAttributes.getFloat(index, qzVar.d));
                         break;
                     case 69:
                         i2 = indexCount;
-                        mzVar.a(69, typedArrayObtainStyledAttributes.getFloat(index, 1.0f));
+                        mzVar.a(69, obtainStyledAttributes.getFloat(index, 1.0f));
                         break;
                     case 70:
                         i2 = indexCount;
-                        mzVar.a(70, typedArrayObtainStyledAttributes.getFloat(index, 1.0f));
+                        mzVar.a(70, obtainStyledAttributes.getFloat(index, 1.0f));
                         break;
                     case 71:
                         i2 = indexCount;
@@ -557,65 +555,65 @@ public final class sz {
                         break;
                     case 72:
                         i2 = indexCount;
-                        mzVar.b(72, typedArrayObtainStyledAttributes.getInt(index, ozVar.f0));
+                        mzVar.b(72, obtainStyledAttributes.getInt(index, ozVar.f0));
                         break;
                     case 73:
                         i2 = indexCount;
-                        mzVar.b(73, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.g0));
+                        mzVar.b(73, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.g0));
                         break;
                     case 74:
                         i2 = indexCount;
-                        mzVar.c(74, typedArrayObtainStyledAttributes.getString(index));
+                        mzVar.c(74, obtainStyledAttributes.getString(index));
                         break;
                     case 75:
                         i2 = indexCount;
-                        mzVar.d(75, typedArrayObtainStyledAttributes.getBoolean(index, ozVar.n0));
+                        mzVar.d(75, obtainStyledAttributes.getBoolean(index, ozVar.n0));
                         break;
                     case 76:
                         i2 = indexCount;
-                        mzVar.b(76, typedArrayObtainStyledAttributes.getInt(index, pzVar.c));
+                        mzVar.b(76, obtainStyledAttributes.getInt(index, pzVar.c));
                         break;
                     case 77:
                         i2 = indexCount;
-                        mzVar.c(77, typedArrayObtainStyledAttributes.getString(index));
+                        mzVar.c(77, obtainStyledAttributes.getString(index));
                         break;
                     case 78:
                         i2 = indexCount;
-                        mzVar.b(78, typedArrayObtainStyledAttributes.getInt(index, qzVar.b));
+                        mzVar.b(78, obtainStyledAttributes.getInt(index, qzVar.b));
                         break;
                     case 79:
                         i2 = indexCount;
-                        mzVar.a(79, typedArrayObtainStyledAttributes.getFloat(index, pzVar.d));
+                        mzVar.a(79, obtainStyledAttributes.getFloat(index, pzVar.d));
                         break;
                     case 80:
                         i2 = indexCount;
-                        mzVar.d(80, typedArrayObtainStyledAttributes.getBoolean(index, ozVar.l0));
+                        mzVar.d(80, obtainStyledAttributes.getBoolean(index, ozVar.l0));
                         break;
                     case 81:
                         i2 = indexCount;
-                        mzVar.d(81, typedArrayObtainStyledAttributes.getBoolean(index, ozVar.m0));
+                        mzVar.d(81, obtainStyledAttributes.getBoolean(index, ozVar.m0));
                         break;
                     case 82:
                         i2 = indexCount;
-                        mzVar.b(82, typedArrayObtainStyledAttributes.getInteger(index, pzVar.b));
+                        mzVar.b(82, obtainStyledAttributes.getInteger(index, pzVar.b));
                         break;
                     case 83:
                         i2 = indexCount;
-                        mzVar.b(83, f(typedArrayObtainStyledAttributes, index, rzVar.h));
+                        mzVar.b(83, f(obtainStyledAttributes, index, rzVar.h));
                         break;
                     case 84:
                         i2 = indexCount;
-                        mzVar.b(84, typedArrayObtainStyledAttributes.getInteger(index, pzVar.g));
+                        mzVar.b(84, obtainStyledAttributes.getInteger(index, pzVar.g));
                         break;
                     case 85:
                         i2 = indexCount;
-                        mzVar.a(85, typedArrayObtainStyledAttributes.getFloat(index, pzVar.f));
+                        mzVar.a(85, obtainStyledAttributes.getFloat(index, pzVar.f));
                         break;
                     case 86:
                         i2 = indexCount;
-                        int i5 = typedArrayObtainStyledAttributes.peekValue(index).type;
+                        int i5 = obtainStyledAttributes.peekValue(index).type;
                         if (i5 == 1) {
-                            int resourceId2 = typedArrayObtainStyledAttributes.getResourceId(index, -1);
+                            int resourceId2 = obtainStyledAttributes.getResourceId(index, -1);
                             pzVar.i = resourceId2;
                             mzVar.b(89, resourceId2);
                             if (pzVar.i != -1) {
@@ -623,11 +621,11 @@ public final class sz {
                                 break;
                             }
                         } else if (i5 == 3) {
-                            String string = typedArrayObtainStyledAttributes.getString(index);
+                            String string = obtainStyledAttributes.getString(index);
                             pzVar.h = string;
                             mzVar.c(90, string);
                             if (pzVar.h.indexOf("/") > 0) {
-                                int resourceId3 = typedArrayObtainStyledAttributes.getResourceId(index, -1);
+                                int resourceId3 = obtainStyledAttributes.getResourceId(index, -1);
                                 pzVar.i = resourceId3;
                                 mzVar.b(89, resourceId3);
                                 mzVar.b(88, -2);
@@ -637,7 +635,7 @@ public final class sz {
                                 break;
                             }
                         } else {
-                            mzVar.b(88, typedArrayObtainStyledAttributes.getInteger(index, pzVar.i));
+                            mzVar.b(88, obtainStyledAttributes.getInteger(index, pzVar.i));
                             break;
                         }
                         break;
@@ -647,45 +645,45 @@ public final class sz {
                         break;
                     case 93:
                         i2 = indexCount;
-                        mzVar.b(93, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.L));
+                        mzVar.b(93, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.L));
                         break;
                     case 94:
                         i2 = indexCount;
-                        mzVar.b(94, typedArrayObtainStyledAttributes.getDimensionPixelSize(index, ozVar.S));
+                        mzVar.b(94, obtainStyledAttributes.getDimensionPixelSize(index, ozVar.S));
                         break;
                     case 95:
                         i2 = indexCount;
-                        g(mzVar, typedArrayObtainStyledAttributes, index, 0);
+                        g(mzVar, obtainStyledAttributes, index, 0);
                         break;
                     case 96:
                         i2 = indexCount;
-                        g(mzVar, typedArrayObtainStyledAttributes, index, 1);
+                        g(mzVar, obtainStyledAttributes, index, 1);
                         break;
                     case 97:
                         i2 = indexCount;
-                        mzVar.b(97, typedArrayObtainStyledAttributes.getInt(index, ozVar.o0));
+                        mzVar.b(97, obtainStyledAttributes.getInt(index, ozVar.o0));
                         break;
                     case 98:
                         i2 = indexCount;
                         int i6 = be1.t;
-                        if (typedArrayObtainStyledAttributes.peekValue(index).type == 3) {
-                            typedArrayObtainStyledAttributes.getString(index);
+                        if (obtainStyledAttributes.peekValue(index).type == 3) {
+                            obtainStyledAttributes.getString(index);
                             break;
                         } else {
-                            nzVar.f833a = typedArrayObtainStyledAttributes.getResourceId(index, nzVar.f833a);
+                            nzVar.f832a = obtainStyledAttributes.getResourceId(index, nzVar.f832a);
                             break;
                         }
                     case 99:
                         i2 = indexCount;
-                        mzVar.d(99, typedArrayObtainStyledAttributes.getBoolean(index, ozVar.g));
+                        mzVar.d(99, obtainStyledAttributes.getBoolean(index, ozVar.g));
                         break;
                 }
                 i3 = i4 + 1;
             }
         } else {
             int i7 = 0;
-            for (int indexCount2 = typedArrayObtainStyledAttributes.getIndexCount(); i7 < indexCount2; indexCount2 = i) {
-                int index2 = typedArrayObtainStyledAttributes.getIndex(i7);
+            for (int indexCount2 = obtainStyledAttributes.getIndexCount(); i7 < indexCount2; indexCount2 = i) {
+                int index2 = obtainStyledAttributes.getIndex(i7);
                 if (index2 != 1 && 23 != index2) {
                     if (24 != index2) {
                         pzVar.getClass();
@@ -696,359 +694,294 @@ public final class sz {
                 switch (sparseIntArray.get(index2)) {
                     case 1:
                         i = indexCount2;
-                        ozVar.p = f(typedArrayObtainStyledAttributes, index2, ozVar.p);
+                        ozVar.p = f(obtainStyledAttributes, index2, ozVar.p);
                         continue;
-                        i7++;
                     case 2:
                         i = indexCount2;
-                        ozVar.I = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.I);
+                        ozVar.I = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.I);
                         continue;
-                        i7++;
                     case BCell.NETWORK_TYPE_UMTS /* 3 */:
                         i = indexCount2;
-                        ozVar.o = f(typedArrayObtainStyledAttributes, index2, ozVar.o);
+                        ozVar.o = f(obtainStyledAttributes, index2, ozVar.o);
                         continue;
-                        i7++;
                     case 4:
                         i = indexCount2;
-                        ozVar.n = f(typedArrayObtainStyledAttributes, index2, ozVar.n);
+                        ozVar.n = f(obtainStyledAttributes, index2, ozVar.n);
                         continue;
-                        i7++;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         i = indexCount2;
-                        ozVar.y = typedArrayObtainStyledAttributes.getString(index2);
+                        ozVar.y = obtainStyledAttributes.getString(index2);
                         continue;
-                        i7++;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         i = indexCount2;
-                        ozVar.C = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.C);
+                        ozVar.C = obtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.C);
                         continue;
-                        i7++;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                         i = indexCount2;
-                        ozVar.D = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.D);
+                        ozVar.D = obtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.D);
                         continue;
-                        i7++;
                     case 8:
                         i = indexCount2;
-                        ozVar.J = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.J);
+                        ozVar.J = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.J);
                         continue;
-                        i7++;
-                    case 9:
+                    case pz0.b /* 9 */:
                         i = indexCount2;
-                        ozVar.v = f(typedArrayObtainStyledAttributes, index2, ozVar.v);
+                        ozVar.v = f(obtainStyledAttributes, index2, ozVar.v);
                         continue;
-                        i7++;
-                    case 10:
+                    case pz0.d /* 10 */:
                         i = indexCount2;
-                        ozVar.u = f(typedArrayObtainStyledAttributes, index2, ozVar.u);
+                        ozVar.u = f(obtainStyledAttributes, index2, ozVar.u);
                         continue;
-                        i7++;
                     case 11:
                         i = indexCount2;
-                        ozVar.P = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.P);
+                        ozVar.P = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.P);
                         continue;
-                        i7++;
                     case 12:
                         i = indexCount2;
-                        ozVar.Q = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.Q);
+                        ozVar.Q = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.Q);
                         continue;
-                        i7++;
                     case 13:
                         i = indexCount2;
-                        ozVar.M = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.M);
+                        ozVar.M = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.M);
                         continue;
-                        i7++;
                     case 14:
                         i = indexCount2;
-                        ozVar.O = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.O);
+                        ozVar.O = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.O);
                         continue;
-                        i7++;
-                    case 15:
+                    case pz0.f /* 15 */:
                         i = indexCount2;
-                        ozVar.R = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.R);
+                        ozVar.R = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.R);
                         continue;
-                        i7++;
                     case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                         i = indexCount2;
-                        ozVar.N = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.N);
+                        ozVar.N = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.N);
                         continue;
-                        i7++;
                     case 17:
                         i = indexCount2;
-                        ozVar.d = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.d);
+                        ozVar.d = obtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.d);
                         continue;
-                        i7++;
                     case 18:
                         i = indexCount2;
-                        ozVar.e = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.e);
+                        ozVar.e = obtainStyledAttributes.getDimensionPixelOffset(index2, ozVar.e);
                         continue;
-                        i7++;
                     case 19:
                         i = indexCount2;
-                        ozVar.f = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.f);
+                        ozVar.f = obtainStyledAttributes.getFloat(index2, ozVar.f);
                         continue;
-                        i7++;
                     case 20:
                         i = indexCount2;
-                        ozVar.w = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.w);
+                        ozVar.w = obtainStyledAttributes.getFloat(index2, ozVar.w);
                         continue;
-                        i7++;
                     case 21:
                         i = indexCount2;
-                        ozVar.c = typedArrayObtainStyledAttributes.getLayoutDimension(index2, ozVar.c);
+                        ozVar.c = obtainStyledAttributes.getLayoutDimension(index2, ozVar.c);
                         continue;
-                        i7++;
                     case 22:
                         i = indexCount2;
-                        int i8 = typedArrayObtainStyledAttributes.getInt(index2, qzVar.f986a);
-                        qzVar.f986a = i8;
-                        qzVar.f986a = iArr[i8];
+                        int i8 = obtainStyledAttributes.getInt(index2, qzVar.f985a);
+                        qzVar.f985a = i8;
+                        qzVar.f985a = iArr[i8];
                         continue;
-                        i7++;
                     case 23:
                         i = indexCount2;
-                        ozVar.b = typedArrayObtainStyledAttributes.getLayoutDimension(index2, ozVar.b);
+                        ozVar.b = obtainStyledAttributes.getLayoutDimension(index2, ozVar.b);
                         continue;
-                        i7++;
                     case 24:
                         i = indexCount2;
-                        ozVar.F = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.F);
+                        ozVar.F = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.F);
                         continue;
-                        i7++;
                     case 25:
                         i = indexCount2;
-                        ozVar.h = f(typedArrayObtainStyledAttributes, index2, ozVar.h);
+                        ozVar.h = f(obtainStyledAttributes, index2, ozVar.h);
                         continue;
-                        i7++;
                     case 26:
                         i = indexCount2;
-                        ozVar.i = f(typedArrayObtainStyledAttributes, index2, ozVar.i);
+                        ozVar.i = f(obtainStyledAttributes, index2, ozVar.i);
                         continue;
-                        i7++;
                     case 27:
                         i = indexCount2;
-                        ozVar.E = typedArrayObtainStyledAttributes.getInt(index2, ozVar.E);
+                        ozVar.E = obtainStyledAttributes.getInt(index2, ozVar.E);
                         continue;
-                        i7++;
                     case 28:
                         i = indexCount2;
-                        ozVar.G = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.G);
+                        ozVar.G = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.G);
                         continue;
-                        i7++;
                     case 29:
                         i = indexCount2;
-                        ozVar.j = f(typedArrayObtainStyledAttributes, index2, ozVar.j);
+                        ozVar.j = f(obtainStyledAttributes, index2, ozVar.j);
                         continue;
-                        i7++;
                     case 30:
                         i = indexCount2;
-                        ozVar.k = f(typedArrayObtainStyledAttributes, index2, ozVar.k);
+                        ozVar.k = f(obtainStyledAttributes, index2, ozVar.k);
                         continue;
-                        i7++;
                     case 31:
                         i = indexCount2;
-                        ozVar.K = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.K);
+                        ozVar.K = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.K);
                         continue;
-                        i7++;
                     case PackageParser.PARSE_EXTERNAL_STORAGE /* 32 */:
                         i = indexCount2;
-                        ozVar.s = f(typedArrayObtainStyledAttributes, index2, ozVar.s);
+                        ozVar.s = f(obtainStyledAttributes, index2, ozVar.s);
                         continue;
-                        i7++;
                     case 33:
                         i = indexCount2;
-                        ozVar.t = f(typedArrayObtainStyledAttributes, index2, ozVar.t);
+                        ozVar.t = f(obtainStyledAttributes, index2, ozVar.t);
                         continue;
-                        i7++;
                     case 34:
                         i = indexCount2;
-                        ozVar.H = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.H);
+                        ozVar.H = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.H);
                         continue;
-                        i7++;
                     case 35:
                         i = indexCount2;
-                        ozVar.m = f(typedArrayObtainStyledAttributes, index2, ozVar.m);
+                        ozVar.m = f(obtainStyledAttributes, index2, ozVar.m);
                         continue;
-                        i7++;
                     case 36:
                         i = indexCount2;
-                        ozVar.l = f(typedArrayObtainStyledAttributes, index2, ozVar.l);
+                        ozVar.l = f(obtainStyledAttributes, index2, ozVar.l);
                         continue;
-                        i7++;
                     case 37:
                         i = indexCount2;
-                        ozVar.x = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.x);
+                        ozVar.x = obtainStyledAttributes.getFloat(index2, ozVar.x);
                         continue;
-                        i7++;
                     case 38:
                         i = indexCount2;
-                        nzVar.f833a = typedArrayObtainStyledAttributes.getResourceId(index2, nzVar.f833a);
+                        nzVar.f832a = obtainStyledAttributes.getResourceId(index2, nzVar.f832a);
                         continue;
-                        i7++;
                     case 39:
                         i = indexCount2;
-                        ozVar.U = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.U);
+                        ozVar.U = obtainStyledAttributes.getFloat(index2, ozVar.U);
                         continue;
-                        i7++;
                     case 40:
                         i = indexCount2;
-                        ozVar.T = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.T);
+                        ozVar.T = obtainStyledAttributes.getFloat(index2, ozVar.T);
                         continue;
-                        i7++;
                     case 41:
                         i = indexCount2;
-                        ozVar.V = typedArrayObtainStyledAttributes.getInt(index2, ozVar.V);
+                        ozVar.V = obtainStyledAttributes.getInt(index2, ozVar.V);
                         continue;
-                        i7++;
                     case 42:
                         i = indexCount2;
-                        ozVar.W = typedArrayObtainStyledAttributes.getInt(index2, ozVar.W);
+                        ozVar.W = obtainStyledAttributes.getInt(index2, ozVar.W);
                         continue;
-                        i7++;
                     case 43:
                         i = indexCount2;
-                        qzVar.c = typedArrayObtainStyledAttributes.getFloat(index2, qzVar.c);
+                        qzVar.c = obtainStyledAttributes.getFloat(index2, qzVar.c);
                         continue;
-                        i7++;
                     case 44:
                         i = indexCount2;
                         rzVar.l = true;
-                        rzVar.m = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.m);
+                        rzVar.m = obtainStyledAttributes.getDimension(index2, rzVar.m);
                         continue;
-                        i7++;
                     case 45:
                         i = indexCount2;
-                        rzVar.b = typedArrayObtainStyledAttributes.getFloat(index2, rzVar.b);
+                        rzVar.b = obtainStyledAttributes.getFloat(index2, rzVar.b);
                         continue;
-                        i7++;
                     case 46:
                         i = indexCount2;
-                        rzVar.c = typedArrayObtainStyledAttributes.getFloat(index2, rzVar.c);
+                        rzVar.c = obtainStyledAttributes.getFloat(index2, rzVar.c);
                         continue;
-                        i7++;
                     case 47:
                         i = indexCount2;
-                        rzVar.d = typedArrayObtainStyledAttributes.getFloat(index2, rzVar.d);
+                        rzVar.d = obtainStyledAttributes.getFloat(index2, rzVar.d);
                         continue;
-                        i7++;
                     case 48:
                         i = indexCount2;
-                        rzVar.e = typedArrayObtainStyledAttributes.getFloat(index2, rzVar.e);
+                        rzVar.e = obtainStyledAttributes.getFloat(index2, rzVar.e);
                         continue;
-                        i7++;
                     case 49:
                         i = indexCount2;
-                        rzVar.f = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.f);
+                        rzVar.f = obtainStyledAttributes.getDimension(index2, rzVar.f);
                         continue;
-                        i7++;
                     case ProxyManifest.FREE_COUNT /* 50 */:
                         i = indexCount2;
-                        rzVar.g = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.g);
+                        rzVar.g = obtainStyledAttributes.getDimension(index2, rzVar.g);
                         continue;
-                        i7++;
                     case 51:
                         i = indexCount2;
-                        rzVar.i = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.i);
+                        rzVar.i = obtainStyledAttributes.getDimension(index2, rzVar.i);
                         continue;
-                        i7++;
                     case 52:
                         i = indexCount2;
-                        rzVar.j = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.j);
+                        rzVar.j = obtainStyledAttributes.getDimension(index2, rzVar.j);
                         continue;
-                        i7++;
                     case 53:
                         i = indexCount2;
-                        rzVar.k = typedArrayObtainStyledAttributes.getDimension(index2, rzVar.k);
+                        rzVar.k = obtainStyledAttributes.getDimension(index2, rzVar.k);
                         continue;
-                        i7++;
                     case 54:
                         i = indexCount2;
-                        ozVar.X = typedArrayObtainStyledAttributes.getInt(index2, ozVar.X);
+                        ozVar.X = obtainStyledAttributes.getInt(index2, ozVar.X);
                         continue;
-                        i7++;
                     case 55:
                         i = indexCount2;
-                        ozVar.Y = typedArrayObtainStyledAttributes.getInt(index2, ozVar.Y);
+                        ozVar.Y = obtainStyledAttributes.getInt(index2, ozVar.Y);
                         continue;
-                        i7++;
                     case 56:
                         i = indexCount2;
-                        ozVar.Z = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.Z);
+                        ozVar.Z = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.Z);
                         continue;
-                        i7++;
                     case 57:
                         i = indexCount2;
-                        ozVar.a0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.a0);
+                        ozVar.a0 = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.a0);
                         continue;
-                        i7++;
                     case 58:
                         i = indexCount2;
-                        ozVar.b0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.b0);
+                        ozVar.b0 = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.b0);
                         continue;
-                        i7++;
                     case 59:
                         i = indexCount2;
-                        ozVar.c0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.c0);
+                        ozVar.c0 = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.c0);
                         continue;
-                        i7++;
                     case 60:
                         i = indexCount2;
-                        rzVar.f1041a = typedArrayObtainStyledAttributes.getFloat(index2, rzVar.f1041a);
+                        rzVar.f1040a = obtainStyledAttributes.getFloat(index2, rzVar.f1040a);
                         continue;
-                        i7++;
                     case 61:
                         i = indexCount2;
-                        ozVar.z = f(typedArrayObtainStyledAttributes, index2, ozVar.z);
+                        ozVar.z = f(obtainStyledAttributes, index2, ozVar.z);
                         continue;
-                        i7++;
                     case 62:
                         i = indexCount2;
-                        ozVar.A = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.A);
+                        ozVar.A = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.A);
                         continue;
-                        i7++;
                     case 63:
                         i = indexCount2;
-                        ozVar.B = typedArrayObtainStyledAttributes.getFloat(index2, ozVar.B);
+                        ozVar.B = obtainStyledAttributes.getFloat(index2, ozVar.B);
                         continue;
-                        i7++;
                     case PackageParser.PARSE_IS_SYSTEM_DIR /* 64 */:
                         i = indexCount2;
-                        pzVar.f934a = f(typedArrayObtainStyledAttributes, index2, pzVar.f934a);
+                        pzVar.f933a = f(obtainStyledAttributes, index2, pzVar.f933a);
                         continue;
-                        i7++;
                     case 65:
                         i = indexCount2;
-                        if (typedArrayObtainStyledAttributes.peekValue(index2).type == 3) {
-                            typedArrayObtainStyledAttributes.getString(index2);
+                        if (obtainStyledAttributes.peekValue(index2).type == 3) {
+                            obtainStyledAttributes.getString(index2);
                             pzVar.getClass();
                             break;
                         } else {
-                            String str = strArr[typedArrayObtainStyledAttributes.getInteger(index2, 0)];
+                            String str = strArr[obtainStyledAttributes.getInteger(index2, 0)];
                             pzVar.getClass();
-                            i7++;
+                            break;
                         }
                     case 66:
                         i = indexCount2;
-                        typedArrayObtainStyledAttributes.getInt(index2, 0);
+                        obtainStyledAttributes.getInt(index2, 0);
                         pzVar.getClass();
                         continue;
-                        i7++;
                     case 67:
                         i = indexCount2;
-                        pzVar.e = typedArrayObtainStyledAttributes.getFloat(index2, pzVar.e);
+                        pzVar.e = obtainStyledAttributes.getFloat(index2, pzVar.e);
                         break;
                     case 68:
                         i = indexCount2;
-                        qzVar.d = typedArrayObtainStyledAttributes.getFloat(index2, qzVar.d);
+                        qzVar.d = obtainStyledAttributes.getFloat(index2, qzVar.d);
                         break;
                     case 69:
                         i = indexCount2;
-                        ozVar.d0 = typedArrayObtainStyledAttributes.getFloat(index2, 1.0f);
+                        ozVar.d0 = obtainStyledAttributes.getFloat(index2, 1.0f);
                         break;
                     case 70:
                         i = indexCount2;
-                        ozVar.e0 = typedArrayObtainStyledAttributes.getFloat(index2, 1.0f);
+                        ozVar.e0 = obtainStyledAttributes.getFloat(index2, 1.0f);
                         break;
                     case 71:
                         i = indexCount2;
@@ -1056,75 +989,75 @@ public final class sz {
                         break;
                     case 72:
                         i = indexCount2;
-                        ozVar.f0 = typedArrayObtainStyledAttributes.getInt(index2, ozVar.f0);
+                        ozVar.f0 = obtainStyledAttributes.getInt(index2, ozVar.f0);
                         break;
                     case 73:
                         i = indexCount2;
-                        ozVar.g0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.g0);
+                        ozVar.g0 = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.g0);
                         break;
                     case 74:
                         i = indexCount2;
-                        ozVar.j0 = typedArrayObtainStyledAttributes.getString(index2);
+                        ozVar.j0 = obtainStyledAttributes.getString(index2);
                         break;
                     case 75:
                         i = indexCount2;
-                        ozVar.n0 = typedArrayObtainStyledAttributes.getBoolean(index2, ozVar.n0);
+                        ozVar.n0 = obtainStyledAttributes.getBoolean(index2, ozVar.n0);
                         break;
                     case 76:
                         i = indexCount2;
-                        pzVar.c = typedArrayObtainStyledAttributes.getInt(index2, pzVar.c);
+                        pzVar.c = obtainStyledAttributes.getInt(index2, pzVar.c);
                         break;
                     case 77:
                         i = indexCount2;
-                        ozVar.k0 = typedArrayObtainStyledAttributes.getString(index2);
+                        ozVar.k0 = obtainStyledAttributes.getString(index2);
                         break;
                     case 78:
                         i = indexCount2;
-                        qzVar.b = typedArrayObtainStyledAttributes.getInt(index2, qzVar.b);
+                        qzVar.b = obtainStyledAttributes.getInt(index2, qzVar.b);
                         break;
                     case 79:
                         i = indexCount2;
-                        pzVar.d = typedArrayObtainStyledAttributes.getFloat(index2, pzVar.d);
+                        pzVar.d = obtainStyledAttributes.getFloat(index2, pzVar.d);
                         break;
                     case 80:
                         i = indexCount2;
-                        ozVar.l0 = typedArrayObtainStyledAttributes.getBoolean(index2, ozVar.l0);
+                        ozVar.l0 = obtainStyledAttributes.getBoolean(index2, ozVar.l0);
                         break;
                     case 81:
                         i = indexCount2;
-                        ozVar.m0 = typedArrayObtainStyledAttributes.getBoolean(index2, ozVar.m0);
+                        ozVar.m0 = obtainStyledAttributes.getBoolean(index2, ozVar.m0);
                         break;
                     case 82:
                         i = indexCount2;
-                        pzVar.b = typedArrayObtainStyledAttributes.getInteger(index2, pzVar.b);
+                        pzVar.b = obtainStyledAttributes.getInteger(index2, pzVar.b);
                         break;
                     case 83:
                         i = indexCount2;
-                        rzVar.h = f(typedArrayObtainStyledAttributes, index2, rzVar.h);
+                        rzVar.h = f(obtainStyledAttributes, index2, rzVar.h);
                         break;
                     case 84:
                         i = indexCount2;
-                        pzVar.g = typedArrayObtainStyledAttributes.getInteger(index2, pzVar.g);
+                        pzVar.g = obtainStyledAttributes.getInteger(index2, pzVar.g);
                         break;
                     case 85:
                         i = indexCount2;
-                        pzVar.f = typedArrayObtainStyledAttributes.getFloat(index2, pzVar.f);
+                        pzVar.f = obtainStyledAttributes.getFloat(index2, pzVar.f);
                         break;
                     case 86:
                         i = indexCount2;
-                        int i9 = typedArrayObtainStyledAttributes.peekValue(index2).type;
+                        int i9 = obtainStyledAttributes.peekValue(index2).type;
                         if (i9 == 1) {
-                            pzVar.i = typedArrayObtainStyledAttributes.getResourceId(index2, -1);
+                            pzVar.i = obtainStyledAttributes.getResourceId(index2, -1);
                             break;
                         } else if (i9 == 3) {
-                            String string2 = typedArrayObtainStyledAttributes.getString(index2);
+                            String string2 = obtainStyledAttributes.getString(index2);
                             pzVar.h = string2;
                             if (string2.indexOf("/") > 0) {
-                                pzVar.i = typedArrayObtainStyledAttributes.getResourceId(index2, -1);
+                                pzVar.i = obtainStyledAttributes.getResourceId(index2, -1);
                                 break;
                             }
                         } else {
-                            typedArrayObtainStyledAttributes.getInteger(index2, pzVar.i);
+                            obtainStyledAttributes.getInteger(index2, pzVar.i);
                             break;
                         }
                         break;
@@ -1145,32 +1078,31 @@ public final class sz {
                         break;
                     case 91:
                         i = indexCount2;
-                        ozVar.q = f(typedArrayObtainStyledAttributes, index2, ozVar.q);
+                        ozVar.q = f(obtainStyledAttributes, index2, ozVar.q);
                         break;
                     case 92:
                         i = indexCount2;
-                        ozVar.r = f(typedArrayObtainStyledAttributes, index2, ozVar.r);
+                        ozVar.r = f(obtainStyledAttributes, index2, ozVar.r);
                         break;
                     case 93:
                         i = indexCount2;
-                        ozVar.L = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.L);
+                        ozVar.L = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.L);
                         break;
                     case 94:
                         i = indexCount2;
-                        ozVar.S = typedArrayObtainStyledAttributes.getDimensionPixelSize(index2, ozVar.S);
+                        ozVar.S = obtainStyledAttributes.getDimensionPixelSize(index2, ozVar.S);
                         break;
                     case 95:
                         i = indexCount2;
-                        g(ozVar, typedArrayObtainStyledAttributes, index2, 0);
+                        g(ozVar, obtainStyledAttributes, index2, 0);
                         continue;
-                        i7++;
                     case 96:
                         i = indexCount2;
-                        g(ozVar, typedArrayObtainStyledAttributes, index2, 1);
+                        g(ozVar, obtainStyledAttributes, index2, 1);
                         break;
                     case 97:
                         i = indexCount2;
-                        ozVar.o0 = typedArrayObtainStyledAttributes.getInt(index2, ozVar.o0);
+                        ozVar.o0 = obtainStyledAttributes.getInt(index2, ozVar.o0);
                         break;
                 }
                 i7++;
@@ -1179,7 +1111,7 @@ public final class sz {
                 ozVar.i0 = null;
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
         return nzVar;
     }
 
@@ -1188,48 +1120,228 @@ public final class sz {
         return resourceId == -1 ? typedArray.getInt(i, -1) : resourceId;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0036  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0044  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static void g(java.lang.Object r7, android.content.res.TypedArray r8, int r9, int r10) {
-        /*
-            Method dump skipped, instructions count: 370
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.sz.g(java.lang.Object, android.content.res.TypedArray, int, int):void");
+    public static void g(Object obj, TypedArray typedArray, int i, int i2) {
+        int dimensionPixelSize;
+        if (obj == null) {
+            return;
+        }
+        int i3 = typedArray.peekValue(i).type;
+        boolean z = true;
+        int i4 = 0;
+        if (i3 == 3) {
+            String string = typedArray.getString(i);
+            if (string == null) {
+                return;
+            }
+            int indexOf = string.indexOf(61);
+            int length = string.length();
+            if (indexOf <= 0 || indexOf >= length - 1) {
+                return;
+            }
+            String substring = string.substring(0, indexOf);
+            String substring2 = string.substring(indexOf + 1);
+            if (substring2.length() > 0) {
+                String trim = substring.trim();
+                String trim2 = substring2.trim();
+                if ("ratio".equalsIgnoreCase(trim)) {
+                    if (obj instanceof iz) {
+                        iz izVar = (iz) obj;
+                        if (i2 == 0) {
+                            ((ViewGroup.MarginLayoutParams) izVar).width = 0;
+                        } else {
+                            ((ViewGroup.MarginLayoutParams) izVar).height = 0;
+                        }
+                        h(izVar, trim2);
+                        return;
+                    }
+                    if (obj instanceof oz) {
+                        ((oz) obj).y = trim2;
+                        return;
+                    } else {
+                        if (obj instanceof mz) {
+                            ((mz) obj).c(5, trim2);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                try {
+                    if ("weight".equalsIgnoreCase(trim)) {
+                        float parseFloat = Float.parseFloat(trim2);
+                        if (obj instanceof iz) {
+                            iz izVar2 = (iz) obj;
+                            if (i2 == 0) {
+                                ((ViewGroup.MarginLayoutParams) izVar2).width = 0;
+                                izVar2.H = parseFloat;
+                                return;
+                            } else {
+                                ((ViewGroup.MarginLayoutParams) izVar2).height = 0;
+                                izVar2.I = parseFloat;
+                                return;
+                            }
+                        }
+                        if (obj instanceof oz) {
+                            oz ozVar = (oz) obj;
+                            if (i2 == 0) {
+                                ozVar.b = 0;
+                                ozVar.U = parseFloat;
+                                return;
+                            } else {
+                                ozVar.c = 0;
+                                ozVar.T = parseFloat;
+                                return;
+                            }
+                        }
+                        if (obj instanceof mz) {
+                            mz mzVar = (mz) obj;
+                            if (i2 == 0) {
+                                mzVar.b(23, 0);
+                                mzVar.a(39, parseFloat);
+                                return;
+                            } else {
+                                mzVar.b(21, 0);
+                                mzVar.a(40, parseFloat);
+                                return;
+                            }
+                        }
+                        return;
+                    }
+                    if ("parent".equalsIgnoreCase(trim)) {
+                        float max = Math.max(0.0f, Math.min(1.0f, Float.parseFloat(trim2)));
+                        if (obj instanceof iz) {
+                            iz izVar3 = (iz) obj;
+                            if (i2 == 0) {
+                                ((ViewGroup.MarginLayoutParams) izVar3).width = 0;
+                                izVar3.R = max;
+                                izVar3.L = 2;
+                                return;
+                            } else {
+                                ((ViewGroup.MarginLayoutParams) izVar3).height = 0;
+                                izVar3.S = max;
+                                izVar3.M = 2;
+                                return;
+                            }
+                        }
+                        if (obj instanceof oz) {
+                            oz ozVar2 = (oz) obj;
+                            if (i2 == 0) {
+                                ozVar2.b = 0;
+                                ozVar2.d0 = max;
+                                ozVar2.X = 2;
+                                return;
+                            } else {
+                                ozVar2.c = 0;
+                                ozVar2.e0 = max;
+                                ozVar2.Y = 2;
+                                return;
+                            }
+                        }
+                        if (obj instanceof mz) {
+                            mz mzVar2 = (mz) obj;
+                            if (i2 == 0) {
+                                mzVar2.b(23, 0);
+                                mzVar2.b(54, 2);
+                                return;
+                            } else {
+                                mzVar2.b(21, 0);
+                                mzVar2.b(55, 2);
+                                return;
+                            }
+                        }
+                        return;
+                    }
+                    return;
+                } catch (NumberFormatException unused) {
+                    return;
+                }
+            }
+            return;
+        }
+        if (i3 != 5) {
+            dimensionPixelSize = typedArray.getInt(i, 0);
+            if (dimensionPixelSize == -4) {
+                i4 = -2;
+            } else if (dimensionPixelSize == -3 || (dimensionPixelSize != -2 && dimensionPixelSize != -1)) {
+                z = false;
+            }
+            if (!(obj instanceof iz)) {
+                iz izVar4 = (iz) obj;
+                if (i2 == 0) {
+                    ((ViewGroup.MarginLayoutParams) izVar4).width = i4;
+                    izVar4.W = z;
+                    return;
+                } else {
+                    ((ViewGroup.MarginLayoutParams) izVar4).height = i4;
+                    izVar4.X = z;
+                    return;
+                }
+            }
+            if (obj instanceof oz) {
+                oz ozVar3 = (oz) obj;
+                if (i2 == 0) {
+                    ozVar3.b = i4;
+                    ozVar3.l0 = z;
+                    return;
+                } else {
+                    ozVar3.c = i4;
+                    ozVar3.m0 = z;
+                    return;
+                }
+            }
+            if (obj instanceof mz) {
+                mz mzVar3 = (mz) obj;
+                if (i2 == 0) {
+                    mzVar3.b(23, i4);
+                    mzVar3.d(80, z);
+                    return;
+                } else {
+                    mzVar3.b(21, i4);
+                    mzVar3.d(81, z);
+                    return;
+                }
+            }
+            return;
+        }
+        dimensionPixelSize = typedArray.getDimensionPixelSize(i, 0);
+        z = false;
+        i4 = dimensionPixelSize;
+        if (!(obj instanceof iz)) {
+        }
     }
 
     public static void h(iz izVar, String str) {
         if (str != null) {
             int length = str.length();
-            int iIndexOf = str.indexOf(44);
+            int indexOf = str.indexOf(44);
             int i = -1;
-            if (iIndexOf > 0 && iIndexOf < length - 1) {
-                String strSubstring = str.substring(0, iIndexOf);
-                i = strSubstring.equalsIgnoreCase("W") ? 0 : strSubstring.equalsIgnoreCase("H") ? 1 : -1;
-                i = iIndexOf + 1;
+            if (indexOf > 0 && indexOf < length - 1) {
+                String substring = str.substring(0, indexOf);
+                i = substring.equalsIgnoreCase("W") ? 0 : substring.equalsIgnoreCase("H") ? 1 : -1;
+                r2 = indexOf + 1;
             }
-            int iIndexOf2 = str.indexOf(58);
+            int indexOf2 = str.indexOf(58);
             try {
-                if (iIndexOf2 < 0 || iIndexOf2 >= length - 1) {
-                    String strSubstring2 = str.substring(i);
-                    if (strSubstring2.length() > 0) {
-                        Float.parseFloat(strSubstring2);
+                if (indexOf2 < 0 || indexOf2 >= length - 1) {
+                    String substring2 = str.substring(r2);
+                    if (substring2.length() > 0) {
+                        Float.parseFloat(substring2);
                     }
                 } else {
-                    String strSubstring3 = str.substring(i, iIndexOf2);
-                    String strSubstring4 = str.substring(iIndexOf2 + 1);
-                    if (strSubstring3.length() > 0 && strSubstring4.length() > 0) {
-                        float f2 = Float.parseFloat(strSubstring3);
-                        float f3 = Float.parseFloat(strSubstring4);
-                        if (f2 > 0.0f && f3 > 0.0f) {
+                    String substring3 = str.substring(r2, indexOf2);
+                    String substring4 = str.substring(indexOf2 + 1);
+                    if (substring3.length() > 0 && substring4.length() > 0) {
+                        float parseFloat = Float.parseFloat(substring3);
+                        float parseFloat2 = Float.parseFloat(substring4);
+                        if (parseFloat > 0.0f && parseFloat2 > 0.0f) {
                             if (i == 1) {
-                                Math.abs(f3 / f2);
+                                Math.abs(parseFloat2 / parseFloat);
                             } else {
-                                Math.abs(f2 / f3);
+                                Math.abs(parseFloat / parseFloat2);
                             }
                         }
                     }
@@ -1246,33 +1358,33 @@ public final class sz {
         int i;
         int i2;
         String str;
-        HashMap map;
-        String resourceEntryName;
+        HashMap hashMap;
+        String str2;
         sz szVar = this;
         int childCount = constraintLayout.getChildCount();
-        HashMap map2 = szVar.c;
-        HashSet hashSet2 = new HashSet(map2.keySet());
+        HashMap hashMap2 = szVar.c;
+        HashSet hashSet2 = new HashSet(hashMap2.keySet());
         int i3 = 0;
         while (i3 < childCount) {
             View childAt = constraintLayout.getChildAt(i3);
             int id = childAt.getId();
-            if (!map2.containsKey(Integer.valueOf(id))) {
+            if (!hashMap2.containsKey(Integer.valueOf(id))) {
                 StringBuilder sb = new StringBuilder("id unknown ");
                 try {
-                    resourceEntryName = childAt.getContext().getResources().getResourceEntryName(childAt.getId());
+                    str2 = childAt.getContext().getResources().getResourceEntryName(childAt.getId());
                 } catch (Exception unused) {
-                    resourceEntryName = "UNKNOWN";
+                    str2 = "UNKNOWN";
                 }
-                sb.append(resourceEntryName);
+                sb.append(str2);
                 Log.w("ConstraintSet", sb.toString());
             } else {
                 if (szVar.b && id == -1) {
                     throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
                 }
                 if (id != -1) {
-                    if (map2.containsKey(Integer.valueOf(id))) {
+                    if (hashMap2.containsKey(Integer.valueOf(id))) {
                         hashSet2.remove(Integer.valueOf(id));
-                        nz nzVar = (nz) map2.get(Integer.valueOf(id));
+                        nz nzVar = (nz) hashMap2.get(Integer.valueOf(id));
                         if (nzVar != null) {
                             qz qzVar = nzVar.b;
                             oz ozVar = nzVar.d;
@@ -1288,114 +1400,114 @@ public final class sz {
                                 if (iArr != null) {
                                     jkVar.setReferencedIds(iArr);
                                 } else {
-                                    String str2 = ozVar.j0;
-                                    if (str2 != null) {
-                                        int[] iArrC = c(jkVar, str2);
-                                        ozVar.i0 = iArrC;
-                                        jkVar.setReferencedIds(iArrC);
+                                    String str3 = ozVar.j0;
+                                    if (str3 != null) {
+                                        int[] c = c(jkVar, str3);
+                                        ozVar.i0 = c;
+                                        jkVar.setReferencedIds(c);
                                     }
                                 }
                             }
                             iz izVar = (iz) childAt.getLayoutParams();
                             izVar.a();
                             nzVar.a(izVar);
-                            HashMap map3 = nzVar.f;
+                            HashMap hashMap3 = nzVar.f;
                             Class<?> cls = childAt.getClass();
-                            for (String str3 : map3.keySet()) {
-                                fz fzVar = (fz) map3.get(str3);
+                            for (String str4 : hashMap3.keySet()) {
+                                fz fzVar = (fz) hashMap3.get(str4);
                                 HashSet hashSet3 = hashSet2;
-                                if (fzVar.f393a) {
+                                if (fzVar.f392a) {
                                     i2 = i3;
-                                    str = str3;
+                                    str = str4;
                                 } else {
                                     i2 = i3;
-                                    str = "set" + str3;
+                                    str = "set" + str4;
                                 }
                                 try {
-                                    int iW = zd.w(fzVar.b);
+                                    int w = zd.w(fzVar.b);
                                     Class cls2 = Float.TYPE;
                                     Class cls3 = Integer.TYPE;
-                                    switch (iW) {
+                                    switch (w) {
                                         case 0:
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             cls.getMethod(str, cls3).invoke(childAt, Integer.valueOf(fzVar.c));
                                             break;
                                         case 1:
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             cls.getMethod(str, cls2).invoke(childAt, Float.valueOf(fzVar.d));
                                             break;
                                         case 2:
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             cls.getMethod(str, cls3).invoke(childAt, Integer.valueOf(fzVar.g));
                                             break;
                                         case BCell.NETWORK_TYPE_UMTS /* 3 */:
                                             Method method = cls.getMethod(str, Drawable.class);
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             try {
                                                 ColorDrawable colorDrawable = new ColorDrawable();
                                                 colorDrawable.setColor(fzVar.g);
                                                 method.invoke(childAt, colorDrawable);
                                             } catch (IllegalAccessException e2) {
                                                 e = e2;
-                                                Log.e("TransitionLayout", " Custom Attribute \"" + str3 + "\" not found on " + cls.getName(), e);
+                                                Log.e("TransitionLayout", " Custom Attribute \"" + str4 + "\" not found on " + cls.getName(), e);
                                                 hashSet2 = hashSet3;
                                                 i3 = i2;
-                                                map3 = map;
+                                                hashMap3 = hashMap;
                                             } catch (NoSuchMethodException e3) {
                                                 e = e3;
                                                 Log.e("TransitionLayout", cls.getName() + " must have a method " + str, e);
                                                 hashSet2 = hashSet3;
                                                 i3 = i2;
-                                                map3 = map;
+                                                hashMap3 = hashMap;
                                             } catch (InvocationTargetException e4) {
                                                 e = e4;
-                                                Log.e("TransitionLayout", " Custom Attribute \"" + str3 + "\" not found on " + cls.getName(), e);
+                                                Log.e("TransitionLayout", " Custom Attribute \"" + str4 + "\" not found on " + cls.getName(), e);
                                                 hashSet2 = hashSet3;
                                                 i3 = i2;
-                                                map3 = map;
+                                                hashMap3 = hashMap;
                                             }
                                         case 4:
                                             cls.getMethod(str, CharSequence.class).invoke(childAt, fzVar.e);
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             break;
-                                        case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                                        case 5:
                                             cls.getMethod(str, Boolean.TYPE).invoke(childAt, Boolean.valueOf(fzVar.f));
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             break;
-                                        case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                                        case 6:
                                             cls.getMethod(str, cls2).invoke(childAt, Float.valueOf(fzVar.d));
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             break;
                                         case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                                             cls.getMethod(str, cls3).invoke(childAt, Integer.valueOf(fzVar.c));
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             break;
                                         default:
-                                            map = map3;
+                                            hashMap = hashMap3;
                                             break;
                                     }
                                 } catch (IllegalAccessException e5) {
                                     e = e5;
-                                    map = map3;
+                                    hashMap = hashMap3;
                                 } catch (NoSuchMethodException e6) {
                                     e = e6;
-                                    map = map3;
+                                    hashMap = hashMap3;
                                 } catch (InvocationTargetException e7) {
                                     e = e7;
-                                    map = map3;
+                                    hashMap = hashMap3;
                                 }
                                 hashSet2 = hashSet3;
                                 i3 = i2;
-                                map3 = map;
+                                hashMap3 = hashMap;
                             }
                             hashSet = hashSet2;
                             i = i3;
                             childAt.setLayoutParams(izVar);
                             if (qzVar.b == 0) {
-                                childAt.setVisibility(qzVar.f986a);
+                                childAt.setVisibility(qzVar.f985a);
                             }
                             childAt.setAlpha(qzVar.c);
-                            childAt.setRotation(rzVar.f1041a);
+                            childAt.setRotation(rzVar.f1040a);
                             childAt.setRotationX(rzVar.b);
                             childAt.setRotationY(rzVar.c);
                             childAt.setScaleX(rzVar.d);
@@ -1429,10 +1541,10 @@ public final class sz {
                         i = i3;
                         Log.v("ConstraintSet", "WARNING NO CONSTRAINTS for view " + id);
                     }
+                    i3 = i + 1;
+                    szVar = this;
+                    hashSet2 = hashSet;
                 }
-                i3 = i + 1;
-                szVar = this;
-                hashSet2 = hashSet;
             }
             hashSet = hashSet2;
             i = i3;
@@ -1443,7 +1555,7 @@ public final class sz {
         Iterator it = hashSet2.iterator();
         while (it.hasNext()) {
             Integer num = (Integer) it.next();
-            nz nzVar2 = (nz) map2.get(num);
+            nz nzVar2 = (nz) hashMap2.get(num);
             if (nzVar2 != null) {
                 oz ozVar2 = nzVar2.d;
                 if (ozVar2.h0 == 1) {
@@ -1466,26 +1578,26 @@ public final class sz {
                     if (iArr2 != null) {
                         jkVar2.setReferencedIds(iArr2);
                     } else {
-                        String str4 = ozVar2.j0;
-                        if (str4 != null) {
-                            int[] iArrC2 = c(jkVar2, str4);
-                            ozVar2.i0 = iArrC2;
-                            jkVar2.setReferencedIds(iArrC2);
+                        String str5 = ozVar2.j0;
+                        if (str5 != null) {
+                            int[] c2 = c(jkVar2, str5);
+                            ozVar2.i0 = c2;
+                            jkVar2.setReferencedIds(c2);
                         }
                     }
                     jkVar2.setType(ozVar2.f0);
                     jkVar2.setMargin(ozVar2.g0);
-                    iz izVarA = ConstraintLayout.a();
+                    iz a2 = ConstraintLayout.a();
                     jkVar2.i();
-                    nzVar2.a(izVarA);
-                    constraintLayout.addView(jkVar2, izVarA);
+                    nzVar2.a(a2);
+                    constraintLayout.addView(jkVar2, a2);
                 }
-                if (ozVar2.f881a) {
+                if (ozVar2.f880a) {
                     View kq0Var = new kq0(constraintLayout.getContext());
                     kq0Var.setId(num.intValue());
-                    iz izVarA2 = ConstraintLayout.a();
-                    nzVar2.a(izVarA2);
-                    constraintLayout.addView(kq0Var, izVarA2);
+                    iz a3 = ConstraintLayout.a();
+                    nzVar2.a(a3);
+                    constraintLayout.addView(kq0Var, a3);
                 }
             }
         }
@@ -1499,12 +1611,12 @@ public final class sz {
 
     public final void b(ConstraintLayout constraintLayout) {
         int i;
-        HashMap map;
+        HashMap hashMap;
         int i2;
         sz szVar = this;
         int childCount = constraintLayout.getChildCount();
-        HashMap map2 = szVar.c;
-        map2.clear();
+        HashMap hashMap2 = szVar.c;
+        hashMap2.clear();
         int i3 = 0;
         while (i3 < childCount) {
             View childAt = constraintLayout.getChildAt(i3);
@@ -1513,32 +1625,32 @@ public final class sz {
             if (szVar.b && id == -1) {
                 throw new RuntimeException("All children of ConstraintLayout must have ids to use ConstraintSet");
             }
-            if (!map2.containsKey(Integer.valueOf(id))) {
-                map2.put(Integer.valueOf(id), new nz());
+            if (!hashMap2.containsKey(Integer.valueOf(id))) {
+                hashMap2.put(Integer.valueOf(id), new nz());
             }
-            nz nzVar = (nz) map2.get(Integer.valueOf(id));
+            nz nzVar = (nz) hashMap2.get(Integer.valueOf(id));
             if (nzVar == null) {
                 i = childCount;
-                map = map2;
+                hashMap = hashMap2;
                 i2 = i3;
             } else {
                 qz qzVar = nzVar.b;
                 oz ozVar = nzVar.d;
                 rz rzVar = nzVar.e;
                 i = childCount;
-                HashMap map3 = new HashMap();
-                map = map2;
+                HashMap hashMap3 = new HashMap();
+                hashMap = hashMap2;
                 Class<?> cls = childAt.getClass();
                 i2 = i3;
-                HashMap map4 = szVar.f1094a;
-                for (String str : map4.keySet()) {
-                    fz fzVar = (fz) map4.get(str);
-                    HashMap map5 = map4;
+                HashMap hashMap4 = szVar.f1093a;
+                for (String str : hashMap4.keySet()) {
+                    fz fzVar = (fz) hashMap4.get(str);
+                    HashMap hashMap5 = hashMap4;
                     try {
                         if (str.equals("BackgroundColor")) {
-                            map3.put(str, new fz(fzVar, Integer.valueOf(((ColorDrawable) childAt.getBackground()).getColor())));
+                            hashMap3.put(str, new fz(fzVar, Integer.valueOf(((ColorDrawable) childAt.getBackground()).getColor())));
                         } else {
-                            map3.put(str, new fz(fzVar, cls.getMethod("getMap" + str, null).invoke(childAt, null)));
+                            hashMap3.put(str, new fz(fzVar, cls.getMethod("getMap" + str, null).invoke(childAt, null)));
                         }
                     } catch (IllegalAccessException e2) {
                         Log.e("TransitionLayout", " Custom Attribute \"" + str + "\" not found on " + cls.getName(), e2);
@@ -1547,10 +1659,10 @@ public final class sz {
                     } catch (InvocationTargetException e4) {
                         Log.e("TransitionLayout", " Custom Attribute \"" + str + "\" not found on " + cls.getName(), e4);
                     }
-                    map4 = map5;
+                    hashMap4 = hashMap5;
                 }
-                nzVar.f = map3;
-                nzVar.f833a = id;
+                nzVar.f = hashMap3;
+                nzVar.f832a = id;
                 ozVar.h = izVar.e;
                 ozVar.i = izVar.f;
                 ozVar.j = izVar.g;
@@ -1576,7 +1688,7 @@ public final class sz {
                 ozVar.D = izVar.U;
                 ozVar.E = izVar.V;
                 ozVar.f = izVar.c;
-                ozVar.d = izVar.f556a;
+                ozVar.d = izVar.f555a;
                 ozVar.e = izVar.b;
                 ozVar.b = ((ViewGroup.MarginLayoutParams) izVar).width;
                 ozVar.c = ((ViewGroup.MarginLayoutParams) izVar).height;
@@ -1610,9 +1722,9 @@ public final class sz {
                 ozVar.o0 = izVar.Z;
                 ozVar.J = izVar.getMarginEnd();
                 ozVar.K = izVar.getMarginStart();
-                qzVar.f986a = childAt.getVisibility();
+                qzVar.f985a = childAt.getVisibility();
                 qzVar.c = childAt.getAlpha();
-                rzVar.f1041a = childAt.getRotation();
+                rzVar.f1040a = childAt.getRotation();
                 rzVar.b = childAt.getRotationX();
                 rzVar.c = childAt.getRotationY();
                 rzVar.d = childAt.getScaleX();
@@ -1640,7 +1752,7 @@ public final class sz {
             i3 = i2 + 1;
             szVar = this;
             childCount = i;
-            map2 = map;
+            hashMap2 = hashMap;
         }
     }
 
@@ -1650,11 +1762,11 @@ public final class sz {
             for (int eventType = xml.getEventType(); eventType != 1; eventType = xml.next()) {
                 if (eventType == 2) {
                     String name = xml.getName();
-                    nz nzVarD = d(context, Xml.asAttributeSet(xml), false);
+                    nz d2 = d(context, Xml.asAttributeSet(xml), false);
                     if (name.equalsIgnoreCase("Guideline")) {
-                        nzVarD.d.f881a = true;
+                        d2.d.f880a = true;
                     }
-                    this.c.put(Integer.valueOf(nzVarD.f833a), nzVarD);
+                    this.c.put(Integer.valueOf(d2.f832a), d2);
                 }
             }
         } catch (IOException e2) {

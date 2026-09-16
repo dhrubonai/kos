@@ -13,7 +13,6 @@ import com.kos.engine.entity.AppConfig;
 import com.kos.engine.proxy.ProxyManifest;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -46,7 +45,7 @@ public class ProcessRecord extends Binder {
         return this.callingBUid;
     }
 
-    public AppConfig getClientConfig() throws IOException {
+    public AppConfig getClientConfig() {
         AppConfig appConfig = new AppConfig();
         appConfig.packageName = this.info.packageName;
         appConfig.processName = this.processName;

@@ -13,7 +13,7 @@ import java.util.HashMap;
 public final class fz {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f393a = false;
+    public boolean f392a = false;
     public int b;
     public int c;
     public float d;
@@ -27,58 +27,58 @@ public final class fz {
         b(obj);
     }
 
-    public static void a(Context context, XmlResourceParser xmlResourceParser, HashMap map) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.d);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
-        String string = null;
+    public static void a(Context context, XmlResourceParser xmlResourceParser, HashMap hashMap) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.d);
+        int indexCount = obtainStyledAttributes.getIndexCount();
+        String str = null;
         int i = 0;
         boolean z = false;
-        Object objValueOf = null;
+        Object obj = null;
         for (int i2 = 0; i2 < indexCount; i2++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i2);
+            int index = obtainStyledAttributes.getIndex(i2);
             int i3 = 1;
             if (index == 0) {
-                string = typedArrayObtainStyledAttributes.getString(index);
-                if (string != null && string.length() > 0) {
-                    string = Character.toUpperCase(string.charAt(0)) + string.substring(1);
+                str = obtainStyledAttributes.getString(index);
+                if (str != null && str.length() > 0) {
+                    str = Character.toUpperCase(str.charAt(0)) + str.substring(1);
                 }
             } else if (index == 10) {
-                string = typedArrayObtainStyledAttributes.getString(index);
+                str = obtainStyledAttributes.getString(index);
                 z = true;
             } else if (index == 1) {
-                objValueOf = Boolean.valueOf(typedArrayObtainStyledAttributes.getBoolean(index, false));
+                obj = Boolean.valueOf(obtainStyledAttributes.getBoolean(index, false));
                 i = 6;
             } else {
                 int i4 = 3;
                 if (index == 3) {
-                    objValueOf = Integer.valueOf(typedArrayObtainStyledAttributes.getColor(index, 0));
+                    obj = Integer.valueOf(obtainStyledAttributes.getColor(index, 0));
                 } else {
                     i4 = 4;
                     if (index == 2) {
-                        objValueOf = Integer.valueOf(typedArrayObtainStyledAttributes.getColor(index, 0));
+                        obj = Integer.valueOf(obtainStyledAttributes.getColor(index, 0));
                     } else {
                         if (index == 7) {
-                            objValueOf = Float.valueOf(TypedValue.applyDimension(1, typedArrayObtainStyledAttributes.getDimension(index, 0.0f), context.getResources().getDisplayMetrics()));
+                            obj = Float.valueOf(TypedValue.applyDimension(1, obtainStyledAttributes.getDimension(index, 0.0f), context.getResources().getDisplayMetrics()));
                         } else if (index == 4) {
-                            objValueOf = Float.valueOf(typedArrayObtainStyledAttributes.getDimension(index, 0.0f));
+                            obj = Float.valueOf(obtainStyledAttributes.getDimension(index, 0.0f));
                         } else {
                             i4 = 5;
                             if (index == 5) {
-                                objValueOf = Float.valueOf(typedArrayObtainStyledAttributes.getFloat(index, Float.NaN));
+                                obj = Float.valueOf(obtainStyledAttributes.getFloat(index, Float.NaN));
                                 i = 2;
                             } else {
                                 if (index == 6) {
-                                    objValueOf = Integer.valueOf(typedArrayObtainStyledAttributes.getInteger(index, -1));
+                                    obj = Integer.valueOf(obtainStyledAttributes.getInteger(index, -1));
                                 } else if (index == 9) {
-                                    objValueOf = typedArrayObtainStyledAttributes.getString(index);
+                                    obj = obtainStyledAttributes.getString(index);
                                 } else {
                                     i3 = 8;
                                     if (index == 8) {
-                                        int resourceId = typedArrayObtainStyledAttributes.getResourceId(index, -1);
+                                        int resourceId = obtainStyledAttributes.getResourceId(index, -1);
                                         if (resourceId == -1) {
-                                            resourceId = typedArrayObtainStyledAttributes.getInt(index, -1);
+                                            resourceId = obtainStyledAttributes.getInt(index, -1);
                                         }
-                                        objValueOf = Integer.valueOf(resourceId);
+                                        obj = Integer.valueOf(resourceId);
                                     }
                                 }
                                 i = i3;
@@ -90,14 +90,14 @@ public final class fz {
                 i = i4;
             }
         }
-        if (string != null && objValueOf != null) {
+        if (str != null && obj != null) {
             fz fzVar = new fz();
             fzVar.b = i;
-            fzVar.f393a = z;
-            fzVar.b(objValueOf);
-            map.put(string, fzVar);
+            fzVar.f392a = z;
+            fzVar.b(obj);
+            hashMap.put(str, fzVar);
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 
     public final void b(Object obj) {
@@ -116,10 +116,10 @@ public final class fz {
             case 4:
                 this.e = (String) obj;
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 this.f = ((Boolean) obj).booleanValue();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 this.d = ((Float) obj).floatValue();
                 break;
         }

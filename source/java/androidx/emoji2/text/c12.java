@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class c12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final jf2 f179a = new jf2(hy.F);
+    public static final jf2 f178a = new jf2(hy.F);
     public static final ky b = new ky(hy.E);
     public static final f12 c;
     public static final f12 d;
@@ -28,20 +28,20 @@ public abstract class c12 {
         long j = et.k;
         tx txVar = (tx) lxVar;
         txVar.X(-1280632857);
-        if (((Boolean) txVar.j(f179a)).booleanValue()) {
-            vo2 vo2Var = d12.f234a;
-            mf1 mf1VarB0 = az0.b0(new et(j), txVar);
+        if (((Boolean) txVar.j(f178a)).booleanValue()) {
+            vo2 vo2Var = d12.f233a;
+            mf1 b0 = az0.b0(new et(j), txVar);
             boolean z3 = (((i & 14) ^ 6) > 4 && txVar.g(z)) || (i & 6) == 4;
             if ((((i & 112) ^ 48) <= 32 || !txVar.c(f)) && (i & 48) != 32) {
                 z2 = false;
             }
             boolean z4 = z3 | z2;
-            Object objM = txVar.M();
-            if (z4 || objM == kx.f663a) {
-                objM = new yr1(z, f, mf1VarB0);
-                txVar.i0(objM);
+            Object M = txVar.M();
+            if (z4 || M == kx.f662a) {
+                M = new yr1(z, f, b0);
+                txVar.i0(M);
             }
-            f12Var = (yr1) objM;
+            f12Var = (yr1) M;
         } else if (da0.a(f, Float.NaN) && et.c(j, j)) {
             f12Var = z ? c : d;
         } else {

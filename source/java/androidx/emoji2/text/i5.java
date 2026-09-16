@@ -18,13 +18,13 @@ public final class i5 extends g01 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         int i = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         String str = this.f;
         switch (i) {
             case 0:
-                wy0[] wy0VarArr = e72.f290a;
+                wy0[] wy0VarArr = e72.f289a;
                 f72 f72Var = c72.d;
-                wy0 wy0Var = e72.f290a[2];
+                wy0 wy0Var = e72.f289a[2];
                 f72Var.a((u62) obj, str);
                 break;
             case 1:
@@ -42,9 +42,9 @@ public final class i5 extends g01 implements um0 {
                 break;
             case 4:
                 u62 u62Var3 = (u62) obj;
-                wy0[] wy0VarArr2 = e72.f290a;
+                wy0[] wy0VarArr2 = e72.f289a;
                 f72 f72Var2 = c72.d;
-                wy0[] wy0VarArr3 = e72.f290a;
+                wy0[] wy0VarArr3 = e72.f289a;
                 wy0 wy0Var2 = wy0VarArr3[2];
                 f72Var2.a(u62Var3, str);
                 f72 f72Var3 = c72.s;

@@ -12,7 +12,7 @@ public final class fy1 {
     public static final /* synthetic */ int e = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public Class f392a;
+    public Class f391a;
     public Object b;
     public Field c;
     public Method d;
@@ -25,7 +25,7 @@ public final class fy1 {
         try {
             Class<?> cls = Class.forName(str, true, fy1.class.getClassLoader());
             fy1 fy1Var = new fy1();
-            fy1Var.f392a = cls;
+            fy1Var.f391a = cls;
             return fy1Var;
         } catch (Throwable th) {
             throw new Exception(a.a.a.c.a(-1296354832957218L, xa1.b), th);
@@ -35,13 +35,13 @@ public final class fy1 {
     public static fy1 i(Object obj) {
         Class<?> cls = obj.getClass();
         fy1 fy1Var = new fy1();
-        fy1Var.f392a = cls;
+        fy1Var.f391a = cls;
         fy1Var.c(obj);
         fy1Var.b = obj;
         return fy1Var;
     }
 
-    public final Object a(Object obj, Object... objArr) throws Exception {
+    public final Object a(Object obj, Object... objArr) {
         Method method = this.d;
         String[] strArr = xa1.b;
         b(obj, method, a.a.a.c.a(-1296947538444066L, strArr));
@@ -54,12 +54,12 @@ public final class fy1 {
         }
     }
 
-    public final void b(Object obj, Member member, String str) throws Exception {
+    public final void b(Object obj, Member member, String str) {
         String[] strArr = xa1.b;
         if (member == null) {
-            StringBuilder sbK = jx0.k(str);
-            sbK.append(a.a.a.c.a(-1297282545893154L, strArr));
-            throw new Exception(sbK.toString());
+            StringBuilder k = jx0.k(str);
+            k.append(a.a.a.c.a(-1297282545893154L, strArr));
+            throw new Exception(k.toString());
         }
         if (obj == null && !Modifier.isStatic(member.getModifiers())) {
             throw new Exception(a.a.a.c.a(-1297295430795042L, strArr));
@@ -67,8 +67,8 @@ public final class fy1 {
         c(obj);
     }
 
-    public final void c(Object obj) throws Exception {
-        if (obj == null || this.f392a.isInstance(obj)) {
+    public final void c(Object obj) {
+        if (obj == null || this.f391a.isInstance(obj)) {
             return;
         }
         StringBuilder sb = new StringBuilder();
@@ -76,7 +76,7 @@ public final class fy1 {
         sb.append(a.a.a.c.a(-1296500861845282L, strArr));
         sb.append(obj);
         sb.append(a.a.a.c.a(-1296591056158498L, strArr));
-        sb.append(this.f392a);
+        sb.append(this.f391a);
         sb.append(a.a.a.c.a(-1297218121383714L, strArr));
         throw new Exception(sb.toString());
     }
@@ -85,11 +85,11 @@ public final class fy1 {
         Field declaredField;
         try {
             try {
-                declaredField = this.f392a.getField(str);
+                declaredField = this.f391a.getField(str);
             } catch (NoSuchFieldException e2) {
-                for (Class superclass = this.f392a; superclass != null; superclass = superclass.getSuperclass()) {
+                for (Class cls = this.f391a; cls != null; cls = cls.getSuperclass()) {
                     try {
-                        declaredField = superclass.getDeclaredField(str);
+                        declaredField = cls.getDeclaredField(str);
                     } catch (NoSuchFieldException unused) {
                     }
                 }
@@ -103,7 +103,7 @@ public final class fy1 {
         }
     }
 
-    public final Object e(Object obj) throws Exception {
+    public final Object e(Object obj) {
         Field field = this.c;
         String[] strArr = xa1.b;
         b(obj, field, a.a.a.c.a(-1297419984846626L, strArr));
@@ -118,11 +118,11 @@ public final class fy1 {
         Method declaredMethod;
         try {
             try {
-                declaredMethod = this.f392a.getMethod(str, clsArr);
+                declaredMethod = this.f391a.getMethod(str, clsArr);
             } catch (NoSuchMethodException e2) {
-                for (Class superclass = this.f392a; superclass != null; superclass = superclass.getSuperclass()) {
+                for (Class cls = this.f391a; cls != null; cls = cls.getSuperclass()) {
                     try {
-                        declaredMethod = superclass.getDeclaredMethod(str, clsArr);
+                        declaredMethod = cls.getDeclaredMethod(str, clsArr);
                     } catch (NoSuchMethodException unused) {
                     }
                 }
@@ -136,7 +136,7 @@ public final class fy1 {
         }
     }
 
-    public final void h(Object obj, Object obj2) throws Exception {
+    public final void h(Object obj, Object obj2) {
         Field field = this.c;
         String[] strArr = xa1.b;
         b(obj, field, a.a.a.c.a(-1296887408901922L, strArr));

@@ -9,7 +9,7 @@ public final class q60 extends h42 {
         int i = ri2.c;
         int i2 = ri2.d;
         long j = ri2.e;
-        String str = ri2.f1014a;
+        String str = ri2.f1013a;
         q60 q60Var = new q60();
         q60Var.f = new d30(i, i2, j, str);
         g = q60Var;

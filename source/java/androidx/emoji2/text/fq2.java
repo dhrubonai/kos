@@ -16,8 +16,8 @@ public final class fq2 implements qz0 {
         StringBuilder sb = new StringBuilder();
         sb.append(uri);
         sb.append('-');
-        Configuration configuration = gl1Var.f428a.getResources().getConfiguration();
-        Bitmap.Config[] configArr = h.f447a;
+        Configuration configuration = gl1Var.f427a.getResources().getConfiguration();
+        Bitmap.Config[] configArr = h.f446a;
         sb.append(configuration.uiMode & 48);
         return sb.toString();
     }

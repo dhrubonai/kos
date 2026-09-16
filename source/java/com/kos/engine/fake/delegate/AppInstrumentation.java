@@ -3,16 +3,23 @@ package com.kos.engine.fake.delegate;
 import a.a.a.c;
 import android.R;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Application;
 import android.app.Instrumentation;
 import android.app.NativeActivity;
+import android.app.WallpaperManager;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,26 +38,34 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.dd2;
+import androidx.emoji2.text.fy1;
 import androidx.emoji2.text.g7;
 import androidx.emoji2.text.jx0;
 import androidx.emoji2.text.kp0;
+import androidx.emoji2.text.kx0;
 import androidx.emoji2.text.nz0;
 import androidx.emoji2.text.rj;
 import androidx.emoji2.text.v00;
 import androidx.emoji2.text.v6;
 import androidx.emoji2.text.xa1;
 import androidx.emoji2.text.zd;
+import black.android.app.BRActivity;
+import black.android.app.BRActivityManagerNative;
 import black.android.app.BRActivityThread;
+import black.android.app.BRIActivityManager;
+import black.com.android.internal.BRRstyleable;
 import com.kos.engine.core.GmsCore;
 import com.kos.engine.fake.delegate.AppInstrumentation;
 import com.kos.engine.fake.frameworks.BPackageManager;
 import com.kos.engine.fake.hook.HookManager;
 import com.kos.engine.fake.hook.IInjectHook;
 import com.kos.engine.fake.service.HCallbackProxy;
+import com.kos.engine.fake.service.IActivityClientProxy;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Locale;
 import java.util.Set;
 import java.util.WeakHashMap;
 
@@ -130,22 +145,22 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
 
     private void applyGuestActivityTheme(Activity activity, int i) {
         try {
-            Resources.Theme themeNewTheme = activity.getResources().newTheme();
+            Resources.Theme newTheme = activity.getResources().newTheme();
             Context baseContext = activity.getBaseContext();
             Resources.Theme theme = baseContext == null ? null : baseContext.getTheme();
             if (theme != null) {
-                themeNewTheme.setTo(theme);
+                newTheme.setTo(theme);
             }
-            themeNewTheme.applyStyle(i, true);
-            activity.getTheme().setTo(themeNewTheme);
+            newTheme.applyStyle(i, true);
+            activity.getTheme().setTo(newTheme);
             activity.setTheme(i);
         } catch (Throwable th) {
             String[] strArr = xa1.b;
-            String strA = c.a(-381045762572066L, strArr);
+            String a2 = c.a(-381045762572066L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-381093007212322L, strArr));
             sb.append(Integer.toHexString(i));
-            zd.s(sb, c.a(-392801088061218L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-392801088061218L, strArr), th, 5, a2);
             activity.setTheme(i);
         }
     }
@@ -176,33 +191,165 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         return bundle;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0217  */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x020a, code lost:
+    
+        if (r6 != null) goto L70;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:103:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0217  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x023f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private void checkActivity(android.app.Activity r10) throws java.lang.Exception {
-        /*
-            Method dump skipped, instructions count: 634
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.delegate.AppInstrumentation.checkActivity(android.app.Activity):void");
+    private void checkActivity(Activity activity) {
+        PackageManager packageManager;
+        Drawable loadIcon;
+        ActivityInfo mActivityInfo;
+        String str;
+        String[] strArr = xa1.b;
+        Log.d(c.a(-380388632575778L, strArr), c.a(-379903301271330L, strArr) + activity.getClass().getName());
+        String packageName = activity.getPackageName();
+        ClassLoader classLoader = activity.getClassLoader();
+        if (c.a(-1371877537890082L, strArr).equals(packageName)) {
+            try {
+                String a2 = c.a(-1370266925154082L, strArr);
+                int i = fy1.e;
+                try {
+                    Class<?> cls = Class.forName(a2, true, classLoader);
+                    fy1 fy1Var = new fy1();
+                    fy1Var.f391a = cls;
+                    fy1Var.d(c.a(-1370464493649698L, strArr));
+                    fy1Var.h(fy1Var.b, Integer.valueOf(MINICLIP_KEYBOARD_WARMUP_ATTEMPTS));
+                } catch (Throwable th) {
+                    throw new Exception(c.a(-1296354832957218L, strArr), th);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        checkHCallback();
+        HookManager.get().checkEnv(IActivityClientProxy.class);
+        ActivityInfo resolveGuestActivityInfo = resolveGuestActivityInfo(activity, BRActivity.get(activity).mActivityInfo());
+        Bitmap bitmap = null;
+        if (resolveGuestActivityInfo != null && (mActivityInfo = BRActivity.get(activity).mActivityInfo()) != resolveGuestActivityInfo) {
+            BRActivity.get(activity)._set_mActivityInfo(resolveGuestActivityInfo);
+            String a3 = c.a(-380002085519138L, strArr);
+            StringBuilder sb = new StringBuilder();
+            sb.append(c.a(-380066510028578L, strArr));
+            sb.append(resolveGuestActivityInfo.packageName);
+            sb.append(c.a(-378619106049826L, strArr));
+            sb.append(resolveGuestActivityInfo.name);
+            sb.append(c.a(-378610516115234L, strArr));
+            if (mActivityInfo == null) {
+                str = null;
+            } else {
+                str = mActivityInfo.packageName + c.a(-378696415461154L, strArr) + mActivityInfo.name;
+            }
+            zd.p(sb, str, 3, a3);
+        }
+        logPlayGamesDependencyInjectionProbe(activity, resolveGuestActivityInfo);
+        String o = resolveGuestActivityInfo == null ? rj.o() : resolveGuestActivityInfo.packageName;
+        v00.a(activity, o);
+        int i2 = resolveGuestActivityInfo == null ? 0 : resolveGuestActivityInfo.theme;
+        if (i2 == 0 && o != null) {
+            c01 c01Var = c01.r;
+            ApplicationInfo applicationInfo = BPackageManager.get().getApplicationInfo(o, 0, rj.u());
+            i2 = applicationInfo == null ? 0 : applicationInfo.theme;
+        }
+        if (i2 != 0) {
+            applyGuestActivityTheme(activity, i2);
+        }
+        guardNativeActivityWindowTheme(activity, o, i2);
+        disableContentCapture(activity);
+        BRActivity.get(activity).mActivityInfo();
+        Context baseContext = activity.getBaseContext();
+        try {
+            TypedArray obtainStyledAttributes = activity.obtainStyledAttributes(BRRstyleable.get().Window());
+            if (obtainStyledAttributes != null) {
+                if (obtainStyledAttributes.getBoolean(BRRstyleable.get().Window_windowShowWallpaper().intValue(), $assertionsDisabled)) {
+                    activity.getWindow().setBackgroundDrawable(WallpaperManager.getInstance(activity).getDrawable());
+                }
+                if (obtainStyledAttributes.getBoolean(BRRstyleable.get().Window_windowFullscreen().intValue(), $assertionsDisabled)) {
+                    activity.getWindow().addFlags(1024);
+                }
+                obtainStyledAttributes.recycle();
+            }
+        } catch (Throwable th2) {
+            th2.printStackTrace();
+        }
+        Intent intent = activity.getIntent();
+        ApplicationInfo applicationInfo2 = baseContext.getApplicationInfo();
+        PackageManager packageManager2 = activity.getPackageManager();
+        if (intent != null && activity.isTaskRoot()) {
+            try {
+                String format = String.format(Locale.CHINA, c.a(-875774455463714L, strArr), Integer.valueOf(rj.u()), applicationInfo2.loadLabel(packageManager2));
+                String str2 = Build.MANUFACTURER;
+                if (str2 == null || !str2.toLowerCase(Locale.US).contains(c.a(-863392064749346L, strArr))) {
+                    packageManager = activity.getPackageManager();
+                    try {
+                        loadIcon = packageManager.getActivityIcon(activity.getComponentName());
+                    } catch (Throwable unused) {
+                    }
+                }
+                loadIcon = null;
+                if (loadIcon != null) {
+                    int launcherLargeIconSize = ((ActivityManager) baseContext.getSystemService(c.a(-869417903865634L, strArr))).getLauncherLargeIconSize();
+                    bitmap = kx0.u(loadIcon, launcherLargeIconSize, launcherLargeIconSize);
+                }
+                activity.setTaskDescription(new ActivityManager.TaskDescription(format, bitmap));
+            } catch (Throwable th3) {
+                th3.printStackTrace();
+            }
+        }
+        if (resolveGuestActivityInfo != null) {
+            return;
+        }
+        int i3 = resolveGuestActivityInfo.screenOrientation;
+        try {
+            activity.setRequestedOrientation(i3);
+            return;
+        } catch (Throwable th4) {
+            th4.printStackTrace();
+            Activity mParent = BRActivity.get(activity).mParent();
+            while (true) {
+                Activity mParent2 = BRActivity.get(mParent).mParent();
+                if (mParent2 == null) {
+                    try {
+                        BRIActivityManager.get(BRActivityManagerNative.get().getDefault()).setRequestedOrientation(BRActivity.get(mParent).mToken(), i3);
+                        return;
+                    } catch (Throwable th5) {
+                        th5.printStackTrace();
+                        return;
+                    }
+                }
+                mParent = mParent2;
+            }
+        }
+        try {
+            loadIcon = activity.getApplicationInfo().loadIcon(packageManager);
+        } catch (Throwable unused2) {
+        }
+        if (loadIcon != null) {
+        }
+        activity.setTaskDescription(new ActivityManager.TaskDescription(format, bitmap));
+        if (resolveGuestActivityInfo != null) {
+        }
     }
 
     private void checkHCallback() {
         HookManager.get().checkEnv(HCallbackProxy.class);
     }
 
-    private boolean checkInstrumentation(Instrumentation instrumentation) throws SecurityException {
+    private boolean checkInstrumentation(Instrumentation instrumentation) {
         if (instrumentation instanceof AppInstrumentation) {
             return true;
         }
-        Class<?> superclass = instrumentation.getClass();
-        if (Instrumentation.class.equals(superclass)) {
+        Class<?> cls = instrumentation.getClass();
+        if (Instrumentation.class.equals(cls)) {
             return $assertionsDisabled;
         }
         do {
-            for (Field field : superclass.getDeclaredFields()) {
+            for (Field field : cls.getDeclaredFields()) {
                 if (Instrumentation.class.isAssignableFrom(field.getType())) {
                     field.setAccessible(true);
                     try {
@@ -214,8 +361,8 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                     }
                 }
             }
-            superclass = superclass.getSuperclass();
-        } while (!Instrumentation.class.equals(superclass));
+            cls = cls.getSuperclass();
+        } while (!Instrumentation.class.equals(cls));
         return $assertionsDisabled;
     }
 
@@ -241,9 +388,9 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
             return;
         }
         try {
-            ContentCaptureManager contentCaptureManagerH = v6.h(activity.getSystemService(v6.j()));
-            if (contentCaptureManagerH != null) {
-                contentCaptureManagerH.setContentCaptureEnabled(false);
+            ContentCaptureManager h = v6.h(activity.getSystemService(v6.j()));
+            if (h != null) {
+                h.setContentCaptureEnabled(false);
             }
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-392058058719010L, strArr), th, 5, c.a(-391993634209570L, strArr));
@@ -353,18 +500,18 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         if (activity instanceof NativeActivity) {
             try {
                 TypedValue typedValue = new TypedValue();
-                boolean zResolveAttribute = activity.getTheme().resolveAttribute(R.attr.windowNoTitle, typedValue, true);
-                boolean z = (!zResolveAttribute || typedValue.data == 0) ? $assertionsDisabled : true;
+                boolean resolveAttribute = activity.getTheme().resolveAttribute(R.attr.windowNoTitle, typedValue, true);
+                boolean z = (!resolveAttribute || typedValue.data == 0) ? $assertionsDisabled : true;
                 TypedValue typedValue2 = new TypedValue();
-                boolean zResolveAttribute2 = activity.getTheme().resolveAttribute(R.attr.windowTitleSize, typedValue2, true);
-                nz0.Q(c.a(-392865512570658L, strArr), 3, c.a(-392912757210914L, strArr) + str + c.a(-392586339696418L, strArr) + activity.getClass().getName() + c.a(-392603519565602L, strArr) + Integer.toHexString(i) + c.a(-392633584336674L, strArr) + zResolveAttribute + c.a(-392753843420962L, strArr) + z + c.a(-393359433809698L, strArr) + zResolveAttribute2 + c.a(-393471102959394L, strArr) + Integer.toHexString(typedValue2.type) + c.a(-393535527468834L, strArr) + Integer.toHexString(typedValue2.data));
-                if (z || zResolveAttribute2) {
+                boolean resolveAttribute2 = activity.getTheme().resolveAttribute(R.attr.windowTitleSize, typedValue2, true);
+                nz0.Q(c.a(-392865512570658L, strArr), 3, c.a(-392912757210914L, strArr) + str + c.a(-392586339696418L, strArr) + activity.getClass().getName() + c.a(-392603519565602L, strArr) + Integer.toHexString(i) + c.a(-392633584336674L, strArr) + resolveAttribute + c.a(-392753843420962L, strArr) + z + c.a(-393359433809698L, strArr) + resolveAttribute2 + c.a(-393471102959394L, strArr) + Integer.toHexString(typedValue2.type) + c.a(-393535527468834L, strArr) + Integer.toHexString(typedValue2.data));
+                if (z || resolveAttribute2) {
                     return;
                 }
-                boolean zRequestWindowFeature = activity.requestWindowFeature(1);
-                nz0.Q(c.a(-393101735771938L, strArr), 5, c.a(-393166160281378L, strArr) + str + c.a(-391877670092578L, strArr) + activity.getClass().getName() + c.a(-391963569438498L, strArr) + Integer.toHexString(i) + c.a(-391426698526498L, strArr) + zRequestWindowFeature);
+                boolean requestWindowFeature = activity.requestWindowFeature(1);
+                nz0.Q(c.a(-393101735771938L, strArr), 5, c.a(-393166160281378L, strArr) + str + c.a(-391877670092578L, strArr) + activity.getClass().getName() + c.a(-391963569438498L, strArr) + Integer.toHexString(i) + c.a(-391426698526498L, strArr) + requestWindowFeature);
             } catch (Throwable th) {
-                String strA = c.a(-391516892839714L, strArr);
+                String a2 = c.a(-391516892839714L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-391564137479970L, strArr));
                 sb.append(str);
@@ -373,7 +520,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 sb.append(c.a(-392444605775650L, strArr));
                 sb.append(Integer.toHexString(i));
                 zd.r(sb, c.a(-392457490677538L, strArr), th);
-                zd.s(sb, c.a(-392496145383202L, strArr), th, 5, strA);
+                zd.s(sb, c.a(-392496145383202L, strArr), th, 5, a2);
             }
         }
     }
@@ -420,12 +567,12 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         if (intent == null) {
             return $assertionsDisabled;
         }
-        String packageName = intent.getPackage();
-        if (packageName == null && intent.getComponent() != null) {
-            packageName = intent.getComponent().getPackageName();
+        String str = intent.getPackage();
+        if (str == null && intent.getComponent() != null) {
+            str = intent.getComponent().getPackageName();
         }
         String[] strArr = xa1.b;
-        if (c.a(-412927304810274L, strArr).equals(packageName) || c.a(-412974549450530L, strArr).equals(packageName) || c.a(-413073333698338L, strArr).equals(packageName) || c.a(-411544325340962L, strArr).equals(packageName)) {
+        if (c.a(-412927304810274L, strArr).equals(str) || c.a(-412974549450530L, strArr).equals(str) || c.a(-413073333698338L, strArr).equals(str) || c.a(-411544325340962L, strArr).equals(str)) {
             return true;
         }
         return $assertionsDisabled;
@@ -479,10 +626,10 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 return;
             }
             boolean z = (activity.getResources().getConfiguration().uiMode & 48) == 32 ? true : $assertionsDisabled;
-            int iRgb = z ? Color.rgb(48, 48, 48) : -1;
-            int iRgb2 = z ? -1 : Color.rgb(32, 32, 32);
+            int rgb = z ? Color.rgb(48, 48, 48) : -1;
+            int rgb2 = z ? -1 : Color.rgb(32, 32, 32);
             FrameLayout frameLayout = new FrameLayout(activity);
-            frameLayout.setBackgroundColor(iRgb);
+            frameLayout.setBackgroundColor(rgb);
             frameLayout.setClickable(true);
             frameLayout.setFocusable(true);
             frameLayout.setImportantForAccessibility(1);
@@ -492,7 +639,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
             linearLayout.setGravity(1);
             TextView textView = new TextView(activity);
             textView.setText(c.a(-411857857953570L, strArr));
-            textView.setTextColor(iRgb2);
+            textView.setTextColor(rgb2);
             textView.setTextSize(2, 22.0f);
             textView.setGravity(17);
             linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, -2));
@@ -521,7 +668,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         if (c.a(-379314890751778L, strArr).equals(activity.getClass().getName())) {
             Application application = activity.getApplication();
             Application application2 = rj.i().b;
-            String strA = c.a(-381840331521826L, strArr);
+            String a2 = c.a(-381840331521826L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-381973475508002L, strArr));
             sb.append(activity.getIntent() == null ? null : activity.getIntent().getComponent());
@@ -544,7 +691,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
             sb.append(activity.getClass().getClassLoader());
             sb.append(c.a(-382132389297954L, strArr));
             sb.append(application != null ? application.getClassLoader() : null);
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
         }
     }
 
@@ -556,14 +703,14 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         intent2.setAction(intent.getAction());
         intent2.putExtras(buildGooglePreAddResultExtras(intent));
         String[] strArr = xa1.b;
-        String strA = c.a(-398719552995106L, strArr);
+        String a2 = c.a(-398719552995106L, strArr);
         StringBuilder sb = new StringBuilder();
         zd.q(sb, c.a(-398783977504546L, strArr), intent);
         sb.append(c.a(-410625202339618L, strArr));
         sb.append(intent.getComponent());
         sb.append(c.a(-410646677176098L, strArr));
         sb.append(i);
-        nz0.Q(strA, 3, sb.toString());
+        nz0.Q(a2, 3, sb.toString());
         kp0.j(c.a(-410161345871650L, strArr) + i + c.a(-410964504756002L, strArr) + kp0.d(intent));
         return new Instrumentation.ActivityResult(-1, intent2);
     }
@@ -618,15 +765,15 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         String[] strArr = xa1.b;
         if ((c.a(-395738845691682L, strArr).equals(packageName) || className.startsWith(c.a(-395305053994786L, strArr))) && (intent = activity.getIntent()) != null) {
             if (className.startsWith(c.a(-395408133209890L, strArr))) {
-                String strQ = rj.q();
-                boolean z = dd2.f246a;
+                String q = rj.q();
+                boolean z = dd2.f245a;
                 if (c.a(-1308028554067746L, strArr).equals(packageName)) {
                     if (dd2.i(c.a(-1306697114205986L, strArr), c.a(-1306246142639906L, strArr), $assertionsDisabled) | dd2.i(c.a(-1308127338315554L, strArr), c.a(-1306624099761954L, strArr), $assertionsDisabled)) {
-                        String strA = c.a(-1306319157083938L, strArr);
+                        String a2 = c.a(-1306319157083938L, strArr);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-1306400761462562L, strArr));
                         sb.append(rj.u());
-                        jx0.r(sb, c.a(-1307242575052578L, strArr), strQ, 3, strA);
+                        jx0.r(sb, c.a(-1307242575052578L, strArr), q, 3, a2);
                     }
                 }
                 dd2.d(packageName, rj.q(), activity.getClassLoader());
@@ -639,15 +786,15 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 if (bundleExtra == null) {
                     bundleExtra = new Bundle();
                 }
-                String strResolveGoogleAddAccountCaller = resolveGoogleAddAccountCaller(intent, bundleExtra);
-                sLastGoogleAddAccountCallerPackage = strResolveGoogleAddAccountCaller;
+                String resolveGoogleAddAccountCaller = resolveGoogleAddAccountCaller(intent, bundleExtra);
+                sLastGoogleAddAccountCallerPackage = resolveGoogleAddAccountCaller;
                 addGoogleAccountTypeExtras(bundleExtra);
                 addGoogleAccountTypeExtras(intent);
-                addGoogleAddAccountCallerExtras(bundleExtra, strResolveGoogleAddAccountCaller);
-                addGoogleAddAccountCallerExtras(intent, strResolveGoogleAddAccountCaller);
-                repairGoogleAddAccountCallerDeep(intent.getExtras(), strResolveGoogleAddAccountCaller, 0);
+                addGoogleAddAccountCallerExtras(bundleExtra, resolveGoogleAddAccountCaller);
+                addGoogleAddAccountCallerExtras(intent, resolveGoogleAddAccountCaller);
+                repairGoogleAddAccountCallerDeep(intent.getExtras(), resolveGoogleAddAccountCaller, 0);
                 intent.putExtra(c.a(-394471830339362L, strArr), bundleExtra);
-                nz0.Q(c.a(-394531959881506L, strArr), 3, c.a(-394647923998498L, strArr) + className + c.a(-394248492039970L, strArr) + intent.getStringExtra(c.a(-394312916549410L, strArr)) + c.a(-394398815895330L, strArr) + strResolveGoogleAddAccountCaller);
+                nz0.Q(c.a(-394531959881506L, strArr), 3, c.a(-394647923998498L, strArr) + className + c.a(-394248492039970L, strArr) + intent.getStringExtra(c.a(-394312916549410L, strArr)) + c.a(-394398815895330L, strArr) + resolveGoogleAddAccountCaller);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-388424516386594L, strArr));
                 sb2.append(className);
@@ -659,29 +806,29 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     }
 
     private void repairGoogleMinuteMaidIntent(String str, Intent intent) {
-        String strResolveGoogleAddAccountCaller = resolveGoogleAddAccountCaller(intent, intent.getExtras());
-        sLastGoogleAddAccountCallerPackage = strResolveGoogleAddAccountCaller;
+        String resolveGoogleAddAccountCaller = resolveGoogleAddAccountCaller(intent, intent.getExtras());
+        sLastGoogleAddAccountCallerPackage = resolveGoogleAddAccountCaller;
         StringBuilder sb = new StringBuilder();
         String[] strArr = xa1.b;
         sb.append(c.a(-388660739587874L, strArr));
         sb.append(str);
         sb.append(c.a(-388299962335010L, strArr));
-        sb.append(strResolveGoogleAddAccountCaller);
+        sb.append(resolveGoogleAddAccountCaller);
         sb.append(c.a(-388372976779042L, strArr));
         sb.append(kp0.d(intent));
         kp0.j(sb.toString());
         addGoogleAccountTypeExtras(intent);
-        addGoogleAddAccountCallerExtras(intent, strResolveGoogleAddAccountCaller);
-        repairGoogleAddAccountCallerDeep(intent.getExtras(), strResolveGoogleAddAccountCaller, 0);
-        nz0.Q(c.a(-388969977233186L, strArr), 3, c.a(-389034401742626L, strArr) + str + c.a(-388699394293538L, strArr) + strResolveGoogleAddAccountCaller);
+        addGoogleAddAccountCallerExtras(intent, resolveGoogleAddAccountCaller);
+        repairGoogleAddAccountCallerDeep(intent.getExtras(), resolveGoogleAddAccountCaller, 0);
+        nz0.Q(c.a(-388969977233186L, strArr), 3, c.a(-389034401742626L, strArr) + str + c.a(-388699394293538L, strArr) + resolveGoogleAddAccountCaller);
         kp0.j(c.a(-388755228868386L, strArr) + str + c.a(-387307824889634L, strArr) + kp0.d(intent));
     }
 
     private String resolveActivityAlias(String str, Intent intent) {
         String[] strArr = xa1.b;
         ComponentName component = intent == null ? null : intent.getComponent();
-        String strO = rj.o();
-        if (component != null && component.getPackageName().equals(strO)) {
+        String o = rj.o();
+        if (component != null && component.getPackageName().equals(o)) {
             try {
                 c01 c01Var = c01.r;
                 ActivityInfo activityInfo = BPackageManager.get().getActivityInfo(component, 0, rj.u());
@@ -701,12 +848,12 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         return null;
     }
 
-    private ClassLoader resolveBoundGuestActivityClassLoader(ClassLoader classLoader, String str, Intent intent) throws ClassNotFoundException {
+    private ClassLoader resolveBoundGuestActivityClassLoader(ClassLoader classLoader, String str, Intent intent) {
         String[] strArr = xa1.b;
         ComponentName component = intent == null ? null : intent.getComponent();
-        String strO = rj.o();
-        if (component == null || strO == null || !strO.equals(component.getPackageName())) {
-            nz0.Q(c.a(-396602134118178L, strArr), 5, c.a(-399398157827874L, strArr) + str + c.a(-399183409463074L, strArr) + component + c.a(-399204884299554L, strArr) + strO + c.a(-399273603776290L, strArr) + classLoader);
+        String o = rj.o();
+        if (component == null || o == null || !o.equals(component.getPackageName())) {
+            nz0.Q(c.a(-396602134118178L, strArr), 5, c.a(-399398157827874L, strArr) + str + c.a(-399183409463074L, strArr) + component + c.a(-399204884299554L, strArr) + o + c.a(-399273603776290L, strArr) + classLoader);
             return null;
         }
         Application application = rj.i().b;
@@ -716,18 +863,18 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 classLoader2.loadClass(str);
                 return classLoader2;
             } catch (ClassNotFoundException | LinkageError | SecurityException e) {
-                String strA = c.a(-399333733318434L, strArr);
+                String a2 = c.a(-399333733318434L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-399999453249314L, strArr));
                 sb.append(str);
                 sb.append(c.a(-399767525015330L, strArr));
                 sb.append(component);
                 sb.append(c.a(-399788999851810L, strArr));
-                sb.append(strO);
+                sb.append(o);
                 sb.append(c.a(-399857719328546L, strArr));
                 sb.append(classLoader2);
                 zd.r(sb, c.a(-399922143837986L, strArr), e);
-                zd.s(sb, c.a(-398311531101986L, strArr), e, 5, strA);
+                zd.s(sb, c.a(-398311531101986L, strArr), e, 5, a2);
             }
         }
         return null;
@@ -735,26 +882,30 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
 
     private String resolveGoogleAddAccountCaller(Intent intent, Bundle bundle) {
         String[] strArr = xa1.b;
-        String strFirstNonEmpty = firstNonEmpty(getStringExtraSafely(intent, c.a(-401322303176482L, strArr)), getStringExtraSafely(intent, c.a(-401455447162658L, strArr)), getStringExtraSafely(intent, c.a(-401502691802914L, strArr)), getBundleStringSafely(bundle, c.a(-401592886116130L, strArr)), getBundleStringSafely(bundle, c.a(-402189886570274L, strArr)), getBundleStringSafely(bundle, c.a(-402254311079714L, strArr)), sLastGoogleAddAccountCallerPackage);
-        return strFirstNonEmpty == null ? c.a(-402327325523746L, strArr) : strFirstNonEmpty;
+        String firstNonEmpty = firstNonEmpty(getStringExtraSafely(intent, c.a(-401322303176482L, strArr)), getStringExtraSafely(intent, c.a(-401455447162658L, strArr)), getStringExtraSafely(intent, c.a(-401502691802914L, strArr)), getBundleStringSafely(bundle, c.a(-401592886116130L, strArr)), getBundleStringSafely(bundle, c.a(-402189886570274L, strArr)), getBundleStringSafely(bundle, c.a(-402254311079714L, strArr)), sLastGoogleAddAccountCallerPackage);
+        return firstNonEmpty == null ? c.a(-402327325523746L, strArr) : firstNonEmpty;
     }
 
     private ActivityInfo resolveGuestActivityInfo(Activity activity, ActivityInfo activityInfo) {
-        String strA;
+        String str;
         String[] strArr = xa1.b;
-        String strO = rj.o();
-        if (strO == null) {
+        String o = rj.o();
+        if (o == null) {
             return activityInfo;
         }
         ComponentName component = activity.getIntent() == null ? null : activity.getIntent().getComponent();
-        if (component == null || !strO.equals(component.getPackageName())) {
-            component = new ComponentName(strO, activity.getClass().getName());
+        if (component == null || !o.equals(component.getPackageName())) {
+            component = new ComponentName(o, activity.getClass().getName());
         }
         try {
             c01 c01Var = c01.r;
             ActivityInfo activityInfo2 = BPackageManager.get().getActivityInfo(component, 0, rj.u());
             if (activityInfo2 != null) {
-                if (activityInfo != null && (!strO.equals(activityInfo.packageName) || !activityInfo2.name.equals(activityInfo.name))) {
+                if (activityInfo != null) {
+                    if (o.equals(activityInfo.packageName)) {
+                        if (!activityInfo2.name.equals(activityInfo.name)) {
+                        }
+                    }
                     nz0.Q(c.a(-382188223872802L, strArr), 5, c.a(-382304187989794L, strArr) + activityInfo.packageName + c.a(-380779474599714L, strArr) + activityInfo.name + c.a(-380839604141858L, strArr) + component.flattenToShortString());
                 }
                 return activityInfo2;
@@ -762,22 +913,22 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         } catch (Throwable th) {
             nz0.P(c.a(-380938388389666L, strArr), c.a(-380453057085218L, strArr) + component, th);
         }
-        if (activityInfo != null && strO.equals(activityInfo.packageName)) {
+        if (activityInfo != null && o.equals(activityInfo.packageName)) {
             return activityInfo;
         }
-        String strA2 = c.a(-380616265842466L, strArr);
+        String a2 = c.a(-380616265842466L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-381281985773346L, strArr));
         if (activityInfo == null) {
-            strA = c.a(-380998517931810L, strArr);
+            str = c.a(-380998517931810L, strArr);
         } else {
-            strA = activityInfo.packageName + c.a(-380985633029922L, strArr) + activityInfo.name;
+            str = activityInfo.packageName + c.a(-380985633029922L, strArr) + activityInfo.name;
         }
-        zd.p(sb, strA, 5, strA2);
+        zd.p(sb, str, 5, a2);
         return null;
     }
 
-    private ClassLoader resolveHostProxyActivityClassLoader(ClassLoader classLoader, String str, Intent intent) throws ClassNotFoundException {
+    private ClassLoader resolveHostProxyActivityClassLoader(ClassLoader classLoader, String str, Intent intent) {
         ClassLoader classLoader2;
         String[] strArr = xa1.b;
         ComponentName component = intent == null ? null : intent.getComponent();
@@ -786,7 +937,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 classLoader2.loadClass(str);
                 return classLoader2;
             } catch (ClassNotFoundException | LinkageError | SecurityException e) {
-                String strA = c.a(-397478307446562L, strArr);
+                String a2 = c.a(-397478307446562L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-397594271563554L, strArr));
                 sb.append(str);
@@ -795,7 +946,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                 sb.append(c.a(-396280011570978L, strArr));
                 sb.append(classLoader2);
                 zd.r(sb, c.a(-396357320982306L, strArr), e);
-                zd.s(sb, c.a(-395846219874082L, strArr), e, 5, strA);
+                zd.s(sb, c.a(-395846219874082L, strArr), e, 5, a2);
             }
         }
         return null;
@@ -821,10 +972,10 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
                             return;
                         }
                         AppInstrumentation.sMiniclipKeyboardWarmupScheduled = AppInstrumentation.$assertionsDisabled;
-                        String strA = c.a(-385057262026530L, strArr2);
+                        String a2 = c.a(-385057262026530L, strArr2);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-385654262480674L, strArr2));
-                        zd.p(sb, name, 5, strA);
+                        zd.p(sb, name, 5, a2);
                         return;
                     }
                     try {
@@ -862,43 +1013,43 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         if (kp0.h(intent)) {
             String packageName = context == null ? null : context.getPackageName();
             String name = activity != null ? activity.getClass().getName() : null;
-            StringBuilder sbK = jx0.k(str);
+            StringBuilder k = jx0.k(str);
             String[] strArr = xa1.b;
-            sbK.append(c.a(-412519282917154L, strArr));
-            sbK.append(packageName);
-            sbK.append(c.a(-412523577884450L, strArr));
-            sbK.append(name);
-            sbK.append(c.a(-413167822978850L, strArr));
-            sbK.append(i);
-            sbK.append(c.a(-413180707880738L, strArr));
-            sbK.append(kp0.d(intent));
-            kp0.j(sbK.toString());
+            k.append(c.a(-412519282917154L, strArr));
+            k.append(packageName);
+            k.append(c.a(-412523577884450L, strArr));
+            k.append(name);
+            k.append(c.a(-413167822978850L, strArr));
+            k.append(i);
+            k.append(c.a(-413180707880738L, strArr));
+            k.append(kp0.d(intent));
+            kp0.j(k.toString());
         }
     }
 
     private void traceStartActivityError(String str, Intent intent, Throwable th) {
         if (kp0.h(intent)) {
-            StringBuilder sbK = jx0.k(str);
+            StringBuilder k = jx0.k(str);
             String[] strArr = xa1.b;
-            sbK.append(c.a(-413331031736098L, strArr));
-            sbK.append(th.getClass().getName());
-            sbK.append(c.a(-413399751212834L, strArr));
-            sbK.append(th.getMessage());
-            sbK.append(c.a(-412880060170018L, strArr));
-            sbK.append(kp0.d(intent));
-            kp0.l(sbK.toString());
+            k.append(c.a(-413331031736098L, strArr));
+            k.append(th.getClass().getName());
+            k.append(c.a(-413399751212834L, strArr));
+            k.append(th.getMessage());
+            k.append(c.a(-412880060170018L, strArr));
+            k.append(kp0.d(intent));
+            kp0.l(k.toString());
         }
     }
 
     private void traceStartActivityResult(String str, Intent intent, Instrumentation.ActivityResult activityResult) {
         if (kp0.h(intent)) {
-            StringBuilder sbK = jx0.k(str);
+            StringBuilder k = jx0.k(str);
             String[] strArr = xa1.b;
-            sbK.append(c.a(-413227952520994L, strArr));
-            sbK.append(activityResult == null ? true : $assertionsDisabled);
-            sbK.append(c.a(-413283787095842L, strArr));
-            sbK.append(kp0.d(intent));
-            kp0.j(sbK.toString());
+            k.append(c.a(-413227952520994L, strArr));
+            k.append(activityResult == null ? true : $assertionsDisabled);
+            k.append(c.a(-413283787095842L, strArr));
+            k.append(kp0.d(intent));
+            kp0.j(k.toString());
         }
     }
 
@@ -910,7 +1061,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     }
 
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate, android.app.Instrumentation
-    public void callActivityOnCreate(Activity activity, Bundle bundle, PersistableBundle persistableBundle) throws Exception {
+    public void callActivityOnCreate(Activity activity, Bundle bundle, PersistableBundle persistableBundle) {
         checkActivity(activity);
         fixIntentClassLoader(activity, bundle);
         repairGoogleAddAccountIntent(activity);
@@ -949,15 +1100,15 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate
     public Instrumentation.ActivityResult execStartActivity(Context context, IBinder iBinder, IBinder iBinder2, Activity activity, Intent intent, int i, Bundle bundle) {
         String[] strArr = xa1.b;
-        Instrumentation.ActivityResult activityResultMaybeCompleteGooglePreAddAccount = maybeCompleteGooglePreAddAccount(intent, i);
-        if (activityResultMaybeCompleteGooglePreAddAccount != null) {
-            return activityResultMaybeCompleteGooglePreAddAccount;
+        Instrumentation.ActivityResult maybeCompleteGooglePreAddAccount = maybeCompleteGooglePreAddAccount(intent, i);
+        if (maybeCompleteGooglePreAddAccount != null) {
+            return maybeCompleteGooglePreAddAccount;
         }
         traceStartActivity(c.a(-398040948162338L, strArr), context, activity, intent, i);
         try {
-            Instrumentation.ActivityResult activityResultExecStartActivity = super.execStartActivity(context, iBinder, iBinder2, activity, intent, i, bundle);
-            traceStartActivityResult(c.a(-398126847508258L, strArr), intent, activityResultExecStartActivity);
-            return activityResultExecStartActivity;
+            Instrumentation.ActivityResult execStartActivity = super.execStartActivity(context, iBinder, iBinder2, activity, intent, i, bundle);
+            traceStartActivityResult(c.a(-398126847508258L, strArr), intent, execStartActivity);
+            return execStartActivity;
         } catch (Throwable th) {
             traceStartActivityError(c.a(-398281466330914L, strArr), intent, th);
             if (handleStartActivityFailed(intent, th)) {
@@ -985,117 +1136,50 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
         return !checkInstrumentation(getCurrInstrumentation());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00d9  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0125  */
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate, android.app.Instrumentation
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public android.app.Activity newActivity(java.lang.ClassLoader r9, java.lang.String r10, android.content.Intent r11) throws java.lang.IllegalAccessException, java.lang.InstantiationException, java.lang.ClassNotFoundException, java.lang.IllegalArgumentException, java.lang.reflect.InvocationTargetException {
-        /*
-            r8 = this;
-            java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-            r8.fixIntentClassLoader(r11, r9)
-            androidx.emoji2.text.rj r1 = androidx.emoji2.text.rj.i()     // Catch: java.lang.ClassNotFoundException -> L35
-            android.app.Activity r1 = r1.y(r9, r10, r11)     // Catch: java.lang.ClassNotFoundException -> L35
-            if (r1 == 0) goto L37
-            r2 = -402713872580386(0xfffe91bbdeadc0de, double:NaN)
-            java.lang.String r2 = a.a.a.c.a(r2, r0)     // Catch: java.lang.ClassNotFoundException -> L35
-            java.lang.StringBuilder r3 = new java.lang.StringBuilder     // Catch: java.lang.ClassNotFoundException -> L35
-            r3.<init>()     // Catch: java.lang.ClassNotFoundException -> L35
-            r4 = -402778297089826(0xfffe91acdeadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)     // Catch: java.lang.ClassNotFoundException -> L35
-            r3.append(r4)     // Catch: java.lang.ClassNotFoundException -> L35
-            r3.append(r10)     // Catch: java.lang.ClassNotFoundException -> L35
-            java.lang.String r3 = r3.toString()     // Catch: java.lang.ClassNotFoundException -> L35
-            r4 = 3
-            androidx.emoji2.text.nz0.Q(r2, r4, r3)     // Catch: java.lang.ClassNotFoundException -> L35
-            return r1
-        L35:
-            r1 = move-exception
-            goto L3c
-        L37:
-            android.app.Activity r9 = super.newActivity(r9, r10, r11)     // Catch: java.lang.ClassNotFoundException -> L35
-            return r9
-        L3c:
-            java.lang.ClassLoader r2 = r8.resolveHostProxyActivityClassLoader(r9, r10, r11)
-            r3 = 5
-            if (r2 == 0) goto L8f
-            r8.fixIntentClassLoader(r11, r2)
-            r4 = -402512009117474(0xfffe91eadeadc0de, double:NaN)
-            java.lang.String r1 = a.a.a.c.a(r4, r0)
-            java.lang.StringBuilder r4 = new java.lang.StringBuilder
-            r4.<init>()
-            r5 = -402559253757730(0xfffe91dfdeadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)
-            r4.append(r5)
-            r4.append(r10)
-            r5 = -403383887478562(0xfffe911fdeadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)
-            r4.append(r5)
-            r4.append(r9)
-            r5 = -403512736497442(0xfffe9101deadc0de, double:NaN)
-            java.lang.String r9 = a.a.a.c.a(r5, r0)
-            r4.append(r9)
-            r4.append(r2)
-            java.lang.String r9 = r4.toString()
-            androidx.emoji2.text.nz0.Q(r1, r3, r9)
-            android.app.Instrumentation r9 = r8.mBaseInstrumentation
-            android.app.Activity r9 = r9.newActivity(r2, r10, r11)
-            return r9
-        L8f:
-            java.lang.String r2 = r8.resolveActivityAlias(r10, r11)
-            if (r2 == 0) goto Ld3
-            r4 = -402971570618146(0xfffe917fdeadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            java.lang.StringBuilder r5 = new java.lang.StringBuilder     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r5.<init>()     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r6 = -403104714604322(0xfffe9160deadc0de, double:NaN)
-            java.lang.String r6 = a.a.a.c.a(r6, r0)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r5.append(r6)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r5.append(r10)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r6 = -397224904376098(0xfffe96b9deadc0de, double:NaN)
-            java.lang.String r6 = a.a.a.c.a(r6, r0)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r5.append(r6)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            r5.append(r2)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            java.lang.String r5 = r5.toString()     // Catch: java.lang.ClassNotFoundException -> Lcf
-            androidx.emoji2.text.nz0.Q(r4, r3, r5)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            android.app.Instrumentation r4 = r8.mBaseInstrumentation     // Catch: java.lang.ClassNotFoundException -> Lcf
-            android.app.Activity r9 = r4.newActivity(r9, r2, r11)     // Catch: java.lang.ClassNotFoundException -> Lcf
-            return r9
-        Lcf:
-            r2 = move-exception
-            r1.addSuppressed(r2)
-        Ld3:
-            java.lang.ClassLoader r2 = r8.resolveBoundGuestActivityClassLoader(r9, r10, r11)
-            if (r2 == 0) goto L125
-            r8.fixIntentClassLoader(r11, r2)
-            r4 = -397212019474210(0xfffe96bcdeadc0de, double:NaN)
-            java.lang.String r1 = a.a.a.c.a(r4, r0)
-            java.lang.StringBuilder r4 = new java.lang.StringBuilder
-            r4.<init>()
-            r5 = -397327983591202(0xfffe96a1deadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)
-            r4.append(r5)
-            r4.append(r10)
-            r5 = -397014450978594(0xfffe96eadeadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)
-            r4.append(r5)
-            r4.append(r9)
-            r5 = -397074580520738(0xfffe96dcdeadc0de, double:NaN)
-            java.lang.String r9 = a.a.a.c.a(r5, r0)
-            r4.append(r9)
-            r4.append(r2)
-            java.lang.String r9 = r4.toString()
-            androidx.emoji2.text.nz0.Q(r1, r3, r9)
-            android.app.Instrumentation r9 = r8.mBaseInstrumentation
-            android.app.Activity r9 = r9.newActivity(r2, r10, r11)
-            return r9
-        L125:
-            throw r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.delegate.AppInstrumentation.newActivity(java.lang.ClassLoader, java.lang.String, android.content.Intent):android.app.Activity");
+    public Activity newActivity(ClassLoader classLoader, String str, Intent intent) {
+        ClassLoader resolveBoundGuestActivityClassLoader;
+        String[] strArr = xa1.b;
+        fixIntentClassLoader(intent, classLoader);
+        try {
+            Activity y = rj.i().y(classLoader, str, intent);
+            if (y == null) {
+                return super.newActivity(classLoader, str, intent);
+            }
+            nz0.Q(c.a(-402713872580386L, strArr), 3, c.a(-402778297089826L, strArr) + str);
+            return y;
+        } catch (ClassNotFoundException e) {
+            ClassLoader resolveHostProxyActivityClassLoader = resolveHostProxyActivityClassLoader(classLoader, str, intent);
+            if (resolveHostProxyActivityClassLoader != null) {
+                fixIntentClassLoader(intent, resolveHostProxyActivityClassLoader);
+                nz0.Q(c.a(-402512009117474L, strArr), 5, c.a(-402559253757730L, strArr) + str + c.a(-403383887478562L, strArr) + classLoader + c.a(-403512736497442L, strArr) + resolveHostProxyActivityClassLoader);
+                return this.mBaseInstrumentation.newActivity(resolveHostProxyActivityClassLoader, str, intent);
+            }
+            String resolveActivityAlias = resolveActivityAlias(str, intent);
+            if (resolveActivityAlias != null) {
+                try {
+                    nz0.Q(c.a(-402971570618146L, strArr), 5, c.a(-403104714604322L, strArr) + str + c.a(-397224904376098L, strArr) + resolveActivityAlias);
+                    return this.mBaseInstrumentation.newActivity(classLoader, resolveActivityAlias, intent);
+                } catch (ClassNotFoundException e2) {
+                    e.addSuppressed(e2);
+                    resolveBoundGuestActivityClassLoader = resolveBoundGuestActivityClassLoader(classLoader, str, intent);
+                    if (resolveBoundGuestActivityClassLoader != null) {
+                    }
+                }
+            }
+            resolveBoundGuestActivityClassLoader = resolveBoundGuestActivityClassLoader(classLoader, str, intent);
+            if (resolveBoundGuestActivityClassLoader != null) {
+                throw e;
+            }
+            fixIntentClassLoader(intent, resolveBoundGuestActivityClassLoader);
+            nz0.Q(c.a(-397212019474210L, strArr), 5, c.a(-397327983591202L, strArr) + str + c.a(-397014450978594L, strArr) + classLoader + c.a(-397074580520738L, strArr) + resolveBoundGuestActivityClassLoader);
+            return this.mBaseInstrumentation.newActivity(resolveBoundGuestActivityClassLoader, str, intent);
+        }
     }
 
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate, android.app.Instrumentation
@@ -1106,17 +1190,17 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
             jx0.r(new StringBuilder(), c.a(-400282921090850L, strArr), str, 3, c.a(-400716712787746L, strArr));
             return application;
         }
-        Context contextWrap = VirtualServiceContext.wrap(context);
-        int i = v00.f1200a;
-        String strO = rj.o();
-        if (!GmsCore.isGoogleAppOrService(strO)) {
-            strO = c01.X();
+        Context wrap = VirtualServiceContext.wrap(context);
+        int i = v00.f1199a;
+        String o = rj.o();
+        if (!GmsCore.isGoogleAppOrService(o)) {
+            o = c01.X();
         }
-        v00.a(contextWrap, strO);
-        if (contextWrap != context) {
+        v00.a(wrap, o);
+        if (wrap != context) {
             jx0.r(new StringBuilder(), c.a(-401184864223010L, strArr), str, 3, c.a(-401137619582754L, strArr));
         }
-        return super.newApplication(classLoader, str, contextWrap);
+        return super.newApplication(classLoader, str, wrap);
     }
 
     private void fixIntentClassLoader(Intent intent, ClassLoader classLoader) {
@@ -1137,7 +1221,7 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     }
 
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate, android.app.Instrumentation
-    public void callActivityOnCreate(Activity activity, Bundle bundle) throws Exception {
+    public void callActivityOnCreate(Activity activity, Bundle bundle) {
         checkActivity(activity);
         fixIntentClassLoader(activity, bundle);
         repairGoogleAddAccountIntent(activity);
@@ -1152,15 +1236,15 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate
     public Instrumentation.ActivityResult execStartActivity(Context context, IBinder iBinder, IBinder iBinder2, String str, Intent intent, int i, Bundle bundle) {
         String[] strArr = xa1.b;
-        Instrumentation.ActivityResult activityResultMaybeCompleteGooglePreAddAccount = maybeCompleteGooglePreAddAccount(intent, i);
-        if (activityResultMaybeCompleteGooglePreAddAccount != null) {
-            return activityResultMaybeCompleteGooglePreAddAccount;
+        Instrumentation.ActivityResult maybeCompleteGooglePreAddAccount = maybeCompleteGooglePreAddAccount(intent, i);
+        if (maybeCompleteGooglePreAddAccount != null) {
+            return maybeCompleteGooglePreAddAccount;
         }
         traceStartActivity(c.a(-398917121490722L, strArr), context, null, intent, i);
         try {
-            Instrumentation.ActivityResult activityResultExecStartActivity = super.execStartActivity(context, iBinder, iBinder2, str, intent, i, bundle);
-            traceStartActivityResult(c.a(-399080330247970L, strArr), intent, activityResultExecStartActivity);
-            return activityResultExecStartActivity;
+            Instrumentation.ActivityResult execStartActivity = super.execStartActivity(context, iBinder, iBinder2, str, intent, i, bundle);
+            traceStartActivityResult(c.a(-399080330247970L, strArr), intent, execStartActivity);
+            return execStartActivity;
         } catch (Throwable th) {
             traceStartActivityError(c.a(-398625063714594L, strArr), intent, th);
             if (handleStartActivityFailed(intent, th)) {
@@ -1199,12 +1283,12 @@ public final class AppInstrumentation extends BaseInstrumentationDelegate implem
     @Override // com.kos.engine.fake.delegate.BaseInstrumentationDelegate, android.app.Instrumentation
     public Activity newActivity(Class<?> cls, Context context, IBinder iBinder, Application application, Intent intent, ActivityInfo activityInfo, CharSequence charSequence, Activity activity, String str, Object obj) {
         fixIntentClassLoader(intent, cls.getClassLoader());
-        Context contextWrap = VirtualServiceContext.wrap(context);
-        v00.a(contextWrap, activityInfo == null ? null : activityInfo.packageName);
-        if (contextWrap != context) {
+        Context wrap = VirtualServiceContext.wrap(context);
+        v00.a(wrap, activityInfo == null ? null : activityInfo.packageName);
+        if (wrap != context) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-398358775742242L, strArr), 3, c.a(-398423200251682L, strArr) + cls.getName());
         }
-        return super.newActivity(cls, contextWrap, iBinder, application, intent, activityInfo, charSequence, activity, str, obj);
+        return super.newActivity(cls, wrap, iBinder, application, intent, activityInfo, charSequence, activity, str, obj);
     }
 }

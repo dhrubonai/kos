@@ -23,15 +23,15 @@ public class LogDumpActivity extends Activity {
     private static final String TAG = a.a.a.c.a(-560871748288290L, xa1.b);
 
     private LinearLayout createProgressView() {
-        int iRound = Math.round(getResources().getDisplayMetrics().density * 24.0f);
+        int round = Math.round(getResources().getDisplayMetrics().density * 24.0f);
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(16);
-        linearLayout.setPadding(iRound, iRound, iRound, iRound);
+        linearLayout.setPadding(round, round, round, round);
         linearLayout.addView(new ProgressBar(this));
         TextView textView = new TextView(this);
         textView.setText(a.a.a.c.a(-561855295799074L, xa1.b));
-        textView.setPadding(iRound, 0, 0, 0);
+        textView.setPadding(round, 0, 0, 0);
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, -2));
         return linearLayout;
     }
@@ -59,11 +59,11 @@ public class LogDumpActivity extends Activity {
         String[] strArr = xa1.b;
         try {
             Uri uriForFile = FileProvider.getUriForFile(this, ProxyManifest.getProxyFileProvider(), file);
-            Intent intentAddFlags = new Intent(a.a.a.c.a(-561954080046882L, strArr)).setType(a.a.a.c.a(-562121583771426L, strArr)).putExtra(a.a.a.c.a(-562740059062050L, strArr), uriForFile).addFlags(1);
-            intentAddFlags.setClipData(ClipData.newRawUri(a.a.a.c.a(-562825958407970L, strArr), uriForFile));
-            Intent intentCreateChooser = Intent.createChooser(intentAddFlags, a.a.a.c.a(-562894677884706L, strArr));
-            intentCreateChooser.addFlags(1);
-            startActivity(intentCreateChooser);
+            Intent addFlags = new Intent(a.a.a.c.a(-561954080046882L, strArr)).setType(a.a.a.c.a(-562121583771426L, strArr)).putExtra(a.a.a.c.a(-562740059062050L, strArr), uriForFile).addFlags(1);
+            addFlags.setClipData(ClipData.newRawUri(a.a.a.c.a(-562825958407970L, strArr), uriForFile));
+            Intent createChooser = Intent.createChooser(addFlags, a.a.a.c.a(-562894677884706L, strArr));
+            createChooser.addFlags(1);
+            startActivity(createChooser);
         } catch (Throwable th) {
             try {
                 Log.e(a.a.a.c.a(-562422231482146L, strArr), a.a.a.c.a(-562490950958882L, strArr), th);

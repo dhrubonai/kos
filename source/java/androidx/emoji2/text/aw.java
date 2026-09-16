@@ -7,5 +7,5 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public abstract class aw {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ComposableLambdaImpl f125a = new ComposableLambdaImpl(-1131826196, false, wc.q);
+    public static final ComposableLambdaImpl f124a = new ComposableLambdaImpl(-1131826196, false, wc.q);
 }

@@ -7,7 +7,7 @@ import android.view.View;
 public final class f8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f8 f349a = new f8();
+    public static final f8 f348a = new f8();
 
     public final void a(View view) {
         view.setForceDarkAllowed(false);

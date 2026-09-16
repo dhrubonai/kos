@@ -15,7 +15,7 @@ public final class x41 extends he2 {
     @Override // androidx.emoji2.text.jy0
     public final void a0() {
         try {
-            l8.j0(xa1.E(this.g), up2.f1187a);
+            l8.j0(xa1.E(this.g), up2.f1186a);
         } catch (Throwable th) {
             g(mz0.h(th));
             throw th;

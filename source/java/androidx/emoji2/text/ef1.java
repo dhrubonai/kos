@@ -9,7 +9,7 @@ public final class ef1 extends uu1 implements wy0, um0 {
 
     @Override // androidx.emoji2.text.wo
     public final py0 b() {
-        dy1.f279a.getClass();
+        dy1.f278a.getClass();
         return this;
     }
 
@@ -23,10 +23,10 @@ public final class ef1 extends uu1 implements wy0, um0 {
         if (this.j) {
             throw new UnsupportedOperationException("Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980");
         }
-        py0 py0VarF = f();
-        if (py0VarF == this) {
+        py0 f = f();
+        if (f == this) {
             throw new i30("Kotlin reflection implementation is not found at runtime. Make sure you have kotlin-reflect.jar in the classpath");
         }
-        ((ef1) ((wy0) py0VarF)).g();
+        ((ef1) ((wy0) f)).g();
     }
 }

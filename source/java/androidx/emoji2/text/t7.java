@@ -33,8 +33,8 @@ public final class t7 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         long j;
-        mi2 mi2VarC;
-        long jNanoTime;
+        mi2 c;
+        long j2;
         w3 w3Var;
         int i = 1;
         int i2 = 2;
@@ -44,9 +44,9 @@ public final class t7 implements Runnable {
                 v7Var.removeCallbacks(this);
                 MotionEvent motionEvent = v7Var.v0;
                 if (motionEvent != null) {
-                    i = motionEvent.getToolType(0) == 3 ? 1 : 0;
+                    r10 = motionEvent.getToolType(0) == 3 ? 1 : 0;
                     int actionMasked = motionEvent.getActionMasked();
-                    if (i != 0) {
+                    if (r10 != 0) {
                         if (actionMasked == 10 || actionMasked == 1) {
                             return;
                         }
@@ -66,10 +66,10 @@ public final class t7 implements Runnable {
                 if (l71Var.r) {
                     if (l71Var.p) {
                         l71Var.p = false;
-                        long jCurrentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-                        ziVar.e = jCurrentAnimationTimeMillis;
+                        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+                        ziVar.e = currentAnimationTimeMillis;
                         ziVar.g = -1L;
-                        ziVar.f = jCurrentAnimationTimeMillis;
+                        ziVar.f = currentAnimationTimeMillis;
                         ziVar.h = 0.5f;
                     }
                     if ((ziVar.g > 0 && AnimationUtils.currentAnimationTimeMillis() > ziVar.g + ziVar.i) || !l71Var.e()) {
@@ -78,20 +78,20 @@ public final class t7 implements Runnable {
                     }
                     if (l71Var.q) {
                         l71Var.q = false;
-                        long jUptimeMillis = SystemClock.uptimeMillis();
-                        MotionEvent motionEventObtain = MotionEvent.obtain(jUptimeMillis, jUptimeMillis, 3, 0.0f, 0.0f, 0);
-                        lc0Var.onTouchEvent(motionEventObtain);
-                        motionEventObtain.recycle();
+                        long uptimeMillis = SystemClock.uptimeMillis();
+                        MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                        lc0Var.onTouchEvent(obtain);
+                        obtain.recycle();
                     }
                     if (ziVar.f == 0) {
                         throw new RuntimeException("Cannot compute scroll delta before calling start()");
                     }
-                    long jCurrentAnimationTimeMillis2 = AnimationUtils.currentAnimationTimeMillis();
-                    float fA = ziVar.a(jCurrentAnimationTimeMillis2);
-                    long j2 = jCurrentAnimationTimeMillis2 - ziVar.f;
-                    ziVar.f = jCurrentAnimationTimeMillis2;
-                    l71Var.t.scrollListBy((int) (j2 * ((fA * 4.0f) + ((-4.0f) * fA * fA)) * ziVar.d));
-                    Field field = es2.f320a;
+                    long currentAnimationTimeMillis2 = AnimationUtils.currentAnimationTimeMillis();
+                    float a2 = ziVar.a(currentAnimationTimeMillis2);
+                    long j3 = currentAnimationTimeMillis2 - ziVar.f;
+                    ziVar.f = currentAnimationTimeMillis2;
+                    l71Var.t.scrollListBy((int) (j3 * ((a2 * 4.0f) + ((-4.0f) * a2 * a2)) * ziVar.d));
+                    Field field = es2.f319a;
                     lc0Var.postOnAnimation(this);
                     return;
                 }
@@ -119,7 +119,7 @@ public final class t7 implements Runnable {
                 lc0Var2.o = null;
                 lc0Var2.drawableStateChanged();
                 return;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 sh0 sh0Var = (sh0) this.e;
                 ValueAnimator valueAnimator = sh0Var.u;
                 int i4 = sh0Var.v;
@@ -133,7 +133,7 @@ public final class t7 implements Runnable {
                 valueAnimator.setDuration(500);
                 valueAnimator.start();
                 return;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ((om0) this.e).i();
                 throw null;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -141,14 +141,14 @@ public final class t7 implements Runnable {
                 if (gx1Var != null) {
                     g60 g60Var = (g60) gx1Var;
                     ArrayList arrayList = g60Var.h;
-                    boolean zIsEmpty = arrayList.isEmpty();
+                    boolean isEmpty = arrayList.isEmpty();
                     ArrayList arrayList2 = g60Var.j;
-                    boolean zIsEmpty2 = arrayList2.isEmpty();
+                    boolean isEmpty2 = arrayList2.isEmpty();
                     ArrayList arrayList3 = g60Var.k;
-                    boolean zIsEmpty3 = arrayList3.isEmpty();
+                    boolean isEmpty3 = arrayList3.isEmpty();
                     ArrayList arrayList4 = g60Var.i;
-                    boolean zIsEmpty4 = arrayList4.isEmpty();
-                    if (zIsEmpty && zIsEmpty2 && zIsEmpty4 && zIsEmpty3) {
+                    boolean isEmpty4 = arrayList4.isEmpty();
+                    if (isEmpty && isEmpty2 && isEmpty4 && isEmpty3) {
                         return;
                     }
                     if (arrayList.size() > 0) {
@@ -156,7 +156,7 @@ public final class t7 implements Runnable {
                         throw null;
                     }
                     arrayList.clear();
-                    if (zIsEmpty2) {
+                    if (isEmpty2) {
                         j = 0;
                     } else {
                         ArrayList arrayList5 = new ArrayList();
@@ -164,26 +164,26 @@ public final class t7 implements Runnable {
                         j = 0;
                         g60Var.m.add(arrayList5);
                         arrayList2.clear();
-                        b60 b60Var = new b60(g60Var, arrayList5, i);
-                        if (!zIsEmpty) {
+                        b60 b60Var = new b60(g60Var, arrayList5, r10);
+                        if (!isEmpty) {
                             ((f60) arrayList5.get(0)).getClass();
                             throw null;
                         }
                         b60Var.run();
                     }
-                    if (!zIsEmpty3) {
+                    if (!isEmpty3) {
                         ArrayList arrayList6 = new ArrayList();
                         arrayList6.addAll(arrayList3);
                         g60Var.n.add(arrayList6);
                         arrayList3.clear();
                         b60 b60Var2 = new b60(g60Var, arrayList6, i);
-                        if (!zIsEmpty) {
+                        if (!isEmpty) {
                             ((e60) arrayList6.get(0)).getClass();
                             throw null;
                         }
                         b60Var2.run();
                     }
-                    if (zIsEmpty4) {
+                    if (isEmpty4) {
                         return;
                     }
                     ArrayList arrayList7 = new ArrayList();
@@ -191,13 +191,13 @@ public final class t7 implements Runnable {
                     g60Var.l.add(arrayList7);
                     arrayList4.clear();
                     b60 b60Var3 = new b60(g60Var, arrayList7, i2);
-                    if (zIsEmpty && zIsEmpty2 && zIsEmpty3) {
+                    if (isEmpty && isEmpty2 && isEmpty3) {
                         b60Var3.run();
                         return;
                     }
-                    Math.max(!zIsEmpty2 ? g60Var.e : j, !zIsEmpty3 ? g60Var.f : j);
+                    Math.max(!isEmpty2 ? g60Var.e : j, !isEmpty3 ? g60Var.f : j);
                     ((vx1) arrayList7.get(0)).getClass();
-                    Field field2 = es2.f320a;
+                    Field field2 = es2.f319a;
                     throw null;
                 }
                 return;
@@ -209,10 +209,10 @@ public final class t7 implements Runnable {
                     return;
                 }
                 return;
-            case 9:
+            case pz0.b /* 9 */:
                 ((StaggeredGridLayoutManager) this.e).c0();
                 return;
-            case 10:
+            case pz0.d /* 10 */:
                 break;
             case 11:
                 CheckableImageButton checkableImageButton = ((TextInputLayout) this.e).f.j;
@@ -233,33 +233,33 @@ public final class t7 implements Runnable {
         while (true) {
             qi2 qi2Var = (qi2) this.e;
             synchronized (qi2Var) {
-                mi2VarC = qi2Var.c();
+                c = qi2Var.c();
             }
-            if (mi2VarC == null) {
+            if (c == null) {
                 return;
             }
-            pi2 pi2Var = mi2VarC.c;
+            pi2 pi2Var = c.c;
             lx0.u(pi2Var);
             qi2 qi2Var2 = (qi2) this.e;
-            boolean zIsLoggable = qi2.j.isLoggable(Level.FINE);
-            if (zIsLoggable) {
-                jNanoTime = System.nanoTime();
-                jz0.k(mi2VarC, pi2Var, "starting");
+            boolean isLoggable = qi2.j.isLoggable(Level.FINE);
+            if (isLoggable) {
+                j2 = System.nanoTime();
+                jz0.k(c, pi2Var, "starting");
             } else {
-                jNanoTime = -1;
+                j2 = -1;
             }
             try {
-                qi2.a(qi2Var2, mi2VarC);
-                if (zIsLoggable) {
-                    jz0.k(mi2VarC, pi2Var, "finished run in ".concat(jz0.y(System.nanoTime() - jNanoTime)));
+                qi2.a(qi2Var2, c);
+                if (isLoggable) {
+                    jz0.k(c, pi2Var, "finished run in ".concat(jz0.y(System.nanoTime() - j2)));
                 }
             } catch (Throwable th) {
                 try {
-                    ((ThreadPoolExecutor) qi2Var2.f958a.d).execute(this);
+                    ((ThreadPoolExecutor) qi2Var2.f957a.d).execute(this);
                     throw th;
                 } catch (Throwable th2) {
-                    if (zIsLoggable) {
-                        jz0.k(mi2VarC, pi2Var, "failed a run in ".concat(jz0.y(System.nanoTime() - jNanoTime)));
+                    if (isLoggable) {
+                        jz0.k(c, pi2Var, "failed a run in ".concat(jz0.y(System.nanoTime() - j2)));
                     }
                     throw th2;
                 }

@@ -15,18 +15,68 @@ public final class i92 extends g01 implements xm0 {
         this.f = list;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00cf  */
     @Override // androidx.emoji2.text.xm0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r4, java.lang.Object r5, java.lang.Object r6, java.lang.Object r7) {
-        /*
-            Method dump skipped, instructions count: 248
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.i92.invoke(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
+        int i;
+        int i2;
+        switch (this.e) {
+            case 0:
+                u21 u21Var = (u21) obj;
+                int intValue = ((Number) obj2).intValue();
+                lx lxVar = (lx) obj3;
+                int intValue2 = ((Number) obj4).intValue();
+                String[] strArr = wj1.f1283a;
+                a.a.a.c.a(-503014243843874L, strArr);
+                if ((intValue2 & 6) == 0) {
+                    i = (((tx) lxVar).f(u21Var) ? 4 : 2) | intValue2;
+                } else {
+                    i = intValue2;
+                }
+                if ((intValue2 & 48) == 0) {
+                    i |= ((tx) lxVar).d(intValue) ? 32 : 16;
+                }
+                if ((i & 147) == 146) {
+                    tx txVar = (tx) lxVar;
+                    if (txVar.B()) {
+                        txVar.S();
+                        break;
+                    }
+                }
+                jo0 jo0Var = (jo0) this.f.get(intValue);
+                tx txVar2 = (tx) lxVar;
+                txVar2.X(-933009308);
+                a.a.a.c.a(-503405085867810L, strArr);
+                n92.g(jo0Var, txVar2, 0);
+                txVar2.p(false);
+            default:
+                u21 u21Var2 = (u21) obj;
+                int intValue3 = ((Number) obj2).intValue();
+                lx lxVar2 = (lx) obj3;
+                int intValue4 = ((Number) obj4).intValue();
+                String[] strArr2 = wj1.f1283a;
+                a.a.a.c.a(-503061488484130L, strArr2);
+                if ((intValue4 & 6) == 0) {
+                    i2 = (((tx) lxVar2).f(u21Var2) ? 4 : 2) | intValue4;
+                } else {
+                    i2 = intValue4;
+                }
+                if ((intValue4 & 48) == 0) {
+                    i2 |= ((tx) lxVar2).d(intValue3) ? 32 : 16;
+                }
+                if ((i2 & 147) == 146) {
+                    tx txVar3 = (tx) lxVar2;
+                    if (txVar3.B()) {
+                        txVar3.S();
+                        break;
+                    }
+                }
+                io0 io0Var = (io0) this.f.get(intValue3);
+                tx txVar4 = (tx) lxVar2;
+                txVar4.X(1307986235);
+                a.a.a.c.a(-501888962412322L, strArr2);
+                n92.c(io0Var, txVar4, 0);
+                txVar4.p(false);
+        }
+        return up2.f1186a;
     }
 }

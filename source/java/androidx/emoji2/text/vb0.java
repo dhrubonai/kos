@@ -6,17 +6,17 @@ import android.content.pm.PackageParser;
 /* loaded from: classes.dex */
 public interface vb0 extends j70 {
     static long Q(long j, long j2) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L));
-        return (Float.floatToRawIntBits(fIntBitsToFloat) << 32) | (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L));
+        return (Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L);
     }
 
     static /* synthetic */ void T(float f, int i, long j, long j2, vb0 vb0Var) {
-        long jQ = (i & 4) != 0 ? Q(vb0Var.i(), 0L) : j2;
+        long Q = (i & 4) != 0 ? Q(vb0Var.i(), 0L) : j2;
         if ((i & 8) != 0) {
             f = 1.0f;
         }
-        vb0Var.u0(j, 0L, jQ, f, li0.n, (i & 64) != 0 ? 3 : 0);
+        vb0Var.u0(j, 0L, Q, f, li0.n, (i & 64) != 0 ? 3 : 0);
     }
 
     static /* synthetic */ void Y(vb0 vb0Var, wa waVar, wj1 wj1Var, float f, fg2 fg2Var, int i) {

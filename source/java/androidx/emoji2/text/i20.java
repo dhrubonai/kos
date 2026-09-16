@@ -24,7 +24,7 @@ public final class i20 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 h51 h51Var = (h51) this.g;
                 kk0 kk0Var = (kk0) this.h;
                 int i = 1;
@@ -39,15 +39,15 @@ public final class i20 extends g01 implements um0 {
                 }
                 if (h51Var.b() && this.f) {
                     if (h51Var.a() != qq0.e) {
-                        tk2 tk2VarD = h51Var.d();
-                        if (tk2VarD != null) {
+                        tk2 d = h51Var.d();
+                        if (d != null) {
                             zg0 zg0Var = (zg0) this.j;
                             l6 l6Var = h51Var.d;
                             f20 f20Var = h51Var.t;
-                            int iB = tk2VarD.b(j, true);
-                            zg0Var.b(iB);
-                            f20Var.e(ak2.a((ak2) l6Var.e, null, n6.F(iB, iB), 5));
-                            if (h51Var.f453a.f153a.e.length() > 0) {
+                            int b = d.b(j, true);
+                            zg0Var.b(b);
+                            f20Var.e(ak2.a((ak2) l6Var.e, null, n6.F(b, b), 5));
+                            if (h51Var.f452a.f152a.e.length() > 0) {
                                 h51Var.k.setValue(qq0.f);
                             }
                         }
@@ -60,26 +60,26 @@ public final class i20 extends g01 implements um0 {
                 i02 i02Var = (i02) obj;
                 qe2 qe2Var = (qe2) this.i;
                 un1 un1Var = ((of1) this.g).c;
-                float fFloatValue = 0.8f;
-                float fFloatValue2 = 1.0f;
+                float f = 0.8f;
+                float f2 = 1.0f;
                 boolean z = this.f;
                 i02Var.e(!z ? ((Number) qe2Var.getValue()).floatValue() : ((Boolean) un1Var.getValue()).booleanValue() ? 1.0f : 0.8f);
                 if (!z) {
-                    fFloatValue = ((Number) qe2Var.getValue()).floatValue();
+                    f = ((Number) qe2Var.getValue()).floatValue();
                 } else if (((Boolean) un1Var.getValue()).booleanValue()) {
-                    fFloatValue = 1.0f;
+                    f = 1.0f;
                 }
-                i02Var.f(fFloatValue);
+                i02Var.f(f);
                 if (!z) {
-                    fFloatValue2 = ((Number) ((qe2) this.j).getValue()).floatValue();
+                    f2 = ((Number) ((qe2) this.j).getValue()).floatValue();
                 } else if (!((Boolean) un1Var.getValue()).booleanValue()) {
-                    fFloatValue2 = 0.0f;
+                    f2 = 0.0f;
                 }
-                i02Var.b(fFloatValue2);
-                i02Var.k(((fn2) ((mf1) this.h).getValue()).f371a);
+                i02Var.b(f2);
+                i02Var.k(((fn2) ((mf1) this.h).getValue()).f370a);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

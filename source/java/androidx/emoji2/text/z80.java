@@ -43,17 +43,83 @@ public final class z80 implements Closeable, Flushable {
         this.s = new y80(ci0Var);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:58:0x011b A[Catch: all -> 0x0035, TRY_LEAVE, TryCatch #0 {, blocks: (B:3:0x0001, B:7:0x0011, B:11:0x0018, B:13:0x0020, B:15:0x0030, B:23:0x003e, B:25:0x0056, B:29:0x0073, B:31:0x0083, B:33:0x008a, B:26:0x005c, B:28:0x006c, B:37:0x00aa, B:39:0x00b1, B:42:0x00b6, B:44:0x00c7, B:47:0x00cc, B:52:0x0107, B:54:0x0112, B:58:0x011b, B:48:0x00e4, B:50:0x00f9, B:51:0x0104, B:36:0x009a, B:61:0x0120, B:62:0x0127), top: B:65:0x0001 }] */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x0119, code lost:
+    
+        if ((r9.l >= 2000) != false) goto L58;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0112 A[Catch: all -> 0x0035, TryCatch #0 {, blocks: (B:3:0x0001, B:7:0x0011, B:11:0x0018, B:13:0x0020, B:16:0x0030, B:26:0x003e, B:28:0x0056, B:29:0x0073, B:31:0x0083, B:33:0x008a, B:36:0x005c, B:38:0x006c, B:40:0x00aa, B:42:0x00b1, B:45:0x00b6, B:47:0x00c7, B:50:0x00cc, B:51:0x0107, B:53:0x0112, B:59:0x011b, B:60:0x00e4, B:62:0x00f9, B:64:0x0104, B:67:0x009a, B:69:0x0120, B:70:0x0127), top: B:2:0x0001 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void b(androidx.emoji2.text.z80 r9, androidx.emoji2.text.v80 r10, boolean r11) {
-        /*
-            Method dump skipped, instructions count: 298
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.z80.b(androidx.emoji2.text.z80, androidx.emoji2.text.v80, boolean):void");
+    public static final void b(z80 z80Var, v80 v80Var, boolean z) {
+        synchronized (z80Var) {
+            w80 w80Var = (w80) v80Var.b;
+            if (!lx0.n(w80Var.g, v80Var)) {
+                throw new IllegalStateException("Check failed.");
+            }
+            if (!z || w80Var.f) {
+                for (int i = 0; i < 2; i++) {
+                    z80Var.s.e((zn1) w80Var.d.get(i));
+                }
+            } else {
+                for (int i2 = 0; i2 < 2; i2++) {
+                    if (((boolean[]) v80Var.c)[i2] && !z80Var.s.f((zn1) w80Var.d.get(i2))) {
+                        v80Var.a(false);
+                        return;
+                    }
+                }
+                for (int i3 = 0; i3 < 2; i3++) {
+                    zn1 zn1Var = (zn1) w80Var.d.get(i3);
+                    zn1 zn1Var2 = (zn1) w80Var.c.get(i3);
+                    if (z80Var.s.f(zn1Var)) {
+                        z80Var.s.b(zn1Var, zn1Var2);
+                    } else {
+                        y80 y80Var = z80Var.s;
+                        zn1 zn1Var3 = (zn1) w80Var.c.get(i3);
+                        if (!y80Var.f(zn1Var3)) {
+                            h.a(y80Var.k(zn1Var3));
+                        }
+                    }
+                    long j = w80Var.b[i3];
+                    Long l = (Long) z80Var.s.h(zn1Var2).e;
+                    long longValue = l != null ? l.longValue() : 0L;
+                    w80Var.b[i3] = longValue;
+                    z80Var.k = (z80Var.k - j) + longValue;
+                }
+            }
+            w80Var.g = null;
+            if (w80Var.f) {
+                z80Var.p(w80Var);
+                return;
+            }
+            z80Var.l++;
+            nv1 nv1Var = z80Var.m;
+            lx0.u(nv1Var);
+            if (!z && !w80Var.e) {
+                z80Var.i.remove(w80Var.f1264a);
+                nv1Var.r("REMOVE");
+                nv1Var.writeByte(32);
+                nv1Var.r(w80Var.f1264a);
+                nv1Var.writeByte(10);
+                nv1Var.flush();
+                if (z80Var.k <= z80Var.e) {
+                }
+                z80Var.j();
+            }
+            w80Var.e = true;
+            nv1Var.r("CLEAN");
+            nv1Var.writeByte(32);
+            nv1Var.r(w80Var.f1264a);
+            for (long j2 : w80Var.b) {
+                nv1Var.writeByte(32);
+                nv1Var.c(j2);
+            }
+            nv1Var.writeByte(10);
+            nv1Var.flush();
+            if (z80Var.k <= z80Var.e) {
+            }
+            z80Var.j();
+        }
     }
 
     public static void s(String str) {
@@ -131,14 +197,14 @@ public final class z80 implements Closeable, Flushable {
     }
 
     public final synchronized x80 e(String str) {
-        x80 x80VarA;
+        x80 a2;
         if (this.p) {
             throw new IllegalStateException("cache is closed");
         }
         s(str);
         f();
         w80 w80Var = (w80) this.i.get(str);
-        if (w80Var != null && (x80VarA = w80Var.a()) != null) {
+        if (w80Var != null && (a2 = w80Var.a()) != null) {
             boolean z = true;
             this.l++;
             nv1 nv1Var = this.m;
@@ -153,7 +219,7 @@ public final class z80 implements Closeable, Flushable {
             if (z) {
                 j();
             }
-            return x80VarA;
+            return a2;
         }
         return null;
     }
@@ -246,31 +312,31 @@ public final class z80 implements Closeable, Flushable {
         this.k = j;
     }
 
-    public final void n() throws Throwable {
-        pv1 pv1VarN = n6.N(this.s.l(this.f));
+    public final void n() {
+        pv1 N = n6.N(this.s.l(this.f));
         try {
-            String strM = pv1VarN.m(Long.MAX_VALUE);
-            String strM2 = pv1VarN.m(Long.MAX_VALUE);
-            String strM3 = pv1VarN.m(Long.MAX_VALUE);
-            String strM4 = pv1VarN.m(Long.MAX_VALUE);
-            String strM5 = pv1VarN.m(Long.MAX_VALUE);
-            if (!"libcore.io.DiskLruCache".equals(strM) || !"1".equals(strM2) || !lx0.n(String.valueOf(1), strM3) || !lx0.n(String.valueOf(2), strM4) || strM5.length() > 0) {
-                throw new IOException("unexpected journal header: [" + strM + ", " + strM2 + ", " + strM3 + ", " + strM4 + ", " + strM5 + ']');
+            String m = N.m(Long.MAX_VALUE);
+            String m2 = N.m(Long.MAX_VALUE);
+            String m3 = N.m(Long.MAX_VALUE);
+            String m4 = N.m(Long.MAX_VALUE);
+            String m5 = N.m(Long.MAX_VALUE);
+            if (!"libcore.io.DiskLruCache".equals(m) || !"1".equals(m2) || !lx0.n(String.valueOf(1), m3) || !lx0.n(String.valueOf(2), m4) || m5.length() > 0) {
+                throw new IOException("unexpected journal header: [" + m + ", " + m2 + ", " + m3 + ", " + m4 + ", " + m5 + ']');
             }
             int i = 0;
             while (true) {
                 try {
-                    o(pv1VarN.m(Long.MAX_VALUE));
+                    o(N.m(Long.MAX_VALUE));
                     i++;
                 } catch (EOFException unused) {
                     this.l = i - this.i.size();
-                    if (pv1VarN.b()) {
+                    if (N.b()) {
                         this.m = k();
                     } else {
                         u();
                     }
                     try {
-                        pv1VarN.close();
+                        N.close();
                         th = null;
                     } catch (Throwable th) {
                         th = th;
@@ -284,72 +350,72 @@ public final class z80 implements Closeable, Flushable {
         } catch (Throwable th2) {
             th = th2;
             try {
-                pv1VarN.close();
+                N.close();
             } catch (Throwable th3) {
                 h50.i(th, th3);
             }
         }
     }
 
-    public final void o(String str) throws IOException {
-        String strSubstring;
-        int iG0 = wf2.g0(str, ' ', 0, 6);
-        if (iG0 == -1) {
+    public final void o(String str) {
+        String substring;
+        int g0 = wf2.g0(str, ' ', 0, 6);
+        if (g0 == -1) {
             throw new IOException("unexpected journal line: ".concat(str));
         }
-        int i = iG0 + 1;
-        int iG02 = wf2.g0(str, ' ', i, 4);
+        int i = g0 + 1;
+        int g02 = wf2.g0(str, ' ', i, 4);
         LinkedHashMap linkedHashMap = this.i;
-        if (iG02 == -1) {
-            strSubstring = str.substring(i);
-            lx0.w(strSubstring, "substring(...)");
-            if (iG0 == 6 && eg2.Z(str, "REMOVE", false)) {
-                linkedHashMap.remove(strSubstring);
+        if (g02 == -1) {
+            substring = str.substring(i);
+            lx0.w(substring, "substring(...)");
+            if (g0 == 6 && eg2.Z(str, "REMOVE", false)) {
+                linkedHashMap.remove(substring);
                 return;
             }
         } else {
-            strSubstring = str.substring(i, iG02);
-            lx0.w(strSubstring, "substring(...)");
+            substring = str.substring(i, g02);
+            lx0.w(substring, "substring(...)");
         }
-        Object w80Var = linkedHashMap.get(strSubstring);
-        if (w80Var == null) {
-            w80Var = new w80(this, strSubstring);
-            linkedHashMap.put(strSubstring, w80Var);
+        Object obj = linkedHashMap.get(substring);
+        if (obj == null) {
+            obj = new w80(this, substring);
+            linkedHashMap.put(substring, obj);
         }
-        w80 w80Var2 = (w80) w80Var;
-        if (iG02 == -1 || iG0 != 5 || !eg2.Z(str, "CLEAN", false)) {
-            if (iG02 == -1 && iG0 == 5 && eg2.Z(str, "DIRTY", false)) {
-                w80Var2.g = new v80(this, w80Var2);
+        w80 w80Var = (w80) obj;
+        if (g02 == -1 || g0 != 5 || !eg2.Z(str, "CLEAN", false)) {
+            if (g02 == -1 && g0 == 5 && eg2.Z(str, "DIRTY", false)) {
+                w80Var.g = new v80(this, w80Var);
                 return;
             } else {
-                if (iG02 != -1 || iG0 != 4 || !eg2.Z(str, "READ", false)) {
+                if (g02 != -1 || g0 != 4 || !eg2.Z(str, "READ", false)) {
                     throw new IOException("unexpected journal line: ".concat(str));
                 }
                 return;
             }
         }
-        String strSubstring2 = str.substring(iG02 + 1);
-        lx0.w(strSubstring2, "substring(...)");
-        List listS0 = wf2.s0(strSubstring2, new char[]{' '});
-        w80Var2.e = true;
-        w80Var2.g = null;
-        if (listS0.size() != 2) {
-            throw new IOException("unexpected journal line: " + listS0);
+        String substring2 = str.substring(g02 + 1);
+        lx0.w(substring2, "substring(...)");
+        List s0 = wf2.s0(substring2, new char[]{' '});
+        w80Var.e = true;
+        w80Var.g = null;
+        if (s0.size() != 2) {
+            throw new IOException("unexpected journal line: " + s0);
         }
         try {
-            int size = listS0.size();
+            int size = s0.size();
             for (int i2 = 0; i2 < size; i2++) {
-                w80Var2.b[i2] = Long.parseLong((String) listS0.get(i2));
+                w80Var.b[i2] = Long.parseLong((String) s0.get(i2));
             }
         } catch (NumberFormatException unused) {
-            throw new IOException("unexpected journal line: " + listS0);
+            throw new IOException("unexpected journal line: " + s0);
         }
     }
 
     public final void p(w80 w80Var) {
         nv1 nv1Var;
         int i = w80Var.h;
-        String str = w80Var.f1265a;
+        String str = w80Var.f1264a;
         if (i > 0 && (nv1Var = this.m) != null) {
             nv1Var.r("DIRTY");
             nv1Var.writeByte(32);
@@ -388,36 +454,17 @@ public final class z80 implements Closeable, Flushable {
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void q() {
-        /*
-            r4 = this;
-        L0:
-            long r0 = r4.k
-            long r2 = r4.e
-            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r0 <= 0) goto L27
-            java.util.LinkedHashMap r0 = r4.i
-            java.util.Collection r0 = r0.values()
-            java.util.Iterator r0 = r0.iterator()
-        L12:
-            boolean r1 = r0.hasNext()
-            if (r1 == 0) goto L26
-            java.lang.Object r1 = r0.next()
-            androidx.emoji2.text.w80 r1 = (androidx.emoji2.text.w80) r1
-            boolean r2 = r1.f
-            if (r2 != 0) goto L12
-            r4.p(r1)
-            goto L0
-        L26:
-            return
-        L27:
-            r0 = 0
-            r4.q = r0
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.z80.q():void");
+        while (this.k > this.e) {
+            for (w80 w80Var : this.i.values()) {
+                if (!w80Var.f) {
+                    break;
+                }
+            }
+            return;
+        }
+        this.q = false;
     }
 
     public final synchronized void u() {
@@ -427,43 +474,43 @@ public final class z80 implements Closeable, Flushable {
             if (nv1Var != null) {
                 nv1Var.close();
             }
-            nv1 nv1VarM = n6.M(this.s.k(this.g));
+            nv1 M = n6.M(this.s.k(this.g));
             try {
-                nv1VarM.r("libcore.io.DiskLruCache");
-                nv1VarM.writeByte(10);
-                nv1VarM.r("1");
-                nv1VarM.writeByte(10);
-                nv1VarM.c(1);
-                nv1VarM.writeByte(10);
-                nv1VarM.c(2);
-                nv1VarM.writeByte(10);
-                nv1VarM.writeByte(10);
+                M.r("libcore.io.DiskLruCache");
+                M.writeByte(10);
+                M.r("1");
+                M.writeByte(10);
+                M.c(1);
+                M.writeByte(10);
+                M.c(2);
+                M.writeByte(10);
+                M.writeByte(10);
                 for (w80 w80Var : this.i.values()) {
                     if (w80Var.g != null) {
-                        nv1VarM.r("DIRTY");
-                        nv1VarM.writeByte(32);
-                        nv1VarM.r(w80Var.f1265a);
-                        nv1VarM.writeByte(10);
+                        M.r("DIRTY");
+                        M.writeByte(32);
+                        M.r(w80Var.f1264a);
+                        M.writeByte(10);
                     } else {
-                        nv1VarM.r("CLEAN");
-                        nv1VarM.writeByte(32);
-                        nv1VarM.r(w80Var.f1265a);
+                        M.r("CLEAN");
+                        M.writeByte(32);
+                        M.r(w80Var.f1264a);
                         for (long j : w80Var.b) {
-                            nv1VarM.writeByte(32);
-                            nv1VarM.c(j);
+                            M.writeByte(32);
+                            M.c(j);
                         }
-                        nv1VarM.writeByte(10);
+                        M.writeByte(10);
                     }
                 }
                 try {
-                    nv1VarM.close();
+                    M.close();
                     th = null;
                 } catch (Throwable th2) {
                     th = th2;
                 }
             } catch (Throwable th3) {
                 try {
-                    nv1VarM.close();
+                    M.close();
                 } catch (Throwable th4) {
                     h50.i(th3, th4);
                 }

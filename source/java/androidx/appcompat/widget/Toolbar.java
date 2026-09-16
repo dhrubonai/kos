@@ -49,6 +49,7 @@ import androidx.emoji2.text.wf;
 import androidx.emoji2.text.wm2;
 import androidx.emoji2.text.xo2;
 import androidx.emoji2.text.yg2;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -106,7 +107,7 @@ public class Toolbar extends ViewGroup {
     public static tm2 g() {
         tm2 tm2Var = new tm2(-2, -2);
         tm2Var.b = 0;
-        tm2Var.f1131a = 8388627;
+        tm2Var.f1130a = 8388627;
         return tm2Var;
     }
 
@@ -172,7 +173,7 @@ public class Toolbar extends ViewGroup {
                 View childAt = getChildAt(i2);
                 tm2 tm2Var = (tm2) childAt.getLayoutParams();
                 if (tm2Var.b == 0 && r(childAt)) {
-                    int i3 = tm2Var.f1131a;
+                    int i3 = tm2Var.f1130a;
                     int layoutDirection = getLayoutDirection();
                     int absoluteGravity2 = Gravity.getAbsoluteGravity(i3, layoutDirection) & 7;
                     if (absoluteGravity2 != 1 && absoluteGravity2 != 3 && absoluteGravity2 != 5) {
@@ -189,7 +190,7 @@ public class Toolbar extends ViewGroup {
             View childAt2 = getChildAt(i4);
             tm2 tm2Var2 = (tm2) childAt2.getLayoutParams();
             if (tm2Var2.b == 0 && r(childAt2)) {
-                int i5 = tm2Var2.f1131a;
+                int i5 = tm2Var2.f1130a;
                 int layoutDirection2 = getLayoutDirection();
                 int absoluteGravity3 = Gravity.getAbsoluteGravity(i5, layoutDirection2) & 7;
                 if (absoluteGravity3 != 1 && absoluteGravity3 != 3 && absoluteGravity3 != 5) {
@@ -204,12 +205,12 @@ public class Toolbar extends ViewGroup {
 
     public final void b(View view, boolean z) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        tm2 tm2VarG = layoutParams == null ? g() : !checkLayoutParams(layoutParams) ? h(layoutParams) : (tm2) layoutParams;
-        tm2VarG.b = 1;
+        tm2 g = layoutParams == null ? g() : !checkLayoutParams(layoutParams) ? h(layoutParams) : (tm2) layoutParams;
+        g.b = 1;
         if (!z || this.l == null) {
-            addView(view, tm2VarG);
+            addView(view, g);
         } else {
-            view.setLayoutParams(tm2VarG);
+            view.setLayoutParams(g);
             this.H.add(view);
         }
     }
@@ -220,10 +221,10 @@ public class Toolbar extends ViewGroup {
             this.k = ufVar;
             ufVar.setImageDrawable(this.i);
             this.k.setContentDescription(this.j);
-            tm2 tm2VarG = g();
-            tm2VarG.f1131a = (this.q & 112) | 8388611;
-            tm2VarG.b = 2;
-            this.k.setLayoutParams(tm2VarG);
+            tm2 g = g();
+            g.f1130a = (this.q & 112) | 8388611;
+            g.b = 2;
+            this.k.setLayoutParams(g);
             this.k.setOnClickListener(new qm2(this));
         }
     }
@@ -236,7 +237,7 @@ public class Toolbar extends ViewGroup {
     public final void d() {
         if (this.w == null) {
             i22 i22Var = new i22();
-            i22Var.f505a = 0;
+            i22Var.f504a = 0;
             i22Var.b = 0;
             i22Var.c = Integer.MIN_VALUE;
             i22Var.d = Integer.MIN_VALUE;
@@ -258,9 +259,9 @@ public class Toolbar extends ViewGroup {
             pm2 pm2Var = new pm2(this);
             actionMenuView2.getClass();
             actionMenuView2.w = pm2Var;
-            tm2 tm2VarG = g();
-            tm2VarG.f1131a = (this.q & 112) | 8388613;
-            this.d.setLayoutParams(tm2VarG);
+            tm2 g = g();
+            g.f1130a = (this.q & 112) | 8388613;
+            this.d.setLayoutParams(g);
             b(this.d, false);
         }
         ActionMenuView actionMenuView3 = this.d;
@@ -278,9 +279,9 @@ public class Toolbar extends ViewGroup {
     public final void f() {
         if (this.g == null) {
             this.g = new uf(getContext(), null, R.attr.toolbarNavigationButtonStyle);
-            tm2 tm2VarG = g();
-            tm2VarG.f1131a = (this.q & 112) | 8388611;
-            this.g.setLayoutParams(tm2VarG);
+            tm2 g = g();
+            g.f1130a = (this.q & 112) | 8388611;
+            this.g.setLayoutParams(g);
         }
     }
 
@@ -313,7 +314,7 @@ public class Toolbar extends ViewGroup {
     public int getContentInsetEnd() {
         i22 i22Var = this.w;
         if (i22Var != null) {
-            return i22Var.g ? i22Var.f505a : i22Var.b;
+            return i22Var.g ? i22Var.f504a : i22Var.b;
         }
         return 0;
     }
@@ -326,7 +327,7 @@ public class Toolbar extends ViewGroup {
     public int getContentInsetLeft() {
         i22 i22Var = this.w;
         if (i22Var != null) {
-            return i22Var.f505a;
+            return i22Var.f504a;
         }
         return 0;
     }
@@ -342,7 +343,7 @@ public class Toolbar extends ViewGroup {
     public int getContentInsetStart() {
         i22 i22Var = this.w;
         if (i22Var != null) {
-            return i22Var.g ? i22Var.b : i22Var.f505a;
+            return i22Var.g ? i22Var.b : i22Var.f504a;
         }
         return 0;
     }
@@ -465,14 +466,14 @@ public class Toolbar extends ViewGroup {
         if (this.M == null) {
             wm2 wm2Var = new wm2();
             wm2Var.l = 0;
-            wm2Var.f1290a = this;
+            wm2Var.f1289a = this;
             wm2Var.h = getTitle();
             wm2Var.i = getSubtitle();
             wm2Var.g = wm2Var.h != null;
             wm2Var.f = getNavigationIcon();
-            rg rgVarV = rg.V(getContext(), null, gv1.f441a, R.attr.actionBarStyle);
-            TypedArray typedArray = (TypedArray) rgVarV.e;
-            wm2Var.m = rgVarV.H(15);
+            rg V = rg.V(getContext(), null, gv1.f440a, R.attr.actionBarStyle);
+            TypedArray typedArray = (TypedArray) V.e;
+            wm2Var.m = V.H(15);
             CharSequence text = typedArray.getText(27);
             if (!TextUtils.isEmpty(text)) {
                 wm2Var.g = true;
@@ -491,14 +492,14 @@ public class Toolbar extends ViewGroup {
                     setSubtitle(text2);
                 }
             }
-            Drawable drawableH = rgVarV.H(20);
-            if (drawableH != null) {
-                wm2Var.e = drawableH;
+            Drawable H = V.H(20);
+            if (H != null) {
+                wm2Var.e = H;
                 wm2Var.c();
             }
-            Drawable drawableH2 = rgVarV.H(17);
-            if (drawableH2 != null) {
-                wm2Var.d = drawableH2;
+            Drawable H2 = V.H(17);
+            if (H2 != null) {
+                wm2Var.d = H2;
                 wm2Var.c();
             }
             if (wm2Var.f == null && (drawable = wm2Var.m) != null) {
@@ -512,14 +513,14 @@ public class Toolbar extends ViewGroup {
             wm2Var.a(typedArray.getInt(10, 0));
             int resourceId = typedArray.getResourceId(9, 0);
             if (resourceId != 0) {
-                View viewInflate = LayoutInflater.from(getContext()).inflate(resourceId, (ViewGroup) this, false);
+                View inflate = LayoutInflater.from(getContext()).inflate(resourceId, (ViewGroup) this, false);
                 View view = wm2Var.c;
                 if (view != null && (wm2Var.b & 16) != 0) {
                     removeView(view);
                 }
-                wm2Var.c = viewInflate;
-                if (viewInflate != null && (wm2Var.b & 16) != 0) {
-                    addView(viewInflate);
+                wm2Var.c = inflate;
+                if (inflate != null && (wm2Var.b & 16) != 0) {
+                    addView(inflate);
                 }
                 wm2Var.a(wm2Var.b | 16);
             }
@@ -532,10 +533,10 @@ public class Toolbar extends ViewGroup {
             int dimensionPixelOffset = typedArray.getDimensionPixelOffset(7, -1);
             int dimensionPixelOffset2 = typedArray.getDimensionPixelOffset(3, -1);
             if (dimensionPixelOffset >= 0 || dimensionPixelOffset2 >= 0) {
-                int iMax = Math.max(dimensionPixelOffset, 0);
-                int iMax2 = Math.max(dimensionPixelOffset2, 0);
+                int max = Math.max(dimensionPixelOffset, 0);
+                int max2 = Math.max(dimensionPixelOffset2, 0);
                 d();
-                this.w.a(iMax, iMax2);
+                this.w.a(max, max2);
             }
             int resourceId2 = typedArray.getResourceId(28, 0);
             if (resourceId2 != 0) {
@@ -559,7 +560,7 @@ public class Toolbar extends ViewGroup {
             if (resourceId4 != 0) {
                 setPopupTheme(resourceId4);
             }
-            rgVarV.X();
+            V.X();
             if (R.string.abc_action_bar_up_description != wm2Var.l) {
                 wm2Var.l = R.string.abc_action_bar_up_description;
                 if (TextUtils.isEmpty(getNavigationContentDescription())) {
@@ -579,7 +580,7 @@ public class Toolbar extends ViewGroup {
         tm2 tm2Var = (tm2) view.getLayoutParams();
         int measuredHeight = view.getMeasuredHeight();
         int i2 = i > 0 ? (measuredHeight - i) / 2 : 0;
-        int i3 = tm2Var.f1131a & 112;
+        int i3 = tm2Var.f1130a & 112;
         if (i3 != 16 && i3 != 48 && i3 != 80) {
             i3 = this.z & 112;
         }
@@ -592,18 +593,18 @@ public class Toolbar extends ViewGroup {
         int paddingTop = getPaddingTop();
         int paddingBottom = getPaddingBottom();
         int height = getHeight();
-        int iMax = (((height - paddingTop) - paddingBottom) - measuredHeight) / 2;
-        int i4 = ((ViewGroup.MarginLayoutParams) tm2Var).topMargin;
-        if (iMax < i4) {
-            iMax = i4;
+        int i4 = (((height - paddingTop) - paddingBottom) - measuredHeight) / 2;
+        int i5 = ((ViewGroup.MarginLayoutParams) tm2Var).topMargin;
+        if (i4 < i5) {
+            i4 = i5;
         } else {
-            int i5 = (((height - paddingBottom) - measuredHeight) - iMax) - paddingTop;
-            int i6 = ((ViewGroup.MarginLayoutParams) tm2Var).bottomMargin;
-            if (i5 < i6) {
-                iMax = Math.max(0, iMax - (i6 - i5));
+            int i6 = (((height - paddingBottom) - measuredHeight) - i4) - paddingTop;
+            int i7 = ((ViewGroup.MarginLayoutParams) tm2Var).bottomMargin;
+            if (i6 < i7) {
+                i4 = Math.max(0, i4 - (i7 - i6));
             }
         }
-        return paddingTop + iMax;
+        return paddingTop + i4;
     }
 
     public final void l() {
@@ -635,23 +636,23 @@ public class Toolbar extends ViewGroup {
     public final int n(View view, int i, int i2, int[] iArr) {
         tm2 tm2Var = (tm2) view.getLayoutParams();
         int i3 = ((ViewGroup.MarginLayoutParams) tm2Var).leftMargin - iArr[0];
-        int iMax = Math.max(0, i3) + i;
+        int max = Math.max(0, i3) + i;
         iArr[0] = Math.max(0, -i3);
         int i4 = i(view, i2);
         int measuredWidth = view.getMeasuredWidth();
-        view.layout(iMax, i4, iMax + measuredWidth, view.getMeasuredHeight() + i4);
-        return measuredWidth + ((ViewGroup.MarginLayoutParams) tm2Var).rightMargin + iMax;
+        view.layout(max, i4, max + measuredWidth, view.getMeasuredHeight() + i4);
+        return measuredWidth + ((ViewGroup.MarginLayoutParams) tm2Var).rightMargin + max;
     }
 
     public final int o(View view, int i, int i2, int[] iArr) {
         tm2 tm2Var = (tm2) view.getLayoutParams();
         int i3 = ((ViewGroup.MarginLayoutParams) tm2Var).rightMargin - iArr[1];
-        int iMax = i - Math.max(0, i3);
+        int max = i - Math.max(0, i3);
         iArr[1] = Math.max(0, -i3);
         int i4 = i(view, i2);
         int measuredWidth = view.getMeasuredWidth();
-        view.layout(iMax - measuredWidth, i4, iMax, view.getMeasuredHeight() + i4);
-        return iMax - (measuredWidth + ((ViewGroup.MarginLayoutParams) tm2Var).leftMargin);
+        view.layout(max - measuredWidth, i4, max, view.getMeasuredHeight() + i4);
+        return max - (measuredWidth + ((ViewGroup.MarginLayoutParams) tm2Var).leftMargin);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -674,8 +675,8 @@ public class Toolbar extends ViewGroup {
             this.F = false;
         }
         if (!this.F) {
-            boolean zOnHoverEvent = super.onHoverEvent(motionEvent);
-            if (actionMasked == 9 && !zOnHoverEvent) {
+            boolean onHoverEvent = super.onHoverEvent(motionEvent);
+            if (actionMasked == 9 && !onHoverEvent) {
                 this.F = true;
             }
         }
@@ -686,39 +687,315 @@ public class Toolbar extends ViewGroup {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x028f A[LOOP:0: B:102:0x028d->B:103:0x028f, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x02a7 A[LOOP:1: B:105:0x02a5->B:106:0x02a7, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02c7 A[LOOP:2: B:108:0x02c5->B:109:0x02c7, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x030d  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x031a A[LOOP:3: B:117:0x0318->B:118:0x031a, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0062  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00cd  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00ea  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x0125  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x012a  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x012e  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0131  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0164  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x019d  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01aa  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0218  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x0131  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:117:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00b6  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00ea  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0106  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x028f A[LOOP:0: B:39:0x028d->B:40:0x028f, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x02a7 A[LOOP:1: B:43:0x02a5->B:44:0x02a7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x02c7 A[LOOP:2: B:47:0x02c5->B:48:0x02c7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x030d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x031a A[LOOP:3: B:56:0x0318->B:57:0x031a, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01aa  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x0218  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public void onLayout(boolean r20, int r21, int r22, int r23, int r24) {
-        /*
-            Method dump skipped, instructions count: 811
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.Toolbar.onLayout(boolean, int, int, int, int):void");
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        int i5;
+        int i6;
+        int max;
+        boolean r;
+        boolean r2;
+        boolean z2;
+        int i7;
+        int i8;
+        int paddingTop;
+        int i9;
+        int i10;
+        int i11;
+        int i12;
+        int size;
+        int i13;
+        int i14;
+        int size2;
+        int i15;
+        int size3;
+        int i16;
+        int i17;
+        int i18;
+        int size4;
+        boolean z3 = getLayoutDirection() == 1;
+        int width = getWidth();
+        int height = getHeight();
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int paddingTop2 = getPaddingTop();
+        int paddingBottom = getPaddingBottom();
+        int i19 = width - paddingRight;
+        int[] iArr = this.I;
+        iArr[1] = 0;
+        iArr[0] = 0;
+        Field field = es2.f319a;
+        int minimumHeight = getMinimumHeight();
+        int min = minimumHeight >= 0 ? Math.min(minimumHeight, i4 - i2) : 0;
+        if (!r(this.g)) {
+            i5 = paddingLeft;
+        } else {
+            if (z3) {
+                i6 = o(this.g, i19, min, iArr);
+                i5 = paddingLeft;
+                if (r(this.k)) {
+                    if (z3) {
+                        i6 = o(this.k, i6, min, iArr);
+                    } else {
+                        i5 = n(this.k, i5, min, iArr);
+                    }
+                }
+                if (r(this.d)) {
+                    if (z3) {
+                        i5 = n(this.d, i5, min, iArr);
+                    } else {
+                        i6 = o(this.d, i6, min, iArr);
+                    }
+                }
+                int currentContentInsetLeft = getCurrentContentInsetLeft();
+                int currentContentInsetRight = getCurrentContentInsetRight();
+                iArr[0] = Math.max(0, currentContentInsetLeft - i5);
+                iArr[1] = Math.max(0, currentContentInsetRight - (i19 - i6));
+                max = Math.max(i5, currentContentInsetLeft);
+                int min2 = Math.min(i6, i19 - currentContentInsetRight);
+                if (r(this.l)) {
+                    if (z3) {
+                        min2 = o(this.l, min2, min, iArr);
+                    } else {
+                        max = n(this.l, max, min, iArr);
+                    }
+                }
+                if (r(this.h)) {
+                    if (z3) {
+                        min2 = o(this.h, min2, min, iArr);
+                    } else {
+                        max = n(this.h, max, min, iArr);
+                    }
+                }
+                r = r(this.e);
+                r2 = r(this.f);
+                if (r) {
+                    z2 = z3;
+                    i7 = 0;
+                } else {
+                    tm2 tm2Var = (tm2) this.e.getLayoutParams();
+                    z2 = z3;
+                    i7 = this.e.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) tm2Var).topMargin + ((ViewGroup.MarginLayoutParams) tm2Var).bottomMargin;
+                }
+                if (!r2) {
+                    tm2 tm2Var2 = (tm2) this.f.getLayoutParams();
+                    i7 = this.f.getMeasuredHeight() + ((ViewGroup.MarginLayoutParams) tm2Var2).topMargin + ((ViewGroup.MarginLayoutParams) tm2Var2).bottomMargin + i7;
+                }
+                if (!r || r2) {
+                    jg jgVar = !r ? this.e : this.f;
+                    jg jgVar2 = !r2 ? this.f : this.e;
+                    tm2 tm2Var3 = (tm2) jgVar.getLayoutParams();
+                    tm2 tm2Var4 = (tm2) jgVar2.getLayoutParams();
+                    int i20 = i7;
+                    boolean z4 = (!r && this.e.getMeasuredWidth() > 0) || (r2 && this.f.getMeasuredWidth() > 0);
+                    i8 = this.z & 112;
+                    int i21 = max;
+                    if (i8 != 48) {
+                        paddingTop = getPaddingTop() + ((ViewGroup.MarginLayoutParams) tm2Var3).topMargin + this.u;
+                    } else if (i8 != 80) {
+                        int i22 = (((height - paddingTop2) - paddingBottom) - i20) / 2;
+                        int i23 = ((ViewGroup.MarginLayoutParams) tm2Var3).topMargin + this.u;
+                        if (i22 < i23) {
+                            i22 = i23;
+                        } else {
+                            int i24 = (((height - paddingBottom) - i20) - i22) - paddingTop2;
+                            int i25 = ((ViewGroup.MarginLayoutParams) tm2Var3).bottomMargin;
+                            int i26 = this.v;
+                            if (i24 < i25 + i26) {
+                                i22 = Math.max(0, i22 - ((((ViewGroup.MarginLayoutParams) tm2Var4).bottomMargin + i26) - i24));
+                            }
+                        }
+                        paddingTop = paddingTop2 + i22;
+                    } else {
+                        paddingTop = (((height - paddingBottom) - ((ViewGroup.MarginLayoutParams) tm2Var4).bottomMargin) - this.v) - i20;
+                    }
+                    if (z2) {
+                        int i27 = (z4 ? this.s : 0) - iArr[0];
+                        max = Math.max(0, i27) + i21;
+                        iArr[0] = Math.max(0, -i27);
+                        if (r) {
+                            tm2 tm2Var5 = (tm2) this.e.getLayoutParams();
+                            int measuredWidth = this.e.getMeasuredWidth() + max;
+                            int measuredHeight = this.e.getMeasuredHeight() + paddingTop;
+                            this.e.layout(max, paddingTop, measuredWidth, measuredHeight);
+                            i9 = measuredWidth + this.t;
+                            paddingTop = measuredHeight + ((ViewGroup.MarginLayoutParams) tm2Var5).bottomMargin;
+                        } else {
+                            i9 = max;
+                        }
+                        if (r2) {
+                            int i28 = paddingTop + ((ViewGroup.MarginLayoutParams) ((tm2) this.f.getLayoutParams())).topMargin;
+                            int measuredWidth2 = this.f.getMeasuredWidth() + max;
+                            this.f.layout(max, i28, measuredWidth2, this.f.getMeasuredHeight() + i28);
+                            i10 = measuredWidth2 + this.t;
+                        } else {
+                            i10 = max;
+                        }
+                        if (z4) {
+                            max = Math.max(i9, i10);
+                        }
+                    } else {
+                        int i29 = (z4 ? this.s : 0) - iArr[1];
+                        min2 -= Math.max(0, i29);
+                        iArr[1] = Math.max(0, -i29);
+                        if (r) {
+                            tm2 tm2Var6 = (tm2) this.e.getLayoutParams();
+                            int measuredWidth3 = min2 - this.e.getMeasuredWidth();
+                            int measuredHeight2 = this.e.getMeasuredHeight() + paddingTop;
+                            this.e.layout(measuredWidth3, paddingTop, min2, measuredHeight2);
+                            i11 = measuredWidth3 - this.t;
+                            paddingTop = measuredHeight2 + ((ViewGroup.MarginLayoutParams) tm2Var6).bottomMargin;
+                        } else {
+                            i11 = min2;
+                        }
+                        if (r2) {
+                            int i30 = paddingTop + ((ViewGroup.MarginLayoutParams) ((tm2) this.f.getLayoutParams())).topMargin;
+                            this.f.layout(min2 - this.f.getMeasuredWidth(), i30, min2, this.f.getMeasuredHeight() + i30);
+                            i12 = min2 - this.t;
+                        } else {
+                            i12 = min2;
+                        }
+                        if (z4) {
+                            min2 = Math.min(i11, i12);
+                        }
+                        max = i21;
+                    }
+                }
+                ArrayList arrayList = this.G;
+                a(3, arrayList);
+                size = arrayList.size();
+                i13 = max;
+                for (i14 = 0; i14 < size; i14++) {
+                    i13 = n((View) arrayList.get(i14), i13, min, iArr);
+                }
+                a(5, arrayList);
+                size2 = arrayList.size();
+                for (i15 = 0; i15 < size2; i15++) {
+                    min2 = o((View) arrayList.get(i15), min2, min, iArr);
+                }
+                a(1, arrayList);
+                int i31 = iArr[0];
+                int i32 = iArr[1];
+                size3 = arrayList.size();
+                int i33 = i31;
+                i16 = 0;
+                int i34 = 0;
+                while (i16 < size3) {
+                    View view = (View) arrayList.get(i16);
+                    tm2 tm2Var7 = (tm2) view.getLayoutParams();
+                    int i35 = i32;
+                    int i36 = ((ViewGroup.MarginLayoutParams) tm2Var7).leftMargin - i33;
+                    int i37 = ((ViewGroup.MarginLayoutParams) tm2Var7).rightMargin - i35;
+                    int max2 = Math.max(0, i36);
+                    int max3 = Math.max(0, i37);
+                    int max4 = Math.max(0, -i36);
+                    int max5 = Math.max(0, -i37);
+                    i34 += view.getMeasuredWidth() + max2 + max3;
+                    i16++;
+                    i33 = max4;
+                    i32 = max5;
+                }
+                i18 = ((((width - paddingLeft) - paddingRight) / 2) + paddingLeft) - (i34 / 2);
+                int i38 = i34 + i18;
+                if (i18 >= i13) {
+                    i13 = i38 > min2 ? i18 - (i38 - min2) : i18;
+                }
+                size4 = arrayList.size();
+                for (i17 = 0; i17 < size4; i17++) {
+                    i13 = n((View) arrayList.get(i17), i13, min, iArr);
+                }
+                arrayList.clear();
+            }
+            i5 = n(this.g, paddingLeft, min, iArr);
+        }
+        i6 = i19;
+        if (r(this.k)) {
+        }
+        if (r(this.d)) {
+        }
+        int currentContentInsetLeft2 = getCurrentContentInsetLeft();
+        int currentContentInsetRight2 = getCurrentContentInsetRight();
+        iArr[0] = Math.max(0, currentContentInsetLeft2 - i5);
+        iArr[1] = Math.max(0, currentContentInsetRight2 - (i19 - i6));
+        max = Math.max(i5, currentContentInsetLeft2);
+        int min22 = Math.min(i6, i19 - currentContentInsetRight2);
+        if (r(this.l)) {
+        }
+        if (r(this.h)) {
+        }
+        r = r(this.e);
+        r2 = r(this.f);
+        if (r) {
+        }
+        if (!r2) {
+        }
+        if (!r) {
+        }
+        if (!r) {
+        }
+        if (!r2) {
+        }
+        tm2 tm2Var32 = (tm2) jgVar.getLayoutParams();
+        tm2 tm2Var42 = (tm2) jgVar2.getLayoutParams();
+        int i202 = i7;
+        if (r) {
+        }
+        i8 = this.z & 112;
+        int i212 = max;
+        if (i8 != 48) {
+        }
+        if (z2) {
+        }
+        ArrayList arrayList2 = this.G;
+        a(3, arrayList2);
+        size = arrayList2.size();
+        i13 = max;
+        while (i14 < size) {
+        }
+        a(5, arrayList2);
+        size2 = arrayList2.size();
+        while (i15 < size2) {
+        }
+        a(1, arrayList2);
+        int i312 = iArr[0];
+        int i322 = iArr[1];
+        size3 = arrayList2.size();
+        int i332 = i312;
+        i16 = 0;
+        int i342 = 0;
+        while (i16 < size3) {
+        }
+        i18 = ((((width - paddingLeft) - paddingRight) / 2) + paddingLeft) - (i342 / 2);
+        int i382 = i342 + i18;
+        if (i18 >= i13) {
+        }
+        size4 = arrayList2.size();
+        while (i17 < size4) {
+        }
+        arrayList2.clear();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -726,15 +1003,15 @@ public class Toolbar extends ViewGroup {
     public final void onMeasure(int i, int i2) {
         char c;
         Object[] objArr;
-        int iJ;
-        int iMax;
-        int iCombineMeasuredStates;
-        int iJ2;
-        int iK;
-        int iCombineMeasuredStates2;
-        int iMax2;
-        boolean z = ct2.f218a;
-        int i3 = 0;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        boolean z = ct2.f217a;
+        int i10 = 0;
         if (getLayoutDirection() == 1) {
             objArr = true;
             c = 0;
@@ -744,101 +1021,99 @@ public class Toolbar extends ViewGroup {
         }
         if (r(this.g)) {
             q(this.g, i, 0, i2, this.r);
-            iJ = j(this.g) + this.g.getMeasuredWidth();
-            iMax = Math.max(0, k(this.g) + this.g.getMeasuredHeight());
-            iCombineMeasuredStates = View.combineMeasuredStates(0, this.g.getMeasuredState());
+            i3 = j(this.g) + this.g.getMeasuredWidth();
+            i4 = Math.max(0, k(this.g) + this.g.getMeasuredHeight());
+            i5 = View.combineMeasuredStates(0, this.g.getMeasuredState());
         } else {
-            iJ = 0;
-            iMax = 0;
-            iCombineMeasuredStates = 0;
+            i3 = 0;
+            i4 = 0;
+            i5 = 0;
         }
         if (r(this.k)) {
             q(this.k, i, 0, i2, this.r);
-            iJ = j(this.k) + this.k.getMeasuredWidth();
-            iMax = Math.max(iMax, k(this.k) + this.k.getMeasuredHeight());
-            iCombineMeasuredStates = View.combineMeasuredStates(iCombineMeasuredStates, this.k.getMeasuredState());
+            i3 = j(this.k) + this.k.getMeasuredWidth();
+            i4 = Math.max(i4, k(this.k) + this.k.getMeasuredHeight());
+            i5 = View.combineMeasuredStates(i5, this.k.getMeasuredState());
         }
         int currentContentInsetStart = getCurrentContentInsetStart();
-        int iMax3 = Math.max(currentContentInsetStart, iJ);
-        int iMax4 = Math.max(0, currentContentInsetStart - iJ);
+        int max = Math.max(currentContentInsetStart, i3);
+        int max2 = Math.max(0, currentContentInsetStart - i3);
         Object[] objArr2 = objArr;
         int[] iArr = this.I;
-        iArr[objArr2 == true ? 1 : 0] = iMax4;
+        iArr[objArr2 == true ? 1 : 0] = max2;
         if (r(this.d)) {
-            q(this.d, i, iMax3, i2, this.r);
-            iJ2 = j(this.d) + this.d.getMeasuredWidth();
-            iMax = Math.max(iMax, k(this.d) + this.d.getMeasuredHeight());
-            iCombineMeasuredStates = View.combineMeasuredStates(iCombineMeasuredStates, this.d.getMeasuredState());
+            q(this.d, i, max, i2, this.r);
+            i6 = j(this.d) + this.d.getMeasuredWidth();
+            i4 = Math.max(i4, k(this.d) + this.d.getMeasuredHeight());
+            i5 = View.combineMeasuredStates(i5, this.d.getMeasuredState());
         } else {
-            iJ2 = 0;
+            i6 = 0;
         }
         int currentContentInsetEnd = getCurrentContentInsetEnd();
-        int iMax5 = iMax3 + Math.max(currentContentInsetEnd, iJ2);
-        iArr[c] = Math.max(0, currentContentInsetEnd - iJ2);
+        int max3 = max + Math.max(currentContentInsetEnd, i6);
+        iArr[c] = Math.max(0, currentContentInsetEnd - i6);
         if (r(this.l)) {
-            iMax5 += p(this.l, i, iMax5, i2, 0, iArr);
-            iMax = Math.max(iMax, k(this.l) + this.l.getMeasuredHeight());
-            iCombineMeasuredStates = View.combineMeasuredStates(iCombineMeasuredStates, this.l.getMeasuredState());
+            max3 += p(this.l, i, max3, i2, 0, iArr);
+            i4 = Math.max(i4, k(this.l) + this.l.getMeasuredHeight());
+            i5 = View.combineMeasuredStates(i5, this.l.getMeasuredState());
         }
         if (r(this.h)) {
-            iMax5 += p(this.h, i, iMax5, i2, 0, iArr);
-            iMax = Math.max(iMax, k(this.h) + this.h.getMeasuredHeight());
-            iCombineMeasuredStates = View.combineMeasuredStates(iCombineMeasuredStates, this.h.getMeasuredState());
+            max3 += p(this.h, i, max3, i2, 0, iArr);
+            i4 = Math.max(i4, k(this.h) + this.h.getMeasuredHeight());
+            i5 = View.combineMeasuredStates(i5, this.h.getMeasuredState());
         }
         int childCount = getChildCount();
-        for (int i4 = 0; i4 < childCount; i4++) {
-            View childAt = getChildAt(i4);
+        for (int i11 = 0; i11 < childCount; i11++) {
+            View childAt = getChildAt(i11);
             if (((tm2) childAt.getLayoutParams()).b == 0 && r(childAt)) {
-                iMax5 += p(childAt, i, iMax5, i2, 0, iArr);
-                int iMax6 = Math.max(iMax, k(childAt) + childAt.getMeasuredHeight());
-                iCombineMeasuredStates = View.combineMeasuredStates(iCombineMeasuredStates, childAt.getMeasuredState());
-                iMax = iMax6;
+                max3 += p(childAt, i, max3, i2, 0, iArr);
+                int max4 = Math.max(i4, k(childAt) + childAt.getMeasuredHeight());
+                i5 = View.combineMeasuredStates(i5, childAt.getMeasuredState());
+                i4 = max4;
             } else {
-                iMax5 = iMax5;
+                max3 = max3;
             }
         }
-        int i5 = iMax5;
-        int i6 = this.u + this.v;
-        int i7 = this.s + this.t;
+        int i12 = max3;
+        int i13 = this.u + this.v;
+        int i14 = this.s + this.t;
         if (r(this.e)) {
-            p(this.e, i, i5 + i7, i2, i6, iArr);
-            int iJ3 = j(this.e) + this.e.getMeasuredWidth();
-            iK = k(this.e) + this.e.getMeasuredHeight();
-            iCombineMeasuredStates2 = View.combineMeasuredStates(iCombineMeasuredStates, this.e.getMeasuredState());
-            iMax2 = iJ3;
+            p(this.e, i, i12 + i14, i2, i13, iArr);
+            int j = j(this.e) + this.e.getMeasuredWidth();
+            i7 = k(this.e) + this.e.getMeasuredHeight();
+            i8 = View.combineMeasuredStates(i5, this.e.getMeasuredState());
+            i9 = j;
         } else {
-            iK = 0;
-            iCombineMeasuredStates2 = iCombineMeasuredStates;
-            iMax2 = 0;
+            i7 = 0;
+            i8 = i5;
+            i9 = 0;
         }
         if (r(this.f)) {
-            iMax2 = Math.max(iMax2, p(this.f, i, i5 + i7, i2, i6 + iK, iArr));
-            iK += k(this.f) + this.f.getMeasuredHeight();
-            iCombineMeasuredStates2 = View.combineMeasuredStates(iCombineMeasuredStates2, this.f.getMeasuredState());
+            i9 = Math.max(i9, p(this.f, i, i12 + i14, i2, i13 + i7, iArr));
+            i7 += k(this.f) + this.f.getMeasuredHeight();
+            i8 = View.combineMeasuredStates(i8, this.f.getMeasuredState());
         }
-        int iMax7 = Math.max(iMax, iK);
-        int paddingRight = getPaddingRight() + getPaddingLeft() + i5 + iMax2;
-        int paddingBottom = getPaddingBottom() + getPaddingTop() + iMax7;
-        int iResolveSizeAndState = View.resolveSizeAndState(Math.max(paddingRight, getSuggestedMinimumWidth()), i, (-16777216) & iCombineMeasuredStates2);
-        int iResolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingBottom, getSuggestedMinimumHeight()), i2, iCombineMeasuredStates2 << 16);
-        if (!this.O) {
-            i3 = iResolveSizeAndState2;
-            break;
-        }
-        int childCount2 = getChildCount();
-        for (int i8 = 0; i8 < childCount2; i8++) {
-            View childAt2 = getChildAt(i8);
-            if (r(childAt2) && childAt2.getMeasuredWidth() > 0 && childAt2.getMeasuredHeight() > 0) {
-                i3 = iResolveSizeAndState2;
-                break;
+        int max5 = Math.max(i4, i7);
+        int paddingRight = getPaddingRight() + getPaddingLeft() + i12 + i9;
+        int paddingBottom = getPaddingBottom() + getPaddingTop() + max5;
+        int resolveSizeAndState = View.resolveSizeAndState(Math.max(paddingRight, getSuggestedMinimumWidth()), i, (-16777216) & i8);
+        int resolveSizeAndState2 = View.resolveSizeAndState(Math.max(paddingBottom, getSuggestedMinimumHeight()), i2, i8 << 16);
+        if (this.O) {
+            int childCount2 = getChildCount();
+            for (int i15 = 0; i15 < childCount2; i15++) {
+                View childAt2 = getChildAt(i15);
+                if (!r(childAt2) || childAt2.getMeasuredWidth() <= 0 || childAt2.getMeasuredHeight() <= 0) {
+                }
             }
+            setMeasuredDimension(resolveSizeAndState, i10);
         }
-        setMeasuredDimension(iResolveSizeAndState, i3);
+        i10 = resolveSizeAndState2;
+        setMeasuredDimension(resolveSizeAndState, i10);
     }
 
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
-        MenuItem menuItemFindItem;
+        MenuItem findItem;
         if (!(parcelable instanceof vm2)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -848,8 +1123,8 @@ public class Toolbar extends ViewGroup {
         ActionMenuView actionMenuView = this.d;
         qb1 qb1Var = actionMenuView != null ? actionMenuView.s : null;
         int i = vm2Var.f;
-        if (i != 0 && this.N != null && qb1Var != null && (menuItemFindItem = qb1Var.findItem(i)) != null) {
-            menuItemFindItem.expandActionView();
+        if (i != 0 && this.N != null && qb1Var != null && (findItem = qb1Var.findItem(i)) != null) {
+            findItem.expandActionView();
         }
         if (vm2Var.g) {
             t7 t7Var = this.S;
@@ -869,7 +1144,7 @@ public class Toolbar extends ViewGroup {
         }
         i22Var.g = z;
         if (!i22Var.h) {
-            i22Var.f505a = i22Var.e;
+            i22Var.f504a = i22Var.e;
             i22Var.b = i22Var.f;
             return;
         }
@@ -878,7 +1153,7 @@ public class Toolbar extends ViewGroup {
             if (i2 == Integer.MIN_VALUE) {
                 i2 = i22Var.e;
             }
-            i22Var.f505a = i2;
+            i22Var.f504a = i2;
             int i3 = i22Var.c;
             if (i3 == Integer.MIN_VALUE) {
                 i3 = i22Var.f;
@@ -890,7 +1165,7 @@ public class Toolbar extends ViewGroup {
         if (i4 == Integer.MIN_VALUE) {
             i4 = i22Var.e;
         }
-        i22Var.f505a = i4;
+        i22Var.f504a = i4;
         int i5 = i22Var.d;
         if (i5 == Integer.MIN_VALUE) {
             i5 = i22Var.f;
@@ -906,7 +1181,7 @@ public class Toolbar extends ViewGroup {
         vm2 vm2Var = new vm2(super.onSaveInstanceState());
         sm2 sm2Var = this.N;
         if (sm2Var != null && (ub1Var = sm2Var.e) != null) {
-            vm2Var.f = ub1Var.f1167a;
+            vm2Var.f = ub1Var.f1166a;
         }
         ActionMenuView actionMenuView = this.d;
         vm2Var.g = (actionMenuView == null || (w3Var = actionMenuView.v) == null || (s3Var = w3Var.u) == null || !s3Var.b()) ? false : true;
@@ -920,8 +1195,8 @@ public class Toolbar extends ViewGroup {
             this.E = false;
         }
         if (!this.E) {
-            boolean zOnTouchEvent = super.onTouchEvent(motionEvent);
-            if (actionMasked == 0 && !zOnTouchEvent) {
+            boolean onTouchEvent = super.onTouchEvent(motionEvent);
+            if (actionMasked == 0 && !onTouchEvent) {
                 this.E = true;
             }
         }
@@ -936,11 +1211,11 @@ public class Toolbar extends ViewGroup {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         int i5 = marginLayoutParams.leftMargin - iArr[0];
         int i6 = marginLayoutParams.rightMargin - iArr[1];
-        int iMax = Math.max(0, i6) + Math.max(0, i5);
+        int max = Math.max(0, i6) + Math.max(0, i5);
         iArr[0] = Math.max(0, -i5);
         iArr[1] = Math.max(0, -i6);
-        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + iMax + i2, marginLayoutParams.width), ViewGroup.getChildMeasureSpec(i3, getPaddingBottom() + getPaddingTop() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin + i4, marginLayoutParams.height));
-        return view.getMeasuredWidth() + iMax;
+        view.measure(ViewGroup.getChildMeasureSpec(i, getPaddingRight() + getPaddingLeft() + max + i2, marginLayoutParams.width), ViewGroup.getChildMeasureSpec(i3, getPaddingBottom() + getPaddingTop() + marginLayoutParams.topMargin + marginLayoutParams.bottomMargin + i4, marginLayoutParams.height));
+        return view.getMeasuredWidth() + max;
     }
 
     public final void q(View view, int i, int i2, int i3, int i4) {
@@ -964,15 +1239,15 @@ public class Toolbar extends ViewGroup {
     public final void s() {
         OnBackInvokedDispatcher onBackInvokedDispatcher;
         if (Build.VERSION.SDK_INT >= 33) {
-            OnBackInvokedDispatcher onBackInvokedDispatcherA = rm2.a(this);
+            OnBackInvokedDispatcher a2 = rm2.a(this);
             sm2 sm2Var = this.N;
-            boolean z = (sm2Var == null || sm2Var.e == null || onBackInvokedDispatcherA == null || !isAttachedToWindow() || !this.R) ? false : true;
+            boolean z = (sm2Var == null || sm2Var.e == null || a2 == null || !isAttachedToWindow() || !this.R) ? false : true;
             if (z && this.Q == null) {
                 if (this.P == null) {
                     this.P = rm2.b(new om2(this, 0));
                 }
-                rm2.c(onBackInvokedDispatcherA, this.P);
-                this.Q = onBackInvokedDispatcherA;
+                rm2.c(a2, this.P);
+                this.Q = a2;
                 return;
             }
             if (z || (onBackInvokedDispatcher = this.Q) == null) {
@@ -1112,9 +1387,9 @@ public class Toolbar extends ViewGroup {
         this.S = new t7(12, this);
         Context context2 = getContext();
         int[] iArr = gv1.s;
-        rg rgVarV = rg.V(context2, attributeSet, iArr, R.attr.toolbarStyle);
-        es2.j(this, context, iArr, attributeSet, (TypedArray) rgVarV.e, R.attr.toolbarStyle);
-        TypedArray typedArray = (TypedArray) rgVarV.e;
+        rg V = rg.V(context2, attributeSet, iArr, R.attr.toolbarStyle);
+        es2.j(this, context, iArr, attributeSet, (TypedArray) V.e, R.attr.toolbarStyle);
+        TypedArray typedArray = (TypedArray) V.e;
         this.o = typedArray.getResourceId(28, 0);
         this.p = typedArray.getResourceId(19, 0);
         this.z = typedArray.getInteger(0, 8388627);
@@ -1151,7 +1426,7 @@ public class Toolbar extends ViewGroup {
         i22Var.h = false;
         if (dimensionPixelSize != Integer.MIN_VALUE) {
             i22Var.e = dimensionPixelSize;
-            i22Var.f505a = dimensionPixelSize;
+            i22Var.f504a = dimensionPixelSize;
         }
         if (dimensionPixelSize2 != Integer.MIN_VALUE) {
             i22Var.f = dimensionPixelSize2;
@@ -1162,7 +1437,7 @@ public class Toolbar extends ViewGroup {
         }
         this.x = typedArray.getDimensionPixelOffset(10, Integer.MIN_VALUE);
         this.y = typedArray.getDimensionPixelOffset(6, Integer.MIN_VALUE);
-        this.i = rgVarV.H(4);
+        this.i = V.H(4);
         this.j = typedArray.getText(3);
         CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
@@ -1174,42 +1449,42 @@ public class Toolbar extends ViewGroup {
         }
         this.m = getContext();
         setPopupTheme(typedArray.getResourceId(17, 0));
-        Drawable drawableH = rgVarV.H(16);
-        if (drawableH != null) {
-            setNavigationIcon(drawableH);
+        Drawable H = V.H(16);
+        if (H != null) {
+            setNavigationIcon(H);
         }
         CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable drawableH2 = rgVarV.H(11);
-        if (drawableH2 != null) {
-            setLogo(drawableH2);
+        Drawable H2 = V.H(11);
+        if (H2 != null) {
+            setLogo(H2);
         }
         CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (typedArray.hasValue(29)) {
-            setTitleTextColor(rgVarV.G(29));
+            setTitleTextColor(V.G(29));
         }
         if (typedArray.hasValue(20)) {
-            setSubtitleTextColor(rgVarV.G(20));
+            setSubtitleTextColor(V.G(20));
         }
         if (typedArray.hasValue(14)) {
             getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());
         }
-        rgVarV.X();
+        V.X();
     }
 
     @Override // android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         Context context = getContext();
         tm2 tm2Var = new tm2(context, attributeSet);
-        tm2Var.f1131a = 0;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.b);
-        tm2Var.f1131a = typedArrayObtainStyledAttributes.getInt(0, 0);
-        typedArrayObtainStyledAttributes.recycle();
+        tm2Var.f1130a = 0;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.b);
+        tm2Var.f1130a = obtainStyledAttributes.getInt(0, 0);
+        obtainStyledAttributes.recycle();
         tm2Var.b = 0;
         return tm2Var;
     }

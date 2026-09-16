@@ -10,7 +10,7 @@ public final class a60 extends jg0 implements Executor {
 
     static {
         vp2 vp2Var = vp2.f;
-        int i = wh2.f1281a;
+        int i = wh2.f1280a;
         if (64 >= i) {
             i = 64;
         }

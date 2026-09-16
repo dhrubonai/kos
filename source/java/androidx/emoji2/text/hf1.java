@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class hf1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public long[] f468a;
+    public long[] f467a;
     public Object[] b;
     public int c;
     public int d;
     public int e;
 
     public hf1(int i) {
-        this.f468a = e42.f285a;
+        this.f467a = e42.f284a;
         this.b = lx0.k;
         if (i >= 0) {
             f(e42.d(i));
@@ -30,10 +30,10 @@ public final class hf1 {
 
     public final void b() {
         this.d = 0;
-        long[] jArr = this.f468a;
-        if (jArr != e42.f285a) {
+        long[] jArr = this.f467a;
+        if (jArr != e42.f284a) {
             xh.F0(jArr, -9187201950435737472L);
-            long[] jArr2 = this.f468a;
+            long[] jArr2 = this.f467a;
             int i = this.c;
             int i2 = i >> 3;
             long j = 255 << ((i & 7) << 3);
@@ -43,105 +43,46 @@ public final class hf1 {
         this.e = e42.a(this.c) - this.d;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006e, code lost:
     
         if (((r7 & ((~r7) << 6)) & (-9187201950435737472L)) == 0) goto L20;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0070, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0070, code lost:
     
         r11 = -1;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean c(java.lang.Object r18) {
-        /*
-            r17 = this;
-            r0 = r17
-            r1 = r18
-            r2 = 0
-            if (r1 == 0) goto Lc
-            int r3 = r1.hashCode()
-            goto Ld
-        Lc:
-            r3 = r2
-        Ld:
-            r4 = -862048943(0xffffffffcc9e2d51, float:-8.293031E7)
-            int r3 = r3 * r4
-            int r4 = r3 << 16
-            r3 = r3 ^ r4
-            r4 = r3 & 127(0x7f, float:1.78E-43)
-            int r5 = r0.c
-            int r3 = r3 >>> 7
-            r3 = r3 & r5
-            r6 = r2
-        L1c:
-            long[] r7 = r0.f468a
-            int r8 = r3 >> 3
-            r9 = r3 & 7
-            int r9 = r9 << 3
-            r10 = r7[r8]
-            long r10 = r10 >>> r9
-            r12 = 1
-            int r8 = r8 + r12
-            r13 = r7[r8]
-            int r7 = 64 - r9
-            long r7 = r13 << r7
-            long r13 = (long) r9
-            long r13 = -r13
-            r9 = 63
-            long r13 = r13 >> r9
-            long r7 = r7 & r13
-            long r7 = r7 | r10
-            long r9 = (long) r4
-            r13 = 72340172838076673(0x101010101010101, double:7.748604185489348E-304)
-            long r9 = r9 * r13
-            long r9 = r9 ^ r7
-            long r13 = r9 - r13
-            long r9 = ~r9
-            long r9 = r9 & r13
-            r13 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r9 = r9 & r13
-        L48:
-            r15 = 0
-            int r11 = (r9 > r15 ? 1 : (r9 == r15 ? 0 : -1))
-            if (r11 == 0) goto L67
-            int r11 = java.lang.Long.numberOfTrailingZeros(r9)
-            int r11 = r11 >> 3
-            int r11 = r11 + r3
-            r11 = r11 & r5
-            java.lang.Object[] r15 = r0.b
-            r15 = r15[r11]
-            boolean r15 = androidx.emoji2.text.lx0.n(r15, r1)
-            if (r15 == 0) goto L61
-            goto L71
-        L61:
-            r15 = 1
-            long r15 = r9 - r15
-            long r9 = r9 & r15
-            goto L48
-        L67:
-            long r9 = ~r7
-            r11 = 6
-            long r9 = r9 << r11
-            long r7 = r7 & r9
-            long r7 = r7 & r13
-            int r7 = (r7 > r15 ? 1 : (r7 == r15 ? 0 : -1))
-            if (r7 == 0) goto L75
-            r11 = -1
-        L71:
-            if (r11 < 0) goto L74
-            return r12
-        L74:
-            return r2
-        L75:
-            int r6 = r6 + 8
-            int r3 = r3 + r6
-            r3 = r3 & r5
-            goto L1c
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.hf1.c(java.lang.Object):boolean");
+    public final boolean c(Object obj) {
+        int i;
+        int hashCode = (obj != null ? obj.hashCode() : 0) * (-862048943);
+        int i2 = hashCode ^ (hashCode << 16);
+        int i3 = i2 & 127;
+        int i4 = this.c;
+        int i5 = (i2 >>> 7) & i4;
+        int i6 = 0;
+        loop0: while (true) {
+            long[] jArr = this.f467a;
+            int i7 = i5 >> 3;
+            int i8 = (i5 & 7) << 3;
+            long j = ((jArr[i7 + 1] << (64 - i8)) & ((-i8) >> 63)) | (jArr[i7] >>> i8);
+            long j2 = (i3 * 72340172838076673L) ^ j;
+            long j3 = (~j2) & (j2 - 72340172838076673L) & (-9187201950435737472L);
+            while (true) {
+                if (j3 == 0) {
+                    break;
+                }
+                i = ((Long.numberOfTrailingZeros(j3) >> 3) + i5) & i4;
+                if (lx0.n(this.b[i], obj)) {
+                    break loop0;
+                }
+                j3 &= j3 - 1;
+            }
+            i6 += 8;
+            i5 = (i5 + i6) & i4;
+        }
+        return i >= 0;
     }
 
     public final int d(Object obj) {
@@ -154,15 +95,15 @@ public final class hf1 {
         Object[] objArr;
         int i2;
         int i3 = -862048943;
-        int iHashCode = (obj != null ? obj.hashCode() : 0) * (-862048943);
-        int i4 = iHashCode ^ (iHashCode << 16);
+        int hashCode = (obj != null ? obj.hashCode() : 0) * (-862048943);
+        int i4 = hashCode ^ (hashCode << 16);
         int i5 = i4 >>> 7;
         int i6 = i4 & 127;
         int i7 = this.c;
         int i8 = i5 & i7;
         int i9 = 0;
         while (true) {
-            long[] jArr3 = this.f468a;
+            long[] jArr3 = this.f467a;
             int i10 = i8 >> 3;
             int i11 = (i8 & 7) << 3;
             long j4 = ((jArr3[i10 + 1] << (64 - i11)) & ((-i11) >> 63)) | (jArr3[i10] >>> i11);
@@ -171,19 +112,19 @@ public final class hf1 {
             long j6 = j4 ^ (j5 * 72340172838076673L);
             long j7 = (~j6) & (j6 - 72340172838076673L) & (-9187201950435737472L);
             while (j7 != 0) {
-                int iNumberOfTrailingZeros = (i8 + (Long.numberOfTrailingZeros(j7) >> 3)) & i7;
+                int numberOfTrailingZeros = (i8 + (Long.numberOfTrailingZeros(j7) >> 3)) & i7;
                 int i13 = i3;
-                if (lx0.n(this.b[iNumberOfTrailingZeros], obj)) {
-                    return iNumberOfTrailingZeros;
+                if (lx0.n(this.b[numberOfTrailingZeros], obj)) {
+                    return numberOfTrailingZeros;
                 }
                 j7 &= j7 - 1;
                 i3 = i13;
             }
             int i14 = i3;
             if ((((~j4) << 6) & j4 & (-9187201950435737472L)) != 0) {
-                int iE = e(i5);
+                int e = e(i5);
                 long j8 = 255;
-                if (this.e != 0 || ((this.f468a[iE >> 3] >> ((iE & 7) << 3)) & 255) == 254) {
+                if (this.e != 0 || ((this.f467a[e >> 3] >> ((e & 7) << 3)) & 255) == 254) {
                     j = 255;
                     j2 = j5;
                     j3 = 128;
@@ -192,7 +133,7 @@ public final class hf1 {
                     if (i15 > 8) {
                         int i16 = 8;
                         if (Long.compare((this.d * 32) ^ Long.MIN_VALUE, (i15 * 25) ^ Long.MIN_VALUE) <= 0) {
-                            long[] jArr4 = this.f468a;
+                            long[] jArr4 = this.f467a;
                             int i17 = this.c;
                             Object[] objArr2 = this.b;
                             int i18 = (i17 + 7) >> 3;
@@ -210,11 +151,11 @@ public final class hf1 {
                             j = j8;
                             j2 = j5;
                             int i20 = i16;
-                            int iJ0 = xh.J0(jArr4);
-                            int i21 = iJ0 - 1;
+                            int J0 = xh.J0(jArr4);
+                            int i21 = J0 - 1;
                             long j11 = 72057594037927935L;
                             jArr4[i21] = (jArr4[i21] & 72057594037927935L) | (-72057594037927936L);
-                            jArr4[iJ0] = jArr4[0];
+                            jArr4[J0] = jArr4[0];
                             int i22 = 0;
                             while (i22 != i17) {
                                 int i23 = i22 >> 3;
@@ -222,11 +163,11 @@ public final class hf1 {
                                 long j12 = (jArr4[i23] >> i24) & j;
                                 if (j12 != 128 && j12 == 254) {
                                     Object obj2 = objArr2[i22];
-                                    int iHashCode2 = (obj2 != null ? obj2.hashCode() : 0) * i14;
-                                    int i25 = (iHashCode2 ^ (iHashCode2 << 16)) >>> 7;
-                                    int iE2 = e(i25);
+                                    int hashCode2 = (obj2 != null ? obj2.hashCode() : 0) * i14;
+                                    int i25 = (hashCode2 ^ (hashCode2 << 16)) >>> 7;
+                                    int e2 = e(i25);
                                     int i26 = i25 & i17;
-                                    if (((iE2 - i26) & i17) / i20 == ((i22 - i26) & i17) / i20) {
+                                    if (((e2 - i26) & i17) / i20 == ((i22 - i26) & i17) / i20) {
                                         long j13 = j11;
                                         jArr4[i23] = ((r7 & 127) << i24) | ((~(j << i24)) & jArr4[i23]);
                                         jArr4[jArr4.length - 1] = (jArr4[0] & j13) | Long.MIN_VALUE;
@@ -234,24 +175,24 @@ public final class hf1 {
                                         j11 = j13;
                                     } else {
                                         long j14 = j11;
-                                        int i27 = iE2 >> 3;
+                                        int i27 = e2 >> 3;
                                         long j15 = jArr4[i27];
-                                        int i28 = (iE2 & 7) << 3;
+                                        int i28 = (e2 & 7) << 3;
                                         if (((j15 >> i28) & j) == 128) {
                                             i2 = i20;
                                             i = i17;
                                             objArr = objArr2;
                                             jArr4[i27] = ((~(j << i28)) & j15) | ((r7 & 127) << i28);
                                             jArr4[i23] = (jArr4[i23] & (~(j << i24))) | (128 << i24);
-                                            objArr[iE2] = objArr[i22];
+                                            objArr[e2] = objArr[i22];
                                             objArr[i22] = null;
                                         } else {
                                             i = i17;
                                             objArr = objArr2;
                                             i2 = i20;
                                             jArr4[i27] = ((r7 & 127) << i28) | ((~(j << i28)) & j15);
-                                            Object obj3 = objArr[iE2];
-                                            objArr[iE2] = objArr[i22];
+                                            Object obj3 = objArr[e2];
+                                            objArr[e2] = objArr[i22];
                                             objArr[i22] = obj3;
                                             i22--;
                                         }
@@ -267,36 +208,36 @@ public final class hf1 {
                                 }
                             }
                             this.e = e42.a(this.c) - this.d;
+                            e = e(i5);
                         }
-                        iE = e(i5);
                     }
                     j = 255;
                     j2 = j5;
                     j3 = 128;
-                    int iB = e42.b(this.c);
-                    long[] jArr5 = this.f468a;
+                    int b = e42.b(this.c);
+                    long[] jArr5 = this.f467a;
                     Object[] objArr3 = this.b;
                     int i29 = this.c;
-                    f(iB);
-                    long[] jArr6 = this.f468a;
+                    f(b);
+                    long[] jArr6 = this.f467a;
                     Object[] objArr4 = this.b;
                     int i30 = this.c;
                     int i31 = 0;
                     while (i31 < i29) {
                         if (((jArr5[i31 >> 3] >> ((i31 & 7) << 3)) & 255) < 128) {
                             Object obj4 = objArr3[i31];
-                            int iHashCode3 = (obj4 != null ? obj4.hashCode() : 0) * i14;
-                            int i32 = iHashCode3 ^ (iHashCode3 << 16);
-                            int iE3 = e(i32 >>> 7);
+                            int hashCode3 = (obj4 != null ? obj4.hashCode() : 0) * i14;
+                            int i32 = hashCode3 ^ (hashCode3 << 16);
+                            int e3 = e(i32 >>> 7);
                             long j16 = i32 & 127;
-                            int i33 = iE3 >> 3;
-                            int i34 = (iE3 & 7) << 3;
+                            int i33 = e3 >> 3;
+                            int i34 = (e3 & 7) << 3;
                             jArr = jArr6;
                             jArr2 = jArr5;
                             long j17 = (jArr6[i33] & (~(255 << i34))) | (j16 << i34);
                             jArr[i33] = j17;
-                            jArr[(((iE3 - 7) & i30) + (i30 & 7)) >> 3] = j17;
-                            objArr4[iE3] = obj4;
+                            jArr[(((e3 - 7) & i30) + (i30 & 7)) >> 3] = j17;
+                            objArr4[e3] = obj4;
                         } else {
                             jArr = jArr6;
                             jArr2 = jArr5;
@@ -305,20 +246,20 @@ public final class hf1 {
                         jArr5 = jArr2;
                         jArr6 = jArr;
                     }
-                    iE = e(i5);
+                    e = e(i5);
                 }
                 this.d++;
                 int i35 = this.e;
-                long[] jArr7 = this.f468a;
-                int i36 = iE >> 3;
+                long[] jArr7 = this.f467a;
+                int i36 = e >> 3;
                 long j18 = jArr7[i36];
-                int i37 = (iE & 7) << 3;
+                int i37 = (e & 7) << 3;
                 this.e = i35 - (((j18 >> i37) & j) == j3 ? 1 : 0);
                 int i38 = this.c;
                 long j19 = (j18 & (~(j << i37))) | (j2 << i37);
                 jArr7[i36] = j19;
-                jArr7[(((iE - 7) & i38) + (i38 & 7)) >> 3] = j19;
-                return iE;
+                jArr7[(((e - 7) & i38) + (i38 & 7)) >> 3] = j19;
+                return e;
             }
             i9 += 8;
             i8 = (i8 + i9) & i7;
@@ -332,7 +273,7 @@ public final class hf1 {
         int i3 = i & i2;
         int i4 = 0;
         while (true) {
-            long[] jArr = this.f468a;
+            long[] jArr = this.f467a;
             int i5 = i3 >> 3;
             int i6 = (i3 & 7) << 3;
             long j = ((jArr[i5 + 1] << (64 - i6)) & ((-i6) >> 63)) | (jArr[i5] >>> i6);
@@ -345,98 +286,61 @@ public final class hf1 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0058  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final boolean equals(java.lang.Object r18) {
-        /*
-            r17 = this;
-            r0 = r17
-            r1 = r18
-            r2 = 1
-            if (r1 != r0) goto L8
-            return r2
-        L8:
-            boolean r3 = r1 instanceof androidx.emoji2.text.hf1
-            r4 = 0
-            if (r3 != 0) goto Le
-            return r4
-        Le:
-            androidx.emoji2.text.hf1 r1 = (androidx.emoji2.text.hf1) r1
-            int r3 = r1.d
-            int r5 = r0.d
-            if (r3 == r5) goto L17
-            return r4
-        L17:
-            java.lang.Object[] r3 = r0.b
-            long[] r5 = r0.f468a
-            int r6 = r5.length
-            int r6 = r6 + (-2)
-            if (r6 < 0) goto L5d
-            r7 = r4
-        L21:
-            r8 = r5[r7]
-            long r10 = ~r8
-            r12 = 7
-            long r10 = r10 << r12
-            long r10 = r10 & r8
-            r12 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r10 = r10 & r12
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 == 0) goto L58
-            int r10 = r7 - r6
-            int r10 = ~r10
-            int r10 = r10 >>> 31
-            r11 = 8
-            int r10 = 8 - r10
-            r12 = r4
-        L3b:
-            if (r12 >= r10) goto L56
-            r13 = 255(0xff, double:1.26E-321)
-            long r13 = r13 & r8
-            r15 = 128(0x80, double:6.3E-322)
-            int r13 = (r13 > r15 ? 1 : (r13 == r15 ? 0 : -1))
-            if (r13 >= 0) goto L52
-            int r13 = r7 << 3
-            int r13 = r13 + r12
-            r13 = r3[r13]
-            boolean r13 = r1.c(r13)
-            if (r13 != 0) goto L52
-            return r4
-        L52:
-            long r8 = r8 >> r11
-            int r12 = r12 + 1
-            goto L3b
-        L56:
-            if (r10 != r11) goto L5d
-        L58:
-            if (r7 == r6) goto L5d
-            int r7 = r7 + 1
-            goto L21
-        L5d:
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.hf1.equals(java.lang.Object):boolean");
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof hf1)) {
+            return false;
+        }
+        hf1 hf1Var = (hf1) obj;
+        if (hf1Var.d != this.d) {
+            return false;
+        }
+        Object[] objArr = this.b;
+        long[] jArr = this.f467a;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i = 0;
+            while (true) {
+                long j = jArr[i];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i2 = 8 - ((~(i - length)) >>> 31);
+                    for (int i3 = 0; i3 < i2; i3++) {
+                        if ((255 & j) < 128 && !hf1Var.c(objArr[(i << 3) + i3])) {
+                            return false;
+                        }
+                        j >>= 8;
+                    }
+                    if (i2 != 8) {
+                        break;
+                    }
+                }
+                if (i == length) {
+                    break;
+                }
+                i++;
+            }
+        }
+        return true;
     }
 
     public final void f(int i) {
         long[] jArr;
-        int iMax = i > 0 ? Math.max(7, e42.c(i)) : 0;
-        this.c = iMax;
-        if (iMax == 0) {
-            jArr = e42.f285a;
+        int max = i > 0 ? Math.max(7, e42.c(i)) : 0;
+        this.c = max;
+        if (max == 0) {
+            jArr = e42.f284a;
         } else {
-            jArr = new long[((iMax + 15) & (-8)) >> 3];
+            jArr = new long[((max + 15) & (-8)) >> 3];
             xh.F0(jArr, -9187201950435737472L);
         }
-        this.f468a = jArr;
-        int i2 = iMax >> 3;
-        long j = 255 << ((iMax & 7) << 3);
+        this.f467a = jArr;
+        int i2 = max >> 3;
+        long j = 255 << ((max & 7) << 3);
         jArr[i2] = (jArr[i2] & (~j)) | j;
         this.e = e42.a(this.c) - this.d;
-        this.b = iMax == 0 ? lx0.k : new Object[iMax];
+        this.b = max == 0 ? lx0.k : new Object[max];
     }
 
     public final boolean g() {
@@ -448,42 +352,42 @@ public final class hf1 {
     }
 
     public final int hashCode() {
-        int iHashCode = (this.c * 31) + this.d;
+        int i = (this.c * 31) + this.d;
         Object[] objArr = this.b;
-        long[] jArr = this.f468a;
+        long[] jArr = this.f467a;
         int length = jArr.length - 2;
         if (length >= 0) {
-            int i = 0;
+            int i2 = 0;
             while (true) {
-                long j = jArr[i];
+                long j = jArr[i2];
                 if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
-                    int i2 = 8 - ((~(i - length)) >>> 31);
-                    for (int i3 = 0; i3 < i2; i3++) {
+                    int i3 = 8 - ((~(i2 - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
                         if ((255 & j) < 128) {
-                            Object obj = objArr[(i << 3) + i3];
+                            Object obj = objArr[(i2 << 3) + i4];
                             if (!lx0.n(obj, this)) {
-                                iHashCode += obj != null ? obj.hashCode() : 0;
+                                i += obj != null ? obj.hashCode() : 0;
                             }
                         }
                         j >>= 8;
                     }
-                    if (i2 != 8) {
-                        return iHashCode;
+                    if (i3 != 8) {
+                        return i;
                     }
                 }
-                if (i == length) {
+                if (i2 == length) {
                     break;
                 }
-                i++;
+                i2++;
             }
         }
-        return iHashCode;
+        return i;
     }
 
     public final void i(hf1 hf1Var) {
         lx0.x(hf1Var, "elements");
         Object[] objArr = hf1Var.b;
-        long[] jArr = hf1Var.f468a;
+        long[] jArr = hf1Var.f467a;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -515,113 +419,55 @@ public final class hf1 {
         this.b[d(obj)] = obj;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x006e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x006e, code lost:
     
         if (((r7 & ((~r7) << 6)) & (-9187201950435737472L)) == 0) goto L22;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0070, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0070, code lost:
     
         r11 = -1;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean k(java.lang.Object r18) {
-        /*
-            r17 = this;
-            r0 = r17
-            r1 = r18
-            r2 = 0
-            if (r1 == 0) goto Lc
-            int r3 = r1.hashCode()
-            goto Ld
-        Lc:
-            r3 = r2
-        Ld:
-            r4 = -862048943(0xffffffffcc9e2d51, float:-8.293031E7)
-            int r3 = r3 * r4
-            int r4 = r3 << 16
-            r3 = r3 ^ r4
-            r4 = r3 & 127(0x7f, float:1.78E-43)
-            int r5 = r0.c
-            int r3 = r3 >>> 7
-            r3 = r3 & r5
-            r6 = r2
-        L1c:
-            long[] r7 = r0.f468a
-            int r8 = r3 >> 3
-            r9 = r3 & 7
-            int r9 = r9 << 3
-            r10 = r7[r8]
-            long r10 = r10 >>> r9
-            r12 = 1
-            int r8 = r8 + r12
-            r13 = r7[r8]
-            int r7 = 64 - r9
-            long r7 = r13 << r7
-            long r13 = (long) r9
-            long r13 = -r13
-            r9 = 63
-            long r13 = r13 >> r9
-            long r7 = r7 & r13
-            long r7 = r7 | r10
-            long r9 = (long) r4
-            r13 = 72340172838076673(0x101010101010101, double:7.748604185489348E-304)
-            long r9 = r9 * r13
-            long r9 = r9 ^ r7
-            long r13 = r9 - r13
-            long r9 = ~r9
-            long r9 = r9 & r13
-            r13 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r9 = r9 & r13
-        L48:
-            r15 = 0
-            int r11 = (r9 > r15 ? 1 : (r9 == r15 ? 0 : -1))
-            if (r11 == 0) goto L67
-            int r11 = java.lang.Long.numberOfTrailingZeros(r9)
-            int r11 = r11 >> 3
-            int r11 = r11 + r3
-            r11 = r11 & r5
-            java.lang.Object[] r15 = r0.b
-            r15 = r15[r11]
-            boolean r15 = androidx.emoji2.text.lx0.n(r15, r1)
-            if (r15 == 0) goto L61
-            goto L71
-        L61:
-            r15 = 1
-            long r15 = r9 - r15
-            long r9 = r9 & r15
-            goto L48
-        L67:
-            long r9 = ~r7
-            r11 = 6
-            long r9 = r9 << r11
-            long r7 = r7 & r9
-            long r7 = r7 & r13
-            int r7 = (r7 > r15 ? 1 : (r7 == r15 ? 0 : -1))
-            if (r7 == 0) goto L7a
-            r11 = -1
-        L71:
-            if (r11 < 0) goto L74
-            r2 = r12
-        L74:
-            if (r2 == 0) goto L79
-            r0.l(r11)
-        L79:
-            return r2
-        L7a:
-            int r6 = r6 + 8
-            int r3 = r3 + r6
-            r3 = r3 & r5
-            goto L1c
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.hf1.k(java.lang.Object):boolean");
+    public final boolean k(Object obj) {
+        int i;
+        int hashCode = (obj != null ? obj.hashCode() : 0) * (-862048943);
+        int i2 = hashCode ^ (hashCode << 16);
+        int i3 = i2 & 127;
+        int i4 = this.c;
+        int i5 = (i2 >>> 7) & i4;
+        int i6 = 0;
+        loop0: while (true) {
+            long[] jArr = this.f467a;
+            int i7 = i5 >> 3;
+            int i8 = (i5 & 7) << 3;
+            long j = ((jArr[i7 + 1] << (64 - i8)) & ((-i8) >> 63)) | (jArr[i7] >>> i8);
+            long j2 = (i3 * 72340172838076673L) ^ j;
+            long j3 = (~j2) & (j2 - 72340172838076673L) & (-9187201950435737472L);
+            while (true) {
+                if (j3 == 0) {
+                    break;
+                }
+                i = ((Long.numberOfTrailingZeros(j3) >> 3) + i5) & i4;
+                if (lx0.n(this.b[i], obj)) {
+                    break loop0;
+                }
+                j3 &= j3 - 1;
+            }
+            i6 += 8;
+            i5 = (i5 + i6) & i4;
+        }
+        boolean z = i >= 0;
+        if (z) {
+            l(i);
+        }
+        return z;
     }
 
     public final void l(int i) {
         this.d--;
-        long[] jArr = this.f468a;
+        long[] jArr = this.f467a;
         int i2 = this.c;
         int i3 = i >> 3;
         int i4 = (i & 7) << 3;
@@ -631,92 +477,48 @@ public final class hf1 {
         this.b[i] = null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0066 A[PHI: r7
-      0x0066: PHI (r7v2 int) = (r7v1 int), (r7v3 int) binds: [B:6:0x0026, B:21:0x0064] A[DONT_GENERATE, DONT_INLINE]] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.String toString() {
-        /*
-            r17 = this;
-            r0 = r17
-            java.lang.StringBuilder r1 = new java.lang.StringBuilder
-            r1.<init>()
-            java.lang.String r2 = "["
-            r1.append(r2)
-            java.lang.Object[] r2 = r0.b
-            long[] r3 = r0.f468a
-            int r4 = r3.length
-            int r4 = r4 + (-2)
-            if (r4 < 0) goto L6b
-            r5 = 0
-            r6 = r5
-            r7 = r6
-        L18:
-            r8 = r3[r6]
-            long r10 = ~r8
-            r12 = 7
-            long r10 = r10 << r12
-            long r10 = r10 & r8
-            r12 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r10 = r10 & r12
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 == 0) goto L66
-            int r10 = r6 - r4
-            int r10 = ~r10
-            int r10 = r10 >>> 31
-            r11 = 8
-            int r10 = 8 - r10
-            r12 = r5
-        L32:
-            if (r12 >= r10) goto L64
-            r13 = 255(0xff, double:1.26E-321)
-            long r13 = r13 & r8
-            r15 = 128(0x80, double:6.3E-322)
-            int r13 = (r13 > r15 ? 1 : (r13 == r15 ? 0 : -1))
-            if (r13 >= 0) goto L60
-            int r13 = r6 << 3
-            int r13 = r13 + r12
-            r13 = r2[r13]
-            r14 = -1
-            if (r7 != r14) goto L4b
-            java.lang.String r2 = "..."
-            r1.append(r2)
-            goto L70
-        L4b:
-            if (r7 == 0) goto L52
-            java.lang.String r14 = ", "
-            r1.append(r14)
-        L52:
-            if (r13 != r0) goto L57
-            java.lang.String r13 = "(this)"
-            goto L5b
-        L57:
-            java.lang.String r13 = java.lang.String.valueOf(r13)
-        L5b:
-            r1.append(r13)
-            int r7 = r7 + 1
-        L60:
-            long r8 = r8 >> r11
-            int r12 = r12 + 1
-            goto L32
-        L64:
-            if (r10 != r11) goto L6b
-        L66:
-            if (r6 == r4) goto L6b
-            int r6 = r6 + 1
-            goto L18
-        L6b:
-            java.lang.String r2 = "]"
-            r1.append(r2)
-        L70:
-            java.lang.String r1 = r1.toString()
-            java.lang.String r2 = "toString(...)"
-            androidx.emoji2.text.lx0.w(r1, r2)
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.hf1.toString():java.lang.String");
+    public final String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append((CharSequence) "[");
+        Object[] objArr = this.b;
+        long[] jArr = this.f467a;
+        int length = jArr.length - 2;
+        if (length >= 0) {
+            int i = 0;
+            int i2 = 0;
+            loop0: while (true) {
+                long j = jArr[i];
+                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                    int i3 = 8 - ((~(i - length)) >>> 31);
+                    for (int i4 = 0; i4 < i3; i4++) {
+                        if ((255 & j) < 128) {
+                            Object obj = objArr[(i << 3) + i4];
+                            if (i2 == -1) {
+                                sb.append((CharSequence) "...");
+                                break loop0;
+                            }
+                            if (i2 != 0) {
+                                sb.append((CharSequence) ", ");
+                            }
+                            sb.append((CharSequence) (obj == this ? "(this)" : String.valueOf(obj)));
+                            i2++;
+                        }
+                        j >>= 8;
+                    }
+                    if (i3 != 8) {
+                        break;
+                    }
+                }
+                if (i == length) {
+                    break;
+                }
+                i++;
+            }
+        }
+        sb.append((CharSequence) "]");
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public /* synthetic */ hf1() {

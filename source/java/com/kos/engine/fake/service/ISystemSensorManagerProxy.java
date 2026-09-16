@@ -8,7 +8,6 @@ import androidx.emoji2.text.xi;
 import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -57,15 +56,15 @@ public class ISystemSensorManagerProxy extends ClassInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object createSafeSensorManager() throws IllegalAccessException, NoSuchMethodException, InstantiationException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public static Object createSafeSensorManager() {
         String[] strArr = xa1.b;
         try {
             try {
                 java.lang.reflect.Constructor<?> declaredConstructor = Class.forName(c.a(-1003365048925986L, strArr)).getDeclaredConstructor(null);
                 declaredConstructor.setAccessible(true);
-                Object objNewInstance = declaredConstructor.newInstance(null);
+                Object newInstance = declaredConstructor.newInstance(null);
                 nz0.Q(c.a(-1003489602977570L, strArr), 3, c.a(-1006332871327522L, strArr));
-                return objNewInstance;
+                return newInstance;
             } catch (Exception e) {
                 nz0.Q(c.a(-1006070878322466L, strArr), 5, c.a(-1006165367602978L, strArr) + e.getMessage());
                 return null;

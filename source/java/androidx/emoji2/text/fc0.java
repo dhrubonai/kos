@@ -12,7 +12,7 @@ import android.os.Build;
 public abstract class fc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int[] f356a = {R.attr.state_checked};
+    public static final int[] f355a = {R.attr.state_checked};
     public static final int[] b = new int[0];
 
     static {
@@ -27,7 +27,7 @@ public abstract class fc0 {
         }
         int[] state = drawable.getState();
         if (state == null || state.length == 0) {
-            drawable.setState(f356a);
+            drawable.setState(f355a);
         } else {
             drawable.setState(b);
         }
@@ -47,7 +47,7 @@ public abstract class fc0 {
         switch (i) {
             case 14:
                 return PorterDuff.Mode.MULTIPLY;
-            case 15:
+            case pz0.f /* 15 */:
                 return PorterDuff.Mode.SCREEN;
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                 return PorterDuff.Mode.ADD;

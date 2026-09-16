@@ -62,12 +62,12 @@ public final class gv2 extends lv2 {
     @Override // androidx.emoji2.text.lv2
     public wv2 b() {
         a();
-        wv2 wv2VarD = wv2.d(null, this.c);
+        wv2 d = wv2.d(null, this.c);
         zv0[] zv0VarArr = this.b;
-        tv2 tv2Var = wv2VarD.f1306a;
+        tv2 tv2Var = d.f1305a;
         tv2Var.r(zv0VarArr);
         tv2Var.u(this.d);
-        return wv2VarD;
+        return d;
     }
 
     @Override // androidx.emoji2.text.lv2
@@ -79,7 +79,7 @@ public final class gv2 extends lv2 {
     public void g(zv0 zv0Var) {
         WindowInsets windowInsets = this.c;
         if (windowInsets != null) {
-            this.c = windowInsets.replaceSystemWindowInsets(zv0Var.f1457a, zv0Var.b, zv0Var.c, zv0Var.d);
+            this.c = windowInsets.replaceSystemWindowInsets(zv0Var.f1456a, zv0Var.b, zv0Var.c, zv0Var.d);
         }
     }
 

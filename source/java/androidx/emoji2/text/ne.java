@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class ne extends oe {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f806a;
+    public float f805a;
     public float b;
     public float c;
     public float d;
 
     public ne(float f, float f2, float f3, float f4) {
-        this.f806a = f;
+        this.f805a = f;
         this.b = f2;
         this.c = f3;
         this.d = f4;
@@ -20,7 +20,7 @@ public final class ne extends oe {
     @Override // androidx.emoji2.text.oe
     public final float a(int i) {
         if (i == 0) {
-            return this.f806a;
+            return this.f805a;
         }
         if (i == 1) {
             return this.b;
@@ -46,7 +46,7 @@ public final class ne extends oe {
 
     @Override // androidx.emoji2.text.oe
     public final void d() {
-        this.f806a = 0.0f;
+        this.f805a = 0.0f;
         this.b = 0.0f;
         this.c = 0.0f;
         this.d = 0.0f;
@@ -55,7 +55,7 @@ public final class ne extends oe {
     @Override // androidx.emoji2.text.oe
     public final void e(int i, float f) {
         if (i == 0) {
-            this.f806a = f;
+            this.f805a = f;
             return;
         }
         if (i == 1) {
@@ -75,14 +75,14 @@ public final class ne extends oe {
             return false;
         }
         ne neVar = (ne) obj;
-        return neVar.f806a == this.f806a && neVar.b == this.b && neVar.c == this.c && neVar.d == this.d;
+        return neVar.f805a == this.f805a && neVar.b == this.b && neVar.c == this.c && neVar.d == this.d;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.d) + zd.b(this.c, zd.b(this.b, Float.hashCode(this.f806a) * 31, 31), 31);
+        return Float.hashCode(this.d) + zd.b(this.c, zd.b(this.b, Float.hashCode(this.f805a) * 31, 31), 31);
     }
 
     public final String toString() {
-        return "AnimationVector4D: v1 = " + this.f806a + ", v2 = " + this.b + ", v3 = " + this.c + ", v4 = " + this.d;
+        return "AnimationVector4D: v1 = " + this.f805a + ", v2 = " + this.b + ", v3 = " + this.c + ", v4 = " + this.d;
     }
 }

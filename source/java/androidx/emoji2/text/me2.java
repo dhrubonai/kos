@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class me2 implements he {
 
     /* renamed from: a, reason: collision with root package name */
-    public final he f744a;
+    public final he f743a;
     public final long b;
 
     public me2(ri0 ri0Var, long j) {
-        this.f744a = ri0Var;
+        this.f743a = ri0Var;
         this.b = j;
     }
 
     @Override // androidx.emoji2.text.he
     public final yq2 a(wo2 wo2Var) {
-        return new ne2(this.f744a.a(wo2Var), this.b);
+        return new ne2(this.f743a.a(wo2Var), this.b);
     }
 
     public final boolean equals(Object obj) {
@@ -23,10 +23,10 @@ public final class me2 implements he {
             return false;
         }
         me2 me2Var = (me2) obj;
-        return me2Var.b == this.b && lx0.n(me2Var.f744a, this.f744a);
+        return me2Var.b == this.b && lx0.n(me2Var.f743a, this.f743a);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (this.f744a.hashCode() * 31);
+        return Long.hashCode(this.b) + (this.f743a.hashCode() * 31);
     }
 }

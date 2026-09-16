@@ -34,16 +34,18 @@ public final class SplashScreenViewProvider {
             this._splashScreenView$delegate = az0.U(new sm0() { // from class: androidx.core.splashscreen.d
                 @Override // androidx.emoji2.text.sm0
                 public final Object a() {
-                    return SplashScreenViewProvider.ViewImpl._splashScreenView_delegate$lambda$0(this.d);
+                    ViewGroup _splashScreenView_delegate$lambda$0;
+                    _splashScreenView_delegate$lambda$0 = SplashScreenViewProvider.ViewImpl._splashScreenView_delegate$lambda$0(SplashScreenViewProvider.ViewImpl.this);
+                    return _splashScreenView_delegate$lambda$0;
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final ViewGroup _splashScreenView_delegate$lambda$0(ViewImpl viewImpl) {
-            View viewInflate = View.inflate(viewImpl.activity, R.layout.splash_screen_view, null);
-            lx0.v(viewInflate, "null cannot be cast to non-null type android.view.ViewGroup");
-            return (ViewGroup) viewInflate;
+            View inflate = View.inflate(viewImpl.activity, R.layout.splash_screen_view, null);
+            lx0.v(inflate, "null cannot be cast to non-null type android.view.ViewGroup");
+            return (ViewGroup) inflate;
         }
 
         private final ViewGroup get_splashScreenView() {
@@ -71,9 +73,9 @@ public final class SplashScreenViewProvider {
         }
 
         public View getIconView() {
-            View viewFindViewById = getSplashScreenView().findViewById(R.id.splashscreen_icon_view);
-            lx0.w(viewFindViewById, "findViewById(...)");
-            return viewFindViewById;
+            View findViewById = getSplashScreenView().findViewById(R.id.splashscreen_icon_view);
+            lx0.w(findViewById, "findViewById(...)");
+            return findViewById;
         }
 
         public ViewGroup getSplashScreenView() {
@@ -101,30 +103,39 @@ public final class SplashScreenViewProvider {
 
         @Override // androidx.core.splashscreen.SplashScreenViewProvider.ViewImpl
         public long getIconAnimationDurationMillis() {
-            Duration iconAnimationDuration = getPlatformView().getIconAnimationDuration();
-            if (iconAnimationDuration != null) {
-                return iconAnimationDuration.toMillis();
+            Duration iconAnimationDuration;
+            long millis;
+            iconAnimationDuration = getPlatformView().getIconAnimationDuration();
+            if (iconAnimationDuration == null) {
+                return 0L;
             }
-            return 0L;
+            millis = iconAnimationDuration.toMillis();
+            return millis;
         }
 
         @Override // androidx.core.splashscreen.SplashScreenViewProvider.ViewImpl
         public long getIconAnimationStartMillis() {
-            Instant iconAnimationStart = getPlatformView().getIconAnimationStart();
-            if (iconAnimationStart != null) {
-                return iconAnimationStart.toEpochMilli();
+            Instant iconAnimationStart;
+            long epochMilli;
+            iconAnimationStart = getPlatformView().getIconAnimationStart();
+            if (iconAnimationStart == null) {
+                return 0L;
             }
-            return 0L;
+            epochMilli = iconAnimationStart.toEpochMilli();
+            return epochMilli;
         }
 
         @Override // androidx.core.splashscreen.SplashScreenViewProvider.ViewImpl
         public View getIconView() {
-            if (getPlatformView().getIconView() == null) {
+            View iconView;
+            View iconView2;
+            iconView = getPlatformView().getIconView();
+            if (iconView == null) {
                 return new View(getActivity());
             }
-            View iconView = getPlatformView().getIconView();
-            lx0.u(iconView);
-            return iconView;
+            iconView2 = getPlatformView().getIconView();
+            lx0.u(iconView2);
+            return iconView2;
         }
 
         public final SplashScreenView getPlatformView() {

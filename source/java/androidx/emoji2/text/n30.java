@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public final class n30 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final File f788a;
+    public final File f787a;
     public final String b;
     public final String c;
     public final int d;
@@ -24,24 +24,24 @@ public final class n30 {
     public Process j;
 
     public n30(File file, String str, String str2, int i) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         a.a.a.c.a(-232955290205986L, strArr);
         lx0.x(str, a.a.a.c.a(-233011124780834L, strArr));
         lx0.x(str2, a.a.a.c.a(-233036894584610L, strArr));
-        this.f788a = file;
+        this.f787a = file;
         this.b = str;
         this.c = str2;
         this.d = i;
         this.e = new Object();
-        String strA = a.a.a.c.a(-232573038116642L, strArr);
-        lx0.x(strA, "pattern");
-        Pattern patternCompile = Pattern.compile(strA);
-        lx0.w(patternCompile, "compile(...)");
-        String strA2 = a.a.a.c.a(-232641757593378L, strArr);
-        lx0.x(strA2, "replacement");
-        String strReplaceAll = patternCompile.matcher(str2).replaceAll(strA2);
-        lx0.w(strReplaceAll, "replaceAll(...)");
-        this.f = strReplaceAll;
+        String a2 = a.a.a.c.a(-232573038116642L, strArr);
+        lx0.x(a2, "pattern");
+        Pattern compile = Pattern.compile(a2);
+        lx0.w(compile, "compile(...)");
+        String a3 = a.a.a.c.a(-232641757593378L, strArr);
+        lx0.x(a3, "replacement");
+        String replaceAll = compile.matcher(str2).replaceAll(a3);
+        lx0.w(replaceAll, "replaceAll(...)");
+        this.f = replaceAll;
     }
 
     public final void a(byte[] bArr, int i) {
@@ -74,13 +74,13 @@ public final class n30 {
                         this.i++;
                         b();
                     } else {
-                        int iMin = Math.min(i3, i - i2);
+                        int min = Math.min(i3, i - i2);
                         BufferedOutputStream bufferedOutputStream3 = this.g;
                         if (bufferedOutputStream3 != null) {
-                            bufferedOutputStream3.write(bArr, i2, iMin);
+                            bufferedOutputStream3.write(bArr, i2, min);
                         }
-                        this.h += iMin;
-                        i2 += iMin;
+                        this.h += min;
+                        i2 += min;
                     }
                 } catch (Throwable th3) {
                     throw th3;
@@ -94,25 +94,25 @@ public final class n30 {
     }
 
     public final void b() {
-        this.g = new BufferedOutputStream(new FileOutputStream(new File(this.f788a, this.b + '-' + this.d + '-' + this.f + '-' + this.i + a.a.a.c.a(-230971015315234L, wj1.f1284a)), false), 8192);
+        this.g = new BufferedOutputStream(new FileOutputStream(new File(this.f787a, this.b + '-' + this.d + '-' + this.f + '-' + this.i + a.a.a.c.a(-230971015315234L, wj1.f1283a)), false), 8192);
         this.h = 0L;
     }
 
-    public final Process c() throws IOException {
-        String[] strArr = wj1.f1284a;
-        String strA = a.a.a.c.a(-231263073091362L, strArr);
+    public final Process c() {
+        String[] strArr = wj1.f1283a;
+        String a2 = a.a.a.c.a(-231263073091362L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-231293137862434L, strArr));
         int i = this.d;
         sb.append(i);
         try {
-            Process processStart = new ProcessBuilder((List<String>) xs.m0(strA, sb.toString(), a.a.a.c.a(-231340382502690L, strArr), a.a.a.c.a(-231318907666210L, strArr))).redirectErrorStream(true).start();
-            lx0.u(processStart);
-            return processStart;
+            Process start = new ProcessBuilder((List<String>) xs.m0(a2, sb.toString(), a.a.a.c.a(-231340382502690L, strArr), a.a.a.c.a(-231318907666210L, strArr))).redirectErrorStream(true).start();
+            lx0.u(start);
+            return start;
         } catch (IOException unused) {
-            Process processStart2 = new ProcessBuilder((List<String>) xs.m0(a.a.a.c.a(-231348972437282L, strArr), a.a.a.c.a(-230915180740386L, strArr) + i, a.a.a.c.a(-230962425380642L, strArr), a.a.a.c.a(-230940950544162L, strArr))).redirectErrorStream(true).start();
-            lx0.u(processStart2);
-            return processStart2;
+            Process start2 = new ProcessBuilder((List<String>) xs.m0(a.a.a.c.a(-231348972437282L, strArr), a.a.a.c.a(-230915180740386L, strArr) + i, a.a.a.c.a(-230962425380642L, strArr), a.a.a.c.a(-230940950544162L, strArr))).redirectErrorStream(true).start();
+            lx0.u(start2);
+            return start2;
         }
     }
 }

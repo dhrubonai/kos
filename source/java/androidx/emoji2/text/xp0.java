@@ -37,11 +37,11 @@ public final class xp0 implements sp0 {
         np npVar = new np();
         this.b = opVar;
         this.c = npVar;
-        RenderNode renderNodeC = wb0.c();
-        this.d = renderNodeC;
+        RenderNode c = wb0.c();
+        this.d = c;
         this.e = 0L;
-        renderNodeC.setClipToBounds(false);
-        b(renderNodeC, 0);
+        c.setClipToBounds(false);
+        b(c, 0);
         this.i = 1.0f;
         this.j = 3;
         this.k = 1.0f;
@@ -266,7 +266,9 @@ public final class xp0 implements sp0 {
 
     @Override // androidx.emoji2.text.sp0
     public final boolean p() {
-        return this.d.hasDisplayList();
+        boolean hasDisplayList;
+        hasDisplayList = this.d.hasDisplayList();
+        return hasDisplayList;
     }
 
     @Override // androidx.emoji2.text.sp0
@@ -312,13 +314,14 @@ public final class xp0 implements sp0 {
 
     @Override // androidx.emoji2.text.sp0
     public final void x(j70 j70Var, q01 q01Var, rp0 rp0Var, r5 r5Var) {
+        RecordingCanvas beginRecording;
         np npVar = this.c;
-        RecordingCanvas recordingCanvasBeginRecording = this.d.beginRecording();
+        beginRecording = this.d.beginRecording();
         try {
             op opVar = this.b;
-            w6 w6Var = opVar.f867a;
-            Canvas canvas = w6Var.f1261a;
-            w6Var.f1261a = recordingCanvasBeginRecording;
+            w6 w6Var = opVar.f866a;
+            Canvas canvas = w6Var.f1260a;
+            w6Var.f1260a = beginRecording;
             rg rgVar = npVar.e;
             rgVar.c0(j70Var);
             rgVar.d0(q01Var);
@@ -326,7 +329,7 @@ public final class xp0 implements sp0 {
             rgVar.e0(this.e);
             rgVar.b0(w6Var);
             r5Var.e(npVar);
-            opVar.f867a.f1261a = canvas;
+            opVar.f866a.f1260a = canvas;
         } finally {
             this.d.endRecording();
         }

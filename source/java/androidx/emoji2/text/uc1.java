@@ -35,7 +35,7 @@ public final class uc1 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((uc1) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((uc1) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -45,11 +45,11 @@ public final class uc1 extends hh2 implements Function2 {
                 int i = this.i;
                 if (i == 0) {
                     mz0.L(obj);
-                    Float f = new Float(lt1.f711a.a(this.k.getProgress()));
+                    Float f = new Float(lt1.f710a.a(this.k.getProgress()));
                     this.i = 1;
-                    Object objE = this.j.e(this, f);
+                    Object e = this.j.e(this, f);
                     f30 f30Var = f30.d;
-                    if (objE == f30Var) {
+                    if (e == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -58,16 +58,16 @@ public final class uc1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
-                    Float f2 = new Float(lt1.f711a.a(this.k.getProgress()));
+                    Float f2 = new Float(lt1.f710a.a(this.k.getProgress()));
                     this.i = 1;
-                    Object objE2 = this.j.e(this, f2);
+                    Object e2 = this.j.e(this, f2);
                     f30 f30Var2 = f30.d;
-                    if (objE2 == f30Var2) {
+                    if (e2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -76,7 +76,7 @@ public final class uc1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

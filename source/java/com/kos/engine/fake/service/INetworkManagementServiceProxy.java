@@ -74,8 +74,8 @@ public class INetworkManagementServiceProxy extends BinderInvocationStub {
         }
 
         @Override // com.kos.engine.fake.service.base.UidMethodProxy, com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
-            int iIntValue = ((Integer) objArr[0]).intValue();
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            int intValue = ((Integer) objArr[0]).intValue();
             try {
                 return super.hook(obj, method, objArr);
             } catch (InvocationTargetException e) {
@@ -87,13 +87,13 @@ public class INetworkManagementServiceProxy extends BinderInvocationStub {
                     return null;
                 }
                 String[] strArr = xa1.b;
-                String strA = c.a(-601798491651874L, strArr);
+                String a2 = c.a(-601798491651874L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-601901570866978L, strArr));
-                sb.append(iIntValue);
+                sb.append(intValue);
                 sb.append(c.a(-601609513090850L, strArr));
                 sb.append(objArr[0]);
-                zd.s(sb, c.a(-601678232567586L, strArr), targetException, 5, strA);
+                zd.s(sb, c.a(-601678232567586L, strArr), targetException, 5, a2);
                 return null;
             }
         }

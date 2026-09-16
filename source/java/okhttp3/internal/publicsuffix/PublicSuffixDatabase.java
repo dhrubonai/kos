@@ -1,20 +1,14 @@
 package okhttp3.internal.publicsuffix;
 
-import androidx.emoji2.text.dt;
 import androidx.emoji2.text.iz0;
 import androidx.emoji2.text.lr1;
 import androidx.emoji2.text.lx0;
-import androidx.emoji2.text.lz0;
 import androidx.emoji2.text.n6;
-import androidx.emoji2.text.nc0;
 import androidx.emoji2.text.nq0;
-import androidx.emoji2.text.oc0;
 import androidx.emoji2.text.pv1;
-import androidx.emoji2.text.q72;
 import androidx.emoji2.text.qe0;
 import androidx.emoji2.text.wf2;
 import androidx.emoji2.text.ws;
-import androidx.emoji2.text.zd;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
@@ -33,32 +27,264 @@ public final class PublicSuffixDatabase {
     public static final PublicSuffixDatabase g = new PublicSuffixDatabase();
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicBoolean f1481a = new AtomicBoolean(false);
+    public final AtomicBoolean f1480a = new AtomicBoolean(false);
     public final CountDownLatch b = new CountDownLatch(1);
     public byte[] c;
     public byte[] d;
 
     public static List c(String str) {
-        List listS0 = wf2.s0(str, new char[]{'.'});
-        if (!lx0.n(ws.F0(listS0), "")) {
-            return listS0;
+        List s0 = wf2.s0(str, new char[]{'.'});
+        if (!lx0.n(ws.F0(s0), "")) {
+            return s0;
         }
-        int size = listS0.size() - 1;
-        return ws.L0(listS0, size >= 0 ? size : 0);
+        int size = s0.size() - 1;
+        return ws.L0(s0, size >= 0 ? size : 0);
     }
 
-    public final String a(String str) throws InterruptedException {
-        String strF;
-        String strF2;
-        String strF3;
-        int size;
-        int size2;
+    /* JADX WARN: Code restructure failed: missing block: B:100:0x00c2, code lost:
+    
+        r12 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x009f, code lost:
+    
+        if (r2 <= 1) goto L52;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x00a1, code lost:
+    
+        r6 = (byte[][]) r5.clone();
+        r10 = r6.length - 1;
+        r11 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00aa, code lost:
+    
+        if (r11 >= r10) goto L122;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x00ac, code lost:
+    
+        r6[r11] = okhttp3.internal.publicsuffix.PublicSuffixDatabase.e;
+        r12 = r13.c;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x00b2, code lost:
+    
+        if (r12 == null) goto L120;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00b4, code lost:
+    
+        r12 = androidx.emoji2.text.iz0.f(r12, r6, r11);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00b8, code lost:
+    
+        if (r12 == null) goto L49;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00bb, code lost:
+    
+        r11 = r11 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00c3, code lost:
+    
+        if (r12 == null) goto L64;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x00c5, code lost:
+    
+        r2 = r2 - 1;
+        r6 = 0;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00c7, code lost:
+    
+        if (r6 >= r2) goto L124;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x00c9, code lost:
+    
+        r8 = r13.d;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00cb, code lost:
+    
+        if (r8 == null) goto L125;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x00cd, code lost:
+    
+        r8 = androidx.emoji2.text.iz0.f(r8, r5, r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x00d1, code lost:
+    
+        if (r8 == null) goto L61;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x00d4, code lost:
+    
+        r6 = r6 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x00e0, code lost:
+    
+        if (r8 == null) goto L68;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00e2, code lost:
+    
+        r1 = androidx.emoji2.text.wf2.s0("!".concat(r8), new char[]{'.'});
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0123, code lost:
+    
+        if (r0.size() != r1.size()) goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x012f, code lost:
+    
+        if (((java.lang.String) r1.get(0)).charAt(0) == '!') goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0131, code lost:
+    
+        return null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x013c, code lost:
+    
+        if (((java.lang.String) r1.get(0)).charAt(0) != '!') goto L88;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:56:0x013e, code lost:
+    
+        r0 = r0.size();
+        r1 = r1.size();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0146, code lost:
+    
+        r0 = r0 - r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:58:0x0152, code lost:
+    
+        r1 = new androidx.emoji2.text.dt(0, c(r14));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x015b, code lost:
+    
+        if (r0 < 0) goto L106;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x015d, code lost:
+    
+        if (r0 != 0) goto L93;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x0162, code lost:
+    
+        if ((r1 instanceof androidx.emoji2.text.oc0) == false) goto L96;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x0164, code lost:
+    
+        r1 = ((androidx.emoji2.text.oc0) r1).a(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x016b, code lost:
+    
+        r1 = new androidx.emoji2.text.nc0(r1, r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x0171, code lost:
+    
+        r14 = new java.lang.StringBuilder();
+        r14.append((java.lang.CharSequence) "");
+        r1 = r1.iterator();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x0183, code lost:
+    
+        if (r1.hasNext() == false) goto L126;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0185, code lost:
+    
+        r2 = r1.next();
+        r3 = r3 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x018a, code lost:
+    
+        if (r3 <= 1) goto L128;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x018c, code lost:
+    
+        r14.append((java.lang.CharSequence) ".");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0191, code lost:
+    
+        androidx.emoji2.text.lz0.h(r14, r2, null);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:75:0x0195, code lost:
+    
+        r14.append((java.lang.CharSequence) "");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x019c, code lost:
+    
+        return r14.toString();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01ae, code lost:
+    
+        throw new java.lang.IllegalArgumentException(androidx.emoji2.text.zd.g("Requested element count ", r0, " is less than zero.").toString());
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x0148, code lost:
+    
+        r0 = r0.size();
+        r1 = r1.size() + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x00f1, code lost:
+    
+        if (r9 != null) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:81:0x00f3, code lost:
+    
+        if (r12 != null) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x00f5, code lost:
+    
+        r1 = okhttp3.internal.publicsuffix.PublicSuffixDatabase.f;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:83:0x00f8, code lost:
+    
+        if (r9 == null) goto L73;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x00fa, code lost:
+    
+        r5 = androidx.emoji2.text.wf2.s0(r9, new char[]{'.'});
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x0104, code lost:
+    
+        if (r12 == null) goto L76;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:86:0x0106, code lost:
+    
+        r1 = androidx.emoji2.text.wf2.s0(r12, new char[]{'.'});
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:88:0x0116, code lost:
+    
+        if (r5.size() <= r1.size()) goto L79;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:89:0x0118, code lost:
+    
+        r1 = r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:90:0x0103, code lost:
+    
+        r5 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x00d7, code lost:
+    
+        androidx.emoji2.text.lx0.b0("publicSuffixExceptionListBytes");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x00dc, code lost:
+    
+        throw null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x00dd, code lost:
+    
+        r8 = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x00be, code lost:
+    
+        androidx.emoji2.text.lx0.b0("publicSuffixListBytes");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:98:0x00c1, code lost:
+    
+        throw null;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String a(String str) {
+        String str2;
         String unicode = IDN.toUnicode(str);
         lx0.w(unicode, "unicodeDomain");
-        List listC = c(unicode);
-        List listS0 = qe0.d;
+        List c = c(unicode);
+        List list = qe0.d;
         int i = 0;
-        if (this.f1481a.get() || !this.f1481a.compareAndSet(false, true)) {
+        if (this.f1480a.get() || !this.f1480a.compareAndSet(false, true)) {
             try {
                 this.b.await();
             } catch (InterruptedException unused) {
@@ -75,8 +301,8 @@ public final class PublicSuffixDatabase {
                         Thread.interrupted();
                         z = true;
                     } catch (IOException e2) {
-                        lr1 lr1Var = lr1.f707a;
-                        lr1.f707a.getClass();
+                        lr1 lr1Var = lr1.f706a;
+                        lr1.f706a.getClass();
                         lr1.i(5, "Failed to read public suffix list", e2);
                         if (z) {
                         }
@@ -91,20 +317,20 @@ public final class PublicSuffixDatabase {
         if (this.c == null) {
             throw new IllegalStateException("Unable to load publicsuffixes.gz resource from the classpath.");
         }
-        int size3 = listC.size();
-        byte[][] bArr = new byte[size3][];
-        for (int i2 = 0; i2 < size3; i2++) {
-            String str2 = (String) listC.get(i2);
+        int size = c.size();
+        byte[][] bArr = new byte[size][];
+        for (int i2 = 0; i2 < size; i2++) {
+            String str3 = (String) c.get(i2);
             Charset charset = StandardCharsets.UTF_8;
             lx0.w(charset, "UTF_8");
-            byte[] bytes = str2.getBytes(charset);
+            byte[] bytes = str3.getBytes(charset);
             lx0.w(bytes, "this as java.lang.String).getBytes(charset)");
             bArr[i2] = bytes;
         }
         int i3 = 0;
         while (true) {
-            if (i3 >= size3) {
-                strF = null;
+            if (i3 >= size) {
+                str2 = null;
                 break;
             }
             byte[] bArr2 = this.c;
@@ -112,108 +338,30 @@ public final class PublicSuffixDatabase {
                 lx0.b0("publicSuffixListBytes");
                 throw null;
             }
-            strF = iz0.f(bArr2, bArr, i3);
-            if (strF != null) {
+            str2 = iz0.f(bArr2, bArr, i3);
+            if (str2 != null) {
                 break;
             }
             i3++;
         }
-        if (size3 > 1) {
-            byte[][] bArr3 = (byte[][]) bArr.clone();
-            int length = bArr3.length - 1;
-            for (int i4 = 0; i4 < length; i4++) {
-                bArr3[i4] = e;
-                byte[] bArr4 = this.c;
-                if (bArr4 == null) {
-                    lx0.b0("publicSuffixListBytes");
-                    throw null;
-                }
-                strF2 = iz0.f(bArr4, bArr3, i4);
-                if (strF2 != null) {
-                    break;
-                }
-            }
-            strF2 = null;
-        } else {
-            strF2 = null;
-        }
-        if (strF2 != null) {
-            int i5 = size3 - 1;
-            for (int i6 = 0; i6 < i5; i6++) {
-                byte[] bArr5 = this.d;
-                if (bArr5 == null) {
-                    lx0.b0("publicSuffixExceptionListBytes");
-                    throw null;
-                }
-                strF3 = iz0.f(bArr5, bArr, i6);
-                if (strF3 != null) {
-                    break;
-                }
-            }
-            strF3 = null;
-        } else {
-            strF3 = null;
-        }
-        if (strF3 != null) {
-            listS0 = wf2.s0("!".concat(strF3), new char[]{'.'});
-        } else if (strF == null && strF2 == null) {
-            listS0 = f;
-        } else {
-            List listS02 = strF != null ? wf2.s0(strF, new char[]{'.'}) : listS0;
-            if (strF2 != null) {
-                listS0 = wf2.s0(strF2, new char[]{'.'});
-            }
-            if (listS02.size() > listS0.size()) {
-                listS0 = listS02;
-            }
-        }
-        if (listC.size() == listS0.size() && ((String) listS0.get(0)).charAt(0) != '!') {
-            return null;
-        }
-        if (((String) listS0.get(0)).charAt(0) == '!') {
-            size = listC.size();
-            size2 = listS0.size();
-        } else {
-            size = listC.size();
-            size2 = listS0.size() + 1;
-        }
-        int i7 = size - size2;
-        q72 dtVar = new dt(0, c(str));
-        if (i7 < 0) {
-            throw new IllegalArgumentException(zd.g("Requested element count ", i7, " is less than zero.").toString());
-        }
-        if (i7 != 0) {
-            dtVar = dtVar instanceof oc0 ? ((oc0) dtVar).a(i7) : new nc0(dtVar, i7);
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append((CharSequence) "");
-        for (Object obj : dtVar) {
-            i++;
-            if (i > 1) {
-                sb.append((CharSequence) ".");
-            }
-            lz0.h(sb, obj, null);
-        }
-        sb.append((CharSequence) "");
-        return sb.toString();
     }
 
     public final void b() {
         try {
             InputStream resourceAsStream = PublicSuffixDatabase.class.getResourceAsStream("publicsuffixes.gz");
             if (resourceAsStream != null) {
-                pv1 pv1VarN = n6.N(new nq0(n6.f0(resourceAsStream)));
+                pv1 N = n6.N(new nq0(n6.f0(resourceAsStream)));
                 try {
-                    long j = pv1VarN.readInt();
-                    pv1VarN.z(j);
-                    byte[] bArrN = pv1VarN.e.n(j);
-                    long j2 = pv1VarN.readInt();
-                    pv1VarN.z(j2);
-                    byte[] bArrN2 = pv1VarN.e.n(j2);
-                    pv1VarN.close();
+                    long readInt = N.readInt();
+                    N.z(readInt);
+                    byte[] n = N.e.n(readInt);
+                    long readInt2 = N.readInt();
+                    N.z(readInt2);
+                    byte[] n2 = N.e.n(readInt2);
+                    N.close();
                     synchronized (this) {
-                        this.c = bArrN;
-                        this.d = bArrN2;
+                        this.c = n;
+                        this.d = n2;
                     }
                 } finally {
                 }

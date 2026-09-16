@@ -5,28 +5,28 @@ package androidx.emoji2.text;
 public final class t30 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final m5 f1102a;
+    public final m5 f1101a;
 
     public t30(el elVar) {
-        this.f1102a = elVar;
+        this.f1101a = elVar;
     }
 
     public final int a(int i, q01 q01Var) {
-        return this.f1102a.a(0, i, q01Var);
+        return this.f1101a.a(0, i, q01Var);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof t30) && lx0.n(this.f1102a, ((t30) obj).f1102a);
+        return (obj instanceof t30) && lx0.n(this.f1101a, ((t30) obj).f1101a);
     }
 
     public final int hashCode() {
-        return this.f1102a.hashCode();
+        return this.f1101a.hashCode();
     }
 
     public final String toString() {
-        return "HorizontalCrossAxisAlignment(horizontal=" + this.f1102a + ')';
+        return "HorizontalCrossAxisAlignment(horizontal=" + this.f1101a + ')';
     }
 }

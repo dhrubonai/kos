@@ -48,15 +48,15 @@ public final class aa2 extends fa2 {
             iArr[2] = r92Var.e;
             iArr[3] = r92Var.f;
         }
-        float fWidth = rectF.width() / 2.0f;
-        if (fWidth <= f) {
+        float width = rectF.width() / 2.0f;
+        if (width <= f) {
             return;
         }
-        float f5 = 1.0f - (i / fWidth);
+        float f5 = 1.0f - (i / width);
         float[] fArr = r92.l;
         fArr[1] = f5;
         fArr[2] = ((1.0f - f5) / 2.0f) + f5;
-        paint.setShader(new RadialGradient(rectF.centerX(), rectF.centerY(), fWidth, iArr, fArr, Shader.TileMode.CLAMP));
+        paint.setShader(new RadialGradient(rectF.centerX(), rectF.centerY(), width, iArr, fArr, Shader.TileMode.CLAMP));
         canvas.save();
         canvas.concat(matrix);
         canvas.scale(1.0f, rectF.height() / rectF.width());

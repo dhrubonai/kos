@@ -11,7 +11,7 @@ public final class x70 implements Parcelable {
     public final String e;
 
     public x70(String str, String str2) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(str, a.a.a.c.a(-157046038216482L, strArr));
         lx0.x(str2, a.a.a.c.a(-157063218085666L, strArr));
         this.d = str;
@@ -40,7 +40,7 @@ public final class x70 implements Parcelable {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-157196362071842L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-156835584818978L, strArr));
@@ -49,7 +49,7 @@ public final class x70 implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-157093282856738L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-157093282856738L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeString(this.e);
     }

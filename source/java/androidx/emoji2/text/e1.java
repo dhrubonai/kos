@@ -11,7 +11,7 @@ public final class e1 extends c1 {
 
     @Override // androidx.emoji2.text.c1
     public final int[] b(int i) {
-        int iC;
+        int i2;
         if (n().length() <= 0 || i >= n().length()) {
             return null;
         }
@@ -21,8 +21,8 @@ public final class e1 extends c1 {
                 lx0.b0("node");
                 throw null;
             }
-            zw1 zw1VarG = y62Var.g();
-            int iRound = Math.round(zw1VarG.d - zw1VarG.b);
+            zw1 g2 = y62Var.g();
+            int round = Math.round(g2.d - g2.b);
             if (i <= 0) {
                 i = 0;
             }
@@ -31,13 +31,13 @@ public final class e1 extends c1 {
                 lx0.b0("layoutResult");
                 throw null;
             }
-            int iE = sk2Var.e(i);
+            int e2 = sk2Var.e(i);
             sk2 sk2Var2 = this.c;
             if (sk2Var2 == null) {
                 lx0.b0("layoutResult");
                 throw null;
             }
-            float fD = sk2Var2.b.d(iE) + iRound;
+            float d = sk2Var2.b.d(e2) + round;
             sk2 sk2Var3 = this.c;
             if (sk2Var3 == null) {
                 lx0.b0("layoutResult");
@@ -47,22 +47,22 @@ public final class e1 extends c1 {
                 lx0.b0("layoutResult");
                 throw null;
             }
-            if (fD < sk2Var3.b.d(r0.f - 1)) {
+            if (d < sk2Var3.b.d(r0.f - 1)) {
                 sk2 sk2Var4 = this.c;
                 if (sk2Var4 == null) {
                     lx0.b0("layoutResult");
                     throw null;
                 }
-                iC = sk2Var4.b.c(fD);
+                i2 = sk2Var4.b.c(d);
             } else {
                 sk2 sk2Var5 = this.c;
                 if (sk2Var5 == null) {
                     lx0.b0("layoutResult");
                     throw null;
                 }
-                iC = sk2Var5.b.f;
+                i2 = sk2Var5.b.f;
             }
-            return l(i, t(iC - 1, g) + 1);
+            return l(i, t(i2 - 1, g) + 1);
         } catch (IllegalStateException unused) {
             return null;
         }
@@ -70,7 +70,7 @@ public final class e1 extends c1 {
 
     @Override // androidx.emoji2.text.c1
     public final int[] s(int i) {
-        int iC;
+        int i2;
         if (n().length() <= 0 || i <= 0) {
             return null;
         }
@@ -80,8 +80,8 @@ public final class e1 extends c1 {
                 lx0.b0("node");
                 throw null;
             }
-            zw1 zw1VarG = y62Var.g();
-            int iRound = Math.round(zw1VarG.d - zw1VarG.b);
+            zw1 g2 = y62Var.g();
+            int round = Math.round(g2.d - g2.b);
             int length = n().length();
             if (length <= i) {
                 i = length;
@@ -91,27 +91,27 @@ public final class e1 extends c1 {
                 lx0.b0("layoutResult");
                 throw null;
             }
-            int iE = sk2Var.e(i);
+            int e2 = sk2Var.e(i);
             sk2 sk2Var2 = this.c;
             if (sk2Var2 == null) {
                 lx0.b0("layoutResult");
                 throw null;
             }
-            float fD = sk2Var2.b.d(iE) - iRound;
-            if (fD > 0.0f) {
+            float d = sk2Var2.b.d(e2) - round;
+            if (d > 0.0f) {
                 sk2 sk2Var3 = this.c;
                 if (sk2Var3 == null) {
                     lx0.b0("layoutResult");
                     throw null;
                 }
-                iC = sk2Var3.b.c(fD);
+                i2 = sk2Var3.b.c(d);
             } else {
-                iC = 0;
+                i2 = 0;
             }
-            if (i == n().length() && iC < iE) {
-                iC++;
+            if (i == n().length() && i2 < e2) {
+                i2++;
             }
-            return l(t(iC, f), i);
+            return l(t(i2, f), i);
         } catch (IllegalStateException unused) {
             return null;
         }
@@ -123,13 +123,13 @@ public final class e1 extends c1 {
             lx0.b0("layoutResult");
             throw null;
         }
-        int iH = sk2Var.h(i);
+        int h = sk2Var.h(i);
         sk2 sk2Var2 = this.c;
         if (sk2Var2 == null) {
             lx0.b0("layoutResult");
             throw null;
         }
-        if (rz1Var != sk2Var2.i(iH)) {
+        if (rz1Var != sk2Var2.i(h)) {
             sk2 sk2Var3 = this.c;
             if (sk2Var3 != null) {
                 return sk2Var3.h(i);

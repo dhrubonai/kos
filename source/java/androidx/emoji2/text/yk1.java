@@ -7,31 +7,31 @@ public final class yk1 extends dl1 {
 
     @Override // androidx.emoji2.text.dl1
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
-        int iC = on0Var.c(0);
+        int c2 = on0Var.c(0);
         int i = rb2Var.v;
-        int iM = rb2Var.M(rb2Var.b, rb2Var.r(i));
-        int iG = rb2Var.g(rb2Var.b, rb2Var.r(i + 1));
-        for (int iMax = Math.max(iM, iG - iC); iMax < iG; iMax++) {
-            Object obj = rb2Var.c[rb2Var.h(iMax)];
+        int M = rb2Var.M(rb2Var.b, rb2Var.r(i));
+        int g = rb2Var.g(rb2Var.b, rb2Var.r(i + 1));
+        for (int max = Math.max(M, g - c2); max < g; max++) {
+            Object obj = rb2Var.c[rb2Var.h(max)];
             if (obj instanceof ly1) {
                 jy1Var.d((ly1) obj);
             } else if (obj instanceof pw1) {
                 ((pw1) obj).d();
             }
         }
-        if (iC <= 0) {
+        if (c2 <= 0) {
             vx.c("Check failed");
         }
         int i2 = rb2Var.v;
-        int iM2 = rb2Var.M(rb2Var.b, rb2Var.r(i2));
-        int iG2 = rb2Var.g(rb2Var.b, rb2Var.r(i2 + 1)) - iC;
-        if (iG2 < iM2) {
+        int M2 = rb2Var.M(rb2Var.b, rb2Var.r(i2));
+        int g2 = rb2Var.g(rb2Var.b, rb2Var.r(i2 + 1)) - c2;
+        if (g2 < M2) {
             vx.c("Check failed");
         }
-        rb2Var.I(iG2, iC, i2);
+        rb2Var.I(g2, c2, i2);
         int i3 = rb2Var.i;
-        if (i3 >= iM2) {
-            rb2Var.i = i3 - iC;
+        if (i3 >= M2) {
+            rb2Var.i = i3 - c2;
         }
     }
 }

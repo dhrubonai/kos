@@ -94,27 +94,27 @@ public class BPackageSettings implements Parcelable {
 
     public boolean save() {
         synchronized (this) {
-            Parcel parcelObtain = Parcel.obtain();
+            Parcel obtain = Parcel.obtain();
             AtomicFile atomicFile = new AtomicFile(BEnvironment.getPackageConf(this.pkg.packageName));
-            FileOutputStream fileOutputStreamStartWrite = null;
+            FileOutputStream fileOutputStream = null;
             try {
-                writeToParcel(parcelObtain, 0);
-                parcelObtain.setDataPosition(0);
-                fileOutputStreamStartWrite = atomicFile.startWrite();
-                fileOutputStreamStartWrite.write(parcelObtain.marshall());
-                atomicFile.finishWrite(fileOutputStreamStartWrite);
-                parcelObtain.recycle();
-                l8.F(fileOutputStreamStartWrite);
+                writeToParcel(obtain, 0);
+                obtain.setDataPosition(0);
+                fileOutputStream = atomicFile.startWrite();
+                fileOutputStream.write(obtain.marshall());
+                atomicFile.finishWrite(fileOutputStream);
+                obtain.recycle();
+                l8.F(fileOutputStream);
             } catch (Throwable th) {
                 try {
                     th.printStackTrace();
-                    atomicFile.failWrite(fileOutputStreamStartWrite);
-                    parcelObtain.recycle();
-                    l8.F(fileOutputStreamStartWrite);
+                    atomicFile.failWrite(fileOutputStream);
+                    obtain.recycle();
+                    l8.F(fileOutputStream);
                     return false;
                 } catch (Throwable th2) {
-                    parcelObtain.recycle();
-                    l8.F(fileOutputStreamStartWrite);
+                    obtain.recycle();
+                    l8.F(fileOutputStream);
                     throw th2;
                 }
             }
@@ -151,9 +151,9 @@ public class BPackageSettings implements Parcelable {
         this.pkg = (BPackage) parcel.readParcelable(BPackage.class.getClassLoader());
         this.appId = parcel.readInt();
         this.installOption = (InstallOption) parcel.readParcelable(InstallOption.class.getClassLoader());
-        int i = parcel.readInt();
-        this.userState = new HashMap(i);
-        for (int i2 = 0; i2 < i; i2++) {
+        int readInt = parcel.readInt();
+        this.userState = new HashMap(readInt);
+        for (int i = 0; i < readInt; i++) {
             this.userState.put((Integer) parcel.readValue(Integer.class.getClassLoader()), (BPackageUserState) parcel.readParcelable(BPackageUserState.class.getClassLoader()));
         }
     }

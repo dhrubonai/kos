@@ -12,7 +12,6 @@ import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -163,15 +162,15 @@ public class IXiaomiMiuiServicesProxy extends ClassInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object createSafeMiuiCameraManagerForXiaomi() throws IllegalAccessException, NoSuchMethodException, InstantiationException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public static Object createSafeMiuiCameraManagerForXiaomi() {
         String[] strArr = xa1.b;
         try {
             try {
                 Constructor<?> declaredConstructor = Class.forName(c.a(-1049153695268642L, strArr)).getDeclaredConstructor(null);
                 declaredConstructor.setAccessible(true);
-                Object objNewInstance = declaredConstructor.newInstance(null);
+                Object newInstance = declaredConstructor.newInstance(null);
                 nz0.Q(c.a(-1049935379316514L, strArr), 3, c.a(-1049544537292578L, strArr));
-                return objNewInstance;
+                return newInstance;
             } catch (Exception e) {
                 nz0.Q(c.a(-920609619066658L, strArr), 5, c.a(-920716993249058L, strArr) + e.getMessage());
                 return null;
@@ -194,7 +193,7 @@ public class IXiaomiMiuiServicesProxy extends ClassInvocationStub {
             nz0.Q(c.a(-1049286839254818L, strArr), 3, c.a(-1049394213437218L, strArr));
             return;
         }
-        String strA = c.a(-1051009121140514L, strArr);
+        String a2 = c.a(-1051009121140514L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-1051099315453730L, strArr));
         String str = yw2.f;
@@ -205,7 +204,7 @@ public class IXiaomiMiuiServicesProxy extends ClassInvocationStub {
         sb.append(str);
         sb.append(c.a(-1049261069451042L, strArr));
         sb.append(yw2.c());
-        zd.p(sb, c.a(-1049295429189410L, strArr), 3, strA);
+        zd.p(sb, c.a(-1049295429189410L, strArr), 3, a2);
     }
 
     @Override // com.kos.engine.fake.hook.IInjectHook

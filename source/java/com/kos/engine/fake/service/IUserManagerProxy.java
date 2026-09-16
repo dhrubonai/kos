@@ -24,6 +24,7 @@ import com.kos.engine.fake.hook.ProxyMethods;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -95,10 +96,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1028370348523298L, strArr);
+            String a2 = c.a(-1028370348523298L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1028430478065442L, strArr), 3, strA);
+            zd.p(sb, c.a(-1028430478065442L, strArr), 3, a2);
             return null;
         }
     }
@@ -108,10 +109,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
     public static class GetUserInfo extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            int iFirstIntArg = IUserManagerProxy.firstIntArg(objArr, rj.u());
+            int firstIntArg = IUserManagerProxy.firstIntArg(objArr, rj.u());
             String[] strArr = xa1.b;
-            zd.o(new StringBuilder(), c.a(-1028108355518242L, strArr), iFirstIntArg, 3, c.a(-1028529262313250L, strArr));
-            return IUserManagerProxy.createVirtualUserInfo(iFirstIntArg);
+            zd.o(new StringBuilder(), c.a(-1028108355518242L, strArr), firstIntArg, 3, c.a(-1028529262313250L, strArr));
+            return IUserManagerProxy.createVirtualUserInfo(firstIntArg);
         }
     }
 
@@ -144,10 +145,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1027249362059042L, strArr);
+            String a2 = c.a(-1027249362059042L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1027309491601186L, strArr), 3, strA);
+            zd.p(sb, c.a(-1027309491601186L, strArr), 3, a2);
             return Boolean.FALSE;
         }
     }
@@ -158,10 +159,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1027425455718178L, strArr);
+            String a2 = c.a(-1027425455718178L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1027004548923170L, strArr), 3, strA);
+            zd.p(sb, c.a(-1027004548923170L, strArr), 3, a2);
             return Boolean.TRUE;
         }
     }
@@ -172,10 +173,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1027081858334498L, strArr);
+            String a2 = c.a(-1027081858334498L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1027210707353378L, strArr), 3, strA);
+            zd.p(sb, c.a(-1027210707353378L, strArr), 3, a2);
             return Boolean.FALSE;
         }
     }
@@ -195,10 +196,10 @@ public class IUserManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1027842067545890L, strArr);
+            String a2 = c.a(-1027842067545890L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1027970916564770L, strArr), 3, strA);
+            zd.p(sb, c.a(-1027970916564770L, strArr), 3, a2);
             return null;
         }
     }
@@ -315,99 +316,51 @@ public class IUserManagerProxy extends BinderInvocationStub {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00bb  */
-    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00bb  */
+    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private static void disableLocalUnlockedCaches(java.lang.Object r11) {
-        /*
-            java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-            r1 = 3
-            r2 = 0
-            r3 = -1020617932554018(0xfffc5fc0deadc0de, double:NaN)
-            java.lang.String r3 = a.a.a.c.a(r3, r0)     // Catch: java.lang.Throwable -> L8b
-            java.lang.Class r3 = java.lang.Class.forName(r3)     // Catch: java.lang.Throwable -> L8b
-            r4 = -1021253587713826(0xfffc5f2cdeadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)     // Catch: java.lang.Throwable -> L8b
-            java.lang.Object r11 = readField(r11, r4)     // Catch: java.lang.Throwable -> L8b
-            java.lang.reflect.Field[] r3 = r3.getDeclaredFields()     // Catch: java.lang.Throwable -> L8b
-            int r4 = r3.length     // Catch: java.lang.Throwable -> L8b
-            r5 = r2
-        L24:
-            if (r2 >= r4) goto Lb9
-            r6 = r3[r2]     // Catch: java.lang.Throwable -> L88
-            java.lang.String r7 = r6.getName()     // Catch: java.lang.Throwable -> L88
-            boolean r7 = isUnlockedCacheFieldName(r7)     // Catch: java.lang.Throwable -> L88
-            if (r7 != 0) goto L33
-            goto L85
-        L33:
-            r7 = 1
-            r6.setAccessible(r7)     // Catch: java.lang.Throwable -> L85
-            int r7 = r6.getModifiers()     // Catch: java.lang.Throwable -> L85
-            boolean r7 = java.lang.reflect.Modifier.isStatic(r7)     // Catch: java.lang.Throwable -> L85
-            if (r7 == 0) goto L43
-            r7 = 0
-            goto L44
-        L43:
-            r7 = r11
-        L44:
-            if (r7 != 0) goto L51
-            int r8 = r6.getModifiers()     // Catch: java.lang.Throwable -> L85
-            boolean r8 = java.lang.reflect.Modifier.isStatic(r8)     // Catch: java.lang.Throwable -> L85
-            if (r8 != 0) goto L51
-            goto L85
-        L51:
-            java.lang.Object r7 = r6.get(r7)     // Catch: java.lang.Throwable -> L85
-            boolean r7 = disableLocalCache(r7)     // Catch: java.lang.Throwable -> L85
-            if (r7 == 0) goto L85
-            int r5 = r5 + 1
-            r7 = -1021330897125154(0xfffc5f1adeadc0de, double:NaN)
-            java.lang.String r7 = a.a.a.c.a(r7, r0)     // Catch: java.lang.Throwable -> L85
-            java.lang.StringBuilder r8 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L85
-            r8.<init>()     // Catch: java.lang.Throwable -> L85
-            r9 = -1021391026667298(0xfffc5f0cdeadc0de, double:NaN)
-            java.lang.String r9 = a.a.a.c.a(r9, r0)     // Catch: java.lang.Throwable -> L85
-            r8.append(r9)     // Catch: java.lang.Throwable -> L85
-            java.lang.String r6 = r6.getName()     // Catch: java.lang.Throwable -> L85
-            r8.append(r6)     // Catch: java.lang.Throwable -> L85
-            java.lang.String r6 = r8.toString()     // Catch: java.lang.Throwable -> L85
-            androidx.emoji2.text.nz0.Q(r7, r1, r6)     // Catch: java.lang.Throwable -> L85
-        L85:
-            int r2 = r2 + 1
-            goto L24
-        L88:
-            r11 = move-exception
-            r2 = r5
-            goto L8c
-        L8b:
-            r11 = move-exception
-        L8c:
-            r3 = -1021073199087394(0xfffc5f56deadc0de, double:NaN)
-            java.lang.String r3 = a.a.a.c.a(r3, r0)
-            java.lang.StringBuilder r4 = new java.lang.StringBuilder
-            r4.<init>()
-            r5 = -1023950827175714(0xfffc5cb8deadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)
-            r4.append(r5)
-            java.lang.Class r11 = r11.getClass()
-            java.lang.String r11 = r11.getSimpleName()
-            r4.append(r11)
-            java.lang.String r11 = r4.toString()
-            androidx.emoji2.text.nz0.Q(r3, r1, r11)
-            r5 = r2
-        Lb9:
-            if (r5 != 0) goto Ld0
-            r2 = -1023667359334178(0xfffc5cfadeadc0de, double:NaN)
-            java.lang.String r11 = a.a.a.c.a(r2, r0)
-            r2 = -1023727488876322(0xfffc5cecdeadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r2, r0)
-            androidx.emoji2.text.nz0.Q(r11, r1, r0)
-        Ld0:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IUserManagerProxy.disableLocalUnlockedCaches(java.lang.Object):void");
+    private static void disableLocalUnlockedCaches(Object obj) {
+        int i;
+        String[] strArr = xa1.b;
+        int i2 = 0;
+        try {
+            Class<?> cls = Class.forName(c.a(-1020617932554018L, strArr));
+            Object readField = readField(obj, c.a(-1021253587713826L, strArr));
+            Field[] declaredFields = cls.getDeclaredFields();
+            int length = declaredFields.length;
+            i = 0;
+            while (i2 < length) {
+                try {
+                    Field field = declaredFields[i2];
+                    if (isUnlockedCacheFieldName(field.getName())) {
+                        try {
+                            field.setAccessible(true);
+                            Object obj2 = Modifier.isStatic(field.getModifiers()) ? null : readField;
+                            if ((obj2 != null || Modifier.isStatic(field.getModifiers())) && disableLocalCache(field.get(obj2))) {
+                                i++;
+                                nz0.Q(c.a(-1021330897125154L, strArr), 3, c.a(-1021391026667298L, strArr) + field.getName());
+                            }
+                        } catch (Throwable unused) {
+                        }
+                    }
+                    i2++;
+                } catch (Throwable th) {
+                    th = th;
+                    i2 = i;
+                    nz0.Q(c.a(-1021073199087394L, strArr), 3, c.a(-1023950827175714L, strArr) + th.getClass().getSimpleName());
+                    i = i2;
+                    if (i != 0) {
+                    }
+                }
+            }
+        } catch (Throwable th2) {
+            th = th2;
+        }
+        if (i != 0) {
+            nz0.Q(c.a(-1023667359334178L, strArr), 3, c.a(-1023727488876322L, strArr));
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -445,27 +398,27 @@ public class IUserManagerProxy extends BinderInvocationStub {
     }
 
     private static void fixUserManagerContexts(Context context, IInterface iInterface) {
-        Set setNewSetFromMap = Collections.newSetFromMap(new IdentityHashMap());
-        addContextChain(setNewSetFromMap, context);
+        Set newSetFromMap = Collections.newSetFromMap(new IdentityHashMap());
+        addContextChain(newSetFromMap, context);
         if (context instanceof Application) {
-            ArrayList arrayList = new ArrayList(setNewSetFromMap);
+            ArrayList arrayList = new ArrayList(newSetFromMap);
             int size = arrayList.size();
             int i = 0;
             while (i < size) {
                 Object obj = arrayList.get(i);
                 i++;
                 try {
-                    addContextChain(setNewSetFromMap, ((Context) obj).createDeviceProtectedStorageContext());
+                    addContextChain(newSetFromMap, ((Context) obj).createDeviceProtectedStorageContext());
                 } catch (Throwable unused) {
                 }
             }
         }
-        Iterator it = setNewSetFromMap.iterator();
+        Iterator it = newSetFromMap.iterator();
         Object obj2 = null;
         while (it.hasNext()) {
-            Object objRebindUserManager = rebindUserManager((Context) it.next(), iInterface);
-            if (obj2 == null && objRebindUserManager != null) {
-                obj2 = objRebindUserManager;
+            Object rebindUserManager = rebindUserManager((Context) it.next(), iInterface);
+            if (obj2 == null && rebindUserManager != null) {
+                obj2 = rebindUserManager;
             }
         }
         if (obj2 == null || !sUnlockedCacheInspectionComplete.compareAndSet(false, true)) {
@@ -497,9 +450,9 @@ public class IUserManagerProxy extends BinderInvocationStub {
         if (obj == null) {
             return null;
         }
-        for (Class<?> superclass = obj.getClass(); superclass != null; superclass = superclass.getSuperclass()) {
+        for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
             try {
-                Field declaredField = superclass.getDeclaredField(str);
+                Field declaredField = cls.getDeclaredField(str);
                 declaredField.setAccessible(true);
                 return declaredField.get(obj);
             } catch (NoSuchFieldException unused) {
@@ -519,14 +472,14 @@ public class IUserManagerProxy extends BinderInvocationStub {
                     return systemService;
                 }
                 BRUserManager.get(systemService)._set_mService(iInterface);
-                IInterface iInterfaceMService = BRUserManager.get(systemService).mService();
-                if (!sameBinder(iInterfaceMService, iInterface)) {
+                IInterface mService = BRUserManager.get(systemService).mService();
+                if (!sameBinder(mService, iInterface)) {
                     Field declaredField = systemService.getClass().getDeclaredField(c.a(-1021562825359138L, strArr));
                     declaredField.setAccessible(true);
                     declaredField.set(systemService, iInterface);
-                    iInterfaceMService = BRUserManager.get(systemService).mService();
+                    mService = BRUserManager.get(systemService).mService();
                 }
-                if (sameBinder(iInterfaceMService, iInterface)) {
+                if (sameBinder(mService, iInterface)) {
                     nz0.Q(c.a(-1022516308098850L, strArr), 3, c.a(-1022095401303842L, strArr) + context.getClass().getName() + c.a(-1020678062096162L, strArr) + rj.u());
                     return systemService;
                 }
@@ -535,12 +488,12 @@ public class IUserManagerProxy extends BinderInvocationStub {
             }
             return null;
         } catch (Throwable th) {
-            String strA = c.a(-1020742486605602L, strArr);
+            String a2 = c.a(-1020742486605602L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1020802616147746L, strArr));
             sb.append(context.getClass().getName());
             zd.r(sb, c.a(-1020484788567842L, strArr), th);
-            zd.s(sb, c.a(-1020549213077282L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-1020549213077282L, strArr), th, 5, a2);
             return null;
         }
     }
@@ -561,9 +514,9 @@ public class IUserManagerProxy extends BinderInvocationStub {
     }
 
     private static int virtualMainUserFlags() {
-        int iIntValue = BRUserInfo.get().FLAG_PRIMARY().intValue();
+        int intValue = BRUserInfo.get().FLAG_PRIMARY().intValue();
         String[] strArr = xa1.b;
-        return iIntValue | getUserInfoFlag(c.a(-1034976008224546L, strArr)) | getUserInfoFlag(c.a(-1035006072995618L, strArr)) | getUserInfoFlag(c.a(-1035031842799394L, strArr)) | getUserInfoFlag(c.a(-1035117742145314L, strArr), 16384);
+        return intValue | getUserInfoFlag(c.a(-1034976008224546L, strArr)) | getUserInfoFlag(c.a(-1035006072995618L, strArr)) | getUserInfoFlag(c.a(-1035031842799394L, strArr)) | getUserInfoFlag(c.a(-1035117742145314L, strArr), 16384);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -593,11 +546,11 @@ public class IUserManagerProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException unused) {
-            String strA = c.a(-1024728216256290L, strArr);
+            String a2 = c.a(-1024728216256290L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1024238589984546L, strArr), method);
             sb.append(c.a(-1024393208807202L, strArr));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }
@@ -609,21 +562,21 @@ public class IUserManagerProxy extends BinderInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static Object createVirtualUserInfo(int i) {
-        int iVirtualMainUserFlags = virtualMainUserFlags();
+        int virtualMainUserFlags = virtualMainUserFlags();
         UserInfoStatic userInfoStatic = BRUserInfo.get();
         String[] strArr = xa1.b;
-        Object obj_new = userInfoStatic._new(i, c.a(-1022907150122786L, strArr), iVirtualMainUserFlags);
-        if (obj_new != null) {
-            return obj_new;
+        Object _new = userInfoStatic._new(i, c.a(-1022907150122786L, strArr), virtualMainUserFlags);
+        if (_new != null) {
+            return _new;
         }
         try {
-            Object obj_new2 = BRUserInfo.get()._new();
-            if (obj_new2 != null) {
-                BRUserInfo.get(obj_new2)._set_id(Integer.valueOf(i));
-                BRUserInfo.get(obj_new2)._set_name(c.a(-1022932919926562L, strArr));
-                BRUserInfo.get(obj_new2)._set_flags(Integer.valueOf(iVirtualMainUserFlags));
+            Object _new2 = BRUserInfo.get()._new();
+            if (_new2 != null) {
+                BRUserInfo.get(_new2)._set_id(Integer.valueOf(i));
+                BRUserInfo.get(_new2)._set_name(c.a(-1022932919926562L, strArr));
+                BRUserInfo.get(_new2)._set_flags(Integer.valueOf(virtualMainUserFlags));
                 nz0.Q(c.a(-1022958689730338L, strArr), 3, c.a(-1023087538749218L, strArr) + i);
-                return obj_new2;
+                return _new2;
             }
         } catch (Throwable th) {
             nz0.P(c.a(-1022765416202018L, strArr), c.a(-1023375301558050L, strArr) + i, th);

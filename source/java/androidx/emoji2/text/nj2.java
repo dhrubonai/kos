@@ -18,11 +18,11 @@ public final class nj2 extends hh2 implements wm0 {
 
     @Override // androidx.emoji2.text.wm0
     public final Object invoke(Object obj, Object obj2, Object obj3) {
-        long j = ((zi1) obj2).f1442a;
+        long j = ((zi1) obj2).f1441a;
         nj2 nj2Var = new nj2(this.k, this.l, (l10) obj3);
         nj2Var.i = (tt1) obj;
         nj2Var.j = j;
-        return nj2Var.k(up2.f1187a);
+        return nj2Var.k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -48,6 +48,6 @@ public final class nj2 extends hh2 implements wm0 {
             mz0.L(obj);
         }
         h50.G(e30Var, null, new tt2(mf1Var, ((Boolean) obj).booleanValue(), l10Var, 4), 3);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

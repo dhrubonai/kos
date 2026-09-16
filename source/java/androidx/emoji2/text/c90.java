@@ -17,7 +17,7 @@ public abstract class c90 extends ni2 {
     public Throwable e(Object obj) {
         lu luVar = obj instanceof lu ? (lu) obj : null;
         if (luVar != null) {
-            return luVar.f713a;
+            return luVar.f712a;
         }
         return null;
     }
@@ -28,48 +28,52 @@ public abstract class c90 extends ni2 {
 
     public abstract Object k();
 
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003f, code lost:
+    
+        r4 = (androidx.emoji2.text.cy0) r5.n(androidx.emoji2.text.dd0.K);
+     */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
         try {
-            l10 l10VarC = c();
-            lx0.v(l10VarC, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T of kotlinx.coroutines.DispatchedTask>");
-            a90 a90Var = (a90) l10VarC;
+            l10 c = c();
+            lx0.v(c, "null cannot be cast to non-null type kotlinx.coroutines.internal.DispatchedContinuation<T of kotlinx.coroutines.DispatchedTask>");
+            a90 a90Var = (a90) c;
             n10 n10Var = a90Var.h;
             Object obj = a90Var.j;
-            v20 v20VarT = n10Var.t();
-            Object objL0 = bz0.l0(v20VarT, obj);
+            v20 t = n10Var.t();
+            Object l0 = bz0.l0(t, obj);
             cy0 cy0Var = null;
-            rp2 rp2VarH0 = objL0 != bz0.m ? lx0.h0(n10Var, v20VarT, objL0) : null;
+            rp2 h0 = l0 != bz0.m ? lx0.h0(n10Var, t, l0) : null;
             try {
-                v20 v20VarT2 = n10Var.t();
-                Object objK = k();
-                Throwable thE = e(objK);
-                if (thE == null) {
+                v20 t2 = n10Var.t();
+                Object k = k();
+                Throwable e = e(k);
+                if (e == null) {
                     int i = this.f;
                     boolean z = true;
                     if (i != 1 && i != 2) {
                         z = false;
                     }
-                    if (z) {
-                        cy0Var = (cy0) v20VarT2.n(dd0.K);
-                    }
                 }
                 if (cy0Var != null && !cy0Var.b()) {
-                    CancellationException cancellationExceptionL = cy0Var.l();
-                    b(cancellationExceptionL);
-                    n10Var.g(mz0.h(cancellationExceptionL));
-                } else if (thE != null) {
-                    n10Var.g(mz0.h(thE));
+                    CancellationException l = cy0Var.l();
+                    b(l);
+                    n10Var.g(mz0.h(l));
+                } else if (e != null) {
+                    n10Var.g(mz0.h(e));
                 } else {
-                    n10Var.g(i(objK));
+                    n10Var.g(i(k));
                 }
-                if (rp2VarH0 != null && !rp2VarH0.k0()) {
+                if (h0 != null && !h0.k0()) {
                     return;
                 }
-                bz0.e0(v20VarT, objL0);
+                bz0.e0(t, l0);
             } catch (Throwable th) {
-                if (rp2VarH0 == null || rp2VarH0.k0()) {
-                    bz0.e0(v20VarT, objL0);
+                if (h0 == null || h0.k0()) {
+                    bz0.e0(t, l0);
                 }
                 throw th;
             }

@@ -130,16 +130,16 @@ public class ISubProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException e) {
-            Object objFallbackForRestrictedSubscriptionCall = fallbackForRestrictedSubscriptionCall(method);
-            if (objFallbackForRestrictedSubscriptionCall == UNHANDLED) {
+            Object fallbackForRestrictedSubscriptionCall = fallbackForRestrictedSubscriptionCall(method);
+            if (fallbackForRestrictedSubscriptionCall == UNHANDLED) {
                 throw e;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-1010524759408418L, strArr);
+            String a2 = c.a(-1010524759408418L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1010619248688930L, strArr), method);
-            zd.p(sb, c.a(-1011336508227362L, strArr), 5, strA);
-            return objFallbackForRestrictedSubscriptionCall;
+            zd.p(sb, c.a(-1011336508227362L, strArr), 5, a2);
+            return fallbackForRestrictedSubscriptionCall;
         }
     }
 

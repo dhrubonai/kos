@@ -7,22 +7,22 @@ import kotlin.jvm.functions.Function2;
 public final class cu implements nd1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final nd1 f219a;
+    public final nd1 f218a;
     public final nd1 b;
 
     public cu(nd1 nd1Var, nd1 nd1Var2) {
-        this.f219a = nd1Var;
+        this.f218a = nd1Var;
         this.b = nd1Var2;
     }
 
     @Override // androidx.emoji2.text.nd1
     public final Object a(Object obj, Function2 function2) {
-        return this.b.a(this.f219a.a(obj, function2), function2);
+        return this.b.a(this.f218a.a(obj, function2), function2);
     }
 
     @Override // androidx.emoji2.text.nd1
     public final boolean b(um0 um0Var) {
-        return this.f219a.b(um0Var) && this.b.b(um0Var);
+        return this.f218a.b(um0Var) && this.b.b(um0Var);
     }
 
     public final boolean equals(Object obj) {
@@ -30,11 +30,11 @@ public final class cu implements nd1 {
             return false;
         }
         cu cuVar = (cu) obj;
-        return lx0.n(this.f219a, cuVar.f219a) && lx0.n(this.b, cuVar.b);
+        return lx0.n(this.f218a, cuVar.f218a) && lx0.n(this.b, cuVar.b);
     }
 
     public final int hashCode() {
-        return (this.b.hashCode() * 31) + this.f219a.hashCode();
+        return (this.b.hashCode() * 31) + this.f218a.hashCode();
     }
 
     public final String toString() {

@@ -54,111 +54,57 @@ public final /* synthetic */ class kq1 implements um0 {
                     if (w70Var.p) {
                         final int i = 0;
                         l41.P(l41Var, new ComposableLambdaImpl(385604780, true, new wm0() { // from class: androidx.emoji2.text.qq1
-                            /* JADX WARN: Removed duplicated region for block: B:10:0x0028  */
-                            /* JADX WARN: Removed duplicated region for block: B:24:0x0075  */
                             @Override // androidx.emoji2.text.wm0
-                            /*
-                                Code decompiled incorrectly, please refer to instructions dump.
-                                To view partially-correct add '--show-bad-code' argument
-                            */
-                            public final java.lang.Object invoke(java.lang.Object r7, java.lang.Object r8, java.lang.Object r9) {
-                                /*
-                                    r6 = this;
-                                    int r0 = r1
-                                    androidx.emoji2.text.u21 r7 = (androidx.emoji2.text.u21) r7
-                                    androidx.emoji2.text.lx r8 = (androidx.emoji2.text.lx) r8
-                                    java.lang.Integer r9 = (java.lang.Integer) r9
-                                    int r9 = r9.intValue()
-                                    switch(r0) {
-                                        case 0: goto L5c;
-                                        default: goto Lf;
-                                    }
-                                Lf:
-                                    java.lang.String r0 = "$this$item"
-                                    androidx.emoji2.text.lx0.x(r7, r0)
-                                    r7 = r9 & 17
-                                    r9 = 16
-                                    if (r7 != r9) goto L28
-                                    r7 = r8
-                                    androidx.emoji2.text.tx r7 = (androidx.emoji2.text.tx) r7
-                                    boolean r9 = r7.B()
-                                    if (r9 != 0) goto L24
-                                    goto L28
-                                L24:
-                                    r7.S()
-                                    goto L59
-                                L28:
-                                    androidx.emoji2.text.w70 r7 = r2
-                                    boolean r2 = r7.r
-                                    r4 = r8
-                                    androidx.emoji2.text.tx r4 = (androidx.emoji2.text.tx) r4
-                                    kotlin.jvm.functions.Function2 r8 = r3
-                                    boolean r9 = r4.f(r8)
-                                    boolean r0 = r4.h(r7)
-                                    r9 = r9 | r0
-                                    java.lang.Object r0 = r4.M()
-                                    if (r9 != 0) goto L44
-                                    androidx.emoji2.text.on r9 = androidx.emoji2.text.kx.f663a
-                                    if (r0 != r9) goto L4d
-                                L44:
-                                    androidx.emoji2.text.vq1 r0 = new androidx.emoji2.text.vq1
-                                    r9 = 1
-                                    r0.<init>(r9, r7, r8)
-                                    r4.i0(r0)
-                                L4d:
-                                    r3 = r0
-                                    androidx.emoji2.text.um0 r3 = (androidx.emoji2.text.um0) r3
-                                    r5 = 54
-                                    java.lang.String r0 = "Early process access"
-                                    java.lang.String r1 = "Allow loading before the target Application has fully started."
-                                    androidx.emoji2.text.n6.t(r0, r1, r2, r3, r4, r5)
-                                L59:
-                                    androidx.emoji2.text.up2 r7 = androidx.emoji2.text.up2.f1187a
-                                    return r7
-                                L5c:
-                                    java.lang.String r0 = "$this$item"
-                                    androidx.emoji2.text.lx0.x(r7, r0)
-                                    r7 = r9 & 17
-                                    r9 = 16
-                                    if (r7 != r9) goto L75
-                                    r7 = r8
-                                    androidx.emoji2.text.tx r7 = (androidx.emoji2.text.tx) r7
-                                    boolean r9 = r7.B()
-                                    if (r9 != 0) goto L71
-                                    goto L75
-                                L71:
-                                    r7.S()
-                                    goto La6
-                                L75:
-                                    androidx.emoji2.text.w70 r7 = r2
-                                    boolean r2 = r7.q
-                                    r4 = r8
-                                    androidx.emoji2.text.tx r4 = (androidx.emoji2.text.tx) r4
-                                    kotlin.jvm.functions.Function2 r8 = r3
-                                    boolean r9 = r4.f(r8)
-                                    boolean r0 = r4.h(r7)
-                                    r9 = r9 | r0
-                                    java.lang.Object r0 = r4.M()
-                                    if (r9 != 0) goto L91
-                                    androidx.emoji2.text.on r9 = androidx.emoji2.text.kx.f663a
-                                    if (r0 != r9) goto L9a
-                                L91:
-                                    androidx.emoji2.text.vq1 r0 = new androidx.emoji2.text.vq1
-                                    r9 = 0
-                                    r0.<init>(r9, r7, r8)
-                                    r4.i0(r0)
-                                L9a:
-                                    r3 = r0
-                                    androidx.emoji2.text.um0 r3 = (androidx.emoji2.text.um0) r3
-                                    r5 = 54
-                                    java.lang.String r0 = "Native libraries"
-                                    java.lang.String r1 = "Allow System.loadLibrary() from the module native library directory."
-                                    androidx.emoji2.text.n6.t(r0, r1, r2, r3, r4, r5)
-                                La6:
-                                    androidx.emoji2.text.up2 r7 = androidx.emoji2.text.up2.f1187a
-                                    return r7
-                                */
-                                throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.qq1.invoke(java.lang.Object, java.lang.Object, java.lang.Object):java.lang.Object");
+                            public final Object invoke(Object obj2, Object obj3, Object obj4) {
+                                int i2 = i;
+                                u21 u21Var = (u21) obj2;
+                                lx lxVar = (lx) obj3;
+                                int intValue = ((Integer) obj4).intValue();
+                                switch (i2) {
+                                    case 0:
+                                        lx0.x(u21Var, "$this$item");
+                                        if ((intValue & 17) == 16) {
+                                            tx txVar = (tx) lxVar;
+                                            if (txVar.B()) {
+                                                txVar.S();
+                                                break;
+                                            }
+                                        }
+                                        w70 w70Var2 = w70Var;
+                                        boolean z = w70Var2.q;
+                                        tx txVar2 = (tx) lxVar;
+                                        Function2 function25 = function23;
+                                        boolean f = txVar2.f(function25) | txVar2.h(w70Var2);
+                                        Object M = txVar2.M();
+                                        if (f || M == kx.f662a) {
+                                            M = new vq1(0, w70Var2, function25);
+                                            txVar2.i0(M);
+                                        }
+                                        n6.t("Native libraries", "Allow System.loadLibrary() from the module native library directory.", z, (um0) M, txVar2, 54);
+                                        break;
+                                    default:
+                                        lx0.x(u21Var, "$this$item");
+                                        if ((intValue & 17) == 16) {
+                                            tx txVar3 = (tx) lxVar;
+                                            if (txVar3.B()) {
+                                                txVar3.S();
+                                                break;
+                                            }
+                                        }
+                                        w70 w70Var3 = w70Var;
+                                        boolean z2 = w70Var3.r;
+                                        tx txVar4 = (tx) lxVar;
+                                        Function2 function26 = function23;
+                                        boolean f2 = txVar4.f(function26) | txVar4.h(w70Var3);
+                                        Object M2 = txVar4.M();
+                                        if (f2 || M2 == kx.f662a) {
+                                            M2 = new vq1(1, w70Var3, function26);
+                                            txVar4.i0(M2);
+                                        }
+                                        n6.t("Early process access", "Allow loading before the target Application has fully started.", z2, (um0) M2, txVar4, 54);
+                                        break;
+                                }
+                                return up2.f1186a;
                             }
                         }));
                     }
@@ -166,104 +112,56 @@ public final /* synthetic */ class kq1 implements um0 {
                         final int i2 = 1;
                         l41.P(l41Var, new ComposableLambdaImpl(-1718562973, true, new wm0() { // from class: androidx.emoji2.text.qq1
                             @Override // androidx.emoji2.text.wm0
-                            public final Object invoke(Object v, Object v2, Object v3) {
-                                /*
-                                    this = this;
-                                    int r0 = r1
-                                    androidx.emoji2.text.u21 r7 = (androidx.emoji2.text.u21) r7
-                                    androidx.emoji2.text.lx r8 = (androidx.emoji2.text.lx) r8
-                                    java.lang.Integer r9 = (java.lang.Integer) r9
-                                    int r9 = r9.intValue()
-                                    switch(r0) {
-                                        case 0: goto L5c;
-                                        default: goto Lf;
-                                    }
-                                Lf:
-                                    java.lang.String r0 = "$this$item"
-                                    androidx.emoji2.text.lx0.x(r7, r0)
-                                    r7 = r9 & 17
-                                    r9 = 16
-                                    if (r7 != r9) goto L28
-                                    r7 = r8
-                                    androidx.emoji2.text.tx r7 = (androidx.emoji2.text.tx) r7
-                                    boolean r9 = r7.B()
-                                    if (r9 != 0) goto L24
-                                    goto L28
-                                L24:
-                                    r7.S()
-                                    goto L59
-                                L28:
-                                    androidx.emoji2.text.w70 r7 = r2
-                                    boolean r2 = r7.r
-                                    r4 = r8
-                                    androidx.emoji2.text.tx r4 = (androidx.emoji2.text.tx) r4
-                                    kotlin.jvm.functions.Function2 r8 = r3
-                                    boolean r9 = r4.f(r8)
-                                    boolean r0 = r4.h(r7)
-                                    r9 = r9 | r0
-                                    java.lang.Object r0 = r4.M()
-                                    if (r9 != 0) goto L44
-                                    androidx.emoji2.text.on r9 = androidx.emoji2.text.kx.f663a
-                                    if (r0 != r9) goto L4d
-                                L44:
-                                    androidx.emoji2.text.vq1 r0 = new androidx.emoji2.text.vq1
-                                    r9 = 1
-                                    r0.<init>(r9, r7, r8)
-                                    r4.i0(r0)
-                                L4d:
-                                    r3 = r0
-                                    androidx.emoji2.text.um0 r3 = (androidx.emoji2.text.um0) r3
-                                    r5 = 54
-                                    java.lang.String r0 = "Early process access"
-                                    java.lang.String r1 = "Allow loading before the target Application has fully started."
-                                    androidx.emoji2.text.n6.t(r0, r1, r2, r3, r4, r5)
-                                L59:
-                                    androidx.emoji2.text.up2 r7 = androidx.emoji2.text.up2.f1187a
-                                    return r7
-                                L5c:
-                                    java.lang.String r0 = "$this$item"
-                                    androidx.emoji2.text.lx0.x(r7, r0)
-                                    r7 = r9 & 17
-                                    r9 = 16
-                                    if (r7 != r9) goto L75
-                                    r7 = r8
-                                    androidx.emoji2.text.tx r7 = (androidx.emoji2.text.tx) r7
-                                    boolean r9 = r7.B()
-                                    if (r9 != 0) goto L71
-                                    goto L75
-                                L71:
-                                    r7.S()
-                                    goto La6
-                                L75:
-                                    androidx.emoji2.text.w70 r7 = r2
-                                    boolean r2 = r7.q
-                                    r4 = r8
-                                    androidx.emoji2.text.tx r4 = (androidx.emoji2.text.tx) r4
-                                    kotlin.jvm.functions.Function2 r8 = r3
-                                    boolean r9 = r4.f(r8)
-                                    boolean r0 = r4.h(r7)
-                                    r9 = r9 | r0
-                                    java.lang.Object r0 = r4.M()
-                                    if (r9 != 0) goto L91
-                                    androidx.emoji2.text.on r9 = androidx.emoji2.text.kx.f663a
-                                    if (r0 != r9) goto L9a
-                                L91:
-                                    androidx.emoji2.text.vq1 r0 = new androidx.emoji2.text.vq1
-                                    r9 = 0
-                                    r0.<init>(r9, r7, r8)
-                                    r4.i0(r0)
-                                L9a:
-                                    r3 = r0
-                                    androidx.emoji2.text.um0 r3 = (androidx.emoji2.text.um0) r3
-                                    r5 = 54
-                                    java.lang.String r0 = "Native libraries"
-                                    java.lang.String r1 = "Allow System.loadLibrary() from the module native library directory."
-                                    androidx.emoji2.text.n6.t(r0, r1, r2, r3, r4, r5)
-                                La6:
-                                    androidx.emoji2.text.up2 r7 = androidx.emoji2.text.up2.f1187a
-                                    return r7
-                                */
-                                throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.qq1.invoke(java.lang.Object, java.lang.Object, java.lang.Object):java.lang.Object");
+                            public final Object invoke(Object obj2, Object obj3, Object obj4) {
+                                int i22 = i2;
+                                u21 u21Var = (u21) obj2;
+                                lx lxVar = (lx) obj3;
+                                int intValue = ((Integer) obj4).intValue();
+                                switch (i22) {
+                                    case 0:
+                                        lx0.x(u21Var, "$this$item");
+                                        if ((intValue & 17) == 16) {
+                                            tx txVar = (tx) lxVar;
+                                            if (txVar.B()) {
+                                                txVar.S();
+                                                break;
+                                            }
+                                        }
+                                        w70 w70Var2 = w70Var;
+                                        boolean z = w70Var2.q;
+                                        tx txVar2 = (tx) lxVar;
+                                        Function2 function25 = function24;
+                                        boolean f = txVar2.f(function25) | txVar2.h(w70Var2);
+                                        Object M = txVar2.M();
+                                        if (f || M == kx.f662a) {
+                                            M = new vq1(0, w70Var2, function25);
+                                            txVar2.i0(M);
+                                        }
+                                        n6.t("Native libraries", "Allow System.loadLibrary() from the module native library directory.", z, (um0) M, txVar2, 54);
+                                        break;
+                                    default:
+                                        lx0.x(u21Var, "$this$item");
+                                        if ((intValue & 17) == 16) {
+                                            tx txVar3 = (tx) lxVar;
+                                            if (txVar3.B()) {
+                                                txVar3.S();
+                                                break;
+                                            }
+                                        }
+                                        w70 w70Var3 = w70Var;
+                                        boolean z2 = w70Var3.r;
+                                        tx txVar4 = (tx) lxVar;
+                                        Function2 function26 = function24;
+                                        boolean f2 = txVar4.f(function26) | txVar4.h(w70Var3);
+                                        Object M2 = txVar4.M();
+                                        if (f2 || M2 == kx.f662a) {
+                                            M2 = new vq1(1, w70Var3, function26);
+                                            txVar4.i0(M2);
+                                        }
+                                        n6.t("Early process access", "Allow loading before the target Application has fully started.", z2, (um0) M2, txVar4, 54);
+                                        break;
+                                }
+                                return up2.f1186a;
                             }
                         }));
                     }
@@ -280,11 +178,11 @@ public final /* synthetic */ class kq1 implements um0 {
                 mf1 mf1Var5 = (mf1) this.k;
                 mf1 mf1Var6 = (mf1) this.l;
                 i01 i01Var = (i01) obj;
-                lx0.x(i01Var, a.a.a.c.a(-374285484048162L, wj1.f1284a));
+                lx0.x(i01Var, a.a.a.c.a(-374285484048162L, wj1.f1283a));
                 h50.G(e30Var, null, new xa0(context, i01Var, mf1Var, mf1Var2, mf1Var3, mf1Var4, mf1Var5, mf1Var6, null), 3);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ kq1(w70 w70Var, kt ktVar, um0 um0Var, Function2 function2, Function2 function22, wm0 wm0Var, Function2 function23, Function2 function24) {

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 /* loaded from: classes.dex */
 public class FileProviderHandler {
     public static File convertFile(Context context, Uri uri) {
-        File fileForUri;
         ArrayList arrayList = rj.i().e;
         int size = arrayList.size();
         int i = 0;
@@ -21,22 +20,22 @@ public class FileProviderHandler {
             Object obj = arrayList.get(i);
             i++;
             try {
-                fileForUri = FileProvider.getFileForUri(context, ((ProviderInfo) obj).authority, uri);
+                File fileForUri = FileProvider.getFileForUri(context, ((ProviderInfo) obj).authority, uri);
+                if (fileForUri != null && fileForUri.exists()) {
+                    return fileForUri;
+                }
             } catch (Exception unused) {
-            }
-            if (fileForUri != null && fileForUri.exists()) {
-                return fileForUri;
             }
         }
         return null;
     }
 
     public static Uri convertFileUri(Context context, Uri uri) {
-        File fileConvertFile = convertFile(context, uri);
-        if (fileConvertFile == null) {
+        File convertFile = convertFile(context, uri);
+        if (convertFile == null) {
             return null;
         }
         c01 c01Var = c01.r;
-        return BStorageManager.get().getUriForFile(fileConvertFile.getAbsolutePath());
+        return BStorageManager.get().getUriForFile(convertFile.getAbsolutePath());
     }
 }

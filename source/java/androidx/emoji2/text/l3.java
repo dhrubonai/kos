@@ -12,17 +12,17 @@ import com.kos.engine.entity.location.BCell;
 public final class l3 extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f671a;
+    public final /* synthetic */ int f670a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ l3(int i, Object obj) {
-        this.f671a = i;
+        this.f670a = i;
         this.b = obj;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationCancel(Animator animator) {
-        switch (this.f671a) {
+        switch (this.f670a) {
             case 0:
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
                 actionBarOverlayLayout.w = null;
@@ -36,7 +36,7 @@ public final class l3 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.f671a) {
+        switch (this.f670a) {
             case 0:
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.b;
                 actionBarOverlayLayout.w = null;

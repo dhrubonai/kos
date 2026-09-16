@@ -8,8 +8,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public final class es1 extends m0 {
     @Override // androidx.emoji2.text.m0
     public final Random a() {
-        ThreadLocalRandom threadLocalRandomCurrent = ThreadLocalRandom.current();
-        lx0.w(threadLocalRandomCurrent, "current(...)");
-        return threadLocalRandomCurrent;
+        ThreadLocalRandom current = ThreadLocalRandom.current();
+        lx0.w(current, "current(...)");
+        return current;
     }
 }

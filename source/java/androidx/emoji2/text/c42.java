@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class c42 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f182a;
+    public final long f181a;
     public final vo2 b;
 
     public c42(long j, vo2 vo2Var) {
-        this.f182a = j;
+        this.f181a = j;
         this.b = vo2Var;
     }
 
@@ -21,16 +21,16 @@ public final class c42 {
             return false;
         }
         c42 c42Var = (c42) obj;
-        return Float.compare(0.92f, 0.92f) == 0 && fn2.a(this.f182a, c42Var.f182a) && this.b.equals(c42Var.b);
+        return Float.compare(0.92f, 0.92f) == 0 && fn2.a(this.f181a, c42Var.f181a) && this.b.equals(c42Var.b);
     }
 
     public final int hashCode() {
-        int iHashCode = Float.hashCode(0.92f) * 31;
+        int hashCode = Float.hashCode(0.92f) * 31;
         int i = fn2.c;
-        return this.b.hashCode() + jx0.b(iHashCode, 31, this.f182a);
+        return this.b.hashCode() + jx0.b(hashCode, 31, this.f181a);
     }
 
     public final String toString() {
-        return "Scale(scale=0.92, transformOrigin=" + ((Object) fn2.d(this.f182a)) + ", animationSpec=" + this.b + ')';
+        return "Scale(scale=0.92, transformOrigin=" + ((Object) fn2.d(this.f181a)) + ", animationSpec=" + this.b + ')';
     }
 }

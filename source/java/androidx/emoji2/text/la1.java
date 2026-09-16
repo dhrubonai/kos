@@ -33,13 +33,13 @@ public abstract class la1 extends LinearLayout {
     public ze2 l;
     public boolean m;
 
-    public la1(Context context, AttributeSet attributeSet) throws Resources.NotFoundException {
-        we2 we2VarB;
+    public la1(Context context, AttributeSet attributeSet) {
+        super(bz0.m0(context, attributeSet, R.attr.materialButtonToggleGroupStyle, R.style.Widget_Material3_MaterialButtonGroup), attributeSet, R.attr.materialButtonToggleGroupStyle);
+        we2 b;
         XmlResourceParser xml;
         int next;
         ze2 ze2Var;
         int next2;
-        super(bz0.m0(context, attributeSet, R.attr.materialButtonToggleGroupStyle, R.style.Widget_Material3_MaterialButtonGroup), attributeSet, R.attr.materialButtonToggleGroupStyle);
         this.d = new ArrayList();
         this.e = new ArrayList();
         MaterialButtonToggleGroup materialButtonToggleGroup = (MaterialButtonToggleGroup) this;
@@ -47,9 +47,9 @@ public abstract class la1 extends LinearLayout {
         this.g = new fu(1, materialButtonToggleGroup);
         this.m = true;
         Context context2 = getContext();
-        TypedArray typedArrayP = lx0.P(context2, attributeSet, fv1.j, R.attr.materialButtonToggleGroupStyle, R.style.Widget_Material3_MaterialButtonGroup, new int[0]);
-        if (typedArrayP.hasValue(2)) {
-            int resourceId = typedArrayP.getResourceId(2, 0);
+        TypedArray P = lx0.P(context2, attributeSet, fv1.j, R.attr.materialButtonToggleGroupStyle, R.style.Widget_Material3_MaterialButtonGroup, new int[0]);
+        if (P.hasValue(2)) {
+            int resourceId = P.getResourceId(2, 0);
             if (resourceId != 0 && context2.getResources().getResourceTypeName(resourceId).equals("xml")) {
                 try {
                     xml = context2.getResources().getXml(resourceId);
@@ -59,7 +59,7 @@ public abstract class la1 extends LinearLayout {
                     ze2Var = new ze2();
                     ze2Var.c = new int[10][];
                     ze2Var.d = new gz0[10];
-                    AttributeSet attributeSetAsAttributeSet = Xml.asAttributeSet(xml);
+                    AttributeSet asAttributeSet = Xml.asAttributeSet(xml);
                     do {
                         next2 = xml.next();
                         if (next2 == 2) {
@@ -70,34 +70,35 @@ public abstract class la1 extends LinearLayout {
                         throw new XmlPullParserException("No start tag found");
                     }
                     if (xml.getName().equals("selector")) {
-                        ze2Var.a(context2, xml, attributeSetAsAttributeSet, context2.getTheme());
+                        ze2Var.a(context2, xml, asAttributeSet, context2.getTheme());
                     }
                     xml.close();
                     this.l = ze2Var;
                 } finally {
                 }
-            } else {
-                ze2Var = null;
-                this.l = ze2Var;
             }
+            ze2Var = null;
+            this.l = ze2Var;
         }
-        if (typedArrayP.hasValue(4)) {
-            xe2 xe2VarB = xe2.b(context2, typedArrayP, 4);
-            this.j = xe2VarB;
-            if (xe2VarB == null) {
-                lt0 lt0Var = new lt0(v92.a(context2, typedArrayP.getResourceId(4, 0), typedArrayP.getResourceId(5, 0), new m(0)).a());
+        if (P.hasValue(4)) {
+            xe2 b2 = xe2.b(context2, P, 4);
+            this.j = b2;
+            if (b2 == null) {
+                lt0 lt0Var = new lt0(v92.a(context2, P.getResourceId(4, 0), P.getResourceId(5, 0), new m(0)).a());
                 this.j = lt0Var.b != 0 ? new xe2(lt0Var) : null;
             }
         }
-        if (typedArrayP.hasValue(3)) {
+        if (P.hasValue(3)) {
             m mVar = new m(0.0f);
-            int resourceId2 = typedArrayP.getResourceId(3, 0);
-            if (resourceId2 != 0 && context2.getResources().getResourceTypeName(resourceId2).equals("xml")) {
+            int resourceId2 = P.getResourceId(3, 0);
+            if (resourceId2 == 0) {
+                b = we2.b(v92.c(P, 3, mVar));
+            } else if (context2.getResources().getResourceTypeName(resourceId2).equals("xml")) {
                 try {
                     xml = context2.getResources().getXml(resourceId2);
                     try {
-                        we2VarB = new we2();
-                        AttributeSet attributeSetAsAttributeSet2 = Xml.asAttributeSet(xml);
+                        b = new we2();
+                        AttributeSet asAttributeSet2 = Xml.asAttributeSet(xml);
                         do {
                             next = xml.next();
                             if (next == 2) {
@@ -108,23 +109,23 @@ public abstract class la1 extends LinearLayout {
                             throw new XmlPullParserException("No start tag found");
                         }
                         if (xml.getName().equals("selector")) {
-                            we2VarB.d(context2, xml, attributeSetAsAttributeSet2, context2.getTheme());
+                            b.d(context2, xml, asAttributeSet2, context2.getTheme());
                         }
                         xml.close();
                     } finally {
                     }
                 } catch (Resources.NotFoundException | IOException | XmlPullParserException unused2) {
-                    we2VarB = we2.b(mVar);
+                    b = we2.b(mVar);
                 }
             } else {
-                we2VarB = we2.b(v92.c(typedArrayP, 3, mVar));
+                b = we2.b(v92.c(P, 3, mVar));
             }
-            this.i = we2VarB;
+            this.i = b;
         }
-        this.k = typedArrayP.getDimensionPixelSize(1, 0);
+        this.k = P.getDimensionPixelSize(1, 0);
         setChildrenDrawingOrderEnabled(true);
-        setEnabled(typedArrayP.getBoolean(0, true));
-        typedArrayP.recycle();
+        setEnabled(P.getBoolean(0, true));
+        P.recycle();
     }
 
     private int getFirstVisibleChildIndex() {
@@ -153,32 +154,32 @@ public abstract class la1 extends LinearLayout {
     }
 
     public final void a() {
-        int iMin;
+        int i;
         int firstVisibleChildIndex = getFirstVisibleChildIndex();
         if (firstVisibleChildIndex == -1) {
             return;
         }
-        for (int i = firstVisibleChildIndex + 1; i < getChildCount(); i++) {
-            MaterialButton materialButton = (MaterialButton) getChildAt(i);
-            MaterialButton materialButton2 = (MaterialButton) getChildAt(i - 1);
+        for (int i2 = firstVisibleChildIndex + 1; i2 < getChildCount(); i2++) {
+            MaterialButton materialButton = (MaterialButton) getChildAt(i2);
+            MaterialButton materialButton2 = (MaterialButton) getChildAt(i2 - 1);
             if (this.k <= 0) {
-                iMin = Math.min(materialButton.getStrokeWidth(), materialButton2.getStrokeWidth());
+                i = Math.min(materialButton.getStrokeWidth(), materialButton2.getStrokeWidth());
                 materialButton.setShouldDrawSurfaceColorStroke(true);
                 materialButton2.setShouldDrawSurfaceColorStroke(true);
             } else {
                 materialButton.setShouldDrawSurfaceColorStroke(false);
                 materialButton2.setShouldDrawSurfaceColorStroke(false);
-                iMin = 0;
+                i = 0;
             }
             ViewGroup.LayoutParams layoutParams = materialButton.getLayoutParams();
             LinearLayout.LayoutParams layoutParams2 = layoutParams instanceof LinearLayout.LayoutParams ? (LinearLayout.LayoutParams) layoutParams : new LinearLayout.LayoutParams(layoutParams.width, layoutParams.height);
             if (getOrientation() == 0) {
                 layoutParams2.setMarginEnd(0);
-                layoutParams2.setMarginStart(this.k - iMin);
+                layoutParams2.setMarginStart(this.k - i);
                 layoutParams2.topMargin = 0;
             } else {
                 layoutParams2.bottomMargin = 0;
-                layoutParams2.topMargin = this.k - iMin;
+                layoutParams2.topMargin = this.k - i;
                 layoutParams2.setMarginStart(0);
             }
             materialButton.setLayoutParams(layoutParams2);
@@ -218,74 +219,74 @@ public abstract class la1 extends LinearLayout {
     public final void b() {
         MaterialButton materialButton;
         MaterialButton materialButton2;
-        float fMax;
+        float max;
         if (this.l == null || getChildCount() == 0) {
             return;
         }
         int firstVisibleChildIndex = getFirstVisibleChildIndex();
         int lastVisibleChildIndex = getLastVisibleChildIndex();
-        int iMin = Integer.MAX_VALUE;
-        for (int i = firstVisibleChildIndex; i <= lastVisibleChildIndex; i++) {
-            if (c(i)) {
-                if (c(i) && this.l != null) {
-                    MaterialButton materialButton3 = (MaterialButton) getChildAt(i);
+        int i = Integer.MAX_VALUE;
+        for (int i2 = firstVisibleChildIndex; i2 <= lastVisibleChildIndex; i2++) {
+            if (c(i2)) {
+                if (c(i2) && this.l != null) {
+                    MaterialButton materialButton3 = (MaterialButton) getChildAt(i2);
                     ze2 ze2Var = this.l;
                     int width = materialButton3.getWidth();
-                    int i2 = -width;
-                    for (int i3 = 0; i3 < ze2Var.f1437a; i3++) {
-                        ye2 ye2Var = (ye2) ze2Var.d[i3].d;
-                        int i4 = ye2Var.f1383a;
+                    int i3 = -width;
+                    for (int i4 = 0; i4 < ze2Var.f1436a; i4++) {
+                        ye2 ye2Var = (ye2) ze2Var.d[i4].d;
+                        int i5 = ye2Var.f1382a;
                         float f = ye2Var.b;
-                        if (i4 == 2) {
-                            fMax = Math.max(i2, f);
-                        } else if (i4 == 1) {
-                            fMax = Math.max(i2, width * f);
+                        if (i5 == 2) {
+                            max = Math.max(i3, f);
+                        } else if (i5 == 1) {
+                            max = Math.max(i3, width * f);
                         }
-                        i2 = (int) fMax;
+                        i3 = (int) max;
                     }
-                    int iMax = Math.max(0, i2);
-                    int i5 = i - 1;
+                    int max2 = Math.max(0, i3);
+                    int i6 = i2 - 1;
                     while (true) {
                         materialButton = null;
-                        if (i5 < 0) {
+                        if (i6 < 0) {
                             materialButton2 = null;
                             break;
                         } else {
-                            if (c(i5)) {
-                                materialButton2 = (MaterialButton) getChildAt(i5);
+                            if (c(i6)) {
+                                materialButton2 = (MaterialButton) getChildAt(i6);
                                 break;
                             }
-                            i5--;
+                            i6--;
                         }
                     }
                     int allowedWidthDecrease = materialButton2 == null ? 0 : materialButton2.getAllowedWidthDecrease();
                     int childCount = getChildCount();
-                    int i6 = i + 1;
+                    int i7 = i2 + 1;
                     while (true) {
-                        if (i6 >= childCount) {
+                        if (i7 >= childCount) {
                             break;
                         }
-                        if (c(i6)) {
-                            materialButton = (MaterialButton) getChildAt(i6);
+                        if (c(i7)) {
+                            materialButton = (MaterialButton) getChildAt(i7);
                             break;
                         }
-                        i6++;
+                        i7++;
                     }
-                    iMin = Math.min(iMax, allowedWidthDecrease + (materialButton != null ? materialButton.getAllowedWidthDecrease() : 0));
+                    r5 = Math.min(max2, allowedWidthDecrease + (materialButton != null ? materialButton.getAllowedWidthDecrease() : 0));
                 }
-                if (i != firstVisibleChildIndex && i != lastVisibleChildIndex) {
-                    iMin /= 2;
+                if (i2 != firstVisibleChildIndex && i2 != lastVisibleChildIndex) {
+                    r5 /= 2;
                 }
-                iMin = Math.min(iMin, iMin);
+                i = Math.min(i, r5);
             }
         }
-        int i7 = firstVisibleChildIndex;
-        while (i7 <= lastVisibleChildIndex) {
-            if (c(i7)) {
-                ((MaterialButton) getChildAt(i7)).setSizeChange(this.l);
-                ((MaterialButton) getChildAt(i7)).setWidthChangeMax((i7 == firstVisibleChildIndex || i7 == lastVisibleChildIndex) ? iMin : iMin * 2);
+        int i8 = firstVisibleChildIndex;
+        while (i8 <= lastVisibleChildIndex) {
+            if (c(i8)) {
+                ((MaterialButton) getChildAt(i8)).setSizeChange(this.l);
+                ((MaterialButton) getChildAt(i8)).setWidthChangeMax((i8 == firstVisibleChildIndex || i8 == lastVisibleChildIndex) ? i : i * 2);
             }
-            i7++;
+            i8++;
         }
     }
 
@@ -340,7 +341,7 @@ public abstract class la1 extends LinearLayout {
                         lt0Var = new lt0((v92) this.d.get(i2));
                     } else {
                         lt0 lt0Var2 = new lt0(1);
-                        int i3 = xe2Var.f1334a;
+                        int i3 = xe2Var.f1333a;
                         lt0Var2.b = i3;
                         lt0Var2.c = xe2Var.b;
                         int[][] iArr = xe2Var.c;
@@ -458,10 +459,10 @@ public abstract class la1 extends LinearLayout {
         if (view instanceof MaterialButton) {
             ((MaterialButton) view).setOnPressedChangeListenerInternal(null);
         }
-        int iIndexOfChild = indexOfChild(view);
-        if (iIndexOfChild >= 0) {
-            this.d.remove(iIndexOfChild);
-            this.e.remove(iIndexOfChild);
+        int indexOfChild = indexOfChild(view);
+        if (indexOfChild >= 0) {
+            this.d.remove(indexOfChild);
+            this.e.remove(indexOfChild);
         }
         this.m = true;
         e();

@@ -13,7 +13,7 @@ public final class dh {
     public static volatile dh c;
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f250a;
+    public final Context f249a;
 
     static {
         wj1.x(-382269828251426L);
@@ -24,16 +24,16 @@ public final class dh {
     }
 
     public dh(Context context) {
-        this.f250a = context.getApplicationContext();
+        this.f249a = context.getApplicationContext();
     }
 
     public static final boolean a(dh dhVar, String str) {
         dhVar.getClass();
-        String[] strArr = wj1.f1284a;
-        Intent intentAddFlags = new Intent(a.a.a.c.a(-382441626943266L, strArr), Uri.parse(a.a.a.c.a(-382540411191074L, strArr) + str)).addFlags(268435456);
-        lx0.w(intentAddFlags, a.a.a.c.a(-382192518840098L, strArr));
+        String[] strArr = wj1.f1283a;
+        Intent addFlags = new Intent(a.a.a.c.a(-382441626943266L, strArr), Uri.parse(a.a.a.c.a(-382540411191074L, strArr) + str)).addFlags(268435456);
+        lx0.w(addFlags, a.a.a.c.a(-382192518840098L, strArr));
         try {
-            dhVar.f250a.startActivity(intentAddFlags);
+            dhVar.f249a.startActivity(addFlags);
             return true;
         } catch (ActivityNotFoundException | SecurityException unused) {
             return false;
@@ -41,7 +41,7 @@ public final class dh {
     }
 
     public static boolean c(int i, String str) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(str, a.a.a.c.a(-381586928451362L, strArr));
         try {
             c01.r.getClass();
@@ -52,127 +52,95 @@ public final class dh {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0015  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object b(java.lang.String r11, int r12, androidx.emoji2.text.n10 r13) throws java.lang.Throwable {
-        /*
-            r10 = this;
-            java.lang.String[] r0 = androidx.emoji2.text.wj1.f1284a
-            boolean r1 = r13 instanceof androidx.emoji2.text.yg
-            if (r1 == 0) goto L15
-            r1 = r13
-            androidx.emoji2.text.yg r1 = (androidx.emoji2.text.yg) r1
-            int r2 = r1.i
-            r3 = -2147483648(0xffffffff80000000, float:-0.0)
-            r4 = r2 & r3
-            if (r4 == 0) goto L15
-            int r2 = r2 - r3
-            r1.i = r2
-            goto L1a
-        L15:
-            androidx.emoji2.text.yg r1 = new androidx.emoji2.text.yg
-            r1.<init>(r10, r13)
-        L1a:
-            java.lang.Object r13 = r1.g
-            int r2 = r1.i
-            r3 = 1
-            if (r2 == 0) goto L36
-            if (r2 != r3) goto L27
-            androidx.emoji2.text.mz0.L(r13)
-            goto L52
-        L27:
-            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
-            r12 = -378902573891362(0xfffea763deadc0de, double:NaN)
-            java.lang.String r12 = a.a.a.c.a(r12, r0)
-            r11.<init>(r12)
-            throw r11
-        L36:
-            androidx.emoji2.text.mz0.L(r13)
-            androidx.emoji2.text.q60 r13 = androidx.emoji2.text.e90.f294a
-            androidx.emoji2.text.a60 r13 = androidx.emoji2.text.a60.f
-            androidx.emoji2.text.zg r4 = new androidx.emoji2.text.zg
-            r9 = 0
-            r8 = 0
-            r7 = r10
-            r5 = r11
-            r6 = r12
-            r4.<init>(r5, r6, r7, r8, r9)
-            r1.i = r3
-            java.lang.Object r13 = androidx.emoji2.text.h50.M(r13, r4, r1)
-            androidx.emoji2.text.f30 r11 = androidx.emoji2.text.f30.d
-            if (r13 != r11) goto L52
-            return r11
-        L52:
-            r11 = -378846739316514(0xfffea770deadc0de, double:NaN)
-            java.lang.String r11 = a.a.a.c.a(r11, r0)
-            androidx.emoji2.text.lx0.w(r13, r11)
-            return r13
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dh.b(java.lang.String, int, androidx.emoji2.text.n10):java.lang.Object");
+    public final Object b(String str, int i, n10 n10Var) {
+        yg ygVar;
+        int i2;
+        String[] strArr = wj1.f1283a;
+        if (n10Var instanceof yg) {
+            ygVar = (yg) n10Var;
+            int i3 = ygVar.i;
+            if ((i3 & Integer.MIN_VALUE) != 0) {
+                ygVar.i = i3 - Integer.MIN_VALUE;
+                Object obj = ygVar.g;
+                i2 = ygVar.i;
+                if (i2 != 0) {
+                    mz0.L(obj);
+                    q60 q60Var = e90.f293a;
+                    a60 a60Var = a60.f;
+                    zg zgVar = new zg(str, i, this, null, 0);
+                    ygVar.i = 1;
+                    obj = h50.M(a60Var, zgVar, ygVar);
+                    f30 f30Var = f30.d;
+                    if (obj == f30Var) {
+                        return f30Var;
+                    }
+                } else {
+                    if (i2 != 1) {
+                        throw new IllegalStateException(a.a.a.c.a(-378902573891362L, strArr));
+                    }
+                    mz0.L(obj);
+                }
+                lx0.w(obj, a.a.a.c.a(-378846739316514L, strArr));
+                return obj;
+            }
+        }
+        ygVar = new yg(this, n10Var);
+        Object obj2 = ygVar.g;
+        i2 = ygVar.i;
+        if (i2 != 0) {
+        }
+        lx0.w(obj2, a.a.a.c.a(-378846739316514L, strArr));
+        return obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0015  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0036  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object d(java.lang.String r11, int r12, androidx.emoji2.text.n10 r13) throws java.lang.Throwable {
-        /*
-            r10 = this;
-            java.lang.String[] r0 = androidx.emoji2.text.wj1.f1284a
-            boolean r1 = r13 instanceof androidx.emoji2.text.ch
-            if (r1 == 0) goto L15
-            r1 = r13
-            androidx.emoji2.text.ch r1 = (androidx.emoji2.text.ch) r1
-            int r2 = r1.i
-            r3 = -2147483648(0xffffffff80000000, float:-0.0)
-            r4 = r2 & r3
-            if (r4 == 0) goto L15
-            int r2 = r2 - r3
-            r1.i = r2
-            goto L1a
-        L15:
-            androidx.emoji2.text.ch r1 = new androidx.emoji2.text.ch
-            r1.<init>(r10, r13)
-        L1a:
-            java.lang.Object r13 = r1.g
-            int r2 = r1.i
-            r3 = 1
-            if (r2 == 0) goto L36
-            if (r2 != r3) goto L27
-            androidx.emoji2.text.mz0.L(r13)
-            goto L52
-        L27:
-            java.lang.IllegalStateException r11 = new java.lang.IllegalStateException
-            r12 = -381930525835042(0xfffea4a2deadc0de, double:NaN)
-            java.lang.String r12 = a.a.a.c.a(r12, r0)
-            r11.<init>(r12)
-            throw r11
-        L36:
-            androidx.emoji2.text.mz0.L(r13)
-            androidx.emoji2.text.q60 r13 = androidx.emoji2.text.e90.f294a
-            androidx.emoji2.text.a60 r13 = androidx.emoji2.text.a60.f
-            androidx.emoji2.text.zg r4 = new androidx.emoji2.text.zg
-            r9 = 2
-            r8 = 0
-            r7 = r10
-            r5 = r11
-            r6 = r12
-            r4.<init>(r5, r6, r7, r8, r9)
-            r1.i = r3
-            java.lang.Object r13 = androidx.emoji2.text.h50.M(r13, r4, r1)
-            androidx.emoji2.text.f30 r11 = androidx.emoji2.text.f30.d
-            if (r13 != r11) goto L52
-            return r11
-        L52:
-            r11 = -381857511391010(0xfffea4b3deadc0de, double:NaN)
-            java.lang.String r11 = a.a.a.c.a(r11, r0)
-            androidx.emoji2.text.lx0.w(r13, r11)
-            return r13
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dh.d(java.lang.String, int, androidx.emoji2.text.n10):java.lang.Object");
+    public final Object d(String str, int i, n10 n10Var) {
+        ch chVar;
+        int i2;
+        String[] strArr = wj1.f1283a;
+        if (n10Var instanceof ch) {
+            chVar = (ch) n10Var;
+            int i3 = chVar.i;
+            if ((i3 & Integer.MIN_VALUE) != 0) {
+                chVar.i = i3 - Integer.MIN_VALUE;
+                Object obj = chVar.g;
+                i2 = chVar.i;
+                if (i2 != 0) {
+                    mz0.L(obj);
+                    q60 q60Var = e90.f293a;
+                    a60 a60Var = a60.f;
+                    zg zgVar = new zg(str, i, this, null, 2);
+                    chVar.i = 1;
+                    obj = h50.M(a60Var, zgVar, chVar);
+                    f30 f30Var = f30.d;
+                    if (obj == f30Var) {
+                        return f30Var;
+                    }
+                } else {
+                    if (i2 != 1) {
+                        throw new IllegalStateException(a.a.a.c.a(-381930525835042L, strArr));
+                    }
+                    mz0.L(obj);
+                }
+                lx0.w(obj, a.a.a.c.a(-381857511391010L, strArr));
+                return obj;
+            }
+        }
+        chVar = new ch(this, n10Var);
+        Object obj2 = chVar.g;
+        i2 = chVar.i;
+        if (i2 != 0) {
+        }
+        lx0.w(obj2, a.a.a.c.a(-381857511391010L, strArr));
+        return obj2;
     }
 }

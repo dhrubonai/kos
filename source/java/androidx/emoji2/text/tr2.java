@@ -16,9 +16,9 @@ public final class tr2 implements ViewTreeObserver.OnGlobalLayoutListener, View.
         if (Build.VERSION.SDK_INT < 28) {
             for (Map.Entry entry : this.d.entrySet()) {
                 View view = (View) entry.getKey();
-                boolean zBooleanValue = ((Boolean) entry.getValue()).booleanValue();
+                boolean booleanValue = ((Boolean) entry.getValue()).booleanValue();
                 boolean z = view.isShown() && view.getWindowVisibility() == 0;
-                if (zBooleanValue != z) {
+                if (booleanValue != z) {
                     es2.f(view, z ? 16 : 32);
                     entry.setValue(Boolean.valueOf(z));
                 }

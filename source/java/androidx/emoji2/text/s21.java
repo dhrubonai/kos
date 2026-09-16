@@ -7,30 +7,30 @@ import java.util.Map;
 public final class s21 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1048a;
+    public final /* synthetic */ int f1047a;
 
     @Override // androidx.emoji2.text.gb1
     public final void a() {
-        int i = this.f1048a;
+        int i = this.f1047a;
     }
 
     @Override // androidx.emoji2.text.gb1
     public final Map b() {
-        switch (this.f1048a) {
+        switch (this.f1047a) {
         }
         return re0.d;
     }
 
     @Override // androidx.emoji2.text.gb1
     public final int c() {
-        switch (this.f1048a) {
+        switch (this.f1047a) {
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.gb1
     public final int d() {
-        switch (this.f1048a) {
+        switch (this.f1047a) {
         }
         return 0;
     }

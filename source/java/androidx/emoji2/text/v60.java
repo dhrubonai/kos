@@ -8,11 +8,11 @@ import javax.net.ssl.SSLSocket;
 public final class v60 implements ed2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final u60 f1205a;
+    public final u60 f1204a;
     public ed2 b;
 
     public v60(u60 u60Var) {
-        this.f1205a = u60Var;
+        this.f1204a = u60Var;
     }
 
     @Override // androidx.emoji2.text.ed2
@@ -22,9 +22,9 @@ public final class v60 implements ed2 {
 
     @Override // androidx.emoji2.text.ed2
     public final String b(SSLSocket sSLSocket) {
-        ed2 ed2VarD = d(sSLSocket);
-        if (ed2VarD != null) {
-            return ed2VarD.b(sSLSocket);
+        ed2 d = d(sSLSocket);
+        if (d != null) {
+            return d.b(sSLSocket);
         }
         return null;
     }
@@ -32,16 +32,16 @@ public final class v60 implements ed2 {
     @Override // androidx.emoji2.text.ed2
     public final void c(SSLSocket sSLSocket, String str, List list) {
         lx0.x(list, "protocols");
-        ed2 ed2VarD = d(sSLSocket);
-        if (ed2VarD != null) {
-            ed2VarD.c(sSLSocket, str, list);
+        ed2 d = d(sSLSocket);
+        if (d != null) {
+            d.c(sSLSocket, str, list);
         }
     }
 
     public final synchronized ed2 d(SSLSocket sSLSocket) {
         try {
-            if (this.b == null && this.f1205a.e(sSLSocket)) {
-                this.b = this.f1205a.i(sSLSocket);
+            if (this.b == null && this.f1204a.e(sSLSocket)) {
+                this.b = this.f1204a.i(sSLSocket);
             }
         } catch (Throwable th) {
             throw th;
@@ -51,6 +51,6 @@ public final class v60 implements ed2 {
 
     @Override // androidx.emoji2.text.ed2
     public final boolean e(SSLSocket sSLSocket) {
-        return this.f1205a.e(sSLSocket);
+        return this.f1204a.e(sSLSocket);
     }
 }

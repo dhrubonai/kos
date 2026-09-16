@@ -7,7 +7,7 @@ import java.text.DateFormat;
 public abstract class e50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ec f286a = new ec(1);
+    public static final ec f285a = new ec(1);
     public static final String[] b;
     public static final DateFormat[] c;
 

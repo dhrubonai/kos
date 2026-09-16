@@ -1,34 +1,41 @@
 package com.kos.engine.fake.service.context.providers;
 
 import a.a.a.c;
+import android.content.ContentValues;
 import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Binder;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IInterface;
 import android.os.Process;
 import android.os.StrictMode;
 import androidx.emoji2.text.c01;
+import androidx.emoji2.text.ho0;
 import androidx.emoji2.text.iq0;
 import androidx.emoji2.text.jq0;
 import androidx.emoji2.text.jx0;
+import androidx.emoji2.text.l6;
 import androidx.emoji2.text.l8;
 import androidx.emoji2.text.lt2;
 import androidx.emoji2.text.mt2;
 import androidx.emoji2.text.nz0;
 import androidx.emoji2.text.rj;
+import androidx.emoji2.text.wj1;
 import androidx.emoji2.text.xa1;
 import androidx.emoji2.text.zd;
 import com.kos.engine.core.GmsCore;
 import com.kos.engine.core.env.BEnvironment;
 import com.kos.engine.fake.frameworks.BPackageManager;
 import com.kos.engine.fake.hook.ClassInvocationStub;
+import com.kos.engine.fake.service.VirtualAndroidId;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -75,35 +82,35 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private Bundle androidIdBundle() {
         String[] strArr = xa1.b;
-        GservicesAndroidIdReply gservicesAndroidIdReplyResolveGservicesAndroidIdReply = resolveGservicesAndroidIdReply(c.a(-816091589918498L, strArr));
+        GservicesAndroidIdReply resolveGservicesAndroidIdReply = resolveGservicesAndroidIdReply(c.a(-816091589918498L, strArr));
         Bundle bundle = new Bundle();
-        bundle.putString(c.a(-816680000438050L, strArr), gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value);
-        bundle.putString(c.a(-816722950111010L, strArr), gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value);
-        nz0.Q(c.a(-816753014882082L, strArr), 3, c.a(-816864684031778L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value + c.a(-816435187302178L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.source + c.a(-816460957105954L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.persistedAndroidId + c.a(-816572626255650L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.hasSecurityToken);
+        bundle.putString(c.a(-816680000438050L, strArr), resolveGservicesAndroidIdReply.value);
+        bundle.putString(c.a(-816722950111010L, strArr), resolveGservicesAndroidIdReply.value);
+        nz0.Q(c.a(-816753014882082L, strArr), 3, c.a(-816864684031778L, strArr) + resolveGservicesAndroidIdReply.value + c.a(-816435187302178L, strArr) + resolveGservicesAndroidIdReply.source + c.a(-816460957105954L, strArr) + resolveGservicesAndroidIdReply.persistedAndroidId + c.a(-816572626255650L, strArr) + resolveGservicesAndroidIdReply.hasSecurityToken);
         return bundle;
     }
 
     private MatrixCursor androidIdCursor(Object[] objArr) {
         String[] strArr = xa1.b;
-        GservicesAndroidIdReply gservicesAndroidIdReplyResolveGservicesAndroidIdReply = resolveGservicesAndroidIdReply(c.a(-817942720823074L, strArr));
-        String[] strArrFindProjection = findProjection(objArr);
-        if (strArrFindProjection == null || strArrFindProjection.length == 0) {
-            strArrFindProjection = new String[]{c.a(-817985670496034L, strArr), c.a(-817968490626850L, strArr)};
+        GservicesAndroidIdReply resolveGservicesAndroidIdReply = resolveGservicesAndroidIdReply(c.a(-817942720823074L, strArr));
+        String[] findProjection = findProjection(objArr);
+        if (findProjection == null || findProjection.length == 0) {
+            findProjection = new String[]{c.a(-817985670496034L, strArr), c.a(-817968490626850L, strArr)};
         }
-        MatrixCursor matrixCursor = new MatrixCursor(strArrFindProjection);
-        Object[] objArr2 = new Object[strArrFindProjection.length];
-        for (int i = 0; i < strArrFindProjection.length; i++) {
-            String str = strArrFindProjection[i];
+        MatrixCursor matrixCursor = new MatrixCursor(findProjection);
+        Object[] objArr2 = new Object[findProjection.length];
+        for (int i = 0; i < findProjection.length; i++) {
+            String str = findProjection[i];
             if (c.a(-818011440299810L, strArr).equals(str) || c.a(-817513224093474L, strArr).equals(str)) {
                 objArr2[i] = c.a(-817500339191586L, strArr);
             } else if (c.a(-817581943570210L, strArr).equals(str)) {
-                objArr2[i] = Long.valueOf(parsePositiveLong(gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value));
+                objArr2[i] = Long.valueOf(parsePositiveLong(resolveGservicesAndroidIdReply.value));
             } else {
-                objArr2[i] = gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value;
+                objArr2[i] = resolveGservicesAndroidIdReply.value;
             }
         }
         matrixCursor.addRow(objArr2);
-        nz0.Q(c.a(-817564763701026L, strArr), 3, c.a(-817676432850722L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.value + c.a(-816147424493346L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.source + c.a(-816241913773858L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.persistedAndroidId + c.a(-816284863446818L, strArr) + gservicesAndroidIdReplyResolveGservicesAndroidIdReply.hasSecurityToken);
+        nz0.Q(c.a(-817564763701026L, strArr), 3, c.a(-817676432850722L, strArr) + resolveGservicesAndroidIdReply.value + c.a(-816147424493346L, strArr) + resolveGservicesAndroidIdReply.source + c.a(-816241913773858L, strArr) + resolveGservicesAndroidIdReply.persistedAndroidId + c.a(-816284863446818L, strArr) + resolveGservicesAndroidIdReply.hasSecurityToken);
         return matrixCursor;
     }
 
@@ -184,12 +191,12 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
     }
 
     private MatrixCursor emptyCursor(Object[] objArr) {
-        String[] strArrFindProjection = findProjection(objArr);
-        if (strArrFindProjection == null || strArrFindProjection.length == 0) {
+        String[] findProjection = findProjection(objArr);
+        if (findProjection == null || findProjection.length == 0) {
             String[] strArr = xa1.b;
-            strArrFindProjection = new String[]{c.a(-815855366717218L, strArr), c.a(-815838186848034L, strArr)};
+            findProjection = new String[]{c.a(-815855366717218L, strArr), c.a(-815838186848034L, strArr)};
         }
-        return new MatrixCursor(strArrFindProjection);
+        return new MatrixCursor(findProjection);
     }
 
     private Object emptyProviderResult(Method method) {
@@ -199,28 +206,28 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
     }
 
     private int extractAlternateUid(Throwable th, int i) {
-        int iExtractCallingUid = extractCallingUid(th);
-        if (iExtractCallingUid > 0 && iExtractCallingUid != i) {
-            return iExtractCallingUid;
+        int extractCallingUid = extractCallingUid(th);
+        if (extractCallingUid > 0 && extractCallingUid != i) {
+            return extractCallingUid;
         }
-        int iExtractSourceUid = extractSourceUid(th);
-        if (iExtractSourceUid <= 0 || iExtractSourceUid == i) {
+        int extractSourceUid = extractSourceUid(th);
+        if (extractSourceUid <= 0 || extractSourceUid == i) {
             return -1;
         }
-        return iExtractSourceUid;
+        return extractSourceUid;
     }
 
     private int extractCallingUid(String str) {
         String[] strArr = xa1.b;
-        int iExtractUidAfterMarker = extractUidAfterMarker(str, c.a(-805603279781666L, strArr));
-        return iExtractUidAfterMarker > 0 ? iExtractUidAfterMarker : extractUidAfterMarker(str, c.a(-808437958197026L, strArr));
+        int extractUidAfterMarker = extractUidAfterMarker(str, c.a(-805603279781666L, strArr));
+        return extractUidAfterMarker > 0 ? extractUidAfterMarker : extractUidAfterMarker(str, c.a(-808437958197026L, strArr));
     }
 
     private int extractSourceUid(Throwable th) {
         while (th != null) {
-            int iExtractUidAfterMarker = extractUidAfterMarker(th.getMessage(), c.a(-805573215010594L, xa1.b));
-            if (iExtractUidAfterMarker > 0) {
-                return iExtractUidAfterMarker;
+            int extractUidAfterMarker = extractUidAfterMarker(th.getMessage(), c.a(-805573215010594L, xa1.b));
+            if (extractUidAfterMarker > 0) {
+                return extractUidAfterMarker;
             }
             th = th.getCause();
         }
@@ -228,11 +235,11 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
     }
 
     private int extractUidAfterMarker(String str, String str2) {
-        int iIndexOf;
-        if (str == null || (iIndexOf = str.indexOf(str2)) < 0) {
+        int indexOf;
+        if (str == null || (indexOf = str.indexOf(str2)) < 0) {
             return -1;
         }
-        int length = str2.length() + iIndexOf;
+        int length = str2.length() + indexOf;
         while (length < str.length() && (Character.isWhitespace(str.charAt(length)) || str.charAt(length) == ':')) {
             length++;
         }
@@ -269,24 +276,24 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         if (objArr == null || objArr.length == 0) {
             return resolveCurrentCallerPackage();
         }
-        String strResolveProviderBoundaryPackage = resolveProviderBoundaryPackage(resolveCurrentCallerPackage());
+        String resolveProviderBoundaryPackage = resolveProviderBoundaryPackage(resolveCurrentCallerPackage());
         if (shouldUseHostAttributionForProvider()) {
-            strResolveProviderBoundaryPackage = c01.X();
+            resolveProviderBoundaryPackage = c01.X();
             ProviderAttributionFixer.fixArgsForHostProvider(objArr);
-        } else if (shouldUseHostTransportAttribution(strResolveProviderBoundaryPackage)) {
-            ProviderAttributionFixer.fixArgsForHostTransport(objArr, strResolveProviderBoundaryPackage);
+        } else if (shouldUseHostTransportAttribution(resolveProviderBoundaryPackage)) {
+            ProviderAttributionFixer.fixArgsForHostTransport(objArr, resolveProviderBoundaryPackage);
         } else if (shouldUseGoogleProviderIdentity()) {
-            strResolveProviderBoundaryPackage = resolveGoogleProviderPackage(strResolveProviderBoundaryPackage);
-            ProviderAttributionFixer.fixArgsForStrictPackage(objArr, strResolveProviderBoundaryPackage);
-        } else if (strResolveProviderBoundaryPackage == null || !strResolveProviderBoundaryPackage.equals(this.mProviderPkg)) {
-            ProviderAttributionFixer.fixArgs(objArr, strResolveProviderBoundaryPackage);
+            resolveProviderBoundaryPackage = resolveGoogleProviderPackage(resolveProviderBoundaryPackage);
+            ProviderAttributionFixer.fixArgsForStrictPackage(objArr, resolveProviderBoundaryPackage);
+        } else if (resolveProviderBoundaryPackage == null || !resolveProviderBoundaryPackage.equals(this.mProviderPkg)) {
+            ProviderAttributionFixer.fixArgs(objArr, resolveProviderBoundaryPackage);
         } else {
-            ProviderAttributionFixer.fixArgsForStrictPackage(objArr, strResolveProviderBoundaryPackage);
+            ProviderAttributionFixer.fixArgsForStrictPackage(objArr, resolveProviderBoundaryPackage);
         }
         if (objArr[0] instanceof String) {
-            objArr[0] = strResolveProviderBoundaryPackage;
+            objArr[0] = resolveProviderBoundaryPackage;
         }
-        return strResolveProviderBoundaryPackage;
+        return resolveProviderBoundaryPackage;
     }
 
     private String getCurrentAppPackage() {
@@ -312,12 +319,12 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private String getRawCurrentAppPackage() {
         try {
-            String strO = rj.o();
-            if (strO == null) {
+            String o = rj.o();
+            if (o == null) {
                 return null;
             }
-            if (strO.length() > 0) {
-                return strO;
+            if (o.length() > 0) {
+                return o;
             }
             return null;
         } catch (Throwable unused) {
@@ -327,19 +334,19 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private Object invokeProvider(Method method, Object[] objArr, String str) {
         boolean z;
-        Integer numE;
-        int iResolvePackageUid;
+        Integer num;
+        int resolvePackageUid;
         lt2 lt2Var = null;
-        if (!shouldOverrideCallingUid(str) || (iResolvePackageUid = resolvePackageUid(str)) <= 0) {
+        if (!shouldOverrideCallingUid(str) || (resolvePackageUid = resolvePackageUid(str)) <= 0) {
             z = false;
-            numE = null;
+            num = null;
         } else {
-            numE = mt2.e(iResolvePackageUid);
+            num = mt2.e(resolvePackageUid);
             lt2 lt2Var2 = mt2.b;
-            if (iResolvePackageUid <= 0 || str == null || str.length() <= 0) {
+            if (resolvePackageUid <= 0 || str == null || str.length() <= 0) {
                 mt2.b = null;
             } else {
-                mt2.b = new lt2(iResolvePackageUid, str);
+                mt2.b = new lt2(resolvePackageUid, str);
             }
             z = true;
             lt2Var = lt2Var2;
@@ -352,7 +359,7 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
                 mt2.b = lt2Var;
             }
             if (z2) {
-                mt2.g(numE);
+                mt2.g(num);
             }
         }
     }
@@ -511,31 +518,141 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:0x0279  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0279  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private boolean persistRejectedServerUpdate(java.lang.Object[] r16) {
-        /*
-            Method dump skipped, instructions count: 684
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.context.providers.GservicesProviderStub.persistRejectedServerUpdate(java.lang.Object[]):boolean");
+    private boolean persistRejectedServerUpdate(Object[] objArr) {
+        Uri uri;
+        ContentValues contentValues;
+        SQLiteDatabase openOrCreateDatabase;
+        boolean z = false;
+        SQLiteDatabase sQLiteDatabase = null;
+        if (objArr != null) {
+            uri = null;
+            contentValues = null;
+            for (Object obj : objArr) {
+                if (uri == null && (obj instanceof Uri)) {
+                    uri = (Uri) obj;
+                } else if (contentValues == null && (obj instanceof ContentValues)) {
+                    contentValues = (ContentValues) obj;
+                }
+            }
+        } else {
+            uri = null;
+            contentValues = null;
+        }
+        int u = rj.u();
+        Object obj2 = jq0.f594a;
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        String authority = uri == null ? null : uri.getAuthority();
+        String lastPathSegment = uri == null ? null : uri.getLastPathSegment();
+        int size = contentValues == null ? 0 : contentValues.size();
+        String[] strArr = xa1.b;
+        if (c.a(-1367840268631842L, strArr).equals(authority) && ((c.a(-1367964822683426L, strArr).equals(lastPathSegment) || c.a(-1368020657258274L, strArr).equals(lastPathSegment)) && size > 0)) {
+            if (contentValues.containsKey(c.a(-1368046427062050L, strArr)) && contentValues.containsKey(c.a(-1368634837581602L, strArr))) {
+                String asString = contentValues.getAsString(c.a(-1368677787254562L, strArr));
+                if (asString != null && asString.length() > 0) {
+                    linkedHashMap.put(asString, contentValues.getAsString(c.a(-1368664902352674L, strArr)));
+                }
+            } else {
+                for (Map.Entry<String, Object> entry : contentValues.valueSet()) {
+                    String key = entry.getKey();
+                    if (key != null && key.length() > 0) {
+                        Object value = entry.getValue();
+                        linkedHashMap.put(key, value == null ? null : String.valueOf(value));
+                    }
+                }
+            }
+        }
+        if (!linkedHashMap.isEmpty()) {
+            StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
+            synchronized (jq0.f594a) {
+                try {
+                    String[] strArr2 = xa1.b;
+                    File file = new File(BEnvironment.getDataDir(c.a(-1368707852025634L, strArr2), u), c.a(-1368806636273442L, strArr2));
+                    File parentFile = file.getParentFile();
+                    if (parentFile != null) {
+                        wj1.C(parentFile);
+                    }
+                    openOrCreateDatabase = SQLiteDatabase.openOrCreateDatabase(file, (SQLiteDatabase.CursorFactory) null);
+                    try {
+                        openOrCreateDatabase.execSQL(c.a(-1368372844576546L, strArr2));
+                        openOrCreateDatabase.execSQL(c.a(-1371379321683746L, strArr2));
+                        openOrCreateDatabase.beginTransaction();
+                    } catch (Throwable th) {
+                        th = th;
+                        sQLiteDatabase = openOrCreateDatabase;
+                        try {
+                            String[] strArr3 = xa1.b;
+                            nz0.P(c.a(-1357532347121442L, strArr3), c.a(-1369176003460898L, strArr3) + u + c.a(-1369420816596770L, strArr3) + linkedHashMap.size(), th);
+                            if (sQLiteDatabase != null) {
+                                sQLiteDatabase.close();
+                            }
+                            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+                            if (z) {
+                            }
+                            return z;
+                        } catch (Throwable th2) {
+                            if (sQLiteDatabase != null) {
+                                sQLiteDatabase.close();
+                            }
+                            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+                            throw th2;
+                        }
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                }
+                try {
+                    for (Map.Entry entry2 : linkedHashMap.entrySet()) {
+                        ContentValues contentValues2 = new ContentValues(2);
+                        String[] strArr4 = xa1.b;
+                        contentValues2.put(c.a(-1357004066144034L, strArr4), (String) entry2.getKey());
+                        if (entry2.getValue() == null) {
+                            contentValues2.putNull(c.a(-1357059900718882L, strArr4));
+                        } else {
+                            contentValues2.put(c.a(-1357652606205730L, strArr4), (String) entry2.getValue());
+                        }
+                        if (openOrCreateDatabase.insertWithOnConflict(c.a(-1357626836401954L, strArr4), null, contentValues2, 5) < 0) {
+                            openOrCreateDatabase.endTransaction();
+                            openOrCreateDatabase.close();
+                            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+                            break;
+                        }
+                    }
+                    openOrCreateDatabase.setTransactionSuccessful();
+                    openOrCreateDatabase.endTransaction();
+                    String[] strArr5 = xa1.b;
+                    nz0.Q(c.a(-1357665491107618L, strArr5), 3, c.a(-1357781455224610L, strArr5) + u + c.a(-1357424972939042L, strArr5) + uri.getLastPathSegment() + c.a(-1357459332677410L, strArr5) + linkedHashMap.size() + c.a(-1357497987383074L, strArr5) + jq0.a(linkedHashMap));
+                    openOrCreateDatabase.close();
+                    StrictMode.setThreadPolicy(allowThreadDiskWrites);
+                    z = true;
+                } catch (Throwable th4) {
+                    openOrCreateDatabase.endTransaction();
+                    throw th4;
+                }
+            }
+        }
+        if (z) {
+            String[] strArr6 = xa1.b;
+            nz0.Q(c.a(-814231869079330L, strArr6), 3, c.a(-814343538229026L, strArr6) + uri);
+        }
+        return z;
     }
 
     private MatrixCursor persistedValueCursor(Object[] objArr, Map<String, String> map) {
         String[] strArr = xa1.b;
-        String[] strArrFindProjection = findProjection(objArr);
+        String[] findProjection = findProjection(objArr);
         int i = 1;
-        if (strArrFindProjection == null || strArrFindProjection.length == 0) {
-            strArrFindProjection = new String[]{c.a(-813862501891874L, strArr), c.a(-813845322022690L, strArr)};
+        if (findProjection == null || findProjection.length == 0) {
+            findProjection = new String[]{c.a(-813862501891874L, strArr), c.a(-813845322022690L, strArr)};
         }
-        MatrixCursor matrixCursor = new MatrixCursor(strArrFindProjection);
+        MatrixCursor matrixCursor = new MatrixCursor(findProjection);
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            Object[] objArr2 = new Object[strArrFindProjection.length];
-            for (int i2 = 0; i2 < strArrFindProjection.length; i2++) {
-                String str = strArrFindProjection[i2];
+            Object[] objArr2 = new Object[findProjection.length];
+            for (int i2 = 0; i2 < findProjection.length; i2++) {
+                String str = findProjection[i2];
                 if (c.a(-813888271695650L, strArr).equals(str) || c.a(-814489567117090L, strArr).equals(str)) {
                     objArr2[i2] = entry.getKey();
                 } else if (c.a(-814476682215202L, strArr).equals(str)) {
@@ -555,7 +672,7 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         String currentAppPackage = getCurrentAppPackage();
         String str = this.mProviderPkg;
         boolean z = Binder.getCallingPid() == Process.myPid();
-        int i = iq0.f542a;
+        int i = iq0.f541a;
         if (z) {
             String[] strArr = xa1.b;
             if (c.a(-1358438585220898L, strArr).equals(currentAppPackage) && (c.a(-1357936074047266L, strArr).equals(str) || c.a(-1358034858295074L, strArr).equals(str))) {
@@ -565,8 +682,8 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         if (l8.W() && isGooglePackage(this.mProviderPkg) && isGooglePackage(currentAppPackage)) {
             return currentAppPackage;
         }
-        String strC = mt2.c();
-        return (strC == null || strC.length() <= 0) ? (currentAppPackage == null || currentAppPackage.length() <= 0) ? this.mAppPkg : currentAppPackage : strC;
+        String c = mt2.c();
+        return (c == null || c.length() <= 0) ? (currentAppPackage == null || currentAppPackage.length() <= 0) ? this.mAppPkg : currentAppPackage : c;
     }
 
     private String resolveGoogleProviderPackage(String str) {
@@ -577,17 +694,114 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         return isGooglePackage(currentAppPackage) ? currentAppPackage : str;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00d4 A[Catch: all -> 0x0054, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0054, blocks: (B:7:0x0014, B:9:0x002b, B:11:0x0031, B:13:0x004d, B:20:0x0061, B:22:0x008f, B:27:0x009a, B:29:0x00a0, B:32:0x00a7, B:36:0x00b0, B:38:0x00b6, B:41:0x00bd, B:43:0x00c3, B:45:0x00c9, B:48:0x00d4), top: B:77:0x0014 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0115  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0129  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private com.kos.engine.fake.service.context.providers.GservicesProviderStub.GservicesAndroidIdReply resolveGservicesAndroidIdReply(java.lang.String r11) {
-        /*
-            Method dump skipped, instructions count: 586
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.context.providers.GservicesProviderStub.resolveGservicesAndroidIdReply(java.lang.String):com.kos.engine.fake.service.context.providers.GservicesProviderStub$GservicesAndroidIdReply");
+    private GservicesAndroidIdReply resolveGservicesAndroidIdReply(String str) {
+        int i;
+        l6 L;
+        String a2;
+        String a3;
+        String str2;
+        String a4;
+        String[] strArr = xa1.b;
+        HashMap hashMap = ho0.f479a;
+        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+        try {
+            i = rj.u();
+        } catch (Throwable unused) {
+            i = 0;
+        }
+        try {
+            String O = ho0.O(c.a(-889170458459938L, strArr), i, c.a(-892035201646370L, strArr));
+            if (!ho0.D(O) || (!ho0.v(i) && !ho0.D(ho0.O(c.a(-892048086548258L, strArr), i, c.a(-902884289036066L, strArr))) && !ho0.z(i, O))) {
+                String O2 = ho0.O(c.a(-892164050665250L, strArr), i, c.a(-891713079099170L, strArr));
+                if (!(ho0.D(O2) && ho0.D(ho0.O(c.a(-891743143870242L, strArr), i, c.a(-891841928118050L, strArr)))) && (!ho0.D(O2) || !ho0.z(i, O2))) {
+                    if (Build.VERSION.SDK_INT <= 30) {
+                        if (ho0.Q(i, O2) == null && !ho0.u(i, O2)) {
+                            if (!ho0.D(O2) && (L = ho0.L(i)) != null) {
+                                O = (String) L.e;
+                            }
+                        }
+                    }
+                    if (!ho0.D(O)) {
+                        O = O2;
+                    }
+                }
+                StrictMode.setThreadPolicy(allowThreadDiskReads);
+                O = O2;
+                boolean x = ho0.x();
+                if (!isUsableAndroidId(O) && x) {
+                    a4 = c.a(-810645571387170L, strArr);
+                } else {
+                    if (isUsableAndroidId(O) || !shouldUseBootstrapAndroidId()) {
+                        if (!isUsableAndroidId(O)) {
+                            a2 = c.a(-810813075111714L, strArr);
+                            a3 = c.a(-810804485177122L, strArr);
+                        } else if (shouldUseBootstrapAndroidId()) {
+                            a2 = VirtualAndroidId.getDecimal();
+                            a3 = c.a(-810396463284002L, strArr);
+                            String a5 = c.a(-896008046395170L, strArr);
+                            StringBuilder sb = new StringBuilder();
+                            sb.append(c.a(-896076765871906L, strArr));
+                            sb.append(str);
+                            sb.append(c.a(-895737463455522L, strArr));
+                            sb.append(a2);
+                            sb.append(c.a(-889810408587042L, strArr));
+                            try {
+                                str2 = Long.toHexString(jx0.s(a2));
+                            } catch (Throwable unused2) {
+                                str2 = null;
+                            }
+                            sb.append(str2);
+                            nz0.Q(a5, 3, sb.toString());
+                            ho0.F(c.a(-889879128063778L, strArr) + str);
+                        } else {
+                            a2 = c.a(-810448002891554L, strArr);
+                            a3 = c.a(-810508132433698L, strArr);
+                        }
+                        nz0.Q(c.a(-889917782769442L, strArr), 3, c.a(-889986502246178L, strArr) + str + c.a(-889625724993314L, strArr) + a3 + c.a(-889651494797090L, strArr) + a2 + c.a(-889690149502754L, strArr) + x + c.a(-890360164400930L, strArr) + O);
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append(c.a(-890403114073890L, strArr));
+                        sb2.append(str);
+                        sb2.append(c.a(-890531963092770L, strArr));
+                        sb2.append(a3);
+                        ho0.F(sb2.toString());
+                        return new GservicesAndroidIdReply(a2, a3, x, O);
+                    }
+                    a4 = c.a(-810671341190946L, strArr);
+                }
+                a3 = a4;
+                a2 = O;
+                nz0.Q(c.a(-889917782769442L, strArr), 3, c.a(-889986502246178L, strArr) + str + c.a(-889625724993314L, strArr) + a3 + c.a(-889651494797090L, strArr) + a2 + c.a(-889690149502754L, strArr) + x + c.a(-890360164400930L, strArr) + O);
+                StringBuilder sb22 = new StringBuilder();
+                sb22.append(c.a(-890403114073890L, strArr));
+                sb22.append(str);
+                sb22.append(c.a(-890531963092770L, strArr));
+                sb22.append(a3);
+                ho0.F(sb22.toString());
+                return new GservicesAndroidIdReply(a2, a3, x, O);
+            }
+            boolean x2 = ho0.x();
+            if (!isUsableAndroidId(O)) {
+            }
+            if (isUsableAndroidId(O)) {
+            }
+            if (!isUsableAndroidId(O)) {
+            }
+            nz0.Q(c.a(-889917782769442L, strArr), 3, c.a(-889986502246178L, strArr) + str + c.a(-889625724993314L, strArr) + a3 + c.a(-889651494797090L, strArr) + a2 + c.a(-889690149502754L, strArr) + x2 + c.a(-890360164400930L, strArr) + O);
+            StringBuilder sb222 = new StringBuilder();
+            sb222.append(c.a(-890403114073890L, strArr));
+            sb222.append(str);
+            sb222.append(c.a(-890531963092770L, strArr));
+            sb222.append(a3);
+            ho0.F(sb222.toString());
+            return new GservicesAndroidIdReply(a2, a3, x2, O);
+        } finally {
+            StrictMode.setThreadPolicy(allowThreadDiskReads);
+        }
     }
 
     private int resolvePackageUid(String str) {
@@ -609,38 +823,38 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private Map<String, String> resolvePersistedGservicesValues(Object[] objArr) {
         File file;
-        int iU = rj.u();
-        List<String> listCollectGservicesQueryKeys = collectGservicesQueryKeys(objArr);
-        Object obj = jq0.f595a;
+        int u = rj.u();
+        List<String> collectGservicesQueryKeys = collectGservicesQueryKeys(objArr);
+        Object obj = jq0.f594a;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        if (listCollectGservicesQueryKeys != null) {
-            StrictMode.ThreadPolicy threadPolicyAllowThreadDiskReads = StrictMode.allowThreadDiskReads();
-            synchronized (jq0.f595a) {
+        if (collectGservicesQueryKeys != null) {
+            StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
+            synchronized (jq0.f594a) {
                 SQLiteDatabase sQLiteDatabase = null;
                 Cursor cursor = null;
                 try {
                     try {
                         String[] strArr = xa1.b;
-                        file = new File(BEnvironment.getDataDir(c.a(-1368707852025634L, strArr), iU), c.a(-1368806636273442L, strArr));
+                        file = new File(BEnvironment.getDataDir(c.a(-1368707852025634L, strArr), u), c.a(-1368806636273442L, strArr));
                     } catch (Throwable th) {
                         th = th;
                     }
                     if (file.isFile() && file.length() > 0) {
-                        SQLiteDatabase sQLiteDatabaseOpenDatabase = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, 17);
+                        SQLiteDatabase openDatabase = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, 17);
                         try {
-                            for (String str : listCollectGservicesQueryKeys) {
+                            for (String str : collectGservicesQueryKeys) {
                                 if (str != null && str.length() != 0 && !linkedHashMap.containsKey(str)) {
                                     try {
-                                        Cursor cursorRawQuery = sQLiteDatabaseOpenDatabase.rawQuery(c.a(-1371125918613282L, xa1.b), new String[]{str});
+                                        Cursor rawQuery = openDatabase.rawQuery(c.a(-1371125918613282L, xa1.b), new String[]{str});
                                         try {
-                                            String string = cursorRawQuery.moveToFirst() ? cursorRawQuery.getString(0) : null;
-                                            cursorRawQuery.close();
+                                            String string = rawQuery.moveToFirst() ? rawQuery.getString(0) : null;
+                                            rawQuery.close();
                                             if (string != null) {
                                                 linkedHashMap.put(str, string);
                                             }
                                         } catch (Throwable th2) {
                                             th = th2;
-                                            cursor = cursorRawQuery;
+                                            cursor = rawQuery;
                                             if (cursor != null) {
                                                 cursor.close();
                                             }
@@ -651,31 +865,31 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
                                     }
                                 }
                             }
-                            if (sQLiteDatabaseOpenDatabase != null) {
-                                sQLiteDatabaseOpenDatabase.close();
+                            if (openDatabase != null) {
+                                openDatabase.close();
                             }
                         } catch (Throwable th4) {
                             th = th4;
-                            sQLiteDatabase = sQLiteDatabaseOpenDatabase;
+                            sQLiteDatabase = openDatabase;
                             try {
                                 String[] strArr2 = xa1.b;
-                                nz0.P(c.a(-1368892535619362L, strArr2), c.a(-1369008499736354L, strArr2) + iU, th);
+                                nz0.P(c.a(-1368892535619362L, strArr2), c.a(-1369008499736354L, strArr2) + u, th);
                                 if (sQLiteDatabase != null) {
                                     sQLiteDatabase.close();
                                 }
-                                StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                                StrictMode.setThreadPolicy(allowThreadDiskReads);
                                 return linkedHashMap;
                             } catch (Throwable th5) {
                                 if (sQLiteDatabase != null) {
                                     sQLiteDatabase.close();
                                 }
-                                StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                                StrictMode.setThreadPolicy(allowThreadDiskReads);
                                 throw th5;
                             }
                         }
-                        StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                        StrictMode.setThreadPolicy(allowThreadDiskReads);
                     }
-                    StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
                     return linkedHashMap;
                 } finally {
                 }
@@ -692,9 +906,9 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (String str : collectLookupStrings(objArr)) {
             if (str != null && str.length() != 0) {
-                String strSchedulerOverrideForKey = schedulerOverrideForKey(str);
-                if (strSchedulerOverrideForKey != null) {
-                    linkedHashMap.put(str, strSchedulerOverrideForKey);
+                String schedulerOverrideForKey = schedulerOverrideForKey(str);
+                if (schedulerOverrideForKey != null) {
+                    linkedHashMap.put(str, schedulerOverrideForKey);
                 } else if (looksLikeSchedulerPrefix(str)) {
                     for (String[] strArr : SCHEDULER_GSERVICES_OVERRIDES) {
                         if (strArr[0].startsWith(str)) {
@@ -702,10 +916,10 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
                         }
                     }
                     if (linkedHashMap.isEmpty()) {
-                        StringBuilder sbK = jx0.k(str);
+                        StringBuilder k = jx0.k(str);
                         String[] strArr2 = xa1.b;
-                        sbK.append(c.a(-809090793226018L, strArr2));
-                        linkedHashMap.put(sbK.toString(), c.a(-809193872441122L, strArr2));
+                        k.append(c.a(-809090793226018L, strArr2));
+                        linkedHashMap.put(k.toString(), c.a(-809193872441122L, strArr2));
                         linkedHashMap.put(str + c.a(-809236822114082L, strArr2), c.a(-808751490809634L, strArr2));
                     }
                 }
@@ -714,39 +928,39 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         return linkedHashMap;
     }
 
-    private Object retryAfterUidMismatch(Method method, Object[] objArr, Throwable th, String str) throws Throwable {
-        boolean zIsUidMismatchSecurityException;
+    private Object retryAfterUidMismatch(Method method, Object[] objArr, Throwable th, String str) {
+        boolean isUidMismatchSecurityException;
         String[] strArr = xa1.b;
         if (objArr == null || objArr.length == 0) {
             return UID_MISMATCH_RETRY_NOT_HANDLED;
         }
-        int iExtractCallingUid = extractCallingUid(th);
-        if (iExtractCallingUid <= 0) {
+        int extractCallingUid = extractCallingUid(th);
+        if (extractCallingUid <= 0) {
             return UID_MISMATCH_RETRY_NOT_HANDLED;
         }
-        String strResolvePackageNameForUid = ProviderAttributionFixer.resolvePackageNameForUid(iExtractCallingUid, str);
-        ProviderAttributionFixer.fixArgsForProviderProcess(objArr, iExtractCallingUid, strResolvePackageNameForUid);
+        String resolvePackageNameForUid = ProviderAttributionFixer.resolvePackageNameForUid(extractCallingUid, str);
+        ProviderAttributionFixer.fixArgsForProviderProcess(objArr, extractCallingUid, resolvePackageNameForUid);
         if (objArr[0] instanceof String) {
-            objArr[0] = strResolvePackageNameForUid;
+            objArr[0] = resolvePackageNameForUid;
         }
         try {
-            nz0.Q(c.a(-806535287684898L, strArr), 5, c.a(-806646956834594L, strArr) + iExtractCallingUid + c.a(-805319811940130L, strArr) + strResolvePackageNameForUid);
-            return invokeProvider(method, objArr, strResolvePackageNameForUid);
+            nz0.Q(c.a(-806535287684898L, strArr), 5, c.a(-806646956834594L, strArr) + extractCallingUid + c.a(-805319811940130L, strArr) + resolvePackageNameForUid);
+            return invokeProvider(method, objArr, resolvePackageNameForUid);
         } catch (Throwable th2) {
             th = th2;
-            if (!zIsUidMismatchSecurityException) {
+            if (!isUidMismatchSecurityException) {
                 throw th;
             }
-            int iExtractAlternateUid = extractAlternateUid(th, iExtractCallingUid);
-            if (iExtractAlternateUid > 0 && iExtractAlternateUid != iExtractCallingUid) {
-                String strResolvePackageNameForUid2 = ProviderAttributionFixer.resolvePackageNameForUid(iExtractAlternateUid, str);
-                ProviderAttributionFixer.fixArgsForProviderProcess(objArr, iExtractAlternateUid, strResolvePackageNameForUid2);
+            int extractAlternateUid = extractAlternateUid(th, extractCallingUid);
+            if (extractAlternateUid > 0 && extractAlternateUid != extractCallingUid) {
+                String resolvePackageNameForUid2 = ProviderAttributionFixer.resolvePackageNameForUid(extractAlternateUid, str);
+                ProviderAttributionFixer.fixArgsForProviderProcess(objArr, extractAlternateUid, resolvePackageNameForUid2);
                 if (objArr[0] instanceof String) {
-                    objArr[0] = strResolvePackageNameForUid2;
+                    objArr[0] = resolvePackageNameForUid2;
                 }
                 try {
-                    nz0.Q(c.a(-805332696842018L, strArr), 5, c.a(-804894610177826L, strArr) + iExtractAlternateUid + c.a(-805710653964066L, strArr) + strResolvePackageNameForUid2);
-                    return invokeProvider(method, objArr, strResolvePackageNameForUid2);
+                    nz0.Q(c.a(-805332696842018L, strArr), 5, c.a(-804894610177826L, strArr) + extractAlternateUid + c.a(-805710653964066L, strArr) + resolvePackageNameForUid2);
+                    return invokeProvider(method, objArr, resolvePackageNameForUid2);
                 } finally {
                     th = th;
                     if (th.getCause() != null) {
@@ -766,15 +980,15 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
     private Bundle schedulerOverrideBundle(Map<String, String> map) {
         String[] strArr = xa1.b;
         Bundle bundle = new Bundle();
-        String value = null;
+        String str = null;
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (value == null) {
-                value = entry.getValue();
+            if (str == null) {
+                str = entry.getValue();
             }
             bundle.putString(entry.getKey(), entry.getValue());
         }
-        if (value != null) {
-            bundle.putString(c.a(-817410144878370L, strArr), value);
+        if (str != null) {
+            bundle.putString(c.a(-817410144878370L, strArr), str);
         }
         nz0.Q(c.a(-817384375074594L, strArr), 3, c.a(-816946288410402L, strArr) + map.keySet());
         return bundle;
@@ -782,15 +996,15 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private MatrixCursor schedulerOverrideCursor(Object[] objArr, Map<String, String> map) {
         String[] strArr = xa1.b;
-        String[] strArrFindProjection = findProjection(objArr);
-        if (strArrFindProjection == null || strArrFindProjection.length == 0) {
-            strArrFindProjection = new String[]{c.a(-814042890518306L, strArr), c.a(-814025710649122L, strArr)};
+        String[] findProjection = findProjection(objArr);
+        if (findProjection == null || findProjection.length == 0) {
+            findProjection = new String[]{c.a(-814042890518306L, strArr), c.a(-814025710649122L, strArr)};
         }
-        MatrixCursor matrixCursor = new MatrixCursor(strArrFindProjection);
+        MatrixCursor matrixCursor = new MatrixCursor(findProjection);
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            Object[] objArr2 = new Object[strArrFindProjection.length];
-            for (int i = 0; i < strArrFindProjection.length; i++) {
-                String str = strArrFindProjection[i];
+            Object[] objArr2 = new Object[findProjection.length];
+            for (int i = 0; i < findProjection.length; i++) {
+                String str = findProjection[i];
                 if (c.a(-814068660322082L, strArr).equals(str) || c.a(-814051480452898L, strArr).equals(str)) {
                     objArr2[i] = entry.getKey();
                 } else if (c.a(-814107315027746L, strArr).equals(str)) {
@@ -864,24 +1078,24 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         String[] strArr = xa1.b;
         if (c.a(-792344715738914L, strArr).equals(method.getName())) {
             return method.invoke(this.mBase, objArr);
         }
-        String strResolveCurrentCallerPackage = resolveCurrentCallerPackage();
-        String strFixCallerIdentity = fixCallerIdentity(objArr);
+        String resolveCurrentCallerPackage = resolveCurrentCallerPackage();
+        String fixCallerIdentity = fixCallerIdentity(objArr);
         String name = method.getName();
-        int i = iq0.f542a;
+        int i = iq0.f541a;
         if (c.a(-1358150822412066L, strArr).equals(name) || c.a(-1358730642997026L, strArr).equals(name) || c.a(-1358760707768098L, strArr).equals(name) || c.a(-1358790772539170L, strArr).equals(name) || c.a(-1358838017179426L, strArr).equals(name)) {
-            if (!c.a(-1358339800973090L, strArr).equals(strResolveCurrentCallerPackage)) {
-                nz0.Q(c.a(-792383370444578L, strArr), 5, c.a(-795243818663714L, strArr) + strResolveCurrentCallerPackage + c.a(-795454272061218L, strArr) + method.getName());
+            if (!c.a(-1358339800973090L, strArr).equals(resolveCurrentCallerPackage)) {
+                nz0.Q(c.a(-792383370444578L, strArr), 5, c.a(-795243818663714L, strArr) + resolveCurrentCallerPackage + c.a(-795454272061218L, strArr) + method.getName());
                 throw new SecurityException(c.a(-795480041864994L, strArr));
             }
-            String strA = c.a(-795845114085154L, strArr);
+            String a2 = c.a(-795845114085154L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-795956783234850L, strArr));
-            sb.append(strResolveCurrentCallerPackage);
+            sb.append(resolveCurrentCallerPackage);
             sb.append(c.a(-795621775785762L, strArr));
             sb.append(this.mProviderPkg);
             zd.t(sb, c.a(-795638955654946L, strArr), method);
@@ -889,14 +1103,14 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
             sb.append(Binder.getCallingPid());
             sb.append(c.a(-795737739902754L, strArr));
             sb.append(Process.myPid());
-            nz0.Q(strA, 3, sb.toString());
+            nz0.Q(a2, 3, sb.toString());
         }
-        Map<String, String> mapResolveSchedulerGservicesOverrides = resolveSchedulerGservicesOverrides(objArr);
-        if (c.a(-794165781872418L, strArr).equals(method.getName()) && !mapResolveSchedulerGservicesOverrides.isEmpty()) {
-            return schedulerOverrideCursor(objArr, mapResolveSchedulerGservicesOverrides);
+        Map<String, String> resolveSchedulerGservicesOverrides = resolveSchedulerGservicesOverrides(objArr);
+        if (c.a(-794165781872418L, strArr).equals(method.getName()) && !resolveSchedulerGservicesOverrides.isEmpty()) {
+            return schedulerOverrideCursor(objArr, resolveSchedulerGservicesOverrides);
         }
-        if (c.a(-794208731545378L, strArr).equals(method.getName()) && !mapResolveSchedulerGservicesOverrides.isEmpty()) {
-            return schedulerOverrideBundle(mapResolveSchedulerGservicesOverrides);
+        if (c.a(-794208731545378L, strArr).equals(method.getName()) && !resolveSchedulerGservicesOverrides.isEmpty()) {
+            return schedulerOverrideBundle(resolveSchedulerGservicesOverrides);
         }
         if (c.a(-794195846643490L, strArr).equals(method.getName()) && isAndroidIdQuery(objArr)) {
             return androidIdCursor(objArr);
@@ -905,26 +1119,26 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
             return androidIdBundle();
         }
         if (c.a(-794277451022114L, strArr).equals(method.getName())) {
-            Map<String, String> mapResolvePersistedGservicesValues = resolvePersistedGservicesValues(objArr);
-            if (!mapResolvePersistedGservicesValues.isEmpty()) {
-                return persistedValueCursor(objArr, mapResolvePersistedGservicesValues);
+            Map<String, String> resolvePersistedGservicesValues = resolvePersistedGservicesValues(objArr);
+            if (!resolvePersistedGservicesValues.isEmpty()) {
+                return persistedValueCursor(objArr, resolvePersistedGservicesValues);
             }
         }
         try {
-            return invokeProvider(method, objArr, strFixCallerIdentity);
+            return invokeProvider(method, objArr, fixCallerIdentity);
         } catch (Throwable th) {
             th = th;
             if (th.getCause() != null) {
                 th = th.getCause();
             }
-            if (c.a(-794320400695074L, strArr).equals(method.getName()) && c.a(-1358339800973090L, strArr).equals(strResolveCurrentCallerPackage)) {
-                Object obj2 = jq0.f595a;
-                for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-                    String message = cause.getMessage();
+            if (c.a(-794320400695074L, strArr).equals(method.getName()) && c.a(-1358339800973090L, strArr).equals(resolveCurrentCallerPackage)) {
+                Object obj2 = jq0.f594a;
+                for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+                    String message = th2.getMessage();
                     if (message != null) {
-                        boolean zStartsWith = message.startsWith(c.a(-1369803068686114L, strArr));
+                        boolean startsWith = message.startsWith(c.a(-1369803068686114L, strArr));
                         boolean z = message.startsWith(c.a(-1369493831040802L, strArr)) && message.contains(c.a(-1369592615288610L, strArr)) && message.contains(c.a(-1368166686146338L, strArr));
-                        if (zStartsWith || z) {
+                        if (startsWith || z) {
                             if (persistRejectedServerUpdate(objArr)) {
                                 return 1;
                             }
@@ -942,9 +1156,9 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
                 }
             }
             if (isUidMismatchSecurityException(th)) {
-                Object objRetryAfterUidMismatch = retryAfterUidMismatch(method, objArr, th, resolveProviderBoundaryPackage(resolveCurrentCallerPackage()));
-                if (objRetryAfterUidMismatch != UID_MISMATCH_RETRY_NOT_HANDLED) {
-                    return objRetryAfterUidMismatch;
+                Object retryAfterUidMismatch = retryAfterUidMismatch(method, objArr, th, resolveProviderBoundaryPackage(resolveCurrentCallerPackage()));
+                if (retryAfterUidMismatch != UID_MISMATCH_RETRY_NOT_HANDLED) {
+                    return retryAfterUidMismatch;
                 }
                 zd.s(new StringBuilder(), c.a(-794831501803298L, strArr), th, 5, c.a(-794719832653602L, strArr));
                 if (c.a(-794625343373090L, strArr).equals(method.getName())) {
@@ -976,7 +1190,7 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
         return wrapper(iInterface, str, null);
     }
 
-    public IInterface wrapper(IInterface iInterface, String str, String str2) throws IllegalArgumentException {
+    public IInterface wrapper(IInterface iInterface, String str, String str2) {
         this.mBase = iInterface;
         this.mAppPkg = str;
         this.mProviderPkg = str2;
@@ -986,9 +1200,9 @@ public class GservicesProviderStub extends ClassInvocationStub implements BConte
 
     private int extractCallingUid(Throwable th) {
         while (th != null) {
-            int iExtractCallingUid = extractCallingUid(th.getMessage());
-            if (iExtractCallingUid > 0) {
-                return iExtractCallingUid;
+            int extractCallingUid = extractCallingUid(th.getMessage());
+            if (extractCallingUid > 0) {
+                return extractCallingUid;
             }
             th = th.getCause();
         }

@@ -30,9 +30,9 @@ public class TextInputEditText extends sf {
         lx0.t(context, attributeSet, R.attr.editTextStyle, R.style.Widget_Design_TextInputEditText);
         int[] iArr = fv1.w;
         lx0.z(context, attributeSet, iArr, R.attr.editTextStyle, R.style.Widget_Design_TextInputEditText, new int[0]);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, R.attr.editTextStyle, R.style.Widget_Design_TextInputEditText);
-        setTextInputLayoutFocusedRectEnabled(typedArrayObtainStyledAttributes.getBoolean(0, false));
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, R.attr.editTextStyle, R.style.Widget_Design_TextInputEditText);
+        setTextInputLayoutFocusedRectEnabled(obtainStyledAttributes.getBoolean(0, false));
+        obtainStyledAttributes.recycle();
     }
 
     private CharSequence getHintFromLayout() {
@@ -97,11 +97,11 @@ public class TextInputEditText extends sf {
 
     @Override // androidx.emoji2.text.sf, android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        if (inputConnectionOnCreateInputConnection != null && editorInfo.hintText == null) {
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        if (onCreateInputConnection != null && editorInfo.hintText == null) {
             editorInfo.hintText = getHintFromLayout();
         }
-        return inputConnectionOnCreateInputConnection;
+        return onCreateInputConnection;
     }
 
     @Override // android.view.View

@@ -8,26 +8,26 @@ public final class mi0 extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        int iJ;
-        int iH;
-        int iG;
-        int iP;
+        int j2;
+        int h;
+        int g;
+        int i;
         if (!vz.d(j) || this.r == 1) {
-            iJ = vz.j(j);
-            iH = vz.h(j);
+            j2 = vz.j(j);
+            h = vz.h(j);
         } else {
-            iJ = az0.p(Math.round(vz.h(j) * this.s), vz.j(j), vz.h(j));
-            iH = iJ;
+            j2 = az0.p(Math.round(vz.h(j) * this.s), vz.j(j), vz.h(j));
+            h = j2;
         }
         if (!vz.c(j) || this.r == 2) {
-            int i = vz.i(j);
-            iG = vz.g(j);
-            iP = i;
+            int i2 = vz.i(j);
+            g = vz.g(j);
+            i = i2;
         } else {
-            iP = az0.p(Math.round(vz.g(j) * this.s), vz.i(j), vz.g(j));
-            iG = iP;
+            i = az0.p(Math.round(vz.g(j) * this.s), vz.i(j), vz.g(j));
+            g = i;
         }
-        hr1 hr1VarQ = ab1Var.q(xz.a(iJ, iH, iP, iG));
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new jb(hr1VarQ, 4));
+        hr1 q = ab1Var.q(xz.a(j2, h, i, g));
+        return hb1Var.P(q.d, q.e, re0.d, new jb(q, 4));
     }
 }

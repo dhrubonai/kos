@@ -46,9 +46,9 @@ public class XposedConfig implements Parcelable {
     public XposedConfig(Parcel parcel) {
         this.moduleState = new HashMap();
         this.enable = parcel.readByte() != 0;
-        int i = parcel.readInt();
-        this.moduleState = new HashMap(i);
-        for (int i2 = 0; i2 < i; i2++) {
+        int readInt = parcel.readInt();
+        this.moduleState = new HashMap(readInt);
+        for (int i = 0; i < readInt; i++) {
             this.moduleState.put(parcel.readString(), (Boolean) parcel.readValue(Boolean.class.getClassLoader()));
         }
     }

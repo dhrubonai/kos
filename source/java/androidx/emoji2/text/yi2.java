@@ -17,7 +17,7 @@ import android.util.Xml;
 public final class yi2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ColorStateList f1390a;
+    public final ColorStateList f1389a;
     public final String b;
     public final String c;
     public final int d;
@@ -34,30 +34,30 @@ public final class yi2 {
     public boolean o = false;
     public Typeface p;
 
-    public yi2(Context context, int i) throws Resources.NotFoundException {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(i, gv1.r);
-        this.l = typedArrayObtainStyledAttributes.getDimension(0, 0.0f);
-        this.k = a01.E(context, typedArrayObtainStyledAttributes, 3);
-        a01.E(context, typedArrayObtainStyledAttributes, 4);
-        a01.E(context, typedArrayObtainStyledAttributes, 5);
-        this.d = typedArrayObtainStyledAttributes.getInt(2, 0);
-        this.e = typedArrayObtainStyledAttributes.getInt(1, 1);
-        int i2 = typedArrayObtainStyledAttributes.hasValue(12) ? 12 : 10;
-        this.m = typedArrayObtainStyledAttributes.getResourceId(i2, 0);
-        this.b = typedArrayObtainStyledAttributes.getString(i2);
-        typedArrayObtainStyledAttributes.getBoolean(14, false);
-        this.f1390a = a01.E(context, typedArrayObtainStyledAttributes, 6);
-        this.f = typedArrayObtainStyledAttributes.getFloat(7, 0.0f);
-        this.g = typedArrayObtainStyledAttributes.getFloat(8, 0.0f);
-        this.h = typedArrayObtainStyledAttributes.getFloat(9, 0.0f);
-        typedArrayObtainStyledAttributes.recycle();
-        TypedArray typedArrayObtainStyledAttributes2 = context.obtainStyledAttributes(i, fv1.o);
-        this.i = typedArrayObtainStyledAttributes2.hasValue(0);
-        this.j = typedArrayObtainStyledAttributes2.getFloat(0, 0.0f);
+    public yi2(Context context, int i) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i, gv1.r);
+        this.l = obtainStyledAttributes.getDimension(0, 0.0f);
+        this.k = a01.E(context, obtainStyledAttributes, 3);
+        a01.E(context, obtainStyledAttributes, 4);
+        a01.E(context, obtainStyledAttributes, 5);
+        this.d = obtainStyledAttributes.getInt(2, 0);
+        this.e = obtainStyledAttributes.getInt(1, 1);
+        int i2 = obtainStyledAttributes.hasValue(12) ? 12 : 10;
+        this.m = obtainStyledAttributes.getResourceId(i2, 0);
+        this.b = obtainStyledAttributes.getString(i2);
+        obtainStyledAttributes.getBoolean(14, false);
+        this.f1389a = a01.E(context, obtainStyledAttributes, 6);
+        this.f = obtainStyledAttributes.getFloat(7, 0.0f);
+        this.g = obtainStyledAttributes.getFloat(8, 0.0f);
+        this.h = obtainStyledAttributes.getFloat(9, 0.0f);
+        obtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(i, fv1.o);
+        this.i = obtainStyledAttributes2.hasValue(0);
+        this.j = obtainStyledAttributes2.getFloat(0, 0.0f);
         if (Build.VERSION.SDK_INT >= 26) {
-            this.c = typedArrayObtainStyledAttributes2.getString(typedArrayObtainStyledAttributes2.hasValue(3) ? 3 : 1);
+            this.c = obtainStyledAttributes2.getString(obtainStyledAttributes2.hasValue(3) ? 3 : 1);
         }
-        typedArrayObtainStyledAttributes2.recycle();
+        obtainStyledAttributes2.recycle();
     }
 
     public final void a() {
@@ -96,7 +96,7 @@ public final class yi2 {
         }
         try {
             wi2 wi2Var = new wi2(this, lz0Var);
-            ThreadLocal threadLocal = zz1.f1464a;
+            ThreadLocal threadLocal = zz1.f1463a;
             if (context.isRestricted()) {
                 wi2Var.i(-4);
             } else {
@@ -112,27 +112,27 @@ public final class yi2 {
         }
     }
 
-    public final boolean c(Context context) throws Exception {
+    public final boolean c(Context context) {
         Context context2;
-        Typeface typefaceA;
-        String string;
-        Typeface typefaceCreate;
+        Typeface a2;
+        String str;
+        Typeface create;
         if (this.n) {
             return true;
         }
         int i = this.m;
         if (i != 0) {
-            ThreadLocal threadLocal = zz1.f1464a;
-            Typeface typefaceCreate2 = null;
+            ThreadLocal threadLocal = zz1.f1463a;
+            Typeface typeface = null;
             if (context.isRestricted()) {
                 context2 = context;
-                typefaceA = null;
+                a2 = null;
             } else {
                 context2 = context;
-                typefaceA = zz1.a(context2, i, new TypedValue(), 0, null, false, true);
+                a2 = zz1.a(context2, i, new TypedValue(), 0, null, false, true);
             }
-            if (typefaceA != null) {
-                this.p = typefaceA;
+            if (a2 != null) {
+                this.p = a2;
                 this.n = true;
                 return true;
             }
@@ -140,33 +140,28 @@ public final class yi2 {
                 this.o = true;
                 Resources resources = context2.getResources();
                 int i2 = this.m;
-                if (i2 == 0 || !resources.getResourceTypeName(i2).equals("font")) {
-                    string = null;
-                    if (string != null && (typefaceCreate = Typeface.create(string, 0)) != Typeface.DEFAULT) {
-                        typefaceCreate2 = Typeface.create(typefaceCreate, this.d);
-                    }
-                } else {
+                if (i2 != 0 && resources.getResourceTypeName(i2).equals("font")) {
                     try {
                         XmlResourceParser xml = resources.getXml(i2);
                         while (xml.getEventType() != 1) {
                             if (xml.getEventType() == 2 && xml.getName().equals("font-family")) {
-                                TypedArray typedArrayObtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xml), cv1.b);
-                                string = typedArrayObtainAttributes.getString(7);
-                                typedArrayObtainAttributes.recycle();
+                                TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xml), cv1.b);
+                                str = obtainAttributes.getString(7);
+                                obtainAttributes.recycle();
                                 break;
                             }
                             xml.next();
                         }
                     } catch (Throwable unused) {
                     }
-                    string = null;
-                    if (string != null) {
-                        typefaceCreate2 = Typeface.create(typefaceCreate, this.d);
-                    }
+                }
+                str = null;
+                if (str != null && (create = Typeface.create(str, 0)) != Typeface.DEFAULT) {
+                    typeface = Typeface.create(create, this.d);
                 }
             }
-            if (typefaceCreate2 != null) {
-                this.p = typefaceCreate2;
+            if (typeface != null) {
+                this.p = typeface;
                 this.n = true;
                 return true;
             }
@@ -178,7 +173,7 @@ public final class yi2 {
         e(context, textPaint, lz0Var);
         ColorStateList colorStateList = this.k;
         textPaint.setColor(colorStateList != null ? colorStateList.getColorForState(textPaint.drawableState, colorStateList.getDefaultColor()) : -16777216);
-        ColorStateList colorStateList2 = this.f1390a;
+        ColorStateList colorStateList2 = this.f1389a;
         textPaint.setShadowLayer(this.h, this.f, this.g, colorStateList2 != null ? colorStateList2.getColorForState(textPaint.drawableState, colorStateList2.getDefaultColor()) : 0);
     }
 
@@ -194,9 +189,9 @@ public final class yi2 {
     }
 
     public final void f(Context context, TextPaint textPaint, Typeface typeface) {
-        Typeface typefaceV = az0.V(context.getResources().getConfiguration(), typeface);
-        if (typefaceV != null) {
-            typeface = typefaceV;
+        Typeface V = az0.V(context.getResources().getConfiguration(), typeface);
+        if (V != null) {
+            typeface = V;
         }
         textPaint.setTypeface(typeface);
         int i = (~typeface.getStyle()) & this.d;

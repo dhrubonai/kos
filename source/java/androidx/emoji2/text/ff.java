@@ -7,25 +7,25 @@ import android.text.SegmentFinder;
 public final class ff extends SegmentFinder {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ a12 f359a;
+    public final /* synthetic */ a12 f358a;
 
     public ff(a12 a12Var) {
-        this.f359a = a12Var;
+        this.f358a = a12Var;
     }
 
     public final int nextEndBoundary(int i) {
-        return this.f359a.f(i);
+        return this.f358a.f(i);
     }
 
     public final int nextStartBoundary(int i) {
-        return this.f359a.c(i);
+        return this.f358a.c(i);
     }
 
     public final int previousEndBoundary(int i) {
-        return this.f359a.d(i);
+        return this.f358a.d(i);
     }
 
     public final int previousStartBoundary(int i) {
-        return this.f359a.e(i);
+        return this.f358a.e(i);
     }
 }

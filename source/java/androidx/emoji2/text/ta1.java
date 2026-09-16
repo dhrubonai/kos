@@ -30,9 +30,9 @@ public final class ta1 extends ex2 {
                 fArr[i] = f;
                 j4 j4Var = ua1Var.G;
                 if (j4Var != null) {
-                    float fH = ua1Var.h();
-                    MaterialButton materialButton = (MaterialButton) j4Var.f561a;
-                    int i2 = (int) (fH * 0.11f);
+                    float h = ua1Var.h();
+                    MaterialButton materialButton = (MaterialButton) j4Var.f560a;
+                    int i2 = (int) (h * 0.11f);
                     if (materialButton.A != i2) {
                         materialButton.A = i2;
                         materialButton.j();

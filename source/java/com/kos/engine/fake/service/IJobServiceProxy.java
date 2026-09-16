@@ -31,17 +31,17 @@ public class IJobServiceProxy extends BinderInvocationStub {
     public static class Cancel extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            int iFindJobIdIndex = IJobServiceProxy.findJobIdIndex(objArr);
-            if (iFindJobIdIndex < 0) {
+            int findJobIdIndex = IJobServiceProxy.findJobIdIndex(objArr);
+            if (findJobIdIndex < 0) {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-581740994379554L, strArr), 5, c.a(-581805418888994L, strArr));
                 return method.invoke(obj, objArr);
             }
-            int iIntValue = ((Number) objArr[iFindJobIdIndex]).intValue();
+            int intValue = ((Number) objArr[findJobIdIndex]).intValue();
             c01 c01Var = c01.r;
-            int iCancel = BJobManager.get().cancel(rj.q(), iIntValue);
-            if (iCancel >= 0) {
-                objArr[iFindJobIdIndex] = IJobServiceProxy.coerceNumber(iCancel, objArr[iFindJobIdIndex]);
+            int cancel = BJobManager.get().cancel(rj.q(), intValue);
+            if (cancel >= 0) {
+                objArr[findJobIdIndex] = IJobServiceProxy.coerceNumber(cancel, objArr[findJobIdIndex]);
             }
             return method.invoke(obj, objArr);
         }
@@ -69,18 +69,18 @@ public class IJobServiceProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            int iFindJobInfoIndex = IJobServiceProxy.findJobInfoIndex(objArr);
-            if (iFindJobInfoIndex < 0) {
+            int findJobInfoIndex = IJobServiceProxy.findJobInfoIndex(objArr);
+            if (findJobInfoIndex < 0) {
                 nz0.Q(c.a(-582484023721762L, strArr), 5, c.a(-582565628100386L, strArr));
                 return method.invoke(obj, objArr);
             }
-            JobInfo jobInfo = (JobInfo) objArr[iFindJobInfoIndex];
+            JobInfo jobInfo = (JobInfo) objArr[findJobInfoIndex];
             IJobServiceProxy.logCriticalGmsSchedulerJob(c.a(-582685887184674L, strArr), jobInfo);
             if (!IJobServiceProxy.shouldSuppressOptionalPlayStoreJob(jobInfo)) {
                 c01 c01Var = c01.r;
-                JobInfo jobInfoSchedule = BJobManager.get().schedule(jobInfo);
-                if (jobInfoSchedule != null) {
-                    objArr[iFindJobInfoIndex] = jobInfoSchedule;
+                JobInfo schedule = BJobManager.get().schedule(jobInfo);
+                if (schedule != null) {
+                    objArr[findJobInfoIndex] = schedule;
                 }
                 return method.invoke(obj, objArr);
             }
@@ -95,18 +95,18 @@ public class IJobServiceProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            int iFindJobInfoIndex = IJobServiceProxy.findJobInfoIndex(objArr);
-            if (iFindJobInfoIndex < 0) {
+            int findJobInfoIndex = IJobServiceProxy.findJobInfoIndex(objArr);
+            if (findJobInfoIndex < 0) {
                 nz0.Q(c.a(-580847641181986L, strArr), 5, c.a(-580912065691426L, strArr));
                 return method.invoke(obj, objArr);
             }
-            JobInfo jobInfo = (JobInfo) objArr[iFindJobInfoIndex];
+            JobInfo jobInfo = (JobInfo) objArr[findJobInfoIndex];
             IJobServiceProxy.logCriticalGmsSchedulerJob(c.a(-581036619743010L, strArr), jobInfo);
             if (!IJobServiceProxy.shouldSuppressOptionalPlayStoreJob(jobInfo)) {
                 c01 c01Var = c01.r;
-                JobInfo jobInfoSchedule = BJobManager.get().schedule(jobInfo);
-                if (jobInfoSchedule != null) {
-                    objArr[iFindJobInfoIndex] = jobInfoSchedule;
+                JobInfo schedule = BJobManager.get().schedule(jobInfo);
+                if (schedule != null) {
+                    objArr[findJobInfoIndex] = schedule;
                 }
                 return method.invoke(obj, objArr);
             }
@@ -137,7 +137,7 @@ public class IJobServiceProxy extends BinderInvocationStub {
     }
 
     private static void appendBundleKeys(StringBuilder sb, Set<String> set, ValueReader valueReader) {
-        Object objA;
+        Object a2;
         String[] strArr = xa1.b;
         int i = 0;
         for (String str : set) {
@@ -149,13 +149,13 @@ public class IJobServiceProxy extends BinderInvocationStub {
                 return;
             }
             try {
-                objA = valueReader.get(str);
+                a2 = valueReader.get(str);
             } catch (Throwable unused) {
-                objA = c.a(-584661572140834L, strArr);
+                a2 = c.a(-584661572140834L, strArr);
             }
             sb.append(str);
             sb.append('=');
-            sb.append(objA);
+            sb.append(a2);
             i++;
         }
     }
@@ -254,7 +254,7 @@ public class IJobServiceProxy extends BinderInvocationStub {
     public static void logCriticalGmsSchedulerJob(String str, JobInfo jobInfo) {
         if (isCriticalGmsSchedulerJob(jobInfo)) {
             String[] strArr = xa1.b;
-            String strA = c.a(-581517656080162L, strArr);
+            String a2 = c.a(-581517656080162L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-581582080589602L, strArr));
             sb.append(str);
@@ -265,7 +265,7 @@ public class IJobServiceProxy extends BinderInvocationStub {
             sb.append(c.a(-581358742290210L, strArr));
             sb.append(describePersistableBundle(safeExtras(jobInfo)));
             sb.append(c.a(-584133291163426L, strArr));
-            zd.p(sb, describeBundle(safeTransientExtras(jobInfo)), 3, strA);
+            zd.p(sb, describeBundle(safeTransientExtras(jobInfo)), 3, a2);
         }
     }
 
@@ -281,11 +281,13 @@ public class IJobServiceProxy extends BinderInvocationStub {
     }
 
     private static Bundle safeTransientExtras(JobInfo jobInfo) {
+        Bundle transientExtras;
         if (jobInfo == null) {
             return null;
         }
         try {
-            return jobInfo.getTransientExtras();
+            transientExtras = jobInfo.getTransientExtras();
+            return transientExtras;
         } catch (Throwable unused) {
             return null;
         }

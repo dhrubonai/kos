@@ -22,9 +22,9 @@ public final class lg2 extends g01 implements Function2 {
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
         ((Number) obj2).intValue();
-        int iK0 = n6.k0(this.g | 1);
+        int k0 = n6.k0(this.g | 1);
         int i = this.h;
-        jm.h(this.e, this.f, (lx) obj, iK0, i);
-        return up2.f1187a;
+        jm.h(this.e, this.f, (lx) obj, k0, i);
+        return up2.f1186a;
     }
 }

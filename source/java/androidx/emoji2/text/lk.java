@@ -49,15 +49,15 @@ public abstract class lk implements l10, g30, Serializable {
         throw new UnsupportedOperationException("create(Any?;Continuation) has not been overridden");
     }
 
-    public StackTraceElement j() throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
-        int iIntValue;
-        String strC;
+    public StackTraceElement j() {
+        int i;
+        String str;
         Method method;
-        Object objInvoke;
+        Object invoke;
         Method method2;
-        Object objInvoke2;
+        Object invoke2;
         g50 g50Var = (g50) getClass().getAnnotation(g50.class);
-        String str = null;
+        String str2 = null;
         if (g50Var == null || g50Var.v() < 1) {
             return null;
         }
@@ -66,11 +66,11 @@ public abstract class lk implements l10, g30, Serializable {
             declaredField.setAccessible(true);
             Object obj = declaredField.get(this);
             Integer num = obj instanceof Integer ? (Integer) obj : null;
-            iIntValue = (num != null ? num.intValue() : 0) - 1;
+            i = (num != null ? num.intValue() : 0) - 1;
         } catch (Exception unused) {
-            iIntValue = -1;
+            i = -1;
         }
-        int i = iIntValue >= 0 ? g50Var.l()[iIntValue] : -1;
+        int i2 = i >= 0 ? g50Var.l()[i] : -1;
         os osVar = wj1.c;
         os osVar2 = wj1.d;
         if (osVar2 == null) {
@@ -83,30 +83,30 @@ public abstract class lk implements l10, g30, Serializable {
                 osVar2 = osVar;
             }
         }
-        if (osVar2 != osVar && (method = osVar2.f872a) != null && (objInvoke = method.invoke(getClass(), null)) != null && (method2 = osVar2.b) != null && (objInvoke2 = method2.invoke(objInvoke, null)) != null) {
+        if (osVar2 != osVar && (method = osVar2.f871a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = osVar2.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
             Method method3 = osVar2.c;
-            Object objInvoke3 = method3 != null ? method3.invoke(objInvoke2, null) : null;
-            if (objInvoke3 instanceof String) {
-                str = (String) objInvoke3;
+            Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
+            if (invoke3 instanceof String) {
+                str2 = (String) invoke3;
             }
         }
-        if (str == null) {
-            strC = g50Var.c();
+        if (str2 == null) {
+            str = g50Var.c();
         } else {
-            strC = str + '/' + g50Var.c();
+            str = str2 + '/' + g50Var.c();
         }
-        return new StackTraceElement(strC, g50Var.m(), g50Var.f(), i);
+        return new StackTraceElement(str, g50Var.m(), g50Var.f(), i2);
     }
 
     public abstract Object k(Object obj);
 
-    public String toString() throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public String toString() {
         StringBuilder sb = new StringBuilder("Continuation at ");
-        Object objJ = j();
-        if (objJ == null) {
-            objJ = getClass().getName();
+        Object j = j();
+        if (j == null) {
+            j = getClass().getName();
         }
-        sb.append(objJ);
+        sb.append(j);
         return sb.toString();
     }
 

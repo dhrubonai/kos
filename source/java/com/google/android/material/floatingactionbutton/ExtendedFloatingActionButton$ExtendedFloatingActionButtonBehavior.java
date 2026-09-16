@@ -38,9 +38,9 @@ public class ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior<T
     }
 
     public ExtendedFloatingActionButton$ExtendedFloatingActionButtonBehavior(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.f);
-        typedArrayObtainStyledAttributes.getBoolean(0, false);
-        typedArrayObtainStyledAttributes.getBoolean(1, true);
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.f);
+        obtainStyledAttributes.getBoolean(0, false);
+        obtainStyledAttributes.getBoolean(1, true);
+        obtainStyledAttributes.recycle();
     }
 }

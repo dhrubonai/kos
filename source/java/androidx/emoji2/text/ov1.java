@@ -13,7 +13,7 @@ public final class ov1 extends InputStream {
     }
 
     @Override // java.io.InputStream
-    public final int available() throws IOException {
+    public final int available() {
         pv1 pv1Var = this.d;
         if (pv1Var.f) {
             throw new IOException("closed");
@@ -27,7 +27,7 @@ public final class ov1 extends InputStream {
     }
 
     @Override // java.io.InputStream
-    public final int read() throws IOException {
+    public final int read() {
         pv1 pv1Var = this.d;
         rn rnVar = pv1Var.e;
         if (pv1Var.f) {
@@ -44,7 +44,7 @@ public final class ov1 extends InputStream {
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) throws IOException {
+    public final int read(byte[] bArr, int i, int i2) {
         lx0.x(bArr, "data");
         pv1 pv1Var = this.d;
         rn rnVar = pv1Var.e;

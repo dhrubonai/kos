@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class g31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final be2 f398a;
+    public static final be2 f397a;
 
     static {
-        Object obj = ku2.f659a;
-        f398a = lx0.a0(1, new nw0(jm.e(1, 1)));
+        Object obj = ku2.f658a;
+        f397a = lx0.a0(1, new nw0(jm.e(1, 1)));
     }
 }

@@ -144,64 +144,64 @@ public interface IBDeveloperModuleManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void clearModuleQuarantine(String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-471076867030818L, xa1.b));
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-471076867030818L, xa1.b));
+                    obtain.writeString(str);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void disableAllModules() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-470810579058466L, xa1.b));
-                    this.mRemote.transact(Stub.TRANSACTION_disableAllModules, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-470810579058466L, xa1.b));
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public List<DeveloperModuleInfo> getActiveModules(String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-460167650098978L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(DeveloperModuleInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-460167650098978L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(DeveloperModuleInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public List<DeveloperModuleInfo> getInstalledModules(int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-460433938071330L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(DeveloperModuleInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-460433938071330L, xa1.b));
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(DeveloperModuleInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -211,100 +211,100 @@ public interface IBDeveloperModuleManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void recordModuleLoadResult(String str, boolean z, String str2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-471643802713890L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeString(str2);
-                    this.mRemote.transact(Stub.TRANSACTION_recordModuleLoadResult, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-471643802713890L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeString(str2);
+                    this.mRemote.transact(10, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void setModuleEarlyAllowed(String str, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-472511386107682L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-472511386107682L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void setModuleEnabled(String str, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-472210738396962L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-472210738396962L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void setModuleNativeAllowed(String str, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-472777674080034L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-472777674080034L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void setModuleTargetEnabled(String str, String str2, int i, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-471944450424610L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-471944450424610L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBDeveloperModuleManagerService
             public void setModuleTrusted(String str, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-471995990032162L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-471995990032162L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -317,18 +317,18 @@ public interface IBDeveloperModuleManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-474341042175778L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBDeveloperModuleManagerService)) ? new Proxy(iBinder) : (IBDeveloperModuleManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-474341042175778L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBDeveloperModuleManagerService)) ? new Proxy(iBinder) : (IBDeveloperModuleManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = a.a.a.c.a(-474074754203426L, xa1.b);
+            String a2 = a.a.a.c.a(-474074754203426L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
@@ -366,11 +366,11 @@ public interface IBDeveloperModuleManagerService extends IInterface {
                     clearModuleQuarantine(parcel.readString());
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_disableAllModules /* 9 */:
+                case 9:
                     disableAllModules();
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_recordModuleLoadResult /* 10 */:
+                case 10:
                     recordModuleLoadResult(parcel.readString(), parcel.readInt() != 0, parcel.readString());
                     parcel2.writeNoException();
                     return true;

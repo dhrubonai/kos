@@ -31,53 +31,53 @@ public class NativeCore {
     public static native void addIORule(String str, String str2);
 
     public static void dumpDex(ClassLoader classLoader, String str) {
-        Object objE;
+        Object obj;
         Object[] objArr;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         String[] strArr = xa1.b;
         try {
-            fy1 fy1VarG = fy1.g(c.a(-876371455917858L, strArr));
-            fy1VarG.d(c.a(-876513189838626L, strArr));
-            objE = fy1VarG.e(classLoader);
+            fy1 g = fy1.g(c.a(-876371455917858L, strArr));
+            g.d(c.a(-876513189838626L, strArr));
+            obj = g.e(classLoader);
         } catch (Exception e) {
             e.printStackTrace();
-            objE = null;
+            obj = null;
         }
         int i = 0;
-        if (objE == null) {
+        if (obj == null) {
             objArr = new Object[0];
         } else {
             try {
-                fy1 fy1VarI = fy1.i(objE);
-                fy1VarI.d(c.a(-876835312385826L, strArr));
-                objArr = (Object[]) fy1VarI.e(fy1VarI.b);
+                fy1 i2 = fy1.i(obj);
+                i2.d(c.a(-876835312385826L, strArr));
+                objArr = (Object[]) i2.e(i2.b);
             } catch (Exception e2) {
                 e2.printStackTrace();
                 objArr = new Object[0];
             }
         }
-        for (Object obj : objArr) {
+        for (Object obj2 : objArr) {
             try {
-                fy1 fy1VarI2 = fy1.i(obj);
-                fy1VarI2.d(c.a(-876800952647458L, strArr));
-                arrayList2.add((DexFile) fy1VarI2.e(fy1VarI2.b));
+                fy1 i3 = fy1.i(obj2);
+                i3.d(c.a(-876800952647458L, strArr));
+                arrayList2.add((DexFile) i3.e(i3.b));
             } catch (Exception e3) {
                 e3.printStackTrace();
             }
         }
         int size = arrayList2.size();
-        int i2 = 0;
-        while (i2 < size) {
-            Object obj2 = arrayList2.get(i2);
-            i2++;
-            arrayList.addAll(l8.R((DexFile) obj2));
+        int i4 = 0;
+        while (i4 < size) {
+            Object obj3 = arrayList2.get(i4);
+            i4++;
+            arrayList.addAll(l8.R((DexFile) obj3));
         }
         int size2 = arrayList.size();
         while (i < size2) {
-            Object obj3 = arrayList.get(i);
+            Object obj4 = arrayList.get(i);
             i++;
-            ((Long) obj3).getClass();
+            ((Long) obj4).getClass();
         }
     }
 
@@ -94,23 +94,23 @@ public class NativeCore {
 
     @xy0
     public static int getCallingUid(int i) {
-        int iR;
+        int r;
         Integer num = (Integer) mt2.i.get();
-        int iIntValue = num == null ? -1 : num.intValue();
-        if (iIntValue > 0) {
-            return iIntValue;
+        int intValue = num == null ? -1 : num.intValue();
+        if (intValue > 0) {
+            return intValue;
         }
         if ((i > 0 && i < 10000) || i > 19999 || i != c01.r.o) {
             return i;
         }
-        int iB = mt2.b();
-        return iB > 0 ? toVirtualUid(iB) : (rj.n() == null || (iR = rj.r()) <= 0) ? i : toVirtualUid(iR);
+        int b = mt2.b();
+        return b > 0 ? toVirtualUid(b) : (rj.n() == null || (r = rj.r()) <= 0) ? i : toVirtualUid(r);
     }
 
     @xy0
     public static int getUid(int i) {
-        int iR;
-        return ((i <= 0 || i >= 10000) && i <= 19999 && i == c01.r.o && rj.n() != null && (iR = rj.r()) > 0) ? toVirtualUid(iR) : i;
+        int r;
+        return ((i <= 0 || i >= 10000) && i <= 19999 && i == c01.r.o && rj.n() != null && (r = rj.r()) > 0) ? toVirtualUid(r) : i;
     }
 
     public static native void hideXposed();
@@ -122,10 +122,10 @@ public class NativeCore {
     @xy0
     public static long[] loadEmptyDex() {
         try {
-            ArrayList arrayListR = l8.R(new DexFile(BEnvironment.EMPTY_JAR));
-            long[] jArr = new long[arrayListR.size()];
-            for (int i = 0; i < arrayListR.size(); i++) {
-                jArr[i] = ((Long) arrayListR.get(i)).longValue();
+            ArrayList R = l8.R(new DexFile(BEnvironment.EMPTY_JAR));
+            long[] jArr = new long[R.size()];
+            for (int i = 0; i < R.size(); i++) {
+                jArr[i] = ((Long) R.get(i)).longValue();
             }
             return jArr;
         } catch (Exception e) {

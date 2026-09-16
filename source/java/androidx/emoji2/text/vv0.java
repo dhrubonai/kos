@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class vv0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final i51 f1244a;
+    public final i51 f1243a;
     public final o b;
     public final Object c = new Object();
     public final sf1 d = new sf1(new nu2[16]);
     public boolean e;
 
     public vv0(i51 i51Var, o oVar) {
-        this.f1244a = i51Var;
+        this.f1243a = i51Var;
         this.b = oVar;
     }
 }

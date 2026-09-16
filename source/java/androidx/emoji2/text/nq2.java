@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class nq2 implements wu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f822a;
+    public final String f821a;
     public final un1 b;
 
     public nq2(gw0 gw0Var, String str) {
-        this.f822a = str;
+        this.f821a = str;
         this.b = az0.W(gw0Var);
     }
 
@@ -30,7 +30,7 @@ public final class nq2 implements wu2 {
 
     @Override // androidx.emoji2.text.wu2
     public final int d(j70 j70Var, q01 q01Var) {
-        return e().f443a;
+        return e().f442a;
     }
 
     public final gw0 e() {
@@ -52,14 +52,14 @@ public final class nq2 implements wu2 {
     }
 
     public final int hashCode() {
-        return this.f822a.hashCode();
+        return this.f821a.hashCode();
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f822a);
+        sb.append(this.f821a);
         sb.append("(left=");
-        sb.append(e().f443a);
+        sb.append(e().f442a);
         sb.append(", top=");
         sb.append(e().b);
         sb.append(", right=");

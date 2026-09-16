@@ -7,5 +7,5 @@ import androidx.appcompat.widget.Toolbar;
 public final class pm2 implements z3 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ Toolbar f916a;
+    public final /* synthetic */ Toolbar f915a;
 }

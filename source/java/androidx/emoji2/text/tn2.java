@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class tn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final of1 f1133a;
+    public final of1 f1132a;
     public final tn2 b;
     public final String c;
     public final un1 d = az0.W(c());
@@ -18,7 +18,7 @@ public final class tn2 {
     public final un1 k;
 
     public tn2(of1 of1Var, tn2 tn2Var, String str) {
-        this.f1133a = of1Var;
+        this.f1132a = of1Var;
         this.b = tn2Var;
         this.c = str;
         Boolean bool = Boolean.FALSE;
@@ -29,36 +29,75 @@ public final class tn2 {
         az0.u(new vd(this, 1));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0089  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void a(java.lang.Object r10, androidx.emoji2.text.lx r11, int r12) {
-        /*
-            Method dump skipped, instructions count: 234
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.tn2.a(java.lang.Object, androidx.emoji2.text.lx, int):void");
+    public final void a(Object obj, lx lxVar, int i) {
+        int i2;
+        tx txVar = (tx) lxVar;
+        txVar.Z(-1493585151);
+        if ((i & 6) == 0) {
+            i2 = ((i & 8) == 0 ? txVar.f(obj) : txVar.h(obj) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            i2 |= txVar.f(this) ? 32 : 16;
+        }
+        if ((i2 & 19) == 18 && txVar.B()) {
+            txVar.S();
+        } else if (g()) {
+            txVar.X(1823992347);
+            txVar.p(false);
+        } else {
+            txVar.X(1822507602);
+            l(obj);
+            if (lx0.n(obj, c())) {
+                if (!(this.g.g() != Long.MIN_VALUE) && !((Boolean) this.h.getValue()).booleanValue()) {
+                    txVar.X(1823982427);
+                    txVar.p(false);
+                    txVar.p(false);
+                }
+            }
+            txVar.X(1822738893);
+            Object M = txVar.M();
+            on onVar = kx.f662a;
+            if (M == onVar) {
+                jy jyVar = new jy(bz0.D(txVar));
+                txVar.i0(jyVar);
+                M = jyVar;
+            }
+            e30 e30Var = ((jy) M).d;
+            boolean h = txVar.h(e30Var) | ((i2 & 112) == 32);
+            Object M2 = txVar.M();
+            if (h || M2 == onVar) {
+                M2 = new v32(6, e30Var, this);
+                txVar.i0(M2);
+            }
+            bz0.l(e30Var, this, (um0) M2, txVar);
+            txVar.p(false);
+            txVar.p(false);
+        }
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new o9(i, 8, this, obj);
+        }
     }
 
     public final long b() {
         yc2 yc2Var = this.i;
         int size = yc2Var.size();
-        long jMax = 0;
+        long j = 0;
         for (int i = 0; i < size; i++) {
-            jMax = Math.max(jMax, ((pn2) yc2Var.get(i)).m.g());
+            j = Math.max(j, ((pn2) yc2Var.get(i)).m.g());
         }
         yc2 yc2Var2 = this.j;
         int size2 = yc2Var2.size();
         for (int i2 = 0; i2 < size2; i2++) {
-            jMax = Math.max(jMax, ((tn2) yc2Var2.get(i2)).b());
+            j = Math.max(j, ((tn2) yc2Var2.get(i2)).b());
         }
-        return jMax;
+        return j;
     }
 
     public final Object c() {
-        return this.f1133a.b.getValue();
+        return this.f1132a.b.getValue();
     }
 
     public final boolean d() {
@@ -91,12 +130,12 @@ public final class tn2 {
     }
 
     public final void h(long j, boolean z) {
-        of1 of1Var = this.f1133a;
-        un1 un1Var = of1Var.f854a;
+        of1 of1Var = this.f1132a;
+        un1 un1Var = of1Var.f853a;
         sn1 sn1Var = this.g;
         if (sn1Var.g() == Long.MIN_VALUE) {
             sn1Var.h(j);
-            of1Var.f854a.setValue(Boolean.TRUE);
+            of1Var.f853a.setValue(Boolean.TRUE);
         } else if (!((Boolean) un1Var.getValue()).booleanValue()) {
             un1Var.setValue(Boolean.TRUE);
         }
@@ -109,10 +148,10 @@ public final class tn2 {
             un1 un1Var2 = pn2Var.h;
             un1 un1Var3 = pn2Var.h;
             if (!((Boolean) un1Var2.getValue()).booleanValue()) {
-                long jB = z ? pn2Var.a().b() : j;
-                pn2Var.k.setValue(pn2Var.a().f(jB));
-                pn2Var.l = pn2Var.a().d(jB);
-                if (pn2Var.a().e(jB)) {
+                long b = z ? pn2Var.a().b() : j;
+                pn2Var.k.setValue(pn2Var.a().f(b));
+                pn2Var.l = pn2Var.a().d(b);
+                if (pn2Var.a().e(b)) {
                     un1Var3.setValue(Boolean.TRUE);
                 }
             }
@@ -139,12 +178,12 @@ public final class tn2 {
     public final void i() {
         this.g.h(Long.MIN_VALUE);
         Object value = this.d.getValue();
-        of1 of1Var = this.f1133a;
+        of1 of1Var = this.f1132a;
         of1Var.b.setValue(value);
         if (this.b == null) {
             this.f.h(0L);
         }
-        of1Var.f854a.setValue(Boolean.FALSE);
+        of1Var.f853a.setValue(Boolean.FALSE);
         yc2 yc2Var = this.j;
         int size = yc2Var.size();
         for (int i = 0; i < size; i++) {
@@ -167,11 +206,11 @@ public final class tn2 {
 
     public final void k(Object obj, Object obj2) {
         this.g.h(Long.MIN_VALUE);
-        of1 of1Var = this.f1133a;
-        of1Var.f854a.setValue(Boolean.FALSE);
-        boolean zG = g();
+        of1 of1Var = this.f1132a;
+        of1Var.f853a.setValue(Boolean.FALSE);
+        boolean g = g();
         un1 un1Var = this.d;
-        if (!zG || !lx0.n(c(), obj) || !lx0.n(un1Var.getValue(), obj2)) {
+        if (!g || !lx0.n(c(), obj) || !lx0.n(un1Var.getValue(), obj2)) {
             if (!lx0.n(c(), obj)) {
                 of1Var.b.setValue(obj);
             }
@@ -202,7 +241,7 @@ public final class tn2 {
         }
         this.e.setValue(new on2(un1Var.getValue(), obj));
         if (!lx0.n(c(), un1Var.getValue())) {
-            this.f1133a.b.setValue(un1Var.getValue());
+            this.f1132a.b.setValue(un1Var.getValue());
         }
         un1Var.setValue(obj);
         if (this.g.g() == Long.MIN_VALUE) {

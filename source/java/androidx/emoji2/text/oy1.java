@@ -43,34 +43,34 @@ public final class oy1 implements e30, ky1 {
 
     @Override // androidx.emoji2.text.e30
     public final v20 u() {
-        v20 v20VarB;
-        v20 v20Var = this.f;
-        if (v20Var == null || v20Var == g) {
+        v20 v20Var;
+        v20 v20Var2 = this.f;
+        if (v20Var2 == null || v20Var2 == g) {
             ay ayVar = (ay) this.d.n(ay.e);
             v20 ny1Var = ayVar != null ? new ny1(ayVar, this) : oe0.d;
             synchronized (this.e) {
                 try {
-                    v20 v20Var2 = this.f;
-                    if (v20Var2 == null) {
-                        v20 v20Var3 = this.d;
-                        v20VarB = v20Var3.B(new ey0((cy0) v20Var3.n(dd0.K))).B(oe0.d).B(ny1Var);
-                    } else if (v20Var2 == g) {
+                    v20 v20Var3 = this.f;
+                    if (v20Var3 == null) {
                         v20 v20Var4 = this.d;
-                        ey0 ey0Var = new ey0((cy0) v20Var4.n(dd0.K));
+                        v20Var = v20Var4.B(new ey0((cy0) v20Var4.n(dd0.K))).B(oe0.d).B(ny1Var);
+                    } else if (v20Var3 == g) {
+                        v20 v20Var5 = this.d;
+                        ey0 ey0Var = new ey0((cy0) v20Var5.n(dd0.K));
                         ey0Var.D(new gm0(0));
-                        v20VarB = v20Var4.B(ey0Var).B(oe0.d).B(ny1Var);
+                        v20Var = v20Var5.B(ey0Var).B(oe0.d).B(ny1Var);
                     } else {
-                        v20VarB = v20Var2;
+                        v20Var = v20Var3;
                     }
-                    this.f = v20VarB;
+                    this.f = v20Var;
                 } catch (Throwable th) {
                     throw th;
                 }
             }
-            v20Var = v20VarB;
+            v20Var2 = v20Var;
         }
-        lx0.u(v20Var);
-        return v20Var;
+        lx0.u(v20Var2);
+        return v20Var2;
     }
 
     @Override // androidx.emoji2.text.ky1

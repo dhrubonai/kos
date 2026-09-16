@@ -9,7 +9,6 @@ import black.android.os.ServiceManagerStatic;
 import com.kos.engine.fake.hook.BinderInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -292,7 +291,7 @@ public class AudioPermissionProxy extends BinderInvocationStub {
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
-    public Object getWho() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public Object getWho() {
         ServiceManagerStatic serviceManagerStatic = BRServiceManager.get();
         String[] strArr = xa1.b;
         IBinder service = serviceManagerStatic.getService(c.a(-340926473060130L, strArr));
@@ -301,10 +300,10 @@ public class AudioPermissionProxy extends BinderInvocationStub {
             return null;
         }
         try {
-            Object objInvoke = Class.forName(c.a(-341759696715554L, strArr)).getMethod(c.a(-341901430636322L, strArr), IBinder.class).invoke(null, service);
-            if (objInvoke != null) {
+            Object invoke = Class.forName(c.a(-341759696715554L, strArr)).getMethod(c.a(-341901430636322L, strArr), IBinder.class).invoke(null, service);
+            if (invoke != null) {
                 nz0.Q(c.a(-341918610505506L, strArr), 3, c.a(-341476228874018L, strArr));
-                return objInvoke;
+                return invoke;
             }
             nz0.s(c.a(-335643663286050L, strArr), c.a(-335699497860898L, strArr));
             return null;

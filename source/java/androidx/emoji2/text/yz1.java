@@ -8,11 +8,11 @@ import java.util.Objects;
 public final class yz1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Resources f1412a;
+    public final Resources f1411a;
     public final Resources.Theme b;
 
     public yz1(Resources resources, Resources.Theme theme) {
-        this.f1412a = resources;
+        this.f1411a = resources;
         this.b = theme;
     }
 
@@ -22,7 +22,7 @@ public final class yz1 {
         }
         if (obj != null && yz1.class == obj.getClass()) {
             yz1 yz1Var = (yz1) obj;
-            if (this.f1412a.equals(yz1Var.f1412a) && Objects.equals(this.b, yz1Var.b)) {
+            if (this.f1411a.equals(yz1Var.f1411a) && Objects.equals(this.b, yz1Var.b)) {
                 return true;
             }
         }
@@ -30,6 +30,6 @@ public final class yz1 {
     }
 
     public final int hashCode() {
-        return Objects.hash(this.f1412a, this.b);
+        return Objects.hash(this.f1411a, this.b);
     }
 }

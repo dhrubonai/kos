@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class ta {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final sa f1111a = new sa();
+    public static final sa f1110a = new sa();
 }

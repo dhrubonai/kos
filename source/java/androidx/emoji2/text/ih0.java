@@ -10,16 +10,16 @@ import com.kos.engine.app.FacebookWebViewActivity;
 public final class ih0 extends WebChromeClient {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ FacebookWebViewActivity f524a;
+    public final /* synthetic */ FacebookWebViewActivity f523a;
 
     public ih0(FacebookWebViewActivity facebookWebViewActivity) {
-        this.f524a = facebookWebViewActivity;
+        this.f523a = facebookWebViewActivity;
     }
 
     @Override // android.webkit.WebChromeClient
     public final void onProgressChanged(WebView webView, int i) {
         super.onProgressChanged(webView, i);
-        FacebookWebViewActivity facebookWebViewActivity = this.f524a;
+        FacebookWebViewActivity facebookWebViewActivity = this.f523a;
         ProgressBar progressBar = facebookWebViewActivity.i;
         if (progressBar == null) {
             return;

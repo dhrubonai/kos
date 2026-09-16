@@ -26,18 +26,20 @@ public final /* synthetic */ class ci implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$3;
         switch (this.d) {
             case 0:
                 ((Integer) obj2).getClass();
                 wj1.e((nd1) this.f, (pi) this.g, (String) this.h, (n5) this.i, (q00) this.j, (lx) obj, n6.k0(this.e | 1));
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
-                int iIntValue = ((Integer) obj2).intValue();
-                return ComposableLambdaImpl.invoke$lambda$3((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.e, (lx) obj, iIntValue);
+                int intValue = ((Integer) obj2).intValue();
+                invoke$lambda$3 = ComposableLambdaImpl.invoke$lambda$3((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.e, (lx) obj, intValue);
+                return invoke$lambda$3;
             default:
                 ((Integer) obj2).getClass();
                 n6.z((String) this.h, (String) this.f, (String) this.g, (sm0) this.i, (sm0) this.j, (lx) obj, n6.k0(1), this.e);
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

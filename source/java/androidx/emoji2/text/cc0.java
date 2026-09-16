@@ -7,12 +7,12 @@ import android.graphics.drawable.Drawable;
 public final class cc0 extends uh0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Drawable f192a;
+    public final Drawable f191a;
     public final boolean b;
     public final d50 c;
 
     public cc0(Drawable drawable, boolean z, d50 d50Var) {
-        this.f192a = drawable;
+        this.f191a = drawable;
         this.b = z;
         this.c = d50Var;
     }
@@ -25,10 +25,10 @@ public final class cc0 extends uh0 {
             return false;
         }
         cc0 cc0Var = (cc0) obj;
-        return lx0.n(this.f192a, cc0Var.f192a) && this.b == cc0Var.b && this.c == cc0Var.c;
+        return lx0.n(this.f191a, cc0Var.f191a) && this.b == cc0Var.b && this.c == cc0Var.c;
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + jx0.d(this.f192a.hashCode() * 31, 31, this.b);
+        return this.c.hashCode() + jx0.d(this.f191a.hashCode() * 31, 31, this.b);
     }
 }

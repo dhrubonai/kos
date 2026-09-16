@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class aq {
 
     /* renamed from: a, reason: collision with root package name */
-    public final tz f116a;
+    public final tz f115a;
     public tz b;
     public tz c;
     public tz d;
@@ -26,7 +26,7 @@ public final class aq {
     public boolean q;
 
     public aq(tz tzVar, int i, boolean z) {
-        this.f116a = tzVar;
+        this.f115a = tzVar;
         this.l = i;
         this.m = z;
     }

@@ -23,25 +23,25 @@ public final class qh implements Iterator, ry0 {
 
     @Override // java.util.Iterator
     public final Object next() {
-        Object objF;
+        Object f;
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
         int i = this.e;
         switch (this.g) {
             case 0:
-                objF = ((uh) this.h).f(i);
+                f = ((uh) this.h).f(i);
                 break;
             case 1:
-                objF = ((uh) this.h).i(i);
+                f = ((uh) this.h).i(i);
                 break;
             default:
-                objF = ((wh) this.h).e[i];
+                f = ((wh) this.h).e[i];
                 break;
         }
         this.e++;
         this.f = true;
-        return objF;
+        return f;
     }
 
     @Override // java.util.Iterator

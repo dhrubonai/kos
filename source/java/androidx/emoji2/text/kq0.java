@@ -26,10 +26,10 @@ public final class kq0 extends View {
 
     public void setGuidelineBegin(int i) {
         iz izVar = (iz) getLayoutParams();
-        if (this.d && izVar.f556a == i) {
+        if (this.d && izVar.f555a == i) {
             return;
         }
-        izVar.f556a = i;
+        izVar.f555a = i;
         setLayoutParams(izVar);
     }
 

@@ -28,7 +28,7 @@ public final /* synthetic */ class k32 implements t51 {
                 break;
             default:
                 rn1 rn1Var = (rn1) this.e;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-375990586064674L, strArr);
                 a.a.a.c.a(-376012060901154L, strArr);
                 if (n51Var == n51.ON_RESUME) {

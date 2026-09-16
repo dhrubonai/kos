@@ -63,10 +63,10 @@ public class LinearLayoutManager extends jx1 {
     public final void M(AccessibilityEvent accessibilityEvent) {
         super.M(accessibilityEvent);
         if (q() > 0) {
-            View viewI0 = i0(0, q(), false);
-            accessibilityEvent.setFromIndex(viewI0 == null ? -1 : jx1.A(viewI0));
-            View viewI02 = i0(q() - 1, -1, false);
-            accessibilityEvent.setToIndex(viewI02 != null ? jx1.A(viewI02) : -1);
+            View i0 = i0(0, q(), false);
+            accessibilityEvent.setFromIndex(i0 == null ? -1 : jx1.A(i0));
+            View i02 = i0(q() - 1, -1, false);
+            accessibilityEvent.setToIndex(i02 != null ? jx1.A(i02) : -1);
         }
     }
 
@@ -89,14 +89,14 @@ public class LinearLayoutManager extends jx1 {
         boolean z = false ^ this.o;
         q61Var3.f = z;
         if (z) {
-            View viewJ0 = j0();
-            q61Var3.e = this.m.h() - this.m.c(viewJ0);
-            q61Var3.d = jx1.A(viewJ0);
+            View j0 = j0();
+            q61Var3.e = this.m.h() - this.m.c(j0);
+            q61Var3.d = jx1.A(j0);
             return q61Var3;
         }
-        View viewK0 = k0();
-        q61Var3.d = jx1.A(viewK0);
-        q61Var3.e = this.m.f(viewK0) - this.m.m();
+        View k0 = k0();
+        q61Var3.d = jx1.A(k0);
+        q61Var3.e = this.m.f(k0) - this.m.m();
         return q61Var3;
     }
 
@@ -166,7 +166,7 @@ public class LinearLayoutManager extends jx1 {
     public final void f0() {
         if (this.l == null) {
             p61 p61Var = new p61();
-            p61Var.f891a = true;
+            p61Var.f890a = true;
             p61Var.h = 0;
             p61Var.i = 0;
             p61Var.j = null;
@@ -228,7 +228,7 @@ public class LinearLayoutManager extends jx1 {
 
     public final boolean l0() {
         RecyclerView recyclerView = this.b;
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         return recyclerView.getLayoutDirection() == 1;
     }
 
@@ -239,107 +239,107 @@ public class LinearLayoutManager extends jx1 {
 
     public void m0(px1 px1Var, sx1 sx1Var, p61 p61Var, o61 o61Var) {
         int i;
-        int iE;
         int i2;
-        int iX;
         int i3;
-        View viewB = p61Var.b(px1Var);
-        if (viewB == null) {
+        int i4;
+        int i5;
+        View b = p61Var.b(px1Var);
+        if (b == null) {
             o61Var.b = true;
             return;
         }
-        kx1 kx1Var = (kx1) viewB.getLayoutParams();
+        kx1 kx1Var = (kx1) b.getLayoutParams();
         if (p61Var.j == null) {
             if (this.o == (p61Var.f == -1)) {
-                a(viewB, -1, false);
+                a(b, -1, false);
             } else {
-                a(viewB, 0, false);
+                a(b, 0, false);
             }
         } else {
             if (this.o == (p61Var.f == -1)) {
-                a(viewB, -1, true);
+                a(b, -1, true);
             } else {
-                a(viewB, 0, true);
+                a(b, 0, true);
             }
         }
-        kx1 kx1Var2 = (kx1) viewB.getLayoutParams();
-        Rect rectT = this.b.t(viewB);
-        int i4 = rectT.left + rectT.right;
-        int i5 = rectT.top + rectT.bottom;
-        int iR = jx1.r(c(), this.i, this.g, y() + x() + ((ViewGroup.MarginLayoutParams) kx1Var2).leftMargin + ((ViewGroup.MarginLayoutParams) kx1Var2).rightMargin + i4, ((ViewGroup.MarginLayoutParams) kx1Var2).width);
-        int iR2 = jx1.r(d(), this.j, this.h, w() + z() + ((ViewGroup.MarginLayoutParams) kx1Var2).topMargin + ((ViewGroup.MarginLayoutParams) kx1Var2).bottomMargin + i5, ((ViewGroup.MarginLayoutParams) kx1Var2).height);
-        if (a0(viewB, iR, iR2, kx1Var2)) {
-            viewB.measure(iR, iR2);
+        kx1 kx1Var2 = (kx1) b.getLayoutParams();
+        Rect t = this.b.t(b);
+        int i6 = t.left + t.right;
+        int i7 = t.top + t.bottom;
+        int r = jx1.r(c(), this.i, this.g, y() + x() + ((ViewGroup.MarginLayoutParams) kx1Var2).leftMargin + ((ViewGroup.MarginLayoutParams) kx1Var2).rightMargin + i6, ((ViewGroup.MarginLayoutParams) kx1Var2).width);
+        int r2 = jx1.r(d(), this.j, this.h, w() + z() + ((ViewGroup.MarginLayoutParams) kx1Var2).topMargin + ((ViewGroup.MarginLayoutParams) kx1Var2).bottomMargin + i7, ((ViewGroup.MarginLayoutParams) kx1Var2).height);
+        if (a0(b, r, r2, kx1Var2)) {
+            b.measure(r, r2);
         }
-        o61Var.f842a = this.m.d(viewB);
+        o61Var.f841a = this.m.d(b);
         if (this.k == 1) {
             if (l0()) {
-                iE = this.i - y();
-                iX = iE - this.m.e(viewB);
+                i2 = this.i - y();
+                i4 = i2 - this.m.e(b);
             } else {
-                iX = x();
-                iE = this.m.e(viewB) + iX;
+                i4 = x();
+                i2 = this.m.e(b) + i4;
             }
             if (p61Var.f == -1) {
-                i3 = p61Var.b;
-                i = i3 - o61Var.f842a;
+                i5 = p61Var.b;
+                i = i5 - o61Var.f841a;
             } else {
-                int i6 = p61Var.b;
-                i2 = o61Var.f842a + i6;
-                i = i6;
-                i3 = i2;
+                int i8 = p61Var.b;
+                i3 = o61Var.f841a + i8;
+                i = i8;
+                i5 = i3;
             }
         } else {
-            int iZ = z();
-            int iE2 = this.m.e(viewB) + iZ;
+            int z = z();
+            int e = this.m.e(b) + z;
             if (p61Var.f == -1) {
-                int i7 = p61Var.b;
-                int i8 = i7 - o61Var.f842a;
-                i = iZ;
-                iE = i7;
-                i3 = iE2;
-                iX = i8;
-            } else {
                 int i9 = p61Var.b;
-                int i10 = o61Var.f842a + i9;
-                i = iZ;
-                iE = i10;
-                i2 = iE2;
-                iX = i9;
-                i3 = i2;
+                int i10 = i9 - o61Var.f841a;
+                i = z;
+                i2 = i9;
+                i5 = e;
+                i4 = i10;
+            } else {
+                int i11 = p61Var.b;
+                int i12 = o61Var.f841a + i11;
+                i = z;
+                i2 = i12;
+                i3 = e;
+                i4 = i11;
+                i5 = i3;
             }
         }
-        jx1.G(viewB, iX, i, iE, i3);
+        jx1.G(b, i4, i, i2, i5);
         kx1Var.getClass();
         throw null;
     }
 
     public final void n0(px1 px1Var, p61 p61Var) {
-        if (!p61Var.f891a || p61Var.k) {
+        if (!p61Var.f890a || p61Var.k) {
             return;
         }
         int i = p61Var.g;
         int i2 = p61Var.i;
         if (p61Var.f == -1) {
-            int iQ = q();
+            int q = q();
             if (i < 0) {
                 return;
             }
-            int iG = (this.m.g() - i) + i2;
+            int g = (this.m.g() - i) + i2;
             if (this.o) {
-                for (int i3 = 0; i3 < iQ; i3++) {
-                    View viewP = p(i3);
-                    if (this.m.f(viewP) < iG || this.m.q(viewP) < iG) {
+                for (int i3 = 0; i3 < q; i3++) {
+                    View p = p(i3);
+                    if (this.m.f(p) < g || this.m.q(p) < g) {
                         o0(px1Var, 0, i3);
                         return;
                     }
                 }
                 return;
             }
-            int i4 = iQ - 1;
+            int i4 = q - 1;
             for (int i5 = i4; i5 >= 0; i5--) {
-                View viewP2 = p(i5);
-                if (this.m.f(viewP2) < iG || this.m.q(viewP2) < iG) {
+                View p2 = p(i5);
+                if (this.m.f(p2) < g || this.m.q(p2) < g) {
                     o0(px1Var, i4, i5);
                     return;
                 }
@@ -350,21 +350,21 @@ public class LinearLayoutManager extends jx1 {
             return;
         }
         int i6 = i - i2;
-        int iQ2 = q();
+        int q2 = q();
         if (!this.o) {
-            for (int i7 = 0; i7 < iQ2; i7++) {
-                View viewP3 = p(i7);
-                if (this.m.c(viewP3) > i6 || this.m.p(viewP3) > i6) {
+            for (int i7 = 0; i7 < q2; i7++) {
+                View p3 = p(i7);
+                if (this.m.c(p3) > i6 || this.m.p(p3) > i6) {
                     o0(px1Var, 0, i7);
                     return;
                 }
             }
             return;
         }
-        int i8 = iQ2 - 1;
+        int i8 = q2 - 1;
         for (int i9 = i8; i9 >= 0; i9--) {
-            View viewP4 = p(i9);
-            if (this.m.c(viewP4) > i6 || this.m.p(viewP4) > i6) {
+            View p4 = p(i9);
+            if (this.m.c(p4) > i6 || this.m.p(p4) > i6) {
                 o0(px1Var, i8, i9);
                 return;
             }
@@ -377,28 +377,28 @@ public class LinearLayoutManager extends jx1 {
         }
         if (i2 <= i) {
             while (i > i2) {
-                View viewP = p(i);
+                View p = p(i);
                 U(i);
-                px1Var.i(viewP);
+                px1Var.i(p);
                 i--;
             }
             return;
         }
         for (int i3 = i2 - 1; i3 >= i; i3--) {
-            View viewP2 = p(i3);
+            View p2 = p(i3);
             U(i3);
-            px1Var.i(viewP2);
+            px1Var.i(p2);
         }
     }
 
     public final int p0(int i, px1 px1Var, sx1 sx1Var) {
-        int iM;
+        int m;
         int i2;
         if (q() != 0 && i != 0) {
             f0();
-            this.l.f891a = true;
+            this.l.f890a = true;
             int i3 = i <= 0 ? -1 : 1;
-            int iAbs = Math.abs(i);
+            int abs = Math.abs(i);
             this.l.k = this.m.j() == 0 && this.m.g() == 0;
             this.l.f = i3;
             int[] iArr = this.u;
@@ -408,42 +408,42 @@ public class LinearLayoutManager extends jx1 {
             int i4 = this.l.f;
             iArr[0] = 0;
             iArr[1] = 0;
-            int iMax = Math.max(0, iArr[0]);
-            int iMax2 = Math.max(0, iArr[1]);
+            int max = Math.max(0, iArr[0]);
+            int max2 = Math.max(0, iArr[1]);
             boolean z = i3 == 1;
             p61 p61Var = this.l;
-            int i5 = z ? iMax2 : iMax;
+            int i5 = z ? max2 : max;
             p61Var.h = i5;
             if (!z) {
-                iMax = iMax2;
+                max = max2;
             }
-            p61Var.i = iMax;
+            p61Var.i = max;
             if (z) {
                 p61Var.h = this.m.i() + i5;
-                View viewJ0 = j0();
+                View j0 = j0();
                 p61 p61Var2 = this.l;
                 p61Var2.e = this.o ? -1 : 1;
-                int iA = jx1.A(viewJ0);
+                int A = jx1.A(j0);
                 p61 p61Var3 = this.l;
-                p61Var2.d = iA + p61Var3.e;
-                p61Var3.b = this.m.c(viewJ0);
-                iM = this.m.c(viewJ0) - this.m.h();
+                p61Var2.d = A + p61Var3.e;
+                p61Var3.b = this.m.c(j0);
+                m = this.m.c(j0) - this.m.h();
             } else {
-                View viewK0 = k0();
+                View k0 = k0();
                 p61 p61Var4 = this.l;
                 p61Var4.h = this.m.m() + p61Var4.h;
                 p61 p61Var5 = this.l;
                 p61Var5.e = this.o ? 1 : -1;
-                int iA2 = jx1.A(viewK0);
+                int A2 = jx1.A(k0);
                 p61 p61Var6 = this.l;
-                p61Var5.d = iA2 + p61Var6.e;
-                p61Var6.b = this.m.f(viewK0);
-                iM = (-this.m.f(viewK0)) + this.m.m();
+                p61Var5.d = A2 + p61Var6.e;
+                p61Var6.b = this.m.f(k0);
+                m = (-this.m.f(k0)) + this.m.m();
             }
             p61 p61Var7 = this.l;
-            p61Var7.c = iAbs;
-            p61Var7.c = iAbs - iM;
-            p61Var7.g = iM;
+            p61Var7.c = abs;
+            p61Var7.c = abs - m;
+            p61Var7.g = m;
             p61 p61Var8 = this.l;
             int i6 = p61Var8.g;
             int i7 = p61Var8.c;
@@ -460,7 +460,7 @@ public class LinearLayoutManager extends jx1 {
                     break;
                 }
                 o61 o61Var = this.t;
-                o61Var.f842a = 0;
+                o61Var.f841a = 0;
                 o61Var.b = false;
                 o61Var.c = false;
                 o61Var.d = false;
@@ -469,7 +469,7 @@ public class LinearLayoutManager extends jx1 {
                     break;
                 }
                 int i10 = p61Var8.b;
-                int i11 = o61Var.f842a;
+                int i11 = o61Var.f841a;
                 p61Var8.b = (p61Var8.f * i11) + i10;
                 if (!o61Var.c || p61Var8.j != null || !sx1Var.e) {
                     p61Var8.c -= i11;
@@ -488,7 +488,7 @@ public class LinearLayoutManager extends jx1 {
             }
             int i15 = (i7 - p61Var8.c) + i6;
             if (i15 >= 0) {
-                if (iAbs > i15) {
+                if (abs > i15) {
                     i = i3 * i15;
                 }
                 this.m.r(-i);
@@ -531,15 +531,15 @@ public class LinearLayoutManager extends jx1 {
         this.s = new n61(0);
         this.t = new o61();
         this.u = new int[2];
-        n61 n61VarB = jx1.B(context, attributeSet, i, i2);
-        q0(n61VarB.b);
-        boolean z = n61VarB.d;
+        n61 B = jx1.B(context, attributeSet, i, i2);
+        q0(B.b);
+        boolean z = B.d;
         b(null);
         if (z != this.n) {
             this.n = z;
             W();
         }
-        r0(n61VarB.e);
+        r0(B.e);
     }
 
     @Override // androidx.emoji2.text.jx1

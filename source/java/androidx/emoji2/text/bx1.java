@@ -7,12 +7,12 @@ import android.view.animation.Interpolator;
 public final class bx1 implements Interpolator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f175a;
+    public final /* synthetic */ int f174a;
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:3:0x0002. Please report as an issue. */
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
     @Override // android.animation.TimeInterpolator
     public final float getInterpolation(float f) {
-        switch (this.f175a) {
+        switch (this.f174a) {
         }
         float f2 = f - 1.0f;
         return (f2 * f2 * f2 * f2 * f2) + 1.0f;

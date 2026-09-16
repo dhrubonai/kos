@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public final class sa2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f32 f1060a = new f32(4);
+    public static final f32 f1059a = new f32(4);
     public static final f32 b = new f32(5);
 }

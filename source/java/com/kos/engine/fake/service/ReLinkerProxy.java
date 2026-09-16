@@ -36,11 +36,11 @@ public class ReLinkerProxy extends ClassInvocationStub {
             String str = (String) objArr[1];
             String str2 = (String) objArr[2];
             String[] strArr = xa1.b;
-            String strA = c.a(-933790873698082L, strArr);
+            String a2 = c.a(-933790873698082L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-933799463632674L, strArr));
             sb.append(str);
-            jx0.r(sb, c.a(-933984147226402L, strArr), str2, 3, strA);
+            jx0.r(sb, c.a(-933984147226402L, strArr), str2, 3, a2);
             return null;
         }
     }

@@ -5,25 +5,25 @@ package androidx.emoji2.text;
 public final class fz1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ h21 f394a;
+    public final /* synthetic */ h21 f393a;
 
     public fz1(h21 h21Var) {
-        this.f394a = h21Var;
+        this.f393a = h21Var;
     }
 
     public final int a() {
-        return this.f394a.f451a;
+        return this.f393a.f450a;
     }
 
     public final Object b() {
-        return this.f394a.b;
+        return this.f393a.b;
     }
 
     public final long c() {
-        return this.f394a.t;
+        return this.f393a.t;
     }
 
     public final long d() {
-        return this.f394a.s;
+        return this.f393a.s;
     }
 }

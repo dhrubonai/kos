@@ -1,15 +1,24 @@
 package androidx.compose.foundation.gestures;
 
 import androidx.emoji2.text.a52;
+import androidx.emoji2.text.b52;
+import androidx.emoji2.text.f30;
 import androidx.emoji2.text.i52;
 import androidx.emoji2.text.il1;
 import androidx.emoji2.text.in;
+import androidx.emoji2.text.mz0;
+import androidx.emoji2.text.n10;
 import androidx.emoji2.text.nd1;
+import androidx.emoji2.text.q;
 import androidx.emoji2.text.rl1;
 import androidx.emoji2.text.se1;
 import androidx.emoji2.text.u80;
+import androidx.emoji2.text.vf1;
+import androidx.emoji2.text.x52;
 import androidx.emoji2.text.xm1;
 import androidx.emoji2.text.yi0;
+import androidx.emoji2.text.zi1;
+import androidx.emoji2.text.zx1;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -20,72 +29,55 @@ public abstract class a {
     public static final u80 b = new u80(1);
     public static final xm1 c = new xm1(1);
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object a(androidx.emoji2.text.x52 r10, long r11, androidx.emoji2.text.n10 r13) {
-        /*
-            boolean r0 = r13 instanceof androidx.emoji2.text.b52
-            if (r0 == 0) goto L13
-            r0 = r13
-            androidx.emoji2.text.b52 r0 = (androidx.emoji2.text.b52) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.b52 r0 = new androidx.emoji2.text.b52
-            r0.<init>(r13)
-        L18:
-            java.lang.Object r13 = r0.i
-            int r1 = r0.j
-            r2 = 1
-            if (r1 == 0) goto L33
-            if (r1 != r2) goto L2b
-            androidx.emoji2.text.zx1 r10 = r0.h
-            androidx.emoji2.text.x52 r11 = r0.g
-            androidx.emoji2.text.mz0.L(r13)
-            r7 = r10
-            r10 = r11
-            goto L56
-        L2b:
-            java.lang.IllegalStateException r10 = new java.lang.IllegalStateException
-            java.lang.String r11 = "call to 'resume' before 'invoke' with coroutine"
-            r10.<init>(r11)
-            throw r10
-        L33:
-            androidx.emoji2.text.mz0.L(r13)
-            androidx.emoji2.text.zx1 r7 = new androidx.emoji2.text.zx1
-            r7.<init>()
-            androidx.emoji2.text.q r3 = new androidx.emoji2.text.q
-            r8 = 0
-            r9 = 2
-            r4 = r10
-            r5 = r11
-            r3.<init>(r4, r5, r7, r8, r9)
-            r0.g = r4
-            r0.h = r7
-            r0.j = r2
-            androidx.emoji2.text.vf1 r10 = androidx.emoji2.text.vf1.d
-            java.lang.Object r10 = r4.e(r10, r3, r0)
-            androidx.emoji2.text.f30 r11 = androidx.emoji2.text.f30.d
-            if (r10 != r11) goto L55
-            return r11
-        L55:
-            r10 = r4
-        L56:
-            float r11 = r7.d
-            long r10 = r10.g(r11)
-            androidx.emoji2.text.zi1 r12 = new androidx.emoji2.text.zi1
-            r12.<init>(r10)
-            return r12
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.compose.foundation.gestures.a.a(androidx.emoji2.text.x52, long, androidx.emoji2.text.n10):java.lang.Object");
+    public static final Object a(x52 x52Var, long j, n10 n10Var) {
+        b52 b52Var;
+        int i;
+        zx1 zx1Var;
+        x52 x52Var2;
+        if (n10Var instanceof b52) {
+            b52Var = (b52) n10Var;
+            int i2 = b52Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                b52Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = b52Var.i;
+                i = b52Var.j;
+                if (i != 0) {
+                    mz0.L(obj);
+                    zx1Var = new zx1();
+                    q qVar = new q(x52Var, j, zx1Var, null, 2);
+                    b52Var.g = x52Var;
+                    b52Var.h = zx1Var;
+                    b52Var.j = 1;
+                    Object e = x52Var.e(vf1.d, qVar, b52Var);
+                    f30 f30Var = f30.d;
+                    if (e == f30Var) {
+                        return f30Var;
+                    }
+                    x52Var2 = x52Var;
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    zx1 zx1Var2 = b52Var.h;
+                    x52 x52Var3 = b52Var.g;
+                    mz0.L(obj);
+                    zx1Var = zx1Var2;
+                    x52Var2 = x52Var3;
+                }
+                return new zi1(x52Var2.g(zx1Var.d));
+            }
+        }
+        b52Var = new b52(n10Var);
+        Object obj2 = b52Var.i;
+        i = b52Var.j;
+        if (i != 0) {
+        }
+        return new zi1(x52Var2.g(zx1Var.d));
     }
 
     public static final nd1 b(nd1 nd1Var, i52 i52Var, il1 il1Var, rl1 rl1Var, boolean z, boolean z2, yi0 yi0Var, se1 se1Var, in inVar) {

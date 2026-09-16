@@ -7,11 +7,11 @@ import android.util.SparseIntArray;
 public abstract class hz {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final SparseIntArray f497a;
+    public static final SparseIntArray f496a;
 
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
-        f497a = sparseIntArray;
+        f496a = sparseIntArray;
         sparseIntArray.append(98, 64);
         sparseIntArray.append(75, 65);
         sparseIntArray.append(84, 8);

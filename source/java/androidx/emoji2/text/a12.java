@@ -1,9 +1,11 @@
 package androidx.emoji2.text;
 
+import android.graphics.Insets;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsetsAnimation;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.kos.engine.entity.location.BCell;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
@@ -81,126 +83,94 @@ public final class a12 implements p32, gj1, d62 {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:37:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00ae  */
     @Override // androidx.emoji2.text.gj1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public androidx.emoji2.text.wv2 g(android.view.View r21, androidx.emoji2.text.wv2 r22) {
-        /*
-            r20 = this;
-            r0 = r20
-            r1 = r21
-            r2 = r22
-            java.lang.Object r3 = r0.e
-            androidx.emoji2.text.cm r3 = (androidx.emoji2.text.cm) r3
-            java.lang.Object r4 = r0.f
-            androidx.emoji2.text.pn0 r4 = (androidx.emoji2.text.pn0) r4
-            int r5 = r4.f917a
-            int r6 = r4.b
-            int r4 = r4.c
-            androidx.emoji2.text.tv2 r7 = r2.f1306a
-            r8 = 519(0x207, float:7.27E-43)
-            androidx.emoji2.text.zv0 r8 = r7.g(r8)
-            r9 = 32
-            androidx.emoji2.text.zv0 r9 = r7.g(r9)
-            java.lang.Object r10 = r3.b
-            com.google.android.material.bottomsheet.BottomSheetBehavior r10 = (com.google.android.material.bottomsheet.BottomSheetBehavior) r10
-            int r11 = r8.b
-            int r12 = r8.c
-            int r13 = r8.f1457a
-            r10.w = r11
-            int r11 = r1.getLayoutDirection()
-            r15 = 1
-            if (r11 != r15) goto L37
-            r11 = r15
-            goto L38
-        L37:
-            r11 = 0
-        L38:
-            int r16 = r1.getPaddingBottom()
-            int r17 = r1.getPaddingLeft()
-            int r18 = r1.getPaddingRight()
-            boolean r14 = r10.o
-            if (r14 == 0) goto L52
-            androidx.emoji2.text.zv0 r7 = r7.l()
-            int r7 = r7.d
-            r10.v = r7
-            int r16 = r4 + r7
-        L52:
-            r4 = r16
-            boolean r7 = r10.p
-            if (r7 == 0) goto L5f
-            if (r11 == 0) goto L5c
-            r7 = r6
-            goto L5d
-        L5c:
-            r7 = r5
-        L5d:
-            int r17 = r7 + r13
-        L5f:
-            r7 = r17
-            boolean r15 = r10.q
-            if (r15 == 0) goto L6b
-            if (r11 == 0) goto L68
-            goto L69
-        L68:
-            r5 = r6
-        L69:
-            int r18 = r5 + r12
-        L6b:
-            r5 = r18
-            android.view.ViewGroup$LayoutParams r6 = r1.getLayoutParams()
-            android.view.ViewGroup$MarginLayoutParams r6 = (android.view.ViewGroup.MarginLayoutParams) r6
-            boolean r11 = r10.s
-            if (r11 == 0) goto L80
-            int r11 = r6.leftMargin
-            if (r11 == r13) goto L80
-            r6.leftMargin = r13
-            r19 = 1
-            goto L82
-        L80:
-            r19 = 0
-        L82:
-            boolean r11 = r10.t
-            if (r11 == 0) goto L8e
-            int r11 = r6.rightMargin
-            if (r11 == r12) goto L8e
-            r6.rightMargin = r12
-            r19 = 1
-        L8e:
-            boolean r11 = r10.u
-            if (r11 == 0) goto L9c
-            int r11 = r6.topMargin
-            int r8 = r8.b
-            if (r11 == r8) goto L9c
-            r6.topMargin = r8
-            r15 = 1
-            goto L9e
-        L9c:
-            r15 = r19
-        L9e:
-            if (r15 == 0) goto La3
-            r1.setLayoutParams(r6)
-        La3:
-            int r6 = r1.getPaddingTop()
-            r1.setPadding(r7, r6, r5, r4)
-            boolean r1 = r3.f208a
-            if (r1 == 0) goto Lb2
-            int r3 = r9.d
-            r10.m = r3
-        Lb2:
-            if (r14 != 0) goto Lb8
-            if (r1 == 0) goto Lb7
-            goto Lb8
-        Lb7:
-            return r2
-        Lb8:
-            r10.I()
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.a12.g(android.view.View, androidx.emoji2.text.wv2):androidx.emoji2.text.wv2");
+    public wv2 g(View view, wv2 wv2Var) {
+        boolean z;
+        boolean z2;
+        boolean z3;
+        cm cmVar = (cm) this.e;
+        pn0 pn0Var = (pn0) this.f;
+        int i = pn0Var.f916a;
+        int i2 = pn0Var.b;
+        int i3 = pn0Var.c;
+        tv2 tv2Var = wv2Var.f1305a;
+        zv0 g = tv2Var.g(519);
+        zv0 g2 = tv2Var.g(32);
+        BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) cmVar.b;
+        int i4 = g.b;
+        int i5 = g.c;
+        int i6 = g.f1456a;
+        bottomSheetBehavior.w = i4;
+        boolean z4 = view.getLayoutDirection() == 1;
+        int paddingBottom = view.getPaddingBottom();
+        int paddingLeft = view.getPaddingLeft();
+        int paddingRight = view.getPaddingRight();
+        boolean z5 = bottomSheetBehavior.o;
+        if (z5) {
+            int i7 = tv2Var.l().d;
+            bottomSheetBehavior.v = i7;
+            paddingBottom = i3 + i7;
+        }
+        int i8 = paddingBottom;
+        if (bottomSheetBehavior.p) {
+            paddingLeft = (z4 ? i2 : i) + i6;
+        }
+        int i9 = paddingLeft;
+        if (bottomSheetBehavior.q) {
+            if (!z4) {
+                i = i2;
+            }
+            paddingRight = i + i5;
+        }
+        int i10 = paddingRight;
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        if (!bottomSheetBehavior.s || marginLayoutParams.leftMargin == i6) {
+            z = false;
+        } else {
+            marginLayoutParams.leftMargin = i6;
+            z = true;
+        }
+        if (bottomSheetBehavior.t && marginLayoutParams.rightMargin != i5) {
+            marginLayoutParams.rightMargin = i5;
+            z = true;
+        }
+        if (bottomSheetBehavior.u) {
+            int i11 = marginLayoutParams.topMargin;
+            int i12 = g.b;
+            if (i11 != i12) {
+                marginLayoutParams.topMargin = i12;
+                z2 = true;
+                if (z2) {
+                    view.setLayoutParams(marginLayoutParams);
+                }
+                view.setPadding(i9, view.getPaddingTop(), i10, i8);
+                z3 = cmVar.f207a;
+                if (z3) {
+                    bottomSheetBehavior.m = g2.d;
+                }
+                if (z5 && !z3) {
+                    return wv2Var;
+                }
+                bottomSheetBehavior.I();
+                return wv2Var;
+            }
+        }
+        z2 = z;
+        if (z2) {
+        }
+        view.setPadding(i9, view.getPaddingTop(), i10, i8);
+        z3 = cmVar.f207a;
+        if (z3) {
+        }
+        if (z5) {
+        }
+        bottomSheetBehavior.I();
+        return wv2Var;
     }
 
     public void h() {
@@ -221,12 +191,12 @@ public final class a12 implements p32, gj1, d62 {
         if (bundle == null) {
             return null;
         }
-        Bundle bundleA = bundle.containsKey(str) ? nz0.A(bundle, str) : null;
+        Bundle A = bundle.containsKey(str) ? nz0.A(bundle, str) : null;
         bundle.remove(str);
         if (bundle.isEmpty()) {
             l32Var.f = null;
         }
-        return bundleA;
+        return A;
     }
 
     public void j(int i) {
@@ -249,88 +219,88 @@ public final class a12 implements p32, gj1, d62 {
     }
 
     public View k(int i, int i2, int i3, int i4) {
-        int iX;
+        int x;
         int i5;
-        int iY;
-        View viewP;
+        int y;
+        View p;
         int left;
         int i6;
         int right;
         int i7;
         rr2 rr2Var = (rr2) this.f;
         ix1 ix1Var = (ix1) this.e;
-        switch (ix1Var.f554a) {
+        switch (ix1Var.f553a) {
             case 0:
-                iX = ix1Var.b.x();
+                x = ix1Var.b.x();
                 break;
             default:
-                iX = ix1Var.b.z();
+                x = ix1Var.b.z();
                 break;
         }
-        switch (ix1Var.f554a) {
+        switch (ix1Var.f553a) {
             case 0:
                 jx1 jx1Var = ix1Var.b;
                 i5 = jx1Var.i;
-                iY = jx1Var.y();
+                y = jx1Var.y();
                 break;
             default:
                 jx1 jx1Var2 = ix1Var.b;
                 i5 = jx1Var2.j;
-                iY = jx1Var2.w();
+                y = jx1Var2.w();
                 break;
         }
-        int i8 = i5 - iY;
+        int i8 = i5 - y;
         int i9 = i2 > i ? 1 : -1;
         View view = null;
         while (i != i2) {
-            switch (ix1Var.f554a) {
+            switch (ix1Var.f553a) {
                 case 0:
-                    viewP = ix1Var.b.p(i);
+                    p = ix1Var.b.p(i);
                     break;
                 default:
-                    viewP = ix1Var.b.p(i);
+                    p = ix1Var.b.p(i);
                     break;
             }
-            switch (ix1Var.f554a) {
+            switch (ix1Var.f553a) {
                 case 0:
-                    kx1 kx1Var = (kx1) viewP.getLayoutParams();
-                    left = viewP.getLeft() - ((kx1) viewP.getLayoutParams()).f665a.left;
+                    kx1 kx1Var = (kx1) p.getLayoutParams();
+                    left = p.getLeft() - ((kx1) p.getLayoutParams()).f664a.left;
                     i6 = ((ViewGroup.MarginLayoutParams) kx1Var).leftMargin;
                     break;
                 default:
-                    kx1 kx1Var2 = (kx1) viewP.getLayoutParams();
-                    left = viewP.getTop() - ((kx1) viewP.getLayoutParams()).f665a.top;
+                    kx1 kx1Var2 = (kx1) p.getLayoutParams();
+                    left = p.getTop() - ((kx1) p.getLayoutParams()).f664a.top;
                     i6 = ((ViewGroup.MarginLayoutParams) kx1Var2).topMargin;
                     break;
             }
             int i10 = left - i6;
-            switch (ix1Var.f554a) {
+            switch (ix1Var.f553a) {
                 case 0:
-                    kx1 kx1Var3 = (kx1) viewP.getLayoutParams();
-                    right = viewP.getRight() + ((kx1) viewP.getLayoutParams()).f665a.right;
+                    kx1 kx1Var3 = (kx1) p.getLayoutParams();
+                    right = p.getRight() + ((kx1) p.getLayoutParams()).f664a.right;
                     i7 = ((ViewGroup.MarginLayoutParams) kx1Var3).rightMargin;
                     break;
                 default:
-                    kx1 kx1Var4 = (kx1) viewP.getLayoutParams();
-                    right = viewP.getBottom() + ((kx1) viewP.getLayoutParams()).f665a.bottom;
+                    kx1 kx1Var4 = (kx1) p.getLayoutParams();
+                    right = p.getBottom() + ((kx1) p.getLayoutParams()).f664a.bottom;
                     i7 = ((ViewGroup.MarginLayoutParams) kx1Var4).bottomMargin;
                     break;
             }
             int i11 = right + i7;
-            rr2Var.b = iX;
+            rr2Var.b = x;
             rr2Var.c = i8;
             rr2Var.d = i10;
             rr2Var.e = i11;
             if (i3 != 0) {
-                rr2Var.f1029a = i3;
+                rr2Var.f1028a = i3;
                 if (rr2Var.a()) {
-                    return viewP;
+                    return p;
                 }
             }
             if (i4 != 0) {
-                rr2Var.f1029a = i4;
+                rr2Var.f1028a = i4;
                 if (rr2Var.a()) {
-                    view = viewP;
+                    view = p;
                 }
             }
             i += i9;
@@ -361,7 +331,7 @@ public final class a12 implements p32, gj1, d62 {
 
     public void m(Bundle bundle) {
         l32 l32Var = (l32) this.e;
-        m32 m32Var = l32Var.f673a;
+        m32 m32Var = l32Var.f672a;
         if (!l32Var.e) {
             l32Var.a();
         }
@@ -371,34 +341,34 @@ public final class a12 implements p32, gj1, d62 {
         if (l32Var.g) {
             throw new IllegalStateException("SavedStateRegistry was already restored.");
         }
-        Bundle bundleA = null;
+        Bundle bundle2 = null;
         if (bundle != null && bundle.containsKey("androidx.lifecycle.BundlableSavedStateRegistry.key")) {
-            bundleA = nz0.A(bundle, "androidx.lifecycle.BundlableSavedStateRegistry.key");
+            bundle2 = nz0.A(bundle, "androidx.lifecycle.BundlableSavedStateRegistry.key");
         }
-        l32Var.f = bundleA;
+        l32Var.f = bundle2;
         l32Var.g = true;
     }
 
     public void n(Bundle bundle) {
         l32 l32Var = (l32) this.e;
-        Bundle bundleL = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
+        Bundle l = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
         Bundle bundle2 = l32Var.f;
         if (bundle2 != null) {
-            bundleL.putAll(bundle2);
+            l.putAll(bundle2);
         }
         synchronized (l32Var.c) {
             for (Map.Entry entry : l32Var.d.entrySet()) {
                 String str = (String) entry.getKey();
-                Bundle bundleA = ((j32) entry.getValue()).a();
+                Bundle a2 = ((j32) entry.getValue()).a();
                 lx0.x(str, "key");
-                lx0.x(bundleA, "value");
-                bundleL.putBundle(str, bundleA);
+                lx0.x(a2, "value");
+                l.putBundle(str, a2);
             }
         }
-        if (bundleL.isEmpty()) {
+        if (l.isEmpty()) {
             return;
         }
-        bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundleL);
+        bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", l);
     }
 
     public void o(String str, j32 j32Var) {
@@ -417,7 +387,7 @@ public final class a12 implements p32, gj1, d62 {
         if (ns2Var == null) {
             return;
         }
-        ns2Var.f825a &= -2;
+        ns2Var.f824a &= -2;
     }
 
     public void q() {
@@ -433,7 +403,7 @@ public final class a12 implements p32, gj1, d62 {
             g51.class.getDeclaredConstructor(null);
             xw1 xw1Var2 = (xw1) this.f;
             if (xw1Var2 != null) {
-                xw1Var2.f1360a.add(g51.class.getName());
+                xw1Var2.f1359a.add(g51.class.getName());
             }
         } catch (NoSuchMethodException e) {
             throw new IllegalArgumentException("Class " + g51.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
@@ -466,27 +436,27 @@ public final class a12 implements p32, gj1, d62 {
         this.d = 8;
         this.e = ix1Var;
         rr2 rr2Var = new rr2();
-        rr2Var.f1029a = 0;
+        rr2Var.f1028a = 0;
         this.f = rr2Var;
     }
 
     public a12(int i) {
         this.d = i;
         switch (i) {
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 this.e = new f32(10);
                 this.f = new t81(16);
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
             case 8:
-            case 10:
+            case pz0.d /* 10 */:
             default:
                 this.e = new LinkedHashMap();
                 this.f = new LinkedHashMap();
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 this.e = new db2(0);
                 this.f = new g81((Object) null);
                 break;
@@ -498,8 +468,12 @@ public final class a12 implements p32, gj1, d62 {
     }
 
     public a12(WindowInsetsAnimation.Bounds bounds) {
+        Insets lowerBound;
+        Insets upperBound;
         this.d = 12;
-        this.e = zv0.c(bounds.getLowerBound());
-        this.f = zv0.c(bounds.getUpperBound());
+        lowerBound = bounds.getLowerBound();
+        this.e = zv0.c(lowerBound);
+        upperBound = bounds.getUpperBound();
+        this.f = zv0.c(upperBound);
     }
 }

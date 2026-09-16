@@ -97,100 +97,100 @@ public interface IBNotificationManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void cancelNotificationWithTag(int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-426529466236706L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_cancelNotificationWithTag, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-426529466236706L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void createNotificationChannel(NotificationChannel notificationChannel, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-422298923450146L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, notificationChannel, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-422298923450146L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, notificationChannel, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void createNotificationChannelGroup(NotificationChannelGroup notificationChannelGroup, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-422874449067810L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, notificationChannelGroup, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-422874449067810L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, notificationChannelGroup, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void deleteNotificationChannel(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-423110672269090L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-423110672269090L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void deleteNotificationChannelGroup(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-425953940619042L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-425953940619042L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public void enqueueNotificationWithTag(int i, String str, Notification notification, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-425648997941026L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, notification, 0);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-425648997941026L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, notification, 0);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -200,52 +200,58 @@ public interface IBNotificationManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public NotificationChannel getNotificationChannel(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcelable.Creator creator;
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-424158644289314L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return ej.b(_Parcel.readTypedObject(parcelObtain2, NotificationChannel.CREATOR));
+                    obtain.writeInterfaceToken(c.a(-424158644289314L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    creator = NotificationChannel.CREATOR;
+                    return ej.b(_Parcel.readTypedObject(obtain2, creator));
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public List<NotificationChannelGroup> getNotificationChannelGroups(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcelable.Creator creator;
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-422535146651426L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(NotificationChannelGroup.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-422535146651426L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
+                    creator = NotificationChannelGroup.CREATOR;
+                    return obtain2.createTypedArrayList(creator);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.notification.IBNotificationManagerService
             public List<NotificationChannel> getNotificationChannels(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcelable.Creator creator;
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-423922421088034L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(NotificationChannel.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-423922421088034L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
+                    creator = NotificationChannel.CREATOR;
+                    return obtain2.createTypedArrayList(creator);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -258,18 +264,20 @@ public interface IBNotificationManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-424905968598818L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBNotificationManagerService)) ? new Proxy(iBinder) : (IBNotificationManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-424905968598818L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBNotificationManagerService)) ? new Proxy(iBinder) : (IBNotificationManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-424669745397538L, xa1.b);
+            Parcelable.Creator creator;
+            Parcelable.Creator creator2;
+            String a2 = c.a(-424669745397538L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
@@ -289,7 +297,8 @@ public interface IBNotificationManagerService extends IInterface {
                     _Parcel.writeTypedList(parcel2, notificationChannelGroups, 1);
                     return true;
                 case 4:
-                    createNotificationChannel(ej.b(_Parcel.readTypedObject(parcel, NotificationChannel.CREATOR)), parcel.readInt());
+                    creator = NotificationChannel.CREATOR;
+                    createNotificationChannel(ej.b(_Parcel.readTypedObject(parcel, creator)), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 5:
@@ -297,7 +306,8 @@ public interface IBNotificationManagerService extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case 6:
-                    createNotificationChannelGroup(ej.e(_Parcel.readTypedObject(parcel, NotificationChannelGroup.CREATOR)), parcel.readInt());
+                    creator2 = NotificationChannelGroup.CREATOR;
+                    createNotificationChannelGroup(ej.e(_Parcel.readTypedObject(parcel, creator2)), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 7:
@@ -308,7 +318,7 @@ public interface IBNotificationManagerService extends IInterface {
                     enqueueNotificationWithTag(parcel.readInt(), parcel.readString(), (Notification) _Parcel.readTypedObject(parcel, Notification.CREATOR), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_cancelNotificationWithTag /* 9 */:
+                case 9:
                     cancelNotificationWithTag(parcel.readInt(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
                     return true;

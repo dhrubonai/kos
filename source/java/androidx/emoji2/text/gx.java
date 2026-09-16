@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class gx {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ gx f444a = new gx();
+    public static final /* synthetic */ gx f443a = new gx();
     public static final hy b = hy.w;
     public static final wc c = wc.B;
     public static final wc d = wc.C;

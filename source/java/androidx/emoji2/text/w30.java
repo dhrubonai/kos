@@ -9,15 +9,15 @@ public abstract class w30 {
         if (!zw1Var.f()) {
             float f = zw1Var.b;
             je1 je1Var = sk2Var.b;
-            int iC = je1Var.c(f);
-            int iC2 = je1Var.c(zw1Var.d);
-            if (iC <= iC2) {
+            int c = je1Var.c(f);
+            int c2 = je1Var.c(zw1Var.d);
+            if (c <= c2) {
                 while (true) {
-                    builder.addVisibleLineBounds(sk2Var.f(iC), je1Var.d(iC), sk2Var.g(iC), je1Var.b(iC));
-                    if (iC == iC2) {
+                    builder.addVisibleLineBounds(sk2Var.f(c), je1Var.d(c), sk2Var.g(c), je1Var.b(c));
+                    if (c == c2) {
                         break;
                     }
-                    iC++;
+                    c++;
                 }
             }
         }

@@ -24,7 +24,7 @@ public class ProxyBrowserActivity extends Activity {
     private String mTargetPkg = null;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public boolean handleUrl(String str) throws URISyntaxException {
+    public boolean handleUrl(String str) {
         String[] strArr = xa1.b;
         Log.d(c.a(-850696141422370L, strArr), c.a(-850721911226146L, strArr) + str);
         if (str.startsWith(c.a(-849175722999586L, strArr))) {
@@ -33,10 +33,10 @@ public class ProxyBrowserActivity extends Activity {
         }
         if (str.startsWith(c.a(-849171428032290L, strArr))) {
             try {
-                Intent uri = Intent.parseUri(str, 1);
-                String stringExtra = uri.getStringExtra(c.a(-849265917312802L, strArr));
-                if (uri.getScheme() != null && uri.getScheme().startsWith(c.a(-849304572018466L, strArr))) {
-                    sendToVirtual(uri.toUri(0));
+                Intent parseUri = Intent.parseUri(str, 1);
+                String stringExtra = parseUri.getStringExtra(c.a(-849265917312802L, strArr));
+                if (parseUri.getScheme() != null && parseUri.getScheme().startsWith(c.a(-849304572018466L, strArr))) {
+                    sendToVirtual(parseUri.toUri(0));
                     return true;
                 }
                 if (stringExtra != null) {
@@ -50,27 +50,27 @@ public class ProxyBrowserActivity extends Activity {
         return false;
     }
 
-    private void sendToVirtual(String str) throws URISyntaxException {
+    private void sendToVirtual(String str) {
         String[] strArr = xa1.b;
         try {
             Log.e(c.a(-849368996527906L, strArr), c.a(-848845010517794L, strArr) + str);
-            Uri data = Uri.parse(str);
-            if (c.a(-848986744438562L, strArr).equals(data.getScheme())) {
+            Uri parse = Uri.parse(str);
+            if (c.a(-848986744438562L, strArr).equals(parse.getScheme())) {
                 try {
-                    Intent uri = Intent.parseUri(str, 1);
-                    if (uri.getData() != null) {
-                        data = uri.getData();
+                    Intent parseUri = Intent.parseUri(str, 1);
+                    if (parseUri.getData() != null) {
+                        parse = parseUri.getData();
                     }
                 } catch (Exception unused) {
                 }
             }
-            String string = data.toString();
+            String uri = parse.toString();
             Intent intent = new Intent();
             intent.setClassName(this.mTargetPkg, c.a(-848965269602082L, strArr));
             intent.setPackage(this.mTargetPkg);
             intent.setAction(c.a(-849699709009698L, strArr));
-            intent.putExtra(c.a(-849867212734242L, strArr), string);
-            intent.setData(data);
+            intent.putExtra(c.a(-849867212734242L, strArr), uri);
+            intent.setData(parse);
             intent.addFlags(268435456);
             intent.addFlags(536870912);
             intent.addFlags(67108864);

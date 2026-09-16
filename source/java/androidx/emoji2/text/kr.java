@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class kr {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f652a;
+    public final /* synthetic */ int f651a;
     public long b;
     public Object c;
 
     public kr(zn znVar) {
-        this.f652a = 1;
+        this.f651a = 1;
         lx0.x(znVar, "source");
         this.c = znVar;
         this.b = 262144L;
@@ -76,24 +76,24 @@ public final class kr {
     public dr0 f() {
         pm0 pm0Var = new pm0(1);
         while (true) {
-            String strM = ((zn) this.c).m(this.b);
-            this.b -= strM.length();
-            if (strM.length() == 0) {
+            String m = ((zn) this.c).m(this.b);
+            this.b -= m.length();
+            if (m.length() == 0) {
                 return pm0Var.d();
             }
-            int iG0 = wf2.g0(strM, ':', 1, 4);
-            if (iG0 != -1) {
-                String strSubstring = strM.substring(0, iG0);
-                lx0.w(strSubstring, "this as java.lang.String…ing(startIndex, endIndex)");
-                String strSubstring2 = strM.substring(iG0 + 1);
-                lx0.w(strSubstring2, "this as java.lang.String).substring(startIndex)");
-                pm0Var.a(strSubstring, strSubstring2);
-            } else if (strM.charAt(0) == ':') {
-                String strSubstring3 = strM.substring(1);
-                lx0.w(strSubstring3, "this as java.lang.String).substring(startIndex)");
-                pm0Var.a("", strSubstring3);
+            int g0 = wf2.g0(m, ':', 1, 4);
+            if (g0 != -1) {
+                String substring = m.substring(0, g0);
+                lx0.w(substring, "this as java.lang.String…ing(startIndex, endIndex)");
+                String substring2 = m.substring(g0 + 1);
+                lx0.w(substring2, "this as java.lang.String).substring(startIndex)");
+                pm0Var.a(substring, substring2);
+            } else if (m.charAt(0) == ':') {
+                String substring3 = m.substring(1);
+                lx0.w(substring3, "this as java.lang.String).substring(startIndex)");
+                pm0Var.a("", substring3);
             } else {
-                pm0Var.a("", strM);
+                pm0Var.a("", m);
             }
         }
     }
@@ -138,7 +138,7 @@ public final class kr {
     }
 
     public String toString() {
-        switch (this.f652a) {
+        switch (this.f651a) {
             case 0:
                 if (((kr) this.c) == null) {
                     return Long.toBinaryString(this.b);
@@ -150,18 +150,18 @@ public final class kr {
     }
 
     public kr() {
-        this.f652a = 0;
+        this.f651a = 0;
         this.b = 0L;
     }
 
     public kr(il1 il1Var) {
-        this.f652a = 3;
+        this.f651a = 3;
         this.c = il1Var;
         this.b = 0L;
     }
 
     public kr(long j, Long l) {
-        this.f652a = 2;
+        this.f651a = 2;
         this.b = j;
         this.c = l;
     }

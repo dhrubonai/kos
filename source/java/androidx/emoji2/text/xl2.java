@@ -7,15 +7,15 @@ import android.os.Looper;
 public abstract class xl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f1345a;
+    public static final long f1344a;
 
     static {
-        long id;
+        long j;
         try {
-            id = Looper.getMainLooper().getThread().getId();
+            j = Looper.getMainLooper().getThread().getId();
         } catch (Exception unused) {
-            id = -1;
+            j = -1;
         }
-        f1345a = id;
+        f1344a = j;
     }
 }

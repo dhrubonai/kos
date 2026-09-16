@@ -21,19 +21,19 @@ public final class ym1 extends g01 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.e) {
             case 0:
-                float fFloatValue = ((Number) obj).floatValue();
+                float floatValue = ((Number) obj).floatValue();
                 ((Number) obj2).floatValue();
                 zx1 zx1Var = this.f;
-                zx1Var.d += this.g.a(fFloatValue - zx1Var.d);
+                zx1Var.d += this.g.a(floatValue - zx1Var.d);
                 break;
             default:
-                float fFloatValue2 = ((Number) obj).floatValue();
+                float floatValue2 = ((Number) obj).floatValue();
                 ((Number) obj2).floatValue();
                 zx1 zx1Var2 = this.f;
                 float f = zx1Var2.d;
-                zx1Var2.d = this.g.a(fFloatValue2 - f) + f;
+                zx1Var2.d = this.g.a(floatValue2 - f) + f;
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

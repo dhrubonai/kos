@@ -7,7 +7,7 @@ import android.text.Layout;
 public abstract /* synthetic */ class su0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int[] f1087a;
+    public static final /* synthetic */ int[] f1086a;
 
     static {
         int[] iArr = new int[Layout.Alignment.values().length];
@@ -15,6 +15,6 @@ public abstract /* synthetic */ class su0 {
             iArr[Layout.Alignment.ALIGN_CENTER.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
-        f1087a = iArr;
+        f1086a = iArr;
     }
 }

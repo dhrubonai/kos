@@ -9,12 +9,12 @@ import android.view.View;
 public final class yw extends View.DragShadowBuilder {
 
     /* renamed from: a, reason: collision with root package name */
-    public final k70 f1407a;
+    public final k70 f1406a;
     public final long b;
     public final um0 c;
 
     public yw(k70 k70Var, long j, um0 um0Var) {
-        this.f1407a = k70Var;
+        this.f1406a = k70Var;
         this.b = j;
         this.c = um0Var;
     }
@@ -22,22 +22,22 @@ public final class yw extends View.DragShadowBuilder {
     @Override // android.view.View.DragShadowBuilder
     public final void onDrawShadow(Canvas canvas) {
         np npVar = new np();
-        Canvas canvas2 = x6.f1320a;
+        Canvas canvas2 = x6.f1319a;
         w6 w6Var = new w6();
-        w6Var.f1261a = canvas;
+        w6Var.f1260a = canvas;
         mp mpVar = npVar.d;
-        j70 j70Var = mpVar.f760a;
+        j70 j70Var = mpVar.f759a;
         q01 q01Var = mpVar.b;
         lp lpVar = mpVar.c;
         long j = mpVar.d;
-        mpVar.f760a = this.f1407a;
+        mpVar.f759a = this.f1406a;
         mpVar.b = q01.d;
         mpVar.c = w6Var;
         mpVar.d = this.b;
         w6Var.f();
         this.c.e(npVar);
         w6Var.n();
-        mpVar.f760a = j70Var;
+        mpVar.f759a = j70Var;
         mpVar.b = q01Var;
         mpVar.c = lpVar;
         mpVar.d = j;
@@ -46,9 +46,9 @@ public final class yw extends View.DragShadowBuilder {
     @Override // android.view.View.DragShadowBuilder
     public final void onProvideShadowMetrics(Point point, Point point2) {
         long j = this.b;
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        k70 k70Var = this.f1407a;
-        point.set(k70Var.i0(fIntBitsToFloat / k70Var.a()), k70Var.i0(Float.intBitsToFloat((int) (j & 4294967295L)) / k70Var.a()));
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+        k70 k70Var = this.f1406a;
+        point.set(k70Var.i0(intBitsToFloat / k70Var.a()), k70Var.i0(Float.intBitsToFloat((int) (j & 4294967295L)) / k70Var.a()));
         point2.set(point.x / 2, point.y / 2);
     }
 }

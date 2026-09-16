@@ -43,7 +43,7 @@ public abstract class bg0 implements Runnable, Comparable, l90 {
             }
             synchronized (cg0Var) {
                 try {
-                    bg0[] bg0VarArr = cg0Var.f1180a;
+                    bg0[] bg0VarArr = cg0Var.f1179a;
                     bg0 bg0Var = bg0VarArr != null ? bg0VarArr[0] : null;
                     if (dg0.l.get(dg0Var) != 0) {
                         return 1;

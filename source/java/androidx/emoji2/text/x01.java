@@ -17,9 +17,9 @@ public final class x01 extends m81 {
         w01 w01Var = y01Var.S;
         xh1 xh1Var = y01Var.s;
         lx0.u(xh1Var);
-        m81 m81VarR0 = xh1Var.R0();
-        lx0.u(m81VarR0);
-        return w01Var.j(this, m81VarR0, i);
+        m81 R0 = xh1Var.R0();
+        lx0.u(R0);
+        return w01Var.j(this, R0, i);
     }
 
     @Override // androidx.emoji2.text.ab1
@@ -28,9 +28,9 @@ public final class x01 extends m81 {
         w01 w01Var = y01Var.S;
         xh1 xh1Var = y01Var.s;
         lx0.u(xh1Var);
-        m81 m81VarR0 = xh1Var.R0();
-        lx0.u(m81VarR0);
-        return w01Var.h(this, m81VarR0, i);
+        m81 R0 = xh1Var.R0();
+        lx0.u(R0);
+        return w01Var.h(this, R0, i);
     }
 
     @Override // androidx.emoji2.text.ab1
@@ -39,9 +39,9 @@ public final class x01 extends m81 {
         w01 w01Var = y01Var.S;
         xh1 xh1Var = y01Var.s;
         lx0.u(xh1Var);
-        m81 m81VarR0 = xh1Var.R0();
-        lx0.u(m81VarR0);
-        return w01Var.c(this, m81VarR0, i);
+        m81 R0 = xh1Var.R0();
+        lx0.u(R0);
+        return w01Var.c(this, R0, i);
     }
 
     @Override // androidx.emoji2.text.ab1
@@ -50,16 +50,16 @@ public final class x01 extends m81 {
         w01 w01Var = y01Var.S;
         xh1 xh1Var = y01Var.s;
         lx0.u(xh1Var);
-        m81 m81VarR0 = xh1Var.R0();
-        lx0.u(m81VarR0);
-        return w01Var.e(this, m81VarR0, i);
+        m81 R0 = xh1Var.R0();
+        lx0.u(R0);
+        return w01Var.e(this, R0, i);
     }
 
     @Override // androidx.emoji2.text.k81
     public final int o0(xr0 xr0Var) {
-        int iH = jz0.h(this, xr0Var);
-        this.w.h(iH, xr0Var);
-        return iH;
+        int h = jz0.h(this, xr0Var);
+        this.w.h(h, xr0Var);
+        return h;
     }
 
     @Override // androidx.emoji2.text.ab1
@@ -70,9 +70,9 @@ public final class x01 extends m81 {
         w01 w01Var = y01Var.S;
         xh1 xh1Var = y01Var.s;
         lx0.u(xh1Var);
-        m81 m81VarR0 = xh1Var.R0();
-        lx0.u(m81VarR0);
-        m81.I0(this, w01Var.d(this, m81VarR0, j));
+        m81 R0 = xh1Var.R0();
+        lx0.u(R0);
+        m81.I0(this, w01Var.d(this, R0, j));
         return this;
     }
 }

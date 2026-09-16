@@ -11,10 +11,10 @@ public abstract class is0 implements nd2 {
 
     public is0(ms0 ms0Var) {
         this.f = ms0Var;
-        fm2 fm2VarA = ms0Var.c.a();
-        lx0.x(fm2VarA, "delegate");
+        fm2 a2 = ms0Var.c.a();
+        lx0.x(a2, "delegate");
         jm0 jm0Var = new jm0();
-        jm0Var.e = fm2VarA;
+        jm0Var.e = a2;
         this.d = jm0Var;
     }
 

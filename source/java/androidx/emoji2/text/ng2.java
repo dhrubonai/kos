@@ -22,13 +22,13 @@ public final class ng2 extends g01 implements Function2 {
                 this.f.a().e = (xx) obj2;
                 break;
             case 1:
-                r11 r11VarA = this.f.a();
-                ((e11) obj).d0(new o11(r11VarA, (Function2) obj2, r11VarA.s));
+                r11 a2 = this.f.a();
+                ((e11) obj).d0(new o11(a2, (Function2) obj2, a2.s));
                 break;
             default:
                 e11 e11Var = (e11) obj;
                 og2 og2Var = this.f;
-                rg2 rg2Var = og2Var.f857a;
+                rg2 rg2Var = og2Var.f856a;
                 r11 r11Var = e11Var.J;
                 if (r11Var == null) {
                     r11Var = new r11(e11Var, rg2Var);
@@ -36,14 +36,14 @@ public final class ng2 extends g01 implements Function2 {
                 }
                 og2Var.b = r11Var;
                 og2Var.a().d();
-                r11 r11VarA2 = og2Var.a();
-                if (r11VarA2.f != rg2Var) {
-                    r11VarA2.f = rg2Var;
-                    r11VarA2.e(false);
-                    e11.W(r11VarA2.d, false, 7);
+                r11 a3 = og2Var.a();
+                if (a3.f != rg2Var) {
+                    a3.f = rg2Var;
+                    a3.e(false);
+                    e11.W(a3.d, false, 7);
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

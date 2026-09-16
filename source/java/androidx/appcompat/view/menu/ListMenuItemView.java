@@ -1,12 +1,14 @@
 package androidx.appcompat.view.menu;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.CheckBox;
@@ -45,17 +47,17 @@ public class ListMenuItemView extends LinearLayout implements kc1, AbsListView.S
 
     public ListMenuItemView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        rg rgVarV = rg.V(getContext(), attributeSet, gv1.o, R.attr.listMenuViewStyle);
-        this.m = rgVarV.H(5);
-        TypedArray typedArray = (TypedArray) rgVarV.e;
+        rg V = rg.V(getContext(), attributeSet, gv1.o, R.attr.listMenuViewStyle);
+        this.m = V.H(5);
+        TypedArray typedArray = (TypedArray) V.e;
         this.n = typedArray.getResourceId(1, -1);
         this.p = typedArray.getBoolean(7, false);
         this.o = context;
-        this.q = rgVarV.H(8);
-        TypedArray typedArrayObtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
-        this.r = typedArrayObtainStyledAttributes.hasValue(0);
-        rgVarV.X();
-        typedArrayObtainStyledAttributes.recycle();
+        this.q = V.H(8);
+        TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, new int[]{android.R.attr.divider}, R.attr.dropDownListViewStyle, 0);
+        this.r = obtainStyledAttributes.hasValue(0);
+        V.X();
+        obtainStyledAttributes.recycle();
     }
 
     private LayoutInflater getInflater() {
@@ -72,20 +74,99 @@ public class ListMenuItemView extends LinearLayout implements kc1, AbsListView.S
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0035  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0058  */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0055, code lost:
+    
+        if (r0 == false) goto L28;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x011b  */
     @Override // androidx.emoji2.text.kc1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void a(androidx.emoji2.text.ub1 r11) {
-        /*
-            Method dump skipped, instructions count: 315
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.view.menu.ListMenuItemView.a(androidx.emoji2.text.ub1):void");
+    public final void a(ub1 ub1Var) {
+        boolean z;
+        String sb;
+        boolean z2;
+        this.d = ub1Var;
+        boolean isVisible = ub1Var.isVisible();
+        qb1 qb1Var = ub1Var.n;
+        int i = 0;
+        setVisibility(isVisible ? 0 : 8);
+        setTitle(ub1Var.e);
+        setCheckable(ub1Var.isCheckable());
+        if (qb1Var.n()) {
+            if ((qb1Var.m() ? ub1Var.j : ub1Var.h) != 0) {
+                z = true;
+                qb1Var.m();
+                if (z) {
+                    ub1 ub1Var2 = this.d;
+                    qb1 qb1Var2 = ub1Var2.n;
+                    if (qb1Var2.n()) {
+                        if ((qb1Var2.m() ? ub1Var2.j : ub1Var2.h) != 0) {
+                            z2 = true;
+                        }
+                    }
+                    z2 = false;
+                }
+                i = 8;
+                if (i == 0) {
+                    TextView textView = this.i;
+                    ub1 ub1Var3 = this.d;
+                    qb1 qb1Var3 = ub1Var3.n;
+                    Context context = qb1Var3.f948a;
+                    char c = qb1Var3.m() ? ub1Var3.j : ub1Var3.h;
+                    if (c == 0) {
+                        sb = "";
+                    } else {
+                        Resources resources = context.getResources();
+                        StringBuilder sb2 = new StringBuilder();
+                        if (ViewConfiguration.get(context).hasPermanentMenuKey()) {
+                            sb2.append(resources.getString(R.string.abc_prepend_shortcut_label));
+                        }
+                        int i2 = qb1Var3.m() ? ub1Var3.k : ub1Var3.i;
+                        ub1.a(i2, 65536, resources.getString(R.string.abc_menu_meta_shortcut_label), sb2);
+                        ub1.a(i2, 4096, resources.getString(R.string.abc_menu_ctrl_shortcut_label), sb2);
+                        ub1.a(i2, 2, resources.getString(R.string.abc_menu_alt_shortcut_label), sb2);
+                        ub1.a(i2, 1, resources.getString(R.string.abc_menu_shift_shortcut_label), sb2);
+                        ub1.a(i2, 4, resources.getString(R.string.abc_menu_sym_shortcut_label), sb2);
+                        ub1.a(i2, 8, resources.getString(R.string.abc_menu_function_shortcut_label), sb2);
+                        if (c == '\b') {
+                            sb2.append(resources.getString(R.string.abc_menu_delete_shortcut_label));
+                        } else if (c == '\n') {
+                            sb2.append(resources.getString(R.string.abc_menu_enter_shortcut_label));
+                        } else if (c != ' ') {
+                            sb2.append(c);
+                        } else {
+                            sb2.append(resources.getString(R.string.abc_menu_space_shortcut_label));
+                        }
+                        sb = sb2.toString();
+                    }
+                    textView.setText(sb);
+                }
+                if (this.i.getVisibility() != i) {
+                    this.i.setVisibility(i);
+                }
+                setIcon(ub1Var.getIcon());
+                setEnabled(ub1Var.isEnabled());
+                setSubMenuArrowVisible(ub1Var.hasSubMenu());
+                setContentDescription(ub1Var.q);
+            }
+        }
+        z = false;
+        qb1Var.m();
+        if (z) {
+        }
+        i = 8;
+        if (i == 0) {
+        }
+        if (this.i.getVisibility() != i) {
+        }
+        setIcon(ub1Var.getIcon());
+        setEnabled(ub1Var.isEnabled());
+        setSubMenuArrowVisible(ub1Var.hasSubMenu());
+        setContentDescription(ub1Var.q);
     }
 
     @Override // android.widget.AbsListView.SelectionBoundsAdjuster

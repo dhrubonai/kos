@@ -17,12 +17,13 @@ public final /* synthetic */ class qu implements t51 {
 
     @Override // androidx.emoji2.text.t51
     public final void c(v51 v51Var, n51 n51Var) {
+        OnBackInvokedDispatcher onBackInvokedDispatcher;
         switch (this.d) {
             case 0:
                 oj1 oj1Var = (oj1) this.e;
                 zu zuVar = (zu) this.f;
                 if (n51Var == n51.ON_CREATE) {
-                    OnBackInvokedDispatcher onBackInvokedDispatcher = zuVar.getOnBackInvokedDispatcher();
+                    onBackInvokedDispatcher = zuVar.getOnBackInvokedDispatcher();
                     lx0.w(onBackInvokedDispatcher, "getOnBackInvokedDispatcher(...)");
                     oj1Var.b(onBackInvokedDispatcher);
                     break;
@@ -31,7 +32,7 @@ public final /* synthetic */ class qu implements t51 {
             default:
                 t91 t91Var = (t91) this.e;
                 mf1 mf1Var = (mf1) this.f;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-137409447739170L, strArr);
                 a.a.a.c.a(-136932706369314L, strArr);
                 if (n51Var == n51.ON_RESUME && ((h22) mf1Var.getValue()) == h22.d) {

@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 public final class cx1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ RecyclerView f226a;
+    public final /* synthetic */ RecyclerView f225a;
 
     public /* synthetic */ cx1(RecyclerView recyclerView) {
-        this.f226a = recyclerView;
+        this.f225a = recyclerView;
     }
 
     public void a(int i) {
-        RecyclerView recyclerView = this.f226a;
+        RecyclerView recyclerView = this.f225a;
         View childAt = recyclerView.getChildAt(i);
         if (childAt != null) {
             RecyclerView.s(childAt);

@@ -8,9 +8,9 @@ public final class zj1 extends dl1 {
     @Override // androidx.emoji2.text.dl1
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
         t5 t5Var = (t5) on0Var.d(0);
-        Object objD = on0Var.d(1);
-        if (objD instanceof ly1) {
-            ly1 ly1Var = (ly1) objD;
+        Object d = on0Var.d(1);
+        if (d instanceof ly1) {
+            ly1 ly1Var = (ly1) d;
             jy1Var.e.b(ly1Var);
             jy1Var.d.a(ly1Var);
         }
@@ -19,16 +19,16 @@ public final class zj1 extends dl1 {
         }
         int i = rb2Var.i;
         int i2 = rb2Var.j;
-        int iC = rb2Var.c(t5Var);
-        int iG = rb2Var.g(rb2Var.b, rb2Var.r(iC + 1));
-        rb2Var.i = iG;
-        rb2Var.j = iG;
-        rb2Var.w(1, iC);
-        if (i >= iG) {
+        int c2 = rb2Var.c(t5Var);
+        int g = rb2Var.g(rb2Var.b, rb2Var.r(c2 + 1));
+        rb2Var.i = g;
+        rb2Var.j = g;
+        rb2Var.w(1, c2);
+        if (i >= g) {
             i++;
             i2++;
         }
-        rb2Var.c[iG] = objD;
+        rb2Var.c[g] = d;
         rb2Var.i = i;
         rb2Var.j = i2;
     }

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class dy1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ey1 f279a;
+    public static final ey1 f278a;
 
     static {
         ey1 ey1Var = null;
@@ -16,11 +16,11 @@ public abstract class dy1 {
         if (ey1Var == null) {
             ey1Var = new ey1();
         }
-        f279a = ey1Var;
+        f278a = ey1Var;
     }
 
     public static vr a(Class cls) {
-        f279a.getClass();
+        f278a.getClass();
         return new vr(cls);
     }
 }

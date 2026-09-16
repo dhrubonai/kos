@@ -104,11 +104,11 @@ public final class f01 extends mt {
                 float f5 = f / fArr[0];
                 float f6 = f2 / fArr[1];
                 float f7 = f3 / fArr[2];
-                float fCbrt = f5 > 0.008856452f ? (float) Math.cbrt(f5) : (f5 * 7.787037f) + 0.13793103f;
-                float fCbrt2 = f6 > 0.008856452f ? (float) Math.cbrt(f6) : (f6 * 7.787037f) + 0.13793103f;
-                float f8 = (116.0f * fCbrt2) - 16.0f;
-                float f9 = (fCbrt - fCbrt2) * 500.0f;
-                float fCbrt3 = (fCbrt2 - (f7 > 0.008856452f ? (float) Math.cbrt(f7) : (f7 * 7.787037f) + 0.13793103f)) * 200.0f;
+                float cbrt = f5 > 0.008856452f ? (float) Math.cbrt(f5) : (f5 * 7.787037f) + 0.13793103f;
+                float cbrt2 = f6 > 0.008856452f ? (float) Math.cbrt(f6) : (f6 * 7.787037f) + 0.13793103f;
+                float f8 = (116.0f * cbrt2) - 16.0f;
+                float f9 = (cbrt - cbrt2) * 500.0f;
+                float cbrt3 = (cbrt2 - (f7 > 0.008856452f ? (float) Math.cbrt(f7) : (f7 * 7.787037f) + 0.13793103f)) * 200.0f;
                 if (f8 < 0.0f) {
                     f8 = 0.0f;
                 }
@@ -121,10 +121,10 @@ public final class f01 extends mt {
                 if (f9 > 128.0f) {
                     f9 = 128.0f;
                 }
-                if (fCbrt3 < -128.0f) {
-                    fCbrt3 = -128.0f;
+                if (cbrt3 < -128.0f) {
+                    cbrt3 = -128.0f;
                 }
-                return bz0.b(f8, f9, fCbrt3 <= 128.0f ? fCbrt3 : 128.0f, f4, mtVar);
+                return bz0.b(f8, f9, cbrt3 <= 128.0f ? cbrt3 : 128.0f, f4, mtVar);
             default:
                 if (f < -2.0f) {
                     f = -2.0f;

@@ -11,7 +11,7 @@ public final class gj2 {
     public yi2 f;
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextPaint f423a = new TextPaint(1);
+    public final TextPaint f422a = new TextPaint(1);
     public final nr b = new nr(1, this);
     public boolean d = true;
 
@@ -24,7 +24,7 @@ public final class gj2 {
         if (!this.d) {
             return this.c;
         }
-        TextPaint textPaint = this.f423a;
+        TextPaint textPaint = this.f422a;
         this.c = str == null ? 0.0f : textPaint.measureText((CharSequence) str, 0, str.length());
         if (str != null) {
             Math.abs(textPaint.getFontMetrics().ascent);

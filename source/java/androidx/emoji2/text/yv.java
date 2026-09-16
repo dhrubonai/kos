@@ -7,6 +7,6 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public abstract class yv {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ComposableLambdaImpl f1404a = new ComposableLambdaImpl(1318589766, false, new xv(0));
+    public static final ComposableLambdaImpl f1403a = new ComposableLambdaImpl(1318589766, false, new xv(0));
     public static final ComposableLambdaImpl b = new ComposableLambdaImpl(278297927, false, new xv(1));
 }

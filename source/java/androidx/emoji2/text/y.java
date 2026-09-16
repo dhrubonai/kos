@@ -31,7 +31,7 @@ public abstract class y extends ViewGroup {
         y7 y7Var = new y7(7, this);
         addOnAttachStateChangeListener(y7Var);
         pt ptVar = new pt(27);
-        a01.I(this).f1354a.add(ptVar);
+        a01.I(this).f1353a.add(ptVar);
         this.h = new ek(this, y7Var, ptVar, 8);
     }
 
@@ -141,31 +141,31 @@ public abstract class y extends ViewGroup {
         uw1 uw1Var;
         v20 v20Var;
         ic icVar;
-        xx xxVarB = this.g;
-        if (xxVarB == null) {
-            xxVarB = mw2.b(this);
-            if (xxVarB == null) {
+        xx xxVar = this.g;
+        if (xxVar == null) {
+            xxVar = mw2.b(this);
+            if (xxVar == null) {
                 Object parent = getParent();
-                while (xxVarB == null && (parent instanceof View)) {
+                while (xxVar == null && (parent instanceof View)) {
                     View view = (View) parent;
-                    xxVarB = mw2.b(view);
+                    xxVar = mw2.b(view);
                     parent = view.getParent();
                 }
             }
-            if (xxVarB != null) {
-                xx xxVar = (!(xxVarB instanceof uw1) || ((qw1) ((uw1) xxVarB).t.getValue()).compareTo(qw1.e) > 0) ? xxVarB : null;
-                if (xxVar != null) {
-                    this.d = new WeakReference(xxVar);
+            if (xxVar != null) {
+                xx xxVar2 = (!(xxVar instanceof uw1) || ((qw1) ((uw1) xxVar).t.getValue()).compareTo(qw1.e) > 0) ? xxVar : null;
+                if (xxVar2 != null) {
+                    this.d = new WeakReference(xxVar2);
                 }
             } else {
-                xxVarB = null;
+                xxVar = null;
             }
-            if (xxVarB == null) {
+            if (xxVar == null) {
                 WeakReference weakReference = this.d;
-                if (weakReference == null || (xxVarB = (xx) weakReference.get()) == null || ((xxVarB instanceof uw1) && ((qw1) ((uw1) xxVarB).t.getValue()).compareTo(qw1.e) <= 0)) {
-                    xxVarB = null;
+                if (weakReference == null || (xxVar = (xx) weakReference.get()) == null || ((xxVar instanceof uw1) && ((qw1) ((uw1) xxVar).t.getValue()).compareTo(qw1.e) <= 0)) {
+                    xxVar = null;
                 }
-                if (xxVarB == null) {
+                if (xxVar == null) {
                     if (!isAttachedToWindow()) {
                         iv0.b("Cannot locate windowRecomposer; View " + this + " is not attached to a window");
                     }
@@ -179,9 +179,9 @@ public abstract class y extends ViewGroup {
                         view2 = view3;
                         parent2 = view3.getParent();
                     }
-                    xx xxVarB2 = mw2.b(view2);
-                    if (xxVarB2 == null) {
-                        ((gw2) hw2.f495a.get()).getClass();
+                    xx b = mw2.b(view2);
+                    if (b == null) {
+                        ((gw2) hw2.f494a.get()).getClass();
                         oe0 oe0Var = oe0.d;
                         th2 th2Var = gc.p;
                         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -192,62 +192,62 @@ public abstract class y extends ViewGroup {
                                 throw new IllegalStateException("no AndroidUiDispatcher for this thread");
                             }
                         }
-                        v20 v20VarB = v20Var.B(oe0Var);
-                        vd1 vd1Var = (vd1) v20VarB.n(dd0.M);
+                        v20 B = v20Var.B(oe0Var);
+                        vd1 vd1Var = (vd1) B.n(dd0.M);
                         if (vd1Var != null) {
                             ic icVar2 = new ic(vd1Var);
                             v80 v80Var = (v80) icVar2.f;
                             synchronized (v80Var.b) {
-                                v80Var.f1208a = false;
+                                v80Var.f1207a = false;
                                 icVar = icVar2;
                             }
                         } else {
                             icVar = 0;
                         }
                         cy1 cy1Var = new cy1();
-                        v20 yd1Var = (xd1) v20VarB.n(dd0.N);
-                        if (yd1Var == null) {
-                            yd1Var = new yd1();
-                            cy1Var.d = yd1Var;
+                        v20 v20Var2 = (xd1) B.n(dd0.N);
+                        if (v20Var2 == null) {
+                            v20Var2 = new yd1();
+                            cy1Var.d = v20Var2;
                         }
                         if (icVar != 0) {
                             oe0Var = icVar;
                         }
-                        v20 v20VarB2 = v20VarB.B(oe0Var).B(yd1Var);
-                        uw1 uw1Var2 = new uw1(v20VarB2);
+                        v20 B2 = B.B(oe0Var).B(v20Var2);
+                        uw1 uw1Var2 = new uw1(B2);
                         synchronized (uw1Var2.b) {
                             uw1Var2.s = true;
                         }
-                        j10 j10VarG = wj1.g(v20VarB2);
-                        v51 v51VarT = pz0.t(view2);
-                        lz0 lz0VarG = v51VarT != null ? v51VarT.g() : null;
-                        if (lz0VarG == null) {
+                        j10 g = wj1.g(B2);
+                        v51 t = pz0.t(view2);
+                        lz0 g2 = t != null ? t.g() : null;
+                        if (g2 == null) {
                             iv0.c("ViewTreeLifecycleOwner not found from " + view2);
                             throw new mu();
                         }
                         view2.addOnAttachStateChangeListener(new iw2(view2, uw1Var2));
-                        lz0VarG.g(new kw2(j10VarG, icVar, uw1Var2, cy1Var, view2));
+                        g2.g(new kw2(g, icVar, uw1Var2, cy1Var, view2));
                         view2.setTag(R.id.androidx_compose_ui_view_composition_context, uw1Var2);
                         zn0 zn0Var = zn0.d;
                         Handler handler = view2.getHandler();
-                        int i = tq0.f1138a;
-                        view2.addOnAttachStateChangeListener(new y7(8, h50.G(zn0Var, new sq0(handler, "windowRecomposer cleanup", false).i, new vc2(uw1Var2, view2, l10Var, 7), 2)));
+                        int i = tq0.f1137a;
+                        view2.addOnAttachStateChangeListener(new y7(8, h50.G(zn0Var, new sq0(handler, "windowRecomposer cleanup", false).i, new vc2(uw1Var2, view2, r1, 7), 2)));
                         uw1Var = uw1Var2;
                     } else {
-                        if (!(xxVarB2 instanceof uw1)) {
+                        if (!(b instanceof uw1)) {
                             throw new IllegalStateException("root viewTreeParentCompositionContext is not a Recomposer");
                         }
-                        uw1Var = (uw1) xxVarB2;
+                        uw1Var = (uw1) b;
                     }
-                    l10Var = ((qw1) uw1Var.t.getValue()).compareTo(qw1.e) > 0 ? uw1Var : null;
-                    if (l10Var != null) {
-                        this.d = new WeakReference(l10Var);
+                    r1 = ((qw1) uw1Var.t.getValue()).compareTo(qw1.e) > 0 ? uw1Var : null;
+                    if (r1 != null) {
+                        this.d = new WeakReference(r1);
                     }
                     return uw1Var;
                 }
             }
         }
-        return xxVarB;
+        return xxVar;
     }
 
     @Override // android.view.ViewGroup
@@ -310,7 +310,7 @@ public abstract class y extends ViewGroup {
         y7 y7Var = new y7(7, this);
         addOnAttachStateChangeListener(y7Var);
         pt ptVar = new pt(27);
-        a01.I(this).f1354a.add(ptVar);
+        a01.I(this).f1353a.add(ptVar);
         this.h = new ek(this, y7Var, ptVar, 8);
     }
 

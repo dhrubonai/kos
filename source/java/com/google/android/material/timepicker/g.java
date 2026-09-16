@@ -8,16 +8,16 @@ import android.view.MotionEvent;
 public final class g extends GestureDetector.SimpleOnGestureListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ TimePickerView f1472a;
+    public final /* synthetic */ TimePickerView f1471a;
 
     public g(TimePickerView timePickerView) {
-        this.f1472a = timePickerView;
+        this.f1471a = timePickerView;
     }
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
     public final boolean onDoubleTap(MotionEvent motionEvent) {
         int i = TimePickerView.u;
-        this.f1472a.getClass();
+        this.f1471a.getClass();
         return false;
     }
 }

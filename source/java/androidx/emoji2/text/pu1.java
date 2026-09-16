@@ -28,35 +28,35 @@ public final class pu1 extends g01 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         vb0 vb0Var = (vb0) obj;
-        float fB = ib2.b(vb0Var.i());
+        float b = ib2.b(vb0Var.i());
         int i = this.e;
-        float fO = this.f;
+        float f = this.f;
         if (i != 0 && ib2.b(vb0Var.i()) <= ib2.d(vb0Var.i())) {
-            fO += vb0Var.O(fB);
+            f += vb0Var.O(b);
         }
-        float fO2 = fO / vb0Var.O(ib2.d(vb0Var.i()));
+        float O = f / vb0Var.O(ib2.d(vb0Var.i()));
         qe2 qe2Var = this.g;
-        if (((Number) qe2Var.getValue()).floatValue() < 1.0f - fO2) {
-            ru1.c(vb0Var, ((Number) qe2Var.getValue()).floatValue() > 0.0f ? ((Number) qe2Var.getValue()).floatValue() + fO2 : 0.0f, 1.0f, this.h, fB, this.e);
+        if (((Number) qe2Var.getValue()).floatValue() < 1.0f - O) {
+            ru1.c(vb0Var, ((Number) qe2Var.getValue()).floatValue() > 0.0f ? ((Number) qe2Var.getValue()).floatValue() + O : 0.0f, 1.0f, this.h, b, this.e);
         }
-        float fFloatValue = ((Number) qe2Var.getValue()).floatValue();
+        float floatValue = ((Number) qe2Var.getValue()).floatValue();
         qe2 qe2Var2 = this.i;
-        if (fFloatValue - ((Number) qe2Var2.getValue()).floatValue() > 0.0f) {
-            ru1.c(vb0Var, ((Number) qe2Var.getValue()).floatValue(), ((Number) qe2Var2.getValue()).floatValue(), this.j, fB, this.e);
+        if (floatValue - ((Number) qe2Var2.getValue()).floatValue() > 0.0f) {
+            ru1.c(vb0Var, ((Number) qe2Var.getValue()).floatValue(), ((Number) qe2Var2.getValue()).floatValue(), this.j, b, this.e);
         }
-        float fFloatValue2 = ((Number) qe2Var2.getValue()).floatValue();
+        float floatValue2 = ((Number) qe2Var2.getValue()).floatValue();
         qe2 qe2Var3 = this.k;
-        if (fFloatValue2 > fO2) {
-            ru1.c(vb0Var, ((Number) qe2Var3.getValue()).floatValue() > 0.0f ? ((Number) qe2Var3.getValue()).floatValue() + fO2 : 0.0f, ((Number) qe2Var2.getValue()).floatValue() < 1.0f ? ((Number) qe2Var2.getValue()).floatValue() - fO2 : 1.0f, this.h, fB, this.e);
+        if (floatValue2 > O) {
+            ru1.c(vb0Var, ((Number) qe2Var3.getValue()).floatValue() > 0.0f ? ((Number) qe2Var3.getValue()).floatValue() + O : 0.0f, ((Number) qe2Var2.getValue()).floatValue() < 1.0f ? ((Number) qe2Var2.getValue()).floatValue() - O : 1.0f, this.h, b, this.e);
         }
-        float fFloatValue3 = ((Number) qe2Var3.getValue()).floatValue();
+        float floatValue3 = ((Number) qe2Var3.getValue()).floatValue();
         qe2 qe2Var4 = this.l;
-        if (fFloatValue3 - ((Number) qe2Var4.getValue()).floatValue() > 0.0f) {
-            ru1.c(vb0Var, ((Number) qe2Var3.getValue()).floatValue(), ((Number) qe2Var4.getValue()).floatValue(), this.j, fB, this.e);
+        if (floatValue3 - ((Number) qe2Var4.getValue()).floatValue() > 0.0f) {
+            ru1.c(vb0Var, ((Number) qe2Var3.getValue()).floatValue(), ((Number) qe2Var4.getValue()).floatValue(), this.j, b, this.e);
         }
-        if (((Number) qe2Var4.getValue()).floatValue() > fO2) {
-            ru1.c(vb0Var, 0.0f, ((Number) qe2Var4.getValue()).floatValue() < 1.0f ? ((Number) qe2Var4.getValue()).floatValue() - fO2 : 1.0f, this.h, fB, this.e);
+        if (((Number) qe2Var4.getValue()).floatValue() > O) {
+            ru1.c(vb0Var, 0.0f, ((Number) qe2Var4.getValue()).floatValue() < 1.0f ? ((Number) qe2Var4.getValue()).floatValue() - O : 1.0f, this.h, b, this.e);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -110,8 +110,8 @@ public class AppSystemEnv {
                 threadLocal.remove();
                 return null;
             }
-            ComponentName componentNameUnflattenFromString = ComponentName.unflattenFromString(string);
-            sInputMethodPackage = componentNameUnflattenFromString == null ? null : componentNameUnflattenFromString.getPackageName();
+            ComponentName unflattenFromString = ComponentName.unflattenFromString(string);
+            sInputMethodPackage = unflattenFromString == null ? null : unflattenFromString.getPackageName();
             sInputMethodPackageLoaded = true;
             String str = sInputMethodPackage;
             threadLocal.remove();

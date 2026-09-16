@@ -13,7 +13,7 @@ public abstract class wm1 implements i52 {
     public final un1 F;
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f1289a;
+    public final un1 f1288a;
     public final gz0 b;
     public final rm1 c;
     public int d;
@@ -45,7 +45,7 @@ public abstract class wm1 implements i52 {
         if (-0.5d > d || d > 0.5d) {
             throw new IllegalArgumentException(("currentPageOffsetFraction " + f + " is not within the range -0.5 to 0.5").toString());
         }
-        this.f1289a = az0.W(new zi1(0L));
+        this.f1288a = az0.W(new zi1(0L));
         this.b = new gz0(this);
         this.c = new rm1(i, f, this);
         this.d = i;
@@ -77,100 +77,86 @@ public abstract class wm1 implements i52 {
         this.F = az0.W(bool);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x007e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x007e, code lost:
     
-        if (r9.e(r7, r8, r0) == r5) goto L27;
+        if (r9.e(r7, r8, r0) != r5) goto L28;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0080, code lost:
+    
+        return r5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x005b, code lost:
+    
+        if (r9 == r5) goto L27;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0066  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0024  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static java.lang.Object r(androidx.emoji2.text.wm1 r6, androidx.emoji2.text.vf1 r7, kotlin.jvm.functions.Function2 r8, androidx.emoji2.text.l10 r9) {
-        /*
-            boolean r0 = r9 instanceof androidx.emoji2.text.um1
-            if (r0 == 0) goto L13
-            r0 = r9
-            androidx.emoji2.text.um1 r0 = (androidx.emoji2.text.um1) r0
-            int r1 = r0.l
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.l = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.um1 r0 = new androidx.emoji2.text.um1
-            r0.<init>(r6, r9)
-        L18:
-            java.lang.Object r9 = r0.j
-            int r1 = r0.l
-            androidx.emoji2.text.up2 r2 = androidx.emoji2.text.up2.f1187a
-            r3 = 2
-            r4 = 1
-            androidx.emoji2.text.f30 r5 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L43
-            if (r1 == r4) goto L36
-            if (r1 != r3) goto L2e
-            androidx.emoji2.text.wm1 r6 = r0.g
-            androidx.emoji2.text.mz0.L(r9)
-            goto L81
-        L2e:
-            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
-            java.lang.String r7 = "call to 'resume' before 'invoke' with coroutine"
-            r6.<init>(r7)
-            throw r6
-        L36:
-            androidx.emoji2.text.hh2 r6 = r0.i
-            r8 = r6
-            kotlin.jvm.functions.Function2 r8 = (kotlin.jvm.functions.Function2) r8
-            androidx.emoji2.text.vf1 r7 = r0.h
-            androidx.emoji2.text.wm1 r6 = r0.g
-            androidx.emoji2.text.mz0.L(r9)
-            goto L5e
-        L43:
-            androidx.emoji2.text.mz0.L(r9)
-            r0.g = r6
-            r0.h = r7
-            r9 = r8
-            androidx.emoji2.text.hh2 r9 = (androidx.emoji2.text.hh2) r9
-            r0.i = r9
-            r0.l = r4
-            androidx.emoji2.text.ij r9 = r6.v
-            java.lang.Object r9 = r9.f(r0)
-            if (r9 != r5) goto L5a
-            goto L5b
-        L5a:
-            r9 = r2
-        L5b:
-            if (r9 != r5) goto L5e
-            goto L80
-        L5e:
-            androidx.emoji2.text.s60 r9 = r6.j
-            boolean r9 = r9.a()
-            if (r9 != 0) goto L6f
-            int r9 = r6.j()
-            androidx.emoji2.text.rn1 r1 = r6.s
-            r1.h(r9)
-        L6f:
-            androidx.emoji2.text.s60 r9 = r6.j
-            r0.g = r6
-            r1 = 0
-            r0.h = r1
-            r0.i = r1
-            r0.l = r3
-            java.lang.Object r7 = r9.e(r7, r8, r0)
-            if (r7 != r5) goto L81
-        L80:
-            return r5
-        L81:
-            r7 = -1
-            androidx.emoji2.text.rn1 r6 = r6.r
-            r6.h(r7)
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.wm1.r(androidx.emoji2.text.wm1, androidx.emoji2.text.vf1, kotlin.jvm.functions.Function2, androidx.emoji2.text.l10):java.lang.Object");
+    public static Object r(wm1 wm1Var, vf1 vf1Var, Function2 function2, l10 l10Var) {
+        um1 um1Var;
+        int i;
+        if (l10Var instanceof um1) {
+            um1Var = (um1) l10Var;
+            int i2 = um1Var.l;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                um1Var.l = i2 - Integer.MIN_VALUE;
+                Object obj = um1Var.j;
+                i = um1Var.l;
+                Object obj2 = up2.f1186a;
+                Object obj3 = f30.d;
+                if (i != 0) {
+                    mz0.L(obj);
+                    um1Var.g = wm1Var;
+                    um1Var.h = vf1Var;
+                    um1Var.i = (hh2) function2;
+                    um1Var.l = 1;
+                    Object f = wm1Var.v.f(um1Var);
+                    if (f != obj3) {
+                        f = obj2;
+                    }
+                } else {
+                    if (i != 1) {
+                        if (i != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        wm1Var = um1Var.g;
+                        mz0.L(obj);
+                        wm1Var.r.h(-1);
+                        return obj2;
+                    }
+                    function2 = (Function2) um1Var.i;
+                    vf1Var = um1Var.h;
+                    wm1Var = um1Var.g;
+                    mz0.L(obj);
+                }
+                if (!wm1Var.j.a()) {
+                    wm1Var.s.h(wm1Var.j());
+                }
+                s60 s60Var = wm1Var.j;
+                um1Var.g = wm1Var;
+                um1Var.h = null;
+                um1Var.i = null;
+                um1Var.l = 2;
+            }
+        }
+        um1Var = new um1(wm1Var, l10Var);
+        Object obj4 = um1Var.j;
+        i = um1Var.l;
+        Object obj22 = up2.f1186a;
+        Object obj32 = f30.d;
+        if (i != 0) {
+        }
+        if (!wm1Var.j.a()) {
+        }
+        s60 s60Var2 = wm1Var.j;
+        um1Var.g = wm1Var;
+        um1Var.h = null;
+        um1Var.i = null;
+        um1Var.l = 2;
     }
 
     @Override // androidx.emoji2.text.i52
@@ -198,17 +184,87 @@ public abstract class wm1 implements i52 {
         return r(this, vf1Var, function2, l10Var);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0019  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object f(int r18, androidx.emoji2.text.be2 r19, androidx.emoji2.text.n10 r20) {
-        /*
-            Method dump skipped, instructions count: 225
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.wm1.f(int, androidx.emoji2.text.be2, androidx.emoji2.text.n10):java.lang.Object");
+    public final Object f(int i, be2 be2Var, n10 n10Var) {
+        tm1 tm1Var;
+        int i2;
+        wm1 wm1Var;
+        be2 be2Var2;
+        double d;
+        int i3 = i;
+        if (n10Var instanceof tm1) {
+            tm1Var = (tm1) n10Var;
+            int i4 = tm1Var.l;
+            if ((i4 & Integer.MIN_VALUE) != 0) {
+                tm1Var.l = i4 - Integer.MIN_VALUE;
+                Object obj = tm1Var.j;
+                i2 = tm1Var.l;
+                up2 up2Var = up2.f1186a;
+                f30 f30Var = f30.d;
+                if (i2 != 0) {
+                    mz0.L(obj);
+                    if ((i3 != j() || this.c.c.g() != 0.0f) && l() != 0) {
+                        tm1Var.g = this;
+                        tm1Var.h = be2Var;
+                        tm1Var.i = i3;
+                        tm1Var.l = 1;
+                        Object f = this.v.f(tm1Var);
+                        if (f != f30Var) {
+                            f = up2Var;
+                        }
+                        if (f != f30Var) {
+                            wm1Var = this;
+                            be2Var2 = be2Var;
+                        }
+                    }
+                }
+                if (i2 != 1) {
+                    if (i2 != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                    return up2Var;
+                }
+                i3 = tm1Var.i;
+                be2 be2Var3 = tm1Var.h;
+                wm1Var = tm1Var.g;
+                mz0.L(obj);
+                be2Var2 = be2Var3;
+                d = 0.0f;
+                if (-0.5d <= d || d > 0.5d) {
+                    throw new IllegalArgumentException(("pageOffsetFraction 0.0 is not within the range -0.5 to 0.5").toString());
+                }
+                gz0 gz0Var = wm1Var.b;
+                x xVar = new x(12, wm1Var);
+                tm1Var.g = null;
+                tm1Var.h = null;
+                tm1Var.l = 2;
+                float f2 = an1.f111a;
+                Object e = ((wm1) gz0Var.d).e(vf1.d, new zm1(xVar, wm1Var.i(i3), gz0Var, 0.0f * wm1Var.n(), be2Var2, null), tm1Var);
+                if (e != f30Var) {
+                    e = up2Var;
+                }
+                if (e != f30Var) {
+                    e = up2Var;
+                }
+                return e == f30Var ? f30Var : up2Var;
+            }
+        }
+        tm1Var = new tm1(this, n10Var);
+        Object obj2 = tm1Var.j;
+        i2 = tm1Var.l;
+        up2 up2Var2 = up2.f1186a;
+        f30 f30Var2 = f30.d;
+        if (i2 != 0) {
+        }
+        d = 0.0f;
+        if (-0.5d <= d) {
+        }
+        throw new IllegalArgumentException(("pageOffsetFraction 0.0 is not within the range -0.5 to 0.5").toString());
     }
 
     /* JADX WARN: Type inference failed for: r9v1, types: [java.lang.Object, java.util.Collection, java.util.List] */
@@ -220,18 +276,18 @@ public abstract class wm1 implements i52 {
             rm1Var.c.h(pm1Var.j);
         } else {
             rm1Var.getClass();
-            ?? r9 = pm1Var.f915a;
+            ?? r9 = pm1Var.f914a;
             rm1Var.e = ib1Var != null ? ib1Var.d : null;
             if (rm1Var.d || !r9.isEmpty()) {
                 rm1Var.d = true;
-                int i = ib1Var != null ? ib1Var.f517a : 0;
+                int i = ib1Var != null ? ib1Var.f516a : 0;
                 float f = pm1Var.j;
                 rm1Var.b.h(i);
                 rm1Var.f.a(i);
                 rm1Var.c.h(f);
             }
             if (this.l != -1 && !r9.isEmpty()) {
-                if (this.l != (this.n ? ((ib1) ws.F0(r9)).f517a + 1 : ((ib1) ws.A0(r9)).f517a - 1)) {
+                if (this.l != (this.n ? ((ib1) ws.F0(r9)).f516a + 1 : ((ib1) ws.A0(r9)).f516a - 1)) {
                     this.l = -1;
                     z31 z31Var = this.m;
                     if (z31Var != null) {
@@ -245,29 +301,29 @@ public abstract class wm1 implements i52 {
         boolean z3 = pm1Var.l;
         ib1 ib1Var2 = pm1Var.h;
         this.C.setValue(Boolean.valueOf(z3));
-        if ((ib1Var2 != null ? ib1Var2.f517a : 0) == 0 && pm1Var.k == 0) {
+        if ((ib1Var2 != null ? ib1Var2.f516a : 0) == 0 && pm1Var.k == 0) {
             z2 = false;
         }
         this.D.setValue(Boolean.valueOf(z2));
         if (ib1Var2 != null) {
-            this.d = ib1Var2.f517a;
+            this.d = ib1Var2.f516a;
         }
         this.e = pm1Var.k;
-        ec2 ec2VarG = a01.G();
-        um0 um0VarE = ec2VarG != null ? ec2VarG.e() : null;
-        ec2 ec2VarS = a01.S(ec2VarG);
+        ec2 G = a01.G();
+        um0 e = G != null ? G.e() : null;
+        ec2 S = a01.S(G);
         try {
             if (Math.abs(this.i) > 0.5f && this.k && p(this.i)) {
                 q(this.i, pm1Var);
             }
-            a01.V(ec2VarG, ec2VarS, um0VarE);
+            a01.V(G, S, e);
             this.f = an1.a(pm1Var, l());
             l();
-            int iF = (int) (pm1Var.e == il1.e ? pm1Var.f() >> 32 : pm1Var.f() & 4294967295L);
+            int f2 = (int) (pm1Var.e == il1.e ? pm1Var.f() >> 32 : pm1Var.f() & 4294967295L);
             pm1Var.m.getClass();
-            this.g = az0.p(0, 0, iF);
+            this.g = az0.p(0, 0, f2);
         } catch (Throwable th) {
-            a01.V(ec2VarG, ec2VarS, um0VarE);
+            a01.V(G, S, e);
             throw th;
         }
     }
@@ -298,7 +354,7 @@ public abstract class wm1 implements i52 {
     }
 
     public final long o() {
-        return ((zi1) this.f1289a.getValue()).f1442a;
+        return ((zi1) this.f1288a.getValue()).f1441a;
     }
 
     public final boolean p(float f) {
@@ -317,10 +373,10 @@ public abstract class wm1 implements i52 {
         z31 z31Var;
         z31 z31Var2;
         z31 z31Var3;
-        ?? r0 = pm1Var.f915a;
+        ?? r0 = pm1Var.f914a;
         if (this.k && !r0.isEmpty()) {
             boolean z = f > 0.0f;
-            int i = z ? ((ib1) ws.F0(r0)).f517a + 1 : ((ib1) ws.A0(r0)).f517a - 1;
+            int i = z ? ((ib1) ws.F0(r0)).f516a + 1 : ((ib1) ws.A0(r0)).f516a - 1;
             if (i < 0 || i >= l()) {
                 return;
             }

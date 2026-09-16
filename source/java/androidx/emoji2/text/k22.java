@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class k22 {
 
     /* renamed from: a, reason: collision with root package name */
-    public ru2 f615a;
+    public ru2 f614a;
     public ArrayList b;
 
     public static long a(o70 o70Var, long j) {
@@ -17,23 +17,23 @@ public final class k22 {
             return j;
         }
         int size = arrayList.size();
-        long jMin = j;
+        long j2 = j;
         for (int i = 0; i < size; i++) {
             m70 m70Var = (m70) arrayList.get(i);
             if (m70Var instanceof o70) {
                 o70 o70Var2 = (o70) m70Var;
                 if (o70Var2.d != ru2Var) {
-                    jMin = Math.min(jMin, a(o70Var2, o70Var2.f + j));
+                    j2 = Math.min(j2, a(o70Var2, o70Var2.f + j));
                 }
             }
         }
         o70 o70Var3 = ru2Var.i;
         o70 o70Var4 = ru2Var.h;
         if (o70Var != o70Var3) {
-            return jMin;
+            return j2;
         }
-        long j2 = j - ru2Var.j();
-        return Math.min(Math.min(jMin, a(o70Var4, j2)), j2 - o70Var4.f);
+        long j3 = j - ru2Var.j();
+        return Math.min(Math.min(j2, a(o70Var4, j3)), j3 - o70Var4.f);
     }
 
     public static long b(o70 o70Var, long j) {
@@ -43,22 +43,22 @@ public final class k22 {
             return j;
         }
         int size = arrayList.size();
-        long jMax = j;
+        long j2 = j;
         for (int i = 0; i < size; i++) {
             m70 m70Var = (m70) arrayList.get(i);
             if (m70Var instanceof o70) {
                 o70 o70Var2 = (o70) m70Var;
                 if (o70Var2.d != ru2Var) {
-                    jMax = Math.max(jMax, b(o70Var2, o70Var2.f + j));
+                    j2 = Math.max(j2, b(o70Var2, o70Var2.f + j));
                 }
             }
         }
         o70 o70Var3 = ru2Var.h;
         o70 o70Var4 = ru2Var.i;
         if (o70Var != o70Var3) {
-            return jMax;
+            return j2;
         }
-        long j2 = ru2Var.j() + j;
-        return Math.max(Math.max(jMax, b(o70Var4, j2)), j2 - o70Var4.f);
+        long j3 = ru2Var.j() + j;
+        return Math.max(Math.max(j2, b(o70Var4, j3)), j3 - o70Var4.f);
     }
 }

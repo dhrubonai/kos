@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class e82 implements ed0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f293a;
+    public final ue f292a;
     public final int b;
 
     public e82(String str, int i) {
-        this.f293a = new ue(str);
+        this.f292a = new ue(str);
         this.b = i;
     }
 
     @Override // androidx.emoji2.text.ed0
     public final void a(fd0 fd0Var) {
         int i = fd0Var.d;
-        ue ueVar = this.f293a;
+        ue ueVar = this.f292a;
         if (i != -1) {
             int i2 = fd0Var.e;
             String str = ueVar.e;
@@ -39,8 +39,8 @@ public final class e82 implements ed0 {
         int i6 = fd0Var.c;
         int i7 = i5 == i6 ? i6 : -1;
         int i8 = this.b;
-        int iP = az0.p(i8 > 0 ? (i7 + i8) - 1 : (i7 + i8) - ueVar.e.length(), 0, fd0Var.f357a.b());
-        fd0Var.f(iP, iP);
+        int p = az0.p(i8 > 0 ? (i7 + i8) - 1 : (i7 + i8) - ueVar.e.length(), 0, fd0Var.f356a.b());
+        fd0Var.f(p, p);
     }
 
     public final boolean equals(Object obj) {
@@ -51,16 +51,16 @@ public final class e82 implements ed0 {
             return false;
         }
         e82 e82Var = (e82) obj;
-        return lx0.n(this.f293a.e, e82Var.f293a.e) && this.b == e82Var.b;
+        return lx0.n(this.f292a.e, e82Var.f292a.e) && this.b == e82Var.b;
     }
 
     public final int hashCode() {
-        return (this.f293a.e.hashCode() * 31) + this.b;
+        return (this.f292a.e.hashCode() * 31) + this.b;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("SetComposingTextCommand(text='");
-        sb.append(this.f293a.e);
+        sb.append(this.f292a.e);
         sb.append("', newCursorPosition=");
         return zd.j(sb, this.b, ')');
     }

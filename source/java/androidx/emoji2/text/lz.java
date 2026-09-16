@@ -1,7 +1,6 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.util.Log;
@@ -15,24 +14,24 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public final class lz {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f724a;
+    public final float f723a;
     public final float b;
     public final float c;
     public final float d;
     public final int e;
 
-    public lz(Context context, XmlResourceParser xmlResourceParser) throws Resources.NotFoundException {
-        this.f724a = Float.NaN;
+    public lz(Context context, XmlResourceParser xmlResourceParser) {
+        this.f723a = Float.NaN;
         this.b = Float.NaN;
         this.c = Float.NaN;
         this.d = Float.NaN;
         this.e = -1;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.j);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlResourceParser), av1.j);
+        int indexCount = obtainStyledAttributes.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i);
+            int index = obtainStyledAttributes.getIndex(i);
             if (index == 0) {
-                int resourceId = typedArrayObtainStyledAttributes.getResourceId(index, this.e);
+                int resourceId = obtainStyledAttributes.getResourceId(index, this.e);
                 this.e = resourceId;
                 String resourceTypeName = context.getResources().getResourceTypeName(resourceId);
                 context.getResources().getResourceName(resourceId);
@@ -40,17 +39,17 @@ public final class lz {
                     new sz().b((ConstraintLayout) LayoutInflater.from(context).inflate(resourceId, (ViewGroup) null));
                 }
             } else if (index == 1) {
-                this.d = typedArrayObtainStyledAttributes.getDimension(index, this.d);
+                this.d = obtainStyledAttributes.getDimension(index, this.d);
             } else if (index == 2) {
-                this.b = typedArrayObtainStyledAttributes.getDimension(index, this.b);
+                this.b = obtainStyledAttributes.getDimension(index, this.b);
             } else if (index == 3) {
-                this.c = typedArrayObtainStyledAttributes.getDimension(index, this.c);
+                this.c = obtainStyledAttributes.getDimension(index, this.c);
             } else if (index == 4) {
-                this.f724a = typedArrayObtainStyledAttributes.getDimension(index, this.f724a);
+                this.f723a = obtainStyledAttributes.getDimension(index, this.f723a);
             } else {
                 Log.v("ConstraintLayoutStates", "Unknown tag");
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 }

@@ -14,7 +14,7 @@ public abstract class gt {
     public static final long I;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f437a;
+    public static final long f436a;
     public static final long b;
     public static final long c;
     public static final long d;
@@ -43,7 +43,7 @@ public abstract class gt {
 
     static {
         long j2 = in1.v;
-        f437a = j2;
+        f436a = j2;
         b = in1.d;
         c = in1.e;
         d = in1.t;
@@ -52,7 +52,7 @@ public abstract class gt {
         long j3 = in1.g;
         g = j3;
         h = in1.b;
-        i = in1.f538a;
+        i = in1.f537a;
         j = in1.B;
         k = in1.A;
         l = in1.H;

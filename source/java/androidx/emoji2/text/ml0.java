@@ -11,14 +11,14 @@ import java.util.concurrent.Callable;
 public final class ml0 implements Callable {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f753a;
+    public final /* synthetic */ int f752a;
     public final /* synthetic */ String b;
     public final /* synthetic */ Context c;
     public final /* synthetic */ int d;
     public final /* synthetic */ Object e;
 
     public /* synthetic */ ml0(String str, Context context, Object obj, int i, int i2) {
-        this.f753a = i2;
+        this.f752a = i2;
         this.b = str;
         this.c = context;
         this.e = obj;
@@ -27,7 +27,7 @@ public final class ml0 implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        switch (this.f753a) {
+        switch (this.f752a) {
             case 0:
                 Object[] objArr = {(jl0) this.e};
                 ArrayList arrayList = new ArrayList(1);

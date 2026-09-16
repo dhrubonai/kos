@@ -22,28 +22,28 @@ public final class fs extends hh2 implements wm0 {
         zi1 zi1Var = (zi1) obj2;
         switch (this.h) {
             case 0:
-                long j = zi1Var.f1442a;
+                long j = zi1Var.f1441a;
                 fs fsVar = new fs((gs) this.l, (l10) obj3, 0);
                 fsVar.j = tt1Var;
                 fsVar.k = j;
-                return fsVar.k(up2.f1187a);
+                return fsVar.k(up2.f1186a);
             default:
-                long j2 = zi1Var.f1442a;
+                long j2 = zi1Var.f1441a;
                 fs fsVar2 = new fs((zt) this.l, (l10) obj3, 1);
                 fsVar2.j = tt1Var;
                 fsVar2.k = j2;
-                return fsVar2.k(up2.f1187a);
+                return fsVar2.k(up2.f1186a);
         }
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        Object objS;
-        Object objS2;
+        Object obj2;
+        Object obj3;
         switch (this.h) {
             case 0:
                 int i = this.i;
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 if (i != 0) {
                     if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -61,13 +61,13 @@ public final class fs extends hh2 implements wm0 {
                 this.i = 1;
                 se1 se1Var = gsVar.t;
                 f30 f30Var = f30.d;
-                if (se1Var == null || (objS = wj1.s(new r(tt1Var, j, se1Var, gsVar, null), this)) != f30Var) {
-                    objS = up2Var;
+                if (se1Var == null || (obj2 = wj1.s(new r(tt1Var, j, se1Var, gsVar, null), this)) != f30Var) {
+                    obj2 = up2Var;
                 }
-                return objS == f30Var ? f30Var : up2Var;
+                return obj2 == f30Var ? f30Var : up2Var;
             default:
                 int i2 = this.i;
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 if (i2 != 0) {
                     if (i2 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -85,10 +85,10 @@ public final class fs extends hh2 implements wm0 {
                 this.i = 1;
                 se1 se1Var2 = ztVar.t;
                 f30 f30Var2 = f30.d;
-                if (se1Var2 == null || (objS2 = wj1.s(new r(tt1Var2, j2, se1Var2, ztVar, null), this)) != f30Var2) {
-                    objS2 = up2Var2;
+                if (se1Var2 == null || (obj3 = wj1.s(new r(tt1Var2, j2, se1Var2, ztVar, null), this)) != f30Var2) {
+                    obj3 = up2Var2;
                 }
-                return objS2 == f30Var2 ? f30Var2 : up2Var2;
+                return obj3 == f30Var2 ? f30Var2 : up2Var2;
         }
     }
 }

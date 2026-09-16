@@ -5,19 +5,19 @@ package androidx.emoji2.text;
 public final class cv0 implements he {
 
     /* renamed from: a, reason: collision with root package name */
-    public final uc0 f221a;
+    public final uc0 f220a;
     public final int b;
     public final long c;
 
     public cv0(uc0 uc0Var, int i, long j) {
-        this.f221a = uc0Var;
+        this.f220a = uc0Var;
         this.b = i;
         this.c = j;
     }
 
     @Override // androidx.emoji2.text.he
     public final yq2 a(wo2 wo2Var) {
-        return new br2(this.f221a.a(wo2Var), this.b, this.c);
+        return new br2(this.f220a.a(wo2Var), this.b, this.c);
     }
 
     public final boolean equals(Object obj) {
@@ -25,10 +25,10 @@ public final class cv0 implements he {
             return false;
         }
         cv0 cv0Var = (cv0) obj;
-        return cv0Var.f221a.equals(this.f221a) && cv0Var.b == this.b && cv0Var.c == this.c;
+        return cv0Var.f220a.equals(this.f220a) && cv0Var.b == this.b && cv0Var.c == this.c;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.c) + ((zd.w(this.b) + (this.f221a.hashCode() * 31)) * 31);
+        return Long.hashCode(this.c) + ((zd.w(this.b) + (this.f220a.hashCode() * 31)) * 31);
     }
 }

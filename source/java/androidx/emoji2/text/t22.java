@@ -21,8 +21,8 @@ public class t22 implements Iterable {
     }
 
     public Object b(Object obj) {
-        q22 q22VarA = a(obj);
-        if (q22VarA == null) {
+        q22 a2 = a(obj);
+        if (a2 == null) {
             return null;
         }
         this.g--;
@@ -30,108 +30,84 @@ public class t22 implements Iterable {
         if (!weakHashMap.isEmpty()) {
             Iterator it = weakHashMap.keySet().iterator();
             while (it.hasNext()) {
-                ((s22) it.next()).a(q22VarA);
+                ((s22) it.next()).a(a2);
             }
         }
-        q22 q22Var = q22VarA.g;
+        q22 q22Var = a2.g;
         if (q22Var != null) {
-            q22Var.f = q22VarA.f;
+            q22Var.f = a2.f;
         } else {
-            this.d = q22VarA.f;
+            this.d = a2.f;
         }
-        q22 q22Var2 = q22VarA.f;
+        q22 q22Var2 = a2.f;
         if (q22Var2 != null) {
             q22Var2.g = q22Var;
         } else {
             this.e = q22Var;
         }
-        q22VarA.f = null;
-        q22VarA.g = null;
-        return q22VarA.e;
+        a2.f = null;
+        a2.g = null;
+        return a2.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0048, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0048, code lost:
     
         if (r3.hasNext() != false) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0050, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0050, code lost:
     
         if (((androidx.emoji2.text.p22) r7).hasNext() != false) goto L28;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0052, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0052, code lost:
     
         return true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0053, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0053, code lost:
     
         return false;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean equals(java.lang.Object r7) {
-        /*
-            r6 = this;
-            r0 = 1
-            if (r7 != r6) goto L4
-            return r0
-        L4:
-            boolean r1 = r7 instanceof androidx.emoji2.text.t22
-            r2 = 0
-            if (r1 != 0) goto La
-            return r2
-        La:
-            androidx.emoji2.text.t22 r7 = (androidx.emoji2.text.t22) r7
-            int r1 = r6.g
-            int r3 = r7.g
-            if (r1 == r3) goto L13
-            return r2
-        L13:
-            java.util.Iterator r1 = r6.iterator()
-            java.util.Iterator r7 = r7.iterator()
-        L1b:
-            r3 = r1
-            androidx.emoji2.text.p22 r3 = (androidx.emoji2.text.p22) r3
-            boolean r4 = r3.hasNext()
-            if (r4 == 0) goto L44
-            r4 = r7
-            androidx.emoji2.text.p22 r4 = (androidx.emoji2.text.p22) r4
-            boolean r5 = r4.hasNext()
-            if (r5 == 0) goto L44
-            java.lang.Object r3 = r3.next()
-            java.util.Map$Entry r3 = (java.util.Map.Entry) r3
-            java.lang.Object r4 = r4.next()
-            if (r3 != 0) goto L3b
-            if (r4 != 0) goto L43
-        L3b:
-            if (r3 == 0) goto L1b
-            boolean r3 = r3.equals(r4)
-            if (r3 != 0) goto L1b
-        L43:
-            return r2
-        L44:
-            boolean r1 = r3.hasNext()
-            if (r1 != 0) goto L53
-            androidx.emoji2.text.p22 r7 = (androidx.emoji2.text.p22) r7
-            boolean r7 = r7.hasNext()
-            if (r7 != 0) goto L53
-            return r0
-        L53:
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.t22.equals(java.lang.Object):boolean");
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof t22)) {
+            return false;
+        }
+        t22 t22Var = (t22) obj;
+        if (this.g != t22Var.g) {
+            return false;
+        }
+        Iterator it = iterator();
+        Iterator it2 = t22Var.iterator();
+        while (true) {
+            p22 p22Var = (p22) it;
+            if (!p22Var.hasNext()) {
+                break;
+            }
+            p22 p22Var2 = (p22) it2;
+            if (!p22Var2.hasNext()) {
+                break;
+            }
+            Map.Entry entry = (Map.Entry) p22Var.next();
+            Object next = p22Var2.next();
+            if ((entry != null || next == null) && (entry == null || entry.equals(next))) {
+            }
+        }
+        return false;
     }
 
     public final int hashCode() {
         Iterator it = iterator();
-        int iHashCode = 0;
+        int i = 0;
         while (true) {
             p22 p22Var = (p22) it;
             if (!p22Var.hasNext()) {
-                return iHashCode;
+                return i;
             }
-            iHashCode += ((Map.Entry) p22Var.next()).hashCode();
+            i += ((Map.Entry) p22Var.next()).hashCode();
         }
     }
 

@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class tw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int[] f1148a;
+    public static final int[] f1147a;
 
     static {
         new re1(0);
-        f1148a = new int[0];
+        f1147a = new int[0];
     }
 }

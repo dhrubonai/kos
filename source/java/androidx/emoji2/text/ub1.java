@@ -22,7 +22,7 @@ public final class ub1 implements MenuItem {
     public MenuItem.OnActionExpandListener A;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1167a;
+    public final int f1166a;
     public final int b;
     public final int c;
     public final int d;
@@ -52,7 +52,7 @@ public final class ub1 implements MenuItem {
 
     public ub1(qb1 qb1Var, int i, int i2, int i3, int i4, CharSequence charSequence) {
         this.n = qb1Var;
-        this.f1167a = i2;
+        this.f1166a = i2;
         this.b = i;
         this.c = i3;
         this.d = i4;
@@ -170,10 +170,10 @@ public final class ub1 implements MenuItem {
         if (i == 0) {
             return null;
         }
-        Drawable drawableO = xo2.o(this.n.f949a, i);
+        Drawable o = xo2.o(this.n.f948a, i);
         this.m = 0;
-        this.l = drawableO;
-        return b(drawableO);
+        this.l = o;
+        return b(o);
     }
 
     @Override // android.view.MenuItem
@@ -193,7 +193,7 @@ public final class ub1 implements MenuItem {
 
     @Override // android.view.MenuItem
     public final int getItemId() {
-        return this.f1167a;
+        return this.f1166a;
     }
 
     @Override // android.view.MenuItem
@@ -276,7 +276,7 @@ public final class ub1 implements MenuItem {
     public final MenuItem setActionView(View view) {
         int i;
         this.z = view;
-        if (view != null && view.getId() == -1 && (i = this.f1167a) > 0) {
+        if (view != null && view.getId() == -1 && (i = this.f1166a) > 0) {
             view.setId(i);
         }
         qb1 qb1Var = this.n;
@@ -524,7 +524,7 @@ public final class ub1 implements MenuItem {
 
     @Override // android.view.MenuItem
     public final MenuItem setTitle(int i) {
-        setTitle(this.n.f949a.getString(i));
+        setTitle(this.n.f948a.getString(i));
         return this;
     }
 
@@ -532,11 +532,11 @@ public final class ub1 implements MenuItem {
     public final MenuItem setActionView(int i) {
         int i2;
         qb1 qb1Var = this.n;
-        Context context = qb1Var.f949a;
-        View viewInflate = LayoutInflater.from(context).inflate(i, (ViewGroup) new LinearLayout(context), false);
-        this.z = viewInflate;
-        if (viewInflate != null && viewInflate.getId() == -1 && (i2 = this.f1167a) > 0) {
-            viewInflate.setId(i2);
+        Context context = qb1Var.f948a;
+        View inflate = LayoutInflater.from(context).inflate(i, (ViewGroup) new LinearLayout(context), false);
+        this.z = inflate;
+        if (inflate != null && inflate.getId() == -1 && (i2 = this.f1166a) > 0) {
+            inflate.setId(i2);
         }
         qb1Var.k = true;
         qb1Var.o(true);

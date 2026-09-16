@@ -7,12 +7,12 @@ import android.graphics.drawable.Drawable;
 public final class xf0 extends cu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Drawable f1335a;
+    public final Drawable f1334a;
     public final bu0 b;
     public final Throwable c;
 
     public xf0(Drawable drawable, bu0 bu0Var, Throwable th) {
-        this.f1335a = drawable;
+        this.f1334a = drawable;
         this.b = bu0Var;
         this.c = th;
     }
@@ -30,11 +30,11 @@ public final class xf0 extends cu0 {
             return false;
         }
         xf0 xf0Var = (xf0) obj;
-        return lx0.n(this.f1335a, xf0Var.f1335a) && lx0.n(this.b, xf0Var.b) && lx0.n(this.c, xf0Var.c);
+        return lx0.n(this.f1334a, xf0Var.f1334a) && lx0.n(this.b, xf0Var.b) && lx0.n(this.c, xf0Var.c);
     }
 
     public final int hashCode() {
-        Drawable drawable = this.f1335a;
+        Drawable drawable = this.f1334a;
         return this.c.hashCode() + ((this.b.hashCode() + ((drawable != null ? drawable.hashCode() : 0) * 31)) * 31);
     }
 }

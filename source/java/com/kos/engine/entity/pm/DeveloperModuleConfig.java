@@ -43,13 +43,13 @@ public class DeveloperModuleConfig implements Parcelable {
 
     public DeveloperModuleConfig(Parcel parcel) {
         this.moduleState = new HashMap();
-        int i = parcel.readInt();
-        this.moduleState = new HashMap(i);
-        for (int i2 = 0; i2 < i; i2++) {
-            String string = parcel.readString();
+        int readInt = parcel.readInt();
+        this.moduleState = new HashMap(readInt);
+        for (int i = 0; i < readInt; i++) {
+            String readString = parcel.readString();
             DeveloperModuleSettings developerModuleSettings = (DeveloperModuleSettings) parcel.readParcelable(DeveloperModuleSettings.class.getClassLoader());
-            if (string != null && developerModuleSettings != null) {
-                this.moduleState.put(string, developerModuleSettings);
+            if (readString != null && developerModuleSettings != null) {
+                this.moduleState.put(readString, developerModuleSettings);
             }
         }
     }

@@ -8,7 +8,7 @@ import java.util.Objects;
 public final class hl0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public String f475a;
+    public String f474a;
     public String b;
     public List c;
 
@@ -20,10 +20,10 @@ public final class hl0 {
             return false;
         }
         hl0 hl0Var = (hl0) obj;
-        return Objects.equals(this.f475a, hl0Var.f475a) && Objects.equals(this.b, hl0Var.b) && Objects.equals(this.c, hl0Var.c);
+        return Objects.equals(this.f474a, hl0Var.f474a) && Objects.equals(this.b, hl0Var.b) && Objects.equals(this.c, hl0Var.c);
     }
 
     public final int hashCode() {
-        return Objects.hash(this.f475a, this.b, this.c);
+        return Objects.hash(this.f474a, this.b, this.c);
     }
 }

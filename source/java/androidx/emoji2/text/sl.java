@@ -16,9 +16,9 @@ public final class sl extends z {
 
     @Override // androidx.emoji2.text.jy0
     public final void v(Object obj) {
-        Thread threadCurrentThread = Thread.currentThread();
+        Thread currentThread = Thread.currentThread();
         Thread thread = this.g;
-        if (lx0.n(threadCurrentThread, thread)) {
+        if (lx0.n(currentThread, thread)) {
             return;
         }
         LockSupport.unpark(thread);

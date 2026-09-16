@@ -11,12 +11,12 @@ import android.view.inputmethod.InputContentInfo;
 public final class qv0 extends InputConnectionWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ j4 f982a;
+    public final /* synthetic */ j4 f981a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public qv0(InputConnection inputConnection, j4 j4Var) {
         super(inputConnection, false);
-        this.f982a = j4Var;
+        this.f981a = j4Var;
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
@@ -25,7 +25,7 @@ public final class qv0 extends InputConnectionWrapper {
         if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
             p4Var = new p4(29, new sv0(inputContentInfo));
         }
-        if (this.f982a.d(p4Var, i, bundle)) {
+        if (this.f981a.d(p4Var, i, bundle)) {
             return true;
         }
         return super.commitContent(inputContentInfo, i, bundle);

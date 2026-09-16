@@ -141,11 +141,11 @@ public class uf extends ImageButton {
         vf vfVar = this.e;
         ImageView imageView = (ImageView) vfVar.f;
         if (i != 0) {
-            Drawable drawableO = xo2.o(imageView.getContext(), i);
-            if (drawableO != null) {
-                fc0.a(drawableO);
+            Drawable o = xo2.o(imageView.getContext(), i);
+            if (o != null) {
+                fc0.a(o);
             }
-            imageView.setImageDrawable(drawableO);
+            imageView.setImageDrawable(o);
         } else {
             imageView.setImageDrawable(null);
         }
@@ -196,7 +196,7 @@ public class uf extends ImageButton {
             }
             ry ryVar = (ry) vfVar.g;
             ryVar.d = mode;
-            ryVar.f1040a = true;
+            ryVar.f1039a = true;
             vfVar.c();
         }
     }

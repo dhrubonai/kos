@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class dj2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final cm f254a = new cm((j42) null, false);
+    public static final cm f253a = new cm((j42) null, false);
     public static final cm b = new cm((j42) null, true);
     public static final cm c;
     public static final cm d;

@@ -29,16 +29,16 @@ public class ActionBarContainer extends FrameLayout {
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setBackground(new k3(this));
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.f441a);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.f440a);
         boolean z = false;
-        this.g = typedArrayObtainStyledAttributes.getDrawable(0);
-        this.h = typedArrayObtainStyledAttributes.getDrawable(2);
-        this.l = typedArrayObtainStyledAttributes.getDimensionPixelSize(13, -1);
+        this.g = obtainStyledAttributes.getDrawable(0);
+        this.h = obtainStyledAttributes.getDrawable(2);
+        this.l = obtainStyledAttributes.getDimensionPixelSize(13, -1);
         if (getId() == R.id.split_action_bar) {
             this.j = true;
-            this.i = typedArrayObtainStyledAttributes.getDrawable(1);
+            this.i = obtainStyledAttributes.getDrawable(1);
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
         if (!this.j ? !(this.g != null || this.h != null) : this.i == null) {
             z = true;
         }

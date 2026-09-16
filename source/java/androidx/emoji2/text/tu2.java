@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class tu2 implements gc1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final fl f1146a;
+    public final fl f1145a;
     public final int b;
 
     public tu2(fl flVar, int i) {
-        this.f1146a = flVar;
+        this.f1145a = flVar;
         this.b = i;
     }
 
@@ -18,7 +18,7 @@ public final class tu2 implements gc1 {
         int i2 = (int) (j & 4294967295L);
         int i3 = this.b;
         if (i < i2 - (i3 * 2)) {
-            return az0.p(this.f1146a.a(i, i2), i3, (i2 - i3) - i);
+            return az0.p(this.f1145a.a(i, i2), i3, (i2 - i3) - i);
         }
         return Math.round((1 + 0.0f) * ((i2 - i) / 2.0f));
     }
@@ -31,16 +31,16 @@ public final class tu2 implements gc1 {
             return false;
         }
         tu2 tu2Var = (tu2) obj;
-        return this.f1146a.equals(tu2Var.f1146a) && this.b == tu2Var.b;
+        return this.f1145a.equals(tu2Var.f1145a) && this.b == tu2Var.b;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.b) + (Float.hashCode(this.f1146a.f368a) * 31);
+        return Integer.hashCode(this.b) + (Float.hashCode(this.f1145a.f367a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Vertical(alignment=");
-        sb.append(this.f1146a);
+        sb.append(this.f1145a);
         sb.append(", margin=");
         return zd.j(sb, this.b, ')');
     }

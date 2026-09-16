@@ -2,7 +2,6 @@ package androidx.emoji2.text;
 
 import java.io.Serializable;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -44,28 +43,28 @@ public class io implements Serializable, Comparable {
     /* renamed from: a, reason: merged with bridge method [inline-methods] */
     public final int compareTo(io ioVar) {
         lx0.x(ioVar, "other");
-        int iC = c();
-        int iC2 = ioVar.c();
-        int iMin = Math.min(iC, iC2);
-        for (int i = 0; i < iMin; i++) {
-            int iH = h(i) & 255;
-            int iH2 = ioVar.h(i) & 255;
-            if (iH != iH2) {
-                return iH < iH2 ? -1 : 1;
+        int c = c();
+        int c2 = ioVar.c();
+        int min = Math.min(c, c2);
+        for (int i = 0; i < min; i++) {
+            int h = h(i) & 255;
+            int h2 = ioVar.h(i) & 255;
+            if (h != h2) {
+                return h < h2 ? -1 : 1;
             }
         }
-        if (iC == iC2) {
+        if (c == c2) {
             return 0;
         }
-        return iC < iC2 ? -1 : 1;
+        return c < c2 ? -1 : 1;
     }
 
-    public io b(String str) throws NoSuchAlgorithmException {
+    public io b(String str) {
         MessageDigest messageDigest = MessageDigest.getInstance(str);
         messageDigest.update(this.d, 0, c());
-        byte[] bArrDigest = messageDigest.digest();
-        lx0.u(bArrDigest);
-        return new io(bArrDigest);
+        byte[] digest = messageDigest.digest();
+        lx0.u(digest);
+        return new io(digest);
     }
 
     public int c() {
@@ -78,7 +77,7 @@ public class io implements Serializable, Comparable {
         int i = 0;
         for (byte b : bArr) {
             int i2 = i + 1;
-            char[] cArr2 = l8.f678a;
+            char[] cArr2 = l8.f677a;
             cArr[i] = cArr2[(b >> 4) & 15];
             i += 2;
             cArr[i2] = cArr2[b & 15];
@@ -90,17 +89,17 @@ public class io implements Serializable, Comparable {
         lx0.x(bArr, "other");
         byte[] bArr2 = this.d;
         int length = bArr2.length - bArr.length;
-        int iMax = Math.max(i, 0);
-        if (iMax > length) {
+        int max = Math.max(i, 0);
+        if (max > length) {
             return -1;
         }
-        while (!lx0.o(iMax, 0, bArr.length, bArr2, bArr)) {
-            if (iMax == length) {
+        while (!lx0.o(max, 0, bArr.length, bArr2, bArr)) {
+            if (max == length) {
                 return -1;
             }
-            iMax++;
+            max++;
         }
-        return iMax;
+        return max;
     }
 
     public boolean equals(Object obj) {
@@ -109,9 +108,9 @@ public class io implements Serializable, Comparable {
         }
         if (obj instanceof io) {
             io ioVar = (io) obj;
-            int iC = ioVar.c();
+            int c = ioVar.c();
             byte[] bArr = this.d;
-            if (iC == bArr.length && ioVar.l(0, bArr, 0, bArr.length)) {
+            if (c == bArr.length && ioVar.l(0, bArr, 0, bArr.length)) {
                 return true;
             }
         }
@@ -131,18 +130,18 @@ public class io implements Serializable, Comparable {
         if (i != 0) {
             return i;
         }
-        int iHashCode = Arrays.hashCode(this.d);
-        this.e = iHashCode;
-        return iHashCode;
+        int hashCode = Arrays.hashCode(this.d);
+        this.e = hashCode;
+        return hashCode;
     }
 
     public int i(byte[] bArr) {
         lx0.x(bArr, "other");
-        int iC = c();
+        int c = c();
         byte[] bArr2 = this.d;
-        for (int iMin = Math.min(iC, bArr2.length - bArr.length); -1 < iMin; iMin--) {
-            if (lx0.o(iMin, 0, bArr.length, bArr2, bArr)) {
-                return iMin;
+        for (int min = Math.min(c, bArr2.length - bArr.length); -1 < min; min--) {
+            if (lx0.o(min, 0, bArr.length, bArr2, bArr)) {
+                return min;
             }
         }
         return -1;
@@ -188,16 +187,16 @@ public class io implements Serializable, Comparable {
             }
             byte b = bArr[i];
             if (b >= 65 && b <= 90) {
-                byte[] bArrCopyOf = Arrays.copyOf(bArr, bArr.length);
-                lx0.w(bArrCopyOf, "copyOf(...)");
-                bArrCopyOf[i] = (byte) (b + 32);
-                for (int i2 = i + 1; i2 < bArrCopyOf.length; i2++) {
-                    byte b2 = bArrCopyOf[i2];
+                byte[] copyOf = Arrays.copyOf(bArr, bArr.length);
+                lx0.w(copyOf, "copyOf(...)");
+                copyOf[i] = (byte) (b + 32);
+                for (int i2 = i + 1; i2 < copyOf.length; i2++) {
+                    byte b2 = copyOf[i2];
                     if (b2 >= 65 && b2 <= 90) {
-                        bArrCopyOf[i2] = (byte) (b2 + 32);
+                        copyOf[i2] = (byte) (b2 + 32);
                     }
                 }
-                return new io(bArrCopyOf);
+                return new io(copyOf);
             }
             i++;
         }
@@ -208,9 +207,9 @@ public class io implements Serializable, Comparable {
         if (str != null) {
             return str;
         }
-        byte[] bArrG = g();
-        lx0.x(bArrG, "<this>");
-        String str2 = new String(bArrG, vq.f1236a);
+        byte[] g2 = g();
+        lx0.x(g2, "<this>");
+        String str2 = new String(g2, vq.f1235a);
         this.f = str2;
         return str2;
     }
@@ -219,6 +218,73 @@ public class io implements Serializable, Comparable {
         rnVar.w(this.d, i);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x00f6, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x0130, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0134, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:111:0x00d6, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:127:0x0173, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x017a, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:155:0x016c, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x01aa, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:159:0x01ad, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x01b0, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:163:0x0140, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:165:0x01b3, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:64:0x0096, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00c4, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0085, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x00fe, code lost:
+    
+        if (r6 == 64) goto L180;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public String toString() {
         byte b;
         int i;
@@ -240,7 +306,7 @@ public class io implements Serializable, Comparable {
                 if (i4 == 64) {
                     break;
                 }
-                if ((b2 != 10 && b2 != 13 && ((b2 >= 0 && b2 < 32) || (127 <= b2 && b2 < 160))) || b2 == 65533) {
+                if ((b2 != 10 && b2 != 13 && ((b2 >= 0 && b2 < 32) || (Byte.MAX_VALUE <= b2 && b2 < 160))) || b2 == 65533) {
                     break;
                 }
                 i3 += b2 < 65536 ? 1 : 2;
@@ -253,12 +319,10 @@ public class io implements Serializable, Comparable {
                         if (i4 == 64) {
                             break loop0;
                         }
-                        if ((b != 10 && b != 13 && ((b >= 0 && b < 32) || (127 <= b && b < 160))) || b == 65533) {
+                        if ((b != 10 && b != 13 && ((b >= 0 && b < 32) || (Byte.MAX_VALUE <= b && b < 160))) || b == 65533) {
                             break loop0;
                         }
                         i3 += b < 65536 ? 1 : 2;
-                    } else {
-                        break;
                     }
                 }
             } else if ((b2 >> 5) == -2) {
@@ -278,14 +342,8 @@ public class io implements Serializable, Comparable {
                             i3 += i7 < 65536 ? 1 : 2;
                             i2 += 2;
                             i4 = i;
-                        } else if (i4 != 64) {
-                            break;
                         }
-                    } else if (i4 != 64) {
-                        break;
                     }
-                } else if (i4 != 64) {
-                    break;
                 }
             } else if ((b2 >> 4) == -2) {
                 int i8 = i2 + 2;
@@ -295,32 +353,22 @@ public class io implements Serializable, Comparable {
                         byte b5 = bArr[i8];
                         if ((b5 & 192) == 128) {
                             int i9 = ((b5 ^ (-123008)) ^ (b4 << 6)) ^ (b2 << 12);
-                            if (i9 < 2048) {
-                                if (i4 != 64) {
-                                    break;
+                            if (i9 >= 2048) {
+                                if (55296 > i9 || i9 >= 57344) {
+                                    i = i4 + 1;
+                                    if (i4 == 64) {
+                                        break;
+                                    }
+                                    if ((i9 != 10 && i9 != 13 && ((i9 >= 0 && i9 < 32) || (127 <= i9 && i9 < 160))) || i9 == 65533) {
+                                        break;
+                                    }
+                                    i3 += i9 < 65536 ? 1 : 2;
+                                    i2 += 3;
+                                    i4 = i;
                                 }
-                            } else if (55296 > i9 || i9 >= 57344) {
-                                i = i4 + 1;
-                                if (i4 == 64) {
-                                    break;
-                                }
-                                if ((i9 != 10 && i9 != 13 && ((i9 >= 0 && i9 < 32) || (127 <= i9 && i9 < 160))) || i9 == 65533) {
-                                    break;
-                                }
-                                i3 += i9 < 65536 ? 1 : 2;
-                                i2 += 3;
-                                i4 = i;
-                            } else if (i4 != 64) {
-                                break;
                             }
-                        } else if (i4 != 64) {
-                            break;
                         }
-                    } else if (i4 != 64) {
-                        break;
                     }
-                } else if (i4 != 64) {
-                    break;
                 }
             } else if ((b2 >> 3) == -2) {
                 int i10 = i2 + 3;
@@ -332,45 +380,28 @@ public class io implements Serializable, Comparable {
                             byte b8 = bArr[i10];
                             if ((b8 & 192) == 128) {
                                 int i11 = (((b8 ^ 3678080) ^ (b7 << 6)) ^ (b6 << 12)) ^ (b2 << 18);
-                                if (i11 > 1114111) {
-                                    if (i4 != 64) {
-                                        break;
-                                    }
-                                } else if (55296 > i11 || i11 >= 57344) {
-                                    if (i11 >= 65536) {
-                                        i = i4 + 1;
-                                        if (i4 == 64) {
-                                            break;
+                                if (i11 <= 1114111) {
+                                    if (55296 > i11 || i11 >= 57344) {
+                                        if (i11 >= 65536) {
+                                            i = i4 + 1;
+                                            if (i4 == 64) {
+                                                break;
+                                            }
+                                            if ((i11 != 10 && i11 != 13 && ((i11 >= 0 && i11 < 32) || (127 <= i11 && i11 < 160))) || i11 == 65533) {
+                                                break;
+                                            }
+                                            i3 += i11 < 65536 ? 1 : 2;
+                                            i2 += 4;
+                                            i4 = i;
                                         }
-                                        if ((i11 != 10 && i11 != 13 && ((i11 >= 0 && i11 < 32) || (127 <= i11 && i11 < 160))) || i11 == 65533) {
-                                            break;
-                                        }
-                                        i3 += i11 < 65536 ? 1 : 2;
-                                        i2 += 4;
-                                        i4 = i;
-                                    } else if (i4 != 64) {
-                                        break;
                                     }
-                                } else if (i4 != 64) {
-                                    break;
                                 }
-                            } else if (i4 != 64) {
-                                break;
                             }
-                        } else if (i4 != 64) {
-                            break;
                         }
-                    } else if (i4 != 64) {
-                        break;
                     }
-                } else if (i4 != 64) {
-                    break;
                 }
-            } else if (i4 != 64) {
-                break;
             }
         }
-        i3 = -1;
         if (i3 == -1) {
             if (bArr.length <= 64) {
                 return "[hex=" + d() + ']';
@@ -385,13 +416,13 @@ public class io implements Serializable, Comparable {
             sb.append("…]");
             return sb.toString();
         }
-        String strP = p();
-        String strSubstring = strP.substring(0, i3);
-        lx0.w(strSubstring, "substring(...)");
-        String strX = eg2.X(eg2.X(eg2.X(strSubstring, "\\", "\\\\"), "\n", "\\n"), "\r", "\\r");
-        if (i3 >= strP.length()) {
-            return "[text=" + strX + ']';
+        String p = p();
+        String substring = p.substring(0, i3);
+        lx0.w(substring, "substring(...)");
+        String X = eg2.X(eg2.X(eg2.X(substring, "\\", "\\\\"), "\n", "\\n"), "\r", "\\r");
+        if (i3 >= p.length()) {
+            return "[text=" + X + ']';
         }
-        return "[size=" + bArr.length + " text=" + strX + "…]";
+        return "[size=" + bArr.length + " text=" + X + "…]";
     }
 }

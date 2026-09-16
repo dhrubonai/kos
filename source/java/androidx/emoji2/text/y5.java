@@ -23,7 +23,7 @@ public final class y5 extends hh2 implements xm0 {
         y5Var.i = (i6) obj;
         y5Var.j = (ba1) obj2;
         y5Var.k = obj3;
-        return y5Var.k(up2.f1187a);
+        return y5Var.k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -32,20 +32,20 @@ public final class y5 extends hh2 implements xm0 {
         if (i == 0) {
             mz0.L(obj);
             i6 i6Var = this.i;
-            float fD = this.j.d(this.k);
-            if (!Float.isNaN(fD)) {
+            float d = this.j.d(this.k);
+            if (!Float.isNaN(d)) {
                 zx1 zx1Var = new zx1();
                 m6 m6Var = this.l;
-                float fG = Float.isNaN(m6Var.j.g()) ? 0.0f : m6Var.j.g();
-                zx1Var.d = fG;
+                float g = Float.isNaN(m6Var.j.g()) ? 0.0f : m6Var.j.g();
+                zx1Var.d = g;
                 he heVar = m6Var.c;
                 x5 x5Var = new x5(0, i6Var, zx1Var);
                 this.i = null;
                 this.j = null;
                 this.h = 1;
-                Object objL = pz0.l(fG, fD, this.m, heVar, x5Var, this);
+                Object l = pz0.l(g, d, this.m, heVar, x5Var, this);
                 f30 f30Var = f30.d;
-                if (objL == f30Var) {
+                if (l == f30Var) {
                     return f30Var;
                 }
             }
@@ -55,6 +55,6 @@ public final class y5 extends hh2 implements xm0 {
             }
             mz0.L(obj);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

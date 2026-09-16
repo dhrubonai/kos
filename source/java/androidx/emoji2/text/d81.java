@@ -17,7 +17,7 @@ public final class d81 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                this.f.a(((zi1) obj).f1442a);
+                this.f.a(((zi1) obj).f1441a);
                 break;
             default:
                 ps1 ps1Var = (ps1) obj;
@@ -25,6 +25,6 @@ public final class d81 extends g01 implements um0 {
                 ps1Var.a();
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

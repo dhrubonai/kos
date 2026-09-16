@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class tl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1129a;
+    public final int f1128a;
     public final long[] b;
     public final Object[] c;
 
     public tl2(int i, long[] jArr, Object[] objArr) {
-        this.f1129a = i;
+        this.f1128a = i;
         this.b = jArr;
         this.c = objArr;
     }
 
     public final int a(long j) {
-        int i = this.f1129a - 1;
+        int i = this.f1128a - 1;
         if (i != -1) {
             long[] jArr = this.b;
             int i2 = 0;
@@ -64,7 +64,7 @@ public final class tl2 {
             int i5 = 0;
             while (true) {
                 jArr = this.b;
-                i = this.f1129a;
+                i = this.f1128a;
                 if (i2 >= i4 || i5 >= i) {
                     break;
                 }

@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 public final class f11 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final hr1 f339a;
+    public final hr1 f338a;
     public boolean c;
     public boolean d;
     public boolean e;
@@ -21,54 +21,54 @@ public final class f11 {
     /* JADX WARN: Multi-variable type inference failed */
     public f11(s5 s5Var, int i) {
         this.h = i;
-        this.f339a = (hr1) s5Var;
+        this.f338a = (hr1) s5Var;
     }
 
     /* JADX WARN: Type inference failed for: r12v5, types: [androidx.emoji2.text.bn0, kotlin.jvm.functions.Function2] */
     /* JADX WARN: Type inference failed for: r3v5, types: [androidx.emoji2.text.hr1, androidx.emoji2.text.s5] */
     public static final void a(f11 f11Var, xr0 xr0Var, int i, xh1 xh1Var) {
-        HashMap map = f11Var.g;
+        HashMap hashMap = f11Var.g;
         float f = i;
-        long jFloatToRawIntBits = Float.floatToRawIntBits(f) << 32;
-        long jFloatToRawIntBits2 = Float.floatToRawIntBits(f) & 4294967295L;
+        long floatToRawIntBits = Float.floatToRawIntBits(f) << 32;
+        long floatToRawIntBits2 = Float.floatToRawIntBits(f) & 4294967295L;
         while (true) {
-            long jO1 = jFloatToRawIntBits | jFloatToRawIntBits2;
+            long j = floatToRawIntBits | floatToRawIntBits2;
             do {
                 switch (f11Var.h) {
                     case 0:
                         i02 i02Var = xh1.N;
-                        jO1 = xh1Var.o1(jO1);
+                        j = xh1Var.o1(j);
                         break;
                     default:
-                        m81 m81VarR0 = xh1Var.R0();
-                        lx0.u(m81VarR0);
-                        long j = m81VarR0.s;
-                        jO1 = zi1.g((Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (j >> 32)) << 32), jO1);
+                        m81 R0 = xh1Var.R0();
+                        lx0.u(R0);
+                        long j2 = R0.s;
+                        j = zi1.g((Float.floatToRawIntBits((int) (j2 & 4294967295L)) & 4294967295L) | (Float.floatToRawIntBits((int) (j2 >> 32)) << 32), j);
                         break;
                 }
                 xh1Var = xh1Var.t;
                 lx0.u(xh1Var);
-                if (xh1Var.equals(f11Var.f339a.e())) {
-                    int iRound = Math.round(xr0Var instanceof xr0 ? Float.intBitsToFloat((int) (jO1 & 4294967295L)) : Float.intBitsToFloat((int) (jO1 >> 32)));
-                    if (map.containsKey(xr0Var)) {
-                        lx0.x(map, "<this>");
-                        Object obj = map.get(xr0Var);
-                        if (obj == null && !map.containsKey(xr0Var)) {
+                if (xh1Var.equals(f11Var.f338a.e())) {
+                    int round = Math.round(xr0Var instanceof xr0 ? Float.intBitsToFloat((int) (j & 4294967295L)) : Float.intBitsToFloat((int) (j >> 32)));
+                    if (hashMap.containsKey(xr0Var)) {
+                        lx0.x(hashMap, "<this>");
+                        Object obj = hashMap.get(xr0Var);
+                        if (obj == null && !hashMap.containsKey(xr0Var)) {
                             throw new NoSuchElementException("Key " + xr0Var + " is missing in the map.");
                         }
-                        int iIntValue = ((Number) obj).intValue();
-                        xr0 xr0Var2 = q5.f940a;
-                        iRound = ((Number) xr0Var.f1353a.invoke(Integer.valueOf(iIntValue), Integer.valueOf(iRound))).intValue();
+                        int intValue = ((Number) obj).intValue();
+                        xr0 xr0Var2 = q5.f939a;
+                        round = ((Number) xr0Var.f1352a.invoke(Integer.valueOf(intValue), Integer.valueOf(round))).intValue();
                     }
-                    map.put(xr0Var, Integer.valueOf(iRound));
+                    hashMap.put(xr0Var, Integer.valueOf(round));
                     return;
                 }
             } while (!f11Var.b(xh1Var).containsKey(xr0Var));
-            float fC = f11Var.c(xh1Var, xr0Var);
-            long jFloatToRawIntBits3 = Float.floatToRawIntBits(fC);
-            long jFloatToRawIntBits4 = Float.floatToRawIntBits(fC);
-            jFloatToRawIntBits = jFloatToRawIntBits3 << 32;
-            jFloatToRawIntBits2 = jFloatToRawIntBits4 & 4294967295L;
+            float c = f11Var.c(xh1Var, xr0Var);
+            long floatToRawIntBits3 = Float.floatToRawIntBits(c);
+            long floatToRawIntBits4 = Float.floatToRawIntBits(c);
+            floatToRawIntBits = floatToRawIntBits3 << 32;
+            floatToRawIntBits2 = floatToRawIntBits4 & 4294967295L;
         }
     }
 
@@ -77,9 +77,9 @@ public final class f11 {
             case 0:
                 return xh1Var.B0().b();
             default:
-                m81 m81VarR0 = xh1Var.R0();
-                lx0.u(m81VarR0);
-                return m81VarR0.B0().b();
+                m81 R0 = xh1Var.R0();
+                lx0.u(R0);
+                return R0.B0().b();
         }
     }
 
@@ -88,9 +88,9 @@ public final class f11 {
             case 0:
                 return xh1Var.w0(xr0Var);
             default:
-                m81 m81VarR0 = xh1Var.R0();
-                lx0.u(m81VarR0);
-                return m81VarR0.w0(xr0Var);
+                m81 R0 = xh1Var.R0();
+                lx0.u(R0);
+                return R0.w0(xr0Var);
         }
     }
 
@@ -106,13 +106,13 @@ public final class f11 {
     /* JADX WARN: Type inference failed for: r0v1, types: [androidx.emoji2.text.hr1, androidx.emoji2.text.s5] */
     public final void f() {
         this.b = true;
-        ?? r0 = this.f339a;
-        s5 s5VarG = r0.g();
-        if (s5VarG == null) {
+        ?? r0 = this.f338a;
+        s5 g = r0.g();
+        if (g == null) {
             return;
         }
         if (this.c) {
-            s5VarG.requestLayout();
+            g.requestLayout();
         }
         if (this.d) {
             r0.L();
@@ -120,72 +120,55 @@ public final class f11 {
         if (this.e) {
             r0.requestLayout();
         }
-        s5VarG.b().f();
+        g.b().f();
     }
 
     /* JADX WARN: Type inference failed for: r2v1, types: [androidx.emoji2.text.hr1, androidx.emoji2.text.s5] */
     public final void g() {
-        HashMap map = this.g;
-        map.clear();
+        HashMap hashMap = this.g;
+        hashMap.clear();
         r5 r5Var = new r5(0, this);
-        ?? r2 = this.f339a;
+        ?? r2 = this.f338a;
         r2.C(r5Var);
-        map.putAll(b(r2.e()));
+        hashMap.putAll(b(r2.e()));
         this.b = false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0023  */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0020, code lost:
+    
+        if (r0 != false) goto L29;
+     */
     /* JADX WARN: Type inference failed for: r1v0, types: [androidx.emoji2.text.hr1, androidx.emoji2.text.s5] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void h() {
-        /*
-            r2 = this;
-            boolean r0 = r2.d()
-            androidx.emoji2.text.hr1 r1 = r2.f339a
-            if (r0 == 0) goto L9
-            goto L51
-        L9:
-            androidx.emoji2.text.s5 r0 = r1.g()
-            if (r0 != 0) goto L10
-            goto L53
-        L10:
-            androidx.emoji2.text.f11 r0 = r0.b()
-            androidx.emoji2.text.s5 r1 = r0.f
-            if (r1 == 0) goto L23
-            androidx.emoji2.text.f11 r0 = r1.b()
-            boolean r0 = r0.d()
-            if (r0 == 0) goto L23
-            goto L51
-        L23:
-            androidx.emoji2.text.s5 r0 = r2.f
-            if (r0 == 0) goto L53
-            androidx.emoji2.text.f11 r1 = r0.b()
-            boolean r1 = r1.d()
-            if (r1 == 0) goto L32
-            goto L53
-        L32:
-            androidx.emoji2.text.s5 r1 = r0.g()
-            if (r1 == 0) goto L41
-            androidx.emoji2.text.f11 r1 = r1.b()
-            if (r1 == 0) goto L41
-            r1.h()
-        L41:
-            androidx.emoji2.text.s5 r0 = r0.g()
-            if (r0 == 0) goto L50
-            androidx.emoji2.text.f11 r0 = r0.b()
-            if (r0 == 0) goto L50
-            androidx.emoji2.text.s5 r1 = r0.f
-            goto L51
-        L50:
-            r1 = 0
-        L51:
-            r2.f = r1
-        L53:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.f11.h():void");
+        f11 b;
+        f11 b2;
+        boolean d = d();
+        ?? r1 = this.f338a;
+        s5 s5Var = r1;
+        if (!d) {
+            s5 g = r1.g();
+            if (g == null) {
+                return;
+            }
+            s5 s5Var2 = g.b().f;
+            if (s5Var2 != null) {
+                boolean d2 = s5Var2.b().d();
+                s5Var = s5Var2;
+            }
+            s5 s5Var3 = this.f;
+            if (s5Var3 == null || s5Var3.b().d()) {
+                return;
+            }
+            s5 g2 = s5Var3.g();
+            if (g2 != null && (b2 = g2.b()) != null) {
+                b2.h();
+            }
+            s5 g3 = s5Var3.g();
+            s5Var = (g3 == null || (b = g3.b()) == null) ? null : b.f;
+        }
+        this.f = s5Var;
     }
 }

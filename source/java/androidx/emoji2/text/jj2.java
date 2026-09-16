@@ -75,40 +75,40 @@ public final class jj2 extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        Integer numValueOf;
+        Integer num;
         int i2 = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         switch (i2) {
             case 0:
                 mj2 mj2Var = (mj2) obj;
                 zg0 zg0Var = mj2Var.d;
                 sk2 sk2Var = mj2Var.c;
                 if (sk2Var != null) {
-                    int iE = al2.e(mj2Var.f);
-                    zg0Var.a(iE);
-                    int iH = sk2Var.h(sk2Var.e(iE));
-                    zg0Var.b(iH);
-                    numValueOf = Integer.valueOf(iH);
+                    int e = al2.e(mj2Var.f);
+                    zg0Var.a(e);
+                    int h2 = sk2Var.h(sk2Var.e(e));
+                    zg0Var.b(h2);
+                    num = Integer.valueOf(h2);
                 } else {
-                    numValueOf = null;
+                    num = null;
                 }
-                if (numValueOf == null) {
+                if (num == null) {
                     return null;
                 }
-                int iIntValue = numValueOf.intValue();
+                int intValue = num.intValue();
                 long j2 = mj2Var.f;
                 int i3 = al2.c;
-                return new e70(((int) (j2 & 4294967295L)) - iIntValue, 0);
+                return new e70(((int) (j2 & 4294967295L)) - intValue, 0);
             case 1:
                 mj2 mj2Var2 = (mj2) obj;
-                Integer numB = mj2Var2.b();
-                if (numB == null) {
+                Integer b = mj2Var2.b();
+                if (b == null) {
                     return null;
                 }
-                int iIntValue2 = numB.intValue();
+                int intValue2 = b.intValue();
                 long j3 = mj2Var2.f;
                 int i4 = al2.c;
-                return new e70(0, iIntValue2 - ((int) (j3 & 4294967295L)));
+                return new e70(0, intValue2 - ((int) (j3 & 4294967295L)));
             case 2:
                 List list = (List) obj;
                 Object obj2 = list.get(1);
@@ -121,70 +121,70 @@ public final class jj2 extends g01 implements um0 {
                 return up2Var;
             case 4:
                 return up2Var;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                int i5 = ((iu0) obj).f549a;
+            case 5:
+                int i5 = ((iu0) obj).f548a;
                 return up2Var;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return up2Var;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                int i6 = ((iu0) obj).f549a;
+                int i6 = ((iu0) obj).f548a;
                 return up2Var;
             case 8:
                 ((sm0) obj).a();
                 return up2Var;
-            case 9:
-                long j4 = ((fa0) obj).f352a;
+            case pz0.b /* 9 */:
+                long j4 = ((fa0) obj).f351a;
                 return new le(Float.intBitsToFloat((int) (j4 >> 32)), Float.intBitsToFloat((int) (j4 & 4294967295L)));
-            case 10:
+            case pz0.d /* 10 */:
                 le leVar = (le) obj;
-                return new fa0((Float.floatToRawIntBits(leVar.f687a) << 32) | (Float.floatToRawIntBits(leVar.b) & 4294967295L));
+                return new fa0((Float.floatToRawIntBits(leVar.f686a) << 32) | (Float.floatToRawIntBits(leVar.b) & 4294967295L));
             case 11:
                 return new ke(((da0) obj).d);
             case 12:
-                return new da0(((ke) obj).f635a);
+                return new da0(((ke) obj).f634a);
             case 13:
                 return new ke(((Number) obj).floatValue());
             case 14:
-                return Float.valueOf(((ke) obj).f635a);
-            case 15:
-                long j5 = ((nw0) obj).f830a;
+                return Float.valueOf(((ke) obj).f634a);
+            case pz0.f /* 15 */:
+                long j5 = ((nw0) obj).f829a;
                 return new le((int) (j5 >> 32), (int) (j5 & 4294967295L));
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                 le leVar2 = (le) obj;
-                return new nw0(jm.e(Math.round(leVar2.f687a), Math.round(leVar2.b)));
+                return new nw0(jm.e(Math.round(leVar2.f686a), Math.round(leVar2.b)));
             case 17:
-                long j6 = ((uw0) obj).f1196a;
+                long j6 = ((uw0) obj).f1195a;
                 return new le((int) (j6 >> 32), (int) (j6 & 4294967295L));
             case 18:
                 le leVar3 = (le) obj;
-                int iRound = Math.round(leVar3.f687a);
-                if (iRound < 0) {
-                    iRound = 0;
+                int round = Math.round(leVar3.f686a);
+                if (round < 0) {
+                    round = 0;
                 }
-                int iRound2 = Math.round(leVar3.b);
-                return new uw0(kx0.d(iRound, iRound2 >= 0 ? iRound2 : 0));
+                int round2 = Math.round(leVar3.b);
+                return new uw0(kx0.d(round, round2 >= 0 ? round2 : 0));
             case 19:
                 return new ke(((Number) obj).intValue());
             case 20:
-                return Integer.valueOf((int) ((ke) obj).f635a);
+                return Integer.valueOf((int) ((ke) obj).f634a);
             case 21:
-                long j7 = ((zi1) obj).f1442a;
+                long j7 = ((zi1) obj).f1441a;
                 return new le(zi1.d(j7), zi1.e(j7));
             case 22:
                 le leVar4 = (le) obj;
-                return new zi1(jz0.d(leVar4.f687a, leVar4.b));
+                return new zi1(jz0.d(leVar4.f686a, leVar4.b));
             case 23:
                 zw1 zw1Var = (zw1) obj;
-                return new ne(zw1Var.f1459a, zw1Var.b, zw1Var.c, zw1Var.d);
+                return new ne(zw1Var.f1458a, zw1Var.b, zw1Var.c, zw1Var.d);
             case 24:
                 ne neVar = (ne) obj;
-                return new zw1(neVar.f806a, neVar.b, neVar.c, neVar.d);
+                return new zw1(neVar.f805a, neVar.b, neVar.c, neVar.d);
             case 25:
-                long j8 = ((ib2) obj).f518a;
+                long j8 = ((ib2) obj).f517a;
                 return new le(ib2.d(j8), ib2.b(j8));
             case 26:
                 le leVar5 = (le) obj;
-                return new ib2(mz0.c(leVar5.f687a, leVar5.b));
+                return new ib2(mz0.c(leVar5.f686a, leVar5.b));
             case 27:
                 return Boolean.valueOf(((rk0) obj).M0(7));
             case 28:

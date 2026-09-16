@@ -5,26 +5,26 @@ package androidx.emoji2.text;
 public final class hi extends ji {
 
     /* renamed from: a, reason: collision with root package name */
-    public final fn1 f472a;
+    public final fn1 f471a;
 
     public hi(fn1 fn1Var) {
-        this.f472a = fn1Var;
+        this.f471a = fn1Var;
     }
 
     @Override // androidx.emoji2.text.ji
     public final fn1 a() {
-        return this.f472a;
+        return this.f471a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof hi) && lx0.n(this.f472a, ((hi) obj).f472a);
+        return (obj instanceof hi) && lx0.n(this.f471a, ((hi) obj).f471a);
     }
 
     public final int hashCode() {
-        fn1 fn1Var = this.f472a;
+        fn1 fn1Var = this.f471a;
         if (fn1Var == null) {
             return 0;
         }
@@ -32,6 +32,6 @@ public final class hi extends ji {
     }
 
     public final String toString() {
-        return "Loading(painter=" + this.f472a + ')';
+        return "Loading(painter=" + this.f471a + ')';
     }
 }

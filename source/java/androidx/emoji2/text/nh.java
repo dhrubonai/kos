@@ -21,12 +21,12 @@ public final class nh extends i0 {
 
     @Override // java.util.AbstractList, java.util.List
     public final void add(int i, Object obj) {
-        int length;
-        int i2 = this.f;
-        if (i < 0 || i > i2) {
-            throw new IndexOutOfBoundsException(zd.e(i, i2, "index: ", ", size: "));
+        int i2;
+        int i3 = this.f;
+        if (i < 0 || i > i3) {
+            throw new IndexOutOfBoundsException(zd.e(i, i3, "index: ", ", size: "));
         }
-        if (i == i2) {
+        if (i == i3) {
             addLast(obj);
             return;
         }
@@ -36,50 +36,50 @@ public final class nh extends i0 {
         }
         i();
         d(this.f + 1);
-        int iH = h(this.d + i);
-        int i3 = this.f;
-        if (i < ((i3 + 1) >> 1)) {
-            if (iH == 0) {
+        int h = h(this.d + i);
+        int i4 = this.f;
+        if (i < ((i4 + 1) >> 1)) {
+            if (h == 0) {
                 Object[] objArr = this.e;
                 lx0.x(objArr, "<this>");
-                iH = objArr.length;
+                h = objArr.length;
             }
-            int i4 = iH - 1;
-            int i5 = this.d;
-            if (i5 == 0) {
+            int i5 = h - 1;
+            int i6 = this.d;
+            if (i6 == 0) {
                 Object[] objArr2 = this.e;
                 lx0.x(objArr2, "<this>");
-                length = objArr2.length - 1;
+                i2 = objArr2.length - 1;
             } else {
-                length = i5 - 1;
+                i2 = i6 - 1;
             }
-            int i6 = this.d;
-            if (i4 >= i6) {
+            int i7 = this.d;
+            if (i5 >= i7) {
                 Object[] objArr3 = this.e;
-                objArr3[length] = objArr3[i6];
-                xh.z0(objArr3, objArr3, i6, i6 + 1, i4 + 1);
+                objArr3[i2] = objArr3[i7];
+                xh.z0(objArr3, objArr3, i7, i7 + 1, i5 + 1);
             } else {
                 Object[] objArr4 = this.e;
-                xh.z0(objArr4, objArr4, i6 - 1, i6, objArr4.length);
+                xh.z0(objArr4, objArr4, i7 - 1, i7, objArr4.length);
                 Object[] objArr5 = this.e;
                 objArr5[objArr5.length - 1] = objArr5[0];
-                xh.z0(objArr5, objArr5, 0, 1, i4 + 1);
+                xh.z0(objArr5, objArr5, 0, 1, i5 + 1);
             }
-            this.e[i4] = obj;
-            this.d = length;
+            this.e[i5] = obj;
+            this.d = i2;
         } else {
-            int iH2 = h(i3 + this.d);
-            if (iH < iH2) {
+            int h2 = h(i4 + this.d);
+            if (h < h2) {
                 Object[] objArr6 = this.e;
-                xh.z0(objArr6, objArr6, iH + 1, iH, iH2);
+                xh.z0(objArr6, objArr6, h + 1, h, h2);
             } else {
                 Object[] objArr7 = this.e;
-                xh.z0(objArr7, objArr7, 1, 0, iH2);
+                xh.z0(objArr7, objArr7, 1, 0, h2);
                 Object[] objArr8 = this.e;
                 objArr8[0] = objArr8[objArr8.length - 1];
-                xh.z0(objArr8, objArr8, iH + 1, iH, objArr8.length - 1);
+                xh.z0(objArr8, objArr8, h + 1, h, objArr8.length - 1);
             }
-            this.e[iH] = obj;
+            this.e[h] = obj;
         }
         this.f++;
     }
@@ -99,86 +99,86 @@ public final class nh extends i0 {
         }
         i();
         d(collection.size() + this.f);
-        int iH = h(this.f + this.d);
-        int iH2 = h(this.d + i);
+        int h = h(this.f + this.d);
+        int h2 = h(this.d + i);
         int size = collection.size();
         if (i >= ((this.f + 1) >> 1)) {
-            int i3 = iH2 + size;
-            if (iH2 < iH) {
-                int i4 = size + iH;
+            int i3 = h2 + size;
+            if (h2 < h) {
+                int i4 = size + h;
                 Object[] objArr = this.e;
                 if (i4 <= objArr.length) {
-                    xh.z0(objArr, objArr, i3, iH2, iH);
+                    xh.z0(objArr, objArr, i3, h2, h);
                 } else if (i3 >= objArr.length) {
-                    xh.z0(objArr, objArr, i3 - objArr.length, iH2, iH);
+                    xh.z0(objArr, objArr, i3 - objArr.length, h2, h);
                 } else {
-                    int length = iH - (i4 - objArr.length);
-                    xh.z0(objArr, objArr, 0, length, iH);
+                    int length = h - (i4 - objArr.length);
+                    xh.z0(objArr, objArr, 0, length, h);
                     Object[] objArr2 = this.e;
-                    xh.z0(objArr2, objArr2, i3, iH2, length);
+                    xh.z0(objArr2, objArr2, i3, h2, length);
                 }
             } else {
                 Object[] objArr3 = this.e;
-                xh.z0(objArr3, objArr3, size, 0, iH);
+                xh.z0(objArr3, objArr3, size, 0, h);
                 Object[] objArr4 = this.e;
                 if (i3 >= objArr4.length) {
-                    xh.z0(objArr4, objArr4, i3 - objArr4.length, iH2, objArr4.length);
+                    xh.z0(objArr4, objArr4, i3 - objArr4.length, h2, objArr4.length);
                 } else {
                     xh.z0(objArr4, objArr4, 0, objArr4.length - size, objArr4.length);
                     Object[] objArr5 = this.e;
-                    xh.z0(objArr5, objArr5, i3, iH2, objArr5.length - size);
+                    xh.z0(objArr5, objArr5, i3, h2, objArr5.length - size);
                 }
             }
-            c(iH2, collection);
+            c(h2, collection);
             return true;
         }
         int i5 = this.d;
-        int length2 = i5 - size;
-        if (iH2 < i5) {
+        int i6 = i5 - size;
+        if (h2 < i5) {
             Object[] objArr6 = this.e;
-            xh.z0(objArr6, objArr6, length2, i5, objArr6.length);
-            if (size >= iH2) {
+            xh.z0(objArr6, objArr6, i6, i5, objArr6.length);
+            if (size >= h2) {
                 Object[] objArr7 = this.e;
-                xh.z0(objArr7, objArr7, objArr7.length - size, 0, iH2);
+                xh.z0(objArr7, objArr7, objArr7.length - size, 0, h2);
             } else {
                 Object[] objArr8 = this.e;
                 xh.z0(objArr8, objArr8, objArr8.length - size, 0, size);
                 Object[] objArr9 = this.e;
-                xh.z0(objArr9, objArr9, 0, size, iH2);
+                xh.z0(objArr9, objArr9, 0, size, h2);
             }
-        } else if (length2 >= 0) {
+        } else if (i6 >= 0) {
             Object[] objArr10 = this.e;
-            xh.z0(objArr10, objArr10, length2, i5, iH2);
+            xh.z0(objArr10, objArr10, i6, i5, h2);
         } else {
             Object[] objArr11 = this.e;
-            length2 += objArr11.length;
-            int i6 = iH2 - i5;
-            int length3 = objArr11.length - length2;
-            if (length3 >= i6) {
-                xh.z0(objArr11, objArr11, length2, i5, iH2);
+            i6 += objArr11.length;
+            int i7 = h2 - i5;
+            int length2 = objArr11.length - i6;
+            if (length2 >= i7) {
+                xh.z0(objArr11, objArr11, i6, i5, h2);
             } else {
-                xh.z0(objArr11, objArr11, length2, i5, i5 + length3);
+                xh.z0(objArr11, objArr11, i6, i5, i5 + length2);
                 Object[] objArr12 = this.e;
-                xh.z0(objArr12, objArr12, 0, this.d + length3, iH2);
+                xh.z0(objArr12, objArr12, 0, this.d + length2, h2);
             }
         }
-        this.d = length2;
-        c(f(iH2 - size), collection);
+        this.d = i6;
+        c(f(h2 - size), collection);
         return true;
     }
 
     public final void addFirst(Object obj) {
         i();
         d(this.f + 1);
-        int length = this.d;
-        if (length == 0) {
+        int i = this.d;
+        if (i == 0) {
             Object[] objArr = this.e;
             lx0.x(objArr, "<this>");
-            length = objArr.length;
+            i = objArr.length;
         }
-        int i = length - 1;
-        this.d = i;
-        this.e[i] = obj;
+        int i2 = i - 1;
+        this.d = i2;
+        this.e[i2] = obj;
         this.f++;
     }
 
@@ -202,15 +202,15 @@ public final class nh extends i0 {
             return removeFirst();
         }
         i();
-        int iH = h(this.d + i);
+        int h = h(this.d + i);
         Object[] objArr = this.e;
-        Object obj = objArr[iH];
+        Object obj = objArr[h];
         if (i < (this.f >> 1)) {
             int i3 = this.d;
-            if (iH >= i3) {
-                xh.z0(objArr, objArr, i3 + 1, i3, iH);
+            if (h >= i3) {
+                xh.z0(objArr, objArr, i3 + 1, i3, h);
             } else {
-                xh.z0(objArr, objArr, 1, 0, iH);
+                xh.z0(objArr, objArr, 1, 0, h);
                 Object[] objArr2 = this.e;
                 objArr2[0] = objArr2[objArr2.length - 1];
                 int i4 = this.d;
@@ -221,18 +221,18 @@ public final class nh extends i0 {
             objArr3[i5] = null;
             this.d = e(i5);
         } else {
-            int iH2 = h(xs.l0(this) + this.d);
-            if (iH <= iH2) {
+            int h2 = h(xs.l0(this) + this.d);
+            if (h <= h2) {
                 Object[] objArr4 = this.e;
-                xh.z0(objArr4, objArr4, iH, iH + 1, iH2 + 1);
+                xh.z0(objArr4, objArr4, h, h + 1, h2 + 1);
             } else {
                 Object[] objArr5 = this.e;
-                xh.z0(objArr5, objArr5, iH, iH + 1, objArr5.length);
+                xh.z0(objArr5, objArr5, h, h + 1, objArr5.length);
                 Object[] objArr6 = this.e;
                 objArr6[objArr6.length - 1] = objArr6[0];
-                xh.z0(objArr6, objArr6, 0, 1, iH2 + 1);
+                xh.z0(objArr6, objArr6, 0, 1, h2 + 1);
             }
-            this.e[iH2] = null;
+            this.e[h2] = null;
         }
         this.f--;
         return obj;
@@ -331,9 +331,9 @@ public final class nh extends i0 {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object get(int i) {
-        int iA = a();
-        if (i < 0 || i >= iA) {
-            throw new IndexOutOfBoundsException(zd.e(i, iA, "index: ", ", size: "));
+        int a2 = a();
+        if (i < 0 || i >= a2) {
+            throw new IndexOutOfBoundsException(zd.e(i, a2, "index: ", ", size: "));
         }
         return this.e[h(this.d + i)];
     }
@@ -350,39 +350,39 @@ public final class nh extends i0 {
     @Override // java.util.AbstractList, java.util.List
     public final int indexOf(Object obj) {
         int i;
-        int iH = h(a() + this.d);
-        int length = this.d;
-        if (length < iH) {
-            while (length < iH) {
-                if (lx0.n(obj, this.e[length])) {
+        int h = h(a() + this.d);
+        int i2 = this.d;
+        if (i2 < h) {
+            while (i2 < h) {
+                if (lx0.n(obj, this.e[i2])) {
                     i = this.d;
                 } else {
-                    length++;
+                    i2++;
                 }
             }
             return -1;
         }
-        if (isEmpty() || (length = this.d) < iH) {
+        if (isEmpty() || (i2 = this.d) < h) {
             return -1;
         }
-        int length2 = this.e.length;
+        int length = this.e.length;
         while (true) {
-            if (length >= length2) {
-                for (int i2 = 0; i2 < iH; i2++) {
-                    if (lx0.n(obj, this.e[i2])) {
-                        length = i2 + this.e.length;
+            if (i2 >= length) {
+                for (int i3 = 0; i3 < h; i3++) {
+                    if (lx0.n(obj, this.e[i3])) {
+                        i2 = i3 + this.e.length;
                         i = this.d;
                     }
                 }
                 return -1;
             }
-            if (lx0.n(obj, this.e[length])) {
+            if (lx0.n(obj, this.e[i2])) {
                 i = this.d;
                 break;
             }
-            length++;
+            i2++;
         }
-        return length - i;
+        return i2 - i;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -401,10 +401,10 @@ public final class nh extends i0 {
     public final int lastIndexOf(Object obj) {
         int length;
         int i;
-        int iH = h(this.f + this.d);
+        int h = h(this.f + this.d);
         int i2 = this.d;
-        if (i2 < iH) {
-            length = iH - 1;
+        if (i2 < h) {
+            length = h - 1;
             if (i2 <= length) {
                 while (!lx0.n(obj, this.e[length])) {
                     if (length != i2) {
@@ -416,8 +416,8 @@ public final class nh extends i0 {
             }
             return -1;
         }
-        if (!isEmpty() && this.d >= iH) {
-            int i3 = iH - 1;
+        if (!isEmpty() && this.d >= h) {
+            int i3 = h - 1;
             while (true) {
                 if (-1 >= i3) {
                     Object[] objArr = this.e;
@@ -448,37 +448,37 @@ public final class nh extends i0 {
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
-        int iIndexOf = indexOf(obj);
-        if (iIndexOf == -1) {
+        int indexOf = indexOf(obj);
+        if (indexOf == -1) {
             return false;
         }
-        b(iIndexOf);
+        b(indexOf);
         return true;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean removeAll(Collection collection) {
-        int iH;
+        int h;
         lx0.x(collection, "elements");
         boolean z = false;
         z = false;
         z = false;
         if (!isEmpty() && this.e.length != 0) {
-            int iH2 = h(this.f + this.d);
+            int h2 = h(this.f + this.d);
             int i = this.d;
-            if (i < iH2) {
-                iH = i;
-                while (i < iH2) {
+            if (i < h2) {
+                h = i;
+                while (i < h2) {
                     Object obj = this.e[i];
                     if (collection.contains(obj)) {
                         z = true;
                     } else {
-                        this.e[iH] = obj;
-                        iH++;
+                        this.e[h] = obj;
+                        h++;
                     }
                     i++;
                 }
-                xh.E0(this.e, iH, iH2);
+                xh.E0(this.e, h, h2);
             } else {
                 int length = this.e.length;
                 boolean z2 = false;
@@ -495,23 +495,23 @@ public final class nh extends i0 {
                     }
                     i++;
                 }
-                iH = h(i2);
-                for (int i3 = 0; i3 < iH2; i3++) {
+                h = h(i2);
+                for (int i3 = 0; i3 < h2; i3++) {
                     Object[] objArr2 = this.e;
                     Object obj3 = objArr2[i3];
                     objArr2[i3] = null;
                     if (collection.contains(obj3)) {
                         z2 = true;
                     } else {
-                        this.e[iH] = obj3;
-                        iH = e(iH);
+                        this.e[h] = obj3;
+                        h = e(h);
                     }
                 }
                 z = z2;
             }
             if (z) {
                 i();
-                this.f = f(iH - this.d);
+                this.f = f(h - this.d);
             }
         }
         return z;
@@ -536,10 +536,10 @@ public final class nh extends i0 {
             throw new NoSuchElementException("ArrayDeque is empty.");
         }
         i();
-        int iH = h(xs.l0(this) + this.d);
+        int h = h(xs.l0(this) + this.d);
         Object[] objArr = this.e;
-        Object obj = objArr[iH];
-        objArr[iH] = null;
+        Object obj = objArr[h];
+        objArr[h] = null;
         this.f = a() - 1;
         return obj;
     }
@@ -561,25 +561,25 @@ public final class nh extends i0 {
         }
         i();
         if (i < this.f - i2) {
-            int iH = h(this.d + (i - 1));
-            int iH2 = h(this.d + (i2 - 1));
+            int h = h(this.d + (i - 1));
+            int h2 = h(this.d + (i2 - 1));
             while (i > 0) {
-                int i4 = iH + 1;
-                int iMin = Math.min(i, Math.min(i4, iH2 + 1));
+                int i4 = h + 1;
+                int min = Math.min(i, Math.min(i4, h2 + 1));
                 Object[] objArr = this.e;
-                int i5 = iH2 - iMin;
-                int i6 = iH - iMin;
+                int i5 = h2 - min;
+                int i6 = h - min;
                 xh.z0(objArr, objArr, i5 + 1, i6 + 1, i4);
-                iH = f(i6);
-                iH2 = f(i5);
-                i -= iMin;
+                h = f(i6);
+                h2 = f(i5);
+                i -= min;
             }
-            int iH3 = h(this.d + i3);
-            g(this.d, iH3);
-            this.d = iH3;
+            int h3 = h(this.d + i3);
+            g(this.d, h3);
+            this.d = h3;
         } else {
-            int iH4 = h(this.d + i2);
-            int iH5 = h(this.d + i);
+            int h4 = h(this.d + i2);
+            int h5 = h(this.d + i);
             int i7 = this.f;
             while (true) {
                 i7 -= i2;
@@ -587,42 +587,42 @@ public final class nh extends i0 {
                     break;
                 }
                 Object[] objArr2 = this.e;
-                i2 = Math.min(i7, Math.min(objArr2.length - iH4, objArr2.length - iH5));
+                i2 = Math.min(i7, Math.min(objArr2.length - h4, objArr2.length - h5));
                 Object[] objArr3 = this.e;
-                int i8 = iH4 + i2;
-                xh.z0(objArr3, objArr3, iH5, iH4, i8);
-                iH4 = h(i8);
-                iH5 = h(iH5 + i2);
+                int i8 = h4 + i2;
+                xh.z0(objArr3, objArr3, h5, h4, i8);
+                h4 = h(i8);
+                h5 = h(h5 + i2);
             }
-            int iH6 = h(this.f + this.d);
-            g(f(iH6 - i3), iH6);
+            int h6 = h(this.f + this.d);
+            g(f(h6 - i3), h6);
         }
         this.f -= i3;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean retainAll(Collection collection) {
-        int iH;
+        int h;
         lx0.x(collection, "elements");
         boolean z = false;
         z = false;
         z = false;
         if (!isEmpty() && this.e.length != 0) {
-            int iH2 = h(this.f + this.d);
+            int h2 = h(this.f + this.d);
             int i = this.d;
-            if (i < iH2) {
-                iH = i;
-                while (i < iH2) {
+            if (i < h2) {
+                h = i;
+                while (i < h2) {
                     Object obj = this.e[i];
                     if (collection.contains(obj)) {
-                        this.e[iH] = obj;
-                        iH++;
+                        this.e[h] = obj;
+                        h++;
                     } else {
                         z = true;
                     }
                     i++;
                 }
-                xh.E0(this.e, iH, iH2);
+                xh.E0(this.e, h, h2);
             } else {
                 int length = this.e.length;
                 boolean z2 = false;
@@ -639,14 +639,14 @@ public final class nh extends i0 {
                     }
                     i++;
                 }
-                iH = h(i2);
-                for (int i3 = 0; i3 < iH2; i3++) {
+                h = h(i2);
+                for (int i3 = 0; i3 < h2; i3++) {
                     Object[] objArr2 = this.e;
                     Object obj3 = objArr2[i3];
                     objArr2[i3] = null;
                     if (collection.contains(obj3)) {
-                        this.e[iH] = obj3;
-                        iH = e(iH);
+                        this.e[h] = obj3;
+                        h = e(h);
                     } else {
                         z2 = true;
                     }
@@ -655,7 +655,7 @@ public final class nh extends i0 {
             }
             if (z) {
                 i();
-                this.f = f(iH - this.d);
+                this.f = f(h - this.d);
             }
         }
         return z;
@@ -663,14 +663,14 @@ public final class nh extends i0 {
 
     @Override // java.util.AbstractList, java.util.List
     public final Object set(int i, Object obj) {
-        int iA = a();
-        if (i < 0 || i >= iA) {
-            throw new IndexOutOfBoundsException(zd.e(i, iA, "index: ", ", size: "));
+        int a2 = a();
+        if (i < 0 || i >= a2) {
+            throw new IndexOutOfBoundsException(zd.e(i, a2, "index: ", ", size: "));
         }
-        int iH = h(this.d + i);
+        int h = h(this.d + i);
         Object[] objArr = this.e;
-        Object obj2 = objArr[iH];
-        objArr[iH] = obj;
+        Object obj2 = objArr[h];
+        objArr[h] = obj;
         return obj2;
     }
 
@@ -680,24 +680,24 @@ public final class nh extends i0 {
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final Object[] toArray(Object[] objArr) throws NegativeArraySizeException {
+    public final Object[] toArray(Object[] objArr) {
         lx0.x(objArr, "array");
         int length = objArr.length;
         int i = this.f;
         if (length < i) {
-            Object objNewInstance = Array.newInstance(objArr.getClass().getComponentType(), i);
-            lx0.v(objNewInstance, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.arrayOfNulls>");
-            objArr = (Object[]) objNewInstance;
+            Object newInstance = Array.newInstance(objArr.getClass().getComponentType(), i);
+            lx0.v(newInstance, "null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.arrayOfNulls>");
+            objArr = (Object[]) newInstance;
         }
-        int iH = h(this.f + this.d);
+        int h = h(this.f + this.d);
         int i2 = this.d;
-        if (i2 < iH) {
-            xh.B0(this.e, objArr, i2, iH, 2);
+        if (i2 < h) {
+            xh.B0(this.e, objArr, i2, h, 2);
         } else if (!isEmpty()) {
             Object[] objArr2 = this.e;
             xh.z0(objArr2, objArr, 0, this.d, objArr2.length);
             Object[] objArr3 = this.e;
-            xh.z0(objArr3, objArr, objArr3.length - this.d, 0, iH);
+            xh.z0(objArr3, objArr, objArr3.length - this.d, 0, h);
         }
         int i3 = this.f;
         if (i3 < objArr.length) {

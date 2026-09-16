@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class sw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1090a = 0;
+    public int f1089a = 0;
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("IntRef(element = ");
-        sb.append(this.f1090a);
+        sb.append(this.f1089a);
         sb.append(")@");
-        int iHashCode = hashCode();
+        int hashCode = hashCode();
         ex2.m(16);
-        String string = Integer.toString(iHashCode, 16);
-        lx0.w(string, "toString(...)");
-        sb.append(string);
+        String num = Integer.toString(hashCode, 16);
+        lx0.w(num, "toString(...)");
+        sb.append(num);
         return sb.toString();
     }
 }

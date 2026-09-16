@@ -43,15 +43,15 @@ public final class zg extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((zg) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((zg) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws PackageManager.NameNotFoundException {
+    public final Object k(Object obj) {
         String string;
         switch (this.h) {
             case 0:
-                Context context = this.k.f250a;
+                Context context = this.k.f249a;
                 mz0.L(obj);
                 try {
                     c01 c01Var = c01.r;
@@ -64,8 +64,8 @@ public final class zg extends hh2 implements Function2 {
                     return context.getString(R.string.data_clear_failed);
                 }
             case 1:
-                String[] strArr = wj1.f1284a;
-                Context context2 = this.k.f250a;
+                String[] strArr = wj1.f1283a;
+                Context context2 = this.k.f249a;
                 int i2 = this.j;
                 String str2 = this.i;
                 mz0.L(obj);
@@ -74,9 +74,9 @@ public final class zg extends hh2 implements Function2 {
                     c01Var2.getClass();
                     if (!c01.b0(str2, i2)) {
                         context2.getPackageManager().getPackageInfo(str2, 0);
-                        InstallResult installResultZ = c01.Z(i2, str2);
-                        if (!installResultZ.success) {
-                            string = context2.getString(R.string.app_installation_failed, installResultZ.msg);
+                        InstallResult Z = c01.Z(i2, str2);
+                        if (!Z.success) {
+                            string = context2.getString(R.string.app_installation_failed, Z.msg);
                             lx0.u(string);
                         } else if (c01Var2.d0(i2, str2)) {
                             string = a.a.a.c.a(-386539025743650L, strArr);
@@ -106,7 +106,7 @@ public final class zg extends hh2 implements Function2 {
                     return string3;
                 }
             default:
-                Context context3 = this.k.f250a;
+                Context context3 = this.k.f249a;
                 mz0.L(obj);
                 try {
                     c01 c01Var3 = c01.r;

@@ -5,24 +5,24 @@ package androidx.emoji2.text;
 public final class x02 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1313a = et.k;
+    public final long f1312a = et.k;
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
         if (obj instanceof x02) {
-            return et.c(this.f1313a, ((x02) obj).f1313a);
+            return et.c(this.f1312a, ((x02) obj).f1312a);
         }
         return false;
     }
 
     public final int hashCode() {
         int i = et.l;
-        return Long.hashCode(this.f1313a) * 31;
+        return Long.hashCode(this.f1312a) * 31;
     }
 
     public final String toString() {
-        return "RippleConfiguration(color=" + ((Object) et.i(this.f1313a)) + ", rippleAlpha=null)";
+        return "RippleConfiguration(color=" + ((Object) et.i(this.f1312a)) + ", rippleAlpha=null)";
     }
 }

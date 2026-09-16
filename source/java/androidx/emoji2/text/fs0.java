@@ -11,7 +11,7 @@ public final class fs0 {
     public int g;
 
     /* renamed from: a, reason: collision with root package name */
-    public int f380a = 4096;
+    public int f379a = 4096;
     public final ArrayList b = new ArrayList();
     public cr0[] d = new cr0[8];
     public int e = 7;
@@ -46,20 +46,20 @@ public final class fs0 {
         return i3;
     }
 
-    public final io b(int i) throws IOException {
+    public final io b(int i) {
         if (i >= 0) {
-            cr0[] cr0VarArr = hs0.f485a;
+            cr0[] cr0VarArr = hs0.f484a;
             if (i <= cr0VarArr.length - 1) {
-                return cr0VarArr[i].f215a;
+                return cr0VarArr[i].f214a;
             }
         }
-        int length = this.e + 1 + (i - hs0.f485a.length);
+        int length = this.e + 1 + (i - hs0.f484a.length);
         if (length >= 0) {
             cr0[] cr0VarArr2 = this.d;
             if (length < cr0VarArr2.length) {
                 cr0 cr0Var = cr0VarArr2[length];
                 lx0.u(cr0Var);
-                return cr0Var.f215a;
+                return cr0Var.f214a;
             }
         }
         throw new IOException("Header index too large " + (i + 1));
@@ -68,10 +68,9 @@ public final class fs0 {
     public final void c(cr0 cr0Var) {
         this.b.add(cr0Var);
         int i = cr0Var.c;
-        int i2 = this.f380a;
+        int i2 = this.f379a;
         if (i > i2) {
-            cr0[] cr0VarArr = this.d;
-            xh.E0(cr0VarArr, 0, cr0VarArr.length);
+            xh.E0(r7, 0, this.d.length);
             this.e = this.d.length - 1;
             this.f = 0;
             this.g = 0;
@@ -79,12 +78,12 @@ public final class fs0 {
         }
         a((this.g + i) - i2);
         int i3 = this.f + 1;
-        cr0[] cr0VarArr2 = this.d;
-        if (i3 > cr0VarArr2.length) {
-            cr0[] cr0VarArr3 = new cr0[cr0VarArr2.length * 2];
-            System.arraycopy(cr0VarArr2, 0, cr0VarArr3, cr0VarArr2.length, cr0VarArr2.length);
+        cr0[] cr0VarArr = this.d;
+        if (i3 > cr0VarArr.length) {
+            cr0[] cr0VarArr2 = new cr0[cr0VarArr.length * 2];
+            System.arraycopy(cr0VarArr, 0, cr0VarArr2, cr0VarArr.length, cr0VarArr.length);
             this.e = this.d.length - 1;
-            this.d = cr0VarArr3;
+            this.d = cr0VarArr2;
         }
         int i4 = this.e;
         this.e = i4 - 1;
@@ -95,25 +94,25 @@ public final class fs0 {
 
     public final io d() {
         pv1 pv1Var = this.c;
-        byte b = pv1Var.readByte();
-        byte[] bArr = jq2.f596a;
-        int i = b & 255;
+        byte readByte = pv1Var.readByte();
+        byte[] bArr = jq2.f595a;
+        int i = readByte & 255;
         int i2 = 0;
-        boolean z = (b & 128) == 128;
-        long jE = e(i, 127);
+        boolean z = (readByte & 128) == 128;
+        long e = e(i, 127);
         if (!z) {
-            return pv1Var.d(jE);
+            return pv1Var.d(e);
         }
         rn rnVar = new rn();
-        int[] iArr = nt0.f827a;
+        int[] iArr = nt0.f826a;
         lx0.x(pv1Var, "source");
         kz kzVar = nt0.c;
         kz kzVar2 = kzVar;
         int i3 = 0;
-        for (long j = 0; j < jE; j++) {
-            byte b2 = pv1Var.readByte();
-            byte[] bArr2 = jq2.f596a;
-            i2 = (i2 << 8) | (b2 & 255);
+        for (long j = 0; j < e; j++) {
+            byte readByte2 = pv1Var.readByte();
+            byte[] bArr2 = jq2.f595a;
+            i2 = (i2 << 8) | (readByte2 & 255);
             i3 += 8;
             while (i3 >= 8) {
                 kz[] kzVarArr = (kz[]) kzVar2.f;
@@ -152,13 +151,13 @@ public final class fs0 {
         }
         int i4 = 0;
         while (true) {
-            byte b = this.c.readByte();
-            byte[] bArr = jq2.f596a;
-            int i5 = b & 255;
-            if ((b & 128) == 0) {
+            byte readByte = this.c.readByte();
+            byte[] bArr = jq2.f595a;
+            int i5 = readByte & 255;
+            if ((readByte & 128) == 0) {
                 return i2 + (i5 << i4);
             }
-            i2 += (b & 127) << i4;
+            i2 += (readByte & Byte.MAX_VALUE) << i4;
             i4 += 7;
         }
     }

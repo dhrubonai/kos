@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class cw2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final xu1 f224a = new xu1(ka2.m);
+    public static final xu1 f223a = new xu1(ka2.m);
 
     public static final nd1 a(nd1 nd1Var, wu2 wu2Var) {
         return bz0.y(nd1Var, new id(5, wu2Var));

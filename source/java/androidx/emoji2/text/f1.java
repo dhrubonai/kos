@@ -27,7 +27,14 @@ public final class f1 extends c1 {
         return l(i, i2);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x002c, code lost:
+    
+        return null;
+     */
     @Override // androidx.emoji2.text.c1
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final int[] s(int i) {
         int length = n().length();
         if (length <= 0 || i <= 0) {
@@ -38,9 +45,6 @@ public final class f1 extends c1 {
         }
         while (i > 0 && n().charAt(i - 1) == '\n' && !t(i)) {
             i--;
-        }
-        if (i <= 0) {
-            return null;
         }
         int i2 = i - 1;
         while (i2 > 0 && (n().charAt(i2) == '\n' || (i2 != 0 && n().charAt(i2 - 1) != '\n'))) {

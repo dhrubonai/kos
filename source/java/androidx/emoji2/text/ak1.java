@@ -8,7 +8,7 @@ public final class ak1 extends dl1 {
     @Override // androidx.emoji2.text.dl1
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
         sw0 sw0Var = (sw0) on0Var.d(1);
-        int i = sw0Var != null ? sw0Var.f1090a : 0;
+        int i = sw0Var != null ? sw0Var.f1089a : 0;
         hq hqVar = (hq) on0Var.d(0);
         if (i > 0) {
             wgVar = new kz(wgVar, i);

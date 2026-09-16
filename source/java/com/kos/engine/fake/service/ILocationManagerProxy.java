@@ -65,14 +65,14 @@ public class ILocationManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getProviderProperties")
     public static class GetProviderProperties extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-            Object objInvoke = method.invoke(obj, objArr);
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Object invoke = method.invoke(obj, objArr);
             if (BLocationManager.isFakeLocationEnable()) {
-                ProviderPropertiesContext providerPropertiesContext = BRProviderProperties.get(objInvoke);
+                ProviderPropertiesContext providerPropertiesContext = BRProviderProperties.get(invoke);
                 Boolean bool = Boolean.FALSE;
                 providerPropertiesContext._set_mHasNetworkRequirement(bool);
                 if (BLocationManager.get().getCell(rj.u(), rj.o()) == null) {
-                    BRProviderProperties.get(objInvoke)._set_mHasCellRequirement(bool);
+                    BRProviderProperties.get(invoke)._set_mHasCellRequirement(bool);
                 }
             }
             return method.invoke(obj, objArr);
@@ -150,7 +150,7 @@ public class ILocationManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object invokeLocationOrNull(Object obj, Method method, Object[] objArr) throws Throwable {
+    public static Object invokeLocationOrNull(Object obj, Method method, Object[] objArr) {
         String[] strArr = xa1.b;
         try {
             return method.invoke(obj, objArr);

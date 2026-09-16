@@ -5,31 +5,31 @@ package androidx.emoji2.text;
 public final class b00 implements od1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final um0 f130a;
+    public final um0 f129a;
     public wu2 b;
 
     public b00(um0 um0Var) {
-        this.f130a = um0Var;
+        this.f129a = um0Var;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof b00) && ((b00) obj).f130a == this.f130a;
+        return (obj instanceof b00) && ((b00) obj).f129a == this.f129a;
     }
 
     public final int hashCode() {
-        return this.f130a.hashCode();
+        return this.f129a.hashCode();
     }
 
     @Override // androidx.emoji2.text.od1
     public final void i(sd1 sd1Var) {
-        wu2 wu2Var = (wu2) sd1Var.b(cw2.f224a);
+        wu2 wu2Var = (wu2) sd1Var.b(cw2.f223a);
         if (lx0.n(wu2Var, this.b)) {
             return;
         }
         this.b = wu2Var;
-        this.f130a.e(wu2Var);
+        this.f129a.e(wu2Var);
     }
 }

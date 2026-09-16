@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class o20 implements bj1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ long f837a;
+    public final /* synthetic */ long f836a;
 
     public o20(long j) {
-        this.f837a = j;
+        this.f836a = j;
     }
 
     @Override // androidx.emoji2.text.bj1
     public final long a() {
-        return this.f837a;
+        return this.f836a;
     }
 }

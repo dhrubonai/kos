@@ -18,13 +18,13 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
 
     @Override // androidx.emoji2.text.md1
     public final void B0() {
-        int iOrdinal = K0().ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
+        int ordinal = K0().ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
                 return;
             }
-            if (iOrdinal != 2) {
-                if (iOrdinal != 3) {
+            if (ordinal != 2) {
+                if (ordinal != 3) {
                     throw new mu();
                 }
                 return;
@@ -75,9 +75,9 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
             iv0.b("visitAncestors called on an unattached node");
         }
         md1 md1Var2 = this.d;
-        e11 e11VarT = lx0.T(this);
-        loop0: while (e11VarT != null) {
-            if ((e11VarT.H.f.g & 5120) != 0) {
+        e11 T = lx0.T(this);
+        loop0: while (T != null) {
+            if ((T.H.f.g & 5120) != 0) {
                 while (md1Var2 != null) {
                     int i = md1Var2.f;
                     if ((i & 5120) != 0) {
@@ -85,52 +85,52 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
                             break loop0;
                         }
                         if ((i & 4096) != 0) {
-                            z60 z60VarM = md1Var2;
-                            ?? sf1Var = 0;
-                            while (z60VarM != 0) {
-                                if (z60VarM instanceof wj0) {
-                                    wj0 wj0Var = (wj0) z60VarM;
+                            z60 z60Var = md1Var2;
+                            ?? r6 = 0;
+                            while (z60Var != 0) {
+                                if (z60Var instanceof wj0) {
+                                    wj0 wj0Var = (wj0) z60Var;
                                     if (rk0Var == gk0Var.h) {
                                         wj0Var.d0(ok0Var2);
                                     }
-                                } else if ((z60VarM.f & 4096) != 0 && (z60VarM instanceof z60)) {
-                                    md1 md1Var3 = z60VarM.s;
+                                } else if ((z60Var.f & 4096) != 0 && (z60Var instanceof z60)) {
+                                    md1 md1Var3 = z60Var.s;
                                     int i2 = 0;
-                                    z60VarM = z60VarM;
-                                    sf1Var = sf1Var;
+                                    z60Var = z60Var;
+                                    r6 = r6;
                                     while (md1Var3 != null) {
                                         if ((md1Var3.f & 4096) != 0) {
                                             i2++;
-                                            sf1Var = sf1Var;
+                                            r6 = r6;
                                             if (i2 == 1) {
-                                                z60VarM = md1Var3;
+                                                z60Var = md1Var3;
                                             } else {
-                                                if (sf1Var == 0) {
-                                                    sf1Var = new sf1(new md1[16]);
+                                                if (r6 == 0) {
+                                                    r6 = new sf1(new md1[16]);
                                                 }
-                                                if (z60VarM != 0) {
-                                                    sf1Var.b(z60VarM);
-                                                    z60VarM = 0;
+                                                if (z60Var != 0) {
+                                                    r6.b(z60Var);
+                                                    z60Var = 0;
                                                 }
-                                                sf1Var.b(md1Var3);
+                                                r6.b(md1Var3);
                                             }
                                         }
                                         md1Var3 = md1Var3.i;
-                                        z60VarM = z60VarM;
-                                        sf1Var = sf1Var;
+                                        z60Var = z60Var;
+                                        r6 = r6;
                                     }
                                     if (i2 == 1) {
                                     }
                                 }
-                                z60VarM = lx0.m(sf1Var);
+                                z60Var = lx0.m(r6);
                             }
                         }
                     }
                     md1Var2 = md1Var2.h;
                 }
             }
-            e11VarT = e11VarT.u();
-            md1Var2 = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+            T = T.u();
+            md1Var2 = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
         }
         um0 um0Var = this.r;
         if (um0Var != null) {
@@ -165,7 +165,7 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
         boolean z;
         vh1 vh1Var;
         ik0 ik0Var = new ik0();
-        ik0Var.f530a = true;
+        ik0Var.f529a = true;
         kk0 kk0Var = kk0.b;
         ik0Var.b = kk0Var;
         ik0Var.c = kk0Var;
@@ -181,22 +181,22 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
         if (i == 1) {
             z = true;
         } else if (i == 0) {
-            z = !(((wv0) ((yv0) ((xv0) xa1.t(this, iy.m))).f1405a.getValue()).f1304a == 1);
+            z = !(((wv0) ((yv0) ((xv0) xa1.t(this, iy.m))).f1404a.getValue()).f1303a == 1);
         } else {
             if (i != 2) {
                 throw new IllegalStateException("Unknown Focusability");
             }
             z = false;
         }
-        ik0Var.f530a = z;
+        ik0Var.f529a = z;
         md1 md1Var = this.d;
         if (!md1Var.q) {
             iv0.b("visitAncestors called on an unattached node");
         }
         md1 md1Var2 = this.d;
-        e11 e11VarT = lx0.T(this);
-        loop0: while (e11VarT != null) {
-            if ((e11VarT.H.f.g & 3072) != 0) {
+        e11 T = lx0.T(this);
+        loop0: while (T != null) {
+            if ((T.H.f.g & 3072) != 0) {
                 while (md1Var2 != null) {
                     int i2 = md1Var2.f;
                     if ((i2 & 3072) != 0) {
@@ -204,60 +204,63 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
                             break loop0;
                         }
                         if ((i2 & 2048) != 0) {
-                            z60 z60VarM = md1Var2;
-                            ?? sf1Var = 0;
-                            while (z60VarM != 0) {
-                                if (z60VarM instanceof jk0) {
-                                    ((jk0) z60VarM).k(ik0Var);
-                                } else if ((z60VarM.f & 2048) != 0 && (z60VarM instanceof z60)) {
-                                    md1 md1Var3 = z60VarM.s;
+                            z60 z60Var = md1Var2;
+                            ?? r8 = 0;
+                            while (z60Var != 0) {
+                                if (z60Var instanceof jk0) {
+                                    ((jk0) z60Var).k(ik0Var);
+                                } else if ((z60Var.f & 2048) != 0 && (z60Var instanceof z60)) {
+                                    md1 md1Var3 = z60Var.s;
                                     int i3 = 0;
-                                    z60VarM = z60VarM;
-                                    sf1Var = sf1Var;
+                                    z60Var = z60Var;
+                                    r8 = r8;
                                     while (md1Var3 != null) {
                                         if ((md1Var3.f & 2048) != 0) {
                                             i3++;
-                                            sf1Var = sf1Var;
+                                            r8 = r8;
                                             if (i3 == 1) {
-                                                z60VarM = md1Var3;
+                                                z60Var = md1Var3;
                                             } else {
-                                                if (sf1Var == 0) {
-                                                    sf1Var = new sf1(new md1[16]);
+                                                if (r8 == 0) {
+                                                    r8 = new sf1(new md1[16]);
                                                 }
-                                                if (z60VarM != 0) {
-                                                    sf1Var.b(z60VarM);
-                                                    z60VarM = 0;
+                                                if (z60Var != 0) {
+                                                    r8.b(z60Var);
+                                                    z60Var = 0;
                                                 }
-                                                sf1Var.b(md1Var3);
+                                                r8.b(md1Var3);
                                             }
                                         }
                                         md1Var3 = md1Var3.i;
-                                        z60VarM = z60VarM;
-                                        sf1Var = sf1Var;
+                                        z60Var = z60Var;
+                                        r8 = r8;
                                     }
                                     if (i3 == 1) {
                                     }
                                 }
-                                z60VarM = lx0.m(sf1Var);
+                                z60Var = lx0.m(r8);
                             }
                         }
                     }
                     md1Var2 = md1Var2.h;
                 }
             }
-            e11VarT = e11VarT.u();
-            md1Var2 = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+            T = T.u();
+            md1Var2 = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
         }
         return ik0Var;
     }
 
     public final ok0 K0() {
-        gk0 gk0Var;
-        rk0 rk0Var;
         vh1 vh1Var;
         boolean z = this.q;
         ok0 ok0Var = ok0.g;
-        if (!z || (rk0Var = (gk0Var = (gk0) ((v7) lx0.U(this)).getFocusOwner()).h) == null) {
+        if (!z) {
+            return ok0Var;
+        }
+        gk0 gk0Var = (gk0) ((v7) lx0.U(this)).getFocusOwner();
+        rk0 rk0Var = gk0Var.h;
+        if (rk0Var == null) {
             return ok0Var;
         }
         if (this == rk0Var) {
@@ -269,61 +272,61 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
                 iv0.b("visitAncestors called on an unattached node");
             }
             md1 md1Var = rk0Var.d.h;
-            e11 e11VarT = lx0.T(rk0Var);
-            while (e11VarT != null) {
-                if ((e11VarT.H.f.g & 1024) != 0) {
+            e11 T = lx0.T(rk0Var);
+            while (T != null) {
+                if ((T.H.f.g & 1024) != 0) {
                     while (md1Var != null) {
                         if ((md1Var.f & 1024) != 0) {
-                            md1 md1VarM = md1Var;
+                            md1 md1Var2 = md1Var;
                             sf1 sf1Var = null;
-                            while (md1VarM != null) {
-                                if (md1VarM instanceof rk0) {
-                                    if (this == ((rk0) md1VarM)) {
+                            while (md1Var2 != null) {
+                                if (md1Var2 instanceof rk0) {
+                                    if (this == ((rk0) md1Var2)) {
                                         return ok0.e;
                                     }
-                                } else if ((md1VarM.f & 1024) != 0 && (md1VarM instanceof z60)) {
+                                } else if ((md1Var2.f & 1024) != 0 && (md1Var2 instanceof z60)) {
                                     int i = 0;
-                                    for (md1 md1Var2 = ((z60) md1VarM).s; md1Var2 != null; md1Var2 = md1Var2.i) {
-                                        if ((md1Var2.f & 1024) != 0) {
+                                    for (md1 md1Var3 = ((z60) md1Var2).s; md1Var3 != null; md1Var3 = md1Var3.i) {
+                                        if ((md1Var3.f & 1024) != 0) {
                                             i++;
                                             if (i == 1) {
-                                                md1VarM = md1Var2;
+                                                md1Var2 = md1Var3;
                                             } else {
                                                 if (sf1Var == null) {
                                                     sf1Var = new sf1(new md1[16]);
                                                 }
-                                                if (md1VarM != null) {
-                                                    sf1Var.b(md1VarM);
-                                                    md1VarM = null;
+                                                if (md1Var2 != null) {
+                                                    sf1Var.b(md1Var2);
+                                                    md1Var2 = null;
                                                 }
-                                                sf1Var.b(md1Var2);
+                                                sf1Var.b(md1Var3);
                                             }
                                         }
                                     }
                                     if (i == 1) {
                                     }
                                 }
-                                md1VarM = lx0.m(sf1Var);
+                                md1Var2 = lx0.m(sf1Var);
                             }
                         }
                         md1Var = md1Var.h;
                     }
                 }
-                e11VarT = e11VarT.u();
-                md1Var = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+                T = T.u();
+                md1Var = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
             }
         }
         return ok0Var;
     }
 
     public final void L0() {
-        int iOrdinal = K0().ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
+        int ordinal = K0().ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
                 return;
             }
-            if (iOrdinal != 2) {
-                if (iOrdinal != 3) {
+            if (ordinal != 2) {
+                if (ordinal != 3) {
                     throw new mu();
                 }
                 return;
@@ -345,22 +348,22 @@ public final class rk0 extends md1 implements ey, xi1, qd1 {
     public final boolean M0(int i) {
         Trace.beginSection("FocusTransactions:requestFocus");
         try {
-            boolean zK = false;
-            if (!J0().f530a) {
+            boolean z = false;
+            if (!J0().f529a) {
                 Trace.endSection();
                 return false;
             }
-            int iOrdinal = wj1.J(this, i).ordinal();
-            if (iOrdinal == 0) {
-                zK = wj1.K(this);
-            } else if (iOrdinal != 1) {
-                if (iOrdinal == 2) {
-                    zK = true;
-                } else if (iOrdinal != 3) {
+            int ordinal = wj1.J(this, i).ordinal();
+            if (ordinal == 0) {
+                z = wj1.K(this);
+            } else if (ordinal != 1) {
+                if (ordinal == 2) {
+                    z = true;
+                } else if (ordinal != 3) {
                     throw new mu();
                 }
             }
-            return zK;
+            return z;
         } finally {
             Trace.endSection();
         }

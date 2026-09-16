@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class om0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f862a = new ArrayList();
+    public final ArrayList f861a = new ArrayList();
     public final pm0 b = new pm0(0);
     public ArrayList c;
     public final AtomicInteger d;
@@ -49,11 +49,11 @@ public final class om0 {
                         }
                         break;
                     case 2:
-                        boolean z = ((me1) obj).f743a;
+                        boolean z = ((me1) obj).f742a;
                         this.b.d(false);
                         break;
                     default:
-                        boolean z2 = ((er1) obj).f318a;
+                        boolean z2 = ((er1) obj).f317a;
                         this.b.g(false);
                         break;
                 }
@@ -80,11 +80,11 @@ public final class om0 {
                         }
                         break;
                     case 2:
-                        boolean z = ((me1) obj).f743a;
+                        boolean z = ((me1) obj).f742a;
                         this.b.d(false);
                         break;
                     default:
-                        boolean z2 = ((er1) obj).f318a;
+                        boolean z2 = ((er1) obj).f317a;
                         this.b.g(false);
                         break;
                 }
@@ -111,11 +111,11 @@ public final class om0 {
                         }
                         break;
                     case 2:
-                        boolean z = ((me1) obj).f743a;
+                        boolean z = ((me1) obj).f742a;
                         this.b.d(false);
                         break;
                     default:
-                        boolean z2 = ((er1) obj).f318a;
+                        boolean z2 = ((er1) obj).f317a;
                         this.b.g(false);
                         break;
                 }
@@ -142,11 +142,11 @@ public final class om0 {
                         }
                         break;
                     case 2:
-                        boolean z = ((me1) obj).f743a;
+                        boolean z = ((me1) obj).f742a;
                         this.b.d(false);
                         break;
                     default:
-                        boolean z2 = ((er1) obj).f318a;
+                        boolean z2 = ((er1) obj).f317a;
                         this.b.g(false);
                         break;
                 }

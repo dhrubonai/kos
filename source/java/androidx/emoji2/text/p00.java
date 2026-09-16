@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class p00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final on f884a = new on(7);
+    public static final on f883a = new on(7);
     public static final on b = new on(8);
     public static final on c = new on(9);
     public static final vi0 d = new vi0();

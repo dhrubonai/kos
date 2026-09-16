@@ -20,13 +20,13 @@ public final class pf0 extends g01 implements um0 {
                 nn2 nn2Var = (nn2) obj;
                 jf0 jf0Var = jf0.d;
                 jf0 jf0Var2 = jf0.e;
-                boolean zB = nn2Var.b(jf0Var, jf0Var2);
+                boolean b = nn2Var.b(jf0Var, jf0Var2);
                 be2 be2Var = null;
                 qf0 qf0Var = this.f;
-                if (zB) {
-                    qf0Var.t.f1008a.getClass();
+                if (b) {
+                    qf0Var.t.f1007a.getClass();
                 } else if (nn2Var.b(jf0Var2, jf0.f)) {
-                    qf0Var.u.f1385a.getClass();
+                    qf0Var.u.f1384a.getClass();
                 } else {
                     be2Var = of0.d;
                 }
@@ -35,16 +35,16 @@ public final class pf0 extends g01 implements um0 {
                 nn2 nn2Var2 = (nn2) obj;
                 jf0 jf0Var3 = jf0.d;
                 jf0 jf0Var4 = jf0.e;
-                boolean zB2 = nn2Var2.b(jf0Var3, jf0Var4);
+                boolean b2 = nn2Var2.b(jf0Var3, jf0Var4);
                 qf0 qf0Var2 = this.f;
-                if (zB2) {
-                    mb2 mb2Var = qf0Var2.t.f1008a.b;
+                if (b2) {
+                    mb2 mb2Var = qf0Var2.t.f1007a.b;
                     return mb2Var != null ? mb2Var.b : of0.c;
                 }
                 if (!nn2Var2.b(jf0Var4, jf0.f)) {
                     return of0.c;
                 }
-                mb2 mb2Var2 = qf0Var2.u.f1385a.b;
+                mb2 mb2Var2 = qf0Var2.u.f1384a.b;
                 return mb2Var2 != null ? mb2Var2.b : of0.c;
         }
     }

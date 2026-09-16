@@ -31,8 +31,8 @@ public final class le2 extends LinearLayout {
     public boolean m;
 
     public le2(TextInputLayout textInputLayout, rg rgVar) {
-        CharSequence text;
         super(textInputLayout.getContext());
+        CharSequence text;
         this.d = textInputLayout;
         setVisibility(8);
         setOrientation(0);
@@ -74,9 +74,9 @@ public final class le2 extends LinearLayout {
             checkableImageButton.setMinimumHeight(dimensionPixelSize);
         }
         if (typedArray.hasValue(69)) {
-            ImageView.ScaleType scaleTypeH = l8.H(typedArray.getInt(69, -1));
-            this.k = scaleTypeH;
-            checkableImageButton.setScaleType(scaleTypeH);
+            ImageView.ScaleType H = l8.H(typedArray.getInt(69, -1));
+            this.k = H;
+            checkableImageButton.setScaleType(H);
         }
         jgVar.setVisibility(8);
         jgVar.setId(R.id.textinput_prefix_text);
@@ -95,14 +95,14 @@ public final class le2 extends LinearLayout {
     }
 
     public final int a() {
-        int marginEnd;
+        int i;
         CheckableImageButton checkableImageButton = this.g;
         if (checkableImageButton.getVisibility() == 0) {
-            marginEnd = ((ViewGroup.MarginLayoutParams) checkableImageButton.getLayoutParams()).getMarginEnd() + checkableImageButton.getMeasuredWidth();
+            i = ((ViewGroup.MarginLayoutParams) checkableImageButton.getLayoutParams()).getMarginEnd() + checkableImageButton.getMeasuredWidth();
         } else {
-            marginEnd = 0;
+            i = 0;
         }
-        return this.e.getPaddingStart() + getPaddingStart() + marginEnd;
+        return this.e.getPaddingStart() + getPaddingStart() + i;
     }
 
     public final void b(Drawable drawable) {

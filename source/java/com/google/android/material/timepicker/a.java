@@ -16,17 +16,17 @@ public final class a extends nl2 {
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        boolean zIsEmpty = TextUtils.isEmpty(editable);
+        boolean isEmpty = TextUtils.isEmpty(editable);
         ChipTextInputComboView chipTextInputComboView = this.d;
-        if (zIsEmpty) {
+        if (isEmpty) {
             chipTextInputComboView.d.setText(ChipTextInputComboView.a(chipTextInputComboView, "00"));
             return;
         }
-        String strA = ChipTextInputComboView.a(chipTextInputComboView, editable);
+        String a2 = ChipTextInputComboView.a(chipTextInputComboView, editable);
         Chip chip = chipTextInputComboView.d;
-        if (TextUtils.isEmpty(strA)) {
-            strA = ChipTextInputComboView.a(chipTextInputComboView, "00");
+        if (TextUtils.isEmpty(a2)) {
+            a2 = ChipTextInputComboView.a(chipTextInputComboView, "00");
         }
-        chip.setText(strA);
+        chip.setText(a2);
     }
 }

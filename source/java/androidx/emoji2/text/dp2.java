@@ -29,40 +29,40 @@ public class dp2 extends bp2 {
     public final Method p;
     public final Method q;
 
-    public dp2() throws NoSuchMethodException, ClassNotFoundException, SecurityException {
-        Method methodS;
-        Constructor<?> constructor;
-        Method methodR;
+    public dp2() {
         Method method;
+        Constructor<?> constructor;
         Method method2;
         Method method3;
+        Method method4;
+        Method method5;
         Class<?> cls = null;
         try {
             Class<?> cls2 = Class.forName("android.graphics.FontFamily");
             constructor = cls2.getConstructor(null);
-            methodR = R(cls2);
+            method2 = R(cls2);
             Class cls3 = Integer.TYPE;
-            method = cls2.getMethod("addFontFromBuffer", ByteBuffer.class, cls3, FontVariationAxis[].class, cls3, cls3);
-            method2 = cls2.getMethod("freeze", null);
-            method3 = cls2.getMethod("abortCreation", null);
-            methodS = S(cls2);
+            method3 = cls2.getMethod("addFontFromBuffer", ByteBuffer.class, cls3, FontVariationAxis[].class, cls3, cls3);
+            method4 = cls2.getMethod("freeze", null);
+            method5 = cls2.getMethod("abortCreation", null);
+            method = S(cls2);
             cls = cls2;
         } catch (ClassNotFoundException | NoSuchMethodException e) {
             Log.e("TypefaceCompatApi26Impl", "Unable to collect necessary methods for class ".concat(e.getClass().getName()), e);
-            methodS = null;
-            constructor = null;
-            methodR = null;
             method = null;
+            constructor = null;
             method2 = null;
             method3 = null;
+            method4 = null;
+            method5 = null;
         }
         this.k = cls;
         this.l = constructor;
-        this.m = methodR;
-        this.n = method;
-        this.o = method2;
-        this.p = method3;
-        this.q = methodS;
+        this.m = method2;
+        this.n = method3;
+        this.o = method4;
+        this.p = method5;
+        this.q = method;
     }
 
     public static Method R(Class cls) {
@@ -79,11 +79,11 @@ public class dp2 extends bp2 {
         }
     }
 
-    public Typeface P(Object obj) throws ArrayIndexOutOfBoundsException, IllegalArgumentException, NegativeArraySizeException {
+    public Typeface P(Object obj) {
         try {
-            Object objNewInstance = Array.newInstance((Class<?>) this.k, 1);
-            Array.set(objNewInstance, 0, obj);
-            return (Typeface) this.q.invoke(null, objNewInstance, -1, -1);
+            Object newInstance = Array.newInstance((Class<?>) this.k, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) this.q.invoke(null, newInstance, -1, -1);
         } catch (IllegalAccessException | InvocationTargetException unused) {
             return null;
         }
@@ -97,7 +97,7 @@ public class dp2 extends bp2 {
         }
     }
 
-    public Method S(Class cls) throws NoSuchMethodException, SecurityException {
+    public Method S(Class cls) {
         Class<?> cls2 = Array.newInstance((Class<?>) cls, 1).getClass();
         Class cls3 = Integer.TYPE;
         Method declaredMethod = Typeface.class.getDeclaredMethod("createFromFamiliesWithDefault", cls2, cls3, cls3);
@@ -106,8 +106,8 @@ public class dp2 extends bp2 {
     }
 
     @Override // androidx.emoji2.text.bp2, androidx.emoji2.text.ly0
-    public final Typeface j(Context context, rl0 rl0Var, Resources resources, int i) throws IllegalAccessException, InstantiationException, IllegalArgumentException, InvocationTargetException {
-        Object objNewInstance;
+    public final Typeface j(Context context, rl0 rl0Var, Resources resources, int i) {
+        Object obj;
         Method method = this.m;
         if (method == null) {
             Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
@@ -116,30 +116,30 @@ public class dp2 extends bp2 {
             return super.j(context, rl0Var, resources, i);
         }
         try {
-            objNewInstance = this.l.newInstance(null);
+            obj = this.l.newInstance(null);
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            objNewInstance = null;
+            obj = null;
         }
-        if (objNewInstance != null) {
-            sl0[] sl0VarArr = rl0Var.f1018a;
+        if (obj != null) {
+            sl0[] sl0VarArr = rl0Var.f1017a;
             int length = sl0VarArr.length;
             int i2 = 0;
             while (true) {
                 if (i2 < length) {
                     sl0 sl0Var = sl0VarArr[i2];
                     Context context2 = context;
-                    if (O(context2, objNewInstance, sl0Var.f1074a, sl0Var.e, sl0Var.b, sl0Var.c ? 1 : 0, FontVariationAxis.fromFontVariationSettings(sl0Var.d))) {
+                    if (O(context2, obj, sl0Var.f1073a, sl0Var.e, sl0Var.b, sl0Var.c ? 1 : 0, FontVariationAxis.fromFontVariationSettings(sl0Var.d))) {
                         i2++;
                         context = context2;
                     } else {
                         try {
-                            this.p.invoke(objNewInstance, null);
+                            this.p.invoke(obj, null);
                             break;
                         } catch (IllegalAccessException | InvocationTargetException unused2) {
                         }
                     }
-                } else if (Q(objNewInstance)) {
-                    return P(objNewInstance);
+                } else if (Q(obj)) {
+                    return P(obj);
                 }
             }
         }
@@ -147,10 +147,10 @@ public class dp2 extends bp2 {
     }
 
     @Override // androidx.emoji2.text.bp2, androidx.emoji2.text.ly0
-    public final Typeface k(Context context, cm0[] cm0VarArr, int i) throws IllegalAccessException, InstantiationException, IOException, IllegalArgumentException, InvocationTargetException {
-        Object objNewInstance;
-        Typeface typefaceP;
-        boolean zBooleanValue;
+    public final Typeface k(Context context, cm0[] cm0VarArr, int i) {
+        Object obj;
+        Typeface P;
+        boolean z;
         if (cm0VarArr.length >= 1) {
             Method method = this.m;
             if (method == null) {
@@ -158,64 +158,64 @@ public class dp2 extends bp2 {
             }
             try {
                 if (method != null) {
-                    HashMap map = new HashMap();
+                    HashMap hashMap = new HashMap();
                     for (cm0 cm0Var : cm0VarArr) {
                         if (cm0Var.f == 0) {
-                            Uri uri = cm0Var.f209a;
-                            if (!map.containsKey(uri)) {
-                                map.put(uri, oy0.L(context, uri));
+                            Uri uri = cm0Var.f208a;
+                            if (!hashMap.containsKey(uri)) {
+                                hashMap.put(uri, oy0.L(context, uri));
                             }
                         }
                     }
-                    Map mapUnmodifiableMap = Collections.unmodifiableMap(map);
+                    Map unmodifiableMap = Collections.unmodifiableMap(hashMap);
                     try {
-                        objNewInstance = this.l.newInstance(null);
+                        obj = this.l.newInstance(null);
                     } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-                        objNewInstance = null;
+                        obj = null;
                     }
-                    if (objNewInstance != null) {
+                    if (obj != null) {
                         int length = cm0VarArr.length;
                         int i2 = 0;
-                        boolean z = false;
+                        boolean z2 = false;
                         while (true) {
                             Method method2 = this.p;
                             if (i2 < length) {
                                 cm0 cm0Var2 = cm0VarArr[i2];
-                                ByteBuffer byteBuffer = (ByteBuffer) mapUnmodifiableMap.get(cm0Var2.f209a);
+                                ByteBuffer byteBuffer = (ByteBuffer) unmodifiableMap.get(cm0Var2.f208a);
                                 if (byteBuffer != null) {
                                     try {
-                                        zBooleanValue = ((Boolean) this.n.invoke(objNewInstance, byteBuffer, Integer.valueOf(cm0Var2.b), null, Integer.valueOf(cm0Var2.c), Integer.valueOf(cm0Var2.d ? 1 : 0))).booleanValue();
+                                        z = ((Boolean) this.n.invoke(obj, byteBuffer, Integer.valueOf(cm0Var2.b), null, Integer.valueOf(cm0Var2.c), Integer.valueOf(cm0Var2.d ? 1 : 0))).booleanValue();
                                     } catch (IllegalAccessException | InvocationTargetException unused2) {
-                                        zBooleanValue = false;
+                                        z = false;
                                     }
-                                    if (!zBooleanValue) {
-                                        method2.invoke(objNewInstance, null);
+                                    if (!z) {
+                                        method2.invoke(obj, null);
                                         break;
                                     }
-                                    z = true;
+                                    z2 = true;
                                 }
                                 i2++;
-                                z = z;
-                            } else if (!z) {
-                                method2.invoke(objNewInstance, null);
-                            } else if (Q(objNewInstance) && (typefaceP = P(objNewInstance)) != null) {
-                                return Typeface.create(typefaceP, i);
+                                z2 = z2;
+                            } else if (!z2) {
+                                method2.invoke(obj, null);
+                            } else if (Q(obj) && (P = P(obj)) != null) {
+                                return Typeface.create(P, i);
                             }
                         }
                     }
                 } else {
-                    cm0 cm0VarQ = q(cm0VarArr, i);
-                    ParcelFileDescriptor parcelFileDescriptorOpenFileDescriptor = context.getContentResolver().openFileDescriptor(cm0VarQ.f209a, "r", null);
-                    if (parcelFileDescriptorOpenFileDescriptor != null) {
+                    cm0 q = q(cm0VarArr, i);
+                    ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(q.f208a, "r", null);
+                    if (openFileDescriptor != null) {
                         try {
-                            Typeface typefaceBuild = new Typeface.Builder(parcelFileDescriptorOpenFileDescriptor.getFileDescriptor()).setWeight(cm0VarQ.c).setItalic(cm0VarQ.d).build();
-                            parcelFileDescriptorOpenFileDescriptor.close();
-                            return typefaceBuild;
+                            Typeface build = new Typeface.Builder(openFileDescriptor.getFileDescriptor()).setWeight(q.c).setItalic(q.d).build();
+                            openFileDescriptor.close();
+                            return build;
                         } finally {
                         }
                     }
-                    if (parcelFileDescriptorOpenFileDescriptor != null) {
-                        parcelFileDescriptorOpenFileDescriptor.close();
+                    if (openFileDescriptor != null) {
+                        openFileDescriptor.close();
                         return null;
                     }
                 }
@@ -226,8 +226,8 @@ public class dp2 extends bp2 {
     }
 
     @Override // androidx.emoji2.text.ly0
-    public final Typeface n(Context context, Resources resources, int i, String str, int i2) throws IllegalAccessException, InstantiationException, IllegalArgumentException, InvocationTargetException {
-        Object objNewInstance;
+    public final Typeface n(Context context, Resources resources, int i, String str, int i2) {
+        Object obj;
         Method method = this.m;
         if (method == null) {
             Log.w("TypefaceCompatApi26Impl", "Unable to collect necessary private methods. Fallback to legacy implementation.");
@@ -236,18 +236,18 @@ public class dp2 extends bp2 {
             return super.n(context, resources, i, str, i2);
         }
         try {
-            objNewInstance = this.l.newInstance(null);
+            obj = this.l.newInstance(null);
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            objNewInstance = null;
+            obj = null;
         }
-        if (objNewInstance != null) {
-            if (!O(context, objNewInstance, str, 0, -1, -1, null)) {
+        if (obj != null) {
+            if (!O(context, obj, str, 0, -1, -1, null)) {
                 try {
-                    this.p.invoke(objNewInstance, null);
+                    this.p.invoke(obj, null);
                 } catch (IllegalAccessException | InvocationTargetException unused2) {
                 }
-            } else if (Q(objNewInstance)) {
-                return P(objNewInstance);
+            } else if (Q(obj)) {
+                return P(obj);
             }
         }
         return null;

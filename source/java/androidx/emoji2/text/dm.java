@@ -1,5 +1,6 @@
 package androidx.emoji2.text;
 
+import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -55,14 +56,14 @@ public final class dm extends lz0 {
                 WeakReference weakReference = sideSheetBehavior.q;
                 View view2 = weakReference != null ? (View) weakReference.get() : null;
                 if (view2 != null && (marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams()) != null) {
-                    sideSheetBehavior.f1470a.m0(marginLayoutParams, view.getLeft(), view.getRight());
+                    sideSheetBehavior.f1469a.m0(marginLayoutParams, view.getLeft(), view.getRight());
                     view2.setLayoutParams(marginLayoutParams);
                 }
                 LinkedHashSet linkedHashSet = sideSheetBehavior.u;
                 if (linkedHashSet.isEmpty()) {
                     return;
                 }
-                sideSheetBehavior.f1470a.i(i);
+                sideSheetBehavior.f1469a.i(i);
                 Iterator it = linkedHashSet.iterator();
                 if (it.hasNext()) {
                     throw jx0.g(it);
@@ -71,95 +72,150 @@ public final class dm extends lz0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005a  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0071  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00e9  */
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0028, code lost:
+    
+        if (r0.f1469a.R(r6) == false) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0058, code lost:
+    
+        if (java.lang.Math.abs(r7 - r0.f1469a.B()) < java.lang.Math.abs(r7 - r0.f1469a.C())) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0080, code lost:
+    
+        if (r7 > r0.E) goto L75;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x00d0, code lost:
+    
+        if (java.lang.Math.abs(r6.getTop() - r0.x()) < java.lang.Math.abs(r6.getTop() - r0.E)) goto L29;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x011b, code lost:
+    
+        if (java.lang.Math.abs(r7 - r0.D) < java.lang.Math.abs(r7 - r0.G)) goto L29;
+     */
     @Override // androidx.emoji2.text.lz0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void F(android.view.View r6, float r7, float r8) {
-        /*
-            Method dump skipped, instructions count: 340
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dm.F(android.view.View, float, float):void");
+    public final void F(View view, float f, float f2) {
+        int i;
+        switch (this.e) {
+            case 0:
+                BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) this.f;
+                int i2 = 6;
+                if (f2 < 0.0f) {
+                    if (!bottomSheetBehavior.b) {
+                        int top2 = view.getTop();
+                        SystemClock.uptimeMillis();
+                        bottomSheetBehavior.getClass();
+                        break;
+                    }
+                    i2 = 3;
+                    bottomSheetBehavior.getClass();
+                    bottomSheetBehavior.E(view, i2, true);
+                    break;
+                } else if (bottomSheetBehavior.I && bottomSheetBehavior.D(view, f2)) {
+                    if (Math.abs(f) >= Math.abs(f2) || f2 <= bottomSheetBehavior.d) {
+                        if (view.getTop() <= (bottomSheetBehavior.x() + bottomSheetBehavior.V) / 2) {
+                            if (!bottomSheetBehavior.b) {
+                                break;
+                            }
+                            i2 = 3;
+                            bottomSheetBehavior.getClass();
+                            bottomSheetBehavior.E(view, i2, true);
+                        }
+                    }
+                    i2 = 5;
+                    bottomSheetBehavior.getClass();
+                    bottomSheetBehavior.E(view, i2, true);
+                } else {
+                    if (f2 == 0.0f || Math.abs(f) > Math.abs(f2)) {
+                        int top3 = view.getTop();
+                        if (bottomSheetBehavior.b) {
+                            break;
+                        } else {
+                            int i3 = bottomSheetBehavior.E;
+                            if (top3 < i3) {
+                                if (top3 >= Math.abs(top3 - bottomSheetBehavior.G)) {
+                                    bottomSheetBehavior.getClass();
+                                }
+                                i2 = 3;
+                            } else {
+                                if (Math.abs(top3 - i3) < Math.abs(top3 - bottomSheetBehavior.G)) {
+                                    bottomSheetBehavior.getClass();
+                                }
+                                i2 = 4;
+                            }
+                        }
+                    } else {
+                        if (!bottomSheetBehavior.b) {
+                            int top4 = view.getTop();
+                            if (Math.abs(top4 - bottomSheetBehavior.E) < Math.abs(top4 - bottomSheetBehavior.G)) {
+                                bottomSheetBehavior.getClass();
+                            }
+                        }
+                        i2 = 4;
+                    }
+                    bottomSheetBehavior.getClass();
+                    bottomSheetBehavior.E(view, i2, true);
+                }
+                break;
+            default:
+                SideSheetBehavior sideSheetBehavior = (SideSheetBehavior) this.f;
+                if (!sideSheetBehavior.f1469a.P(f)) {
+                    if (sideSheetBehavior.f1469a.h0(view, f)) {
+                        if (!sideSheetBehavior.f1469a.S(f, f2)) {
+                            break;
+                        }
+                        i = 5;
+                    } else {
+                        if (f == 0.0f || Math.abs(f) <= Math.abs(f2)) {
+                            int left = view.getLeft();
+                            break;
+                        }
+                        i = 5;
+                    }
+                    sideSheetBehavior.t(view, i, true);
+                    break;
+                }
+                i = 3;
+                sideSheetBehavior.t(view, i, true);
+                break;
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0048  */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0045, code lost:
+    
+        if (r6.canScrollVertically(-1) != false) goto L36;
+     */
     @Override // androidx.emoji2.text.lz0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean O(android.view.View r5, int r6) {
-        /*
-            r4 = this;
-            int r0 = r4.e
-            switch(r0) {
-                case 0: goto L1c;
-                default: goto L5;
-            }
-        L5:
-            androidx.emoji2.text.q10 r6 = r4.f
-            com.google.android.material.sidesheet.SideSheetBehavior r6 = (com.google.android.material.sidesheet.SideSheetBehavior) r6
-            int r0 = r6.h
-            r1 = 0
-            r2 = 1
-            if (r0 != r2) goto L10
-            goto L1b
-        L10:
-            java.lang.ref.WeakReference r6 = r6.p
-            if (r6 == 0) goto L1b
-            java.lang.Object r6 = r6.get()
-            if (r6 != r5) goto L1b
-            r1 = r2
-        L1b:
-            return r1
-        L1c:
-            androidx.emoji2.text.q10 r0 = r4.f
-            com.google.android.material.bottomsheet.BottomSheetBehavior r0 = (com.google.android.material.bottomsheet.BottomSheetBehavior) r0
-            int r1 = r0.N
-            r2 = 1
-            if (r1 != r2) goto L26
-            goto L56
-        L26:
-            boolean r3 = r0.c0
-            if (r3 == 0) goto L2b
-            goto L56
-        L2b:
-            r3 = 3
-            if (r1 != r3) goto L48
-            int r1 = r0.a0
-            if (r1 != r6) goto L48
-            java.lang.ref.WeakReference r6 = r0.X
-            if (r6 == 0) goto L3d
-            java.lang.Object r6 = r6.get()
-            android.view.View r6 = (android.view.View) r6
-            goto L3e
-        L3d:
-            r6 = 0
-        L3e:
-            if (r6 == 0) goto L48
-            r1 = -1
-            boolean r6 = r6.canScrollVertically(r1)
-            if (r6 == 0) goto L48
-            goto L56
-        L48:
-            android.os.SystemClock.uptimeMillis()
-            java.lang.ref.WeakReference r6 = r0.W
-            if (r6 == 0) goto L56
-            java.lang.Object r6 = r6.get()
-            if (r6 != r5) goto L56
-            goto L57
-        L56:
-            r2 = 0
-        L57:
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dm.O(android.view.View, int):boolean");
+    public final boolean O(View view, int i) {
+        WeakReference weakReference;
+        switch (this.e) {
+            case 0:
+                BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) this.f;
+                int i2 = bottomSheetBehavior.N;
+                if (i2 != 1 && !bottomSheetBehavior.c0) {
+                    if (i2 == 3 && bottomSheetBehavior.a0 == i) {
+                        WeakReference weakReference2 = bottomSheetBehavior.X;
+                        View view2 = weakReference2 != null ? (View) weakReference2.get() : null;
+                        if (view2 != null) {
+                            break;
+                        }
+                    }
+                    SystemClock.uptimeMillis();
+                    WeakReference weakReference3 = bottomSheetBehavior.W;
+                    if (weakReference3 != null && weakReference3.get() == view) {
+                        return true;
+                    }
+                }
+                return false;
+            default:
+                SideSheetBehavior sideSheetBehavior = (SideSheetBehavior) this.f;
+                return (sideSheetBehavior.h == 1 || (weakReference = sideSheetBehavior.p) == null || weakReference.get() != view) ? false : true;
+        }
     }
 
     @Override // androidx.emoji2.text.lz0
@@ -169,7 +225,7 @@ public final class dm extends lz0 {
                 return view.getLeft();
             default:
                 SideSheetBehavior sideSheetBehavior = (SideSheetBehavior) this.f;
-                return az0.m(i, sideSheetBehavior.f1470a.G(), sideSheetBehavior.f1470a.F());
+                return az0.m(i, sideSheetBehavior.f1469a.G(), sideSheetBehavior.f1469a.F());
         }
     }
 

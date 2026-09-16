@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class k91 extends m91 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final k91 f626a = new k91();
+    public static final k91 f625a = new k91();
 }

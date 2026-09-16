@@ -12,7 +12,7 @@ public final class gi0 extends di0 {
     @Override // androidx.emoji2.text.ii0
     public final File a() {
         boolean z = this.b;
-        File file = this.f526a;
+        File file = this.f525a;
         if (!z) {
             this.b = true;
             return file;
@@ -22,9 +22,9 @@ public final class gi0 extends di0 {
             return null;
         }
         if (fileArr == null) {
-            File[] fileArrListFiles = file.listFiles();
-            this.c = fileArrListFiles;
-            if (fileArrListFiles == null || fileArrListFiles.length == 0) {
+            File[] listFiles = file.listFiles();
+            this.c = listFiles;
+            if (listFiles == null || listFiles.length == 0) {
                 return null;
             }
         }

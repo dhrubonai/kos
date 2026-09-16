@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class xd implements wd {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f1330a = az0.W(new uw0(0));
+    public final un1 f1329a = az0.W(new uw0(0));
 }

@@ -61,33 +61,33 @@ public interface IJobCallback extends IInterface {
 
             @Override // android.app.job.IJobCallback
             public void acknowledgeStartMessage(int i, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.app.job.IJobCallback
             public void acknowledgeStopMessage(int i, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -98,34 +98,36 @@ public interface IJobCallback extends IInterface {
 
             @Override // android.app.job.IJobCallback
             public boolean completeWork(int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // android.app.job.IJobCallback
             public JobWorkItem dequeueWork(int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcelable.Creator creator;
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return e40.f(_Parcel.readTypedObject(parcelObtain2, JobWorkItem.CREATOR));
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
+                    creator = JobWorkItem.CREATOR;
+                    return e40.f(_Parcel.readTypedObject(obtain2, creator));
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -135,17 +137,17 @@ public interface IJobCallback extends IInterface {
 
             @Override // android.app.job.IJobCallback
             public void jobFinished(int i, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(Stub.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -158,8 +160,8 @@ public interface IJobCallback extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IJobCallback)) ? new Proxy(iBinder) : (IJobCallback) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IJobCallback)) ? new Proxy(iBinder) : (IJobCallback) queryLocalInterface;
         }
 
         @Override // android.os.Binder
@@ -182,15 +184,15 @@ public interface IJobCallback extends IInterface {
                 return true;
             }
             if (i == 3) {
-                JobWorkItem jobWorkItemDequeueWork = dequeueWork(parcel.readInt());
+                JobWorkItem dequeueWork = dequeueWork(parcel.readInt());
                 parcel2.writeNoException();
-                _Parcel.writeTypedObject(parcel2, jobWorkItemDequeueWork, 1);
+                _Parcel.writeTypedObject(parcel2, dequeueWork, 1);
                 return true;
             }
             if (i == 4) {
-                boolean zCompleteWork = completeWork(parcel.readInt(), parcel.readInt());
+                boolean completeWork = completeWork(parcel.readInt(), parcel.readInt());
                 parcel2.writeNoException();
-                parcel2.writeInt(zCompleteWork ? 1 : 0);
+                parcel2.writeInt(completeWork ? 1 : 0);
                 return true;
             }
             if (i != 5) {

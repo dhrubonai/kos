@@ -21,9 +21,10 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0082 A[Catch: all -> 0x0036, TRY_ENTER, TryCatch #1 {all -> 0x0036, blocks: (B:15:0x002f, B:32:0x0078, B:35:0x0082, B:39:0x0095, B:42:0x009c, B:43:0x00a0, B:44:0x00a1, B:22:0x0049), top: B:53:0x001e }] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0093 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0082 A[Catch: all -> 0x0036, TRY_ENTER, TryCatch #1 {all -> 0x0036, blocks: (B:14:0x002f, B:18:0x0078, B:21:0x0082, B:30:0x0095, B:33:0x009c, B:34:0x00a0, B:36:0x00a1, B:42:0x0049), top: B:7:0x001e }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0093 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0020  */
     /* JADX WARN: Type inference failed for: r4v1, types: [androidx.emoji2.text.v0] */
     /* JADX WARN: Type inference failed for: r4v12 */
     /* JADX WARN: Type inference failed for: r4v2 */
@@ -40,150 +41,194 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
     /* JADX WARN: Type inference failed for: r9v4 */
     /* JADX WARN: Type inference failed for: r9v5, types: [androidx.emoji2.text.pa2] */
     /* JADX WARN: Type inference failed for: r9v8, types: [androidx.emoji2.text.pa2] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x00af -> B:16:0x0032). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00af -> B:15:0x0032). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static void k(androidx.emoji2.text.oa2 r8, androidx.emoji2.text.jj0 r9, androidx.emoji2.text.l10 r10) throws java.lang.Throwable {
-        /*
-            boolean r0 = r10 instanceof androidx.emoji2.text.na2
-            if (r0 == 0) goto L13
-            r0 = r10
-            androidx.emoji2.text.na2 r0 = (androidx.emoji2.text.na2) r0
-            int r1 = r0.m
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.m = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.na2 r0 = new androidx.emoji2.text.na2
-            r0.<init>(r8, r10)
-        L18:
-            java.lang.Object r10 = r0.k
-            int r1 = r0.m
-            r2 = 3
-            r3 = 2
-            if (r1 == 0) goto L5c
-            r8 = 1
-            if (r1 == r8) goto L4d
-            if (r1 == r3) goto L41
-            if (r1 != r2) goto L39
-            androidx.emoji2.text.cy0 r8 = r0.j
-            androidx.emoji2.text.pa2 r9 = r0.i
-            androidx.emoji2.text.jj0 r1 = r0.h
-            androidx.emoji2.text.oa2 r4 = r0.g
-            androidx.emoji2.text.mz0.L(r10)     // Catch: java.lang.Throwable -> L36
-        L32:
-            r10 = r1
-            r1 = r8
-            r8 = r4
-            goto L75
-        L36:
-            r8 = move-exception
-            goto Lb5
-        L39:
-            java.lang.IllegalStateException r8 = new java.lang.IllegalStateException
-            java.lang.String r9 = "call to 'resume' before 'invoke' with coroutine"
-            r8.<init>(r9)
-            throw r8
-        L41:
-            androidx.emoji2.text.cy0 r8 = r0.j
-            androidx.emoji2.text.pa2 r9 = r0.i
-            androidx.emoji2.text.jj0 r1 = r0.h
-            androidx.emoji2.text.oa2 r4 = r0.g
-            androidx.emoji2.text.mz0.L(r10)     // Catch: java.lang.Throwable -> L36
-            goto L78
-        L4d:
-            androidx.emoji2.text.pa2 r9 = r0.i
-            androidx.emoji2.text.jj0 r8 = r0.h
-            androidx.emoji2.text.oa2 r1 = r0.g
-            androidx.emoji2.text.mz0.L(r10)     // Catch: java.lang.Throwable -> L59
-            r10 = r8
-            r8 = r1
-            goto L68
-        L59:
-            r8 = move-exception
-            r4 = r1
-            goto Lb5
-        L5c:
-            androidx.emoji2.text.mz0.L(r10)
-            androidx.emoji2.text.w0 r10 = r8.a()
-            androidx.emoji2.text.pa2 r10 = (androidx.emoji2.text.pa2) r10
-            r7 = r10
-            r10 = r9
-            r9 = r7
-        L68:
-            androidx.emoji2.text.v20 r1 = r0.e     // Catch: java.lang.Throwable -> Lb2
-            androidx.emoji2.text.lx0.u(r1)     // Catch: java.lang.Throwable -> Lb2
-            androidx.emoji2.text.dd0 r4 = androidx.emoji2.text.dd0.K     // Catch: java.lang.Throwable -> Lb2
-            androidx.emoji2.text.t20 r1 = r1.n(r4)     // Catch: java.lang.Throwable -> Lb2
-            androidx.emoji2.text.cy0 r1 = (androidx.emoji2.text.cy0) r1     // Catch: java.lang.Throwable -> Lb2
-        L75:
-            r4 = r8
-            r8 = r1
-            r1 = r10
-        L78:
-            java.lang.Object r10 = r4.t(r9)     // Catch: java.lang.Throwable -> L36
-            androidx.emoji2.text.de0 r5 = androidx.emoji2.text.kx0.f     // Catch: java.lang.Throwable -> L36
-            androidx.emoji2.text.f30 r6 = androidx.emoji2.text.f30.d
-            if (r10 != r5) goto L93
-            r0.g = r4     // Catch: java.lang.Throwable -> L36
-            r0.h = r1     // Catch: java.lang.Throwable -> L36
-            r0.i = r9     // Catch: java.lang.Throwable -> L36
-            r0.j = r8     // Catch: java.lang.Throwable -> L36
-            r0.m = r3     // Catch: java.lang.Throwable -> L36
-            java.lang.Object r10 = r4.h(r9, r0)     // Catch: java.lang.Throwable -> L36
-            if (r10 != r6) goto L78
-            goto Lb1
-        L93:
-            if (r8 == 0) goto La1
-            boolean r5 = r8.b()     // Catch: java.lang.Throwable -> L36
-            if (r5 == 0) goto L9c
-            goto La1
-        L9c:
-            java.util.concurrent.CancellationException r8 = r8.l()     // Catch: java.lang.Throwable -> L36
-            throw r8     // Catch: java.lang.Throwable -> L36
-        La1:
-            r0.g = r4     // Catch: java.lang.Throwable -> L36
-            r0.h = r1     // Catch: java.lang.Throwable -> L36
-            r0.i = r9     // Catch: java.lang.Throwable -> L36
-            r0.j = r8     // Catch: java.lang.Throwable -> L36
-            r0.m = r2     // Catch: java.lang.Throwable -> L36
-            java.lang.Object r10 = r1.b(r10, r0)     // Catch: java.lang.Throwable -> L36
-            if (r10 != r6) goto L32
-        Lb1:
-            return
-        Lb2:
-            r10 = move-exception
-            r4 = r8
-            r8 = r10
-        Lb5:
-            r4.e(r9)
-            throw r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.oa2.k(androidx.emoji2.text.oa2, androidx.emoji2.text.jj0, androidx.emoji2.text.l10):void");
+    public static void k(oa2 oa2Var, jj0 jj0Var, l10 l10Var) {
+        na2 na2Var;
+        int i;
+        ?? r4;
+        jj0 jj0Var2;
+        cy0 cy0Var;
+        cy0 cy0Var2;
+        jj0 jj0Var3;
+        Object t;
+        de0 de0Var;
+        f30 f30Var;
+        pa2 pa2Var;
+        try {
+            try {
+                if (l10Var instanceof na2) {
+                    na2Var = (na2) l10Var;
+                    int i2 = na2Var.m;
+                    if ((i2 & Integer.MIN_VALUE) != 0) {
+                        na2Var.m = i2 - Integer.MIN_VALUE;
+                        Object obj = na2Var.k;
+                        i = na2Var.m;
+                        if (i != 0) {
+                            mz0.L(obj);
+                            jj0Var2 = jj0Var;
+                            jj0Var = (pa2) oa2Var.a();
+                        } else {
+                            if (i != 1) {
+                                if (i == 2) {
+                                    cy0Var2 = na2Var.j;
+                                    pa2 pa2Var2 = na2Var.i;
+                                    jj0Var3 = na2Var.h;
+                                    oa2 oa2Var2 = na2Var.g;
+                                    mz0.L(obj);
+                                    r4 = oa2Var2;
+                                    jj0Var = pa2Var2;
+                                    do {
+                                        t = r4.t(jj0Var);
+                                        de0Var = kx0.f;
+                                        f30Var = f30.d;
+                                        if (t == de0Var) {
+                                        }
+                                    } while (r4.h(jj0Var, na2Var) != f30Var);
+                                    return;
+                                }
+                                if (i != 3) {
+                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                                }
+                                cy0Var2 = na2Var.j;
+                                pa2 pa2Var3 = na2Var.i;
+                                jj0Var3 = na2Var.h;
+                                oa2 oa2Var3 = na2Var.g;
+                                mz0.L(obj);
+                                oa2 oa2Var4 = oa2Var3;
+                                pa2 pa2Var4 = pa2Var3;
+                                jj0Var2 = jj0Var3;
+                                cy0Var = cy0Var2;
+                                oa2Var = oa2Var4;
+                                pa2Var = pa2Var4;
+                                r4 = oa2Var;
+                                cy0Var2 = cy0Var;
+                                jj0Var3 = jj0Var2;
+                                jj0Var = pa2Var;
+                                do {
+                                    t = r4.t(jj0Var);
+                                    de0Var = kx0.f;
+                                    f30Var = f30.d;
+                                    if (t == de0Var) {
+                                        if (cy0Var2 != null && !cy0Var2.b()) {
+                                            throw cy0Var2.l();
+                                        }
+                                        na2Var.g = r4;
+                                        na2Var.h = jj0Var3;
+                                        na2Var.i = jj0Var;
+                                        na2Var.j = cy0Var2;
+                                        na2Var.m = 3;
+                                        oa2Var4 = r4;
+                                        pa2Var4 = jj0Var;
+                                        if (jj0Var3.b(t, na2Var) == f30Var) {
+                                            return;
+                                        }
+                                        jj0Var2 = jj0Var3;
+                                        cy0Var = cy0Var2;
+                                        oa2Var = oa2Var4;
+                                        pa2Var = pa2Var4;
+                                        r4 = oa2Var;
+                                        cy0Var2 = cy0Var;
+                                        jj0Var3 = jj0Var2;
+                                        jj0Var = pa2Var;
+                                        t = r4.t(jj0Var);
+                                        de0Var = kx0.f;
+                                        f30Var = f30.d;
+                                        if (t == de0Var) {
+                                            na2Var.g = r4;
+                                            na2Var.h = jj0Var3;
+                                            na2Var.i = jj0Var;
+                                            na2Var.j = cy0Var2;
+                                            na2Var.m = 2;
+                                        }
+                                    }
+                                } while (r4.h(jj0Var, na2Var) != f30Var);
+                                return;
+                            }
+                            jj0Var = na2Var.i;
+                            jj0 jj0Var4 = na2Var.h;
+                            oa2 oa2Var5 = na2Var.g;
+                            try {
+                                mz0.L(obj);
+                                jj0Var2 = jj0Var4;
+                                oa2Var = oa2Var5;
+                                jj0Var = jj0Var;
+                            } catch (Throwable th) {
+                                th = th;
+                                r4 = oa2Var5;
+                                r4.e(jj0Var);
+                                throw th;
+                            }
+                        }
+                        v20 v20Var = na2Var.e;
+                        lx0.u(v20Var);
+                        cy0Var = (cy0) v20Var.n(dd0.K);
+                        pa2Var = jj0Var;
+                        r4 = oa2Var;
+                        cy0Var2 = cy0Var;
+                        jj0Var3 = jj0Var2;
+                        jj0Var = pa2Var;
+                        do {
+                            t = r4.t(jj0Var);
+                            de0Var = kx0.f;
+                            f30Var = f30.d;
+                            if (t == de0Var) {
+                            }
+                        } while (r4.h(jj0Var, na2Var) != f30Var);
+                        return;
+                    }
+                }
+                v20 v20Var2 = na2Var.e;
+                lx0.u(v20Var2);
+                cy0Var = (cy0) v20Var2.n(dd0.K);
+                pa2Var = jj0Var;
+                r4 = oa2Var;
+                cy0Var2 = cy0Var;
+                jj0Var3 = jj0Var2;
+                jj0Var = pa2Var;
+                do {
+                    t = r4.t(jj0Var);
+                    de0Var = kx0.f;
+                    f30Var = f30.d;
+                    if (t == de0Var) {
+                    }
+                } while (r4.h(jj0Var, na2Var) != f30Var);
+                return;
+            } catch (Throwable th2) {
+                r4 = oa2Var;
+                th = th2;
+                r4.e(jj0Var);
+                throw th;
+            }
+            if (i != 0) {
+            }
+        } catch (Throwable th3) {
+            th = th3;
+        }
+        na2Var = new na2(oa2Var, l10Var);
+        Object obj2 = na2Var.k;
+        i = na2Var.m;
     }
 
     @Override // androidx.emoji2.text.jj0
-    public final Object b(Object obj, l10 l10Var) throws Throwable {
+    public final Object b(Object obj, l10 l10Var) {
         Throwable th;
-        l10[] l10VarArrN;
+        l10[] n;
         ma2 ma2Var;
         if (q(obj)) {
-            return up2.f1187a;
+            return up2.f1186a;
         }
         ip ipVar = new ip(1, xa1.E(l10Var));
         ipVar.s();
-        l10[] l10VarArrN2 = h50.f452a;
+        l10[] l10VarArr = h50.f451a;
         synchronized (this) {
             try {
                 if (r(obj)) {
                     try {
-                        ipVar.g(up2.f1187a);
-                        l10VarArrN = n(l10VarArrN2);
+                        ipVar.g(up2.f1186a);
+                        n = n(l10VarArr);
                         ma2Var = null;
                     } catch (Throwable th2) {
                         th = th2;
@@ -195,9 +240,9 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
                         m(ma2Var2);
                         this.o++;
                         if (this.i == 0) {
-                            l10VarArrN2 = n(l10VarArrN2);
+                            l10VarArr = n(l10VarArr);
                         }
-                        l10VarArrN = l10VarArrN2;
+                        n = l10VarArr;
                         ma2Var = ma2Var2;
                     } catch (Throwable th3) {
                         th = th3;
@@ -208,17 +253,17 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
                 if (ma2Var != null) {
                     ipVar.w(new cp(1, ma2Var));
                 }
-                for (l10 l10Var2 : l10VarArrN) {
+                for (l10 l10Var2 : n) {
                     if (l10Var2 != null) {
-                        l10Var2.g(up2.f1187a);
+                        l10Var2.g(up2.f1186a);
                     }
                 }
-                Object objR = ipVar.r();
+                Object r = ipVar.r();
                 f30 f30Var = f30.d;
-                if (objR != f30Var) {
-                    objR = up2.f1187a;
+                if (r != f30Var) {
+                    r = up2.f1186a;
                 }
-                return objR == f30Var ? objR : up2.f1187a;
+                return r == f30Var ? r : up2.f1186a;
             } catch (Throwable th4) {
                 th = th4;
             }
@@ -228,7 +273,7 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
     @Override // androidx.emoji2.text.v0
     public final w0 c() {
         pa2 pa2Var = new pa2();
-        pa2Var.f897a = -1L;
+        pa2Var.f896a = -1L;
         return pa2Var;
     }
 
@@ -250,14 +295,14 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
                 if (s(pa2Var) < 0) {
                     pa2Var.b = ipVar;
                 } else {
-                    ipVar.g(up2.f1187a);
+                    ipVar.g(up2.f1186a);
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        Object objR = ipVar.r();
-        return objR == f30.d ? objR : up2.f1187a;
+        Object r = ipVar.r();
+        return r == f30.d ? r : up2.f1186a;
     }
 
     public final void i() {
@@ -265,10 +310,10 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
             Object[] objArr = this.k;
             lx0.u(objArr);
             while (this.o > 0) {
-                long jO = o();
+                long o = o();
                 int i = this.n;
                 int i2 = this.o;
-                if (objArr[((int) ((jO + (i + i2)) - 1)) & (objArr.length - 1)] != kx0.f) {
+                if (objArr[((int) ((o + (i + i2)) - 1)) & (objArr.length - 1)] != kx0.f) {
                     return;
                 }
                 this.o = i2 - 1;
@@ -278,7 +323,7 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
     }
 
     @Override // androidx.emoji2.text.hj0
-    public final Object j(jj0 jj0Var, l10 l10Var) throws Throwable {
+    public final Object j(jj0 jj0Var, l10 l10Var) {
         k(this, jj0Var, l10Var);
         return f30.d;
     }
@@ -289,35 +334,35 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
         lx0.u(objArr);
         kx0.h(objArr, o(), null);
         this.n--;
-        long jO = o() + 1;
-        if (this.l < jO) {
-            this.l = jO;
+        long o = o() + 1;
+        if (this.l < o) {
+            this.l = o;
         }
-        if (this.m < jO) {
+        if (this.m < o) {
             if (this.e != 0 && (w0VarArr = this.d) != null) {
                 for (w0 w0Var : w0VarArr) {
                     if (w0Var != null) {
                         pa2 pa2Var = (pa2) w0Var;
-                        long j = pa2Var.f897a;
-                        if (j >= 0 && j < jO) {
-                            pa2Var.f897a = jO;
+                        long j = pa2Var.f896a;
+                        if (j >= 0 && j < o) {
+                            pa2Var.f896a = o;
                         }
                     }
                 }
             }
-            this.m = jO;
+            this.m = o;
         }
     }
 
     public final void m(Object obj) {
         int i = this.n + this.o;
-        Object[] objArrP = this.k;
-        if (objArrP == null) {
-            objArrP = p(null, 0, 2);
-        } else if (i >= objArrP.length) {
-            objArrP = p(objArrP, i, objArrP.length * 2);
+        Object[] objArr = this.k;
+        if (objArr == null) {
+            objArr = p(null, 0, 2);
+        } else if (i >= objArr.length) {
+            objArr = p(objArr, i, objArr.length * 2);
         }
-        kx0.h(objArrP, o() + i, obj);
+        kx0.h(objArr, o() + i, obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -337,9 +382,9 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
                     int length3 = l10VarArr.length;
                     l10VarArr = l10VarArr;
                     if (length >= length3) {
-                        ?? CopyOf = Arrays.copyOf(l10VarArr, Math.max(2, l10VarArr.length * 2));
-                        lx0.w(CopyOf, "copyOf(...)");
-                        l10VarArr = CopyOf;
+                        ?? copyOf = Arrays.copyOf(l10VarArr, Math.max(2, l10VarArr.length * 2));
+                        lx0.w(copyOf, "copyOf(...)");
+                        l10VarArr = copyOf;
                     }
                     l10VarArr[length] = ipVar;
                     pa2Var.b = null;
@@ -363,9 +408,9 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
         Object[] objArr2 = new Object[i2];
         this.k = objArr2;
         if (objArr != null) {
-            long jO = o();
+            long o = o();
             for (int i3 = 0; i3 < i; i3++) {
-                long j = i3 + jO;
+                long j = i3 + o;
                 kx0.h(objArr2, j, objArr[((int) j) & (objArr.length - 1)]);
             }
         }
@@ -375,113 +420,66 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
     public final boolean q(Object obj) {
         int i;
         boolean z;
-        l10[] l10VarArrN = h50.f452a;
+        l10[] l10VarArr = h50.f451a;
         synchronized (this) {
             if (r(obj)) {
-                l10VarArrN = n(l10VarArrN);
+                l10VarArr = n(l10VarArr);
                 z = true;
             } else {
                 z = false;
             }
         }
-        for (l10 l10Var : l10VarArrN) {
+        for (l10 l10Var : l10VarArr) {
             if (l10Var != null) {
-                l10Var.g(up2.f1187a);
+                l10Var.g(up2.f1186a);
             }
         }
         return z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0047  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final boolean r(java.lang.Object r13) {
-        /*
-            r12 = this;
-            int r1 = r12.e
-            int r2 = r12.h
-            r9 = 1
-            if (r1 != 0) goto L23
-            if (r2 != 0) goto Lb
-            goto L7f
-        Lb:
-            r12.m(r13)
-            int r1 = r12.n
-            int r1 = r1 + r9
-            r12.n = r1
-            if (r1 <= r2) goto L18
-            r12.l()
-        L18:
-            long r1 = r12.o()
-            int r3 = r12.n
-            long r3 = (long) r3
-            long r1 = r1 + r3
-            r12.m = r1
-            return r9
-        L23:
-            int r1 = r12.n
-            int r3 = r12.i
-            if (r1 < r3) goto L47
-            long r4 = r12.m
-            long r6 = r12.l
-            int r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
-            if (r1 > 0) goto L47
-            androidx.emoji2.text.tn r1 = r12.j
-            int r1 = r1.ordinal()
-            if (r1 == 0) goto L45
-            if (r1 == r9) goto L47
-            r2 = 2
-            if (r1 != r2) goto L3f
-            goto L7f
-        L3f:
-            androidx.emoji2.text.mu r1 = new androidx.emoji2.text.mu
-            r1.<init>()
-            throw r1
-        L45:
-            r1 = 0
-            return r1
-        L47:
-            r12.m(r13)
-            int r1 = r12.n
-            int r1 = r1 + r9
-            r12.n = r1
-            if (r1 <= r3) goto L54
-            r12.l()
-        L54:
-            long r3 = r12.o()
-            int r1 = r12.n
-            long r5 = (long) r1
-            long r3 = r3 + r5
-            long r5 = r12.l
-            long r3 = r3 - r5
-            int r1 = (int) r3
-            if (r1 <= r2) goto L7f
-            r1 = 1
-            long r1 = r1 + r5
-            long r3 = r12.m
-            long r5 = r12.o()
-            int r7 = r12.n
-            long r7 = (long) r7
-            long r5 = r5 + r7
-            long r7 = r12.o()
-            int r10 = r12.n
-            long r10 = (long) r10
-            long r7 = r7 + r10
-            int r10 = r12.o
-            long r10 = (long) r10
-            long r7 = r7 + r10
-            r0 = r12
-            r0.u(r1, r3, r5, r7)
-        L7f:
-            return r9
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.oa2.r(java.lang.Object):boolean");
+    public final boolean r(Object obj) {
+        int i = this.e;
+        int i2 = this.h;
+        if (i != 0) {
+            int i3 = this.n;
+            int i4 = this.i;
+            if (i3 >= i4 && this.m <= this.l) {
+                int ordinal = this.j.ordinal();
+                if (ordinal == 0) {
+                    return false;
+                }
+                if (ordinal != 1) {
+                    if (ordinal != 2) {
+                        throw new mu();
+                    }
+                }
+            }
+            m(obj);
+            int i5 = this.n + 1;
+            this.n = i5;
+            if (i5 > i4) {
+                l();
+            }
+            long o = o() + this.n;
+            long j = this.l;
+            if (((int) (o - j)) > i2) {
+                u(1 + j, this.m, o() + this.n, o() + this.n + this.o);
+            }
+        } else if (i2 != 0) {
+            m(obj);
+            int i6 = this.n + 1;
+            this.n = i6;
+            if (i6 > i2) {
+                l();
+            }
+            this.m = o() + this.n;
+            return true;
+        }
+        return true;
     }
 
     public final long s(pa2 pa2Var) {
-        long j = pa2Var.f897a;
+        long j = pa2Var.f896a;
         if (j < o() + this.n) {
             return j;
         }
@@ -493,47 +491,47 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
 
     public final Object t(pa2 pa2Var) {
         Object obj;
-        l10[] l10VarArrV = h50.f452a;
+        l10[] l10VarArr = h50.f451a;
         synchronized (this) {
             try {
-                long jS = s(pa2Var);
-                if (jS < 0) {
+                long s = s(pa2Var);
+                if (s < 0) {
                     obj = kx0.f;
                 } else {
-                    long j = pa2Var.f897a;
+                    long j = pa2Var.f896a;
                     Object[] objArr = this.k;
                     lx0.u(objArr);
-                    Object obj2 = objArr[((int) jS) & (objArr.length - 1)];
+                    Object obj2 = objArr[((int) s) & (objArr.length - 1)];
                     if (obj2 instanceof ma2) {
                         obj2 = ((ma2) obj2).f;
                     }
-                    pa2Var.f897a = jS + 1;
+                    pa2Var.f896a = s + 1;
                     Object obj3 = obj2;
-                    l10VarArrV = v(j);
+                    l10VarArr = v(j);
                     obj = obj3;
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        for (l10 l10Var : l10VarArrV) {
+        for (l10 l10Var : l10VarArr) {
             if (l10Var != null) {
-                l10Var.g(up2.f1187a);
+                l10Var.g(up2.f1186a);
             }
         }
         return obj;
     }
 
     public final void u(long j, long j2, long j3, long j4) {
-        long jMin = Math.min(j2, j);
-        for (long jO = o(); jO < jMin; jO++) {
+        long min = Math.min(j2, j);
+        for (long o = o(); o < min; o++) {
             Object[] objArr = this.k;
             lx0.u(objArr);
-            kx0.h(objArr, jO, null);
+            kx0.h(objArr, o, null);
         }
         this.l = j;
         this.m = j2;
-        this.n = (int) (j3 - jMin);
+        this.n = (int) (j3 - min);
         this.o = (int) (j4 - j3);
     }
 
@@ -545,10 +543,10 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
         l10[] l10VarArr2;
         w0[] w0VarArr;
         de0 de0Var = kx0.f;
-        l10[] l10VarArr3 = h50.f452a;
+        l10[] l10VarArr3 = h50.f451a;
         if (j <= this.m) {
-            long jO = o();
-            long j5 = this.n + jO;
+            long o = o();
+            long j5 = this.n + o;
             int i = this.i;
             if (i == 0 && this.o > 0) {
                 j5++;
@@ -557,7 +555,7 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
             if (this.e != 0 && (w0VarArr = this.d) != null) {
                 for (w0 w0Var : w0VarArr) {
                     if (w0Var != null) {
-                        long j6 = ((pa2) w0Var).f897a;
+                        long j6 = ((pa2) w0Var).f896a;
                         if (j6 >= 0 && j6 < j5) {
                             j5 = j6;
                         }
@@ -565,64 +563,64 @@ public class oa2 extends v0 implements kf1, hj0, cn0 {
                 }
             }
             if (j5 > this.m) {
-                long jO2 = o() + this.n;
-                int iMin = this.e > 0 ? Math.min(this.o, i - ((int) (jO2 - j5))) : this.o;
-                long j7 = this.o + jO2;
-                if (iMin > 0) {
+                long o2 = o() + this.n;
+                int min = this.e > 0 ? Math.min(this.o, i - ((int) (o2 - j5))) : this.o;
+                long j7 = this.o + o2;
+                if (min > 0) {
                     j4 = 1;
                     Object[] objArr = this.k;
                     lx0.u(objArr);
-                    j2 = jO;
-                    l10[] l10VarArr4 = new l10[iMin];
-                    long j8 = jO2;
+                    j2 = o;
+                    l10[] l10VarArr4 = new l10[min];
+                    long j8 = o2;
                     while (true) {
-                        if (jO2 >= j7) {
+                        if (o2 >= j7) {
                             l10VarArr2 = l10VarArr4;
                             j3 = j5;
                             break;
                         }
                         l10VarArr2 = l10VarArr4;
-                        Object obj = objArr[(objArr.length - 1) & ((int) jO2)];
+                        Object obj = objArr[(objArr.length - 1) & ((int) o2)];
                         if (obj != de0Var) {
                             lx0.v(obj, "null cannot be cast to non-null type kotlinx.coroutines.flow.SharedFlowImpl.Emitter");
                             ma2 ma2Var = (ma2) obj;
                             int i3 = i2 + 1;
                             j3 = j5;
                             l10VarArr2[i2] = ma2Var.g;
-                            kx0.h(objArr, jO2, de0Var);
+                            kx0.h(objArr, o2, de0Var);
                             kx0.h(objArr, j8, ma2Var.f);
                             j8++;
-                            if (i3 >= iMin) {
+                            if (i3 >= min) {
                                 break;
                             }
                             i2 = i3;
                         } else {
                             j3 = j5;
                         }
-                        jO2++;
+                        o2++;
                         l10VarArr4 = l10VarArr2;
                         j5 = j3;
                     }
-                    jO2 = j8;
+                    o2 = j8;
                     l10VarArr = l10VarArr2;
                 } else {
-                    j2 = jO;
+                    j2 = o;
                     j3 = j5;
                     j4 = 1;
                     l10VarArr = l10VarArr3;
                 }
-                int i4 = (int) (jO2 - j2);
-                long j9 = this.e == 0 ? jO2 : j3;
-                long jMax = Math.max(this.l, jO2 - Math.min(this.h, i4));
-                if (i == 0 && jMax < j7) {
+                int i4 = (int) (o2 - j2);
+                long j9 = this.e == 0 ? o2 : j3;
+                long max = Math.max(this.l, o2 - Math.min(this.h, i4));
+                if (i == 0 && max < j7) {
                     Object[] objArr2 = this.k;
                     lx0.u(objArr2);
-                    if (lx0.n(objArr2[((int) jMax) & (objArr2.length - 1)], de0Var)) {
-                        jO2 += j4;
-                        jMax += j4;
+                    if (lx0.n(objArr2[((int) max) & (objArr2.length - 1)], de0Var)) {
+                        o2 += j4;
+                        max += j4;
                     }
                 }
-                u(jMax, j9, jO2, j7);
+                u(max, j9, o2, j7);
                 i();
                 return l10VarArr.length == 0 ? l10VarArr : n(l10VarArr);
             }

@@ -27,16 +27,14 @@ import kotlin.jvm.functions.Function2;
 public abstract class mz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static gu0 f779a = null;
+    public static gu0 f778a = null;
     public static gu0 b = null;
     public static gu0 c = null;
     public static boolean d = true;
 
     public static void A(Object[] objArr) {
         int i;
-        if (objArr == null || objArr.length == 0) {
-            i = -1;
-        } else {
+        if (objArr != null && objArr.length != 0) {
             for (int length = objArr.length; length > 0; length--) {
                 i = length - 1;
                 Object obj = objArr[i];
@@ -44,8 +42,8 @@ public abstract class mz0 {
                     break;
                 }
             }
-            i = -1;
         }
+        i = -1;
         if (i == -1 || ((Integer) objArr[i]).intValue() != rj.r()) {
             return;
         }
@@ -58,9 +56,9 @@ public abstract class mz0 {
         zl0 zl0Var;
         xl0 xl0Var;
         t71 t71Var;
-        rd2 rd2Var = gl2Var.f429a;
+        rd2 rd2Var = gl2Var.f428a;
         bk2 bk2Var2 = sd2.d;
-        bk2 bk2Var3 = rd2Var.f1004a;
+        bk2 bk2Var3 = rd2Var.f1003a;
         if (bk2Var3.equals(j42.q)) {
             bk2Var3 = sd2.d;
         }
@@ -68,7 +66,7 @@ public abstract class mz0 {
         long j2 = rd2Var.b;
         kl2[] kl2VarArr = jl2.b;
         if ((j2 & 1095216660480L) == 0) {
-            j2 = sd2.f1065a;
+            j2 = sd2.f1064a;
         }
         long j3 = j2;
         zl0 zl0Var2 = rd2Var.c;
@@ -77,12 +75,12 @@ public abstract class mz0 {
         }
         zl0 zl0Var3 = zl0Var2;
         xl0 xl0Var2 = rd2Var.d;
-        xl0 xl0Var3 = new xl0(xl0Var2 != null ? xl0Var2.f1343a : 0);
+        xl0 xl0Var3 = new xl0(xl0Var2 != null ? xl0Var2.f1342a : 0);
         yl0 yl0Var = rd2Var.e;
-        yl0 yl0Var2 = new yl0(yl0Var != null ? yl0Var.f1393a : 65535);
+        yl0 yl0Var2 = new yl0(yl0Var != null ? yl0Var.f1392a : 65535);
         vh2 vh2Var = rd2Var.f;
         if (vh2Var == null) {
-            vh2Var = vh2.f1219a;
+            vh2Var = vh2.f1218a;
         }
         vh2 vh2Var2 = vh2Var;
         String str = rd2Var.g;
@@ -95,7 +93,7 @@ public abstract class mz0 {
             j4 = sd2.b;
         }
         sk skVar = rd2Var.i;
-        sk skVar2 = new sk(skVar != null ? skVar.f1072a : 0.0f);
+        sk skVar2 = new sk(skVar != null ? skVar.f1071a : 0.0f);
         ck2 ck2Var = rd2Var.j;
         if (ck2Var == null) {
             ck2Var = ck2.c;
@@ -104,7 +102,7 @@ public abstract class mz0 {
         t71 t71Var2 = rd2Var.k;
         if (t71Var2 == null) {
             t71 t71Var3 = t71.f;
-            rg rgVar = or1.f871a;
+            rg rgVar = or1.f870a;
             rgVar.getClass();
             LocaleList localeList = LocaleList.getDefault();
             bk2Var = bk2Var4;
@@ -162,25 +160,25 @@ public abstract class mz0 {
         rd2 rd2Var2 = new rd2(bk2Var, j, zl0Var, xl0Var, yl0Var2, vh2Var2, str2, j4, skVar2, ck2Var2, t71Var4, j5, zi2Var, q92Var, l8Var);
         nn1 nn1Var = gl2Var.b;
         int i2 = on1.b;
-        int i3 = nn1Var.f818a;
+        int i3 = nn1Var.f817a;
         int i4 = 5;
         if (i3 == Integer.MIN_VALUE) {
             i3 = 5;
         }
         int i5 = nn1Var.b;
         if (i5 == 3) {
-            int iOrdinal = q01Var.ordinal();
-            if (iOrdinal == 0) {
+            int ordinal = q01Var.ordinal();
+            if (ordinal == 0) {
                 i4 = 4;
-            } else if (iOrdinal != 1) {
+            } else if (ordinal != 1) {
                 throw new mu();
             }
         } else if (i5 == Integer.MIN_VALUE) {
-            int iOrdinal2 = q01Var.ordinal();
-            if (iOrdinal2 == 0) {
+            int ordinal2 = q01Var.ordinal();
+            if (ordinal2 == 0) {
                 i4 = 1;
             } else {
-                if (iOrdinal2 != 1) {
+                if (ordinal2 != 1) {
                     throw new mu();
                 }
                 i4 = 2;
@@ -190,7 +188,7 @@ public abstract class mz0 {
         }
         long j6 = nn1Var.c;
         if ((j6 & 1095216660480L) == 0) {
-            j6 = on1.f864a;
+            j6 = on1.f863a;
         }
         dk2 dk2Var = nn1Var.d;
         if (dk2Var == null) {
@@ -215,20 +213,20 @@ public abstract class mz0 {
     }
 
     public static final float C(long j, float f, j70 j70Var) {
-        float fC;
-        long jB = jl2.b(j);
-        if (kl2.a(jB, 4294967296L)) {
+        float c2;
+        long b2 = jl2.b(j);
+        if (kl2.a(b2, 4294967296L)) {
             if (j70Var.U() <= 1.05d) {
                 return j70Var.p0(j);
             }
-            fC = jl2.c(j) / jl2.c(j70Var.I(f));
+            c2 = jl2.c(j) / jl2.c(j70Var.I(f));
         } else {
-            if (!kl2.a(jB, 8589934592L)) {
+            if (!kl2.a(b2, 8589934592L)) {
                 return Float.NaN;
             }
-            fC = jl2.c(j);
+            c2 = jl2.c(j);
         }
-        return fC * f;
+        return c2 * f;
     }
 
     public static final nd1 D(nd1 nd1Var, i52 i52Var, il1 il1Var, boolean z, yi0 yi0Var, se1 se1Var, hm1 hm1Var, lx lxVar, int i) {
@@ -246,16 +244,16 @@ public abstract class mz0 {
         hm1 hm1Var2 = hm1Var;
         tx txVar = (tx) lxVar;
         Context context = (Context) txVar.j(t8.b);
-        pl1 pl1Var = (pl1) txVar.j(ql1.f964a);
+        pl1 pl1Var = (pl1) txVar.j(ql1.f963a);
         if (pl1Var != null) {
             txVar.X(1586021609);
-            boolean zF = txVar.f(context) | txVar.f(pl1Var);
-            Object objM = txVar.M();
-            if (zF || objM == kx.f663a) {
-                objM = new t9(context, pl1Var);
-                txVar.i0(objM);
+            boolean f = txVar.f(context) | txVar.f(pl1Var);
+            Object M = txVar.M();
+            if (f || M == kx.f662a) {
+                M = new t9(context, pl1Var);
+                txVar.i0(M);
             }
-            rl1Var = (t9) objM;
+            rl1Var = (t9) M;
             txVar.p(false);
         } else {
             txVar.X(1586120933);
@@ -264,9 +262,9 @@ public abstract class mz0 {
         }
         rl1 rl1Var2 = rl1Var;
         il1 il1Var3 = il1.d;
-        nd1 nd1VarK = nd1Var.k(il1Var == il1Var3 ? js.c : js.b).k(rl1Var2.f());
+        nd1 k = nd1Var.k(il1Var == il1Var3 ? js.c : js.b).k(rl1Var2.f());
         if (((q01) txVar.j(iy.n)) != q01.e || il1Var == il1Var3) {
-            nd1Var2 = nd1VarK;
+            nd1Var2 = k;
             i52Var2 = i52Var;
             il1Var2 = il1Var;
             yi0Var2 = yi0Var;
@@ -274,7 +272,7 @@ public abstract class mz0 {
             z2 = true;
             z3 = z;
         } else {
-            nd1Var2 = nd1VarK;
+            nd1Var2 = k;
             i52Var2 = i52Var;
             z3 = z;
             yi0Var2 = yi0Var;
@@ -285,42 +283,228 @@ public abstract class mz0 {
         return androidx.compose.foundation.gestures.a.b(nd1Var2, i52Var2, il1Var2, rl1Var2, z3, z2, yi0Var2, se1Var2, hm1Var2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:75:0x00fe, code lost:
-    
-        return true;
-     */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x019a  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x0197 A[EDGE_INSN: B:157:0x0197->B:127:0x0197 BREAK  A[LOOP:5: B:89:0x012c->B:162:0x012c], SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x011f  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x012e  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x019a  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0197 A[EDGE_INSN: B:151:0x0197->B:132:0x0197 BREAK  A[LOOP:5: B:91:0x012c->B:146:0x012c], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x011f  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x012e  */
     /* JADX WARN: Type inference failed for: r11v2, types: [java.lang.Object, java.lang.Object[]] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final boolean E(androidx.emoji2.text.rk0 r12, androidx.emoji2.text.rk0 r13, int r14, androidx.emoji2.text.pc r15) {
-        /*
-            Method dump skipped, instructions count: 438
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mz0.E(androidx.emoji2.text.rk0, androidx.emoji2.text.rk0, int, androidx.emoji2.text.pc):boolean");
+    public static final boolean E(rk0 rk0Var, rk0 rk0Var2, int i, pc pcVar) {
+        md1 md1Var;
+        e11 T;
+        vh1 vh1Var;
+        if (rk0Var.K0() != ok0.e) {
+            throw new IllegalStateException("This function should only be used within a parent that has focus.");
+        }
+        rk0[] rk0VarArr = new rk0[16];
+        if (!rk0Var.d.q) {
+            iv0.b("visitChildren called on an unattached node");
+        }
+        sf1 sf1Var = new sf1(new md1[16]);
+        md1 md1Var2 = rk0Var.d;
+        md1 md1Var3 = md1Var2.i;
+        if (md1Var3 == null) {
+            lx0.i(sf1Var, md1Var2);
+        } else {
+            sf1Var.b(md1Var3);
+        }
+        int i2 = 0;
+        while (true) {
+            int i3 = sf1Var.f;
+            md1Var = null;
+            if (i3 == 0) {
+                break;
+            }
+            md1 md1Var4 = (md1) sf1Var.k(i3 - 1);
+            if ((md1Var4.g & 1024) == 0) {
+                lx0.i(sf1Var, md1Var4);
+            } else {
+                while (true) {
+                    if (md1Var4 == null) {
+                        break;
+                    }
+                    if ((md1Var4.f & 1024) != 0) {
+                        sf1 sf1Var2 = null;
+                        while (md1Var4 != null) {
+                            if (md1Var4 instanceof rk0) {
+                                rk0 rk0Var3 = (rk0) md1Var4;
+                                int i4 = i2 + 1;
+                                if (rk0VarArr.length < i4) {
+                                    int length = rk0VarArr.length;
+                                    ?? r11 = new Object[Math.max(i4, length * 2)];
+                                    System.arraycopy(rk0VarArr, 0, r11, 0, length);
+                                    rk0VarArr = r11;
+                                }
+                                rk0VarArr[i2] = rk0Var3;
+                                i2 = i4;
+                            } else if ((md1Var4.f & 1024) != 0 && (md1Var4 instanceof z60)) {
+                                int i5 = 0;
+                                for (md1 md1Var5 = ((z60) md1Var4).s; md1Var5 != null; md1Var5 = md1Var5.i) {
+                                    if ((md1Var5.f & 1024) != 0) {
+                                        i5++;
+                                        if (i5 == 1) {
+                                            md1Var4 = md1Var5;
+                                        } else {
+                                            if (sf1Var2 == null) {
+                                                sf1Var2 = new sf1(new md1[16]);
+                                            }
+                                            if (md1Var4 != null) {
+                                                sf1Var2.b(md1Var4);
+                                                md1Var4 = null;
+                                            }
+                                            sf1Var2.b(md1Var5);
+                                        }
+                                    }
+                                }
+                                if (i5 == 1) {
+                                }
+                            }
+                            md1Var4 = lx0.m(sf1Var2);
+                        }
+                    } else {
+                        md1Var4 = md1Var4.i;
+                    }
+                }
+            }
+        }
+        xh.Q0(rk0VarArr, tk0.b, 0, i2);
+        if (i != 1) {
+            if (i != 2) {
+                throw new IllegalStateException("This function should only be used for 1-D focus search");
+            }
+            qw0 l0 = az0.l0(0, i2);
+            int i6 = l0.d;
+            int i7 = l0.e;
+            if (i6 <= i7) {
+                boolean z = false;
+                while (true) {
+                    if (z) {
+                        rk0 rk0Var4 = rk0VarArr[i7];
+                        if (xo2.x(rk0Var4) && f(rk0Var4, pcVar)) {
+                            break;
+                        }
+                    }
+                    if (lx0.n(rk0VarArr[i7], rk0Var2)) {
+                        z = true;
+                    }
+                    if (i7 == i6) {
+                        break;
+                    }
+                    i7--;
+                }
+                return true;
+            }
+            if (i != 1) {
+                if (!rk0Var.d.q) {
+                }
+                md1 md1Var6 = rk0Var.d.h;
+                T = lx0.T(rk0Var);
+                loop5: while (true) {
+                    if (T == null) {
+                    }
+                }
+                if (md1Var != null) {
+                }
+            }
+            return false;
+        }
+        qw0 l02 = az0.l0(0, i2);
+        int i8 = l02.d;
+        int i9 = l02.e;
+        if (i8 <= i9) {
+            boolean z2 = false;
+            while (true) {
+                if (z2) {
+                    rk0 rk0Var5 = rk0VarArr[i8];
+                    if (xo2.x(rk0Var5) && k(rk0Var5, pcVar)) {
+                        break;
+                    }
+                }
+                if (lx0.n(rk0VarArr[i8], rk0Var2)) {
+                    z2 = true;
+                }
+                if (i8 == i9) {
+                    break;
+                }
+                i8++;
+            }
+            return true;
+        }
+        if (i != 1 && rk0Var.J0().f529a) {
+            if (!rk0Var.d.q) {
+                iv0.b("visitAncestors called on an unattached node");
+            }
+            md1 md1Var62 = rk0Var.d.h;
+            T = lx0.T(rk0Var);
+            loop5: while (true) {
+                if (T == null) {
+                    break;
+                }
+                if ((T.H.f.g & 1024) != 0) {
+                    while (md1Var62 != null) {
+                        if ((md1Var62.f & 1024) != 0) {
+                            md1 md1Var7 = md1Var62;
+                            sf1 sf1Var3 = null;
+                            while (md1Var7 != null) {
+                                if (md1Var7 instanceof rk0) {
+                                    md1Var = md1Var7;
+                                    break loop5;
+                                }
+                                if ((md1Var7.f & 1024) != 0 && (md1Var7 instanceof z60)) {
+                                    int i10 = 0;
+                                    for (md1 md1Var8 = ((z60) md1Var7).s; md1Var8 != null; md1Var8 = md1Var8.i) {
+                                        if ((md1Var8.f & 1024) != 0) {
+                                            i10++;
+                                            if (i10 == 1) {
+                                                md1Var7 = md1Var8;
+                                            } else {
+                                                if (sf1Var3 == null) {
+                                                    sf1Var3 = new sf1(new md1[16]);
+                                                }
+                                                if (md1Var7 != null) {
+                                                    sf1Var3.b(md1Var7);
+                                                    md1Var7 = null;
+                                                }
+                                                sf1Var3.b(md1Var8);
+                                            }
+                                        }
+                                    }
+                                    if (i10 == 1) {
+                                    }
+                                }
+                                md1Var7 = lx0.m(sf1Var3);
+                            }
+                        }
+                        md1Var62 = md1Var62.h;
+                    }
+                }
+                T = T.u();
+                md1Var62 = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
+            }
+            if (md1Var != null) {
+                return ((Boolean) pcVar.e(rk0Var)).booleanValue();
+            }
+        }
+        return false;
     }
 
     public static final tc F(yc ycVar, int i) {
-        Object next;
+        Object obj;
         Iterator<T> it = ycVar.getLayoutNodeToHolder().entrySet().iterator();
         while (true) {
             if (!it.hasNext()) {
-                next = null;
+                obj = null;
                 break;
             }
-            next = it.next();
-            if (((e11) ((Map.Entry) next).getKey()).e == i) {
+            obj = it.next();
+            if (((e11) ((Map.Entry) obj).getKey()).e == i) {
                 break;
             }
         }
-        Map.Entry entry = (Map.Entry) next;
+        Map.Entry entry = (Map.Entry) obj;
         if (entry != null) {
             return (tc) entry.getValue();
         }
@@ -342,10 +526,10 @@ public abstract class mz0 {
     }
 
     public static final void I(Spannable spannable, long j, j70 j70Var, int i, int i2) {
-        long jB = jl2.b(j);
-        if (kl2.a(jB, 4294967296L)) {
+        long b2 = jl2.b(j);
+        if (kl2.a(b2, 4294967296L)) {
             spannable.setSpan(new AbsoluteSizeSpan(xa1.Q(j70Var.p0(j)), false), i, i2, 33);
-        } else if (kl2.a(jB, 8589934592L)) {
+        } else if (kl2.a(b2, 8589934592L)) {
             spannable.setSpan(new RelativeSizeSpan(jl2.c(j)), i, i2, 33);
         }
     }
@@ -355,7 +539,7 @@ public abstract class mz0 {
             ArrayList arrayList = new ArrayList(ys.r0(t71Var));
             Iterator it = t71Var.d.iterator();
             while (it.hasNext()) {
-                arrayList.add(((s71) it.next()).f1056a);
+                arrayList.add(((s71) it.next()).f1055a);
             }
             Locale[] localeArr = (Locale[]) arrayList.toArray(new Locale[0]);
             spannable.setSpan(new LocaleSpan(new LocaleList((Locale[]) Arrays.copyOf(localeArr, localeArr.length))), i, i2, 33);
@@ -381,15 +565,15 @@ public abstract class mz0 {
     }
 
     public static final Rect M(rw0 rw0Var) {
-        return new Rect(rw0Var.f1038a, rw0Var.b, rw0Var.c, rw0Var.d);
+        return new Rect(rw0Var.f1037a, rw0Var.b, rw0Var.c, rw0Var.d);
     }
 
     public static final Rect N(zw1 zw1Var) {
-        return new Rect((int) zw1Var.f1459a, (int) zw1Var.b, (int) zw1Var.c, (int) zw1Var.d);
+        return new Rect((int) zw1Var.f1458a, (int) zw1Var.b, (int) zw1Var.c, (int) zw1Var.d);
     }
 
     public static final RectF O(zw1 zw1Var) {
-        return new RectF(zw1Var.f1459a, zw1Var.b, zw1Var.c, zw1Var.d);
+        return new RectF(zw1Var.f1458a, zw1Var.b, zw1Var.c, zw1Var.d);
     }
 
     public static final zw1 P(Rect rect) {
@@ -450,26 +634,26 @@ public abstract class mz0 {
         if (txVar.P(i2 & 1, (i2 & 1171) != 1170)) {
             txVar.U();
             if ((i & 1) == 0 || txVar.y()) {
-                v51Var = (v51) txVar.j(o71.f845a);
+                v51Var = (v51) txVar.j(o71.f844a);
             } else {
                 txVar.S();
             }
             int i3 = i2 & (-897);
             txVar.q();
-            boolean zF = txVar.f(bool) | txVar.f(obj) | txVar.f(v51Var);
-            Object objM = txVar.M();
-            if (zF || objM == kx.f663a) {
-                objM = new y51(v51Var.g());
-                txVar.i0(objM);
+            boolean f = txVar.f(bool) | txVar.f(obj) | txVar.f(v51Var);
+            Object M = txVar.M();
+            if (f || M == kx.f662a) {
+                M = new y51(v51Var.g());
+                txVar.i0(M);
             }
-            b(v51Var, (y51) objM, um0Var, txVar, (i3 >> 3) & 896);
+            b(v51Var, (y51) M, um0Var, txVar, (i3 >> 3) & 896);
         } else {
             txVar.S();
         }
         v51 v51Var2 = v51Var;
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new rv(bool, obj, v51Var2, um0Var, i, 2);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new rv(bool, obj, v51Var2, um0Var, i, 2);
         }
     }
 
@@ -489,19 +673,19 @@ public abstract class mz0 {
             i2 |= txVar.h(um0Var) ? 256 : PackageParser.PARSE_IS_PRIVILEGED;
         }
         if (txVar.P(i2 & 1, (i2 & 147) != 146)) {
-            boolean zH = txVar.h(y51Var) | ((i2 & 896) == 256) | txVar.h(v51Var);
-            Object objM = txVar.M();
-            if (zH || objM == kx.f663a) {
-                objM = new t4(v51Var, y51Var, um0Var, 3);
-                txVar.i0(objM);
+            boolean h = txVar.h(y51Var) | ((i2 & 896) == 256) | txVar.h(v51Var);
+            Object M = txVar.M();
+            if (h || M == kx.f662a) {
+                M = new t4(v51Var, y51Var, um0Var, 3);
+                txVar.i0(M);
             }
-            bz0.l(v51Var, y51Var, (um0) objM, txVar);
+            bz0.l(v51Var, y51Var, (um0) M, txVar);
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new qv(v51Var, y51Var, um0Var, i, 1);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new qv(v51Var, y51Var, um0Var, i, 1);
         }
     }
 
@@ -532,169 +716,109 @@ public abstract class mz0 {
         } else {
             ((v22) obj).a(obj2, l8.f0(980966366, new o9(i, n31Var, obj2), txVar), txVar, 48);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new k9(n31Var, obj, i, obj2, i2);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new k9(n31Var, obj, i, obj2, i2);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object e(androidx.emoji2.text.eu1 r4, androidx.emoji2.text.f4 r5, androidx.emoji2.text.n10 r6) {
-        /*
-            boolean r0 = r6 instanceof androidx.emoji2.text.bu1
-            if (r0 == 0) goto L13
-            r0 = r6
-            androidx.emoji2.text.bu1 r0 = (androidx.emoji2.text.bu1) r0
-            int r1 = r0.i
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.i = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.bu1 r0 = new androidx.emoji2.text.bu1
-            r0.<init>(r6)
-        L18:
-            java.lang.Object r6 = r0.h
-            int r1 = r0.i
-            r2 = 1
-            if (r1 == 0) goto L31
-            if (r1 != r2) goto L29
-            androidx.emoji2.text.f4 r5 = r0.g
-            L(r6)     // Catch: java.lang.Throwable -> L27
-            goto L65
-        L27:
-            r4 = move-exception
-            goto L6b
-        L29:
-            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
-            java.lang.String r5 = "call to 'resume' before 'invoke' with coroutine"
-            r4.<init>(r5)
-            throw r4
-        L31:
-            L(r6)
-            androidx.emoji2.text.v20 r6 = r0.e
-            androidx.emoji2.text.lx0.u(r6)
-            androidx.emoji2.text.dd0 r1 = androidx.emoji2.text.dd0.K
-            androidx.emoji2.text.t20 r6 = r6.n(r1)
-            if (r6 != r4) goto L6f
-            r0.g = r5     // Catch: java.lang.Throwable -> L27
-            r0.i = r2     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.ip r6 = new androidx.emoji2.text.ip     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.l10 r0 = androidx.emoji2.text.xa1.E(r0)     // Catch: java.lang.Throwable -> L27
-            r6.<init>(r2, r0)     // Catch: java.lang.Throwable -> L27
-            r6.s()     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.ao0 r0 = new androidx.emoji2.text.ao0     // Catch: java.lang.Throwable -> L27
-            r1 = 3
-            r0.<init>(r1, r6)     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.du1 r4 = (androidx.emoji2.text.du1) r4     // Catch: java.lang.Throwable -> L27
-            r4.l0(r0)     // Catch: java.lang.Throwable -> L27
-            java.lang.Object r4 = r6.r()     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.f30 r6 = androidx.emoji2.text.f30.d
-            if (r4 != r6) goto L65
-            return r6
-        L65:
-            r5.a()
-            androidx.emoji2.text.up2 r4 = androidx.emoji2.text.up2.f1187a
-            return r4
-        L6b:
-            r5.a()
-            throw r4
-        L6f:
-            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
-            java.lang.String r5 = "awaitClose() can only be invoked from the producer context"
-            r4.<init>(r5)
-            throw r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mz0.e(androidx.emoji2.text.eu1, androidx.emoji2.text.f4, androidx.emoji2.text.n10):java.lang.Object");
+    public static final Object e(eu1 eu1Var, f4 f4Var, n10 n10Var) {
+        bu1 bu1Var;
+        int i;
+        try {
+            if (n10Var instanceof bu1) {
+                bu1Var = (bu1) n10Var;
+                int i2 = bu1Var.i;
+                if ((i2 & Integer.MIN_VALUE) != 0) {
+                    bu1Var.i = i2 - Integer.MIN_VALUE;
+                    Object obj = bu1Var.h;
+                    i = bu1Var.i;
+                    if (i != 0) {
+                        L(obj);
+                        v20 v20Var = bu1Var.e;
+                        lx0.u(v20Var);
+                        if (v20Var.n(dd0.K) != eu1Var) {
+                            throw new IllegalStateException("awaitClose() can only be invoked from the producer context");
+                        }
+                        bu1Var.g = f4Var;
+                        bu1Var.i = 1;
+                        ip ipVar = new ip(1, xa1.E(bu1Var));
+                        ipVar.s();
+                        ((du1) eu1Var).l0(new ao0(3, ipVar));
+                        Object r = ipVar.r();
+                        f30 f30Var = f30.d;
+                        if (r == f30Var) {
+                            return f30Var;
+                        }
+                    } else {
+                        if (i != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        f4Var = bu1Var.g;
+                        L(obj);
+                    }
+                    f4Var.a();
+                    return up2.f1186a;
+                }
+            }
+            if (i != 0) {
+            }
+            f4Var.a();
+            return up2.f1186a;
+        } catch (Throwable th) {
+            f4Var.a();
+            throw th;
+        }
+        bu1Var = new bu1(n10Var);
+        Object obj2 = bu1Var.h;
+        i = bu1Var.i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x007c A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x007c A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final boolean f(androidx.emoji2.text.rk0 r7, androidx.emoji2.text.pc r8) {
-        /*
-            androidx.emoji2.text.ok0 r0 = r7.K0()
-            int r0 = r0.ordinal()
-            if (r0 == 0) goto L89
-            r1 = 3
-            r2 = 0
-            r3 = 2
-            r4 = 1
-            if (r0 == r4) goto L37
-            if (r0 == r3) goto L89
-            if (r0 != r1) goto L31
-            boolean r0 = v(r7, r8)
-            if (r0 != 0) goto L7d
-            androidx.emoji2.text.ik0 r0 = r7.J0()
-            boolean r0 = r0.f530a
-            if (r0 == 0) goto L2d
-            java.lang.Object r7 = r8.e(r7)
-            java.lang.Boolean r7 = (java.lang.Boolean) r7
-            boolean r7 = r7.booleanValue()
-            goto L2e
-        L2d:
-            r7 = r2
-        L2e:
-            if (r7 == 0) goto L7c
-            goto L7d
-        L31:
-            androidx.emoji2.text.mu r7 = new androidx.emoji2.text.mu
-            r7.<init>()
-            throw r7
-        L37:
-            androidx.emoji2.text.rk0 r0 = androidx.emoji2.text.xo2.m(r7)
-            java.lang.String r5 = "ActiveParent must have a focusedChild"
-            if (r0 == 0) goto L83
-            androidx.emoji2.text.ok0 r6 = r0.K0()
-            int r6 = r6.ordinal()
-            if (r6 == 0) goto L7e
-            if (r6 == r4) goto L5b
-            if (r6 == r3) goto L7e
-            if (r6 == r1) goto L55
-            androidx.emoji2.text.mu r7 = new androidx.emoji2.text.mu
-            r7.<init>()
-            throw r7
-        L55:
-            java.lang.IllegalStateException r7 = new java.lang.IllegalStateException
-            r7.<init>(r5)
-            throw r7
-        L5b:
-            boolean r1 = f(r0, r8)
-            if (r1 != 0) goto L7d
-            boolean r7 = l(r7, r0, r3, r8)
-            if (r7 != 0) goto L7d
-            androidx.emoji2.text.ik0 r7 = r0.J0()
-            boolean r7 = r7.f530a
-            if (r7 == 0) goto L7c
-            java.lang.Object r7 = r8.e(r0)
-            java.lang.Boolean r7 = (java.lang.Boolean) r7
-            boolean r7 = r7.booleanValue()
-            if (r7 == 0) goto L7c
-            goto L7d
-        L7c:
-            return r2
-        L7d:
-            return r4
-        L7e:
-            boolean r7 = l(r7, r0, r3, r8)
-            return r7
-        L83:
-            java.lang.IllegalStateException r7 = new java.lang.IllegalStateException
-            r7.<init>(r5)
-            throw r7
-        L89:
-            boolean r7 = v(r7, r8)
-            return r7
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mz0.f(androidx.emoji2.text.rk0, androidx.emoji2.text.pc):boolean");
+    public static final boolean f(rk0 rk0Var, pc pcVar) {
+        int ordinal = rk0Var.K0().ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
+                rk0 m = xo2.m(rk0Var);
+                if (m == null) {
+                    throw new IllegalStateException("ActiveParent must have a focusedChild");
+                }
+                int ordinal2 = m.K0().ordinal();
+                if (ordinal2 != 0) {
+                    if (ordinal2 != 1) {
+                        if (ordinal2 != 2) {
+                            if (ordinal2 != 3) {
+                                throw new mu();
+                            }
+                            throw new IllegalStateException("ActiveParent must have a focusedChild");
+                        }
+                    } else if (f(m, pcVar) || l(rk0Var, m, 2, pcVar) || (m.J0().f529a && ((Boolean) pcVar.e(m)).booleanValue())) {
+                        return true;
+                    }
+                }
+                return l(rk0Var, m, 2, pcVar);
+            }
+            if (ordinal != 2) {
+                if (ordinal != 3) {
+                    throw new mu();
+                }
+                if (!v(rk0Var, pcVar)) {
+                    if (!(rk0Var.J0().f529a ? ((Boolean) pcVar.e(rk0Var)).booleanValue() : false)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return v(rk0Var, pcVar);
     }
 
     public static final int g(float f) {
@@ -713,7 +837,7 @@ public abstract class mz0 {
         if (bundle == null) {
             c32 c32Var = new c32();
             new LinkedHashMap();
-            c32Var.f181a = new dv(re0.d);
+            c32Var.f180a = new dv(re0.d);
             return c32Var;
         }
         ClassLoader classLoader = c32.class.getClassLoader();
@@ -732,7 +856,7 @@ public abstract class mz0 {
         }
         c32 c32Var2 = new c32();
         new LinkedHashMap();
-        c32Var2.f181a = new dv(y91Var);
+        c32Var2.f180a = new dv(y91Var);
         return c32Var2;
     }
 
@@ -741,18 +865,18 @@ public abstract class mz0 {
     }
 
     public static final boolean k(rk0 rk0Var, pc pcVar) {
-        int iOrdinal = rk0Var.K0().ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
-                rk0 rk0VarM = xo2.m(rk0Var);
-                if (rk0VarM != null) {
-                    return k(rk0VarM, pcVar) || l(rk0Var, rk0VarM, 1, pcVar);
+        int ordinal = rk0Var.K0().ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
+                rk0 m = xo2.m(rk0Var);
+                if (m != null) {
+                    return k(m, pcVar) || l(rk0Var, m, 1, pcVar);
                 }
                 throw new IllegalStateException("ActiveParent must have a focusedChild");
             }
-            if (iOrdinal != 2) {
-                if (iOrdinal == 3) {
-                    return rk0Var.J0().f530a ? ((Boolean) pcVar.e(rk0Var)).booleanValue() : w(rk0Var, pcVar);
+            if (ordinal != 2) {
+                if (ordinal == 3) {
+                    return rk0Var.J0().f529a ? ((Boolean) pcVar.e(rk0Var)).booleanValue() : w(rk0Var, pcVar);
                 }
                 throw new mu();
             }
@@ -790,9 +914,9 @@ public abstract class mz0 {
     }
 
     public static final long o(long j) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) / 2.0f;
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) / 2.0f;
-        return (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) / 2.0f;
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) / 2.0f;
+        return (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
     }
 
     public static Object p(Object[] objArr, Class cls) {
@@ -800,9 +924,7 @@ public abstract class mz0 {
         if (objArr == null) {
             return null;
         }
-        if (objArr.length == 0) {
-            i = -1;
-        } else {
+        if (objArr.length != 0) {
             i = -1;
             for (Object obj : objArr) {
                 i++;
@@ -810,8 +932,8 @@ public abstract class mz0 {
                     break;
                 }
             }
-            i = -1;
         }
+        i = -1;
         if (i != -1) {
             return objArr[i];
         }
@@ -824,7 +946,7 @@ public abstract class mz0 {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.PlayArrow", 24.0f, 24.0f, false, 96);
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         ArrayList arrayList = new ArrayList(32);
         arrayList.add(new go1(8.0f, 6.82f));
@@ -836,25 +958,25 @@ public abstract class mz0 {
         arrayList.add(new do1(8.87f, 5.55f, 8.0f, 6.03f, 8.0f, 6.82f));
         arrayList.add(co1.b);
         fu0.a(fu0Var, arrayList, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        b = gu0VarB;
-        return gu0VarB;
+        gu0 b2 = fu0Var.b();
+        b = b2;
+        return b2;
     }
 
     public static final String r(lx lxVar, int i) {
         tx txVar = (tx) lxVar;
-        txVar.j(t8.f1108a);
+        txVar.j(t8.f1107a);
         return ((Context) txVar.j(t8.b)).getResources().getString(i);
     }
 
     public static final sk2 s(u62 u62Var) {
         um0 um0Var;
         ArrayList arrayList = new ArrayList();
-        Object objG = u62Var.d.g(t62.f1107a);
-        if (objG == null) {
-            objG = null;
+        Object g = u62Var.d.g(t62.f1106a);
+        if (g == null) {
+            g = null;
         }
-        x0 x0Var = (x0) objG;
+        x0 x0Var = (x0) g;
         if (x0Var == null || (um0Var = (um0) x0Var.b) == null || !((Boolean) um0Var.e(arrayList)).booleanValue()) {
             return null;
         }
@@ -922,19 +1044,19 @@ public abstract class mz0 {
             if (i2 == 0) {
                 break;
             }
-            md1 md1VarM = (md1) sf1Var.k(i2 - 1);
-            if ((md1VarM.g & 1024) == 0) {
-                lx0.i(sf1Var, md1VarM);
+            md1 md1Var3 = (md1) sf1Var.k(i2 - 1);
+            if ((md1Var3.g & 1024) == 0) {
+                lx0.i(sf1Var, md1Var3);
             } else {
                 while (true) {
-                    if (md1VarM == null) {
+                    if (md1Var3 == null) {
                         break;
                     }
-                    if ((md1VarM.f & 1024) != 0) {
+                    if ((md1Var3.f & 1024) != 0) {
                         sf1 sf1Var2 = null;
-                        while (md1VarM != null) {
-                            if (md1VarM instanceof rk0) {
-                                rk0 rk0Var2 = (rk0) md1VarM;
+                        while (md1Var3 != null) {
+                            if (md1Var3 instanceof rk0) {
+                                rk0 rk0Var2 = (rk0) md1Var3;
                                 int i3 = i + 1;
                                 if (rk0VarArr.length < i3) {
                                     int length = rk0VarArr.length;
@@ -944,32 +1066,32 @@ public abstract class mz0 {
                                 }
                                 rk0VarArr[i] = rk0Var2;
                                 i = i3;
-                            } else if ((md1VarM.f & 1024) != 0 && (md1VarM instanceof z60)) {
+                            } else if ((md1Var3.f & 1024) != 0 && (md1Var3 instanceof z60)) {
                                 int i4 = 0;
-                                for (md1 md1Var3 = ((z60) md1VarM).s; md1Var3 != null; md1Var3 = md1Var3.i) {
-                                    if ((md1Var3.f & 1024) != 0) {
+                                for (md1 md1Var4 = ((z60) md1Var3).s; md1Var4 != null; md1Var4 = md1Var4.i) {
+                                    if ((md1Var4.f & 1024) != 0) {
                                         i4++;
                                         if (i4 == 1) {
-                                            md1VarM = md1Var3;
+                                            md1Var3 = md1Var4;
                                         } else {
                                             if (sf1Var2 == null) {
                                                 sf1Var2 = new sf1(new md1[16]);
                                             }
-                                            if (md1VarM != null) {
-                                                sf1Var2.b(md1VarM);
-                                                md1VarM = null;
+                                            if (md1Var3 != null) {
+                                                sf1Var2.b(md1Var3);
+                                                md1Var3 = null;
                                             }
-                                            sf1Var2.b(md1Var3);
+                                            sf1Var2.b(md1Var4);
                                         }
                                     }
                                 }
                                 if (i4 == 1) {
                                 }
                             }
-                            md1VarM = lx0.m(sf1Var2);
+                            md1Var3 = lx0.m(sf1Var2);
                         }
                     } else {
-                        md1VarM = md1VarM.i;
+                        md1Var3 = md1Var3.i;
                     }
                 }
             }
@@ -1009,19 +1131,19 @@ public abstract class mz0 {
             if (i2 == 0) {
                 break;
             }
-            md1 md1VarM = (md1) sf1Var.k(i2 - 1);
-            if ((md1VarM.g & 1024) == 0) {
-                lx0.i(sf1Var, md1VarM);
+            md1 md1Var3 = (md1) sf1Var.k(i2 - 1);
+            if ((md1Var3.g & 1024) == 0) {
+                lx0.i(sf1Var, md1Var3);
             } else {
                 while (true) {
-                    if (md1VarM == null) {
+                    if (md1Var3 == null) {
                         break;
                     }
-                    if ((md1VarM.f & 1024) != 0) {
+                    if ((md1Var3.f & 1024) != 0) {
                         sf1 sf1Var2 = null;
-                        while (md1VarM != null) {
-                            if (md1VarM instanceof rk0) {
-                                rk0 rk0Var2 = (rk0) md1VarM;
+                        while (md1Var3 != null) {
+                            if (md1Var3 instanceof rk0) {
+                                rk0 rk0Var2 = (rk0) md1Var3;
                                 int i3 = i + 1;
                                 if (rk0VarArr.length < i3) {
                                     int length = rk0VarArr.length;
@@ -1031,32 +1153,32 @@ public abstract class mz0 {
                                 }
                                 rk0VarArr[i] = rk0Var2;
                                 i = i3;
-                            } else if ((md1VarM.f & 1024) != 0 && (md1VarM instanceof z60)) {
+                            } else if ((md1Var3.f & 1024) != 0 && (md1Var3 instanceof z60)) {
                                 int i4 = 0;
-                                for (md1 md1Var3 = ((z60) md1VarM).s; md1Var3 != null; md1Var3 = md1Var3.i) {
-                                    if ((md1Var3.f & 1024) != 0) {
+                                for (md1 md1Var4 = ((z60) md1Var3).s; md1Var4 != null; md1Var4 = md1Var4.i) {
+                                    if ((md1Var4.f & 1024) != 0) {
                                         i4++;
                                         if (i4 == 1) {
-                                            md1VarM = md1Var3;
+                                            md1Var3 = md1Var4;
                                         } else {
                                             if (sf1Var2 == null) {
                                                 sf1Var2 = new sf1(new md1[16]);
                                             }
-                                            if (md1VarM != null) {
-                                                sf1Var2.b(md1VarM);
-                                                md1VarM = null;
+                                            if (md1Var3 != null) {
+                                                sf1Var2.b(md1Var3);
+                                                md1Var3 = null;
                                             }
-                                            sf1Var2.b(md1Var3);
+                                            sf1Var2.b(md1Var4);
                                         }
                                     }
                                 }
                                 if (i4 == 1) {
                                 }
                             }
-                            md1VarM = lx0.m(sf1Var2);
+                            md1Var3 = lx0.m(sf1Var2);
                         }
                     } else {
-                        md1VarM = md1VarM.i;
+                        md1Var3 = md1Var3.i;
                     }
                 }
             }
@@ -1079,9 +1201,9 @@ public abstract class mz0 {
             Object obj = objArr[i];
             if (obj != null && (obj instanceof String)) {
                 c01 c01Var = c01.r;
-                int iU = rj.u();
+                int u = rj.u();
                 c01Var.getClass();
-                if (c01.b0((String) obj, iU)) {
+                if (c01.b0((String) obj, u)) {
                     objArr[i] = c01.X();
                 }
             }
@@ -1096,9 +1218,9 @@ public abstract class mz0 {
             Object obj = objArr[i];
             if (obj instanceof String) {
                 c01 c01Var = c01.r;
-                int iU = rj.u();
+                int u = rj.u();
                 c01Var.getClass();
-                if (c01.b0((String) obj, iU)) {
+                if (c01.b0((String) obj, u)) {
                     objArr[i] = c01.X();
                     return;
                 }

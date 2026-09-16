@@ -28,16 +28,16 @@ public final class ie implements qe2 {
     }
 
     public ie(wo2 wo2Var, Object obj, oe oeVar, long j, long j2, boolean z) {
-        oe oeVarQ;
+        oe oeVar2;
         this.d = wo2Var;
         this.e = az0.W(obj);
         if (oeVar != null) {
-            oeVarQ = xa1.q(oeVar);
+            oeVar2 = xa1.q(oeVar);
         } else {
-            oeVarQ = (oe) wo2Var.f1293a.e(obj);
-            oeVarQ.d();
+            oeVar2 = (oe) wo2Var.f1292a.e(obj);
+            oeVar2.d();
         }
-        this.f = oeVarQ;
+        this.f = oeVar2;
         this.g = j;
         this.h = j2;
         this.i = z;

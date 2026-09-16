@@ -1,7 +1,6 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import com.kos.engine.entity.location.BCell;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
@@ -53,23 +52,23 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
             siVar.setDaemon(true);
             siVar.start();
         }
-        long jNanoTime = System.nanoTime();
+        long nanoTime = System.nanoTime();
         if (j2 != 0 && z) {
-            viVar.g = Math.min(j2, viVar.c() - jNanoTime) + jNanoTime;
+            viVar.g = Math.min(j2, viVar.c() - nanoTime) + nanoTime;
         } else if (j2 != 0) {
-            viVar.g = j2 + jNanoTime;
+            viVar.g = j2 + nanoTime;
         } else {
             if (!z) {
                 throw new AssertionError();
             }
             viVar.g = viVar.c();
         }
-        long j3 = viVar.g - jNanoTime;
+        long j3 = viVar.g - nanoTime;
         vi viVar3 = vi.l;
         lx0.u(viVar3);
         while (true) {
             viVar2 = viVar3.f;
-            if (viVar2 == null || j3 < viVar2.g - jNanoTime) {
+            if (viVar2 == null || j3 < viVar2.g - nanoTime) {
                 break;
             }
             lx0.u(viVar2);
@@ -82,23 +81,23 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
         }
     }
 
-    public static vi o() throws InterruptedException {
+    public static vi o() {
         vi viVar = vi.l;
         lx0.u(viVar);
         vi viVar2 = viVar.f;
         if (viVar2 == null) {
-            long jNanoTime = System.nanoTime();
+            long nanoTime = System.nanoTime();
             vi.i.await(vi.j, TimeUnit.MILLISECONDS);
             vi viVar3 = vi.l;
             lx0.u(viVar3);
-            if (viVar3.f != null || System.nanoTime() - jNanoTime < vi.k) {
+            if (viVar3.f != null || System.nanoTime() - nanoTime < vi.k) {
                 return null;
             }
             return vi.l;
         }
-        long jNanoTime2 = viVar2.g - System.nanoTime();
-        if (jNanoTime2 > 0) {
-            vi.i.await(jNanoTime2, TimeUnit.NANOSECONDS);
+        long nanoTime2 = viVar2.g - System.nanoTime();
+        if (nanoTime2 > 0) {
+            vi.i.await(nanoTime2, TimeUnit.NANOSECONDS);
             return null;
         }
         vi viVar4 = vi.l;
@@ -110,27 +109,27 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
     }
 
     public static tg p(String str) {
-        Object next;
+        Object obj;
         if (str == null || wf2.j0(str)) {
             return tg.g;
         }
-        Locale localeForLanguageTag = Locale.forLanguageTag(str);
+        Locale forLanguageTag = Locale.forLanguageTag(str);
         vf0 vf0Var = tg.j;
         vf0Var.getClass();
         c0 c0Var = new c0(vf0Var);
         while (true) {
             if (!c0Var.hasNext()) {
-                next = null;
+                obj = null;
                 break;
             }
-            next = c0Var.next();
-            tg tgVar = (tg) next;
+            obj = c0Var.next();
+            tg tgVar = (tg) obj;
             if (tgVar != tg.g) {
-                Locale localeForLanguageTag2 = Locale.forLanguageTag(tgVar.d);
-                if (lx0.n(localeForLanguageTag2.getLanguage(), localeForLanguageTag.getLanguage())) {
-                    String country = localeForLanguageTag2.getCountry();
-                    lx0.w(country, a.a.a.c.a(-382647785373474L, wj1.f1284a));
-                    if (wf2.j0(country) || lx0.n(localeForLanguageTag2.getCountry(), localeForLanguageTag.getCountry())) {
+                Locale forLanguageTag2 = Locale.forLanguageTag(tgVar.d);
+                if (lx0.n(forLanguageTag2.getLanguage(), forLanguageTag.getLanguage())) {
+                    String country = forLanguageTag2.getCountry();
+                    lx0.w(country, a.a.a.c.a(-382647785373474L, wj1.f1283a));
+                    if (wf2.j0(country) || lx0.n(forLanguageTag2.getCountry(), forLanguageTag.getCountry())) {
                         break;
                     }
                 } else {
@@ -138,14 +137,14 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
                 }
             }
         }
-        tg tgVar2 = (tg) next;
+        tg tgVar2 = (tg) obj;
         return tgVar2 == null ? tg.g : tgVar2;
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [androidx.emoji2.text.g01, androidx.emoji2.text.sm0] */
     @Override // androidx.emoji2.text.sd1
     public Object b(xu1 xu1Var) {
-        return xu1Var.f1359a.a();
+        return xu1Var.f1358a.a();
     }
 
     @Override // androidx.emoji2.text.bk2
@@ -196,7 +195,7 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
     public long h(on0 on0Var, int i2) {
         switch (this.d) {
             case 1:
-                String str = ((sk2) on0Var.e).f1073a.f1017a.e;
+                String str = ((sk2) on0Var.e).f1072a.f1016a.e;
                 return n6.F(az0.z(str, i2), az0.y(str, i2));
             default:
                 return ((sk2) on0Var.e).k(i2);
@@ -206,14 +205,14 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
     @Override // androidx.emoji2.text.u60
     public ed2 i(SSLSocket sSLSocket) {
         Class<?> cls = sSLSocket.getClass();
-        Class<?> superclass = cls;
-        while (!superclass.getSimpleName().equals("OpenSSLSocketImpl")) {
-            superclass = superclass.getSuperclass();
-            if (superclass == null) {
+        Class<?> cls2 = cls;
+        while (!cls2.getSimpleName().equals("OpenSSLSocketImpl")) {
+            cls2 = cls2.getSuperclass();
+            if (cls2 == null) {
                 throw new AssertionError("No OpenSSLSocketImpl superclass of socket of type " + cls);
             }
         }
-        return new zb(superclass);
+        return new zb(cls2);
     }
 
     @Override // androidx.emoji2.text.rc2
@@ -233,7 +232,7 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
 
     public dh q(Context context) {
         dh dhVar;
-        lx0.x(context, a.a.a.c.a(-386989997309730L, wj1.f1284a));
+        lx0.x(context, a.a.a.c.a(-386989997309730L, wj1.f1283a));
         dh dhVar2 = dh.c;
         if (dhVar2 != null) {
             return dhVar2;
@@ -250,9 +249,9 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
 
     public String toString() {
         switch (this.d) {
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return "Start";
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return "StructuralEqualityPolicy";
             case 21:
                 return "AbsoluteArrangement#Left";
@@ -270,7 +269,7 @@ public final class j42 implements nm, rc2, bk2, hc1, al0, u60, ih, sd1 {
     public j42() {
         this.d = 26;
         new t81(16);
-        long[] jArr = e42.f285a;
+        long[] jArr = e42.f284a;
         new gf1();
     }
 

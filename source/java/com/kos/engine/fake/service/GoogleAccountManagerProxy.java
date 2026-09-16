@@ -11,7 +11,6 @@ import androidx.emoji2.text.xa1;
 import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -43,16 +42,16 @@ public class GoogleAccountManagerProxy extends ClassInvocationStub {
     @ProxyMethod("getAccounts")
     public static class GetAccounts extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             try {
                 nz0.Q(c.a(-717161313222434L, strArr), 3, c.a(-717324521979682L, strArr));
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null && (objInvoke instanceof Account[])) {
-                    Account[] accountArr = (Account[]) objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null && (invoke instanceof Account[])) {
+                    Account[] accountArr = (Account[]) invoke;
                     if (accountArr.length > 0) {
                         nz0.Q(c.a(-716980924596002L, strArr), 3, c.a(-717075413876514L, strArr) + accountArr.length + c.a(-717766903611170L, strArr));
-                        return objInvoke;
+                        return invoke;
                     }
                 }
                 nz0.Q(c.a(-717779788513058L, strArr), 3, c.a(-717942997270306L, strArr));

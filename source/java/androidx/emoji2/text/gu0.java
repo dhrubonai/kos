@@ -7,7 +7,7 @@ public final class gu0 {
     public static final on l = new on(28);
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f439a;
+    public final String f438a;
     public final float b;
     public final float c;
     public final float d;
@@ -24,7 +24,7 @@ public final class gu0 {
             i2 = k;
             k = i2 + 1;
         }
-        this.f439a = str;
+        this.f438a = str;
         this.b = f;
         this.c = f2;
         this.d = f3;
@@ -44,12 +44,12 @@ public final class gu0 {
             return false;
         }
         gu0 gu0Var = (gu0) obj;
-        return lx0.n(this.f439a, gu0Var.f439a) && da0.a(this.b, gu0Var.b) && da0.a(this.c, gu0Var.c) && this.d == gu0Var.d && this.e == gu0Var.e && this.f.equals(gu0Var.f) && et.c(this.g, gu0Var.g) && this.h == gu0Var.h && this.i == gu0Var.i;
+        return lx0.n(this.f438a, gu0Var.f438a) && da0.a(this.b, gu0Var.b) && da0.a(this.c, gu0Var.c) && this.d == gu0Var.d && this.e == gu0Var.e && this.f.equals(gu0Var.f) && et.c(this.g, gu0Var.g) && this.h == gu0Var.h && this.i == gu0Var.i;
     }
 
     public final int hashCode() {
-        int iHashCode = (this.f.hashCode() + zd.b(this.e, zd.b(this.d, zd.b(this.c, zd.b(this.b, this.f439a.hashCode() * 31, 31), 31), 31), 31)) * 31;
+        int hashCode = (this.f.hashCode() + zd.b(this.e, zd.b(this.d, zd.b(this.c, zd.b(this.b, this.f438a.hashCode() * 31, 31), 31), 31), 31)) * 31;
         int i = et.l;
-        return Boolean.hashCode(this.i) + jx0.a(this.h, jx0.b(iHashCode, 31, this.g), 31);
+        return Boolean.hashCode(this.i) + jx0.a(this.h, jx0.b(hashCode, 31, this.g), 31);
     }
 }

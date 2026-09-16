@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class q7 implements ns1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ v7 f943a;
+    public final /* synthetic */ v7 f942a;
 
     public q7(v7 v7Var) {
-        this.f943a = v7Var;
-        ms1.f764a.getClass();
+        this.f942a = v7Var;
+        ms1.f763a.getClass();
     }
 }

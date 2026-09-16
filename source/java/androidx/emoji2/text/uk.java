@@ -1,11 +1,6 @@
 package androidx.emoji2.text;
 
 import java.security.GeneralSecurityException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.SignatureException;
-import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -24,21 +19,21 @@ public final class uk extends lx0 {
     }
 
     @Override // androidx.emoji2.text.lx0
-    public final List B(String str, List list) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, CertificateException, NoSuchProviderException, SSLPeerUnverifiedException {
+    public final List B(String str, List list) {
         lx0.x(list, "chain");
         lx0.x(str, "hostname");
         ArrayDeque arrayDeque = new ArrayDeque(list);
         ArrayList arrayList = new ArrayList();
-        Object objRemoveFirst = arrayDeque.removeFirst();
-        lx0.w(objRemoveFirst, "queue.removeFirst()");
-        arrayList.add(objRemoveFirst);
+        Object removeFirst = arrayDeque.removeFirst();
+        lx0.w(removeFirst, "queue.removeFirst()");
+        arrayList.add(removeFirst);
         boolean z = false;
         for (int i = 0; i < 9; i++) {
             Object obj = arrayList.get(arrayList.size() - 1);
             lx0.v(obj, "null cannot be cast to non-null type java.security.cert.X509Certificate");
             X509Certificate x509Certificate = (X509Certificate) obj;
-            X509Certificate x509CertificateA = this.t.a(x509Certificate);
-            if (x509CertificateA == null) {
+            X509Certificate a2 = this.t.a(x509Certificate);
+            if (a2 == null) {
                 Iterator it = arrayDeque.iterator();
                 lx0.w(it, "queue.iterator()");
                 while (it.hasNext()) {
@@ -60,12 +55,12 @@ public final class uk extends lx0 {
                 }
                 return arrayList;
             }
-            if (arrayList.size() > 1 || !x509Certificate.equals(x509CertificateA)) {
-                arrayList.add(x509CertificateA);
+            if (arrayList.size() > 1 || !x509Certificate.equals(a2)) {
+                arrayList.add(a2);
             }
-            if (lx0.n(x509CertificateA.getIssuerDN(), x509CertificateA.getSubjectDN())) {
+            if (lx0.n(a2.getIssuerDN(), a2.getSubjectDN())) {
                 try {
-                    x509CertificateA.verify(x509CertificateA.getPublicKey());
+                    a2.verify(a2.getPublicKey());
                     return arrayList;
                 } catch (GeneralSecurityException unused2) {
                 }

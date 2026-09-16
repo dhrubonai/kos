@@ -15,13 +15,17 @@ public final class op0 extends bz0 {
 
     @Override // androidx.emoji2.text.bz0
     public final int S(int i) {
+        int textRunCursor;
         CharSequence charSequence = this.t;
-        return this.u.getTextRunCursor(charSequence, 0, charSequence.length(), false, i, 0);
+        textRunCursor = this.u.getTextRunCursor(charSequence, 0, charSequence.length(), false, i, 0);
+        return textRunCursor;
     }
 
     @Override // androidx.emoji2.text.bz0
     public final int V(int i) {
+        int textRunCursor;
         CharSequence charSequence = this.t;
-        return this.u.getTextRunCursor(charSequence, 0, charSequence.length(), false, i, 2);
+        textRunCursor = this.u.getTextRunCursor(charSequence, 0, charSequence.length(), false, i, 2);
+        return textRunCursor;
     }
 }

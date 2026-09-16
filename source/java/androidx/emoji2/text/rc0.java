@@ -43,7 +43,7 @@ public final class rc0 extends af0 {
         this.o = Long.MAX_VALUE;
         this.f = az0.c0(ze0Var.getContext(), R.attr.motionDurationShort3, 67);
         this.e = az0.c0(ze0Var.getContext(), R.attr.motionDurationShort3, 50);
-        this.g = az0.d0(ze0Var.getContext(), R.attr.motionEasingLinearInterpolator, je.f575a);
+        this.g = az0.d0(ze0Var.getContext(), R.attr.motionEasingLinearInterpolator, je.f574a);
     }
 
     @Override // androidx.emoji2.text.af0
@@ -100,9 +100,9 @@ public final class rc0 extends af0 {
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 1) {
-                    long jUptimeMillis = SystemClock.uptimeMillis();
-                    rc0 rc0Var = this.d;
-                    long j = jUptimeMillis - rc0Var.o;
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    rc0 rc0Var = rc0.this;
+                    long j = uptimeMillis - rc0Var.o;
                     if (j < 0 || j > 300) {
                         rc0Var.m = false;
                     }
@@ -116,14 +116,14 @@ public final class rc0 extends af0 {
         this.h.setOnDismissListener(new AutoCompleteTextView.OnDismissListener() { // from class: androidx.emoji2.text.qc0
             @Override // android.widget.AutoCompleteTextView.OnDismissListener
             public final void onDismiss() {
-                rc0 rc0Var = this.f950a;
+                rc0 rc0Var = rc0.this;
                 rc0Var.m = true;
                 rc0Var.o = SystemClock.uptimeMillis();
                 rc0Var.s(false);
             }
         });
         this.h.setThreshold(0);
-        TextInputLayout textInputLayout = this.f99a;
+        TextInputLayout textInputLayout = this.f98a;
         textInputLayout.setErrorIconDrawable((Drawable) null);
         if (editText.getInputType() == 0 && this.p.isTouchExplorationEnabled()) {
             this.d.setImportantForAccessibility(2);
@@ -133,7 +133,7 @@ public final class rc0 extends af0 {
 
     @Override // androidx.emoji2.text.af0
     public final void m(s1 s1Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
         if (this.h.getInputType() == 0) {
             s1Var.i(Spinner.class.getName());
         }
@@ -162,18 +162,18 @@ public final class rc0 extends af0 {
     @Override // androidx.emoji2.text.af0
     public final void q() {
         int i = 2;
-        ValueAnimator valueAnimatorOfFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         TimeInterpolator timeInterpolator = this.g;
-        valueAnimatorOfFloat.setInterpolator(timeInterpolator);
-        valueAnimatorOfFloat.setDuration(this.f);
-        valueAnimatorOfFloat.addUpdateListener(new bs(this, i));
-        this.r = valueAnimatorOfFloat;
-        ValueAnimator valueAnimatorOfFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
-        valueAnimatorOfFloat2.setInterpolator(timeInterpolator);
-        valueAnimatorOfFloat2.setDuration(this.e);
-        valueAnimatorOfFloat2.addUpdateListener(new bs(this, i));
-        this.q = valueAnimatorOfFloat2;
-        valueAnimatorOfFloat2.addListener(new l3(1, this));
+        ofFloat.setInterpolator(timeInterpolator);
+        ofFloat.setDuration(this.f);
+        ofFloat.addUpdateListener(new bs(this, i));
+        this.r = ofFloat;
+        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
+        ofFloat2.setInterpolator(timeInterpolator);
+        ofFloat2.setDuration(this.e);
+        ofFloat2.addUpdateListener(new bs(this, i));
+        this.q = ofFloat2;
+        ofFloat2.addListener(new l3(1, this));
         this.p = (AccessibilityManager) this.c.getSystemService("accessibility");
     }
 
@@ -198,8 +198,8 @@ public final class rc0 extends af0 {
         if (this.h == null) {
             return;
         }
-        long jUptimeMillis = SystemClock.uptimeMillis() - this.o;
-        if (jUptimeMillis < 0 || jUptimeMillis > 300) {
+        long uptimeMillis = SystemClock.uptimeMillis() - this.o;
+        if (uptimeMillis < 0 || uptimeMillis > 300) {
             this.m = false;
         }
         if (this.m) {

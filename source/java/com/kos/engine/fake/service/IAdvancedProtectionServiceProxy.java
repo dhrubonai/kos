@@ -85,11 +85,11 @@ public class IAdvancedProtectionServiceProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-645860561141538L, strArr)).getMethod(c.a(-645637222842146L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-645860561141538L, strArr)).getMethod(c.a(-645637222842146L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-646307237740322L, strArr), th, 3, c.a(-645654402711330L, strArr));
             return null;
@@ -102,10 +102,10 @@ public class IAdvancedProtectionServiceProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-646509101203234L, strArr);
+            String a2 = c.a(-646509101203234L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-646062424604450L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 

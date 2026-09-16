@@ -7,21 +7,21 @@ import android.text.Layout;
 public abstract class ui2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Layout.Alignment f1177a;
+    public static final Layout.Alignment f1176a;
     public static final Layout.Alignment b;
 
     static {
-        Layout.Alignment[] alignmentArrValues = Layout.Alignment.values();
+        Layout.Alignment[] values = Layout.Alignment.values();
         Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
         Layout.Alignment alignment2 = alignment;
-        for (Layout.Alignment alignment3 : alignmentArrValues) {
+        for (Layout.Alignment alignment3 : values) {
             if (lx0.n(alignment3.name(), "ALIGN_LEFT")) {
                 alignment = alignment3;
             } else if (lx0.n(alignment3.name(), "ALIGN_RIGHT")) {
                 alignment2 = alignment3;
             }
         }
-        f1177a = alignment;
+        f1176a = alignment;
         b = alignment2;
     }
 }

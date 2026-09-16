@@ -7,20 +7,20 @@ import android.graphics.drawable.Drawable;
 public final class li implements ki2, kb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ pi f691a;
+    public final /* synthetic */ pi f690a;
 
     public /* synthetic */ li(pi piVar) {
-        this.f691a = piVar;
+        this.f690a = piVar;
     }
 
     @Override // androidx.emoji2.text.ki2
     public void a(Drawable drawable) {
-        pi piVar = this.f691a;
+        pi piVar = this.f690a;
         piVar.k(new hi(drawable != null ? piVar.j(drawable) : null));
     }
 
     @Override // androidx.emoji2.text.kb2
     public Object f(zv1 zv1Var) {
-        return l8.N(new oi(this.f691a.j, 0), zv1Var);
+        return l8.N(new oi(this.f690a.j, 0), zv1Var);
     }
 }

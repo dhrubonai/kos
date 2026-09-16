@@ -23,7 +23,7 @@ public abstract class in1 {
     public static final /* synthetic */ int R = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f538a;
+    public static final long f537a;
     public static final long b;
     public static final long c;
     public static final long d;
@@ -53,7 +53,7 @@ public abstract class in1 {
     static {
         bz0.i(0, 0, 0);
         bz0.i(0, 0, 0);
-        f538a = bz0.i(65, 14, 11);
+        f537a = bz0.i(65, 14, 11);
         b = bz0.i(255, 255, 255);
         bz0.i(96, 20, 16);
         c = bz0.i(140, 29, 24);

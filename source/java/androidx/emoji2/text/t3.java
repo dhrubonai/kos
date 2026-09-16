@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class t3 extends r3 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ w3 f1101a;
+    public final /* synthetic */ w3 f1100a;
 
     public t3(w3 w3Var) {
-        this.f1101a = w3Var;
+        this.f1100a = w3Var;
     }
 }

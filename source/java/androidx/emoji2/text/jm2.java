@@ -8,13 +8,13 @@ import android.content.ContextWrapper;
 public abstract class jm2 extends ContextWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Object f586a = null;
+    public static final Object f585a = null;
 
     public static void a(Context context) {
         if (context.getResources() instanceof km2) {
             return;
         }
         context.getResources();
-        int i = sq2.f1081a;
+        int i = sq2.f1080a;
     }
 }

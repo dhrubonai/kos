@@ -19,24 +19,24 @@ public class ProxyBroadcastReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         intent.setExtrasClassLoader(context.getClassLoader());
-        ProxyBroadcastRecord proxyBroadcastRecordCreate = ProxyBroadcastRecord.create(intent);
-        if (proxyBroadcastRecordCreate.mIntent == null) {
+        ProxyBroadcastRecord create = ProxyBroadcastRecord.create(intent);
+        if (create.mIntent == null) {
             return;
         }
-        BroadcastReceiver.PendingResult pendingResultGoAsync = goAsync();
-        PendingResultData pendingResultData = new PendingResultData(pendingResultGoAsync);
+        BroadcastReceiver.PendingResult goAsync = goAsync();
+        PendingResultData pendingResultData = new PendingResultData(goAsync);
         if (!pendingResultData.mOrderedHint) {
-            pendingResultGoAsync.finish();
+            goAsync.finish();
             pendingResultData.mFinished = true;
         }
         try {
             c01 c01Var = c01.r;
-            BActivityManager.get().scheduleBroadcastReceiver(proxyBroadcastRecordCreate.mIntent, pendingResultData, proxyBroadcastRecordCreate.mUserId);
+            BActivityManager.get().scheduleBroadcastReceiver(create.mIntent, pendingResultData, create.mUserId);
         } catch (RemoteException unused) {
             if (pendingResultData.mFinished) {
                 return;
             }
-            pendingResultGoAsync.finish();
+            goAsync.finish();
         }
     }
 }

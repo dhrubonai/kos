@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public abstract class lz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static gu0 f725a;
+    public static gu0 f724a;
     public static gu0 b;
     public static gu0 c;
     public static gu0 d;
@@ -32,47 +32,47 @@ public abstract class lz0 {
         new AtomicReference(null);
     }
 
-    public static mc1 G(MappedByteBuffer mappedByteBuffer) throws IOException {
+    public static mc1 G(MappedByteBuffer mappedByteBuffer) {
         long j;
-        ByteBuffer byteBufferDuplicate = mappedByteBuffer.duplicate();
-        byteBufferDuplicate.order(ByteOrder.BIG_ENDIAN);
-        byteBufferDuplicate.position(byteBufferDuplicate.position() + 4);
-        int i = byteBufferDuplicate.getShort() & 65535;
+        ByteBuffer duplicate = mappedByteBuffer.duplicate();
+        duplicate.order(ByteOrder.BIG_ENDIAN);
+        duplicate.position(duplicate.position() + 4);
+        int i = duplicate.getShort() & 65535;
         if (i > 100) {
             throw new IOException("Cannot read metadata.");
         }
-        byteBufferDuplicate.position(byteBufferDuplicate.position() + 6);
+        duplicate.position(duplicate.position() + 6);
         int i2 = 0;
         while (true) {
             if (i2 >= i) {
                 j = -1;
                 break;
             }
-            int i3 = byteBufferDuplicate.getInt();
-            byteBufferDuplicate.position(byteBufferDuplicate.position() + 4);
-            j = byteBufferDuplicate.getInt() & 4294967295L;
-            byteBufferDuplicate.position(byteBufferDuplicate.position() + 4);
+            int i3 = duplicate.getInt();
+            duplicate.position(duplicate.position() + 4);
+            j = duplicate.getInt() & 4294967295L;
+            duplicate.position(duplicate.position() + 4);
             if (1835365473 == i3) {
                 break;
             }
             i2++;
         }
         if (j != -1) {
-            byteBufferDuplicate.position(byteBufferDuplicate.position() + ((int) (j - byteBufferDuplicate.position())));
-            byteBufferDuplicate.position(byteBufferDuplicate.position() + 12);
-            long j2 = byteBufferDuplicate.getInt() & 4294967295L;
+            duplicate.position(duplicate.position() + ((int) (j - duplicate.position())));
+            duplicate.position(duplicate.position() + 12);
+            long j2 = duplicate.getInt() & 4294967295L;
             for (int i4 = 0; i4 < j2; i4++) {
-                int i5 = byteBufferDuplicate.getInt();
-                long j3 = byteBufferDuplicate.getInt() & 4294967295L;
-                byteBufferDuplicate.getInt();
+                int i5 = duplicate.getInt();
+                long j3 = duplicate.getInt() & 4294967295L;
+                duplicate.getInt();
                 if (1164798569 == i5 || 1701669481 == i5) {
-                    byteBufferDuplicate.position((int) (j3 + j));
+                    duplicate.position((int) (j3 + j));
                     mc1 mc1Var = new mc1();
-                    byteBufferDuplicate.order(ByteOrder.LITTLE_ENDIAN);
-                    int iPosition = byteBufferDuplicate.position() + byteBufferDuplicate.getInt(byteBufferDuplicate.position());
-                    mc1Var.g = byteBufferDuplicate;
-                    mc1Var.d = iPosition;
-                    int i6 = iPosition - byteBufferDuplicate.getInt(iPosition);
+                    duplicate.order(ByteOrder.LITTLE_ENDIAN);
+                    int position = duplicate.position() + duplicate.getInt(duplicate.position());
+                    mc1Var.g = duplicate;
+                    mc1Var.d = position;
+                    int i6 = position - duplicate.getInt(position);
                     mc1Var.e = i6;
                     mc1Var.f = ((ByteBuffer) mc1Var.g).getShort(i6);
                     return mc1Var;
@@ -82,17 +82,17 @@ public abstract class lz0 {
         throw new IOException("Cannot read metadata.");
     }
 
-    public static final String H(Reader reader) throws IOException {
+    public static final String H(Reader reader) {
         StringWriter stringWriter = new StringWriter();
         char[] cArr = new char[8192];
-        int i = reader.read(cArr);
-        while (i >= 0) {
-            stringWriter.write(cArr, 0, i);
-            i = reader.read(cArr);
+        int read = reader.read(cArr);
+        while (read >= 0) {
+            stringWriter.write(cArr, 0, read);
+            read = reader.read(cArr);
         }
-        String string = stringWriter.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String stringWriter2 = stringWriter.toString();
+        lx0.w(stringWriter2, "toString(...)");
+        return stringWriter2;
     }
 
     public static void J(Window window, boolean z) {
@@ -111,39 +111,39 @@ public abstract class lz0 {
     }
 
     public static final int K(pe1 pe1Var) {
-        int iC;
+        int c2;
         int i = pe1Var.b;
-        int iC2 = pe1Var.c(0);
-        while (pe1Var.b != 0 && pe1Var.c(0) == iC2) {
+        int c3 = pe1Var.c(0);
+        while (pe1Var.b != 0 && pe1Var.c(0) == c3) {
             int i2 = pe1Var.b;
             if (i2 == 0) {
                 N("IntList is empty.");
                 throw null;
             }
-            pe1Var.e(0, pe1Var.f901a[i2 - 1]);
+            pe1Var.e(0, pe1Var.f900a[i2 - 1]);
             pe1Var.d(pe1Var.b - 1);
             int i3 = pe1Var.b;
             int i4 = i3 >>> 1;
             int i5 = 0;
             while (i5 < i4) {
-                int iC3 = pe1Var.c(i5);
+                int c4 = pe1Var.c(i5);
                 int i6 = (i5 + 1) * 2;
                 int i7 = i6 - 1;
-                int iC4 = pe1Var.c(i7);
-                if (i6 >= i3 || (iC = pe1Var.c(i6)) <= iC4) {
-                    if (iC4 > iC3) {
-                        pe1Var.e(i5, iC4);
-                        pe1Var.e(i7, iC3);
+                int c5 = pe1Var.c(i7);
+                if (i6 >= i3 || (c2 = pe1Var.c(i6)) <= c5) {
+                    if (c5 > c4) {
+                        pe1Var.e(i5, c5);
+                        pe1Var.e(i7, c4);
                         i5 = i7;
                     }
-                } else if (iC > iC3) {
-                    pe1Var.e(i5, iC);
-                    pe1Var.e(i6, iC3);
+                } else if (c2 > c4) {
+                    pe1Var.e(i5, c2);
+                    pe1Var.e(i6, c4);
                     i5 = i6;
                 }
             }
         }
-        return iC2;
+        return c3;
     }
 
     public static final void L(String str) {
@@ -167,129 +167,91 @@ public abstract class lz0 {
         ve veVar = pi.w;
         gl glVar = dd0.i;
         on onVar = wj1.b;
-        bw1 bw1VarQ = (bw1) txVar.j(n71.f796a);
-        if (bw1VarQ == null) {
+        bw1 bw1Var = (bw1) txVar.j(n71.f795a);
+        if (bw1Var == null) {
             Context context = (Context) txVar.j(t8.b);
-            bw1 bw1Var = dd0.w;
-            if (bw1Var == null) {
+            bw1 bw1Var2 = dd0.w;
+            if (bw1Var2 == null) {
                 synchronized (dd0.v) {
-                    bw1Var = dd0.w;
-                    if (bw1Var != null) {
-                        bw1VarQ = bw1Var;
-                    } else {
+                    bw1Var2 = dd0.w;
+                    if (bw1Var2 == null) {
                         context.getApplicationContext();
-                        bw1VarQ = kx0.q(context);
-                        dd0.w = bw1VarQ;
+                        bw1Var = kx0.q(context);
+                        dd0.w = bw1Var;
                     }
                 }
-            } else {
-                bw1VarQ = bw1Var;
             }
+            bw1Var = bw1Var2;
         }
         int i2 = ((i << 3) & 7168) | (i & 112) | 520 | 12582912;
         txVar.Y(2032051394);
-        wj1.b(new ri(obj, onVar, bw1VarQ), str, nd1Var, veVar, glVar, q00Var, txVar, (i2 & 112) | ((i2 >> 3) & 896) | 1572864, 0);
+        wj1.b(new ri(obj, onVar, bw1Var), str, nd1Var, veVar, glVar, q00Var, txVar, (i2 & 112) | ((i2 >> 3) & 896) | 1572864, 0);
         txVar.p(false);
         txVar.p(false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0061 A[LOOP:0: B:4:0x000b->B:35:0x0061, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0064 A[EDGE_INSN: B:43:0x0064->B:36:0x0064 BREAK  A[LOOP:0: B:4:0x000b->B:35:0x0061], SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public static final androidx.emoji2.text.y62 b(androidx.emoji2.text.e11 r8, boolean r9) {
-        /*
-            androidx.emoji2.text.vh1 r0 = r8.H
-            androidx.emoji2.text.md1 r0 = r0.f
-            int r1 = r0.g
-            r1 = r1 & 8
-            r2 = 0
-            if (r1 == 0) goto L64
-        Lb:
-            if (r0 == 0) goto L64
-            int r1 = r0.f
-            r1 = r1 & 8
-            if (r1 == 0) goto L5b
-            r1 = r0
-            r3 = r2
-        L15:
-            if (r1 == 0) goto L5b
-            boolean r4 = r1 instanceof androidx.emoji2.text.w62
-            if (r4 == 0) goto L1d
-            r2 = r1
-            goto L64
-        L1d:
-            int r4 = r1.f
-            r4 = r4 & 8
-            if (r4 == 0) goto L56
-            boolean r4 = r1 instanceof androidx.emoji2.text.z60
-            if (r4 == 0) goto L56
-            r4 = r1
-            androidx.emoji2.text.z60 r4 = (androidx.emoji2.text.z60) r4
-            androidx.emoji2.text.md1 r4 = r4.s
-            r5 = 0
-        L2d:
-            r6 = 1
-            if (r4 == 0) goto L53
-            int r7 = r4.f
-            r7 = r7 & 8
-            if (r7 == 0) goto L50
-            int r5 = r5 + 1
-            if (r5 != r6) goto L3c
-            r1 = r4
-            goto L50
-        L3c:
-            if (r3 != 0) goto L47
-            androidx.emoji2.text.sf1 r3 = new androidx.emoji2.text.sf1
-            r6 = 16
-            androidx.emoji2.text.md1[] r6 = new androidx.emoji2.text.md1[r6]
-            r3.<init>(r6)
-        L47:
-            if (r1 == 0) goto L4d
-            r3.b(r1)
-            r1 = r2
-        L4d:
-            r3.b(r4)
-        L50:
-            androidx.emoji2.text.md1 r4 = r4.i
-            goto L2d
-        L53:
-            if (r5 != r6) goto L56
-            goto L15
-        L56:
-            androidx.emoji2.text.md1 r1 = androidx.emoji2.text.lx0.m(r3)
-            goto L15
-        L5b:
-            int r1 = r0.g
-            r1 = r1 & 8
-            if (r1 == 0) goto L64
-            androidx.emoji2.text.md1 r0 = r0.i
-            goto Lb
-        L64:
-            androidx.emoji2.text.lx0.u(r2)
-            androidx.emoji2.text.w62 r2 = (androidx.emoji2.text.w62) r2
-            androidx.emoji2.text.md1 r2 = (androidx.emoji2.text.md1) r2
-            androidx.emoji2.text.md1 r0 = r2.d
-            androidx.emoji2.text.u62 r1 = r8.x()
-            if (r1 != 0) goto L78
-            androidx.emoji2.text.u62 r1 = new androidx.emoji2.text.u62
-            r1.<init>()
-        L78:
-            androidx.emoji2.text.y62 r2 = new androidx.emoji2.text.y62
-            r2.<init>(r0, r9, r8, r1)
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.lz0.b(androidx.emoji2.text.e11, boolean):androidx.emoji2.text.y62");
+    public static final y62 b(e11 e11Var, boolean z) {
+        md1 md1Var = e11Var.H.f;
+        y60 y60Var = null;
+        if ((md1Var.g & 8) != 0) {
+            loop0: while (true) {
+                if (md1Var == null) {
+                    break;
+                }
+                if ((md1Var.f & 8) != 0) {
+                    md1 md1Var2 = md1Var;
+                    sf1 sf1Var = null;
+                    while (md1Var2 != null) {
+                        if (md1Var2 instanceof w62) {
+                            y60Var = md1Var2;
+                            break loop0;
+                        }
+                        if ((md1Var2.f & 8) != 0 && (md1Var2 instanceof z60)) {
+                            int i = 0;
+                            for (md1 md1Var3 = ((z60) md1Var2).s; md1Var3 != null; md1Var3 = md1Var3.i) {
+                                if ((md1Var3.f & 8) != 0) {
+                                    i++;
+                                    if (i == 1) {
+                                        md1Var2 = md1Var3;
+                                    } else {
+                                        if (sf1Var == null) {
+                                            sf1Var = new sf1(new md1[16]);
+                                        }
+                                        if (md1Var2 != null) {
+                                            sf1Var.b(md1Var2);
+                                            md1Var2 = null;
+                                        }
+                                        sf1Var.b(md1Var3);
+                                    }
+                                }
+                            }
+                            if (i == 1) {
+                            }
+                        }
+                        md1Var2 = lx0.m(sf1Var);
+                    }
+                }
+                if ((md1Var.g & 8) == 0) {
+                    break;
+                }
+                md1Var = md1Var.i;
+            }
+        }
+        lx0.u(y60Var);
+        md1 md1Var4 = ((md1) ((w62) y60Var)).d;
+        u62 x = e11Var.x();
+        if (x == null) {
+            x = new u62();
+        }
+        return new y62(md1Var4, z, e11Var, x);
     }
 
     public static final void c(lx lxVar, nd1 nd1Var) {
         n9 n9Var = n9.i;
-        int iA = jm.A(lxVar);
-        nd1 nd1VarQ = bz0.Q(lxVar, nd1Var);
+        int A = jm.A(lxVar);
+        nd1 Q = bz0.Q(lxVar, nd1Var);
         tx txVar = (tx) lxVar;
-        ap1 ap1VarL = txVar.l();
+        ap1 l = txVar.l();
         hx.b.getClass();
         hy hyVar = gx.b;
         txVar.b0();
@@ -299,18 +261,18 @@ public abstract class lz0 {
             txVar.l0();
         }
         mz0.G(lxVar, n9Var, gx.e);
-        mz0.G(lxVar, ap1VarL, gx.d);
-        mz0.G(lxVar, nd1VarQ, gx.c);
+        mz0.G(lxVar, l, gx.d);
+        mz0.G(lxVar, Q, gx.c);
         wc wcVar = gx.f;
-        if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iA))) {
-            zd.l(iA, txVar, iA, wcVar);
+        if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(A))) {
+            zd.l(A, txVar, A, wcVar);
         }
         txVar.p(true);
     }
 
     public static final ExtractedText d(ak2 ak2Var) {
         ExtractedText extractedText = new ExtractedText();
-        String str = ak2Var.f106a.e;
+        String str = ak2Var.f105a.e;
         extractedText.text = str;
         extractedText.startOffset = 0;
         extractedText.partialEndOffset = str.length();
@@ -318,7 +280,7 @@ public abstract class lz0 {
         long j = ak2Var.b;
         extractedText.selectionStart = al2.e(j);
         extractedText.selectionEnd = al2.d(j);
-        extractedText.flags = !wf2.b0(ak2Var.f106a.e, '\n') ? 1 : 0;
+        extractedText.flags = !wf2.b0(ak2Var.f105a.e, '\n') ? 1 : 0;
         return extractedText;
     }
 
@@ -328,11 +290,11 @@ public abstract class lz0 {
             pe1Var.a(i);
             while (i2 > 0) {
                 int i3 = ((i2 + 1) >>> 1) - 1;
-                int iC = pe1Var.c(i3);
-                if (i <= iC) {
+                int c2 = pe1Var.c(i3);
+                if (i <= c2) {
                     break;
                 }
-                pe1Var.e(i2, iC);
+                pe1Var.e(i2, c2);
                 i2 = i3;
             }
             pe1Var.e(i2, i);
@@ -342,16 +304,16 @@ public abstract class lz0 {
     public static void f(oj1 oj1Var, cv cvVar, um0 um0Var) {
         lx0.x(oj1Var, "<this>");
         vj vjVar = new vj(um0Var);
-        lz0 lz0VarG = cvVar.g();
-        if (lz0VarG.q() == o51.d) {
+        lz0 g = cvVar.g();
+        if (g.q() == o51.d) {
             return;
         }
         kj1 kj1Var = new kj1(vjVar, new lj1(vjVar, cvVar));
-        vjVar.f1222a.add(kj1Var);
+        vjVar.f1221a.add(kj1Var);
         kj1Var.g(false);
         s6.c(oj1Var.a().c, kj1Var);
-        nj1 nj1Var = new nj1(kj1Var, oj1Var, lz0VarG);
-        lz0VarG.g(nj1Var);
+        nj1 nj1Var = new nj1(kj1Var, oj1Var, g);
+        g.g(nj1Var);
         vjVar.c.add(nj1Var);
     }
 
@@ -383,11 +345,11 @@ public abstract class lz0 {
         if (jx1Var.q() == 0 || sx1Var.a() == 0 || view == null || view2 == null) {
             return 0;
         }
-        int iMax = z2 ? Math.max(0, (sx1Var.a() - Math.max(jx1.A(view), jx1.A(view2))) - 1) : Math.max(0, Math.min(jx1.A(view), jx1.A(view2)));
+        int max = z2 ? Math.max(0, (sx1Var.a() - Math.max(jx1.A(view), jx1.A(view2))) - 1) : Math.max(0, Math.min(jx1.A(view), jx1.A(view2)));
         if (z) {
-            return Math.round((iMax * (Math.abs(c1Var.c(view2) - c1Var.f(view)) / (Math.abs(jx1.A(view) - jx1.A(view2)) + 1))) + (c1Var.m() - c1Var.f(view)));
+            return Math.round((max * (Math.abs(c1Var.c(view2) - c1Var.f(view)) / (Math.abs(jx1.A(view) - jx1.A(view2)) + 1))) + (c1Var.m() - c1Var.f(view)));
         }
-        return iMax;
+        return max;
     }
 
     public static int n(sx1 sx1Var, c1 c1Var, View view, View view2, jx1 jx1Var, boolean z) {
@@ -405,12 +367,12 @@ public abstract class lz0 {
     }
 
     public static final gu0 t() {
-        gu0 gu0Var = f725a;
+        gu0 gu0Var = f724a;
         if (gu0Var != null) {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("AutoMirrored.Rounded.KeyboardArrowRight", 24.0f, 24.0f, true, 96);
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         pm0 pm0Var = new pm0(2);
         pm0Var.m(9.29f, 15.88f);
@@ -425,9 +387,9 @@ public abstract class lz0 {
         pm0Var.g(-0.38f, -0.39f, -0.39f, -1.03f, 0.0f, -1.42f);
         pm0Var.e();
         fu0.a(fu0Var, pm0Var.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        f725a = gu0VarB;
-        return gu0VarB;
+        gu0 b2 = fu0Var.b();
+        f724a = b2;
+        return b2;
     }
 
     public static final gu0 u() {
@@ -436,20 +398,20 @@ public abstract class lz0 {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.ManageAccounts", 24.0f, 24.0f, false, 96);
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         long j = et.b;
         kd2 kd2Var = new kd2(j);
-        pm0 pm0VarD = zd.d(10.67f, 13.02f);
-        pm0VarD.f(10.45f, 13.01f, 10.23f, 13.0f, 10.0f, 13.0f);
-        pm0VarD.g(-2.42f, 0.0f, -4.68f, 0.67f, -6.61f, 1.82f);
-        pm0VarD.f(2.51f, 15.34f, 2.0f, 16.32f, 2.0f, 17.35f);
-        pm0VarD.q(19.0f);
-        pm0VarD.g(0.0f, 0.55f, 0.45f, 1.0f, 1.0f, 1.0f);
-        pm0VarD.j(8.26f);
-        pm0VarD.f(10.47f, 18.87f, 10.0f, 17.49f, 10.0f, 16.0f);
-        pm0VarD.f(10.0f, 14.93f, 10.25f, 13.93f, 10.67f, 13.02f);
-        pm0VarD.e();
-        fu0.a(fu0Var, pm0VarD.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
+        pm0 d2 = zd.d(10.67f, 13.02f);
+        d2.f(10.45f, 13.01f, 10.23f, 13.0f, 10.0f, 13.0f);
+        d2.g(-2.42f, 0.0f, -4.68f, 0.67f, -6.61f, 1.82f);
+        d2.f(2.51f, 15.34f, 2.0f, 16.32f, 2.0f, 17.35f);
+        d2.q(19.0f);
+        d2.g(0.0f, 0.55f, 0.45f, 1.0f, 1.0f, 1.0f);
+        d2.j(8.26f);
+        d2.f(10.47f, 18.87f, 10.0f, 17.49f, 10.0f, 16.0f);
+        d2.f(10.0f, 14.93f, 10.25f, 13.93f, 10.67f, 13.02f);
+        d2.e();
+        fu0.a(fu0Var, d2.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
         kd2 kd2Var2 = new kd2(j);
         ArrayList arrayList = new ArrayList(32);
         arrayList.add(new go1(10.0f, 8.0f));
@@ -458,56 +420,56 @@ public abstract class lz0 {
         arrayList.add(new io1(4.0f, 4.0f, true, true, -8.0f, 0.0f));
         fu0.a(fu0Var, arrayList, 0, "", kd2Var2, 1.0f, 2, 1.0f);
         kd2 kd2Var3 = new kd2(j);
-        pm0 pm0VarD2 = zd.d(20.75f, 16.0f);
-        pm0VarD2.g(0.0f, -0.22f, -0.03f, -0.42f, -0.06f, -0.63f);
-        pm0VarD2.l(0.84f, -0.73f);
-        pm0VarD2.g(0.18f, -0.16f, 0.22f, -0.42f, 0.1f, -0.63f);
-        pm0VarD2.l(-0.59f, -1.02f);
-        pm0VarD2.g(-0.12f, -0.21f, -0.37f, -0.3f, -0.59f, -0.22f);
-        pm0VarD2.l(-1.06f, 0.36f);
-        pm0VarD2.g(-0.32f, -0.27f, -0.68f, -0.48f, -1.08f, -0.63f);
-        pm0VarD2.l(-0.22f, -1.09f);
-        pm0VarD2.g(-0.05f, -0.23f, -0.25f, -0.4f, -0.49f, -0.4f);
-        pm0VarD2.j(-1.18f);
-        pm0VarD2.g(-0.24f, 0.0f, -0.44f, 0.17f, -0.49f, 0.4f);
-        pm0VarD2.l(-0.22f, 1.09f);
-        pm0VarD2.g(-0.4f, 0.15f, -0.76f, 0.36f, -1.08f, 0.63f);
-        pm0VarD2.l(-1.06f, -0.36f);
-        pm0VarD2.g(-0.23f, -0.08f, -0.47f, 0.02f, -0.59f, 0.22f);
-        pm0VarD2.l(-0.59f, 1.02f);
-        pm0VarD2.g(-0.12f, 0.21f, -0.08f, 0.47f, 0.1f, 0.63f);
-        pm0VarD2.l(0.84f, 0.73f);
-        pm0VarD2.g(-0.03f, 0.21f, -0.06f, 0.41f, -0.06f, 0.63f);
-        pm0VarD2.o(0.03f, 0.42f, 0.06f, 0.63f);
-        pm0VarD2.l(-0.84f, 0.73f);
-        pm0VarD2.g(-0.18f, 0.16f, -0.22f, 0.42f, -0.1f, 0.63f);
-        pm0VarD2.l(0.59f, 1.02f);
-        pm0VarD2.g(0.12f, 0.21f, 0.37f, 0.3f, 0.59f, 0.22f);
-        pm0VarD2.l(1.06f, -0.36f);
-        pm0VarD2.g(0.32f, 0.27f, 0.68f, 0.48f, 1.08f, 0.63f);
-        pm0VarD2.l(0.22f, 1.09f);
-        pm0VarD2.g(0.05f, 0.23f, 0.25f, 0.4f, 0.49f, 0.4f);
-        pm0VarD2.j(1.18f);
-        pm0VarD2.g(0.24f, 0.0f, 0.44f, -0.17f, 0.49f, -0.4f);
-        pm0VarD2.l(0.22f, -1.09f);
-        pm0VarD2.g(0.4f, -0.15f, 0.76f, -0.36f, 1.08f, -0.63f);
-        pm0VarD2.l(1.06f, 0.36f);
-        pm0VarD2.g(0.23f, 0.08f, 0.47f, -0.02f, 0.59f, -0.22f);
-        pm0VarD2.l(0.59f, -1.02f);
-        pm0VarD2.g(0.12f, -0.21f, 0.08f, -0.47f, -0.1f, -0.63f);
-        pm0VarD2.l(-0.84f, -0.73f);
-        pm0VarD2.f(20.72f, 16.42f, 20.75f, 16.22f, 20.75f, 16.0f);
-        pm0VarD2.e();
-        pm0VarD2.m(17.0f, 18.0f);
-        pm0VarD2.g(-1.1f, 0.0f, -2.0f, -0.9f, -2.0f, -2.0f);
-        pm0VarD2.o(0.9f, -2.0f, 2.0f, -2.0f);
-        pm0VarD2.o(2.0f, 0.9f, 2.0f, 2.0f);
-        pm0VarD2.n(18.1f, 18.0f, 17.0f, 18.0f);
-        pm0VarD2.e();
-        fu0.a(fu0Var, pm0VarD2.d, 0, "", kd2Var3, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        b = gu0VarB;
-        return gu0VarB;
+        pm0 d3 = zd.d(20.75f, 16.0f);
+        d3.g(0.0f, -0.22f, -0.03f, -0.42f, -0.06f, -0.63f);
+        d3.l(0.84f, -0.73f);
+        d3.g(0.18f, -0.16f, 0.22f, -0.42f, 0.1f, -0.63f);
+        d3.l(-0.59f, -1.02f);
+        d3.g(-0.12f, -0.21f, -0.37f, -0.3f, -0.59f, -0.22f);
+        d3.l(-1.06f, 0.36f);
+        d3.g(-0.32f, -0.27f, -0.68f, -0.48f, -1.08f, -0.63f);
+        d3.l(-0.22f, -1.09f);
+        d3.g(-0.05f, -0.23f, -0.25f, -0.4f, -0.49f, -0.4f);
+        d3.j(-1.18f);
+        d3.g(-0.24f, 0.0f, -0.44f, 0.17f, -0.49f, 0.4f);
+        d3.l(-0.22f, 1.09f);
+        d3.g(-0.4f, 0.15f, -0.76f, 0.36f, -1.08f, 0.63f);
+        d3.l(-1.06f, -0.36f);
+        d3.g(-0.23f, -0.08f, -0.47f, 0.02f, -0.59f, 0.22f);
+        d3.l(-0.59f, 1.02f);
+        d3.g(-0.12f, 0.21f, -0.08f, 0.47f, 0.1f, 0.63f);
+        d3.l(0.84f, 0.73f);
+        d3.g(-0.03f, 0.21f, -0.06f, 0.41f, -0.06f, 0.63f);
+        d3.o(0.03f, 0.42f, 0.06f, 0.63f);
+        d3.l(-0.84f, 0.73f);
+        d3.g(-0.18f, 0.16f, -0.22f, 0.42f, -0.1f, 0.63f);
+        d3.l(0.59f, 1.02f);
+        d3.g(0.12f, 0.21f, 0.37f, 0.3f, 0.59f, 0.22f);
+        d3.l(1.06f, -0.36f);
+        d3.g(0.32f, 0.27f, 0.68f, 0.48f, 1.08f, 0.63f);
+        d3.l(0.22f, 1.09f);
+        d3.g(0.05f, 0.23f, 0.25f, 0.4f, 0.49f, 0.4f);
+        d3.j(1.18f);
+        d3.g(0.24f, 0.0f, 0.44f, -0.17f, 0.49f, -0.4f);
+        d3.l(0.22f, -1.09f);
+        d3.g(0.4f, -0.15f, 0.76f, -0.36f, 1.08f, -0.63f);
+        d3.l(1.06f, 0.36f);
+        d3.g(0.23f, 0.08f, 0.47f, -0.02f, 0.59f, -0.22f);
+        d3.l(0.59f, -1.02f);
+        d3.g(0.12f, -0.21f, 0.08f, -0.47f, -0.1f, -0.63f);
+        d3.l(-0.84f, -0.73f);
+        d3.f(20.72f, 16.42f, 20.75f, 16.22f, 20.75f, 16.0f);
+        d3.e();
+        d3.m(17.0f, 18.0f);
+        d3.g(-1.1f, 0.0f, -2.0f, -0.9f, -2.0f, -2.0f);
+        d3.o(0.9f, -2.0f, 2.0f, -2.0f);
+        d3.o(2.0f, 0.9f, 2.0f, 2.0f);
+        d3.n(18.1f, 18.0f, 17.0f, 18.0f);
+        d3.e();
+        fu0.a(fu0Var, d3.d, 0, "", kd2Var3, 1.0f, 2, 1.0f);
+        gu0 b2 = fu0Var.b();
+        b = b2;
+        return b2;
     }
 
     public static final gu0 v() {
@@ -516,7 +478,7 @@ public abstract class lz0 {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.Update", 24.0f, 24.0f, false, 96);
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         pm0 pm0Var = new pm0(2);
         pm0Var.m(11.0f, 8.75f);
@@ -550,17 +512,17 @@ public abstract class lz0 {
         pm0Var.f(20.78f, 10.0f, 21.0f, 9.78f, 21.0f, 9.5f);
         pm0Var.e();
         fu0.a(fu0Var, pm0Var.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        d = gu0VarB;
-        return gu0VarB;
+        gu0 b2 = fu0Var.b();
+        d = b2;
+        return b2;
     }
 
     public static final boolean y(e11 e11Var) {
         if (e11Var.j == null) {
             return false;
         }
-        e11 e11VarU = e11Var.u();
-        return (e11VarU != null ? e11VarU.j : null) == null || e11Var.I.b;
+        e11 u = e11Var.u();
+        return (u != null ? u.j : null) == null || e11Var.I.b;
     }
 
     public abstract void A(Typeface typeface);
@@ -588,8 +550,8 @@ public abstract class lz0 {
     public abstract int k(View view, int i);
 
     public Object p(int i) {
-        ex0 ex0VarE = r().e(i);
-        return ex0VarE.c.a().e(Integer.valueOf(i - ex0VarE.f334a));
+        ex0 e = r().e(i);
+        return e.c.a().e(Integer.valueOf(i - e.f333a));
     }
 
     public abstract o51 q();
@@ -597,11 +559,11 @@ public abstract class lz0 {
     public abstract vf r();
 
     public Object s(int i) {
-        Object objE;
-        ex0 ex0VarE = r().e(i);
-        int i2 = i - ex0VarE.f334a;
-        um0 key = ex0VarE.c.getKey();
-        return (key == null || (objE = key.e(Integer.valueOf(i2))) == null) ? new i60(i) : objE;
+        Object e;
+        ex0 e2 = r().e(i);
+        int i2 = i - e2.f333a;
+        um0 key = e2.c.getKey();
+        return (key == null || (e = key.e(Integer.valueOf(i2))) == null) ? new i60(i) : e;
     }
 
     public int w(View view) {

@@ -26,12 +26,12 @@ public final class ProcessLifecycleInitializer implements hv0 {
     @Override // androidx.emoji2.text.hv0
     public final Object b(Context context) {
         lx0.x(context, "context");
-        rg rgVarJ = rg.J(context);
-        lx0.w(rgVarJ, "getInstance(...)");
-        if (!((HashSet) rgVarJ.f).contains(ProcessLifecycleInitializer.class)) {
+        rg J = rg.J(context);
+        lx0.w(J, "getInstance(...)");
+        if (!((HashSet) J.f).contains(ProcessLifecycleInitializer.class)) {
             throw new IllegalStateException("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
         }
-        if (!q51.f941a.getAndSet(true)) {
+        if (!q51.f940a.getAndSet(true)) {
             Context applicationContext = context.getApplicationContext();
             lx0.v(applicationContext, "null cannot be cast to non-null type android.app.Application");
             ((Application) applicationContext).registerActivityLifecycleCallbacks(new p51());

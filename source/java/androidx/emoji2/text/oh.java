@@ -9,7 +9,7 @@ public final class oh {
     public final rg c;
 
     /* renamed from: a, reason: collision with root package name */
-    public int f858a = 0;
+    public int f857a = 0;
     public int d = 8;
     public int[] e = new int[8];
     public int[] f = new int[8];
@@ -34,7 +34,7 @@ public final class oh {
                 this.f[0] = -1;
                 ld2Var.n++;
                 ld2Var.a(vhVar);
-                this.f858a++;
+                this.f857a++;
                 if (this.j) {
                     return;
                 }
@@ -49,7 +49,7 @@ public final class oh {
                 return;
             }
             int i3 = -1;
-            for (int i4 = 0; i != -1 && i4 < this.f858a; i4++) {
+            for (int i4 = 0; i != -1 && i4 < this.f857a; i4++) {
                 int i5 = this.e[i];
                 int i6 = ld2Var.e;
                 if (i5 == i6) {
@@ -73,7 +73,7 @@ public final class oh {
                             this.i = i;
                         }
                         ld2Var.n--;
-                        this.f858a--;
+                        this.f857a--;
                         return;
                     }
                     return;
@@ -83,61 +83,61 @@ public final class oh {
                 }
                 i = this.f[i];
             }
-            int length = this.i;
-            int i7 = length + 1;
+            int i7 = this.i;
+            int i8 = i7 + 1;
             if (this.j) {
                 int[] iArr3 = this.e;
-                if (iArr3[length] != -1) {
-                    length = iArr3.length;
+                if (iArr3[i7] != -1) {
+                    i7 = iArr3.length;
                 }
             } else {
-                length = i7;
+                i7 = i8;
             }
             int[] iArr4 = this.e;
-            if (length >= iArr4.length && this.f858a < iArr4.length) {
-                int i8 = 0;
+            if (i7 >= iArr4.length && this.f857a < iArr4.length) {
+                int i9 = 0;
                 while (true) {
                     int[] iArr5 = this.e;
-                    if (i8 >= iArr5.length) {
+                    if (i9 >= iArr5.length) {
                         break;
                     }
-                    if (iArr5[i8] == -1) {
-                        length = i8;
+                    if (iArr5[i9] == -1) {
+                        i7 = i9;
                         break;
                     }
-                    i8++;
+                    i9++;
                 }
             }
             int[] iArr6 = this.e;
-            if (length >= iArr6.length) {
-                length = iArr6.length;
-                int i9 = this.d * 2;
-                this.d = i9;
+            if (i7 >= iArr6.length) {
+                i7 = iArr6.length;
+                int i10 = this.d * 2;
+                this.d = i10;
                 this.j = false;
-                this.i = length - 1;
-                this.g = Arrays.copyOf(this.g, i9);
+                this.i = i7 - 1;
+                this.g = Arrays.copyOf(this.g, i10);
                 this.e = Arrays.copyOf(this.e, this.d);
                 this.f = Arrays.copyOf(this.f, this.d);
             }
-            this.e[length] = ld2Var.e;
-            this.g[length] = f;
+            this.e[i7] = ld2Var.e;
+            this.g[i7] = f;
             if (i3 != -1) {
                 int[] iArr7 = this.f;
-                iArr7[length] = iArr7[i3];
-                iArr7[i3] = length;
+                iArr7[i7] = iArr7[i3];
+                iArr7[i3] = i7;
             } else {
-                this.f[length] = this.h;
-                this.h = length;
+                this.f[i7] = this.h;
+                this.h = i7;
             }
             ld2Var.n++;
             ld2Var.a(vhVar);
-            this.f858a++;
+            this.f857a++;
             if (!this.j) {
                 this.i++;
             }
-            int i10 = this.i;
+            int i11 = this.i;
             int[] iArr8 = this.e;
-            if (i10 >= iArr8.length) {
+            if (i11 >= iArr8.length) {
                 this.j = true;
                 this.i = iArr8.length - 1;
             }
@@ -146,7 +146,7 @@ public final class oh {
 
     public final void b() {
         int i = this.h;
-        for (int i2 = 0; i != -1 && i2 < this.f858a; i2++) {
+        for (int i2 = 0; i != -1 && i2 < this.f857a; i2++) {
             ld2 ld2Var = ((ld2[]) this.c.g)[this.e[i]];
             if (ld2Var != null) {
                 ld2Var.b(this.b);
@@ -156,12 +156,12 @@ public final class oh {
         this.h = -1;
         this.i = -1;
         this.j = false;
-        this.f858a = 0;
+        this.f857a = 0;
     }
 
     public final float c(ld2 ld2Var) {
         int i = this.h;
-        for (int i2 = 0; i != -1 && i2 < this.f858a; i2++) {
+        for (int i2 = 0; i != -1 && i2 < this.f857a; i2++) {
             if (this.e[i] == ld2Var.e) {
                 return this.g[i];
             }
@@ -171,12 +171,12 @@ public final class oh {
     }
 
     public final int d() {
-        return this.f858a;
+        return this.f857a;
     }
 
     public final ld2 e(int i) {
         int i2 = this.h;
-        for (int i3 = 0; i2 != -1 && i3 < this.f858a; i3++) {
+        for (int i3 = 0; i2 != -1 && i3 < this.f857a; i3++) {
             if (i3 == i) {
                 return ((ld2[]) this.c.g)[this.e[i2]];
             }
@@ -187,7 +187,7 @@ public final class oh {
 
     public final float f(int i) {
         int i2 = this.h;
-        for (int i3 = 0; i2 != -1 && i3 < this.f858a; i3++) {
+        for (int i3 = 0; i2 != -1 && i3 < this.f857a; i3++) {
             if (i3 == i) {
                 return this.g[i2];
             }
@@ -210,7 +210,7 @@ public final class oh {
             this.f[0] = -1;
             ld2Var.n++;
             ld2Var.a(vhVar);
-            this.f858a++;
+            this.f857a++;
             if (this.j) {
                 return;
             }
@@ -225,7 +225,7 @@ public final class oh {
             return;
         }
         int i3 = -1;
-        for (int i4 = 0; i != -1 && i4 < this.f858a; i4++) {
+        for (int i4 = 0; i != -1 && i4 < this.f857a; i4++) {
             int i5 = this.e[i];
             int i6 = ld2Var.e;
             if (i5 == i6) {
@@ -237,61 +237,61 @@ public final class oh {
             }
             i = this.f[i];
         }
-        int length = this.i;
-        int i7 = length + 1;
+        int i7 = this.i;
+        int i8 = i7 + 1;
         if (this.j) {
             int[] iArr2 = this.e;
-            if (iArr2[length] != -1) {
-                length = iArr2.length;
+            if (iArr2[i7] != -1) {
+                i7 = iArr2.length;
             }
         } else {
-            length = i7;
+            i7 = i8;
         }
         int[] iArr3 = this.e;
-        if (length >= iArr3.length && this.f858a < iArr3.length) {
-            int i8 = 0;
+        if (i7 >= iArr3.length && this.f857a < iArr3.length) {
+            int i9 = 0;
             while (true) {
                 int[] iArr4 = this.e;
-                if (i8 >= iArr4.length) {
+                if (i9 >= iArr4.length) {
                     break;
                 }
-                if (iArr4[i8] == -1) {
-                    length = i8;
+                if (iArr4[i9] == -1) {
+                    i7 = i9;
                     break;
                 }
-                i8++;
+                i9++;
             }
         }
         int[] iArr5 = this.e;
-        if (length >= iArr5.length) {
-            length = iArr5.length;
-            int i9 = this.d * 2;
-            this.d = i9;
+        if (i7 >= iArr5.length) {
+            i7 = iArr5.length;
+            int i10 = this.d * 2;
+            this.d = i10;
             this.j = false;
-            this.i = length - 1;
-            this.g = Arrays.copyOf(this.g, i9);
+            this.i = i7 - 1;
+            this.g = Arrays.copyOf(this.g, i10);
             this.e = Arrays.copyOf(this.e, this.d);
             this.f = Arrays.copyOf(this.f, this.d);
         }
-        this.e[length] = ld2Var.e;
-        this.g[length] = f;
+        this.e[i7] = ld2Var.e;
+        this.g[i7] = f;
         if (i3 != -1) {
             int[] iArr6 = this.f;
-            iArr6[length] = iArr6[i3];
-            iArr6[i3] = length;
+            iArr6[i7] = iArr6[i3];
+            iArr6[i3] = i7;
         } else {
-            this.f[length] = this.h;
-            this.h = length;
+            this.f[i7] = this.h;
+            this.h = i7;
         }
         ld2Var.n++;
         ld2Var.a(vhVar);
-        int i10 = this.f858a + 1;
-        this.f858a = i10;
+        int i11 = this.f857a + 1;
+        this.f857a = i11;
         if (!this.j) {
             this.i++;
         }
         int[] iArr7 = this.e;
-        if (i10 >= iArr7.length) {
+        if (i11 >= iArr7.length) {
             this.j = true;
         }
         if (this.i >= iArr7.length) {
@@ -307,7 +307,7 @@ public final class oh {
         }
         int i2 = 0;
         int i3 = -1;
-        while (i != -1 && i2 < this.f858a) {
+        while (i != -1 && i2 < this.f857a) {
             if (this.e[i] == ld2Var.e) {
                 if (i == this.h) {
                     this.h = this.f[i];
@@ -319,7 +319,7 @@ public final class oh {
                     ld2Var.b(this.b);
                 }
                 ld2Var.n--;
-                this.f858a--;
+                this.f857a--;
                 this.e[i] = -1;
                 if (this.j) {
                     this.i = i;
@@ -335,16 +335,16 @@ public final class oh {
 
     public final String toString() {
         int i = this.h;
-        String string = "";
-        for (int i2 = 0; i != -1 && i2 < this.f858a; i2++) {
-            StringBuilder sbK = jx0.k(zd.h(string, " -> "));
-            sbK.append(this.g[i]);
-            sbK.append(" : ");
-            StringBuilder sbK2 = jx0.k(sbK.toString());
-            sbK2.append(((ld2[]) this.c.g)[this.e[i]]);
-            string = sbK2.toString();
+        String str = "";
+        for (int i2 = 0; i != -1 && i2 < this.f857a; i2++) {
+            StringBuilder k = jx0.k(zd.h(str, " -> "));
+            k.append(this.g[i]);
+            k.append(" : ");
+            StringBuilder k2 = jx0.k(k.toString());
+            k2.append(((ld2[]) this.c.g)[this.e[i]]);
+            str = k2.toString();
             i = this.f[i];
         }
-        return string;
+        return str;
     }
 }

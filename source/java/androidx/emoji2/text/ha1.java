@@ -21,9 +21,9 @@ public abstract class ha1 extends mz0 {
         return Integer.MAX_VALUE;
     }
 
-    public static final void U(HashMap map, hn1[] hn1VarArr) {
+    public static final void U(HashMap hashMap, hn1[] hn1VarArr) {
         for (hn1 hn1Var : hn1VarArr) {
-            map.put(hn1Var.d, hn1Var.e);
+            hashMap.put(hn1Var.d, hn1Var.e);
         }
     }
 
@@ -38,9 +38,9 @@ public abstract class ha1 extends mz0 {
         }
         lx0.x(map, "<this>");
         Map.Entry entry = (Map.Entry) map.entrySet().iterator().next();
-        Map mapSingletonMap = Collections.singletonMap(entry.getKey(), entry.getValue());
-        lx0.w(mapSingletonMap, "with(...)");
-        return mapSingletonMap;
+        Map singletonMap = Collections.singletonMap(entry.getKey(), entry.getValue());
+        lx0.w(singletonMap, "with(...)");
+        return singletonMap;
     }
 
     public static LinkedHashMap W(Map map) {

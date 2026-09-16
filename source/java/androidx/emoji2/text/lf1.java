@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -36,7 +37,7 @@ public class lf1 extends ec2 {
         this.h = hf1Var;
     }
 
-    public lf1 C(um0 um0Var, um0 um0Var2) throws Throwable {
+    public lf1 C(um0 um0Var, um0 um0Var2) {
         if (this.c) {
             jt1.a("Cannot use a disposed snapshot");
         }
@@ -51,21 +52,21 @@ public class lf1 extends ec2 {
                 long j2 = 1;
                 kc2.e = j + j2;
                 kc2.d = kc2.d.e(j);
-                ic2 ic2VarD = d();
-                r(ic2VarD.e(j));
+                ic2 d = d();
+                r(d.e(j));
                 try {
-                    bh1 bh1Var = new bh1(j, kc2.e(ic2VarD, g() + j2, j), kc2.l(um0Var, e(), true), kc2.b(um0Var2, i()), this);
+                    bh1 bh1Var = new bh1(j, kc2.e(d, g() + j2, j), kc2.l(um0Var, e(), true), kc2.b(um0Var2, i()), this);
                     if (this.m || this.c) {
                         return bh1Var;
                     }
-                    long jG = g();
+                    long g = g();
                     synchronized (obj) {
                         long j3 = kc2.e;
                         kc2.e = j3 + j2;
                         s(j3);
                         kc2.d = kc2.d.e(g());
                     }
-                    r(kc2.e(d(), jG + j2, g()));
+                    r(kc2.e(d(), g + j2, g()));
                     return bh1Var;
                 } catch (Throwable th) {
                     th = th;
@@ -114,105 +115,57 @@ public class lf1 extends ec2 {
         this.l++;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x008c  */
     @Override // androidx.emoji2.text.ec2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public void l() {
-        /*
-            r17 = this;
-            r0 = r17
-            int r1 = r0.l
-            if (r1 <= 0) goto L7
-            goto Lc
-        L7:
-            java.lang.String r1 = "no pending nested snapshots"
-            androidx.emoji2.text.jt1.a(r1)
-        Lc:
-            int r1 = r0.l
-            int r1 = r1 + (-1)
-            r0.l = r1
-            if (r1 != 0) goto L94
-            boolean r1 = r0.m
-            if (r1 != 0) goto L94
-            androidx.emoji2.text.hf1 r1 = r0.x()
-            if (r1 == 0) goto L91
-            boolean r2 = r0.m
-            if (r2 == 0) goto L27
-            java.lang.String r2 = "Unsupported operation on a snapshot that has been applied"
-            androidx.emoji2.text.jt1.b(r2)
-        L27:
-            r2 = 0
-            r0.B(r2)
-            long r2 = r0.g()
-            java.lang.Object[] r4 = r1.b
-            long[] r1 = r1.f468a
-            int r5 = r1.length
-            int r5 = r5 + (-2)
-            if (r5 < 0) goto L91
-            r7 = 0
-        L39:
-            r8 = r1[r7]
-            long r10 = ~r8
-            r12 = 7
-            long r10 = r10 << r12
-            long r10 = r10 & r8
-            r12 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r10 = r10 & r12
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 == 0) goto L8c
-            int r10 = r7 - r5
-            int r10 = ~r10
-            int r10 = r10 >>> 31
-            r11 = 8
-            int r10 = 8 - r10
-            r12 = 0
-        L53:
-            if (r12 >= r10) goto L8a
-            r13 = 255(0xff, double:1.26E-321)
-            long r13 = r13 & r8
-            r15 = 128(0x80, double:6.3E-322)
-            int r13 = (r13 > r15 ? 1 : (r13 == r15 ? 0 : -1))
-            if (r13 >= 0) goto L86
-            int r13 = r7 << 3
-            int r13 = r13 + r12
-            r13 = r4[r13]
-            androidx.emoji2.text.df2 r13 = (androidx.emoji2.text.df2) r13
-            androidx.emoji2.text.ff2 r13 = r13.a()
-        L69:
-            if (r13 == 0) goto L86
-            long r14 = r13.f361a
-            int r16 = (r14 > r2 ? 1 : (r14 == r2 ? 0 : -1))
-            if (r16 == 0) goto L7d
-            androidx.emoji2.text.ic2 r6 = r0.j
-            java.lang.Long r14 = java.lang.Long.valueOf(r14)
-            boolean r6 = androidx.emoji2.text.ws.x0(r6, r14)
-            if (r6 == 0) goto L83
-        L7d:
-            androidx.emoji2.text.q32 r6 = androidx.emoji2.text.kc2.f632a
-            r14 = 0
-            r13.f361a = r14
-        L83:
-            androidx.emoji2.text.ff2 r13 = r13.b
-            goto L69
-        L86:
-            long r8 = r8 >> r11
-            int r12 = r12 + 1
-            goto L53
-        L8a:
-            if (r10 != r11) goto L91
-        L8c:
-            if (r7 == r5) goto L91
-            int r7 = r7 + 1
-            goto L39
-        L91:
-            r0.a()
-        L94:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.lf1.l():void");
+        if (this.l <= 0) {
+            jt1.a("no pending nested snapshots");
+        }
+        int i = this.l - 1;
+        this.l = i;
+        if (i != 0 || this.m) {
+            return;
+        }
+        hf1 x = x();
+        if (x != null) {
+            if (this.m) {
+                jt1.b("Unsupported operation on a snapshot that has been applied");
+            }
+            B(null);
+            long g = g();
+            Object[] objArr = x.b;
+            long[] jArr = x.f467a;
+            int length = jArr.length - 2;
+            if (length >= 0) {
+                int i2 = 0;
+                while (true) {
+                    long j = jArr[i2];
+                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                        int i3 = 8 - ((~(i2 - length)) >>> 31);
+                        for (int i4 = 0; i4 < i3; i4++) {
+                            if ((255 & j) < 128) {
+                                for (ff2 a2 = ((df2) objArr[(i2 << 3) + i4]).a(); a2 != null; a2 = a2.b) {
+                                    long j2 = a2.f360a;
+                                    if (j2 == g || ws.x0(this.j, Long.valueOf(j2))) {
+                                        q32 q32Var = kc2.f631a;
+                                        a2.f360a = 0L;
+                                    }
+                                }
+                            }
+                            j >>= 8;
+                        }
+                        if (i3 != 8) {
+                            break;
+                        }
+                    }
+                    if (i2 == length) {
+                        break;
+                    } else {
+                        i2++;
+                    }
+                }
+            }
+        }
+        a();
     }
 
     @Override // androidx.emoji2.text.ec2
@@ -225,13 +178,13 @@ public class lf1 extends ec2 {
 
     @Override // androidx.emoji2.text.ec2
     public void n(df2 df2Var) {
-        hf1 hf1VarX = x();
-        if (hf1VarX == null) {
-            int i = f42.f343a;
-            hf1VarX = new hf1();
-            B(hf1VarX);
+        hf1 x = x();
+        if (x == null) {
+            int i = f42.f342a;
+            x = new hf1();
+            B(x);
         }
-        hf1VarX.a(df2Var);
+        x.a(df2Var);
     }
 
     @Override // androidx.emoji2.text.ec2
@@ -249,14 +202,14 @@ public class lf1 extends ec2 {
     }
 
     @Override // androidx.emoji2.text.ec2
-    public ec2 u(um0 um0Var) throws Throwable {
+    public ec2 u(um0 um0Var) {
         if (this.c) {
             jt1.a("Cannot use a disposed snapshot");
         }
         if (this.m && this.d < 0) {
             jt1.b("Unsupported operation on a disposed or applied snapshot");
         }
-        long jG = g();
+        long g = g();
         A(g());
         Object obj = kc2.c;
         synchronized (obj) {
@@ -266,18 +219,18 @@ public class lf1 extends ec2 {
                 kc2.e = j + j2;
                 kc2.d = kc2.d.e(j);
                 try {
-                    ch1 ch1Var = new ch1(j, kc2.e(d(), jG + j2, j), kc2.l(um0Var, e(), true), this);
+                    ch1 ch1Var = new ch1(j, kc2.e(d(), g + j2, j), kc2.l(um0Var, e(), true), this);
                     if (this.m || this.c) {
                         return ch1Var;
                     }
-                    long jG2 = g();
+                    long g2 = g();
                     synchronized (obj) {
                         long j3 = kc2.e;
                         kc2.e = j3 + j2;
                         s(j3);
                         kc2.d = kc2.d.e(g());
                     }
-                    r(kc2.e(d(), jG2 + j2, g()));
+                    r(kc2.e(d(), g2 + j2, g()));
                     return ch1Var;
                 } catch (Throwable th) {
                     th = th;
@@ -295,7 +248,7 @@ public class lf1 extends ec2 {
         if (this.m || this.c) {
             return;
         }
-        long jG = g();
+        long g = g();
         synchronized (kc2.c) {
             long j2 = kc2.e;
             j = 1;
@@ -303,23 +256,175 @@ public class lf1 extends ec2 {
             s(j2);
             kc2.d = kc2.d.e(g());
         }
-        r(kc2.e(d(), jG + j, g()));
+        r(kc2.e(d(), g + j, g()));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0106  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0145  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00ab A[LOOP:1: B:31:0x00a9->B:32:0x00ab, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00ba A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0111 A[Catch: all -> 0x00fe, TryCatch #1 {all -> 0x00fe, blocks: (B:37:0x00ba, B:39:0x00ca, B:42:0x00d6, B:44:0x00e2, B:46:0x00ec, B:48:0x00f2, B:50:0x0100, B:56:0x0111, B:59:0x011b, B:61:0x0125, B:63:0x012f, B:65:0x0135, B:67:0x013f, B:73:0x0147, B:75:0x014a, B:77:0x014e, B:79:0x0155, B:81:0x0161, B:87:0x0108), top: B:36:0x00ba }] */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x014e A[Catch: all -> 0x00fe, TryCatch #1 {all -> 0x00fe, blocks: (B:37:0x00ba, B:39:0x00ca, B:42:0x00d6, B:44:0x00e2, B:46:0x00ec, B:48:0x00f2, B:50:0x0100, B:56:0x0111, B:59:0x011b, B:61:0x0125, B:63:0x012f, B:65:0x0135, B:67:0x013f, B:73:0x0147, B:75:0x014a, B:77:0x014e, B:79:0x0155, B:81:0x0161, B:87:0x0108), top: B:36:0x00ba }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public androidx.emoji2.text.ly0 w() {
-        /*
-            Method dump skipped, instructions count: 363
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.lf1.w():androidx.emoji2.text.ly0");
+    public ly0 w() {
+        HashMap hashMap;
+        qe0 qe0Var;
+        hf1 hf1Var;
+        long j;
+        long j2;
+        ArrayList arrayList;
+        int size;
+        int i;
+        hf1 x = x();
+        if (x != null) {
+            long j3 = kc2.j.b;
+            hashMap = kc2.c(j3, this, kc2.d.b(j3));
+        } else {
+            hashMap = null;
+        }
+        qe0 qe0Var2 = qe0.d;
+        synchronized (kc2.c) {
+            try {
+                kc2.d(this);
+                if (x != null && x.d != 0) {
+                    bo0 bo0Var = kc2.j;
+                    ly0 z = z(kc2.e, x, hashMap, kc2.d.b(bo0Var.b));
+                    if (!z.equals(gc2.f)) {
+                        return z;
+                    }
+                    b();
+                    hf1Var = bo0Var.h;
+                    kc2.v(bo0Var, kc2.f631a);
+                    B(null);
+                    bo0Var.h = null;
+                    qe0Var = kc2.h;
+                    this.m = true;
+                    if (hf1Var != null) {
+                        g42 g42Var = new g42(hf1Var);
+                        if (!hf1Var.g()) {
+                            int size2 = qe0Var.size();
+                            for (int i2 = 0; i2 < size2; i2++) {
+                                ((Function2) qe0Var.get(i2)).invoke(g42Var, this);
+                            }
+                        }
+                    }
+                    if (x != null && x.h()) {
+                        g42 g42Var2 = new g42(x);
+                        size = qe0Var.size();
+                        for (i = 0; i < size; i++) {
+                            ((Function2) qe0Var.get(i)).invoke(g42Var2, this);
+                        }
+                    }
+                    synchronized (kc2.c) {
+                        try {
+                            p();
+                            kc2.g();
+                            if (hf1Var != null) {
+                                Object[] objArr = hf1Var.b;
+                                long[] jArr = hf1Var.f467a;
+                                int length = jArr.length - 2;
+                                if (length >= 0) {
+                                    int i3 = 0;
+                                    j = 128;
+                                    while (true) {
+                                        long j4 = jArr[i3];
+                                        j2 = 255;
+                                        if ((((~j4) << 7) & j4 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i4 = 8 - ((~(i3 - length)) >>> 31);
+                                            for (int i5 = 0; i5 < i4; i5++) {
+                                                if ((j4 & 255) < 128) {
+                                                    kc2.q((df2) objArr[(i3 << 3) + i5]);
+                                                }
+                                                j4 >>= 8;
+                                            }
+                                            if (i4 != 8) {
+                                                break;
+                                            }
+                                        }
+                                        if (i3 == length) {
+                                            break;
+                                        }
+                                        i3++;
+                                    }
+                                    if (x != null) {
+                                        Object[] objArr2 = x.b;
+                                        long[] jArr2 = x.f467a;
+                                        int length2 = jArr2.length - 2;
+                                        if (length2 >= 0) {
+                                            int i6 = 0;
+                                            while (true) {
+                                                long j5 = jArr2[i6];
+                                                if ((((~j5) << 7) & j5 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                    int i7 = 8 - ((~(i6 - length2)) >>> 31);
+                                                    for (int i8 = 0; i8 < i7; i8++) {
+                                                        if ((j5 & j2) < j) {
+                                                            kc2.q((df2) objArr2[(i6 << 3) + i8]);
+                                                        }
+                                                        j5 >>= 8;
+                                                    }
+                                                    if (i7 != 8) {
+                                                        break;
+                                                    }
+                                                }
+                                                if (i6 == length2) {
+                                                    break;
+                                                }
+                                                i6++;
+                                            }
+                                        }
+                                    }
+                                    arrayList = this.i;
+                                    if (arrayList != null) {
+                                        int size3 = arrayList.size();
+                                        for (int i9 = 0; i9 < size3; i9++) {
+                                            kc2.q((df2) arrayList.get(i9));
+                                        }
+                                    }
+                                    this.i = null;
+                                }
+                            }
+                            j = 128;
+                            j2 = 255;
+                            if (x != null) {
+                            }
+                            arrayList = this.i;
+                            if (arrayList != null) {
+                            }
+                            this.i = null;
+                        } catch (Throwable th) {
+                            throw th;
+                        }
+                    }
+                    return gc2.f;
+                }
+                b();
+                bo0 bo0Var2 = kc2.j;
+                hf1 hf1Var2 = bo0Var2.h;
+                kc2.v(bo0Var2, kc2.f631a);
+                if (hf1Var2 == null || !hf1Var2.h()) {
+                    qe0Var = qe0Var2;
+                    hf1Var = null;
+                } else {
+                    qe0Var = kc2.h;
+                    hf1Var = hf1Var2;
+                }
+                this.m = true;
+                if (hf1Var != null) {
+                }
+                if (x != null) {
+                    g42 g42Var22 = new g42(x);
+                    size = qe0Var.size();
+                    while (i < size) {
+                    }
+                }
+                synchronized (kc2.c) {
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
     public hf1 x() {
@@ -332,10 +437,10 @@ public class lf1 extends ec2 {
         return this.e;
     }
 
-    public final ly0 z(long j, hf1 hf1Var, HashMap map, ic2 ic2Var) {
+    public final ly0 z(long j, hf1 hf1Var, HashMap hashMap, ic2 ic2Var) {
         ArrayList arrayList;
-        ArrayList arrayListH0;
         ArrayList arrayList2;
+        ArrayList arrayList3;
         ic2 ic2Var2;
         Object[] objArr;
         long[] jArr;
@@ -344,16 +449,16 @@ public class lf1 extends ec2 {
         long[] jArr2;
         int i;
         long j2;
-        ArrayList arrayList3;
-        ff2 ff2VarC;
-        ic2 ic2VarD = d().e(g()).d(this.j);
+        ArrayList arrayList4;
+        ff2 c;
+        ic2 d = d().e(g()).d(this.j);
         Object[] objArr3 = hf1Var.b;
-        long[] jArr3 = hf1Var.f468a;
+        long[] jArr3 = hf1Var.f467a;
         int length = jArr3.length - 2;
         if (length >= 0) {
             int i2 = 0;
+            arrayList3 = null;
             arrayList2 = null;
-            arrayListH0 = null;
             while (true) {
                 long j3 = jArr3[i2];
                 if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
@@ -364,54 +469,54 @@ public class lf1 extends ec2 {
                             objArr2 = objArr3;
                             df2 df2Var = (df2) objArr3[(i2 << 3) + i4];
                             jArr2 = jArr3;
-                            ff2 ff2VarA = df2Var.a();
+                            ff2 a2 = df2Var.a();
                             i = i4;
-                            ArrayList arrayList4 = arrayList2;
-                            ff2 ff2VarS = kc2.s(ff2VarA, j, ic2Var);
-                            if (ff2VarS == null) {
-                                ic2Var3 = ic2VarD;
-                                arrayList3 = arrayListH0;
+                            ArrayList arrayList5 = arrayList3;
+                            ff2 s = kc2.s(a2, j, ic2Var);
+                            if (s == null) {
+                                ic2Var3 = d;
+                                arrayList4 = arrayList2;
                                 j2 = j3;
                             } else {
-                                arrayList3 = arrayListH0;
+                                arrayList4 = arrayList2;
                                 j2 = j3;
-                                ff2 ff2VarS2 = kc2.s(ff2VarA, g(), ic2VarD);
-                                if (ff2VarS2 == null) {
-                                    ic2Var3 = ic2VarD;
+                                ff2 s2 = kc2.s(a2, g(), d);
+                                if (s2 == null) {
+                                    ic2Var3 = d;
                                 } else {
-                                    ic2Var3 = ic2VarD;
-                                    if (ff2VarS2.f361a != 1 && !ff2VarS.equals(ff2VarS2)) {
-                                        ff2 ff2VarS3 = kc2.s(ff2VarA, g(), d());
-                                        if (ff2VarS3 == null) {
+                                    ic2Var3 = d;
+                                    if (s2.f360a != 1 && !s.equals(s2)) {
+                                        ff2 s3 = kc2.s(a2, g(), d());
+                                        if (s3 == null) {
                                             kc2.r();
                                             throw null;
                                         }
-                                        if (map == null || (ff2VarC = (ff2) map.get(ff2VarS)) == null) {
-                                            ff2VarC = df2Var.c(ff2VarS2, ff2VarS, ff2VarS3);
+                                        if (hashMap == null || (c = (ff2) hashMap.get(s)) == null) {
+                                            c = df2Var.c(s2, s, s3);
                                         }
-                                        if (ff2VarC == null) {
+                                        if (c == null) {
                                             return new fc2();
                                         }
-                                        if (!ff2VarC.equals(ff2VarS3)) {
-                                            if (ff2VarC.equals(ff2VarS)) {
-                                                ArrayList arrayList5 = arrayList4 == null ? new ArrayList() : arrayList4;
-                                                arrayList5.add(new hn1(df2Var, ff2VarS.b(g())));
-                                                arrayListH0 = arrayList3 == null ? new ArrayList() : arrayList3;
-                                                arrayListH0.add(df2Var);
-                                                arrayList2 = arrayList5;
-                                            } else {
+                                        if (!c.equals(s3)) {
+                                            if (c.equals(s)) {
+                                                ArrayList arrayList6 = arrayList5 == null ? new ArrayList() : arrayList5;
+                                                arrayList6.add(new hn1(df2Var, s.b(g())));
                                                 arrayList2 = arrayList4 == null ? new ArrayList() : arrayList4;
-                                                arrayList2.add(!ff2VarC.equals(ff2VarS2) ? new hn1(df2Var, ff2VarC) : new hn1(df2Var, ff2VarS2.b(g())));
+                                                arrayList2.add(df2Var);
+                                                arrayList3 = arrayList6;
+                                            } else {
+                                                arrayList3 = arrayList5 == null ? new ArrayList() : arrayList5;
+                                                arrayList3.add(!c.equals(s2) ? new hn1(df2Var, c) : new hn1(df2Var, s2.b(g())));
+                                                arrayList2 = arrayList4;
                                             }
                                         }
-                                        arrayListH0 = arrayList3;
                                     }
                                 }
                             }
+                            arrayList3 = arrayList5;
                             arrayList2 = arrayList4;
-                            arrayListH0 = arrayList3;
                         } else {
-                            ic2Var3 = ic2VarD;
+                            ic2Var3 = d;
                             objArr2 = objArr3;
                             jArr2 = jArr3;
                             i = i4;
@@ -421,57 +526,57 @@ public class lf1 extends ec2 {
                         i4 = i + 1;
                         jArr3 = jArr2;
                         objArr3 = objArr2;
-                        ic2VarD = ic2Var3;
+                        d = ic2Var3;
                     }
-                    ic2Var2 = ic2VarD;
+                    ic2Var2 = d;
                     objArr = objArr3;
                     jArr = jArr3;
                     if (i3 != 8) {
                         break;
                     }
                 } else {
-                    ic2Var2 = ic2VarD;
+                    ic2Var2 = d;
                     objArr = objArr3;
                     jArr = jArr3;
                 }
                 if (i2 == length) {
-                    arrayList = arrayList2;
+                    arrayList = arrayList3;
                     break;
                 }
                 i2++;
                 jArr3 = jArr;
                 objArr3 = objArr;
-                ic2VarD = ic2Var2;
+                d = ic2Var2;
             }
         } else {
             arrayList = null;
-            arrayListH0 = null;
+            arrayList2 = null;
         }
-        arrayList2 = arrayList;
-        if (arrayList2 != null) {
+        arrayList3 = arrayList;
+        if (arrayList3 != null) {
             v();
-            int size = arrayList2.size();
+            int size = arrayList3.size();
             for (int i5 = 0; i5 < size; i5++) {
-                hn1 hn1Var = (hn1) arrayList2.get(i5);
+                hn1 hn1Var = (hn1) arrayList3.get(i5);
                 df2 df2Var2 = (df2) hn1Var.d;
                 ff2 ff2Var = (ff2) hn1Var.e;
-                ff2Var.f361a = j;
+                ff2Var.f360a = j;
                 synchronized (kc2.c) {
                     ff2Var.b = df2Var2.a();
                     df2Var2.b(ff2Var);
                 }
             }
         }
-        if (arrayListH0 != null) {
-            int size2 = arrayListH0.size();
+        if (arrayList2 != null) {
+            int size2 = arrayList2.size();
             for (int i6 = 0; i6 < size2; i6++) {
-                hf1Var.k((df2) arrayListH0.get(i6));
+                hf1Var.k((df2) arrayList2.get(i6));
             }
-            ArrayList arrayList6 = this.i;
-            if (arrayList6 != null) {
-                arrayListH0 = ws.H0(arrayList6, arrayListH0);
+            ArrayList arrayList7 = this.i;
+            if (arrayList7 != null) {
+                arrayList2 = ws.H0(arrayList7, arrayList2);
             }
-            this.i = arrayListH0;
+            this.i = arrayList2;
         }
         return gc2.f;
     }

@@ -7,5 +7,5 @@ import org.conscrypt.ConscryptHostnameVerifier;
 public final class zy implements ConscryptHostnameVerifier {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final zy f1462a = new zy();
+    public static final zy f1461a = new zy();
 }

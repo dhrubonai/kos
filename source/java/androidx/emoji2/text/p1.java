@@ -27,18 +27,18 @@ public abstract class p1 {
     }
 
     public static final void e(bt1 bt1Var, cf cfVar) {
-        OnBackInvokedDispatcher onBackInvokedDispatcherFindOnBackInvokedDispatcher;
-        if (cfVar == null || (onBackInvokedDispatcherFindOnBackInvokedDispatcher = bt1Var.findOnBackInvokedDispatcher()) == null) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+        if (cfVar == null || (findOnBackInvokedDispatcher = bt1Var.findOnBackInvokedDispatcher()) == null) {
             return;
         }
-        onBackInvokedDispatcherFindOnBackInvokedDispatcher.registerOnBackInvokedCallback(1000000, cfVar);
+        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(1000000, cfVar);
     }
 
     public static final void f(bt1 bt1Var, cf cfVar) {
-        OnBackInvokedDispatcher onBackInvokedDispatcherFindOnBackInvokedDispatcher;
-        if (cfVar == null || (onBackInvokedDispatcherFindOnBackInvokedDispatcher = bt1Var.findOnBackInvokedDispatcher()) == null) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+        if (cfVar == null || (findOnBackInvokedDispatcher = bt1Var.findOnBackInvokedDispatcher()) == null) {
             return;
         }
-        onBackInvokedDispatcherFindOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(cfVar);
+        findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(cfVar);
     }
 }

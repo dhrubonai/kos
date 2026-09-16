@@ -32,17 +32,17 @@ public final class nu1 extends g01 implements um0 {
         long j = this.e;
         fg2 fg2Var = this.f;
         ru1.d(vb0Var, 0.0f, 360.0f, j, fg2Var);
-        float fFloatValue = (((Number) this.g.getValue()).floatValue() * 216.0f) % 360.0f;
-        float fFloatValue2 = ((Number) this.h.getValue()).floatValue();
+        float floatValue = (((Number) this.g.getValue()).floatValue() * 216.0f) % 360.0f;
+        float floatValue2 = ((Number) this.h.getValue()).floatValue();
         qe2 qe2Var = this.i;
-        float fAbs = Math.abs(fFloatValue2 - ((Number) qe2Var.getValue()).floatValue());
-        float fFloatValue3 = ((Number) qe2Var.getValue()).floatValue() + ((Number) this.j.getValue()).floatValue() + (fFloatValue - 90.0f);
+        float abs = Math.abs(floatValue2 - ((Number) qe2Var.getValue()).floatValue());
+        float floatValue3 = ((Number) qe2Var.getValue()).floatValue() + ((Number) this.j.getValue()).floatValue() + (floatValue - 90.0f);
         if (fg2Var.p == 0) {
             f = 0.0f;
         } else {
             f = ((this.k / (ru1.e / 2)) * 57.29578f) / 2.0f;
         }
-        ru1.d(vb0Var, fFloatValue3 + f, Math.max(fAbs, 0.1f), this.l, fg2Var);
-        return up2.f1187a;
+        ru1.d(vb0Var, floatValue3 + f, Math.max(abs, 0.1f), this.l, fg2Var);
+        return up2.f1186a;
     }
 }

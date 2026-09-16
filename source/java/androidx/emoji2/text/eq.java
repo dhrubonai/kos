@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 public final class eq extends yn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f315a = false;
+    public boolean f314a = false;
     public final ViewGroup b;
 
     public eq(ViewGroup viewGroup) {
@@ -21,7 +21,7 @@ public final class eq extends yn2 {
 
     @Override // androidx.emoji2.text.qn2
     public final void c(sn2 sn2Var) {
-        if (!this.f315a) {
+        if (!this.f314a) {
             mz0.K(this.b, false);
         }
         sn2Var.x(this);
@@ -30,7 +30,7 @@ public final class eq extends yn2 {
     @Override // androidx.emoji2.text.yn2, androidx.emoji2.text.qn2
     public final void e(sn2 sn2Var) {
         mz0.K(this.b, false);
-        this.f315a = true;
+        this.f314a = true;
     }
 
     @Override // androidx.emoji2.text.yn2, androidx.emoji2.text.qn2

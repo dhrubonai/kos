@@ -74,9 +74,9 @@ public class dd0 implements u20, ao, o31, rc2, wu0, rl1, rg2 {
     public Object d(long j2, w52 w52Var, l10 l10Var) {
         w52 w52Var2 = new w52(w52Var.k, l10Var);
         w52Var2.j = j2;
-        up2 up2Var = up2.f1187a;
-        Object objK = w52Var2.k(up2Var);
-        return objK == f30.d ? objK : up2Var;
+        up2 up2Var = up2.f1186a;
+        Object k2 = w52Var2.k(up2Var);
+        return k2 == f30.d ? k2 : up2Var;
     }
 
     @Override // androidx.emoji2.text.wu0
@@ -86,7 +86,7 @@ public class dd0 implements u20, ao, o31, rc2, wu0, rl1, rg2 {
 
     @Override // androidx.emoji2.text.rl1
     public nd1 f() {
-        return kd1.f634a;
+        return kd1.f633a;
     }
 
     @Override // androidx.emoji2.text.rg2
@@ -126,7 +126,7 @@ public class dd0 implements u20, ao, o31, rc2, wu0, rl1, rg2 {
     public long k(long j2, int i2, cn1 cn1Var) {
         cn1Var.getClass();
         x52 x52Var = (x52) cn1Var.f;
-        return new zi1(x52.a(x52Var, x52Var.h, j2, x52Var.g)).f1442a;
+        return new zi1(x52.a(x52Var, x52Var.h, j2, x52Var.g)).f1441a;
     }
 
     public String toString() {

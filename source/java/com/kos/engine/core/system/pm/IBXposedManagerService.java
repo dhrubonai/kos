@@ -79,16 +79,16 @@ public interface IBXposedManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBXposedManagerService
             public List<InstalledModule> getInstalledModules() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-488200901639970L, xa1.b));
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(InstalledModule.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-488200901639970L, xa1.b));
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(InstalledModule.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -98,63 +98,63 @@ public interface IBXposedManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBXposedManagerService
             public boolean isModuleEnable(String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-489961838231330L, xa1.b));
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(a.a.a.c.a(-489961838231330L, xa1.b));
+                    obtain.writeString(str);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBXposedManagerService
             public boolean isXPEnable() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-489455032090402L, xa1.b));
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(a.a.a.c.a(-489455032090402L, xa1.b));
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBXposedManagerService
             public void setModuleEnable(String str, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-488505844317986L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-488505844317986L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBXposedManagerService
             public void setXPEnable(boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-490266780909346L, xa1.b));
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-490266780909346L, xa1.b));
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -167,24 +167,24 @@ public interface IBXposedManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-489188744118050L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBXposedManagerService)) ? new Proxy(iBinder) : (IBXposedManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-489188744118050L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBXposedManagerService)) ? new Proxy(iBinder) : (IBXposedManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = a.a.a.c.a(-488900981309218L, xa1.b);
+            String a2 = a.a.a.c.a(-488900981309218L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             if (i == 1) {
-                boolean zIsXPEnable = isXPEnable();
+                boolean isXPEnable = isXPEnable();
                 parcel2.writeNoException();
-                parcel2.writeInt(zIsXPEnable ? 1 : 0);
+                parcel2.writeInt(isXPEnable ? 1 : 0);
                 return true;
             }
             if (i == 2) {
@@ -193,9 +193,9 @@ public interface IBXposedManagerService extends IInterface {
                 return true;
             }
             if (i == 3) {
-                boolean zIsModuleEnable = isModuleEnable(parcel.readString());
+                boolean isModuleEnable = isModuleEnable(parcel.readString());
                 parcel2.writeNoException();
-                parcel2.writeInt(zIsModuleEnable ? 1 : 0);
+                parcel2.writeInt(isModuleEnable ? 1 : 0);
                 return true;
             }
             if (i == 4) {

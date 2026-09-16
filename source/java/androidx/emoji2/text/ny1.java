@@ -7,15 +7,18 @@ public final class ny1 extends a0 implements y20 {
     public final /* synthetic */ oy1 f;
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public ny1(ay ayVar, oy1 oy1Var) {
+        super(r0);
         dd0 dd0Var = dd0.B;
         this.e = ayVar;
         this.f = oy1Var;
-        super(dd0Var);
     }
 
     @Override // androidx.emoji2.text.y20
-    public final void o(v20 v20Var, Throwable th) throws Throwable {
+    public final void o(v20 v20Var, Throwable th) {
         ay ayVar = this.e;
         oy1 oy1Var = this.f;
         lx0.f0(th, new yj(1, ayVar, oy1Var));

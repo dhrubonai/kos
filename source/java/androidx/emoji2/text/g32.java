@@ -9,50 +9,50 @@ import java.util.Map;
 public final class g32 implements j32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final a12 f399a;
+    public final a12 f398a;
     public boolean b;
     public Bundle c;
     public final th2 d;
 
     public g32(a12 a12Var, xs2 xs2Var) {
         lx0.x(a12Var, "savedStateRegistry");
-        this.f399a = a12Var;
+        this.f398a = a12Var;
         this.d = az0.U(new t2(12, xs2Var));
     }
 
     @Override // androidx.emoji2.text.j32
     public final Bundle a() {
-        Bundle bundleL = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
+        Bundle l = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
         Bundle bundle = this.c;
         if (bundle != null) {
-            bundleL.putAll(bundle);
+            l.putAll(bundle);
         }
         for (Map.Entry entry : ((h32) this.d.getValue()).b.entrySet()) {
             String str = (String) entry.getKey();
-            Bundle bundleA = ((su) ((c32) entry.getValue()).f181a.i).a();
-            if (!bundleA.isEmpty()) {
+            Bundle a2 = ((su) ((c32) entry.getValue()).f180a.i).a();
+            if (!a2.isEmpty()) {
                 lx0.x(str, "key");
-                bundleL.putBundle(str, bundleA);
+                l.putBundle(str, a2);
             }
         }
         this.b = false;
-        return bundleL;
+        return l;
     }
 
     public final void b() {
         if (this.b) {
             return;
         }
-        Bundle bundleI = this.f399a.i("androidx.lifecycle.internal.SavedStateHandlesProvider");
-        Bundle bundleL = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
+        Bundle i = this.f398a.i("androidx.lifecycle.internal.SavedStateHandlesProvider");
+        Bundle l = kx0.l((hn1[]) Arrays.copyOf(new hn1[0], 0));
         Bundle bundle = this.c;
         if (bundle != null) {
-            bundleL.putAll(bundle);
+            l.putAll(bundle);
         }
-        if (bundleI != null) {
-            bundleL.putAll(bundleI);
+        if (i != null) {
+            l.putAll(i);
         }
-        this.c = bundleL;
+        this.c = l;
         this.b = true;
     }
 }

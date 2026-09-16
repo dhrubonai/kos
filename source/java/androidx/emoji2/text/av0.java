@@ -9,16 +9,16 @@ import android.widget.EditText;
 public final class av0 extends View.AccessibilityDelegate {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ bv0 f123a;
+    public final /* synthetic */ bv0 f122a;
 
     public av0(bv0 bv0Var) {
-        this.f123a = bv0Var;
+        this.f122a = bv0Var;
     }
 
     @Override // android.view.View.AccessibilityDelegate
     public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        EditText editText = this.f123a.h.getEditText();
+        EditText editText = this.f122a.h.getEditText();
         if (editText != null) {
             accessibilityNodeInfo.setLabeledBy(editText);
         }

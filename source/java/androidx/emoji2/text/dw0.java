@@ -33,18 +33,18 @@ public final class dw0 extends g01 implements um0 {
                 gr1 gr1Var = (gr1) obj;
                 for (hr1 hr1Var : (hr1[]) this.g) {
                     if (hr1Var != null) {
-                        long jD = kx0.d(hr1Var.d, hr1Var.e);
-                        long jD2 = kx0.d(this.f, this.h);
+                        long d = kx0.d(hr1Var.d, hr1Var.e);
+                        long d2 = kx0.d(this.f, this.h);
                         float f = 1;
-                        float f2 = (f - 1.0f) * ((((int) (jD2 >> 32)) - ((int) (jD >> 32))) / 2.0f);
-                        float f3 = (f - 1.0f) * ((((int) (jD2 & 4294967295L)) - ((int) (jD & 4294967295L))) / 2.0f);
-                        long jRound = (Math.round(f3) & 4294967295L) | (Math.round(f2) << 32);
-                        gr1Var.f(hr1Var, (int) (jRound >> 32), (int) (jRound & 4294967295L), 0.0f);
+                        float f2 = (f - 1.0f) * ((((int) (d2 >> 32)) - ((int) (d >> 32))) / 2.0f);
+                        float f3 = (f - 1.0f) * ((((int) (d2 & 4294967295L)) - ((int) (d & 4294967295L))) / 2.0f);
+                        long round = (Math.round(f3) & 4294967295L) | (Math.round(f2) << 32);
+                        gr1Var.f(hr1Var, (int) (round >> 32), (int) (round & 4294967295L), 0.0f);
                     }
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

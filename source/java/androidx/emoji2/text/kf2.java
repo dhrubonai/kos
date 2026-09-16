@@ -5,26 +5,26 @@ package androidx.emoji2.text;
 public final class kf2 implements mq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f638a;
+    public final Object f637a;
 
     public kf2(Object obj) {
-        this.f638a = obj;
+        this.f637a = obj;
     }
 
     @Override // androidx.emoji2.text.mq2
     public final Object a(ap1 ap1Var) {
-        return this.f638a;
+        return this.f637a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof kf2) && lx0.n(this.f638a, ((kf2) obj).f638a);
+        return (obj instanceof kf2) && lx0.n(this.f637a, ((kf2) obj).f637a);
     }
 
     public final int hashCode() {
-        Object obj = this.f638a;
+        Object obj = this.f637a;
         if (obj == null) {
             return 0;
         }
@@ -32,6 +32,6 @@ public final class kf2 implements mq2 {
     }
 
     public final String toString() {
-        return "StaticValueHolder(value=" + this.f638a + ')';
+        return "StaticValueHolder(value=" + this.f637a + ')';
     }
 }

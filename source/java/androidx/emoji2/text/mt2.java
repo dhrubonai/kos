@@ -13,7 +13,7 @@ public abstract class mt2 {
     public static volatile long f;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ThreadLocal f769a = new ThreadLocal();
+    public static final ThreadLocal f768a = new ThreadLocal();
     public static final ThreadLocal g = new ThreadLocal();
     public static final ThreadLocal h = new ThreadLocal();
     public static final ThreadLocal i = new ThreadLocal();
@@ -40,18 +40,18 @@ public abstract class mt2 {
         if (bool != null && bool.booleanValue()) {
             return -1;
         }
-        lt2 lt2Var = (lt2) f769a.get();
+        lt2 lt2Var = (lt2) f768a.get();
         if (lt2Var == null) {
             lt2Var = b;
         }
         if (lt2Var == null) {
             return -1;
         }
-        return lt2Var.f712a;
+        return lt2Var.f711a;
     }
 
     public static String c() {
-        lt2 lt2Var = (lt2) f769a.get();
+        lt2 lt2Var = (lt2) f768a.get();
         if (lt2Var == null) {
             lt2Var = b;
         }
@@ -61,37 +61,25 @@ public abstract class mt2 {
         return lt2Var.b;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:4:0x0005  */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0019, code lost:
+    
+        if (r2 <= 60000) goto L9;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static java.lang.String d() {
-        /*
-            androidx.emoji2.text.lt2 r0 = androidx.emoji2.text.mt2.e
-            r1 = 0
-            if (r0 != 0) goto L7
-        L5:
-            r0 = r1
-            goto L1b
-        L7:
-            long r2 = android.os.SystemClock.elapsedRealtime()
-            long r4 = androidx.emoji2.text.mt2.f
-            long r2 = r2 - r4
-            r4 = 0
-            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r4 < 0) goto L5
-            r4 = 60000(0xea60, double:2.9644E-319)
-            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r2 > 0) goto L5
-        L1b:
-            if (r0 != 0) goto L1e
-            return r1
-        L1e:
-            java.lang.String r0 = r0.b
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mt2.d():java.lang.String");
+    public static String d() {
+        lt2 lt2Var = e;
+        if (lt2Var != null) {
+            long elapsedRealtime = SystemClock.elapsedRealtime() - f;
+            if (elapsedRealtime >= 0) {
+            }
+        }
+        lt2Var = null;
+        if (lt2Var == null) {
+            return null;
+        }
+        return lt2Var.b;
     }
 
     public static Integer e(int i2) {
@@ -106,7 +94,7 @@ public abstract class mt2 {
     }
 
     public static void f(lt2 lt2Var) {
-        ThreadLocal threadLocal = f769a;
+        ThreadLocal threadLocal = f768a;
         if (lt2Var == null) {
             threadLocal.remove();
         } else {
@@ -124,7 +112,7 @@ public abstract class mt2 {
     }
 
     public static lt2 h(int i2, String str) {
-        ThreadLocal threadLocal = f769a;
+        ThreadLocal threadLocal = f768a;
         lt2 lt2Var = (lt2) threadLocal.get();
         if (i2 <= 0 || str == null || str.length() <= 0) {
             threadLocal.remove();

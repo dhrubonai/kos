@@ -43,25 +43,25 @@ public class IWifiManagerProxy extends BinderInvocationStub {
         }
 
         public static int ip2Int(String str) {
-            String[] strArrSplit = str.split(c.a(-1041770646486818L, xa1.b));
+            String[] split = str.split(c.a(-1041770646486818L, xa1.b));
             int i = 0;
-            for (int i2 = 0; i2 < strArrSplit.length; i2++) {
-                i |= Integer.parseInt(strArrSplit[i2]) << (i2 * 8);
+            for (int i2 = 0; i2 < split.length; i2++) {
+                i |= Integer.parseInt(split[i2]) << (i2 * 8);
             }
             return i;
         }
 
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            WifiInfo wifiInfoInvokeGetConnectionInfo = IWifiManagerProxy.invokeGetConnectionInfo(obj, method, objArr);
-            if (wifiInfoInvokeGetConnectionInfo != null) {
-                WifiInfoContext wifiInfoContext = BRWifiInfo.get(wifiInfoInvokeGetConnectionInfo);
+            WifiInfo invokeGetConnectionInfo = IWifiManagerProxy.invokeGetConnectionInfo(obj, method, objArr);
+            if (invokeGetConnectionInfo != null) {
+                WifiInfoContext wifiInfoContext = BRWifiInfo.get(invokeGetConnectionInfo);
                 String[] strArr = xa1.b;
                 wifiInfoContext._set_mBSSID(c.a(-1041530128318242L, strArr));
-                BRWifiInfo.get(wifiInfoInvokeGetConnectionInfo)._set_mMacAddress(c.a(-1041590257860386L, strArr));
-                BRWifiInfo.get(wifiInfoInvokeGetConnectionInfo)._set_mWifiSsid(BRWifiSsid.get().createFromAsciiEncoded(c.a(-1041650387402530L, strArr)));
+                BRWifiInfo.get(invokeGetConnectionInfo)._set_mMacAddress(c.a(-1041590257860386L, strArr));
+                BRWifiInfo.get(invokeGetConnectionInfo)._set_mWifiSsid(BRWifiSsid.get().createFromAsciiEncoded(c.a(-1041650387402530L, strArr)));
             }
-            return wifiInfoInvokeGetConnectionInfo;
+            return invokeGetConnectionInfo;
         }
     }
 
@@ -87,9 +87,9 @@ public class IWifiManagerProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
@@ -117,19 +117,19 @@ public class IWifiManagerProxy extends BinderInvocationStub {
             if (!isPackageOwnershipException(th)) {
                 throw th;
             }
-            String strA = c.a(-1041835070996258L, strArr);
+            String a2 = c.a(-1041835070996258L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1041895200538402L, strArr));
-            zd.p(sb, findMessage(th), 5, strA);
-            Object[] objArrRewriteCallingPackage = rewriteCallingPackage(objArr, findOffendingPackage(th));
-            if (objArrRewriteCallingPackage != null) {
+            zd.p(sb, findMessage(th), 5, a2);
+            Object[] rewriteCallingPackage = rewriteCallingPackage(objArr, findOffendingPackage(th));
+            if (rewriteCallingPackage != null) {
                 try {
-                    return (WifiInfo) method.invoke(obj, objArrRewriteCallingPackage);
+                    return (WifiInfo) method.invoke(obj, rewriteCallingPackage);
                 } catch (Throwable th2) {
-                    String strA2 = c.a(-1040568055643938L, strArr);
+                    String a3 = c.a(-1040568055643938L, strArr);
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(c.a(-1040628185186082L, strArr));
-                    zd.p(sb2, findMessage(th2), 5, strA2);
+                    zd.p(sb2, findMessage(th2), 5, a3);
                     return newEmptyWifiInfo();
                 }
             }
@@ -164,7 +164,7 @@ public class IWifiManagerProxy extends BinderInvocationStub {
         if (objArr == null || objArr.length == 0) {
             return null;
         }
-        String strX = c01.X();
+        String X = c01.X();
         Object[] objArr2 = (Object[]) objArr.clone();
         int i = 0;
         boolean z = false;
@@ -176,13 +176,13 @@ public class IWifiManagerProxy extends BinderInvocationStub {
             if (obj instanceof String) {
                 String str2 = (String) obj;
                 if (!str2.equals(str)) {
-                    if (str == null && !str2.equals(strX)) {
-                        objArr2[i] = strX;
+                    if (str == null && !str2.equals(X)) {
+                        objArr2[i] = X;
                         z = true;
                         break;
                     }
                 } else {
-                    objArr2[i] = strX;
+                    objArr2[i] = X;
                     z = true;
                 }
             }
@@ -213,10 +213,10 @@ public class IWifiManagerProxy extends BinderInvocationStub {
                 String name = method.getName();
                 String[] strArr = xa1.b;
                 if (name.contains(c.a(-1042127128772386L, strArr))) {
-                    String strA = c.a(-1042191553281826L, strArr);
+                    String a2 = c.a(-1042191553281826L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-1042251682823970L, strArr));
-                    zd.p(sb, findMessage(th), 5, strA);
+                    zd.p(sb, findMessage(th), 5, a2);
                     return Collections.EMPTY_LIST;
                 }
             }

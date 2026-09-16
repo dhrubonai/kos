@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class op {
 
     /* renamed from: a, reason: collision with root package name */
-    public final w6 f867a = new w6();
+    public final w6 f866a = new w6();
 }

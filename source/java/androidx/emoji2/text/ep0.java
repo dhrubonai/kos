@@ -13,7 +13,7 @@ public final class ep0 extends hh2 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        return new ep0(this.h, (l10) obj).k(up2.f1187a);
+        return new ep0(this.h, (l10) obj).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk

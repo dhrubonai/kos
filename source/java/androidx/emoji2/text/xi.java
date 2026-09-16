@@ -2,7 +2,6 @@ package androidx.emoji2.text;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Set;
 
@@ -13,7 +12,7 @@ public abstract class xi {
         xa1.B(-869538162949922L);
     }
 
-    public static Object a() throws IllegalAccessException, NoSuchMethodException, InstantiationException, ClassNotFoundException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public static Object a() {
         String[] strArr = xa1.b;
         try {
             Class<?> cls = Class.forName(a.a.a.c.a(-867141571198754L, strArr));
@@ -25,9 +24,9 @@ public abstract class xi {
                 } catch (Exception unused) {
                     Constructor<?> declaredConstructor2 = cls.getDeclaredConstructor(null);
                     declaredConstructor2.setAccessible(true);
-                    Object objNewInstance = declaredConstructor2.newInstance(null);
-                    d(objNewInstance);
-                    return objNewInstance;
+                    Object newInstance = declaredConstructor2.newInstance(null);
+                    d(newInstance);
+                    return newInstance;
                 }
             } catch (Exception e) {
                 nz0.Q(a.a.a.c.a(-870087918763810L, strArr), 5, a.a.a.c.a(-870186703011618L, strArr) + e.getMessage());
@@ -65,14 +64,14 @@ public abstract class xi {
         }
     }
 
-    public static void c(Object obj) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public static void c(Object obj) {
         String[] strArr = xa1.b;
         try {
             for (String str : (Set) obj.getClass().getMethod(a.a.a.c.a(-866462966365986L, strArr), null).invoke(obj, null)) {
                 try {
-                    Object objInvoke = obj.getClass().getMethod(a.a.a.c.a(-866493031137058L, strArr), String.class).invoke(obj, str);
-                    if (objInvoke != null && objInvoke.getClass().getName().contains(a.a.a.c.a(-866544570744610L, strArr))) {
-                        d(objInvoke);
+                    Object invoke = obj.getClass().getMethod(a.a.a.c.a(-866493031137058L, strArr), String.class).invoke(obj, str);
+                    if (invoke != null && invoke.getClass().getName().contains(a.a.a.c.a(-866544570744610L, strArr))) {
+                        d(invoke);
                         nz0.Q(a.a.a.c.a(-866604700286754L, strArr), 3, a.a.a.c.a(-867270420217634L, strArr) + str);
                     }
                 } catch (Exception unused) {
@@ -83,7 +82,7 @@ public abstract class xi {
         }
     }
 
-    public static void d(Object obj) throws IllegalAccessException, NoSuchFieldException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public static void d(Object obj) {
         String[] strArr = xa1.b;
         if (obj == null) {
             return;

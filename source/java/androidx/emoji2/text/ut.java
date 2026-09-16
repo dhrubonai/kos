@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public abstract class ut {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final wt f1191a = new wt(lh.c, dd0.q);
+    public static final wt f1190a = new wt(lh.c, dd0.q);
 
     public static final wt a(kh khVar, el elVar, lx lxVar, int i) {
         if (khVar.equals(lh.c) && elVar.equals(dd0.q)) {
             tx txVar = (tx) lxVar;
             txVar.X(345962472);
             txVar.p(false);
-            return f1191a;
+            return f1190a;
         }
         tx txVar2 = (tx) lxVar;
         txVar2.X(346016319);
@@ -22,12 +22,12 @@ public abstract class ut {
             z = false;
         }
         boolean z3 = z2 | z;
-        Object objM = txVar2.M();
-        if (z3 || objM == kx.f663a) {
-            objM = new wt(khVar, elVar);
-            txVar2.i0(objM);
+        Object M = txVar2.M();
+        if (z3 || M == kx.f662a) {
+            M = new wt(khVar, elVar);
+            txVar2.i0(M);
         }
-        wt wtVar = (wt) objM;
+        wt wtVar = (wt) M;
         txVar2.p(false);
         return wtVar;
     }

@@ -51,20 +51,20 @@ public class ServiceManager {
     }
 
     private ServiceManager() {
-        HashMap map = new HashMap();
-        this.mCaches = map;
+        HashMap hashMap = new HashMap();
+        this.mCaches = hashMap;
         String[] strArr = xa1.b;
-        map.put(a.a.a.c.a(-371132978052898L, strArr), BActivityManagerService.get());
-        map.put(a.a.a.c.a(-371188812627746L, strArr), BJobManagerService.get());
-        map.put(a.a.a.c.a(-371274711973666L, strArr), BPackageManagerService.get());
-        map.put(a.a.a.c.a(-371343431450402L, strArr), BPackageInstallerService.get());
-        map.put(a.a.a.c.a(-369754293550882L, strArr), BStorageManagerService.get());
-        map.put(a.a.a.c.a(-369823013027618L, strArr), BUserManagerService.get());
-        map.put(a.a.a.c.a(-369913207340834L, strArr), BXposedManagerService.get());
-        map.put(a.a.a.c.a(-369977631850274L, strArr), BDeveloperModuleManagerService.get());
-        map.put(a.a.a.c.a(-369535250218786L, strArr), BAccountManagerService.get());
-        map.put(a.a.a.c.a(-369603969695522L, strArr), BLocationManagerService.get());
-        map.put(a.a.a.c.a(-369659804270370L, strArr), BNotificationManagerService.get());
+        hashMap.put(a.a.a.c.a(-371132978052898L, strArr), BActivityManagerService.get());
+        hashMap.put(a.a.a.c.a(-371188812627746L, strArr), BJobManagerService.get());
+        hashMap.put(a.a.a.c.a(-371274711973666L, strArr), BPackageManagerService.get());
+        hashMap.put(a.a.a.c.a(-371343431450402L, strArr), BPackageInstallerService.get());
+        hashMap.put(a.a.a.c.a(-369754293550882L, strArr), BStorageManagerService.get());
+        hashMap.put(a.a.a.c.a(-369823013027618L, strArr), BUserManagerService.get());
+        hashMap.put(a.a.a.c.a(-369913207340834L, strArr), BXposedManagerService.get());
+        hashMap.put(a.a.a.c.a(-369977631850274L, strArr), BDeveloperModuleManagerService.get());
+        hashMap.put(a.a.a.c.a(-369535250218786L, strArr), BAccountManagerService.get());
+        hashMap.put(a.a.a.c.a(-369603969695522L, strArr), BLocationManagerService.get());
+        hashMap.put(a.a.a.c.a(-369659804270370L, strArr), BNotificationManagerService.get());
     }
 
     public static ServiceManager get() {

@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class mb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final g01 f741a;
+    public final g01 f740a;
     public final be2 b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public mb2(um0 um0Var, be2 be2Var) {
-        this.f741a = (g01) um0Var;
+        this.f740a = (g01) um0Var;
         this.b = be2Var;
     }
 
@@ -22,14 +22,14 @@ public final class mb2 {
             return false;
         }
         mb2 mb2Var = (mb2) obj;
-        return this.f741a.equals(mb2Var.f741a) && this.b.equals(mb2Var.b);
+        return this.f740a.equals(mb2Var.f740a) && this.b.equals(mb2Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f741a.hashCode() * 31);
+        return this.b.hashCode() + (this.f740a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "Slide(slideOffset=" + this.f741a + ", animationSpec=" + this.b + ')';
+        return "Slide(slideOffset=" + this.f740a + ", animationSpec=" + this.b + ')';
     }
 }

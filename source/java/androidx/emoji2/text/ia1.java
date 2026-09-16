@@ -7,7 +7,9 @@ import com.google.android.material.button.MaterialButton;
 public final class ia1 extends ex2 {
     @Override // androidx.emoji2.text.ex2
     public final float F(ia2 ia2Var) {
-        return ((MaterialButton) ia2Var).getDisplayedWidthIncrease();
+        float displayedWidthIncrease;
+        displayedWidthIncrease = ((MaterialButton) ia2Var).getDisplayedWidthIncrease();
+        return displayedWidthIncrease;
     }
 
     @Override // androidx.emoji2.text.ex2

@@ -14,14 +14,14 @@ public final class ru0 implements LeadingMarginSpan {
         if (layout == null || paint == null || (lineForOffset = layout.getLineForOffset(i6)) != layout.getLineCount() - 1) {
             return;
         }
-        vi2 vi2Var = vk2.f1227a;
+        vi2 vi2Var = vk2.f1226a;
         if (layout.getEllipsisCount(lineForOffset) > 0) {
-            float fI = bz0.I(layout, lineForOffset, paint) + bz0.H(layout, lineForOffset, paint);
-            if (fI == 0.0f) {
+            float I = bz0.I(layout, lineForOffset, paint) + bz0.H(layout, lineForOffset, paint);
+            if (I == 0.0f) {
                 return;
             }
             lx0.u(canvas);
-            canvas.translate(fI, 0.0f);
+            canvas.translate(I, 0.0f);
         }
     }
 

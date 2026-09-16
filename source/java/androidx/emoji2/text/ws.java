@@ -111,9 +111,9 @@ public abstract class ws extends ct {
 
     public static List J0(Iterable iterable) {
         if (!(iterable instanceof Collection)) {
-            List listP0 = P0(iterable);
-            bt.s0(listP0);
-            return listP0;
+            List P0 = P0(iterable);
+            bt.s0(P0);
+            return P0;
         }
         Collection collection = (Collection) iterable;
         if (collection.size() <= 1) {
@@ -131,9 +131,9 @@ public abstract class ws extends ct {
     public static List K0(Iterable iterable, Comparator comparator) {
         lx0.x(iterable, "<this>");
         if (!(iterable instanceof Collection)) {
-            List listP0 = P0(iterable);
-            bt.t0(listP0, comparator);
-            return listP0;
+            List P0 = P0(iterable);
+            bt.t0(P0, comparator);
+            return P0;
         }
         Collection collection = (Collection) iterable;
         if (collection.size() <= 1) {
@@ -223,9 +223,9 @@ public abstract class ws extends ct {
                     M0(collection, linkedHashSet);
                     return linkedHashSet;
                 }
-                Set setSingleton = Collections.singleton(collection instanceof List ? ((List) collection).get(0) : collection2.iterator().next());
-                lx0.w(setSingleton, "singleton(...)");
-                return setSingleton;
+                Set singleton = Collections.singleton(collection instanceof List ? ((List) collection).get(0) : collection2.iterator().next());
+                lx0.w(singleton, "singleton(...)");
+                return singleton;
             }
         } else {
             LinkedHashSet linkedHashSet2 = new LinkedHashSet();
@@ -235,9 +235,9 @@ public abstract class ws extends ct {
                 if (size2 != 1) {
                     return linkedHashSet2;
                 }
-                Set setSingleton2 = Collections.singleton(linkedHashSet2.iterator().next());
-                lx0.w(setSingleton2, "singleton(...)");
-                return setSingleton2;
+                Set singleton2 = Collections.singleton(linkedHashSet2.iterator().next());
+                lx0.w(singleton2, "singleton(...)");
+                return singleton2;
             }
         }
         return ve0.d;
@@ -247,51 +247,51 @@ public abstract class ws extends ct {
         if (i >= 0 && i <= xs.l0(list)) {
             return xs.l0(list) - i;
         }
-        StringBuilder sbL = jx0.l("Element index ", i, " must be in range [");
-        sbL.append(new qw0(0, xs.l0(list), 1));
-        sbL.append("].");
-        throw new IndexOutOfBoundsException(sbL.toString());
+        StringBuilder l = jx0.l("Element index ", i, " must be in range [");
+        l.append(new qw0(0, xs.l0(list), 1));
+        l.append("].");
+        throw new IndexOutOfBoundsException(l.toString());
     }
 
     public static final int w0(int i, List list) {
         if (i >= 0 && i <= list.size()) {
             return list.size() - i;
         }
-        StringBuilder sbL = jx0.l("Position index ", i, " must be in range [");
-        sbL.append(new qw0(0, list.size(), 1));
-        sbL.append("].");
-        throw new IndexOutOfBoundsException(sbL.toString());
+        StringBuilder l = jx0.l("Position index ", i, " must be in range [");
+        l.append(new qw0(0, list.size(), 1));
+        l.append("].");
+        throw new IndexOutOfBoundsException(l.toString());
     }
 
     public static boolean x0(Iterable iterable, Object obj) {
-        int iIndexOf;
+        int i;
         lx0.x(iterable, "<this>");
         if (iterable instanceof Collection) {
             return ((Collection) iterable).contains(obj);
         }
         if (!(iterable instanceof List)) {
             Iterator it = iterable.iterator();
-            int i = 0;
+            int i2 = 0;
             while (true) {
                 if (!it.hasNext()) {
-                    iIndexOf = -1;
+                    i = -1;
                     break;
                 }
                 Object next = it.next();
-                if (i < 0) {
+                if (i2 < 0) {
                     xs.q0();
                     throw null;
                 }
                 if (lx0.n(obj, next)) {
-                    iIndexOf = i;
+                    i = i2;
                     break;
                 }
-                i++;
+                i2++;
             }
         } else {
-            iIndexOf = ((List) iterable).indexOf(obj);
+            i = ((List) iterable).indexOf(obj);
         }
-        return iIndexOf >= 0;
+        return i >= 0;
     }
 
     public static List y0(List list) {

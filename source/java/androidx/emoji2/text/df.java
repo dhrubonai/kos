@@ -39,10 +39,10 @@ public final /* synthetic */ class df implements Runnable {
             case 2:
                 mo0 mo0Var = (mo0) obj;
                 if (ip0.v.remove(Integer.valueOf(i2), mo0Var)) {
-                    String[] strArr = wj1.f1284a;
+                    String[] strArr = wj1.f1283a;
                     Log.d(a.a.a.c.a(-311501652115234L, strArr), a.a.a.c.a(-311514537017122L, strArr) + i2);
-                    ip0 ip0Var = ip0.f540a;
-                    List list = mo0Var.f759a;
+                    ip0 ip0Var = ip0.f539a;
+                    List list = mo0Var.f758a;
                     ip0Var.getClass();
                     ip0.G(list);
                     break;

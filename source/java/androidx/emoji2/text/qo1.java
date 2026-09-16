@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public abstract class qo1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f972a;
+    public final boolean f971a;
 
     public qo1(int i) {
-        this.f972a = (i & 1) == 0;
+        this.f971a = (i & 1) == 0;
     }
 }

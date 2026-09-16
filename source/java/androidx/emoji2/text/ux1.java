@@ -32,7 +32,7 @@ public final class ux1 implements Runnable {
         }
         RecyclerView recyclerView = this.j;
         recyclerView.removeCallbacks(this);
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         recyclerView.postOnAnimation(this);
     }
 
@@ -40,6 +40,7 @@ public final class ux1 implements Runnable {
     public final void run() {
         int i;
         int i2;
+        boolean awakenScrollBars;
         RecyclerView recyclerView = this.j;
         int[] iArr = recyclerView.k0;
         if (recyclerView.m == null) {
@@ -80,7 +81,8 @@ public final class ux1 implements Runnable {
             recyclerView.k(0, 0, i, i2, null, 1, iArr3);
             int i5 = i - iArr[0];
             int i6 = i2 - iArr[1];
-            if (!recyclerView.awakenScrollBars()) {
+            awakenScrollBars = recyclerView.awakenScrollBars();
+            if (!awakenScrollBars) {
                 recyclerView.invalidate();
             }
             boolean z = overScroller.isFinished() || (((overScroller.getCurrX() == overScroller.getFinalX()) || i5 != 0) && ((overScroller.getCurrY() == overScroller.getFinalY()) || i6 != 0));
@@ -117,7 +119,7 @@ public final class ux1 implements Runnable {
                         }
                     }
                     if (i7 != 0 || currVelocity != 0) {
-                        Field field = es2.f320a;
+                        Field field = es2.f319a;
                         recyclerView.postInvalidateOnAnimation();
                     }
                 }
@@ -139,7 +141,7 @@ public final class ux1 implements Runnable {
             recyclerView.H(1);
         } else {
             recyclerView.removeCallbacks(this);
-            Field field2 = es2.f320a;
+            Field field2 = es2.f319a;
             recyclerView.postOnAnimation(this);
         }
     }

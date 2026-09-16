@@ -20,7 +20,7 @@ public final class w72 extends b82 {
     public final String k;
 
     public w72(String str, String str2, List list, List list2, List list3, List list4, dn0[] dn0VarArr, String str3) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(str, a.a.a.c.a(-153768978169634L, strArr));
         lx0.x(str2, a.a.a.c.a(-153803337908002L, strArr));
         lx0.x(list, a.a.a.c.a(-153841992613666L, strArr));
@@ -61,7 +61,7 @@ public final class w72 extends b82 {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-152244264779554L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-151771818376994L, strArr));
@@ -82,7 +82,7 @@ public final class w72 extends b82 {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-153528460001058L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-153528460001058L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         List list = this.f;

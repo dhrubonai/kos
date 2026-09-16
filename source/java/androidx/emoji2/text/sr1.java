@@ -10,15 +10,15 @@ public final class sr1 implements qr1 {
     public static final sr1 c = new sr1(1);
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1084a;
+    public final /* synthetic */ int f1083a;
 
     public /* synthetic */ sr1(int i) {
-        this.f1084a = i;
+        this.f1083a = i;
     }
 
     @Override // androidx.emoji2.text.qr1
     public final boolean a() {
-        switch (this.f1084a) {
+        switch (this.f1083a) {
             case 0:
                 return false;
             default:
@@ -28,7 +28,7 @@ public final class sr1 implements qr1 {
 
     @Override // androidx.emoji2.text.qr1
     public final pr1 b(View view, j70 j70Var) {
-        switch (this.f1084a) {
+        switch (this.f1083a) {
             case 0:
                 return new rr1(new Magnifier(view));
             default:

@@ -23,9 +23,11 @@ public final /* synthetic */ class qv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$1;
         switch (this.d) {
             case 0:
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
+                invoke$lambda$1 = ComposableLambdaImpl.invoke$lambda$1((ComposableLambdaImpl) this.f, this.g, this.h, this.e, (lx) obj, intValue);
                 break;
             case 1:
                 ((Integer) obj2).intValue();
@@ -41,11 +43,11 @@ public final /* synthetic */ class qv implements Function2 {
                 break;
             default:
                 ((Integer) obj2).getClass();
-                int iK0 = n6.k0(this.e | 1);
-                ((w22) this.h).a(this.g, (ComposableLambdaImpl) this.f, (lx) obj, iK0);
+                int k0 = n6.k0(this.e | 1);
+                ((w22) this.h).a(this.g, (ComposableLambdaImpl) this.f, (lx) obj, k0);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ qv(Object obj, Object obj2, Object obj3, int i, int i2) {

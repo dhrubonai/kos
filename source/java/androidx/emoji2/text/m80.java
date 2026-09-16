@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class m80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f737a;
+    public static final int f736a;
     public static final int b;
     public static final int c;
     public static final int d;
@@ -13,8 +13,8 @@ public abstract class m80 {
     public static final int f;
 
     static {
-        float f2 = ld0.f686a;
-        f737a = 1;
+        float f2 = ld0.f685a;
+        f736a = 1;
         b = 18;
         c = 9;
         d = 19;

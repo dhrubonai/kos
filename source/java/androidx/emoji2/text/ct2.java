@@ -7,9 +7,9 @@ import android.os.Build;
 public abstract class ct2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final boolean f218a;
+    public static final boolean f217a;
 
     static {
-        f218a = Build.VERSION.SDK_INT >= 27;
+        f217a = Build.VERSION.SDK_INT >= 27;
     }
 }

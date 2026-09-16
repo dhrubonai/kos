@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 public final class xu {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashMap f1357a = new LinkedHashMap();
+    public final LinkedHashMap f1356a = new LinkedHashMap();
     public final LinkedHashMap b = new LinkedHashMap();
     public final LinkedHashMap c = new LinkedHashMap();
     public final ArrayList d = new ArrayList();
@@ -31,15 +31,15 @@ public final class xu {
     }
 
     public final boolean a(int i, int i2, Intent intent) {
-        String str = (String) this.f1357a.get(Integer.valueOf(i));
+        String str = (String) this.f1356a.get(Integer.valueOf(i));
         if (str == null) {
             return false;
         }
         g4 g4Var = (g4) this.e.get(str);
-        if ((g4Var != null ? g4Var.f400a : null) != null) {
+        if ((g4Var != null ? g4Var.f399a : null) != null) {
             ArrayList arrayList = this.d;
             if (arrayList.contains(str)) {
-                g4Var.f400a.c(g4Var.b.I(i2, intent));
+                g4Var.f399a.c(g4Var.b.I(i2, intent));
                 arrayList.remove(str);
                 return true;
             }
@@ -50,31 +50,31 @@ public final class xu {
     }
 
     public final void b(int i, jm jmVar, Object obj) {
-        Bundle bundleExtra;
+        Bundle bundle;
         int i2;
         zu zuVar = this.h;
-        p4 p4VarE = jmVar.E(zuVar, obj);
-        if (p4VarE != null) {
-            new Handler(Looper.getMainLooper()).post(new wu(i, 0, this, p4VarE));
+        p4 E = jmVar.E(zuVar, obj);
+        if (E != null) {
+            new Handler(Looper.getMainLooper()).post(new wu(i, 0, this, E));
             return;
         }
-        Intent intentT = jmVar.t(zuVar, obj);
-        if (intentT.getExtras() != null) {
-            Bundle extras = intentT.getExtras();
+        Intent t = jmVar.t(zuVar, obj);
+        if (t.getExtras() != null) {
+            Bundle extras = t.getExtras();
             lx0.u(extras);
             if (extras.getClassLoader() == null) {
-                intentT.setExtrasClassLoader(zuVar.getClassLoader());
+                t.setExtrasClassLoader(zuVar.getClassLoader());
             }
         }
-        if (intentT.hasExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) {
-            bundleExtra = intentT.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
-            intentT.removeExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
+        if (t.hasExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE")) {
+            bundle = t.getBundleExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
+            t.removeExtra("androidx.activity.result.contract.extra.ACTIVITY_OPTIONS_BUNDLE");
         } else {
-            bundleExtra = null;
+            bundle = null;
         }
-        Bundle bundle = bundleExtra;
-        if ("androidx.activity.result.contract.action.REQUEST_PERMISSIONS".equals(intentT.getAction())) {
-            String[] stringArrayExtra = intentT.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
+        Bundle bundle2 = bundle;
+        if ("androidx.activity.result.contract.action.REQUEST_PERMISSIONS".equals(t.getAction())) {
+            String[] stringArrayExtra = t.getStringArrayExtra("androidx.activity.result.contract.extra.PERMISSIONS");
             if (stringArrayExtra == null) {
                 stringArrayExtra = new String[0];
             }
@@ -104,16 +104,16 @@ public final class xu {
             zuVar.requestPermissions(stringArrayExtra, i);
             return;
         }
-        if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(intentT.getAction())) {
-            zuVar.startActivityForResult(intentT, i, bundle);
+        if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(t.getAction())) {
+            zuVar.startActivityForResult(t, i, bundle2);
             return;
         }
-        ww0 ww0Var = (ww0) intentT.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
+        ww0 ww0Var = (ww0) t.getParcelableExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST");
         try {
             lx0.u(ww0Var);
             i2 = i;
             try {
-                zuVar.startIntentSenderForResult(ww0Var.d, i2, ww0Var.e, ww0Var.f, ww0Var.g, 0, bundle);
+                zuVar.startIntentSenderForResult(ww0Var.d, i2, ww0Var.e, ww0Var.f, ww0Var.g, 0, bundle2);
             } catch (IntentSender.SendIntentException e) {
                 e = e;
                 new Handler(Looper.getMainLooper()).post(new wu(i2, 1, this, e));

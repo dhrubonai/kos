@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ot0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f874a;
+    public final int f873a;
 
     public static String a(int i) {
         return i == 1 ? "Hyphens.None" : i == 2 ? "Hyphens.Auto" : i == Integer.MIN_VALUE ? "Hyphens.Unspecified" : "Invalid";
@@ -13,16 +13,16 @@ public final class ot0 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof ot0) {
-            return this.f874a == ((ot0) obj).f874a;
+            return this.f873a == ((ot0) obj).f873a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f874a);
+        return Integer.hashCode(this.f873a);
     }
 
     public final String toString() {
-        return a(this.f874a);
+        return a(this.f873a);
     }
 }

@@ -21,6 +21,6 @@ public final class y0 extends ClickableSpan {
     public final void onClick(View view) {
         Bundle bundle = new Bundle();
         bundle.putInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", this.d);
-        this.e.f1045a.performAction(this.f, bundle);
+        this.e.f1044a.performAction(this.f, bundle);
     }
 }

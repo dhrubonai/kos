@@ -28,11 +28,11 @@ public final class lc extends xu2 {
                     return wv2Var;
                 }
                 View childAt = k80Var.getChildAt(0);
-                int iMax = Math.max(0, childAt.getLeft());
-                int iMax2 = Math.max(0, childAt.getTop());
-                int iMax3 = Math.max(0, k80Var.getWidth() - childAt.getRight());
-                int iMax4 = Math.max(0, k80Var.getHeight() - childAt.getBottom());
-                return (iMax == 0 && iMax2 == 0 && iMax3 == 0 && iMax4 == 0) ? wv2Var : wv2Var.f1306a.n(iMax, iMax2, iMax3, iMax4);
+                int max = Math.max(0, childAt.getLeft());
+                int max2 = Math.max(0, childAt.getTop());
+                int max3 = Math.max(0, k80Var.getWidth() - childAt.getRight());
+                int max4 = Math.max(0, k80Var.getHeight() - childAt.getBottom());
+                return (max == 0 && max2 == 0 && max3 == 0 && max4 == 0) ? wv2Var : wv2Var.f1305a.n(max, max2, max3, max4);
         }
     }
 
@@ -44,25 +44,25 @@ public final class lc extends xu2 {
                 if (!ov0Var.S.q) {
                     return a12Var;
                 }
-                long jK = jm.K(ov0Var.J(0L));
-                int i = (int) (jK >> 32);
+                long K = jm.K(ov0Var.J(0L));
+                int i = (int) (K >> 32);
                 if (i < 0) {
                     i = 0;
                 }
-                int i2 = (int) (jK & 4294967295L);
+                int i2 = (int) (K & 4294967295L);
                 if (i2 < 0) {
                     i2 = 0;
                 }
-                long jK2 = az0.A(ov0Var).k();
-                int i3 = (int) (jK2 >> 32);
-                int i4 = (int) (jK2 & 4294967295L);
+                long k = az0.A(ov0Var).k();
+                int i3 = (int) (k >> 32);
+                int i4 = (int) (k & 4294967295L);
                 long j = ov0Var.f;
-                long jK3 = jm.K(ov0Var.J((Float.floatToRawIntBits((int) (j >> 32)) << 32) | (Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L)));
-                int i5 = i3 - ((int) (jK3 >> 32));
+                long K2 = jm.K(ov0Var.J((Float.floatToRawIntBits((int) (j >> 32)) << 32) | (Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L)));
+                int i5 = i3 - ((int) (K2 >> 32));
                 if (i5 < 0) {
                     i5 = 0;
                 }
-                int i6 = i4 - ((int) (4294967295L & jK3));
+                int i6 = i4 - ((int) (4294967295L & K2));
                 int i7 = i6 >= 0 ? i6 : 0;
                 return (i == 0 && i2 == 0 && i5 == 0 && i7 == 0) ? a12Var : new a12(12, tc.l((zv0) a12Var.e, i, i2, i5, i7), tc.l((zv0) a12Var.f, i, i2, i5, i7));
             default:
@@ -71,19 +71,19 @@ public final class lc extends xu2 {
                     return a12Var;
                 }
                 View childAt = k80Var.getChildAt(0);
-                int iMax = Math.max(0, childAt.getLeft());
-                int iMax2 = Math.max(0, childAt.getTop());
-                int iMax3 = Math.max(0, k80Var.getWidth() - childAt.getRight());
-                int iMax4 = Math.max(0, k80Var.getHeight() - childAt.getBottom());
-                if (iMax == 0 && iMax2 == 0 && iMax3 == 0 && iMax4 == 0) {
+                int max = Math.max(0, childAt.getLeft());
+                int max2 = Math.max(0, childAt.getTop());
+                int max3 = Math.max(0, k80Var.getWidth() - childAt.getRight());
+                int max4 = Math.max(0, k80Var.getHeight() - childAt.getBottom());
+                if (max == 0 && max2 == 0 && max3 == 0 && max4 == 0) {
                     return a12Var;
                 }
-                zv0 zv0VarB = zv0.b(iMax, iMax2, iMax3, iMax4);
-                int i8 = zv0VarB.f1457a;
+                zv0 b = zv0.b(max, max2, max3, max4);
+                int i8 = b.f1456a;
                 zv0 zv0Var = (zv0) a12Var.e;
-                int i9 = zv0VarB.b;
-                int i10 = zv0VarB.c;
-                int i11 = zv0VarB.d;
+                int i9 = b.b;
+                int i10 = b.c;
+                int i11 = b.d;
                 return new a12(12, wv2.b(zv0Var, i8, i9, i10, i11), wv2.b((zv0) a12Var.f, i8, i9, i10, i11));
         }
     }

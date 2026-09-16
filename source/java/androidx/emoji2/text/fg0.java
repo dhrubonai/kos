@@ -42,7 +42,7 @@ public final class fg0 extends im0 {
     }
 
     @Override // androidx.emoji2.text.im0, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws IOException {
+    public final void close() {
         if (this.i) {
             return;
         }
@@ -56,28 +56,28 @@ public final class fg0 extends im0 {
     }
 
     @Override // androidx.emoji2.text.im0, androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws IOException {
+    public final long v(long j, rn rnVar) {
         lx0.x(rnVar, "sink");
         if (this.i) {
             throw new IllegalStateException("closed");
         }
         try {
-            long jV = this.d.v(j, rnVar);
+            long v = this.d.v(j, rnVar);
             if (this.g) {
                 this.g = false;
             }
-            if (jV == -1) {
+            if (v == -1) {
                 b(null);
                 return -1L;
             }
-            long j2 = this.f + jV;
+            long j2 = this.f + v;
             long j3 = this.e;
             if (j3 == -1 || j2 <= j3) {
                 this.f = j2;
                 if (j2 == j3) {
                     b(null);
                 }
-                return jV;
+                return v;
             }
             throw new ProtocolException("expected " + j3 + " bytes but received " + j2);
         } catch (IOException e) {

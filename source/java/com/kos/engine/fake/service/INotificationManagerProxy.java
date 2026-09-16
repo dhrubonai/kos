@@ -287,7 +287,7 @@ public class INotificationManagerProxy extends BinderInvocationStub {
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         mz0.x(objArr);
         try {
             return super.invoke(obj, method, objArr);

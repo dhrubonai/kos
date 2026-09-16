@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class a41 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final um0 f82a;
+    public final um0 f81a;
     public final ot1 b = new ot1();
     public rg c;
 
     public a41(um0 um0Var) {
-        this.f82a = um0Var;
+        this.f81a = um0Var;
     }
 
     public final z31 a(int i, long j) {
         rg rgVar = this.c;
         if (rgVar == null) {
-            return tc0.f1114a;
+            return tc0.f1113a;
         }
         nt1 nt1Var = new nt1(rgVar, i, j, this.b);
         ((pt1) rgVar.g).b(nt1Var);

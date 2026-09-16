@@ -80,13 +80,13 @@ public class GmsCore {
                 StringBuilder sb = new StringBuilder();
                 sb.append(applicationInfo.packageName);
                 if (sTargetSdkCompatLogs.add(jx0.j(sb, c.a(-8667803041570L, strArr), i))) {
-                    String strA = c.a(-8659213106978L, strArr);
+                    String a2 = c.a(-8659213106978L, strArr);
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(c.a(-8693572845346L, strArr));
                     sb2.append(applicationInfo.packageName);
                     sb2.append(c.a(-8349975461666L, strArr));
                     sb2.append(i);
-                    zd.o(sb2, c.a(-8414399971106L, strArr), GMS_SCHEDULER_COMPAT_TARGET_SDK, 3, strA);
+                    zd.o(sb2, c.a(-8414399971106L, strArr), GMS_SCHEDULER_COMPAT_TARGET_SDK, 3, a2);
                 }
             }
         }
@@ -115,14 +115,14 @@ public class GmsCore {
                 return c.a(-1881754713890L, strArr);
             }
             StringBuilder sb = new StringBuilder();
-            int iMin = Math.min(list.length, 8);
-            for (int i = 0; i < iMin; i++) {
+            int min = Math.min(list.length, 8);
+            for (int i = 0; i < min; i++) {
                 if (i > 0) {
                     sb.append(',');
                 }
                 sb.append(list[i]);
             }
-            if (list.length > iMin) {
+            if (list.length > min) {
                 sb.append(c.a(-1868869812002L, strArr));
             }
             return sb.toString();
@@ -137,7 +137,7 @@ public class GmsCore {
 
     public static void ensureGoogleDataDirs(String str, int i) {
         if (isGoogleAppOrService(str)) {
-            StrictMode.ThreadPolicy threadPolicyAllowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
+            StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
             try {
                 File dataDir = BEnvironment.getDataDir(str, i);
                 File deDataDir = BEnvironment.getDeDataDir(str, i);
@@ -170,9 +170,9 @@ public class GmsCore {
                 if (c01.r.c0() && (c.a(-7375017885474L, strArr).equals(str) || c.a(-1426488180514L, strArr).equals(str) || c.a(-1478027788066L, strArr).equals(str))) {
                     wp1.g(i);
                 }
-                StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+                StrictMode.setThreadPolicy(allowThreadDiskWrites);
             } catch (Throwable th) {
-                StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskWrites);
+                StrictMode.setThreadPolicy(allowThreadDiskWrites);
                 throw th;
             }
         }
@@ -202,15 +202,15 @@ public class GmsCore {
         return applySchedulerCompatTargetSdk(BPackageManager.get().getApplicationInfo(str, 0, i));
     }
 
-    public static InstallResult installGApps(int i) throws PackageManager.NameNotFoundException {
+    public static InstallResult installGApps(int i) {
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         String[] strArr = xa1.b;
         linkedHashSet.add(c.a(-8087982456610L, strArr));
         linkedHashSet.add(c.a(-8186766704418L, strArr));
         linkedHashSet.add(c.a(-7752975007522L, strArr));
-        InstallResult installResultInstallPackages = installPackages(linkedHashSet, i);
-        if (!installResultInstallPackages.success) {
-            return installResultInstallPackages;
+        InstallResult installPackages = installPackages(linkedHashSet, i);
+        if (!installPackages.success) {
+            return installPackages;
         }
         LinkedHashSet linkedHashSet2 = new LinkedHashSet();
         linkedHashSet2.addAll(GOOGLE_SERVICE);
@@ -219,21 +219,21 @@ public class GmsCore {
         return installPackages(linkedHashSet2, i);
     }
 
-    private static InstallResult installPackages(Set<String> set, int i) throws PackageManager.NameNotFoundException {
+    private static InstallResult installPackages(Set<String> set, int i) {
         c01 c01Var = c01.r;
         for (String str : set) {
             c01Var.getClass();
             if (!c01.b0(str, i)) {
                 try {
                     c01.s.getPackageManager().getApplicationInfo(str, 0);
-                    InstallResult installResultZ = c01.Z(i, str);
-                    if (installResultZ == null) {
+                    InstallResult Z = c01.Z(i, str);
+                    if (Z == null) {
                         String[] strArr = xa1.b;
                         nz0.Q(c.a(-5296253714210L, strArr), 5, c.a(-5330613452578L, strArr) + str + c.a(-5021375807266L, strArr) + i);
                         return new InstallResult().installError(str, c.a(-5055735545634L, strArr));
                     }
-                    if (!installResultZ.success) {
-                        return installResultZ;
+                    if (!Z.success) {
+                        return Z;
                     }
                 } catch (PackageManager.NameNotFoundException unused) {
                     continue;
@@ -253,16 +253,16 @@ public class GmsCore {
 
     public static boolean isInstalledGoogleService(int i) {
         c01 c01Var = c01.r;
-        String strA = c.a(-7903298862882L, xa1.b);
+        String a2 = c.a(-7903298862882L, xa1.b);
         c01Var.getClass();
-        return c01.b0(strA, i);
+        return c01.b0(a2, i);
     }
 
     public static boolean isPlayGamesGamePackage(String str) {
         return str != null && PLAY_GAMES_GAME_PACKAGES.contains(str);
     }
 
-    public static boolean isSupportGms() throws PackageManager.NameNotFoundException {
+    public static boolean isSupportGms() {
         try {
             c01.s.getPackageManager().getPackageInfo(c.a(-7804514615074L, xa1.b), 0);
             return true;
@@ -296,14 +296,14 @@ public class GmsCore {
                 deleteQuietly(file2);
             }
             if (sDirWarnings.add(c.a(-2062143340322L, strArr) + file.getAbsolutePath())) {
-                String strA = c.a(-2156632620834L, strArr);
+                String a2 = c.a(-2156632620834L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-2190992359202L, strArr));
                 sb2.append(file.getAbsolutePath());
                 sb2.append(c.a(-1778675498786L, strArr));
                 sb2.append(describeParent(parentFile));
                 sb2.append(c.a(-1851689942818L, strArr));
-                zd.p(sb2, file2 != null ? file2.getAbsolutePath() : null, 5, strA);
+                zd.p(sb2, file2 != null ? file2.getAbsolutePath() : null, 5, a2);
             }
         }
         return false;
@@ -362,7 +362,7 @@ public class GmsCore {
         if (sDirWarnings.add(absolutePath)) {
             File parentFile = file.getParentFile();
             String[] strArr = xa1.b;
-            String strA = c.a(-425760800546L, strArr);
+            String a2 = c.a(-425760800546L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-460120538914L, strArr));
             sb.append(absolutePath);
@@ -384,7 +384,7 @@ public class GmsCore {
                 z = true;
             }
             sb.append(z);
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
         }
     }
 

@@ -8,7 +8,7 @@ import android.graphics.Outline;
 public interface sp0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final dd0 f1079a = dd0.I;
+    public static final dd0 f1078a = dd0.I;
 
     void A(long j);
 

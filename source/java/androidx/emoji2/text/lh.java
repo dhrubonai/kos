@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class lh {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final j42 f690a = new j42(24);
+    public static final j42 f689a = new j42(24);
     public static final j42 b = new j42(23);
     public static final gh c = new gh();
     public static final hh d = new hh(0);
@@ -147,13 +147,13 @@ public abstract class lh {
         for (int i4 : iArr) {
             i3 += i4;
         }
-        float fMax = (i - i3) / Math.max(iArr.length - 1, 1);
-        float f = (z && iArr.length == 1) ? fMax : 0.0f;
+        float max = (i - i3) / Math.max(iArr.length - 1, 1);
+        float f = (z && iArr.length == 1) ? max : 0.0f;
         if (z) {
             for (int length = iArr.length - 1; -1 < length; length--) {
                 int i5 = iArr[length];
                 iArr2[length] = Math.round(f);
-                f += i5 + fMax;
+                f += i5 + max;
             }
             return;
         }
@@ -162,7 +162,7 @@ public abstract class lh {
         while (i2 < length2) {
             int i7 = iArr[i2];
             iArr2[i6] = Math.round(f);
-            f += i7 + fMax;
+            f += i7 + max;
             i2++;
             i6++;
         }

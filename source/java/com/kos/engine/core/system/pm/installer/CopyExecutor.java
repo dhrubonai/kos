@@ -21,27 +21,28 @@ public class CopyExecutor implements Executor {
     private static final int INSTALLED_APK_MODE = 292;
     private static final String TAG = c.a(-492294005473058L, xa1.b);
 
-    private boolean copySplits(ApplicationInfo applicationInfo, String[] strArr, File file) throws Throwable {
-        String[] strArr2 = xa1.b;
+    private boolean copySplits(ApplicationInfo applicationInfo, String[] strArr, File file) {
+        String[] strArr2;
+        String[] strArr3 = xa1.b;
         if (applicationInfo != null && strArr != null && strArr.length != 0) {
-            String[] strArr3 = applicationInfo.splitNames;
+            strArr2 = applicationInfo.splitNames;
             int length = strArr.length;
             String[] strArr4 = new String[length];
             for (int i = 0; i < strArr.length; i++) {
                 String str = strArr[i];
                 File file2 = str == null ? null : new File(str);
                 if (file2 == null || !file2.isFile()) {
-                    throw new IOException(jx0.j(new StringBuilder(), c.a(-491752839593762L, strArr2), i));
+                    throw new IOException(jx0.j(new StringBuilder(), c.a(-491752839593762L, strArr3), i));
                 }
-                String str2 = (strArr3 == null || strArr3.length != strArr.length) ? null : strArr3[i];
-                File file3 = new File(file, wj1.j((str2 == null || str2.isEmpty()) ? c.a(-492435739393826L, strArr2) + i + c.a(-492414264557346L, strArr2) : c.a(-492452919263010L, strArr2) + str2 + c.a(-492500163903266L, strArr2)));
+                String str2 = (strArr2 == null || strArr2.length != strArr.length) ? null : strArr2[i];
+                File file3 = new File(file, wj1.j((str2 == null || str2.isEmpty()) ? c.a(-492435739393826L, strArr3) + i + c.a(-492414264557346L, strArr3) : c.a(-492452919263010L, strArr3) + str2 + c.a(-492500163903266L, strArr3)));
                 wj1.q(file2, file3);
                 sealInstalledApk(file3);
                 strArr4[i] = file3.getAbsolutePath();
             }
             applicationInfo.splitSourceDirs = strArr4;
             applicationInfo.splitPublicSourceDirs = (String[]) strArr4.clone();
-            if (strArr3 == null || strArr3.length != length) {
+            if (strArr2 == null || strArr2.length != length) {
                 applicationInfo.splitNames = null;
                 return true;
             }
@@ -53,7 +54,7 @@ public class CopyExecutor implements Executor {
         return true;
     }
 
-    private void sealInstalledApk(File file) throws IOException, ErrnoException {
+    private void sealInstalledApk(File file) {
         String[] strArr = xa1.b;
         try {
             Os.chmod(file.getAbsolutePath(), INSTALLED_APK_MODE);
@@ -66,7 +67,7 @@ public class CopyExecutor implements Executor {
     }
 
     @Override // com.kos.engine.core.system.pm.installer.Executor
-    public int exec(BPackageSettings bPackageSettings, InstallOption installOption, int i) throws Throwable {
+    public int exec(BPackageSettings bPackageSettings, InstallOption installOption, int i) {
         ApplicationInfo applicationInfo = bPackageSettings.pkg.applicationInfo;
         String[] strArr = applicationInfo == null ? null : applicationInfo.splitSourceDirs;
         boolean z = applicationInfo == null || (applicationInfo.flags & 268435456) != 0;
@@ -88,7 +89,9 @@ public class CopyExecutor implements Executor {
                 File file2 = new File(bPackageSettings.pkg.baseCodePath);
                 File baseApkDir = BEnvironment.getBaseApkDir(bPackageSettings.pkg.packageName);
                 try {
-                    if (!installOption.isFlag(8) || !file2.renameTo(baseApkDir)) {
+                    if (!installOption.isFlag(8)) {
+                        wj1.q(file2, baseApkDir);
+                    } else if (!file2.renameTo(baseApkDir)) {
                         wj1.q(file2, baseApkDir);
                     }
                     sealInstalledApk(baseApkDir);
@@ -101,7 +104,7 @@ public class CopyExecutor implements Executor {
                         return -1;
                     }
                     String[] strArr2 = xa1.b;
-                    String strA = c.a(-491825854037794L, strArr2);
+                    String a2 = c.a(-491825854037794L, strArr2);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-491916048351010L, strArr2));
                     sb.append(bPackageSettings.pkg.packageName);
@@ -109,7 +112,7 @@ public class CopyExecutor implements Executor {
                     sb.append(strArr == null ? 0 : strArr.length);
                     sb.append(c.a(-491581040901922L, strArr2));
                     sb.append(z ? c.a(-491589630836514L, strArr2) : c.a(-491684120117026L, strArr2));
-                    nz0.Q(strA, 3, sb.toString());
+                    nz0.Q(a2, 3, sb.toString());
                 } catch (IOException e) {
                     e.printStackTrace();
                     return -1;

@@ -23,14 +23,14 @@ public final class vp implements ViewTreeObserver.OnGlobalLayoutListener {
                 ArrayList arrayList = ypVar.k;
                 if (ypVar.e() && arrayList.size() > 0) {
                     int i = 0;
-                    if (!((xp) arrayList.get(0)).f1350a.x) {
+                    if (!((xp) arrayList.get(0)).f1349a.x) {
                         View view = ypVar.r;
                         if (view != null && view.isShown()) {
                             int size = arrayList.size();
                             while (i < size) {
                                 Object obj = arrayList.get(i);
                                 i++;
-                                ((xp) obj).f1350a.f();
+                                ((xp) obj).f1349a.f();
                             }
                             break;
                         } else {

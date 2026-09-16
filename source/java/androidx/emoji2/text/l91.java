@@ -7,14 +7,14 @@ import java.util.List;
 public final class l91 extends m91 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final List f680a;
+    public final List f679a;
     public final List b;
 
     public l91(List list, List list2) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(list, a.a.a.c.a(-280998794379042L, strArr));
         a.a.a.c.a(-281033154117410L, strArr);
-        this.f680a = list;
+        this.f679a = list;
         this.b = list2;
     }
 
@@ -26,18 +26,18 @@ public final class l91 extends m91 {
             return false;
         }
         l91 l91Var = (l91) obj;
-        return lx0.n(this.f680a, l91Var.f680a) && lx0.n(this.b, l91Var.b);
+        return lx0.n(this.f679a, l91Var.f679a) && lx0.n(this.b, l91Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f680a.hashCode() * 31);
+        return this.b.hashCode() + (this.f679a.hashCode() * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-281153413201698L, strArr));
-        sb.append(this.f680a);
+        sb.append(this.f679a);
         sb.append(a.a.a.c.a(-279559980334882L, strArr));
         sb.append(this.b);
         sb.append(')');

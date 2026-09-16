@@ -36,7 +36,7 @@ public final class u02 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((u02) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((u02) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk

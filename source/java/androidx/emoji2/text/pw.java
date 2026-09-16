@@ -7,7 +7,7 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public abstract class pw {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ComposableLambdaImpl f930a = new ComposableLambdaImpl(2133218642, false, new nw(6));
+    public static final ComposableLambdaImpl f929a = new ComposableLambdaImpl(2133218642, false, new nw(6));
     public static final ComposableLambdaImpl b = new ComposableLambdaImpl(219022462, false, new nw(7));
     public static final ComposableLambdaImpl c = new ComposableLambdaImpl(-1540144094, false, new jw(9));
 }

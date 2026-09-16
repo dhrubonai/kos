@@ -7,9 +7,11 @@ import android.content.Context;
 public final class am0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final am0 f109a = new am0();
+    public static final am0 f108a = new am0();
 
     public final int a(Context context) {
-        return context.getResources().getConfiguration().fontWeightAdjustment;
+        int i;
+        i = context.getResources().getConfiguration().fontWeightAdjustment;
+        return i;
     }
 }

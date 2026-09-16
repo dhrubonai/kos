@@ -10,7 +10,7 @@ public final class fo2 {
     public final View b;
 
     /* renamed from: a, reason: collision with root package name */
-    public final HashMap f374a = new HashMap();
+    public final HashMap f373a = new HashMap();
     public final ArrayList c = new ArrayList();
 
     public fo2(View view) {
@@ -22,19 +22,19 @@ public final class fo2 {
             return false;
         }
         fo2 fo2Var = (fo2) obj;
-        return this.b == fo2Var.b && this.f374a.equals(fo2Var.f374a);
+        return this.b == fo2Var.b && this.f373a.equals(fo2Var.f373a);
     }
 
     public final int hashCode() {
-        return this.f374a.hashCode() + (this.b.hashCode() * 31);
+        return this.f373a.hashCode() + (this.b.hashCode() * 31);
     }
 
     public final String toString() {
-        String strH = zd.h(("TransitionValues@" + Integer.toHexString(hashCode()) + ":\n") + "    view = " + this.b + "\n", "    values:");
-        HashMap map = this.f374a;
-        for (String str : map.keySet()) {
-            strH = strH + "    " + str + ": " + map.get(str) + "\n";
+        String h = zd.h(("TransitionValues@" + Integer.toHexString(hashCode()) + ":\n") + "    view = " + this.b + "\n", "    values:");
+        HashMap hashMap = this.f373a;
+        for (String str : hashMap.keySet()) {
+            h = h + "    " + str + ": " + hashMap.get(str) + "\n";
         }
-        return strH;
+        return h;
     }
 }

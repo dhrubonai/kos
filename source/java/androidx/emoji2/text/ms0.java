@@ -10,7 +10,7 @@ import java.net.Socket;
 public final class ms0 implements gg0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final dj1 f763a;
+    public final dj1 f762a;
     public final vv1 b;
     public final zn c;
     public final yn d;
@@ -21,7 +21,7 @@ public final class ms0 implements gg0 {
     public ms0(dj1 dj1Var, vv1 vv1Var, pv1 pv1Var, nv1 nv1Var) {
         lx0.x(pv1Var, "source");
         lx0.x(nv1Var, "sink");
-        this.f763a = dj1Var;
+        this.f762a = dj1Var;
         this.b = vv1Var;
         this.c = pv1Var;
         this.d = nv1Var;
@@ -41,14 +41,14 @@ public final class ms0 implements gg0 {
             throw new IllegalStateException(("state: " + this.e).toString());
         }
         try {
-            String strM = ((zn) krVar.c).m(krVar.b);
-            krVar.b -= strM.length();
-            vf vfVarU = a01.U(strM);
-            int i2 = vfVarU.e;
+            String m = ((zn) krVar.c).m(krVar.b);
+            krVar.b -= m.length();
+            vf U = a01.U(m);
+            int i2 = U.e;
             b02 b02Var = new b02();
-            b02Var.b = (vu1) vfVarU.f;
+            b02Var.b = (vu1) U.f;
             b02Var.c = i2;
-            b02Var.d = (String) vfVarU.g;
+            b02Var.d = (String) U.g;
             b02Var.f = krVar.f().c();
             if (z && i2 == 100) {
                 return null;
@@ -64,7 +64,7 @@ public final class ms0 implements gg0 {
             this.e = 3;
             return b02Var;
         } catch (EOFException e) {
-            throw new IOException("unexpected end of stream on ".concat(this.b.b.f1155a.h.f()), e);
+            throw new IOException("unexpected end of stream on ".concat(this.b.b.f1154a.h.f()), e);
         }
     }
 
@@ -74,7 +74,7 @@ public final class ms0 implements gg0 {
     }
 
     @Override // androidx.emoji2.text.gg0
-    public final void cancel() throws IOException {
+    public final void cancel() {
         Socket socket = this.b.c;
         if (socket != null) {
             jq2.c(socket);
@@ -91,19 +91,19 @@ public final class ms0 implements gg0 {
         sb.append(' ');
         mt0 mt0Var = (mt0) dvVar.e;
         if (mt0Var.i || type != Proxy.Type.HTTP) {
-            String strB = mt0Var.b();
-            String strD = mt0Var.d();
-            if (strD != null) {
-                strB = strB + '?' + strD;
+            String b = mt0Var.b();
+            String d = mt0Var.d();
+            if (d != null) {
+                b = b + '?' + d;
             }
-            sb.append(strB);
+            sb.append(b);
         } else {
             sb.append(mt0Var);
         }
         sb.append(" HTTP/1.1");
-        String string = sb.toString();
-        lx0.w(string, "StringBuilder().apply(builderAction).toString()");
-        i((dr0) dvVar.g, string);
+        String sb2 = sb.toString();
+        lx0.w(sb2, "StringBuilder().apply(builderAction).toString()");
+        i((dr0) dvVar.g, sb2);
     }
 
     @Override // androidx.emoji2.text.gg0
@@ -119,9 +119,9 @@ public final class ms0 implements gg0 {
             }
             throw new IllegalStateException(("state: " + this.e).toString());
         }
-        long jH = jq2.h(c02Var);
-        if (jH != -1) {
-            return h(jH);
+        long h = jq2.h(c02Var);
+        if (h != -1) {
+            return h(h);
         }
         if (this.e == 4) {
             this.e = 5;

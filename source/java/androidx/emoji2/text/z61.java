@@ -126,9 +126,9 @@ public final class z61 extends i0 implements RandomAccess, Serializable {
             if (i4 - 2147483639 > 0) {
                 i4 = i3 > 2147483639 ? Integer.MAX_VALUE : 2147483639;
             }
-            Object[] objArrCopyOf = Arrays.copyOf(objArr, i4);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.d = objArrCopyOf;
+            Object[] copyOf = Arrays.copyOf(objArr, i4);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
         }
         Object[] objArr2 = this.d;
         xh.z0(objArr2, objArr2, i + i2, i, this.e);
@@ -161,12 +161,12 @@ public final class z61 extends i0 implements RandomAccess, Serializable {
     public final int hashCode() {
         Object[] objArr = this.d;
         int i = this.e;
-        int iHashCode = 1;
-        for (int i2 = 0; i2 < i; i2++) {
-            Object obj = objArr[i2];
-            iHashCode = (iHashCode * 31) + (obj != null ? obj.hashCode() : 0);
+        int i2 = 1;
+        for (int i3 = 0; i3 < i; i3++) {
+            Object obj = objArr[i3];
+            i2 = (i2 * 31) + (obj != null ? obj.hashCode() : 0);
         }
-        return iHashCode;
+        return i2;
     }
 
     public final void i(int i, int i2) {
@@ -246,11 +246,11 @@ public final class z61 extends i0 implements RandomAccess, Serializable {
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
         f();
-        int iIndexOf = indexOf(obj);
-        if (iIndexOf >= 0) {
-            b(iIndexOf);
+        int indexOf = indexOf(obj);
+        if (indexOf >= 0) {
+            b(indexOf);
         }
-        return iIndexOf >= 0;
+        return indexOf >= 0;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -292,9 +292,9 @@ public final class z61 extends i0 implements RandomAccess, Serializable {
         int length = objArr.length;
         int i = this.e;
         if (length < i) {
-            Object[] objArrCopyOfRange = Arrays.copyOfRange(this.d, 0, i, objArr.getClass());
-            lx0.w(objArrCopyOfRange, "copyOfRange(...)");
-            return objArrCopyOfRange;
+            Object[] copyOfRange = Arrays.copyOfRange(this.d, 0, i, objArr.getClass());
+            lx0.w(copyOfRange, "copyOfRange(...)");
+            return copyOfRange;
         }
         xh.z0(this.d, objArr, 0, 0, i);
         int i2 = this.e;

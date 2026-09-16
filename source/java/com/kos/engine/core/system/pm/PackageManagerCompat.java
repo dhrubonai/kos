@@ -148,11 +148,11 @@ public class PackageManagerCompat {
         }
         Iterator<String> it = list.iterator();
         while (it.hasNext()) {
-            SharedLibraryInfo sharedLibraryInfoG = e40.g(map.get(it.next()));
-            if (sharedLibraryInfoG != null && !list2.contains(sharedLibraryInfoG)) {
-                list2.add(sharedLibraryInfoG);
+            SharedLibraryInfo g = e40.g(map.get(it.next()));
+            if (g != null && !list2.contains(g)) {
+                list2.add(g);
                 if (list3 != null) {
-                    list3.add(sharedLibraryInfoG);
+                    list3.add(g);
                 }
             }
         }
@@ -191,8 +191,8 @@ public class PackageManagerCompat {
 
     private static void fixJar(BPackage bPackage, ApplicationInfo applicationInfo) {
         String[] strArr = xa1.b;
-        String strA = a.a.a.c.a(-362057712156450L, strArr);
-        String strA2 = a.a.a.c.a(-362255280652066L, strArr);
+        String a2 = a.a.a.c.a(-362057712156450L, strArr);
+        String a3 = a.a.a.c.a(-362255280652066L, strArr);
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         String[] strArr2 = applicationInfo.sharedLibraryFiles;
         if (strArr2 != null) {
@@ -201,10 +201,12 @@ public class PackageManagerCompat {
             }
         }
         int i = Build.VERSION.SDK_INT;
-        if ((i >= 29 || (i >= 28 && Build.VERSION.PREVIEW_SDK_INT == 1)) && new File(strA2).exists()) {
-            addSharedLibraryIfExists(linkedHashSet, strA2);
+        if (i < 29 && (i < 28 || Build.VERSION.PREVIEW_SDK_INT != 1)) {
+            addSharedLibraryIfExists(linkedHashSet, a2);
+        } else if (new File(a3).exists()) {
+            addSharedLibraryIfExists(linkedHashSet, a3);
         } else {
-            addSharedLibraryIfExists(linkedHashSet, strA);
+            addSharedLibraryIfExists(linkedHashSet, a2);
         }
         if (a.a.a.c.a(-361933158104866L, strArr).equals(applicationInfo.packageName)) {
             addSharedLibraryIfExists(linkedHashSet, a.a.a.c.a(-362581698166562L, strArr));
@@ -231,9 +233,9 @@ public class PackageManagerCompat {
         return activityInfo;
     }
 
-    public static ApplicationInfo generateApplicationInfo(BPackage bPackage, int i, BPackageUserState bPackageUserState, int i2) throws PackageManager.NameNotFoundException {
+    public static ApplicationInfo generateApplicationInfo(BPackage bPackage, int i, BPackageUserState bPackageUserState, int i2) {
         Bundle bundle;
-        Integer numNetworkSecurityConfigRes;
+        Integer networkSecurityConfigRes;
         ApplicationInfo applicationInfo = null;
         if (checkUseInstalledOrHidden(i, bPackageUserState, bPackage.applicationInfo)) {
             try {
@@ -250,8 +252,8 @@ public class PackageManagerCompat {
                     bPackage.applicationInfo = c01.s.getPackageManager().getPackageArchiveInfo(str, 0).applicationInfo;
                 }
                 ApplicationInfo applicationInfo3 = new ApplicationInfo(bPackage.applicationInfo);
-                if (bPackage.installOption.isFlag(1) && applicationInfo != null && (numNetworkSecurityConfigRes = BRApplicationInfoN.get(applicationInfo).networkSecurityConfigRes()) != null) {
-                    BRApplicationInfoN.get(applicationInfo3)._set_networkSecurityConfigRes(numNetworkSecurityConfigRes);
+                if (bPackage.installOption.isFlag(1) && applicationInfo != null && (networkSecurityConfigRes = BRApplicationInfoN.get(applicationInfo).networkSecurityConfigRes()) != null) {
+                    BRApplicationInfoN.get(applicationInfo3)._set_networkSecurityConfigRes(networkSecurityConfigRes);
                 }
                 if ((i & PackageParser.PARSE_IS_PRIVILEGED) != 0) {
                     Bundle bundle2 = bPackage.mAppMetaData;
@@ -293,14 +295,14 @@ public class PackageManagerCompat {
                 if (BRApplicationInfoN.get(applicationInfo3)._check_credentialProtectedDataDir() != null) {
                     BRApplicationInfoN.get(applicationInfo3)._set_credentialProtectedDataDir(applicationInfo3.dataDir);
                 }
-                StrictMode.ThreadPolicy threadPolicyAllowThreadDiskReads = StrictMode.allowThreadDiskReads();
+                StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
                 try {
                     fixJar(bPackage, applicationInfo3);
-                    StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
                     GmsCore.applySchedulerCompatTargetSdk(applicationInfo3);
                     return applicationInfo3;
                 } catch (Throwable th) {
-                    StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+                    StrictMode.setThreadPolicy(allowThreadDiskReads);
                     throw th;
                 }
             } catch (Exception unused2) {
@@ -328,17 +330,17 @@ public class PackageManagerCompat {
         int i4;
         if (bPackageSettings != null && (bPackage = bPackageSettings.pkg) != null) {
             try {
-                long jResolvePackageTimestamp = resolvePackageTimestamp(bPackage);
+                long resolvePackageTimestamp = resolvePackageTimestamp(bPackage);
                 i3 = i;
                 bPackageUserState2 = bPackageUserState;
                 i4 = i2;
                 try {
-                    return generatePackageInfo(bPackage, i3, jResolvePackageTimestamp, jResolvePackageTimestamp, bPackageUserState2, i4);
+                    return generatePackageInfo(bPackage, i3, resolvePackageTimestamp, resolvePackageTimestamp, bPackageUserState2, i4);
                 } catch (Throwable th) {
                     th = th;
                     Throwable th2 = th;
                     String[] strArr = xa1.b;
-                    String strA = a.a.a.c.a(-355516476964642L, strArr);
+                    String a2 = a.a.a.c.a(-355516476964642L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(a.a.a.c.a(-355555131670306L, strArr));
                     sb.append(bPackage.packageName);
@@ -348,7 +350,7 @@ public class PackageManagerCompat {
                     sb.append(i4);
                     sb.append(a.a.a.c.a(-355306023567138L, strArr));
                     sb.append(bPackageUserState2 != null && bPackageUserState2.installed);
-                    nz0.P(strA, sb.toString(), th2);
+                    nz0.P(a2, sb.toString(), th2);
                     return null;
                 }
             } catch (Throwable th3) {
@@ -379,10 +381,10 @@ public class PackageManagerCompat {
         }
         if (shouldSuppressVirtualProvider(provider.info)) {
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-365171563446050L, strArr);
+            String a2 = a.a.a.c.a(-365171563446050L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-365210218151714L, strArr));
-            zd.p(sb, provider.info.name, 3, strA);
+            zd.p(sb, provider.info.name, 3, a2);
             return null;
         }
         ProviderInfo providerInfo = new ProviderInfo(provider.info);
@@ -398,30 +400,33 @@ public class PackageManagerCompat {
         return providerInfo;
     }
 
-    public static ServiceInfo generateServiceInfo(BPackage.Service service, int i, BPackageUserState bPackageUserState, int i2) throws PackageManager.NameNotFoundException {
+    public static ServiceInfo generateServiceInfo(BPackage.Service service, int i, BPackageUserState bPackageUserState, int i2) {
         if (!checkUseInstalledOrHidden(i, bPackageUserState, service.info.applicationInfo)) {
             return null;
         }
         if (shouldSuppressVirtualService(service.info)) {
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-354154972331810L, strArr);
+            String a2 = a.a.a.c.a(-354154972331810L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-354279526383394L, strArr));
-            zd.p(sb, service.info.name, 3, strA);
+            zd.p(sb, service.info.name, 3, a2);
             return null;
         }
         ServiceInfo serviceInfo = new ServiceInfo(service.info);
         serviceInfo.metaData = (i & PackageParser.PARSE_IS_PRIVILEGED) != 0 ? service.metaData : null;
         serviceInfo.processName = BPackageManagerService.fixProcessName(serviceInfo.packageName, serviceInfo.processName);
-        ApplicationInfo applicationInfoGenerateApplicationInfo = generateApplicationInfo(service.owner, i, bPackageUserState, i2);
-        serviceInfo.applicationInfo = applicationInfoGenerateApplicationInfo;
-        if (applicationInfoGenerateApplicationInfo == null) {
+        ApplicationInfo generateApplicationInfo = generateApplicationInfo(service.owner, i, bPackageUserState, i2);
+        serviceInfo.applicationInfo = generateApplicationInfo;
+        if (generateApplicationInfo == null) {
             return null;
         }
         return serviceInfo;
     }
 
     private static Map<String, SharedLibraryInfo> getPlatformSharedLibraries() {
+        List sharedLibraries;
+        String name;
+        String name2;
         Map<String, SharedLibraryInfo> map = sPlatformSharedLibraries;
         if (map != null) {
             return map;
@@ -434,13 +439,17 @@ public class PackageManagerCompat {
                 }
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 try {
-                    List sharedLibraries = c01.s.getPackageManager().getSharedLibraries(0);
+                    sharedLibraries = c01.s.getPackageManager().getSharedLibraries(0);
                     if (sharedLibraries != null) {
                         Iterator it = sharedLibraries.iterator();
                         while (it.hasNext()) {
-                            SharedLibraryInfo sharedLibraryInfoG = e40.g(it.next());
-                            if (sharedLibraryInfoG != null && sharedLibraryInfoG.getName() != null) {
-                                linkedHashMap.put(sharedLibraryInfoG.getName(), sharedLibraryInfoG);
+                            SharedLibraryInfo g = e40.g(it.next());
+                            if (g != null) {
+                                name = g.getName();
+                                if (name != null) {
+                                    name2 = g.getName();
+                                    linkedHashMap.put(name2, g);
+                                }
                             }
                         }
                     }
@@ -448,9 +457,9 @@ public class PackageManagerCompat {
                     String[] strArr = xa1.b;
                     nz0.P(a.a.a.c.a(-361125704253218L, strArr), a.a.a.c.a(-360683322621730L, strArr), th);
                 }
-                Map<String, SharedLibraryInfo> mapUnmodifiableMap = Collections.unmodifiableMap(linkedHashMap);
-                sPlatformSharedLibraries = mapUnmodifiableMap;
-                return mapUnmodifiableMap;
+                Map<String, SharedLibraryInfo> unmodifiableMap = Collections.unmodifiableMap(linkedHashMap);
+                sPlatformSharedLibraries = unmodifiableMap;
+                return unmodifiableMap;
             } catch (Throwable th2) {
                 throw th2;
             }
@@ -462,10 +471,10 @@ public class PackageManagerCompat {
         if (bPackageSetting == null) {
             return null;
         }
-        AssetManager assetManager_new = BRAssetManager.get()._new();
-        BRAssetManager.get(assetManager_new).addAssetPath(bPackageSetting.pkg.baseCodePath);
+        AssetManager _new = BRAssetManager.get()._new();
+        BRAssetManager.get(_new).addAssetPath(bPackageSetting.pkg.baseCodePath);
         Resources resources = context.getResources();
-        return new Resources(assetManager_new, resources.getDisplayMetrics(), resources.getConfiguration());
+        return new Resources(_new, resources.getDisplayMetrics(), resources.getConfiguration());
     }
 
     private static boolean isPlayGamesRuntimePackage(String str) {
@@ -484,43 +493,65 @@ public class PackageManagerCompat {
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:23:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0055  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private static void mergeInstalledApplicationInfoPaths(ApplicationInfo applicationInfo, ApplicationInfo applicationInfo2) {
         String[] strArr;
+        String[] strArr2;
+        String[] strArr3;
+        String[] strArr4;
+        String[] strArr5;
         if (applicationInfo == null || applicationInfo2 == null) {
             return;
         }
-        String[] strArr2 = applicationInfo2.splitSourceDirs;
-        boolean z = strArr2 != null && strArr2.length > 0 && allFilesExist(strArr2) && ((strArr = applicationInfo2.splitPublicSourceDirs) == null || allFilesExist(strArr));
+        String[] strArr6 = applicationInfo2.splitSourceDirs;
+        boolean z = strArr6 != null && strArr6.length > 0 && allFilesExist(strArr6) && ((strArr5 = applicationInfo2.splitPublicSourceDirs) == null || allFilesExist(strArr5));
         if (z) {
-            applicationInfo.splitNames = (applicationInfo2.splitNames == null || applicationInfo2.splitNames.length != strArr2.length) ? null : (String[]) applicationInfo2.splitNames.clone();
-            applicationInfo.splitSourceDirs = (String[]) strArr2.clone();
-            String[] strArr3 = applicationInfo2.splitPublicSourceDirs;
-            applicationInfo.splitPublicSourceDirs = strArr3 == null ? (String[]) strArr2.clone() : (String[]) strArr3.clone();
+            strArr = applicationInfo2.splitNames;
+            if (strArr != null) {
+                strArr3 = applicationInfo2.splitNames;
+                if (strArr3.length == strArr6.length) {
+                    strArr4 = applicationInfo2.splitNames;
+                    strArr2 = (String[]) strArr4.clone();
+                    applicationInfo.splitNames = strArr2;
+                    applicationInfo.splitSourceDirs = (String[]) strArr6.clone();
+                    String[] strArr7 = applicationInfo2.splitPublicSourceDirs;
+                    applicationInfo.splitPublicSourceDirs = strArr7 != null ? (String[]) strArr6.clone() : (String[]) strArr7.clone();
+                }
+            }
+            strArr2 = null;
+            applicationInfo.splitNames = strArr2;
+            applicationInfo.splitSourceDirs = (String[]) strArr6.clone();
+            String[] strArr72 = applicationInfo2.splitPublicSourceDirs;
+            applicationInfo.splitPublicSourceDirs = strArr72 != null ? (String[]) strArr6.clone() : (String[]) strArr72.clone();
         } else {
-            if (applicationInfo.splitSourceDirs != null || strArr2 != null) {
-                String[] strArr4 = xa1.b;
-                String strA = a.a.a.c.a(-368156565716770L, strArr4);
+            if (applicationInfo.splitSourceDirs != null || strArr6 != null) {
+                String[] strArr8 = xa1.b;
+                String a2 = a.a.a.c.a(-368156565716770L, strArr8);
                 StringBuilder sb = new StringBuilder();
-                sb.append(a.a.a.c.a(-368212400291618L, strArr4));
-                zd.p(sb, applicationInfo.packageName, 5, strA);
+                sb.append(a.a.a.c.a(-368212400291618L, strArr8));
+                zd.p(sb, applicationInfo.packageName, 5, a2);
             }
             applicationInfo.splitNames = null;
             applicationInfo.splitSourceDirs = null;
             applicationInfo.splitPublicSourceDirs = null;
         }
         if (BRApplicationInfoN.get(applicationInfo)._check_splitDependencies() != null && BRApplicationInfoN.get(applicationInfo2)._check_splitDependencies() != null) {
-            SparseArray<int[]> sparseArraySplitDependencies = BRApplicationInfoN.get(applicationInfo2).splitDependencies();
-            if (!z || sparseArraySplitDependencies == null) {
+            SparseArray<int[]> splitDependencies = BRApplicationInfoN.get(applicationInfo2).splitDependencies();
+            if (!z || splitDependencies == null) {
                 BRApplicationInfoN.get(applicationInfo)._set_splitDependencies(null);
-                Integer numPrivateFlags = BRApplicationInfoL.get(applicationInfo).privateFlags();
-                if (numPrivateFlags != null && (numPrivateFlags.intValue() & PRIVATE_FLAG_ISOLATED_SPLIT_LOADING) != 0) {
-                    BRApplicationInfoL.get(applicationInfo)._set_privateFlags(Integer.valueOf(numPrivateFlags.intValue() & (-32769)));
+                Integer privateFlags = BRApplicationInfoL.get(applicationInfo).privateFlags();
+                if (privateFlags != null && (privateFlags.intValue() & PRIVATE_FLAG_ISOLATED_SPLIT_LOADING) != 0) {
+                    BRApplicationInfoL.get(applicationInfo)._set_privateFlags(Integer.valueOf(privateFlags.intValue() & (-32769)));
                 }
             } else {
-                SparseArray sparseArray = new SparseArray(sparseArraySplitDependencies.size());
-                for (int i = 0; i < sparseArraySplitDependencies.size(); i++) {
-                    int[] iArrValueAt = sparseArraySplitDependencies.valueAt(i);
-                    sparseArray.put(sparseArraySplitDependencies.keyAt(i), iArrValueAt == null ? null : (int[]) iArrValueAt.clone());
+                SparseArray sparseArray = new SparseArray(splitDependencies.size());
+                for (int i = 0; i < splitDependencies.size(); i++) {
+                    int[] valueAt = splitDependencies.valueAt(i);
+                    sparseArray.put(splitDependencies.keyAt(i), valueAt == null ? null : (int[]) valueAt.clone());
                 }
                 BRApplicationInfoN.get(applicationInfo)._set_splitDependencies(sparseArray);
             }
@@ -533,6 +564,14 @@ public class PackageManagerCompat {
     }
 
     private static SigningInfo resolveArchiveSigningInfo(BPackage bPackage) {
+        SigningInfo signingInfo;
+        SigningInfo signingInfo2;
+        boolean hasMultipleSigners;
+        SigningInfo signingInfo3;
+        Signature[] signingCertificateHistory;
+        SigningInfo signingInfo4;
+        SigningInfo signingInfo5;
+        SigningInfo signingInfo6;
         if (bPackage != null && bPackage.packageName != null) {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
             addSigningArchiveCandidate(linkedHashSet, bPackage.baseCodePath);
@@ -541,25 +580,38 @@ public class PackageManagerCompat {
             while (it.hasNext()) {
                 String str = (String) it.next();
                 File file = new File(str);
-                String strBuildArchiveSigningInfoCacheKey = buildArchiveSigningInfoCacheKey(bPackage.packageName, str, file.length(), file.lastModified());
+                String buildArchiveSigningInfoCacheKey = buildArchiveSigningInfoCacheKey(bPackage.packageName, str, file.length(), file.lastModified());
                 Map<String, SigningInfo> map = sArchiveSigningInfoCache;
                 synchronized (map) {
                     try {
-                        SigningInfo signingInfoJ = h1.j(map.get(strBuildArchiveSigningInfoCacheKey));
-                        if (signingInfoJ != null) {
-                            return signingInfoJ;
+                        SigningInfo j = h1.j(map.get(buildArchiveSigningInfoCacheKey));
+                        if (j != null) {
+                            return j;
                         }
                         try {
                             PackageInfo packageArchiveInfo = c01.s.getPackageManager().getPackageArchiveInfo(str, 134217728);
-                            if (packageArchiveInfo != null && bPackage.packageName.equals(packageArchiveInfo.packageName) && packageArchiveInfo.signingInfo != null) {
-                                Signature[] apkContentsSigners = packageArchiveInfo.signingInfo.hasMultipleSigners() ? packageArchiveInfo.signingInfo.getApkContentsSigners() : packageArchiveInfo.signingInfo.getSigningCertificateHistory();
-                                if (apkContentsSigners != null && apkContentsSigners.length != 0) {
-                                    String[] strArr = xa1.b;
-                                    nz0.Q(a.a.a.c.a(-355327498403618L, strArr), 3, a.a.a.c.a(-355984628399906L, strArr) + bPackage.packageName + a.a.a.c.a(-356203671732002L, strArr) + apkContentsSigners.length);
-                                    synchronized (map) {
-                                        map.put(strBuildArchiveSigningInfoCacheKey, packageArchiveInfo.signingInfo);
+                            if (packageArchiveInfo != null && bPackage.packageName.equals(packageArchiveInfo.packageName)) {
+                                signingInfo = packageArchiveInfo.signingInfo;
+                                if (signingInfo != null) {
+                                    signingInfo2 = packageArchiveInfo.signingInfo;
+                                    hasMultipleSigners = signingInfo2.hasMultipleSigners();
+                                    if (hasMultipleSigners) {
+                                        signingInfo6 = packageArchiveInfo.signingInfo;
+                                        signingCertificateHistory = signingInfo6.getApkContentsSigners();
+                                    } else {
+                                        signingInfo3 = packageArchiveInfo.signingInfo;
+                                        signingCertificateHistory = signingInfo3.getSigningCertificateHistory();
                                     }
-                                    return packageArchiveInfo.signingInfo;
+                                    if (signingCertificateHistory != null && signingCertificateHistory.length != 0) {
+                                        String[] strArr = xa1.b;
+                                        nz0.Q(a.a.a.c.a(-355327498403618L, strArr), 3, a.a.a.c.a(-355984628399906L, strArr) + bPackage.packageName + a.a.a.c.a(-356203671732002L, strArr) + signingCertificateHistory.length);
+                                        synchronized (map) {
+                                            signingInfo4 = packageArchiveInfo.signingInfo;
+                                            map.put(buildArchiveSigningInfoCacheKey, signingInfo4);
+                                        }
+                                        signingInfo5 = packageArchiveInfo.signingInfo;
+                                        return signingInfo5;
+                                    }
                                 }
                             }
                         } catch (Throwable th) {
@@ -571,58 +623,63 @@ public class PackageManagerCompat {
                 }
             }
             String[] strArr3 = xa1.b;
-            String strA = a.a.a.c.a(-354408375402274L, strArr3);
+            String a2 = a.a.a.c.a(-354408375402274L, strArr3);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-354515749584674L, strArr3));
-            zd.p(sb, bPackage.packageName, 5, strA);
+            zd.p(sb, bPackage.packageName, 5, a2);
         }
         return null;
     }
 
     private static long resolvePackageTimestamp(BPackage bPackage) {
-        long jLastModified = lastModified(bPackage == null ? null : bPackage.baseCodePath);
-        if (jLastModified > 0) {
-            return jLastModified;
+        long lastModified = lastModified(bPackage == null ? null : bPackage.baseCodePath);
+        if (lastModified > 0) {
+            return lastModified;
         }
-        long jLastModified2 = lastModified(bPackage == null ? null : BEnvironment.getBaseApkDir(bPackage.packageName).getAbsolutePath());
-        if (jLastModified2 > 0) {
-            return jLastModified2;
+        long lastModified2 = lastModified(bPackage == null ? null : BEnvironment.getBaseApkDir(bPackage.packageName).getAbsolutePath());
+        if (lastModified2 > 0) {
+            return lastModified2;
         }
-        long jLastModified3 = lastModified(bPackage != null ? BEnvironment.getAppDir(bPackage.packageName).getAbsolutePath() : null);
-        if (jLastModified3 > 0) {
-            return jLastModified3;
+        long lastModified3 = lastModified(bPackage != null ? BEnvironment.getAppDir(bPackage.packageName).getAbsolutePath() : null);
+        if (lastModified3 > 0) {
+            return lastModified3;
         }
-        long jCurrentTimeMillis = System.currentTimeMillis();
-        if (jCurrentTimeMillis > 0) {
-            return jCurrentTimeMillis;
+        long currentTimeMillis = System.currentTimeMillis();
+        if (currentTimeMillis > 0) {
+            return currentTimeMillis;
         }
         return 1L;
     }
 
     private static void retainVirtualSplitPaths(ApplicationInfo applicationInfo) {
+        String[] strArr;
+        String[] strArr2;
         if (applicationInfo == null) {
             return;
         }
-        String[] strArr = applicationInfo.splitSourceDirs;
-        if (strArr != null && strArr.length != 0 && allFilesExist(strArr)) {
-            applicationInfo.splitSourceDirs = (String[]) strArr.clone();
-            applicationInfo.splitPublicSourceDirs = (String[]) strArr.clone();
-            if (applicationInfo.splitNames == null || applicationInfo.splitNames.length == strArr.length) {
-                return;
+        String[] strArr3 = applicationInfo.splitSourceDirs;
+        if (strArr3 == null || strArr3.length == 0 || !allFilesExist(strArr3)) {
+            if (strArr3 != null) {
+                String[] strArr4 = xa1.b;
+                String a2 = a.a.a.c.a(-367791493496610L, strArr4);
+                StringBuilder sb = new StringBuilder();
+                sb.append(a.a.a.c.a(-367898867679010L, strArr4));
+                zd.p(sb, applicationInfo.packageName, 5, a2);
             }
             applicationInfo.splitNames = null;
+            applicationInfo.splitSourceDirs = null;
+            applicationInfo.splitPublicSourceDirs = null;
             return;
         }
+        applicationInfo.splitSourceDirs = (String[]) strArr3.clone();
+        applicationInfo.splitPublicSourceDirs = (String[]) strArr3.clone();
+        strArr = applicationInfo.splitNames;
         if (strArr != null) {
-            String[] strArr2 = xa1.b;
-            String strA = a.a.a.c.a(-367791493496610L, strArr2);
-            StringBuilder sb = new StringBuilder();
-            sb.append(a.a.a.c.a(-367898867679010L, strArr2));
-            zd.p(sb, applicationInfo.packageName, 5, strA);
+            strArr2 = applicationInfo.splitNames;
+            if (strArr2.length != strArr3.length) {
+                applicationInfo.splitNames = null;
+            }
         }
-        applicationInfo.splitNames = null;
-        applicationInfo.splitSourceDirs = null;
-        applicationInfo.splitPublicSourceDirs = null;
     }
 
     private static <T extends ComponentInfo> void shareApplicationInfo(T[] tArr, ApplicationInfo applicationInfo) {
@@ -670,13 +727,13 @@ public class PackageManagerCompat {
 
     private static Bundle withVirtualPlayGamesSdkMetadata(String str, Bundle bundle) {
         String[] strArr = xa1.b;
-        boolean zIsPlayGamesRuntimePackage = isPlayGamesRuntimePackage(str);
-        if (zIsPlayGamesRuntimePackage) {
+        boolean isPlayGamesRuntimePackage = isPlayGamesRuntimePackage(str);
+        if (isPlayGamesRuntimePackage) {
             String string = bundle == null ? null : bundle.getString(a.a.a.c.a(-368517342969634L, strArr));
             String string2 = bundle != null ? bundle.getString(a.a.a.c.a(-369260372311842L, strArr)) : null;
-            if (string == null || (zIsPlayGamesRuntimePackage && string2 == null)) {
+            if (string == null || (isPlayGamesRuntimePackage && string2 == null)) {
                 Bundle bundle2 = bundle == null ? new Bundle() : new Bundle(bundle);
-                if (zIsPlayGamesRuntimePackage && bundle2.getString(a.a.a.c.a(-369380631396130L, strArr)) == null) {
+                if (isPlayGamesRuntimePackage && bundle2.getString(a.a.a.c.a(-369380631396130L, strArr)) == null) {
                     bundle2.putString(a.a.a.c.a(-369019854143266L, strArr), a.a.a.c.a(-369140113227554L, strArr));
                 }
                 if (bundle2.getString(a.a.a.c.a(-367563860229922L, strArr)) == null) {
@@ -688,7 +745,10 @@ public class PackageManagerCompat {
         return bundle;
     }
 
-    public static PackageInfo generatePackageInfo(BPackage bPackage, int i, long j, long j2, BPackageUserState bPackageUserState, int i2) throws PackageManager.NameNotFoundException {
+    public static PackageInfo generatePackageInfo(BPackage bPackage, int i, long j, long j2, BPackageUserState bPackageUserState, int i2) {
+        SigningInfo signingInfo;
+        SigningInfo signingInfo2;
+        SigningInfo signingInfo3;
         PackageInfo packageInfo = null;
         if (!checkUseInstalledOrHidden(i, bPackageUserState, bPackage.applicationInfo)) {
             return null;
@@ -778,9 +838,9 @@ public class PackageManagerCompat {
                 ProviderInfo[] providerInfoArr = new ProviderInfo[size6];
                 int i9 = 0;
                 for (int i10 = 0; i10 < size6; i10++) {
-                    ProviderInfo providerInfoGenerateProviderInfo = generateProviderInfo(bPackage.providers.get(i10), i, bPackageUserState, i2);
-                    if (providerInfoGenerateProviderInfo != null) {
-                        providerInfoArr[i9] = providerInfoGenerateProviderInfo;
+                    ProviderInfo generateProviderInfo = generateProviderInfo(bPackage.providers.get(i10), i, bPackageUserState, i2);
+                    if (generateProviderInfo != null) {
+                        providerInfoArr[i9] = generateProviderInfo;
                         i9++;
                     }
                 }
@@ -833,15 +893,19 @@ public class PackageManagerCompat {
             }
         }
         if (l8.U() && (i & 134217728) != 0) {
-            if (packageInfo == null || packageInfo.signingInfo == null) {
-                packageInfo2.signingInfo = resolveArchiveSigningInfo(bPackage);
-                if (packageInfo2.signingInfo == null && bPackage.mSigningDetails != null) {
-                    PackageParser.SigningDetails signingDetails = PackageParser.SigningDetails.UNKNOWN;
-                    BRPackageParserSigningDetails.get(signingDetails)._set_signatures(bPackage.mSigningDetails.signatures);
-                    packageInfo2.signingInfo = BRSigningInfo.get()._new(signingDetails);
+            if (packageInfo != null) {
+                signingInfo2 = packageInfo.signingInfo;
+                if (signingInfo2 != null) {
+                    signingInfo3 = packageInfo.signingInfo;
+                    packageInfo2.signingInfo = signingInfo3;
                 }
-            } else {
-                packageInfo2.signingInfo = packageInfo.signingInfo;
+            }
+            packageInfo2.signingInfo = resolveArchiveSigningInfo(bPackage);
+            signingInfo = packageInfo2.signingInfo;
+            if (signingInfo == null && bPackage.mSigningDetails != null) {
+                PackageParser.SigningDetails signingDetails = PackageParser.SigningDetails.UNKNOWN;
+                BRPackageParserSigningDetails.get(signingDetails)._set_signatures(bPackage.mSigningDetails.signatures);
+                packageInfo2.signingInfo = BRSigningInfo.get()._new(signingDetails);
             }
         }
         gu2.a(packageInfo2);

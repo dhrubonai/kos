@@ -4,6 +4,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.pm.PackageParser;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -16,9 +18,12 @@ import android.os.Parcelable;
 import android.os.Process;
 import android.os.StatFs;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.LongSparseArray;
 import android.util.Size;
 import android.util.SizeF;
+import android.util.SparseArray;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -34,6 +39,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
+import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import kotlin.jvm.functions.Function2;
 
@@ -42,7 +48,7 @@ import kotlin.jvm.functions.Function2;
 public abstract class kx0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final uc f664a = new uc();
+    public static final uc f663a = new uc();
     public static final de0 b = new de0("CLOSED", 1);
     public static final String[] c = {"standard", "accelerate", "decelerate", "linear"};
     public static final f31[] d = new f31[0];
@@ -64,20 +70,20 @@ public abstract class kx0 {
         if (zqVar != null) {
             return zqVar;
         }
-        long jC = lt.c(ktVar, fr.d);
+        long c2 = lt.c(ktVar, fr.d);
         long j = et.j;
         int i = fr.b;
-        long jC2 = lt.c(ktVar, i);
+        long c3 = lt.c(ktVar, i);
         int i2 = fr.c;
-        zq zqVar2 = new zq(jC, j, jC2, j, et.b(0.38f, lt.c(ktVar, i2)), j, et.b(0.38f, lt.c(ktVar, i2)), lt.c(ktVar, i), lt.c(ktVar, fr.f), et.b(0.38f, lt.c(ktVar, i2)), et.b(0.38f, lt.c(ktVar, fr.e)), et.b(0.38f, lt.c(ktVar, i2)));
+        zq zqVar2 = new zq(c2, j, c3, j, et.b(0.38f, lt.c(ktVar, i2)), j, et.b(0.38f, lt.c(ktVar, i2)), lt.c(ktVar, i), lt.c(ktVar, fr.f), et.b(0.38f, lt.c(ktVar, i2)), et.b(0.38f, lt.c(ktVar, fr.e)), et.b(0.38f, lt.c(ktVar, i2)));
         ktVar.N = zqVar2;
         return zqVar2;
     }
 
     public static final x60 B(v20 v20Var) {
-        t20 t20VarN = v20Var.n(dd0.z);
-        x60 x60Var = t20VarN instanceof x60 ? (x60) t20VarN : null;
-        return x60Var == null ? s50.f1052a : x60Var;
+        t20 n = v20Var.n(dd0.z);
+        x60 x60Var = n instanceof x60 ? (x60) n : null;
+        return x60Var == null ? s50.f1051a : x60Var;
     }
 
     public static final float C(long j) {
@@ -90,18 +96,18 @@ public abstract class kx0 {
             return -1;
         }
         try {
-            int iQ = lx0.q(i2, i, whVar.d);
-            if (iQ < 0 || lx0.n(obj, whVar.e[iQ])) {
-                return iQ;
+            int q = lx0.q(i2, i, whVar.d);
+            if (q < 0 || lx0.n(obj, whVar.e[q])) {
+                return q;
             }
-            int i3 = iQ + 1;
+            int i3 = q + 1;
             while (i3 < i2 && whVar.d[i3] == i) {
                 if (lx0.n(obj, whVar.e[i3])) {
                     return i3;
                 }
                 i3++;
             }
-            for (int i4 = iQ - 1; i4 >= 0 && whVar.d[i4] == i; i4--) {
+            for (int i4 = q - 1; i4 >= 0 && whVar.d[i4] == i; i4--) {
                 if (lx0.n(obj, whVar.e[i4])) {
                     return i4;
                 }
@@ -134,31 +140,31 @@ public abstract class kx0 {
         Object obj;
         final jm jmVar2;
         az0.b0(jmVar, lxVar);
-        final mf1 mf1VarB0 = az0.b0(um0Var, lxVar);
+        final mf1 b0 = az0.b0(um0Var, lxVar);
         Object[] objArr = new Object[0];
         tx txVar = (tx) lxVar;
-        Object objM = txVar.M();
-        Object obj2 = kx.f663a;
-        if (objM == obj2) {
-            objM = new f4(1);
-            txVar.i0(objM);
+        Object M = txVar.M();
+        Object obj2 = kx.f662a;
+        if (M == obj2) {
+            M = new f4(1);
+            txVar.i0(M);
         }
-        final String str = (String) oy0.N(objArr, (sm0) objM, txVar);
-        l4 l4Var = (l4) txVar.j(m71.f735a);
+        final String str = (String) oy0.N(objArr, (sm0) M, txVar);
+        l4 l4Var = (l4) txVar.j(m71.f734a);
         if (l4Var == null) {
             txVar.X(1213380307);
-            Object baseContext = (Context) txVar.j(t8.b);
+            Object obj3 = (Context) txVar.j(t8.b);
             while (true) {
-                if (!(baseContext instanceof ContextWrapper)) {
-                    baseContext = null;
+                if (!(obj3 instanceof ContextWrapper)) {
+                    obj3 = null;
                     break;
                 }
-                if (baseContext instanceof l4) {
+                if (obj3 instanceof l4) {
                     break;
                 }
-                baseContext = ((ContextWrapper) baseContext).getBaseContext();
+                obj3 = ((ContextWrapper) obj3).getBaseContext();
             }
-            l4Var = (l4) baseContext;
+            l4Var = (l4) obj3;
         } else {
             txVar.X(1213379439);
         }
@@ -167,29 +173,29 @@ public abstract class kx0 {
             throw new IllegalStateException("No ActivityResultRegistryOwner was provided via LocalActivityResultRegistryOwner");
         }
         final xu xuVar = ((zu) l4Var).k;
-        Object objM2 = txVar.M();
-        if (objM2 == obj2) {
-            objM2 = new e4();
-            txVar.i0(objM2);
+        Object M2 = txVar.M();
+        if (M2 == obj2) {
+            M2 = new e4();
+            txVar.i0(M2);
         }
-        final e4 e4Var = (e4) objM2;
-        Object objM3 = txVar.M();
-        if (objM3 == obj2) {
-            objM3 = new u91(e4Var);
-            txVar.i0(objM3);
+        final e4 e4Var = (e4) M2;
+        Object M3 = txVar.M();
+        if (M3 == obj2) {
+            M3 = new u91(e4Var);
+            txVar.i0(M3);
         }
-        u91 u91Var = (u91) objM3;
-        boolean zH = txVar.h(e4Var) | txVar.h(xuVar) | txVar.f(str) | txVar.h(jmVar) | txVar.f(mf1VarB0);
-        Object objM4 = txVar.M();
-        if (zH || objM4 == obj2) {
+        u91 u91Var = (u91) M3;
+        boolean h2 = txVar.h(e4Var) | txVar.h(xuVar) | txVar.f(str) | txVar.h(jmVar) | txVar.f(b0);
+        Object M4 = txVar.M();
+        if (h2 || M4 == obj2) {
             jmVar2 = jmVar;
             obj = new um0() { // from class: androidx.emoji2.text.i4
                 @Override // androidx.emoji2.text.um0
-                public final Object e(Object obj3) {
+                public final Object e(Object obj4) {
                     Object parcelable;
-                    j4 j4Var = new j4(mf1VarB0);
+                    j4 j4Var = new j4(b0);
                     xu xuVar2 = xuVar;
-                    LinkedHashMap linkedHashMap = xuVar2.f1357a;
+                    LinkedHashMap linkedHashMap = xuVar2.f1356a;
                     Bundle bundle = xuVar2.g;
                     LinkedHashMap linkedHashMap2 = xuVar2.f;
                     String str2 = str;
@@ -201,9 +207,9 @@ public abstract class kx0 {
                         while (it.hasNext()) {
                             Number number = (Number) it.next();
                             if (!linkedHashMap.containsKey(Integer.valueOf(number.intValue()))) {
-                                int iIntValue = number.intValue();
-                                linkedHashMap.put(Integer.valueOf(iIntValue), str2);
-                                linkedHashMap3.put(str2, Integer.valueOf(iIntValue));
+                                int intValue = number.intValue();
+                                linkedHashMap.put(Integer.valueOf(intValue), str2);
+                                linkedHashMap3.put(str2, Integer.valueOf(intValue));
                             }
                         }
                         throw new NoSuchElementException("Sequence contains no element matching the predicate.");
@@ -212,9 +218,9 @@ public abstract class kx0 {
                     jm jmVar3 = jmVar2;
                     linkedHashMap4.put(str2, new g4(j4Var, jmVar3));
                     if (linkedHashMap2.containsKey(str2)) {
-                        Object obj4 = linkedHashMap2.get(str2);
+                        Object obj5 = linkedHashMap2.get(str2);
                         linkedHashMap2.remove(str2);
-                        j4Var.c(obj4);
+                        j4Var.c(obj5);
                     }
                     if (Build.VERSION.SDK_INT >= 34) {
                         parcelable = p1.b(bundle, str2);
@@ -230,22 +236,22 @@ public abstract class kx0 {
                         j4Var.c(jmVar3.I(c4Var.d, c4Var.e));
                     }
                     h4 h4Var = new h4(xuVar2, str2, jmVar3);
-                    e4 e4Var2 = e4Var;
-                    e4Var2.f283a = h4Var;
+                    e4 e4Var2 = e4.this;
+                    e4Var2.f282a = h4Var;
                     return new k4(0, e4Var2);
                 }
             };
             txVar.i0(obj);
         } else {
-            obj = objM4;
+            obj = M4;
             jmVar2 = jmVar;
         }
         um0 um0Var2 = (um0) obj;
-        boolean zF = txVar.f(xuVar) | txVar.f(str) | txVar.f(jmVar2);
-        Object objM5 = txVar.M();
-        if (zF || objM5 == obj2) {
-            objM5 = new i90(um0Var2);
-            txVar.i0(objM5);
+        boolean f2 = txVar.f(xuVar) | txVar.f(str) | txVar.f(jmVar2);
+        Object M5 = txVar.M();
+        if (f2 || M5 == obj2) {
+            M5 = new i90(um0Var2);
+            txVar.i0(M5);
         }
         return u91Var;
     }
@@ -279,23 +285,23 @@ public abstract class kx0 {
     }
 
     public static final void K(s1 s1Var, y62 y62Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
-        Object objG = y62Var.k().d.g(c72.f);
-        if (objG == null) {
-            objG = null;
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
+        Object g2 = y62Var.k().d.g(c72.f);
+        if (g2 == null) {
+            g2 = null;
         }
-        us usVar = (us) objG;
+        us usVar = (us) g2;
         if (usVar != null) {
-            accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(usVar.f1190a, usVar.b, false, 0));
+            accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(usVar.f1189a, usVar.b, false, 0));
             return;
         }
         ArrayList arrayList = new ArrayList();
-        Object objG2 = y62Var.k().d.g(c72.e);
-        if ((objG2 != null ? objG2 : null) != null) {
-            List listJ = y62.j(4, y62Var);
-            int size = listJ.size();
+        Object g3 = y62Var.k().d.g(c72.e);
+        if ((g3 != null ? g3 : null) != null) {
+            List j = y62.j(4, y62Var);
+            int size = j.size();
             for (int i = 0; i < size; i++) {
-                y62 y62Var2 = (y62) listJ.get(i);
+                y62 y62Var2 = (y62) j.get(i);
                 if (y62Var2.k().d.c(c72.H)) {
                     arrayList.add(y62Var2);
                 }
@@ -304,37 +310,37 @@ public abstract class kx0 {
         if (arrayList.isEmpty()) {
             return;
         }
-        boolean zM = m(arrayList);
-        accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(zM ? 1 : arrayList.size(), zM ? arrayList.size() : 1, false, 0));
+        boolean m = m(arrayList);
+        accessibilityNodeInfo.setCollectionInfo(AccessibilityNodeInfo.CollectionInfo.obtain(m ? 1 : arrayList.size(), m ? arrayList.size() : 1, false, 0));
     }
 
     public static final void L(s1 s1Var, y62 y62Var) {
-        Object objG = y62Var.k().d.g(c72.g);
-        if (objG == null) {
-            objG = null;
+        Object g2 = y62Var.k().d.g(c72.g);
+        if (g2 == null) {
+            g2 = null;
         }
-        if (objG != null) {
+        if (g2 != null) {
             throw new ClassCastException();
         }
-        y62 y62VarL = y62Var.l();
-        if (y62VarL == null) {
+        y62 l = y62Var.l();
+        if (l == null) {
             return;
         }
-        Object objG2 = y62VarL.k().d.g(c72.e);
-        if (objG2 == null) {
-            objG2 = null;
+        Object g3 = l.k().d.g(c72.e);
+        if (g3 == null) {
+            g3 = null;
         }
-        if (objG2 != null) {
-            Object objG3 = y62VarL.k().d.g(c72.f);
-            us usVar = (us) (objG3 != null ? objG3 : null);
-            if (usVar == null || (usVar.f1190a >= 0 && usVar.b >= 0)) {
+        if (g3 != null) {
+            Object g4 = l.k().d.g(c72.f);
+            us usVar = (us) (g4 != null ? g4 : null);
+            if (usVar == null || (usVar.f1189a >= 0 && usVar.b >= 0)) {
                 if (y62Var.k().d.c(c72.H)) {
                     ArrayList arrayList = new ArrayList();
-                    List listJ = y62.j(4, y62VarL);
-                    int size = listJ.size();
+                    List j = y62.j(4, l);
+                    int size = j.size();
                     int i = 0;
                     for (int i2 = 0; i2 < size; i2++) {
-                        y62 y62Var2 = (y62) listJ.get(i2);
+                        y62 y62Var2 = (y62) j.get(i2);
                         if (y62Var2.k().d.c(c72.H)) {
                             arrayList.add(y62Var2);
                             if (y62Var2.c.v() < y62Var.c.v()) {
@@ -345,14 +351,14 @@ public abstract class kx0 {
                     if (arrayList.isEmpty()) {
                         return;
                     }
-                    boolean zM = m(arrayList);
-                    int i3 = zM ? 0 : i;
-                    int i4 = zM ? i : 0;
-                    Object objG4 = y62Var.k().d.g(c72.H);
-                    if (objG4 == null) {
-                        objG4 = Boolean.FALSE;
+                    boolean m = m(arrayList);
+                    int i3 = m ? 0 : i;
+                    int i4 = m ? i : 0;
+                    Object g5 = y62Var.k().d.g(c72.H);
+                    if (g5 == null) {
+                        g5 = Boolean.FALSE;
                     }
-                    s1Var.f1045a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(i3, 1, i4, 1, false, ((Boolean) objG4).booleanValue()));
+                    s1Var.f1044a.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(i3, 1, i4, 1, false, ((Boolean) g5).booleanValue()));
                 }
             }
         }
@@ -371,22 +377,22 @@ public abstract class kx0 {
     /* JADX WARN: Type inference failed for: r7v5 */
     public static final ArrayList N(nb2 nb2Var, int i, Integer num) {
         ?? kv1Var = new kv1(nb2Var);
-        int iQ = nb2Var.q(i);
-        t5 t5VarA = nb2Var.a(i);
+        int q = nb2Var.q(i);
+        t5 a2 = nb2Var.a(i);
         while (i >= 0) {
-            kv1Var.b(nb2Var.f802a.f(i), num);
-            if (iQ >= 0) {
-                t5 t5Var = t5VarA;
-                t5VarA = nb2Var.a(iQ);
-                i = iQ;
-                iQ = nb2Var.q(iQ);
+            kv1Var.b(nb2Var.f801a.f(i), num);
+            if (q >= 0) {
+                t5 t5Var = a2;
+                a2 = nb2Var.a(q);
+                i = q;
+                q = nb2Var.q(q);
                 num = t5Var;
             } else {
-                i = iQ;
-                num = t5VarA;
+                i = q;
+                num = a2;
             }
         }
-        return kv1Var.f660a;
+        return kv1Var.f659a;
     }
 
     public static final void O(int i, int i2) {
@@ -433,17 +439,17 @@ public abstract class kx0 {
         } else {
             int i3 = i2 & 14;
             boolean z = i3 == 4;
-            Object objM = txVar2.M();
-            Object obj = kx.f663a;
-            if (z || objM == obj) {
-                objM = new sd(tn2Var2);
-                txVar2.i0(objM);
+            Object M = txVar2.M();
+            Object obj = kx.f662a;
+            if (z || M == obj) {
+                M = new sd(tn2Var2);
+                txVar2.i0(M);
             }
-            sd sdVar2 = (sd) objM;
+            sd sdVar2 = (sd) M;
             boolean z2 = i3 == 4;
-            Object objM2 = txVar2.M();
-            Object obj2 = objM2;
-            if (z2 || objM2 == obj) {
+            Object M2 = txVar2.M();
+            Object obj2 = M2;
+            if (z2 || M2 == obj) {
                 Object[] objArr = {tn2Var2.c()};
                 yc2 yc2Var3 = new yc2();
                 yc2Var3.addAll(xh.S0(objArr));
@@ -452,16 +458,16 @@ public abstract class kx0 {
             }
             yc2 yc2Var4 = (yc2) obj2;
             boolean z3 = i3 == 4;
-            Object objM3 = txVar2.M();
-            if (z3 || objM3 == obj) {
-                long[] jArr = e42.f285a;
-                objM3 = new gf1();
-                txVar2.i0(objM3);
+            Object M3 = txVar2.M();
+            if (z3 || M3 == obj) {
+                long[] jArr = e42.f284a;
+                M3 = new gf1();
+                txVar2.i0(M3);
             }
-            gf1 gf1Var = (gf1) objM3;
-            Object objC = tn2Var2.c();
+            gf1 gf1Var = (gf1) M3;
+            Object c2 = tn2Var2.c();
             un1 un1Var = tn2Var2.d;
-            if (!yc2Var4.contains(objC)) {
+            if (!yc2Var4.contains(c2)) {
                 yc2Var4.clear();
                 yc2Var4.add(tn2Var2.c());
             }
@@ -524,41 +530,41 @@ public abstract class kx0 {
                 sdVar = sdVar2;
                 txVar2.p(false);
             }
-            boolean zF = txVar2.f(tn2Var.f()) | txVar2.f(sdVar);
-            Object objM4 = txVar2.M();
-            if (zF || objM4 == obj) {
-                objM4 = (r00) um0Var3.e(sdVar);
-                txVar2.i0(objM4);
+            boolean f2 = txVar2.f(tn2Var.f()) | txVar2.f(sdVar);
+            Object M4 = txVar2.M();
+            if (f2 || M4 == obj) {
+                M4 = (r00) um0Var3.e(sdVar);
+                txVar2.i0(M4);
             }
-            r00 r00Var = (r00) objM4;
-            tn2 tn2Var3 = sdVar.f1064a;
-            boolean zF2 = txVar2.f(sdVar);
-            Object objM5 = txVar2.M();
-            if (zF2 || objM5 == obj) {
-                objM5 = az0.W(Boolean.FALSE);
-                txVar2.i0(objM5);
+            r00 r00Var = (r00) M4;
+            tn2 tn2Var3 = sdVar.f1063a;
+            boolean f3 = txVar2.f(sdVar);
+            Object M5 = txVar2.M();
+            if (f3 || M5 == obj) {
+                M5 = az0.W(Boolean.FALSE);
+                txVar2.i0(M5);
             }
-            mf1 mf1Var = (mf1) objM5;
-            mf1 mf1VarB0 = az0.b0(r00Var.d, txVar2);
+            mf1 mf1Var = (mf1) M5;
+            mf1 b0 = az0.b0(r00Var.d, txVar2);
             if (lx0.n(tn2Var3.c(), tn2Var3.d.getValue())) {
                 mf1Var.setValue(Boolean.FALSE);
-            } else if (mf1VarB0.getValue() != null) {
+            } else if (b0.getValue() != null) {
                 mf1Var.setValue(Boolean.TRUE);
             }
-            boolean zBooleanValue = ((Boolean) mf1Var.getValue()).booleanValue();
-            nd1 nd1Var2 = kd1.f634a;
-            if (zBooleanValue) {
+            boolean booleanValue = ((Boolean) mf1Var.getValue()).booleanValue();
+            nd1 nd1Var2 = kd1.f633a;
+            if (booleanValue) {
                 txVar2.X(249037309);
                 yc2Var2 = yc2Var;
                 txVar = txVar2;
-                mn2 mn2VarA = xn2.a(sdVar.f1064a, qq2.h, null, txVar, 0, 2);
-                boolean zF3 = txVar.f(mn2VarA);
-                Object objM6 = txVar.M();
-                if (zF3 || objM6 == obj) {
-                    objM6 = xo2.g(nd1Var2).k(new rd(sdVar, mn2VarA, mf1VarB0));
-                    txVar.i0(objM6);
+                mn2 a2 = xn2.a(sdVar.f1063a, qq2.h, null, txVar, 0, 2);
+                boolean f4 = txVar.f(a2);
+                Object M6 = txVar.M();
+                if (f4 || M6 == obj) {
+                    M6 = xo2.g(nd1Var2).k(new rd(sdVar, a2, b0));
+                    txVar.i0(M6);
                 }
-                nd1Var2 = (nd1) objM6;
+                nd1Var2 = (nd1) M6;
                 txVar.p(false);
             } else {
                 txVar = txVar2;
@@ -566,16 +572,16 @@ public abstract class kx0 {
                 txVar.X(249353726);
                 txVar.p(false);
             }
-            nd1 nd1VarK = nd1Var.k(nd1Var2);
-            Object objM7 = txVar.M();
-            if (objM7 == obj) {
-                objM7 = new nd(sdVar);
-                txVar.i0(objM7);
+            nd1 k = nd1Var.k(nd1Var2);
+            Object M7 = txVar.M();
+            if (M7 == obj) {
+                M7 = new nd(sdVar);
+                txVar.i0(M7);
             }
-            nd ndVar = (nd) objM7;
-            int iHashCode = Long.hashCode(txVar.T);
-            ap1 ap1VarL = txVar.l();
-            nd1 nd1VarQ = bz0.Q(txVar, nd1VarK);
+            nd ndVar = (nd) M7;
+            int hashCode = Long.hashCode(txVar.T);
+            ap1 l = txVar.l();
+            nd1 Q = bz0.Q(txVar, k);
             hx.b.getClass();
             hy hyVar = gx.b;
             txVar.b0();
@@ -585,12 +591,12 @@ public abstract class kx0 {
                 txVar.l0();
             }
             mz0.G(txVar, ndVar, gx.e);
-            mz0.G(txVar, ap1VarL, gx.d);
+            mz0.G(txVar, l, gx.d);
             wc wcVar = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar);
             }
-            mz0.G(txVar, nd1VarQ, gx.c);
+            mz0.G(txVar, Q, gx.c);
             txVar.X(-1491001814);
             int size2 = yc2Var2.size();
             for (int i6 = 0; i6 < size2; i6++) {
@@ -609,62 +615,387 @@ public abstract class kx0 {
             txVar.p(false);
             txVar.p(true);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new md(tn2Var, nd1Var, um0Var, um0Var2, composableLambdaImpl, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new md(tn2Var, nd1Var, um0Var, um0Var2, composableLambdaImpl, i);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x008b  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0092  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0050  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0073  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x00be  */
+    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0087  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x008e  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0055  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void b(java.lang.Object r16, androidx.emoji2.text.nd1 r17, androidx.emoji2.text.um0 r18, androidx.emoji2.text.n5 r19, java.lang.String r20, androidx.emoji2.text.um0 r21, androidx.compose.runtime.internal.ComposableLambdaImpl r22, androidx.emoji2.text.lx r23, int r24, int r25) {
-        /*
-            Method dump skipped, instructions count: 202
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.kx0.b(java.lang.Object, androidx.emoji2.text.nd1, androidx.emoji2.text.um0, androidx.emoji2.text.n5, java.lang.String, androidx.emoji2.text.um0, androidx.compose.runtime.internal.ComposableLambdaImpl, androidx.emoji2.text.lx, int, int):void");
+    public static final void b(Object obj, nd1 nd1Var, um0 um0Var, n5 n5Var, String str, um0 um0Var2, ComposableLambdaImpl composableLambdaImpl, lx lxVar, int i, int i2) {
+        nd1 nd1Var2;
+        int i3;
+        um0 um0Var3;
+        int i4;
+        String str2;
+        int i5;
+        n5 n5Var2;
+        nd1 nd1Var3;
+        um0 um0Var4;
+        um0 um0Var5;
+        pw1 s;
+        tx txVar = (tx) lxVar;
+        txVar.Z(2132720749);
+        int i6 = (txVar.f(obj) ? 4 : 2) | i;
+        int i7 = i2 & 2;
+        if (i7 != 0) {
+            i3 = i6 | 48;
+            nd1Var2 = nd1Var;
+        } else {
+            nd1Var2 = nd1Var;
+            i3 = i6 | (txVar.f(nd1Var2) ? 32 : 16);
+        }
+        int i8 = i2 & 4;
+        if (i8 != 0) {
+            i3 |= 384;
+        } else if ((i & 384) == 0) {
+            um0Var3 = um0Var;
+            i3 |= txVar.h(um0Var3) ? PackageParser.PARSE_COLLECT_CERTIFICATES : PackageParser.PARSE_IS_PRIVILEGED;
+            int i9 = i3 | 3072;
+            i4 = i2 & 16;
+            if (i4 == 0) {
+                i9 = i3 | 27648;
+            } else if ((i & 24576) == 0) {
+                str2 = str;
+                i9 |= txVar.f(str2) ? 16384 : 8192;
+                i5 = i9 | 196608;
+                if ((599187 & i5) == 599186 || !txVar.B()) {
+                    nd1 nd1Var4 = i7 != 0 ? kd1.f633a : nd1Var2;
+                    um0 um0Var6 = i8 != 0 ? j7.t : um0Var3;
+                    gl glVar = dd0.e;
+                    if (i4 != 0) {
+                        str2 = "AnimatedContent";
+                    }
+                    j7 j7Var = j7.u;
+                    a(xn2.c(obj, str2, txVar, (i5 & 14) | ((i5 >> 9) & 112), 0), nd1Var4, um0Var6, j7Var, composableLambdaImpl, txVar, (i5 & 8176) | 221184);
+                    n5Var2 = glVar;
+                    nd1Var3 = nd1Var4;
+                    um0Var4 = um0Var6;
+                    um0Var5 = j7Var;
+                } else {
+                    txVar.S();
+                    n5Var2 = n5Var;
+                    um0Var5 = um0Var2;
+                    nd1Var3 = nd1Var2;
+                    um0Var4 = um0Var3;
+                }
+                String str3 = str2;
+                s = txVar.s();
+                if (s != null) {
+                    s.d = new hd(obj, nd1Var3, um0Var4, n5Var2, str3, um0Var5, composableLambdaImpl, i, i2);
+                    return;
+                }
+                return;
+            }
+            str2 = str;
+            i5 = i9 | 196608;
+            if ((599187 & i5) == 599186) {
+            }
+            if (i7 != 0) {
+            }
+            if (i8 != 0) {
+            }
+            gl glVar2 = dd0.e;
+            if (i4 != 0) {
+            }
+            j7 j7Var2 = j7.u;
+            a(xn2.c(obj, str2, txVar, (i5 & 14) | ((i5 >> 9) & 112), 0), nd1Var4, um0Var6, j7Var2, composableLambdaImpl, txVar, (i5 & 8176) | 221184);
+            n5Var2 = glVar2;
+            nd1Var3 = nd1Var4;
+            um0Var4 = um0Var6;
+            um0Var5 = j7Var2;
+            String str32 = str2;
+            s = txVar.s();
+            if (s != null) {
+            }
+        }
+        um0Var3 = um0Var;
+        int i92 = i3 | 3072;
+        i4 = i2 & 16;
+        if (i4 == 0) {
+        }
+        str2 = str;
+        i5 = i92 | 196608;
+        if ((599187 & i5) == 599186) {
+        }
+        if (i7 != 0) {
+        }
+        if (i8 != 0) {
+        }
+        gl glVar22 = dd0.e;
+        if (i4 != 0) {
+        }
+        j7 j7Var22 = j7.u;
+        a(xn2.c(obj, str2, txVar, (i5 & 14) | ((i5 >> 9) & 112), 0), nd1Var4, um0Var6, j7Var22, composableLambdaImpl, txVar, (i5 & 8176) | 221184);
+        n5Var2 = glVar22;
+        nd1Var3 = nd1Var4;
+        um0Var4 = um0Var6;
+        um0Var5 = j7Var22;
+        String str322 = str2;
+        s = txVar.s();
+        if (s != null) {
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0039  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x00ab  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:27:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x008b  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00ad  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00d2  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00d2  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00e8  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:73:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0044  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void c(androidx.emoji2.text.nd1 r24, androidx.emoji2.text.t92 r25, androidx.emoji2.text.pp r26, androidx.emoji2.text.qp r27, androidx.emoji2.text.zl r28, androidx.compose.runtime.internal.ComposableLambdaImpl r29, androidx.emoji2.text.lx r30, int r31, int r32) {
-        /*
-            Method dump skipped, instructions count: 359
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.kx0.c(androidx.emoji2.text.nd1, androidx.emoji2.text.t92, androidx.emoji2.text.pp, androidx.emoji2.text.qp, androidx.emoji2.text.zl, androidx.compose.runtime.internal.ComposableLambdaImpl, androidx.emoji2.text.lx, int, int):void");
+    public static final void c(nd1 nd1Var, t92 t92Var, pp ppVar, qp qpVar, zl zlVar, ComposableLambdaImpl composableLambdaImpl, lx lxVar, int i, int i2) {
+        nd1 nd1Var2;
+        int i3;
+        t92 t92Var2;
+        int i4;
+        pp ppVar2;
+        int i5;
+        int i6;
+        zl zlVar2;
+        int i7;
+        nd1 nd1Var3;
+        t92 t92Var3;
+        pp ppVar3;
+        int i8;
+        zl zlVar3;
+        pp ppVar4;
+        qp qpVar2;
+        Object M;
+        nd1 nd1Var4;
+        t92 t92Var4;
+        zl zlVar4;
+        pp ppVar5;
+        qp qpVar3;
+        pw1 s;
+        tx txVar = (tx) lxVar;
+        txVar.Z(1179621553);
+        int i9 = i2 & 1;
+        if (i9 != 0) {
+            i3 = i | 6;
+            nd1Var2 = nd1Var;
+        } else {
+            nd1Var2 = nd1Var;
+            i3 = i | (txVar.f(nd1Var2) ? 4 : 2);
+        }
+        if ((i2 & 2) == 0) {
+            t92Var2 = t92Var;
+            if (txVar.f(t92Var2)) {
+                i4 = 32;
+                int i10 = i3 | i4;
+                if ((i2 & 4) != 0) {
+                    ppVar2 = ppVar;
+                    if (txVar.f(ppVar2)) {
+                        i5 = PackageParser.PARSE_COLLECT_CERTIFICATES;
+                        int i11 = i10 | i5;
+                        int i12 = i11 | 1024;
+                        i6 = i2 & 16;
+                        if (i6 != 0) {
+                            i7 = i11 | 25600;
+                            zlVar2 = zlVar;
+                        } else {
+                            zlVar2 = zlVar;
+                            i7 = i12 | (txVar.f(zlVar2) ? 16384 : 8192);
+                        }
+                        if ((74899 & i7) == 74898 || !txVar.B()) {
+                            txVar.U();
+                            if ((i & 1) != 0 || txVar.y()) {
+                                nd1Var3 = i9 != 0 ? kd1.f633a : nd1Var2;
+                                if ((i2 & 2) != 0) {
+                                    t92Var3 = la2.a(txVar, oi0.b);
+                                    i7 &= -113;
+                                } else {
+                                    t92Var3 = t92Var2;
+                                }
+                                if ((i2 & 4) != 0) {
+                                    ppVar3 = h50.x((kt) txVar.j(lt.f708a));
+                                    i7 &= -897;
+                                } else {
+                                    ppVar3 = ppVar2;
+                                }
+                                qp qpVar4 = new qp(oi0.f858a, oi0.i, oi0.g, oi0.h, oi0.f, oi0.d);
+                                i8 = i7 & (-7169);
+                                if (i6 != 0) {
+                                    zlVar2 = null;
+                                }
+                                zlVar3 = zlVar2;
+                                ppVar4 = ppVar3;
+                                qpVar2 = qpVar4;
+                            } else {
+                                txVar.S();
+                                if ((i2 & 2) != 0) {
+                                    i7 &= -113;
+                                }
+                                if ((i2 & 4) != 0) {
+                                    i7 &= -897;
+                                }
+                                qpVar2 = qpVar;
+                                zlVar3 = zlVar2;
+                                ppVar4 = ppVar2;
+                                i8 = i7 & (-7169);
+                                nd1Var3 = nd1Var2;
+                                t92Var3 = t92Var2;
+                            }
+                            txVar.q();
+                            long j = ppVar4.f919a;
+                            int i13 = i8;
+                            long j2 = ppVar4.b;
+                            float f2 = qpVar2.f972a;
+                            txVar.X(-1763481333);
+                            txVar.X(-734838460);
+                            M = txVar.M();
+                            if (M == kx.f662a) {
+                                M = az0.W(new da0(f2));
+                                txVar.i0(M);
+                            }
+                            txVar.p(false);
+                            txVar.p(false);
+                            bh2.a(nd1Var3, t92Var3, j, j2, 0.0f, ((da0) ((mf1) M).getValue()).d, zlVar3, l8.f0(664103990, new e5(composableLambdaImpl), txVar), txVar, (i13 & 14) | 12582912 | (i13 & 112) | ((i13 << 6) & 3670016), 16);
+                            nd1Var4 = nd1Var3;
+                            t92Var4 = t92Var3;
+                            zlVar4 = zlVar3;
+                            ppVar5 = ppVar4;
+                            qpVar3 = qpVar2;
+                        } else {
+                            txVar.S();
+                            qpVar3 = qpVar;
+                            nd1Var4 = nd1Var2;
+                            zlVar4 = zlVar2;
+                            t92Var4 = t92Var2;
+                            ppVar5 = ppVar2;
+                        }
+                        s = txVar.s();
+                        if (s != null) {
+                            s.d = new rp(nd1Var4, t92Var4, ppVar5, qpVar3, zlVar4, composableLambdaImpl, i, i2);
+                            return;
+                        }
+                        return;
+                    }
+                } else {
+                    ppVar2 = ppVar;
+                }
+                i5 = PackageParser.PARSE_IS_PRIVILEGED;
+                int i112 = i10 | i5;
+                int i122 = i112 | 1024;
+                i6 = i2 & 16;
+                if (i6 != 0) {
+                }
+                if ((74899 & i7) == 74898) {
+                }
+                txVar.U();
+                if ((i & 1) != 0) {
+                }
+                if (i9 != 0) {
+                }
+                if ((i2 & 2) != 0) {
+                }
+                if ((i2 & 4) != 0) {
+                }
+                qp qpVar42 = new qp(oi0.f858a, oi0.i, oi0.g, oi0.h, oi0.f, oi0.d);
+                i8 = i7 & (-7169);
+                if (i6 != 0) {
+                }
+                zlVar3 = zlVar2;
+                ppVar4 = ppVar3;
+                qpVar2 = qpVar42;
+                txVar.q();
+                long j3 = ppVar4.f919a;
+                int i132 = i8;
+                long j22 = ppVar4.b;
+                float f22 = qpVar2.f972a;
+                txVar.X(-1763481333);
+                txVar.X(-734838460);
+                M = txVar.M();
+                if (M == kx.f662a) {
+                }
+                txVar.p(false);
+                txVar.p(false);
+                bh2.a(nd1Var3, t92Var3, j3, j22, 0.0f, ((da0) ((mf1) M).getValue()).d, zlVar3, l8.f0(664103990, new e5(composableLambdaImpl), txVar), txVar, (i132 & 14) | 12582912 | (i132 & 112) | ((i132 << 6) & 3670016), 16);
+                nd1Var4 = nd1Var3;
+                t92Var4 = t92Var3;
+                zlVar4 = zlVar3;
+                ppVar5 = ppVar4;
+                qpVar3 = qpVar2;
+                s = txVar.s();
+                if (s != null) {
+                }
+            }
+        } else {
+            t92Var2 = t92Var;
+        }
+        i4 = 16;
+        int i102 = i3 | i4;
+        if ((i2 & 4) != 0) {
+        }
+        i5 = PackageParser.PARSE_IS_PRIVILEGED;
+        int i1122 = i102 | i5;
+        int i1222 = i1122 | 1024;
+        i6 = i2 & 16;
+        if (i6 != 0) {
+        }
+        if ((74899 & i7) == 74898) {
+        }
+        txVar.U();
+        if ((i & 1) != 0) {
+        }
+        if (i9 != 0) {
+        }
+        if ((i2 & 2) != 0) {
+        }
+        if ((i2 & 4) != 0) {
+        }
+        qp qpVar422 = new qp(oi0.f858a, oi0.i, oi0.g, oi0.h, oi0.f, oi0.d);
+        i8 = i7 & (-7169);
+        if (i6 != 0) {
+        }
+        zlVar3 = zlVar2;
+        ppVar4 = ppVar3;
+        qpVar2 = qpVar422;
+        txVar.q();
+        long j32 = ppVar4.f919a;
+        int i1322 = i8;
+        long j222 = ppVar4.b;
+        float f222 = qpVar2.f972a;
+        txVar.X(-1763481333);
+        txVar.X(-734838460);
+        M = txVar.M();
+        if (M == kx.f662a) {
+        }
+        txVar.p(false);
+        txVar.p(false);
+        bh2.a(nd1Var3, t92Var3, j32, j222, 0.0f, ((da0) ((mf1) M).getValue()).d, zlVar3, l8.f0(664103990, new e5(composableLambdaImpl), txVar), txVar, (i1322 & 14) | 12582912 | (i1322 & 112) | ((i1322 << 6) & 3670016), 16);
+        nd1Var4 = nd1Var3;
+        t92Var4 = t92Var3;
+        zlVar4 = zlVar3;
+        ppVar5 = ppVar4;
+        qpVar3 = qpVar2;
+        s = txVar.s();
+        if (s != null) {
+        }
     }
 
     public static final long d(int i, int i2) {
@@ -684,97 +1015,65 @@ public abstract class kx0 {
         return new oa2(i2, i4, tnVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0031, code lost:
     
         return null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x005d, code lost:
     
-        return null;
+        return r0;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final android.view.View f(android.view.View r4, android.view.View r5, int r6) {
-        /*
-            r0 = 1
-            r1 = -1
-            r2 = 0
-            if (r6 == r0) goto L33
-            r0 = 2
-            if (r6 == r0) goto L9
-            goto L39
-        L9:
-            int r6 = r4.getNextFocusForwardId()
-            if (r6 != r1) goto L10
-            goto L39
-        L10:
-            androidx.emoji2.text.r7 r0 = new androidx.emoji2.text.r7
-            r1 = 1
-            r0.<init>(r6, r1)
-            r6 = r2
-        L17:
-            android.view.View r6 = x(r4, r0, r6)
-            if (r6 != 0) goto L32
-            if (r4 != r5) goto L20
-            goto L32
-        L20:
-            android.view.ViewParent r6 = r4.getParent()
-            if (r6 == 0) goto L31
-            boolean r1 = r6 instanceof android.view.View
-            if (r1 != 0) goto L2b
-            goto L31
-        L2b:
-            android.view.View r6 = (android.view.View) r6
-            r3 = r6
-            r6 = r4
-            r4 = r3
-            goto L17
-        L31:
-            return r2
-        L32:
-            return r6
-        L33:
-            int r6 = r4.getId()
-            if (r6 != r1) goto L3a
-        L39:
-            return r2
-        L3a:
-            androidx.emoji2.text.q8 r6 = new androidx.emoji2.text.q8
-            r0 = 17
-            r6.<init>(r0, r5, r4)
-            r0 = r2
-        L42:
-            android.view.View r0 = x(r4, r6, r0)
-            if (r0 != 0) goto L5d
-            if (r4 != r5) goto L4b
-            goto L5d
-        L4b:
-            android.view.ViewParent r0 = r4.getParent()
-            if (r0 == 0) goto L5c
-            boolean r1 = r0 instanceof android.view.View
-            if (r1 != 0) goto L56
-            goto L5c
-        L56:
-            android.view.View r0 = (android.view.View) r0
-            r3 = r0
-            r0 = r4
-            r4 = r3
-            goto L42
-        L5c:
-            return r2
-        L5d:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.kx0.f(android.view.View, android.view.View, int):android.view.View");
+    public static final View f(View view, View view2, int i) {
+        int nextFocusForwardId;
+        View x;
+        if (i != 1) {
+            if (i == 2 && (nextFocusForwardId = view.getNextFocusForwardId()) != -1) {
+                r7 r7Var = new r7(nextFocusForwardId, 1);
+                View view3 = null;
+                while (true) {
+                    x = x(view, r7Var, view3);
+                    if (x != null || view == view2) {
+                        break;
+                    }
+                    Object parent = view.getParent();
+                    if (parent == null || !(parent instanceof View)) {
+                        break;
+                    }
+                    View view4 = (View) parent;
+                    view3 = view;
+                    view = view4;
+                }
+                return x;
+            }
+        } else if (view.getId() != -1) {
+            q8 q8Var = new q8(17, view2, view);
+            View view5 = null;
+            while (true) {
+                View x2 = x(view, q8Var, view5);
+                if (x2 != null || view == view2) {
+                    break;
+                }
+                Object parent2 = view.getParent();
+                if (parent2 == null || !(parent2 instanceof View)) {
+                    break;
+                }
+                View view6 = (View) parent2;
+                view5 = view;
+                view = view6;
+            }
+            return null;
+        }
+        return null;
     }
 
     public static final void g(js2 js2Var, e11 e11Var) {
         long J = e11Var.H.c.J(0L);
-        int iRound = Math.round(Float.intBitsToFloat((int) (J >> 32)));
-        int iRound2 = Math.round(Float.intBitsToFloat((int) (J & 4294967295L)));
-        js2Var.layout(iRound, iRound2, js2Var.getMeasuredWidth() + iRound, js2Var.getMeasuredHeight() + iRound2);
+        int round = Math.round(Float.intBitsToFloat((int) (J >> 32)));
+        int round2 = Math.round(Float.intBitsToFloat((int) (J & 4294967295L)));
+        js2Var.layout(round, round2, js2Var.getMeasuredWidth() + round, js2Var.getMeasuredHeight() + round2);
     }
 
     public static final void h(Object[] objArr, long j, Object obj) {
@@ -803,10 +1102,10 @@ public abstract class kx0 {
             for (int i2 = 0; i2 < childCount; i2++) {
                 viewArr[i2] = viewGroup.getChildAt(i2);
             }
-            ze1 ze1Var = nk0.f812a;
+            ze1 ze1Var = nk0.f811a;
             boolean z4 = viewGroup.getLayoutDirection() == 1;
             jj jjVar = nk0.f;
-            ze1 ze1Var2 = nk0.f812a;
+            ze1 ze1Var2 = nk0.f811a;
             gf1 gf1Var = nk0.d;
             if (childCount < 2) {
                 i = 0;
@@ -826,33 +1125,33 @@ public abstract class kx0 {
                     gf1Var.m(view2, rect);
                 }
                 xh.P0(viewArr, nk0.e);
-                Object objG = gf1Var.g(viewArr[0]);
-                lx0.u(objG);
-                int iMax = ((Rect) objG).bottom;
+                Object g2 = gf1Var.g(viewArr[0]);
+                lx0.u(g2);
+                int i7 = ((Rect) g2).bottom;
                 nk0.c = z4 ? -1 : 1;
-                int i7 = 0;
-                for (int i8 = 0; i8 < childCount; i8++) {
-                    Object objG2 = gf1Var.g(viewArr[i8]);
-                    lx0.u(objG2);
-                    Rect rect2 = (Rect) objG2;
-                    if (rect2.top >= iMax) {
-                        if (i8 - i7 > 1) {
-                            xh.Q0(viewArr, jjVar, i7, i8);
+                int i8 = 0;
+                for (int i9 = 0; i9 < childCount; i9++) {
+                    Object g3 = gf1Var.g(viewArr[i9]);
+                    lx0.u(g3);
+                    Rect rect2 = (Rect) g3;
+                    if (rect2.top >= i7) {
+                        if (i9 - i8 > 1) {
+                            xh.Q0(viewArr, jjVar, i8, i9);
                         }
-                        iMax = rect2.bottom;
-                        i7 = i8;
+                        i7 = rect2.bottom;
+                        i8 = i9;
                     } else {
-                        iMax = Math.max(iMax, rect2.bottom);
+                        i7 = Math.max(i7, rect2.bottom);
                     }
                 }
-                if (childCount - i7 > 1) {
-                    xh.Q0(viewArr, jjVar, i7, childCount);
+                if (childCount - i8 > 1) {
+                    xh.Q0(viewArr, jjVar, i8, childCount);
                 }
                 nk0.b = 0;
                 gf1Var.a();
             }
-            for (int i9 = i; i9 < childCount; i9++) {
-                i(viewArr[i9], arrayList, z);
+            for (int i10 = i; i10 < childCount; i10++) {
+                i(viewArr[i10], arrayList, z);
             }
         }
         if (z2 && !z3 && size == arrayList.size()) {
@@ -873,37 +1172,37 @@ public abstract class kx0 {
     /* JADX WARN: Type inference failed for: r5v3, types: [androidx.emoji2.text.t5] */
     /* JADX WARN: Type inference failed for: r5v7, types: [java.lang.Integer] */
     public static final List k(rb2 rb2Var, Integer num, int i, Integer num2) {
-        int iD;
+        int i2;
         ze1 ze1Var;
         if (rb2Var.w || rb2Var.p() == 0) {
             return qe0.d;
         }
         ?? kv1Var = new kv1(rb2Var);
         if (num2 != null) {
-            iD = num2.intValue();
+            i2 = num2.intValue();
         } else {
-            iD = rb2Var.v;
-            if (iD < 0) {
-                iD = rb2Var.D(rb2Var.b, i);
+            i2 = rb2Var.v;
+            if (i2 < 0) {
+                i2 = rb2Var.D(rb2Var.b, i);
             }
         }
         if (num == 0) {
-            int iM = rb2Var.i - rb2Var.M(rb2Var.b, rb2Var.r(i));
+            int M = rb2Var.i - rb2Var.M(rb2Var.b, rb2Var.r(i));
             qe1 qe1Var = rb2Var.s;
-            num = Integer.valueOf(iM + ((qe1Var == null || (ze1Var = (ze1) qe1Var.b(i)) == null) ? 0 : ze1Var.b));
+            num = Integer.valueOf(M + ((qe1Var == null || (ze1Var = (ze1) qe1Var.b(i)) == null) ? 0 : ze1Var.b));
         }
         while (i >= 0) {
             kv1Var.b(rb2Var.N(i), num);
             num = rb2Var.b(i);
-            if (iD >= 0) {
-                int i2 = iD;
-                iD = rb2Var.D(rb2Var.b, iD);
-                i = i2;
+            if (i2 >= 0) {
+                int i3 = i2;
+                i2 = rb2Var.D(rb2Var.b, i2);
+                i = i3;
             } else {
-                i = iD;
+                i = i2;
             }
         }
-        return kv1Var.f660a;
+        return kv1Var.f659a;
     }
 
     public static final Bundle l(hn1... hn1VarArr) {
@@ -991,39 +1290,39 @@ public abstract class kx0 {
             } else {
                 ArrayList arrayList2 = new ArrayList();
                 Object obj = arrayList.get(0);
-                int iL0 = xs.l0(arrayList);
+                int l0 = xs.l0(arrayList);
                 int i = 0;
-                while (i < iL0) {
+                while (i < l0) {
                     i++;
                     Object obj2 = arrayList.get(i);
                     y62 y62Var = (y62) obj2;
                     y62 y62Var2 = (y62) obj;
-                    float fAbs = Math.abs(Float.intBitsToFloat((int) (y62Var2.g().c() >> 32)) - Float.intBitsToFloat((int) (y62Var.g().c() >> 32)));
-                    float fAbs2 = Math.abs(Float.intBitsToFloat((int) (y62Var2.g().c() & 4294967295L)) - Float.intBitsToFloat((int) (y62Var.g().c() & 4294967295L)));
-                    arrayList2.add(new zi1((Float.floatToRawIntBits(fAbs) << 32) | (Float.floatToRawIntBits(fAbs2) & 4294967295L)));
+                    float abs = Math.abs(Float.intBitsToFloat((int) (y62Var2.g().c() >> 32)) - Float.intBitsToFloat((int) (y62Var.g().c() >> 32)));
+                    float abs2 = Math.abs(Float.intBitsToFloat((int) (y62Var2.g().c() & 4294967295L)) - Float.intBitsToFloat((int) (y62Var.g().c() & 4294967295L)));
+                    arrayList2.add(new zi1((Float.floatToRawIntBits(abs) << 32) | (Float.floatToRawIntBits(abs2) & 4294967295L)));
                     obj = obj2;
                 }
                 list = arrayList2;
             }
             if (list.size() == 1) {
-                j = ((zi1) ws.A0(list)).f1442a;
+                j = ((zi1) ws.A0(list)).f1441a;
             } else {
                 if (list.isEmpty()) {
                     k71.b("Empty collection can't be reduced.");
                 }
-                Object objA0 = ws.A0(list);
-                int iL02 = xs.l0(list);
-                if (1 <= iL02) {
+                Object A0 = ws.A0(list);
+                int l02 = xs.l0(list);
+                if (1 <= l02) {
                     int i2 = 1;
                     while (true) {
-                        objA0 = new zi1(zi1.g(((zi1) objA0).f1442a, ((zi1) list.get(i2)).f1442a));
-                        if (i2 == iL02) {
+                        A0 = new zi1(zi1.g(((zi1) A0).f1441a, ((zi1) list.get(i2)).f1441a));
+                        if (i2 == l02) {
                             break;
                         }
                         i2++;
                     }
                 }
-                j = ((zi1) objA0).f1442a;
+                j = ((zi1) A0).f1441a;
             }
             if (Float.intBitsToFloat((int) (4294967295L & j)) >= Float.intBitsToFloat((int) (j >> 32))) {
                 return false;
@@ -1034,15 +1333,15 @@ public abstract class kx0 {
 
     public static int n(Context context, String str) {
         if (str != null) {
-            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new mi1(context).f748a.areNotificationsEnabled() ? 0 : -1;
+            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new mi1(context).f747a.areNotificationsEnabled() ? 0 : -1;
         }
         throw new NullPointerException("permission must be non-null");
     }
 
     public static final int o(long j, long j2) {
-        boolean zF = F(j);
-        if (zF != F(j2)) {
-            return zF ? -1 : 1;
+        boolean F = F(j);
+        if (F != F(j2)) {
+            return F ? -1 : 1;
         }
         return (Math.min(C(j), C(j2)) >= 0.0f && E(j) != E(j2)) ? E(j) ? -1 : 1 : (int) Math.signum(C(j) - C(j2));
     }
@@ -1068,16 +1367,16 @@ public abstract class kx0 {
         Context context2 = (Context) rgVar.g;
         p60 p60Var = (p60) rgVar.e;
         final int i = 0;
-        th2 th2VarU = az0.U(new sm0() { // from class: androidx.emoji2.text.yt0
+        th2 U = az0.U(new sm0() { // from class: androidx.emoji2.text.yt0
             @Override // androidx.emoji2.text.sm0
             public final Object a() {
                 int i2;
-                int largeMemoryClass;
+                int i3;
                 yv1 yv1Var;
                 switch (i) {
                     case 0:
                         Context context3 = (Context) rgVar.g;
-                        Bitmap.Config[] configArr = h.f447a;
+                        Bitmap.Config[] configArr = h.f446a;
                         double d2 = 0.2d;
                         try {
                             Object systemService = context3.getSystemService((Class<Object>) ActivityManager.class);
@@ -1089,16 +1388,16 @@ public abstract class kx0 {
                         }
                         em emVar = new em(3);
                         if (d2 > 0.0d) {
-                            Bitmap.Config[] configArr2 = h.f447a;
+                            Bitmap.Config[] configArr2 = h.f446a;
                             try {
                                 Object systemService2 = context3.getSystemService((Class<Object>) ActivityManager.class);
                                 lx0.u(systemService2);
                                 ActivityManager activityManager = (ActivityManager) systemService2;
-                                largeMemoryClass = (context3.getApplicationInfo().flags & 1048576) != 0 ? activityManager.getLargeMemoryClass() : activityManager.getMemoryClass();
+                                i3 = (context3.getApplicationInfo().flags & 1048576) != 0 ? activityManager.getLargeMemoryClass() : activityManager.getMemoryClass();
                             } catch (Exception unused2) {
-                                largeMemoryClass = PackageParser.PARSE_COLLECT_CERTIFICATES;
+                                i3 = PackageParser.PARSE_COLLECT_CERTIFICATES;
                             }
-                            double d3 = d2 * largeMemoryClass;
+                            double d3 = d2 * i3;
                             double d4 = 1024;
                             i2 = (int) (d3 * d4 * d4);
                         } else {
@@ -1113,27 +1412,27 @@ public abstract class kx0 {
                             try {
                                 yv1Var = j42.m;
                                 if (yv1Var == null) {
-                                    ny0 ny0Var = ci0.f198a;
-                                    q60 q60Var = e90.f294a;
+                                    ny0 ny0Var = ci0.f197a;
+                                    q60 q60Var = e90.f293a;
                                     a60 a60Var = a60.f;
-                                    Bitmap.Config[] configArr3 = h.f447a;
+                                    Bitmap.Config[] configArr3 = h.f446a;
                                     File cacheDir = context4.getCacheDir();
                                     if (cacheDir == null) {
                                         throw new IllegalStateException("cacheDir == null");
                                     }
                                     cacheDir.mkdirs();
-                                    File fileR = ki0.R(cacheDir);
+                                    File R = ki0.R(cacheDir);
                                     String str = zn1.e;
-                                    zn1 zn1VarP = iz0.p(fileR);
-                                    long jQ = 10485760;
+                                    zn1 p = iz0.p(R);
+                                    long j = 10485760;
                                     try {
-                                        File file = zn1VarP.toFile();
+                                        File file = p.toFile();
                                         file.mkdir();
                                         StatFs statFs = new StatFs(file.getAbsolutePath());
-                                        jQ = az0.q((long) (0.02d * statFs.getBlockCountLong() * statFs.getBlockSizeLong()), 10485760L, 262144000L);
+                                        j = az0.q((long) (0.02d * statFs.getBlockCountLong() * statFs.getBlockSizeLong()), 10485760L, 262144000L);
                                     } catch (Exception unused3) {
                                     }
-                                    yv1 yv1Var2 = new yv1(jQ, a60Var, ny0Var, zn1VarP);
+                                    yv1 yv1Var2 = new yv1(j, a60Var, ny0Var, p);
                                     j42.m = yv1Var2;
                                     yv1Var = yv1Var2;
                                 }
@@ -1145,16 +1444,16 @@ public abstract class kx0 {
             }
         });
         final int i2 = 1;
-        th2 th2VarU2 = az0.U(new sm0() { // from class: androidx.emoji2.text.yt0
+        th2 U2 = az0.U(new sm0() { // from class: androidx.emoji2.text.yt0
             @Override // androidx.emoji2.text.sm0
             public final Object a() {
                 int i22;
-                int largeMemoryClass;
+                int i3;
                 yv1 yv1Var;
                 switch (i2) {
                     case 0:
                         Context context3 = (Context) rgVar.g;
-                        Bitmap.Config[] configArr = h.f447a;
+                        Bitmap.Config[] configArr = h.f446a;
                         double d2 = 0.2d;
                         try {
                             Object systemService = context3.getSystemService((Class<Object>) ActivityManager.class);
@@ -1166,16 +1465,16 @@ public abstract class kx0 {
                         }
                         em emVar = new em(3);
                         if (d2 > 0.0d) {
-                            Bitmap.Config[] configArr2 = h.f447a;
+                            Bitmap.Config[] configArr2 = h.f446a;
                             try {
                                 Object systemService2 = context3.getSystemService((Class<Object>) ActivityManager.class);
                                 lx0.u(systemService2);
                                 ActivityManager activityManager = (ActivityManager) systemService2;
-                                largeMemoryClass = (context3.getApplicationInfo().flags & 1048576) != 0 ? activityManager.getLargeMemoryClass() : activityManager.getMemoryClass();
+                                i3 = (context3.getApplicationInfo().flags & 1048576) != 0 ? activityManager.getLargeMemoryClass() : activityManager.getMemoryClass();
                             } catch (Exception unused2) {
-                                largeMemoryClass = PackageParser.PARSE_COLLECT_CERTIFICATES;
+                                i3 = PackageParser.PARSE_COLLECT_CERTIFICATES;
                             }
-                            double d3 = d2 * largeMemoryClass;
+                            double d3 = d2 * i3;
                             double d4 = 1024;
                             i22 = (int) (d3 * d4 * d4);
                         } else {
@@ -1190,27 +1489,27 @@ public abstract class kx0 {
                             try {
                                 yv1Var = j42.m;
                                 if (yv1Var == null) {
-                                    ny0 ny0Var = ci0.f198a;
-                                    q60 q60Var = e90.f294a;
+                                    ny0 ny0Var = ci0.f197a;
+                                    q60 q60Var = e90.f293a;
                                     a60 a60Var = a60.f;
-                                    Bitmap.Config[] configArr3 = h.f447a;
+                                    Bitmap.Config[] configArr3 = h.f446a;
                                     File cacheDir = context4.getCacheDir();
                                     if (cacheDir == null) {
                                         throw new IllegalStateException("cacheDir == null");
                                     }
                                     cacheDir.mkdirs();
-                                    File fileR = ki0.R(cacheDir);
+                                    File R = ki0.R(cacheDir);
                                     String str = zn1.e;
-                                    zn1 zn1VarP = iz0.p(fileR);
-                                    long jQ = 10485760;
+                                    zn1 p = iz0.p(R);
+                                    long j = 10485760;
                                     try {
-                                        File file = zn1VarP.toFile();
+                                        File file = p.toFile();
                                         file.mkdir();
                                         StatFs statFs = new StatFs(file.getAbsolutePath());
-                                        jQ = az0.q((long) (0.02d * statFs.getBlockCountLong() * statFs.getBlockSizeLong()), 10485760L, 262144000L);
+                                        j = az0.q((long) (0.02d * statFs.getBlockCountLong() * statFs.getBlockSizeLong()), 10485760L, 262144000L);
                                     } catch (Exception unused3) {
                                     }
-                                    yv1 yv1Var2 = new yv1(jQ, a60Var, ny0Var, zn1VarP);
+                                    yv1 yv1Var2 = new yv1(j, a60Var, ny0Var, p);
                                     j42.m = yv1Var2;
                                     yv1Var = yv1Var2;
                                 }
@@ -1221,9 +1520,9 @@ public abstract class kx0 {
                 }
             }
         });
-        th2 th2VarU3 = az0.U(new f4(6));
+        th2 U3 = az0.U(new f4(6));
         qe0 qe0Var = qe0.d;
-        return new bw1(context2, p60Var, th2VarU, th2VarU2, th2VarU3, new ev(qe0Var, qe0Var, qe0Var, qe0Var, qe0Var), (zt0) rgVar.f);
+        return new bw1(context2, p60Var, U, U2, U3, new ev(qe0Var, qe0Var, qe0Var, qe0Var, qe0Var), (zt0) rgVar.f);
     }
 
     public static final Object r(long j, n10 n10Var) {
@@ -1233,12 +1532,12 @@ public abstract class kx0 {
             if (j < Long.MAX_VALUE) {
                 B(ipVar.h).u(j, ipVar);
             }
-            Object objR = ipVar.r();
-            if (objR == f30.d) {
-                return objR;
+            Object r = ipVar.r();
+            if (r == f30.d) {
+                return r;
             }
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public static boolean s(File file) {
@@ -1246,17 +1545,28 @@ public abstract class kx0 {
             file.delete();
             return true;
         }
-        File[] fileArrListFiles = file.listFiles();
-        if (fileArrListFiles == null) {
+        File[] listFiles = file.listFiles();
+        if (listFiles == null) {
             return false;
         }
         boolean z = true;
-        for (File file2 : fileArrListFiles) {
+        for (File file2 : listFiles) {
             z = s(file2) && z;
         }
         return z;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0015, code lost:
+    
+        r4 = r4.getValue("android:text");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x001b, code lost:
+    
+        r4 = r4.getText();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static void t(x8 x8Var, LongSparseArray longSparseArray) {
         TranslationResponseValue value;
         CharSequence text;
@@ -1265,14 +1575,14 @@ public abstract class kx0 {
         um0 um0Var;
         int size = longSparseArray.size();
         for (int i = 0; i < size; i++) {
-            long jKeyAt = longSparseArray.keyAt(i);
-            ViewTranslationResponse viewTranslationResponseP = b7.p(longSparseArray.get(jKeyAt));
-            if (viewTranslationResponseP != null && (value = viewTranslationResponseP.getValue("android:text")) != null && (text = value.getText()) != null && (a72Var = (a72) x8Var.g().b((int) jKeyAt)) != null && (y62Var = a72Var.f87a) != null) {
-                Object objG = y62Var.d.d.g(t62.k);
-                if (objG == null) {
-                    objG = null;
+            long keyAt = longSparseArray.keyAt(i);
+            ViewTranslationResponse p = b7.p(longSparseArray.get(keyAt));
+            if (p != null && value != null && text != null && (a72Var = (a72) x8Var.g().b((int) keyAt)) != null && (y62Var = a72Var.f86a) != null) {
+                Object g2 = y62Var.d.d.g(t62.k);
+                if (g2 == null) {
+                    g2 = null;
                 }
-                x0 x0Var = (x0) objG;
+                x0 x0Var = (x0) g2;
                 if (x0Var != null && (um0Var = (um0) x0Var.b) != null) {
                 }
             }
@@ -1283,11 +1593,11 @@ public abstract class kx0 {
         if (drawable instanceof BitmapDrawable) {
             return ((BitmapDrawable) drawable).getBitmap();
         }
-        Bitmap bitmapCreateBitmap = Bitmap.createBitmap(i, i2, drawable.getOpacity() != -1 ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
-        Canvas canvas = new Canvas(bitmapCreateBitmap);
+        Bitmap createBitmap = Bitmap.createBitmap(i, i2, drawable.getOpacity() != -1 ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
+        Canvas canvas = new Canvas(createBitmap);
         drawable.setBounds(0, 0, i, i2);
         drawable.draw(canvas);
-        return bitmapCreateBitmap;
+        return createBitmap;
     }
 
     public static final Object v(c62 c62Var, long j, Function2 function2) {
@@ -1295,7 +1605,7 @@ public abstract class kx0 {
             if (c62Var.c >= j && !c62Var.c()) {
                 return c62Var;
             }
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = oy.f879a;
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = oy.f878a;
             Object obj = atomicReferenceFieldUpdater.get(c62Var);
             de0 de0Var = b;
             if (obj == de0Var) {
@@ -1318,7 +1628,7 @@ public abstract class kx0 {
     }
 
     public static final Integer w(nb2 nb2Var, xx xxVar, int i, int i2) {
-        Integer numW;
+        Integer w;
         int[] iArr = nb2Var.b;
         while (true) {
             if (i >= i2) {
@@ -1326,21 +1636,21 @@ public abstract class kx0 {
             }
             int i3 = iArr[(i * 5) + 3] + i;
             if (nb2Var.j(i) && nb2Var.i(i) == 206 && lx0.n(nb2Var.p(iArr, i), vx.e)) {
-                Object objH = nb2Var.h(i, 0);
-                px pxVar = objH instanceof px ? (px) objH : null;
+                Object h2 = nb2Var.h(i, 0);
+                px pxVar = h2 instanceof px ? (px) h2 : null;
                 if (pxVar != null && pxVar.d.equals(xxVar)) {
                     return Integer.valueOf(i);
                 }
             }
-            if (nb2Var.d(i) && (numW = w(nb2Var, xxVar, i + 1, i3)) != null) {
-                return Integer.valueOf(numW.intValue());
+            if (nb2Var.d(i) && (w = w(nb2Var, xxVar, i + 1, i3)) != null) {
+                return Integer.valueOf(w.intValue());
             }
             i = i3;
         }
     }
 
     public static final View x(View view, um0 um0Var, View view2) {
-        View viewX;
+        View x;
         if (((Boolean) um0Var.e(view)).booleanValue()) {
             return view;
         }
@@ -1351,8 +1661,8 @@ public abstract class kx0 {
         int childCount = viewGroup.getChildCount();
         for (int i = 0; i < childCount; i++) {
             View childAt = viewGroup.getChildAt(i);
-            if (childAt != view2 && (viewX = x(childAt, um0Var, view2)) != null) {
-                return viewX;
+            if (childAt != view2 && (x = x(childAt, um0Var, view2)) != null) {
+                return x;
             }
         }
         return null;
@@ -1366,120 +1676,73 @@ public abstract class kx0 {
         return null;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0047, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0047, code lost:
     
         if (r5.c == r8.hashCode()) goto L21;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static android.content.res.ColorStateList z(android.content.Context r8, int r9) {
-        /*
-            android.content.res.Resources r0 = r8.getResources()
-            android.content.res.Resources$Theme r8 = r8.getTheme()
-            androidx.emoji2.text.yz1 r1 = new androidx.emoji2.text.yz1
-            r1.<init>(r0, r8)
-            java.lang.Object r2 = androidx.emoji2.text.zz1.c
-            monitor-enter(r2)
-            java.util.WeakHashMap r3 = androidx.emoji2.text.zz1.b     // Catch: java.lang.Throwable -> L3c
-            java.lang.Object r3 = r3.get(r1)     // Catch: java.lang.Throwable -> L3c
-            android.util.SparseArray r3 = (android.util.SparseArray) r3     // Catch: java.lang.Throwable -> L3c
-            r4 = 0
-            if (r3 == 0) goto L50
-            int r5 = r3.size()     // Catch: java.lang.Throwable -> L3c
-            if (r5 <= 0) goto L50
-            java.lang.Object r5 = r3.get(r9)     // Catch: java.lang.Throwable -> L3c
-            androidx.emoji2.text.xz1 r5 = (androidx.emoji2.text.xz1) r5     // Catch: java.lang.Throwable -> L3c
-            if (r5 == 0) goto L50
-            android.content.res.Configuration r6 = r5.b     // Catch: java.lang.Throwable -> L3c
-            android.content.res.Configuration r7 = r0.getConfiguration()     // Catch: java.lang.Throwable -> L3c
-            boolean r6 = r6.equals(r7)     // Catch: java.lang.Throwable -> L3c
-            if (r6 == 0) goto L4d
-            if (r8 != 0) goto L3f
-            int r6 = r5.c     // Catch: java.lang.Throwable -> L3c
-            if (r6 == 0) goto L49
-            goto L3f
-        L3c:
-            r8 = move-exception
-            goto Lb8
-        L3f:
-            if (r8 == 0) goto L4d
-            int r6 = r5.c     // Catch: java.lang.Throwable -> L3c
-            int r7 = r8.hashCode()     // Catch: java.lang.Throwable -> L3c
-            if (r6 != r7) goto L4d
-        L49:
-            android.content.res.ColorStateList r3 = r5.f1364a     // Catch: java.lang.Throwable -> L3c
-            monitor-exit(r2)     // Catch: java.lang.Throwable -> L3c
-            goto L52
-        L4d:
-            r3.remove(r9)     // Catch: java.lang.Throwable -> L3c
-        L50:
-            monitor-exit(r2)     // Catch: java.lang.Throwable -> L3c
-            r3 = r4
-        L52:
-            if (r3 == 0) goto L55
-            return r3
-        L55:
-            java.lang.ThreadLocal r2 = androidx.emoji2.text.zz1.f1464a
-            java.lang.Object r3 = r2.get()
-            android.util.TypedValue r3 = (android.util.TypedValue) r3
-            if (r3 != 0) goto L67
-            android.util.TypedValue r3 = new android.util.TypedValue
-            r3.<init>()
-            r2.set(r3)
-        L67:
-            r2 = 1
-            r0.getValue(r9, r3, r2)
-            int r2 = r3.type
-            r3 = 28
-            if (r2 < r3) goto L76
-            r3 = 31
-            if (r2 > r3) goto L76
-            goto L87
-        L76:
-            android.content.res.XmlResourceParser r2 = r0.getXml(r9)
-            android.content.res.ColorStateList r4 = androidx.emoji2.text.rt.a(r0, r2, r8)     // Catch: java.lang.Exception -> L7f
-            goto L87
-        L7f:
-            r2 = move-exception
-            java.lang.String r3 = "ResourcesCompat"
-            java.lang.String r5 = "Failed to inflate ColorStateList, leaving it to the framework"
-            android.util.Log.w(r3, r5, r2)
-        L87:
-            if (r4 == 0) goto Lb3
-            java.lang.Object r2 = androidx.emoji2.text.zz1.c
-            monitor-enter(r2)
-            java.util.WeakHashMap r0 = androidx.emoji2.text.zz1.b     // Catch: java.lang.Throwable -> L9f
-            java.lang.Object r3 = r0.get(r1)     // Catch: java.lang.Throwable -> L9f
-            android.util.SparseArray r3 = (android.util.SparseArray) r3     // Catch: java.lang.Throwable -> L9f
-            if (r3 != 0) goto La1
-            android.util.SparseArray r3 = new android.util.SparseArray     // Catch: java.lang.Throwable -> L9f
-            r3.<init>()     // Catch: java.lang.Throwable -> L9f
-            r0.put(r1, r3)     // Catch: java.lang.Throwable -> L9f
-            goto La1
-        L9f:
-            r8 = move-exception
-            goto Lb1
-        La1:
-            androidx.emoji2.text.xz1 r0 = new androidx.emoji2.text.xz1     // Catch: java.lang.Throwable -> L9f
-            android.content.res.Resources r1 = r1.f1412a     // Catch: java.lang.Throwable -> L9f
-            android.content.res.Configuration r1 = r1.getConfiguration()     // Catch: java.lang.Throwable -> L9f
-            r0.<init>(r4, r1, r8)     // Catch: java.lang.Throwable -> L9f
-            r3.append(r9, r0)     // Catch: java.lang.Throwable -> L9f
-            monitor-exit(r2)     // Catch: java.lang.Throwable -> L9f
-            goto Lb7
-        Lb1:
-            monitor-exit(r2)     // Catch: java.lang.Throwable -> L9f
-            throw r8
-        Lb3:
-            android.content.res.ColorStateList r4 = r0.getColorStateList(r9, r8)
-        Lb7:
-            return r4
-        Lb8:
-            monitor-exit(r2)     // Catch: java.lang.Throwable -> L3c
-            throw r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.kx0.z(android.content.Context, int):android.content.res.ColorStateList");
+    public static ColorStateList z(Context context, int i) {
+        ColorStateList colorStateList;
+        ColorStateList colorStateList2;
+        xz1 xz1Var;
+        Resources resources = context.getResources();
+        Resources.Theme theme = context.getTheme();
+        yz1 yz1Var = new yz1(resources, theme);
+        synchronized (zz1.c) {
+            try {
+                SparseArray sparseArray = (SparseArray) zz1.b.get(yz1Var);
+                colorStateList = null;
+                if (sparseArray != null && sparseArray.size() > 0 && (xz1Var = (xz1) sparseArray.get(i)) != null) {
+                    if (xz1Var.b.equals(resources.getConfiguration())) {
+                        if (theme == null) {
+                            if (xz1Var.c != 0) {
+                            }
+                            colorStateList2 = xz1Var.f1363a;
+                        }
+                        if (theme != null) {
+                        }
+                    }
+                    sparseArray.remove(i);
+                }
+                colorStateList2 = null;
+            } finally {
+            }
+        }
+        if (colorStateList2 != null) {
+            return colorStateList2;
+        }
+        ThreadLocal threadLocal = zz1.f1463a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
+        }
+        resources.getValue(i, typedValue, true);
+        int i2 = typedValue.type;
+        if (i2 < 28 || i2 > 31) {
+            try {
+                colorStateList = rt.a(resources, resources.getXml(i), theme);
+            } catch (Exception e2) {
+                Log.w("ResourcesCompat", "Failed to inflate ColorStateList, leaving it to the framework", e2);
+            }
+        }
+        if (colorStateList == null) {
+            return resources.getColorStateList(i, theme);
+        }
+        synchronized (zz1.c) {
+            try {
+                WeakHashMap weakHashMap = zz1.b;
+                SparseArray sparseArray2 = (SparseArray) weakHashMap.get(yz1Var);
+                if (sparseArray2 == null) {
+                    sparseArray2 = new SparseArray();
+                    weakHashMap.put(yz1Var, sparseArray2);
+                }
+                sparseArray2.append(i, new xz1(colorStateList, yz1Var.f1411a.getConfiguration(), theme));
+            } finally {
+            }
+        }
+        return colorStateList;
     }
 }

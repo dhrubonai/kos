@@ -10,7 +10,7 @@ import java.lang.reflect.Field;
 public final class vr2 implements View.OnApplyWindowInsetsListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public wv2 f1239a = null;
+    public wv2 f1238a = null;
     public final /* synthetic */ View b;
     public final /* synthetic */ gj1 c;
 
@@ -21,22 +21,22 @@ public final class vr2 implements View.OnApplyWindowInsetsListener {
 
     @Override // android.view.View.OnApplyWindowInsetsListener
     public WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        wv2 wv2VarD = wv2.d(view, windowInsets);
+        wv2 d = wv2.d(view, windowInsets);
         int i = Build.VERSION.SDK_INT;
         gj1 gj1Var = this.c;
         if (i < 30) {
             wr2.a(windowInsets, this.b);
-            if (wv2VarD.equals(this.f1239a)) {
-                return gj1Var.g(view, wv2VarD).c();
+            if (d.equals(this.f1238a)) {
+                return gj1Var.g(view, d).c();
             }
         }
-        this.f1239a = wv2VarD;
-        wv2 wv2VarG = gj1Var.g(view, wv2VarD);
+        this.f1238a = d;
+        wv2 g = gj1Var.g(view, d);
         if (i >= 30) {
-            return wv2VarG.c();
+            return g.c();
         }
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         ur2.c(view);
-        return wv2VarG.c();
+        return g.c();
     }
 }

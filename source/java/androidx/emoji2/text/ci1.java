@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public class ci1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final sf1 f199a = new sf1(new sh1[16]);
+    public final sf1 f198a = new sf1(new sh1[16]);
     public final ze1 b = new ze1(10);
 
     public boolean a(g81 g81Var, p01 p01Var, dx0 dx0Var, boolean z) {
-        sf1 sf1Var = this.f199a;
+        sf1 sf1Var = this.f198a;
         Object[] objArr = sf1Var.d;
         int i = sf1Var.f;
         boolean z2 = false;
@@ -20,7 +20,7 @@ public class ci1 {
     }
 
     public void b(dx0 dx0Var) {
-        sf1 sf1Var = this.f199a;
+        sf1 sf1Var = this.f198a;
         int i = sf1Var.f;
         while (true) {
             i--;

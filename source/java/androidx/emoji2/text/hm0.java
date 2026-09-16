@@ -32,10 +32,10 @@ public final class hm0 implements Runnable {
                 View view = q3Var.g;
                 if (view.isEnabled() && !view.isLongClickable() && q3Var.c()) {
                     view.getParent().requestDisallowInterceptTouchEvent(true);
-                    long jUptimeMillis = SystemClock.uptimeMillis();
-                    MotionEvent motionEventObtain = MotionEvent.obtain(jUptimeMillis, jUptimeMillis, 3, 0.0f, 0.0f, 0);
-                    view.onTouchEvent(motionEventObtain);
-                    motionEventObtain.recycle();
+                    long uptimeMillis = SystemClock.uptimeMillis();
+                    MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
+                    view.onTouchEvent(obtain);
+                    obtain.recycle();
                     q3Var.j = true;
                     break;
                 }

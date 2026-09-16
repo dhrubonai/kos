@@ -8,15 +8,15 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class dz implements q72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicReference f280a;
+    public final AtomicReference f279a;
 
     public dz(q72 q72Var) {
-        this.f280a = new AtomicReference(q72Var);
+        this.f279a = new AtomicReference(q72Var);
     }
 
     @Override // androidx.emoji2.text.q72
     public final Iterator iterator() {
-        q72 q72Var = (q72) this.f280a.getAndSet(null);
+        q72 q72Var = (q72) this.f279a.getAndSet(null);
         if (q72Var != null) {
             return q72Var.iterator();
         }

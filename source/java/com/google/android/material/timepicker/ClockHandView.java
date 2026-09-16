@@ -46,25 +46,25 @@ class ClockHandView extends View {
         this.i = paint;
         this.j = new RectF();
         this.p = 1;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.e, R.attr.materialClockStyle, R.style.Widget_MaterialComponents_TimePicker_Clock);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.e, R.attr.materialClockStyle, R.style.Widget_MaterialComponents_TimePicker_Clock);
         az0.c0(context, R.attr.motionDurationLong2, 200);
         az0.d0(context, R.attr.motionEasingEmphasizedInterpolator, je.b);
-        this.o = typedArrayObtainStyledAttributes.getDimensionPixelSize(1, 0);
-        this.g = typedArrayObtainStyledAttributes.getDimensionPixelSize(2, 0);
+        this.o = obtainStyledAttributes.getDimensionPixelSize(1, 0);
+        this.g = obtainStyledAttributes.getDimensionPixelSize(2, 0);
         this.k = getResources().getDimensionPixelSize(R.dimen.material_clock_hand_stroke_width);
         this.h = r5.getDimensionPixelSize(R.dimen.material_clock_hand_center_dot_radius);
-        int color = typedArrayObtainStyledAttributes.getColor(0, 0);
+        int color = obtainStyledAttributes.getColor(0, 0);
         paint.setAntiAlias(true);
         paint.setColor(color);
         b(0.0f);
         ViewConfiguration.get(context).getScaledTouchSlop();
         setImportantForAccessibility(2);
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.google.android.material.timepicker.d
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
                 int i = ClockHandView.q;
-                this.f1471a.c(((Float) valueAnimator2.getAnimatedValue()).floatValue());
+                ClockHandView.this.c(((Float) valueAnimator2.getAnimatedValue()).floatValue());
             }
         });
         valueAnimator.addListener(new ms());
@@ -85,11 +85,11 @@ class ClockHandView extends View {
         this.n = Math.toRadians(f2 - 90.0f);
         int height = getHeight() / 2;
         int width = getWidth() / 2;
-        float fA = a(this.p);
-        float fCos = (((float) Math.cos(this.n)) * fA) + width;
-        float fSin = (fA * ((float) Math.sin(this.n))) + height;
+        float a2 = a(this.p);
+        float cos = (((float) Math.cos(this.n)) * a2) + width;
+        float sin = (a2 * ((float) Math.sin(this.n))) + height;
         float f3 = this.g;
-        this.j.set(fCos - f3, fSin - f3, fCos + f3, fSin + f3);
+        this.j.set(cos - f3, sin - f3, cos + f3, sin + f3);
         ArrayList arrayList = this.f;
         int size = arrayList.size();
         int i = 0;
@@ -111,16 +111,16 @@ class ClockHandView extends View {
         int height = getHeight() / 2;
         int width = getWidth() / 2;
         float f = width;
-        float fA = a(this.p);
-        float fCos = (((float) Math.cos(this.n)) * fA) + f;
+        float a2 = a(this.p);
+        float cos = (((float) Math.cos(this.n)) * a2) + f;
         float f2 = height;
-        float fSin = (fA * ((float) Math.sin(this.n))) + f2;
+        float sin = (a2 * ((float) Math.sin(this.n))) + f2;
         Paint paint = this.i;
         paint.setStrokeWidth(0.0f);
-        canvas.drawCircle(fCos, fSin, this.g, paint);
-        double dSin = Math.sin(this.n);
+        canvas.drawCircle(cos, sin, this.g, paint);
+        double sin2 = Math.sin(this.n);
         paint.setStrokeWidth(this.k);
-        canvas.drawLine(f, f2, width + ((int) (Math.cos(this.n) * d)), height + ((int) (d * dSin)), paint);
+        canvas.drawLine(f, f2, width + ((int) (Math.cos(this.n) * r2)), height + ((int) (r2 * sin2)), paint);
         canvas.drawCircle(f, f2, this.h, paint);
     }
 
@@ -163,12 +163,14 @@ class ClockHandView extends View {
         }
         float f = i;
         boolean z5 = this.l != f;
-        if (z && z5) {
-            z3 = true;
-        } else if (z5 || z2) {
-            b(f);
-            z3 = true;
+        if (!z || !z5) {
+            if (z5 || z2) {
+                b(f);
+            }
+            this.m = z4 | z3;
+            return true;
         }
+        z3 = true;
         this.m = z4 | z3;
         return true;
     }

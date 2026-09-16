@@ -9,25 +9,25 @@ import java.util.Map;
 public final class ba1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Map f140a;
+    public final Map f139a;
 
     public ba1(Map map) {
-        this.f140a = map;
+        this.f139a = map;
     }
 
     public final Object a(float f) {
         Object next;
-        Iterator it = this.f140a.entrySet().iterator();
+        Iterator it = this.f139a.entrySet().iterator();
         if (it.hasNext()) {
             next = it.next();
             if (it.hasNext()) {
-                float fAbs = Math.abs(f - ((Number) ((Map.Entry) next).getValue()).floatValue());
+                float abs = Math.abs(f - ((Number) ((Map.Entry) next).getValue()).floatValue());
                 do {
                     Object next2 = it.next();
-                    float fAbs2 = Math.abs(f - ((Number) ((Map.Entry) next2).getValue()).floatValue());
-                    if (Float.compare(fAbs, fAbs2) > 0) {
+                    float abs2 = Math.abs(f - ((Number) ((Map.Entry) next2).getValue()).floatValue());
+                    if (Float.compare(abs, abs2) > 0) {
                         next = next2;
-                        fAbs = fAbs2;
+                        abs = abs2;
                     }
                 } while (it.hasNext());
             }
@@ -43,19 +43,19 @@ public final class ba1 {
 
     public final Object b(float f, boolean z) {
         Object next;
-        Iterator it = this.f140a.entrySet().iterator();
+        Iterator it = this.f139a.entrySet().iterator();
         if (it.hasNext()) {
             next = it.next();
             if (it.hasNext()) {
-                float fFloatValue = ((Number) ((Map.Entry) next).getValue()).floatValue();
-                float f2 = z ? fFloatValue - f : f - fFloatValue;
+                float floatValue = ((Number) ((Map.Entry) next).getValue()).floatValue();
+                float f2 = z ? floatValue - f : f - floatValue;
                 if (f2 < 0.0f) {
                     f2 = Float.POSITIVE_INFINITY;
                 }
                 do {
                     Object next2 = it.next();
-                    float fFloatValue2 = ((Number) ((Map.Entry) next2).getValue()).floatValue();
-                    float f3 = z ? fFloatValue2 - f : f - fFloatValue2;
+                    float floatValue2 = ((Number) ((Map.Entry) next2).getValue()).floatValue();
+                    float f3 = z ? floatValue2 - f : f - floatValue2;
                     if (f3 < 0.0f) {
                         f3 = Float.POSITIVE_INFINITY;
                     }
@@ -76,27 +76,27 @@ public final class ba1 {
     }
 
     public final float c() {
-        Float fValueOf;
-        Collection collectionValues = this.f140a.values();
-        lx0.x(collectionValues, "<this>");
-        Iterator it = collectionValues.iterator();
+        Float valueOf;
+        Collection values = this.f139a.values();
+        lx0.x(values, "<this>");
+        Iterator it = values.iterator();
         if (it.hasNext()) {
-            float fFloatValue = ((Number) it.next()).floatValue();
+            float floatValue = ((Number) it.next()).floatValue();
             while (it.hasNext()) {
-                fFloatValue = Math.min(fFloatValue, ((Number) it.next()).floatValue());
+                floatValue = Math.min(floatValue, ((Number) it.next()).floatValue());
             }
-            fValueOf = Float.valueOf(fFloatValue);
+            valueOf = Float.valueOf(floatValue);
         } else {
-            fValueOf = null;
+            valueOf = null;
         }
-        if (fValueOf != null) {
-            return fValueOf.floatValue();
+        if (valueOf != null) {
+            return valueOf.floatValue();
         }
         return Float.NaN;
     }
 
     public final float d(Object obj) {
-        Float f = (Float) this.f140a.get(obj);
+        Float f = (Float) this.f139a.get(obj);
         if (f != null) {
             return f.floatValue();
         }
@@ -110,14 +110,14 @@ public final class ba1 {
         if (!(obj instanceof ba1)) {
             return false;
         }
-        return lx0.n(this.f140a, ((ba1) obj).f140a);
+        return lx0.n(this.f139a, ((ba1) obj).f139a);
     }
 
     public final int hashCode() {
-        return this.f140a.hashCode() * 31;
+        return this.f139a.hashCode() * 31;
     }
 
     public final String toString() {
-        return "MapDraggableAnchors(" + this.f140a + ')';
+        return "MapDraggableAnchors(" + this.f139a + ')';
     }
 }

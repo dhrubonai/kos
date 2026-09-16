@@ -58,14 +58,14 @@ public interface IResultReceiver2 extends IInterface {
 
             @Override // android.support.v4.os.IResultReceiver2
             public void send(int i, Bundle bundle) {
-                Parcel parcelObtain = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(IResultReceiver2.DESCRIPTOR);
-                    parcelObtain.writeInt(i);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    this.mRemote.transact(1, parcelObtain, null, 1);
+                    obtain.writeInterfaceToken(IResultReceiver2.DESCRIPTOR);
+                    obtain.writeInt(i);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    this.mRemote.transact(1, obtain, null, 1);
                 } finally {
-                    parcelObtain.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -78,8 +78,8 @@ public interface IResultReceiver2 extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(IResultReceiver2.DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IResultReceiver2)) ? new Proxy(iBinder) : (IResultReceiver2) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IResultReceiver2.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IResultReceiver2)) ? new Proxy(iBinder) : (IResultReceiver2) queryLocalInterface;
         }
 
         @Override // android.os.Binder

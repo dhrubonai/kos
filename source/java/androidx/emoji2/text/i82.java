@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class i82 extends j82 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final i82 f514a = new i82();
+    public static final i82 f513a = new i82();
     public static final i82 b = new i82();
     public static final i82 c = new i82();
 }

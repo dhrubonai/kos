@@ -7,5 +7,5 @@ import java.util.Set;
 public abstract class xg0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Set f1337a = a01.c0("image/jpeg", "image/webp", "image/heic", "image/heif");
+    public static final Set f1336a = a01.c0("image/jpeg", "image/webp", "image/heic", "image/heif");
 }

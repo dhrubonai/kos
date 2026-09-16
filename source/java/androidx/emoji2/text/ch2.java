@@ -24,9 +24,9 @@ public final class ch2 extends g01 implements um0 {
             case 0:
                 ge geVar = (ge) obj;
                 Object value = geVar.e.getValue();
-                wo2 wo2Var = qq2.f974a;
-                r1.invoke(value, Float.valueOf(((ke) geVar.f).f635a));
-                return up2.f1187a;
+                wo2 wo2Var = qq2.f973a;
+                r1.invoke(value, Float.valueOf(((ke) geVar.f).f634a));
+                return up2.f1186a;
             default:
                 return r1.e(Long.valueOf(((Number) obj).longValue()));
         }
@@ -36,7 +36,7 @@ public final class ch2 extends g01 implements um0 {
     /* JADX WARN: Multi-variable type inference failed */
     public ch2(Function2 function2) {
         super(1);
-        wo2 wo2Var = qq2.f974a;
+        wo2 wo2Var = qq2.f973a;
         this.f = (g01) function2;
     }
 }

@@ -9,10 +9,10 @@ import android.view.animation.LinearInterpolator;
 public abstract class qk {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f961a = 0;
+    public static final /* synthetic */ int f960a = 0;
 
     static {
-        LinearInterpolator linearInterpolator = je.f575a;
+        LinearInterpolator linearInterpolator = je.f574a;
         new Handler(Looper.getMainLooper(), new nk());
     }
 }

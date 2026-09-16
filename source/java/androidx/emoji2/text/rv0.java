@@ -13,24 +13,24 @@ import android.view.inputmethod.InputConnectionWrapper;
 public final class rv0 extends InputConnectionWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ j4 f1035a;
+    public final /* synthetic */ j4 f1034a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public rv0(InputConnection inputConnection, j4 j4Var) {
         super(inputConnection, false);
-        this.f1035a = j4Var;
+        this.f1034a = j4Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
-    public final boolean performPrivateCommand(String str, Bundle bundle) throws Throwable {
+    public final boolean performPrivateCommand(String str, Bundle bundle) {
         Object[] objArr;
         ResultReceiver resultReceiver;
-        j4 j4Var = this.f1035a;
-        boolean zD = false;
-        zD = false;
-        zD = false;
-        zD = false;
+        j4 j4Var = this.f1034a;
+        boolean z = false;
+        z = false;
+        z = false;
+        z = false;
         if (bundle != null) {
             if (TextUtils.equals("androidx.core.view.inputmethod.InputConnectionCompat.COMMIT_CONTENT", str)) {
                 objArr = false;
@@ -46,10 +46,10 @@ public final class rv0 extends InputConnectionWrapper {
                     int i = bundle.getInt(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_FLAGS");
                     Bundle bundle2 = (Bundle) bundle.getParcelable(objArr != false ? "android.support.v13.view.inputmethod.InputConnectionCompat.CONTENT_OPTS" : "androidx.core.view.inputmethod.InputConnectionCompat.CONTENT_OPTS");
                     if (uri != null && clipDescription != null) {
-                        zD = j4Var.d(new p4(uri, clipDescription, uri2), i, bundle2);
+                        z = j4Var.d(new p4(uri, clipDescription, uri2), i, bundle2);
                     }
                     if (resultReceiver != null) {
-                        resultReceiver.send(zD ? 1 : 0, null);
+                        resultReceiver.send(z ? 1 : 0, null);
                     }
                 } catch (Throwable th) {
                     th = th;
@@ -63,7 +63,7 @@ public final class rv0 extends InputConnectionWrapper {
                 resultReceiver = null;
             }
         }
-        if (zD) {
+        if (z) {
             return true;
         }
         return super.performPrivateCommand(str, bundle);

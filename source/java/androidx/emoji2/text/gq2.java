@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class gq2 implements qe {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f435a;
+    public final String f434a;
 
     public gq2(String str) {
-        this.f435a = str;
+        this.f434a = str;
     }
 
     public final boolean equals(Object obj) {
@@ -16,16 +16,16 @@ public final class gq2 implements qe {
             return true;
         }
         if (obj instanceof gq2) {
-            return lx0.n(this.f435a, ((gq2) obj).f435a);
+            return lx0.n(this.f434a, ((gq2) obj).f434a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f435a.hashCode();
+        return this.f434a.hashCode();
     }
 
     public final String toString() {
-        return jx0.i(new StringBuilder("UrlAnnotation(url="), this.f435a, ')');
+        return jx0.i(new StringBuilder("UrlAnnotation(url="), this.f434a, ')');
     }
 }

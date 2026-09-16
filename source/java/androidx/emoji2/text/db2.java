@@ -39,12 +39,12 @@ public class db2 {
         int i2 = this.f;
         int[] iArr = this.d;
         if (iArr.length < i) {
-            int[] iArrCopyOf = Arrays.copyOf(iArr, i);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.d = iArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.e, i * 2);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.e = objArrCopyOf;
+            int[] copyOf = Arrays.copyOf(iArr, i);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.e, i * 2);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.e = copyOf2;
         }
         if (this.f != i2) {
             throw new ConcurrentModificationException();
@@ -56,18 +56,18 @@ public class db2 {
         if (i2 == 0) {
             return -1;
         }
-        int iQ = lx0.q(i2, i, this.d);
-        if (iQ < 0 || lx0.n(obj, this.e[iQ << 1])) {
-            return iQ;
+        int q = lx0.q(i2, i, this.d);
+        if (q < 0 || lx0.n(obj, this.e[q << 1])) {
+            return q;
         }
-        int i3 = iQ + 1;
+        int i3 = q + 1;
         while (i3 < i2 && this.d[i3] == i) {
             if (lx0.n(obj, this.e[i3 << 1])) {
                 return i3;
             }
             i3++;
         }
-        for (int i4 = iQ - 1; i4 >= 0 && this.d[i4] == i; i4--) {
+        for (int i4 = q - 1; i4 >= 0 && this.d[i4] == i; i4--) {
             if (lx0.n(obj, this.e[i4 << 1])) {
                 return i4;
             }
@@ -103,18 +103,18 @@ public class db2 {
         if (i == 0) {
             return -1;
         }
-        int iQ = lx0.q(i, 0, this.d);
-        if (iQ < 0 || this.e[iQ << 1] == null) {
-            return iQ;
+        int q = lx0.q(i, 0, this.d);
+        if (q < 0 || this.e[q << 1] == null) {
+            return q;
         }
-        int i2 = iQ + 1;
+        int i2 = q + 1;
         while (i2 < i && this.d[i2] == 0) {
             if (this.e[i2 << 1] == null) {
                 return i2;
             }
             i2++;
         }
-        for (int i3 = iQ - 1; i3 >= 0 && this.d[i3] == 0; i3--) {
+        for (int i3 = q - 1; i3 >= 0 && this.d[i3] == 0; i3--) {
             if (this.e[i3 << 1] == null) {
                 return i3;
             }
@@ -134,14 +134,14 @@ public class db2 {
                 }
                 db2 db2Var = (db2) obj;
                 for (int i2 = 0; i2 < i; i2++) {
-                    Object objF = f(i2);
-                    Object objI = i(i2);
-                    Object obj2 = db2Var.get(objF);
-                    if (objI == null) {
-                        if (obj2 != null || !db2Var.containsKey(objF)) {
+                    Object f = f(i2);
+                    Object i3 = i(i2);
+                    Object obj2 = db2Var.get(f);
+                    if (i3 == null) {
+                        if (obj2 != null || !db2Var.containsKey(f)) {
                             return false;
                         }
-                    } else if (!objI.equals(obj2)) {
+                    } else if (!i3.equals(obj2)) {
                         return false;
                     }
                 }
@@ -150,16 +150,16 @@ public class db2 {
             if (!(obj instanceof Map) || this.f != ((Map) obj).size()) {
                 return false;
             }
-            int i3 = this.f;
-            for (int i4 = 0; i4 < i3; i4++) {
-                Object objF2 = f(i4);
-                Object objI2 = i(i4);
-                Object obj3 = ((Map) obj).get(objF2);
-                if (objI2 == null) {
-                    if (obj3 != null || !((Map) obj).containsKey(objF2)) {
+            int i4 = this.f;
+            for (int i5 = 0; i5 < i4; i5++) {
+                Object f2 = f(i5);
+                Object i6 = i(i5);
+                Object obj3 = ((Map) obj).get(f2);
+                if (i6 == null) {
+                    if (obj3 != null || !((Map) obj).containsKey(f2)) {
                         return false;
                     }
-                } else if (!objI2.equals(obj3)) {
+                } else if (!i6.equals(obj3)) {
                     return false;
                 }
             }
@@ -209,12 +209,12 @@ public class db2 {
             objArr3[i6 + 1] = null;
         } else {
             int i7 = i2 > 8 ? i2 + (i2 >> 1) : 8;
-            int[] iArrCopyOf = Arrays.copyOf(iArr, i7);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.d = iArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.e, i7 << 1);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.e = objArrCopyOf;
+            int[] copyOf = Arrays.copyOf(iArr, i7);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.e, i7 << 1);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.e = copyOf2;
             if (i2 != this.f) {
                 throw new ConcurrentModificationException();
             }
@@ -236,16 +236,16 @@ public class db2 {
     }
 
     public Object get(Object obj) {
-        int iD = d(obj);
-        if (iD >= 0) {
-            return this.e[(iD << 1) + 1];
+        int d = d(obj);
+        if (d >= 0) {
+            return this.e[(d << 1) + 1];
         }
         return null;
     }
 
     public final Object getOrDefault(Object obj, Object obj2) {
-        int iD = d(obj);
-        return iD >= 0 ? this.e[(iD << 1) + 1] : obj2;
+        int d = d(obj);
+        return d >= 0 ? this.e[(d << 1) + 1] : obj2;
     }
 
     public final Object h(int i, Object obj) {
@@ -270,14 +270,14 @@ public class db2 {
         int i = this.f;
         int i2 = 1;
         int i3 = 0;
-        int iHashCode = 0;
+        int i4 = 0;
         while (i3 < i) {
             Object obj = objArr[i2];
-            iHashCode += (obj != null ? obj.hashCode() : 0) ^ iArr[i3];
+            i4 += (obj != null ? obj.hashCode() : 0) ^ iArr[i3];
             i3++;
             i2 += 2;
         }
-        return iHashCode;
+        return i4;
     }
 
     public final Object i(int i) {
@@ -298,16 +298,16 @@ public class db2 {
 
     public final Object put(Object obj, Object obj2) {
         int i = this.f;
-        int iHashCode = obj != null ? obj.hashCode() : 0;
-        int iC = obj != null ? c(iHashCode, obj) : e();
-        if (iC >= 0) {
-            int i2 = (iC << 1) + 1;
+        int hashCode = obj != null ? obj.hashCode() : 0;
+        int c = obj != null ? c(hashCode, obj) : e();
+        if (c >= 0) {
+            int i2 = (c << 1) + 1;
             Object[] objArr = this.e;
             Object obj3 = objArr[i2];
             objArr[i2] = obj2;
             return obj3;
         }
-        int i3 = ~iC;
+        int i3 = ~c;
         int[] iArr = this.d;
         if (i >= iArr.length) {
             int i4 = 8;
@@ -316,12 +316,12 @@ public class db2 {
             } else if (i < 4) {
                 i4 = 4;
             }
-            int[] iArrCopyOf = Arrays.copyOf(iArr, i4);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.d = iArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.e, i4 << 1);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.e = objArrCopyOf;
+            int[] copyOf = Arrays.copyOf(iArr, i4);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.e, i4 << 1);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.e = copyOf2;
             if (i != this.f) {
                 throw new ConcurrentModificationException();
             }
@@ -337,7 +337,7 @@ public class db2 {
         if (i == i6) {
             int[] iArr3 = this.d;
             if (i3 < iArr3.length) {
-                iArr3[i3] = iHashCode;
+                iArr3[i3] = hashCode;
                 Object[] objArr3 = this.e;
                 int i7 = i3 << 1;
                 objArr3[i7] = obj;
@@ -355,17 +355,17 @@ public class db2 {
     }
 
     public Object remove(Object obj) {
-        int iD = d(obj);
-        if (iD >= 0) {
-            return g(iD);
+        int d = d(obj);
+        if (d >= 0) {
+            return g(d);
         }
         return null;
     }
 
     public final Object replace(Object obj, Object obj2) {
-        int iD = d(obj);
-        if (iD >= 0) {
-            return h(iD, obj2);
+        int d = d(obj);
+        if (d >= 0) {
+            return h(d, obj2);
         }
         return null;
     }
@@ -385,41 +385,41 @@ public class db2 {
             if (i2 > 0) {
                 sb.append(", ");
             }
-            Object objF = f(i2);
-            if (objF != sb) {
-                sb.append(objF);
+            Object f = f(i2);
+            if (f != sb) {
+                sb.append(f);
             } else {
                 sb.append("(this Map)");
             }
             sb.append('=');
-            Object objI = i(i2);
-            if (objI != sb) {
-                sb.append(objI);
+            Object i3 = i(i2);
+            if (i3 != sb) {
+                sb.append(i3);
             } else {
                 sb.append("(this Map)");
             }
         }
         sb.append('}');
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public final boolean remove(Object obj, Object obj2) {
-        int iD = d(obj);
-        if (iD < 0 || !lx0.n(obj2, i(iD))) {
+        int d = d(obj);
+        if (d < 0 || !lx0.n(obj2, i(d))) {
             return false;
         }
-        g(iD);
+        g(d);
         return true;
     }
 
     public final boolean replace(Object obj, Object obj2, Object obj3) {
-        int iD = d(obj);
-        if (iD < 0 || !lx0.n(obj2, i(iD))) {
+        int d = d(obj);
+        if (d < 0 || !lx0.n(obj2, i(d))) {
             return false;
         }
-        h(iD, obj3);
+        h(d, obj3);
         return true;
     }
 }

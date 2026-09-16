@@ -20,9 +20,9 @@ public final class lc2 implements Set, vy0 {
     private final boolean a(Collection collection) {
         mp1 mp1Var;
         int i;
-        ec2 ec2VarK;
-        boolean zD;
-        Set setQ0 = ws.Q0(collection);
+        ec2 k;
+        boolean d;
+        Set Q0 = ws.Q0(collection);
         ad2 ad2Var = this.d;
         boolean z = false;
         do {
@@ -34,27 +34,27 @@ public final class lc2 implements Set, vy0 {
                 i = zc2Var2.d;
             }
             lx0.u(mp1Var);
-            lp1 lp1VarBuilder = mp1Var.builder();
+            lp1 builder = mp1Var.builder();
             Iterator it = ad2Var.e.iterator();
             while (((cf2) it).hasNext()) {
                 Map.Entry entry = (Map.Entry) ((cf2) it).next();
-                if (!setQ0.contains(entry.getKey())) {
-                    lp1VarBuilder.remove(entry.getKey());
+                if (!Q0.contains(entry.getKey())) {
+                    builder.remove(entry.getKey());
                     z = true;
                 }
             }
-            mp1 mp1VarBuild = lp1VarBuilder.build();
-            if (lx0.n(mp1VarBuild, mp1Var)) {
+            mp1 build = builder.build();
+            if (lx0.n(build, mp1Var)) {
                 break;
             }
             zc2 zc2Var3 = ad2Var.d;
             lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zD = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, ec2VarK), i, mp1VarBuild);
+                k = kc2.k();
+                d = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, k), i, build);
             }
-            kc2.n(ec2VarK, ad2Var);
-        } while (!zD);
+            kc2.n(k, ad2Var);
+        } while (!d);
         return z;
     }
 
@@ -174,7 +174,7 @@ public final class lc2 implements Set, vy0 {
 
     @Override // java.util.Set, java.util.Collection
     public final boolean remove(Object obj) {
-        Object next;
+        Object obj2;
         switch (this.e) {
             case 0:
                 if (obj instanceof Map.Entry) {
@@ -188,14 +188,14 @@ public final class lc2 implements Set, vy0 {
                 Iterator it = ad2Var.e.iterator();
                 while (true) {
                     if (((cf2) it).hasNext()) {
-                        next = ((cf2) it).next();
-                        if (lx0.n(((Map.Entry) next).getValue(), obj)) {
+                        obj2 = ((cf2) it).next();
+                        if (lx0.n(((Map.Entry) obj2).getValue(), obj)) {
                         }
                     } else {
-                        next = null;
+                        obj2 = null;
                     }
                 }
-                Map.Entry entry = (Map.Entry) next;
+                Map.Entry entry = (Map.Entry) obj2;
                 if (entry == null) {
                     return false;
                 }
@@ -208,8 +208,8 @@ public final class lc2 implements Set, vy0 {
     public final boolean removeAll(Collection collection) {
         mp1 mp1Var;
         int i;
-        ec2 ec2VarK;
-        boolean zD;
+        ec2 k;
+        boolean d;
         switch (this.e) {
             case 0:
                 Iterator it = collection.iterator();
@@ -223,6 +223,7 @@ public final class lc2 implements Set, vy0 {
                     return z;
                     break;
                 }
+                break;
             case 1:
                 Iterator it2 = collection.iterator();
                 while (true) {
@@ -235,9 +236,8 @@ public final class lc2 implements Set, vy0 {
                     return z2;
                     break;
                 }
-                break;
             default:
-                Set setQ0 = ws.Q0(collection);
+                Set Q0 = ws.Q0(collection);
                 ad2 ad2Var = this.d;
                 boolean z3 = false;
                 do {
@@ -249,27 +249,27 @@ public final class lc2 implements Set, vy0 {
                         i = zc2Var2.d;
                     }
                     lx0.u(mp1Var);
-                    lp1 lp1VarBuilder = mp1Var.builder();
+                    lp1 builder = mp1Var.builder();
                     Iterator it3 = ad2Var.e.iterator();
                     while (((cf2) it3).hasNext()) {
                         Map.Entry entry = (Map.Entry) ((cf2) it3).next();
-                        if (setQ0.contains(entry.getValue())) {
-                            lp1VarBuilder.remove(entry.getKey());
+                        if (Q0.contains(entry.getValue())) {
+                            builder.remove(entry.getKey());
                             z3 = true;
                         }
                     }
-                    mp1 mp1VarBuild = lp1VarBuilder.build();
-                    if (!lx0.n(mp1VarBuild, mp1Var)) {
+                    mp1 build = builder.build();
+                    if (!lx0.n(build, mp1Var)) {
                         zc2 zc2Var3 = ad2Var.d;
                         lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
                         synchronized (kc2.c) {
-                            ec2VarK = kc2.k();
-                            zD = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, ec2VarK), i, mp1VarBuild);
+                            k = kc2.k();
+                            d = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, k), i, build);
                         }
-                        kc2.n(ec2VarK, ad2Var);
+                        kc2.n(k, ad2Var);
                     }
                     return z3;
-                } while (!zD);
+                } while (!d);
                 return z3;
         }
     }
@@ -278,20 +278,20 @@ public final class lc2 implements Set, vy0 {
     public final boolean retainAll(Collection collection) {
         mp1 mp1Var;
         int i;
-        ec2 ec2VarK;
-        boolean zD;
+        ec2 k;
+        boolean d;
         mp1 mp1Var2;
         int i2;
-        ec2 ec2VarK2;
-        boolean zD2;
+        ec2 k2;
+        boolean d2;
         switch (this.e) {
             case 0:
                 Collection<Map.Entry> collection2 = collection;
-                int iT = ha1.T(ys.r0(collection2));
-                if (iT < 16) {
-                    iT = 16;
+                int T = ha1.T(ys.r0(collection2));
+                if (T < 16) {
+                    T = 16;
                 }
-                LinkedHashMap linkedHashMap = new LinkedHashMap(iT);
+                LinkedHashMap linkedHashMap = new LinkedHashMap(T);
                 for (Map.Entry entry : collection2) {
                     linkedHashMap.put(entry.getKey(), entry.getValue());
                 }
@@ -306,32 +306,32 @@ public final class lc2 implements Set, vy0 {
                         i = zc2Var2.d;
                     }
                     lx0.u(mp1Var);
-                    lp1 lp1VarBuilder = mp1Var.builder();
+                    lp1 builder = mp1Var.builder();
                     Iterator it = ad2Var.e.iterator();
                     while (((cf2) it).hasNext()) {
                         Map.Entry entry2 = (Map.Entry) ((cf2) it).next();
                         if (!linkedHashMap.containsKey(entry2.getKey()) || !lx0.n(linkedHashMap.get(entry2.getKey()), entry2.getValue())) {
-                            lp1VarBuilder.remove(entry2.getKey());
+                            builder.remove(entry2.getKey());
                             z = true;
                         }
                     }
-                    mp1 mp1VarBuild = lp1VarBuilder.build();
-                    if (!lx0.n(mp1VarBuild, mp1Var)) {
+                    mp1 build = builder.build();
+                    if (!lx0.n(build, mp1Var)) {
                         zc2 zc2Var3 = ad2Var.d;
                         lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
                         synchronized (kc2.c) {
-                            ec2VarK = kc2.k();
-                            zD = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, ec2VarK), i, mp1VarBuild);
+                            k = kc2.k();
+                            d = ad2.d(ad2Var, (zc2) kc2.w(zc2Var3, ad2Var, k), i, build);
                         }
-                        kc2.n(ec2VarK, ad2Var);
+                        kc2.n(k, ad2Var);
                     }
                     return z;
-                } while (!zD);
+                } while (!d);
                 return z;
             case 1:
                 return a(collection);
             default:
-                Set setQ0 = ws.Q0(collection);
+                Set Q0 = ws.Q0(collection);
                 ad2 ad2Var2 = this.d;
                 boolean z2 = false;
                 do {
@@ -343,27 +343,27 @@ public final class lc2 implements Set, vy0 {
                         i2 = zc2Var5.d;
                     }
                     lx0.u(mp1Var2);
-                    lp1 lp1VarBuilder2 = mp1Var2.builder();
+                    lp1 builder2 = mp1Var2.builder();
                     Iterator it2 = ad2Var2.e.iterator();
                     while (((cf2) it2).hasNext()) {
                         Map.Entry entry3 = (Map.Entry) ((cf2) it2).next();
-                        if (!setQ0.contains(entry3.getValue())) {
-                            lp1VarBuilder2.remove(entry3.getKey());
+                        if (!Q0.contains(entry3.getValue())) {
+                            builder2.remove(entry3.getKey());
                             z2 = true;
                         }
                     }
-                    mp1 mp1VarBuild2 = lp1VarBuilder2.build();
-                    if (!lx0.n(mp1VarBuild2, mp1Var2)) {
+                    mp1 build2 = builder2.build();
+                    if (!lx0.n(build2, mp1Var2)) {
                         zc2 zc2Var6 = ad2Var2.d;
                         lx0.v(zc2Var6, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
                         synchronized (kc2.c) {
-                            ec2VarK2 = kc2.k();
-                            zD2 = ad2.d(ad2Var2, (zc2) kc2.w(zc2Var6, ad2Var2, ec2VarK2), i2, mp1VarBuild2);
+                            k2 = kc2.k();
+                            d2 = ad2.d(ad2Var2, (zc2) kc2.w(zc2Var6, ad2Var2, k2), i2, build2);
                         }
-                        kc2.n(ec2VarK2, ad2Var2);
+                        kc2.n(k2, ad2Var2);
                     }
                     return z2;
-                } while (!zD2);
+                } while (!d2);
                 return z2;
         }
     }

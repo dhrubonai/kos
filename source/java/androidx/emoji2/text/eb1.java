@@ -43,54 +43,73 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         this.i = i11Var;
     }
 
-    public final void A0(long j, float f, um0 um0Var, rp0 rp0Var) throws Throwable {
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0032 A[Catch: all -> 0x0017, TryCatch #0 {all -> 0x0017, blocks: (B:3:0x0007, B:5:0x0012, B:8:0x002e, B:10:0x0032, B:14:0x004e, B:16:0x0056, B:18:0x0064, B:20:0x006f, B:21:0x0073, B:22:0x005a, B:23:0x003e, B:25:0x0044, B:27:0x0048, B:28:0x004a, B:29:0x0087, B:31:0x008b, B:35:0x0093, B:36:0x0098, B:41:0x001b, B:43:0x001f, B:45:0x0023, B:47:0x002b, B:48:0x0027), top: B:2:0x0007 }] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0093 A[Catch: all -> 0x0017, TryCatch #0 {all -> 0x0017, blocks: (B:3:0x0007, B:5:0x0012, B:8:0x002e, B:10:0x0032, B:14:0x004e, B:16:0x0056, B:18:0x0064, B:20:0x006f, B:21:0x0073, B:22:0x005a, B:23:0x003e, B:25:0x0044, B:27:0x0048, B:28:0x004a, B:29:0x0087, B:31:0x008b, B:35:0x0093, B:36:0x0098, B:41:0x001b, B:43:0x001f, B:45:0x0023, B:47:0x002b, B:48:0x0027), top: B:2:0x0007 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void A0(long j, float f, um0 um0Var, rp0 rp0Var) {
+        r81 r81Var;
+        r81 r81Var2;
         boolean z;
         gr1 placementScope;
         i11 i11Var = this.i;
-        e11 e11Var = i11Var.f502a;
-        e11 e11Var2 = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
+        e11 e11Var2 = i11Var.f501a;
         boolean z2 = true;
         try {
             this.w = true;
-            if (!nw0.b(j, this.p) || this.O) {
-                if (i11Var.k || i11Var.j || this.O) {
-                    this.y = true;
-                    this.O = false;
+            if (nw0.b(j, this.p)) {
+                if (this.O) {
                 }
-                r0();
+                r81Var = i11Var.q;
+                if (r81Var != null) {
+                    i11 i11Var2 = r81Var.i;
+                    if (lz0.y(i11Var2.f501a)) {
+                        z = true;
+                    } else {
+                        if (r81Var.t == o81.f && !i11Var2.b) {
+                            i11Var2.c = true;
+                        }
+                        z = i11Var2.c;
+                    }
+                    if (z) {
+                        xh1 xh1Var = i11Var.a().t;
+                        if (xh1Var == null || (placementScope = xh1Var.o) == null) {
+                            placementScope = ((v7) h11.a(e11Var2)).getPlacementScope();
+                        }
+                        r81 r81Var3 = i11Var.q;
+                        lx0.u(r81Var3);
+                        e11 u = e11Var2.u();
+                        if (u != null) {
+                            u.I.h = 0;
+                        }
+                        r81Var3.l = Integer.MAX_VALUE;
+                        placementScope.f(r81Var3, (int) (j >> 32), (int) (4294967295L & j), 0.0f);
+                    }
+                }
+                r81Var2 = i11Var.q;
+                if (r81Var2 != null || r81Var2.n) {
+                    z2 = false;
+                }
+                if (z2) {
+                    iv0.b("Error: Placement happened before lookahead.");
+                }
+                z0(j, f, um0Var, rp0Var);
             }
-            r81 r81Var = i11Var.q;
+            if (i11Var.k || i11Var.j || this.O) {
+                this.y = true;
+                this.O = false;
+            }
+            r0();
+            r81Var = i11Var.q;
             if (r81Var != null) {
-                i11 i11Var2 = r81Var.i;
-                if (lz0.y(i11Var2.f502a)) {
-                    z = true;
-                } else {
-                    if (r81Var.t == o81.f && !i11Var2.b) {
-                        i11Var2.c = true;
-                    }
-                    z = i11Var2.c;
-                }
-                if (z) {
-                    xh1 xh1Var = i11Var.a().t;
-                    if (xh1Var == null || (placementScope = xh1Var.o) == null) {
-                        placementScope = ((v7) h11.a(e11Var2)).getPlacementScope();
-                    }
-                    r81 r81Var2 = i11Var.q;
-                    lx0.u(r81Var2);
-                    e11 e11VarU = e11Var2.u();
-                    if (e11VarU != null) {
-                        e11VarU.I.h = 0;
-                    }
-                    r81Var2.l = Integer.MAX_VALUE;
-                    placementScope.f(r81Var2, (int) (j >> 32), (int) (4294967295L & j), 0.0f);
-                }
             }
-            r81 r81Var3 = i11Var.q;
-            if (r81Var3 == null || r81Var3.n) {
-                z2 = false;
+            r81Var2 = i11Var.q;
+            if (r81Var2 != null) {
             }
+            z2 = false;
             if (z2) {
-                iv0.b("Error: Placement happened before lookahead.");
             }
             z0(j, f, um0Var, rp0Var);
         } catch (Throwable th) {
@@ -108,39 +127,72 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         }
     }
 
-    public final boolean B0(long j) throws Throwable {
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0054 A[Catch: all -> 0x0010, LOOP:0: B:22:0x0052->B:23:0x0054, LOOP_END, TryCatch #0 {all -> 0x0010, blocks: (B:3:0x0006, B:5:0x000a, B:6:0x0013, B:9:0x0023, B:13:0x002b, B:15:0x0033, B:18:0x003c, B:21:0x0045, B:23:0x0054, B:25:0x0064, B:27:0x007e, B:29:0x0088, B:33:0x0094), top: B:2:0x0006 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean B0(long j) {
+        boolean z;
+        int i;
+        int i2;
+        long j2;
         i11 i11Var = this.i;
-        e11 e11Var = i11Var.f502a;
-        e11 e11Var2 = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
+        e11 e11Var2 = i11Var.f501a;
         try {
             if (e11Var.S) {
                 iv0.a("measure is called on a deactivated node");
             }
-            tl1 tl1VarA = h11.a(e11Var2);
-            e11 e11VarU = e11Var2.u();
-            boolean z = true;
-            e11Var2.G = e11Var2.G || (e11VarU != null && e11VarU.G);
-            if (!e11Var2.q() && vz.b(this.g, j)) {
-                ((v7) tl1VarA).n(e11Var2, false);
+            tl1 a2 = h11.a(e11Var2);
+            e11 u = e11Var2.u();
+            boolean z2 = true;
+            if (!e11Var2.G && (u == null || !u.G)) {
+                z = false;
+                e11Var2.G = z;
+                if (!e11Var2.q() && vz.b(this.g, j)) {
+                    ((v7) a2).n(e11Var2, false);
+                    e11Var2.Y();
+                    return false;
+                }
+                this.A.d = false;
+                sf1 z3 = e11Var2.z();
+                Object[] objArr = z3.d;
+                i = z3.f;
+                for (i2 = 0; i2 < i; i2++) {
+                    ((e11) objArr[i2]).I.p.A.getClass();
+                }
+                this.m = true;
+                j2 = i11Var.a().f;
+                l0(j);
+                y0(j);
+                if (uw0.a(i11Var.a().f, j2) && i11Var.a().d == this.d && i11Var.a().e == this.e) {
+                    z2 = false;
+                }
+                k0((i11Var.a().e & 4294967295L) | (i11Var.a().d << 32));
+                return z2;
+            }
+            z = true;
+            e11Var2.G = z;
+            if (!e11Var2.q()) {
+                ((v7) a2).n(e11Var2, false);
                 e11Var2.Y();
                 return false;
             }
             this.A.d = false;
-            sf1 sf1VarZ = e11Var2.z();
-            Object[] objArr = sf1VarZ.d;
-            int i = sf1VarZ.f;
-            for (int i2 = 0; i2 < i; i2++) {
-                ((e11) objArr[i2]).I.p.A.getClass();
+            sf1 z32 = e11Var2.z();
+            Object[] objArr2 = z32.d;
+            i = z32.f;
+            while (i2 < i) {
             }
             this.m = true;
-            long j2 = i11Var.a().f;
+            j2 = i11Var.a().f;
             l0(j);
             y0(j);
-            if (uw0.a(i11Var.a().f, j2) && i11Var.a().d == this.d && i11Var.a().e == this.e) {
-                z = false;
+            if (uw0.a(i11Var.a().f, j2)) {
+                z2 = false;
             }
             k0((i11Var.a().e & 4294967295L) | (i11Var.a().d << 32));
-            return z;
+            return z2;
         } catch (Throwable th) {
             e11Var.Z(th);
             throw null;
@@ -149,43 +201,43 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     @Override // androidx.emoji2.text.s5
     public final void C(r5 r5Var) {
-        sf1 sf1VarZ = this.i.f502a.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        sf1 z = this.i.f501a.z();
+        Object[] objArr = z.d;
+        int i = z.f;
         for (int i2 = 0; i2 < i; i2++) {
             r5Var.e(((e11) objArr[i2]).I.p);
         }
     }
 
     @Override // androidx.emoji2.text.s5
-    public final void E() throws Throwable {
-        boolean zB0;
+    public final void E() {
+        boolean z;
         this.D = true;
         f11 f11Var = this.A;
         f11Var.h();
-        boolean z = this.y;
+        boolean z2 = this.y;
         i11 i11Var = this.i;
-        if (z) {
-            sf1 sf1VarZ = i11Var.f502a.z();
-            Object[] objArr = sf1VarZ.d;
-            int i = sf1VarZ.f;
+        if (z2) {
+            sf1 z3 = i11Var.f501a.z();
+            Object[] objArr = z3.d;
+            int i = z3.f;
             for (int i2 = 0; i2 < i; i2++) {
                 e11 e11Var = (e11) objArr[i2];
-                boolean zQ = e11Var.q();
+                boolean q = e11Var.q();
                 i11 i11Var2 = e11Var.I;
-                if (zQ && e11Var.r() == c11.d) {
+                if (q && e11Var.r() == c11.d) {
                     eb1 eb1Var = i11Var2.p;
                     vz vzVar = eb1Var.m ? new vz(eb1Var.g) : null;
                     if (vzVar != null) {
                         if (e11Var.E == c11.f) {
                             e11Var.e();
                         }
-                        zB0 = i11Var2.p.B0(vzVar.f1250a);
+                        z = i11Var2.p.B0(vzVar.f1249a);
                     } else {
-                        zB0 = false;
+                        z = false;
                     }
-                    if (zB0) {
-                        e11.W(i11Var.f502a, false, 7);
+                    if (z) {
+                        e11.W(i11Var.f501a, false, 7);
                     }
                 }
             }
@@ -195,7 +247,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
             a11 a11Var = i11Var.d;
             i11Var.d = a11.f;
             i11Var.g(false);
-            e11 e11Var2 = i11Var.f502a;
+            e11 e11Var2 = i11Var.f501a;
             wl1 snapshotObserver = ((v7) h11.a(e11Var2)).getSnapshotObserver();
             snapshotObserver.a(e11Var2, snapshotObserver.e, this.G);
             i11Var.d = a11Var;
@@ -217,13 +269,13 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     @Override // androidx.emoji2.text.s5
     public final void L() {
-        e11.W(this.i.f502a, false, 7);
+        e11.W(this.i.f501a, false, 7);
     }
 
     @Override // androidx.emoji2.text.ab1
     public final int N(int i) {
         i11 i11Var = this.i;
-        if (!lz0.y(i11Var.f502a)) {
+        if (!lz0.y(i11Var.f501a)) {
             w0();
             return i11Var.a().N(i);
         }
@@ -250,7 +302,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     @Override // androidx.emoji2.text.ab1
     public final int c(int i) {
         i11 i11Var = this.i;
-        if (!lz0.y(i11Var.f502a)) {
+        if (!lz0.y(i11Var.f501a)) {
             w0();
             return i11Var.a().c(i);
         }
@@ -261,33 +313,33 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     @Override // androidx.emoji2.text.s5
     public final ov0 e() {
-        return this.i.f502a.H.c;
+        return this.i.f501a.H.c;
     }
 
     @Override // androidx.emoji2.text.s5
     public final s5 g() {
         i11 i11Var;
-        e11 e11VarU = this.i.f502a.u();
-        if (e11VarU == null || (i11Var = e11VarU.I) == null) {
+        e11 u = this.i.f501a.u();
+        if (u == null || (i11Var = u.I) == null) {
             return null;
         }
         return i11Var.p;
     }
 
     @Override // androidx.emoji2.text.hr1
-    public final void g0(long j, float f, um0 um0Var) throws Throwable {
+    public final void g0(long j, float f, um0 um0Var) {
         A0(j, f, um0Var, null);
     }
 
     @Override // androidx.emoji2.text.hr1
-    public final void h0(long j, float f, rp0 rp0Var) throws Throwable {
+    public final void h0(long j, float f, rp0 rp0Var) {
         A0(j, f, null, rp0Var);
     }
 
     @Override // androidx.emoji2.text.ab1
     public final int l(int i) {
         i11 i11Var = this.i;
-        if (!lz0.y(i11Var.f502a)) {
+        if (!lz0.y(i11Var.f501a)) {
             w0();
             return i11Var.a().l(i);
         }
@@ -299,7 +351,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     @Override // androidx.emoji2.text.ab1
     public final int n(int i) {
         i11 i11Var = this.i;
-        if (!lz0.y(i11Var.f502a)) {
+        if (!lz0.y(i11Var.f501a)) {
             w0();
             return i11Var.a().n(i);
         }
@@ -310,16 +362,16 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     public final List n0() {
         i11 i11Var = this.i;
-        i11Var.f502a.g0();
+        i11Var.f501a.g0();
         boolean z = this.C;
         sf1 sf1Var = this.B;
         if (!z) {
             return sf1Var.f();
         }
-        e11 e11Var = i11Var.f502a;
-        sf1 sf1VarZ = e11Var.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        e11 e11Var = i11Var.f501a;
+        sf1 z2 = e11Var.z();
+        Object[] objArr = z2.d;
+        int i = z2.f;
         for (int i2 = 0; i2 < i; i2++) {
             e11 e11Var2 = (e11) objArr[i2];
             if (sf1Var.f <= i2) {
@@ -339,7 +391,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     public final void o0() {
         boolean z = this.v;
         this.v = true;
-        e11 e11Var = this.i.f502a;
+        e11 e11Var = this.i.f501a;
         vh1 vh1Var = e11Var.H;
         if (!z) {
             vh1Var.c.f1();
@@ -355,9 +407,9 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
                 xh1Var2.a1();
             }
         }
-        sf1 sf1VarZ = e11Var.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        sf1 z2 = e11Var.z();
+        Object[] objArr = z2.d;
+        int i = z2.f;
         for (int i2 = 0; i2 < i; i2++) {
             e11 e11Var2 = (e11) objArr[i2];
             if (e11Var2.v() != Integer.MAX_VALUE) {
@@ -368,33 +420,33 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     }
 
     @Override // androidx.emoji2.text.ab1
-    public final hr1 q(long j) throws Throwable {
+    public final hr1 q(long j) {
         c11 c11Var;
         i11 i11Var = this.i;
-        e11 e11Var = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
         c11 c11Var2 = e11Var.E;
         c11 c11Var3 = c11.f;
         if (c11Var2 == c11Var3) {
             e11Var.e();
         }
-        if (lz0.y(i11Var.f502a)) {
+        if (lz0.y(i11Var.f501a)) {
             r81 r81Var = i11Var.q;
             lx0.u(r81Var);
             r81Var.m = c11Var3;
             r81Var.q(j);
         }
-        e11 e11Var2 = i11Var.f502a;
-        e11 e11VarU = e11Var2.u();
-        if (e11VarU != null) {
-            i11 i11Var2 = e11VarU.I;
+        e11 e11Var2 = i11Var.f501a;
+        e11 u = e11Var2.u();
+        if (u != null) {
+            i11 i11Var2 = u.I;
             if (this.o != c11Var3 && !e11Var2.G) {
                 iv0.b("measure() may not be called multiple times on the same Measurable. If you want to get the content size of the Measurable before calculating the final constraints, please use methods like minIntrinsicWidth()/maxIntrinsicWidth() and minIntrinsicHeight()/maxIntrinsicHeight()");
             }
-            int iOrdinal = i11Var2.d.ordinal();
-            if (iOrdinal == 0) {
+            int ordinal = i11Var2.d.ordinal();
+            if (ordinal == 0) {
                 c11Var = c11.d;
             } else {
-                if (iOrdinal != 2) {
+                if (ordinal != 2) {
                     throw new IllegalStateException("Measurable could be only measured from the parent's measure or layout block. Parents state is " + i11Var2.d);
                 }
                 c11Var = c11.e;
@@ -411,54 +463,54 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         if (this.v) {
             this.v = false;
             i11 i11Var = this.i;
-            vh1 vh1Var = i11Var.f502a.H;
+            vh1 vh1Var = i11Var.f501a.H;
             xh1 xh1Var = vh1Var.c.s;
             for (xh1 xh1Var2 = vh1Var.d; !lx0.n(xh1Var2, xh1Var) && xh1Var2 != null; xh1Var2 = xh1Var2.s) {
-                md1 md1VarV0 = xh1Var2.V0(yh1.g(1048576));
-                if (md1VarV0 != null && (md1VarV0.d.g & 1048576) != 0) {
-                    boolean zG = yh1.g(1048576);
-                    md1 md1VarT0 = xh1Var2.T0();
-                    if (zG || (md1VarT0 = md1VarT0.h) != null) {
-                        for (md1 md1VarV02 = xh1Var2.V0(zG); md1VarV02 != null && (md1VarV02.g & 1048576) != 0; md1VarV02 = md1VarV02.i) {
-                            if ((md1VarV02.f & 1048576) != 0) {
-                                md1 md1VarM = md1VarV02;
+                md1 V0 = xh1Var2.V0(yh1.g(1048576));
+                if (V0 != null && (V0.d.g & 1048576) != 0) {
+                    boolean g = yh1.g(1048576);
+                    md1 T0 = xh1Var2.T0();
+                    if (g || (T0 = T0.h) != null) {
+                        for (md1 V02 = xh1Var2.V0(g); V02 != null && (V02.g & 1048576) != 0; V02 = V02.i) {
+                            if ((V02.f & 1048576) != 0) {
+                                md1 md1Var = V02;
                                 sf1 sf1Var = null;
-                                while (md1VarM != null) {
-                                    if ((md1VarM.f & 1048576) != 0 && (md1VarM instanceof z60)) {
+                                while (md1Var != null) {
+                                    if ((md1Var.f & 1048576) != 0 && (md1Var instanceof z60)) {
                                         int i = 0;
-                                        for (md1 md1Var = ((z60) md1VarM).s; md1Var != null; md1Var = md1Var.i) {
-                                            if ((md1Var.f & 1048576) != 0) {
+                                        for (md1 md1Var2 = ((z60) md1Var).s; md1Var2 != null; md1Var2 = md1Var2.i) {
+                                            if ((md1Var2.f & 1048576) != 0) {
                                                 i++;
                                                 if (i == 1) {
-                                                    md1VarM = md1Var;
+                                                    md1Var = md1Var2;
                                                 } else {
                                                     if (sf1Var == null) {
                                                         sf1Var = new sf1(new md1[16]);
                                                     }
-                                                    if (md1VarM != null) {
-                                                        sf1Var.b(md1VarM);
-                                                        md1VarM = null;
+                                                    if (md1Var != null) {
+                                                        sf1Var.b(md1Var);
+                                                        md1Var = null;
                                                     }
-                                                    sf1Var.b(md1Var);
+                                                    sf1Var.b(md1Var2);
                                                 }
                                             }
                                         }
                                         if (i == 1) {
                                         }
                                     }
-                                    md1VarM = lx0.m(sf1Var);
+                                    md1Var = lx0.m(sf1Var);
                                 }
                             }
-                            if (md1VarV02 != md1VarT0) {
+                            if (V02 != T0) {
                             }
                         }
                     }
                 }
                 xh1Var2.l1();
             }
-            sf1 sf1VarZ = i11Var.f502a.z();
-            Object[] objArr = sf1VarZ.d;
-            int i2 = sf1VarZ.f;
+            sf1 z = i11Var.f501a.z();
+            Object[] objArr = z.d;
+            int i2 = z.f;
             for (int i3 = 0; i3 < i2; i3++) {
                 ((e11) objArr[i3]).I.p.q0();
             }
@@ -468,15 +520,15 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     public final void r0() {
         i11 i11Var = this.i;
         if (i11Var.l > 0) {
-            sf1 sf1VarZ = i11Var.f502a.z();
-            Object[] objArr = sf1VarZ.d;
-            int i = sf1VarZ.f;
+            sf1 z = i11Var.f501a.z();
+            Object[] objArr = z.d;
+            int i = z.f;
             for (int i2 = 0; i2 < i; i2++) {
                 e11 e11Var = (e11) objArr[i2];
                 i11 i11Var2 = e11Var.I;
-                boolean z = i11Var2.j;
+                boolean z2 = i11Var2.j;
                 eb1 eb1Var = i11Var2.p;
-                if ((z || i11Var2.k) && !eb1Var.y) {
+                if ((z2 || i11Var2.k) && !eb1Var.y) {
                     e11Var.V(false);
                 }
                 eb1Var.r0();
@@ -486,7 +538,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     @Override // androidx.emoji2.text.s5
     public final void requestLayout() {
-        this.i.f502a.V(false);
+        this.i.f501a.V(false);
     }
 
     @Override // androidx.emoji2.text.hr1, androidx.emoji2.text.ab1
@@ -496,22 +548,22 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
 
     public final void w0() {
         i11 i11Var = this.i;
-        e11.W(i11Var.f502a, false, 7);
-        e11 e11Var = i11Var.f502a;
-        e11 e11VarU = e11Var.u();
-        if (e11VarU == null || e11Var.E != c11.f) {
+        e11.W(i11Var.f501a, false, 7);
+        e11 e11Var = i11Var.f501a;
+        e11 u = e11Var.u();
+        if (u == null || e11Var.E != c11.f) {
             return;
         }
-        int iOrdinal = e11VarU.I.d.ordinal();
-        e11Var.E = iOrdinal != 0 ? iOrdinal != 2 ? e11VarU.E : c11.e : c11.d;
+        int ordinal = u.I.d.ordinal();
+        e11Var.E = ordinal != 0 ? ordinal != 2 ? u.E : c11.e : c11.d;
     }
 
-    public final void x0() throws Throwable {
+    public final void x0() {
         this.I = true;
         i11 i11Var = this.i;
-        e11 e11VarU = i11Var.f502a.u();
+        e11 u = i11Var.f501a.u();
         float f = e().D;
-        e11 e11Var = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
         vh1 vh1Var = e11Var.H;
         xh1 xh1Var = vh1Var.d;
         ov0 ov0Var = vh1Var.c;
@@ -523,26 +575,26 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         }
         if (f != this.H) {
             this.H = f;
-            if (e11VarU != null) {
-                e11VarU.P();
+            if (u != null) {
+                u.P();
             }
-            if (e11VarU != null) {
-                e11VarU.C();
+            if (u != null) {
+                u.C();
             }
         }
         if (this.v) {
             e11Var.H.c.f1();
         } else {
-            if (e11VarU != null) {
-                e11VarU.C();
+            if (u != null) {
+                u.C();
             }
             o0();
-            if (this.j && e11VarU != null) {
-                e11VarU.V(false);
+            if (this.j && u != null) {
+                u.V(false);
             }
         }
-        if (e11VarU != null) {
-            i11 i11Var2 = e11VarU.I;
+        if (u != null) {
+            i11 i11Var2 = u.I;
             if (!this.j && i11Var2.d == a11.f) {
                 if (this.l != Integer.MAX_VALUE) {
                     iv0.b("Place was called on a node which was placed already");
@@ -560,7 +612,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
     public final void y0(long j) {
         i11 i11Var = this.i;
         a11 a11Var = i11Var.d;
-        e11 e11Var = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
         a11 a11Var2 = a11.h;
         if (a11Var != a11Var2) {
             iv0.b("layout state is not idle before measure starts");
@@ -578,10 +630,10 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         }
     }
 
-    public final void z0(long j, float f, um0 um0Var, rp0 rp0Var) throws Throwable {
+    public final void z0(long j, float f, um0 um0Var, rp0 rp0Var) {
         i11 i11Var = this.i;
-        e11 e11Var = i11Var.f502a;
-        e11 e11Var2 = i11Var.f502a;
+        e11 e11Var = i11Var.f501a;
+        e11 e11Var2 = i11Var.f501a;
         if (e11Var.S) {
             iv0.a("place is called on a deactivated node");
         }
@@ -591,7 +643,7 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
         this.q = um0Var;
         this.r = rp0Var;
         this.I = false;
-        tl1 tl1VarA = h11.a(e11Var2);
+        tl1 a2 = h11.a(e11Var2);
         if (this.y || !this.v) {
             this.A.e = false;
             i11Var.f(false);
@@ -599,11 +651,11 @@ public final class eb1 extends hr1 implements ab1, s5, ce1 {
             this.L = j;
             this.M = f;
             this.K = rp0Var;
-            wl1 snapshotObserver = ((v7) tl1VarA).getSnapshotObserver();
+            wl1 snapshotObserver = ((v7) a2).getSnapshotObserver();
             snapshotObserver.a(e11Var2, snapshotObserver.f, this.N);
         } else {
-            xh1 xh1VarA = i11Var.a();
-            xh1VarA.j1(nw0.d(j, xh1VarA.h), f, um0Var, rp0Var);
+            xh1 a3 = i11Var.a();
+            a3.j1(nw0.d(j, a3.h), f, um0Var, rp0Var);
             x0();
         }
         i11Var.d = a11.h;

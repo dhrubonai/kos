@@ -44,7 +44,7 @@ public final class sq0 extends x20 implements x60 {
         if (cy0Var != null) {
             cy0Var.c(cancellationException);
         }
-        q60 q60Var = e90.f294a;
+        q60 q60Var = e90.f293a;
         a60.f.D(v20Var, runnable);
     }
 
@@ -65,7 +65,7 @@ public final class sq0 extends x20 implements x60 {
             return new l90() { // from class: androidx.emoji2.text.rq0
                 @Override // androidx.emoji2.text.l90
                 public final void a() {
-                    this.d.f.removeCallbacks(hm2Var);
+                    sq0.this.f.removeCallbacks(hm2Var);
                 }
             };
         }
@@ -81,8 +81,8 @@ public final class sq0 extends x20 implements x60 {
     public final String toString() {
         sq0 sq0Var;
         String str;
-        q60 q60Var = e90.f294a;
-        sq0 sq0Var2 = h91.f462a;
+        q60 q60Var = e90.f293a;
+        sq0 sq0Var2 = h91.f461a;
         if (this == sq0Var2) {
             str = "Dispatchers.Main";
         } else {
@@ -96,11 +96,11 @@ public final class sq0 extends x20 implements x60 {
         if (str != null) {
             return str;
         }
-        String string = this.g;
-        if (string == null) {
-            string = this.f.toString();
+        String str2 = this.g;
+        if (str2 == null) {
+            str2 = this.f.toString();
         }
-        return this.h ? zd.h(string, ".immediate") : string;
+        return this.h ? zd.h(str2, ".immediate") : str2;
     }
 
     @Override // androidx.emoji2.text.x60

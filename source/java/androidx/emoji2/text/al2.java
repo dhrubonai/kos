@@ -7,10 +7,10 @@ public final class al2 {
     public static final /* synthetic */ int c = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f107a;
+    public final long f106a;
 
     public /* synthetic */ al2(long j) {
-        this.f107a = j;
+        this.f106a = j;
     }
 
     public static final boolean a(long j, long j2) {
@@ -46,16 +46,16 @@ public final class al2 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof al2) {
-            return this.f107a == ((al2) obj).f107a;
+            return this.f106a == ((al2) obj).f106a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f107a);
+        return Long.hashCode(this.f106a);
     }
 
     public final String toString() {
-        return g(this.f107a);
+        return g(this.f106a);
     }
 }

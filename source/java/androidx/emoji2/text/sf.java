@@ -9,6 +9,7 @@ import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.method.KeyListener;
 import android.text.method.NumberKeyListener;
@@ -16,6 +17,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.DragEvent;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
@@ -55,19 +58,19 @@ public abstract class sf extends EditText implements sj1 {
         if (keyListener instanceof NumberKeyListener) {
             return;
         }
-        boolean zIsFocusable = super.isFocusable();
-        boolean zIsClickable = super.isClickable();
-        boolean zIsLongClickable = super.isLongClickable();
+        boolean isFocusable = super.isFocusable();
+        boolean isClickable = super.isClickable();
+        boolean isLongClickable = super.isLongClickable();
         int inputType = super.getInputType();
-        KeyListener keyListenerM = l6Var2.m(keyListener);
-        if (keyListenerM == keyListener) {
+        KeyListener m = l6Var2.m(keyListener);
+        if (m == keyListener) {
             return;
         }
-        super.setKeyListener(keyListenerM);
+        super.setKeyListener(m);
         super.setRawInputType(inputType);
-        super.setFocusable(zIsFocusable);
-        super.setClickable(zIsClickable);
-        super.setLongClickable(zIsLongClickable);
+        super.setFocusable(isFocusable);
+        super.setClickable(isClickable);
+        super.setLongClickable(isLongClickable);
     }
 
     private rf getSuperCaller() {
@@ -143,92 +146,66 @@ public abstract class sf extends EditText implements sj1 {
         return textClassifier == null ? zf.a((TextView) l6Var.e) : textClassifier;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005e A[PHI: r1
-      0x005e: PHI (r1v10 java.lang.String[]) = (r1v5 java.lang.String[]), (r1v11 java.lang.String[]) binds: [B:33:0x0071, B:25:0x005c] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0078  */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x005c, code lost:
+    
+        if (r1 != null) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x005e, code lost:
+    
+        r6 = r1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0071, code lost:
+    
+        if (r1 != null) goto L26;
+     */
     @Override // android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public android.view.inputmethod.InputConnection onCreateInputConnection(android.view.inputmethod.EditorInfo r8) {
-        /*
-            r7 = this;
-            android.view.inputmethod.InputConnection r0 = super.onCreateInputConnection(r8)
-            androidx.emoji2.text.fg r1 = r7.e
-            r1.getClass()
-            int r1 = android.os.Build.VERSION.SDK_INT
-            r2 = 30
-            if (r1 >= r2) goto L18
-            if (r0 == 0) goto L18
-            java.lang.CharSequence r3 = r7.getText()
-            androidx.emoji2.text.lx0.X(r8, r3)
-        L18:
-            androidx.emoji2.text.wj1.E(r0, r8, r7)
-            if (r0 == 0) goto L7e
-            if (r1 > r2) goto L7e
-            java.lang.String[] r2 = androidx.emoji2.text.es2.e(r7)
-            if (r2 == 0) goto L7e
-            java.lang.String r3 = "android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES"
-            java.lang.String r4 = "androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES"
-            r5 = 25
-            if (r1 < r5) goto L31
-            androidx.emoji2.text.hd0.a(r8, r2)
-            goto L46
-        L31:
-            android.os.Bundle r6 = r8.extras
-            if (r6 != 0) goto L3c
-            android.os.Bundle r6 = new android.os.Bundle
-            r6.<init>()
-            r8.extras = r6
-        L3c:
-            android.os.Bundle r6 = r8.extras
-            r6.putStringArray(r4, r2)
-            android.os.Bundle r6 = r8.extras
-            r6.putStringArray(r3, r2)
-        L46:
-            androidx.emoji2.text.j4 r2 = new androidx.emoji2.text.j4
-            r2.<init>(r7)
-            if (r1 < r5) goto L54
-            androidx.emoji2.text.qv0 r1 = new androidx.emoji2.text.qv0
-            r1.<init>(r0, r2)
-        L52:
-            r0 = r1
-            goto L7e
-        L54:
-            java.lang.String[] r6 = androidx.emoji2.text.lx0.l
-            if (r1 < r5) goto L60
-            java.lang.String[] r1 = androidx.emoji2.text.hd0.b(r8)
-            if (r1 == 0) goto L74
-        L5e:
-            r6 = r1
-            goto L74
-        L60:
-            android.os.Bundle r1 = r8.extras
-            if (r1 != 0) goto L65
-            goto L74
-        L65:
-            java.lang.String[] r1 = r1.getStringArray(r4)
-            if (r1 != 0) goto L71
-            android.os.Bundle r1 = r8.extras
-            java.lang.String[] r1 = r1.getStringArray(r3)
-        L71:
-            if (r1 == 0) goto L74
-            goto L5e
-        L74:
-            int r1 = r6.length
-            if (r1 != 0) goto L78
-            goto L7e
-        L78:
-            androidx.emoji2.text.rv0 r1 = new androidx.emoji2.text.rv0
-            r1.<init>(r0, r2)
-            goto L52
-        L7e:
-            androidx.emoji2.text.l6 r1 = r7.h
-            androidx.emoji2.text.xd0 r8 = r1.r(r0, r8)
-            return r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.sf.onCreateInputConnection(android.view.inputmethod.EditorInfo):android.view.inputmethod.InputConnection");
+    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        String[] e;
+        String[] stringArray;
+        InputConnection rv0Var;
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        this.e.getClass();
+        int i = Build.VERSION.SDK_INT;
+        if (i < 30 && onCreateInputConnection != null) {
+            lx0.X(editorInfo, getText());
+        }
+        wj1.E(onCreateInputConnection, editorInfo, this);
+        if (onCreateInputConnection != null && i <= 30 && (e = es2.e(this)) != null) {
+            if (i >= 25) {
+                editorInfo.contentMimeTypes = e;
+            } else {
+                if (editorInfo.extras == null) {
+                    editorInfo.extras = new Bundle();
+                }
+                editorInfo.extras.putStringArray("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES", e);
+                editorInfo.extras.putStringArray("android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES", e);
+            }
+            j4 j4Var = new j4(this);
+            if (i >= 25) {
+                rv0Var = new qv0(onCreateInputConnection, j4Var);
+            } else {
+                String[] strArr = lx0.l;
+                if (i >= 25) {
+                    stringArray = editorInfo.contentMimeTypes;
+                } else {
+                    Bundle bundle = editorInfo.extras;
+                    if (bundle != null) {
+                        stringArray = bundle.getStringArray("androidx.core.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
+                        if (stringArray == null) {
+                            stringArray = editorInfo.extras.getStringArray("android.support.v13.view.inputmethod.EditorInfoCompat.CONTENT_MIME_TYPES");
+                        }
+                    }
+                    if (strArr.length != 0) {
+                        rv0Var = new rv0(onCreateInputConnection, j4Var);
+                    }
+                }
+            }
+            onCreateInputConnection = rv0Var;
+        }
+        return this.h.r(onCreateInputConnection, editorInfo);
     }
 
     @Override // android.view.View
@@ -244,7 +221,7 @@ public abstract class sf extends EditText implements sj1 {
     @Override // android.widget.TextView, android.view.View
     public final boolean onDragEvent(DragEvent dragEvent) {
         Activity activity;
-        boolean zA = false;
+        boolean z = false;
         if (Build.VERSION.SDK_INT < 31 && dragEvent.getLocalState() == null && es2.e(this) != null) {
             Context context = getContext();
             while (true) {
@@ -261,10 +238,10 @@ public abstract class sf extends EditText implements sj1 {
             if (activity == null) {
                 Log.i("ReceiveContent", "Can't handle drop: no activity: view=" + this);
             } else if (dragEvent.getAction() != 1 && dragEvent.getAction() == 3) {
-                zA = yf.a(dragEvent, this, activity);
+                z = yf.a(dragEvent, this, activity);
             }
         }
-        if (zA) {
+        if (z) {
             return true;
         }
         return super.onDragEvent(dragEvent);
@@ -272,7 +249,7 @@ public abstract class sf extends EditText implements sj1 {
 
     @Override // android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i) {
-        k00 p4Var;
+        k00 k00Var;
         int i2 = Build.VERSION.SDK_INT;
         if (i2 >= 31 || es2.e(this) == null || !(i == 16908322 || i == 16908337)) {
             return super.onTextContextMenuItem(i);
@@ -281,15 +258,15 @@ public abstract class sf extends EditText implements sj1 {
         ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
             if (i2 >= 31) {
-                p4Var = new p4(primaryClip, 1);
+                k00Var = new p4(primaryClip, 1);
             } else {
                 l00 l00Var = new l00();
                 l00Var.e = primaryClip;
                 l00Var.f = 1;
-                p4Var = l00Var;
+                k00Var = l00Var;
             }
-            p4Var.h(i == 16908322 ? 0 : 1);
-            es2.g(this, p4Var.build());
+            k00Var.h(i == 16908322 ? 0 : 1);
+            es2.g(this, k00Var.build());
         }
         return true;
     }

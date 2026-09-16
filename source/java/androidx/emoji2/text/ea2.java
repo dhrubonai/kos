@@ -8,7 +8,7 @@ import android.graphics.Path;
 public abstract class ea2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Matrix f296a = new Matrix();
+    public final Matrix f295a = new Matrix();
 
     public abstract void a(Matrix matrix, Path path);
 }

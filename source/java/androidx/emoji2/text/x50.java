@@ -7,17 +7,17 @@ import android.view.View;
 public final class x50 implements zq0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1318a;
+    public final /* synthetic */ int f1317a;
     public final View b;
 
     public /* synthetic */ x50(View view, int i) {
-        this.f1318a = i;
+        this.f1317a = i;
         this.b = view;
     }
 
     @Override // androidx.emoji2.text.zq0
     public final void a() {
-        switch (this.f1318a) {
+        switch (this.f1317a) {
             case 0:
                 this.b.performHapticFeedback(9);
                 break;

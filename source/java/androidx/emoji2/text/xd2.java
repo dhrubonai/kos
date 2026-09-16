@@ -7,17 +7,17 @@ import android.view.ViewConfiguration;
 public abstract class xd2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1332a = ViewConfiguration.getScrollFriction();
+    public static final float f1331a = ViewConfiguration.getScrollFriction();
 
     public static final j50 a(lx lxVar) {
         tx txVar = (tx) lxVar;
         j70 j70Var = (j70) txVar.j(iy.h);
-        boolean zC = txVar.c(j70Var.a());
-        Object objM = txVar.M();
-        if (zC || objM == kx.f663a) {
-            objM = new j50(new gz0(j70Var));
-            txVar.i0(objM);
+        boolean c = txVar.c(j70Var.a());
+        Object M = txVar.M();
+        if (c || M == kx.f662a) {
+            M = new j50(new gz0(j70Var));
+            txVar.i0(M);
         }
-        return (j50) objM;
+        return (j50) M;
     }
 }

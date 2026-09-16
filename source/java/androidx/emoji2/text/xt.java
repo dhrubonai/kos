@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class xt {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final xt f1355a = new xt();
+    public static final xt f1354a = new xt();
 }

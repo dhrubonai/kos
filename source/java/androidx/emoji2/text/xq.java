@@ -37,17 +37,17 @@ public final class xq extends a1 {
         int i;
         int i2 = this.d;
         View view2 = this.e;
-        View.AccessibilityDelegate accessibilityDelegate = this.f76a;
+        View.AccessibilityDelegate accessibilityDelegate = this.f75a;
         switch (i2) {
             case 0:
-                AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
+                AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
                 accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
                 CheckableImageButton checkableImageButton = (CheckableImageButton) view2;
                 accessibilityNodeInfo.setCheckable(checkableImageButton.h);
                 accessibilityNodeInfo.setChecked(checkableImageButton.g);
                 break;
             case 1:
-                AccessibilityNodeInfo accessibilityNodeInfo2 = s1Var.f1045a;
+                AccessibilityNodeInfo accessibilityNodeInfo2 = s1Var.f1044a;
                 accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo2);
                 MaterialButtonToggleGroup materialButtonToggleGroup = (MaterialButtonToggleGroup) view2;
                 int i3 = MaterialButtonToggleGroup.t;
@@ -56,20 +56,20 @@ public final class xq extends a1 {
                     for (int i5 = 0; i5 < materialButtonToggleGroup.getChildCount(); i5++) {
                         if (materialButtonToggleGroup.getChildAt(i5) == view) {
                             i = i4;
+                            accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(0, 1, i, 1, false, ((MaterialButton) view).r));
+                            break;
                         } else {
                             if ((materialButtonToggleGroup.getChildAt(i5) instanceof MaterialButton) && materialButtonToggleGroup.getChildAt(i5).getVisibility() != 8) {
                                 i4++;
                             }
                         }
                     }
-                    i = -1;
-                } else {
-                    i = -1;
                 }
+                i = -1;
                 accessibilityNodeInfo2.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(0, 1, i, 1, false, ((MaterialButton) view).r));
                 break;
             default:
-                AccessibilityNodeInfo accessibilityNodeInfo3 = s1Var.f1045a;
+                AccessibilityNodeInfo accessibilityNodeInfo3 = s1Var.f1044a;
                 accessibilityDelegate.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo3);
                 accessibilityNodeInfo3.setCheckable(((NavigationMenuItemView) view2).A);
                 break;

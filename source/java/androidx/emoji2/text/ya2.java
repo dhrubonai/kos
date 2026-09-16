@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class ya2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f1377a;
+    public final boolean f1376a;
     public final m6 b;
 
     public ya2(boolean z, j70 j70Var, za2 za2Var, um0 um0Var) {
-        this.f1377a = z;
+        this.f1376a = z;
         if (z && za2Var == za2.f) {
             throw new IllegalArgumentException("The initial value must not be set to PartiallyExpanded if skipPartiallyExpanded is set to true.");
         }
@@ -18,13 +18,13 @@ public final class ya2 {
 
     public static Object a(ya2 ya2Var, za2 za2Var, hh2 hh2Var) {
         m6 m6Var = ya2Var.b;
-        Object objB = androidx.compose.material3.internal.a.b(m6Var, za2Var, m6Var.k.g(), hh2Var);
-        return objB == f30.d ? objB : up2.f1187a;
+        Object b = androidx.compose.material3.internal.a.b(m6Var, za2Var, m6Var.k.g(), hh2Var);
+        return b == f30.d ? b : up2.f1186a;
     }
 
     public final Object b(hh2 hh2Var) {
-        Object objA = a(this, za2.d, hh2Var);
-        return objA == f30.d ? objA : up2.f1187a;
+        Object a2 = a(this, za2.d, hh2Var);
+        return a2 == f30.d ? a2 : up2.f1186a;
     }
 
     public final boolean c() {
@@ -32,10 +32,10 @@ public final class ya2 {
     }
 
     public final Object d(hh2 hh2Var) {
-        if (this.f1377a) {
+        if (this.f1376a) {
             throw new IllegalStateException("Attempted to animate to partial expanded when skipPartiallyExpanded was enabled. Set skipPartiallyExpanded to false to use this function.");
         }
-        Object objA = a(this, za2.f, hh2Var);
-        return objA == f30.d ? objA : up2.f1187a;
+        Object a2 = a(this, za2.f, hh2Var);
+        return a2 == f30.d ? a2 : up2.f1186a;
     }
 }

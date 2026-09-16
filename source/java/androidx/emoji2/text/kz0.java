@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class kz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final kz0 f667a = new kz0();
+    public static final kz0 f666a = new kz0();
 
     public final boolean equals(Object obj) {
         return this == obj || (obj instanceof kz0);

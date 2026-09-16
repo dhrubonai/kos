@@ -8,7 +8,7 @@ import java.lang.ref.WeakReference;
 public final class ia implements cs1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public c51 f516a;
+    public c51 f515a;
     public he2 b;
     public i51 c;
     public oa2 d;
@@ -21,7 +21,7 @@ public final class ia implements cs1 {
     @Override // androidx.emoji2.text.cs1
     public final void b() {
         gd2 gd2Var;
-        c51 c51Var = this.f516a;
+        c51 c51Var = this.f515a;
         if (c51Var == null || (gd2Var = (gd2) xa1.t(c51Var, iy.p)) == null) {
             return;
         }
@@ -35,9 +35,9 @@ public final class ia implements cs1 {
             he2Var.c(null);
         }
         this.b = null;
-        kf1 kf1VarI = i();
-        if (kf1VarI != null) {
-            oa2 oa2Var = (oa2) kf1VarI;
+        kf1 i = i();
+        if (i != null) {
+            oa2 oa2Var = (oa2) i;
             synchronized (oa2Var) {
                 oa2Var.u(oa2Var.o() + oa2Var.n, oa2Var.m, oa2Var.o() + oa2Var.n, oa2Var.o() + oa2Var.n + oa2Var.o);
             }
@@ -61,9 +61,11 @@ public final class ia implements cs1 {
                     d51Var.k = sk2Var;
                     d51Var.m = zw1Var;
                     d51Var.n = zw1Var2;
-                    if (d51Var.e || d51Var.d) {
-                        d51Var.a();
+                    if (!d51Var.e) {
+                        if (d51Var.d) {
+                        }
                     }
+                    d51Var.a();
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -74,7 +76,7 @@ public final class ia implements cs1 {
     @Override // androidx.emoji2.text.cs1
     public final void f() {
         gd2 gd2Var;
-        c51 c51Var = this.f516a;
+        c51 c51Var = this.f515a;
         if (c51Var == null || (gd2Var = (gd2) xa1.t(c51Var, iy.p)) == null) {
             return;
         }
@@ -105,17 +107,17 @@ public final class ia implements cs1 {
             if (lx0.n(ak2Var, ak2Var2)) {
                 if (z) {
                     uv0 uv0Var = i51Var.b;
-                    int iE = al2.e(ak2Var2.b);
-                    int iD = al2.d(ak2Var2.b);
+                    int e = al2.e(ak2Var2.b);
+                    int d = al2.d(ak2Var2.b);
                     al2 al2Var = i51Var.h.c;
-                    int iE2 = al2Var != null ? al2.e(al2Var.f107a) : -1;
+                    int e2 = al2Var != null ? al2.e(al2Var.f106a) : -1;
                     al2 al2Var2 = i51Var.h.c;
-                    uv0Var.a().updateSelection(uv0Var.b, iE, iD, iE2, al2Var2 != null ? al2.d(al2Var2.f107a) : -1);
+                    uv0Var.a().updateSelection(uv0Var.b, e, d, e2, al2Var2 != null ? al2.d(al2Var2.f106a) : -1);
                     return;
                 }
                 return;
             }
-            if (ak2Var != null && (!lx0.n(ak2Var.f106a.e, ak2Var2.f106a.e) || (al2.a(ak2Var.b, ak2Var2.b) && !lx0.n(ak2Var.c, ak2Var2.c)))) {
+            if (ak2Var != null && (!lx0.n(ak2Var.f105a.e, ak2Var2.f105a.e) || (al2.a(ak2Var.b, ak2Var2.b) && !lx0.n(ak2Var.c, ak2Var2.c)))) {
                 uv0 uv0Var2 = i51Var.b;
                 uv0Var2.a().restartInput(uv0Var2.b);
                 return;
@@ -133,9 +135,9 @@ public final class ia implements cs1 {
                         }
                         al2 al2Var3 = ak2Var3.c;
                         long j = ak2Var3.b;
-                        int iE3 = al2Var3 != null ? al2.e(al2Var3.f107a) : -1;
+                        int e3 = al2Var3 != null ? al2.e(al2Var3.f106a) : -1;
                         al2 al2Var4 = ak2Var3.c;
-                        uv0Var3.a().updateSelection(uv0Var3.b, al2.e(j), al2.d(j), iE3, al2Var4 != null ? al2.d(al2Var4.f107a) : -1);
+                        uv0Var3.a().updateSelection(uv0Var3.b, al2.e(j), al2.d(j), e3, al2Var4 != null ? al2.d(al2Var4.f106a) : -1);
                     }
                 }
             }
@@ -147,11 +149,11 @@ public final class ia implements cs1 {
         Rect rect;
         i51 i51Var = this.c;
         if (i51Var != null) {
-            i51Var.l = new Rect(xa1.Q(zw1Var.f1459a), xa1.Q(zw1Var.b), xa1.Q(zw1Var.c), xa1.Q(zw1Var.d));
+            i51Var.l = new Rect(xa1.Q(zw1Var.f1458a), xa1.Q(zw1Var.b), xa1.Q(zw1Var.c), xa1.Q(zw1Var.d));
             if (!i51Var.j.isEmpty() || (rect = i51Var.l) == null) {
                 return;
             }
-            i51Var.f509a.requestRectangleOnScreen(new Rect(rect));
+            i51Var.f508a.requestRectangleOnScreen(new Rect(rect));
         }
     }
 
@@ -160,27 +162,27 @@ public final class ia implements cs1 {
         if (oa2Var != null) {
             return oa2Var;
         }
-        if (!ig2.f523a) {
+        if (!ig2.f522a) {
             return null;
         }
-        oa2 oa2VarE = kx0.e(2, tn.f);
-        this.d = oa2VarE;
-        return oa2VarE;
+        oa2 e = kx0.e(2, tn.f);
+        this.d = e;
+        return e;
     }
 
     public final void j(da daVar) {
-        c51 c51Var = this.f516a;
+        c51 c51Var = this.f515a;
         if (c51Var == null) {
             return;
         }
-        this.b = c51Var.q ? h50.G(c51Var.w0(), null, new p(c51Var, new ha(daVar, this, c51Var, he2Var, 0), he2Var, 21), 1) : null;
+        this.b = c51Var.q ? h50.G(c51Var.w0(), null, new p(c51Var, new ha(daVar, this, c51Var, r4, 0), r4, 21), 1) : null;
     }
 
     public final void k(c51 c51Var) {
-        if (this.f516a == c51Var) {
-            this.f516a = null;
+        if (this.f515a == c51Var) {
+            this.f515a = null;
             return;
         }
-        throw new IllegalStateException(("Expected textInputModifierNode to be " + c51Var + " but was " + this.f516a).toString());
+        throw new IllegalStateException(("Expected textInputModifierNode to be " + c51Var + " but was " + this.f515a).toString());
     }
 }

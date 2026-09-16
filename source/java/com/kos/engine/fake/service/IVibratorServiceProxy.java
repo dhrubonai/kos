@@ -47,8 +47,8 @@ public class IVibratorServiceProxy extends BinderInvocationStub {
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
     public Object invoke(Object obj, Method method, Object[] objArr) {
         String[] strArr = xa1.b;
-        boolean zEquals = c.a(-1034061180190498L, strArr).equals(method.getName());
-        if (zEquals && objArr != null && objArr.length > 0 && (objArr[0] instanceof Integer)) {
+        boolean equals = c.a(-1034061180190498L, strArr).equals(method.getName());
+        if (equals && objArr != null && objArr.length > 0 && (objArr[0] instanceof Integer)) {
             objArr[0] = Integer.valueOf(c01.r.o);
         }
         mz0.z(objArr);
@@ -56,7 +56,7 @@ public class IVibratorServiceProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException e) {
-            if (!zEquals) {
+            if (!equals) {
                 throw e;
             }
             nz0.Q(c.a(-1033545784114978L, strArr), 5, c.a(-1033657453264674L, strArr) + e.getMessage());

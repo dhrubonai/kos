@@ -5,15 +5,15 @@ package androidx.emoji2.text;
 public final class ck {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ ww f202a;
+    public final /* synthetic */ ww f201a;
 
     public ck(y51 y51Var, ww wwVar) {
-        this.f202a = wwVar;
+        this.f201a = wwVar;
     }
 
     public final void a() {
-        ww wwVar = this.f202a;
-        wwVar.f1307a.d(false);
+        ww wwVar = this.f201a;
+        wwVar.f1306a.d(false);
         wwVar.b.f(false);
     }
 }

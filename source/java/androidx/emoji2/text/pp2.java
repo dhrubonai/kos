@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class pp2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final gl2 f921a = gl2.a(gl2.d, 0, null, null, 0, 0, new h61(0, e61.b), 15204351);
+    public static final gl2 f920a = gl2.a(gl2.d, 0, null, null, 0, 0, new h61(0, e61.b), 15204351);
 }

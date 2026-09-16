@@ -7,20 +7,20 @@ import java.util.List;
 public final class ze1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Object[] f1436a;
+    public Object[] f1435a;
     public int b;
 
     public ze1(int i) {
-        this.f1436a = i == 0 ? ui1.f1176a : new Object[i];
+        this.f1435a = i == 0 ? ui1.f1175a : new Object[i];
     }
 
     public final void a(Object obj) {
         int i = this.b + 1;
-        Object[] objArr = this.f1436a;
+        Object[] objArr = this.f1435a;
         if (objArr.length < i) {
             l(objArr, i);
         }
-        Object[] objArr2 = this.f1436a;
+        Object[] objArr2 = this.f1435a;
         int i2 = this.b;
         objArr2[i2] = obj;
         this.b = i2 + 1;
@@ -32,11 +32,11 @@ public final class ze1 {
         }
         int i = this.b;
         int size = list.size() + i;
-        Object[] objArr = this.f1436a;
+        Object[] objArr = this.f1435a;
         if (objArr.length < size) {
             l(objArr, size);
         }
-        Object[] objArr2 = this.f1436a;
+        Object[] objArr2 = this.f1435a;
         int size2 = list.size();
         for (int i2 = 0; i2 < size2; i2++) {
             objArr2[i2 + i] = list.get(i2);
@@ -45,13 +45,13 @@ public final class ze1 {
     }
 
     public final void c() {
-        xh.E0(this.f1436a, 0, this.b);
+        xh.E0(this.f1435a, 0, this.b);
         this.b = 0;
     }
 
     public final Object d() {
         if (!g()) {
-            return this.f1436a[0];
+            return this.f1435a[0];
         }
         lz0.N("ObjectList is empty.");
         throw null;
@@ -59,7 +59,7 @@ public final class ze1 {
 
     public final Object e(int i) {
         if (i >= 0 && i < this.b) {
-            return this.f1436a[i];
+            return this.f1435a[i];
         }
         m(i);
         throw null;
@@ -71,11 +71,11 @@ public final class ze1 {
             int i = ze1Var.b;
             int i2 = this.b;
             if (i == i2) {
-                Object[] objArr = this.f1436a;
-                Object[] objArr2 = ze1Var.f1436a;
-                qw0 qw0VarL0 = az0.l0(0, i2);
-                int i3 = qw0VarL0.d;
-                int i4 = qw0VarL0.e;
+                Object[] objArr = this.f1435a;
+                Object[] objArr2 = ze1Var.f1435a;
+                qw0 l0 = az0.l0(0, i2);
+                int i3 = l0.d;
+                int i4 = l0.e;
                 if (i3 > i4) {
                     return true;
                 }
@@ -94,7 +94,7 @@ public final class ze1 {
     public final int f(Object obj) {
         int i = 0;
         if (obj == null) {
-            Object[] objArr = this.f1436a;
+            Object[] objArr = this.f1435a;
             int i2 = this.b;
             while (i < i2) {
                 if (objArr[i] == null) {
@@ -104,7 +104,7 @@ public final class ze1 {
             }
             return -1;
         }
-        Object[] objArr2 = this.f1436a;
+        Object[] objArr2 = this.f1435a;
         int i3 = this.b;
         while (i < i3) {
             if (obj.equals(objArr2[i])) {
@@ -124,22 +124,22 @@ public final class ze1 {
     }
 
     public final int hashCode() {
-        Object[] objArr = this.f1436a;
+        Object[] objArr = this.f1435a;
         int i = this.b;
-        int iHashCode = 0;
-        for (int i2 = 0; i2 < i; i2++) {
-            Object obj = objArr[i2];
-            iHashCode += (obj != null ? obj.hashCode() : 0) * 31;
+        int i2 = 0;
+        for (int i3 = 0; i3 < i; i3++) {
+            Object obj = objArr[i3];
+            i2 += (obj != null ? obj.hashCode() : 0) * 31;
         }
-        return iHashCode;
+        return i2;
     }
 
     public final boolean i(Object obj) {
-        int iF = f(obj);
-        if (iF < 0) {
+        int f = f(obj);
+        if (f < 0) {
             return false;
         }
-        j(iF);
+        j(f);
         return true;
     }
 
@@ -149,7 +149,7 @@ public final class ze1 {
             m(i);
             throw null;
         }
-        Object[] objArr = this.f1436a;
+        Object[] objArr = this.f1435a;
         Object obj = objArr[i];
         if (i != i2 - 1) {
             xh.z0(objArr, objArr, i, i + 1, i2);
@@ -172,12 +172,12 @@ public final class ze1 {
         }
         if (i2 != i) {
             if (i2 < i3) {
-                Object[] objArr = this.f1436a;
+                Object[] objArr = this.f1435a;
                 xh.z0(objArr, objArr, i, i2, i3);
             }
             int i4 = this.b;
             int i5 = i4 - (i2 - i);
-            xh.E0(this.f1436a, i5, i4);
+            xh.E0(this.f1435a, i5, i4);
             this.b = i5;
         }
     }
@@ -187,20 +187,20 @@ public final class ze1 {
         int length = objArr.length;
         Object[] objArr2 = new Object[Math.max(i, (length * 3) / 2)];
         xh.z0(objArr, objArr2, 0, 0, length);
-        this.f1436a = objArr2;
+        this.f1435a = objArr2;
     }
 
     public final void m(int i) {
-        StringBuilder sbL = jx0.l("Index ", i, " must be in 0..");
-        sbL.append(this.b - 1);
-        lz0.M(sbL.toString());
+        StringBuilder l = jx0.l("Index ", i, " must be in 0..");
+        l.append(this.b - 1);
+        lz0.M(l.toString());
         throw null;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append((CharSequence) "[");
-        Object[] objArr = this.f1436a;
+        Object[] objArr = this.f1435a;
         int i = this.b;
         int i2 = 0;
         while (true) {
@@ -219,9 +219,9 @@ public final class ze1 {
             sb.append((CharSequence) (obj == this ? "(this)" : String.valueOf(obj)));
             i2++;
         }
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public /* synthetic */ ze1() {

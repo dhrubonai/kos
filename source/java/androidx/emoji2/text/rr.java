@@ -108,7 +108,7 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
         gj2 gj2Var = new gj2(this);
         this.w0 = gj2Var;
         this.Q = "";
-        gj2Var.f423a.density = context.getResources().getDisplayMetrics().density;
+        gj2Var.f422a.density = context.getResources().getDisplayMetrics().density;
         int[] iArr = R0;
         setState(iArr);
         R(iArr);
@@ -140,29 +140,186 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:54:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x016a  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0104  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x014d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean B(int[] r10, int[] r11) {
-        /*
-            Method dump skipped, instructions count: 380
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.rr.B(int[], int[]):boolean");
+    public final boolean B(int[] iArr, int[] iArr2) {
+        int i;
+        int colorForState;
+        int[] state;
+        boolean z;
+        boolean z2;
+        int colorForState2;
+        ColorStateList colorStateList;
+        boolean onStateChange = super.onStateChange(iArr);
+        ColorStateList colorStateList2 = this.J;
+        int c = c(colorStateList2 != null ? colorStateList2.getColorForState(iArr, this.x0) : 0);
+        boolean z3 = true;
+        if (this.x0 != c) {
+            this.x0 = c;
+            onStateChange = true;
+        }
+        ColorStateList colorStateList3 = this.K;
+        int c2 = c(colorStateList3 != null ? colorStateList3.getColorForState(iArr, this.y0) : 0);
+        if (this.y0 != c2) {
+            this.y0 = c2;
+            onStateChange = true;
+        }
+        int b = tt.b(c2, c);
+        if ((this.z0 != b) | (this.e.d == null)) {
+            this.z0 = b;
+            n(ColorStateList.valueOf(b));
+            onStateChange = true;
+        }
+        ColorStateList colorStateList4 = this.N;
+        int colorForState3 = colorStateList4 != null ? colorStateList4.getColorForState(iArr, this.A0) : 0;
+        if (this.A0 != colorForState3) {
+            this.A0 = colorForState3;
+            onStateChange = true;
+        }
+        if (this.L0 != null) {
+            int[] iArr3 = i12.f502a;
+            boolean z4 = false;
+            boolean z5 = false;
+            for (int i2 : iArr) {
+                if (i2 == 16842910) {
+                    z4 = true;
+                } else if (i2 == 16842908 || i2 == 16842919 || i2 == 16843623) {
+                    z5 = true;
+                }
+            }
+            if (z4 && z5) {
+                i = this.L0.getColorForState(iArr, this.B0);
+                if (this.B0 != i) {
+                    this.B0 = i;
+                }
+                yi2 yi2Var = this.w0.f;
+                colorForState = (yi2Var != null || (colorStateList = yi2Var.k) == null) ? 0 : colorStateList.getColorForState(iArr, this.C0);
+                if (this.C0 != colorForState) {
+                    this.C0 = colorForState;
+                    onStateChange = true;
+                }
+                state = getState();
+                if (state != null) {
+                    int length = state.length;
+                    int i3 = 0;
+                    while (true) {
+                        if (i3 >= length) {
+                            break;
+                        }
+                        if (state[i3] != 16842912) {
+                            i3++;
+                        } else if (this.c0) {
+                            z = true;
+                        }
+                    }
+                }
+                z = false;
+                if (this.D0 != z || this.e0 == null) {
+                    z2 = false;
+                } else {
+                    float v = v();
+                    this.D0 = z;
+                    if (v != v()) {
+                        onStateChange = true;
+                        z2 = true;
+                    } else {
+                        z2 = false;
+                        onStateChange = true;
+                    }
+                }
+                ColorStateList colorStateList5 = this.I0;
+                colorForState2 = colorStateList5 == null ? colorStateList5.getColorForState(iArr, this.E0) : 0;
+                if (this.E0 == colorForState2) {
+                    this.E0 = colorForState2;
+                    ColorStateList colorStateList6 = this.I0;
+                    PorterDuff.Mode mode = this.J0;
+                    this.H0 = (colorStateList6 == null || mode == null) ? null : new PorterDuffColorFilter(colorStateList6.getColorForState(getState(), 0), mode);
+                } else {
+                    z3 = onStateChange;
+                }
+                if (z(this.S)) {
+                    z3 |= this.S.setState(iArr);
+                }
+                if (z(this.e0)) {
+                    z3 |= this.e0.setState(iArr);
+                }
+                if (z(this.X)) {
+                    int[] iArr4 = new int[iArr.length + iArr2.length];
+                    System.arraycopy(iArr, 0, iArr4, 0, iArr.length);
+                    System.arraycopy(iArr2, 0, iArr4, iArr.length, iArr2.length);
+                    z3 |= this.X.setState(iArr4);
+                }
+                if (z(this.Y)) {
+                    z3 |= this.Y.setState(iArr2);
+                }
+                if (z3) {
+                    invalidateSelf();
+                }
+                if (z2) {
+                    A();
+                }
+                return z3;
+            }
+        }
+        i = 0;
+        if (this.B0 != i) {
+        }
+        yi2 yi2Var2 = this.w0.f;
+        if (yi2Var2 != null) {
+        }
+        if (this.C0 != colorForState) {
+        }
+        state = getState();
+        if (state != null) {
+        }
+        z = false;
+        if (this.D0 != z) {
+        }
+        z2 = false;
+        ColorStateList colorStateList52 = this.I0;
+        if (colorStateList52 == null) {
+        }
+        if (this.E0 == colorForState2) {
+        }
+        if (z(this.S)) {
+        }
+        if (z(this.e0)) {
+        }
+        if (z(this.X)) {
+        }
+        if (z(this.Y)) {
+        }
+        if (z3) {
+        }
+        if (z2) {
+        }
+        return z3;
     }
 
     public final void C(boolean z) {
         if (this.c0 != z) {
             this.c0 = z;
-            float fV = v();
+            float v = v();
             if (!z && this.D0) {
                 this.D0 = false;
             }
-            float fV2 = v();
+            float v2 = v();
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -170,13 +327,13 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void D(Drawable drawable) {
         if (this.e0 != drawable) {
-            float fV = v();
+            float v = v();
             this.e0 = drawable;
-            float fV2 = v();
+            float v2 = v();
             b0(this.e0);
             t(this.e0);
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -195,11 +352,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void F(boolean z) {
         if (this.d0 != z) {
-            boolean zY = Y();
+            boolean Y = Y();
             this.d0 = z;
-            boolean zY2 = Y();
-            if (zY != zY2) {
-                if (zY2) {
+            boolean Y2 = Y();
+            if (Y != Y2) {
+                if (Y2) {
                     t(this.e0);
                 } else {
                     b0(this.e0);
@@ -213,12 +370,12 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
     public final void G(float f) {
         if (this.M != f) {
             this.M = f;
-            u92 u92VarF = this.e.f1059a.f();
-            u92VarF.e = new m(f);
-            u92VarF.f = new m(f);
-            u92VarF.g = new m(f);
-            u92VarF.h = new m(f);
-            setShapeAppearanceModel(u92VarF.a());
+            u92 f2 = this.e.f1058a.f();
+            f2.e = new m(f);
+            f2.f = new m(f);
+            f2.g = new m(f);
+            f2.h = new m(f);
+            setShapeAppearanceModel(f2.a());
         }
     }
 
@@ -236,15 +393,15 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             drawable2 = null;
         }
         if (drawable2 != drawable) {
-            float fV = v();
+            float v = v();
             this.S = drawable != null ? drawable.mutate() : null;
-            float fV2 = v();
+            float v2 = v();
             b0(drawable2);
             if (Z()) {
                 t(this.S);
             }
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -252,11 +409,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void I(float f) {
         if (this.U != f) {
-            float fV = v();
+            float v = v();
             this.U = f;
-            float fV2 = v();
+            float v2 = v();
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -330,16 +487,16 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             drawable2 = null;
         }
         if (drawable2 != drawable) {
-            float fW = w();
+            float w = w();
             this.X = drawable != null ? drawable.mutate() : null;
             this.Y = new RippleDrawable(i12.a(this.P), this.X, S0);
-            float fW2 = w();
+            float w2 = w();
             b0(drawable2);
             if (a0()) {
                 t(this.X);
             }
             invalidateSelf();
-            if (fW != fW2) {
+            if (w != w2) {
                 A();
             }
         }
@@ -398,11 +555,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void T(boolean z) {
         if (this.W != z) {
-            boolean zA0 = a0();
+            boolean a0 = a0();
             this.W = z;
-            boolean zA02 = a0();
-            if (zA0 != zA02) {
-                if (zA02) {
+            boolean a02 = a0();
+            if (a0 != a02) {
+                if (a02) {
                     t(this.X);
                 } else {
                     b0(this.X);
@@ -415,11 +572,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void U(float f) {
         if (this.k0 != f) {
-            float fV = v();
+            float v = v();
             this.k0 = f;
-            float fV2 = v();
+            float v2 = v();
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -427,11 +584,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     public final void V(float f) {
         if (this.j0 != f) {
-            float fV = v();
+            float v = v();
             this.j0 = f;
-            float fV2 = v();
+            float v2 = v();
             invalidateSelf();
-            if (fV != fV2) {
+            if (v != v2) {
                 A();
             }
         }
@@ -448,7 +605,7 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
     public final void X(yi2 yi2Var) {
         gj2 gj2Var = this.w0;
         nr nrVar = gj2Var.b;
-        TextPaint textPaint = gj2Var.f423a;
+        TextPaint textPaint = gj2Var.f422a;
         if (gj2Var.f != yi2Var) {
             gj2Var.f = yi2Var;
             if (yi2Var != null) {
@@ -487,19 +644,19 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
     public final void draw(Canvas canvas) {
         int i;
         Canvas canvas2;
-        int iSaveLayerAlpha;
-        float f;
         int i2;
+        float f;
+        int i3;
         Rect bounds = getBounds();
         if (bounds.isEmpty() || (i = this.F0) == 0) {
             return;
         }
         if (i < 255) {
             canvas2 = canvas;
-            iSaveLayerAlpha = canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i);
+            i2 = canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i);
         } else {
             canvas2 = canvas;
-            iSaveLayerAlpha = 0;
+            i2 = 0;
         }
         boolean z = this.Q0;
         Paint paint = this.r0;
@@ -546,7 +703,7 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
         if (this.Q0) {
             RectF rectF2 = new RectF(bounds);
             sa1 sa1Var = this.e;
-            v92 v92Var = sa1Var.f1059a;
+            v92 v92Var = sa1Var.f1058a;
             float[] fArr = this.E;
             float f5 = sa1Var.j;
             ra1 ra1Var = this.u;
@@ -554,7 +711,7 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             f = 2.0f;
             Path path = this.v0;
             x92Var.a(v92Var, fArr, f5, rectF2, ra1Var, path);
-            e(canvas2, paint, path, this.e.f1059a, this.E, g());
+            e(canvas2, paint, path, this.e.f1058a, this.E, g());
         } else {
             canvas2.drawRoundRect(rectF, x(), x(), paint);
             f = 2.0f;
@@ -584,35 +741,35 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             CharSequence charSequence = this.Q;
             gj2 gj2Var = this.w0;
             if (charSequence != null) {
-                float fV = v() + this.i0 + this.l0;
+                float v = v() + this.i0 + this.l0;
                 if (getLayoutDirection() == 0) {
-                    pointF.x = bounds.left + fV;
+                    pointF.x = bounds.left + v;
                 } else {
-                    pointF.x = bounds.right - fV;
+                    pointF.x = bounds.right - v;
                     align = Paint.Align.RIGHT;
                 }
-                float fCenterY = bounds.centerY();
-                TextPaint textPaint = gj2Var.f423a;
+                float centerY = bounds.centerY();
+                TextPaint textPaint = gj2Var.f422a;
                 Paint.FontMetrics fontMetrics = this.s0;
                 textPaint.getFontMetrics(fontMetrics);
-                pointF.y = fCenterY - ((fontMetrics.descent + fontMetrics.ascent) / f);
+                pointF.y = centerY - ((fontMetrics.descent + fontMetrics.ascent) / f);
             }
             rectF.setEmpty();
             if (this.Q != null) {
-                float fV2 = v() + this.i0 + this.l0;
-                float fW = w() + this.p0 + this.m0;
+                float v2 = v() + this.i0 + this.l0;
+                float w = w() + this.p0 + this.m0;
                 if (getLayoutDirection() == 0) {
-                    rectF.left = bounds.left + fV2;
-                    rectF.right = bounds.right - fW;
+                    rectF.left = bounds.left + v2;
+                    rectF.right = bounds.right - w;
                 } else {
-                    rectF.left = bounds.left + fW;
-                    rectF.right = bounds.right - fV2;
+                    rectF.left = bounds.left + w;
+                    rectF.right = bounds.right - v2;
                 }
                 rectF.top = bounds.top;
                 rectF.bottom = bounds.bottom;
             }
             yi2 yi2Var = gj2Var.f;
-            TextPaint textPaint2 = gj2Var.f423a;
+            TextPaint textPaint2 = gj2Var.f422a;
             if (yi2Var != null) {
                 textPaint2.drawableState = getState();
                 gj2Var.f.d(this.q0, textPaint2, gj2Var.b);
@@ -620,20 +777,20 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             textPaint2.setTextAlign(align);
             boolean z2 = Math.round(gj2Var.a(this.Q.toString())) > Math.round(rectF.width());
             if (z2) {
-                int iSave = canvas2.save();
+                int save = canvas2.save();
                 canvas2.clipRect(rectF);
-                i2 = iSave;
+                i3 = save;
             } else {
-                i2 = 0;
+                i3 = 0;
             }
-            CharSequence charSequenceEllipsize = this.Q;
+            CharSequence charSequence2 = this.Q;
             if (z2 && this.N0 != null) {
-                charSequenceEllipsize = TextUtils.ellipsize(charSequenceEllipsize, textPaint2, rectF.width(), this.N0);
+                charSequence2 = TextUtils.ellipsize(charSequence2, textPaint2, rectF.width(), this.N0);
             }
-            canvas.drawText(charSequenceEllipsize, 0, charSequenceEllipsize.length(), pointF.x, pointF.y, textPaint2);
+            canvas.drawText(charSequence2, 0, charSequence2.length(), pointF.x, pointF.y, textPaint2);
             canvas2 = canvas;
             if (z2) {
-                canvas2.restoreToCount(i2);
+                canvas2.restoreToCount(i3);
             }
         }
         if (a0()) {
@@ -649,9 +806,9 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
                     rectF.left = f12;
                     rectF.right = f12 + this.a0;
                 }
-                float fExactCenterY = bounds.exactCenterY();
+                float exactCenterY = bounds.exactCenterY();
                 float f13 = this.a0;
-                float f14 = fExactCenterY - (f13 / f);
+                float f14 = exactCenterY - (f13 / f);
                 rectF.top = f14;
                 rectF.bottom = f14 + f13;
             }
@@ -665,7 +822,7 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             canvas2.translate(-f15, -f16);
         }
         if (this.F0 < 255) {
-            canvas2.restoreToCount(iSaveLayerAlpha);
+            canvas2.restoreToCount(i2);
         }
     }
 
@@ -735,17 +892,17 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean onLayoutDirectionChanged(int i) {
-        boolean zOnLayoutDirectionChanged = super.onLayoutDirectionChanged(i);
+        boolean onLayoutDirectionChanged = super.onLayoutDirectionChanged(i);
         if (Z()) {
-            zOnLayoutDirectionChanged |= this.S.setLayoutDirection(i);
+            onLayoutDirectionChanged |= this.S.setLayoutDirection(i);
         }
         if (Y()) {
-            zOnLayoutDirectionChanged |= this.e0.setLayoutDirection(i);
+            onLayoutDirectionChanged |= this.e0.setLayoutDirection(i);
         }
         if (a0()) {
-            zOnLayoutDirectionChanged |= this.X.setLayoutDirection(i);
+            onLayoutDirectionChanged |= this.X.setLayoutDirection(i);
         }
-        if (!zOnLayoutDirectionChanged) {
+        if (!onLayoutDirectionChanged) {
             return true;
         }
         invalidateSelf();
@@ -754,20 +911,20 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean onLevelChange(int i) {
-        boolean zOnLevelChange = super.onLevelChange(i);
+        boolean onLevelChange = super.onLevelChange(i);
         if (Z()) {
-            zOnLevelChange |= this.S.setLevel(i);
+            onLevelChange |= this.S.setLevel(i);
         }
         if (Y()) {
-            zOnLevelChange |= this.e0.setLevel(i);
+            onLevelChange |= this.e0.setLevel(i);
         }
         if (a0()) {
-            zOnLevelChange |= this.X.setLevel(i);
+            onLevelChange |= this.X.setLevel(i);
         }
-        if (zOnLevelChange) {
+        if (onLevelChange) {
             invalidateSelf();
         }
-        return zOnLevelChange;
+        return onLevelChange;
     }
 
     @Override // androidx.emoji2.text.ua1, android.graphics.drawable.Drawable
@@ -867,30 +1024,30 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
         if (Z() || Y()) {
             float f = this.i0 + this.j0;
             Drawable drawable = this.D0 ? this.e0 : this.S;
-            float intrinsicWidth = this.U;
-            if (intrinsicWidth <= 0.0f && drawable != null) {
-                intrinsicWidth = drawable.getIntrinsicWidth();
+            float f2 = this.U;
+            if (f2 <= 0.0f && drawable != null) {
+                f2 = drawable.getIntrinsicWidth();
             }
             if (getLayoutDirection() == 0) {
-                float f2 = rect.left + f;
-                rectF.left = f2;
-                rectF.right = f2 + intrinsicWidth;
+                float f3 = rect.left + f;
+                rectF.left = f3;
+                rectF.right = f3 + f2;
             } else {
-                float f3 = rect.right - f;
-                rectF.right = f3;
-                rectF.left = f3 - intrinsicWidth;
+                float f4 = rect.right - f;
+                rectF.right = f4;
+                rectF.left = f4 - f2;
             }
             Drawable drawable2 = this.D0 ? this.e0 : this.S;
-            float fCeil = this.U;
-            if (fCeil <= 0.0f && drawable2 != null) {
-                fCeil = (float) Math.ceil(TypedValue.applyDimension(1, 24, this.q0.getResources().getDisplayMetrics()));
-                if (drawable2.getIntrinsicHeight() <= fCeil) {
-                    fCeil = drawable2.getIntrinsicHeight();
+            float f5 = this.U;
+            if (f5 <= 0.0f && drawable2 != null) {
+                f5 = (float) Math.ceil(TypedValue.applyDimension(1, 24, this.q0.getResources().getDisplayMetrics()));
+                if (drawable2.getIntrinsicHeight() <= f5) {
+                    f5 = drawable2.getIntrinsicHeight();
                 }
             }
-            float fExactCenterY = rect.exactCenterY() - (fCeil / 2.0f);
-            rectF.top = fExactCenterY;
-            rectF.bottom = fExactCenterY + fCeil;
+            float exactCenterY = rect.exactCenterY() - (f5 / 2.0f);
+            rectF.top = exactCenterY;
+            rectF.bottom = exactCenterY + f5;
         }
     }
 
@@ -908,11 +1065,11 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
         }
         float f = this.j0;
         Drawable drawable = this.D0 ? this.e0 : this.S;
-        float intrinsicWidth = this.U;
-        if (intrinsicWidth <= 0.0f && drawable != null) {
-            intrinsicWidth = drawable.getIntrinsicWidth();
+        float f2 = this.U;
+        if (f2 <= 0.0f && drawable != null) {
+            f2 = drawable.getIntrinsicWidth();
         }
-        return intrinsicWidth + f + this.k0;
+        return f2 + f + this.k0;
     }
 
     public final float w() {
@@ -927,6 +1084,6 @@ public final class rr extends ua1 implements Drawable.Callback, fj2 {
             return this.M;
         }
         float[] fArr = this.E;
-        return fArr != null ? fArr[3] : this.e.f1059a.e.a(g());
+        return fArr != null ? fArr[3] : this.e.f1058a.e.a(g());
     }
 }

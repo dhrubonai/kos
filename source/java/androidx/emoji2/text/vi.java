@@ -19,9 +19,9 @@ public class vi extends fm2 {
     static {
         ReentrantLock reentrantLock = new ReentrantLock();
         h = reentrantLock;
-        Condition conditionNewCondition = reentrantLock.newCondition();
-        lx0.w(conditionNewCondition, "newCondition(...)");
-        i = conditionNewCondition;
+        Condition newCondition = reentrantLock.newCondition();
+        lx0.w(newCondition, "newCondition(...)");
+        i = newCondition;
         long millis = TimeUnit.SECONDS.toMillis(60L);
         j = millis;
         k = TimeUnit.MILLISECONDS.toNanos(millis);
@@ -29,7 +29,7 @@ public class vi extends fm2 {
 
     public final void h() {
         long j2 = this.c;
-        boolean z = this.f369a;
+        boolean z = this.f368a;
         if (j2 != 0 || z) {
             ReentrantLock reentrantLock = h;
             reentrantLock.lock();

@@ -14,7 +14,7 @@ public final class md0 extends wj1 {
 
     @Override // androidx.emoji2.text.wj1
     public final void F(Throwable th) {
-        ((qd0) this.j.f1117a).f(th);
+        ((qd0) this.j.f1116a).f(th);
     }
 
     @Override // androidx.emoji2.text.wj1
@@ -22,20 +22,20 @@ public final class md0 extends wj1 {
         te1 te1Var = this.j;
         te1Var.c = s6Var;
         s6 s6Var2 = (s6) te1Var.c;
-        qd0 qd0Var = (qd0) te1Var.f1117a;
+        qd0 qd0Var = (qd0) te1Var.f1116a;
         te1Var.b = new rg(s6Var2, qd0Var.g, qd0Var.i, Build.VERSION.SDK_INT >= 34 ? wd0.a() : xo2.p());
-        qd0 qd0Var2 = (qd0) te1Var.f1117a;
+        qd0 qd0Var2 = (qd0) te1Var.f1116a;
         qd0Var2.getClass();
         ArrayList arrayList = new ArrayList();
-        qd0Var2.f951a.writeLock().lock();
+        qd0Var2.f950a.writeLock().lock();
         try {
             qd0Var2.c = 1;
             arrayList.addAll(qd0Var2.b);
             qd0Var2.b.clear();
-            qd0Var2.f951a.writeLock().unlock();
+            qd0Var2.f950a.writeLock().unlock();
             qd0Var2.d.post(new zo(arrayList, qd0Var2.c, null));
         } catch (Throwable th) {
-            qd0Var2.f951a.writeLock().unlock();
+            qd0Var2.f950a.writeLock().unlock();
             throw th;
         }
     }

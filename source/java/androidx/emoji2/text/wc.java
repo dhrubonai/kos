@@ -1,5 +1,9 @@
 package androidx.emoji2.text;
 
+import android.content.pm.PackageParser;
+import com.kos.engine.entity.location.BCell;
+import java.util.Map;
+import java.util.WeakHashMap;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -78,7 +82,6 @@ public final class wc extends g01 implements Function2 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x02bc  */
     /* JADX WARN: Type inference failed for: r5v15 */
     /* JADX WARN: Type inference failed for: r5v16, types: [androidx.emoji2.text.md1] */
     /* JADX WARN: Type inference failed for: r5v20 */
@@ -102,15 +105,254 @@ public final class wc extends g01 implements Function2 {
     /* JADX WARN: Type inference failed for: r8v8 */
     /* JADX WARN: Type inference failed for: r8v9 */
     @Override // kotlin.jvm.functions.Function2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r18, java.lang.Object r19) {
-        /*
-            Method dump skipped, instructions count: 1074
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.wc.invoke(java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2) {
+        int i2 = this.e;
+        int i3 = 0;
+        up2 up2Var = up2.f1186a;
+        switch (i2) {
+            case 0:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setUpdateBlock((um0) obj2);
+                return up2Var;
+            case 1:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setReleaseBlock((um0) obj2);
+                return up2Var;
+            case 2:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setModifier((nd1) obj2);
+                return up2Var;
+            case BCell.NETWORK_TYPE_UMTS /* 3 */:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setDensity((j70) obj2);
+                return up2Var;
+            case 4:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setLifecycleOwner((v51) obj2);
+                return up2Var;
+            case 5:
+                androidx.compose.ui.viewinterop.a.c((e11) obj).setSavedStateRegistryOwner((m32) obj2);
+                return up2Var;
+            case 6:
+                js2 c = androidx.compose.ui.viewinterop.a.c((e11) obj);
+                int ordinal = ((q01) obj2).ordinal();
+                if (ordinal != 0) {
+                    if (ordinal != 1) {
+                        throw new mu();
+                    }
+                    i3 = 1;
+                }
+                c.setLayoutDirection(i3);
+                return up2Var;
+            case BCell.NETWORK_TYPE_1xRTT /* 7 */:
+                long j2 = ((uw0) obj).f1195a;
+                long j3 = ((uw0) obj2).f1195a;
+                Object obj3 = ku2.f658a;
+                return lx0.a0(1, new uw0(kx0.d(1, 1)));
+            case 8:
+                return Integer.valueOf(Math.round((1 + (((q01) obj2) != q01.d ? (-1.0f) * (-1) : -1.0f)) * (((Number) obj).intValue() / 2.0f)));
+            case pz0.b /* 9 */:
+                String str = (String) obj;
+                ld1 ld1Var = (ld1) obj2;
+                if (str.length() == 0) {
+                    return ld1Var.toString();
+                }
+                return str + ", " + ld1Var;
+            case pz0.d /* 10 */:
+                lx lxVar = (lx) obj;
+                int intValue = ((Number) obj2).intValue();
+                tx txVar = (tx) lxVar;
+                if (!txVar.P(intValue & 1, (intValue & 3) != 2)) {
+                    txVar.S();
+                }
+                return up2Var;
+            case 11:
+                lx lxVar2 = (lx) obj;
+                int intValue2 = ((Number) obj2).intValue();
+                tx txVar2 = (tx) lxVar2;
+                if (!txVar2.P(intValue2 & 1, (intValue2 & 3) != 2)) {
+                    txVar2.S();
+                }
+                return up2Var;
+            case 12:
+                lx lxVar3 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar3 = (tx) lxVar3;
+                    if (txVar3.B()) {
+                        txVar3.S();
+                        return up2Var;
+                    }
+                }
+                im.f533a.a(null, 0.0f, 0.0f, null, 0L, lxVar3, 196608, 31);
+                return up2Var;
+            case 13:
+                lx lxVar4 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar4 = (tx) lxVar4;
+                    if (txVar4.B()) {
+                        txVar4.S();
+                    }
+                }
+                return up2Var;
+            case 14:
+                lx lxVar5 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar5 = (tx) lxVar5;
+                    if (txVar5.B()) {
+                        txVar5.S();
+                    }
+                }
+                return up2Var;
+            case pz0.f /* 15 */:
+                lx lxVar6 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar6 = (tx) lxVar6;
+                    if (txVar6.B()) {
+                        txVar6.S();
+                    }
+                }
+                return up2Var;
+            case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
+                lx lxVar7 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar7 = (tx) lxVar7;
+                    if (txVar7.B()) {
+                        txVar7.S();
+                    }
+                }
+                return up2Var;
+            case 17:
+                lx lxVar8 = (lx) obj;
+                if ((((Number) obj2).intValue() & 3) == 2) {
+                    tx txVar8 = (tx) lxVar8;
+                    if (txVar8.B()) {
+                        txVar8.S();
+                    }
+                }
+                return up2Var;
+            case 18:
+                lx lxVar9 = (lx) obj;
+                int intValue3 = ((Number) obj2).intValue();
+                tx txVar9 = (tx) lxVar9;
+                if (!txVar9.P(intValue3 & 1, (intValue3 & 3) != 2)) {
+                    txVar9.S();
+                }
+                return up2Var;
+            case 19:
+                lx lxVar10 = (lx) obj;
+                int intValue4 = ((Number) obj2).intValue();
+                tx txVar10 = (tx) lxVar10;
+                if (!txVar10.P(intValue4 & 1, (intValue4 & 3) != 2)) {
+                    txVar10.S();
+                }
+                return up2Var;
+            case 20:
+                ((Number) obj2).intValue();
+                ((hx) obj).getClass();
+                return up2Var;
+            case 21:
+                ((e11) ((hx) obj)).d0((fb1) obj2);
+                return up2Var;
+            case 22:
+                ((e11) ((hx) obj)).e0((nd1) obj2);
+                return up2Var;
+            case 23:
+                gy gyVar = (gy) obj2;
+                e11 e11Var = (e11) ((hx) obj);
+                e11Var.D = gyVar;
+                vh1 vh1Var = e11Var.H;
+                jf2 jf2Var = iy.h;
+                zo1 zo1Var = (zo1) gyVar;
+                zo1Var.getClass();
+                e11Var.a0((j70) xo2.E(zo1Var, jf2Var));
+                q01 q01Var = (q01) xo2.E(zo1Var, iy.n);
+                if (e11Var.B != q01Var) {
+                    e11Var.B = q01Var;
+                    e11Var.E();
+                    e11 u2 = e11Var.u();
+                    if (u2 != null) {
+                        u2.C();
+                    }
+                    e11Var.D();
+                    for (md1 md1Var = vh1Var.f; md1Var != null; md1Var = md1Var.i) {
+                        md1Var.N();
+                    }
+                }
+                e11Var.f0((gs2) xo2.E(zo1Var, iy.s));
+                md1 md1Var2 = vh1Var.f;
+                if ((md1Var2.g & 32768) != 0) {
+                    while (md1Var2 != null) {
+                        if ((md1Var2.f & 32768) != 0) {
+                            z60 z60Var = md1Var2;
+                            ?? r8 = 0;
+                            while (z60Var != 0) {
+                                if (z60Var instanceof ey) {
+                                    md1 md1Var3 = ((md1) ((ey) z60Var)).d;
+                                    if (md1Var3.q) {
+                                        yh1.c(md1Var3);
+                                    } else {
+                                        md1Var3.m = true;
+                                    }
+                                } else if ((z60Var.f & 32768) != 0 && (z60Var instanceof z60)) {
+                                    md1 md1Var4 = z60Var.s;
+                                    int i4 = 0;
+                                    z60Var = z60Var;
+                                    r8 = r8;
+                                    while (md1Var4 != null) {
+                                        if ((md1Var4.f & 32768) != 0) {
+                                            i4++;
+                                            r8 = r8;
+                                            if (i4 == 1) {
+                                                z60Var = md1Var4;
+                                            } else {
+                                                if (r8 == 0) {
+                                                    r8 = new sf1(new md1[16]);
+                                                }
+                                                if (z60Var != 0) {
+                                                    r8.b(z60Var);
+                                                    z60Var = 0;
+                                                }
+                                                r8.b(md1Var4);
+                                            }
+                                        }
+                                        md1Var4 = md1Var4.i;
+                                        z60Var = z60Var;
+                                        r8 = r8;
+                                    }
+                                    if (i4 == 1) {
+                                    }
+                                }
+                                z60Var = lx0.m(r8);
+                            }
+                        }
+                        if ((md1Var2.g & 32768) != 0) {
+                            md1Var2 = md1Var2.i;
+                        }
+                    }
+                }
+                return up2Var;
+            case 24:
+                o60 o60Var = (o60) obj2;
+                return xs.m0(Integer.valueOf(o60Var.j()), Float.valueOf(az0.o(o60Var.c.c.g(), -0.5f, 0.5f)), Integer.valueOf(o60Var.l()));
+            case 25:
+                ((Number) obj2).intValue();
+                return new bq0(oy0.e(1));
+            case 26:
+                r21 r21Var = (r21) obj2;
+                return xs.m0(Integer.valueOf(r21Var.b.b.g()), Integer.valueOf(r21Var.b.c.g()));
+            case 27:
+                s41 s41Var = (s41) obj2;
+                return xs.m0(Integer.valueOf(s41Var.d.b.g()), Integer.valueOf(s41Var.d.c.g()));
+            case 28:
+                Map c2 = ((v41) obj2).c();
+                if (c2.isEmpty()) {
+                    return null;
+                }
+                return c2;
+            default:
+                ((Number) obj2).intValue();
+                tx txVar11 = (tx) ((lx) obj);
+                txVar11.X(58488196);
+                im imVar = im.f533a;
+                WeakHashMap weakHashMap = bw2.v;
+                a61 a61Var = new a61(f32.d(txVar11).k, 32);
+                txVar11.p(false);
+                return a61Var;
+        }
     }
 }

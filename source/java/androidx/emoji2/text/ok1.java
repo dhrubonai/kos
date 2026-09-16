@@ -11,12 +11,12 @@ public final class ok1 extends dl1 {
         ob2 ob2Var = (ob2) on0Var.d(1);
         t5 t5Var = (t5) on0Var.d(0);
         xi0 xi0Var = (xi0) on0Var.d(2);
-        rb2 rb2VarD = ob2Var.d();
+        rb2 d = ob2Var.d();
         if (el1Var != null) {
             try {
                 l6Var = new l6(24, el1Var, rb2Var);
             } catch (Throwable th) {
-                rb2VarD.e(false);
+                d.e(false);
                 throw th;
             }
         } else {
@@ -25,8 +25,8 @@ public final class ok1 extends dl1 {
         if (!xi0Var.g.O()) {
             vx.c("FixupList has pending fixup operations that were not realized. Were there mismatched insertNode() and endNodeInsert() calls?");
         }
-        xi0Var.f.N(wgVar, rb2VarD, jy1Var, l6Var);
-        rb2VarD.e(true);
+        xi0Var.f.N(wgVar, d, jy1Var, l6Var);
+        d.e(true);
         rb2Var.d();
         t5Var.getClass();
         rb2Var.z(ob2Var, ob2Var.a(t5Var));

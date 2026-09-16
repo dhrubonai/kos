@@ -5,19 +5,19 @@ package androidx.emoji2.text;
 public final class se1 implements yw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final oa2 f1067a = kx0.e(1, tn.e);
+    public final oa2 f1066a = kx0.e(1, tn.e);
 
     @Override // androidx.emoji2.text.yw0
     public final hj0 a() {
-        return this.f1067a;
+        return this.f1066a;
     }
 
-    public final Object b(xw0 xw0Var, l10 l10Var) throws Throwable {
-        Object objB = this.f1067a.b(xw0Var, l10Var);
-        return objB == f30.d ? objB : up2.f1187a;
+    public final Object b(xw0 xw0Var, l10 l10Var) {
+        Object b = this.f1066a.b(xw0Var, l10Var);
+        return b == f30.d ? b : up2.f1186a;
     }
 
     public final void c(xw0 xw0Var) {
-        this.f1067a.q(xw0Var);
+        this.f1066a.q(xw0Var);
     }
 }

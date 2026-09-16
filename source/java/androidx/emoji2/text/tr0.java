@@ -21,33 +21,39 @@ public final class tr0 implements ListIterator, ry0 {
     }
 
     public void a() {
-        if (((AbstractList) ((y61) this.h).h).modCount != this.g) {
+        int i;
+        i = ((AbstractList) ((y61) this.h).h).modCount;
+        if (i != this.g) {
             throw new ConcurrentModificationException();
         }
     }
 
     @Override // java.util.ListIterator
     public final void add(Object obj) {
+        int i;
+        int i2;
         switch (this.d) {
             case 0:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
             case 1:
                 a();
                 y61 y61Var = (y61) this.h;
-                int i = this.e;
-                this.e = i + 1;
-                y61Var.add(i, obj);
+                int i3 = this.e;
+                this.e = i3 + 1;
+                y61Var.add(i3, obj);
                 this.f = -1;
-                this.g = ((AbstractList) y61Var).modCount;
+                i = ((AbstractList) y61Var).modCount;
+                this.g = i;
                 return;
             case 2:
                 b();
                 z61 z61Var = (z61) this.h;
-                int i2 = this.e;
-                this.e = i2 + 1;
-                z61Var.add(i2, obj);
+                int i4 = this.e;
+                this.e = i4 + 1;
+                z61Var.add(i4, obj);
                 this.f = -1;
-                this.g = ((AbstractList) z61Var).modCount;
+                i2 = ((AbstractList) z61Var).modCount;
+                this.g = i2;
                 return;
             default:
                 c();
@@ -61,7 +67,9 @@ public final class tr0 implements ListIterator, ry0 {
     }
 
     public void b() {
-        if (((AbstractList) ((z61) this.h)).modCount != this.g) {
+        int i;
+        i = ((AbstractList) ((z61) this.h)).modCount;
+        if (i != this.g) {
             throw new ConcurrentModificationException();
         }
     }
@@ -116,9 +124,9 @@ public final class tr0 implements ListIterator, ry0 {
                 ze1 ze1Var = ((vr0) this.h).d;
                 int i = this.e;
                 this.e = i + 1;
-                Object objE = ze1Var.e(i);
-                lx0.v(objE, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
-                return (md1) objE;
+                Object e = ze1Var.e(i);
+                lx0.v(e, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
+                return (md1) e;
             case 1:
                 a();
                 int i2 = this.e;
@@ -172,9 +180,9 @@ public final class tr0 implements ListIterator, ry0 {
                 ze1 ze1Var = ((vr0) this.h).d;
                 int i = this.e - 1;
                 this.e = i;
-                Object objE = ze1Var.e(i);
-                lx0.v(objE, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
-                return (md1) objE;
+                Object e = ze1Var.e(i);
+                lx0.v(e, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
+                return (md1) e;
             case 1:
                 a();
                 int i2 = this.e;
@@ -229,32 +237,36 @@ public final class tr0 implements ListIterator, ry0 {
 
     @Override // java.util.ListIterator, java.util.Iterator
     public final void remove() {
+        int i;
+        int i2;
         switch (this.d) {
             case 0:
                 throw new UnsupportedOperationException("Operation is not supported for read-only collection");
             case 1:
                 y61 y61Var = (y61) this.h;
                 a();
-                int i = this.f;
-                if (i == -1) {
+                int i3 = this.f;
+                if (i3 == -1) {
                     throw new IllegalStateException("Call next() or previous() before removing element from the iterator.");
                 }
-                y61Var.b(i);
+                y61Var.b(i3);
                 this.e = this.f;
                 this.f = -1;
-                this.g = ((AbstractList) y61Var).modCount;
+                i = ((AbstractList) y61Var).modCount;
+                this.g = i;
                 return;
             case 2:
                 z61 z61Var = (z61) this.h;
                 b();
-                int i2 = this.f;
-                if (i2 == -1) {
+                int i4 = this.f;
+                if (i4 == -1) {
                     throw new IllegalStateException("Call next() or previous() before removing element from the iterator.");
                 }
-                z61Var.b(i2);
+                z61Var.b(i4);
                 this.e = this.f;
                 this.f = -1;
-                this.g = ((AbstractList) z61Var).modCount;
+                i2 = ((AbstractList) z61Var).modCount;
+                this.g = i2;
                 return;
             default:
                 c();
@@ -302,11 +314,13 @@ public final class tr0 implements ListIterator, ry0 {
     }
 
     public tr0(z61 z61Var, int i) {
+        int i2;
         this.d = 2;
         this.h = z61Var;
         this.e = i;
         this.f = -1;
-        this.g = ((AbstractList) z61Var).modCount;
+        i2 = ((AbstractList) z61Var).modCount;
+        this.g = i2;
     }
 
     public tr0(yc2 yc2Var, int i) {
@@ -326,10 +340,12 @@ public final class tr0 implements ListIterator, ry0 {
     }
 
     public tr0(y61 y61Var, int i) {
+        int i2;
         this.d = 1;
         this.h = y61Var;
         this.e = i;
         this.f = -1;
-        this.g = ((AbstractList) y61Var).modCount;
+        i2 = ((AbstractList) y61Var).modCount;
+        this.g = i2;
     }
 }

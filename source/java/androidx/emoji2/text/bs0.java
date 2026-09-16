@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class bs0 implements u01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final rj2 f165a;
+    public final rj2 f164a;
     public final int b;
     public final gn2 c;
     public final sm0 d;
 
     public bs0(rj2 rj2Var, int i, gn2 gn2Var, sm0 sm0Var) {
-        this.f165a = rj2Var;
+        this.f164a = rj2Var;
         this.b = i;
         this.c = gn2Var;
         this.d = sm0Var;
@@ -26,9 +26,9 @@ public final class bs0 implements u01 {
             j2 = j;
             j = vz.a(j2, 0, Integer.MAX_VALUE, 0, 0, 13);
         }
-        hr1 hr1VarQ = ab1Var.q(j);
-        int iMin = Math.min(hr1VarQ.d, vz.h(j2));
-        return hb1Var.P(iMin, hr1VarQ.e, re0.d, new d5(hb1Var, this, hr1VarQ, iMin, 1));
+        hr1 q = ab1Var.q(j);
+        int min = Math.min(q.d, vz.h(j2));
+        return hb1Var.P(min, q.e, re0.d, new d5(hb1Var, this, q, min, 1));
     }
 
     public final boolean equals(Object obj) {
@@ -39,14 +39,14 @@ public final class bs0 implements u01 {
             return false;
         }
         bs0 bs0Var = (bs0) obj;
-        return lx0.n(this.f165a, bs0Var.f165a) && this.b == bs0Var.b && lx0.n(this.c, bs0Var.c) && lx0.n(this.d, bs0Var.d);
+        return lx0.n(this.f164a, bs0Var.f164a) && this.b == bs0Var.b && lx0.n(this.c, bs0Var.c) && lx0.n(this.d, bs0Var.d);
     }
 
     public final int hashCode() {
-        return this.d.hashCode() + ((this.c.hashCode() + jx0.a(this.b, this.f165a.hashCode() * 31, 31)) * 31);
+        return this.d.hashCode() + ((this.c.hashCode() + jx0.a(this.b, this.f164a.hashCode() * 31, 31)) * 31);
     }
 
     public final String toString() {
-        return "HorizontalScrollLayoutModifier(scrollerPosition=" + this.f165a + ", cursorOffset=" + this.b + ", transformedText=" + this.c + ", textLayoutResultProvider=" + this.d + ')';
+        return "HorizontalScrollLayoutModifier(scrollerPosition=" + this.f164a + ", cursorOffset=" + this.b + ", transformedText=" + this.c + ", textLayoutResultProvider=" + this.d + ')';
     }
 }

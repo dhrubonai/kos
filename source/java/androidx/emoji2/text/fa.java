@@ -13,7 +13,7 @@ public final /* synthetic */ class fa extends bn0 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        float[] fArr = ((ya1) obj).f1376a;
+        float[] fArr = ((ya1) obj).f1375a;
         p01 p01Var = (p01) this.k.u.getValue();
         if (p01Var != null) {
             if (!p01Var.h()) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class fa extends bn0 implements um0 {
                 p01Var.j(fArr);
             }
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

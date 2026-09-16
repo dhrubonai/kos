@@ -23,7 +23,7 @@ public final class cr1 extends hh2 implements xm0 {
         cr1 cr1Var = new cr1(this.j, this.k, (l10) obj4);
         cr1Var.h = (h21) obj2;
         cr1Var.i = (h21) obj3;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         cr1Var.k(up2Var);
         return up2Var;
     }
@@ -34,10 +34,10 @@ public final class cr1 extends hh2 implements xm0 {
         h21 h21Var2 = this.i;
         mz0.L(obj);
         mf1 mf1Var = this.k;
-        ArrayList arrayListO0 = ws.O0((List) mf1Var.getValue());
-        arrayListO0.add(h21Var2.f451a, arrayListO0.remove(h21Var.f451a));
-        mf1Var.setValue(arrayListO0);
+        ArrayList O0 = ws.O0((List) mf1Var.getValue());
+        O0.add(h21Var2.f450a, O0.remove(h21Var.f450a));
+        mf1Var.setValue(O0);
         this.j.e((List) mf1Var.getValue());
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

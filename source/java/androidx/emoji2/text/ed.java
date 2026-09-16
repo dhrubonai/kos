@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ed {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wo2 f300a;
+    public final wo2 f299a;
     public final Object b;
     public final ie c;
     public final un1 d;
@@ -18,7 +18,7 @@ public final class ed {
     public final oe k;
 
     public ed(Object obj, wo2 wo2Var, Object obj2) {
-        this.f300a = wo2Var;
+        this.f299a = wo2Var;
         this.b = obj2;
         ie ieVar = new ie(wo2Var, obj, null, 60);
         this.c = ieVar;
@@ -30,21 +30,21 @@ public final class ed {
         boolean z = oeVar instanceof ke;
         oe oeVar2 = z ? lx0.e : oeVar instanceof le ? lx0.f : oeVar instanceof me ? lx0.g : lx0.h;
         this.h = oeVar2;
-        oe oeVar3 = z ? lx0.f720a : oeVar instanceof le ? lx0.b : oeVar instanceof me ? lx0.c : lx0.d;
+        oe oeVar3 = z ? lx0.f719a : oeVar instanceof le ? lx0.b : oeVar instanceof me ? lx0.c : lx0.d;
         this.i = oeVar3;
         this.j = oeVar2;
         this.k = oeVar3;
     }
 
     public static final Object a(ed edVar, Object obj) {
-        wo2 wo2Var = edVar.f300a;
+        wo2 wo2Var = edVar.f299a;
         oe oeVar = edVar.k;
         oe oeVar2 = edVar.j;
         if (!lx0.n(oeVar2, edVar.h) || !lx0.n(oeVar, edVar.i)) {
-            oe oeVar3 = (oe) wo2Var.f1293a.e(obj);
-            int iB = oeVar3.b();
+            oe oeVar3 = (oe) wo2Var.f1292a.e(obj);
+            int b = oeVar3.b();
             boolean z = false;
-            for (int i = 0; i < iB; i++) {
+            for (int i = 0; i < b; i++) {
                 if (oeVar3.a(i) < oeVar2.a(i) || oeVar3.a(i) > oeVar.a(i)) {
                     oeVar3.e(i, az0.o(oeVar3.a(i), oeVar2.a(i), oeVar.a(i)));
                     z = true;
@@ -69,14 +69,14 @@ public final class ed {
             heVar = edVar.g;
         }
         he heVar2 = heVar;
-        Object objE = edVar.f300a.b.e(edVar.c.f);
+        Object e = edVar.f299a.b.e(edVar.c.f);
         if ((i & 8) != 0) {
             um0Var = null;
         }
         um0 um0Var2 = um0Var;
-        Object objD = edVar.d();
-        wo2 wo2Var = edVar.f300a;
-        return ag1.a(edVar.f, new bd(edVar, objE, new li2(heVar2, wo2Var, objD, obj, (oe) wo2Var.f1293a.e(objE)), edVar.c.g, um0Var2, null), l10Var);
+        Object d = edVar.d();
+        wo2 wo2Var = edVar.f299a;
+        return ag1.a(edVar.f, new bd(edVar, e, new li2(heVar2, wo2Var, d, obj, (oe) wo2Var.f1292a.e(e)), edVar.c.g, um0Var2, null), l10Var);
     }
 
     public final Object d() {
@@ -84,13 +84,13 @@ public final class ed {
     }
 
     public final Object e(l10 l10Var, Object obj) {
-        Object objA = ag1.a(this.f, new cd(this, obj, null), l10Var);
-        return objA == f30.d ? objA : up2.f1187a;
+        Object a2 = ag1.a(this.f, new cd(this, obj, null), l10Var);
+        return a2 == f30.d ? a2 : up2.f1186a;
     }
 
     public final Object f(hh2 hh2Var) {
-        Object objA = ag1.a(this.f, new dd(this, null), hh2Var);
-        return objA == f30.d ? objA : up2.f1187a;
+        Object a2 = ag1.a(this.f, new dd(this, null), hh2Var);
+        return a2 == f30.d ? a2 : up2.f1186a;
     }
 
     public /* synthetic */ ed(Object obj, wo2 wo2Var, Object obj2, int i) {

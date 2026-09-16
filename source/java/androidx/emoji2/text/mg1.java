@@ -9,12 +9,12 @@ import kotlin.jvm.functions.Function2;
 public final class mg1 implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ sm0 f745a;
+    public final /* synthetic */ sm0 f744a;
     public final /* synthetic */ Function2 b;
     public final /* synthetic */ boolean c;
 
     public mg1(sm0 sm0Var, Function2 function2, boolean z) {
-        this.f745a = sm0Var;
+        this.f744a = sm0Var;
         this.b = function2;
         this.c = z;
     }
@@ -22,33 +22,33 @@ public final class mg1 implements fb1 {
     @Override // androidx.emoji2.text.fb1
     public final gb1 e(hb1 hb1Var, List list, long j) {
         Object obj;
-        hr1 hr1VarQ;
-        hr1 hr1VarQ2;
+        hr1 hr1Var;
+        hr1 hr1Var2;
         mg1 mg1Var = this;
-        float fFloatValue = ((Number) mg1Var.f745a.a()).floatValue();
-        long jA = vz.a(j, 0, 0, 0, 0, 10);
+        float floatValue = ((Number) mg1Var.f744a.a()).floatValue();
+        long a2 = vz.a(j, 0, 0, 0, 0, 10);
         int size = list.size();
         int i = 0;
         while (i < size) {
             ab1 ab1Var = (ab1) list.get(i);
             if (lx0.n(androidx.compose.ui.layout.a.a(ab1Var), "icon")) {
-                hr1 hr1VarQ3 = ab1Var.q(jA);
+                hr1 q = ab1Var.q(a2);
                 char c = 2;
                 float f = 2;
-                int iI0 = hb1Var.i0(pg1.d * f) + hr1VarQ3.d;
-                int iQ = xa1.Q(iI0 * fFloatValue);
-                int iI02 = hb1Var.i0(pg1.e * f) + hr1VarQ3.e;
+                int i0 = hb1Var.i0(pg1.d * f) + q.d;
+                int Q = xa1.Q(i0 * floatValue);
+                int i02 = hb1Var.i0(pg1.e * f) + q.e;
                 int size2 = list.size();
                 int i2 = 0;
                 while (i2 < size2) {
                     ab1 ab1Var2 = (ab1) list.get(i2);
                     char c2 = c;
-                    float f2 = fFloatValue;
+                    float f2 = floatValue;
                     if (lx0.n(androidx.compose.ui.layout.a.a(ab1Var2), "indicatorRipple")) {
-                        if (!((iI0 >= 0) & (iI02 >= 0))) {
+                        if (!((i0 >= 0) & (i02 >= 0))) {
                             kv0.a("width and height must be >= 0");
                         }
-                        hr1 hr1VarQ4 = ab1Var2.q(xz.h(iI0, iI0, iI02, iI02));
+                        hr1 q2 = ab1Var2.q(xz.h(i0, i0, i02, i02));
                         int size3 = list.size();
                         int i3 = 0;
                         while (true) {
@@ -64,12 +64,12 @@ public final class mg1 implements fb1 {
                         }
                         ab1 ab1Var3 = (ab1) obj;
                         if (ab1Var3 != null) {
-                            if (!((iQ >= 0) & (iI02 >= 0))) {
+                            if (!((Q >= 0) & (i02 >= 0))) {
                                 kv0.a("width and height must be >= 0");
                             }
-                            hr1VarQ = ab1Var3.q(xz.h(iQ, iQ, iI02, iI02));
+                            hr1Var = ab1Var3.q(xz.h(Q, Q, i02, i02));
                         } else {
-                            hr1VarQ = null;
+                            hr1Var = null;
                         }
                         Function2 function2 = mg1Var.b;
                         if (function2 != null) {
@@ -77,40 +77,40 @@ public final class mg1 implements fb1 {
                             for (int i4 = 0; i4 < size4; i4++) {
                                 ab1 ab1Var4 = (ab1) list.get(i4);
                                 if (lx0.n(androidx.compose.ui.layout.a.a(ab1Var4), "label")) {
-                                    hr1VarQ2 = ab1Var4.q(jA);
+                                    hr1Var2 = ab1Var4.q(a2);
                                 }
                             }
                             throw new NoSuchElementException("Collection contains no element matching the predicate.");
                         }
-                        hr1VarQ2 = null;
+                        hr1Var2 = null;
                         re0 re0Var = re0.d;
                         if (function2 == null) {
-                            int iH = vz.h(j);
-                            int iF = xz.f(hb1Var.i0(pg1.f905a), j);
-                            return hb1Var.P(iH, iF, re0Var, new ng1(hr1VarQ, hr1VarQ3, (iH - hr1VarQ3.d) / 2, (iF - hr1VarQ3.e) / 2, hr1VarQ4, (iH - hr1VarQ4.d) / 2, (iF - hr1VarQ4.e) / 2, iH, iF));
+                            int h = vz.h(j);
+                            int f3 = xz.f(hb1Var.i0(pg1.f904a), j);
+                            return hb1Var.P(h, f3, re0Var, new ng1(hr1Var, q, (h - q.d) / 2, (f3 - q.e) / 2, q2, (h - q2.d) / 2, (f3 - q2.e) / 2, h, f3));
                         }
-                        lx0.u(hr1VarQ2);
-                        float f3 = hr1VarQ3.e;
-                        float f4 = pg1.e;
-                        float fC0 = hb1Var.c0(f4) + f3;
-                        float f5 = pg1.c;
-                        float fC02 = hb1Var.c0(f5) + fC0 + hr1VarQ2.e;
-                        float fI = (vz.i(j) - fC02) / f;
-                        float fC03 = hb1Var.c0(f4);
-                        if (fI < fC03) {
-                            fI = fC03;
+                        lx0.u(hr1Var2);
+                        float f4 = q.e;
+                        float f5 = pg1.e;
+                        float c0 = hb1Var.c0(f5) + f4;
+                        float f6 = pg1.c;
+                        float c02 = hb1Var.c0(f6) + c0 + hr1Var2.e;
+                        float i5 = (vz.i(j) - c02) / f;
+                        float c03 = hb1Var.c0(f5);
+                        if (i5 < c03) {
+                            i5 = c03;
                         }
-                        float f6 = (fI * f) + fC02;
+                        float f7 = (i5 * f) + c02;
                         boolean z = mg1Var.c;
-                        float f7 = (1 - f2) * ((z ? fI : (f6 - hr1VarQ3.e) / f) - fI);
-                        float fC04 = hb1Var.c0(f5) + hb1Var.c0(f4) + hr1VarQ3.e + fI;
-                        int iH2 = vz.h(j);
-                        return hb1Var.P(iH2, xa1.Q(f6), re0Var, new og1(hr1VarQ, z, f2, hr1VarQ2, (iH2 - hr1VarQ2.d) / 2, fC04, f7, hr1VarQ3, (iH2 - hr1VarQ3.d) / 2, fI, hr1VarQ4, (iH2 - hr1VarQ4.d) / 2, fI - hb1Var.c0(f4), iH2, hb1Var));
+                        float f8 = (1 - f2) * ((z ? i5 : (f7 - q.e) / f) - i5);
+                        float c04 = hb1Var.c0(f6) + hb1Var.c0(f5) + q.e + i5;
+                        int h2 = vz.h(j);
+                        return hb1Var.P(h2, xa1.Q(f7), re0Var, new og1(hr1Var, z, f2, hr1Var2, (h2 - hr1Var2.d) / 2, c04, f8, q, (h2 - q.d) / 2, i5, q2, (h2 - q2.d) / 2, i5 - hb1Var.c0(f5), h2, hb1Var));
                     }
                     i2++;
                     mg1Var = this;
                     c = c2;
-                    fFloatValue = f2;
+                    floatValue = f2;
                 }
                 throw new NoSuchElementException("Collection contains no element matching the predicate.");
             }

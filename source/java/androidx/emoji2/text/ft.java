@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class ft {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f381a;
+    public static final long f380a;
     public static final long b;
     public static final long c;
     public static final long d;
@@ -29,7 +29,7 @@ public abstract class ft {
     static {
         long j2 = in1.o;
         int i2 = in1.R;
-        f381a = in1.c;
+        f380a = in1.c;
         b = in1.k;
         c = in1.D;
         d = in1.q;

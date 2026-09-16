@@ -7,26 +7,26 @@ import android.widget.Magnifier;
 public class rr1 implements pr1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Magnifier f1028a;
+    public final Magnifier f1027a;
 
     public rr1(Magnifier magnifier) {
-        this.f1028a = magnifier;
+        this.f1027a = magnifier;
     }
 
     @Override // androidx.emoji2.text.pr1
     public void a(long j, long j2) {
-        this.f1028a.show(zi1.d(j), zi1.e(j));
+        this.f1027a.show(zi1.d(j), zi1.e(j));
     }
 
     public final void b() {
-        this.f1028a.dismiss();
+        this.f1027a.dismiss();
     }
 
     public final long c() {
-        return kx0.d(this.f1028a.getWidth(), this.f1028a.getHeight());
+        return kx0.d(this.f1027a.getWidth(), this.f1027a.getHeight());
     }
 
     public final void d() {
-        this.f1028a.update();
+        this.f1027a.update();
     }
 }

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class u32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final a12 f1158a;
+    public static final a12 f1157a;
     public static final a12 b;
     public static final a12 c;
     public static final a12 d;
@@ -29,7 +29,7 @@ public abstract class u32 {
 
     static {
         new a12(3, new jw(20), new ve(27));
-        f1158a = new a12(3, new jw(27), new q32(9));
+        f1157a = new a12(3, new jw(27), new q32(9));
         b = new a12(3, new r32(5), new q32(12));
         c = new a12(3, new r32(7), new q32(13));
         d = new a12(3, new r32(8), new q32(14));
@@ -54,7 +54,7 @@ public abstract class u32 {
     }
 
     public static final Object a(Object obj, p32 p32Var, u22 u22Var) {
-        Object objB;
-        return (obj == null || (objB = p32Var.b(u22Var, obj)) == null) ? Boolean.FALSE : objB;
+        Object b2;
+        return (obj == null || (b2 = p32Var.b(u22Var, obj)) == null) ? Boolean.FALSE : b2;
     }
 }

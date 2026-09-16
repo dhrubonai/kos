@@ -10,18 +10,18 @@ import java.util.Comparator;
 public final class xj0 implements Comparator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gf1 f1341a;
+    public final gf1 f1340a;
     public final hf1 b;
     public final gf1 c;
     public final ye1 d;
 
     public xj0(pt ptVar) {
-        long[] jArr = e42.f285a;
-        this.f1341a = new gf1();
-        int i = f42.f343a;
+        long[] jArr = e42.f284a;
+        this.f1340a = new gf1();
+        int i = f42.f342a;
         this.b = new hf1();
         this.c = new gf1();
-        ye1 ye1Var = ti1.f1122a;
+        ye1 ye1Var = ti1.f1121a;
         this.d = new ye1();
     }
 
@@ -39,16 +39,16 @@ public final class xj0 implements Comparator {
         }
         int size2 = arrayList.size() - 1;
         hf1 hf1Var = this.b;
-        gf1 gf1Var = this.f1341a;
+        gf1 gf1Var = this.f1340a;
         if (size2 >= 0) {
             while (true) {
                 int i2 = size2 - 1;
                 View view = (View) arrayList.get(size2);
                 int nextFocusForwardId = view.getNextFocusForwardId();
-                View viewF = (nextFocusForwardId == 0 || nextFocusForwardId == -1) ? null : kx0.f(view, viewGroup, 2);
-                if (viewF != null && ye1Var.d(viewF) >= 0) {
-                    gf1Var.m(view, viewF);
-                    hf1Var.a(viewF);
+                View f = (nextFocusForwardId == 0 || nextFocusForwardId == -1) ? null : kx0.f(view, viewGroup, 2);
+                if (f != null && ye1Var.d(f) >= 0) {
+                    gf1Var.m(view, f);
+                    hf1Var.a(f);
                 }
                 if (i2 < 0) {
                     break;
@@ -108,7 +108,7 @@ public final class xj0 implements Comparator {
             if (view == view3) {
                 return -1;
             }
-            return (view2 == view3 || this.f1341a.g(view) == null) ? 1 : -1;
+            return (view2 == view3 || this.f1340a.g(view) == null) ? 1 : -1;
         }
         if (view3 != null) {
             view = view3;

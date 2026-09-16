@@ -56,13 +56,13 @@ public abstract class sn2 implements Cloneable {
                 sparseArray.put(id, view);
             }
         }
-        Field field = es2.f320a;
-        String strE = wr2.e(view);
-        if (strE != null) {
-            if (uhVar2.containsKey(strE)) {
-                uhVar2.put(strE, null);
+        Field field = es2.f319a;
+        String e = wr2.e(view);
+        if (e != null) {
+            if (uhVar2.containsKey(e)) {
+                uhVar2.put(e, null);
             } else {
-                uhVar2.put(strE, view);
+                uhVar2.put(e, view);
             }
         }
         if (view.getParent() instanceof ListView) {
@@ -95,8 +95,8 @@ public abstract class sn2 implements Cloneable {
     }
 
     public static boolean u(fo2 fo2Var, fo2 fo2Var2, String str) {
-        Object obj = fo2Var.f374a.get(str);
-        Object obj2 = fo2Var2.f374a.get(str);
+        Object obj = fo2Var.f373a.get(str);
+        Object obj2 = fo2Var2.f373a.get(str);
         if (obj == null && obj2 == null) {
             return false;
         }
@@ -244,9 +244,9 @@ public abstract class sn2 implements Cloneable {
             return;
         }
         for (int i = 0; i < arrayList.size(); i++) {
-            View viewFindViewById = viewGroup.findViewById(((Integer) arrayList.get(i)).intValue());
-            if (viewFindViewById != null) {
-                fo2 fo2Var = new fo2(viewFindViewById);
+            View findViewById = viewGroup.findViewById(((Integer) arrayList.get(i)).intValue());
+            if (findViewById != null) {
+                fo2 fo2Var = new fo2(findViewById);
                 if (z2) {
                     g(fo2Var);
                 } else {
@@ -255,9 +255,9 @@ public abstract class sn2 implements Cloneable {
                 fo2Var.c.add(this);
                 f(fo2Var);
                 if (z2) {
-                    b(this.j, viewFindViewById, fo2Var);
+                    b(this.j, findViewById, fo2Var);
                 } else {
-                    b(this.k, viewFindViewById, fo2Var);
+                    b(this.k, findViewById, fo2Var);
                 }
             }
         }
@@ -320,7 +320,7 @@ public abstract class sn2 implements Cloneable {
         fo2 fo2Var;
         Animator animator;
         fo2 fo2Var2;
-        uh uhVarP = p();
+        uh p = p();
         SparseIntArray sparseIntArray = new SparseIntArray();
         int size = arrayList.size();
         o().getClass();
@@ -335,36 +335,36 @@ public abstract class sn2 implements Cloneable {
                 fo2Var4 = null;
             }
             if ((fo2Var3 != null || fo2Var4 != null) && (fo2Var3 == null || fo2Var4 == null || s(fo2Var3, fo2Var4))) {
-                Animator animatorK = k(viewGroup, fo2Var3, fo2Var4);
-                if (animatorK != null) {
+                Animator k = k(viewGroup, fo2Var3, fo2Var4);
+                if (k != null) {
                     String str = this.d;
                     if (fo2Var4 != null) {
                         view = fo2Var4.b;
-                        String[] strArrQ = q();
-                        if (strArrQ != null && strArrQ.length > 0) {
+                        String[] q = q();
+                        if (q != null && q.length > 0) {
                             fo2Var2 = new fo2(view);
                             fo2 fo2Var5 = (fo2) ((uh) s6Var2.d).get(view);
                             i = size;
                             if (fo2Var5 != null) {
                                 int i4 = 0;
-                                while (i4 < strArrQ.length) {
-                                    String str2 = strArrQ[i4];
-                                    fo2Var2.f374a.put(str2, fo2Var5.f374a.get(str2));
+                                while (i4 < q.length) {
+                                    String str2 = q[i4];
+                                    fo2Var2.f373a.put(str2, fo2Var5.f373a.get(str2));
                                     i4++;
                                     i3 = i3;
                                     fo2Var5 = fo2Var5;
                                 }
                             }
                             i2 = i3;
-                            int i5 = uhVarP.f;
+                            int i5 = p.f;
                             int i6 = 0;
                             while (true) {
                                 if (i6 >= i5) {
-                                    animator = animatorK;
+                                    animator = k;
                                     break;
                                 }
-                                kn2 kn2Var = (kn2) uhVarP.get((Animator) uhVarP.f(i6));
-                                if (kn2Var.c != null && kn2Var.f649a == view && kn2Var.b.equals(str) && kn2Var.c.equals(fo2Var2)) {
+                                kn2 kn2Var = (kn2) p.get((Animator) p.f(i6));
+                                if (kn2Var.c != null && kn2Var.f648a == view && kn2Var.b.equals(str) && kn2Var.c.equals(fo2Var2)) {
                                     animator = null;
                                     break;
                                 }
@@ -373,10 +373,10 @@ public abstract class sn2 implements Cloneable {
                         } else {
                             i = size;
                             i2 = i3;
-                            animator = animatorK;
+                            animator = k;
                             fo2Var2 = null;
                         }
-                        animatorK = animator;
+                        k = animator;
                         fo2Var = fo2Var2;
                     } else {
                         i = size;
@@ -384,21 +384,21 @@ public abstract class sn2 implements Cloneable {
                         view = fo2Var3.b;
                         fo2Var = null;
                     }
-                    if (animatorK != null) {
+                    if (k != null) {
                         WindowId windowId = viewGroup.getWindowId();
                         kn2 kn2Var2 = new kn2();
-                        kn2Var2.f649a = view;
+                        kn2Var2.f648a = view;
                         kn2Var2.b = str;
                         kn2Var2.c = fo2Var;
                         kn2Var2.d = windowId;
                         kn2Var2.e = this;
-                        kn2Var2.f = animatorK;
-                        uhVarP.put(animatorK, kn2Var2);
-                        this.x.add(animatorK);
+                        kn2Var2.f = k;
+                        p.put(k, kn2Var2);
+                        this.x.add(k);
                     }
+                    i3 = i2 + 1;
+                    size = i;
                 }
-                i3 = i2 + 1;
-                size = i;
             }
             i = size;
             i2 = i3;
@@ -407,7 +407,7 @@ public abstract class sn2 implements Cloneable {
         }
         if (sparseIntArray.size() != 0) {
             for (int i7 = 0; i7 < sparseIntArray.size(); i7++) {
-                kn2 kn2Var3 = (kn2) uhVarP.get((Animator) this.x.get(sparseIntArray.keyAt(i7)));
+                kn2 kn2Var3 = (kn2) p.get((Animator) this.x.get(sparseIntArray.keyAt(i7)));
                 kn2Var3.f.setStartDelay(kn2Var3.f.getStartDelay() + (sparseIntArray.valueAt(i7) - Long.MAX_VALUE));
             }
         }
@@ -434,84 +434,35 @@ public abstract class sn2 implements Cloneable {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x002c, code lost:
-    
-        if (r2 < 0) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x002e, code lost:
-    
-        if (r6 == false) goto L24;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0030, code lost:
-    
-        r5 = r4.o;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0033, code lost:
-    
-        r5 = r4.n;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x003b, code lost:
-    
-        return (androidx.emoji2.text.fo2) r5.get(r2);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x003c, code lost:
-    
+    public final fo2 n(View view, boolean z2) {
+        aj ajVar = this.l;
+        if (ajVar != null) {
+            return ajVar.n(view, z2);
+        }
+        ArrayList arrayList = z2 ? this.n : this.o;
+        if (arrayList == null) {
+            return null;
+        }
+        int size = arrayList.size();
+        int i = 0;
+        while (true) {
+            if (i >= size) {
+                i = -1;
+                break;
+            }
+            fo2 fo2Var = (fo2) arrayList.get(i);
+            if (fo2Var == null) {
+                return null;
+            }
+            if (fo2Var.b == view) {
+                break;
+            }
+            i++;
+        }
+        if (i >= 0) {
+            return (fo2) (z2 ? this.o : this.n).get(i);
+        }
         return null;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final androidx.emoji2.text.fo2 n(android.view.View r5, boolean r6) {
-        /*
-            r4 = this;
-            androidx.emoji2.text.aj r0 = r4.l
-            if (r0 == 0) goto L9
-            androidx.emoji2.text.fo2 r5 = r0.n(r5, r6)
-            return r5
-        L9:
-            if (r6 == 0) goto Le
-            java.util.ArrayList r0 = r4.n
-            goto L10
-        Le:
-            java.util.ArrayList r0 = r4.o
-        L10:
-            if (r0 != 0) goto L13
-            goto L3c
-        L13:
-            int r1 = r0.size()
-            r2 = 0
-        L18:
-            if (r2 >= r1) goto L2b
-            java.lang.Object r3 = r0.get(r2)
-            androidx.emoji2.text.fo2 r3 = (androidx.emoji2.text.fo2) r3
-            if (r3 != 0) goto L23
-            goto L3c
-        L23:
-            android.view.View r3 = r3.b
-            if (r3 != r5) goto L28
-            goto L2c
-        L28:
-            int r2 = r2 + 1
-            goto L18
-        L2b:
-            r2 = -1
-        L2c:
-            if (r2 < 0) goto L3c
-            if (r6 == 0) goto L33
-            java.util.ArrayList r5 = r4.o
-            goto L35
-        L33:
-            java.util.ArrayList r5 = r4.n
-        L35:
-            java.lang.Object r5 = r5.get(r2)
-            androidx.emoji2.text.fo2 r5 = (androidx.emoji2.text.fo2) r5
-            return r5
-        L3c:
-            r5 = 0
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.sn2.n(android.view.View, boolean):androidx.emoji2.text.fo2");
     }
 
     public final sn2 o() {
@@ -533,15 +484,15 @@ public abstract class sn2 implements Cloneable {
 
     public boolean s(fo2 fo2Var, fo2 fo2Var2) {
         if (fo2Var != null && fo2Var2 != null) {
-            String[] strArrQ = q();
-            if (strArrQ != null) {
-                for (String str : strArrQ) {
+            String[] q = q();
+            if (q != null) {
+                for (String str : q) {
                     if (u(fo2Var, fo2Var2, str)) {
                         return true;
                     }
                 }
             } else {
-                Iterator it = fo2Var.f374a.keySet().iterator();
+                Iterator it = fo2Var.f373a.keySet().iterator();
                 while (it.hasNext()) {
                     if (u(fo2Var, fo2Var2, (String) it.next())) {
                         return true;
@@ -582,7 +533,7 @@ public abstract class sn2 implements Cloneable {
         qn2[] qn2VarArr2 = (qn2[]) this.w.toArray(qn2VarArr);
         for (int i = 0; i < size; i++) {
             qn2 qn2Var = qn2VarArr2[i];
-            switch (ptVar.f927a) {
+            switch (ptVar.f926a) {
                 case 21:
                     qn2Var.a(sn2Var);
                     break;
@@ -657,7 +608,7 @@ public abstract class sn2 implements Cloneable {
 
     public void z() {
         G();
-        uh uhVarP = p();
+        uh p = p();
         ArrayList arrayList = this.x;
         int size = arrayList.size();
         int i = 0;
@@ -665,10 +616,10 @@ public abstract class sn2 implements Cloneable {
             Object obj = arrayList.get(i);
             i++;
             Animator animator = (Animator) obj;
-            if (uhVarP.containsKey(animator)) {
+            if (p.containsKey(animator)) {
                 G();
                 if (animator != null) {
-                    animator.addListener(new jn2(this, uhVarP));
+                    animator.addListener(new jn2(this, p));
                     long j = this.f;
                     if (j >= 0) {
                         animator.setDuration(j);

@@ -15,21 +15,25 @@ public final class js2 extends tc {
     public um0 G;
     public um0 H;
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public js2(Context context, um0 um0Var, qx qxVar, y22 y22Var, int i, tl1 tl1Var) {
+        super(context, qxVar, i, r4, r5, tl1Var);
         View view = (View) um0Var.e(context);
         gh1 gh1Var = new gh1();
-        super(context, qxVar, i, gh1Var, view, tl1Var);
         this.C = view;
         this.D = gh1Var;
         setClipChildren(false);
-        String strValueOf = String.valueOf(i);
-        Object objD = y22Var != null ? y22Var.d(strValueOf) : null;
-        SparseArray<Parcelable> sparseArray = objD instanceof SparseArray ? (SparseArray) objD : null;
+        String valueOf = String.valueOf(i);
+        Object d = y22Var != null ? y22Var.d(valueOf) : null;
+        SparseArray<Parcelable> sparseArray = d instanceof SparseArray ? (SparseArray) d : null;
         if (sparseArray != null) {
             view.restoreHierarchyState(sparseArray);
         }
         if (y22Var != null) {
-            setSavableRegistryEntry(y22Var.e(strValueOf, new sc(this, 2)));
+            setSavableRegistryEntry(y22Var.e(valueOf, new sc(this, 2)));
         }
         j7 j7Var = j7.s;
         this.F = j7Var;

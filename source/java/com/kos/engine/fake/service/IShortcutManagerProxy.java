@@ -15,7 +15,6 @@ import com.kos.engine.fake.hook.ProxyMethod;
 import com.kos.engine.fake.service.base.PkgMethodProxy;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -51,9 +50,9 @@ public class IShortcutManagerProxy extends BinderInvocationStub {
 
         @Override // com.kos.engine.fake.service.base.PkgMethodProxy, com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            Object objA = vn1.a(new ArrayList());
+            Object a2 = vn1.a(new ArrayList());
             Class<?> returnType = method.getReturnType();
-            return IShortcutManagerProxy.isAndroidFuture(returnType) ? IShortcutManagerProxy.completedAndroidFuture(returnType, objA) : objA;
+            return IShortcutManagerProxy.isAndroidFuture(returnType) ? IShortcutManagerProxy.completedAndroidFuture(returnType, a2) : a2;
         }
     }
 
@@ -99,12 +98,12 @@ public class IShortcutManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object completedAndroidFuture(Class<?> cls, Object obj) throws IllegalAccessException, NoSuchMethodException, InstantiationException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    public static Object completedAndroidFuture(Class<?> cls, Object obj) {
         Constructor<?> declaredConstructor = cls.getDeclaredConstructor(null);
         declaredConstructor.setAccessible(true);
-        Object objNewInstance = declaredConstructor.newInstance(null);
-        cls.getMethod(c.a(-998803793657634L, xa1.b), Object.class).invoke(objNewInstance, obj);
-        return objNewInstance;
+        Object newInstance = declaredConstructor.newInstance(null);
+        cls.getMethod(c.a(-998803793657634L, xa1.b), Object.class).invoke(newInstance, obj);
+        return newInstance;
     }
 
     private static Object intResult(Method method, int i) {

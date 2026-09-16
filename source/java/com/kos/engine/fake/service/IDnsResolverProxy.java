@@ -10,7 +10,6 @@ import com.kos.engine.core.system.user.BUserHandle;
 import com.kos.engine.fake.hook.BinderInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.util.ArrayList;
@@ -65,13 +64,13 @@ public class IDnsResolverProxy extends BinderInvocationStub {
         }
 
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-565832435515170L, strArr), 3, c.a(-565892565057314L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
-                    return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
+                    return invoke;
                 }
                 nz0.Q(c.a(-577557696233250L, strArr), 5, c.a(-577686545252130L, strArr));
                 return createFallbackDnsResult();
@@ -94,9 +93,9 @@ public class IDnsResolverProxy extends BinderInvocationStub {
                     if (objArr.length > 0) {
                         Object obj2 = objArr[0];
                         if (obj2 instanceof Integer) {
-                            int iMin = Math.min(((Integer) obj2).intValue(), BUserHandle.AID_APP_START);
-                            nz0.Q(c.a(-576453889638178L, strArr), 3, c.a(-576582738657058L, strArr) + iMin + c.a(-576664343035682L, strArr));
-                            objArr[0] = Integer.valueOf(iMin);
+                            int min = Math.min(((Integer) obj2).intValue(), BUserHandle.AID_APP_START);
+                            nz0.Q(c.a(-576453889638178L, strArr), 3, c.a(-576582738657058L, strArr) + min + c.a(-576664343035682L, strArr));
+                            objArr[0] = Integer.valueOf(min);
                         }
                     }
                 } catch (Exception e) {
@@ -112,13 +111,13 @@ public class IDnsResolverProxy extends BinderInvocationStub {
     @ProxyMethod("setDnsServersForNetwork")
     public static class SetDnsServersForNetwork extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-576398055063330L, strArr), 3, c.a(-577007940419362L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
+                Object invoke = method.invoke(obj, objArr);
                 nz0.Q(c.a(-577188329045794L, strArr), 3, c.a(-576698702774050L, strArr));
-                return objInvoke;
+                return invoke;
             } catch (Exception e) {
                 jx0.q(new StringBuilder(), c.a(-576952105844514L, strArr), e, 5, c.a(-576891976302370L, strArr));
                 return null;

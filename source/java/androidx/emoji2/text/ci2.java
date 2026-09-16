@@ -34,7 +34,7 @@ public final class ci2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((ci2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((ci2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -45,9 +45,9 @@ public final class ci2 extends hh2 implements Function2 {
                 if (i == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB = this.j.b(this);
+                    Object b = this.j.b(this);
                     f30 f30Var = f30.d;
-                    if (objB == f30Var) {
+                    if (b == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -56,15 +56,15 @@ public final class ci2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB2 = this.j.b(this);
+                    Object b2 = this.j.b(this);
                     f30 f30Var2 = f30.d;
-                    if (objB2 == f30Var2) {
+                    if (b2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -73,15 +73,15 @@ public final class ci2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i3 = this.i;
                 if (i3 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB3 = this.j.b(this);
+                    Object b3 = this.j.b(this);
                     f30 f30Var3 = f30.d;
-                    if (objB3 == f30Var3) {
+                    if (b3 == f30Var3) {
                         return f30Var3;
                     }
                 } else {
@@ -90,7 +90,7 @@ public final class ci2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

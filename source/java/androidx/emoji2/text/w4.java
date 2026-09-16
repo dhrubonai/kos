@@ -12,7 +12,7 @@ import javax.net.ssl.SSLSocketFactory;
 public final class w4 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final dd0 f1257a;
+    public final dd0 f1256a;
     public final SocketFactory b;
     public final SSLSocketFactory c;
     public final HostnameVerifier d;
@@ -31,7 +31,7 @@ public final class w4 {
         lx0.x(list, "protocols");
         lx0.x(list2, "connectionSpecs");
         lx0.x(proxySelector, "proxySelector");
-        this.f1257a = dd0Var;
+        this.f1256a = dd0Var;
         this.b = socketFactory;
         this.c = sSLSocketFactory;
         this.d = hostnameVerifier;
@@ -48,11 +48,11 @@ public final class w4 {
             }
             lt0Var.c = "https";
         }
-        String strS = xa1.S(on.o(str, 0, 0, 7));
-        if (strS == null) {
+        String S = xa1.S(on.o(str, 0, 0, 7));
+        if (S == null) {
             throw new IllegalArgumentException("unexpected host: ".concat(str));
         }
-        lt0Var.f = strS;
+        lt0Var.f = S;
         if (1 > i || i >= 65536) {
             throw new IllegalArgumentException(zd.f(i, "unexpected port: ").toString());
         }
@@ -64,7 +64,7 @@ public final class w4 {
 
     public final boolean a(w4 w4Var) {
         lx0.x(w4Var, "that");
-        return lx0.n(this.f1257a, w4Var.f1257a) && lx0.n(this.f, w4Var.f) && lx0.n(this.i, w4Var.i) && lx0.n(this.j, w4Var.j) && lx0.n(this.g, w4Var.g) && lx0.n(this.c, w4Var.c) && lx0.n(this.d, w4Var.d) && lx0.n(this.e, w4Var.e) && this.h.e == w4Var.h.e;
+        return lx0.n(this.f1256a, w4Var.f1256a) && lx0.n(this.f, w4Var.f) && lx0.n(this.i, w4Var.i) && lx0.n(this.j, w4Var.j) && lx0.n(this.g, w4Var.g) && lx0.n(this.c, w4Var.c) && lx0.n(this.d, w4Var.d) && lx0.n(this.e, w4Var.e) && this.h.e == w4Var.h.e;
     }
 
     public final boolean equals(Object obj) {
@@ -76,7 +76,7 @@ public final class w4 {
     }
 
     public final int hashCode() {
-        return Objects.hashCode(this.e) + ((Objects.hashCode(this.d) + ((Objects.hashCode(this.c) + ((this.g.hashCode() + ((this.j.hashCode() + ((this.i.hashCode() + ((this.f.hashCode() + ((this.f1257a.hashCode() + jx0.c(527, 31, this.h.h)) * 31)) * 31)) * 31)) * 31)) * 961)) * 31)) * 31);
+        return Objects.hashCode(this.e) + ((Objects.hashCode(this.d) + ((Objects.hashCode(this.c) + ((this.g.hashCode() + ((this.j.hashCode() + ((this.i.hashCode() + ((this.f.hashCode() + ((this.f1256a.hashCode() + jx0.c(527, 31, this.h.h)) * 31)) * 31)) * 31)) * 31)) * 961)) * 31)) * 31);
     }
 
     public final String toString() {

@@ -60,28 +60,28 @@ class ClockFaceView extends hv1 implements ns {
         SparseArray sparseArray = new SparseArray();
         this.A = sparseArray;
         this.D = new float[]{0.0f, 0.9f, 1.0f};
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.d, R.attr.materialClockStyle, R.style.Widget_MaterialComponents_TimePicker_Clock);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.d, R.attr.materialClockStyle, R.style.Widget_MaterialComponents_TimePicker_Clock);
         Resources resources = getResources();
-        ColorStateList colorStateListE = a01.E(context, typedArrayObtainStyledAttributes, 1);
-        this.K = colorStateListE;
+        ColorStateList E = a01.E(context, obtainStyledAttributes, 1);
+        this.K = E;
         LayoutInflater.from(context).inflate(R.layout.material_clockface_view, (ViewGroup) this, true);
         ClockHandView clockHandView = (ClockHandView) findViewById(R.id.material_clock_hand);
         this.w = clockHandView;
         this.E = resources.getDimensionPixelSize(R.dimen.material_clock_hand_padding);
-        int colorForState = colorStateListE.getColorForState(new int[]{android.R.attr.state_selected}, colorStateListE.getDefaultColor());
-        this.C = new int[]{colorForState, colorForState, colorStateListE.getDefaultColor()};
+        int colorForState = E.getColorForState(new int[]{android.R.attr.state_selected}, E.getDefaultColor());
+        this.C = new int[]{colorForState, colorForState, E.getDefaultColor()};
         clockHandView.f.add(this);
         int defaultColor = kx0.z(context, R.color.material_timepicker_clockface).getDefaultColor();
-        ColorStateList colorStateListE2 = a01.E(context, typedArrayObtainStyledAttributes, 0);
-        setBackgroundColor(colorStateListE2 != null ? colorStateListE2.getDefaultColor() : defaultColor);
+        ColorStateList E2 = a01.E(context, obtainStyledAttributes, 0);
+        setBackgroundColor(E2 != null ? E2.getDefaultColor() : defaultColor);
         getViewTreeObserver().addOnPreDrawListener(new b(this));
         setFocusable(false);
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
         this.B = new c(this);
         String[] strArr = new String[12];
         Arrays.fill(strArr, "");
         this.I = strArr;
-        LayoutInflater layoutInflaterFrom = LayoutInflater.from(getContext());
+        LayoutInflater from = LayoutInflater.from(getContext());
         int size = sparseArray.size();
         boolean z = false;
         for (int i = 0; i < Math.max(this.I.length, size); i++) {
@@ -91,7 +91,7 @@ class ClockFaceView extends hv1 implements ns {
                 sparseArray.remove(i);
             } else {
                 if (textView == null) {
-                    textView = (TextView) layoutInflaterFrom.inflate(R.layout.material_clockface_textview, (ViewGroup) this, false);
+                    textView = (TextView) from.inflate(R.layout.material_clockface_textview, (ViewGroup) this, false);
                     sparseArray.put(i, textView);
                     addView(textView);
                 }
@@ -119,7 +119,7 @@ class ClockFaceView extends hv1 implements ns {
     public final void m() {
         sz szVar = new sz();
         szVar.b(this);
-        HashMap map = new HashMap();
+        HashMap hashMap = new HashMap();
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
             if (childAt.getId() != R.id.circle_center && !"skip".equals(childAt.getTag())) {
@@ -127,29 +127,29 @@ class ClockFaceView extends hv1 implements ns {
                 if (i2 == null) {
                     i2 = 1;
                 }
-                if (!map.containsKey(i2)) {
-                    map.put(i2, new ArrayList());
+                if (!hashMap.containsKey(i2)) {
+                    hashMap.put(i2, new ArrayList());
                 }
-                ((List) map.get(i2)).add(childAt);
+                ((List) hashMap.get(i2)).add(childAt);
             }
         }
-        for (Map.Entry entry : map.entrySet()) {
+        for (Map.Entry entry : hashMap.entrySet()) {
             List list = (List) entry.getValue();
-            int iRound = ((Integer) entry.getKey()).intValue() == 2 ? Math.round(this.u * 0.66f) : this.u;
+            int round = ((Integer) entry.getKey()).intValue() == 2 ? Math.round(this.u * 0.66f) : this.u;
             Iterator it = list.iterator();
-            float size = 0.0f;
+            float f = 0.0f;
             while (it.hasNext()) {
                 int id = ((View) it.next()).getId();
-                Integer numValueOf = Integer.valueOf(id);
-                HashMap map2 = szVar.c;
-                if (!map2.containsKey(numValueOf)) {
-                    map2.put(Integer.valueOf(id), new nz());
+                Integer valueOf = Integer.valueOf(id);
+                HashMap hashMap2 = szVar.c;
+                if (!hashMap2.containsKey(valueOf)) {
+                    hashMap2.put(Integer.valueOf(id), new nz());
                 }
-                oz ozVar = ((nz) map2.get(Integer.valueOf(id))).d;
+                oz ozVar = ((nz) hashMap2.get(Integer.valueOf(id))).d;
                 ozVar.z = R.id.circle_center;
-                ozVar.A = iRound;
-                ozVar.B = size;
-                size += 360.0f / list.size();
+                ozVar.A = round;
+                ozVar.B = f;
+                f += 360.0f / list.size();
             }
         }
         szVar.a(this);
@@ -187,10 +187,10 @@ class ClockFaceView extends hv1 implements ns {
                 textView2.getHitRect(rect);
                 rectF.set(rect);
                 rectF.union(rectF2);
-                float fHeight = rectF.height() * rectF.width();
-                if (fHeight < f) {
+                float height = rectF.height() * rectF.width();
+                if (height < f) {
                     textView = textView2;
-                    f = fHeight;
+                    f = height;
                 }
             }
             i++;
@@ -222,11 +222,11 @@ class ClockFaceView extends hv1 implements ns {
     }
 
     @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.View
-    public final void onMeasure(int i, int i2) throws Resources.NotFoundException, NumberFormatException {
+    public final void onMeasure(int i, int i2) {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        int iMax = (int) (this.H / Math.max(Math.max(this.F / displayMetrics.heightPixels, this.G / displayMetrics.widthPixels), 1.0f));
-        int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(iMax, 1073741824);
-        setMeasuredDimension(iMax, iMax);
-        super.onMeasure(iMakeMeasureSpec, iMakeMeasureSpec);
+        int max = (int) (this.H / Math.max(Math.max(this.F / displayMetrics.heightPixels, this.G / displayMetrics.widthPixels), 1.0f));
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(max, 1073741824);
+        setMeasuredDimension(max, max);
+        super.onMeasure(makeMeasureSpec, makeMeasureSpec);
     }
 }

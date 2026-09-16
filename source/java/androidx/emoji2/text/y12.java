@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public abstract class y12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final z12 f1365a = new z12(lh.f690a, dd0.n);
+    public static final z12 f1364a = new z12(lh.f689a, dd0.n);
 
     public static final z12 a(ih ihVar, fl flVar, lx lxVar, int i) {
-        if (lx0.n(ihVar, lh.f690a) && lx0.n(flVar, dd0.n)) {
+        if (lx0.n(ihVar, lh.f689a) && lx0.n(flVar, dd0.n)) {
             tx txVar = (tx) lxVar;
             txVar.X(-849081669);
             txVar.p(false);
-            return f1365a;
+            return f1364a;
         }
         tx txVar2 = (tx) lxVar;
         txVar2.X(-849030798);
@@ -22,12 +22,12 @@ public abstract class y12 {
             z = false;
         }
         boolean z3 = z2 | z;
-        Object objM = txVar2.M();
-        if (z3 || objM == kx.f663a) {
-            objM = new z12(ihVar, flVar);
-            txVar2.i0(objM);
+        Object M = txVar2.M();
+        if (z3 || M == kx.f662a) {
+            M = new z12(ihVar, flVar);
+            txVar2.i0(M);
         }
-        z12 z12Var = (z12) objM;
+        z12 z12Var = (z12) M;
         txVar2.p(false);
         return z12Var;
     }

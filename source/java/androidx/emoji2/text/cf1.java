@@ -30,7 +30,7 @@ public final class cf1 extends f02 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((cf1) i((l10) obj2, (r72) obj)).k(up2.f1187a);
+        return ((cf1) i((l10) obj2, (r72) obj)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -61,7 +61,7 @@ public final class cf1 extends f02 implements Function2 {
             mz0.L(obj);
         }
         if (i == Integer.MAX_VALUE) {
-            return up2.f1187a;
+            return up2.f1186a;
         }
         int i3 = (int) ((jArr[i] >> 31) & 2147483647L);
         tn0Var.e = i;

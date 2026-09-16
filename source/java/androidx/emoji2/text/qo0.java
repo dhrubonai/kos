@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class qo0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f971a;
+    public final long f970a;
     public final iu b;
 
     public qo0(long j, iu iuVar) {
-        a.a.a.c.a(-389901985136418L, wj1.f1284a);
-        this.f971a = j;
+        a.a.a.c.a(-389901985136418L, wj1.f1283a);
+        this.f970a = j;
         this.b = iuVar;
     }
 
@@ -22,18 +22,18 @@ public final class qo0 {
             return false;
         }
         qo0 qo0Var = (qo0) obj;
-        return this.f971a == qo0Var.f971a && lx0.n(this.b, qo0Var.b);
+        return this.f970a == qo0Var.f970a && lx0.n(this.b, qo0Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (Long.hashCode(this.f971a) * 31);
+        return this.b.hashCode() + (Long.hashCode(this.f970a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-390013654286114L, strArr));
-        sb.append(this.f971a);
+        sb.append(this.f970a);
         sb.append(a.a.a.c.a(-401691670363938L, strArr));
         sb.append(this.b);
         sb.append(')');

@@ -30,14 +30,14 @@ public class BaseTransientBottomBar$Behavior extends SwipeDismissBehavior<View> 
                 if (r1.b == null) {
                     r1.b = new r1();
                 }
-                synchronized (r1.b.f990a) {
+                synchronized (r1.b.f989a) {
                 }
             }
         } else if (coordinatorLayout.o(view, (int) motionEvent.getX(), (int) motionEvent.getY())) {
             if (r1.b == null) {
                 r1.b = new r1();
             }
-            synchronized (r1.b.f990a) {
+            synchronized (r1.b.f989a) {
             }
         }
         return super.f(coordinatorLayout, view, motionEvent);

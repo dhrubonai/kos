@@ -6,11 +6,11 @@ public final class dk2 {
     public static final dk2 c = new dk2(nz0.D(0), nz0.D(0));
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f257a;
+    public final long f256a;
     public final long b;
 
     public dk2(long j, long j2) {
-        this.f257a = j;
+        this.f256a = j;
         this.b = j2;
     }
 
@@ -22,15 +22,15 @@ public final class dk2 {
             return false;
         }
         dk2 dk2Var = (dk2) obj;
-        return jl2.a(this.f257a, dk2Var.f257a) && jl2.a(this.b, dk2Var.b);
+        return jl2.a(this.f256a, dk2Var.f256a) && jl2.a(this.b, dk2Var.b);
     }
 
     public final int hashCode() {
         kl2[] kl2VarArr = jl2.b;
-        return Long.hashCode(this.b) + (Long.hashCode(this.f257a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f256a) * 31);
     }
 
     public final String toString() {
-        return "TextIndent(firstLine=" + ((Object) jl2.d(this.f257a)) + ", restLine=" + ((Object) jl2.d(this.b)) + ')';
+        return "TextIndent(firstLine=" + ((Object) jl2.d(this.f256a)) + ", restLine=" + ((Object) jl2.d(this.b)) + ')';
     }
 }

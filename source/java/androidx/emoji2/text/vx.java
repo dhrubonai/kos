@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class vx {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final vj1 f1248a = new vj1("provider");
+    public static final vj1 f1247a = new vj1("provider");
     public static final vj1 b = new vj1("provider");
     public static final vj1 c = new vj1("compositionLocalMap");
     public static final vj1 d = new vj1("providers");
@@ -16,18 +16,18 @@ public abstract class vx {
     public static final jj f = new jj(1);
 
     public static final void a(List list, int i, int i2) {
-        int iE = e(i, list);
-        if (iE < 0) {
-            iE = -(iE + 1);
+        int e2 = e(i, list);
+        if (e2 < 0) {
+            e2 = -(e2 + 1);
         }
-        while (iE < list.size() && ((ux0) list.get(iE)).b < i2) {
+        while (e2 < list.size() && ((ux0) list.get(e2)).b < i2) {
         }
     }
 
     public static final void b(nb2 nb2Var, ArrayList arrayList, int i) {
-        boolean zL = nb2Var.l(i);
+        boolean l = nb2Var.l(i);
         int[] iArr = nb2Var.b;
-        if (zL) {
+        if (l) {
             arrayList.add(nb2Var.n(i));
             return;
         }
@@ -50,11 +50,11 @@ public abstract class vx {
         int i2 = 0;
         while (i2 <= size) {
             int i3 = (i2 + size) >>> 1;
-            int iC = lx0.C(((ux0) list.get(i3)).b, i);
-            if (iC < 0) {
+            int C = lx0.C(((ux0) list.get(i3)).b, i);
+            if (C < 0) {
                 i2 = i3 + 1;
             } else {
-                if (iC <= 0) {
+                if (C <= 0) {
                     return i3;
                 }
                 size = i3 - 1;
@@ -64,10 +64,10 @@ public abstract class vx {
     }
 
     public static final void f(rb2 rb2Var, int i, Object obj) {
-        int iH = rb2Var.h(i);
+        int h = rb2Var.h(i);
         Object[] objArr = rb2Var.c;
-        Object obj2 = objArr[iH];
-        objArr[iH] = kx.f663a;
+        Object obj2 = objArr[h];
+        objArr[h] = kx.f662a;
         if (obj == obj2) {
             return;
         }

@@ -26,8 +26,8 @@ public abstract class ExpandableBehavior extends q10 {
     @Override // androidx.emoji2.text.q10
     public final boolean g(CoordinatorLayout coordinatorLayout, View view, int i) {
         if (!view.isLaidOut()) {
-            ArrayList arrayListJ = coordinatorLayout.j(view);
-            int size = arrayListJ.size();
+            ArrayList j = coordinatorLayout.j(view);
+            int size = j.size();
             for (int i2 = 0; i2 < size; i2++) {
                 b(view);
             }

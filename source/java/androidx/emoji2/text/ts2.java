@@ -8,7 +8,7 @@ import java.util.LinkedHashSet;
 public final class ts2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final f32 f1141a = new f32(8);
+    public final f32 f1140a = new f32(8);
     public final LinkedHashMap b = new LinkedHashMap();
     public final LinkedHashSet c = new LinkedHashSet();
     public volatile boolean d;

@@ -9,22 +9,22 @@ import android.widget.TextView;
 public final class tf {
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextView f1118a;
+    public final TextView f1117a;
     public final p4 b;
 
     public tf(TextView textView) {
-        this.f1118a = textView;
+        this.f1117a = textView;
         this.b = new p4(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i) {
-        TypedArray typedArrayObtainStyledAttributes = this.f1118a.getContext().obtainStyledAttributes(attributeSet, gv1.g, i, 0);
+        TypedArray obtainStyledAttributes = this.f1117a.getContext().obtainStyledAttributes(attributeSet, gv1.g, i, 0);
         try {
-            boolean z = typedArrayObtainStyledAttributes.hasValue(14) ? typedArrayObtainStyledAttributes.getBoolean(14, true) : true;
-            typedArrayObtainStyledAttributes.recycle();
+            boolean z = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+            obtainStyledAttributes.recycle();
             ((ex2) this.b.e).N(z);
         } catch (Throwable th) {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
             throw th;
         }
     }

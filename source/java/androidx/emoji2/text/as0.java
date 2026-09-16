@@ -7,11 +7,11 @@ import kotlin.jvm.functions.Function2;
 public final class as0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Function2 f119a;
+    public final Function2 f118a;
     public final /* synthetic */ int b;
 
     public as0(int i, Function2 function2) {
         this.b = i;
-        this.f119a = function2;
+        this.f118a = function2;
     }
 }

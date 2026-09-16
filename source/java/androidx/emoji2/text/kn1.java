@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class kn1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final va f648a;
+    public final va f647a;
     public final int b;
     public final int c;
 
     public kn1(va vaVar, int i, int i2) {
-        this.f648a = vaVar;
+        this.f647a = vaVar;
         this.b = i;
         this.c = i2;
     }
@@ -23,16 +23,16 @@ public final class kn1 {
             return false;
         }
         kn1 kn1Var = (kn1) obj;
-        return this.f648a.equals(kn1Var.f648a) && this.b == kn1Var.b && this.c == kn1Var.c;
+        return this.f647a.equals(kn1Var.f647a) && this.b == kn1Var.b && this.c == kn1Var.c;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.c) + jx0.a(this.b, this.f648a.hashCode() * 31, 31);
+        return Integer.hashCode(this.c) + jx0.a(this.b, this.f647a.hashCode() * 31, 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("ParagraphIntrinsicInfo(intrinsics=");
-        sb.append(this.f648a);
+        sb.append(this.f647a);
         sb.append(", startIndex=");
         sb.append(this.b);
         sb.append(", endIndex=");

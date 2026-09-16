@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class h92 implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f463a;
+    public final /* synthetic */ int f462a;
     public final /* synthetic */ mf1 b;
 
     public /* synthetic */ h92(int i, mf1 mf1Var) {
-        this.f463a = i;
+        this.f462a = i;
         this.b = mf1Var;
     }
 
     @Override // androidx.emoji2.text.j90
     public final void a() {
-        switch (this.f463a) {
+        switch (this.f462a) {
             case 0:
                 cy0 cy0Var = (cy0) this.b.getValue();
                 if (cy0Var != null) {

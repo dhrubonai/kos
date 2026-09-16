@@ -21,7 +21,7 @@ public final class eq0 extends lq2 {
     public boolean n;
 
     public eq0() {
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         this.f = qe0.d;
         this.g = true;
         this.j = new r5(19, this);
@@ -34,84 +34,84 @@ public final class eq0 extends lq2 {
     @Override // androidx.emoji2.text.lq2
     public final void a(vb0 vb0Var) {
         if (this.n) {
-            float[] fArrA = this.b;
-            if (fArrA == null) {
-                fArrA = ya1.a();
-                this.b = fArrA;
+            float[] fArr = this.b;
+            if (fArr == null) {
+                fArr = ya1.a();
+                this.b = fArr;
             } else {
-                ya1.d(fArrA);
+                ya1.d(fArr);
             }
-            ya1.f(fArrA, 0.0f, 0.0f);
-            if (fArrA.length >= 16) {
+            ya1.f(fArr, 0.0f, 0.0f);
+            if (fArr.length >= 16) {
                 double d = 0.0f * 0.017453292519943295d;
-                float fSin = (float) Math.sin(d);
-                float fCos = (float) Math.cos(d);
-                float f = fArrA[0];
-                float f2 = fArrA[4];
-                float f3 = (fSin * f2) + (fCos * f);
-                float f4 = -fSin;
-                float f5 = (f2 * fCos) + (f * f4);
-                float f6 = fArrA[1];
-                float f7 = fArrA[5];
-                float f8 = (fSin * f7) + (fCos * f6);
-                float f9 = (f7 * fCos) + (f6 * f4);
-                float f10 = fArrA[2];
-                float f11 = fArrA[6];
-                float f12 = (fSin * f11) + (fCos * f10);
-                float f13 = (f11 * fCos) + (f10 * f4);
-                float f14 = fArrA[3];
-                float f15 = fArrA[7];
-                fArrA[0] = f3;
-                fArrA[1] = f8;
-                fArrA[2] = f12;
-                fArrA[3] = (fSin * f15) + (fCos * f14);
-                fArrA[4] = f5;
-                fArrA[5] = f9;
-                fArrA[6] = f13;
-                fArrA[7] = (fCos * f15) + (f4 * f14);
+                float sin = (float) Math.sin(d);
+                float cos = (float) Math.cos(d);
+                float f = fArr[0];
+                float f2 = fArr[4];
+                float f3 = (sin * f2) + (cos * f);
+                float f4 = -sin;
+                float f5 = (f2 * cos) + (f * f4);
+                float f6 = fArr[1];
+                float f7 = fArr[5];
+                float f8 = (sin * f7) + (cos * f6);
+                float f9 = (f7 * cos) + (f6 * f4);
+                float f10 = fArr[2];
+                float f11 = fArr[6];
+                float f12 = (sin * f11) + (cos * f10);
+                float f13 = (f11 * cos) + (f10 * f4);
+                float f14 = fArr[3];
+                float f15 = fArr[7];
+                fArr[0] = f3;
+                fArr[1] = f8;
+                fArr[2] = f12;
+                fArr[3] = (sin * f15) + (cos * f14);
+                fArr[4] = f5;
+                fArr[5] = f9;
+                fArr[6] = f13;
+                fArr[7] = (cos * f15) + (f4 * f14);
             }
             float f16 = this.l;
             float f17 = this.m;
-            if (fArrA.length >= 16) {
-                fArrA[0] = fArrA[0] * f16;
-                fArrA[1] = fArrA[1] * f16;
-                fArrA[2] = fArrA[2] * f16;
-                fArrA[3] = fArrA[3] * f16;
-                fArrA[4] = fArrA[4] * f17;
-                fArrA[5] = fArrA[5] * f17;
-                fArrA[6] = fArrA[6] * f17;
-                fArrA[7] = fArrA[7] * f17;
-                fArrA[8] = fArrA[8] * 1.0f;
-                fArrA[9] = fArrA[9] * 1.0f;
-                fArrA[10] = fArrA[10] * 1.0f;
-                fArrA[11] = fArrA[11] * 1.0f;
+            if (fArr.length >= 16) {
+                fArr[0] = fArr[0] * f16;
+                fArr[1] = fArr[1] * f16;
+                fArr[2] = fArr[2] * f16;
+                fArr[3] = fArr[3] * f16;
+                fArr[4] = fArr[4] * f17;
+                fArr[5] = fArr[5] * f17;
+                fArr[6] = fArr[6] * f17;
+                fArr[7] = fArr[7] * f17;
+                fArr[8] = fArr[8] * 1.0f;
+                fArr[9] = fArr[9] * 1.0f;
+                fArr[10] = fArr[10] * 1.0f;
+                fArr[11] = fArr[11] * 1.0f;
             }
-            ya1.f(fArrA, -0.0f, -0.0f);
+            ya1.f(fArr, -0.0f, -0.0f);
             this.n = false;
         }
         if (this.g) {
             if (!this.f.isEmpty()) {
-                wa waVarA = this.h;
-                if (waVarA == null) {
-                    waVarA = ya.a();
-                    this.h = waVarA;
+                wa waVar = this.h;
+                if (waVar == null) {
+                    waVar = ya.a();
+                    this.h = waVar;
                 }
-                ly0.K(this.f, waVarA);
+                ly0.K(this.f, waVar);
             }
             this.g = false;
         }
-        rg rgVarE0 = vb0Var.e0();
-        long jM = rgVarE0.M();
-        rgVarE0.D().f();
+        rg e0 = vb0Var.e0();
+        long M = e0.M();
+        e0.D().f();
         try {
-            rg rgVar = (rg) ((p4) rgVarE0.e).e;
-            float[] fArr = this.b;
-            if (fArr != null) {
-                rgVar.D().h(fArr);
+            rg rgVar = (rg) ((p4) e0.e).e;
+            float[] fArr2 = this.b;
+            if (fArr2 != null) {
+                rgVar.D().h(fArr2);
             }
-            wa waVar = this.h;
-            if (!this.f.isEmpty() && waVar != null) {
-                rgVar.D().j(waVar);
+            wa waVar2 = this.h;
+            if (!this.f.isEmpty() && waVar2 != null) {
+                rgVar.D().j(waVar2);
             }
             ArrayList arrayList = this.c;
             int size = arrayList.size();
@@ -119,8 +119,8 @@ public final class eq0 extends lq2 {
                 ((lq2) arrayList.get(i)).a(vb0Var);
             }
         } finally {
-            rgVarE0.D().n();
-            rgVarE0.e0(jM);
+            e0.D().n();
+            e0.e0(M);
         }
     }
 
@@ -153,7 +153,7 @@ public final class eq0 extends lq2 {
                 this.e = j;
                 return;
             }
-            int i = uq2.f1189a;
+            int i = uq2.f1188a;
             if (et.h(j2) == et.h(j) && et.g(j2) == et.g(j) && et.e(j2) == et.e(j)) {
                 return;
             }

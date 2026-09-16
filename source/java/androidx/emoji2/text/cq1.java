@@ -1,5 +1,6 @@
 package androidx.emoji2.text;
 
+import com.kos.engine.entity.location.BCell;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -13,20 +14,61 @@ public final /* synthetic */ class cq1 implements Function2 {
         this.e = ktVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x00ee  */
     @Override // kotlin.jvm.functions.Function2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r12, java.lang.Object r13) {
-        /*
-            Method dump skipped, instructions count: 270
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.cq1.invoke(java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2) {
+        switch (this.d) {
+            case 0:
+                lx lxVar = (lx) obj;
+                if ((((Integer) obj2).intValue() & 3) == 2) {
+                    tx txVar = (tx) lxVar;
+                    if (txVar.B()) {
+                        txVar.S();
+                        break;
+                    }
+                }
+                im.f533a.a(null, 0.0f, 0.0f, null, this.e.s, lxVar, 196608, 15);
+            case 1:
+                lx lxVar2 = (lx) obj;
+                if ((((Integer) obj2).intValue() & 3) == 2) {
+                    tx txVar2 = (tx) lxVar2;
+                    if (txVar2.B()) {
+                        txVar2.S();
+                        break;
+                    }
+                }
+                im.f533a.a(null, 0.0f, 0.0f, null, this.e.s, lxVar2, 196608, 15);
+            case 2:
+                lx lxVar3 = (lx) obj;
+                if ((((Integer) obj2).intValue() & 3) == 2) {
+                    tx txVar3 = (tx) lxVar3;
+                    if (txVar3.B()) {
+                        txVar3.S();
+                        break;
+                    }
+                }
+                im.f533a.a(null, 0.0f, 0.0f, null, this.e.s, lxVar3, 196608, 15);
+            case BCell.NETWORK_TYPE_UMTS /* 3 */:
+                lx lxVar4 = (lx) obj;
+                if ((((Integer) obj2).intValue() & 3) == 2) {
+                    tx txVar4 = (tx) lxVar4;
+                    if (txVar4.B()) {
+                        txVar4.S();
+                        break;
+                    }
+                }
+                im.f533a.a(null, 0.0f, 0.0f, null, this.e.s, lxVar4, 196608, 15);
+            default:
+                lx lxVar5 = (lx) obj;
+                int intValue = ((Integer) obj2).intValue();
+                a.a.a.c.a(-373886052089634L, wj1.f1283a);
+                tx txVar5 = (tx) lxVar5;
+                if (txVar5.P(intValue & 1, (intValue & 3) != 2)) {
+                    im.f533a.a(null, 0.0f, 0.0f, null, this.e.s, txVar5, 196608, 15);
+                } else {
+                    txVar5.S();
+                }
+                break;
+        }
+        return up2.f1186a;
     }
 }

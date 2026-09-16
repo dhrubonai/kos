@@ -14,7 +14,7 @@ public final class j30 implements Parcelable {
     public final List f;
 
     public j30(String str, String str2, List list) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(str, a.a.a.c.a(-156449037762338L, strArr));
         lx0.x(str2, a.a.a.c.a(-156483397500706L, strArr));
         lx0.x(list, a.a.a.c.a(-156522052206370L, strArr));
@@ -45,7 +45,7 @@ public final class j30 implements Parcelable {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-156264354168610L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-156320188743458L, strArr));
@@ -58,7 +58,7 @@ public final class j30 implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-156638016323362L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-156638016323362L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         List list = this.f;

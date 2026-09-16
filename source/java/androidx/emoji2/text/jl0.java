@@ -8,7 +8,7 @@ import java.util.List;
 public final class jl0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f583a;
+    public final String f582a;
     public final String b;
     public final String c;
     public final List d;
@@ -18,7 +18,7 @@ public final class jl0 {
 
     public jl0(String str, String str2, String str3, List list, String str4, String str5) {
         str.getClass();
-        this.f583a = str;
+        this.f582a = str;
         str2.getClass();
         this.b = str2;
         this.c = str3;
@@ -31,7 +31,7 @@ public final class jl0 {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("FontRequest {mProviderAuthority: " + this.f583a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mSystemFont: " + this.e + ", mVariationSettings: " + this.f + ", mCertificates:");
+        sb.append("FontRequest {mProviderAuthority: " + this.f582a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mSystemFont: " + this.e + ", mVariationSettings: " + this.f + ", mCertificates:");
         int i = 0;
         while (true) {
             List list = this.d;

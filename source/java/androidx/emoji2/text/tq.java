@@ -19,111 +19,63 @@ public final class tq extends c62 {
         return xn.b;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0059, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:51:0x0059, code lost:
     
         m(r5, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x005c, code lost:
     
         if (r0 == false) goto L60;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x005e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x005e, code lost:
     
         androidx.emoji2.text.lx0.u(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0061, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x0061, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:60:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:55:?, code lost:
     
         return;
      */
     @Override // androidx.emoji2.text.c62
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void g(int r5, androidx.emoji2.text.v20 r6) {
-        /*
-            r4 = this;
-            int r6 = androidx.emoji2.text.xn.b
-            if (r5 < r6) goto L6
-            r0 = 1
-            goto L7
-        L6:
-            r0 = 0
-        L7:
-            if (r0 == 0) goto La
-            int r5 = r5 - r6
-        La:
-            int r6 = r5 * 2
-            java.util.concurrent.atomic.AtomicReferenceArray r1 = r4.f
-            r1.get(r6)
-        L11:
-            java.lang.Object r6 = r4.k(r5)
-            boolean r1 = r6 instanceof androidx.emoji2.text.lu2
-            androidx.emoji2.text.vn r2 = r4.e
-            r3 = 0
-            if (r1 != 0) goto L62
-            boolean r1 = r6 instanceof androidx.emoji2.text.mu2
-            if (r1 == 0) goto L21
-            goto L62
-        L21:
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.j
-            if (r6 == r1) goto L59
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.k
-            if (r6 != r1) goto L2a
-            goto L59
-        L2a:
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.g
-            if (r6 == r1) goto L11
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.f
-            if (r6 != r1) goto L33
-            goto L11
-        L33:
-            androidx.emoji2.text.de0 r5 = androidx.emoji2.text.xn.i
-            if (r6 == r5) goto L7c
-            androidx.emoji2.text.de0 r5 = androidx.emoji2.text.xn.d
-            if (r6 != r5) goto L3c
-            goto L7c
-        L3c:
-            androidx.emoji2.text.de0 r5 = androidx.emoji2.text.xn.l
-            if (r6 != r5) goto L41
-            goto L7c
-        L41:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.StringBuilder r0 = new java.lang.StringBuilder
-            java.lang.String r1 = "unexpected state: "
-            r0.<init>(r1)
-            r0.append(r6)
-            java.lang.String r6 = r0.toString()
-            java.lang.String r6 = r6.toString()
-            r5.<init>(r6)
-            throw r5
-        L59:
-            r4.m(r5, r3)
-            if (r0 == 0) goto L7c
-            androidx.emoji2.text.lx0.u(r2)
-            return
-        L62:
-            if (r0 == 0) goto L67
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.j
-            goto L69
-        L67:
-            androidx.emoji2.text.de0 r1 = androidx.emoji2.text.xn.k
-        L69:
-            boolean r6 = r4.j(r5, r6, r1)
-            if (r6 == 0) goto L11
-            r4.m(r5, r3)
-            r6 = r0 ^ 1
-            r4.l(r5, r6)
-            if (r0 == 0) goto L7c
-            androidx.emoji2.text.lx0.u(r2)
-        L7c:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.tq.g(int, androidx.emoji2.text.v20):void");
+    public final void g(int i, v20 v20Var) {
+        int i2 = xn.b;
+        boolean z = i >= i2;
+        if (z) {
+            i -= i2;
+        }
+        this.f.get(i * 2);
+        while (true) {
+            Object k = k(i);
+            boolean z2 = k instanceof lu2;
+            vn vnVar = this.e;
+            if (z2 || (k instanceof mu2)) {
+                if (j(i, k, z ? xn.j : xn.k)) {
+                    m(i, null);
+                    l(i, !z);
+                    if (z) {
+                        lx0.u(vnVar);
+                        return;
+                    }
+                    return;
+                }
+            } else {
+                if (k == xn.j || k == xn.k) {
+                    break;
+                }
+                if (k != xn.g && k != xn.f) {
+                    if (k == xn.i || k == xn.d || k == xn.l) {
+                        return;
+                    }
+                    throw new IllegalStateException(("unexpected state: " + k).toString());
+                }
+            }
+        }
     }
 
     public final boolean j(int i, Object obj, Object obj2) {

@@ -38,42 +38,42 @@ public final class kk extends nr0 {
         if (!z || i <= 0) {
             return false;
         }
-        int iMax = 0;
+        int i5 = 0;
         boolean z2 = false;
-        for (int i5 = 0; i5 < this.r0; i5++) {
-            tz tzVar2 = this.q0[i5];
+        for (int i6 = 0; i6 < this.r0; i6++) {
+            tz tzVar2 = this.q0[i6];
             if (this.t0 || tzVar2.c()) {
                 if (!z2) {
-                    int i6 = this.s0;
-                    if (i6 == 0) {
-                        iMax = tzVar2.i(2).d();
-                    } else if (i6 == 1) {
-                        iMax = tzVar2.i(4).d();
-                    } else if (i6 == 2) {
-                        iMax = tzVar2.i(3).d();
-                    } else if (i6 == 3) {
-                        iMax = tzVar2.i(5).d();
+                    int i7 = this.s0;
+                    if (i7 == 0) {
+                        i5 = tzVar2.i(2).d();
+                    } else if (i7 == 1) {
+                        i5 = tzVar2.i(4).d();
+                    } else if (i7 == 2) {
+                        i5 = tzVar2.i(3).d();
+                    } else if (i7 == 3) {
+                        i5 = tzVar2.i(5).d();
                     }
                     z2 = true;
                 }
-                int i7 = this.s0;
-                if (i7 == 0) {
-                    iMax = Math.min(iMax, tzVar2.i(2).d());
-                } else if (i7 == 1) {
-                    iMax = Math.max(iMax, tzVar2.i(4).d());
-                } else if (i7 == 2) {
-                    iMax = Math.min(iMax, tzVar2.i(3).d());
-                } else if (i7 == 3) {
-                    iMax = Math.max(iMax, tzVar2.i(5).d());
+                int i8 = this.s0;
+                if (i8 == 0) {
+                    i5 = Math.min(i5, tzVar2.i(2).d());
+                } else if (i8 == 1) {
+                    i5 = Math.max(i5, tzVar2.i(4).d());
+                } else if (i8 == 2) {
+                    i5 = Math.min(i5, tzVar2.i(3).d());
+                } else if (i8 == 3) {
+                    i5 = Math.max(i5, tzVar2.i(5).d());
                 }
             }
         }
-        int i8 = iMax + this.u0;
-        int i9 = this.s0;
-        if (i9 == 0 || i9 == 1) {
-            J(i8, i8);
+        int i9 = i5 + this.u0;
+        int i10 = this.s0;
+        if (i10 == 0 || i10 == 1) {
+            J(i9, i9);
         } else {
-            K(i8, i8);
+            K(i9, i9);
         }
         this.v0 = true;
         return true;
@@ -144,31 +144,31 @@ public final class kk extends nr0 {
         while (i8 < this.r0) {
             tz tzVar2 = this.q0[i8];
             if (this.t0 || tzVar2.c()) {
-                ld2 ld2VarK = s61Var.k(tzVar2.Q[this.s0]);
+                ld2 k = s61Var.k(tzVar2.Q[this.s0]);
                 ez[] ezVarArr2 = tzVar2.Q;
                 int i9 = this.s0;
                 ez ezVar7 = ezVarArr2[i9];
-                ezVar7.i = ld2VarK;
+                ezVar7.i = k;
                 ez ezVar8 = ezVar7.f;
                 int i10 = (ezVar8 == null || ezVar8.d != this) ? 0 : ezVar7.g;
                 if (i9 == 0 || i9 == i3) {
                     ld2 ld2Var = ezVar6.i;
                     int i11 = this.u0 - i10;
-                    vh vhVarL = s61Var.l();
-                    ld2 ld2VarM = s61Var.m();
-                    ld2VarM.g = 0;
-                    vhVarL.c(ld2Var, ld2VarK, ld2VarM, i11);
-                    s61Var.c(vhVarL);
+                    vh l = s61Var.l();
+                    ld2 m = s61Var.m();
+                    m.g = 0;
+                    l.c(ld2Var, k, m, i11);
+                    s61Var.c(l);
                 } else {
                     ld2 ld2Var2 = ezVar6.i;
                     int i12 = this.u0 + i10;
-                    vh vhVarL2 = s61Var.l();
-                    ld2 ld2VarM2 = s61Var.m();
-                    ld2VarM2.g = 0;
-                    vhVarL2.b(ld2Var2, ld2VarK, ld2VarM2, i12);
-                    s61Var.c(vhVarL2);
+                    vh l2 = s61Var.l();
+                    ld2 m2 = s61Var.m();
+                    m2.g = 0;
+                    l2.b(ld2Var2, k, m2, i12);
+                    s61Var.c(l2);
                 }
-                s61Var.e(ezVar6.i, ld2VarK, this.u0 + i10, i7);
+                s61Var.e(ezVar6.i, k, this.u0 + i10, i7);
             }
             i8++;
             i3 = 2;
@@ -202,16 +202,16 @@ public final class kk extends nr0 {
 
     @Override // androidx.emoji2.text.tz
     public final String toString() {
-        String strK = zd.k(new StringBuilder("[Barrier] "), this.h0, " {");
+        String k = zd.k(new StringBuilder("[Barrier] "), this.h0, " {");
         for (int i = 0; i < this.r0; i++) {
             tz tzVar = this.q0[i];
             if (i > 0) {
-                strK = zd.h(strK, ", ");
+                k = zd.h(k, ", ");
             }
-            StringBuilder sbK = jx0.k(strK);
-            sbK.append(tzVar.h0);
-            strK = sbK.toString();
+            StringBuilder k2 = jx0.k(k);
+            k2.append(tzVar.h0);
+            k = k2.toString();
         }
-        return zd.h(strK, "}");
+        return zd.h(k, "}");
     }
 }

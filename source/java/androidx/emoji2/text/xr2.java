@@ -11,10 +11,10 @@ public abstract class xr2 {
         if (rootWindowInsets == null) {
             return null;
         }
-        wv2 wv2VarD = wv2.d(null, rootWindowInsets);
-        tv2 tv2Var = wv2VarD.f1306a;
-        tv2Var.t(wv2VarD);
+        wv2 d = wv2.d(null, rootWindowInsets);
+        tv2 tv2Var = d.f1305a;
+        tv2Var.t(d);
         tv2Var.d(view.getRootView());
-        return wv2VarD;
+        return d;
     }
 }

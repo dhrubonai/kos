@@ -19,9 +19,9 @@ public final class a20 extends g01 implements um0 {
             case 0:
                 return new k4(4, this.f);
             default:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 this.f.o();
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

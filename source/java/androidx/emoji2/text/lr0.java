@@ -7,5 +7,5 @@ import java.util.HashSet;
 public abstract class lr0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final HashSet f706a = new HashSet();
+    public static final HashSet f705a = new HashSet();
 }

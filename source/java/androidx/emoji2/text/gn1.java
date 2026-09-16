@@ -31,16 +31,16 @@ public final class gn1 extends md1 implements w01, ub0 {
         if ((!I0() && z2) || z) {
             return vz.a(j, vz.h(j), 0, vz.g(j), 0, 10);
         }
-        long jH = this.r.h();
-        int iRound = K0(jH) ? Math.round(Float.intBitsToFloat((int) (jH >> 32))) : vz.j(j);
-        int iRound2 = J0(jH) ? Math.round(Float.intBitsToFloat((int) (jH & 4294967295L))) : vz.i(j);
-        int iG = xz.g(iRound, j);
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(xz.f(iRound2, j)) & 4294967295L) | (Float.floatToRawIntBits(iG) << 32);
+        long h = this.r.h();
+        int round = K0(h) ? Math.round(Float.intBitsToFloat((int) (h >> 32))) : vz.j(j);
+        int round2 = J0(h) ? Math.round(Float.intBitsToFloat((int) (h & 4294967295L))) : vz.i(j);
+        int g = xz.g(round, j);
+        long floatToRawIntBits = (Float.floatToRawIntBits(xz.f(round2, j)) & 4294967295L) | (Float.floatToRawIntBits(g) << 32);
         if (I0()) {
-            long jFloatToRawIntBits2 = (Float.floatToRawIntBits(!K0(this.r.h()) ? Float.intBitsToFloat((int) (jFloatToRawIntBits >> 32)) : Float.intBitsToFloat((int) (this.r.h() >> 32))) << 32) | (Float.floatToRawIntBits(!J0(this.r.h()) ? Float.intBitsToFloat((int) (jFloatToRawIntBits & 4294967295L)) : Float.intBitsToFloat((int) (this.r.h() & 4294967295L))) & 4294967295L);
-            jFloatToRawIntBits = (Float.intBitsToFloat((int) (jFloatToRawIntBits >> 32)) == 0.0f || Float.intBitsToFloat((int) (jFloatToRawIntBits & 4294967295L)) == 0.0f) ? 0L : pz0.P(jFloatToRawIntBits2, this.u.a(jFloatToRawIntBits2, jFloatToRawIntBits));
+            long floatToRawIntBits2 = (Float.floatToRawIntBits(!K0(this.r.h()) ? Float.intBitsToFloat((int) (floatToRawIntBits >> 32)) : Float.intBitsToFloat((int) (this.r.h() >> 32))) << 32) | (Float.floatToRawIntBits(!J0(this.r.h()) ? Float.intBitsToFloat((int) (floatToRawIntBits & 4294967295L)) : Float.intBitsToFloat((int) (this.r.h() & 4294967295L))) & 4294967295L);
+            floatToRawIntBits = (Float.intBitsToFloat((int) (floatToRawIntBits >> 32)) == 0.0f || Float.intBitsToFloat((int) (floatToRawIntBits & 4294967295L)) == 0.0f) ? 0L : pz0.P(floatToRawIntBits2, this.u.a(floatToRawIntBits2, floatToRawIntBits));
         }
-        return vz.a(j, xz.g(Math.round(Float.intBitsToFloat((int) (jFloatToRawIntBits >> 32))), j), 0, xz.f(Math.round(Float.intBitsToFloat((int) (jFloatToRawIntBits & 4294967295L))), j), 0, 10);
+        return vz.a(j, xz.g(Math.round(Float.intBitsToFloat((int) (floatToRawIntBits >> 32))), j), 0, xz.f(Math.round(Float.intBitsToFloat((int) (floatToRawIntBits & 4294967295L))), j), 0, 10);
     }
 
     @Override // androidx.emoji2.text.w01
@@ -48,14 +48,14 @@ public final class gn1 extends md1 implements w01, ub0 {
         if (!I0()) {
             return ab1Var.l(i);
         }
-        long jL0 = L0(xz.b(0, i, 7));
-        return Math.max(vz.j(jL0), ab1Var.l(i));
+        long L0 = L0(xz.b(0, i, 7));
+        return Math.max(vz.j(L0), ab1Var.l(i));
     }
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        hr1 hr1VarQ = ab1Var.q(L0(j));
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new jb(hr1VarQ, 6));
+        hr1 q = ab1Var.q(L0(j));
+        return hb1Var.P(q.d, q.e, re0.d, new jb(q, 6));
     }
 
     @Override // androidx.emoji2.text.w01
@@ -63,22 +63,22 @@ public final class gn1 extends md1 implements w01, ub0 {
         if (!I0()) {
             return ab1Var.n(i);
         }
-        long jL0 = L0(xz.b(0, i, 7));
-        return Math.max(vz.j(jL0), ab1Var.n(i));
+        long L0 = L0(xz.b(0, i, 7));
+        return Math.max(vz.j(L0), ab1Var.n(i));
     }
 
     @Override // androidx.emoji2.text.ub0
     public final void g(g11 g11Var) {
         np npVar = g11Var.d;
-        long jH = this.r.h();
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(K0(jH) ? Float.intBitsToFloat((int) (jH >> 32)) : Float.intBitsToFloat((int) (npVar.i() >> 32))) << 32) | (Float.floatToRawIntBits(J0(jH) ? Float.intBitsToFloat((int) (jH & 4294967295L)) : Float.intBitsToFloat((int) (npVar.i() & 4294967295L))) & 4294967295L);
-        long jP = (Float.intBitsToFloat((int) (npVar.i() >> 32)) == 0.0f || Float.intBitsToFloat((int) (npVar.i() & 4294967295L)) == 0.0f) ? 0L : pz0.P(jFloatToRawIntBits, this.u.a(jFloatToRawIntBits, npVar.i()));
-        long jA = this.t.a((Math.round(Float.intBitsToFloat((int) (jP >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (jP & 4294967295L))) & 4294967295L), (Math.round(Float.intBitsToFloat((int) (npVar.i() >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (npVar.i() & 4294967295L))) & 4294967295L), g11Var.getLayoutDirection());
-        float f = (int) (jA >> 32);
-        float f2 = (int) (jA & 4294967295L);
+        long h = this.r.h();
+        long floatToRawIntBits = (Float.floatToRawIntBits(K0(h) ? Float.intBitsToFloat((int) (h >> 32)) : Float.intBitsToFloat((int) (npVar.i() >> 32))) << 32) | (Float.floatToRawIntBits(J0(h) ? Float.intBitsToFloat((int) (h & 4294967295L)) : Float.intBitsToFloat((int) (npVar.i() & 4294967295L))) & 4294967295L);
+        long P = (Float.intBitsToFloat((int) (npVar.i() >> 32)) == 0.0f || Float.intBitsToFloat((int) (npVar.i() & 4294967295L)) == 0.0f) ? 0L : pz0.P(floatToRawIntBits, this.u.a(floatToRawIntBits, npVar.i()));
+        long a2 = this.t.a((Math.round(Float.intBitsToFloat((int) (P >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (P & 4294967295L))) & 4294967295L), (Math.round(Float.intBitsToFloat((int) (npVar.i() >> 32))) << 32) | (Math.round(Float.intBitsToFloat((int) (npVar.i() & 4294967295L))) & 4294967295L), g11Var.getLayoutDirection());
+        float f = (int) (a2 >> 32);
+        float f2 = (int) (a2 & 4294967295L);
         ((p4) npVar.e.e).F(f, f2);
         try {
-            this.r.g(g11Var, jP, this.v, this.w);
+            this.r.g(g11Var, P, this.v, this.w);
             ((p4) npVar.e.e).F(-f, -f2);
             g11Var.b();
         } catch (Throwable th) {
@@ -92,8 +92,8 @@ public final class gn1 extends md1 implements w01, ub0 {
         if (!I0()) {
             return ab1Var.c(i);
         }
-        long jL0 = L0(xz.b(i, 0, 13));
-        return Math.max(vz.i(jL0), ab1Var.c(i));
+        long L0 = L0(xz.b(i, 0, 13));
+        return Math.max(vz.i(L0), ab1Var.c(i));
     }
 
     @Override // androidx.emoji2.text.w01
@@ -101,8 +101,8 @@ public final class gn1 extends md1 implements w01, ub0 {
         if (!I0()) {
             return ab1Var.N(i);
         }
-        long jL0 = L0(xz.b(i, 0, 13));
-        return Math.max(vz.i(jL0), ab1Var.N(i));
+        long L0 = L0(xz.b(i, 0, 13));
+        return Math.max(vz.i(L0), ab1Var.N(i));
     }
 
     public final String toString() {

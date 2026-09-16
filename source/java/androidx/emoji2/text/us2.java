@@ -28,7 +28,7 @@ public final class us2 extends ws2 {
         if (this.b != null) {
             return a(cls);
         }
-        Application application = (Application) ne1Var.f1049a.get(d);
+        Application application = (Application) ne1Var.f1048a.get(d);
         if (application != null) {
             return d(cls, application);
         }

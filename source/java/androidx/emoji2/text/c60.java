@@ -10,13 +10,13 @@ import android.view.ViewPropertyAnimator;
 public final class c60 extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f184a;
+    public final /* synthetic */ int f183a;
     public final /* synthetic */ View b;
     public final /* synthetic */ ViewPropertyAnimator c;
     public final /* synthetic */ g60 d;
 
     public /* synthetic */ c60(g60 g60Var, Object obj, ViewPropertyAnimator viewPropertyAnimator, View view, int i) {
-        this.f184a = i;
+        this.f183a = i;
         this.d = g60Var;
         this.c = viewPropertyAnimator;
         this.b = view;
@@ -24,7 +24,7 @@ public final class c60 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationCancel(Animator animator) {
-        switch (this.f184a) {
+        switch (this.f183a) {
             case 1:
                 this.b.setAlpha(1.0f);
                 break;
@@ -36,7 +36,7 @@ public final class c60 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.f184a) {
+        switch (this.f183a) {
             case 0:
                 this.c.setListener(null);
                 this.b.setAlpha(1.0f);
@@ -79,7 +79,7 @@ public final class c60 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationStart(Animator animator) {
-        switch (this.f184a) {
+        switch (this.f183a) {
             case 0:
                 this.d.getClass();
                 break;
@@ -96,7 +96,7 @@ public final class c60 extends AnimatorListenerAdapter {
     }
 
     public c60(g60 g60Var, vx1 vx1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.f184a = 1;
+        this.f183a = 1;
         this.d = g60Var;
         this.b = view;
         this.c = viewPropertyAnimator;

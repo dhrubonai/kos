@@ -152,118 +152,118 @@ public interface IBPackageManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public void clearPackage(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-478378311434018L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_clearPackage, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-478378311434018L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_clearPackage, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public void deleteUser(int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-479357563977506L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_deleteUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-479357563977506L, xa1.b));
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_deleteUser, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ActivityInfo getActivityInfo(ComponentName componentName, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-476394036543266L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, componentName, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_getActivityInfo, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ActivityInfo) _Parcel.readTypedObject(parcelObtain2, ActivityInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-476394036543266L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, componentName, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ActivityInfo) _Parcel.readTypedObject(obtain2, ActivityInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ApplicationInfo getApplicationInfo(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-482063393373986L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ApplicationInfo) _Parcel.readTypedObject(parcelObtain2, ApplicationInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-482063393373986L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ApplicationInfo) _Parcel.readTypedObject(obtain2, ApplicationInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle getInstalledApplicationsSlice(int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-476273777458978L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_getInstalledApplicationsSlice, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-476273777458978L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_getInstalledApplicationsSlice, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public List<InstalledPackage> getInstalledPackagesAsUser(int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-477656756928290L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_getInstalledPackagesAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(InstalledPackage.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-477656756928290L, xa1.b));
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_getInstalledPackagesAsUser, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(InstalledPackage.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle getInstalledPackagesSlice(int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-477072641376034L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_getInstalledPackagesSlice, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-477072641376034L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_getInstalledPackagesSlice, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -273,322 +273,322 @@ public interface IBPackageManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public PackageInfo getPackageInfo(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-481694026186530L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (PackageInfo) _Parcel.readTypedObject(parcelObtain2, PackageInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-481694026186530L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (PackageInfo) _Parcel.readTypedObject(obtain2, PackageInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public String[] getPackagesForUid(int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-477356109217570L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_getPackagesForUid, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createStringArray();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-477356109217570L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_getPackagesForUid, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createStringArray();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ProviderInfo getProviderInfo(ComponentName componentName, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-476574425169698L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, componentName, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_getProviderInfo, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ProviderInfo) _Parcel.readTypedObject(parcelObtain2, ProviderInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-476574425169698L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, componentName, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(10, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ProviderInfo) _Parcel.readTypedObject(obtain2, ProviderInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ActivityInfo getReceiverInfo(ComponentName componentName, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-482192242392866L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, componentName, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ActivityInfo) _Parcel.readTypedObject(parcelObtain2, ActivityInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-482192242392866L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, componentName, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ActivityInfo) _Parcel.readTypedObject(obtain2, ActivityInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ServiceInfo getServiceInfo(ComponentName componentName, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-482492890103586L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, componentName, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ServiceInfo) _Parcel.readTypedObject(parcelObtain2, ServiceInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-482492890103586L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, componentName, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ServiceInfo) _Parcel.readTypedObject(obtain2, ServiceInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public InstallResult installPackageAsUser(String str, InstallOption installOption, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-476050439159586L, xa1.b));
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, installOption, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_installPackageAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (InstallResult) _Parcel.readTypedObject(parcelObtain2, InstallResult.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-476050439159586L, xa1.b));
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, installOption, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_installPackageAsUser, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (InstallResult) _Parcel.readTypedObject(obtain2, InstallResult.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public boolean isInstalled(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-479056916266786L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_isInstalled, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(a.a.a.c.a(-479056916266786L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_isInstalled, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle queryBroadcastReceiversSlice(Intent intent, int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-475303114850082L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_queryBroadcastReceiversSlice, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-475303114850082L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_queryBroadcastReceiversSlice, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle queryContentProvidersSlice(String str, int i, int i2, int i3) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-475251575242530L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    parcelObtain.writeInt(i3);
-                    this.mRemote.transact(16, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-475251575242530L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    obtain.writeInt(i3);
+                    this.mRemote.transact(16, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle queryIntentActivitiesSlice(Intent intent, int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-476771993665314L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_queryIntentActivitiesSlice, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-476771993665314L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_queryIntentActivitiesSlice, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public Bundle queryIntentServicesSlice(Intent intent, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-475002467139362L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_queryIntentServicesSlice, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Bundle) _Parcel.readTypedObject(parcelObtain2, Bundle.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-475002467139362L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(15, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Bundle) _Parcel.readTypedObject(obtain2, Bundle.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ResolveInfo resolveActivity(Intent intent, int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-483515092320034L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ResolveInfo) _Parcel.readTypedObject(parcelObtain2, ResolveInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-483515092320034L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ResolveInfo) _Parcel.readTypedObject(obtain2, ResolveInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ProviderInfo resolveContentProvider(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-483764200423202L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ProviderInfo) _Parcel.readTypedObject(parcelObtain2, ProviderInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-483764200423202L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ProviderInfo) _Parcel.readTypedObject(obtain2, ProviderInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ResolveInfo resolveIntent(Intent intent, String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-483463552712482L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ResolveInfo) _Parcel.readTypedObject(parcelObtain2, ResolveInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-483463552712482L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ResolveInfo) _Parcel.readTypedObject(obtain2, ResolveInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public ResolveInfo resolveService(Intent intent, int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-482784947879714L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, intent, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (ResolveInfo) _Parcel.readTypedObject(parcelObtain2, ResolveInfo.CREATOR);
+                    obtain.writeInterfaceToken(a.a.a.c.a(-482784947879714L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, intent, 0);
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (ResolveInfo) _Parcel.readTypedObject(obtain2, ResolveInfo.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public void stopPackage(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-479177175351074L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_stopPackage, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-479177175351074L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_stopPackage, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public void uninstallPackage(String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-478678959144738L, xa1.b));
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(Stub.TRANSACTION_uninstallPackage, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-478678959144738L, xa1.b));
+                    obtain.writeString(str);
+                    this.mRemote.transact(Stub.TRANSACTION_uninstallPackage, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.pm.IBPackageManagerService
             public void uninstallPackageAsUser(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(a.a.a.c.a(-475681071972130L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_uninstallPackageAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(a.a.a.c.a(-475681071972130L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_uninstallPackageAsUser, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -601,40 +601,40 @@ public interface IBPackageManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-477785605947170L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBPackageManagerService)) ? new Proxy(iBinder) : (IBPackageManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(a.a.a.c.a(-477785605947170L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBPackageManagerService)) ? new Proxy(iBinder) : (IBPackageManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = a.a.a.c.a(-489579586141986L, xa1.b);
+            String a2 = a.a.a.c.a(-489579586141986L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
                 case 1:
-                    ResolveInfo resolveInfoResolveService = resolveService((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
+                    ResolveInfo resolveService = resolveService((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, resolveInfoResolveService, 1);
+                    _Parcel.writeTypedObject(parcel2, resolveService, 1);
                     return true;
                 case 2:
-                    ResolveInfo resolveInfoResolveActivity = resolveActivity((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
+                    ResolveInfo resolveActivity = resolveActivity((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, resolveInfoResolveActivity, 1);
+                    _Parcel.writeTypedObject(parcel2, resolveActivity, 1);
                     return true;
                 case 3:
-                    ProviderInfo providerInfoResolveContentProvider = resolveContentProvider(parcel.readString(), parcel.readInt(), parcel.readInt());
+                    ProviderInfo resolveContentProvider = resolveContentProvider(parcel.readString(), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, providerInfoResolveContentProvider, 1);
+                    _Parcel.writeTypedObject(parcel2, resolveContentProvider, 1);
                     return true;
                 case 4:
-                    ResolveInfo resolveInfoResolveIntent = resolveIntent((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readString(), parcel.readInt(), parcel.readInt());
+                    ResolveInfo resolveIntent = resolveIntent((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readString(), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, resolveInfoResolveIntent, 1);
+                    _Parcel.writeTypedObject(parcel2, resolveIntent, 1);
                     return true;
                 case 5:
                     ApplicationInfo applicationInfo = getApplicationInfo(parcel.readString(), parcel.readInt(), parcel.readInt());
@@ -656,12 +656,12 @@ public interface IBPackageManagerService extends IInterface {
                     parcel2.writeNoException();
                     _Parcel.writeTypedObject(parcel2, receiverInfo, 1);
                     return true;
-                case TRANSACTION_getActivityInfo /* 9 */:
+                case 9:
                     ActivityInfo activityInfo = getActivityInfo((ComponentName) _Parcel.readTypedObject(parcel, ComponentName.CREATOR), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
                     _Parcel.writeTypedObject(parcel2, activityInfo, 1);
                     return true;
-                case TRANSACTION_getProviderInfo /* 10 */:
+                case 10:
                     ProviderInfo providerInfo = getProviderInfo((ComponentName) _Parcel.readTypedObject(parcel, ComponentName.CREATOR), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
                     _Parcel.writeTypedObject(parcel2, providerInfo, 1);
@@ -677,29 +677,29 @@ public interface IBPackageManagerService extends IInterface {
                     _Parcel.writeTypedObject(parcel2, installedPackagesSlice, 1);
                     return true;
                 case TRANSACTION_queryIntentActivitiesSlice /* 13 */:
-                    Bundle bundleQueryIntentActivitiesSlice = queryIntentActivitiesSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
+                    Bundle queryIntentActivitiesSlice = queryIntentActivitiesSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, bundleQueryIntentActivitiesSlice, 1);
+                    _Parcel.writeTypedObject(parcel2, queryIntentActivitiesSlice, 1);
                     return true;
                 case TRANSACTION_queryBroadcastReceiversSlice /* 14 */:
-                    Bundle bundleQueryBroadcastReceiversSlice = queryBroadcastReceiversSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
+                    Bundle queryBroadcastReceiversSlice = queryBroadcastReceiversSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, bundleQueryBroadcastReceiversSlice, 1);
+                    _Parcel.writeTypedObject(parcel2, queryBroadcastReceiversSlice, 1);
                     return true;
-                case TRANSACTION_queryIntentServicesSlice /* 15 */:
-                    Bundle bundleQueryIntentServicesSlice = queryIntentServicesSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readInt());
+                case 15:
+                    Bundle queryIntentServicesSlice = queryIntentServicesSlice((Intent) _Parcel.readTypedObject(parcel, Intent.CREATOR), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, bundleQueryIntentServicesSlice, 1);
+                    _Parcel.writeTypedObject(parcel2, queryIntentServicesSlice, 1);
                     return true;
                 case 16:
-                    Bundle bundleQueryContentProvidersSlice = queryContentProvidersSlice(parcel.readString(), parcel.readInt(), parcel.readInt(), parcel.readInt());
+                    Bundle queryContentProvidersSlice = queryContentProvidersSlice(parcel.readString(), parcel.readInt(), parcel.readInt(), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, bundleQueryContentProvidersSlice, 1);
+                    _Parcel.writeTypedObject(parcel2, queryContentProvidersSlice, 1);
                     return true;
                 case TRANSACTION_installPackageAsUser /* 17 */:
-                    InstallResult installResultInstallPackageAsUser = installPackageAsUser(parcel.readString(), (InstallOption) _Parcel.readTypedObject(parcel, InstallOption.CREATOR), parcel.readInt());
+                    InstallResult installPackageAsUser = installPackageAsUser(parcel.readString(), (InstallOption) _Parcel.readTypedObject(parcel, InstallOption.CREATOR), parcel.readInt());
                     parcel2.writeNoException();
-                    _Parcel.writeTypedObject(parcel2, installResultInstallPackageAsUser, 1);
+                    _Parcel.writeTypedObject(parcel2, installPackageAsUser, 1);
                     return true;
                 case TRANSACTION_uninstallPackageAsUser /* 18 */:
                     uninstallPackageAsUser(parcel.readString(), parcel.readInt());
@@ -722,9 +722,9 @@ public interface IBPackageManagerService extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case TRANSACTION_isInstalled /* 23 */:
-                    boolean zIsInstalled = isInstalled(parcel.readString(), parcel.readInt());
+                    boolean isInstalled = isInstalled(parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeInt(zIsInstalled ? 1 : 0);
+                    parcel2.writeInt(isInstalled ? 1 : 0);
                     return true;
                 case TRANSACTION_getInstalledPackagesAsUser /* 24 */:
                     List<InstalledPackage> installedPackagesAsUser = getInstalledPackagesAsUser(parcel.readInt());

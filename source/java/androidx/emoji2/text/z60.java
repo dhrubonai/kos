@@ -61,17 +61,17 @@ public abstract class z60 extends md1 {
         }
         md1Var.G0(this.d);
         int i = this.f;
-        int iF = yh1.f(md1Var);
-        md1Var.f = iF;
+        int f = yh1.f(md1Var);
+        md1Var.f = f;
         int i2 = this.f;
-        int i3 = iF & 2;
+        int i3 = f & 2;
         if (i3 != 0 && (i2 & 2) != 0 && !(this instanceof w01)) {
             iv0.b("Delegating to multiple LayoutModifierNodes without the delegating node implementing LayoutModifierNode itself is not allowed.\nDelegating Node: " + this + "\nDelegate Node: " + md1Var);
         }
         md1Var.i = this.s;
         this.s = md1Var;
         md1Var.h = this;
-        K0(iF | this.f, false);
+        K0(f | this.f, false);
         if (this.q) {
             if (i3 == 0 || (i & 2) != 0) {
                 H0(this.k);
@@ -95,7 +95,7 @@ public abstract class z60 extends md1 {
             if (md1Var2 == y60Var) {
                 boolean z = md1Var2.q;
                 if (z) {
-                    ye1 ye1Var = yh1.f1388a;
+                    ye1 ye1Var = yh1.f1387a;
                     if (!z) {
                         iv0.b("autoInvalidateRemovedNode called on unattached node");
                     }
@@ -113,9 +113,9 @@ public abstract class z60 extends md1 {
                 md1Var2.i = null;
                 md1Var2.h = null;
                 int i = this.f;
-                int iF = yh1.f(this);
-                K0(iF, true);
-                if (this.q && (i & 2) != 0 && (iF & 2) == 0) {
+                int f = yh1.f(this);
+                K0(f, true);
+                if (this.q && (i & 2) != 0 && (f & 2) == 0) {
                     vh1 vh1Var = lx0.T(this).H;
                     this.d.H0(null);
                     vh1Var.g();

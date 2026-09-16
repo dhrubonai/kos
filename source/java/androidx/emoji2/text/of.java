@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 public final class of {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f852a;
+    public boolean f851a;
     public boolean b;
     public boolean c;
     public final Object d;
@@ -19,7 +19,7 @@ public final class of {
     public of(nf nfVar) {
         this.e = null;
         this.f = null;
-        this.f852a = false;
+        this.f851a = false;
         this.b = false;
         this.d = nfVar;
     }
@@ -28,24 +28,24 @@ public final class of {
         nf nfVar = (nf) this.d;
         Drawable buttonDrawable = nfVar.getButtonDrawable();
         if (buttonDrawable != null) {
-            if (this.f852a || this.b) {
-                Drawable drawableMutate = buttonDrawable.mutate();
-                if (this.f852a) {
-                    drawableMutate.setTintList((ColorStateList) this.e);
+            if (this.f851a || this.b) {
+                Drawable mutate = buttonDrawable.mutate();
+                if (this.f851a) {
+                    mutate.setTintList((ColorStateList) this.e);
                 }
                 if (this.b) {
-                    drawableMutate.setTintMode((PorterDuff.Mode) this.f);
+                    mutate.setTintMode((PorterDuff.Mode) this.f);
                 }
-                if (drawableMutate.isStateful()) {
-                    drawableMutate.setState(nfVar.getDrawableState());
+                if (mutate.isStateful()) {
+                    mutate.setState(nfVar.getDrawableState());
                 }
-                nfVar.setButtonDrawable(drawableMutate);
+                nfVar.setButtonDrawable(mutate);
             }
         }
     }
 
     public Object b() {
-        if (this.f852a) {
+        if (this.f851a) {
             return null;
         }
         Object obj = this.f;
@@ -58,7 +58,7 @@ public final class of {
 
     public of(wu1 wu1Var, Object obj, boolean z, rc2 rc2Var, boolean z2) {
         this.d = wu1Var;
-        this.f852a = z;
+        this.f851a = z;
         this.e = rc2Var;
         this.b = z2;
         this.f = obj;

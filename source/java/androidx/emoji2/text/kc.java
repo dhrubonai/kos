@@ -8,10 +8,10 @@ import android.view.ViewConfiguration;
 public final class kc implements gs2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ViewConfiguration f630a;
+    public final ViewConfiguration f629a;
 
     public kc(ViewConfiguration viewConfiguration) {
-        this.f630a = viewConfiguration;
+        this.f629a = viewConfiguration;
     }
 
     @Override // androidx.emoji2.text.gs2
@@ -26,27 +26,31 @@ public final class kc implements gs2 {
 
     @Override // androidx.emoji2.text.gs2
     public final float c() {
-        if (Build.VERSION.SDK_INT >= 34) {
-            return this.f630a.getScaledHandwritingSlop();
+        int scaledHandwritingSlop;
+        if (Build.VERSION.SDK_INT < 34) {
+            return 2.0f;
         }
-        return 2.0f;
+        scaledHandwritingSlop = this.f629a.getScaledHandwritingSlop();
+        return scaledHandwritingSlop;
     }
 
     @Override // androidx.emoji2.text.gs2
     public final float e() {
-        return this.f630a.getScaledMaximumFlingVelocity();
+        return this.f629a.getScaledMaximumFlingVelocity();
     }
 
     @Override // androidx.emoji2.text.gs2
     public final float f() {
-        return this.f630a.getScaledTouchSlop();
+        return this.f629a.getScaledTouchSlop();
     }
 
     @Override // androidx.emoji2.text.gs2
     public final float g() {
-        if (Build.VERSION.SDK_INT >= 34) {
-            return this.f630a.getScaledHandwritingGestureLineMargin();
+        int scaledHandwritingGestureLineMargin;
+        if (Build.VERSION.SDK_INT < 34) {
+            return 16.0f;
         }
-        return 16.0f;
+        scaledHandwritingGestureLineMargin = this.f629a.getScaledHandwritingGestureLineMargin();
+        return scaledHandwritingGestureLineMargin;
     }
 }

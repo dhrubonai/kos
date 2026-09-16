@@ -7,13 +7,13 @@ import android.graphics.drawable.Drawable;
 public final class bf0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Drawable f147a;
+    public final Drawable f146a;
     public final boolean b;
     public final d50 c;
     public final String d;
 
     public bf0(Drawable drawable, boolean z, d50 d50Var, String str) {
-        this.f147a = drawable;
+        this.f146a = drawable;
         this.b = z;
         this.c = d50Var;
         this.d = str;

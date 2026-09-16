@@ -24,8 +24,8 @@ public final class kw2 implements t51 {
     @Override // androidx.emoji2.text.t51
     public final void c(v51 v51Var, n51 n51Var) {
         boolean z;
-        gp gpVarT = null;
-        switch (jw2.f605a[n51Var.ordinal()]) {
+        gp gpVar = null;
+        switch (jw2.f604a[n51Var.ordinal()]) {
             case 1:
                 h50.G(this.d, null, new fd(this.g, this.f, v51Var, this, this.h, (l10) null), 1);
                 return;
@@ -36,16 +36,16 @@ public final class kw2 implements t51 {
                     synchronized (v80Var.b) {
                         try {
                             synchronized (v80Var.b) {
-                                z = v80Var.f1208a;
+                                z = v80Var.f1207a;
                             }
                             if (!z) {
                                 ArrayList arrayList = (ArrayList) v80Var.c;
                                 v80Var.c = (ArrayList) v80Var.d;
                                 v80Var.d = arrayList;
-                                v80Var.f1208a = true;
+                                v80Var.f1207a = true;
                                 int size = arrayList.size();
                                 for (int i = 0; i < size; i++) {
-                                    ((l10) arrayList.get(i)).g(up2.f1187a);
+                                    ((l10) arrayList.get(i)).g(up2.f1186a);
                                 }
                                 arrayList.clear();
                             }
@@ -58,11 +58,11 @@ public final class kw2 implements t51 {
                 synchronized (uw1Var.b) {
                     if (uw1Var.s) {
                         uw1Var.s = false;
-                        gpVarT = uw1Var.t();
+                        gpVar = uw1Var.t();
                     }
                 }
-                if (gpVarT != null) {
-                    ((ip) gpVarT).g(up2.f1187a);
+                if (gpVar != null) {
+                    ((ip) gpVar).g(up2.f1186a);
                     return;
                 }
                 return;
@@ -75,8 +75,8 @@ public final class kw2 implements t51 {
             case 4:
                 this.f.s();
                 return;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 5:
+            case 6:
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return;
             default:

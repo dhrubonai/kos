@@ -34,9 +34,9 @@ public final class fl2 extends md1 implements w01, ub0, w62 {
             mn1Var.d(j70Var);
             return mn1Var;
         }
-        mn1 mn1VarI0 = I0();
-        mn1VarI0.d(j70Var);
-        return mn1VarI0;
+        mn1 I0 = I0();
+        I0.d(j70Var);
+        return I0;
     }
 
     @Override // androidx.emoji2.text.w01
@@ -46,92 +46,92 @@ public final class fl2 extends md1 implements w01, ub0, w62 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        long jA;
+        long j2;
         boolean z;
         ln1 ln1Var;
         int i;
-        mn1 mn1VarJ0 = J0(hb1Var);
+        mn1 J0 = J0(hb1Var);
         q01 layoutDirection = hb1Var.getLayoutDirection();
-        if (mn1VarJ0.g > 1) {
-            oc1 oc1Var = mn1VarJ0.m;
-            gl2 gl2Var = mn1VarJ0.b;
-            j70 j70Var = mn1VarJ0.i;
+        if (J0.g > 1) {
+            oc1 oc1Var = J0.m;
+            gl2 gl2Var = J0.b;
+            j70 j70Var = J0.i;
             lx0.u(j70Var);
-            bl0 bl0Var = mn1VarJ0.c;
-            if ((oc1Var == null || layoutDirection != oc1Var.f850a || !lx0.n(gl2Var, oc1Var.b) || j70Var.a() != oc1Var.c.d || bl0Var != oc1Var.d) && ((oc1Var = oc1.h) == null || layoutDirection != oc1Var.f850a || !lx0.n(gl2Var, oc1Var.b) || j70Var.a() != oc1Var.c.d || bl0Var != oc1Var.d)) {
+            bl0 bl0Var = J0.c;
+            if ((oc1Var == null || layoutDirection != oc1Var.f849a || !lx0.n(gl2Var, oc1Var.b) || j70Var.a() != oc1Var.c.d || bl0Var != oc1Var.d) && ((oc1Var = oc1.h) == null || layoutDirection != oc1Var.f849a || !lx0.n(gl2Var, oc1Var.b) || j70Var.a() != oc1Var.c.d || bl0Var != oc1Var.d)) {
                 oc1Var = new oc1(layoutDirection, mz0.B(gl2Var, layoutDirection), new k70(j70Var.a(), j70Var.U()), bl0Var);
                 oc1.h = oc1Var;
             }
-            mn1VarJ0.m = oc1Var;
-            int i2 = mn1VarJ0.g;
+            J0.m = oc1Var;
+            int i2 = J0.g;
             k70 k70Var = oc1Var.c;
             float f = oc1Var.g;
-            float fB = oc1Var.f;
-            if (Float.isNaN(f) || Float.isNaN(fB)) {
-                float fB2 = pz0.d(pc1.f898a, oc1Var.e, xz.b(0, 0, 15), k70Var, oc1Var.d, 1, 96).b();
-                fB = pz0.d(pc1.b, oc1Var.e, xz.b(0, 0, 15), k70Var, oc1Var.d, 2, 96).b() - fB2;
-                oc1Var.g = fB2;
-                oc1Var.f = fB;
-                f = fB2;
+            float f2 = oc1Var.f;
+            if (Float.isNaN(f) || Float.isNaN(f2)) {
+                float b = pz0.d(pc1.f897a, oc1Var.e, xz.b(0, 0, 15), k70Var, oc1Var.d, 1, 96).b();
+                f2 = pz0.d(pc1.b, oc1Var.e, xz.b(0, 0, 15), k70Var, oc1Var.d, 2, 96).b() - b;
+                oc1Var.g = b;
+                oc1Var.f = f2;
+                f = b;
             }
             if (i2 != 1) {
-                int iRound = Math.round((fB * (i2 - 1)) + f);
-                i = iRound >= 0 ? iRound : 0;
-                int iG = vz.g(j);
-                if (i > iG) {
-                    i = iG;
+                int round = Math.round((f2 * (i2 - 1)) + f);
+                i = round >= 0 ? round : 0;
+                int g = vz.g(j);
+                if (i > g) {
+                    i = g;
                 }
             } else {
                 i = vz.i(j);
             }
-            jA = xz.a(vz.j(j), vz.h(j), i, vz.g(j));
+            j2 = xz.a(vz.j(j), vz.h(j), i, vz.g(j));
         } else {
-            jA = j;
+            j2 = j;
         }
-        ra raVar = mn1VarJ0.j;
-        if (raVar == null || (ln1Var = mn1VarJ0.n) == null || ln1Var.a() || layoutDirection != mn1VarJ0.o || (!vz.b(jA, mn1VarJ0.p) && (vz.h(jA) != vz.h(mn1VarJ0.p) || vz.g(jA) < raVar.b() || raVar.d.d))) {
-            ra raVarB = mn1VarJ0.b(jA, layoutDirection);
-            mn1VarJ0.p = jA;
-            long jD = xz.d(jA, kx0.d(mz0.g(raVarB.d()), mz0.g(raVarB.b())));
-            mn1VarJ0.l = jD;
-            mn1VarJ0.k = mn1VarJ0.d != 3 && (((float) ((int) (jD >> 32))) < raVarB.d() || ((float) ((int) (jD & 4294967295L))) < raVarB.b());
-            mn1VarJ0.j = raVarB;
+        ra raVar = J0.j;
+        if (raVar == null || (ln1Var = J0.n) == null || ln1Var.a() || layoutDirection != J0.o || (!vz.b(j2, J0.p) && (vz.h(j2) != vz.h(J0.p) || vz.g(j2) < raVar.b() || raVar.d.d))) {
+            ra b2 = J0.b(j2, layoutDirection);
+            J0.p = j2;
+            long d = xz.d(j2, kx0.d(mz0.g(b2.d()), mz0.g(b2.b())));
+            J0.l = d;
+            J0.k = J0.d != 3 && (((float) ((int) (d >> 32))) < b2.d() || ((float) ((int) (d & 4294967295L))) < b2.b());
+            J0.j = b2;
             z = true;
         } else {
-            if (!vz.b(jA, mn1VarJ0.p)) {
-                ra raVar2 = mn1VarJ0.j;
+            if (!vz.b(j2, J0.p)) {
+                ra raVar2 = J0.j;
                 lx0.u(raVar2);
-                long jD2 = xz.d(jA, kx0.d(mz0.g(Math.min(raVar2.f998a.l.c(), raVar2.d())), mz0.g(raVar2.b())));
-                mn1VarJ0.l = jD2;
-                mn1VarJ0.k = mn1VarJ0.d != 3 && (((float) ((int) (jD2 >> 32))) < raVar2.d() || ((float) ((int) (jD2 & 4294967295L))) < raVar2.b());
-                mn1VarJ0.p = jA;
+                long d2 = xz.d(j2, kx0.d(mz0.g(Math.min(raVar2.f997a.l.c(), raVar2.d())), mz0.g(raVar2.b())));
+                J0.l = d2;
+                J0.k = J0.d != 3 && (((float) ((int) (d2 >> 32))) < raVar2.d() || ((float) ((int) (d2 & 4294967295L))) < raVar2.b());
+                J0.p = j2;
             }
             z = false;
         }
-        ln1 ln1Var2 = mn1VarJ0.n;
+        ln1 ln1Var2 = J0.n;
         if (ln1Var2 != null) {
             ln1Var2.a();
         }
-        ra raVar3 = mn1VarJ0.j;
+        ra raVar3 = J0.j;
         lx0.u(raVar3);
         qk2 qk2Var = raVar3.d;
-        long j2 = mn1VarJ0.l;
+        long j3 = J0.l;
         if (z) {
             lx0.R(this, 2).a1();
-            Map linkedHashMap = this.y;
-            if (linkedHashMap == null) {
-                linkedHashMap = new LinkedHashMap(2);
+            Map map = this.y;
+            if (map == null) {
+                map = new LinkedHashMap(2);
             }
-            linkedHashMap.put(q5.f940a, Integer.valueOf(Math.round(qk2Var.d(0))));
-            linkedHashMap.put(q5.b, Integer.valueOf(Math.round(qk2Var.d(qk2Var.g - 1))));
-            this.y = linkedHashMap;
+            map.put(q5.f939a, Integer.valueOf(Math.round(qk2Var.d(0))));
+            map.put(q5.b, Integer.valueOf(Math.round(qk2Var.d(qk2Var.g - 1))));
+            this.y = map;
         }
-        int i3 = (int) (j2 >> 32);
-        int i4 = (int) (j2 & 4294967295L);
-        hr1 hr1VarQ = ab1Var.q(ex2.x(i3, i3, i4, i4));
-        Map map = this.y;
-        lx0.u(map);
-        return hb1Var.P(i3, i4, map, new jb(hr1VarQ, 11));
+        int i3 = (int) (j3 >> 32);
+        int i4 = (int) (j3 & 4294967295L);
+        hr1 q = ab1Var.q(ex2.x(i3, i3, i4, i4));
+        Map map2 = this.y;
+        lx0.u(map2);
+        return hb1Var.P(i3, i4, map2, new jb(q, 11));
     }
 
     @Override // androidx.emoji2.text.w01
@@ -142,20 +142,20 @@ public final class fl2 extends md1 implements w01, ub0, w62 {
     @Override // androidx.emoji2.text.ub0
     public final void g(g11 g11Var) {
         if (this.q) {
-            mn1 mn1VarJ0 = J0(g11Var);
-            ra raVar = mn1VarJ0.j;
+            mn1 J0 = J0(g11Var);
+            ra raVar = J0.j;
             if (raVar == null) {
                 throw new IllegalArgumentException(("no paragraph (layoutCache=" + this.z + ", textSubstitution=" + this.B + ')').toString());
             }
-            lp lpVarD = g11Var.d.e.D();
-            boolean z = mn1VarJ0.k;
+            lp D = g11Var.d.e.D();
+            boolean z = J0.k;
             if (z) {
-                long j = mn1VarJ0.l;
-                lpVarD.f();
-                lpVarD.k(0.0f, 0.0f, (int) (j >> 32), (int) (j & 4294967295L), 1);
+                long j = J0.l;
+                D.f();
+                D.k(0.0f, 0.0f, (int) (j >> 32), (int) (j & 4294967295L), 1);
             }
             try {
-                rd2 rd2Var = this.s.f429a;
+                rd2 rd2Var = this.s.f428a;
                 zi2 zi2Var = rd2Var.m;
                 if (zi2Var == null) {
                     zi2Var = zi2.b;
@@ -171,22 +171,22 @@ public final class fl2 extends md1 implements w01, ub0, w62 {
                     l8Var = li0.n;
                 }
                 l8 l8Var2 = l8Var;
-                wj1 wj1VarK = rd2Var.f1004a.k();
-                if (wj1VarK != null) {
-                    raVar.g(lpVarD, wj1VarK, this.s.f429a.f1004a.d(), q92Var2, zi2Var2, l8Var2);
+                wj1 k = rd2Var.f1003a.k();
+                if (k != null) {
+                    raVar.g(D, k, this.s.f428a.f1003a.d(), q92Var2, zi2Var2, l8Var2);
                 } else {
-                    long jB = et.k;
-                    if (jB == 16) {
-                        jB = this.s.b() != 16 ? this.s.b() : et.b;
+                    long j2 = et.k;
+                    if (j2 == 16) {
+                        j2 = this.s.b() != 16 ? this.s.b() : et.b;
                     }
-                    raVar.f(lpVarD, jB, q92Var2, zi2Var2, l8Var2);
+                    raVar.f(D, j2, q92Var2, zi2Var2, l8Var2);
                 }
                 if (z) {
-                    lpVarD.n();
+                    D.n();
                 }
             } catch (Throwable th) {
                 if (z) {
-                    lpVarD.n();
+                    D.n();
                 }
                 throw th;
             }
@@ -211,13 +211,13 @@ public final class fl2 extends md1 implements w01, ub0, w62 {
             this.A = el2Var;
         }
         ue ueVar = new ue(this.r, null, 6);
-        wy0[] wy0VarArr = e72.f290a;
+        wy0[] wy0VarArr = e72.f289a;
         u62Var.d(c72.A, lx0.M(ueVar));
         dl2 dl2Var = this.B;
         if (dl2Var != null) {
             boolean z = dl2Var.c;
             f72 f72Var = c72.C;
-            wy0[] wy0VarArr2 = e72.f290a;
+            wy0[] wy0VarArr2 = e72.f289a;
             wy0 wy0Var = wy0VarArr2[16];
             f72Var.a(u62Var, Boolean.valueOf(z));
             ue ueVar2 = new ue(dl2Var.b, null, 6);

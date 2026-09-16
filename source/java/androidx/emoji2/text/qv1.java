@@ -18,11 +18,11 @@ public final class qv1 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         dj1 dj1Var;
-        String strConcat = "OkHttp ".concat(((mt0) this.f.e.e).f());
+        String concat = "OkHttp ".concat(((mt0) this.f.e.e).f());
         tv1 tv1Var = this.f;
-        Thread threadCurrentThread = Thread.currentThread();
-        String name = threadCurrentThread.getName();
-        threadCurrentThread.setName(strConcat);
+        Thread currentThread = Thread.currentThread();
+        String name = currentThread.getName();
+        currentThread.setName(concat);
         try {
             tv1Var.g.h();
             boolean z = false;
@@ -35,8 +35,8 @@ public final class qv1 implements Runnable {
                         e = e;
                         z = true;
                         if (z) {
-                            lr1 lr1Var = lr1.f707a;
-                            lr1 lr1Var2 = lr1.f707a;
+                            lr1 lr1Var = lr1.f706a;
+                            lr1 lr1Var2 = lr1.f706a;
                             String str = "Callback failure for " + tv1.a(tv1Var);
                             lr1Var2.getClass();
                             lr1.i(4, str, e);
@@ -73,7 +73,7 @@ public final class qv1 implements Runnable {
             }
             dj1Var.d.o(this);
         } finally {
-            threadCurrentThread.setName(name);
+            currentThread.setName(name);
         }
     }
 }

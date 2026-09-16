@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class mt1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f768a;
+    public int f767a;
     public int b;
     public Object c;
     public Object d;
     public Object e;
 
     public int a(long j) {
-        int i = this.f768a + 1;
+        int i = this.f767a + 1;
         long[] jArr = (long[]) this.c;
         int length = jArr.length;
         if (i > length) {
@@ -24,8 +24,8 @@ public final class mt1 {
             this.c = jArr2;
             this.d = iArr;
         }
-        int i3 = this.f768a;
-        this.f768a = i3 + 1;
+        int i3 = this.f767a;
+        this.f767a = i3 + 1;
         int length2 = ((int[]) this.e).length;
         if (this.b >= length2) {
             int i4 = length2 * 2;

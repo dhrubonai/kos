@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class t5 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1104a;
+    public int f1103a;
 
     public t5(int i) {
-        this.f1104a = i;
+        this.f1103a = i;
     }
 
     public final boolean a() {
-        return this.f1104a != Integer.MIN_VALUE;
+        return this.f1103a != Integer.MIN_VALUE;
     }
 
     public final String toString() {
-        return super.toString() + "{ location = " + this.f1104a + " }";
+        return super.toString() + "{ location = " + this.f1103a + " }";
     }
 }

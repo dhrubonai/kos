@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public class ws2 implements vs2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static ws2 f1299a;
+    public static ws2 f1298a;
 
     @Override // androidx.emoji2.text.vs2
     public ss2 a(Class cls) {

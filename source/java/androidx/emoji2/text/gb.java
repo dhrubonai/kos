@@ -20,12 +20,12 @@ public final class gb extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                p01 p01VarZ = ((p01) obj).z();
-                lx0.u(p01VarZ);
-                this.f.n(p01VarZ);
+                p01 z = ((p01) obj).z();
+                lx0.u(z);
+                this.f.n(z);
                 break;
             case 1:
-                uw0 uw0Var = new uw0(((uw0) obj).f1196a);
+                uw0 uw0Var = new uw0(((uw0) obj).f1195a);
                 bt1 bt1Var = this.f;
                 bt1Var.m1setPopupContentSizefhxjrPA(uw0Var);
                 bt1Var.o();
@@ -44,6 +44,6 @@ public final class gb extends g01 implements um0 {
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -36,7 +36,7 @@ public final class t02 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((t02) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((t02) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -48,11 +48,11 @@ public final class t02 extends hh2 implements Function2 {
                     mz0.L(obj);
                     ed edVar = this.j.f;
                     Float f = new Float(1.0f);
-                    vo2 vo2VarG0 = lx0.g0(75, 0, zc0.c, 2);
+                    vo2 g0 = lx0.g0(75, 0, zc0.c, 2);
                     this.i = 1;
-                    Object objC = ed.c(edVar, f, vo2VarG0, null, this, 12);
+                    Object c = ed.c(edVar, f, g0, null, this, 12);
                     f30 f30Var = f30.d;
-                    if (objC == f30Var) {
+                    if (c == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -61,18 +61,18 @@ public final class t02 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     ed edVar2 = this.j.g;
                     Float f2 = new Float(1.0f);
-                    vo2 vo2VarG02 = lx0.g0(225, 0, zc0.f1430a, 2);
+                    vo2 g02 = lx0.g0(225, 0, zc0.f1429a, 2);
                     this.i = 1;
-                    Object objC2 = ed.c(edVar2, f2, vo2VarG02, null, this, 12);
+                    Object c2 = ed.c(edVar2, f2, g02, null, this, 12);
                     f30 f30Var2 = f30.d;
-                    if (objC2 == f30Var2) {
+                    if (c2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -81,18 +81,18 @@ public final class t02 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 2:
                 int i3 = this.i;
                 if (i3 == 0) {
                     mz0.L(obj);
                     ed edVar3 = this.j.h;
                     Float f3 = new Float(1.0f);
-                    vo2 vo2VarG03 = lx0.g0(225, 0, zc0.c, 2);
+                    vo2 g03 = lx0.g0(225, 0, zc0.c, 2);
                     this.i = 1;
-                    Object objC3 = ed.c(edVar3, f3, vo2VarG03, null, this, 12);
+                    Object c3 = ed.c(edVar3, f3, g03, null, this, 12);
                     f30 f30Var3 = f30.d;
-                    if (objC3 == f30Var3) {
+                    if (c3 == f30Var3) {
                         return f30Var3;
                     }
                 } else {
@@ -101,18 +101,18 @@ public final class t02 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i4 = this.i;
                 if (i4 == 0) {
                     mz0.L(obj);
                     ed edVar4 = this.j.f;
                     Float f4 = new Float(0.0f);
-                    vo2 vo2VarG04 = lx0.g0(150, 0, zc0.c, 2);
+                    vo2 g04 = lx0.g0(150, 0, zc0.c, 2);
                     this.i = 1;
-                    Object objC4 = ed.c(edVar4, f4, vo2VarG04, null, this, 12);
+                    Object c4 = ed.c(edVar4, f4, g04, null, this, 12);
                     f30 f30Var4 = f30.d;
-                    if (objC4 == f30Var4) {
+                    if (c4 == f30Var4) {
                         return f30Var4;
                     }
                 } else {
@@ -121,7 +121,7 @@ public final class t02 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

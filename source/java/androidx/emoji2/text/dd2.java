@@ -6,6 +6,7 @@ import android.os.Build;
 import android.webkit.WebView;
 import java.io.File;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -18,12 +19,12 @@ import java.util.WeakHashMap;
 public abstract class dd2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static boolean f246a;
+    public static boolean f245a;
     public static final Set b;
 
     static {
         xa1.B(-1318315000741666L);
-        f246a = false;
+        f245a = false;
         b = Collections.synchronizedSet(Collections.newSetFromMap(new WeakHashMap()));
         String[] strArr = xa1.b;
         a.a.a.c.a(-1318482504466210L, strArr);
@@ -145,86 +146,52 @@ public abstract class dd2 {
         String[] strArr = xa1.b;
         if (j()) {
             if (str2 == null || !str2.contains(a.a.a.c.a(-1307938359754530L, strArr))) {
-                StringBuilder sbK = jx0.k(str);
-                sbK.append(a.a.a.c.a(-1308037144002338L, strArr));
-                sbK.append(str2);
-                h(sbK.toString());
+                StringBuilder k = jx0.k(str);
+                k.append(a.a.a.c.a(-1308037144002338L, strArr));
+                k.append(str2);
+                h(k.toString());
             }
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0041 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:6:0x0041 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0042  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean f(java.lang.ClassLoader r8) {
-        /*
-            java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-            r1 = -1310395081047842(0xfffb5833deadc0de, double:NaN)
-            java.lang.String r1 = a.a.a.c.a(r1, r0)
-            r2 = 1
-            r3 = 0
-            java.lang.Class r8 = java.lang.Class.forName(r1, r2, r8)     // Catch: java.lang.Throwable -> L12 java.lang.ClassNotFoundException -> L3d
-            goto L3e
-        L12:
-            r8 = move-exception
-            r4 = -1308878957592354(0xfffb5994deadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)
-            java.lang.StringBuilder r5 = new java.lang.StringBuilder
-            r5.<init>()
-            r6 = -1308479525633826(0xfffb59f1deadc0de, double:NaN)
-            java.lang.String r6 = a.a.a.c.a(r6, r0)
-            r5.append(r6)
-            r5.append(r1)
-            r6 = -1308548245110562(0xfffb59e1deadc0de, double:NaN)
-            java.lang.String r1 = a.a.a.c.a(r6, r0)
-            r6 = 5
-            androidx.emoji2.text.zd.s(r5, r1, r8, r6, r4)
-        L3d:
-            r8 = r3
-        L3e:
-            r1 = 0
-            if (r8 != 0) goto L42
-            return r1
-        L42:
-            r4 = -1310377901178658(0xfffb5837deadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)     // Catch: java.lang.Throwable -> Laf
-            java.lang.Class<java.lang.String> r5 = java.lang.String.class
-            java.lang.Class[] r5 = new java.lang.Class[]{r5}     // Catch: java.lang.Throwable -> Laf
-            java.lang.reflect.Method r8 = r8.getDeclaredMethod(r4, r5)     // Catch: java.lang.Throwable -> Laf
-            r8.setAccessible(r2)     // Catch: java.lang.Throwable -> Laf
-            r4 = -1310438030720802(0xfffb5829deadc0de, double:NaN)
-            java.lang.String r4 = a.a.a.c.a(r4, r0)     // Catch: java.lang.Throwable -> Laf
-            java.lang.Object[] r4 = new java.lang.Object[]{r4}     // Catch: java.lang.Throwable -> Laf
-            java.lang.Object r4 = r8.invoke(r3, r4)     // Catch: java.lang.Throwable -> Laf
-            r5 = -1310575469674274(0xfffb5809deadc0de, double:NaN)
-            java.lang.String r5 = a.a.a.c.a(r5, r0)     // Catch: java.lang.Throwable -> Laf
-            java.lang.Object[] r5 = new java.lang.Object[]{r5}     // Catch: java.lang.Throwable -> Laf
-            java.lang.Object r8 = r8.invoke(r3, r5)     // Catch: java.lang.Throwable -> Laf
-            r5 = -1310163152813858(0xfffb5869deadc0de, double:NaN)
-            java.lang.String r3 = a.a.a.c.a(r5, r0)     // Catch: java.lang.Throwable -> Laf
-            java.lang.StringBuilder r5 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> Laf
-            r5.<init>()     // Catch: java.lang.Throwable -> Laf
-            r6 = -1310261937061666(0xfffb5852deadc0de, double:NaN)
-            java.lang.String r6 = a.a.a.c.a(r6, r0)     // Catch: java.lang.Throwable -> Laf
-            r5.append(r6)     // Catch: java.lang.Throwable -> Laf
-            r5.append(r4)     // Catch: java.lang.Throwable -> Laf
-            r6 = -1308805943148322(0xfffb59a5deadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r6, r0)     // Catch: java.lang.Throwable -> Laf
-            r5.append(r0)     // Catch: java.lang.Throwable -> Laf
-            r5.append(r8)     // Catch: java.lang.Throwable -> Laf
-            java.lang.String r8 = r5.toString()     // Catch: java.lang.Throwable -> Laf
-            r0 = 3
-            androidx.emoji2.text.nz0.Q(r3, r0, r8)     // Catch: java.lang.Throwable -> Laf
-            goto Lb0
-        Laf:
-            r2 = r1
-        Lb0:
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dd2.f(java.lang.ClassLoader):boolean");
+    public static boolean f(ClassLoader classLoader) {
+        Class<?> cls;
+        String[] strArr = xa1.b;
+        String a2 = a.a.a.c.a(-1310395081047842L, strArr);
+        try {
+            cls = Class.forName(a2, true, classLoader);
+        } catch (ClassNotFoundException unused) {
+            cls = null;
+            if (cls == null) {
+            }
+        } catch (Throwable th) {
+            String a3 = a.a.a.c.a(-1308878957592354L, strArr);
+            StringBuilder sb = new StringBuilder();
+            sb.append(a.a.a.c.a(-1308479525633826L, strArr));
+            sb.append(a2);
+            zd.s(sb, a.a.a.c.a(-1308548245110562L, strArr), th, 5, a3);
+            cls = null;
+            if (cls == null) {
+            }
+        }
+        if (cls == null) {
+            return false;
+        }
+        try {
+            Method declaredMethod = cls.getDeclaredMethod(a.a.a.c.a(-1310377901178658L, strArr), String.class);
+            declaredMethod.setAccessible(true);
+            Object invoke = declaredMethod.invoke(null, a.a.a.c.a(-1310438030720802L, strArr));
+            Object invoke2 = declaredMethod.invoke(null, a.a.a.c.a(-1310575469674274L, strArr));
+            nz0.Q(a.a.a.c.a(-1310163152813858L, strArr), 3, a.a.a.c.a(-1310261937061666L, strArr) + invoke + a.a.a.c.a(-1308805943148322L, strArr) + invoke2);
+            return true;
+        } catch (Throwable unused2) {
+            return false;
+        }
     }
 
     public static void g() {
@@ -233,9 +200,9 @@ public abstract class dd2 {
         try {
             try {
                 Class<?> cls = Class.forName(a.a.a.c.a(-1316644258463522L, strArr));
-                Object objInvoke = cls.getDeclaredMethod(a.a.a.c.a(-1316244826504994L, strArr), null).invoke(null, null);
-                if (objInvoke != null) {
-                    context = (Context) cls.getDeclaredMethod(a.a.a.c.a(-1316287776177954L, strArr), null).invoke(objInvoke, null);
+                Object invoke = cls.getDeclaredMethod(a.a.a.c.a(-1316244826504994L, strArr), null).invoke(null, null);
+                if (invoke != null) {
+                    context = (Context) cls.getDeclaredMethod(a.a.a.c.a(-1316287776177954L, strArr), null).invoke(invoke, null);
                 }
             } catch (Exception e) {
                 nz0.Q(a.a.a.c.a(-1316360790621986L, strArr), 5, a.a.a.c.a(-1317060870291234L, strArr) + e.getMessage());
@@ -270,13 +237,13 @@ public abstract class dd2 {
         } catch (NoSuchFieldException unused) {
         } catch (Throwable th) {
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-1302956197691170L, strArr);
+            String a2 = a.a.a.c.a(-1302956197691170L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-1303123701415714L, strArr));
             sb.append(str);
             sb.append(a.a.a.c.a(-1303179535990562L, strArr));
             sb.append(str2);
-            zd.s(sb, a.a.a.c.a(-1303170946055970L, strArr), th, 5, strA);
+            zd.s(sb, a.a.a.c.a(-1303170946055970L, strArr), th, 5, a2);
         }
         return false;
     }
@@ -288,8 +255,8 @@ public abstract class dd2 {
         String str = Build.MANUFACTURER;
         String str2 = Build.BRAND;
         String[] strArr = xa1.b;
-        String strA = a.a.a.c.a(-1308677094129442L, strArr);
-        if (str == null || !str.toLowerCase().contains(strA)) {
+        String a2 = a.a.a.c.a(-1308677094129442L, strArr);
+        if (str == null || !str.toLowerCase().contains(a2)) {
             return str2 != null && str2.toLowerCase().contains(a.a.a.c.a(-1309261209681698L, strArr));
         }
         return true;

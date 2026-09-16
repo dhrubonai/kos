@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class j21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f558a;
+    public final /* synthetic */ int f557a;
     public final rn1 b;
     public final rn1 c;
     public boolean d;
@@ -13,7 +13,7 @@ public final class j21 {
     public final s31 f;
 
     public j21(int i, int i2, int i3) {
-        this.f558a = i3;
+        this.f557a = i3;
         switch (i3) {
             case 1:
                 this.b = new rn1(i);
@@ -29,7 +29,7 @@ public final class j21 {
     }
 
     public final void a(int i, int i2) {
-        switch (this.f558a) {
+        switch (this.f557a) {
             case 0:
                 if (i >= 0.0f) {
                     this.b.h(i);

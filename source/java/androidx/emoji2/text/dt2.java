@@ -6,7 +6,9 @@ import android.view.View;
 /* loaded from: classes.dex */
 public abstract class dt2 {
     public static float a(View view) {
-        return view.getTransitionAlpha();
+        float transitionAlpha;
+        transitionAlpha = view.getTransitionAlpha();
+        return transitionAlpha;
     }
 
     public static void b(View view, float f) {

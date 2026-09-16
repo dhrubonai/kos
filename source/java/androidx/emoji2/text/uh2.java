@@ -27,7 +27,7 @@ public final class uh2 implements ComponentCallbacks2 {
                 b();
             } else if (this.f == null) {
                 if (bw1Var.d.b) {
-                    Context context = bw1Var.f172a;
+                    Context context = bw1Var.f171a;
                     ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(ConnectivityManager.class);
                     if (connectivityManager == null || kx0.n(context, "android.permission.ACCESS_NETWORK_STATE") != 0) {
                         onVar = new on(16);
@@ -87,7 +87,7 @@ public final class uh2 implements ComponentCallbacks2 {
         if (bw1Var != null) {
             ew1 ew1Var = (ew1) bw1Var.c.getValue();
             if (ew1Var != null) {
-                ew1Var.f331a.p(i);
+                ew1Var.f330a.p(i);
                 em emVar = ew1Var.b;
                 synchronized (emVar) {
                     if (i >= 10 && i != 20) {

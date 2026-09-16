@@ -75,21 +75,21 @@ public final class r50 extends dg0 implements Runnable {
         if (j2 >= 4611686018427387903L) {
             return ei1.d;
         }
-        long jNanoTime = System.nanoTime();
-        ag0 ag0Var = new ag0(j2 + jNanoTime, hm2Var);
-        R(jNanoTime, ag0Var);
+        long nanoTime = System.nanoTime();
+        ag0 ag0Var = new ag0(j2 + nanoTime, hm2Var);
+        R(nanoTime, ag0Var);
         return ag0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean zQ;
-        sl2.f1075a.set(this);
+        boolean Q;
+        sl2.f1074a.set(this);
         try {
             synchronized (this) {
                 int i = debugStatus;
                 if (i == 2 || i == 3) {
-                    if (zQ) {
+                    if (Q) {
                         return;
                     } else {
                         return;
@@ -100,13 +100,13 @@ public final class r50 extends dg0 implements Runnable {
                 long j = Long.MAX_VALUE;
                 while (true) {
                     Thread.interrupted();
-                    long jK = K();
-                    if (jK == Long.MAX_VALUE) {
-                        long jNanoTime = System.nanoTime();
+                    long K = K();
+                    if (K == Long.MAX_VALUE) {
+                        long nanoTime = System.nanoTime();
                         if (j == Long.MAX_VALUE) {
-                            j = n + jNanoTime;
+                            j = n + nanoTime;
                         }
-                        long j2 = j - jNanoTime;
+                        long j2 = j - nanoTime;
                         if (j2 <= 0) {
                             _thread = null;
                             S();
@@ -116,13 +116,13 @@ public final class r50 extends dg0 implements Runnable {
                             I();
                             return;
                         }
-                        if (jK > j2) {
-                            jK = j2;
+                        if (K > j2) {
+                            K = j2;
                         }
                     } else {
                         j = Long.MAX_VALUE;
                     }
-                    if (jK > 0) {
+                    if (K > 0) {
                         int i2 = debugStatus;
                         if (i2 == 2 || i2 == 3) {
                             _thread = null;
@@ -133,7 +133,7 @@ public final class r50 extends dg0 implements Runnable {
                             I();
                             return;
                         }
-                        LockSupport.parkNanos(this, jK);
+                        LockSupport.parkNanos(this, K);
                     }
                 }
             }

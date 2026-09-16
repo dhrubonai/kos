@@ -18,7 +18,7 @@ public final class is2 {
     public static final bx1 v = new bx1(1);
 
     /* renamed from: a, reason: collision with root package name */
-    public int f548a;
+    public int f547a;
     public final int b;
     public float[] d;
     public float[] e;
@@ -86,66 +86,25 @@ public final class is2 {
         n(1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0044 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0044 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean c(android.view.View r4, float r5, float r6) {
-        /*
-            r3 = this;
-            r0 = 0
-            if (r4 != 0) goto L4
-            goto L45
-        L4:
-            androidx.emoji2.text.lz0 r1 = r3.q
-            int r4 = r1.w(r4)
-            r2 = 1
-            if (r4 <= 0) goto Lf
-            r4 = r2
-            goto L10
-        Lf:
-            r4 = r0
-        L10:
-            int r1 = r1.x()
-            if (r1 <= 0) goto L18
-            r1 = r2
-            goto L19
-        L18:
-            r1 = r0
-        L19:
-            if (r4 == 0) goto L29
-            if (r1 == 0) goto L29
-            float r5 = r5 * r5
-            float r6 = r6 * r6
-            float r6 = r6 + r5
-            int r4 = r3.b
-            int r4 = r4 * r4
-            float r4 = (float) r4
-            int r4 = (r6 > r4 ? 1 : (r6 == r4 ? 0 : -1))
-            if (r4 <= 0) goto L45
-            goto L44
-        L29:
-            if (r4 == 0) goto L37
-            float r4 = java.lang.Math.abs(r5)
-            int r5 = r3.b
-            float r5 = (float) r5
-            int r4 = (r4 > r5 ? 1 : (r4 == r5 ? 0 : -1))
-            if (r4 <= 0) goto L45
-            goto L44
-        L37:
-            if (r1 == 0) goto L45
-            float r4 = java.lang.Math.abs(r6)
-            int r5 = r3.b
-            float r5 = (float) r5
-            int r4 = (r4 > r5 ? 1 : (r4 == r5 ? 0 : -1))
-            if (r4 <= 0) goto L45
-        L44:
-            return r2
-        L45:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.is2.c(android.view.View, float, float):boolean");
+    public final boolean c(View view, float f, float f2) {
+        if (view != null) {
+            lz0 lz0Var = this.q;
+            boolean z = lz0Var.w(view) > 0;
+            boolean z2 = lz0Var.x() > 0;
+            if (z && z2) {
+                float f3 = (f2 * f2) + (f * f);
+                int i = this.b;
+                if (f3 > i * i) {
+                }
+            } else if (!z ? !(!z2 || Math.abs(f2) <= this.b) : Math.abs(f) > this.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final void d(int i) {
@@ -171,41 +130,41 @@ public final class is2 {
             return 0;
         }
         float width = this.t.getWidth() / 2;
-        float fSin = (((float) Math.sin((Math.min(1.0f, Math.abs(i) / r0) - 0.5f) * 0.47123894f)) * width) + width;
-        int iAbs = Math.abs(i2);
-        return Math.min(iAbs > 0 ? Math.round(Math.abs(fSin / iAbs) * 1000.0f) * 4 : (int) (((Math.abs(i) / i3) + 1.0f) * 256.0f), 600);
+        float sin = (((float) Math.sin((Math.min(1.0f, Math.abs(i) / r0) - 0.5f) * 0.47123894f)) * width) + width;
+        int abs = Math.abs(i2);
+        return Math.min(abs > 0 ? Math.round(Math.abs(sin / abs) * 1000.0f) * 4 : (int) (((Math.abs(i) / i3) + 1.0f) * 256.0f), 600);
     }
 
     public final boolean f() {
-        if (this.f548a == 2) {
+        if (this.f547a == 2) {
             OverScroller overScroller = this.p;
-            boolean zComputeScrollOffset = overScroller.computeScrollOffset();
+            boolean computeScrollOffset = overScroller.computeScrollOffset();
             int currX = overScroller.getCurrX();
             int currY = overScroller.getCurrY();
             int left = currX - this.r.getLeft();
             int top2 = currY - this.r.getTop();
             if (left != 0) {
                 View view = this.r;
-                Field field = es2.f320a;
+                Field field = es2.f319a;
                 view.offsetLeftAndRight(left);
             }
             if (top2 != 0) {
                 View view2 = this.r;
-                Field field2 = es2.f320a;
+                Field field2 = es2.f319a;
                 view2.offsetTopAndBottom(top2);
             }
             if (left != 0 || top2 != 0) {
                 this.q.E(this.r, currX, currY);
             }
-            if (zComputeScrollOffset && currX == overScroller.getFinalX() && currY == overScroller.getFinalY()) {
+            if (computeScrollOffset && currX == overScroller.getFinalX() && currY == overScroller.getFinalY()) {
                 overScroller.abortAnimation();
-                zComputeScrollOffset = false;
+                computeScrollOffset = false;
             }
-            if (!zComputeScrollOffset) {
+            if (!computeScrollOffset) {
                 this.t.post(this.u);
             }
         }
-        return this.f548a == 2;
+        return this.f547a == 2;
     }
 
     public final View g(int i, int i2) {
@@ -238,37 +197,37 @@ public final class is2 {
         View view = this.r;
         int i7 = (int) this.n;
         int i8 = (int) this.m;
-        int iAbs = Math.abs(i3);
-        if (iAbs < i7) {
+        int abs = Math.abs(i3);
+        if (abs < i7) {
             i3 = 0;
-        } else if (iAbs > i8) {
+        } else if (abs > i8) {
             i3 = i3 > 0 ? i8 : -i8;
         }
-        int iAbs2 = Math.abs(i4);
-        if (iAbs2 < i7) {
+        int abs2 = Math.abs(i4);
+        if (abs2 < i7) {
             i4 = 0;
-        } else if (iAbs2 > i8) {
+        } else if (abs2 > i8) {
             i4 = i4 > 0 ? i8 : -i8;
         }
-        int iAbs3 = Math.abs(i5);
-        int iAbs4 = Math.abs(i6);
-        int iAbs5 = Math.abs(i3);
-        int iAbs6 = Math.abs(i4);
-        int i9 = iAbs5 + iAbs6;
-        int i10 = iAbs3 + iAbs4;
+        int abs3 = Math.abs(i5);
+        int abs4 = Math.abs(i6);
+        int abs5 = Math.abs(i3);
+        int abs6 = Math.abs(i4);
+        int i9 = abs5 + abs6;
+        int i10 = abs3 + abs4;
         if (i3 != 0) {
-            f = iAbs5;
+            f = abs5;
             f2 = i9;
         } else {
-            f = iAbs3;
+            f = abs3;
             f2 = i10;
         }
         float f5 = f / f2;
         if (i4 != 0) {
-            f3 = iAbs6;
+            f3 = abs6;
             f4 = i9;
         } else {
-            f3 = iAbs4;
+            f3 = abs4;
             f4 = i10;
         }
         float f6 = f3 / f4;
@@ -302,14 +261,14 @@ public final class is2 {
             float x = motionEvent.getX();
             float y = motionEvent.getY();
             int pointerId = motionEvent.getPointerId(0);
-            View viewG = g((int) x, (int) y);
+            View g = g((int) x, (int) y);
             l(x, y, pointerId);
-            q(viewG, pointerId);
+            q(g, pointerId);
             int i3 = this.h[pointerId];
             return;
         }
         if (actionMasked == 1) {
-            if (this.f548a == 1) {
+            if (this.f547a == 1) {
                 k();
             }
             a();
@@ -318,11 +277,11 @@ public final class is2 {
         lz0 lz0Var = this.q;
         if (actionMasked != 2) {
             if (actionMasked == 3) {
-                if (this.f548a == 1) {
+                if (this.f547a == 1) {
                     this.s = true;
                     lz0Var.F(this.r, 0.0f, 0.0f);
                     this.s = false;
-                    if (this.f548a == 1) {
+                    if (this.f547a == 1) {
                         n(0);
                     }
                 }
@@ -334,7 +293,7 @@ public final class is2 {
                 float x2 = motionEvent.getX(actionIndex);
                 float y2 = motionEvent.getY(actionIndex);
                 l(x2, y2, pointerId2);
-                if (this.f548a == 0) {
+                if (this.f547a == 0) {
                     q(g((int) x2, (int) y2), pointerId2);
                     int i4 = this.h[pointerId2];
                     return;
@@ -355,7 +314,7 @@ public final class is2 {
                 return;
             }
             int pointerId3 = motionEvent.getPointerId(actionIndex);
-            if (this.f548a == 1 && pointerId3 == this.c) {
+            if (this.f547a == 1 && pointerId3 == this.c) {
                 int pointerCount = motionEvent.getPointerCount();
                 while (true) {
                     if (i2 >= pointerCount) {
@@ -364,9 +323,9 @@ public final class is2 {
                     }
                     int pointerId4 = motionEvent.getPointerId(i2);
                     if (pointerId4 != this.c) {
-                        View viewG2 = g((int) motionEvent.getX(i2), (int) motionEvent.getY(i2));
+                        View g2 = g((int) motionEvent.getX(i2), (int) motionEvent.getY(i2));
                         View view2 = this.r;
-                        if (viewG2 == view2 && q(view2, pointerId4)) {
+                        if (g2 == view2 && q(view2, pointerId4)) {
                             i = this.c;
                             break;
                         }
@@ -380,11 +339,11 @@ public final class is2 {
             d(pointerId3);
             return;
         }
-        if (this.f548a == 1) {
+        if (this.f547a == 1) {
             if (i(this.c)) {
-                int iFindPointerIndex = motionEvent.findPointerIndex(this.c);
-                float x3 = motionEvent.getX(iFindPointerIndex);
-                float y3 = motionEvent.getY(iFindPointerIndex);
+                int findPointerIndex = motionEvent.findPointerIndex(this.c);
+                float x3 = motionEvent.getX(findPointerIndex);
+                float y3 = motionEvent.getY(findPointerIndex);
                 float[] fArr = this.f;
                 int i7 = this.c;
                 int i8 = (int) (x3 - fArr[i7]);
@@ -395,12 +354,12 @@ public final class is2 {
                 int top3 = this.r.getTop();
                 if (i8 != 0) {
                     left = lz0Var.j(this.r, left);
-                    Field field = es2.f320a;
+                    Field field = es2.f319a;
                     this.r.offsetLeftAndRight(left - left2);
                 }
                 if (i9 != 0) {
                     top2 = lz0Var.k(this.r, top2);
-                    Field field2 = es2.f320a;
+                    Field field2 = es2.f319a;
                     this.r.offsetTopAndBottom(top2 - top3);
                 }
                 if (i8 != 0 || i9 != 0) {
@@ -431,9 +390,9 @@ public final class is2 {
                 Math.abs(f2);
                 Math.abs(f);
                 int i13 = this.h[pointerId5];
-                if (this.f548a != 1) {
-                    View viewG3 = g((int) x4, (int) y4);
-                    if (c(viewG3, f, f2) && q(viewG3, pointerId5)) {
+                if (this.f547a != 1) {
+                    View g3 = g((int) x4, (int) y4);
+                    if (c(g3, f, f2) && q(g3, pointerId5)) {
                         break;
                     }
                 } else {
@@ -450,18 +409,18 @@ public final class is2 {
         float f = this.m;
         velocityTracker.computeCurrentVelocity(1000, f);
         float xVelocity = this.l.getXVelocity(this.c);
-        float fAbs = Math.abs(xVelocity);
+        float abs = Math.abs(xVelocity);
         float f2 = this.n;
-        if (fAbs < f2) {
+        if (abs < f2) {
             xVelocity = 0.0f;
-        } else if (fAbs > f) {
+        } else if (abs > f) {
             xVelocity = xVelocity > 0.0f ? f : -f;
         }
         float yVelocity = this.l.getYVelocity(this.c);
-        float fAbs2 = Math.abs(yVelocity);
-        if (fAbs2 < f2) {
+        float abs2 = Math.abs(yVelocity);
+        if (abs2 < f2) {
             f = 0.0f;
-        } else if (fAbs2 <= f) {
+        } else if (abs2 <= f) {
             f = yVelocity;
         } else if (yVelocity <= 0.0f) {
             f = -f;
@@ -469,7 +428,7 @@ public final class is2 {
         this.s = true;
         this.q.F(this.r, xVelocity, f);
         this.s = false;
-        if (this.f548a == 1) {
+        if (this.f547a == 1) {
             n(0);
         }
     }
@@ -549,10 +508,10 @@ public final class is2 {
 
     public final void n(int i) {
         this.t.removeCallbacks(this.u);
-        if (this.f548a != i) {
-            this.f548a = i;
+        if (this.f547a != i) {
+            this.f547a = i;
             this.q.D(i);
-            if (this.f548a == 0) {
+            if (this.f547a == 0) {
                 this.r = null;
             }
         }
@@ -565,18 +524,109 @@ public final class is2 {
         throw new IllegalStateException("Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased");
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:52:0x00d6  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0114  */
+    /* JADX WARN: Code restructure failed: missing block: B:47:0x00cd, code lost:
+    
+        if (r12 != r11) goto L52;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean p(android.view.MotionEvent r18) {
-        /*
-            Method dump skipped, instructions count: 322
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.is2.p(android.view.MotionEvent):boolean");
+    public final boolean p(MotionEvent motionEvent) {
+        View g;
+        int actionMasked = motionEvent.getActionMasked();
+        int actionIndex = motionEvent.getActionIndex();
+        if (actionMasked == 0) {
+            a();
+        }
+        if (this.l == null) {
+            this.l = VelocityTracker.obtain();
+        }
+        this.l.addMovement(motionEvent);
+        if (actionMasked != 0) {
+            if (actionMasked != 1) {
+                if (actionMasked != 2) {
+                    if (actionMasked != 3) {
+                        if (actionMasked == 5) {
+                            int pointerId = motionEvent.getPointerId(actionIndex);
+                            float x = motionEvent.getX(actionIndex);
+                            float y = motionEvent.getY(actionIndex);
+                            l(x, y, pointerId);
+                            int i = this.f547a;
+                            if (i == 0) {
+                                int i2 = this.h[pointerId];
+                            } else if (i == 2 && (g = g((int) x, (int) y)) == this.r) {
+                                q(g, pointerId);
+                            }
+                        } else if (actionMasked == 6) {
+                            d(motionEvent.getPointerId(actionIndex));
+                        }
+                    }
+                } else if (this.d != null && this.e != null) {
+                    int pointerCount = motionEvent.getPointerCount();
+                    for (int i3 = 0; i3 < pointerCount; i3++) {
+                        int pointerId2 = motionEvent.getPointerId(i3);
+                        if (i(pointerId2)) {
+                            float x2 = motionEvent.getX(i3);
+                            float y2 = motionEvent.getY(i3);
+                            float f = x2 - this.d[pointerId2];
+                            float f2 = y2 - this.e[pointerId2];
+                            View g2 = g((int) x2, (int) y2);
+                            boolean z = g2 != null && c(g2, f, f2);
+                            if (z) {
+                                int left = g2.getLeft();
+                                lz0 lz0Var = this.q;
+                                int j = lz0Var.j(g2, ((int) f) + left);
+                                int top2 = g2.getTop();
+                                int k = lz0Var.k(g2, ((int) f2) + top2);
+                                int w = lz0Var.w(g2);
+                                int x3 = lz0Var.x();
+                                if (w != 0) {
+                                    if (w > 0) {
+                                    }
+                                }
+                                if (x3 == 0) {
+                                    break;
+                                }
+                                if (x3 > 0 && k == top2) {
+                                    break;
+                                }
+                            }
+                            Math.abs(f);
+                            Math.abs(f2);
+                            int i4 = this.h[pointerId2];
+                            Math.abs(f2);
+                            Math.abs(f);
+                            int i5 = this.h[pointerId2];
+                            Math.abs(f);
+                            Math.abs(f2);
+                            int i6 = this.h[pointerId2];
+                            Math.abs(f2);
+                            Math.abs(f);
+                            int i7 = this.h[pointerId2];
+                            if (this.f547a == 1) {
+                                break;
+                            }
+                            if (z && q(g2, pointerId2)) {
+                                break;
+                            }
+                        }
+                    }
+                    m(motionEvent);
+                }
+            }
+            a();
+        } else {
+            float x4 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            int pointerId3 = motionEvent.getPointerId(0);
+            l(x4, y3, pointerId3);
+            View g3 = g((int) x4, (int) y3);
+            if (g3 == this.r && this.f547a == 2) {
+                q(g3, pointerId3);
+            }
+            int i8 = this.h[pointerId3];
+        }
+        return this.f547a == 1;
     }
 
     public final boolean q(View view, int i) {

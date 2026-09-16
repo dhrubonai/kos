@@ -12,7 +12,7 @@ public final class no0 {
     public static final /* synthetic */ no0[] h;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         no0 no0Var = new no0(a.a.a.c.a(-395262104321826L, strArr), 0);
         d = no0Var;
         no0 no0Var2 = new no0(a.a.a.c.a(-394725233409826L, strArr), 1);

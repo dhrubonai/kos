@@ -48,15 +48,22 @@ public final class c92 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((c92) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((c92) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0095, code lost:
+    
+        if (r15 == r2) goto L27;
+     */
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object k(Object obj) {
         hn1 hn1Var;
         mf1 mf1Var;
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         f30 f30Var = f30.d;
         switch (i) {
             case 0:
@@ -65,46 +72,45 @@ public final class c92 extends hh2 implements Function2 {
                 Context context = this.m;
                 if (i2 == 0) {
                     mz0.L(obj);
-                    q60 q60Var = e90.f294a;
+                    q60 q60Var = e90.f293a;
                     a60 a60Var = a60.f;
                     e3 e3Var = new e3(i3, this.l, context, (l10) null);
                     this.i = 1;
                     obj = h50.M(a60Var, e3Var, this);
-                    if (obj != f30Var) {
+                    break;
+                } else {
+                    if (i2 != 1) {
+                        if (i2 != 2) {
+                            throw new IllegalStateException(a.a.a.c.a(-507274851401506L, wj1.f1283a));
+                        }
+                        mf1Var = this.k;
+                        hn1Var = (hn1) this.q;
+                        mz0.L(obj);
+                        int i4 = n92.f798a;
+                        mf1Var.setValue((List) obj);
+                        this.p.setValue(Boolean.FALSE);
+                        Toast.makeText(context, (CharSequence) hn1Var.e, 0).show();
+                        return up2Var;
                     }
-                    return f30Var;
-                }
-                if (i2 != 1) {
-                    if (i2 != 2) {
-                        throw new IllegalStateException(a.a.a.c.a(-507274851401506L, wj1.f1284a));
-                    }
-                    mf1Var = this.k;
-                    hn1Var = (hn1) this.q;
                     mz0.L(obj);
-                    int i4 = n92.f799a;
-                    mf1Var.setValue((List) obj);
-                    this.p.setValue(Boolean.FALSE);
-                    Toast.makeText(context, (CharSequence) hn1Var.e, 0).show();
-                    return up2Var;
                 }
-                mz0.L(obj);
                 hn1 hn1Var2 = (hn1) obj;
                 List list = (List) hn1Var2.d;
-                int i5 = n92.f799a;
+                int i5 = n92.f798a;
                 this.n.setValue(list);
-                q60 q60Var2 = e90.f294a;
+                q60 q60Var2 = e90.f293a;
                 a60 a60Var2 = a60.f;
                 g3 g3Var = new g3(context, i3, null, 1);
                 this.q = hn1Var2;
                 mf1 mf1Var2 = this.o;
                 this.k = mf1Var2;
                 this.i = 2;
-                Object objM = h50.M(a60Var2, g3Var, this);
-                if (objM != f30Var) {
+                Object M = h50.M(a60Var2, g3Var, this);
+                if (M != f30Var) {
                     hn1Var = hn1Var2;
-                    obj = objM;
+                    obj = M;
                     mf1Var = mf1Var2;
-                    int i42 = n92.f799a;
+                    int i42 = n92.f798a;
                     mf1Var.setValue((List) obj);
                     this.p.setValue(Boolean.FALSE);
                     Toast.makeText(context, (CharSequence) hn1Var.e, 0).show();
@@ -115,7 +121,7 @@ public final class c92 extends hh2 implements Function2 {
                 int i6 = this.i;
                 if (i6 != 0) {
                     if (i6 != 1) {
-                        throw new IllegalStateException(a.a.a.c.a(-505312051347234L, wj1.f1284a));
+                        throw new IllegalStateException(a.a.a.c.a(-505312051347234L, wj1.f1283a));
                     }
                     mz0.L(obj);
                     return up2Var;
@@ -123,10 +129,10 @@ public final class c92 extends hh2 implements Function2 {
                 mz0.L(obj);
                 dh dhVar = (dh) this.q;
                 mf1 mf1Var3 = this.k;
-                int i7 = n92.f799a;
-                boolean zBooleanValue = ((Boolean) mf1Var3.getValue()).booleanValue();
+                int i7 = n92.f798a;
+                boolean booleanValue = ((Boolean) mf1Var3.getValue()).booleanValue();
                 this.i = 1;
-                return n92.k(this.l, this.m, dhVar, this.n, this.o, this.p, mf1Var3, this.j, zBooleanValue, this) == f30Var ? f30Var : up2Var;
+                return n92.k(this.l, this.m, dhVar, this.n, this.o, this.p, mf1Var3, this.j, booleanValue, this) == f30Var ? f30Var : up2Var;
         }
     }
 

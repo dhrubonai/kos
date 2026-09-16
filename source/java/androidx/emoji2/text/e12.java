@@ -35,16 +35,16 @@ public abstract class e12 extends md1 implements ey, ub0, n01 {
         if (xt1Var instanceof vt1) {
             I0((vt1) xt1Var, this.y, this.x);
         } else if (xt1Var instanceof wt1) {
-            L0(((wt1) xt1Var).f1302a);
+            L0(((wt1) xt1Var).f1301a);
         } else if (xt1Var instanceof ut1) {
-            L0(((ut1) xt1Var).f1192a);
+            L0(((ut1) xt1Var).f1191a);
         }
     }
 
     public abstract void L0(vt1 vt1Var);
 
     @Override // androidx.emoji2.text.ub0
-    public final void g(g11 g11Var) throws Throwable {
+    public final void g(g11 g11Var) {
         g11Var.b();
         lr lrVar = this.w;
         if (lrVar != null) {
@@ -61,7 +61,7 @@ public abstract class e12 extends md1 implements ey, ub0, n01 {
         float f = this.t;
         this.x = Float.isNaN(f) ? w02.a(j70Var, this.s, this.y) : j70Var.c0(f);
         ze1 ze1Var = this.A;
-        Object[] objArr = ze1Var.f1436a;
+        Object[] objArr = ze1Var.f1435a;
         int i = ze1Var.b;
         for (int i2 = 0; i2 < i; i2++) {
             K0((xt1) objArr[i2]);

@@ -8,17 +8,17 @@ import android.animation.AnimatorListenerAdapter;
 public final class cs extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f217a;
+    public final /* synthetic */ int f216a;
     public final /* synthetic */ ds b;
 
     public /* synthetic */ cs(ds dsVar, int i) {
-        this.f217a = i;
+        this.f216a = i;
         this.b = dsVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationEnd(Animator animator) {
-        switch (this.f217a) {
+        switch (this.f216a) {
             case 1:
                 this.b.b.h(false);
                 break;
@@ -30,7 +30,7 @@ public final class cs extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationStart(Animator animator) {
-        switch (this.f217a) {
+        switch (this.f216a) {
             case 0:
                 this.b.b.h(true);
                 break;

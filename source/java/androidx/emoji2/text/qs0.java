@@ -19,9 +19,10 @@ public final class qs0 extends mi2 {
 
     @Override // androidx.emoji2.text.mi2
     public final long a() {
-        long jA;
+        long a2;
         int i;
         et0[] et0VarArr;
+        et0[] et0VarArr2;
         switch (this.e) {
             case 0:
                 xs0 xs0Var = (xs0) this.f;
@@ -31,8 +32,8 @@ public final class qs0 extends mi2 {
                 try {
                     ((xs0) this.f).d.b((et0) this.g);
                 } catch (IOException e) {
-                    lr1 lr1Var = lr1.f707a;
-                    lr1 lr1Var2 = lr1.f707a;
+                    lr1 lr1Var = lr1.f706a;
+                    lr1 lr1Var2 = lr1.f706a;
                     String str = "Http2Connection.Listener failure for " + ((xs0) this.f).f;
                     lr1Var2.getClass();
                     lr1.i(4, str, e);
@@ -55,12 +56,21 @@ public final class qs0 extends mi2 {
                             g82Var3.b(g82Var2);
                             g82Var3.b(g82Var);
                             cy1Var.d = g82Var3;
-                            jA = g82Var3.a() - g82Var2.a();
+                            a2 = g82Var3.a() - g82Var2.a();
                             i = 0;
-                            et0VarArr = (jA == 0 || xs0Var2.e.isEmpty()) ? null : (et0[]) xs0Var2.e.values().toArray(new et0[0]);
-                            g82 g82Var4 = (g82) cy1Var.d;
-                            lx0.x(g82Var4, "<set-?>");
-                            xs0Var2.t = g82Var4;
+                            if (a2 != 0 && !xs0Var2.e.isEmpty()) {
+                                et0VarArr = (et0[]) xs0Var2.e.values().toArray(new et0[0]);
+                                et0VarArr2 = et0VarArr;
+                                g82 g82Var4 = (g82) cy1Var.d;
+                                lx0.x(g82Var4, "<set-?>");
+                                xs0Var2.t = g82Var4;
+                                xs0Var2.m.c(new qs0(xs0Var2.f + " onSettings", xs0Var2, cy1Var, i), 0L);
+                            }
+                            et0VarArr = null;
+                            et0VarArr2 = et0VarArr;
+                            g82 g82Var42 = (g82) cy1Var.d;
+                            lx0.x(g82Var42, "<set-?>");
+                            xs0Var2.t = g82Var42;
                             xs0Var2.m.c(new qs0(xs0Var2.f + " onSettings", xs0Var2, cy1Var, i), 0L);
                         } catch (Throwable th) {
                             throw th;
@@ -72,13 +82,13 @@ public final class qs0 extends mi2 {
                         xs0Var2.b(2, 2, e2);
                     }
                 }
-                if (et0VarArr != null) {
-                    int length = et0VarArr.length;
+                if (et0VarArr2 != null) {
+                    int length = et0VarArr2.length;
                     while (i < length) {
-                        et0 et0Var = et0VarArr[i];
+                        et0 et0Var = et0VarArr2[i];
                         synchronized (et0Var) {
-                            et0Var.f += jA;
-                            if (jA > 0) {
+                            et0Var.f += a2;
+                            if (a2 > 0) {
                                 et0Var.notifyAll();
                             }
                         }

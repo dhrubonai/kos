@@ -19,13 +19,13 @@ public final class ln2 implements qe2 {
     /* JADX WARN: Type inference failed for: r0v0, types: [androidx.emoji2.text.g01, androidx.emoji2.text.um0] */
     /* JADX WARN: Type inference failed for: r1v5, types: [androidx.emoji2.text.g01, androidx.emoji2.text.um0] */
     public final void a(nn2 nn2Var) {
-        Object objE = this.f.e(nn2Var.getTargetState());
-        boolean zG = this.g.c.g();
+        Object e = this.f.e(nn2Var.getTargetState());
+        boolean g = this.g.c.g();
         pn2 pn2Var = this.d;
-        if (zG) {
-            pn2Var.f(this.f.e(nn2Var.a()), objE, (ri0) this.e.e(nn2Var));
+        if (g) {
+            pn2Var.f(this.f.e(nn2Var.a()), e, (ri0) this.e.e(nn2Var));
         } else {
-            pn2Var.g(objE, (ri0) this.e.e(nn2Var));
+            pn2Var.g(e, (ri0) this.e.e(nn2Var));
         }
     }
 

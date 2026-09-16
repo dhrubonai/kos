@@ -7,7 +7,7 @@ public final class f31 {
     public static final /* synthetic */ int t = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public final e30 f341a;
+    public final e30 f340a;
     public final qp0 b;
     public final o c;
     public ri0 d;
@@ -27,7 +27,7 @@ public final class f31 {
     public long r;
 
     public f31(e30 e30Var, qp0 qp0Var, o oVar) {
-        this.f341a = e30Var;
+        this.f340a = e30Var;
         this.b = qp0Var;
         this.c = oVar;
         Boolean bool = Boolean.FALSE;
@@ -40,7 +40,7 @@ public final class f31 {
         this.m = 0L;
         this.n = qp0Var != null ? qp0Var.b() : null;
         this.o = new ed(new nw0(0L), qq2.g, null, 12);
-        this.p = new ed(Float.valueOf(1.0f), qq2.f974a, null, 12);
+        this.p = new ed(Float.valueOf(1.0f), qq2.f973a, null, 12);
         this.q = az0.W(new nw0(0L));
         this.r = j;
     }
@@ -48,10 +48,10 @@ public final class f31 {
     public final void a() {
         rp0 rp0Var = this.n;
         ri0 ri0Var = this.d;
-        boolean zBooleanValue = ((Boolean) this.i.getValue()).booleanValue();
-        e30 e30Var = this.f341a;
+        boolean booleanValue = ((Boolean) this.i.getValue()).booleanValue();
+        e30 e30Var = this.f340a;
         l10 l10Var = null;
-        if (zBooleanValue || ri0Var == null || rp0Var == null) {
+        if (booleanValue || ri0Var == null || rp0Var == null) {
             if (b()) {
                 if (rp0Var != null) {
                     rp0Var.f(1.0f);
@@ -62,9 +62,9 @@ public final class f31 {
             return;
         }
         d(true);
-        boolean zB = b();
-        boolean z = !zB;
-        if (!zB) {
+        boolean b = b();
+        boolean z = !b;
+        if (!b) {
             rp0Var.f(0.0f);
         }
         h50.G(e30Var, null, new e31(z, this, ri0Var, rp0Var, null), 3);
@@ -76,10 +76,10 @@ public final class f31 {
 
     public final void c() {
         qp0 qp0Var;
-        boolean zBooleanValue = ((Boolean) this.h.getValue()).booleanValue();
-        e30 e30Var = this.f341a;
+        boolean booleanValue = ((Boolean) this.h.getValue()).booleanValue();
+        e30 e30Var = this.f340a;
         l10 l10Var = null;
-        if (zBooleanValue) {
+        if (booleanValue) {
             f(false);
             h50.G(e30Var, null, new c31(this, l10Var, 2), 3);
         }

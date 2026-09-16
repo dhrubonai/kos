@@ -39,11 +39,11 @@ public class BroadcastManager implements PackageMonitor {
             if (message.what != 1) {
                 return;
             }
-            PendingResultData pendingResultDataRemovePendingResult = BroadcastManager.this.removePendingResult((PendingResultData) message.obj);
-            if (pendingResultDataRemovePendingResult != null) {
-                BroadcastManager.finishPendingResult(pendingResultDataRemovePendingResult);
+            PendingResultData removePendingResult = BroadcastManager.this.removePendingResult((PendingResultData) message.obj);
+            if (removePendingResult != null) {
+                BroadcastManager.finishPendingResult(removePendingResult);
                 String[] strArr = xa1.b;
-                nz0.Q(c.a(-533186389098274L, strArr), 3, c.a(-533259403542306L, strArr) + pendingResultDataRemovePendingResult);
+                nz0.Q(c.a(-533186389098274L, strArr), 3, c.a(-533259403542306L, strArr) + removePendingResult);
             }
         }
     };
@@ -54,12 +54,12 @@ public class BroadcastManager implements PackageMonitor {
     }
 
     private void addReceiver(String str, BroadcastReceiver broadcastReceiver) {
-        List<BroadcastReceiver> arrayList = this.mReceivers.get(str);
-        if (arrayList == null) {
-            arrayList = new ArrayList<>();
-            this.mReceivers.put(str, arrayList);
+        List<BroadcastReceiver> list = this.mReceivers.get(str);
+        if (list == null) {
+            list = new ArrayList<>();
+            this.mReceivers.put(str, list);
         }
-        arrayList.add(broadcastReceiver);
+        list.add(broadcastReceiver);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -106,14 +106,14 @@ public class BroadcastManager implements PackageMonitor {
 
     /* JADX INFO: Access modifiers changed from: private */
     public PendingResultData removePendingResult(PendingResultData pendingResultData) {
-        PendingResultData pendingResultDataRemove;
+        PendingResultData remove;
         if (pendingResultData == null || pendingResultData.mBToken == null) {
             return null;
         }
         synchronized (this.mReceiversData) {
-            pendingResultDataRemove = this.mReceiversData.remove(pendingResultData.mBToken);
+            remove = this.mReceiversData.remove(pendingResultData.mBToken);
         }
-        return pendingResultDataRemove;
+        return remove;
     }
 
     public static BroadcastManager startSystem(BActivityManagerService bActivityManagerService, BPackageManagerService bPackageManagerService) {
@@ -131,17 +131,17 @@ public class BroadcastManager implements PackageMonitor {
     }
 
     public void cancelBroadcast(PendingResultData pendingResultData) {
-        PendingResultData pendingResultDataRemovePendingResult = removePendingResult(pendingResultData);
-        if (pendingResultDataRemovePendingResult != null) {
-            this.mHandler.removeMessages(1, pendingResultDataRemovePendingResult);
-            finishPendingResult(pendingResultDataRemovePendingResult);
+        PendingResultData removePendingResult = removePendingResult(pendingResultData);
+        if (removePendingResult != null) {
+            this.mHandler.removeMessages(1, removePendingResult);
+            finishPendingResult(removePendingResult);
         }
     }
 
     public void finishBroadcast(PendingResultData pendingResultData) {
-        PendingResultData pendingResultDataRemovePendingResult = removePendingResult(pendingResultData);
-        if (pendingResultDataRemovePendingResult != null) {
-            this.mHandler.removeMessages(1, pendingResultDataRemovePendingResult);
+        PendingResultData removePendingResult = removePendingResult(pendingResultData);
+        if (removePendingResult != null) {
+            this.mHandler.removeMessages(1, removePendingResult);
         }
     }
 

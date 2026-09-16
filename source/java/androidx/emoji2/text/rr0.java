@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class rr0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1027a;
+    public final long f1026a;
     public final long b;
     public final long c;
 
     public rr0(long j, long j2, long j3) {
-        this.f1027a = j;
+        this.f1026a = j;
         this.b = j2;
         this.c = j3;
     }
 
     public final String toString() {
-        return "HistoricalChange(uptimeMillis=" + this.f1027a + ", position=" + ((Object) zi1.i(this.b)) + ')';
+        return "HistoricalChange(uptimeMillis=" + this.f1026a + ", position=" + ((Object) zi1.i(this.b)) + ')';
     }
 }

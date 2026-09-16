@@ -20,7 +20,7 @@ public final class rs0 extends mi2 {
     }
 
     @Override // androidx.emoji2.text.mi2
-    public final long a() throws IOException {
+    public final long a() {
         switch (this.e) {
             case 0:
                 xs0 xs0Var = this.f;

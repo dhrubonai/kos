@@ -80,12 +80,12 @@ public final class x32 extends g01 implements um0 {
             int size5 = arrayList5.size();
             for (int i7 = 0; i7 < size5; i7++) {
                 hr1 hr1Var3 = (hr1) arrayList5.get(i7);
-                int i8 = zg0Var.f1439a;
+                int i8 = zg0Var.f1438a;
                 Integer num2 = this.r;
                 lx0.u(num2);
                 gr1Var.f(hr1Var3, i8, i - num2.intValue(), 0.0f);
             }
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

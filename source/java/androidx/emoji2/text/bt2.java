@@ -9,24 +9,24 @@ import android.view.View;
 public abstract class bt2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ht2 f167a;
+    public static final ht2 f166a;
     public static final cq b;
 
     static {
         if (Build.VERSION.SDK_INT >= 29) {
-            f167a = new it2();
+            f166a = new it2();
         } else {
-            f167a = new ht2();
+            f166a = new ht2();
         }
         b = new cq(Float.class, "translationAlpha", 5);
         new cq(Rect.class, "clipBounds", 6);
     }
 
     public static void a(View view, int i, int i2, int i3, int i4) {
-        f167a.o0(view, i, i2, i3, i4);
+        f166a.o0(view, i, i2, i3, i4);
     }
 
-    public static void b(View view, int i) throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
-        f167a.g0(view, i);
+    public static void b(View view, int i) {
+        f166a.g0(view, i);
     }
 }

@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class ra1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ ua1 f999a;
+    public final /* synthetic */ ua1 f998a;
 
     public r20 a(r20 r20Var) {
-        return r20Var instanceof hy1 ? r20Var : new x4(-this.f999a.i(), r20Var);
+        return r20Var instanceof hy1 ? r20Var : new x4(-this.f998a.i(), r20Var);
     }
 }

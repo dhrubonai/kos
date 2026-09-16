@@ -60,11 +60,11 @@ public class IStorageStatsManagerProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException unused) {
-            String strA = c.a(-1007806045110050L, strArr);
+            String a2 = c.a(-1007806045110050L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1007969253867298L, strArr), method);
             sb.append(c.a(-1010808227249954L, strArr));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return emptyResult(method.getReturnType());
         }
     }

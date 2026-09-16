@@ -31,7 +31,7 @@ public abstract class yo2 {
     public static final long Z;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final un0 f1395a;
+    public static final un0 f1394a;
     public static final long a0;
     public static final long b;
     public static final long b0;
@@ -82,9 +82,9 @@ public abstract class yo2 {
     public static final un0 z;
 
     static {
-        zl0 zl0Var = lp2.f703a;
+        zl0 zl0Var = lp2.f702a;
         un0 un0Var = vh2.b;
-        f1395a = un0Var;
+        f1394a = un0Var;
         b = nz0.C(24.0d);
         c = nz0.D(16);
         d = nz0.C(0.5d);
@@ -103,13 +103,13 @@ public abstract class yo2 {
         p = un0Var;
         q = nz0.C(64.0d);
         r = nz0.D(57);
-        long jC = nz0.C(0.2d);
+        long C2 = nz0.C(0.2d);
         kl2[] kl2VarArr = jl2.b;
-        long j2 = jC & 1095216660480L;
+        long j2 = C2 & 1095216660480L;
         if (j2 == 0) {
             kv0.a("Cannot perform operation for Unspecified type.");
         }
-        s = nz0.H(-jl2.c(jC), j2);
+        s = nz0.H(-jl2.c(C2), j2);
         t = zl0Var2;
         u = un0Var;
         v = nz0.C(52.0d);
@@ -140,7 +140,7 @@ public abstract class yo2 {
         U = nz0.C(20.0d);
         V = nz0.D(14);
         W = nz0.C(0.1d);
-        zl0 zl0Var3 = lp2.f703a;
+        zl0 zl0Var3 = lp2.f702a;
         X = zl0Var3;
         Y = un0Var;
         Z = nz0.C(16.0d);

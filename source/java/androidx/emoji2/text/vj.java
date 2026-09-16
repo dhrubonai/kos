@@ -8,7 +8,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class vj {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f1222a;
+    public final ArrayList f1221a;
     public boolean b;
     public final CopyOnWriteArrayList c;
     public final /* synthetic */ int d;
@@ -23,7 +23,7 @@ public final class vj {
 
     public final void d(boolean z) {
         this.b = z;
-        ArrayList arrayList = this.f1222a;
+        ArrayList arrayList = this.f1221a;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
@@ -35,7 +35,7 @@ public final class vj {
     }
 
     public vj(boolean z) {
-        this.f1222a = new ArrayList();
+        this.f1221a = new ArrayList();
         this.b = z;
         this.c = new CopyOnWriteArrayList();
     }

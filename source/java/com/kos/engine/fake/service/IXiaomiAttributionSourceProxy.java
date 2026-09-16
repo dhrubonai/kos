@@ -10,7 +10,6 @@ import androidx.emoji2.text.zd;
 import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -67,14 +66,14 @@ public class IXiaomiAttributionSourceProxy extends ClassInvocationStub {
     @ProxyMethod("fromParcel")
     public static class FromParcel extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke == null) {
-                    return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke == null) {
+                    return invoke;
                 }
-                xi.d(objInvoke);
-                return objInvoke;
+                xi.d(invoke);
+                return invoke;
             } catch (Exception e) {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-1051838049828642L, strArr), 5, c.a(-1054732857786146L, strArr) + e.getMessage());
@@ -95,7 +94,7 @@ public class IXiaomiAttributionSourceProxy extends ClassInvocationStub {
             nz0.Q(c.a(-1055377102880546L, strArr), 3, c.a(-1055523131768610L, strArr));
             return;
         }
-        String strA = c.a(-1054861706805026L, strArr);
+        String a2 = c.a(-1054861706805026L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-1054457979879202L, strArr));
         String str = yw2.f;
@@ -106,7 +105,7 @@ public class IXiaomiAttributionSourceProxy extends ClassInvocationStub {
         sb.append(str);
         sb.append(c.a(-1055351333076770L, strArr));
         sb.append(yw2.c());
-        zd.p(sb, c.a(-1055385692815138L, strArr), 3, strA);
+        zd.p(sb, c.a(-1055385692815138L, strArr), 3, a2);
     }
 
     @Override // com.kos.engine.fake.hook.IInjectHook

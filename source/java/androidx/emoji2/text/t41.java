@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class t41 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1103a = 1;
+    public static final float f1102a = 1;
     public static final o41 b = new o41(null, 0, false, 0.0f, new s21(1), 0.0f, false, wj1.g(oe0.d), ex2.e(), xz.b(0, 0, 15), qe0.d, 0, 0, 0, il1.d, 0, 0);
 }

@@ -11,8 +11,8 @@ public abstract class qb2 {
     }
 
     public static final int b(ArrayList arrayList, int i, int i2) {
-        int iE = e(arrayList, i, i2);
-        return iE >= 0 ? iE : -(iE + 1);
+        int e = e(arrayList, i, i2);
+        return e >= 0 ? e : -(e + 1);
     }
 
     public static final int c(int[] iArr, int i) {
@@ -32,15 +32,15 @@ public abstract class qb2 {
         int i3 = 0;
         while (i3 <= size) {
             int i4 = (i3 + size) >>> 1;
-            int i5 = ((t5) arrayList.get(i4)).f1104a;
+            int i5 = ((t5) arrayList.get(i4)).f1103a;
             if (i5 < 0) {
                 i5 += i2;
             }
-            int iC = lx0.C(i5, i);
-            if (iC < 0) {
+            int C = lx0.C(i5, i);
+            if (C < 0) {
                 i3 = i4 + 1;
             } else {
-                if (iC <= 0) {
+                if (C <= 0) {
                     return i4;
                 }
                 size = i4 - 1;

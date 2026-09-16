@@ -1,21 +1,33 @@
 package androidx.emoji2.text;
 
+import android.app.Notification;
 import android.content.ClipDescription;
 import android.content.Context;
+import android.content.pm.PackageParser;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.NetworkRequest;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Trace;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -23,6 +35,7 @@ import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.splashscreen.R;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kos.engine.entity.location.BCell;
@@ -30,6 +43,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -151,7 +165,7 @@ public final class rg implements tv0, ph1, x22, wg {
         return i2;
     }
 
-    public void B(FileOutputStream fileOutputStream) throws IOException {
+    public void B(FileOutputStream fileOutputStream) {
         try {
             fileOutputStream.getFD().sync();
         } catch (IOException unused) {
@@ -166,14 +180,14 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public Object C() {
-        long jW = a01.w();
-        if (jW == xl2.f1345a) {
+        long w = a01.w();
+        if (w == xl2.f1344a) {
             return this.g;
         }
         tl2 tl2Var = (tl2) ((AtomicReference) this.e).get();
-        int iA = tl2Var.a(jW);
-        if (iA >= 0) {
-            return tl2Var.c[iA];
+        int a2 = tl2Var.a(w);
+        if (a2 >= 0) {
+            return tl2Var.c[a2];
         }
         return null;
     }
@@ -183,18 +197,18 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public View E(int i2) {
-        return ((cx1) this.e).f226a.getChildAt(L(i2));
+        return ((cx1) this.e).f225a.getChildAt(L(i2));
     }
 
     public int F() {
-        return ((cx1) this.e).f226a.getChildCount() - ((ArrayList) this.g).size();
+        return ((cx1) this.e).f225a.getChildCount() - ((ArrayList) this.g).size();
     }
 
     public ColorStateList G(int i2) {
         int resourceId;
-        ColorStateList colorStateListZ;
+        ColorStateList z;
         TypedArray typedArray = (TypedArray) this.e;
-        return (!typedArray.hasValue(i2) || (resourceId = typedArray.getResourceId(i2, 0)) == 0 || (colorStateListZ = kx0.z((Context) this.g, resourceId)) == null) ? typedArray.getColorStateList(i2) : colorStateListZ;
+        return (!typedArray.hasValue(i2) || (resourceId = typedArray.getResourceId(i2, 0)) == 0 || (z = kx0.z((Context) this.g, resourceId)) == null) ? typedArray.getColorStateList(i2) : z;
     }
 
     public Drawable H(int i2) {
@@ -213,7 +227,7 @@ public final class rg implements tv0, ph1, x22, wg {
         }
         Context context = (Context) this.g;
         TypedValue typedValue = (TypedValue) this.f;
-        ThreadLocal threadLocal = zz1.f1464a;
+        ThreadLocal threadLocal = zz1.f1463a;
         if (context.isRestricted()) {
             return null;
         }
@@ -234,17 +248,17 @@ public final class rg implements tv0, ph1, x22, wg {
         if (i2 < 0) {
             return -1;
         }
-        int childCount = ((cx1) this.e).f226a.getChildCount();
+        int childCount = ((cx1) this.e).f225a.getChildCount();
         int i3 = i2;
         while (i3 < childCount) {
-            int iB = i2 - (i3 - krVar.b(i3));
-            if (iB == 0) {
+            int b = i2 - (i3 - krVar.b(i3));
+            if (b == 0) {
                 while (krVar.d(i3)) {
                     i3++;
                 }
                 return i3;
             }
-            i3 += iB;
+            i3 += b;
         }
         return -1;
     }
@@ -254,20 +268,20 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public View N(int i2) {
-        return ((cx1) this.e).f226a.getChildAt(i2);
+        return ((cx1) this.e).f225a.getChildAt(i2);
     }
 
     public int O() {
-        return ((cx1) this.e).f226a.getChildCount();
+        return ((cx1) this.e).f225a.getChildCount();
     }
 
     public boolean P(CharSequence charSequence, int i2, int i3, hp2 hp2Var) {
         if ((hp2Var.c & 3) == 0) {
             nd0 nd0Var = (nd0) this.g;
-            lc1 lc1VarB = hp2Var.b();
-            int iA = lc1VarB.a(8);
-            if (iA != 0) {
-                ((ByteBuffer) lc1VarB.g).getShort(iA + lc1VarB.d);
+            lc1 b = hp2Var.b();
+            int a2 = b.a(8);
+            if (a2 != 0) {
+                ((ByteBuffer) b.g).getShort(a2 + b.d);
             }
             w50 w50Var = (w50) nd0Var;
             w50Var.getClass();
@@ -281,12 +295,12 @@ public final class rg implements tv0, ph1, x22, wg {
                 sb.append(charSequence.charAt(i2));
                 i2++;
             }
-            TextPaint textPaint = w50Var.f1259a;
-            String string = sb.toString();
-            int i4 = en1.f311a;
-            boolean zHasGlyph = textPaint.hasGlyph(string);
+            TextPaint textPaint = w50Var.f1258a;
+            String sb2 = sb.toString();
+            int i4 = en1.f310a;
+            boolean hasGlyph = textPaint.hasGlyph(sb2);
             int i5 = hp2Var.c & 4;
-            hp2Var.c = zHasGlyph ? i5 | 2 : i5 | 1;
+            hp2Var.c = hasGlyph ? i5 | 2 : i5 | 1;
         }
         return (hp2Var.c & 3) == 2;
     }
@@ -316,18 +330,18 @@ public final class rg implements tv0, ph1, x22, wg {
         vk vkVar = (vk) this.f;
         int[] iArr = tzVar.p0;
         int[] iArr2 = tzVar.t;
-        vkVar.f1226a = iArr[0];
+        vkVar.f1225a = iArr[0];
         vkVar.b = iArr[1];
         vkVar.c = tzVar.q();
         vkVar.d = tzVar.k();
         vkVar.i = false;
         vkVar.j = i2;
-        boolean z = vkVar.f1226a == 3;
+        boolean z = vkVar.f1225a == 3;
         boolean z2 = vkVar.b == 3;
         boolean z3 = z && tzVar.W > 0.0f;
         boolean z4 = z2 && tzVar.W > 0.0f;
         if (z3 && iArr2[0] == 4) {
-            vkVar.f1226a = 1;
+            vkVar.f1225a = 1;
         }
         if (z4 && iArr2[1] == 4) {
             vkVar.b = 1;
@@ -345,23 +359,23 @@ public final class rg implements tv0, ph1, x22, wg {
         int i5;
         char c;
         ee0 ee0Var = new ee0((nc1) ((s6) this.f).f);
-        int iCodePointAt = Character.codePointAt(charSequence, i2);
+        int codePointAt = Character.codePointAt(charSequence, i2);
         int i6 = 0;
-        boolean zA = true;
-        int iCharCount = i2;
+        boolean z2 = true;
+        int i7 = i2;
         loop0: while (true) {
-            i5 = iCharCount;
-            while (iCharCount < i3 && i6 < i4 && zA) {
-                SparseArray sparseArray = ee0Var.c.f804a;
-                nc1 nc1Var = sparseArray == null ? null : (nc1) sparseArray.get(iCodePointAt);
-                if (ee0Var.f302a == 2) {
+            i5 = i7;
+            while (i7 < i3 && i6 < i4 && z2) {
+                SparseArray sparseArray = ee0Var.c.f803a;
+                nc1 nc1Var = sparseArray == null ? null : (nc1) sparseArray.get(codePointAt);
+                if (ee0Var.f301a == 2) {
                     if (nc1Var != null) {
                         ee0Var.c = nc1Var;
                         ee0Var.f++;
                     } else {
-                        if (iCodePointAt == 65038) {
+                        if (codePointAt == 65038) {
                             ee0Var.a();
-                        } else if (iCodePointAt != 65039) {
+                        } else if (codePointAt != 65039) {
                             nc1 nc1Var2 = ee0Var.c;
                             if (nc1Var2.b != null) {
                                 if (ee0Var.f != 1) {
@@ -385,34 +399,33 @@ public final class rg implements tv0, ph1, x22, wg {
                     ee0Var.a();
                     c = 1;
                 } else {
-                    ee0Var.f302a = 2;
+                    ee0Var.f301a = 2;
                     ee0Var.c = nc1Var;
                     ee0Var.f = 1;
                     c = 2;
                 }
-                ee0Var.e = iCodePointAt;
+                ee0Var.e = codePointAt;
                 if (c == 1) {
-                    iCharCount = Character.charCount(Character.codePointAt(charSequence, i5)) + i5;
-                    if (iCharCount < i3) {
-                        iCodePointAt = Character.codePointAt(charSequence, iCharCount);
+                    i7 = Character.charCount(Character.codePointAt(charSequence, i5)) + i5;
+                    if (i7 < i3) {
+                        codePointAt = Character.codePointAt(charSequence, i7);
                     }
                 } else if (c == 2) {
-                    int iCharCount2 = Character.charCount(iCodePointAt) + iCharCount;
-                    if (iCharCount2 < i3) {
-                        iCodePointAt = Character.codePointAt(charSequence, iCharCount2);
+                    int charCount = Character.charCount(codePointAt) + i7;
+                    if (charCount < i3) {
+                        codePointAt = Character.codePointAt(charSequence, charCount);
                     }
-                    iCharCount = iCharCount2;
+                    i7 = charCount;
                 } else if (c == 3) {
-                    if (z || !P(charSequence, i5, iCharCount, ee0Var.d.b)) {
-                        zA = be0Var.a(charSequence, i5, iCharCount, ee0Var.d.b);
+                    if (z || !P(charSequence, i5, i7, ee0Var.d.b)) {
+                        z2 = be0Var.a(charSequence, i5, i7, ee0Var.d.b);
                         i6++;
                     }
                 }
             }
-            break loop0;
         }
-        if (ee0Var.f302a == 2 && ee0Var.c.b != null && ((ee0Var.f > 1 || ee0Var.b()) && i6 < i4 && zA && (z || !P(charSequence, i5, iCharCount, ee0Var.c.b)))) {
-            be0Var.a(charSequence, i5, iCharCount, ee0Var.c.b);
+        if (ee0Var.f301a == 2 && ee0Var.c.b != null && ((ee0Var.f > 1 || ee0Var.b()) && i6 < i4 && z2 && (z || !P(charSequence, i5, i7, ee0Var.c.b)))) {
+            be0Var.a(charSequence, i5, i7, ee0Var.c.b);
         }
         return be0Var.getResult();
     }
@@ -437,18 +450,18 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public void a0(Object obj) {
-        long jW = a01.w();
-        if (jW == xl2.f1345a) {
+        long w = a01.w();
+        if (w == xl2.f1344a) {
             this.g = obj;
             return;
         }
         synchronized (this.f) {
             tl2 tl2Var = (tl2) ((AtomicReference) this.e).get();
-            int iA = tl2Var.a(jW);
-            if (iA < 0) {
-                ((AtomicReference) this.e).set(tl2Var.b(jW, obj));
+            int a2 = tl2Var.a(w);
+            if (a2 < 0) {
+                ((AtomicReference) this.e).set(tl2Var.b(w, obj));
             } else {
-                tl2Var.c[iA] = obj;
+                tl2Var.c[a2] = obj;
             }
         }
     }
@@ -475,7 +488,7 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public void c0(j70 j70Var) {
-        ((np) this.g).d.f760a = j70Var;
+        ((np) this.g).d.f759a = j70Var;
     }
 
     @Override // androidx.emoji2.text.wg
@@ -532,7 +545,7 @@ public final class rg implements tv0, ph1, x22, wg {
             }
         }
         int i2 = e11Var.e;
-        e11Var.e = v62.f1207a.addAndGet(1);
+        e11Var.e = v62.f1206a.addAndGet(1);
         tl1 tl1Var = e11Var.p;
         if (tl1Var != null) {
             v7 v7Var = (v7) tl1Var;
@@ -552,13 +565,13 @@ public final class rg implements tv0, ph1, x22, wg {
             v7 v7Var2 = (v7) tl1Var2;
             if (v7.h() && (u6Var = v7Var2.I) != null) {
                 v7 v7Var3 = u6Var.c;
-                gz0 gz0Var = u6Var.f1161a;
+                gz0 gz0Var = u6Var.f1160a;
                 re1 re1Var = u6Var.g;
                 if (re1Var.e(i2)) {
                     gz0Var.p(v7Var3, i2, false);
                 }
-                u62 u62VarX = e11Var.x();
-                if (u62VarX != null && u62VarX.d.b(c72.q)) {
+                u62 x = e11Var.x();
+                if (x != null && x.d.b(c72.q)) {
                     re1Var.a(e11Var.e);
                     gz0Var.p(v7Var3, e11Var.e, true);
                 }
@@ -604,7 +617,7 @@ public final class rg implements tv0, ph1, x22, wg {
         ((e11) this.g).R(i2, i3);
     }
 
-    public FileOutputStream g0() throws IOException {
+    public FileOutputStream g0() {
         File file = (File) this.f;
         File file2 = (File) this.g;
         if (file2.exists()) {
@@ -698,18 +711,18 @@ public final class rg implements tv0, ph1, x22, wg {
         p4 p4Var = (p4) this.e;
         p4 p4Var2 = (p4) this.f;
         p4 p4Var3 = (p4) this.g;
-        int iOrdinal = tx0Var.ordinal();
-        if (iOrdinal == 0) {
+        int ordinal = tx0Var.ordinal();
+        if (ordinal == 0) {
             p4Var.u(e11Var);
             p4Var3.u(e11Var);
             return;
         }
-        if (iOrdinal == 1) {
+        if (ordinal == 1) {
             p4Var2.u(e11Var);
             p4Var3.u(e11Var);
             return;
         }
-        if (iOrdinal == 2) {
+        if (ordinal == 2) {
             if (e11Var.j != null) {
                 p4Var3.u(e11Var);
                 return;
@@ -718,7 +731,7 @@ public final class rg implements tv0, ph1, x22, wg {
                 return;
             }
         }
-        if (iOrdinal != 3) {
+        if (ordinal != 3) {
             throw new mu();
         }
         if (e11Var.j != null) {
@@ -729,7 +742,7 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public void s(View view, int i2, ViewGroup.LayoutParams layoutParams, boolean z) {
-        RecyclerView recyclerView = ((cx1) this.e).f226a;
+        RecyclerView recyclerView = ((cx1) this.e).f225a;
         int childCount = i2 < 0 ? recyclerView.getChildCount() : L(i2);
         ((kr) this.f).e(childCount, z);
         if (z) {
@@ -764,17 +777,17 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public void w(int i2) {
-        int iL = L(i2);
-        ((kr) this.f).g(iL);
-        RecyclerView recyclerView = ((cx1) this.e).f226a;
-        View childAt = recyclerView.getChildAt(iL);
+        int L = L(i2);
+        ((kr) this.f).g(L);
+        RecyclerView recyclerView = ((cx1) this.e).f225a;
+        View childAt = recyclerView.getChildAt(L);
         if (childAt != null) {
             RecyclerView.s(childAt);
         }
-        recyclerView.detachViewFromParent(iL);
+        recyclerView.detachViewFromParent(L);
     }
 
-    public void x(Bundle bundle) throws ClassNotFoundException {
+    public void x(Bundle bundle) {
         HashSet hashSet = (HashSet) this.f;
         String string = ((Context) this.g).getString(R.string.androidx_startup);
         if (bundle != null) {
@@ -799,8 +812,8 @@ public final class rg implements tv0, ph1, x22, wg {
     }
 
     public Object y(Class cls, HashSet hashSet) {
-        Object objB;
-        HashMap map = (HashMap) this.e;
+        Object obj;
+        HashMap hashMap = (HashMap) this.e;
         if (jz0.G()) {
             try {
                 jz0.m(cls.getSimpleName());
@@ -812,32 +825,32 @@ public final class rg implements tv0, ph1, x22, wg {
         if (hashSet.contains(cls)) {
             throw new IllegalStateException("Cannot initialize " + cls.getName() + ". Cycle detected.");
         }
-        if (map.containsKey(cls)) {
-            objB = map.get(cls);
+        if (hashMap.containsKey(cls)) {
+            obj = hashMap.get(cls);
         } else {
             hashSet.add(cls);
             try {
                 hv0 hv0Var = (hv0) cls.getDeclaredConstructor(null).newInstance(null);
-                List<Class> listA = hv0Var.a();
-                if (!listA.isEmpty()) {
-                    for (Class cls2 : listA) {
-                        if (!map.containsKey(cls2)) {
+                List<Class> a2 = hv0Var.a();
+                if (!a2.isEmpty()) {
+                    for (Class cls2 : a2) {
+                        if (!hashMap.containsKey(cls2)) {
                             y(cls2, hashSet);
                         }
                     }
                 }
-                objB = hv0Var.b((Context) this.g);
+                obj = hv0Var.b((Context) this.g);
                 hashSet.remove(cls);
-                map.put(cls, objB);
+                hashMap.put(cls, obj);
             } catch (Throwable th2) {
                 throw new mu(th2);
             }
         }
         Trace.endSection();
-        return objB;
+        return obj;
     }
 
-    public void z(FileOutputStream fileOutputStream) throws IOException {
+    public void z(FileOutputStream fileOutputStream) {
         File file = (File) this.f;
         if (fileOutputStream == null) {
             return;
@@ -866,7 +879,7 @@ public final class rg implements tv0, ph1, x22, wg {
     public rg(int i2) {
         this.d = i2;
         switch (i2) {
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 break;
             case 8:
                 this.e = new p4(20);
@@ -925,24 +938,514 @@ public final class rg implements tv0, ph1, x22, wg {
         this.e = typedArray;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0303  */
-    /* JADX WARN: Removed duplicated region for block: B:179:0x0306 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x029f  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x02a8  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x02d9  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x02df  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02fc  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x029f  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x02a8  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02d9  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x02f5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x02fc  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0303  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0306 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x02df  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public rg(androidx.emoji2.text.ki1 r31) {
-        /*
-            Method dump skipped, instructions count: 1374
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.rg.<init>(androidx.emoji2.text.ki1):void");
+    public rg(ki1 ki1Var) {
+        ArrayList arrayList;
+        Bundle bundle;
+        int i2;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        String str;
+        ArrayList arrayList5;
+        Notification notification;
+        ArrayList arrayList6;
+        int i3;
+        char c;
+        Icon icon;
+        Bundle bundle2;
+        String str2;
+        ColorStateList colorStateList;
+        PorterDuff.Mode mode;
+        int i4;
+        this.d = 14;
+        new ArrayList();
+        this.g = new Bundle();
+        this.f = ki1Var;
+        Context context = ki1Var.f640a;
+        ArrayList arrayList7 = ki1Var.m;
+        ArrayList arrayList8 = ki1Var.c;
+        String str3 = ki1Var.j;
+        ArrayList arrayList9 = ki1Var.d;
+        if (Build.VERSION.SDK_INT >= 26) {
+            this.e = ot.b(context, str3);
+        } else {
+            this.e = new Notification.Builder(context);
+        }
+        Notification notification2 = ki1Var.l;
+        int i5 = 0;
+        ((Notification.Builder) this.e).setWhen(notification2.when).setSmallIcon(notification2.icon, notification2.iconLevel).setContent(notification2.contentView).setTicker(notification2.tickerText, null).setVibrate(notification2.vibrate).setLights(notification2.ledARGB, notification2.ledOnMS, notification2.ledOffMS).setOngoing((notification2.flags & 2) != 0).setOnlyAlertOnce((notification2.flags & 8) != 0).setAutoCancel((notification2.flags & 16) != 0).setDefaults(notification2.defaults).setContentTitle(ki1Var.e).setContentText(ki1Var.f).setContentInfo(null).setContentIntent(null).setDeleteIntent(notification2.deleteIntent).setFullScreenIntent(null, (notification2.flags & PackageParser.PARSE_IS_PRIVILEGED) != 0).setNumber(0).setProgress(0, 0, false);
+        ((Notification.Builder) this.e).setLargeIcon((Icon) null);
+        ((Notification.Builder) this.e).setSubText(null).setUsesChronometer(false).setPriority(ki1Var.g);
+        ArrayList arrayList10 = ki1Var.b;
+        int size = arrayList10.size();
+        int i6 = 0;
+        while (i6 < size) {
+            int i7 = i6 + 1;
+            int i8 = i5;
+            ji1 ji1Var = (ji1) arrayList10.get(i6);
+            int i9 = Build.VERSION.SDK_INT;
+            if (ji1Var.b == null && (i4 = ji1Var.e) != 0) {
+                ji1Var.b = IconCompat.a(i4);
+            }
+            IconCompat iconCompat = ji1Var.b;
+            boolean z = ji1Var.c;
+            Bundle bundle3 = ji1Var.f578a;
+            if (iconCompat != null) {
+                arrayList4 = arrayList8;
+                int i10 = iconCompat.f70a;
+                switch (i10) {
+                    case -1:
+                        arrayList3 = arrayList7;
+                        str = str3;
+                        arrayList5 = arrayList9;
+                        notification = notification2;
+                        arrayList6 = arrayList10;
+                        i3 = size;
+                        c = 2;
+                        icon = (Icon) iconCompat.b;
+                        break;
+                    case 0:
+                    default:
+                        throw new IllegalArgumentException("Unknown type");
+                    case 1:
+                        arrayList3 = arrayList7;
+                        str = str3;
+                        arrayList5 = arrayList9;
+                        notification = notification2;
+                        arrayList6 = arrayList10;
+                        i3 = size;
+                        c = 2;
+                        icon = Icon.createWithBitmap((Bitmap) iconCompat.b);
+                        colorStateList = iconCompat.g;
+                        if (colorStateList != null) {
+                            icon.setTintList(colorStateList);
+                        }
+                        mode = iconCompat.h;
+                        if (mode != IconCompat.k) {
+                            icon.setTintMode(mode);
+                            break;
+                        }
+                        break;
+                    case 2:
+                        arrayList3 = arrayList7;
+                        str = str3;
+                        arrayList5 = arrayList9;
+                        notification = notification2;
+                        arrayList6 = arrayList10;
+                        i3 = size;
+                        if (i10 == -1) {
+                            Object obj = iconCompat.b;
+                            if (i9 >= 28) {
+                                str2 = f90.e(obj);
+                            } else {
+                                try {
+                                    str2 = (String) obj.getClass().getMethod("getResPackage", null).invoke(obj, null);
+                                } catch (IllegalAccessException e) {
+                                    Log.e("IconCompat", "Unable to get icon package", e);
+                                    str2 = null;
+                                    c = 2;
+                                    icon = Icon.createWithResource(str2, iconCompat.e);
+                                    colorStateList = iconCompat.g;
+                                    if (colorStateList != null) {
+                                    }
+                                    mode = iconCompat.h;
+                                    if (mode != IconCompat.k) {
+                                    }
+                                    Notification.Action.Builder builder = new Notification.Action.Builder(icon, ji1Var.f, ji1Var.g);
+                                    if (bundle3 == null) {
+                                    }
+                                    bundle2.putBoolean("android.support.allowGeneratedReplies", z);
+                                    builder.setAllowGeneratedReplies(z);
+                                    bundle2.putInt("android.support.action.semanticAction", i8);
+                                    if (i9 >= 28) {
+                                    }
+                                    if (i9 >= 29) {
+                                    }
+                                    if (i9 < 31) {
+                                    }
+                                    bundle2.putBoolean("android.support.action.showsUserInterface", ji1Var.d);
+                                    builder.addExtras(bundle2);
+                                    ((Notification.Builder) this.e).addAction(builder.build());
+                                    i6 = i7;
+                                    arrayList8 = arrayList4;
+                                    str3 = str;
+                                    arrayList10 = arrayList6;
+                                    size = i3;
+                                    arrayList9 = arrayList5;
+                                    arrayList7 = arrayList3;
+                                    notification2 = notification;
+                                    i5 = 0;
+                                } catch (NoSuchMethodException e2) {
+                                    Log.e("IconCompat", "Unable to get icon package", e2);
+                                    str2 = null;
+                                    c = 2;
+                                    icon = Icon.createWithResource(str2, iconCompat.e);
+                                    colorStateList = iconCompat.g;
+                                    if (colorStateList != null) {
+                                    }
+                                    mode = iconCompat.h;
+                                    if (mode != IconCompat.k) {
+                                    }
+                                    Notification.Action.Builder builder2 = new Notification.Action.Builder(icon, ji1Var.f, ji1Var.g);
+                                    if (bundle3 == null) {
+                                    }
+                                    bundle2.putBoolean("android.support.allowGeneratedReplies", z);
+                                    builder2.setAllowGeneratedReplies(z);
+                                    bundle2.putInt("android.support.action.semanticAction", i8);
+                                    if (i9 >= 28) {
+                                    }
+                                    if (i9 >= 29) {
+                                    }
+                                    if (i9 < 31) {
+                                    }
+                                    bundle2.putBoolean("android.support.action.showsUserInterface", ji1Var.d);
+                                    builder2.addExtras(bundle2);
+                                    ((Notification.Builder) this.e).addAction(builder2.build());
+                                    i6 = i7;
+                                    arrayList8 = arrayList4;
+                                    str3 = str;
+                                    arrayList10 = arrayList6;
+                                    size = i3;
+                                    arrayList9 = arrayList5;
+                                    arrayList7 = arrayList3;
+                                    notification2 = notification;
+                                    i5 = 0;
+                                } catch (InvocationTargetException e3) {
+                                    Log.e("IconCompat", "Unable to get icon package", e3);
+                                    str2 = null;
+                                    c = 2;
+                                    icon = Icon.createWithResource(str2, iconCompat.e);
+                                    colorStateList = iconCompat.g;
+                                    if (colorStateList != null) {
+                                    }
+                                    mode = iconCompat.h;
+                                    if (mode != IconCompat.k) {
+                                    }
+                                    Notification.Action.Builder builder22 = new Notification.Action.Builder(icon, ji1Var.f, ji1Var.g);
+                                    if (bundle3 == null) {
+                                    }
+                                    bundle2.putBoolean("android.support.allowGeneratedReplies", z);
+                                    builder22.setAllowGeneratedReplies(z);
+                                    bundle2.putInt("android.support.action.semanticAction", i8);
+                                    if (i9 >= 28) {
+                                    }
+                                    if (i9 >= 29) {
+                                    }
+                                    if (i9 < 31) {
+                                    }
+                                    bundle2.putBoolean("android.support.action.showsUserInterface", ji1Var.d);
+                                    builder22.addExtras(bundle2);
+                                    ((Notification.Builder) this.e).addAction(builder22.build());
+                                    i6 = i7;
+                                    arrayList8 = arrayList4;
+                                    str3 = str;
+                                    arrayList10 = arrayList6;
+                                    size = i3;
+                                    arrayList9 = arrayList5;
+                                    arrayList7 = arrayList3;
+                                    notification2 = notification;
+                                    i5 = 0;
+                                }
+                            }
+                            c = 2;
+                        } else {
+                            c = 2;
+                            if (i10 == 2) {
+                                String str4 = iconCompat.j;
+                                if (str4 != null && !TextUtils.isEmpty(str4)) {
+                                    str2 = iconCompat.j;
+                                } else {
+                                    str2 = ((String) iconCompat.b).split(":", -1)[i8];
+                                }
+                            } else {
+                                throw new IllegalStateException("called getResPackage() on " + iconCompat);
+                            }
+                        }
+                        icon = Icon.createWithResource(str2, iconCompat.e);
+                        colorStateList = iconCompat.g;
+                        if (colorStateList != null) {
+                        }
+                        mode = iconCompat.h;
+                        if (mode != IconCompat.k) {
+                        }
+                        break;
+                    case BCell.NETWORK_TYPE_UMTS /* 3 */:
+                        arrayList3 = arrayList7;
+                        str = str3;
+                        arrayList5 = arrayList9;
+                        notification = notification2;
+                        arrayList6 = arrayList10;
+                        i3 = size;
+                        icon = Icon.createWithData((byte[]) iconCompat.b, iconCompat.e, iconCompat.f);
+                        c = 2;
+                        colorStateList = iconCompat.g;
+                        if (colorStateList != null) {
+                        }
+                        mode = iconCompat.h;
+                        if (mode != IconCompat.k) {
+                        }
+                        break;
+                    case 4:
+                        arrayList3 = arrayList7;
+                        str = str3;
+                        arrayList5 = arrayList9;
+                        notification = notification2;
+                        arrayList6 = arrayList10;
+                        i3 = size;
+                        icon = Icon.createWithContentUri((String) iconCompat.b);
+                        c = 2;
+                        colorStateList = iconCompat.g;
+                        if (colorStateList != null) {
+                        }
+                        mode = iconCompat.h;
+                        if (mode != IconCompat.k) {
+                        }
+                        break;
+                    case 5:
+                        if (i9 >= 26) {
+                            icon = ot.c((Bitmap) iconCompat.b);
+                            arrayList3 = arrayList7;
+                            str = str3;
+                            arrayList5 = arrayList9;
+                            notification = notification2;
+                            arrayList6 = arrayList10;
+                            i3 = size;
+                            c = 2;
+                            colorStateList = iconCompat.g;
+                            if (colorStateList != null) {
+                            }
+                            mode = iconCompat.h;
+                            if (mode != IconCompat.k) {
+                            }
+                        } else {
+                            Bitmap bitmap = (Bitmap) iconCompat.b;
+                            str = str3;
+                            int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
+                            Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
+                            arrayList6 = arrayList10;
+                            Canvas canvas = new Canvas(createBitmap);
+                            i3 = size;
+                            Paint paint = new Paint(3);
+                            float f = min * 0.5f;
+                            arrayList5 = arrayList9;
+                            paint.setColor(-16777216);
+                            arrayList3 = arrayList7;
+                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+                            Matrix matrix = new Matrix();
+                            notification = notification2;
+                            matrix.setTranslate((-(bitmap.getWidth() - min)) / 2.0f, (-(bitmap.getHeight() - min)) / 2.0f);
+                            bitmapShader.setLocalMatrix(matrix);
+                            paint.setShader(bitmapShader);
+                            canvas.drawCircle(f, f, f * 0.9166667f, paint);
+                            canvas.setBitmap(null);
+                            icon = Icon.createWithBitmap(createBitmap);
+                            c = 2;
+                            colorStateList = iconCompat.g;
+                            if (colorStateList != null) {
+                            }
+                            mode = iconCompat.h;
+                            if (mode != IconCompat.k) {
+                            }
+                        }
+                        break;
+                    case 6:
+                        if (i9 >= 30) {
+                            icon = o1.a(iconCompat.c());
+                            arrayList3 = arrayList7;
+                            str = str3;
+                            arrayList5 = arrayList9;
+                            notification = notification2;
+                            arrayList6 = arrayList10;
+                            i3 = size;
+                            c = 2;
+                            colorStateList = iconCompat.g;
+                            if (colorStateList != null) {
+                            }
+                            mode = iconCompat.h;
+                            if (mode != IconCompat.k) {
+                            }
+                        } else {
+                            throw new IllegalArgumentException("Context is required to resolve the file uri of the icon: " + iconCompat.c());
+                        }
+                        break;
+                }
+            } else {
+                arrayList3 = arrayList7;
+                arrayList4 = arrayList8;
+                str = str3;
+                arrayList5 = arrayList9;
+                notification = notification2;
+                arrayList6 = arrayList10;
+                i3 = size;
+                c = 2;
+                icon = null;
+            }
+            Notification.Action.Builder builder222 = new Notification.Action.Builder(icon, ji1Var.f, ji1Var.g);
+            if (bundle3 == null) {
+                bundle2 = new Bundle(bundle3);
+            } else {
+                bundle2 = new Bundle();
+            }
+            bundle2.putBoolean("android.support.allowGeneratedReplies", z);
+            builder222.setAllowGeneratedReplies(z);
+            bundle2.putInt("android.support.action.semanticAction", i8);
+            if (i9 >= 28) {
+                f90.o(builder222);
+            }
+            if (i9 >= 29) {
+                f00.l(builder222);
+            }
+            if (i9 < 31) {
+                li1.a(builder222);
+            }
+            bundle2.putBoolean("android.support.action.showsUserInterface", ji1Var.d);
+            builder222.addExtras(bundle2);
+            ((Notification.Builder) this.e).addAction(builder222.build());
+            i6 = i7;
+            arrayList8 = arrayList4;
+            str3 = str;
+            arrayList10 = arrayList6;
+            size = i3;
+            arrayList9 = arrayList5;
+            arrayList7 = arrayList3;
+            notification2 = notification;
+            i5 = 0;
+        }
+        ArrayList arrayList11 = arrayList7;
+        ArrayList arrayList12 = arrayList8;
+        String str5 = str3;
+        ArrayList arrayList13 = arrayList9;
+        Notification notification3 = notification2;
+        Bundle bundle4 = ki1Var.i;
+        if (bundle4 != null) {
+            ((Bundle) this.g).putAll(bundle4);
+        }
+        int i11 = Build.VERSION.SDK_INT;
+        ((Notification.Builder) this.e).setShowWhen(ki1Var.h);
+        ((Notification.Builder) this.e).setLocalOnly(false);
+        ((Notification.Builder) this.e).setGroup(null);
+        ((Notification.Builder) this.e).setSortKey(null);
+        ((Notification.Builder) this.e).setGroupSummary(false);
+        ((Notification.Builder) this.e).setCategory(null);
+        ((Notification.Builder) this.e).setColor(0);
+        ((Notification.Builder) this.e).setVisibility(0);
+        ((Notification.Builder) this.e).setPublicVersion(null);
+        ((Notification.Builder) this.e).setSound(notification3.sound, notification3.audioAttributes);
+        if (i11 < 28) {
+            if (arrayList12 == null) {
+                arrayList2 = null;
+            } else {
+                arrayList2 = new ArrayList(arrayList12.size());
+                Iterator it = arrayList12.iterator();
+                if (it.hasNext()) {
+                    throw jx0.g(it);
+                }
+            }
+            if (arrayList2 == null) {
+                arrayList = arrayList11;
+            } else {
+                if (arrayList11 != null) {
+                    wh whVar = new wh(arrayList11.size() + arrayList2.size());
+                    whVar.addAll(arrayList2);
+                    whVar.addAll(arrayList11);
+                    arrayList2 = new ArrayList(whVar);
+                }
+                arrayList = arrayList2;
+            }
+        } else {
+            arrayList = arrayList11;
+        }
+        if (arrayList != null && !arrayList.isEmpty()) {
+            int size2 = arrayList.size();
+            int i12 = 0;
+            while (i12 < size2) {
+                Object obj2 = arrayList.get(i12);
+                i12++;
+                ((Notification.Builder) this.e).addPerson((String) obj2);
+            }
+        }
+        if (arrayList13.size() > 0) {
+            if (ki1Var.i == null) {
+                ki1Var.i = new Bundle();
+            }
+            Bundle bundle5 = ki1Var.i.getBundle("android.car.EXTENSIONS");
+            bundle5 = bundle5 == null ? new Bundle() : bundle5;
+            Bundle bundle6 = new Bundle(bundle5);
+            Bundle bundle7 = new Bundle();
+            int i13 = 0;
+            while (i13 < arrayList13.size()) {
+                String num = Integer.toString(i13);
+                ArrayList arrayList14 = arrayList13;
+                ji1 ji1Var2 = (ji1) arrayList14.get(i13);
+                Bundle bundle8 = new Bundle();
+                if (ji1Var2.b == null && (i2 = ji1Var2.e) != 0) {
+                    ji1Var2.b = IconCompat.a(i2);
+                }
+                IconCompat iconCompat2 = ji1Var2.b;
+                Bundle bundle9 = ji1Var2.f578a;
+                bundle8.putInt("icon", iconCompat2 != null ? iconCompat2.b() : 0);
+                bundle8.putCharSequence("title", ji1Var2.f);
+                bundle8.putParcelable("actionIntent", ji1Var2.g);
+                if (bundle9 != null) {
+                    bundle = new Bundle(bundle9);
+                } else {
+                    bundle = new Bundle();
+                }
+                bundle.putBoolean("android.support.allowGeneratedReplies", ji1Var2.c);
+                bundle8.putBundle("extras", bundle);
+                bundle8.putParcelableArray("remoteInputs", null);
+                bundle8.putBoolean("showsUserInterface", ji1Var2.d);
+                bundle8.putInt("semanticAction", 0);
+                bundle7.putBundle(num, bundle8);
+                i13++;
+                arrayList13 = arrayList14;
+            }
+            bundle5.putBundle("invisible_actions", bundle7);
+            bundle6.putBundle("invisible_actions", bundle7);
+            if (ki1Var.i == null) {
+                ki1Var.i = new Bundle();
+            }
+            ki1Var.i.putBundle("android.car.EXTENSIONS", bundle5);
+            ((Bundle) this.g).putBundle("android.car.EXTENSIONS", bundle6);
+        }
+        int i14 = Build.VERSION.SDK_INT;
+        ((Notification.Builder) this.e).setExtras(ki1Var.i);
+        ((Notification.Builder) this.e).setRemoteInputHistory(null);
+        if (i14 >= 26) {
+            ot.h((Notification.Builder) this.e);
+            ot.n((Notification.Builder) this.e);
+            ot.o((Notification.Builder) this.e);
+            ot.p((Notification.Builder) this.e);
+            ot.j((Notification.Builder) this.e);
+            if (!TextUtils.isEmpty(str5)) {
+                ((Notification.Builder) this.e).setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);
+            }
+        }
+        if (i14 >= 28) {
+            Iterator it2 = arrayList12.iterator();
+            if (it2.hasNext()) {
+                throw jx0.g(it2);
+            }
+        }
+        if (i14 >= 29) {
+            f00.j((Notification.Builder) this.e, ki1Var.k);
+            f00.k((Notification.Builder) this.e);
+        }
+        if (i14 >= 36) {
+            q1.e((Notification.Builder) this.e);
+        }
     }
 
     public rg(ConnectivityManager connectivityManager, uh2 uh2Var) {
@@ -957,9 +1460,9 @@ public final class rg implements tv0, ph1, x22, wg {
     public rg(Context context, int i2) {
         this.d = i2;
         switch (i2) {
-            case 10:
+            case pz0.d /* 10 */:
                 this.g = context.getApplicationContext();
-                this.e = g.f395a;
+                this.e = g.f394a;
                 this.f = new zt0();
                 break;
             default:

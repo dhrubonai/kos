@@ -37,12 +37,12 @@ public final class vy1 extends hh2 implements Function2 {
         switch (this.h) {
             case 0:
                 vy1 vy1Var = (vy1) i(l10Var, e30Var);
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 vy1Var.k(up2Var);
                 return up2Var;
             default:
                 vy1 vy1Var2 = (vy1) i(l10Var, e30Var);
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 vy1Var2.k(up2Var2);
                 return up2Var2;
         }
@@ -65,13 +65,13 @@ public final class vy1 extends hh2 implements Function2 {
             default:
                 mz0.L(obj);
                 c01 c01Var = c01.r;
-                String str = ((w70) this.j).f1264a;
+                String str = ((w70) this.j).f1263a;
                 String str2 = (String) this.k;
                 c01Var.getClass();
                 BDeveloperModuleManager.get().setModuleTargetEnabled(str, str2, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID, this.i);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

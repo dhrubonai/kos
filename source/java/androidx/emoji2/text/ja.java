@@ -9,7 +9,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public abstract class ja {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final CopyOnWriteArraySet f569a = new CopyOnWriteArraySet();
+    public static final CopyOnWriteArraySet f568a = new CopyOnWriteArraySet();
     public static final Map b;
 
     static {

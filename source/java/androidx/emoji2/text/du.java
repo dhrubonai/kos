@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class du implements ed0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f271a;
+    public final ue f270a;
     public final int b;
 
     public du(ue ueVar, int i) {
-        this.f271a = ueVar;
+        this.f270a = ueVar;
         this.b = i;
     }
 
     @Override // androidx.emoji2.text.ed0
     public final void a(fd0 fd0Var) {
         int i = fd0Var.d;
-        ue ueVar = this.f271a;
+        ue ueVar = this.f270a;
         if (i != -1) {
             fd0Var.d(i, fd0Var.e, ueVar.e);
         } else {
@@ -26,8 +26,8 @@ public final class du implements ed0 {
         int i3 = fd0Var.c;
         int i4 = i2 == i3 ? i3 : -1;
         int i5 = this.b;
-        int iP = az0.p(i5 > 0 ? (i4 + i5) - 1 : (i4 + i5) - ueVar.e.length(), 0, fd0Var.f357a.b());
-        fd0Var.f(iP, iP);
+        int p = az0.p(i5 > 0 ? (i4 + i5) - 1 : (i4 + i5) - ueVar.e.length(), 0, fd0Var.f356a.b());
+        fd0Var.f(p, p);
     }
 
     public final boolean equals(Object obj) {
@@ -38,16 +38,16 @@ public final class du implements ed0 {
             return false;
         }
         du duVar = (du) obj;
-        return lx0.n(this.f271a.e, duVar.f271a.e) && this.b == duVar.b;
+        return lx0.n(this.f270a.e, duVar.f270a.e) && this.b == duVar.b;
     }
 
     public final int hashCode() {
-        return (this.f271a.e.hashCode() * 31) + this.b;
+        return (this.f270a.e.hashCode() * 31) + this.b;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("CommitTextCommand(text='");
-        sb.append(this.f271a.e);
+        sb.append(this.f270a.e);
         sb.append("', newCursorPosition=");
         return zd.j(sb, this.b, ')');
     }

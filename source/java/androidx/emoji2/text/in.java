@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public interface in {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final hn f536a = hn.f477a;
+    public static final hn f535a = hn.f476a;
 
     default float a(float f, float f2, float f3) {
-        f536a.getClass();
+        f535a.getClass();
         float f4 = f2 + f;
         if ((f >= 0.0f && f4 <= f3) || (f < 0.0f && f4 > f3)) {
             return 0.0f;
@@ -18,7 +18,7 @@ public interface in {
     }
 
     default he b() {
-        f536a.getClass();
+        f535a.getClass();
         return hn.b;
     }
 }

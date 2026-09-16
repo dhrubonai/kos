@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class eb0 implements xw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final fb0 f297a;
+    public final fb0 f296a;
 
     public eb0(fb0 fb0Var) {
-        this.f297a = fb0Var;
+        this.f296a = fb0Var;
     }
 }

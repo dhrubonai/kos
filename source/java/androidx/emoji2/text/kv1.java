@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public final class kv1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f660a = new ArrayList();
+    public final ArrayList f659a = new ArrayList();
 
     public kv1(Object obj) {
     }
 
     public final boolean a(hq0 hq0Var, Object obj) {
-        ArrayList arrayList = hq0Var.f482a;
+        ArrayList arrayList = hq0Var.f481a;
         if (arrayList == null) {
             return true;
         }

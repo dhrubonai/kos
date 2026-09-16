@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class z00 implements dt1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1414a;
+    public final long f1413a;
 
     public z00(long j) {
-        this.f1414a = j;
+        this.f1413a = j;
     }
 
     @Override // androidx.emoji2.text.dt1
     public final long a(rw0 rw0Var, long j, q01 q01Var, long j2) {
-        int i = rw0Var.f1038a;
-        long j3 = this.f1414a;
+        int i = rw0Var.f1037a;
+        long j3 = this.f1413a;
         return jm.e(xa1.e(i + ((int) (j3 >> 32)), (int) (j2 >> 32), (int) (j >> 32), q01Var == q01.d), xa1.e(rw0Var.b + ((int) (j3 & 4294967295L)), (int) (j2 & 4294967295L), (int) (j & 4294967295L), true));
     }
 }

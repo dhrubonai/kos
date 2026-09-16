@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class en2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final double f312a;
+    public final double f311a;
     public final double b;
     public final double c;
     public final double d;
@@ -25,19 +25,19 @@ public final class en2 {
             return false;
         }
         en2 en2Var = (en2) obj;
-        return Double.compare(this.f312a, en2Var.f312a) == 0 && Double.compare(this.b, en2Var.b) == 0 && Double.compare(this.c, en2Var.c) == 0 && Double.compare(this.d, en2Var.d) == 0 && Double.compare(this.e, en2Var.e) == 0 && Double.compare(this.f, en2Var.f) == 0 && Double.compare(this.g, en2Var.g) == 0;
+        return Double.compare(this.f311a, en2Var.f311a) == 0 && Double.compare(this.b, en2Var.b) == 0 && Double.compare(this.c, en2Var.c) == 0 && Double.compare(this.d, en2Var.d) == 0 && Double.compare(this.e, en2Var.e) == 0 && Double.compare(this.f, en2Var.f) == 0 && Double.compare(this.g, en2Var.g) == 0;
     }
 
     public final int hashCode() {
-        return Double.hashCode(this.g) + ((Double.hashCode(this.f) + ((Double.hashCode(this.e) + ((Double.hashCode(this.d) + ((Double.hashCode(this.c) + ((Double.hashCode(this.b) + (Double.hashCode(this.f312a) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
+        return Double.hashCode(this.g) + ((Double.hashCode(this.f) + ((Double.hashCode(this.e) + ((Double.hashCode(this.d) + ((Double.hashCode(this.c) + ((Double.hashCode(this.b) + (Double.hashCode(this.f311a) * 31)) * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "TransferParameters(gamma=" + this.f312a + ", a=" + this.b + ", b=" + this.c + ", c=" + this.d + ", d=" + this.e + ", e=" + this.f + ", f=" + this.g + ')';
+        return "TransferParameters(gamma=" + this.f311a + ", a=" + this.b + ", b=" + this.c + ", c=" + this.d + ", d=" + this.e + ", e=" + this.f + ", f=" + this.g + ')';
     }
 
     public en2(double d, double d2, double d3, double d4, double d5, double d6, double d7) {
-        this.f312a = d;
+        this.f311a = d;
         this.b = d2;
         this.c = d3;
         this.d = d4;

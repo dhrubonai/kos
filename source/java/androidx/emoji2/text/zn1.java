@@ -24,21 +24,21 @@ public final class zn1 implements Comparable {
 
     public final ArrayList a() {
         ArrayList arrayList = new ArrayList();
-        int iA = f.a(this);
+        int a2 = f.a(this);
         io ioVar = this.d;
-        if (iA == -1) {
-            iA = 0;
-        } else if (iA < ioVar.c() && ioVar.h(iA) == 92) {
-            iA++;
+        if (a2 == -1) {
+            a2 = 0;
+        } else if (a2 < ioVar.c() && ioVar.h(a2) == 92) {
+            a2++;
         }
-        int iC = ioVar.c();
-        int i = iA;
-        while (iA < iC) {
-            if (ioVar.h(iA) == 47 || ioVar.h(iA) == 92) {
-                arrayList.add(ioVar.m(i, iA));
-                i = iA + 1;
+        int c = ioVar.c();
+        int i = a2;
+        while (a2 < c) {
+            if (ioVar.h(a2) == 47 || ioVar.h(a2) == 92) {
+                arrayList.add(ioVar.m(i, a2));
+                i = a2 + 1;
             }
-            iA++;
+            a2++;
         }
         if (i < ioVar.c()) {
             arrayList.add(ioVar.m(i, ioVar.c()));
@@ -52,7 +52,7 @@ public final class zn1 implements Comparable {
         if (lx0.n(ioVar2, ioVar)) {
             return null;
         }
-        io ioVar3 = f.f337a;
+        io ioVar3 = f.f336a;
         if (lx0.n(ioVar2, ioVar3)) {
             return null;
         }
@@ -63,29 +63,29 @@ public final class zn1 implements Comparable {
         io ioVar5 = f.e;
         ioVar2.getClass();
         lx0.x(ioVar5, "suffix");
-        int iC = ioVar2.c();
+        int c = ioVar2.c();
         byte[] bArr = ioVar5.d;
-        if (ioVar2.k(iC - bArr.length, ioVar5, bArr.length) && (ioVar2.c() == 2 || ioVar2.k(ioVar2.c() - 3, ioVar3, 1) || ioVar2.k(ioVar2.c() - 3, ioVar4, 1))) {
+        if (ioVar2.k(c - bArr.length, ioVar5, bArr.length) && (ioVar2.c() == 2 || ioVar2.k(ioVar2.c() - 3, ioVar3, 1) || ioVar2.k(ioVar2.c() - 3, ioVar4, 1))) {
             return null;
         }
-        int iJ = io.j(ioVar2, ioVar3);
-        if (iJ == -1) {
-            iJ = io.j(ioVar2, ioVar4);
+        int j = io.j(ioVar2, ioVar3);
+        if (j == -1) {
+            j = io.j(ioVar2, ioVar4);
         }
-        if (iJ == 2 && f() != null) {
+        if (j == 2 && f() != null) {
             if (ioVar2.c() == 3) {
                 return null;
             }
             return new zn1(io.n(ioVar2, 0, 3, 1));
         }
-        if (iJ == 1) {
+        if (j == 1) {
             lx0.x(ioVar4, "prefix");
             if (ioVar2.k(0, ioVar4, ioVar4.c())) {
                 return null;
             }
         }
-        if (iJ != -1 || f() == null) {
-            return iJ == -1 ? new zn1(ioVar) : iJ == 0 ? new zn1(io.n(ioVar2, 0, 1, 1)) : new zn1(io.n(ioVar2, 0, iJ, 1));
+        if (j != -1 || f() == null) {
+            return j == -1 ? new zn1(ioVar) : j == 0 ? new zn1(io.n(ioVar2, 0, 1, 1)) : new zn1(io.n(ioVar2, 0, j, 1));
         }
         if (ioVar2.c() == 2) {
             return null;
@@ -96,40 +96,40 @@ public final class zn1 implements Comparable {
     public final zn1 c(zn1 zn1Var) {
         lx0.x(zn1Var, "other");
         io ioVar = zn1Var.d;
-        int iA = f.a(this);
+        int a2 = f.a(this);
         io ioVar2 = this.d;
-        zn1 zn1Var2 = iA == -1 ? null : new zn1(ioVar2.m(0, iA));
-        int iA2 = f.a(zn1Var);
-        if (!lx0.n(zn1Var2, iA2 != -1 ? new zn1(ioVar.m(0, iA2)) : null)) {
+        zn1 zn1Var2 = a2 == -1 ? null : new zn1(ioVar2.m(0, a2));
+        int a3 = f.a(zn1Var);
+        if (!lx0.n(zn1Var2, a3 != -1 ? new zn1(ioVar.m(0, a3)) : null)) {
             throw new IllegalArgumentException(("Paths of different roots cannot be relative to each other: " + this + " and " + zn1Var).toString());
         }
-        ArrayList arrayListA = a();
-        ArrayList arrayListA2 = zn1Var.a();
-        int iMin = Math.min(arrayListA.size(), arrayListA2.size());
+        ArrayList a4 = a();
+        ArrayList a5 = zn1Var.a();
+        int min = Math.min(a4.size(), a5.size());
         int i = 0;
-        while (i < iMin && lx0.n(arrayListA.get(i), arrayListA2.get(i))) {
+        while (i < min && lx0.n(a4.get(i), a5.get(i))) {
             i++;
         }
-        if (i == iMin && ioVar2.c() == ioVar.c()) {
+        if (i == min && ioVar2.c() == ioVar.c()) {
             return iz0.o(".");
         }
-        if (arrayListA2.subList(i, arrayListA2.size()).indexOf(f.e) != -1) {
+        if (a5.subList(i, a5.size()).indexOf(f.e) != -1) {
             throw new IllegalArgumentException(("Impossible relative path to resolve: " + this + " and " + zn1Var).toString());
         }
         rn rnVar = new rn();
-        io ioVarC = f.c(zn1Var);
-        if (ioVarC == null && (ioVarC = f.c(this)) == null) {
-            ioVarC = f.f(e);
+        io c = f.c(zn1Var);
+        if (c == null && (c = f.c(this)) == null) {
+            c = f.f(e);
         }
-        int size = arrayListA2.size();
+        int size = a5.size();
         for (int i2 = i; i2 < size; i2++) {
             rnVar.u(f.e);
-            rnVar.u(ioVarC);
+            rnVar.u(c);
         }
-        int size2 = arrayListA.size();
+        int size2 = a4.size();
         while (i < size2) {
-            rnVar.u((io) arrayListA.get(i));
-            rnVar.u(ioVarC);
+            rnVar.u((io) a4.get(i));
+            rnVar.u(c);
             i++;
         }
         return f.d(rnVar, false);
@@ -150,7 +150,8 @@ public final class zn1 implements Comparable {
     }
 
     public final Path e() {
-        Path path = Paths.get(this.d.p(), new String[0]);
+        Path path;
+        path = Paths.get(this.d.p(), new String[0]);
         lx0.w(path, "get(...)");
         return path;
     }
@@ -160,16 +161,16 @@ public final class zn1 implements Comparable {
     }
 
     public final Character f() {
-        io ioVar = f.f337a;
+        io ioVar = f.f336a;
         io ioVar2 = this.d;
         if (io.f(ioVar2, ioVar) != -1 || ioVar2.c() < 2 || ioVar2.h(1) != 58) {
             return null;
         }
-        char cH = (char) ioVar2.h(0);
-        if (('a' > cH || cH >= '{') && ('A' > cH || cH >= '[')) {
+        char h = (char) ioVar2.h(0);
+        if (('a' > h || h >= '{') && ('A' > h || h >= '[')) {
             return null;
         }
-        return Character.valueOf(cH);
+        return Character.valueOf(h);
     }
 
     public final int hashCode() {

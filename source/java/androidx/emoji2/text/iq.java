@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public final class iq {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ iq f541a = new iq();
+    public static final /* synthetic */ iq f540a = new iq();
     public static final int b = (int) ly0.I("kotlinx.coroutines.channels.defaultBuffer", 64, 1, 2147483646);
 }

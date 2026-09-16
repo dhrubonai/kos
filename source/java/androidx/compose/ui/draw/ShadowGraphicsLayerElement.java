@@ -23,7 +23,7 @@ public final class ShadowGraphicsLayerElement extends ud1 {
     public final long d;
 
     public ShadowGraphicsLayerElement(t92 t92Var, boolean z, long j, long j2) {
-        float f = b10.f132a;
+        float f = b10.f131a;
         this.f48a = t92Var;
         this.b = z;
         this.c = j;
@@ -48,9 +48,9 @@ public final class ShadowGraphicsLayerElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iD = jx0.d((this.f48a.hashCode() + (Float.hashCode(b10.d) * 31)) * 31, 31, this.b);
+        int d = jx0.d((this.f48a.hashCode() + (Float.hashCode(b10.d) * 31)) * 31, 31, this.b);
         int i = et.l;
-        return Long.hashCode(this.d) + jx0.b(iD, 31, this.c);
+        return Long.hashCode(this.d) + jx0.b(d, 31, this.c);
     }
 
     @Override // androidx.emoji2.text.ud1

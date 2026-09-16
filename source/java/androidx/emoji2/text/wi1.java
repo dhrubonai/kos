@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class wi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f1282a = 0;
+    public static final /* synthetic */ int f1281a = 0;
 
     static {
         new af1(0);

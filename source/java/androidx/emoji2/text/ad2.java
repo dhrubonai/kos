@@ -14,9 +14,9 @@ public final class ad2 implements df2, Map, uy0 {
 
     public ad2() {
         bp1 bp1Var = bp1.f;
-        ec2 ec2VarK = kc2.k();
-        zc2 zc2Var = new zc2(ec2VarK.g(), bp1Var);
-        if (!(ec2VarK instanceof bo0)) {
+        ec2 k = kc2.k();
+        zc2 zc2Var = new zc2(k.g(), bp1Var);
+        if (!(k instanceof bo0)) {
             zc2Var.b = new zc2(1, bp1Var);
         }
         this.d = zc2Var;
@@ -53,7 +53,7 @@ public final class ad2 implements df2, Map, uy0 {
 
     @Override // java.util.Map
     public final void clear() {
-        ec2 ec2VarK;
+        ec2 k;
         zc2 zc2Var = this.d;
         lx0.v(zc2Var, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
         zc2 zc2Var2 = (zc2) kc2.i(zc2Var);
@@ -62,14 +62,14 @@ public final class ad2 implements df2, Map, uy0 {
             zc2 zc2Var3 = this.d;
             lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zc2 zc2Var4 = (zc2) kc2.w(zc2Var3, this, ec2VarK);
+                k = kc2.k();
+                zc2 zc2Var4 = (zc2) kc2.w(zc2Var3, this, k);
                 synchronized (xa1.l) {
                     zc2Var4.c = bp1Var;
                     zc2Var4.d++;
                 }
             }
-            kc2.n(ec2VarK, this);
+            kc2.n(k, this);
         }
     }
 
@@ -113,9 +113,9 @@ public final class ad2 implements df2, Map, uy0 {
     public final Object put(Object obj, Object obj2) {
         mp1 mp1Var;
         int i;
-        Object objPut;
-        ec2 ec2VarK;
-        boolean zD;
+        Object put;
+        ec2 k;
+        boolean d;
         do {
             synchronized (xa1.l) {
                 zc2 zc2Var = this.d;
@@ -126,28 +126,28 @@ public final class ad2 implements df2, Map, uy0 {
             }
             lx0.u(mp1Var);
             dp1 dp1Var = (dp1) mp1Var.builder();
-            objPut = dp1Var.put(obj, obj2);
-            mp1 mp1VarBuild = dp1Var.build();
-            if (lx0.n(mp1VarBuild, mp1Var)) {
+            put = dp1Var.put(obj, obj2);
+            mp1 build = dp1Var.build();
+            if (lx0.n(build, mp1Var)) {
                 break;
             }
             zc2 zc2Var3 = this.d;
             lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zD = d(this, (zc2) kc2.w(zc2Var3, this, ec2VarK), i, mp1VarBuild);
+                k = kc2.k();
+                d = d(this, (zc2) kc2.w(zc2Var3, this, k), i, build);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zD);
-        return objPut;
+            kc2.n(k, this);
+        } while (!d);
+        return put;
     }
 
     @Override // java.util.Map
     public final void putAll(Map map) {
         mp1 mp1Var;
         int i;
-        ec2 ec2VarK;
-        boolean zD;
+        ec2 k;
+        boolean d;
         do {
             synchronized (xa1.l) {
                 zc2 zc2Var = this.d;
@@ -159,27 +159,27 @@ public final class ad2 implements df2, Map, uy0 {
             lx0.u(mp1Var);
             dp1 dp1Var = (dp1) mp1Var.builder();
             dp1Var.putAll(map);
-            mp1 mp1VarBuild = dp1Var.build();
-            if (lx0.n(mp1VarBuild, mp1Var)) {
+            mp1 build = dp1Var.build();
+            if (lx0.n(build, mp1Var)) {
                 return;
             }
             zc2 zc2Var3 = this.d;
             lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zD = d(this, (zc2) kc2.w(zc2Var3, this, ec2VarK), i, mp1VarBuild);
+                k = kc2.k();
+                d = d(this, (zc2) kc2.w(zc2Var3, this, k), i, build);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zD);
+            kc2.n(k, this);
+        } while (!d);
     }
 
     @Override // java.util.Map
     public final Object remove(Object obj) {
         mp1 mp1Var;
         int i;
-        Object objRemove;
-        ec2 ec2VarK;
-        boolean zD;
+        Object remove;
+        ec2 k;
+        boolean d;
         do {
             synchronized (xa1.l) {
                 zc2 zc2Var = this.d;
@@ -189,21 +189,21 @@ public final class ad2 implements df2, Map, uy0 {
                 i = zc2Var2.d;
             }
             lx0.u(mp1Var);
-            lp1 lp1VarBuilder = mp1Var.builder();
-            objRemove = lp1VarBuilder.remove(obj);
-            mp1 mp1VarBuild = lp1VarBuilder.build();
-            if (lx0.n(mp1VarBuild, mp1Var)) {
+            lp1 builder = mp1Var.builder();
+            remove = builder.remove(obj);
+            mp1 build = builder.build();
+            if (lx0.n(build, mp1Var)) {
                 break;
             }
             zc2 zc2Var3 = this.d;
             lx0.v(zc2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.SnapshotStateMap.StateMapStateRecord<K of androidx.compose.runtime.snapshots.SnapshotStateMap, V of androidx.compose.runtime.snapshots.SnapshotStateMap>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zD = d(this, (zc2) kc2.w(zc2Var3, this, ec2VarK), i, mp1VarBuild);
+                k = kc2.k();
+                d = d(this, (zc2) kc2.w(zc2Var3, this, k), i, build);
             }
-            kc2.n(ec2VarK, this);
-        } while (!zD);
-        return objRemove;
+            kc2.n(k, this);
+        } while (!d);
+        return remove;
     }
 
     @Override // java.util.Map

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class y31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f1369a = new ArrayList();
+    public final ArrayList f1368a = new ArrayList();
     public final /* synthetic */ a41 b;
 
     public y31(a41 a41Var) {

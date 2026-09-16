@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 public abstract class nr1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Method f823a;
+    public static final Method f822a;
     public static final Method b;
 
     static {
@@ -34,7 +34,7 @@ public abstract class nr1 {
             }
             i2++;
         }
-        f823a = method2;
+        f822a = method2;
         int length2 = methods.length;
         while (true) {
             if (i >= length2) {

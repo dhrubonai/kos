@@ -1,9 +1,6 @@
 package androidx.emoji2.text;
 
-import java.security.KeyManagementException;
 import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,9 +34,9 @@ public final class az extends lr1 {
     }
 
     public az() {
-        Provider providerNewProvider = Conscrypt.newProvider();
-        lx0.w(providerNewProvider, "newProvider()");
-        this.c = providerNewProvider;
+        Provider newProvider = Conscrypt.newProvider();
+        lx0.w(newProvider, "newProvider()");
+        this.c = newProvider;
     }
 
     @Override // androidx.emoji2.text.lr1
@@ -74,23 +71,23 @@ public final class az extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final SSLContext k() throws NoSuchAlgorithmException {
+    public final SSLContext k() {
         SSLContext sSLContext = SSLContext.getInstance("TLS", this.c);
         lx0.w(sSLContext, "getInstance(\"TLS\", provider)");
         return sSLContext;
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final SSLSocketFactory l(X509TrustManager x509TrustManager) throws NoSuchAlgorithmException, KeyManagementException {
-        SSLContext sSLContextK = k();
-        sSLContextK.init(null, new TrustManager[]{x509TrustManager}, null);
-        SSLSocketFactory socketFactory = sSLContextK.getSocketFactory();
+    public final SSLSocketFactory l(X509TrustManager x509TrustManager) {
+        SSLContext k = k();
+        k.init(null, new TrustManager[]{x509TrustManager}, null);
+        SSLSocketFactory socketFactory = k.getSocketFactory();
         lx0.w(socketFactory, "newSSLContext().apply {\n…null)\n    }.socketFactory");
         return socketFactory;
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final X509TrustManager m() throws NoSuchAlgorithmException, KeyStoreException {
+    public final X509TrustManager m() {
         TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
         trustManagerFactory.init((KeyStore) null);
         TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
@@ -100,12 +97,12 @@ public final class az extends lr1 {
             if (trustManager instanceof X509TrustManager) {
                 lx0.v(trustManager, "null cannot be cast to non-null type javax.net.ssl.X509TrustManager");
                 X509TrustManager x509TrustManager = (X509TrustManager) trustManager;
-                Conscrypt.setHostnameVerifier(x509TrustManager, zy.f1462a);
+                Conscrypt.setHostnameVerifier(x509TrustManager, zy.f1461a);
                 return x509TrustManager;
             }
         }
-        String string = Arrays.toString(trustManagers);
-        lx0.w(string, "toString(this)");
-        throw new IllegalStateException("Unexpected default trust managers: ".concat(string).toString());
+        String arrays = Arrays.toString(trustManagers);
+        lx0.w(arrays, "toString(this)");
+        throw new IllegalStateException("Unexpected default trust managers: ".concat(arrays).toString());
     }
 }

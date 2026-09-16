@@ -41,9 +41,9 @@ public final class vc2 extends hh2 implements Function2 {
                 vc2 vc2Var3 = new vc2((jj0) this.k, l10Var, 4);
                 vc2Var3.j = obj;
                 return vc2Var3;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new vc2((Context) this.j, (mf1) this.k, l10Var, 5);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return new vc2((i01) this.j, (Context) this.k, l10Var, 6);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return new vc2((uw1) this.j, (View) this.k, l10Var, 7);
@@ -53,39 +53,39 @@ public final class vc2 extends hh2 implements Function2 {
     }
 
     @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) throws Throwable {
+    public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 1:
-                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 2:
-                return ((vc2) i((l10) obj2, (ts1) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, (ts1) obj)).k(up2.f1186a);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                return ((vc2) i((l10) obj2, (ts1) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, (ts1) obj)).k(up2.f1186a);
             case 4:
-                return ((vc2) i((l10) obj2, obj)).k(up2.f1187a);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, obj)).k(up2.f1186a);
+            case 5:
+                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
+            case 6:
+                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             default:
-                ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                ((vc2) i((l10) obj2, (e30) obj)).k(up2.f1186a);
                 return f30.d;
         }
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
-        Object objM;
-        Object objM2;
+    public final Object k(Object obj) {
+        Object M;
+        Object M2;
         int i = this.h;
         int i2 = 0;
         int i3 = 2;
         l10 l10Var = null;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         Object obj2 = this.k;
         f30 f30Var = f30.d;
         int i4 = 1;
@@ -141,11 +141,11 @@ public final class vc2 extends hh2 implements Function2 {
                 }
                 mz0.L(obj);
                 this.i = 1;
-                Object objS = wj1.s(new a50((ts1) this.j, (ej2) obj2, null), this);
-                if (objS != f30Var) {
-                    objS = up2Var;
+                Object s = wj1.s(new a50((ts1) this.j, (ej2) obj2, null), this);
+                if (s != f30Var) {
+                    s = up2Var;
                 }
-                return objS == f30Var ? f30Var : up2Var;
+                return s == f30Var ? f30Var : up2Var;
             case 4:
                 int i9 = this.i;
                 if (i9 != 0) {
@@ -159,9 +159,9 @@ public final class vc2 extends hh2 implements Function2 {
                 Object obj3 = this.j;
                 this.i = 1;
                 return ((jj0) obj2).b(obj3, this) == f30Var ? f30Var : up2Var;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 mf1 mf1Var = (mf1) obj2;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 Context context = (Context) this.j;
                 int i10 = this.i;
                 if (i10 == 0) {
@@ -169,12 +169,12 @@ public final class vc2 extends hh2 implements Function2 {
                     String string = context.getString(R.string.progress_opening_google_sign_in);
                     lx0.w(string, a.a.a.c.a(-489875938885410L, strArr));
                     mf1Var.setValue(new l01(string, context.getString(R.string.progress_preparing_google_sign_in)));
-                    q60 q60Var = e90.f294a;
+                    q60 q60Var = e90.f293a;
                     a60 a60Var = a60.f;
                     g3 g3Var = new g3(context, l10Var, 6);
                     this.i = 1;
-                    objM = h50.M(a60Var, g3Var, this);
-                    if (objM == f30Var) {
+                    M = h50.M(a60Var, g3Var, this);
+                    if (M == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -182,12 +182,12 @@ public final class vc2 extends hh2 implements Function2 {
                         throw new IllegalStateException(a.a.a.c.a(-489957543264034L, strArr));
                     }
                     mz0.L(obj);
-                    objM = obj;
+                    M = obj;
                 }
                 mf1Var.setValue(null);
-                Toast.makeText(context, (String) objM, 1).show();
+                Toast.makeText(context, (String) M, 1).show();
                 return up2Var;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 Context context2 = (Context) obj2;
                 i01 i01Var = (i01) this.j;
                 int i11 = this.i;
@@ -197,22 +197,22 @@ public final class vc2 extends hh2 implements Function2 {
                         Toast.makeText(context2, context2.getString(R.string.app_no_launch_screen, i01Var.b), 0).show();
                         return up2Var;
                     }
-                    q60 q60Var2 = e90.f294a;
+                    q60 q60Var2 = e90.f293a;
                     a60 a60Var2 = a60.f;
                     xt2 xt2Var = new xt2(i01Var, l10Var, i4);
                     this.i = 1;
-                    objM2 = h50.M(a60Var2, xt2Var, this);
-                    if (objM2 == f30Var) {
+                    M2 = h50.M(a60Var2, xt2Var, this);
+                    if (M2 == f30Var) {
                         return f30Var;
                     }
                 } else {
                     if (i11 != 1) {
-                        throw new IllegalStateException(a.a.a.c.a(-484511524732706L, wj1.f1284a));
+                        throw new IllegalStateException(a.a.a.c.a(-484511524732706L, wj1.f1283a));
                     }
                     mz0.L(obj);
-                    objM2 = obj;
+                    M2 = obj;
                 }
-                if (((Boolean) objM2).booleanValue()) {
+                if (((Boolean) M2).booleanValue()) {
                     return up2Var;
                 }
                 Toast.makeText(context2, context2.getString(R.string.app_launch_failed, i01Var.b), 0).show();
@@ -225,11 +225,11 @@ public final class vc2 extends hh2 implements Function2 {
                     if (i12 == 0) {
                         mz0.L(obj);
                         this.i = 1;
-                        Object objO = l8.O(uw1Var.t, new rw1(i3, l10Var, i2), this);
-                        if (objO != f30Var) {
-                            objO = up2Var;
+                        Object O = l8.O(uw1Var.t, new rw1(i3, l10Var, i2), this);
+                        if (O != f30Var) {
+                            O = up2Var;
                         }
-                        if (objO == f30Var) {
+                        if (O == f30Var) {
                             return f30Var;
                         }
                     } else {

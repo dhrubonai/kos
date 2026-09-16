@@ -7,9 +7,9 @@ import android.os.Build;
 public abstract class ig2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final boolean f523a;
+    public static final boolean f522a;
 
     static {
-        f523a = Build.VERSION.SDK_INT >= 34;
+        f522a = Build.VERSION.SDK_INT >= 34;
     }
 }

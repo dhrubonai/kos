@@ -34,17 +34,17 @@ public final class st2 extends hh2 implements Function2 {
                 return new st2(this.i, l10Var, 3);
             case 4:
                 return new st2(this.i, l10Var, 4);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new st2(this.i, l10Var, 5);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return new st2(this.i, l10Var, 6);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return new st2(this.i, l10Var, 7);
             case 8:
                 return new st2(this.i, l10Var, 8);
-            case 9:
+            case pz0.b /* 9 */:
                 return new st2(this.i, l10Var, 9);
-            case 10:
+            case pz0.d /* 10 */:
                 return new st2(this.i, l10Var, 10);
             case 11:
                 return new st2(this.i, l10Var, 11);
@@ -63,12 +63,12 @@ public final class st2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((st2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((st2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        List<ApplicationInfo> installedApplications;
+        List<ApplicationInfo> list;
         switch (this.h) {
             case 0:
                 mz0.L(obj);
@@ -80,7 +80,7 @@ public final class st2 extends hh2 implements Function2 {
                 } catch (Throwable th) {
                     String message = th.getMessage();
                     if (message == null) {
-                        message = a.a.a.c.a(-477918749933346L, wj1.f1284a);
+                        message = a.a.a.c.a(-477918749933346L, wj1.f1283a);
                     }
                     String string = this.i.getString(R.string.google_services_install_failed, message);
                     lx0.u(string);
@@ -95,10 +95,10 @@ public final class st2 extends hh2 implements Function2 {
             case 4:
                 mz0.L(obj);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 mz0.L(obj);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 mz0.L(obj);
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -107,20 +107,20 @@ public final class st2 extends hh2 implements Function2 {
             case 8:
                 mz0.L(obj);
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 mz0.L(obj);
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 mz0.L(obj);
                 break;
             case 11:
                 mz0.L(obj);
                 PackageManager packageManager = this.i.getPackageManager();
                 try {
-                    installedApplications = packageManager.getInstalledApplications(0);
-                    lx0.u(installedApplications);
+                    list = packageManager.getInstalledApplications(0);
+                    lx0.u(list);
                 } catch (Throwable unused) {
-                    installedApplications = qe0.d;
+                    list = qe0.d;
                 }
                 break;
             case 12:

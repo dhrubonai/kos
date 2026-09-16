@@ -176,13 +176,13 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
 
     private Bundle createFrameworkListSliceBundle(String str, List<?> list, int i, int i2) {
         String[] strArr = xa1.b;
-        Object objA = vn1.a(list);
-        if (!(objA instanceof Parcelable)) {
+        Object a2 = vn1.a(list);
+        if (!(a2 instanceof Parcelable)) {
             throw new IllegalStateException(a.a.a.c.a(-877217564475170L, strArr));
         }
         Bundle bundle = new Bundle();
-        bundle.putParcelable(a.a.a.c.a(-876886851993378L, strArr), (Parcelable) objA);
-        String strA = a.a.a.c.a(-449825368850210L, strArr);
+        bundle.putParcelable(a.a.a.c.a(-876886851993378L, strArr), (Parcelable) a2);
+        String a3 = a.a.a.c.a(-449825368850210L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-449924153098018L, strArr));
         sb.append(str);
@@ -192,7 +192,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         sb.append(Integer.toHexString(i));
         sb.append(a.a.a.c.a(-450740196884258L, strArr));
         sb.append(list == null ? 0 : list.size());
-        nz0.Q(strA, 3, sb.toString());
+        nz0.Q(a3, 3, sb.toString());
         return bundle;
     }
 
@@ -251,7 +251,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     private ActivityInfo getActivity(ComponentName componentName, int i, int i2) {
-        int iUpdateFlags = updateFlags(i, i2);
+        int updateFlags = updateFlags(i, i2);
         synchronized (this.mPackages) {
             try {
                 BPackage.Activity activity = this.mComponentResolver.getActivity(componentName);
@@ -262,7 +262,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 if (bPackageSettings == null) {
                     return null;
                 }
-                return PackageManagerCompat.generateActivityInfo(activity, iUpdateFlags, bPackageSettings.readUserState(i2), i2);
+                return PackageManagerCompat.generateActivityInfo(activity, updateFlags, bPackageSettings.readUserState(i2), i2);
             } catch (Throwable th) {
                 throw th;
             }
@@ -274,15 +274,15 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         if (!sUserManager.exists(i2)) {
             return Collections.EMPTY_LIST;
         }
-        boolean zShouldExposeGooglePackagesToCaller = shouldExposeGooglePackagesToCaller();
+        boolean shouldExposeGooglePackagesToCaller = shouldExposeGooglePackagesToCaller();
         synchronized (this.mPackages) {
             try {
                 arrayList = new ArrayList(this.mPackages.size());
                 for (BPackageSettings bPackageSettings : this.mPackages.values()) {
-                    if (zShouldExposeGooglePackagesToCaller || !GmsCore.isGoogleAppOrService(bPackageSettings.pkg.packageName)) {
-                        ApplicationInfo applicationInfoGenerateApplicationInfo = PackageManagerCompat.generateApplicationInfo(bPackageSettings.pkg, i, bPackageSettings.readUserState(i2), i2);
-                        if (applicationInfoGenerateApplicationInfo != null) {
-                            arrayList.add(applicationInfoGenerateApplicationInfo);
+                    if (shouldExposeGooglePackagesToCaller || !GmsCore.isGoogleAppOrService(bPackageSettings.pkg.packageName)) {
+                        ApplicationInfo generateApplicationInfo = PackageManagerCompat.generateApplicationInfo(bPackageSettings.pkg, i, bPackageSettings.readUserState(i2), i2);
+                        if (generateApplicationInfo != null) {
+                            arrayList.add(generateApplicationInfo);
                         }
                     }
                 }
@@ -317,7 +317,8 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         return (serviceInfo == null || (bundle = serviceInfo.metaData) == null || !bundle.containsKey(a.a.a.c.a(-459377376116514L, xa1.b))) ? false : true;
     }
 
-    private InstallResult installHostLinkedPlayStore(PackageParser.Package r11, int i) throws PackageManager.NameNotFoundException {
+    private InstallResult installHostLinkedPlayStore(PackageParser.Package r11, int i) {
+        long longVersionCode;
         BPackageSettings bPackageSettings;
         InstallOption installOption;
         try {
@@ -330,7 +331,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 return new InstallResult().installError(a.a.a.c.a(-463397465505570L, strArr), a.a.a.c.a(-462899249299234L, strArr));
             }
             long j = r11.mVersionCode;
-            long longVersionCode = packageInfo.getLongVersionCode();
+            longVersionCode = packageInfo.getLongVersionCode();
             if (!PlayStoreSystemLinkPolicy.canHostSatisfyUpdate(j, longVersionCode, true)) {
                 nz0.Q(a.a.a.c.a(-463779717594914L, strArr), 5, a.a.a.c.a(-463826962235170L, strArr) + j + a.a.a.c.a(-463599328968482L, strArr) + longVersionCode);
                 return new InstallResult().installError(a.a.a.c.a(-463633688706850L, strArr), a.a.a.c.a(-463685228314402L, strArr));
@@ -356,16 +357,21 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00d7 A[Catch: all -> 0x0019, TRY_ENTER, TRY_LEAVE, TryCatch #3 {all -> 0x0019, blocks: (B:3:0x000d, B:5:0x0015, B:6:0x001c, B:8:0x0022, B:12:0x006a, B:16:0x0074, B:23:0x00c0, B:25:0x00c8, B:31:0x00d7, B:40:0x0123, B:42:0x012d, B:45:0x0133, B:47:0x013b, B:53:0x0179, B:55:0x0190, B:62:0x01d7, B:64:0x01dd, B:66:0x0224, B:67:0x0237, B:73:0x022e, B:74:0x027a, B:76:0x0284, B:77:0x0294, B:79:0x02af, B:84:0x02f4, B:85:0x02f6, B:89:0x0301, B:99:0x0359, B:100:0x035a, B:123:0x0064, B:87:0x02f7, B:88:0x0300), top: B:2:0x000d, inners: #2 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     private InstallResult installPackageAsUserLocked(String str, InstallOption installOption, int i) {
-        String strA;
+        String a2;
         StringBuilder sb;
-        String strA2;
+        String a3;
         File file;
-        InstallResult installResultInstallError;
-        String strA3;
+        InstallResult installError;
+        String a4;
         StringBuilder sb2;
-        String strA4;
-        long jCurrentTimeMillis = System.currentTimeMillis();
+        String a5;
+        boolean z;
+        long currentTimeMillis = System.currentTimeMillis();
         InstallResult installResult = new InstallResult();
         File file2 = null;
         try {
@@ -386,23 +392,23 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                             wj1.t(file2);
                         }
                         String[] strArr = xa1.b;
-                        strA = a.a.a.c.a(-450903405641506L, strArr);
+                        a2 = a.a.a.c.a(-450903405641506L, strArr);
                         sb = new StringBuilder();
                         sb.append(a.a.a.c.a(-451019369758498L, strArr));
-                        sb.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                        strA2 = a.a.a.c.a(-451624960147234L, strArr);
-                        zd.p(sb, strA2, 3, strA);
+                        sb.append(System.currentTimeMillis() - currentTimeMillis);
+                        a3 = a.a.a.c.a(-451624960147234L, strArr);
+                        zd.p(sb, a3, 3, a2);
                         return installResult;
                     } catch (Throwable th2) {
                         if (file2 != null && installOption.isFlag(8)) {
                             wj1.t(file2);
                         }
                         String[] strArr2 = xa1.b;
-                        String strA5 = a.a.a.c.a(-451689384656674L, strArr2);
+                        String a6 = a.a.a.c.a(-451689384656674L, strArr2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(a.a.a.c.a(-451788168904482L, strArr2));
-                        sb3.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                        zd.p(sb3, a.a.a.c.a(-451861183348514L, strArr2), 3, strA5);
+                        sb3.append(System.currentTimeMillis() - currentTimeMillis);
+                        zd.p(sb3, a.a.a.c.a(-451861183348514L, strArr2), 3, a6);
                         throw th2;
                     }
                 }
@@ -417,113 +423,107 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 wj1.t(file2);
             }
             String[] strArr3 = xa1.b;
-            strA = a.a.a.c.a(-450903405641506L, strArr3);
+            a2 = a.a.a.c.a(-450903405641506L, strArr3);
             sb = new StringBuilder();
             sb.append(a.a.a.c.a(-451019369758498L, strArr3));
-            sb.append(System.currentTimeMillis() - jCurrentTimeMillis);
-            strA2 = a.a.a.c.a(-451624960147234L, strArr3);
-            zd.p(sb, strA2, 3, strA);
+            sb.append(System.currentTimeMillis() - currentTimeMillis);
+            a3 = a.a.a.c.a(-451624960147234L, strArr3);
+            zd.p(sb, a3, 3, a2);
             return installResult;
         }
         if (installOption.isFlag(4) && i != -4) {
             InstallResult installResult2 = new InstallResult();
             String[] strArr4 = xa1.b;
-            InstallResult installResultInstallError2 = installResult2.installError(a.a.a.c.a(-449043684802338L, strArr4));
+            InstallResult installError2 = installResult2.installError(a.a.a.c.a(-449043684802338L, strArr4));
             if (installOption.isFlag(8)) {
                 wj1.t(file2);
             }
-            String strA6 = a.a.a.c.a(-448670022647586L, strArr4);
+            String a7 = a.a.a.c.a(-448670022647586L, strArr4);
             StringBuilder sb4 = new StringBuilder();
             sb4.append(a.a.a.c.a(-448785986764578L, strArr4));
-            sb4.append(System.currentTimeMillis() - jCurrentTimeMillis);
-            zd.p(sb4, a.a.a.c.a(-448841821339426L, strArr4), 3, strA6);
-            return installResultInstallError2;
+            sb4.append(System.currentTimeMillis() - currentTimeMillis);
+            zd.p(sb4, a.a.a.c.a(-448841821339426L, strArr4), 3, a7);
+            return installError2;
         }
         if (installOption.isFlag(4)) {
-            boolean z = az0.a0(file2.getAbsolutePath()) != null;
-            if (!z) {
-                InstallResult installResult3 = new InstallResult();
-                String[] strArr5 = xa1.b;
-                InstallResult installResultInstallError3 = installResult3.installError(a.a.a.c.a(-449456001662754L, strArr5));
-                if (installOption.isFlag(8)) {
-                    wj1.t(file2);
-                }
-                String strA7 = a.a.a.c.a(-449524721139490L, strArr5);
-                StringBuilder sb5 = new StringBuilder();
-                sb5.append(a.a.a.c.a(-449623505387298L, strArr5));
-                sb5.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                zd.p(sb5, a.a.a.c.a(-449696519831330L, strArr5), 3, strA7);
-                return installResultInstallError3;
-            }
-        }
-        PackageParser.Package r13 = parserApk(file2.getAbsolutePath());
-        if (r13 == null || r13.baseCodePath == null) {
-            String[] strArr6 = xa1.b;
-            installResultInstallError = installResult.installError(a.a.a.c.a(-449675044994850L, strArr6));
-            if (installOption.isFlag(8)) {
-                wj1.t(file2);
-            }
-            strA3 = a.a.a.c.a(-449185418723106L, strArr6);
-            sb2 = new StringBuilder();
-            sb2.append(a.a.a.c.a(-449301382840098L, strArr6));
-            sb2.append(System.currentTimeMillis() - jCurrentTimeMillis);
-            strA4 = a.a.a.c.a(-449357217414946L, strArr6);
-        } else {
-            if (PlayStoreSystemLinkPolicy.shouldKeepSystemLinked(r13.packageName, installOption)) {
-                InstallResult installResultInstallHostLinkedPlayStore = installHostLinkedPlayStore(r13, i);
-                if (installOption.isFlag(8)) {
-                    wj1.t(file2);
-                }
-                String[] strArr7 = xa1.b;
-                String strA8 = a.a.a.c.a(-449421641924386L, strArr7);
-                StringBuilder sb6 = new StringBuilder();
-                sb6.append(a.a.a.c.a(-452269205241634L, strArr7));
-                sb6.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                zd.p(sb6, a.a.a.c.a(-452342219685666L, strArr7), 3, strA8);
-                return installResultInstallHostLinkedPlayStore;
-            }
-            PackageInfo packageArchiveInfo = c01.s.getPackageManager().getPackageArchiveInfo(new File(r13.baseCodePath).getAbsolutePath(), 0);
-            if (packageArchiveInfo == null) {
-                String[] strArr8 = xa1.b;
-                installResultInstallError = installResult.installError(a.a.a.c.a(-452320744849186L, strArr8));
-                if (installOption.isFlag(8)) {
-                    wj1.t(file2);
-                }
-                strA3 = a.a.a.c.a(-452045866942242L, strArr8);
-                sb2 = new StringBuilder();
-                sb2.append(a.a.a.c.a(-452161831059234L, strArr8));
-                sb2.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                strA4 = a.a.a.c.a(-452767421447970L, strArr8);
-            } else {
-                if (!isPackageAbiSupported(r13)) {
-                    StringBuilder sb7 = new StringBuilder();
-                    sb7.append((Object) packageArchiveInfo.applicationInfo.loadLabel(c01.s.getPackageManager()));
-                    String[] strArr9 = xa1.b;
-                    sb7.append(a.a.a.c.a(-452763126480674L, strArr9));
-                    sb7.append(packageArchiveInfo.packageName);
-                    sb7.append(a.a.a.c.a(-452823256022818L, strArr9));
-                    String string = sb7.toString();
-                    String str2 = packageArchiveInfo.packageName;
-                    StringBuilder sb8 = new StringBuilder();
-                    sb8.append(string);
-                    sb8.append(Process.is64Bit() ? a.a.a.c.a(-452814666088226L, strArr9) : a.a.a.c.a(-452956400008994L, strArr9));
-                    InstallResult installResultInstallError4 = installResult.installError(str2, sb8.toString());
+            if (az0.a0(file2.getAbsolutePath()) != null) {
+                z = true;
+                if (!z) {
+                    InstallResult installResult3 = new InstallResult();
+                    String[] strArr5 = xa1.b;
+                    InstallResult installError3 = installResult3.installError(a.a.a.c.a(-449456001662754L, strArr5));
                     if (installOption.isFlag(8)) {
                         wj1.t(file2);
                     }
-                    String strA9 = a.a.a.c.a(-452501133475618L, strArr9);
+                    String a8 = a.a.a.c.a(-449524721139490L, strArr5);
+                    StringBuilder sb5 = new StringBuilder();
+                    sb5.append(a.a.a.c.a(-449623505387298L, strArr5));
+                    sb5.append(System.currentTimeMillis() - currentTimeMillis);
+                    zd.p(sb5, a.a.a.c.a(-449696519831330L, strArr5), 3, a8);
+                    return installError3;
+                }
+            }
+            z = false;
+            if (!z) {
+            }
+        }
+        PackageParser.Package parserApk = parserApk(file2.getAbsolutePath());
+        if (parserApk != null && parserApk.baseCodePath != null) {
+            if (PlayStoreSystemLinkPolicy.shouldKeepSystemLinked(parserApk.packageName, installOption)) {
+                InstallResult installHostLinkedPlayStore = installHostLinkedPlayStore(parserApk, i);
+                if (installOption.isFlag(8)) {
+                    wj1.t(file2);
+                }
+                String[] strArr6 = xa1.b;
+                String a9 = a.a.a.c.a(-449421641924386L, strArr6);
+                StringBuilder sb6 = new StringBuilder();
+                sb6.append(a.a.a.c.a(-452269205241634L, strArr6));
+                sb6.append(System.currentTimeMillis() - currentTimeMillis);
+                zd.p(sb6, a.a.a.c.a(-452342219685666L, strArr6), 3, a9);
+                return installHostLinkedPlayStore;
+            }
+            PackageInfo packageArchiveInfo = c01.s.getPackageManager().getPackageArchiveInfo(new File(parserApk.baseCodePath).getAbsolutePath(), 0);
+            if (packageArchiveInfo == null) {
+                String[] strArr7 = xa1.b;
+                installError = installResult.installError(a.a.a.c.a(-452320744849186L, strArr7));
+                if (installOption.isFlag(8)) {
+                    wj1.t(file2);
+                }
+                a4 = a.a.a.c.a(-452045866942242L, strArr7);
+                sb2 = new StringBuilder();
+                sb2.append(a.a.a.c.a(-452161831059234L, strArr7));
+                sb2.append(System.currentTimeMillis() - currentTimeMillis);
+                a5 = a.a.a.c.a(-452767421447970L, strArr7);
+            } else {
+                if (!isPackageAbiSupported(parserApk)) {
+                    StringBuilder sb7 = new StringBuilder();
+                    sb7.append((Object) packageArchiveInfo.applicationInfo.loadLabel(c01.s.getPackageManager()));
+                    String[] strArr8 = xa1.b;
+                    sb7.append(a.a.a.c.a(-452763126480674L, strArr8));
+                    sb7.append(packageArchiveInfo.packageName);
+                    sb7.append(a.a.a.c.a(-452823256022818L, strArr8));
+                    String sb8 = sb7.toString();
+                    String str2 = packageArchiveInfo.packageName;
                     StringBuilder sb9 = new StringBuilder();
-                    sb9.append(a.a.a.c.a(-452617097592610L, strArr9));
-                    sb9.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                    zd.p(sb9, a.a.a.c.a(-452672932167458L, strArr9), 3, strA9);
-                    return installResultInstallError4;
+                    sb9.append(sb8);
+                    sb9.append(Process.is64Bit() ? a.a.a.c.a(-452814666088226L, strArr8) : a.a.a.c.a(-452956400008994L, strArr8));
+                    InstallResult installError4 = installResult.installError(str2, sb9.toString());
+                    if (installOption.isFlag(8)) {
+                        wj1.t(file2);
+                    }
+                    String a10 = a.a.a.c.a(-452501133475618L, strArr8);
+                    StringBuilder sb10 = new StringBuilder();
+                    sb10.append(a.a.a.c.a(-452617097592610L, strArr8));
+                    sb10.append(System.currentTimeMillis() - currentTimeMillis);
+                    zd.p(sb10, a.a.a.c.a(-452672932167458L, strArr8), 3, a10);
+                    return installError4;
                 }
-                installResult.packageName = r13.packageName;
+                installResult.packageName = parserApk.packageName;
                 if (installOption.isFlag(1)) {
-                    r13.applicationInfo = c01.s.getPackageManager().getPackageInfo(r13.packageName, 0).applicationInfo;
+                    parserApk.applicationInfo = c01.s.getPackageManager().getPackageInfo(parserApk.packageName, 0).applicationInfo;
                 }
-                BPackageSettings packageLPw = this.mSettings.getPackageLPw(r13.packageName, r13, installOption);
-                BProcessManagerService.get().killPackageAsUser(r13.packageName, i);
+                BPackageSettings packageLPw = this.mSettings.getPackageLPw(parserApk.packageName, parserApk, installOption);
+                BProcessManagerService.get().killPackageAsUser(parserApk.packageName, i);
                 if (BPackageInstallerService.get().installPackageAsUser(packageLPw, i) >= 0) {
                     synchronized (this.mPackages) {
                         packageLPw.setInstalled(true, i);
@@ -532,34 +532,46 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                     }
                     this.mComponentResolver.removeAllComponents(packageLPw.pkg);
                     this.mComponentResolver.addAllComponents(packageLPw.pkg);
-                    this.mSettings.scanPackage(r13.packageName);
+                    this.mSettings.scanPackage(parserApk.packageName);
                     onPackageInstalled(packageLPw.pkg.packageName, i);
                     if (installOption.isFlag(8)) {
                         wj1.t(file2);
                     }
-                    String[] strArr10 = xa1.b;
-                    strA = a.a.a.c.a(-451302837600034L, strArr10);
+                    String[] strArr9 = xa1.b;
+                    a2 = a.a.a.c.a(-451302837600034L, strArr9);
                     sb = new StringBuilder();
-                    sb.append(a.a.a.c.a(-450851866033954L, strArr10));
-                    sb.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                    strA2 = a.a.a.c.a(-450924880477986L, strArr10);
-                    zd.p(sb, strA2, 3, strA);
+                    sb.append(a.a.a.c.a(-450851866033954L, strArr9));
+                    sb.append(System.currentTimeMillis() - currentTimeMillis);
+                    a3 = a.a.a.c.a(-450924880477986L, strArr9);
+                    zd.p(sb, a3, 3, a2);
                     return installResult;
                 }
-                String[] strArr11 = xa1.b;
-                installResultInstallError = installResult.installError(a.a.a.c.a(-452668637200162L, strArr11));
+                String[] strArr10 = xa1.b;
+                installError = installResult.installError(a.a.a.c.a(-452668637200162L, strArr10));
                 if (installOption.isFlag(8)) {
                     wj1.t(file2);
                 }
-                strA3 = a.a.a.c.a(-451135333875490L, strArr11);
+                a4 = a.a.a.c.a(-451135333875490L, strArr10);
                 sb2 = new StringBuilder();
-                sb2.append(a.a.a.c.a(-451182578515746L, strArr11));
-                sb2.append(System.currentTimeMillis() - jCurrentTimeMillis);
-                strA4 = a.a.a.c.a(-451307132567330L, strArr11);
+                sb2.append(a.a.a.c.a(-451182578515746L, strArr10));
+                sb2.append(System.currentTimeMillis() - currentTimeMillis);
+                a5 = a.a.a.c.a(-451307132567330L, strArr10);
             }
+            zd.p(sb2, a5, 3, a4);
+            return installError;
         }
-        zd.p(sb2, strA4, 3, strA3);
-        return installResultInstallError;
+        String[] strArr11 = xa1.b;
+        installError = installResult.installError(a.a.a.c.a(-449675044994850L, strArr11));
+        if (installOption.isFlag(8)) {
+            wj1.t(file2);
+        }
+        a4 = a.a.a.c.a(-449185418723106L, strArr11);
+        sb2 = new StringBuilder();
+        sb2.append(a.a.a.c.a(-449301382840098L, strArr11));
+        sb2.append(System.currentTimeMillis() - currentTimeMillis);
+        a5 = a.a.a.c.a(-449357217414946L, strArr11);
+        zd.p(sb2, a5, 3, a4);
+        return installError;
     }
 
     private boolean isGoogleAuthenticatorPackage(String str) {
@@ -632,23 +644,23 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     private static int measuredParcelSize(PackageInfo packageInfo) {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            packageInfo.writeToParcel(parcelObtain, 1);
-            return parcelObtain.dataSize();
+            packageInfo.writeToParcel(obtain, 1);
+            return obtain.dataSize();
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 
     private PackageParser.Package parserApk(String str) {
         try {
             new File(str);
-            PackageParser packageParserB = am1.b();
-            PackageParser.Package packageC = am1.c(packageParserB, new File(str));
-            retainParsedSplitPaths(packageC);
-            am1.a(packageParserB, packageC);
-            return packageC;
+            PackageParser b = am1.b();
+            PackageParser.Package c = am1.c(b, new File(str));
+            retainParsedSplitPaths(c);
+            am1.a(b, c);
+            return c;
         } catch (Throwable th) {
             th.printStackTrace();
             return null;
@@ -656,7 +668,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     private List<ResolveInfo> queryIntentActivities(Intent intent, String str, int i, int i2) {
-        List<ResolveInfo> listQueryActivities;
+        List<ResolveInfo> queryActivities;
         ComponentName component = intent.getComponent();
         if (component == null && intent.getSelector() != null) {
             intent = intent.getSelector();
@@ -673,9 +685,9 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
             }
         }
         synchronized (this.mPackages) {
-            listQueryActivities = this.mComponentResolver.queryActivities(intent, str, i, i2);
+            queryActivities = this.mComponentResolver.queryActivities(intent, str, i, i2);
         }
-        return listQueryActivities;
+        return queryActivities;
     }
 
     private List<ResolveInfo> queryIntentServicesInternal(Intent intent, String str, int i, int i2) {
@@ -741,11 +753,11 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     private List<String> scopeGoogleSharedUidPackagesForCaller(List<String> list) {
-        ProcessRecord processRecordFindProcessByPid;
-        if (list == null || list.size() <= 1 || (processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null) {
+        ProcessRecord findProcessByPid;
+        if (list == null || list.size() <= 1 || (findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null) {
             return list;
         }
-        String packageName = processRecordFindProcessByPid.getPackageName();
+        String packageName = findProcessByPid.getPackageName();
         if (!GmsCore.isGoogleAppOrService(packageName)) {
             return list;
         }
@@ -772,13 +784,13 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
             if (i2 >= 0) {
                 intent.putExtra(a.a.a.c.a(-465085387652898L, strArr), BUserHandle.getUid(i, i2));
             }
-            Intent intentSendBroadcast = BActivityManagerService.get().sendBroadcast(intent, null, i);
-            if (intentSendBroadcast == null) {
+            Intent sendBroadcast = BActivityManagerService.get().sendBroadcast(intent, null, i);
+            if (sendBroadcast == null) {
                 return;
             }
-            intentSendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
-            ProxyBroadcastRecord.saveStub(intentSendBroadcast, intent, i);
-            c01.s.sendBroadcast(intentSendBroadcast);
+            sendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
+            ProxyBroadcastRecord.saveStub(sendBroadcast, intent, i);
+            c01.s.sendBroadcast(sendBroadcast);
             nz0.Q(a.a.a.c.a(-464643006021410L, strArr), 3, a.a.a.c.a(-464741790269218L, strArr) + str + a.a.a.c.a(-458892044812066L, strArr) + str2 + a.a.a.c.a(-458922109583138L, strArr) + i);
         } catch (Throwable th) {
             nz0.P(a.a.a.c.a(-458956469321506L, strArr), a.a.a.c.a(-458505497755426L, strArr) + str + a.a.a.c.a(-458763195793186L, strArr) + str2 + a.a.a.c.a(-459343016378146L, strArr) + i, th);
@@ -786,8 +798,8 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     private boolean shouldExposeGooglePackagesToCaller() {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        return processRecordFindProcessByPid != null && GmsCore.isGoogleAppOrService(processRecordFindProcessByPid.getPackageName());
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        return findProcessByPid != null && GmsCore.isGoogleAppOrService(findProcessByPid.getPackageName());
     }
 
     private static void stripComponentMetaData(PackageInfo packageInfo) {
@@ -833,10 +845,10 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         StringBuilder sb = new StringBuilder();
         sb.append(packageInfo.packageName);
         String[] strArr = xa1.b;
-        String strJ = jx0.j(sb, a.a.a.c.a(-457165467959074L, strArr), i);
+        String j = jx0.j(sb, a.a.a.c.a(-457165467959074L, strArr), i);
         Map<String, Integer> map = sPackageInfoTrimDecisions;
         synchronized (map) {
-            num = map.get(strJ);
+            num = map.get(j);
         }
         if (num != null) {
             applyPackageInfoTrimDecision(packageInfo, num.intValue(), i);
@@ -844,38 +856,38 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         }
         try {
             if (measuredParcelSize(packageInfo) <= MAX_PACKAGE_INFO_BINDER_BYTES) {
-                rememberPackageInfoTrimDecision(strJ, 0);
+                rememberPackageInfoTrimDecision(j, 0);
                 return packageInfo;
             }
             stripComponentMetaData(packageInfo);
             if (measuredParcelSize(packageInfo) <= MAX_PACKAGE_INFO_BINDER_BYTES) {
-                rememberPackageInfoTrimDecision(strJ, 1);
+                rememberPackageInfoTrimDecision(j, 1);
                 nz0.Q(a.a.a.c.a(-457156878024482L, strArr), 5, a.a.a.c.a(-457272842141474L, strArr) + packageInfo.packageName);
                 return packageInfo;
             }
             dropNonServiceComponentArrays(packageInfo, i);
             if (measuredParcelSize(packageInfo) <= MAX_PACKAGE_INFO_BINDER_BYTES) {
-                rememberPackageInfoTrimDecision(strJ, 2);
+                rememberPackageInfoTrimDecision(j, 2);
                 nz0.Q(a.a.a.c.a(-457083863580450L, strArr), 5, a.a.a.c.a(-455533380386594L, strArr) + packageInfo.packageName);
                 return packageInfo;
             }
             keepOnlyEssentialJobServices(packageInfo, i);
             if (measuredParcelSize(packageInfo) <= MAX_PACKAGE_INFO_BINDER_BYTES) {
-                rememberPackageInfoTrimDecision(strJ, 3);
+                rememberPackageInfoTrimDecision(j, 3);
                 nz0.Q(a.a.a.c.a(-455279977316130L, strArr), 5, a.a.a.c.a(-455378761563938L, strArr) + packageInfo.packageName);
                 return packageInfo;
             }
-            rememberPackageInfoTrimDecision(strJ, 4);
+            rememberPackageInfoTrimDecision(j, 4);
             nz0.Q(a.a.a.c.a(-456199100317474L, strArr), 5, a.a.a.c.a(-455748128751394L, strArr) + packageInfo.packageName);
             dropComponentArrays(packageInfo, i);
             return packageInfo;
         } catch (Throwable th) {
             String[] strArr2 = xa1.b;
-            String strA = a.a.a.c.a(-449997167542050L, strArr2);
+            String a2 = a.a.a.c.a(-449997167542050L, strArr2);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(a.a.a.c.a(-450095951789858L, strArr2));
             sb2.append(packageInfo.packageName);
-            zd.s(sb2, a.a.a.c.a(-449717994667810L, strArr2), th, 5, strA);
+            zd.s(sb2, a.a.a.c.a(-449717994667810L, strArr2), th, 5, a2);
             return packageInfo;
         }
     }
@@ -909,13 +921,13 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         resolveInfo.isDefault = true;
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(resolveInfo);
-        String strA = a.a.a.c.a(-442313471049506L, strArr);
+        String a2 = a.a.a.c.a(-442313471049506L, strArr);
         StringBuilder sb = new StringBuilder();
         zd.q(sb, a.a.a.c.a(-442429435166498L, strArr), intent);
         sb.append(a.a.a.c.a(-442090132750114L, strArr));
         sb.append(serviceInfo.packageName);
         sb.append(a.a.a.c.a(-442077247848226L, strArr));
-        zd.p(sb, serviceInfo.name, 3, strA);
+        zd.p(sb, serviceInfo.name, 3, a2);
         return arrayList;
     }
 
@@ -941,13 +953,13 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         resolveInfo.isDefault = true;
         ArrayList arrayList = new ArrayList(1);
         arrayList.add(resolveInfo);
-        String strA = a.a.a.c.a(-454249185165090L, strArr);
+        String a2 = a.a.a.c.a(-454249185165090L, strArr);
         StringBuilder sb = new StringBuilder();
         zd.q(sb, a.a.a.c.a(-454347969412898L, strArr), intent);
         sb.append(a.a.a.c.a(-455116768558882L, strArr));
         sb.append(serviceInfo.packageName);
         sb.append(a.a.a.c.a(-455155423264546L, strArr));
-        zd.p(sb, serviceInfo.name, 3, strA);
+        zd.p(sb, serviceInfo.name, 3, a2);
         return arrayList;
     }
 
@@ -1025,14 +1037,14 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 return null;
             }
         }
-        int iUpdateFlags = updateFlags(i, i2);
+        int updateFlags = updateFlags(i, i2);
         synchronized (this.mPackages) {
             try {
                 BPackageSettings bPackageSettings = this.mPackages.get(str);
                 if (bPackageSettings == null) {
                     return null;
                 }
-                return PackageManagerCompat.generateApplicationInfo(bPackageSettings.pkg, iUpdateFlags, bPackageSettings.readUserState(i2), i2);
+                return PackageManagerCompat.generateApplicationInfo(bPackageSettings.pkg, updateFlags, bPackageSettings.readUserState(i2), i2);
             } catch (Throwable th) {
                 throw th;
             }
@@ -1122,14 +1134,14 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 return null;
             }
         }
-        int iUpdateFlags = updateFlags(i, i2);
+        int updateFlags = updateFlags(i, i2);
         synchronized (this.mPackages) {
             try {
                 BPackageSettings bPackageSettings = this.mPackages.get(str);
                 if (bPackageSettings == null) {
                     return null;
                 }
-                return trimPackageInfoForBinder(PackageManagerCompat.generatePackageInfo(bPackageSettings, iUpdateFlags, bPackageSettings.readUserState(i2), i2), iUpdateFlags);
+                return trimPackageInfoForBinder(PackageManagerCompat.generatePackageInfo(bPackageSettings, updateFlags, bPackageSettings.readUserState(i2), i2), updateFlags);
             } catch (Throwable th) {
                 throw th;
             }
@@ -1139,7 +1151,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     @Override // com.kos.engine.core.system.pm.IBPackageManagerService
     public String[] getPackagesForUid(int i, int i2) {
         String[] strArr;
-        ProcessRecord processRecordFindProcessByPid;
+        ProcessRecord findProcessByPid;
         if (!sUserManager.exists(i2)) {
             return new String[0];
         }
@@ -1152,8 +1164,8 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                         arrayList.add(str);
                     }
                 }
-                if (arrayList.isEmpty() && (processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) != null) {
-                    arrayList.add(processRecordFindProcessByPid.getPackageName());
+                if (arrayList.isEmpty() && (findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) != null) {
+                    arrayList.add(findProcessByPid.getPackageName());
                 }
                 strArr = (String[]) scopeGoogleSharedUidPackagesForCaller(arrayList).toArray(new String[0]);
             } catch (Throwable th) {
@@ -1235,11 +1247,11 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
 
     @Override // com.kos.engine.core.system.pm.IBPackageManagerService
     public InstallResult installPackageAsUser(String str, InstallOption installOption, int i) {
-        InstallResult installResultInstallPackageAsUserLocked;
+        InstallResult installPackageAsUserLocked;
         synchronized (this.mInstallLock) {
-            installResultInstallPackageAsUserLocked = installPackageAsUserLocked(str, installOption, i);
+            installPackageAsUserLocked = installPackageAsUserLocked(str, installOption, i);
         }
-        return installResultInstallPackageAsUserLocked;
+        return installPackageAsUserLocked;
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageManagerService
@@ -1282,11 +1294,11 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         }
         String[] strArr = xa1.b;
         sendVirtualPackageChangedBroadcast(a.a.a.c.a(-464359538179874L, strArr), str, i, getAppId(str), false);
-        String strA = a.a.a.c.a(-464479797264162L, strArr);
+        String a2 = a.a.a.c.a(-464479797264162L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-464028825698082L, strArr));
         sb.append(str);
-        zd.o(sb, a.a.a.c.a(-464153379749666L, strArr), i, 3, strA);
+        zd.o(sb, a.a.a.c.a(-464153379749666L, strArr), i, 3, a2);
     }
 
     public void onPackageUninstalled(String str, boolean z, int i, int i2) {
@@ -1296,11 +1308,11 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         }
         String[] strArr = xa1.b;
         sendVirtualPackageChangedBroadcast(a.a.a.c.a(-466133359673122L, strArr), str, i, i2, true);
-        String strA = a.a.a.c.a(-465763992485666L, strArr);
+        String a2 = a.a.a.c.a(-465763992485666L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-465879956602658L, strArr));
         sb.append(str);
-        zd.o(sb, a.a.a.c.a(-464329473408802L, strArr), i, 3, strA);
+        zd.o(sb, a.a.a.c.a(-464329473408802L, strArr), i, 3, a2);
     }
 
     public List<ResolveInfo> queryBroadcastReceivers(Intent intent, int i, String str, int i2) {
@@ -1402,9 +1414,9 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
 
     @Override // com.kos.engine.core.system.pm.IBPackageManagerService
     public ResolveInfo resolveService(Intent intent, int i, String str, int i2) {
-        List<ResolveInfo> listQueryIntentServicesInternal;
-        if (sUserManager.exists(i2) && (listQueryIntentServicesInternal = queryIntentServicesInternal(intent, str, i, i2)) != null && listQueryIntentServicesInternal.size() >= 1) {
-            return listQueryIntentServicesInternal.get(0);
+        List<ResolveInfo> queryIntentServicesInternal;
+        if (sUserManager.exists(i2) && (queryIntentServicesInternal = queryIntentServicesInternal(intent, str, i, i2)) != null && queryIntentServicesInternal.size() >= 1) {
+            return queryIntentServicesInternal.get(0);
         }
         return null;
     }
@@ -1494,7 +1506,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
     }
 
     public List<ResolveInfo> queryIntentActivities(Intent intent, int i, String str, int i2) {
-        List<ResolveInfo> arrayList;
+        List<ResolveInfo> list;
         if (!sUserManager.exists(i2)) {
             return Collections.EMPTY_LIST;
         }
@@ -1506,28 +1518,28 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
         }
         Intent intent2 = intent;
         if (component != null) {
-            ArrayList arrayList2 = new ArrayList(1);
+            ArrayList arrayList = new ArrayList(1);
             ActivityInfo activityInfo = getActivityInfo(component, i, i2);
             if (activityInfo != null) {
                 ResolveInfo resolveInfo = new ResolveInfo();
                 resolveInfo.activityInfo = activityInfo;
-                arrayList2.add(resolveInfo);
+                arrayList.add(resolveInfo);
             }
-            return arrayList2;
+            return arrayList;
         }
         synchronized (this.mPackages) {
             try {
                 if (str2 != null) {
                     BPackageSettings bPackageSettings = this.mPackages.get(str2);
                     if (bPackageSettings != null) {
-                        arrayList = this.mComponentResolver.queryActivities(intent2, str, i, bPackageSettings.pkg.activities, i2);
+                        list = this.mComponentResolver.queryActivities(intent2, str, i, bPackageSettings.pkg.activities, i2);
                     } else {
-                        arrayList = null;
+                        list = null;
                     }
-                    if ((arrayList == null || arrayList.size() == 0) && arrayList == null) {
-                        arrayList = new ArrayList<>();
+                    if ((list == null || list.size() == 0) && list == null) {
+                        list = new ArrayList<>();
                     }
-                    return arrayList;
+                    return list;
                 }
                 return Collections.EMPTY_LIST;
             } catch (Throwable th) {

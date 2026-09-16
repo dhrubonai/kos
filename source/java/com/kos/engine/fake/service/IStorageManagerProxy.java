@@ -38,17 +38,17 @@ public class IStorageManagerProxy extends BinderInvocationStub {
     public static class GetStorageProbeBytes extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            Object objFallbackForStorageProbe = IStorageManagerProxy.fallbackForStorageProbe(method);
+            Object fallbackForStorageProbe = IStorageManagerProxy.fallbackForStorageProbe(method);
             String[] strArr = xa1.b;
-            String strA = c.a(-994672035118882L, strArr);
+            String a2 = c.a(-994672035118882L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-994727869693730L, strArr), method);
             sb.append(c.a(-997575433010978L, strArr));
             sb.append(rj.o());
             sb.append(c.a(-997618382683938L, strArr));
-            sb.append(objFallbackForStorageProbe);
-            nz0.Q(strA, 3, sb.toString());
-            return objFallbackForStorageProbe;
+            sb.append(fallbackForStorageProbe);
+            nz0.Q(a2, 3, sb.toString());
+            return fallbackForStorageProbe;
         }
     }
 
@@ -56,7 +56,7 @@ public class IStorageManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getVolumeList")
     public static class GetVolumeList extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             if (objArr == null) {
                 c01 c01Var = c01.r;
                 StorageVolume[] volumeList = BStorageManager.get().getVolumeList(rj.r(), null, 0, rj.u());
@@ -66,11 +66,11 @@ public class IStorageManagerProxy extends BinderInvocationStub {
                 return IStorageManagerProxy.virtualizeVolumePaths(volumeList, rj.u());
             }
             try {
-                int iIntValue = ((Integer) objArr[0]).intValue();
+                int intValue = ((Integer) objArr[0]).intValue();
                 String str = (String) objArr[1];
-                int iIntValue2 = ((Integer) objArr[2]).intValue();
+                int intValue2 = ((Integer) objArr[2]).intValue();
                 c01 c01Var2 = c01.r;
-                StorageVolume[] volumeList2 = BStorageManager.get().getVolumeList(iIntValue, str, iIntValue2, rj.u());
+                StorageVolume[] volumeList2 = BStorageManager.get().getVolumeList(intValue, str, intValue2, rj.u());
                 if (volumeList2 == null || volumeList2.length == 0) {
                     volumeList2 = IStorageManagerProxy.getHostVolumeList(obj, method, objArr);
                 }
@@ -87,26 +87,26 @@ public class IStorageManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strFindRequestedPath = IStorageManagerProxy.findRequestedPath(objArr);
-            if (strFindRequestedPath == null) {
+            String findRequestedPath = IStorageManagerProxy.findRequestedPath(objArr);
+            if (findRequestedPath == null) {
                 nz0.Q(c.a(-997648447455010L, strArr), 5, c.a(-997755821637410L, strArr) + rj.o());
                 return IStorageManagerProxy.mkdirResult(method, false);
             }
             File externalUserDir = BEnvironment.getExternalUserDir(rj.u());
-            File fileF = IStorageManagerProxy.f(externalUserDir, strFindRequestedPath);
-            if (!IStorageManagerProxy.isInsideVirtualRoot(externalUserDir, fileF)) {
-                String strA = c.a(-997399339351842L, strArr);
+            File f = IStorageManagerProxy.f(externalUserDir, findRequestedPath);
+            if (!IStorageManagerProxy.isInsideVirtualRoot(externalUserDir, f)) {
+                String a2 = c.a(-997399339351842L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-997506713534242L, strArr));
                 sb.append(rj.o());
-                jx0.r(sb, c.a(-998266922745634L, strArr), strFindRequestedPath, 5, strA);
+                jx0.r(sb, c.a(-998266922745634L, strArr), findRequestedPath, 5, a2);
                 return IStorageManagerProxy.mkdirResult(method, false);
             }
-            boolean z = fileF.isDirectory() || fileF.mkdirs();
+            boolean z = f.isDirectory() || f.mkdirs();
             if (z) {
-                nz0.Q(c.a(-998314167385890L, strArr), 3, c.a(-997820246146850L, strArr) + rj.o() + c.a(-997987749871394L, strArr) + fileF);
+                nz0.Q(c.a(-998314167385890L, strArr), 3, c.a(-997820246146850L, strArr) + rj.o() + c.a(-997987749871394L, strArr) + f);
             } else {
-                nz0.Q(c.a(-997983454904098L, strArr), 5, c.a(-996441561644834L, strArr) + rj.o() + c.a(-996647720075042L, strArr) + fileF);
+                nz0.Q(c.a(-997983454904098L, strArr), 5, c.a(-996441561644834L, strArr) + rj.o() + c.a(-996647720075042L, strArr) + f);
             }
             return IStorageManagerProxy.mkdirResult(method, z);
         }
@@ -128,15 +128,15 @@ public class IStorageManagerProxy extends BinderInvocationStub {
     }
 
     private void disableFrameworkVolumeListCache() {
-        Object objSVolumeListCache;
+        Object sVolumeListCache;
         String[] strArr = xa1.b;
         try {
-            if (BRStorageManager.get()._check_sVolumeListCache() == null || (objSVolumeListCache = BRStorageManager.get().sVolumeListCache()) == null) {
+            if (BRStorageManager.get()._check_sVolumeListCache() == null || (sVolumeListCache = BRStorageManager.get().sVolumeListCache()) == null) {
                 return;
             }
-            fy1 fy1VarI = fy1.i(objSVolumeListCache);
-            fy1VarI.f(c.a(-996196748508962L, strArr), new Class[0]);
-            fy1VarI.a(fy1VarI.b, new Object[0]);
+            fy1 i = fy1.i(sVolumeListCache);
+            i.f(c.a(-996196748508962L, strArr), new Class[0]);
+            i.a(i.b, new Object[0]);
             nz0.Q(c.a(-996269762952994L, strArr), 3, c.a(-996394317004578L, strArr));
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-996720734519074L, strArr), th, 5, c.a(-997214655758114L, strArr));
@@ -191,7 +191,7 @@ public class IStorageManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static StorageVolume[] getHostVolumeList(Object obj, Method method, Object[] objArr) throws Throwable {
+    public static StorageVolume[] getHostVolumeList(Object obj, Method method, Object[] objArr) {
         Object[] objArr2 = objArr == null ? null : (Object[]) objArr.clone();
         if (objArr2 != null) {
             if (objArr2.length > 0 && (objArr2[0] instanceof Integer)) {
@@ -217,20 +217,20 @@ public class IStorageManagerProxy extends BinderInvocationStub {
         if (!externalUserDir.isDirectory() && !externalUserDir.mkdirs()) {
             nz0.Q(c.a(-1007458152759074L, strArr), 5, c.a(-1007496807464738L, strArr) + externalUserDir);
         }
-        long jAvailableBytes = availableBytes(externalUserDir);
-        if (jAvailableBytes > 0) {
-            return jAvailableBytes;
+        long availableBytes = availableBytes(externalUserDir);
+        if (availableBytes > 0) {
+            return availableBytes;
         }
-        long jAvailableBytes2 = availableBytes(BEnvironment.getVirtualRoot());
-        if (jAvailableBytes2 > 0) {
-            return jAvailableBytes2;
+        long availableBytes2 = availableBytes(BEnvironment.getVirtualRoot());
+        if (availableBytes2 > 0) {
+            return availableBytes2;
         }
         nz0.Q(c.a(-1007672901123874L, strArr), 5, c.a(-1007230519492386L, strArr));
         return 536870912L;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static boolean isInsideVirtualRoot(File file, File file2) throws IOException {
+    public static boolean isInsideVirtualRoot(File file, File file2) {
         if (file != null && file2 != null) {
             try {
                 String canonicalPath = file.getCanonicalPath();
@@ -280,9 +280,9 @@ public class IStorageManagerProxy extends BinderInvocationStub {
             if (str.equals(str2)) {
                 return file;
             }
-            StringBuilder sbK = jx0.k(str2);
-            sbK.append(c.a(-1008819657391906L, strArr));
-            if (str.startsWith(sbK.toString())) {
+            StringBuilder k = jx0.k(str2);
+            k.append(c.a(-1008819657391906L, strArr));
+            if (str.startsWith(k.toString())) {
                 return new File(file, str.substring(str2.length() + 1));
             }
         }
@@ -322,16 +322,16 @@ public class IStorageManagerProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException e) {
-            Object objFallbackForStorageProbe = fallbackForStorageProbe(method);
-            if (objFallbackForStorageProbe == null) {
+            Object fallbackForStorageProbe = fallbackForStorageProbe(method);
+            if (fallbackForStorageProbe == null) {
                 throw e;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-996926892949282L, strArr);
+            String a2 = c.a(-996926892949282L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1008579139223330L, strArr), method);
-            zd.p(sb, c.a(-1008716578176802L, strArr), 5, strA);
-            return objFallbackForStorageProbe;
+            zd.p(sb, c.a(-1008716578176802L, strArr), 5, a2);
+            return fallbackForStorageProbe;
         }
     }
 

@@ -11,12 +11,12 @@ public final class oz1 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        Object objCall;
+        Object obj;
         try {
-            objCall = this.d.call();
+            obj = this.d.call();
         } catch (Exception unused) {
-            objCall = null;
+            obj = null;
         }
-        this.f.post(new u3(4, this.e, objCall, false));
+        this.f.post(new u3(4, this.e, obj, false));
     }
 }

@@ -11,11 +11,11 @@ import java.util.LinkedHashMap;
 public final class k4 implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f619a;
+    public final /* synthetic */ int f618a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ k4(int i, Object obj) {
-        this.f619a = i;
+        this.f618a = i;
         this.b = obj;
     }
 
@@ -23,9 +23,9 @@ public final class k4 implements j90 {
     public final void a() {
         Object parcelable;
         Integer num;
-        switch (this.f619a) {
+        switch (this.f618a) {
             case 0:
-                h4 h4Var = ((e4) this.b).f283a;
+                h4 h4Var = ((e4) this.b).f282a;
                 if (h4Var == null) {
                     throw new IllegalStateException("Launcher has not been initialized");
                 }
@@ -35,7 +35,7 @@ public final class k4 implements j90 {
                 LinkedHashMap linkedHashMap = xuVar.f;
                 lx0.x(str, "key");
                 if (!xuVar.d.contains(str) && (num = (Integer) xuVar.b.remove(str)) != null) {
-                    xuVar.f1357a.remove(num);
+                    xuVar.f1356a.remove(num);
                 }
                 xuVar.e.remove(str);
                 if (linkedHashMap.containsKey(str)) {
@@ -76,16 +76,16 @@ public final class k4 implements j90 {
             case 4:
                 ((uj2) this.b).k();
                 return;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 ((l31) this.b).d = null;
                 return;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ((a41) this.b).c = null;
                 return;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 w31 w31Var = (w31) this.b;
-                int iG = w31Var.d.g();
-                for (int i = 0; i < iG; i++) {
+                int g = w31Var.d.g();
+                for (int i = 0; i < g; i++) {
                     w31Var.b();
                 }
                 return;

@@ -7,16 +7,16 @@ import java.io.File;
 public final class bi0 implements qz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f151a;
+    public final boolean f150a;
 
     public bi0(boolean z) {
-        this.f151a = z;
+        this.f150a = z;
     }
 
     @Override // androidx.emoji2.text.qz0
     public final String a(Object obj, gl1 gl1Var) {
         File file = (File) obj;
-        if (!this.f151a) {
+        if (!this.f150a) {
             return file.getPath();
         }
         return file.getPath() + ':' + file.lastModified();

@@ -38,11 +38,13 @@ public final /* synthetic */ class iv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$9;
         int i = this.d;
         Object obj3 = this.f;
         switch (i) {
             case 0:
-                return ComposableLambdaImpl.invoke$lambda$9((ComposableLambdaImpl) obj3, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.e, (lx) obj, ((Integer) obj2).intValue());
+                invoke$lambda$9 = ComposableLambdaImpl.invoke$lambda$9((ComposableLambdaImpl) obj3, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.e, (lx) obj, ((Integer) obj2).intValue());
+                return invoke$lambda$9;
             default:
                 final e30 e30Var = (e30) obj3;
                 final dh dhVar = (dh) this.g;
@@ -56,21 +58,21 @@ public final /* synthetic */ class iv implements Function2 {
                 final mf1 mf1Var5 = (mf1) this.o;
                 final mf1 mf1Var6 = (mf1) this.p;
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Integer) obj2).intValue();
-                String[] strArr = wj1.f1284a;
+                int intValue = ((Integer) obj2).intValue();
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-426160099049250L, strArr);
                 tx txVar = (tx) lxVar;
-                if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     boolean z = !((Boolean) mf1Var.getValue()).booleanValue();
-                    em1 em1Var = co.f210a;
-                    bo boVarA = co.a(pl2.f914a, 0L, 0L, txVar, 14);
-                    r12 r12VarA = s12.a(12);
+                    em1 em1Var = co.f209a;
+                    bo a2 = co.a(pl2.f913a, 0L, 0L, txVar, 14);
+                    r12 a3 = s12.a(12);
                     a.a.a.c.a(-424575256117026L, strArr);
-                    boolean zH = txVar.h(e30Var) | txVar.h(dhVar);
+                    boolean h = txVar.h(e30Var) | txVar.h(dhVar);
                     final int i2 = this.e;
-                    boolean zD = zH | txVar.d(i2) | txVar.h(h82Var) | txVar.d(bh0Var.ordinal()) | txVar.h(context);
-                    Object objM = txVar.M();
-                    if (zD || objM == kx.f663a) {
+                    boolean d = h | txVar.d(i2) | txVar.h(h82Var) | txVar.d(bh0Var.ordinal()) | txVar.h(context);
+                    Object M = txVar.M();
+                    if (d || M == kx.f662a) {
                         sm0 sm0Var = new sm0() { // from class: androidx.emoji2.text.t82
                             @Override // androidx.emoji2.text.sm0
                             public final Object a() {
@@ -78,17 +80,17 @@ public final /* synthetic */ class iv implements Function2 {
                                 mf1 mf1Var7 = mf1Var;
                                 mf1Var7.setValue(bool);
                                 h50.G(e30Var, null, new l92(dhVar, i2, h82Var, bh0Var, context, mf1Var7, mf1Var2, mf1Var3, mf1Var4, mf1Var5, mf1Var6, null), 3);
-                                return up2.f1187a;
+                                return up2.f1186a;
                             }
                         };
                         txVar.i0(sm0Var);
-                        objM = sm0Var;
+                        M = sm0Var;
                     }
-                    lx0.c((sm0) objM, null, z, r12VarA, boVarA, null, null, null, ow.k, txVar, 805306368, 482);
+                    lx0.c((sm0) M, null, z, a3, a2, null, null, null, ow.k, txVar, 805306368, 482);
                 } else {
                     txVar.S();
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

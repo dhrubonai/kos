@@ -32,6 +32,7 @@ public final class ThemeUtils {
         }
 
         public static final void applyThemesSystemBarAppearance(Resources.Theme theme, View view, TypedValue typedValue) {
+            WindowInsetsController windowInsetsController;
             lx0.x(theme, "theme");
             lx0.x(view, "decor");
             lx0.x(typedValue, "tv");
@@ -39,7 +40,7 @@ public final class ThemeUtils {
             if (theme.resolveAttribute(android.R.attr.windowLightNavigationBar, typedValue, true) && typedValue.data != 0) {
                 i |= 16;
             }
-            WindowInsetsController windowInsetsController = view.getWindowInsetsController();
+            windowInsetsController = view.getWindowInsetsController();
             lx0.u(windowInsetsController);
             windowInsetsController.setSystemBarsAppearance(i, 24);
         }

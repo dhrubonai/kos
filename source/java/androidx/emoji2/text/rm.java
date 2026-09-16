@@ -23,7 +23,7 @@ public final class rm extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        qm.b((gr1) obj, this.e, this.f, this.g.getLayoutDirection(), this.h, this.i, this.j.f1130a);
-        return up2.f1187a;
+        qm.b((gr1) obj, this.e, this.f, this.g.getLayoutDirection(), this.h, this.i, this.j.f1129a);
+        return up2.f1186a;
     }
 }

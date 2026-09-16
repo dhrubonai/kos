@@ -1,72 +1,69 @@
 package androidx.compose.material3.internal;
 
+import androidx.emoji2.text.a6;
 import androidx.emoji2.text.f30;
 import androidx.emoji2.text.hh2;
+import androidx.emoji2.text.l10;
 import androidx.emoji2.text.m6;
+import androidx.emoji2.text.mz0;
+import androidx.emoji2.text.n10;
 import androidx.emoji2.text.nd1;
+import androidx.emoji2.text.sm0;
 import androidx.emoji2.text.up2;
 import androidx.emoji2.text.vf1;
+import androidx.emoji2.text.wj1;
 import androidx.emoji2.text.y5;
+import androidx.emoji2.text.z5;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public abstract class a {
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Can't wrap try/catch for region: R(10:0|1|(2:3|(7:5|6|7|(1:(1:10)(2:16|17))(4:18|19|20|(1:22))|11|12|13))|24|6|7|(0)(0)|11|12|13) */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object a(androidx.emoji2.text.sm0 r4, kotlin.jvm.functions.Function2 r5, androidx.emoji2.text.n10 r6) {
-        /*
-            boolean r0 = r6 instanceof androidx.emoji2.text.z5
-            if (r0 == 0) goto L13
-            r0 = r6
-            androidx.emoji2.text.z5 r0 = (androidx.emoji2.text.z5) r0
-            int r1 = r0.h
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.h = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.z5 r0 = new androidx.emoji2.text.z5
-            r0.<init>(r6)
-        L18:
-            java.lang.Object r6 = r0.g
-            int r1 = r0.h
-            r2 = 1
-            if (r1 == 0) goto L2d
-            if (r1 != r2) goto L25
-            androidx.emoji2.text.mz0.L(r6)     // Catch: androidx.emoji2.text.w5 -> L42
-            goto L42
-        L25:
-            java.lang.IllegalStateException r4 = new java.lang.IllegalStateException
-            java.lang.String r5 = "call to 'resume' before 'invoke' with coroutine"
-            r4.<init>(r5)
-            throw r4
-        L2d:
-            androidx.emoji2.text.mz0.L(r6)
-            androidx.emoji2.text.a6 r6 = new androidx.emoji2.text.a6     // Catch: androidx.emoji2.text.w5 -> L42
-            r1 = 0
-            r3 = 1
-            r6.<init>(r4, r5, r1, r3)     // Catch: androidx.emoji2.text.w5 -> L42
-            r0.h = r2     // Catch: androidx.emoji2.text.w5 -> L42
-            java.lang.Object r4 = androidx.emoji2.text.wj1.s(r6, r0)     // Catch: androidx.emoji2.text.w5 -> L42
-            androidx.emoji2.text.f30 r5 = androidx.emoji2.text.f30.d
-            if (r4 != r5) goto L42
-            return r5
-        L42:
-            androidx.emoji2.text.up2 r4 = androidx.emoji2.text.up2.f1187a
-            return r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.compose.material3.internal.a.a(androidx.emoji2.text.sm0, kotlin.jvm.functions.Function2, androidx.emoji2.text.n10):java.lang.Object");
+    public static final Object a(sm0 sm0Var, Function2 function2, n10 n10Var) {
+        z5 z5Var;
+        int i;
+        if (n10Var instanceof z5) {
+            z5Var = (z5) n10Var;
+            int i2 = z5Var.h;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                z5Var.h = i2 - Integer.MIN_VALUE;
+                Object obj = z5Var.g;
+                i = z5Var.h;
+                if (i != 0) {
+                    mz0.L(obj);
+                    a6 a6Var = new a6((Object) sm0Var, function2, (l10) null, 1);
+                    z5Var.h = 1;
+                    Object s = wj1.s(a6Var, z5Var);
+                    f30 f30Var = f30.d;
+                    if (s == f30Var) {
+                        return f30Var;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                }
+                return up2.f1186a;
+            }
+        }
+        z5Var = new z5(n10Var);
+        Object obj2 = z5Var.g;
+        i = z5Var.h;
+        if (i != 0) {
+        }
+        return up2.f1186a;
     }
 
     public static final Object b(m6 m6Var, Object obj, float f, hh2 hh2Var) {
-        Object objB = m6Var.b(obj, vf1.d, new y5(m6Var, f, null), hh2Var);
-        return objB == f30.d ? objB : up2.f1187a;
+        Object b = m6Var.b(obj, vf1.d, new y5(m6Var, f, null), hh2Var);
+        return b == f30.d ? b : up2.f1186a;
     }
 
     public static final nd1 c(nd1 nd1Var, m6 m6Var, Function2 function2) {

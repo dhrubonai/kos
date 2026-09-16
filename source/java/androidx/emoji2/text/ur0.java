@@ -61,9 +61,9 @@ public final class ur0 implements List, ry0 {
 
     @Override // java.util.List
     public final Object get(int i) {
-        Object objE = this.f.d.e(i + this.d);
-        lx0.v(objE, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
-        return (md1) objE;
+        Object e = this.f.d.e(i + this.d);
+        lx0.v(e, "null cannot be cast to non-null type androidx.compose.ui.Modifier.Node");
+        return (md1) e;
     }
 
     @Override // java.util.List

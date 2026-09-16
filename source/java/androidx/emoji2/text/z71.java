@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class z71 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1423a;
+    public final int f1422a;
 
     public z71(int i) {
-        this.f1423a = i;
+        this.f1422a = i;
     }
 }

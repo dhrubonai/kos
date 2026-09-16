@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class yv0 implements xv0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f1405a;
+    public final un1 f1404a;
 
     public yv0(int i) {
-        this.f1405a = az0.W(new wv0(i));
+        this.f1404a = az0.W(new wv0(i));
     }
 }

@@ -86,11 +86,11 @@ public class IGrammaticalInflectionManagerProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-575358672977698L, strArr)).getMethod(c.a(-575560536440610L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-575358672977698L, strArr)).getMethod(c.a(-575560536440610L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-575195464220450L, strArr), th, 3, c.a(-575096679972642L, strArr));
             return null;
@@ -103,10 +103,10 @@ public class IGrammaticalInflectionManagerProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-575925608660770L, strArr);
+            String a2 = c.a(-575925608660770L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-576007213039394L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 

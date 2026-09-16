@@ -20,7 +20,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Process;
-import android.os.RemoteException;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.gu2;
 import androidx.emoji2.text.ho0;
@@ -103,38 +102,27 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("bindIsolatedService")
     public static class BindIsolatedService extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:9:0x0010  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0017  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r4, java.lang.reflect.Method r5, java.lang.Object[] r6) {
-            /*
-                r3 = this;
-                r0 = 0
-                if (r6 == 0) goto L10
-                int r1 = r6.length
-                r2 = 2
-                if (r1 <= r2) goto L10
-                r1 = r6[r2]
-                boolean r2 = r1 instanceof android.content.Intent
-                if (r2 == 0) goto L10
-                android.content.Intent r1 = (android.content.Intent) r1
-                goto L11
-            L10:
-                r1 = r0
-            L11:
-                boolean r1 = com.kos.engine.fake.service.IActivityManagerProxy.h(r1)
-                if (r1 != 0) goto L1a
-                r1 = 6
-                r6[r1] = r0
-            L1a:
-                r0 = 7
-                java.lang.Object r4 = com.kos.engine.fake.service.IActivityManagerProxy.BindServiceCommon(r4, r5, r6, r0)
-                return r4
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IActivityManagerProxy.BindIsolatedService.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Intent intent;
+            if (objArr != null && objArr.length > 2) {
+                Object obj2 = objArr[2];
+                if (obj2 instanceof Intent) {
+                    intent = (Intent) obj2;
+                    if (!IActivityManagerProxy.isWebViewProviderService(intent)) {
+                        objArr[6] = null;
+                    }
+                    return IActivityManagerProxy.BindServiceCommon(obj, method, objArr, 7);
+                }
+            }
+            intent = null;
+            if (!IActivityManagerProxy.isWebViewProviderService(intent)) {
+            }
+            return IActivityManagerProxy.BindServiceCommon(obj, method, objArr, 7);
         }
 
         @Override // com.kos.engine.fake.hook.MethodHook
@@ -175,16 +163,16 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         }
 
         private void normalizeBroadcastUserId(Object[] objArr) {
-            int iIntValue;
+            int intValue;
             int i;
             int lastIntegerIndex = getLastIntegerIndex(objArr);
-            if (lastIntegerIndex >= 0 && (iIntValue = ((Integer) objArr[lastIntegerIndex]).intValue()) != (i = c01.r.p)) {
+            if (lastIntegerIndex >= 0 && (intValue = ((Integer) objArr[lastIntegerIndex]).intValue()) != (i = c01.r.p)) {
                 String[] strArr = xa1.b;
-                String strA = c.a(-746581839200034L, strArr);
+                String a2 = c.a(-746581839200034L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-746702098284322L, strArr));
-                sb.append(iIntValue);
-                zd.o(sb, c.a(-747410767888162L, strArr), i, 3, strA);
+                sb.append(intValue);
+                zd.o(sb, c.a(-747410767888162L, strArr), i, 3, a2);
                 objArr[lastIntegerIndex] = Integer.valueOf(i);
             }
         }
@@ -205,24 +193,24 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             Intent intent = (Intent) objArr[intentIndex];
             String str = (String) objArr[intentIndex + 1];
             if (ProxyBroadcastRecord.isPreparedShadow(intent)) {
-                String strA = c.a(-743399268433698L, strArr);
+                String a2 = c.a(-743399268433698L, strArr);
                 StringBuilder sb = new StringBuilder();
                 zd.q(sb, c.a(-743450808041250L, strArr), intent);
                 sb.append(c.a(-744348456206114L, strArr));
                 sb.append(rj.u());
-                nz0.Q(strA, 3, sb.toString());
+                nz0.Q(a2, 3, sb.toString());
             } else {
                 c01 c01Var = c01.r;
-                Intent intentSendBroadcast = BActivityManager.get().sendBroadcast(intent, str, rj.u());
-                if (intentSendBroadcast != null) {
+                Intent sendBroadcast = BActivityManager.get().sendBroadcast(intent, str, rj.u());
+                if (sendBroadcast != null) {
                     Application application = rj.i().b;
                     if (application != null) {
-                        intentSendBroadcast.setExtrasClassLoader(application.getClassLoader());
+                        sendBroadcast.setExtrasClassLoader(application.getClassLoader());
                     } else if (c.a(-743833060130594L, strArr).equals(rj.o())) {
                         nz0.Q(c.a(-743931844378402L, strArr), 3, c.a(-744052103462690L, strArr) + intent.getAction());
                     }
-                    ProxyBroadcastRecord.saveStub(intentSendBroadcast, intent, rj.u());
-                    objArr[intentIndex] = intentSendBroadcast;
+                    ProxyBroadcastRecord.saveStub(sendBroadcast, intent, rj.u());
+                    objArr[intentIndex] = sendBroadcast;
                 }
             }
             for (int i = 0; i < objArr.length; i++) {
@@ -340,27 +328,27 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                             threadLocal.set(bool);
                             try {
                                 c01 c01Var = c01.r;
-                                ProviderInfo providerInfoResolveContentProvider = BPackageManager.get().resolveContentProvider(str, PackageParser.PARSE_IS_PRIVILEGED, rj.u());
-                                if (providerInfoResolveContentProvider != null) {
+                                ProviderInfo resolveContentProvider = BPackageManager.get().resolveContentProvider(str, PackageParser.PARSE_IS_PRIVILEGED, rj.u());
+                                if (resolveContentProvider != null) {
                                     bool2 = threadLocal.get();
                                     threadLocal.set(bool);
                                     try {
-                                        IBinder iBinderAcquireContentProviderClient = BActivityManager.get().acquireContentProviderClient(providerInfoResolveContentProvider);
-                                        if (iBinderAcquireContentProviderClient == null) {
+                                        IBinder acquireContentProviderClient = BActivityManager.get().acquireContentProviderClient(resolveContentProvider);
+                                        if (acquireContentProviderClient == null) {
                                             nz0.Q(c.a(-739392063946530L, strArr), 5, c.a(-738962567216930L, strArr) + str);
                                             return null;
                                         }
                                         Object[] objArr2 = (Object[]) objArr.clone();
                                         objArr2[providerNameIndex] = ProxyManifest.getProxyAuthorities(Math.max(rj.p(), 0));
                                         normalizeHostProviderArgs(objArr2, providerNameIndex);
-                                        Object objInvoke = method.invoke(obj, objArr2);
-                                        if (objInvoke == null) {
+                                        Object invoke = method.invoke(obj, objArr2);
+                                        if (invoke == null) {
                                             nz0.Q(c.a(-739787200937762L, strArr), 5, c.a(-739838740545314L, strArr) + str);
                                             return null;
                                         }
-                                        ContentProviderDelegate.replace(objInvoke, str, providerInfoResolveContentProvider, iBinderAcquireContentProviderClient);
-                                        nz0.Q(c.a(-739581042507554L, strArr), 3, c.a(-739632582115106L, strArr) + str + c.a(-742570339745570L, strArr) + providerInfoResolveContentProvider.packageName);
-                                        return objInvoke;
+                                        ContentProviderDelegate.replace(invoke, str, resolveContentProvider, acquireContentProviderClient);
+                                        nz0.Q(c.a(-739581042507554L, strArr), 3, c.a(-739632582115106L, strArr) + str + c.a(-742570339745570L, strArr) + resolveContentProvider.packageName);
+                                        return invoke;
                                     } finally {
                                     }
                                 }
@@ -374,19 +362,19 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                     }
                     Object[] objArr3 = (Object[]) objArr.clone();
                     normalizeHostProviderArgs(objArr3, providerNameIndex);
-                    Object objInvoke2 = method.invoke(obj, objArr3);
-                    if (objInvoke2 != null) {
-                        ContentProviderDelegate.update(objInvoke2, str);
+                    Object invoke2 = method.invoke(obj, objArr3);
+                    if (invoke2 != null) {
+                        ContentProviderDelegate.update(invoke2, str);
                     }
-                    return objInvoke2;
+                    return invoke2;
                 }
                 Object[] objArr4 = (Object[]) objArr.clone();
                 normalizeHostProviderArgs(objArr4, providerNameIndex);
-                Object objInvoke3 = method.invoke(obj, objArr4);
-                if (objInvoke3 != null && providerNameIndex >= 0) {
-                    ContentProviderDelegate.update(objInvoke3, (String) objArr[providerNameIndex]);
+                Object invoke3 = method.invoke(obj, objArr4);
+                if (invoke3 != null && providerNameIndex >= 0) {
+                    ContentProviderDelegate.update(invoke3, (String) objArr[providerNameIndex]);
                 }
-                return objInvoke3;
+                return invoke3;
             } catch (Throwable th) {
                 zd.s(new StringBuilder(), c.a(-742389951119138L, strArr), th, 5, c.a(-742338411511586L, strArr));
                 return null;
@@ -423,11 +411,11 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             int i;
             int i2;
             int i3;
-            int iIntValue = ((Integer) objArr[0]).intValue();
+            int intValue = ((Integer) objArr[0]).intValue();
             int intentsIndex = getIntentsIndex(objArr);
             Intent[] intentArr = (Intent[]) objArr[intentsIndex];
             int pendingIntentFlags = getPendingIntentFlags(objArr, intentsIndex);
-            if (IActivityManagerProxy.shouldBypassGmsIntentOperationRecovery(iIntValue, intentArr, pendingIntentFlags)) {
+            if (IActivityManagerProxy.shouldBypassGmsIntentOperationRecovery(intValue, intentArr, pendingIntentFlags)) {
                 Intent intent = intentArr[0];
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-741195950210850L, strArr), 3, c.a(-741247489818402L, strArr) + rj.u() + c.a(-742132253081378L, strArr) + intent.getComponent() + c.a(-742136548048674L, strArr) + Integer.toHexString(pendingIntentFlags));
@@ -441,7 +429,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             Intent intent2 = null;
             for (int i4 = 0; i4 < intentArr.length; i4++) {
                 intent2 = intentArr[i4];
-                if (iIntValue == 2) {
+                if (intValue == 2) {
                     Intent intent3 = new Intent();
                     intent3.setComponent(new ComponentName(c01.X(), ProxyManifest.getProxyPendingActivity(rj.p())));
                     ProxyPendingRecord.saveStub(intent3, intent2, rj.u());
@@ -454,12 +442,12 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             IInterface iInterface = (IInterface) method.invoke(obj, objArr);
             if (iInterface != null) {
                 BPackageManager bPackageManager = BPackageManager.get();
-                AppConfig appConfigN = rj.n();
-                if (appConfigN == null) {
+                AppConfig n = rj.n();
+                if (n == null) {
                     i = c01.r.o;
                 } else {
-                    int i5 = appConfigN.callingBUid;
-                    if ((i5 > 0 && i5 != c01.r.o) || (i = appConfigN.buid) <= 0) {
+                    int i5 = n.callingBUid;
+                    if ((i5 > 0 && i5 != c01.r.o) || (i = n.buid) <= 0) {
                         i = i5;
                     }
                 }
@@ -469,20 +457,20 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                 }
                 c01 c01Var = c01.r;
                 BActivityManager bActivityManager = BActivityManager.get();
-                IBinder iBinderAsBinder = iInterface.asBinder();
+                IBinder asBinder = iInterface.asBinder();
                 String str = packagesForUid[0];
-                AppConfig appConfigN2 = rj.n();
-                if (appConfigN2 == null) {
+                AppConfig n2 = rj.n();
+                if (n2 == null) {
                     i2 = c01.r.o;
                 } else {
-                    int i6 = appConfigN2.callingBUid;
-                    if ((i6 > 0 && i6 != c01.r.o) || (i2 = appConfigN2.buid) <= 0) {
+                    int i6 = n2.callingBUid;
+                    if ((i6 > 0 && i6 != c01.r.o) || (i2 = n2.buid) <= 0) {
                         i3 = i6;
+                        bActivityManager.getIntentSender(asBinder, str, i3, intValue, intent2);
                     }
-                    bActivityManager.getIntentSender(iBinderAsBinder, str, i3, iIntValue, intent2);
                 }
                 i3 = i2;
-                bActivityManager.getIntentSender(iBinderAsBinder, str, i3, iIntValue, intent2);
+                bActivityManager.getIntentSender(asBinder, str, i3, intValue, intent2);
             }
             return iInterface;
         }
@@ -555,15 +543,15 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             Uri uri = (Uri) mz0.p(objArr, Uri.class);
-            int iU = rj.u();
+            int u = rj.u();
             String[] strArr = xa1.b;
             if (c.a(-741685576482594L, strArr).equals(rj.o())) {
                 if (isFinskyDynamicSplitUri(uri == null ? null : uri.getAuthority(), uri == null ? null : uri.getPath())) {
                     c01 c01Var = c01.r;
-                    String strA = c.a(-741737116090146L, strArr);
+                    String a2 = c.a(-741737116090146L, strArr);
                     c01Var.getClass();
-                    if (c01.b0(strA, iU) && isCompatibleVirtualGoogleUriGrantTarget(objArr, c01.X())) {
-                        nz0.Q(c.a(-741835900337954L, strArr), 3, c.a(-753501031513890L, strArr) + iU + c.a(-753681420140322L, strArr) + uri);
+                    if (c01.b0(a2, u) && isCompatibleVirtualGoogleUriGrantTarget(objArr, c01.X())) {
+                        nz0.Q(c.a(-741835900337954L, strArr), 3, c.a(-753501031513890L, strArr) + u + c.a(-753681420140322L, strArr) + uri);
                         return null;
                     }
                 }
@@ -579,9 +567,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             int i;
-            if (objArr == null || objArr.length == 0) {
-                i = -1;
-            } else {
+            if (objArr != null && objArr.length != 0) {
                 for (int length = objArr.length; length > 0; length--) {
                     i = length - 1;
                     Object obj2 = objArr[i];
@@ -589,14 +575,14 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                         break;
                     }
                 }
-                i = -1;
             }
+            i = -1;
             if (i != -1) {
                 String str = (String) objArr[i];
                 c01 c01Var = c01.r;
-                int iU = rj.u();
+                int u = rj.u();
                 c01Var.getClass();
-                if (c01.b0(str, iU)) {
+                if (c01.b0(str, u)) {
                     objArr[i] = c01.X();
                 }
             }
@@ -620,7 +606,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     @ProxyMethod("refContentProvider")
     public static class RefContentProvider extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (IActivityManagerProxy.isNullConnection(objArr)) {
                 nz0.Q(c.a(-754033607458594L, strArr), 3, c.a(-754153866542882L, strArr));
@@ -646,17 +632,17 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     @ProxyMethod("registerReceiver")
     public static class RegisterReceiver extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws RemoteException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             IActivityManagerProxy.normalizeReceiverCallingPackage(objArr, 2);
             Object obj2 = objArr[2];
             if (obj2 != null) {
                 IIntentReceiver iIntentReceiver = (IIntentReceiver) obj2;
-                IIntentReceiver iIntentReceiverCreateProxy = InnerReceiverDelegate.createProxy(iIntentReceiver);
-                WeakReference<?> weakReferenceMDispatcher = BRLoadedApkReceiverDispatcherInnerReceiver.get(iIntentReceiver).mDispatcher();
-                if (weakReferenceMDispatcher != null) {
-                    BRLoadedApkReceiverDispatcher.get(weakReferenceMDispatcher.get())._set_mIIntentReceiver(iIntentReceiverCreateProxy);
+                IIntentReceiver createProxy = InnerReceiverDelegate.createProxy(iIntentReceiver);
+                WeakReference<?> mDispatcher = BRLoadedApkReceiverDispatcherInnerReceiver.get(iIntentReceiver).mDispatcher();
+                if (mDispatcher != null) {
+                    BRLoadedApkReceiverDispatcher.get(mDispatcher.get())._set_mIIntentReceiver(createProxy);
                 }
-                objArr[2] = iIntentReceiverCreateProxy;
+                objArr[2] = createProxy;
                 IActivityManagerProxy.addProtectedVirtualBroadcastProxyAction(objArr);
             }
             if (objArr[4] != null) {
@@ -679,18 +665,18 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         }
 
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws RemoteException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             int receiverIndex = getReceiverIndex();
             IActivityManagerProxy.normalizeReceiverCallingPackage(objArr, receiverIndex);
             Object obj2 = objArr[receiverIndex];
             if (obj2 != null) {
                 IIntentReceiver iIntentReceiver = (IIntentReceiver) obj2;
-                IIntentReceiver iIntentReceiverCreateProxy = InnerReceiverDelegate.createProxy(iIntentReceiver);
-                WeakReference<?> weakReferenceMDispatcher = BRLoadedApkReceiverDispatcherInnerReceiver.get(iIntentReceiver).mDispatcher();
-                if (weakReferenceMDispatcher != null) {
-                    BRLoadedApkReceiverDispatcher.get(weakReferenceMDispatcher.get())._set_mIIntentReceiver(iIntentReceiverCreateProxy);
+                IIntentReceiver createProxy = InnerReceiverDelegate.createProxy(iIntentReceiver);
+                WeakReference<?> mDispatcher = BRLoadedApkReceiverDispatcherInnerReceiver.get(iIntentReceiver).mDispatcher();
+                if (mDispatcher != null) {
+                    BRLoadedApkReceiverDispatcher.get(mDispatcher.get())._set_mIIntentReceiver(createProxy);
                 }
-                objArr[receiverIndex] = iIntentReceiverCreateProxy;
+                objArr[receiverIndex] = createProxy;
                 IActivityManagerProxy.addProtectedVirtualBroadcastProxyAction(objArr);
             }
             if (objArr[getPermissionIndex()] != null) {
@@ -700,11 +686,11 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             int i = Build.VERSION.SDK_INT;
             if (i >= 33 || (i >= 32 && Build.VERSION.PREVIEW_SDK_INT == 1)) {
                 int length = objArr.length - 1;
-                int iIntValue = ((Integer) objArr[length]).intValue();
-                if ((iIntValue & 4) == 0 && (iIntValue & 2) == 0) {
-                    iIntValue |= 4;
+                int intValue = ((Integer) objArr[length]).intValue();
+                if ((intValue & 4) == 0 && (intValue & 2) == 0) {
+                    intValue |= 4;
                 }
-                objArr[length] = Integer.valueOf(iIntValue);
+                objArr[length] = Integer.valueOf(intValue);
             }
             return method.invoke(obj, objArr);
         }
@@ -714,7 +700,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     @ProxyMethod("removeContentProvider")
     public static class RemoveContentProvider extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (IActivityManagerProxy.isNullConnection(objArr)) {
                 nz0.Q(c.a(-752573318577954L, strArr), 3, c.a(-752075102371618L, strArr));
@@ -755,9 +741,9 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                 try {
                     if (objArr.length >= 2) {
                         String str = (String) objArr[1];
-                        String strO = rj.o();
-                        if (str != null && !str.equals(strO)) {
-                            nz0.Q(c.a(-752736527335202L, strArr), 5, c.a(-752788066942754L, strArr) + str + c.a(-755884738363170L, strArr) + strO + c.a(-755420881895202L, strArr));
+                        String o = rj.o();
+                        if (str != null && !str.equals(o)) {
+                            nz0.Q(c.a(-752736527335202L, strArr), 5, c.a(-752788066942754L, strArr) + str + c.a(-755884738363170L, strArr) + o + c.a(-755420881895202L, strArr));
                             return null;
                         }
                     }
@@ -797,27 +783,27 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             if (intent == null) {
                 return method.invoke(obj, objArr);
             }
-            Intent intentL = IActivityManagerProxy.l(rj.u(), IActivityManagerProxy.k(rj.u(), intent));
-            objArr[1] = intentL;
+            Intent l = IActivityManagerProxy.l(rj.u(), IActivityManagerProxy.k(rj.u(), intent));
+            objArr[1] = l;
             c01 c01Var = c01.r;
-            if (BPackageManager.get().resolveService(intentL, 0, str, rj.u()) != null) {
+            if (BPackageManager.get().resolveService(l, 0, str, rj.u()) != null) {
                 int requireForeground = getRequireForeground();
-                boolean zBooleanValue = requireForeground != -1 ? ((Boolean) objArr[requireForeground]).booleanValue() : false;
-                IActivityManagerProxy.tagVirtualServiceCaller(intentL);
-                return BActivityManager.get().startService(intentL, str, zBooleanValue, rj.u());
+                boolean booleanValue = requireForeground != -1 ? ((Boolean) objArr[requireForeground]).booleanValue() : false;
+                IActivityManagerProxy.tagVirtualServiceCaller(l);
+                return BActivityManager.get().startService(l, str, booleanValue, rj.u());
             }
-            if (!IActivityManagerProxy.isExplicitGoogleTarget(intentL)) {
+            if (!IActivityManagerProxy.isExplicitGoogleTarget(l)) {
                 return method.invoke(obj, objArr);
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-754557593468706L, strArr);
+            String a2 = c.a(-754557593468706L, strArr);
             StringBuilder sb = new StringBuilder();
-            zd.q(sb, c.a(-754609133076258L, strArr), intentL);
+            zd.q(sb, c.a(-754609133076258L, strArr), l);
             sb.append(c.a(-754265535692578L, strArr));
-            sb.append(intentL.getPackage());
+            sb.append(l.getPackage());
             sb.append(c.a(-754364319940386L, strArr));
-            sb.append(intentL.getComponent());
-            nz0.Q(strA, 3, sb.toString());
+            sb.append(l.getComponent());
+            nz0.Q(a2, 3, sb.toString());
             return null;
         }
     }
@@ -833,9 +819,9 @@ public class IActivityManagerProxy extends ClassInvocationStub {
                 String str = (String) objArr[2];
                 if (intent != null && intent.getComponent() != null) {
                     String packageName = intent.getComponent().getPackageName();
-                    String strO = rj.o();
-                    if (!packageName.equals(strO)) {
-                        nz0.Q(c.a(-754368614907682L, strArr), 5, c.a(-754488873991970L, strArr) + packageName + c.a(-755317802680098L, strArr) + strO + c.a(-755334982549282L, strArr));
+                    String o = rj.o();
+                    if (!packageName.equals(o)) {
+                        nz0.Q(c.a(-754368614907682L, strArr), 5, c.a(-754488873991970L, strArr) + packageName + c.a(-755317802680098L, strArr) + o + c.a(-755334982549282L, strArr));
                         return Boolean.FALSE;
                     }
                 }
@@ -854,90 +840,45 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("stopServiceToken")
     public static class StopServiceToken extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:12:0x0022  */
+        /* JADX WARN: Removed duplicated region for block: B:9:0x0025 A[Catch: Exception -> 0x001d, SecurityException -> 0x001f, TryCatch #2 {SecurityException -> 0x001f, Exception -> 0x001d, blocks: (B:3:0x0003, B:5:0x0010, B:7:0x0016, B:9:0x0025, B:11:0x0033, B:14:0x0076), top: B:2:0x0003 }] */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r6, java.lang.reflect.Method r7, java.lang.Object[] r8) {
-            /*
-                r5 = this;
-                java.lang.String[] r6 = androidx.emoji2.text.xa1.b
-                r7 = 0
-                r7 = r8[r7]     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                android.content.ComponentName r7 = (android.content.ComponentName) r7     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r0 = 1
-                r0 = r8[r0]     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                android.os.IBinder r0 = (android.os.IBinder) r0     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                int r1 = r8.length     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r2 = 2
-                if (r1 <= r2) goto L22
-                r8 = r8[r2]     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                boolean r1 = r8 instanceof java.lang.Integer     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                if (r1 == 0) goto L22
-                java.lang.Integer r8 = (java.lang.Integer) r8     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                int r8 = r8.intValue()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                goto L23
-            L1d:
-                r7 = move-exception
-                goto L89
-            L1f:
-                r7 = move-exception
-                goto La1
-            L22:
-                r8 = -1
-            L23:
-                if (r7 == 0) goto L76
-                java.lang.String r1 = r7.getPackageName()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                java.lang.String r2 = androidx.emoji2.text.rj.o()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                boolean r3 = r1.equals(r2)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                if (r3 != 0) goto L76
-                r7 = -748849581932322(0xfffd56ecdeadc0de, double:NaN)
-                java.lang.String r7 = a.a.a.c.a(r7, r6)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                java.lang.StringBuilder r8 = new java.lang.StringBuilder     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.<init>()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r3 = -748969841016610(0xfffd56d0deadc0de, double:NaN)
-                java.lang.String r0 = a.a.a.c.a(r3, r6)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.append(r0)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.append(r1)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r0 = -749768704933666(0xfffd5616deadc0de, double:NaN)
-                java.lang.String r0 = a.a.a.c.a(r0, r6)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.append(r0)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.append(r2)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r0 = -749854604279586(0xfffd5602deadc0de, double:NaN)
-                java.lang.String r0 = a.a.a.c.a(r0, r6)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r8.append(r0)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                java.lang.String r8 = r8.toString()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                r0 = 5
-                androidx.emoji2.text.nz0.Q(r7, r0, r8)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                java.lang.Boolean r6 = java.lang.Boolean.TRUE     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                return r6
-            L76:
-                androidx.emoji2.text.c01 r1 = androidx.emoji2.text.c01.r     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                com.kos.engine.fake.frameworks.BActivityManager r1 = com.kos.engine.fake.frameworks.BActivityManager.get()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                int r2 = androidx.emoji2.text.rj.u()     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                boolean r7 = r1.stopServiceToken(r7, r0, r8, r2)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                java.lang.Boolean r6 = java.lang.Boolean.valueOf(r7)     // Catch: java.lang.Exception -> L1d java.lang.SecurityException -> L1f
-                return r6
-            L89:
-                r0 = -748055012982562(0xfffd57a5deadc0de, double:NaN)
-                java.lang.String r8 = a.a.a.c.a(r0, r6)
-                r0 = -748175272066850(0xfffd5789deadc0de, double:NaN)
-                java.lang.String r6 = a.a.a.c.a(r0, r6)
-                androidx.emoji2.text.nz0.t(r8, r6, r7)
-                java.lang.Boolean r6 = java.lang.Boolean.TRUE
-                return r6
-            La1:
-                r0 = -749364978007842(0xfffd5674deadc0de, double:NaN)
-                java.lang.String r8 = a.a.a.c.a(r0, r6)
-                r0 = -749485237092130(0xfffd5658deadc0de, double:NaN)
-                java.lang.String r6 = a.a.a.c.a(r0, r6)
-                androidx.emoji2.text.nz0.P(r8, r6, r7)
-                java.lang.Boolean r6 = java.lang.Boolean.TRUE
-                return r6
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IActivityManagerProxy.StopServiceToken.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            int i;
+            String[] strArr = xa1.b;
+            try {
+                ComponentName componentName = (ComponentName) objArr[0];
+                IBinder iBinder = (IBinder) objArr[1];
+                if (objArr.length > 2) {
+                    Object obj2 = objArr[2];
+                    if (obj2 instanceof Integer) {
+                        i = ((Integer) obj2).intValue();
+                        if (componentName != null) {
+                            String packageName = componentName.getPackageName();
+                            String o = rj.o();
+                            if (!packageName.equals(o)) {
+                                nz0.Q(c.a(-748849581932322L, strArr), 5, c.a(-748969841016610L, strArr) + packageName + c.a(-749768704933666L, strArr) + o + c.a(-749854604279586L, strArr));
+                                return Boolean.TRUE;
+                            }
+                        }
+                        c01 c01Var = c01.r;
+                        return Boolean.valueOf(BActivityManager.get().stopServiceToken(componentName, iBinder, i, rj.u()));
+                    }
+                }
+                i = -1;
+                if (componentName != null) {
+                }
+                c01 c01Var2 = c01.r;
+                return Boolean.valueOf(BActivityManager.get().stopServiceToken(componentName, iBinder, i, rj.u()));
+            } catch (SecurityException e) {
+                nz0.P(c.a(-749364978007842L, strArr), c.a(-749485237092130L, strArr), e);
+                return Boolean.TRUE;
+            } catch (Exception e2) {
+                nz0.t(c.a(-748055012982562L, strArr), c.a(-748175272066850L, strArr), e2);
+                return Boolean.TRUE;
+            }
         }
     }
 
@@ -969,7 +910,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     @ProxyMethod("unstableProviderDied")
     public static class UnstableProviderDied extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (IActivityManagerProxy.isNullConnection(objArr)) {
                 nz0.Q(c.a(-748694963109666L, strArr), 3, c.a(-748746502717218L, strArr));
@@ -1017,7 +958,7 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             if (str.equals(c.a(-747513847103266L, strArr)) || str.equals(c.a(-747646991089442L, strArr))) {
                 return 0;
             }
-            HashSet hashSet = gu2.f440a;
+            HashSet hashSet = gu2.f439a;
             if (gu2.e(str, rj.u(), null)) {
                 jx0.r(new StringBuilder(), c.a(-747303393705762L, strArr), str, 3, c.a(-747251854098210L, strArr));
                 return 0;
@@ -1248,85 +1189,85 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             if (intExtra == -1) {
                 intExtra = rj.u();
             }
-            Intent intentRewriteGoogleGamesProxyIntent = rewriteGoogleGamesProxyIntent(rewriteGoogleAccountAccessUiServiceIntent(intent, intExtra), intExtra);
-            objArr[2] = intentRewriteGoogleGamesProxyIntent;
+            Intent rewriteGoogleGamesProxyIntent = rewriteGoogleGamesProxyIntent(rewriteGoogleAccountAccessUiServiceIntent(intent, intExtra), intExtra);
+            objArr[2] = rewriteGoogleGamesProxyIntent;
             c01 c01Var = c01.r;
-            ResolveInfo resolveInfoResolveService = BPackageManager.get().resolveService(intentRewriteGoogleGamesProxyIntent, 0, str, intExtra);
-            if (resolveInfoResolveService == null && isExplicitGoogleTarget(intentRewriteGoogleGamesProxyIntent)) {
-                nz0.Q(c.a(-762473218195234L, strArr), 3, c.a(-761975001988898L, strArr) + intentRewriteGoogleGamesProxyIntent.getAction() + c.a(-762194045320994L, strArr) + intentRewriteGoogleGamesProxyIntent.getPackage() + c.a(-762224110092066L, strArr) + intentRewriteGoogleGamesProxyIntent.getComponent());
+            ResolveInfo resolveService = BPackageManager.get().resolveService(rewriteGoogleGamesProxyIntent, 0, str, intExtra);
+            if (resolveService == null && isExplicitGoogleTarget(rewriteGoogleGamesProxyIntent)) {
+                nz0.Q(c.a(-762473218195234L, strArr), 3, c.a(-761975001988898L, strArr) + rewriteGoogleGamesProxyIntent.getAction() + c.a(-762194045320994L, strArr) + rewriteGoogleGamesProxyIntent.getPackage() + c.a(-762224110092066L, strArr) + rewriteGoogleGamesProxyIntent.getComponent());
                 return 0;
             }
-            if (resolveInfoResolveService != null || AppSystemEnv.isOpenPackage(intentRewriteGoogleGamesProxyIntent.getComponent())) {
-                if (resolveInfoResolveService != null) {
-                    String strO = rj.o();
+            if (resolveService != null || AppSystemEnv.isOpenPackage(rewriteGoogleGamesProxyIntent.getComponent())) {
+                if (resolveService != null) {
+                    String o = rj.o();
                     c = 2;
-                    String strQ = rj.q();
+                    String q = rj.q();
                     c2 = 4;
-                    String action = intentRewriteGoogleGamesProxyIntent.getAction();
-                    ServiceInfo serviceInfo2 = resolveInfoResolveService.serviceInfo;
-                    if (isGoogleAccountCompletionSubmit(strO, strQ, action, serviceInfo2 == null ? null : serviceInfo2.packageName, serviceInfo2 == null ? null : serviceInfo2.name)) {
+                    String action = rewriteGoogleGamesProxyIntent.getAction();
+                    ServiceInfo serviceInfo2 = resolveService.serviceInfo;
+                    if (isGoogleAccountCompletionSubmit(o, q, action, serviceInfo2 == null ? null : serviceInfo2.packageName, serviceInfo2 == null ? null : serviceInfo2.name)) {
                         AppInstrumentation.showGoogleAccountCompletionOverlay();
                     }
                 } else {
                     c = 2;
                     c2 = 4;
                 }
-                boolean z2 = (resolveInfoResolveService == null || (serviceInfo = resolveInfoResolveService.serviceInfo) == null || !GmsCore.isGoogleAppOrService(serviceInfo.packageName)) ? false : true;
-                boolean z3 = (iServiceConnection == null || resolveInfoResolveService == null || !isCachedGoogleAccountService(intentRewriteGoogleGamesProxyIntent, resolveInfoResolveService.serviceInfo)) ? false : true;
-                tagVirtualServiceCaller(intentRewriteGoogleGamesProxyIntent);
-                Intent intentBindService = BActivityManager.get().bindService(intentRewriteGoogleGamesProxyIntent, iServiceConnection == null ? null : iServiceConnection.asBinder(), str, intExtra);
-                IBinder iBinderPeekService = z3 ? BActivityManager.get().peekService(intentRewriteGoogleGamesProxyIntent, str, intExtra) : null;
-                if (iBinderPeekService == null || isUsableCachedAccountServiceBinder(iBinderPeekService)) {
+                boolean z2 = (resolveService == null || (serviceInfo = resolveService.serviceInfo) == null || !GmsCore.isGoogleAppOrService(serviceInfo.packageName)) ? false : true;
+                boolean z3 = (iServiceConnection == null || resolveService == null || !isCachedGoogleAccountService(rewriteGoogleGamesProxyIntent, resolveService.serviceInfo)) ? false : true;
+                tagVirtualServiceCaller(rewriteGoogleGamesProxyIntent);
+                Intent bindService = BActivityManager.get().bindService(rewriteGoogleGamesProxyIntent, iServiceConnection == null ? null : iServiceConnection.asBinder(), str, intExtra);
+                IBinder peekService = z3 ? BActivityManager.get().peekService(rewriteGoogleGamesProxyIntent, str, intExtra) : null;
+                if (peekService == null || isUsableCachedAccountServiceBinder(peekService)) {
                     z = z2;
                     i2 = 1;
                 } else {
-                    String strA = c.a(-762846880349986L, strArr);
+                    String a2 = c.a(-762846880349986L, strArr);
                     StringBuilder sb = new StringBuilder();
                     z = z2;
                     i2 = 1;
                     sb.append(c.a(-762898419957538L, strArr));
-                    sb.append(intentRewriteGoogleGamesProxyIntent.getComponent());
+                    sb.append(rewriteGoogleGamesProxyIntent.getComponent());
                     sb.append(c.a(-762593477279522L, strArr));
-                    sb.append(intentRewriteGoogleGamesProxyIntent.getAction());
+                    sb.append(rewriteGoogleGamesProxyIntent.getAction());
                     sb.append(c.a(-762619247083298L, strArr));
                     sb.append(Process.myPid());
-                    nz0.Q(strA, 5, sb.toString());
-                    iBinderPeekService = null;
+                    nz0.Q(a2, 5, sb.toString());
+                    peekService = null;
                 }
                 if (iServiceConnection != null) {
-                    if (intentRewriteGoogleGamesProxyIntent.getComponent() == null && resolveInfoResolveService != null) {
-                        ServiceInfo serviceInfo3 = resolveInfoResolveService.serviceInfo;
-                        intentRewriteGoogleGamesProxyIntent.setComponent(new ComponentName(serviceInfo3.packageName, serviceInfo3.name));
+                    if (rewriteGoogleGamesProxyIntent.getComponent() == null && resolveService != null) {
+                        ServiceInfo serviceInfo3 = resolveService.serviceInfo;
+                        rewriteGoogleGamesProxyIntent.setComponent(new ComponentName(serviceInfo3.packageName, serviceInfo3.name));
                     }
-                    IServiceConnection iServiceConnectionCreateProxy = ServiceConnectionDelegate.createProxy(iServiceConnection, intentRewriteGoogleGamesProxyIntent);
-                    ServiceConnectionDelegate serviceConnectionDelegate = iServiceConnectionCreateProxy instanceof ServiceConnectionDelegate ? (ServiceConnectionDelegate) iServiceConnectionCreateProxy : null;
-                    objArr[c2] = iServiceConnectionCreateProxy;
-                    WeakReference<?> weakReferenceMDispatcher = BRLoadedApkServiceDispatcherInnerConnection.get(iServiceConnection).mDispatcher();
-                    if (weakReferenceMDispatcher != null) {
-                        BRLoadedApkServiceDispatcher.get(weakReferenceMDispatcher.get())._set_mConnection(iServiceConnectionCreateProxy);
+                    IServiceConnection createProxy = ServiceConnectionDelegate.createProxy(iServiceConnection, rewriteGoogleGamesProxyIntent);
+                    ServiceConnectionDelegate serviceConnectionDelegate = createProxy instanceof ServiceConnectionDelegate ? (ServiceConnectionDelegate) createProxy : null;
+                    objArr[c2] = createProxy;
+                    WeakReference<?> mDispatcher = BRLoadedApkServiceDispatcherInnerConnection.get(iServiceConnection).mDispatcher();
+                    if (mDispatcher != null) {
+                        BRLoadedApkServiceDispatcher.get(mDispatcher.get())._set_mConnection(createProxy);
                     }
-                    if (iBinderPeekService != null && serviceConnectionDelegate != null) {
+                    if (peekService != null && serviceConnectionDelegate != null) {
                         serviceConnectionDelegate.markDirectBind();
                         try {
-                            serviceConnectionDelegate.connected(intentRewriteGoogleGamesProxyIntent.getComponent(), iBinderPeekService, null, false);
-                            nz0.Q(c.a(-762692261527330L, strArr), 3, c.a(-761163253169954L, strArr) + intentRewriteGoogleGamesProxyIntent.getComponent() + c.a(-761365116632866L, strArr) + intentRewriteGoogleGamesProxyIntent.getAction() + c.a(-761390886436642L, strArr) + Process.myPid());
+                            serviceConnectionDelegate.connected(rewriteGoogleGamesProxyIntent.getComponent(), peekService, null, false);
+                            nz0.Q(c.a(-762692261527330L, strArr), 3, c.a(-761163253169954L, strArr) + rewriteGoogleGamesProxyIntent.getComponent() + c.a(-761365116632866L, strArr) + rewriteGoogleGamesProxyIntent.getAction() + c.a(-761390886436642L, strArr) + Process.myPid());
                             return Integer.valueOf(i2);
                         } catch (Throwable th) {
                             serviceConnectionDelegate.consumeDirectBind();
-                            nz0.P(c.a(-760914145066786L, strArr), c.a(-760965684674338L, strArr) + intentRewriteGoogleGamesProxyIntent.getComponent(), th);
+                            nz0.P(c.a(-760914145066786L, strArr), c.a(-760965684674338L, strArr) + rewriteGoogleGamesProxyIntent.getComponent(), th);
                         }
                     }
                 }
-                if (intentBindService != null && intentBindService.getComponent() != null && intentBindService.getComponent().getPackageName().equals(c01.X()) && (flagsIndex = getFlagsIndex(objArr)) >= 0) {
-                    int iR = mz0.R(objArr[flagsIndex]) & Integer.MAX_VALUE;
+                if (bindService != null && bindService.getComponent() != null && bindService.getComponent().getPackageName().equals(c01.X()) && (flagsIndex = getFlagsIndex(objArr)) >= 0) {
+                    int R = mz0.R(objArr[flagsIndex]) & Integer.MAX_VALUE;
                     if (z) {
-                        iR = stabilizeGoogleServiceBindFlags(iR);
+                        R = stabilizeGoogleServiceBindFlags(R);
                     }
-                    objArr[flagsIndex] = Integer.valueOf(iR);
+                    objArr[flagsIndex] = Integer.valueOf(R);
                 }
                 objArr[i] = c01.X();
-                if (intentBindService != null) {
-                    objArr[c] = intentBindService;
+                if (bindService != null) {
+                    objArr[c] = bindService;
                     return method.invoke(obj, objArr);
                 }
             }
@@ -1391,16 +1332,16 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             String[] strArr = xa1.b;
             ServiceInfo serviceInfo = bPackageManager.getServiceInfo(new ComponentName(c.a(-767592819212066L, strArr), str), PackageParser.PARSE_IS_PRIVILEGED, i);
             if (serviceInfo != null) {
-                ServiceInfo serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-767691603459874L, strArr), PackageParser.PARSE_IS_PRIVILEGED, i);
+                ServiceInfo createFixedServiceInfo = createFixedServiceInfo(serviceInfo, c.a(-767691603459874L, strArr), PackageParser.PARSE_IS_PRIVILEGED, i);
                 ResolveInfo resolveInfo = new ResolveInfo();
-                resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+                resolveInfo.serviceInfo = createFixedServiceInfo;
                 resolveInfo.isDefault = true;
-                String strA = c.a(-768288603914018L, strArr);
+                String a2 = c.a(-768288603914018L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-768408862998306L, strArr));
-                sb.append(serviceInfoCreateFixedServiceInfo.packageName);
+                sb.append(createFixedServiceInfo.packageName);
                 sb.append(c.a(-768073855549218L, strArr));
-                zd.p(sb, serviceInfoCreateFixedServiceInfo.name, 3, strA);
+                zd.p(sb, createFixedServiceInfo.name, 3, a2);
                 return resolveInfo;
             }
         }
@@ -1412,17 +1353,17 @@ public class IActivityManagerProxy extends ClassInvocationStub {
             for (String str2 : KNOWN_GOOGLE_ACCOUNT_AUTHENTICATOR_SERVICES) {
                 ServiceInfo serviceInfo = BPackageManager.get().getServiceInfo(new ComponentName(str, str2), PackageParser.PARSE_IS_PRIVILEGED, i);
                 if (serviceInfo != null && !isGoogleAuthDelegateService(serviceInfo.name)) {
-                    ServiceInfo serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(serviceInfo, str, PackageParser.PARSE_IS_PRIVILEGED, i);
+                    ServiceInfo createFixedServiceInfo = createFixedServiceInfo(serviceInfo, str, PackageParser.PARSE_IS_PRIVILEGED, i);
                     ResolveInfo resolveInfo = new ResolveInfo();
-                    resolveInfo.serviceInfo = serviceInfoCreateFixedServiceInfo;
+                    resolveInfo.serviceInfo = createFixedServiceInfo;
                     resolveInfo.isDefault = true;
                     String[] strArr = xa1.b;
-                    String strA = c.a(-639164707127074L, strArr);
+                    String a2 = c.a(-639164707127074L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-639284966211362L, strArr));
-                    sb.append(serviceInfoCreateFixedServiceInfo.packageName);
+                    sb.append(createFixedServiceInfo.packageName);
                     sb.append(c.a(-638937073860386L, strArr));
-                    zd.p(sb, serviceInfoCreateFixedServiceInfo.name, 3, strA);
+                    zd.p(sb, createFixedServiceInfo.name, 3, a2);
                     return resolveInfo;
                 }
             }
@@ -1503,12 +1444,12 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         if (intent == null) {
             return false;
         }
-        String packageName = intent.getPackage();
-        if (packageName == null && intent.getComponent() != null) {
-            packageName = intent.getComponent().getPackageName();
+        String str = intent.getPackage();
+        if (str == null && intent.getComponent() != null) {
+            str = intent.getComponent().getPackageName();
         }
         String[] strArr = xa1.b;
-        return c.a(-764569162235682L, strArr).equals(packageName) || c.a(-764667946483490L, strArr).equals(packageName) || c.a(-764165435309858L, strArr).equals(packageName) || c.a(-764298579296034L, strArr).equals(packageName) || c.a(-764418838380322L, strArr).equals(packageName);
+        return c.a(-764569162235682L, strArr).equals(str) || c.a(-764667946483490L, strArr).equals(str) || c.a(-764165435309858L, strArr).equals(str) || c.a(-764298579296034L, strArr).equals(str) || c.a(-764418838380322L, strArr).equals(str);
     }
 
     public static boolean isGmsIntentOperationRecoveryLookup(int i, int i2, String str, String str2, String str3) {
@@ -1686,41 +1627,41 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     }
 
     private static void markPlayGamesBrokerIntent(Intent intent, int i) {
-        String strResolvePlayGamesRealGamePackage;
+        String resolvePlayGamesRealGamePackage;
         if (intent == null) {
             return;
         }
         String[] strArr = xa1.b;
         intent.putExtra(c.a(-758848265797410L, strArr), true);
         if (isPlayGamesGmsCoreUiInitiatedIntent(intent)) {
-            strResolvePlayGamesRealGamePackage = resolveExplicitPlayGamesRealGamePackage(intent, i);
-            if (strResolvePlayGamesRealGamePackage != null) {
-                intent.putExtra(c.a(-759544050499362L, strArr), strResolvePlayGamesRealGamePackage);
+            resolvePlayGamesRealGamePackage = resolveExplicitPlayGamesRealGamePackage(intent, i);
+            if (resolvePlayGamesRealGamePackage != null) {
+                intent.putExtra(c.a(-759544050499362L, strArr), resolvePlayGamesRealGamePackage);
             } else {
                 intent.removeExtra(c.a(-759660014616354L, strArr));
             }
-            String strA = c.a(-759312122265378L, strArr);
+            String a2 = c.a(-759312122265378L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-759363661872930L, strArr));
             sb.append(rj.o());
             zd.q(sb, c.a(-771226361544482L, strArr), intent);
-            jx0.r(sb, c.a(-771252131348258L, strArr), strResolvePlayGamesRealGamePackage, 3, strA);
+            jx0.r(sb, c.a(-771252131348258L, strArr), resolvePlayGamesRealGamePackage, 3, a2);
         } else {
-            strResolvePlayGamesRealGamePackage = resolvePlayGamesRealGamePackage(intent, i);
-            if (strResolvePlayGamesRealGamePackage != null) {
-                intent.putExtra(c.a(-770801159782178L, strArr), strResolvePlayGamesRealGamePackage);
-                jx0.r(new StringBuilder(), c.a(-771604318666530L, strArr), strResolvePlayGamesRealGamePackage, 3, c.a(-770934303768354L, strArr));
+            resolvePlayGamesRealGamePackage = resolvePlayGamesRealGamePackage(intent, i);
+            if (resolvePlayGamesRealGamePackage != null) {
+                intent.putExtra(c.a(-770801159782178L, strArr), resolvePlayGamesRealGamePackage);
+                jx0.r(new StringBuilder(), c.a(-771604318666530L, strArr), resolvePlayGamesRealGamePackage, 3, c.a(-770934303768354L, strArr));
             } else {
-                String strA2 = c.a(-771814772064034L, strArr);
+                String a3 = c.a(-771814772064034L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-771316555857698L, strArr));
                 sb2.append(rj.o());
                 zd.q(sb2, c.a(-771557074026274L, strArr), intent);
                 sb2.append(c.a(-769933576388386L, strArr));
-                zd.p(sb2, getIntentPackage(intent), 3, strA2);
+                zd.p(sb2, getIntentPackage(intent), 3, a3);
             }
         }
-        recordGenuinePlayGamesFeatureRequest(intent, i, strResolvePlayGamesRealGamePackage);
+        recordGenuinePlayGamesFeatureRequest(intent, i, resolvePlayGamesRealGamePackage);
     }
 
     private static boolean matchesServicePair(String str, String str2, String str3, String str4) {
@@ -1743,14 +1684,14 @@ public class IActivityManagerProxy extends ClassInvocationStub {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void normalizeReceiverCallingPackage(Object[] objArr, int i) {
-        int iNormalizeReceiverCallingPackage = normalizeReceiverCallingPackage(objArr, i, rj.o(), c01.X());
-        if (iNormalizeReceiverCallingPackage > 1) {
+        int normalizeReceiverCallingPackage = normalizeReceiverCallingPackage(objArr, i, rj.o(), c01.X());
+        if (normalizeReceiverCallingPackage > 1) {
             String[] strArr = xa1.b;
-            String strA = c.a(-637975001186082L, strArr);
+            String a2 = c.a(-637975001186082L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-638576296607522L, strArr));
-            sb.append(iNormalizeReceiverCallingPackage);
-            zd.o(sb, c.a(-638318598569762L, strArr), i, 3, strA);
+            sb.append(normalizeReceiverCallingPackage);
+            zd.o(sb, c.a(-638318598569762L, strArr), i, 3, a2);
         }
     }
 
@@ -1765,38 +1706,38 @@ public class IActivityManagerProxy extends ClassInvocationStub {
 
     private static List<ResolveInfo> queryGoogleAuthenticatorServices(int i) {
         String[] strArr = xa1.b;
-        List<ResolveInfo> listQueryIntentServices = BPackageManager.get().queryIntentServices(new Intent(c.a(-768065265614626L, strArr)), PackageParser.PARSE_IS_PRIVILEGED, i);
-        if (listQueryIntentServices != null && !listQueryIntentServices.isEmpty()) {
-            return listQueryIntentServices;
+        List<ResolveInfo> queryIntentServices = BPackageManager.get().queryIntentServices(new Intent(c.a(-768065265614626L, strArr)), PackageParser.PARSE_IS_PRIVILEGED, i);
+        if (queryIntentServices != null && !queryIntentServices.isEmpty()) {
+            return queryIntentServices;
         }
         ArrayList arrayList = new ArrayList();
         for (String str : GOOGLE_AUTHENTICATOR_PACKAGES) {
             Intent intent = new Intent(c.a(-768245654241058L, strArr));
             intent.setPackage(str);
-            List<ResolveInfo> listQueryIntentServices2 = BPackageManager.get().queryIntentServices(intent, PackageParser.PARSE_IS_PRIVILEGED, i);
-            if (listQueryIntentServices2 != null) {
-                arrayList.addAll(listQueryIntentServices2);
+            List<ResolveInfo> queryIntentServices2 = BPackageManager.get().queryIntentServices(intent, PackageParser.PARSE_IS_PRIVILEGED, i);
+            if (queryIntentServices2 != null) {
+                arrayList.addAll(queryIntentServices2);
             }
         }
-        return !arrayList.isEmpty() ? arrayList : listQueryIntentServices;
+        return !arrayList.isEmpty() ? arrayList : queryIntentServices;
     }
 
     private static void recordGenuinePlayGamesFeatureRequest(Intent intent, int i, String str) {
         if (intent != null) {
             String[] strArr = xa1.b;
             if (c.a(-773880651333410L, strArr).equals(intent.getAction()) && isInstalledNonGoogleVirtualPackage(str, i)) {
-                String strO = rj.o();
+                String o = rj.o();
                 String recentNonGoogleActivityPackage = BActivityManager.get().getRecentNonGoogleActivityPackage(i, PLAY_GAMES_REAL_GAME_GRACE_MS);
-                if ((str.equals(strO) || str.equals(recentNonGoogleActivityPackage)) && !ho0.R(i, str)) {
-                    String strA = c.a(-774030975188770L, strArr);
+                if ((str.equals(o) || str.equals(recentNonGoogleActivityPackage)) && !ho0.R(i, str)) {
+                    String a2 = c.a(-774030975188770L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-773601478459170L, strArr));
                     sb.append(i);
                     sb.append(c.a(-772175549316898L, strArr));
                     sb.append(str);
                     sb.append(c.a(-772205614087970L, strArr));
-                    sb.append(strO);
-                    jx0.r(sb, c.a(-772300103368482L, strArr), recentNonGoogleActivityPackage, 5, strA);
+                    sb.append(o);
+                    jx0.r(sb, c.a(-772300103368482L, strArr), recentNonGoogleActivityPackage, 5, a2);
                 }
             }
         }
@@ -1811,9 +1752,9 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         if (isInstalledNonGoogleVirtualPackage(stringExtra, i)) {
             return stringExtra;
         }
-        String strFirstInstalledNonGoogleVirtualPackage = firstInstalledNonGoogleVirtualPackage(i, intent.getStringExtra(c.a(-772471902060322L, strArr)), intent.getStringExtra(c.a(-772665175588642L, strArr)));
-        if (strFirstInstalledNonGoogleVirtualPackage != null) {
-            return strFirstInstalledNonGoogleVirtualPackage;
+        String firstInstalledNonGoogleVirtualPackage = firstInstalledNonGoogleVirtualPackage(i, intent.getStringExtra(c.a(-772471902060322L, strArr)), intent.getStringExtra(c.a(-772665175588642L, strArr)));
+        if (firstInstalledNonGoogleVirtualPackage != null) {
+            return firstInstalledNonGoogleVirtualPackage;
         }
         try {
             Bundle bundleExtra = intent.getBundleExtra(c.a(-766776775425826L, strArr));
@@ -1826,13 +1767,13 @@ public class IActivityManagerProxy extends ClassInvocationStub {
     private static ResolveInfo resolveGoogleAuthenticatorService(int i) {
         ServiceInfo serviceInfo;
         String str;
-        List<ResolveInfo> listQueryGoogleAuthenticatorServices = queryGoogleAuthenticatorServices(i);
-        if (listQueryGoogleAuthenticatorServices == null) {
+        List<ResolveInfo> queryGoogleAuthenticatorServices = queryGoogleAuthenticatorServices(i);
+        if (queryGoogleAuthenticatorServices == null) {
             return findGoogleAuthenticatorFromInstalledPackages(i);
         }
         ResolveInfo resolveInfo = null;
         ResolveInfo resolveInfo2 = null;
-        for (ResolveInfo resolveInfo3 : listQueryGoogleAuthenticatorServices) {
+        for (ResolveInfo resolveInfo3 : queryGoogleAuthenticatorServices) {
             if (resolveInfo3 != null && (serviceInfo = resolveInfo3.serviceInfo) != null && (str = serviceInfo.packageName) != null && serviceInfo.name != null) {
                 if (resolveInfo2 == null) {
                     resolveInfo2 = resolveInfo3;
@@ -1900,18 +1841,18 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         if (isInstalledNonGoogleVirtualPackage(stringExtra, i)) {
             return stringExtra;
         }
-        String strO = rj.o();
-        if (isInstalledNonGoogleVirtualPackage(strO, i)) {
-            return strO;
+        String o = rj.o();
+        if (isInstalledNonGoogleVirtualPackage(o, i)) {
+            return o;
         }
         String recentNonGoogleActivityPackage = BActivityManager.get().getRecentNonGoogleActivityPackage(i, PLAY_GAMES_REAL_GAME_GRACE_MS);
         if (isInstalledNonGoogleVirtualPackage(recentNonGoogleActivityPackage, i)) {
             jx0.r(new StringBuilder(), c.a(-772012340559650L, strArr), recentNonGoogleActivityPackage, 3, c.a(-771892081475362L, strArr));
             return recentNonGoogleActivityPackage;
         }
-        String strResolveInstalledPlayGamesClientPackage = resolveInstalledPlayGamesClientPackage(i);
-        if (strResolveInstalledPlayGamesClientPackage != null) {
-            return strResolveInstalledPlayGamesClientPackage;
+        String resolveInstalledPlayGamesClientPackage = resolveInstalledPlayGamesClientPackage(i);
+        if (resolveInstalledPlayGamesClientPackage != null) {
+            return resolveInstalledPlayGamesClientPackage;
         }
         return null;
     }
@@ -1922,14 +1863,14 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         if (!isGoogleAccountAccessUi(intent)) {
             return intent;
         }
-        ResolveInfo resolveInfoFindGoogleAuthDelegateFromInstalledPackages = findGoogleAuthDelegateFromInstalledPackages(i);
-        if (resolveInfoFindGoogleAuthDelegateFromInstalledPackages == null || (serviceInfo = resolveInfoFindGoogleAuthDelegateFromInstalledPackages.serviceInfo) == null || serviceInfo.packageName == null || serviceInfo.name == null) {
+        ResolveInfo findGoogleAuthDelegateFromInstalledPackages = findGoogleAuthDelegateFromInstalledPackages(i);
+        if (findGoogleAuthDelegateFromInstalledPackages == null || (serviceInfo = findGoogleAuthDelegateFromInstalledPackages.serviceInfo) == null || serviceInfo.packageName == null || serviceInfo.name == null) {
             nz0.Q(c.a(-763684398972706L, strArr), 5, c.a(-763804658056994L, strArr));
             return intent;
         }
         Intent intent2 = new Intent(intent);
         intent2.setPackage(null);
-        ServiceInfo serviceInfo2 = resolveInfoFindGoogleAuthDelegateFromInstalledPackages.serviceInfo;
+        ServiceInfo serviceInfo2 = findGoogleAuthDelegateFromInstalledPackages.serviceInfo;
         intent2.setComponent(new ComponentName(serviceInfo2.packageName, serviceInfo2.name));
         nz0.Q(c.a(-758053696847650L, strArr), 3, c.a(-757624200118050L, strArr) + intent2.getComponent());
         return intent2;
@@ -1952,12 +1893,12 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         intent2.setPackage(null);
         intent2.setComponent(new ComponentName(c.a(-756825336200994L, strArr), c.a(-756941300317986L, strArr)));
         markPlayGamesBrokerIntent(intent2, i);
-        String strA = c.a(-756606292868898L, strArr);
+        String a2 = c.a(-756606292868898L, strArr);
         StringBuilder sb = new StringBuilder();
         zd.q(sb, c.a(-756726551953186L, strArr), intent);
         sb.append(c.a(-757443811491618L, strArr));
         sb.append(intent2.getComponent());
-        nz0.Q(strA, 3, sb.toString());
+        nz0.Q(a2, 3, sb.toString());
         return intent2;
     }
 
@@ -1966,8 +1907,8 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         String[] strArr = xa1.b;
         intent2.setPackage(c.a(-757430926589730L, strArr));
         intent2.setComponent(null);
-        ResolveInfo resolveInfoResolveService = BPackageManager.get().resolveService(intent2, PackageParser.PARSE_IS_PRIVILEGED, intent2.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
-        ServiceInfo serviceInfo = resolveInfoResolveService == null ? null : resolveInfoResolveService.serviceInfo;
+        ResolveInfo resolveService = BPackageManager.get().resolveService(intent2, PackageParser.PARSE_IS_PRIVILEGED, intent2.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
+        ServiceInfo serviceInfo = resolveService == null ? null : resolveService.serviceInfo;
         if (serviceInfo == null || serviceInfo.packageName == null || serviceInfo.name == null) {
             nz0.Q(c.a(-757529710837538L, strArr), 5, c.a(-757100214107938L, strArr) + intent.getAction());
             return intent;
@@ -1975,12 +1916,12 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         intent2.setPackage(null);
         intent2.setComponent(new ComponentName(serviceInfo.packageName, serviceInfo.name));
         markPlayGamesBrokerIntent(intent2, i);
-        String strA = c.a(-760037971738402L, strArr);
+        String a2 = c.a(-760037971738402L, strArr);
         StringBuilder sb = new StringBuilder();
         zd.q(sb, c.a(-760158230822690L, strArr), intent);
         sb.append(c.a(-759793158602530L, strArr));
         sb.append(intent2.getComponent());
-        nz0.Q(strA, 3, sb.toString());
+        nz0.Q(a2, 3, sb.toString());
         return intent2;
     }
 
@@ -2054,15 +1995,15 @@ public class IActivityManagerProxy extends ClassInvocationStub {
         if (intent == null || rj.n() == null) {
             return;
         }
-        int iR = rj.r();
-        String strO = rj.o();
-        if (iR <= 0 || strO == null || strO.length() == 0) {
+        int r = rj.r();
+        String o = rj.o();
+        if (r <= 0 || o == null || o.length() == 0) {
             return;
         }
         String[] strArr = xa1.b;
-        intent.putExtra(c.a(-761579864997666L, strArr), iR);
+        intent.putExtra(c.a(-761579864997666L, strArr), r);
         intent.putExtra(c.a(-761639994539810L, strArr), Process.myPid());
-        intent.putExtra(c.a(-764444608184098L, strArr), strO);
+        intent.putExtra(c.a(-764444608184098L, strArr), o);
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
@@ -2117,9 +2058,9 @@ public class IActivityManagerProxy extends ClassInvocationStub {
 
     public static int normalizeReceiverCallingPackage(Object[] objArr, int i, String str, String str2) {
         if (objArr != null && str2 != null && str2.length() != 0) {
-            int iMin = Math.min(Math.max(i, 0), objArr.length);
+            int min = Math.min(Math.max(i, 0), objArr.length);
             if (str != null && str.length() > 0) {
-                for (int i2 = 0; i2 < iMin; i2++) {
+                for (int i2 = 0; i2 < min; i2++) {
                     if (str.equals(objArr[i2])) {
                         objArr[i2] = str2;
                         return i2;

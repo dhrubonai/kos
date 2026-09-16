@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class d70 implements ed0 {
     @Override // androidx.emoji2.text.ed0
     public final void a(fd0 fd0Var) {
-        fd0Var.d(0, fd0Var.f357a.b(), "");
+        fd0Var.d(0, fd0Var.f356a.b(), "");
     }
 
     public final boolean equals(Object obj) {

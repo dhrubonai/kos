@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class sl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ThreadLocal f1075a = new ThreadLocal();
+    public static final ThreadLocal f1074a = new ThreadLocal();
 
     public static eg0 a() {
-        ThreadLocal threadLocal = f1075a;
+        ThreadLocal threadLocal = f1074a;
         eg0 eg0Var = (eg0) threadLocal.get();
         if (eg0Var != null) {
             return eg0Var;

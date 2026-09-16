@@ -32,7 +32,7 @@ public final class n52 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((n52) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((n52) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -43,9 +43,9 @@ public final class n52 extends hh2 implements Function2 {
                 if (i == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objA = p52.a(this.j, this);
+                    Object a2 = p52.a(this.j, this);
                     f30 f30Var = f30.d;
-                    if (objA == f30Var) {
+                    if (a2 == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -54,15 +54,15 @@ public final class n52 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objC = this.j.c(this);
+                    Object c = this.j.c(this);
                     f30 f30Var2 = f30.d;
-                    if (objC == f30Var2) {
+                    if (c == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -71,7 +71,7 @@ public final class n52 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

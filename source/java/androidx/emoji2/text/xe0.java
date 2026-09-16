@@ -8,14 +8,14 @@ import com.google.android.material.textfield.TextInputLayout;
 public final class xe0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ ze0 f1333a;
+    public final /* synthetic */ ze0 f1332a;
 
     public xe0(ze0 ze0Var) {
-        this.f1333a = ze0Var;
+        this.f1332a = ze0Var;
     }
 
     public final void a(TextInputLayout textInputLayout) {
-        ze0 ze0Var = this.f1333a;
+        ze0 ze0Var = this.f1332a;
         we0 we0Var = ze0Var.y;
         if (ze0Var.v == textInputLayout.getEditText()) {
             return;

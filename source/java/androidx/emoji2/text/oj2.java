@@ -18,54 +18,55 @@ public final class oj2 extends g01 implements wm0 {
 
     @Override // androidx.emoji2.text.wm0
     public final Object invoke(Object obj, Object obj2, Object obj3) {
+        nd1 k;
         switch (this.e) {
             case 0:
                 ((Number) obj3).intValue();
                 tx txVar = (tx) ((lx) obj2);
                 txVar.X(-102778667);
-                Object objM = txVar.M();
-                on onVar = kx.f663a;
-                if (objM == onVar) {
+                Object M = txVar.M();
+                on onVar = kx.f662a;
+                if (M == onVar) {
                     jy jyVar = new jy(bz0.D(txVar));
                     txVar.i0(jyVar);
-                    objM = jyVar;
+                    M = jyVar;
                 }
-                e30 e30Var = ((jy) objM).d;
-                Object objM2 = txVar.M();
-                if (objM2 == onVar) {
-                    objM2 = az0.W(null);
-                    txVar.i0(objM2);
+                e30 e30Var = ((jy) M).d;
+                Object M2 = txVar.M();
+                if (M2 == onVar) {
+                    M2 = az0.W(null);
+                    txVar.i0(M2);
                 }
-                mf1 mf1Var = (mf1) objM2;
-                mf1 mf1VarB0 = az0.b0(this.f, txVar);
-                boolean zF = txVar.f(null);
-                Object objM3 = txVar.M();
-                if (zF || objM3 == onVar) {
-                    objM3 = new n8(3, mf1Var);
-                    txVar.i0(objM3);
+                mf1 mf1Var = (mf1) M2;
+                mf1 b0 = az0.b0(this.f, txVar);
+                boolean f = txVar.f(null);
+                Object M3 = txVar.M();
+                if (f || M3 == onVar) {
+                    M3 = new n8(3, mf1Var);
+                    txVar.i0(M3);
                 }
-                bz0.k(null, (um0) objM3, txVar);
-                boolean zH = txVar.h(e30Var) | txVar.f(null) | txVar.f(mf1VarB0);
-                Object objM4 = txVar.M();
-                if (zH || objM4 == onVar) {
-                    objM4 = new ha(e30Var, mf1Var, mf1VarB0, null, 11);
-                    txVar.i0(objM4);
+                bz0.k(null, (um0) M3, txVar);
+                boolean h = txVar.h(e30Var) | txVar.f(null) | txVar.f(b0);
+                Object M4 = txVar.M();
+                if (h || M4 == onVar) {
+                    M4 = new ha(e30Var, mf1Var, b0, null, 11);
+                    txVar.i0(M4);
                 }
-                nd1 nd1VarK = kd1.f634a.k(new SuspendPointerInputElement(null, null, new ih2((Function2) objM4), 6));
+                k = kd1.f633a.k(new SuspendPointerInputElement(null, null, new ih2((Function2) M4), 6));
                 txVar.p(false);
-                return nd1VarK;
+                return k;
             default:
                 ((Number) obj3).intValue();
                 tx txVar2 = (tx) ((lx) obj2);
                 txVar2.X(-1608161351);
                 um0 um0Var = this.f;
-                boolean zF2 = txVar2.f(um0Var);
-                Object objM5 = txVar2.M();
-                if (zF2 || objM5 == kx.f663a) {
-                    objM5 = new b00(um0Var);
-                    txVar2.i0(objM5);
+                boolean f2 = txVar2.f(um0Var);
+                Object M5 = txVar2.M();
+                if (f2 || M5 == kx.f662a) {
+                    M5 = new b00(um0Var);
+                    txVar2.i0(M5);
                 }
-                b00 b00Var = (b00) objM5;
+                b00 b00Var = (b00) M5;
                 txVar2.p(false);
                 return b00Var;
         }

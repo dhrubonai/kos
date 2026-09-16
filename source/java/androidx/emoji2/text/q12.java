@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class q12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f937a;
+    public final float f936a;
     public final float b;
     public final float c;
     public final float d;
@@ -19,7 +19,7 @@ public final class q12 {
     }
 
     public q12(float f, float f2, float f3, float f4, long j, long j2, long j3, long j4) {
-        this.f937a = f;
+        this.f936a = f;
         this.b = f2;
         this.c = f3;
         this.d = f4;
@@ -34,7 +34,7 @@ public final class q12 {
     }
 
     public final float b() {
-        return this.c - this.f937a;
+        return this.c - this.f936a;
     }
 
     public final boolean equals(Object obj) {
@@ -45,21 +45,21 @@ public final class q12 {
             return false;
         }
         q12 q12Var = (q12) obj;
-        return Float.compare(this.f937a, q12Var.f937a) == 0 && Float.compare(this.b, q12Var.b) == 0 && Float.compare(this.c, q12Var.c) == 0 && Float.compare(this.d, q12Var.d) == 0 && l8.M(this.e, q12Var.e) && l8.M(this.f, q12Var.f) && l8.M(this.g, q12Var.g) && l8.M(this.h, q12Var.h);
+        return Float.compare(this.f936a, q12Var.f936a) == 0 && Float.compare(this.b, q12Var.b) == 0 && Float.compare(this.c, q12Var.c) == 0 && Float.compare(this.d, q12Var.d) == 0 && l8.M(this.e, q12Var.e) && l8.M(this.f, q12Var.f) && l8.M(this.g, q12Var.g) && l8.M(this.h, q12Var.h);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.h) + jx0.b(jx0.b(jx0.b(zd.b(this.d, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f937a) * 31, 31), 31), 31), 31, this.e), 31, this.f), 31, this.g);
+        return Long.hashCode(this.h) + jx0.b(jx0.b(jx0.b(zd.b(this.d, zd.b(this.c, zd.b(this.b, Float.hashCode(this.f936a) * 31, 31), 31), 31), 31, this.e), 31, this.f), 31, this.g);
     }
 
     public final String toString() {
-        String str = lx0.d0(this.f937a) + ", " + lx0.d0(this.b) + ", " + lx0.d0(this.c) + ", " + lx0.d0(this.d);
+        String str = lx0.d0(this.f936a) + ", " + lx0.d0(this.b) + ", " + lx0.d0(this.c) + ", " + lx0.d0(this.d);
         long j = this.e;
         long j2 = this.f;
-        boolean zM = l8.M(j, j2);
+        boolean M = l8.M(j, j2);
         long j3 = this.g;
         long j4 = this.h;
-        if (!zM || !l8.M(j2, j3) || !l8.M(j3, j4)) {
+        if (!M || !l8.M(j2, j3) || !l8.M(j3, j4)) {
             return "RoundRect(rect=" + str + ", topLeft=" + ((Object) l8.p0(j)) + ", topRight=" + ((Object) l8.p0(j2)) + ", bottomRight=" + ((Object) l8.p0(j3)) + ", bottomLeft=" + ((Object) l8.p0(j4)) + ')';
         }
         int i = (int) (j >> 32);

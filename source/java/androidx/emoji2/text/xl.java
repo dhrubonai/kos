@@ -34,30 +34,30 @@ public final class xl extends g01 implements um0 {
             vb0.v0(g11Var, this.f, 0L, 0L, this.g, null, 246);
         } else {
             long j = this.g;
-            float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+            float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
             float f = this.h;
-            if (fIntBitsToFloat < f) {
+            if (intBitsToFloat < f) {
                 float f2 = this.i;
-                float fD = ib2.d(npVar.i());
+                float d = ib2.d(npVar.i());
                 float f3 = this.i;
-                float f4 = fD - f3;
-                float fB = ib2.b(npVar.i()) - f3;
+                float f4 = d - f3;
+                float b = ib2.b(npVar.i()) - f3;
                 wj1 wj1Var = this.f;
                 long j2 = this.g;
                 rg rgVar = npVar.e;
-                long jM = rgVar.M();
+                long M = rgVar.M();
                 rgVar.D().f();
                 try {
-                    ((rg) ((p4) rgVar.e).e).D().k(f2, f2, f4, fB, 0);
+                    ((rg) ((p4) rgVar.e).e).D().k(f2, f2, f4, b, 0);
                     vb0.v0(g11Var, wj1Var, 0L, 0L, j2, null, 246);
                 } finally {
                     rgVar.D().n();
-                    rgVar.e0(jM);
+                    rgVar.e0(M);
                 }
             } else {
                 vb0.v0(g11Var, this.f, this.j, this.k, xo2.I(f, j), this.l, 208);
             }
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

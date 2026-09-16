@@ -38,8 +38,8 @@ public class FloatingActionButton$BaseBehavior<T> extends q10 {
     }
 
     public FloatingActionButton$BaseBehavior(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.g);
-        typedArrayObtainStyledAttributes.getBoolean(0, true);
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.g);
+        obtainStyledAttributes.getBoolean(0, true);
+        obtainStyledAttributes.recycle();
     }
 }

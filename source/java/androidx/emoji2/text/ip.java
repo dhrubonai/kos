@@ -21,7 +21,7 @@ public class ip extends c90 implements gp, g30, lu2 {
         this.g = l10Var;
         this.h = l10Var.t();
         this._decisionAndIndex$volatile = 536870911;
-        this._state$volatile = a4.f81a;
+        this._state$volatile = a4.f80a;
     }
 
     public static Object F(hi1 hi1Var, Object obj, int i2, wm0 wm0Var) {
@@ -91,8 +91,8 @@ public class ip extends c90 implements gp, g30, lu2 {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             if (obj2 instanceof hi1) {
-                Object objF = F((hi1) obj2, obj, i2, wm0Var);
-                while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, objF)) {
+                Object F = F((hi1) obj2, obj, i2, wm0Var);
+                while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, F)) {
                     if (atomicReferenceFieldUpdater.get(this) != obj2) {
                         break;
                     }
@@ -107,7 +107,7 @@ public class ip extends c90 implements gp, g30, lu2 {
                 jp jpVar = (jp) obj2;
                 if (jp.c.compareAndSet(jpVar, 0, 1)) {
                     if (wm0Var != null) {
-                        m(wm0Var, jpVar.f713a, obj);
+                        m(wm0Var, jpVar.f712a, obj);
                         return;
                     }
                     return;
@@ -120,7 +120,7 @@ public class ip extends c90 implements gp, g30, lu2 {
     public final void E(x20 x20Var) {
         l10 l10Var = this.g;
         a90 a90Var = l10Var instanceof a90 ? (a90) l10Var : null;
-        D(up2.f1187a, (a90Var != null ? a90Var.g : null) == x20Var ? 4 : this.f, null);
+        D(up2.f1186a, (a90Var != null ? a90Var.g : null) == x20Var ? 4 : this.f, null);
     }
 
     @Override // androidx.emoji2.text.lu2
@@ -163,8 +163,8 @@ public class ip extends c90 implements gp, g30, lu2 {
             if (juVar2.e != null) {
                 throw new IllegalStateException("Must be called at most once");
             }
-            ju juVarA = ju.a(juVar2, null, cancellationException, 15);
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, juVarA)) {
+            ju a2 = ju.a(juVar2, null, cancellationException, 15);
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, a2)) {
                 if (atomicReferenceFieldUpdater.get(this) != obj) {
                     cancellationException2 = cancellationException;
                 }
@@ -175,7 +175,7 @@ public class ip extends c90 implements gp, g30, lu2 {
             }
             wm0 wm0Var = juVar2.c;
             if (wm0Var != null) {
-                m(wm0Var, cancellationException, juVar2.f600a);
+                m(wm0Var, cancellationException, juVar2.f599a);
                 return;
             }
             return;
@@ -195,9 +195,9 @@ public class ip extends c90 implements gp, g30, lu2 {
 
     @Override // androidx.emoji2.text.c90
     public final Throwable e(Object obj) {
-        Throwable thE = super.e(obj);
-        if (thE != null) {
-            return thE;
+        Throwable e = super.e(obj);
+        if (e != null) {
+            return e;
         }
         return null;
     }
@@ -213,24 +213,24 @@ public class ip extends c90 implements gp, g30, lu2 {
 
     @Override // androidx.emoji2.text.l10
     public final void g(Object obj) {
-        Throwable thA = h02.a(obj);
-        if (thA != null) {
-            obj = new lu(thA, false);
+        Throwable a2 = h02.a(obj);
+        if (a2 != null) {
+            obj = new lu(a2, false);
         }
         D(obj, this.f, null);
     }
 
     @Override // androidx.emoji2.text.gp
     public final de0 h(Object obj, wm0 wm0Var) {
-        de0 de0Var = ex2.f335a;
+        de0 de0Var = ex2.f334a;
         while (true) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
             if (!(obj2 instanceof hi1)) {
                 return null;
             }
-            Object objF = F((hi1) obj2, obj, this.f, wm0Var);
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, objF)) {
+            Object F = F((hi1) obj2, obj, this.f, wm0Var);
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, F)) {
                 if (atomicReferenceFieldUpdater.get(this) != obj2) {
                     break;
                 }
@@ -244,7 +244,7 @@ public class ip extends c90 implements gp, g30, lu2 {
 
     @Override // androidx.emoji2.text.c90
     public final Object i(Object obj) {
-        return obj instanceof ju ? ((ju) obj).f600a : obj;
+        return obj instanceof ju ? ((ju) obj).f599a : obj;
     }
 
     @Override // androidx.emoji2.text.c90
@@ -254,7 +254,7 @@ public class ip extends c90 implements gp, g30, lu2 {
 
     public final void l(cp cpVar, Throwable th) {
         try {
-            switch (cpVar.f213a) {
+            switch (cpVar.f212a) {
                 case 0:
                     ((um0) cpVar.b).e(th);
                     break;
@@ -318,21 +318,21 @@ public class ip extends c90 implements gp, g30, lu2 {
                     if (z2 == (i5 == 1 || i5 == 2)) {
                         a90 a90Var = (a90) l10Var;
                         x20 x20Var = a90Var.g;
-                        v20 v20VarT = a90Var.h.t();
-                        if (x20Var.E(v20VarT)) {
-                            x20Var.D(v20VarT, this);
+                        v20 t = a90Var.h.t();
+                        if (x20Var.E(t)) {
+                            x20Var.D(t, this);
                             return;
                         }
-                        eg0 eg0VarA = sl2.a();
-                        if (eg0VarA.f >= 4294967296L) {
-                            eg0VarA.H(this);
+                        eg0 a2 = sl2.a();
+                        if (a2.f >= 4294967296L) {
+                            a2.H(this);
                             return;
                         }
-                        eg0VarA.J(true);
+                        a2.J(true);
                         try {
                             h50.I(this, l10Var, true);
                             do {
-                            } while (eg0VarA.L());
+                            } while (a2.L());
                         } finally {
                             try {
                                 return;
@@ -356,7 +356,7 @@ public class ip extends c90 implements gp, g30, lu2 {
         AtomicIntegerFieldUpdater atomicIntegerFieldUpdater;
         int i2;
         cy0 cy0Var;
-        boolean zX = x();
+        boolean x = x();
         do {
             atomicIntegerFieldUpdater = i;
             i2 = atomicIntegerFieldUpdater.get(this);
@@ -365,37 +365,37 @@ public class ip extends c90 implements gp, g30, lu2 {
                 if (i3 != 2) {
                     throw new IllegalStateException("Already suspended");
                 }
-                if (zX) {
+                if (x) {
                     B();
                 }
                 Object obj = j.get(this);
                 if (obj instanceof lu) {
-                    throw ((lu) obj).f713a;
+                    throw ((lu) obj).f712a;
                 }
                 int i4 = this.f;
                 if ((i4 != 1 && i4 != 2) || (cy0Var = (cy0) this.h.n(dd0.K)) == null || cy0Var.b()) {
                     return i(obj);
                 }
-                CancellationException cancellationExceptionL = cy0Var.l();
-                b(cancellationExceptionL);
-                throw cancellationExceptionL;
+                CancellationException l = cy0Var.l();
+                b(l);
+                throw l;
             }
         } while (!atomicIntegerFieldUpdater.compareAndSet(this, i2, 536870912 + (536870911 & i2)));
         if (((l90) k.get(this)) == null) {
             u();
         }
-        if (zX) {
+        if (x) {
             B();
         }
         return f30.d;
     }
 
     public final void s() {
-        l90 l90VarU = u();
-        if (l90VarU == null || (j.get(this) instanceof hi1)) {
+        l90 u = u();
+        if (u == null || (j.get(this) instanceof hi1)) {
             return;
         }
-        l90VarU.a();
+        u.a();
         k.set(this, ei1.d);
     }
 
@@ -423,135 +423,98 @@ public class ip extends c90 implements gp, g30, lu2 {
         if (cy0Var == null) {
             return null;
         }
-        l90 l90VarV = xo2.v(cy0Var, true, new hr(this, 0));
+        l90 v = xo2.v(cy0Var, true, new hr(this, 0));
         do {
             atomicReferenceFieldUpdater = k;
-            if (atomicReferenceFieldUpdater.compareAndSet(this, null, l90VarV)) {
+            if (atomicReferenceFieldUpdater.compareAndSet(this, null, v)) {
                 break;
             }
         } while (atomicReferenceFieldUpdater.get(this) == null);
-        return l90VarV;
+        return v;
     }
 
     public final void v(um0 um0Var) {
         w(new cp(0, um0Var));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:58:0x00a0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00a0, code lost:
     
         y(r8, r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00a3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x00a3, code lost:
     
         throw null;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void w(androidx.emoji2.text.hi1 r8) {
-        /*
-            r7 = this;
-        L0:
-            java.util.concurrent.atomic.AtomicReferenceFieldUpdater r0 = androidx.emoji2.text.ip.j
-            java.lang.Object r2 = r0.get(r7)
-            boolean r1 = r2 instanceof androidx.emoji2.text.a4
-            if (r1 == 0) goto L19
-        La:
-            boolean r1 = r0.compareAndSet(r7, r2, r8)
-            if (r1 == 0) goto L12
-            goto L97
-        L12:
-            java.lang.Object r1 = r0.get(r7)
-            if (r1 == r2) goto La
-            goto L0
-        L19:
-            boolean r1 = r2 instanceof androidx.emoji2.text.cp
-            r3 = 0
-            if (r1 != 0) goto La0
-            boolean r1 = r2 instanceof androidx.emoji2.text.c62
-            if (r1 != 0) goto La0
-            boolean r1 = r2 instanceof androidx.emoji2.text.lu
-            if (r1 == 0) goto L4d
-            r0 = r2
-            androidx.emoji2.text.lu r0 = (androidx.emoji2.text.lu) r0
-            java.util.concurrent.atomic.AtomicIntegerFieldUpdater r1 = androidx.emoji2.text.lu.b
-            r4 = 0
-            r5 = 1
-            boolean r1 = r1.compareAndSet(r0, r4, r5)
-            if (r1 == 0) goto L49
-            boolean r1 = r2 instanceof androidx.emoji2.text.jp
-            if (r1 == 0) goto L97
-            java.lang.Throwable r0 = r0.f713a
-            boolean r1 = r8 instanceof androidx.emoji2.text.cp
-            if (r1 == 0) goto L43
-            androidx.emoji2.text.cp r8 = (androidx.emoji2.text.cp) r8
-            r7.l(r8, r0)
-            return
-        L43:
-            androidx.emoji2.text.c62 r8 = (androidx.emoji2.text.c62) r8
-            r7.n(r8, r0)
-            return
-        L49:
-            y(r8, r2)
-            throw r3
-        L4d:
-            boolean r1 = r2 instanceof androidx.emoji2.text.ju
-            if (r1 == 0) goto L80
-            r1 = r2
-            androidx.emoji2.text.ju r1 = (androidx.emoji2.text.ju) r1
-            androidx.emoji2.text.cp r4 = r1.b
-            if (r4 != 0) goto L7c
-            boolean r4 = r8 instanceof androidx.emoji2.text.c62
-            if (r4 == 0) goto L5d
-            goto L97
-        L5d:
-            r4 = r8
-            androidx.emoji2.text.cp r4 = (androidx.emoji2.text.cp) r4
-            java.lang.Throwable r5 = r1.e
-            if (r5 == 0) goto L68
-            r7.l(r4, r5)
-            return
-        L68:
-            r5 = 29
-            androidx.emoji2.text.ju r1 = androidx.emoji2.text.ju.a(r1, r4, r3, r5)
-        L6e:
-            boolean r3 = r0.compareAndSet(r7, r2, r1)
-            if (r3 == 0) goto L75
-            goto L97
-        L75:
-            java.lang.Object r3 = r0.get(r7)
-            if (r3 == r2) goto L6e
-            goto L0
-        L7c:
-            y(r8, r2)
-            throw r3
-        L80:
-            boolean r1 = r8 instanceof androidx.emoji2.text.c62
-            if (r1 == 0) goto L85
-            goto L97
-        L85:
-            r3 = r8
-            androidx.emoji2.text.cp r3 = (androidx.emoji2.text.cp) r3
-            androidx.emoji2.text.ju r1 = new androidx.emoji2.text.ju
-            r5 = 0
-            r6 = 28
-            r4 = 0
-            r1.<init>(r2, r3, r4, r5, r6)
-        L91:
-            boolean r3 = r0.compareAndSet(r7, r2, r1)
-            if (r3 == 0) goto L98
-        L97:
-            return
-        L98:
-            java.lang.Object r3 = r0.get(r7)
-            if (r3 == r2) goto L91
-            goto L0
-        La0:
-            y(r8, r2)
-            throw r3
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ip.w(androidx.emoji2.text.hi1):void");
+    public final void w(hi1 hi1Var) {
+        while (true) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = j;
+            Object obj = atomicReferenceFieldUpdater.get(this);
+            if (obj instanceof a4) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, hi1Var)) {
+                    if (atomicReferenceFieldUpdater.get(this) != obj) {
+                        break;
+                    }
+                }
+                return;
+            }
+            if ((obj instanceof cp) || (obj instanceof c62)) {
+                break;
+            }
+            if (obj instanceof lu) {
+                lu luVar = (lu) obj;
+                if (!lu.b.compareAndSet(luVar, 0, 1)) {
+                    y(hi1Var, obj);
+                    throw null;
+                }
+                if (obj instanceof jp) {
+                    Throwable th = luVar.f712a;
+                    if (hi1Var instanceof cp) {
+                        l((cp) hi1Var, th);
+                        return;
+                    } else {
+                        n((c62) hi1Var, th);
+                        return;
+                    }
+                }
+                return;
+            }
+            if (!(obj instanceof ju)) {
+                if (hi1Var instanceof c62) {
+                    return;
+                }
+                ju juVar = new ju(obj, (cp) hi1Var, (wm0) null, (Throwable) null, 28);
+                while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, juVar)) {
+                    if (atomicReferenceFieldUpdater.get(this) != obj) {
+                        break;
+                    }
+                }
+                return;
+            }
+            ju juVar2 = (ju) obj;
+            if (juVar2.b != null) {
+                y(hi1Var, obj);
+                throw null;
+            }
+            if (hi1Var instanceof c62) {
+                return;
+            }
+            cp cpVar = (cp) hi1Var;
+            Throwable th2 = juVar2.e;
+            if (th2 != null) {
+                l(cpVar, th2);
+                return;
+            }
+            ju a2 = ju.a(juVar2, cpVar, null, 29);
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, a2)) {
+                if (atomicReferenceFieldUpdater.get(this) != obj) {
+                    break;
+                }
+            }
+            return;
+        }
     }
 
     public final boolean x() {

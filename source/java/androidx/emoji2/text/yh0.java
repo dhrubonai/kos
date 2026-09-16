@@ -8,17 +8,17 @@ import java.io.File;
 public final class yh0 implements wh0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final File f1387a;
+    public final File f1386a;
 
     public yh0(File file) {
-        this.f1387a = file;
+        this.f1386a = file;
     }
 
     @Override // androidx.emoji2.text.wh0
     public final Object a(l10 l10Var) {
         String str = zn1.e;
-        File file = this.f1387a;
-        ai0 ai0Var = new ai0(iz0.p(file), ci0.f198a, null, null);
+        File file = this.f1386a;
+        ai0 ai0Var = new ai0(iz0.p(file), ci0.f197a, null, null);
         MimeTypeMap singleton = MimeTypeMap.getSingleton();
         String name = file.getName();
         lx0.w(name, "getName(...)");

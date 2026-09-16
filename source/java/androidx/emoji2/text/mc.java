@@ -20,7 +20,7 @@ public final class mc extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        WindowInsets windowInsetsC;
+        WindowInsets c;
         switch (this.e) {
             case 0:
                 tl1 tl1Var = (tl1) obj;
@@ -52,14 +52,14 @@ public final class mc extends g01 implements um0 {
                 int i2 = iArr[1];
                 js2Var2.getView().getLocationOnScreen(iArr);
                 long j = js2Var2.r;
-                long jK = ((p01) obj).k();
-                js2Var2.r = jK;
+                long k = ((p01) obj).k();
+                js2Var2.r = k;
                 wv2 wv2Var = js2Var2.s;
-                if (wv2Var != null && ((i != iArr[0] || i2 != iArr[1] || !uw0.a(j, jK)) && (windowInsetsC = js2Var2.m(wv2Var).c()) != null)) {
-                    js2Var2.getView().dispatchApplyWindowInsets(windowInsetsC);
+                if (wv2Var != null && ((i != iArr[0] || i2 != iArr[1] || !uw0.a(j, k)) && (c = js2Var2.m(wv2Var).c()) != null)) {
+                    js2Var2.getView().dispatchApplyWindowInsets(c);
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

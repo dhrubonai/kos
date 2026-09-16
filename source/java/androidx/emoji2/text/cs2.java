@@ -12,12 +12,12 @@ public abstract class cs2 {
     }
 
     public static n00 b(View view, n00 n00Var) {
-        ContentInfo contentInfoO = n00Var.f782a.o();
-        Objects.requireNonNull(contentInfoO);
-        ContentInfo contentInfoPerformReceiveContent = view.performReceiveContent(contentInfoO);
-        if (contentInfoPerformReceiveContent == null) {
+        ContentInfo o = n00Var.f781a.o();
+        Objects.requireNonNull(o);
+        ContentInfo performReceiveContent = view.performReceiveContent(o);
+        if (performReceiveContent == null) {
             return null;
         }
-        return contentInfoPerformReceiveContent == contentInfoO ? n00Var : new n00(new p4(contentInfoPerformReceiveContent));
+        return performReceiveContent == o ? n00Var : new n00(new p4(performReceiveContent));
     }
 }

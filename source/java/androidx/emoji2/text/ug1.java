@@ -7,11 +7,11 @@ import java.util.List;
 public final class ug1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final List f1174a;
+    public final List f1173a;
     public final int b;
 
     public ug1(int i, List list) {
-        this.f1174a = list;
+        this.f1173a = list;
         this.b = i;
         if (list.isEmpty() && i == -1) {
             return;
@@ -22,10 +22,10 @@ public final class ug1 {
                 return;
             }
         }
-        StringBuilder sbL = jx0.l("Invalid 'NavigationEventHistory' state:  'currentIndex' must be within the bounds of 'mergedHistory' (or -1 if empty). Received: currentIndex = '", i, "', bounds = '");
-        sbL.append(new qw0(0, list.size() - 1, 1));
-        sbL.append("'.");
-        throw new IllegalArgumentException(sbL.toString().toString());
+        StringBuilder l = jx0.l("Invalid 'NavigationEventHistory' state:  'currentIndex' must be within the bounds of 'mergedHistory' (or -1 if empty). Received: currentIndex = '", i, "', bounds = '");
+        l.append(new qw0(0, list.size() - 1, 1));
+        l.append("'.");
+        throw new IllegalArgumentException(l.toString().toString());
     }
 
     public final boolean equals(Object obj) {
@@ -36,15 +36,15 @@ public final class ug1 {
             return false;
         }
         ug1 ug1Var = (ug1) obj;
-        return this.b == ug1Var.b && lx0.n(this.f1174a, ug1Var.f1174a);
+        return this.b == ug1Var.b && lx0.n(this.f1173a, ug1Var.f1173a);
     }
 
     public final int hashCode() {
-        return this.f1174a.hashCode() + (this.b * 31);
+        return this.f1173a.hashCode() + (this.b * 31);
     }
 
     public final String toString() {
-        return "NavigationEventHistory(currentIndex=" + this.b + ", mergedHistory=" + this.f1174a + ')';
+        return "NavigationEventHistory(currentIndex=" + this.b + ", mergedHistory=" + this.f1173a + ')';
     }
 
     public ug1() {

@@ -7,7 +7,7 @@ public final class uj extends tg1 {
 
     public uj(ww wwVar, xj xjVar) {
         this.d = wwVar;
-        this.f1119a = xjVar;
+        this.f1118a = xjVar;
         this.b = false;
     }
 

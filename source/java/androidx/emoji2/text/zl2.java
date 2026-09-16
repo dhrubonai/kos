@@ -5,15 +5,15 @@ package androidx.emoji2.text;
 public final class zl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final qe1 f1449a;
+    public final qe1 f1448a;
     public long b;
     public long c;
     public long d;
     public long e;
 
     public zl2() {
-        qe1 qe1Var = mw0.f774a;
-        this.f1449a = new qe1();
+        qe1 qe1Var = mw0.f773a;
+        this.f1448a = new qe1();
         this.b = -1L;
         this.c = 0L;
         this.d = 0L;

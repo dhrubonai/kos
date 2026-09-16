@@ -34,18 +34,20 @@ public final class r41 extends hh2 implements Function2 {
         switch (this.h) {
             case 0:
                 r41 r41Var = (r41) i((l10) obj2, (u42) obj);
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 r41Var.k(up2Var);
                 return up2Var;
             case 1:
-                return ((r41) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((r41) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             default:
-                return ((r41) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((r41) i((l10) obj2, (e30) obj)).k(up2.f1186a);
         }
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
+        Object p;
+        Object p2;
         switch (this.h) {
             case 0:
                 mz0.L(obj);
@@ -61,18 +63,18 @@ public final class r41 extends hh2 implements Function2 {
                 if (e11Var != null) {
                     e11Var.k();
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     ie ieVar = this.j.v;
                     Float f = new Float(0.0f);
-                    be2 be2VarA0 = lx0.a0(1, new Float(0.5f));
+                    be2 a0 = lx0.a0(1, new Float(0.5f));
                     this.i = 1;
-                    Object objP = pz0.p(ieVar, f, be2VarA0, true, vl1.D, this);
+                    p = pz0.p(ieVar, f, a0, true, vl1.D, this);
                     f30 f30Var = f30.d;
-                    if (objP == f30Var) {
+                    if (p == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -81,18 +83,18 @@ public final class r41 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i3 = this.i;
                 if (i3 == 0) {
                     mz0.L(obj);
                     ie ieVar2 = this.j.v;
                     Float f2 = new Float(0.0f);
-                    be2 be2VarA02 = lx0.a0(1, new Float(0.5f));
+                    be2 a02 = lx0.a0(1, new Float(0.5f));
                     this.i = 1;
-                    Object objP2 = pz0.p(ieVar2, f2, be2VarA02, true, vl1.D, this);
+                    p2 = pz0.p(ieVar2, f2, a02, true, vl1.D, this);
                     f30 f30Var2 = f30.d;
-                    if (objP2 == f30Var2) {
+                    if (p2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -101,7 +103,7 @@ public final class r41 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

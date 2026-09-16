@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class ff2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public long f361a;
+    public long f360a;
     public ff2 b;
 
     public ff2(long j) {
-        this.f361a = j;
+        this.f360a = j;
     }
 
     public abstract void a(ff2 ff2Var);

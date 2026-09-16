@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class ax2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final zn1 f127a;
+    public final zn1 f126a;
     public final boolean b;
     public final String c;
     public final long d;
@@ -29,7 +29,7 @@ public final class ax2 {
     public ax2(zn1 zn1Var, boolean z, String str, long j, long j2, long j3, int i, long j4, int i2, int i3, Long l, Long l2, Long l3, Integer num, Integer num2, Integer num3) {
         lx0.x(zn1Var, "canonicalPath");
         lx0.x(str, "comment");
-        this.f127a = zn1Var;
+        this.f126a = zn1Var;
         this.b = z;
         this.c = str;
         this.d = j;

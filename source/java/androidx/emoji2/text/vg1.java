@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class vg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public s6 f1216a;
+    public s6 f1215a;
     public boolean b;
 
     public final void a() {
-        s6 s6Var = this.f1216a;
+        s6 s6Var = this.f1215a;
         if (s6Var == null) {
             throw new IllegalStateException("This input is not added to any dispatcher.");
         }
@@ -20,19 +20,19 @@ public abstract class vg1 {
         j4 j4Var = (j4) s6Var.d;
         wg1Var.getClass();
         if (equals(wg1Var.h) && -1 == wg1Var.g) {
-            tg1 tg1VarC = wg1Var.f;
-            if (tg1VarC == null) {
-                tg1VarC = wg1Var.c(-1);
+            tg1 tg1Var = wg1Var.f;
+            if (tg1Var == null) {
+                tg1Var = wg1Var.c(-1);
             }
             wg1Var.f = null;
             wg1Var.g = 0;
             wg1Var.h = null;
-            if (tg1VarC == null) {
-                ((oj1) j4Var.f561a).f860a.run();
+            if (tg1Var == null) {
+                ((oj1) j4Var.f560a).f859a.run();
             } else {
-                tg1VarC.b();
+                tg1Var.b();
             }
-            te2 te2Var = wg1Var.f1279a;
+            te2 te2Var = wg1Var.f1278a;
             te2Var.getClass();
             te2Var.i(null, xg1.e);
         }

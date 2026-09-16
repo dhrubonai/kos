@@ -7,11 +7,11 @@ import java.util.Iterator;
 public final class ue0 implements q72, oc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ue0 f1169a = new ue0();
+    public static final ue0 f1168a = new ue0();
 
     @Override // androidx.emoji2.text.oc0
     public final /* bridge */ /* synthetic */ q72 a(int i) {
-        return f1169a;
+        return f1168a;
     }
 
     @Override // androidx.emoji2.text.q72

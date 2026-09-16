@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class ag1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicReference f101a = new AtomicReference(null);
+    public final AtomicReference f100a = new AtomicReference(null);
     public final dg1 b = new dg1();
 
     public static Object a(ag1 ag1Var, um0 um0Var, l10 l10Var) {

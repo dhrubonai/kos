@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class f70 implements ed0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f346a;
+    public final int f345a;
     public final int b;
 
     public f70(int i, int i2) {
-        this.f346a = i;
+        this.f345a = i;
         this.b = i2;
         if (i >= 0 && i2 >= 0) {
             return;
@@ -23,7 +23,7 @@ public final class f70 implements ed0 {
         int i2 = 0;
         int i3 = 0;
         while (true) {
-            if (i2 < this.f346a) {
+            if (i2 < this.f345a) {
                 int i4 = i3 + 1;
                 int i5 = fd0Var.b;
                 if (i5 <= i4) {
@@ -37,26 +37,26 @@ public final class f70 implements ed0 {
                 break;
             }
         }
-        int iB = 0;
+        int i6 = 0;
         while (true) {
             if (i >= this.b) {
                 break;
             }
-            int i6 = iB + 1;
-            int i7 = fd0Var.c;
-            ye0 ye0Var = fd0Var.f357a;
-            if (i7 + i6 >= ye0Var.b()) {
-                iB = ye0Var.b() - fd0Var.c;
+            int i7 = i6 + 1;
+            int i8 = fd0Var.c;
+            ye0 ye0Var = fd0Var.f356a;
+            if (i8 + i7 >= ye0Var.b()) {
+                i6 = ye0Var.b() - fd0Var.c;
                 break;
             } else {
-                iB = (Character.isHighSurrogate(fd0Var.b((fd0Var.c + i6) + (-1))) && Character.isLowSurrogate(fd0Var.b(fd0Var.c + i6))) ? iB + 2 : i6;
+                i6 = (Character.isHighSurrogate(fd0Var.b((fd0Var.c + i7) + (-1))) && Character.isLowSurrogate(fd0Var.b(fd0Var.c + i7))) ? i6 + 2 : i7;
                 i++;
             }
         }
-        int i8 = fd0Var.c;
-        fd0Var.a(i8, iB + i8);
-        int i9 = fd0Var.b;
-        fd0Var.a(i9 - i3, i9);
+        int i9 = fd0Var.c;
+        fd0Var.a(i9, i6 + i9);
+        int i10 = fd0Var.b;
+        fd0Var.a(i10 - i3, i10);
     }
 
     public final boolean equals(Object obj) {
@@ -67,16 +67,16 @@ public final class f70 implements ed0 {
             return false;
         }
         f70 f70Var = (f70) obj;
-        return this.f346a == f70Var.f346a && this.b == f70Var.b;
+        return this.f345a == f70Var.f345a && this.b == f70Var.b;
     }
 
     public final int hashCode() {
-        return (this.f346a * 31) + this.b;
+        return (this.f345a * 31) + this.b;
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("DeleteSurroundingTextInCodePointsCommand(lengthBeforeCursor=");
-        sb.append(this.f346a);
+        sb.append(this.f345a);
         sb.append(", lengthAfterCursor=");
         return zd.j(sb, this.b, ')');
     }

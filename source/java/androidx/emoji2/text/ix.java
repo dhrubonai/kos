@@ -30,9 +30,9 @@ public final class ix extends y {
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new x(i, 2, this);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new x(i, 2, this);
         }
     }
 

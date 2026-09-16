@@ -9,13 +9,13 @@ import java.util.HashSet;
 public final class mi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final NotificationManager f748a;
+    public final NotificationManager f747a;
 
     static {
         new HashSet();
     }
 
     public mi1(Context context) {
-        this.f748a = (NotificationManager) context.getSystemService("notification");
+        this.f747a = (NotificationManager) context.getSystemService("notification");
     }
 }

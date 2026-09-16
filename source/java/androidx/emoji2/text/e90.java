@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class e90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final q60 f294a = q60.g;
+    public static final q60 f293a = q60.g;
 
     static {
         int i = qp2.f;

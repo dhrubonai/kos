@@ -11,7 +11,7 @@ public final class cr0 {
     public static final io i;
 
     /* renamed from: a, reason: collision with root package name */
-    public final io f215a;
+    public final io f214a;
     public final io b;
     public final int c;
 
@@ -28,7 +28,7 @@ public final class cr0 {
     public cr0(io ioVar, io ioVar2) {
         lx0.x(ioVar, "name");
         lx0.x(ioVar2, "value");
-        this.f215a = ioVar;
+        this.f214a = ioVar;
         this.b = ioVar2;
         this.c = ioVar2.c() + ioVar.c() + 32;
     }
@@ -41,15 +41,15 @@ public final class cr0 {
             return false;
         }
         cr0 cr0Var = (cr0) obj;
-        return lx0.n(this.f215a, cr0Var.f215a) && lx0.n(this.b, cr0Var.b);
+        return lx0.n(this.f214a, cr0Var.f214a) && lx0.n(this.b, cr0Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f215a.hashCode() * 31);
+        return this.b.hashCode() + (this.f214a.hashCode() * 31);
     }
 
     public final String toString() {
-        return this.f215a.p() + ": " + this.b.p();
+        return this.f214a.p() + ": " + this.b.p();
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

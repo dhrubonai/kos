@@ -10,14 +10,14 @@ public final class yr {
     public static final yr c = new yr();
 
     /* renamed from: a, reason: collision with root package name */
-    public final HashMap f1397a = new HashMap();
+    public final HashMap f1396a = new HashMap();
     public final HashMap b = new HashMap();
 
-    public static void b(HashMap map, xr xrVar, n51 n51Var, Class cls) {
-        n51 n51Var2 = (n51) map.get(xrVar);
+    public static void b(HashMap hashMap, xr xrVar, n51 n51Var, Class cls) {
+        n51 n51Var2 = (n51) hashMap.get(xrVar);
         if (n51Var2 == null || n51Var == n51Var2) {
             if (n51Var2 == null) {
-                map.put(xrVar, n51Var);
+                hashMap.put(xrVar, n51Var);
                 return;
             }
             return;
@@ -25,25 +25,25 @@ public final class yr {
         throw new IllegalArgumentException("Method " + xrVar.b.getName() + " in " + cls.getName() + " already declared with different @OnLifecycleEvent value: previous value " + n51Var2 + ", new value " + n51Var);
     }
 
-    public final wr a(Class cls, Method[] methodArr) throws SecurityException {
+    public final wr a(Class cls, Method[] methodArr) {
         int i;
         Class superclass = cls.getSuperclass();
-        HashMap map = new HashMap();
-        HashMap map2 = this.f1397a;
+        HashMap hashMap = new HashMap();
+        HashMap hashMap2 = this.f1396a;
         if (superclass != null) {
-            wr wrVarA = (wr) map2.get(superclass);
-            if (wrVarA == null) {
-                wrVarA = a(superclass, null);
+            wr wrVar = (wr) hashMap2.get(superclass);
+            if (wrVar == null) {
+                wrVar = a(superclass, null);
             }
-            map.putAll(wrVarA.b);
+            hashMap.putAll(wrVar.b);
         }
         for (Class<?> cls2 : cls.getInterfaces()) {
-            wr wrVarA2 = (wr) map2.get(cls2);
-            if (wrVarA2 == null) {
-                wrVarA2 = a(cls2, null);
+            wr wrVar2 = (wr) hashMap2.get(cls2);
+            if (wrVar2 == null) {
+                wrVar2 = a(cls2, null);
             }
-            for (Map.Entry entry : wrVarA2.b.entrySet()) {
-                b(map, (xr) entry.getKey(), (n51) entry.getValue(), cls);
+            for (Map.Entry entry : wrVar2.b.entrySet()) {
+                b(hashMap, (xr) entry.getKey(), (n51) entry.getValue(), cls);
             }
         }
         if (methodArr == null) {
@@ -66,12 +66,12 @@ public final class yr {
                     }
                     i = 1;
                 }
-                n51 n51VarValue = rj1Var.value();
+                n51 value = rj1Var.value();
                 if (parameterTypes.length > 1) {
                     if (!n51.class.isAssignableFrom(parameterTypes[1])) {
                         throw new IllegalArgumentException("invalid parameter type. second arg must be an event");
                     }
-                    if (n51VarValue != n51.ON_ANY) {
+                    if (value != n51.ON_ANY) {
                         throw new IllegalArgumentException("Second arg is supported only for ON_ANY value");
                     }
                     i = 2;
@@ -79,13 +79,13 @@ public final class yr {
                 if (parameterTypes.length > 2) {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
-                b(map, new xr(method, i), n51VarValue, cls);
+                b(hashMap, new xr(method, i), value, cls);
                 z = true;
             }
         }
-        wr wrVar = new wr(map);
-        map2.put(cls, wrVar);
+        wr wrVar3 = new wr(hashMap);
+        hashMap2.put(cls, wrVar3);
         this.b.put(cls, Boolean.valueOf(z));
-        return wrVar;
+        return wrVar3;
     }
 }

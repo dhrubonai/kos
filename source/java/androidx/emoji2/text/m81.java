@@ -14,7 +14,7 @@ public abstract class m81 extends k81 implements ab1 {
 
     public m81(xh1 xh1Var) {
         this.r = xh1Var;
-        ye1 ye1Var = ti1.f1122a;
+        ye1 ye1Var = ti1.f1121a;
         this.w = new ye1();
     }
 
@@ -94,18 +94,18 @@ public abstract class m81 extends k81 implements ab1 {
     }
 
     public final long L0(m81 m81Var, boolean z) {
-        long jD = 0;
-        m81 m81VarR0 = this;
-        while (!m81VarR0.equals(m81Var)) {
-            if (!m81VarR0.l || !z) {
-                jD = nw0.d(jD, m81VarR0.s);
+        long j = 0;
+        m81 m81Var2 = this;
+        while (!m81Var2.equals(m81Var)) {
+            if (!m81Var2.l || !z) {
+                j = nw0.d(j, m81Var2.s);
             }
-            xh1 xh1Var = m81VarR0.r.t;
+            xh1 xh1Var = m81Var2.r.t;
             lx0.u(xh1Var);
-            m81VarR0 = xh1Var.R0();
-            lx0.u(m81VarR0);
+            m81Var2 = xh1Var.R0();
+            lx0.u(m81Var2);
         }
-        return jD;
+        return j;
     }
 
     @Override // androidx.emoji2.text.j70

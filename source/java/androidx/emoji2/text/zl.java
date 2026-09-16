@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class zl {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f1447a;
+    public final float f1446a;
     public final kd2 b;
 
     public zl(float f, kd2 kd2Var) {
-        this.f1447a = f;
+        this.f1446a = f;
         this.b = kd2Var;
     }
 
@@ -21,14 +21,14 @@ public final class zl {
             return false;
         }
         zl zlVar = (zl) obj;
-        return da0.a(this.f1447a, zlVar.f1447a) && this.b.equals(zlVar.b);
+        return da0.a(this.f1446a, zlVar.f1446a) && this.b.equals(zlVar.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (Float.hashCode(this.f1447a) * 31);
+        return this.b.hashCode() + (Float.hashCode(this.f1446a) * 31);
     }
 
     public final String toString() {
-        return "BorderStroke(width=" + ((Object) da0.b(this.f1447a)) + ", brush=" + this.b + ')';
+        return "BorderStroke(width=" + ((Object) da0.b(this.f1446a)) + ", brush=" + this.b + ')';
     }
 }

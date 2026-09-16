@@ -5,64 +5,64 @@ package androidx.emoji2.text;
 public final class tk2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final sk2 f1127a;
+    public final sk2 f1126a;
     public p01 b = null;
     public p01 c;
 
     public tk2(sk2 sk2Var, p01 p01Var) {
-        this.f1127a = sk2Var;
+        this.f1126a = sk2Var;
         this.c = p01Var;
     }
 
     public final long a(long j) {
-        zw1 zw1VarK;
+        zw1 zw1Var;
         p01 p01Var = this.b;
-        zw1 zw1Var = zw1.e;
+        zw1 zw1Var2 = zw1.e;
         if (p01Var != null) {
             if (p01Var.h()) {
                 p01 p01Var2 = this.c;
-                zw1VarK = p01Var2 != null ? p01Var2.K(p01Var, true) : null;
+                zw1Var = p01Var2 != null ? p01Var2.K(p01Var, true) : null;
             } else {
-                zw1VarK = zw1Var;
+                zw1Var = zw1Var2;
             }
-            if (zw1VarK != null) {
-                zw1Var = zw1VarK;
-            }
-        }
-        float fD = zi1.d(j);
-        float fD2 = zw1Var.f1459a;
-        if (fD >= fD2) {
-            float fD3 = zi1.d(j);
-            fD2 = zw1Var.c;
-            if (fD3 <= fD2) {
-                fD2 = zi1.d(j);
+            if (zw1Var != null) {
+                zw1Var2 = zw1Var;
             }
         }
-        float fE = zi1.e(j);
-        float fE2 = zw1Var.b;
-        if (fE >= fE2) {
-            float fE3 = zi1.e(j);
-            fE2 = zw1Var.d;
-            if (fE3 <= fE2) {
-                fE2 = zi1.e(j);
+        float d = zi1.d(j);
+        float f = zw1Var2.f1458a;
+        if (d >= f) {
+            float d2 = zi1.d(j);
+            f = zw1Var2.c;
+            if (d2 <= f) {
+                f = zi1.d(j);
             }
         }
-        return jz0.d(fD2, fE2);
+        float e = zi1.e(j);
+        float f2 = zw1Var2.b;
+        if (e >= f2) {
+            float e2 = zi1.e(j);
+            f2 = zw1Var2.d;
+            if (e2 <= f2) {
+                f2 = zi1.e(j);
+            }
+        }
+        return jz0.d(f, f2);
     }
 
     public final int b(long j, boolean z) {
         if (z) {
             j = a(j);
         }
-        return this.f1127a.b.e(d(j));
+        return this.f1126a.b.e(d(j));
     }
 
     public final boolean c(long j) {
-        long jD = d(a(j));
-        float fE = zi1.e(jD);
-        sk2 sk2Var = this.f1127a;
-        int iC = sk2Var.b.c(fE);
-        return zi1.d(jD) >= sk2Var.f(iC) && zi1.d(jD) <= sk2Var.g(iC);
+        long d = d(a(j));
+        float e = zi1.e(d);
+        sk2 sk2Var = this.f1126a;
+        int c = sk2Var.b.c(e);
+        return zi1.d(d) >= sk2Var.f(c) && zi1.d(d) <= sk2Var.g(c);
     }
 
     public final long d(long j) {

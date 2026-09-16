@@ -36,30 +36,30 @@ public final class ob extends e12 implements z02 {
 
     @Override // androidx.emoji2.text.e12
     public final void I0(vt1 vt1Var, long j, float f) {
-        y02 y02VarA = this.B;
-        if (y02VarA == null) {
-            y02VarA = j12.a(j12.b((View) xa1.t(this, t8.f)));
-            this.B = y02VarA;
+        y02 y02Var = this.B;
+        if (y02Var == null) {
+            y02Var = j12.a(j12.b((View) xa1.t(this, t8.f)));
+            this.B = y02Var;
         }
-        b12 b12VarA = y02VarA.a(this);
-        int iQ = xa1.Q(f);
-        long jC = this.u.c();
+        b12 a2 = y02Var.a(this);
+        int Q = xa1.Q(f);
+        long c = this.u.c();
         this.v.a();
-        b12VarA.b(vt1Var, this.s, j, iQ, jC, 0.1f, new o(3, this));
-        this.C = b12VarA;
+        a2.b(vt1Var, this.s, j, Q, c, 0.1f, new o(3, this));
+        this.C = a2;
         ex2.I(this);
     }
 
     @Override // androidx.emoji2.text.e12
     public final void J0(g11 g11Var) {
-        lp lpVarD = g11Var.d.e.D();
+        lp D = g11Var.d.e.D();
         b12 b12Var = this.C;
         if (b12Var != null) {
             long j = this.y;
-            long jC = this.u.c();
+            long c = this.u.c();
             this.v.a();
-            b12Var.e(0.1f, j, jC);
-            b12Var.draw(x6.a(lpVarD));
+            b12Var.e(0.1f, j, c);
+            b12Var.draw(x6.a(D));
         }
     }
 

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class w31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f1256a;
+    public final Object f1255a;
     public final x31 b;
     public final rn1 c = new rn1(-1);
     public final rn1 d = new rn1(0);
@@ -13,7 +13,7 @@ public final class w31 {
     public final un1 f = az0.W(null);
 
     public w31(Object obj, x31 x31Var) {
-        this.f1256a = obj;
+        this.f1255a = obj;
         this.b = x31Var;
     }
 

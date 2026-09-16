@@ -17,8 +17,8 @@ public final class d61 implements LineHeightSpan {
         if (fontMetricsInt.descent - fontMetricsInt.ascent <= 0) {
             return;
         }
-        int iCeil = (int) Math.ceil(fontMetricsInt.descent * ((r4 * 1.0f) / r3));
-        fontMetricsInt.descent = iCeil;
-        fontMetricsInt.ascent = iCeil - ((int) Math.ceil(this.d));
+        int ceil = (int) Math.ceil(fontMetricsInt.descent * ((r4 * 1.0f) / r3));
+        fontMetricsInt.descent = ceil;
+        fontMetricsInt.ascent = ceil - ((int) Math.ceil(this.d));
     }
 }

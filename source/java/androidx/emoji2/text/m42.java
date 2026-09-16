@@ -6,6 +6,6 @@ public final /* synthetic */ class m42 extends q4 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         ((sf1) this.d).b((n42) obj);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

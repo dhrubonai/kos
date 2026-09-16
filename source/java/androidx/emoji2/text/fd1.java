@@ -14,10 +14,10 @@ public final class fd1 extends hh2 implements wm0 {
 
     @Override // androidx.emoji2.text.wm0
     public final Object invoke(Object obj, Object obj2, Object obj3) {
-        float fFloatValue = ((Number) obj2).floatValue();
+        float floatValue = ((Number) obj2).floatValue();
         fd1 fd1Var = new fd1(this.i, (l10) obj3);
-        fd1Var.h = fFloatValue;
-        up2 up2Var = up2.f1187a;
+        fd1Var.h = floatValue;
+        up2 up2Var = up2.f1186a;
         fd1Var.k(up2Var);
         return up2Var;
     }
@@ -26,6 +26,6 @@ public final class fd1 extends hh2 implements wm0 {
     public final Object k(Object obj) {
         mz0.L(obj);
         this.i.e(new Float(this.h));
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

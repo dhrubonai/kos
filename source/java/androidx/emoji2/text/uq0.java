@@ -10,13 +10,13 @@ import java.util.List;
 public final class uq0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final lm2 f1188a;
+    public final lm2 f1187a;
     public final sr b;
     public final List c;
     public final th2 d;
 
     public uq0(lm2 lm2Var, sr srVar, List list, sm0 sm0Var) {
-        this.f1188a = lm2Var;
+        this.f1187a = lm2Var;
         this.b = srVar;
         this.c = list;
         this.d = az0.U(new o(sm0Var));
@@ -31,19 +31,19 @@ public final class uq0 {
             return false;
         }
         uq0 uq0Var = (uq0) obj;
-        return uq0Var.f1188a == this.f1188a && lx0.n(uq0Var.b, this.b) && lx0.n(uq0Var.a(), a()) && lx0.n(uq0Var.c, this.c);
+        return uq0Var.f1187a == this.f1187a && lx0.n(uq0Var.b, this.b) && lx0.n(uq0Var.a(), a()) && lx0.n(uq0Var.c, this.c);
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + ((a().hashCode() + ((this.b.hashCode() + ((this.f1188a.hashCode() + 527) * 31)) * 31)) * 31);
+        return this.c.hashCode() + ((a().hashCode() + ((this.b.hashCode() + ((this.f1187a.hashCode() + 527) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
         String type;
         String type2;
-        List<Certificate> listA = a();
-        ArrayList arrayList = new ArrayList(ys.r0(listA));
-        for (Certificate certificate : listA) {
+        List<Certificate> a2 = a();
+        ArrayList arrayList = new ArrayList(ys.r0(a2));
+        for (Certificate certificate : a2) {
             if (certificate instanceof X509Certificate) {
                 type2 = ((X509Certificate) certificate).getSubjectDN().toString();
             } else {
@@ -52,13 +52,13 @@ public final class uq0 {
             }
             arrayList.add(type2);
         }
-        String string = arrayList.toString();
+        String obj = arrayList.toString();
         StringBuilder sb = new StringBuilder("Handshake{tlsVersion=");
-        sb.append(this.f1188a);
+        sb.append(this.f1187a);
         sb.append(" cipherSuite=");
         sb.append(this.b);
         sb.append(" peerCertificates=");
-        sb.append(string);
+        sb.append(obj);
         sb.append(" localCertificates=");
         List<Certificate> list = this.c;
         ArrayList arrayList2 = new ArrayList(ys.r0(list));

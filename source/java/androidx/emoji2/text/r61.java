@@ -8,7 +8,7 @@ import android.view.View;
 public abstract class r61 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f994a;
+    public boolean f993a;
     public View b;
     public int c;
     public int d;

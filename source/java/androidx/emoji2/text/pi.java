@@ -24,7 +24,7 @@ public final class pi extends fn1 implements ky1 {
     public final un1 v;
 
     public pi(bu0 bu0Var, bw1 bw1Var) {
-        fi fiVar = fi.f365a;
+        fi fiVar = fi.f364a;
         this.n = fiVar;
         this.p = w;
         this.q = p00.b;
@@ -79,10 +79,10 @@ public final class pi extends fn1 implements ky1 {
         Trace.beginSection("AsyncImagePainter.onRemembered");
         try {
             if (this.i == null) {
-                vg2 vg2VarL = nz0.l();
-                q60 q60Var = e90.f294a;
-                j10 j10VarG = wj1.g(kx0.H(vg2VarL, h91.f462a.i));
-                this.i = j10VarG;
+                vg2 l = nz0.l();
+                q60 q60Var = e90.f293a;
+                j10 g = wj1.g(kx0.H(l, h91.f461a.i));
+                this.i = g;
                 Object obj = this.o;
                 l10 l10Var = null;
                 ky1 ky1Var = obj instanceof ky1 ? (ky1) obj : null;
@@ -90,14 +90,14 @@ public final class pi extends fn1 implements ky1 {
                     ky1Var.f();
                 }
                 if (this.s) {
-                    au0 au0VarA = bu0.a((bu0) this.u.getValue());
-                    au0VarA.b = ((bw1) this.v.getValue()).b;
-                    au0VarA.p = null;
-                    au0VarA.a().z.getClass();
-                    p60 p60Var = g.f395a;
+                    au0 a2 = bu0.a((bu0) this.u.getValue());
+                    a2.b = ((bw1) this.v.getValue()).b;
+                    a2.p = null;
+                    a2.a().z.getClass();
+                    p60 p60Var = g.f394a;
                     k(new hi(null));
                 } else {
-                    h50.G(j10VarG, null, new c3(this, l10Var, 1), 3);
+                    h50.G(g, null, new c3(this, l10Var, 1), 3);
                 }
             }
             Trace.endSection();
@@ -143,18 +143,18 @@ public final class pi extends fn1 implements ky1 {
             if (jiVar3 instanceof gi) {
                 cu0Var = ((gi) jiVar3).b;
             }
-            fn1 fn1VarA = jiVar3.a();
-            this.o = fn1VarA;
-            this.k.setValue(fn1VarA);
+            fn1 a2 = jiVar3.a();
+            this.o = a2;
+            this.k.setValue(a2);
             if (this.i != null || jiVar2.a() == jiVar3.a()) {
             }
-            Object objA = jiVar2.a();
-            ky1 ky1Var = objA instanceof ky1 ? (ky1) objA : null;
+            Object a3 = jiVar2.a();
+            ky1 ky1Var = a3 instanceof ky1 ? (ky1) a3 : null;
             if (ky1Var != null) {
                 ky1Var.d();
             }
-            Object objA2 = jiVar3.a();
-            ky1 ky1Var2 = objA2 instanceof ky1 ? (ky1) objA2 : null;
+            Object a4 = jiVar3.a();
+            ky1 ky1Var2 = a4 instanceof ky1 ? (ky1) a4 : null;
             if (ky1Var2 != null) {
                 ky1Var2.f();
                 return;
@@ -163,9 +163,9 @@ public final class pi extends fn1 implements ky1 {
         }
         cu0Var = ((ii) jiVar3).b;
         cu0Var.a().g.getClass();
-        fn1 fn1VarA2 = jiVar3.a();
-        this.o = fn1VarA2;
-        this.k.setValue(fn1VarA2);
+        fn1 a22 = jiVar3.a();
+        this.o = a22;
+        this.k.setValue(a22);
         if (this.i != null) {
         }
     }

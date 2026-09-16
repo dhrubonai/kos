@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class ll1 extends ol1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wa f696a;
+    public final wa f695a;
 
     public ll1(wa waVar) {
-        this.f696a = waVar;
+        this.f695a = waVar;
     }
 
     @Override // androidx.emoji2.text.ol1
     public final zw1 a() {
-        return this.f696a.b();
+        return this.f695a.b();
     }
 }

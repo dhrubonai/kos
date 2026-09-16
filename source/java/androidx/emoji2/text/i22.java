@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class i22 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f505a;
+    public int f504a;
     public int b;
     public int c;
     public int d;
@@ -20,7 +20,7 @@ public final class i22 {
         this.h = true;
         if (this.g) {
             if (i2 != Integer.MIN_VALUE) {
-                this.f505a = i2;
+                this.f504a = i2;
             }
             if (i != Integer.MIN_VALUE) {
                 this.b = i;
@@ -29,7 +29,7 @@ public final class i22 {
             return;
         }
         if (i != Integer.MIN_VALUE) {
-            this.f505a = i;
+            this.f504a = i;
         }
         if (i2 != Integer.MIN_VALUE) {
             this.b = i2;

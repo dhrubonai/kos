@@ -11,14 +11,14 @@ public class zb implements ed2 {
     public static final j42 f = new j42(17);
 
     /* renamed from: a, reason: collision with root package name */
-    public final Class f1428a;
+    public final Class f1427a;
     public final Method b;
     public final Method c;
     public final Method d;
     public final Method e;
 
-    public zb(Class cls) throws NoSuchMethodException, SecurityException {
-        this.f1428a = cls;
+    public zb(Class cls) {
+        this.f1427a = cls;
         Method declaredMethod = cls.getDeclaredMethod("setUseSessionTickets", Boolean.TYPE);
         lx0.w(declaredMethod, "sslSocketClass.getDeclar…:class.javaPrimitiveType)");
         this.b = declaredMethod;
@@ -35,11 +35,11 @@ public class zb implements ed2 {
 
     @Override // androidx.emoji2.text.ed2
     public final String b(SSLSocket sSLSocket) {
-        if (this.f1428a.isInstance(sSLSocket)) {
+        if (this.f1427a.isInstance(sSLSocket)) {
             try {
                 byte[] bArr = (byte[]) this.d.invoke(sSLSocket, null);
                 if (bArr != null) {
-                    return new String(bArr, vq.f1236a);
+                    return new String(bArr, vq.f1235a);
                 }
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
@@ -54,16 +54,16 @@ public class zb implements ed2 {
     }
 
     @Override // androidx.emoji2.text.ed2
-    public final void c(SSLSocket sSLSocket, String str, List list) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void c(SSLSocket sSLSocket, String str, List list) {
         lx0.x(list, "protocols");
-        if (this.f1428a.isInstance(sSLSocket)) {
+        if (this.f1427a.isInstance(sSLSocket)) {
             try {
                 this.b.invoke(sSLSocket, Boolean.TRUE);
                 if (str != null) {
                     this.c.invoke(sSLSocket, str);
                 }
                 Method method = this.e;
-                lr1 lr1Var = lr1.f707a;
+                lr1 lr1Var = lr1.f706a;
                 method.invoke(sSLSocket, iz0.j(list));
             } catch (IllegalAccessException e) {
                 throw new AssertionError(e);
@@ -75,6 +75,6 @@ public class zb implements ed2 {
 
     @Override // androidx.emoji2.text.ed2
     public final boolean e(SSLSocket sSLSocket) {
-        return this.f1428a.isInstance(sSLSocket);
+        return this.f1427a.isInstance(sSLSocket);
     }
 }

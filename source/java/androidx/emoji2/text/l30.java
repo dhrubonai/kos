@@ -1,10 +1,8 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.util.Log;
 import java.io.File;
-import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
@@ -25,28 +23,28 @@ public final /* synthetic */ class l30 implements Runnable {
     }
 
     @Override // java.lang.Runnable
-    public final void run() throws PackageManager.NameNotFoundException, IOException {
-        FileLock fileLockTryLock;
+    public final void run() {
+        FileLock fileLock;
         switch (this.d) {
             case 0:
-                p30.f886a.getClass();
+                p30.f885a.getClass();
                 Context context = this.e;
-                File fileJ = p30.j(context);
-                String[] strArr = wj1.f1284a;
-                File file = new File(fileJ, a.a.a.c.a(-247644078358306L, strArr));
-                p30.g(fileJ);
+                File j = p30.j(context);
+                String[] strArr = wj1.f1283a;
+                File file = new File(j, a.a.a.c.a(-247644078358306L, strArr));
+                p30.g(j);
                 try {
                     FileChannel channel = new RandomAccessFile(file, a.a.a.c.a(-248258258681634L, strArr)).getChannel();
                     try {
                         try {
-                            fileLockTryLock = channel.tryLock();
+                            fileLock = channel.tryLock();
                         } catch (OverlappingFileLockException unused) {
-                            fileLockTryLock = null;
+                            fileLock = null;
                         }
-                        if (fileLockTryLock != null) {
+                        if (fileLock != null) {
                             try {
                                 p30.k(context);
-                                ex2.n(fileLockTryLock, null);
+                                ex2.n(fileLock, null);
                             } finally {
                             }
                         }

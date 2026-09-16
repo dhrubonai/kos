@@ -12,13 +12,13 @@ public final class v10 extends l {
 
     public v10(Parcel parcel, ClassLoader classLoader) {
         super(parcel, classLoader);
-        int i = parcel.readInt();
-        int[] iArr = new int[i];
+        int readInt = parcel.readInt();
+        int[] iArr = new int[readInt];
         parcel.readIntArray(iArr);
-        Parcelable[] parcelableArray = parcel.readParcelableArray(classLoader);
-        this.f = new SparseArray(i);
-        for (int i2 = 0; i2 < i; i2++) {
-            this.f.append(iArr[i2], parcelableArray[i2]);
+        Parcelable[] readParcelableArray = parcel.readParcelableArray(classLoader);
+        this.f = new SparseArray(readInt);
+        for (int i = 0; i < readInt; i++) {
+            this.f.append(iArr[i], readParcelableArray[i]);
         }
     }
 

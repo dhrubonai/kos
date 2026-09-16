@@ -27,11 +27,11 @@ public final class kd2 extends wj1 {
     @Override // androidx.emoji2.text.wj1
     public final void i(float f, long j, pa paVar) {
         paVar.c(1.0f);
-        long jB = this.j;
+        long j2 = this.j;
         if (f != 1.0f) {
-            jB = et.b(et.d(jB) * f, jB);
+            j2 = et.b(et.d(j2) * f, j2);
         }
-        paVar.e(jB);
+        paVar.e(j2);
         if (paVar.c != null) {
             paVar.h(null);
         }

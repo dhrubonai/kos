@@ -7,12 +7,12 @@ import java.util.Iterator;
 public final class pi0 implements q72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final q72 f906a;
+    public final q72 f905a;
     public final boolean b;
     public final um0 c;
 
     public pi0(q72 q72Var, boolean z, um0 um0Var) {
-        this.f906a = q72Var;
+        this.f905a = q72Var;
         this.b = z;
         this.c = um0Var;
     }

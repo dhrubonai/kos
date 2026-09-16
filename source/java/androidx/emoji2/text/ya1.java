@@ -7,7 +7,7 @@ import java.util.Arrays;
 public final class ya1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float[] f1376a;
+    public final float[] f1375a;
 
     public static float[] a() {
         return new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
@@ -26,14 +26,14 @@ public final class ya1 {
         float f7 = fArr[12];
         float f8 = fArr[13];
         float f9 = fArr[15];
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        float f10 = 1 / (((f6 * fIntBitsToFloat2) + (f3 * fIntBitsToFloat)) + f9);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
+        float f10 = 1 / (((f6 * intBitsToFloat2) + (f3 * intBitsToFloat)) + f9);
         if ((Float.floatToRawIntBits(f10) & Integer.MAX_VALUE) >= 2139095040) {
             f10 = 0.0f;
         }
-        float f11 = f5 * fIntBitsToFloat2;
-        return (Float.floatToRawIntBits((((f4 * fIntBitsToFloat2) + (f * fIntBitsToFloat)) + f7) * f10) << 32) | (Float.floatToRawIntBits((f11 + (f2 * fIntBitsToFloat) + f8) * f10) & 4294967295L);
+        float f11 = f5 * intBitsToFloat2;
+        return (Float.floatToRawIntBits((((f4 * intBitsToFloat2) + (f * intBitsToFloat)) + f7) * f10) << 32) | (Float.floatToRawIntBits((f11 + (f2 * intBitsToFloat) + f8) * f10) & 4294967295L);
     }
 
     public static final void c(float[] fArr, ff1 ff1Var) {
@@ -49,7 +49,7 @@ public final class ya1 {
         float f7 = fArr[12];
         float f8 = fArr[13];
         float f9 = fArr[15];
-        float f10 = ff1Var.f360a;
+        float f10 = ff1Var.f359a;
         float f11 = ff1Var.b;
         float f12 = ff1Var.c;
         float f13 = ff1Var.d;
@@ -87,7 +87,7 @@ public final class ya1 {
         float f36 = (Float.floatToRawIntBits(f35) & Integer.MAX_VALUE) < 2139095040 ? f35 : 0.0f;
         float f37 = (f31 + f25 + f7) * f36;
         float f38 = (f33 + f27 + f8) * f36;
-        ff1Var.f360a = Math.min(f19, Math.min(f26, Math.min(f32, f37)));
+        ff1Var.f359a = Math.min(f19, Math.min(f26, Math.min(f32, f37)));
         ff1Var.b = Math.min(f22, Math.min(f28, Math.min(f34, f38)));
         ff1Var.c = Math.max(f19, Math.max(f26, Math.max(f32, f37)));
         ff1Var.d = Math.max(f22, Math.max(f28, Math.max(f34, f38)));
@@ -221,18 +221,18 @@ public final class ya1 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof ya1) {
-            return lx0.n(this.f1376a, ((ya1) obj).f1376a);
+            return lx0.n(this.f1375a, ((ya1) obj).f1375a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.f1376a);
+        return Arrays.hashCode(this.f1375a);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("\n            |");
-        float[] fArr = this.f1376a;
+        float[] fArr = this.f1375a;
         sb.append(fArr[0]);
         sb.append(' ');
         sb.append(fArr[1]);

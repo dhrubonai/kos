@@ -6,7 +6,6 @@ import android.os.Parcelable;
 import androidx.emoji2.text.b4;
 import androidx.emoji2.text.mr2;
 import androidx.emoji2.text.nr2;
-import java.lang.reflect.InvocationTargetException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 @SuppressLint({"BanParcelableUsage"})
@@ -25,7 +24,7 @@ public class ParcelImpl implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void writeToParcel(Parcel parcel, int i) {
         new mr2(parcel).i(this.d);
     }
 }

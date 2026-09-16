@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class r00 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final rf0 f987a;
+    public final rf0 f986a;
     public final yg0 b;
     public final qn1 c;
     public final lb2 d;
 
     public r00(rf0 rf0Var, yg0 yg0Var) {
         lb2 lb2Var = new lb2(wc.m);
-        this.f987a = rf0Var;
+        this.f986a = rf0Var;
         this.b = yg0Var;
         this.c = new qn1(0.0f);
         this.d = lb2Var;

@@ -7,7 +7,7 @@ import java.util.List;
 public final class rk2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f1017a;
+    public final ue f1016a;
     public final gl2 b;
     public final List c;
     public final int d;
@@ -19,7 +19,7 @@ public final class rk2 {
     public final long j;
 
     public rk2(ue ueVar, gl2 gl2Var, List list, int i, boolean z, int i2, j70 j70Var, q01 q01Var, bl0 bl0Var, long j) {
-        this.f1017a = ueVar;
+        this.f1016a = ueVar;
         this.b = gl2Var;
         this.c = list;
         this.d = i;
@@ -39,16 +39,16 @@ public final class rk2 {
             return false;
         }
         rk2 rk2Var = (rk2) obj;
-        return lx0.n(this.f1017a, rk2Var.f1017a) && lx0.n(this.b, rk2Var.b) && lx0.n(this.c, rk2Var.c) && this.d == rk2Var.d && this.e == rk2Var.e && this.f == rk2Var.f && lx0.n(this.g, rk2Var.g) && this.h == rk2Var.h && lx0.n(this.i, rk2Var.i) && vz.b(this.j, rk2Var.j);
+        return lx0.n(this.f1016a, rk2Var.f1016a) && lx0.n(this.b, rk2Var.b) && lx0.n(this.c, rk2Var.c) && this.d == rk2Var.d && this.e == rk2Var.e && this.f == rk2Var.f && lx0.n(this.g, rk2Var.g) && this.h == rk2Var.h && lx0.n(this.i, rk2Var.i) && vz.b(this.j, rk2Var.j);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.j) + ((this.i.hashCode() + ((this.h.hashCode() + ((this.g.hashCode() + jx0.a(this.f, jx0.d((((this.c.hashCode() + ((this.b.hashCode() + (this.f1017a.hashCode() * 31)) * 31)) * 31) + this.d) * 31, 31, this.e), 31)) * 31)) * 31)) * 31);
+        return Long.hashCode(this.j) + ((this.i.hashCode() + ((this.h.hashCode() + ((this.g.hashCode() + jx0.a(this.f, jx0.d((((this.c.hashCode() + ((this.b.hashCode() + (this.f1016a.hashCode() * 31)) * 31)) * 31) + this.d) * 31, 31, this.e), 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("TextLayoutInput(text=");
-        sb.append((Object) this.f1017a);
+        sb.append((Object) this.f1016a);
         sb.append(", style=");
         sb.append(this.b);
         sb.append(", placeholders=");

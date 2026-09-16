@@ -126,7 +126,7 @@ public final class ij0 extends nr0 {
                 this.C0 = ((uz) tzVar2).u0;
             }
         }
-        vkVar.f1226a = i;
+        vkVar.f1225a = i;
         vkVar.b = i3;
         vkVar.c = i2;
         vkVar.d = i4;

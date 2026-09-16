@@ -4,6 +4,7 @@ import android.R;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageParser;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -15,10 +16,10 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+import androidx.compose.runtime.internal.ComposableLambdaImpl;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
@@ -30,6 +31,7 @@ import java.util.BitSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.UUID;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -57,7 +59,7 @@ public abstract class bz0 implements d62 {
             f2 = ((Number) ieVar.e.getValue()).floatValue();
         }
         if ((i2 & 2) != 0) {
-            f3 = ((ke) ieVar.f).f635a;
+            f3 = ((ke) ieVar.f).f634a;
         }
         return new ie(ieVar.d, Float.valueOf(f2), new ke(f3), ieVar.g, ieVar.h, ieVar.i);
     }
@@ -69,14 +71,14 @@ public abstract class bz0 implements d62 {
         throw new IndexOutOfBoundsException("toIndex (" + i2 + ") is greater than size (" + i3 + ").");
     }
 
-    public static final long C(InputStream inputStream, OutputStream outputStream, int i2) throws IOException {
+    public static final long C(InputStream inputStream, OutputStream outputStream, int i2) {
         byte[] bArr = new byte[i2];
-        int i3 = inputStream.read(bArr);
+        int read = inputStream.read(bArr);
         long j2 = 0;
-        while (i3 >= 0) {
-            outputStream.write(bArr, 0, i3);
-            j2 += i3;
-            i3 = inputStream.read(bArr);
+        while (read >= 0) {
+            outputStream.write(bArr, 0, read);
+            j2 += read;
+            read = inputStream.read(bArr);
         }
         return j2;
     }
@@ -85,35 +87,35 @@ public abstract class bz0 implements d62 {
         return new oy1(((tx) lxVar).R);
     }
 
-    public static byte[] E(e80[] e80VarArr, byte[] bArr) throws IOException {
+    public static byte[] E(e80[] e80VarArr, byte[] bArr) {
         int i2 = 0;
-        int length = 0;
+        int i3 = 0;
         for (e80 e80Var : e80VarArr) {
-            length += ((((e80Var.g * 2) + 7) & (-8)) / 8) + (e80Var.e * 2) + F(e80Var.f292a, e80Var.b, bArr).getBytes(StandardCharsets.UTF_8).length + 16 + e80Var.f;
+            i3 += ((((e80Var.g * 2) + 7) & (-8)) / 8) + (e80Var.e * 2) + F(e80Var.f291a, e80Var.b, bArr).getBytes(StandardCharsets.UTF_8).length + 16 + e80Var.f;
         }
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(length);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(i3);
         if (Arrays.equals(bArr, xa1.g)) {
-            int length2 = e80VarArr.length;
-            while (i2 < length2) {
+            int length = e80VarArr.length;
+            while (i2 < length) {
                 e80 e80Var2 = e80VarArr[i2];
-                p0(byteArrayOutputStream, e80Var2, F(e80Var2.f292a, e80Var2.b, bArr));
+                p0(byteArrayOutputStream, e80Var2, F(e80Var2.f291a, e80Var2.b, bArr));
                 o0(byteArrayOutputStream, e80Var2);
                 i2++;
             }
         } else {
             for (e80 e80Var3 : e80VarArr) {
-                p0(byteArrayOutputStream, e80Var3, F(e80Var3.f292a, e80Var3.b, bArr));
+                p0(byteArrayOutputStream, e80Var3, F(e80Var3.f291a, e80Var3.b, bArr));
             }
-            int length3 = e80VarArr.length;
-            while (i2 < length3) {
+            int length2 = e80VarArr.length;
+            while (i2 < length2) {
                 o0(byteArrayOutputStream, e80VarArr[i2]);
                 i2++;
             }
         }
-        if (byteArrayOutputStream.size() == length) {
+        if (byteArrayOutputStream.size() == i3) {
             return byteArrayOutputStream.toByteArray();
         }
-        throw new IllegalStateException("The bytes saved do not match expectation. actual=" + byteArrayOutputStream.size() + " expected=" + length);
+        throw new IllegalStateException("The bytes saved do not match expectation. actual=" + byteArrayOutputStream.size() + " expected=" + i3);
     }
 
     public static String F(String str, String str2, byte[] bArr) {
@@ -151,7 +153,7 @@ public abstract class bz0 implements d62 {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.Add", 24.0f, 24.0f, false, 96);
-        int i2 = uq2.f1189a;
+        int i2 = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         pm0 pm0Var = new pm0(2);
         pm0Var.m(18.0f, 13.0f);
@@ -173,49 +175,49 @@ public abstract class bz0 implements d62 {
         pm0Var.o(-0.45f, 1.0f, -1.0f, 1.0f);
         pm0Var.e();
         fu0.a(fu0Var, pm0Var.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        q = gu0VarB;
-        return gu0VarB;
+        gu0 b = fu0Var.b();
+        q = b;
+        return b;
     }
 
     public static final float H(Layout layout, int i2, Paint paint) {
-        float fAbs;
+        float abs;
         float width;
         float lineLeft = layout.getLineLeft(i2);
-        vi2 vi2Var = vk2.f1227a;
+        vi2 vi2Var = vk2.f1226a;
         if (layout.getEllipsisCount(i2) <= 0 || layout.getParagraphDirection(i2) != 1 || lineLeft >= 0.0f) {
             return 0.0f;
         }
-        float fMeasureText = paint.measureText("…") + (layout.getPrimaryHorizontal(layout.getEllipsisStart(i2) + layout.getLineStart(i2)) - lineLeft);
+        float measureText = paint.measureText("…") + (layout.getPrimaryHorizontal(layout.getEllipsisStart(i2) + layout.getLineStart(i2)) - lineLeft);
         Layout.Alignment paragraphAlignment = layout.getParagraphAlignment(i2);
-        if ((paragraphAlignment == null ? -1 : su0.f1087a[paragraphAlignment.ordinal()]) == 1) {
-            fAbs = Math.abs(lineLeft);
-            width = (layout.getWidth() - fMeasureText) / 2.0f;
+        if ((paragraphAlignment == null ? -1 : su0.f1086a[paragraphAlignment.ordinal()]) == 1) {
+            abs = Math.abs(lineLeft);
+            width = (layout.getWidth() - measureText) / 2.0f;
         } else {
-            fAbs = Math.abs(lineLeft);
-            width = layout.getWidth() - fMeasureText;
+            abs = Math.abs(lineLeft);
+            width = layout.getWidth() - measureText;
         }
-        return width + fAbs;
+        return width + abs;
     }
 
     public static final float I(Layout layout, int i2, Paint paint) {
         float width;
         float width2;
-        vi2 vi2Var = vk2.f1227a;
+        vi2 vi2Var = vk2.f1226a;
         if (layout.getEllipsisCount(i2) <= 0) {
             return 0.0f;
         }
         if (layout.getParagraphDirection(i2) != -1 || layout.getWidth() >= layout.getLineRight(i2)) {
             return 0.0f;
         }
-        float fMeasureText = paint.measureText("…") + (layout.getLineRight(i2) - layout.getPrimaryHorizontal(layout.getEllipsisStart(i2) + layout.getLineStart(i2)));
+        float measureText = paint.measureText("…") + (layout.getLineRight(i2) - layout.getPrimaryHorizontal(layout.getEllipsisStart(i2) + layout.getLineStart(i2)));
         Layout.Alignment paragraphAlignment = layout.getParagraphAlignment(i2);
-        if ((paragraphAlignment != null ? su0.f1087a[paragraphAlignment.ordinal()] : -1) == 1) {
+        if ((paragraphAlignment != null ? su0.f1086a[paragraphAlignment.ordinal()] : -1) == 1) {
             width = layout.getWidth() - layout.getLineRight(i2);
-            width2 = (layout.getWidth() - fMeasureText) / 2.0f;
+            width2 = (layout.getWidth() - measureText) / 2.0f;
         } else {
             width = layout.getWidth() - layout.getLineRight(i2);
-            width2 = layout.getWidth() - fMeasureText;
+            width2 = layout.getWidth() - measureText;
         }
         return width - width2;
     }
@@ -246,7 +248,7 @@ public abstract class bz0 implements d62 {
 
     public static final void N(v20 v20Var, Throwable th) {
         Throwable runtimeException;
-        Iterator it = z20.f1416a.iterator();
+        Iterator it = z20.f1415a.iterator();
         while (it.hasNext()) {
             try {
                 ((y20) it.next()).o(v20Var, th);
@@ -257,33 +259,33 @@ public abstract class bz0 implements d62 {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th2);
                     h50.i(runtimeException, th);
                 }
-                Thread threadCurrentThread = Thread.currentThread();
-                threadCurrentThread.getUncaughtExceptionHandler().uncaughtException(threadCurrentThread, runtimeException);
+                Thread currentThread = Thread.currentThread();
+                currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
             h50.i(th, new g80(v20Var));
         } catch (Throwable unused) {
         }
-        Thread threadCurrentThread2 = Thread.currentThread();
-        threadCurrentThread2.getUncaughtExceptionHandler().uncaughtException(threadCurrentThread2, th);
+        Thread currentThread2 = Thread.currentThread();
+        currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th);
     }
 
     public static final float O(long j2) {
-        mt mtVarF = et.f(j2);
-        if (!ht.a(mtVarF.b, ht.f488a)) {
-            lv0.a("The specified color must be encoded in an RGB color space. The supplied color space is " + ((Object) ht.b(mtVarF.b)));
+        mt f2 = et.f(j2);
+        if (!ht.a(f2.b, ht.f487a)) {
+            lv0.a("The specified color must be encoded in an RGB color space. The supplied color space is " + ((Object) ht.b(f2.b)));
         }
-        m02 m02Var = ((q02) mtVarF).p;
-        double dC = m02Var.c(et.h(j2));
-        float fC = (float) ((m02Var.c(et.e(j2)) * 0.0722d) + (m02Var.c(et.g(j2)) * 0.7152d) + (dC * 0.2126d));
-        if (fC < 0.0f) {
-            fC = 0.0f;
+        m02 m02Var = ((q02) f2).p;
+        double c = m02Var.c(et.h(j2));
+        float c2 = (float) ((m02Var.c(et.e(j2)) * 0.0722d) + (m02Var.c(et.g(j2)) * 0.7152d) + (c * 0.2126d));
+        if (c2 < 0.0f) {
+            c2 = 0.0f;
         }
-        if (fC > 1.0f) {
+        if (c2 > 1.0f) {
             return 1.0f;
         }
-        return fC;
+        return c2;
     }
 
     public static final nd1 P(lx lxVar, nd1 nd1Var) {
@@ -292,7 +294,7 @@ public abstract class bz0 implements d62 {
         }
         tx txVar = (tx) lxVar;
         txVar.Y(1219399079);
-        nd1 nd1Var2 = (nd1) nd1Var.a(kd1.f634a, new x(3, txVar));
+        nd1 nd1Var2 = (nd1) nd1Var.a(kd1.f633a, new x(3, txVar));
         txVar.p(false);
         return nd1Var2;
     }
@@ -300,17 +302,17 @@ public abstract class bz0 implements d62 {
     public static final nd1 Q(lx lxVar, nd1 nd1Var) {
         tx txVar = (tx) lxVar;
         txVar.X(439770924);
-        nd1 nd1VarP = P(txVar, nd1Var);
+        nd1 P = P(txVar, nd1Var);
         txVar.p(false);
-        return nd1VarP;
+        return P;
     }
 
     public static final boolean R(yc2 yc2Var, um0 um0Var) {
         int i2;
         l0 l0Var;
-        Object objE;
-        ec2 ec2VarK;
-        boolean zU;
+        Object e2;
+        ec2 k2;
+        boolean u;
         do {
             synchronized (l) {
                 af2 af2Var = yc2Var.d;
@@ -320,25 +322,25 @@ public abstract class bz0 implements d62 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            qp1 qp1VarE = l0Var.e();
-            objE = um0Var.e(qp1VarE);
-            l0 l0VarC = qp1VarE.c();
-            if (lx0.n(l0VarC, l0Var)) {
+            qp1 e3 = l0Var.e();
+            e2 = um0Var.e(e3);
+            l0 c = e3.c();
+            if (lx0.n(c, l0Var)) {
                 break;
             }
             af2 af2Var3 = yc2Var.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = u((af2) kc2.w(af2Var3, yc2Var, ec2VarK), i2, l0VarC, true);
+                k2 = kc2.k();
+                u = u((af2) kc2.w(af2Var3, yc2Var, k2), i2, c, true);
             }
-            kc2.n(ec2VarK, yc2Var);
-        } while (!zU);
-        return ((Boolean) objE).booleanValue();
+            kc2.n(k2, yc2Var);
+        } while (!u);
+        return ((Boolean) e2).booleanValue();
     }
 
     public static final void T(Context context, String str) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(context, a.a.a.c.a(-393140390477602L, strArr));
         lx0.x(str, a.a.a.c.a(-393170455248674L, strArr));
         if (wf2.j0(str)) {
@@ -360,7 +362,7 @@ public abstract class bz0 implements d62 {
         int i2 = 0;
         lx0.y(encoded.length, 0, length);
         byte[] bArr = new io(xh.C0(encoded, 0, length)).b("SHA-256").d;
-        byte[] bArr2 = a.f74a;
+        byte[] bArr2 = a.f73a;
         lx0.x(bArr, "<this>");
         lx0.x(bArr2, "map");
         byte[] bArr3 = new byte[((bArr.length + 2) / 3) * 4];
@@ -395,36 +397,36 @@ public abstract class bz0 implements d62 {
             bArr3[i3 + 2] = bArr2[(b6 & 15) << 2];
             bArr3[i3 + 3] = 61;
         }
-        sb.append(new String(bArr3, vq.f1236a));
+        sb.append(new String(bArr3, vq.f1235a));
         return sb.toString();
     }
 
     public static int[] W(ByteArrayInputStream byteArrayInputStream, int i2) {
         int[] iArr = new int[i2];
-        int iD0 = 0;
-        for (int i3 = 0; i3 < i2; i3++) {
-            iD0 += (int) l8.d0(byteArrayInputStream, 2);
-            iArr[i3] = iD0;
+        int i3 = 0;
+        for (int i4 = 0; i4 < i2; i4++) {
+            i3 += (int) l8.d0(byteArrayInputStream, 2);
+            iArr[i4] = i3;
         }
         return iArr;
     }
 
-    public static e80[] X(FileInputStream fileInputStream, byte[] bArr, byte[] bArr2, e80[] e80VarArr) throws IOException {
+    public static e80[] X(FileInputStream fileInputStream, byte[] bArr, byte[] bArr2, e80[] e80VarArr) {
         byte[] bArr3 = xa1.j;
         if (!Arrays.equals(bArr, bArr3)) {
             if (!Arrays.equals(bArr, xa1.k)) {
                 throw new IllegalStateException("Unsupported meta version");
             }
-            int iD0 = (int) l8.d0(fileInputStream, 2);
-            byte[] bArrC0 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
+            int d0 = (int) l8.d0(fileInputStream, 2);
+            byte[] c0 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
             if (fileInputStream.read() > 0) {
                 throw new IllegalStateException("Content found after the end of file");
             }
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArrC0);
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(c0);
             try {
-                e80[] e80VarArrZ = Z(byteArrayInputStream, bArr2, iD0, e80VarArr);
+                e80[] Z = Z(byteArrayInputStream, bArr2, d0, e80VarArr);
                 byteArrayInputStream.close();
-                return e80VarArrZ;
+                return Z;
             } catch (Throwable th) {
                 try {
                     byteArrayInputStream.close();
@@ -440,16 +442,16 @@ public abstract class bz0 implements d62 {
         if (!Arrays.equals(bArr, bArr3)) {
             throw new IllegalStateException("Unsupported meta version");
         }
-        int iD02 = (int) l8.d0(fileInputStream, 1);
-        byte[] bArrC02 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
+        int d02 = (int) l8.d0(fileInputStream, 1);
+        byte[] c02 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
         if (fileInputStream.read() > 0) {
             throw new IllegalStateException("Content found after the end of file");
         }
-        ByteArrayInputStream byteArrayInputStream2 = new ByteArrayInputStream(bArrC02);
+        ByteArrayInputStream byteArrayInputStream2 = new ByteArrayInputStream(c02);
         try {
-            e80[] e80VarArrY = Y(byteArrayInputStream2, iD02, e80VarArr);
+            e80[] Y = Y(byteArrayInputStream2, d02, e80VarArr);
             byteArrayInputStream2.close();
-            return e80VarArrY;
+            return Y;
         } catch (Throwable th3) {
             try {
                 byteArrayInputStream2.close();
@@ -470,9 +472,9 @@ public abstract class bz0 implements d62 {
         String[] strArr = new String[i2];
         int[] iArr = new int[i2];
         for (int i3 = 0; i3 < i2; i3++) {
-            int iD0 = (int) l8.d0(byteArrayInputStream, 2);
+            int d0 = (int) l8.d0(byteArrayInputStream, 2);
             iArr[i3] = (int) l8.d0(byteArrayInputStream, 2);
-            strArr[i3] = new String(l8.a0(byteArrayInputStream, iD0), StandardCharsets.UTF_8);
+            strArr[i3] = new String(l8.a0(byteArrayInputStream, d0), StandardCharsets.UTF_8);
         }
         for (int i4 = 0; i4 < i2; i4++) {
             e80 e80Var = e80VarArr[i4];
@@ -496,21 +498,21 @@ public abstract class bz0 implements d62 {
         for (int i3 = 0; i3 < i2; i3++) {
             l8.d0(byteArrayInputStream, 2);
             String str = new String(l8.a0(byteArrayInputStream, (int) l8.d0(byteArrayInputStream, 2)), StandardCharsets.UTF_8);
-            long jD0 = l8.d0(byteArrayInputStream, 4);
-            int iD0 = (int) l8.d0(byteArrayInputStream, 2);
+            long d0 = l8.d0(byteArrayInputStream, 4);
+            int d02 = (int) l8.d0(byteArrayInputStream, 2);
             e80 e80Var = null;
             if (e80VarArr.length > 0) {
-                int iIndexOf = str.indexOf("!");
-                if (iIndexOf < 0) {
-                    iIndexOf = str.indexOf(":");
+                int indexOf = str.indexOf("!");
+                if (indexOf < 0) {
+                    indexOf = str.indexOf(":");
                 }
-                String strSubstring = iIndexOf > 0 ? str.substring(iIndexOf + 1) : str;
+                String substring = indexOf > 0 ? str.substring(indexOf + 1) : str;
                 int i4 = 0;
                 while (true) {
                     if (i4 >= e80VarArr.length) {
                         break;
                     }
-                    if (e80VarArr[i4].b.equals(strSubstring)) {
+                    if (e80VarArr[i4].b.equals(substring)) {
                         e80Var = e80VarArr[i4];
                         break;
                     }
@@ -520,34 +522,34 @@ public abstract class bz0 implements d62 {
             if (e80Var == null) {
                 throw new IllegalStateException("Missing profile key: ".concat(str));
             }
-            e80Var.d = jD0;
-            int[] iArrW = W(byteArrayInputStream, iD0);
+            e80Var.d = d0;
+            int[] W = W(byteArrayInputStream, d02);
             if (Arrays.equals(bArr, xa1.i)) {
-                e80Var.e = iD0;
-                e80Var.h = iArrW;
+                e80Var.e = d02;
+                e80Var.h = W;
             }
         }
         return e80VarArr;
     }
 
     public static ie a(float f2, float f3) {
-        return new ie(qq2.f974a, Float.valueOf(f2), new ke(f3), Long.MIN_VALUE, Long.MIN_VALUE, false);
+        return new ie(qq2.f973a, Float.valueOf(f2), new ke(f3), Long.MIN_VALUE, Long.MIN_VALUE, false);
     }
 
-    public static e80[] a0(FileInputStream fileInputStream, byte[] bArr, String str) throws IOException {
+    public static e80[] a0(FileInputStream fileInputStream, byte[] bArr, String str) {
         if (!Arrays.equals(bArr, xa1.f)) {
             throw new IllegalStateException("Unsupported version");
         }
-        int iD0 = (int) l8.d0(fileInputStream, 1);
-        byte[] bArrC0 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
+        int d0 = (int) l8.d0(fileInputStream, 1);
+        byte[] c0 = l8.c0(fileInputStream, (int) l8.d0(fileInputStream, 4), (int) l8.d0(fileInputStream, 4));
         if (fileInputStream.read() > 0) {
             throw new IllegalStateException("Content found after the end of file");
         }
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArrC0);
+        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(c0);
         try {
-            e80[] e80VarArrB0 = b0(byteArrayInputStream, str, iD0);
+            e80[] b0 = b0(byteArrayInputStream, str, d0);
             byteArrayInputStream.close();
-            return e80VarArrB0;
+            return b0;
         } catch (Throwable th) {
             try {
                 byteArrayInputStream.close();
@@ -558,95 +560,310 @@ public abstract class bz0 implements d62 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:106:0x015e  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x01b2  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x01b9  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0103  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0111  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x0119  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00fc  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0103  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0111  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x015e  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x01b2  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0179  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final long b(float r21, float r22, float r23, float r24, androidx.emoji2.text.mt r25) {
-        /*
-            Method dump skipped, instructions count: 482
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.bz0.b(float, float, float, float, androidx.emoji2.text.mt):long");
+    public static final long b(float f2, float f3, float f4, float f5, mt mtVar) {
+        int i2;
+        int i3;
+        int i4;
+        float b;
+        float a2;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        float b2;
+        float a3;
+        int i9;
+        int i10;
+        int i11;
+        if (mtVar.c()) {
+            float f6 = f5 < 0.0f ? 0.0f : f5;
+            if (f6 > 1.0f) {
+                f6 = 1.0f;
+            }
+            int i12 = ((int) ((f6 * 255.0f) + 0.5f)) << 24;
+            float f7 = f2 < 0.0f ? 0.0f : f2;
+            if (f7 > 1.0f) {
+                f7 = 1.0f;
+            }
+            int i13 = i12 | (((int) ((f7 * 255.0f) + 0.5f)) << 16);
+            float f8 = f3 < 0.0f ? 0.0f : f3;
+            if (f8 > 1.0f) {
+                f8 = 1.0f;
+            }
+            int i14 = i13 | (((int) ((f8 * 255.0f) + 0.5f)) << 8);
+            long j2 = (i14 | ((int) ((((f4 >= 0.0f ? f4 : 0.0f) <= 1.0f ? r6 : 1.0f) * 255.0f) + 0.5f))) << 32;
+            int i15 = et.l;
+            return j2;
+        }
+        long j3 = mtVar.b;
+        int i16 = ht.e;
+        if (((int) (j3 >> 32)) != 3) {
+            lv0.a("Color only works with ColorSpaces with 3 components");
+        }
+        int i17 = mtVar.c;
+        if (i17 == -1) {
+            lv0.a("Unknown color space, please use a color space in ColorSpaces");
+        }
+        float b3 = mtVar.b(0);
+        float a4 = mtVar.a(0);
+        if (f2 >= b3) {
+            b3 = f2;
+        }
+        if (b3 <= a4) {
+            a4 = b3;
+        }
+        int floatToRawIntBits = Float.floatToRawIntBits(a4);
+        int i18 = floatToRawIntBits >>> 31;
+        int i19 = (floatToRawIntBits >>> 23) & 255;
+        int i20 = floatToRawIntBits & 8388607;
+        if (i19 == 255) {
+            i3 = i20 != 0 ? 512 : 0;
+            i2 = 31;
+        } else {
+            i2 = i19 - 112;
+            if (i2 >= 31) {
+                i3 = 0;
+                i2 = 49;
+            } else if (i2 > 0) {
+                int i21 = i20 >> 13;
+                if ((floatToRawIntBits & 4096) != 0) {
+                    i4 = (((i2 << 10) | i21) + 1) | (i18 << 15);
+                    short s2 = (short) i4;
+                    b = mtVar.b(1);
+                    a2 = mtVar.a(1);
+                    if (f3 >= b) {
+                        b = f3;
+                    }
+                    if (b <= a2) {
+                        a2 = b;
+                    }
+                    int floatToRawIntBits2 = Float.floatToRawIntBits(a2);
+                    int i22 = floatToRawIntBits2 >>> 31;
+                    i5 = (floatToRawIntBits2 >>> 23) & 255;
+                    int i23 = floatToRawIntBits2 & 8388607;
+                    if (i5 != 255) {
+                        i7 = i23 != 0 ? 512 : 0;
+                        i6 = 31;
+                    } else {
+                        i6 = i5 - 112;
+                        if (i6 >= 31) {
+                            i7 = 0;
+                            i6 = 49;
+                        } else if (i6 > 0) {
+                            int i24 = i23 >> 13;
+                            if ((floatToRawIntBits2 & 4096) != 0) {
+                                i8 = (((i6 << 10) | i24) + 1) | (i22 << 15);
+                                short s3 = (short) i8;
+                                b2 = mtVar.b(2);
+                                a3 = mtVar.a(2);
+                                if (f4 >= b2) {
+                                    b2 = f4;
+                                }
+                                if (b2 <= a3) {
+                                    a3 = b2;
+                                }
+                                int floatToRawIntBits3 = Float.floatToRawIntBits(a3);
+                                int i25 = floatToRawIntBits3 >>> 31;
+                                i9 = (floatToRawIntBits3 >>> 23) & 255;
+                                int i26 = 8388607 & floatToRawIntBits3;
+                                if (i9 == 255) {
+                                    i10 = i26 != 0 ? 512 : 0;
+                                    r7 = 31;
+                                } else {
+                                    int i27 = i9 - 112;
+                                    if (i27 >= 31) {
+                                        i10 = 0;
+                                        r7 = 49;
+                                    } else if (i27 > 0) {
+                                        int i28 = i26 >> 13;
+                                        if ((floatToRawIntBits3 & 4096) != 0) {
+                                            i11 = (((i27 << 10) | i28) + 1) | (i25 << 15);
+                                            long j4 = (i17 & 63) | ((s2 & 65535) << 48) | ((s3 & 65535) << 32) | ((65535 & ((short) i11)) << 16) | ((((int) ((((f5 >= 0.0f ? f5 : 0.0f) <= 1.0f ? r6 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6);
+                                            int i29 = et.l;
+                                            return j4;
+                                        }
+                                        i10 = i28;
+                                        r7 = i27;
+                                    } else if (i27 >= -10) {
+                                        int i30 = (i26 | 8388608) >> (1 - i27);
+                                        if ((i30 & 4096) != 0) {
+                                            i30 += 8192;
+                                        }
+                                        i10 = i30 >> 13;
+                                    } else {
+                                        i10 = 0;
+                                    }
+                                }
+                                i11 = i10 | (i25 << 15) | (r7 << 10);
+                                if (f5 >= 0.0f) {
+                                }
+                                long j42 = (i17 & 63) | ((s2 & 65535) << 48) | ((s3 & 65535) << 32) | ((65535 & ((short) i11)) << 16) | ((((int) ((((f5 >= 0.0f ? f5 : 0.0f) <= 1.0f ? r6 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6);
+                                int i292 = et.l;
+                                return j42;
+                            }
+                            i7 = i24;
+                        } else if (i6 >= -10) {
+                            int i31 = (i23 | 8388608) >> (1 - i6);
+                            if ((i31 & 4096) != 0) {
+                                i31 += 8192;
+                            }
+                            i7 = i31 >> 13;
+                            i6 = 0;
+                        } else {
+                            i7 = 0;
+                            i6 = 0;
+                        }
+                    }
+                    i8 = i7 | (i22 << 15) | (i6 << 10);
+                    short s32 = (short) i8;
+                    b2 = mtVar.b(2);
+                    a3 = mtVar.a(2);
+                    if (f4 >= b2) {
+                    }
+                    if (b2 <= a3) {
+                    }
+                    int floatToRawIntBits32 = Float.floatToRawIntBits(a3);
+                    int i252 = floatToRawIntBits32 >>> 31;
+                    i9 = (floatToRawIntBits32 >>> 23) & 255;
+                    int i262 = 8388607 & floatToRawIntBits32;
+                    if (i9 == 255) {
+                    }
+                    i11 = i10 | (i252 << 15) | (r7 << 10);
+                    if (f5 >= 0.0f) {
+                    }
+                    long j422 = (i17 & 63) | ((s2 & 65535) << 48) | ((s32 & 65535) << 32) | ((65535 & ((short) i11)) << 16) | ((((int) ((((f5 >= 0.0f ? f5 : 0.0f) <= 1.0f ? r6 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6);
+                    int i2922 = et.l;
+                    return j422;
+                }
+                i3 = i21;
+            } else if (i2 >= -10) {
+                int i32 = (i20 | 8388608) >> (1 - i2);
+                if ((i32 & 4096) != 0) {
+                    i32 += 8192;
+                }
+                i3 = i32 >> 13;
+                i2 = 0;
+            } else {
+                i3 = 0;
+                i2 = 0;
+            }
+        }
+        i4 = i3 | (i18 << 15) | (i2 << 10);
+        short s22 = (short) i4;
+        b = mtVar.b(1);
+        a2 = mtVar.a(1);
+        if (f3 >= b) {
+        }
+        if (b <= a2) {
+        }
+        int floatToRawIntBits22 = Float.floatToRawIntBits(a2);
+        int i222 = floatToRawIntBits22 >>> 31;
+        i5 = (floatToRawIntBits22 >>> 23) & 255;
+        int i232 = floatToRawIntBits22 & 8388607;
+        if (i5 != 255) {
+        }
+        i8 = i7 | (i222 << 15) | (i6 << 10);
+        short s322 = (short) i8;
+        b2 = mtVar.b(2);
+        a3 = mtVar.a(2);
+        if (f4 >= b2) {
+        }
+        if (b2 <= a3) {
+        }
+        int floatToRawIntBits322 = Float.floatToRawIntBits(a3);
+        int i2522 = floatToRawIntBits322 >>> 31;
+        i9 = (floatToRawIntBits322 >>> 23) & 255;
+        int i2622 = 8388607 & floatToRawIntBits322;
+        if (i9 == 255) {
+        }
+        i11 = i10 | (i2522 << 15) | (r7 << 10);
+        if (f5 >= 0.0f) {
+        }
+        long j4222 = (i17 & 63) | ((s22 & 65535) << 48) | ((s322 & 65535) << 32) | ((65535 & ((short) i11)) << 16) | ((((int) ((((f5 >= 0.0f ? f5 : 0.0f) <= 1.0f ? r6 : 1.0f) * 1023.0f) + 0.5f)) & 1023) << 6);
+        int i29222 = et.l;
+        return j4222;
     }
 
-    public static e80[] b0(ByteArrayInputStream byteArrayInputStream, String str, int i2) throws IOException {
+    public static e80[] b0(ByteArrayInputStream byteArrayInputStream, String str, int i2) {
         int i3 = 0;
         if (byteArrayInputStream.available() == 0) {
             return new e80[0];
         }
         e80[] e80VarArr = new e80[i2];
         for (int i4 = 0; i4 < i2; i4++) {
-            int iD0 = (int) l8.d0(byteArrayInputStream, 2);
-            int iD02 = (int) l8.d0(byteArrayInputStream, 2);
-            e80VarArr[i4] = new e80(str, new String(l8.a0(byteArrayInputStream, iD0), StandardCharsets.UTF_8), l8.d0(byteArrayInputStream, 4), iD02, (int) l8.d0(byteArrayInputStream, 4), (int) l8.d0(byteArrayInputStream, 4), new int[iD02], new TreeMap());
+            int d0 = (int) l8.d0(byteArrayInputStream, 2);
+            int d02 = (int) l8.d0(byteArrayInputStream, 2);
+            e80VarArr[i4] = new e80(str, new String(l8.a0(byteArrayInputStream, d0), StandardCharsets.UTF_8), l8.d0(byteArrayInputStream, 4), d02, (int) l8.d0(byteArrayInputStream, 4), (int) l8.d0(byteArrayInputStream, 4), new int[d02], new TreeMap());
         }
         int i5 = 0;
         while (i5 < i2) {
             e80 e80Var = e80VarArr[i5];
-            int iAvailable = byteArrayInputStream.available();
+            int available = byteArrayInputStream.available();
             int i6 = e80Var.f;
             int i7 = e80Var.g;
             TreeMap treeMap = e80Var.i;
-            int i8 = iAvailable - i6;
-            int iD03 = i3;
+            int i8 = available - i6;
+            int i9 = i3;
             while (byteArrayInputStream.available() > i8) {
-                iD03 += (int) l8.d0(byteArrayInputStream, 2);
-                treeMap.put(Integer.valueOf(iD03), 1);
-                int iD04 = (int) l8.d0(byteArrayInputStream, 2);
-                while (iD04 > 0) {
+                i9 += (int) l8.d0(byteArrayInputStream, 2);
+                treeMap.put(Integer.valueOf(i9), 1);
+                int d03 = (int) l8.d0(byteArrayInputStream, 2);
+                while (d03 > 0) {
                     l8.d0(byteArrayInputStream, 2);
-                    int iD05 = (int) l8.d0(byteArrayInputStream, 1);
-                    if (iD05 != 6 && iD05 != 7) {
-                        while (iD05 > 0) {
+                    int d04 = (int) l8.d0(byteArrayInputStream, 1);
+                    if (d04 != 6 && d04 != 7) {
+                        while (d04 > 0) {
                             l8.d0(byteArrayInputStream, 1);
-                            int i9 = i3;
-                            int i10 = i5;
-                            for (int iD06 = (int) l8.d0(byteArrayInputStream, 1); iD06 > 0; iD06--) {
+                            int i10 = i3;
+                            int i11 = i5;
+                            for (int d05 = (int) l8.d0(byteArrayInputStream, 1); d05 > 0; d05--) {
                                 l8.d0(byteArrayInputStream, 2);
                             }
-                            iD05--;
-                            i3 = i9;
-                            i5 = i10;
+                            d04--;
+                            i3 = i10;
+                            i5 = i11;
                         }
                     }
-                    iD04--;
+                    d03--;
                     i3 = i3;
                     i5 = i5;
                 }
             }
-            int i11 = i3;
-            int i12 = i5;
+            int i12 = i3;
+            int i13 = i5;
             if (byteArrayInputStream.available() != i8) {
                 throw new IllegalStateException("Read too much data during profile line parse");
             }
             e80Var.h = W(byteArrayInputStream, e80Var.e);
-            BitSet bitSetValueOf = BitSet.valueOf(l8.a0(byteArrayInputStream, (((i7 * 2) + 7) & (-8)) / 8));
-            for (int i13 = i11; i13 < i7; i13++) {
-                int i14 = bitSetValueOf.get(i13) ? 2 : i11;
-                if (bitSetValueOf.get(i13 + i7)) {
-                    i14 |= 4;
+            BitSet valueOf = BitSet.valueOf(l8.a0(byteArrayInputStream, (((i7 * 2) + 7) & (-8)) / 8));
+            for (int i14 = i12; i14 < i7; i14++) {
+                int i15 = valueOf.get(i14) ? 2 : i12;
+                if (valueOf.get(i14 + i7)) {
+                    i15 |= 4;
                 }
-                if (i14 != 0) {
-                    Integer numValueOf = (Integer) treeMap.get(Integer.valueOf(i13));
-                    if (numValueOf == null) {
-                        numValueOf = Integer.valueOf(i11);
+                if (i15 != 0) {
+                    Integer num = (Integer) treeMap.get(Integer.valueOf(i14));
+                    if (num == null) {
+                        num = Integer.valueOf(i12);
                     }
-                    treeMap.put(Integer.valueOf(i13), Integer.valueOf(i14 | numValueOf.intValue()));
+                    treeMap.put(Integer.valueOf(i14), Integer.valueOf(i15 | num.intValue()));
                 }
             }
-            i5 = i12 + 1;
-            i3 = i11;
+            i5 = i13 + 1;
+            i3 = i12;
         }
         return e80VarArr;
     }
@@ -669,11 +886,11 @@ public abstract class bz0 implements d62 {
             return ((v7) view).requestFocus(num.intValue(), rect);
         }
         if (rect != null) {
-            View viewFindNextFocusFromRect = FocusFinder.getInstance().findNextFocusFromRect(viewGroup, rect, num.intValue());
-            return viewFindNextFocusFromRect != null ? viewFindNextFocusFromRect.requestFocus(num.intValue(), rect) : viewGroup.requestFocus(num.intValue(), rect);
+            View findNextFocusFromRect = FocusFinder.getInstance().findNextFocusFromRect(viewGroup, rect, num.intValue());
+            return findNextFocusFromRect != null ? findNextFocusFromRect.requestFocus(num.intValue(), rect) : viewGroup.requestFocus(num.intValue(), rect);
         }
-        View viewFindNextFocus = FocusFinder.getInstance().findNextFocus(viewGroup, viewGroup.hasFocus() ? viewGroup.findFocus() : null, num.intValue());
-        return viewFindNextFocus != null ? viewFindNextFocus.requestFocus(num.intValue()) : view.requestFocus(num.intValue());
+        View findNextFocus = FocusFinder.getInstance().findNextFocus(viewGroup, viewGroup.hasFocus() ? viewGroup.findFocus() : null, num.intValue());
+        return findNextFocus != null ? findNextFocus.requestFocus(num.intValue()) : view.requestFocus(num.intValue());
     }
 
     public static final View d0(y60 y60Var) {
@@ -688,9 +905,9 @@ public abstract class bz0 implements d62 {
             return;
         }
         if (!(obj instanceof vl2)) {
-            Object objA = v20Var.A(null, o);
-            lx0.v(objA, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
-            zd.n(objA);
+            Object A = v20Var.A(null, o);
+            lx0.v(A, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
+            zd.n(A);
             throw null;
         }
         vl2 vl2Var = (vl2) obj;
@@ -701,7 +918,7 @@ public abstract class bz0 implements d62 {
         }
         rl2 rl2Var = rl2VarArr[length];
         lx0.u(null);
-        Object obj2 = vl2Var.f1229a[length];
+        Object obj2 = vl2Var.f1228a[length];
         throw null;
     }
 
@@ -722,8 +939,8 @@ public abstract class bz0 implements d62 {
     	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
      */
     public static String f0(String str) {
-        int iHashCode = str.hashCode();
-        switch (iHashCode) {
+        int hashCode = str.hashCode();
+        switch (hashCode) {
             case -2061550653:
                 if (str.equals("kotlin.jvm.internal.DoubleCompanionObject")) {
                     return "Companion";
@@ -940,7 +1157,7 @@ public abstract class bz0 implements d62 {
                 }
                 return null;
             default:
-                switch (iHashCode) {
+                switch (hashCode) {
                     case -1811142716:
                         if (str.equals("kotlin.jvm.functions.Function10")) {
                             return "Function10";
@@ -992,7 +1209,7 @@ public abstract class bz0 implements d62 {
                         }
                         return null;
                     default:
-                        switch (iHashCode) {
+                        switch (hashCode) {
                             case -1811142685:
                                 if (str.equals("kotlin.jvm.functions.Function20")) {
                                     return "Function20";
@@ -1009,7 +1226,7 @@ public abstract class bz0 implements d62 {
                                 }
                                 return null;
                             default:
-                                switch (iHashCode) {
+                                switch (hashCode) {
                                     case 80123371:
                                         if (str.equals("kotlin.jvm.functions.Function0")) {
                                             return "Function0";
@@ -1075,9 +1292,9 @@ public abstract class bz0 implements d62 {
     }
 
     public static final Object g0(v20 v20Var) {
-        Object objA = v20Var.A(0, n);
-        lx0.u(objA);
-        return objA;
+        Object A = v20Var.A(0, n);
+        lx0.u(A);
+        return A;
     }
 
     public static final long h(long j2) {
@@ -1110,27 +1327,121 @@ public abstract class bz0 implements d62 {
     }
 
     public static final int i0(long j2) {
-        float[] fArr = qt.f977a;
+        float[] fArr = qt.f976a;
         return (int) (et.a(j2, qt.e) >>> 32);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0159  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0163  */
-    /* JADX WARN: Removed duplicated region for block: B:70:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0041  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:53:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0159  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0058  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void j(androidx.emoji2.text.sm0 r18, androidx.emoji2.text.l80 r19, androidx.compose.runtime.internal.ComposableLambdaImpl r20, androidx.emoji2.text.lx r21, int r22, int r23) {
-        /*
-            Method dump skipped, instructions count: 367
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.bz0.j(androidx.emoji2.text.sm0, androidx.emoji2.text.l80, androidx.compose.runtime.internal.ComposableLambdaImpl, androidx.emoji2.text.lx, int, int):void");
+    public static final void j(sm0 sm0Var, l80 l80Var, ComposableLambdaImpl composableLambdaImpl, lx lxVar, int i2, int i3) {
+        sm0 sm0Var2;
+        int i4;
+        l80 l80Var2;
+        int i5;
+        pw1 s2;
+        tx txVar = (tx) lxVar;
+        txVar.Z(826668973);
+        if ((i2 & 6) == 0) {
+            sm0Var2 = sm0Var;
+            i4 = (txVar.h(sm0Var2) ? 4 : 2) | i2;
+        } else {
+            sm0Var2 = sm0Var;
+            i4 = i2;
+        }
+        int i6 = i3 & 2;
+        if (i6 != 0) {
+            i4 |= 48;
+        } else if ((i2 & 48) == 0) {
+            l80Var2 = l80Var;
+            i4 |= txVar.f(l80Var2) ? 32 : 16;
+            if ((i2 & 384) == 0) {
+                i4 |= txVar.h(composableLambdaImpl) ? PackageParser.PARSE_COLLECT_CERTIFICATES : PackageParser.PARSE_IS_PRIVILEGED;
+            }
+            i5 = i4;
+            if (txVar.P(i5 & 1, (i5 & 147) == 146)) {
+                txVar.S();
+            } else {
+                if (i6 != 0) {
+                    l80Var2 = new l80(7);
+                }
+                View view = (View) txVar.j(t8.f);
+                j70 j70Var = (j70) txVar.j(iy.h);
+                q01 q01Var = (q01) txVar.j(iy.n);
+                qx J = jm.J(txVar);
+                mf1 b0 = az0.b0(composableLambdaImpl, txVar);
+                Object[] objArr = new Object[0];
+                Object M = txVar.M();
+                on onVar = kx.f662a;
+                if (M == onVar) {
+                    M = m8.k;
+                    txVar.i0(M);
+                }
+                UUID uuid = (UUID) oy0.N(objArr, (sm0) M, txVar);
+                boolean f2 = txVar.f(view) | txVar.f(j70Var);
+                Object M2 = txVar.M();
+                if (f2 || M2 == onVar) {
+                    o80 o80Var = new o80(sm0Var2, l80Var2, view, q01Var, j70Var, uuid);
+                    ComposableLambdaImpl composableLambdaImpl2 = new ComposableLambdaImpl(346960332, true, new l9(0, b0));
+                    k80 k80Var = o80Var.k;
+                    k80Var.setParentCompositionContext(J);
+                    k80Var.m.setValue(composableLambdaImpl2);
+                    k80Var.q = true;
+                    k80Var.c();
+                    txVar.i0(o80Var);
+                    M2 = o80Var;
+                }
+                o80 o80Var2 = (o80) M2;
+                boolean h2 = txVar.h(o80Var2);
+                Object M3 = txVar.M();
+                if (h2 || M3 == onVar) {
+                    M3 = new h9(o80Var2, null, 0);
+                    txVar.i0(M3);
+                }
+                n(txVar, up2.f1186a, (Function2) M3);
+                boolean h3 = txVar.h(o80Var2);
+                Object M4 = txVar.M();
+                if (h3 || M4 == onVar) {
+                    M4 = new i9(o80Var2, 0);
+                    txVar.i0(M4);
+                }
+                k(o80Var2, (um0) M4, txVar);
+                boolean h4 = txVar.h(o80Var2) | ((i5 & 14) == 4) | ((i5 & 112) == 32) | txVar.d(q01Var.ordinal());
+                Object M5 = txVar.M();
+                if (h4 || M5 == onVar) {
+                    l80 l80Var3 = l80Var2;
+                    j9 j9Var = new j9(o80Var2, sm0Var, l80Var3, q01Var, 0);
+                    l80Var2 = l80Var3;
+                    txVar.i0(j9Var);
+                    M5 = j9Var;
+                }
+                p((sm0) M5, txVar);
+            }
+            l80 l80Var4 = l80Var2;
+            s2 = txVar.s();
+            if (s2 == null) {
+                s2.d = new k9(sm0Var, l80Var4, composableLambdaImpl, i2, i3);
+                return;
+            }
+            return;
+        }
+        l80Var2 = l80Var;
+        if ((i2 & 384) == 0) {
+        }
+        i5 = i4;
+        if (txVar.P(i5 & 1, (i5 & 147) == 146)) {
+        }
+        l80 l80Var42 = l80Var2;
+        s2 = txVar.s();
+        if (s2 == null) {
+        }
     }
 
     public static final vj0 j0(int i2) {
@@ -1157,16 +1468,16 @@ public abstract class bz0 implements d62 {
 
     public static final void k(Object obj, um0 um0Var, lx lxVar) {
         tx txVar = (tx) lxVar;
-        boolean zF = txVar.f(obj);
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
-            objM = new i90(um0Var);
-            txVar.i0(objM);
+        boolean f2 = txVar.f(obj);
+        Object M = txVar.M();
+        if (f2 || M == kx.f662a) {
+            M = new i90(um0Var);
+            txVar.i0(M);
         }
     }
 
     /* JADX WARN: Finally extract failed */
-    public static boolean k0(ByteArrayOutputStream byteArrayOutputStream, byte[] bArr, e80[] e80VarArr) throws IOException {
+    public static boolean k0(ByteArrayOutputStream byteArrayOutputStream, byte[] bArr, e80[] e80VarArr) {
         long j2;
         int length;
         byte[] bArr2 = xa1.i;
@@ -1185,12 +1496,12 @@ public abstract class bz0 implements d62 {
                     l8.q0(byteArrayOutputStream2, e80Var.c, 4);
                     l8.q0(byteArrayOutputStream2, e80Var.d, 4);
                     l8.q0(byteArrayOutputStream2, e80Var.g, 4);
-                    String strF = F(e80Var.f292a, e80Var.b, bArr4);
+                    String F = F(e80Var.f291a, e80Var.b, bArr4);
                     Charset charset = StandardCharsets.UTF_8;
-                    int length2 = strF.getBytes(charset).length;
+                    int length2 = F.getBytes(charset).length;
                     l8.r0(byteArrayOutputStream2, length2);
                     i4 = i4 + 14 + length2;
-                    byteArrayOutputStream2.write(strF.getBytes(charset));
+                    byteArrayOutputStream2.write(F.getBytes(charset));
                 }
                 byte[] byteArray = byteArrayOutputStream2.toByteArray();
                 if (i4 != byteArray.length) {
@@ -1239,13 +1550,13 @@ public abstract class bz0 implements d62 {
                     try {
                         e80 e80Var3 = e80VarArr[i11];
                         Iterator it = e80Var3.i.entrySet().iterator();
-                        int iIntValue = 0;
+                        int i13 = 0;
                         while (it.hasNext()) {
-                            iIntValue |= ((Integer) ((Map.Entry) it.next()).getValue()).intValue();
+                            i13 |= ((Integer) ((Map.Entry) it.next()).getValue()).intValue();
                         }
                         ByteArrayOutputStream byteArrayOutputStream4 = new ByteArrayOutputStream();
                         try {
-                            q0(byteArrayOutputStream4, iIntValue, e80Var3);
+                            q0(byteArrayOutputStream4, i13, e80Var3);
                             byte[] byteArray3 = byteArrayOutputStream4.toByteArray();
                             byteArrayOutputStream4.close();
                             byteArrayOutputStream4 = new ByteArrayOutputStream();
@@ -1255,14 +1566,14 @@ public abstract class bz0 implements d62 {
                                 byteArrayOutputStream4.close();
                                 l8.r0(byteArrayOutputStream3, i11);
                                 int length4 = byteArray3.length + 2 + byteArray4.length;
-                                int i13 = i12 + 6;
-                                int i14 = i11;
+                                int i14 = i12 + 6;
+                                int i15 = i11;
                                 l8.q0(byteArrayOutputStream3, length4, 4);
-                                l8.r0(byteArrayOutputStream3, iIntValue);
+                                l8.r0(byteArrayOutputStream3, i13);
                                 byteArrayOutputStream3.write(byteArray3);
                                 byteArrayOutputStream3.write(byteArray4);
-                                i12 = i13 + length4;
-                                i11 = i14 + 1;
+                                i12 = i14 + length4;
+                                i11 = i15 + 1;
                             } finally {
                             }
                         } finally {
@@ -1286,20 +1597,20 @@ public abstract class bz0 implements d62 {
                 long j3 = 4;
                 long size = j3 + j3 + 4 + (arrayList.size() * 16);
                 l8.q0(byteArrayOutputStream, arrayList.size(), 4);
-                for (int i15 = 0; i15 < arrayList.size(); i15++) {
-                    xw2 xw2Var4 = (xw2) arrayList.get(i15);
-                    int i16 = xw2Var4.f1361a;
+                for (int i16 = 0; i16 < arrayList.size(); i16++) {
+                    xw2 xw2Var4 = (xw2) arrayList.get(i16);
+                    int i17 = xw2Var4.f1360a;
                     byte[] bArr5 = xw2Var4.b;
-                    if (i16 == 1) {
+                    if (i17 == 1) {
                         j2 = 0;
-                    } else if (i16 == 2) {
+                    } else if (i17 == 2) {
                         j2 = 1;
-                    } else if (i16 == 3) {
+                    } else if (i17 == 3) {
                         j2 = 2;
-                    } else if (i16 == 4) {
+                    } else if (i17 == 4) {
                         j2 = 3;
                     } else {
-                        if (i16 != 5) {
+                        if (i17 != 5) {
                             throw null;
                         }
                         j2 = 4;
@@ -1308,11 +1619,11 @@ public abstract class bz0 implements d62 {
                     l8.q0(byteArrayOutputStream, size, 4);
                     if (xw2Var4.c) {
                         long length5 = bArr5.length;
-                        byte[] bArrG = l8.G(bArr5);
-                        arrayList2.add(bArrG);
-                        l8.q0(byteArrayOutputStream, bArrG.length, 4);
+                        byte[] G = l8.G(bArr5);
+                        arrayList2.add(G);
+                        l8.q0(byteArrayOutputStream, G.length, 4);
                         l8.q0(byteArrayOutputStream, length5, 4);
-                        length = bArrG.length;
+                        length = G.length;
                     } else {
                         arrayList2.add(bArr5);
                         l8.q0(byteArrayOutputStream, bArr5.length, 4);
@@ -1321,8 +1632,8 @@ public abstract class bz0 implements d62 {
                     }
                     size += length;
                 }
-                for (int i17 = 0; i17 < arrayList2.size(); i17++) {
-                    byteArrayOutputStream.write((byte[]) arrayList2.get(i17));
+                for (int i18 = 0; i18 < arrayList2.size(); i18++) {
+                    byteArrayOutputStream.write((byte[]) arrayList2.get(i18));
                 }
             } catch (Throwable th3) {
                 try {
@@ -1336,43 +1647,43 @@ public abstract class bz0 implements d62 {
         } else {
             byte[] bArr6 = xa1.f;
             if (Arrays.equals(bArr, bArr6)) {
-                byte[] bArrE = E(e80VarArr, bArr6);
+                byte[] E = E(e80VarArr, bArr6);
                 l8.q0(byteArrayOutputStream, e80VarArr.length, 1);
-                l8.q0(byteArrayOutputStream, bArrE.length, 4);
-                byte[] bArrG2 = l8.G(bArrE);
-                l8.q0(byteArrayOutputStream, bArrG2.length, 4);
-                byteArrayOutputStream.write(bArrG2);
+                l8.q0(byteArrayOutputStream, E.length, 4);
+                byte[] G2 = l8.G(E);
+                l8.q0(byteArrayOutputStream, G2.length, 4);
+                byteArrayOutputStream.write(G2);
                 return true;
             }
             if (Arrays.equals(bArr, bArr3)) {
                 l8.q0(byteArrayOutputStream, e80VarArr.length, 1);
                 for (e80 e80Var4 : e80VarArr) {
                     int size2 = e80Var4.i.size() * 4;
-                    String strF2 = F(e80Var4.f292a, e80Var4.b, bArr3);
+                    String F2 = F(e80Var4.f291a, e80Var4.b, bArr3);
                     Charset charset2 = StandardCharsets.UTF_8;
-                    l8.r0(byteArrayOutputStream, strF2.getBytes(charset2).length);
+                    l8.r0(byteArrayOutputStream, F2.getBytes(charset2).length);
                     l8.r0(byteArrayOutputStream, e80Var4.h.length);
                     l8.q0(byteArrayOutputStream, size2, 4);
                     l8.q0(byteArrayOutputStream, e80Var4.c, 4);
-                    byteArrayOutputStream.write(strF2.getBytes(charset2));
+                    byteArrayOutputStream.write(F2.getBytes(charset2));
                     Iterator it2 = e80Var4.i.keySet().iterator();
                     while (it2.hasNext()) {
                         l8.r0(byteArrayOutputStream, ((Integer) it2.next()).intValue());
                         l8.r0(byteArrayOutputStream, 0);
                     }
-                    for (int i18 : e80Var4.h) {
-                        l8.r0(byteArrayOutputStream, i18);
+                    for (int i19 : e80Var4.h) {
+                        l8.r0(byteArrayOutputStream, i19);
                     }
                 }
             } else {
                 byte[] bArr7 = xa1.g;
                 if (Arrays.equals(bArr, bArr7)) {
-                    byte[] bArrE2 = E(e80VarArr, bArr7);
+                    byte[] E2 = E(e80VarArr, bArr7);
                     l8.q0(byteArrayOutputStream, e80VarArr.length, 1);
-                    l8.q0(byteArrayOutputStream, bArrE2.length, 4);
-                    byte[] bArrG3 = l8.G(bArrE2);
-                    l8.q0(byteArrayOutputStream, bArrG3.length, 4);
-                    byteArrayOutputStream.write(bArrG3);
+                    l8.q0(byteArrayOutputStream, E2.length, 4);
+                    byte[] G3 = l8.G(E2);
+                    l8.q0(byteArrayOutputStream, G3.length, 4);
+                    byteArrayOutputStream.write(G3);
                     return true;
                 }
                 if (!Arrays.equals(bArr, bArr2)) {
@@ -1380,21 +1691,21 @@ public abstract class bz0 implements d62 {
                 }
                 l8.r0(byteArrayOutputStream, e80VarArr.length);
                 for (e80 e80Var5 : e80VarArr) {
-                    String str = e80Var5.f292a;
+                    String str = e80Var5.f291a;
                     TreeMap treeMap = e80Var5.i;
-                    String strF3 = F(str, e80Var5.b, bArr2);
+                    String F3 = F(str, e80Var5.b, bArr2);
                     Charset charset3 = StandardCharsets.UTF_8;
-                    l8.r0(byteArrayOutputStream, strF3.getBytes(charset3).length);
+                    l8.r0(byteArrayOutputStream, F3.getBytes(charset3).length);
                     l8.r0(byteArrayOutputStream, treeMap.size());
                     l8.r0(byteArrayOutputStream, e80Var5.h.length);
                     l8.q0(byteArrayOutputStream, e80Var5.c, 4);
-                    byteArrayOutputStream.write(strF3.getBytes(charset3));
+                    byteArrayOutputStream.write(F3.getBytes(charset3));
                     Iterator it3 = treeMap.keySet().iterator();
                     while (it3.hasNext()) {
                         l8.r0(byteArrayOutputStream, ((Integer) it3.next()).intValue());
                     }
-                    for (int i19 : e80Var5.h) {
-                        l8.r0(byteArrayOutputStream, i19);
+                    for (int i20 : e80Var5.h) {
+                        l8.r0(byteArrayOutputStream, i20);
                     }
                 }
             }
@@ -1404,11 +1715,11 @@ public abstract class bz0 implements d62 {
 
     public static final void l(Object obj, Object obj2, um0 um0Var, lx lxVar) {
         tx txVar = (tx) lxVar;
-        boolean zF = txVar.f(obj) | txVar.f(obj2);
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
-            objM = new i90(um0Var);
-            txVar.i0(objM);
+        boolean f2 = txVar.f(obj) | txVar.f(obj2);
+        Object M = txVar.M();
+        if (f2 || M == kx.f662a) {
+            M = new i90(um0Var);
+            txVar.i0(M);
         }
     }
 
@@ -1437,33 +1748,33 @@ public abstract class bz0 implements d62 {
     public static final void n(lx lxVar, Object obj, Function2 function2) {
         tx txVar = (tx) lxVar;
         v20 v20Var = txVar.R;
-        boolean zF = txVar.f(obj);
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
-            objM = new h01(v20Var, function2);
-            txVar.i0(objM);
+        boolean f2 = txVar.f(obj);
+        Object M = txVar.M();
+        if (f2 || M == kx.f662a) {
+            M = new h01(v20Var, function2);
+            txVar.i0(M);
         }
     }
 
     public static Context n0(Context context, AttributeSet attributeSet, int i2, int i3, int[] iArr) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, i, i2, i3);
-        int[] iArr2 = {typedArrayObtainStyledAttributes.getResourceId(0, 0)};
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, i, i2, i3);
+        int[] iArr2 = {obtainStyledAttributes.getResourceId(0, 0)};
+        obtainStyledAttributes.recycle();
         int i4 = iArr2[0];
-        boolean z = (context instanceof k10) && ((k10) context).f611a == i4;
+        boolean z = (context instanceof k10) && ((k10) context).f610a == i4;
         if (i4 == 0 || z) {
             return context;
         }
         k10 k10Var = new k10(context);
-        k10Var.f611a = i4;
+        k10Var.f610a = i4;
         int length = iArr.length;
         int[] iArr3 = new int[length];
         if (iArr.length > 0) {
-            TypedArray typedArrayObtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, iArr, i2, i3);
+            TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, iArr, i2, i3);
             for (int i5 = 0; i5 < iArr.length; i5++) {
-                iArr3[i5] = typedArrayObtainStyledAttributes2.getResourceId(i5, 0);
+                iArr3[i5] = obtainStyledAttributes2.getResourceId(i5, 0);
             }
-            typedArrayObtainStyledAttributes2.recycle();
+            obtainStyledAttributes2.recycle();
         }
         for (int i6 = 0; i6 < length; i6++) {
             int i7 = iArr3[i6];
@@ -1471,10 +1782,10 @@ public abstract class bz0 implements d62 {
                 k10Var.getTheme().applyStyle(i7, true);
             }
         }
-        TypedArray typedArrayObtainStyledAttributes3 = context.obtainStyledAttributes(attributeSet, h);
-        int resourceId = typedArrayObtainStyledAttributes3.getResourceId(0, 0);
-        int resourceId2 = typedArrayObtainStyledAttributes3.getResourceId(1, 0);
-        typedArrayObtainStyledAttributes3.recycle();
+        TypedArray obtainStyledAttributes3 = context.obtainStyledAttributes(attributeSet, h);
+        int resourceId = obtainStyledAttributes3.getResourceId(0, 0);
+        int resourceId2 = obtainStyledAttributes3.getResourceId(1, 0);
+        obtainStyledAttributes3.recycle();
         if (resourceId == 0) {
             resourceId = resourceId2;
         }
@@ -1487,15 +1798,15 @@ public abstract class bz0 implements d62 {
     public static final void o(Object obj, Object obj2, Function2 function2, lx lxVar) {
         tx txVar = (tx) lxVar;
         v20 v20Var = txVar.R;
-        boolean zF = txVar.f(obj) | txVar.f(obj2);
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
-            objM = new h01(v20Var, function2);
-            txVar.i0(objM);
+        boolean f2 = txVar.f(obj) | txVar.f(obj2);
+        Object M = txVar.M();
+        if (f2 || M == kx.f662a) {
+            M = new h01(v20Var, function2);
+            txVar.i0(M);
         }
     }
 
-    public static void o0(ByteArrayOutputStream byteArrayOutputStream, e80 e80Var) throws IOException {
+    public static void o0(ByteArrayOutputStream byteArrayOutputStream, e80 e80Var) {
         r0(byteArrayOutputStream, e80Var);
         int i2 = e80Var.g;
         int[] iArr = e80Var.h;
@@ -1510,14 +1821,14 @@ public abstract class bz0 implements d62 {
         }
         byte[] bArr = new byte[(((i2 * 2) + 7) & (-8)) / 8];
         for (Map.Entry entry : e80Var.i.entrySet()) {
-            int iIntValue = ((Integer) entry.getKey()).intValue();
-            int iIntValue2 = ((Integer) entry.getValue()).intValue();
-            if ((iIntValue2 & 2) != 0) {
-                int i6 = iIntValue / 8;
-                bArr[i6] = (byte) (bArr[i6] | (1 << (iIntValue % 8)));
+            int intValue = ((Integer) entry.getKey()).intValue();
+            int intValue2 = ((Integer) entry.getValue()).intValue();
+            if ((intValue2 & 2) != 0) {
+                int i6 = intValue / 8;
+                bArr[i6] = (byte) (bArr[i6] | (1 << (intValue % 8)));
             }
-            if ((iIntValue2 & 4) != 0) {
-                int i7 = iIntValue + i2;
+            if ((intValue2 & 4) != 0) {
+                int i7 = intValue + i2;
                 int i8 = i7 / 8;
                 bArr[i8] = (byte) ((1 << (i7 % 8)) | bArr[i8]);
             }
@@ -1531,7 +1842,7 @@ public abstract class bz0 implements d62 {
         a01.a0(fl1Var, 0, sm0Var);
     }
 
-    public static void p0(ByteArrayOutputStream byteArrayOutputStream, e80 e80Var, String str) throws IOException {
+    public static void p0(ByteArrayOutputStream byteArrayOutputStream, e80 e80Var, String str) {
         Charset charset = StandardCharsets.UTF_8;
         l8.r0(byteArrayOutputStream, str.getBytes(charset).length);
         l8.r0(byteArrayOutputStream, e80Var.e);
@@ -1554,15 +1865,15 @@ public abstract class bz0 implements d62 {
             i3 |= txVar.h(function2) ? 32 : 16;
         }
         if (txVar.P(i3 & 1, (i3 & 19) != 18)) {
-            Object objM = txVar.M();
-            if (objM == kx.f663a) {
-                objM = n9.b;
-                txVar.i0(objM);
+            Object M = txVar.M();
+            if (M == kx.f662a) {
+                M = n9.b;
+                txVar.i0(M);
             }
-            fb1 fb1Var = (fb1) objM;
-            int iHashCode = Long.hashCode(txVar.T);
-            ap1 ap1VarL = txVar.l();
-            nd1 nd1VarQ = Q(txVar, nd1Var);
+            fb1 fb1Var = (fb1) M;
+            int hashCode = Long.hashCode(txVar.T);
+            ap1 l2 = txVar.l();
+            nd1 Q = Q(txVar, nd1Var);
             hx.b.getClass();
             hy hyVar = gx.b;
             int i4 = (((((i3 << 3) & 112) | (((i3 >> 3) & 14) | 384)) << 6) & 896) | 6;
@@ -1573,34 +1884,34 @@ public abstract class bz0 implements d62 {
                 txVar.l0();
             }
             mz0.G(txVar, fb1Var, gx.e);
-            mz0.G(txVar, ap1VarL, gx.d);
+            mz0.G(txVar, l2, gx.d);
             wc wcVar = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar);
             }
-            mz0.G(txVar, nd1VarQ, gx.c);
+            mz0.G(txVar, Q, gx.c);
             function2.invoke(txVar, Integer.valueOf((i4 >> 6) & 14));
             txVar.p(true);
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new o9(i2, 0, nd1Var, function2);
+        pw1 s2 = txVar.s();
+        if (s2 != null) {
+            s2.d = new o9(i2, 0, nd1Var, function2);
         }
     }
 
-    public static void q0(ByteArrayOutputStream byteArrayOutputStream, int i2, e80 e80Var) throws IOException {
+    public static void q0(ByteArrayOutputStream byteArrayOutputStream, int i2, e80 e80Var) {
         int i3 = e80Var.g;
         byte[] bArr = new byte[(((Integer.bitCount(i2 & (-2)) * i3) + 7) & (-8)) / 8];
         for (Map.Entry entry : e80Var.i.entrySet()) {
-            int iIntValue = ((Integer) entry.getKey()).intValue();
-            int iIntValue2 = ((Integer) entry.getValue()).intValue();
+            int intValue = ((Integer) entry.getKey()).intValue();
+            int intValue2 = ((Integer) entry.getValue()).intValue();
             int i4 = 0;
             for (int i5 = 1; i5 <= 4; i5 <<= 1) {
                 if (i5 != 1 && (i5 & i2) != 0) {
-                    if ((i5 & iIntValue2) == i5) {
-                        int i6 = (i4 * i3) + iIntValue;
+                    if ((i5 & intValue2) == i5) {
+                        int i6 = (i4 * i3) + intValue;
                         int i7 = i6 / 8;
                         bArr[i7] = (byte) ((1 << (i6 % 8)) | bArr[i7]);
                     }
@@ -1617,14 +1928,12 @@ public abstract class bz0 implements d62 {
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0040 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004b  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0040 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004b  */
     /* JADX WARN: Type inference failed for: r8v6, types: [java.lang.Object, java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x003e -> B:18:0x0041). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003e -> B:10:0x0041). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public static final java.lang.Object r(androidx.emoji2.text.nh2 r7, androidx.emoji2.text.lk r8) {
         /*
@@ -1669,7 +1978,7 @@ public abstract class bz0 implements d62 {
         L41:
             androidx.emoji2.text.is1 r8 = (androidx.emoji2.text.is1) r8
             int r1 = r8.c
-            java.lang.Object r8 = r8.f547a
+            java.lang.Object r8 = r8.f546a
             r1 = r1 & 66
             if (r1 == 0) goto L32
             int r1 = r8.size()
@@ -1697,11 +2006,11 @@ public abstract class bz0 implements d62 {
     public static void r0(ByteArrayOutputStream byteArrayOutputStream, e80 e80Var) {
         int i2 = 0;
         for (Map.Entry entry : e80Var.i.entrySet()) {
-            int iIntValue = ((Integer) entry.getKey()).intValue();
+            int intValue = ((Integer) entry.getKey()).intValue();
             if ((((Integer) entry.getValue()).intValue() & 1) != 0) {
-                l8.r0(byteArrayOutputStream, iIntValue - i2);
+                l8.r0(byteArrayOutputStream, intValue - i2);
                 l8.r0(byteArrayOutputStream, 0);
-                i2 = iIntValue;
+                i2 = intValue;
             }
         }
     }
@@ -1712,11 +2021,11 @@ public abstract class bz0 implements d62 {
         while (i4 < i3) {
             int i5 = ((i3 - i4) / 2) + i4;
             Object[] objArr = sf1Var.d;
-            int i6 = ((ex0) objArr[i5]).f334a;
+            int i6 = ((ex0) objArr[i5]).f333a;
             if (i6 != i2) {
                 if (i6 < i2) {
                     i4 = i5 + 1;
-                    if (i2 < ((ex0) objArr[i4]).f334a) {
+                    if (i2 < ((ex0) objArr[i4]).f333a) {
                     }
                 } else {
                     i3 = i5 - 1;
@@ -1805,8 +2114,8 @@ public abstract class bz0 implements d62 {
     	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
      */
     public static String x(String str) {
-        int iHashCode = str.hashCode();
-        switch (iHashCode) {
+        int hashCode = str.hashCode();
+        switch (hashCode) {
             case -2061550653:
                 if (str.equals("kotlin.jvm.internal.DoubleCompanionObject")) {
                     return "kotlin.Double.Companion";
@@ -2023,7 +2332,7 @@ public abstract class bz0 implements d62 {
                 }
                 return null;
             default:
-                switch (iHashCode) {
+                switch (hashCode) {
                     case -1811142716:
                         if (str.equals("kotlin.jvm.functions.Function10")) {
                             return "kotlin.Function10";
@@ -2075,7 +2384,7 @@ public abstract class bz0 implements d62 {
                         }
                         return null;
                     default:
-                        switch (iHashCode) {
+                        switch (hashCode) {
                             case -1811142685:
                                 if (str.equals("kotlin.jvm.functions.Function20")) {
                                     return "kotlin.Function20";
@@ -2092,7 +2401,7 @@ public abstract class bz0 implements d62 {
                                 }
                                 return null;
                             default:
-                                switch (iHashCode) {
+                                switch (hashCode) {
                                     case 80123371:
                                         if (str.equals("kotlin.jvm.functions.Function0")) {
                                             return "kotlin.Function0";
@@ -2155,20 +2464,161 @@ public abstract class bz0 implements d62 {
         return nd1Var.k(new jx(wm0Var));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00e9  */
-    /* JADX WARN: Removed duplicated region for block: B:46:0x00f2  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0137  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0141  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00f2  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final long z(long r19, long r21) {
-        /*
-            Method dump skipped, instructions count: 426
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.bz0.z(long, long):long");
+    public static final long z(long j2, long j3) {
+        int i2;
+        int i3;
+        int i4;
+        int i5;
+        int i6;
+        int i7;
+        int i8;
+        int i9;
+        int i10;
+        long a2 = et.a(j2, et.f(j3));
+        float d2 = et.d(j3);
+        float d3 = et.d(a2);
+        float f2 = 1.0f - d3;
+        float f3 = (d2 * f2) + d3;
+        float h2 = f3 == 0.0f ? 0.0f : (((et.h(j3) * d2) * f2) + (et.h(a2) * d3)) / f3;
+        float g2 = f3 == 0.0f ? 0.0f : (((et.g(j3) * d2) * f2) + (et.g(a2) * d3)) / f3;
+        float e2 = f3 == 0.0f ? 0.0f : (((et.e(j3) * d2) * f2) + (et.e(a2) * d3)) / f3;
+        if (et.f(j3).c()) {
+            return (((int) ((e2 * 255.0f) + 0.5f)) | (((((int) ((f3 * 255.0f) + 0.5f)) << 24) | (((int) ((h2 * 255.0f) + 0.5f)) << 16)) | (((int) ((g2 * 255.0f) + 0.5f)) << 8))) << 32;
+        }
+        int floatToRawIntBits = Float.floatToRawIntBits(h2);
+        int i11 = floatToRawIntBits >>> 31;
+        int i12 = (floatToRawIntBits >>> 23) & 255;
+        int i13 = floatToRawIntBits & 8388607;
+        int i14 = 49;
+        int i15 = PackageParser.PARSE_TRUSTED_OVERLAY;
+        int i16 = 0;
+        if (i12 == 255) {
+            i3 = i13 != 0 ? 512 : 0;
+            i2 = 31;
+        } else {
+            i2 = i12 - 112;
+            if (i2 >= 31) {
+                i2 = 49;
+                i3 = 0;
+            } else if (i2 > 0) {
+                int i17 = i13 >> 13;
+                if ((floatToRawIntBits & 4096) != 0) {
+                    i4 = (((i2 << 10) | i17) + 1) | (i11 << 15);
+                    short s2 = (short) i4;
+                    int floatToRawIntBits2 = Float.floatToRawIntBits(g2);
+                    int i18 = floatToRawIntBits2 >>> 31;
+                    i5 = (floatToRawIntBits2 >>> 23) & 255;
+                    int i19 = floatToRawIntBits2 & 8388607;
+                    if (i5 != 255) {
+                        i7 = i19 != 0 ? 512 : 0;
+                        i6 = 31;
+                    } else {
+                        i6 = i5 - 112;
+                        if (i6 >= 31) {
+                            i6 = 49;
+                            i7 = 0;
+                        } else if (i6 > 0) {
+                            int i20 = i19 >> 13;
+                            if ((floatToRawIntBits2 & 4096) != 0) {
+                                i8 = (((i6 << 10) | i20) + 1) | (i18 << 15);
+                                short s3 = (short) i8;
+                                int floatToRawIntBits3 = Float.floatToRawIntBits(e2);
+                                int i21 = floatToRawIntBits3 >>> 31;
+                                i9 = (floatToRawIntBits3 >>> 23) & 255;
+                                int i22 = 8388607 & floatToRawIntBits3;
+                                if (i9 == 255) {
+                                    if (i22 == 0) {
+                                        i15 = 0;
+                                    }
+                                    i14 = 31;
+                                    i16 = i15;
+                                } else {
+                                    int i23 = i9 - 112;
+                                    if (i23 < 31) {
+                                        if (i23 > 0) {
+                                            i16 = i22 >> 13;
+                                            if ((floatToRawIntBits3 & 4096) != 0) {
+                                                i10 = (((i23 << 10) | i16) + 1) | (i21 << 15);
+                                                return ((((short) i10) & 65535) << 16) | ((s2 & 65535) << 48) | ((s3 & 65535) << 32) | ((((int) ((Math.max(0.0f, Math.min(f3, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (r0.c & 63);
+                                            }
+                                            i14 = i23;
+                                        } else if (i23 >= -10) {
+                                            int i24 = (i22 | 8388608) >> (1 - i23);
+                                            if ((i24 & 4096) != 0) {
+                                                i24 += 8192;
+                                            }
+                                            i14 = 0;
+                                            i16 = i24 >> 13;
+                                        } else {
+                                            i14 = 0;
+                                        }
+                                    }
+                                }
+                                i10 = (i21 << 15) | (i14 << 10) | i16;
+                                return ((((short) i10) & 65535) << 16) | ((s2 & 65535) << 48) | ((s3 & 65535) << 32) | ((((int) ((Math.max(0.0f, Math.min(f3, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (r0.c & 63);
+                            }
+                            i7 = i20;
+                        } else if (i6 >= -10) {
+                            int i25 = (i19 | 8388608) >> (1 - i6);
+                            if ((i25 & 4096) != 0) {
+                                i25 += 8192;
+                            }
+                            i7 = i25 >> 13;
+                            i6 = 0;
+                        } else {
+                            i7 = 0;
+                            i6 = 0;
+                        }
+                    }
+                    i8 = i7 | (i18 << 15) | (i6 << 10);
+                    short s32 = (short) i8;
+                    int floatToRawIntBits32 = Float.floatToRawIntBits(e2);
+                    int i212 = floatToRawIntBits32 >>> 31;
+                    i9 = (floatToRawIntBits32 >>> 23) & 255;
+                    int i222 = 8388607 & floatToRawIntBits32;
+                    if (i9 == 255) {
+                    }
+                    i10 = (i212 << 15) | (i14 << 10) | i16;
+                    return ((((short) i10) & 65535) << 16) | ((s2 & 65535) << 48) | ((s32 & 65535) << 32) | ((((int) ((Math.max(0.0f, Math.min(f3, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (r0.c & 63);
+                }
+                i3 = i17;
+            } else if (i2 >= -10) {
+                int i26 = (i13 | 8388608) >> (1 - i2);
+                if ((i26 & 4096) != 0) {
+                    i26 += 8192;
+                }
+                i3 = i26 >> 13;
+                i2 = 0;
+            } else {
+                i3 = 0;
+                i2 = 0;
+            }
+        }
+        i4 = i3 | (i11 << 15) | (i2 << 10);
+        short s22 = (short) i4;
+        int floatToRawIntBits22 = Float.floatToRawIntBits(g2);
+        int i182 = floatToRawIntBits22 >>> 31;
+        i5 = (floatToRawIntBits22 >>> 23) & 255;
+        int i192 = floatToRawIntBits22 & 8388607;
+        if (i5 != 255) {
+        }
+        i8 = i7 | (i182 << 15) | (i6 << 10);
+        short s322 = (short) i8;
+        int floatToRawIntBits322 = Float.floatToRawIntBits(e2);
+        int i2122 = floatToRawIntBits322 >>> 31;
+        i9 = (floatToRawIntBits322 >>> 23) & 255;
+        int i2222 = 8388607 & floatToRawIntBits322;
+        if (i9 == 255) {
+        }
+        i10 = (i2122 << 15) | (i14 << 10) | i16;
+        return ((((short) i10) & 65535) << 16) | ((s22 & 65535) << 48) | ((s322 & 65535) << 32) | ((((int) ((Math.max(0.0f, Math.min(f3, 1.0f)) * 1023.0f) + 0.5f)) & 1023) << 6) | (r0.c & 63);
     }
 
     public abstract int S(int i2);
@@ -2177,20 +2627,20 @@ public abstract class bz0 implements d62 {
 
     @Override // androidx.emoji2.text.d62
     public int c(int i2) {
-        int iS = S(i2);
-        if (iS == -1 || S(iS) == -1) {
+        int S = S(i2);
+        if (S == -1 || S(S) == -1) {
             return -1;
         }
-        return iS;
+        return S;
     }
 
     @Override // androidx.emoji2.text.d62
     public int d(int i2) {
-        int iV = V(i2);
-        if (iV == -1 || V(iV) == -1) {
+        int V = V(i2);
+        if (V == -1 || V(V) == -1) {
             return -1;
         }
-        return iV;
+        return V;
     }
 
     @Override // androidx.emoji2.text.d62

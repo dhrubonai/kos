@@ -36,6 +36,7 @@ import android.util.Xml;
 import androidx.emoji2.text.az0;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.df;
+import androidx.emoji2.text.gs1;
 import androidx.emoji2.text.jx0;
 import androidx.emoji2.text.kp0;
 import androidx.emoji2.text.l8;
@@ -71,7 +72,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import org.xmlpull.v1.XmlPullParserException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 @SuppressLint({"InlinedApi"})
@@ -303,9 +303,9 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             Binder binder = new Binder();
             try {
                 c01 c01Var = c01.r;
-                Intent intentBindService = BActivityManager.get().bindService(intent, binder, null, this.mAccounts.userId);
-                if (isHostProxyService(intentBindService)) {
-                    if (BAccountManagerService.this.mContext.bindService(intentBindService, this, i)) {
+                Intent bindService = BActivityManager.get().bindService(intent, binder, null, this.mAccounts.userId);
+                if (isHostProxyService(bindService)) {
+                    if (BAccountManagerService.this.mContext.bindService(bindService, this, i)) {
                         this.mBound = true;
                         this.mBoundThroughVirtualProxy = true;
                         this.mVirtualConnectionToken = binder;
@@ -378,33 +378,33 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                 BAccountManagerService.this.ensureGoogleAuthenticatorCached(this.mAccounts.userId);
                 authenticatorInfo = BAccountManagerService.this.mAuthenticatorCache.authenticators.get(c.a(-39999589465890L, strArr));
             }
-            List<AuthenticatorInfo> listCollectGoogleAuthenticatorCandidates = BAccountManagerService.this.collectGoogleAuthenticatorCandidates(this.mAccounts.userId, authenticatorInfo);
-            if (!listCollectGoogleAuthenticatorCandidates.isEmpty()) {
-                for (AuthenticatorInfo authenticatorInfo2 : listCollectGoogleAuthenticatorCandidates) {
+            List<AuthenticatorInfo> collectGoogleAuthenticatorCandidates = BAccountManagerService.this.collectGoogleAuthenticatorCandidates(this.mAccounts.userId, authenticatorInfo);
+            if (!collectGoogleAuthenticatorCandidates.isEmpty()) {
+                for (AuthenticatorInfo authenticatorInfo2 : collectGoogleAuthenticatorCandidates) {
                     if (!BAccountManagerService.this.isUsableGoogleAccountAuthenticatorService(authenticatorInfo2.serviceInfo)) {
-                        String strA = c.a(-40450561031970L, strArr);
+                        String a2 = c.a(-40450561031970L, strArr);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-40562230181666L, strArr));
                         sb.append(authenticatorInfo2.serviceInfo.packageName);
                         sb.append(c.a(-40231517699874L, strArr));
-                        zd.p(sb, authenticatorInfo2.serviceInfo.name, 5, strA);
+                        zd.p(sb, authenticatorInfo2.serviceInfo.name, 5, a2);
                     } else {
                         if (bindToAuthenticatorInfo(authenticatorInfo2)) {
                             BAccountManagerService.this.mAuthenticatorCache.authenticators.put(c.a(-40222927765282L, strArr), authenticatorInfo2);
-                            String strA2 = c.a(-40235812667170L, strArr);
+                            String a3 = c.a(-40235812667170L, strArr);
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(c.a(-40347481816866L, strArr));
                             sb2.append(authenticatorInfo2.serviceInfo.packageName);
                             sb2.append(c.a(-43285239447330L, strArr));
-                            zd.p(sb2, authenticatorInfo2.serviceInfo.name, 3, strA2);
+                            zd.p(sb2, authenticatorInfo2.serviceInfo.name, 3, a3);
                             return true;
                         }
-                        String strA3 = c.a(-43276649512738L, strArr);
+                        String a4 = c.a(-43276649512738L, strArr);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(c.a(-43388318662434L, strArr));
                         sb3.append(authenticatorInfo2.serviceInfo.packageName);
                         sb3.append(c.a(-42984591736610L, strArr));
-                        zd.p(sb3, authenticatorInfo2.serviceInfo.name, 5, strA3);
+                        zd.p(sb3, authenticatorInfo2.serviceInfo.name, 5, a4);
                     }
                 }
             } else if (Log.isLoggable(c.a(-40081193844514L, strArr), 2)) {
@@ -502,15 +502,15 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                 intent.setClipData(ClipData.newPlainText(null, null));
             }
             intent.setFlags(intent.getFlags() & (-196));
-            long jClearCallingIdentity = Binder.clearCallingIdentity();
+            long clearCallingIdentity = Binder.clearCallingIdentity();
             try {
                 if (BAccountManagerService.this.mPms.resolveActivity(intent, 0, null, this.mAccounts.userId) == null) {
                     return false;
                 }
-                Binder.restoreCallingIdentity(jClearCallingIdentity);
+                Binder.restoreCallingIdentity(clearCallingIdentity);
                 return true;
             } finally {
-                Binder.restoreCallingIdentity(jClearCallingIdentity);
+                Binder.restoreCallingIdentity(clearCallingIdentity);
             }
         }
 
@@ -555,16 +555,16 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             Intent intent;
             String[] strArr = xa1.b;
             this.mNumResults++;
-            Account accountResolveResultAccount = BAccountManagerService.this.resolveResultAccount(bundle, this.mAccountName, this.mAccountType, this.mAccounts);
+            Account resolveResultAccount = BAccountManagerService.this.resolveResultAccount(bundle, this.mAccountName, this.mAccountType, this.mAccounts);
             if (bundle != null) {
                 boolean z = this.mUpdateLastAuthenticatedTime && (bundle.getBoolean(c.a(-29966545862434L, strArr), false) || (bundle.containsKey(c.a(-30043855273762L, strArr)) && bundle.containsKey(c.a(-30129754619682L, strArr))));
                 if (z || this.mAuthDetailsRequired) {
-                    boolean z2 = accountResolveResultAccount != null && BAccountManagerService.this.isAccountPresentForCaller(accountResolveResultAccount.name, accountResolveResultAccount.type, this.mAccounts.userId);
+                    boolean z2 = resolveResultAccount != null && BAccountManagerService.this.isAccountPresentForCaller(resolveResultAccount.name, resolveResultAccount.type, this.mAccounts.userId);
                     if (z && z2) {
-                        BAccountManagerService.this.updateLastAuthenticatedTime(this.mAccounts, accountResolveResultAccount);
+                        BAccountManagerService.this.updateLastAuthenticatedTime(this.mAccounts, resolveResultAccount);
                     }
                     if (this.mAuthDetailsRequired) {
-                        bundle.putLong(c.a(-30146934488866L, strArr), z2 ? this.mAccounts.findAccountLastAuthenticatedTime(accountResolveResultAccount) : -1L);
+                        bundle.putLong(c.a(-30146934488866L, strArr), z2 ? this.mAccounts.findAccountLastAuthenticatedTime(resolveResultAccount) : -1L);
                     }
                 }
             }
@@ -659,7 +659,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             return toDebugString(SystemClock.elapsedRealtime());
         }
 
-        public Session(BUserAccounts bUserAccounts, IAccountManagerResponse iAccountManagerResponse, String str, boolean z, boolean z2, String str2, boolean z3, boolean z4) throws RemoteException {
+        public Session(BUserAccounts bUserAccounts, IAccountManagerResponse iAccountManagerResponse, String str, boolean z, boolean z2, String str2, boolean z3, boolean z4) {
             this.mNumResults = 0;
             this.mNumRequestContinued = 0;
             this.mNumErrors = 0;
@@ -746,11 +746,11 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                     nz0.Q(c.a(-69965576290082L, strArr), 3, c.a(-70077245439778L, strArr) + account);
                     return false;
                 }
-                BAccount bAccountAddAccount = bUserAccounts.addAccount(account);
-                bAccountAddAccount.password = str;
+                BAccount addAccount = bUserAccounts.addAccount(account);
+                addAccount.password = str;
                 if (bundle != null) {
                     for (String str2 : bundle.keySet()) {
-                        bAccountAddAccount.insertExtra(str2, bundle.getString(str2));
+                        addAccount.insertExtra(str2, bundle.getString(str2));
                     }
                 }
                 if (map != null) {
@@ -758,7 +758,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                         setAccountVisibility(account, entry.getKey(), entry.getValue().intValue(), bUserAccounts);
                     }
                 }
-                grantDefaultGoogleVisibility(account, bAccountAddAccount);
+                grantDefaultGoogleVisibility(account, addAccount);
                 saveAllAccounts();
                 notifyGoogleAccountStateChanged(account, bUserAccounts.userId, c.a(-68595481722658L, xa1.b));
                 return true;
@@ -806,14 +806,14 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             }
         }
         int size = list.size();
-        int iGoogleAuthenticatorRank = googleAuthenticatorRank(authenticatorInfo.serviceInfo.packageName);
+        int googleAuthenticatorRank = googleAuthenticatorRank(authenticatorInfo.serviceInfo.packageName);
         int i = 0;
         while (true) {
             if (i >= list.size()) {
                 break;
             }
             AuthenticatorInfo authenticatorInfo3 = list.get(i);
-            if (authenticatorInfo3 != null && (serviceInfo = authenticatorInfo3.serviceInfo) != null && iGoogleAuthenticatorRank < googleAuthenticatorRank(serviceInfo.packageName)) {
+            if (authenticatorInfo3 != null && (serviceInfo = authenticatorInfo3.serviceInfo) != null && googleAuthenticatorRank < googleAuthenticatorRank(serviceInfo.packageName)) {
                 size = i;
                 break;
             }
@@ -823,7 +823,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     private void addGoogleAuthenticatorResolveCandidates(List<AuthenticatorInfo> list, List<ResolveInfo> list2, int i) {
-        AuthenticatorDescription authenticatorDescription;
+        AuthenticatorDescription parseAuthenticatorDescription;
         if (list2 == null || list2.isEmpty()) {
             return;
         }
@@ -832,8 +832,8 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         while (it.hasNext()) {
             ResolveInfo next = it.next();
             ServiceInfo serviceInfo = next == null ? null : next.serviceInfo;
-            if (isUsableGoogleAccountAuthenticatorService(serviceInfo) && ((authenticatorDescription = parseAuthenticatorDescription(registeredServicesParser, serviceInfo)) == null || c.a(-64124420767522L, xa1.b).equals(authenticatorDescription.type))) {
-                addGoogleAuthenticatorCandidate(list, buildGoogleAuthenticatorInfo(serviceInfo.packageName, serviceInfo, authenticatorDescription, i));
+            if (isUsableGoogleAccountAuthenticatorService(serviceInfo) && ((parseAuthenticatorDescription = parseAuthenticatorDescription(registeredServicesParser, serviceInfo)) == null || c.a(-64124420767522L, xa1.b).equals(parseAuthenticatorDescription.type))) {
+                addGoogleAuthenticatorCandidate(list, buildGoogleAuthenticatorInfo(serviceInfo.packageName, serviceInfo, parseAuthenticatorDescription, i));
             }
         }
     }
@@ -846,16 +846,16 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             Intent intent = new Intent();
             intent.setClassName(c.a(-53146484358946L, strArr), str);
             addGoogleAddAccountExtras(intent, bundle);
-            ResolveInfo resolveInfoResolveActivity = this.mPms.resolveActivity(intent, 0, intent.resolveTypeIfNeeded(this.mContext.getContentResolver()), i);
+            ResolveInfo resolveActivity = this.mPms.resolveActivity(intent, 0, intent.resolveTypeIfNeeded(this.mContext.getContentResolver()), i);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-53193728999202L, strArr));
             sb.append(str);
             sb.append(c.a(-52845836648226L, strArr));
-            sb.append(resolveInfoResolveActivity != null);
+            sb.append(resolveActivity != null);
             sb.append(c.a(-52931735994146L, strArr));
             sb.append(kp0.d(intent));
             kp0.j(sb.toString());
-            if (resolveInfoResolveActivity != null) {
+            if (resolveActivity != null) {
                 return intent;
             }
         }
@@ -864,8 +864,8 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     private AuthenticatorInfo buildGoogleAuthenticatorInfo(String str, PackageInfo packageInfo, ServiceInfo serviceInfo) {
-        ServiceInfo serviceInfoCreateFixedServiceInfo = createFixedServiceInfo(str, packageInfo, serviceInfo);
-        return new AuthenticatorInfo(new AuthenticatorDescription(c.a(-65726443568930L, xa1.b), serviceInfoCreateFixedServiceInfo.packageName, 0, 0, 0, 0, false), serviceInfoCreateFixedServiceInfo);
+        ServiceInfo createFixedServiceInfo = createFixedServiceInfo(str, packageInfo, serviceInfo);
+        return new AuthenticatorInfo(new AuthenticatorDescription(c.a(-65726443568930L, xa1.b), createFixedServiceInfo.packageName, 0, 0, 0, 0, false), createFixedServiceInfo);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -974,9 +974,9 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                 z = false;
                 for (BAccount bAccount : bUserAccounts.accounts) {
                     if (c.a(-38590840192802L, xa1.b).equals(bAccount.account.type)) {
-                        HashMap map = new HashMap(bAccount.visibility);
+                        HashMap hashMap = new HashMap(bAccount.visibility);
                         grantDefaultGoogleVisibility(bAccount.account, bAccount);
-                        z |= !map.equals(bAccount.visibility);
+                        z |= !hashMap.equals(bAccount.visibility);
                     }
                 }
             } catch (Throwable th) {
@@ -990,28 +990,28 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public void ensureGoogleAuthenticatorCached(int i) {
-        AuthenticatorInfo authenticatorInfoFindGoogleAuthenticatorFromInstalledPackages;
+        AuthenticatorInfo findGoogleAuthenticatorFromInstalledPackages;
         Map<String, AuthenticatorInfo> map = this.mAuthenticatorCache.authenticators;
         String[] strArr = xa1.b;
-        if (map.containsKey(c.a(-62204570386210L, strArr)) || (authenticatorInfoFindGoogleAuthenticatorFromInstalledPackages = findGoogleAuthenticatorFromInstalledPackages(i)) == null) {
+        if (map.containsKey(c.a(-62204570386210L, strArr)) || (findGoogleAuthenticatorFromInstalledPackages = findGoogleAuthenticatorFromInstalledPackages(i)) == null) {
             return;
         }
-        this.mAuthenticatorCache.authenticators.put(c.a(-62286174764834L, strArr), authenticatorInfoFindGoogleAuthenticatorFromInstalledPackages);
-        String strA = c.a(-62316239535906L, strArr);
+        this.mAuthenticatorCache.authenticators.put(c.a(-62286174764834L, strArr), findGoogleAuthenticatorFromInstalledPackages);
+        String a2 = c.a(-62316239535906L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-65176687755042L, strArr));
-        sb.append(authenticatorInfoFindGoogleAuthenticatorFromInstalledPackages.serviceInfo.packageName);
+        sb.append(findGoogleAuthenticatorFromInstalledPackages.serviceInfo.packageName);
         sb.append(c.a(-65288356904738L, strArr));
-        zd.p(sb, authenticatorInfoFindGoogleAuthenticatorFromInstalledPackages.serviceInfo.name, 3, strA);
+        zd.p(sb, findGoogleAuthenticatorFromInstalledPackages.serviceInfo.name, 3, a2);
     }
 
     private Account[] filterAccounts(BUserAccounts bUserAccounts, Account[] accountArr, String str, boolean z) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Account account : accountArr) {
-            Integer numResolveAccountVisibility = resolveAccountVisibility(account, str, bUserAccounts);
-            int iIntValue = numResolveAccountVisibility.intValue();
-            if (iIntValue == 1 || iIntValue == 2 || (z && iIntValue == 4)) {
-                linkedHashMap.put(account, numResolveAccountVisibility);
+            Integer resolveAccountVisibility = resolveAccountVisibility(account, str, bUserAccounts);
+            int intValue = resolveAccountVisibility.intValue();
+            if (intValue == 1 || intValue == 2 || (z && intValue == 4)) {
+                linkedHashMap.put(account, resolveAccountVisibility);
             }
         }
         return (Account[]) linkedHashMap.keySet().toArray(new Account[0]);
@@ -1041,25 +1041,25 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                         int i8 = 0;
                         while (i8 < length3) {
                             ServiceInfo serviceInfo = serviceInfoArr[i8];
-                            AuthenticatorDescription authenticatorDescription = parseAuthenticatorDescription(registeredServicesParser, serviceInfo);
-                            if (authenticatorDescription != null) {
+                            AuthenticatorDescription parseAuthenticatorDescription = parseAuthenticatorDescription(registeredServicesParser, serviceInfo);
+                            if (parseAuthenticatorDescription != null) {
                                 String[] strArr3 = xa1.b;
                                 i2 = i4;
-                                if (c.a(-65348486446882L, strArr3).equals(authenticatorDescription.type)) {
+                                if (c.a(-65348486446882L, strArr3).equals(parseAuthenticatorDescription.type)) {
                                     if (isUsableGoogleAccountAuthenticatorService(serviceInfo)) {
-                                        return buildGoogleAuthenticatorInfo(str, packageInfo, serviceInfo, authenticatorDescription);
+                                        return buildGoogleAuthenticatorInfo(str, packageInfo, serviceInfo, parseAuthenticatorDescription);
                                     }
-                                    String strA = c.a(-65361371348770L, strArr3);
+                                    String a2 = c.a(-65361371348770L, strArr3);
                                     StringBuilder sb = new StringBuilder();
                                     i3 = i7;
                                     sb.append(c.a(-64923284684578L, strArr3));
                                     sb.append(serviceInfo.packageName);
                                     sb.append(c.a(-65116558212898L, strArr3));
-                                    zd.p(sb, serviceInfo.name, 3, strA);
+                                    zd.p(sb, serviceInfo.name, 3, a2);
+                                    i8++;
+                                    i4 = i2;
+                                    i7 = i3;
                                 }
-                                i8++;
-                                i4 = i2;
-                                i7 = i3;
                             } else {
                                 i2 = i4;
                             }
@@ -1109,27 +1109,27 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         }
     }
 
-    private void generateServicesMap(List<ResolveInfo> list, Map<String, AuthenticatorInfo> map, RegisteredServicesParser registeredServicesParser) throws XmlPullParserException, IOException {
+    private void generateServicesMap(List<ResolveInfo> list, Map<String, AuthenticatorInfo> map, RegisteredServicesParser registeredServicesParser) {
         int next;
-        AuthenticatorDescription authenticatorDescription;
+        AuthenticatorDescription parseAuthenticatorDescription;
         String[] strArr = xa1.b;
         for (ResolveInfo resolveInfo : list) {
             XmlResourceParser parser = registeredServicesParser.getParser(this.mContext, resolveInfo.serviceInfo, c.a(-61848088100642L, strArr));
             if (parser != null) {
                 try {
-                    AttributeSet attributeSetAsAttributeSet = Xml.asAttributeSet(parser);
+                    AttributeSet asAttributeSet = Xml.asAttributeSet(parser);
                     do {
                         next = parser.next();
                         if (next == 1) {
                             break;
                         }
                     } while (next != 2);
-                    if (c.a(-62028476727074L, strArr).equals(parser.getName()) && (authenticatorDescription = parseAuthenticatorDescription(registeredServicesParser.getResources(this.mContext, resolveInfo.serviceInfo.applicationInfo), resolveInfo.serviceInfo.packageName, attributeSetAsAttributeSet)) != null) {
-                        if (!c.a(-61590390062882L, strArr).equals(authenticatorDescription.type) || isUsableGoogleAccountAuthenticatorService(resolveInfo.serviceInfo)) {
-                            AuthenticatorInfo authenticatorInfo = new AuthenticatorInfo(authenticatorDescription, resolveInfo.serviceInfo);
-                            AuthenticatorInfo authenticatorInfo2 = map.get(authenticatorDescription.type);
-                            if (authenticatorInfo2 == null || shouldReplaceAuthenticator(authenticatorDescription.type, authenticatorInfo2, authenticatorInfo)) {
-                                map.put(authenticatorDescription.type, authenticatorInfo);
+                    if (c.a(-62028476727074L, strArr).equals(parser.getName()) && (parseAuthenticatorDescription = parseAuthenticatorDescription(registeredServicesParser.getResources(this.mContext, resolveInfo.serviceInfo.applicationInfo), resolveInfo.serviceInfo.packageName, asAttributeSet)) != null) {
+                        if (!c.a(-61590390062882L, strArr).equals(parseAuthenticatorDescription.type) || isUsableGoogleAccountAuthenticatorService(resolveInfo.serviceInfo)) {
+                            AuthenticatorInfo authenticatorInfo = new AuthenticatorInfo(parseAuthenticatorDescription, resolveInfo.serviceInfo);
+                            AuthenticatorInfo authenticatorInfo2 = map.get(parseAuthenticatorDescription.type);
+                            if (authenticatorInfo2 == null || shouldReplaceAuthenticator(parseAuthenticatorDescription.type, authenticatorInfo2, authenticatorInfo)) {
+                                map.put(parseAuthenticatorDescription.type, authenticatorInfo);
                             }
                         } else {
                             nz0.Q(c.a(-61620454833954L, strArr), 3, c.a(-61732123983650L, strArr) + resolveInfo.serviceInfo.packageName + c.a(-62475153325858L, strArr) + resolveInfo.serviceInfo.name);
@@ -1147,38 +1147,38 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     private int getAccountVisibilityFromCache(Account account, String str, BUserAccounts bUserAccounts) {
-        int iIntValue;
+        int intValue;
         synchronized (bUserAccounts.lock) {
             try {
                 Integer num = getPackagesAndVisibilityForAccountLocked(account, bUserAccounts).get(str);
-                iIntValue = num != null ? num.intValue() : 0;
+                intValue = num != null ? num.intValue() : 0;
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return iIntValue;
+        return intValue;
     }
 
     private String getCallingPackageName(String str, int i) {
         int callingPid = Binder.getCallingPid();
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(callingPid);
-        String packageName = processRecordFindProcessByPid == null ? null : processRecordFindProcessByPid.getPackageName();
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(callingPid);
+        String packageName = findProcessByPid == null ? null : findProcessByPid.getPackageName();
         boolean z = false;
         if (!TextUtils.isEmpty(str) && BPackageManagerService.get().getApplicationInfo(str, 0, i) != null) {
             z = true;
         }
-        String strResolve = AccountCallerIdentityCompat.resolve(packageName, str, z);
+        String resolve = AccountCallerIdentityCompat.resolve(packageName, str, z);
         if (TextUtils.isEmpty(packageName)) {
             String[] strArr = xa1.b;
-            String strA = c.a(-498521708052258L, strArr);
+            String a2 = c.a(-498521708052258L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-498564657725218L, strArr));
             sb.append(callingPid);
             sb.append(c.a(-498306959687458L, strArr));
-            sb.append(strResolve);
-            zd.o(sb, c.a(-498319844589346L, strArr), i, 5, strA);
+            sb.append(resolve);
+            zd.o(sb, c.a(-498319844589346L, strArr), i, 5, a2);
         }
-        return strResolve;
+        return resolve;
     }
 
     private Map<String, Integer> getPackagesAndVisibilityForAccountLocked(Account account, BUserAccounts bUserAccounts) {
@@ -1187,14 +1187,14 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     private String googleAuthBindFailureKey(Account account, String str, int i) {
         String[] strArr = xa1.b;
-        String strA = account == null ? c.a(-50440654962466L, strArr) : String.valueOf(account.name);
+        String a2 = account == null ? c.a(-50440654962466L, strArr) : String.valueOf(account.name);
         if (str == null) {
             str = c.a(-50444949929762L, strArr);
         }
         StringBuilder sb = new StringBuilder();
         sb.append(i);
         sb.append(c.a(-50500784504610L, strArr));
-        sb.append(strA);
+        sb.append(a2);
         return zd.k(sb, c.a(-50492194570018L, strArr), str);
     }
 
@@ -1236,11 +1236,11 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         }
         bAccount.visibility.put(str, 1);
         String[] strArr = xa1.b;
-        String strA = c.a(-68994913681186L, strArr);
+        String a2 = c.a(-68994913681186L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-69106582830882L, strArr));
         sb.append(str);
-        zd.o(sb, c.a(-68720035774242L, strArr), i, 3, strA);
+        zd.o(sb, c.a(-68720035774242L, strArr), i, 3, a2);
         return true;
     }
 
@@ -1277,14 +1277,14 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         if (str == null) {
             return false;
         }
-        long jUptimeMillis = SystemClock.uptimeMillis();
+        long uptimeMillis = SystemClock.uptimeMillis();
         synchronized (this.mGoogleAuthBindFailures) {
             try {
                 Long l = this.mGoogleAuthBindFailures.get(str);
                 if (l == null) {
                     return false;
                 }
-                if (jUptimeMillis < l.longValue()) {
+                if (uptimeMillis < l.longValue()) {
                     return true;
                 }
                 this.mGoogleAuthBindFailures.remove(str);
@@ -1337,34 +1337,34 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         return str != null && this.mPms.isInstalled(str, i);
     }
 
-    private void loadAccounts() throws Throwable {
+    private void loadAccounts() {
         FileInputStream fileInputStream;
         Throwable th;
         Exception e;
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
             if (!BEnvironment.getAccountsConf().exists()) {
-                parcelObtain.recycle();
+                obtain.recycle();
                 l8.F(null);
                 return;
             }
             fileInputStream = new FileInputStream(BEnvironment.getAccountsConf());
             try {
                 try {
-                    byte[] bArrN = wj1.N(fileInputStream);
-                    parcelObtain.unmarshall(bArrN, 0, bArrN.length);
-                    parcelObtain.setDataPosition(0);
-                    HashMap hashMap = parcelObtain.readHashMap(BUserAccounts.class.getClassLoader());
-                    if (hashMap == null) {
-                        parcelObtain.recycle();
+                    byte[] N = wj1.N(fileInputStream);
+                    obtain.unmarshall(N, 0, N.length);
+                    obtain.setDataPosition(0);
+                    HashMap readHashMap = obtain.readHashMap(BUserAccounts.class.getClassLoader());
+                    if (readHashMap == null) {
+                        obtain.recycle();
                         l8.F(fileInputStream);
                         return;
                     }
                     synchronized (this.mUserAccountsMap) {
                         try {
                             this.mUserAccountsMap.clear();
-                            for (Integer num : hashMap.keySet()) {
-                                BUserAccounts bUserAccounts = (BUserAccounts) hashMap.get(num);
+                            for (Integer num : readHashMap.keySet()) {
+                                BUserAccounts bUserAccounts = (BUserAccounts) readHashMap.get(num);
                                 if (bUserAccounts != null) {
                                     bUserAccounts.userId = num.intValue();
                                 }
@@ -1373,17 +1373,17 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                         } finally {
                         }
                     }
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                 } catch (Exception e2) {
                     e = e2;
                     e.printStackTrace();
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                 }
             } catch (Throwable th2) {
                 th = th2;
-                parcelObtain.recycle();
+                obtain.recycle();
                 l8.F(fileInputStream);
                 throw th;
             }
@@ -1393,7 +1393,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         } catch (Throwable th3) {
             fileInputStream = null;
             th = th3;
-            parcelObtain.recycle();
+            obtain.recycle();
             l8.F(fileInputStream);
             throw th;
         }
@@ -1412,20 +1412,20 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             if (c.a(-38672444571426L, strArr).equals(account.type)) {
                 BUserAccounts userAccounts = getUserAccounts(i);
                 ensureGoogleAccountState(userAccounts);
-                long jUptimeMillis = SystemClock.uptimeMillis();
+                long uptimeMillis = SystemClock.uptimeMillis();
                 synchronized (this.mLastGoogleAccountChangedAt) {
                     try {
                         Long l = this.mLastGoogleAccountChangedAt.get(Integer.valueOf(i));
-                        if (l == null || jUptimeMillis - l.longValue() >= GOOGLE_ACCOUNT_CHANGED_THROTTLE_MS) {
-                            this.mLastGoogleAccountChangedAt.put(Integer.valueOf(i), Long.valueOf(jUptimeMillis));
-                            String strA = c.a(-38702509342498L, strArr);
+                        if (l == null || uptimeMillis - l.longValue() >= GOOGLE_ACCOUNT_CHANGED_THROTTLE_MS) {
+                            this.mLastGoogleAccountChangedAt.put(Integer.valueOf(i), Long.valueOf(uptimeMillis));
+                            String a2 = c.a(-38702509342498L, strArr);
                             StringBuilder sb = new StringBuilder();
                             sb.append(c.a(-39363934306082L, strArr));
                             sb.append(str);
                             sb.append(c.a(-39544322932514L, strArr));
                             sb.append(i);
                             sb.append(c.a(-39578682670882L, strArr));
-                            zd.p(sb, account.type, 3, strA);
+                            zd.p(sb, account.type, 3, a2);
                             sendVirtualAccountChangedBroadcast(c.a(-39093351366434L, strArr), i);
                             sendVirtualAccountChangedBroadcast(c.a(-39265150058274L, strArr), i);
                             warmGoogleServicesAfterAccountChange(i);
@@ -1458,21 +1458,21 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     private static AuthenticatorDescription parseAuthenticatorDescription(Resources resources, String str, AttributeSet attributeSet) {
         RstyleableStatic rstyleableStatic = BRRstyleable.get();
-        TypedArray typedArrayObtainAttributes = resources.obtainAttributes(attributeSet, rstyleableStatic.AccountAuthenticator());
+        TypedArray obtainAttributes = resources.obtainAttributes(attributeSet, rstyleableStatic.AccountAuthenticator());
         try {
-            String string = typedArrayObtainAttributes.getString(rstyleableStatic.AccountAuthenticator_accountType().intValue());
-            int resourceId = typedArrayObtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_label().intValue(), 0);
-            int resourceId2 = typedArrayObtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_icon().intValue(), 0);
-            int resourceId3 = typedArrayObtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_smallIcon().intValue(), 0);
-            int resourceId4 = typedArrayObtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_accountPreferences().intValue(), 0);
-            boolean z = typedArrayObtainAttributes.getBoolean(rstyleableStatic.AccountAuthenticator_customTokens().intValue(), false);
+            String string = obtainAttributes.getString(rstyleableStatic.AccountAuthenticator_accountType().intValue());
+            int resourceId = obtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_label().intValue(), 0);
+            int resourceId2 = obtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_icon().intValue(), 0);
+            int resourceId3 = obtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_smallIcon().intValue(), 0);
+            int resourceId4 = obtainAttributes.getResourceId(rstyleableStatic.AccountAuthenticator_accountPreferences().intValue(), 0);
+            boolean z = obtainAttributes.getBoolean(rstyleableStatic.AccountAuthenticator_customTokens().intValue(), false);
             if (!TextUtils.isEmpty(string)) {
                 return new AuthenticatorDescription(string, str, resourceId, resourceId2, resourceId3, resourceId4, z);
             }
-            typedArrayObtainAttributes.recycle();
+            obtainAttributes.recycle();
             return null;
         } finally {
-            typedArrayObtainAttributes.recycle();
+            obtainAttributes.recycle();
         }
     }
 
@@ -1516,18 +1516,18 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean removeAccountInternal(BUserAccounts bUserAccounts, Account account) {
-        boolean zDelAccount;
+        boolean delAccount;
         synchronized (bUserAccounts.lock) {
             try {
-                zDelAccount = bUserAccounts.delAccount(account);
-                if (zDelAccount) {
+                delAccount = bUserAccounts.delAccount(account);
+                if (delAccount) {
                     saveAllAccounts();
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return zDelAccount;
+        return delAccount;
     }
 
     private boolean removeCachedAuthToken(String str, String str2, int i) {
@@ -1567,9 +1567,9 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                             }
                         }
                         if (z) {
-                            HashMap map = new HashMap(bAccount.visibility);
+                            HashMap hashMap = new HashMap(bAccount.visibility);
                             grantDefaultGoogleVisibility(bAccount.account, bAccount);
-                            z2 |= !map.equals(bAccount.visibility);
+                            z2 |= !hashMap.equals(bAccount.visibility);
                         }
                     }
                 }
@@ -1585,7 +1585,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     private Integer resolveAccountVisibility(Account account, String str, BUserAccounts bUserAccounts) {
         BAccount account2;
-        boolean zGrantGoogleVisibilityForPackageLocked;
+        boolean grantGoogleVisibilityForPackageLocked;
         if (bUserAccounts == null || (account2 = bUserAccounts.getAccount(account)) == null) {
             return 3;
         }
@@ -1597,16 +1597,16 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             return 3;
         }
         synchronized (bUserAccounts.lock) {
-            zGrantGoogleVisibilityForPackageLocked = grantGoogleVisibilityForPackageLocked(account, account2, str, bUserAccounts.userId);
+            grantGoogleVisibilityForPackageLocked = grantGoogleVisibilityForPackageLocked(account, account2, str, bUserAccounts.userId);
         }
-        if (zGrantGoogleVisibilityForPackageLocked) {
+        if (grantGoogleVisibilityForPackageLocked) {
             saveAllAccounts();
         }
         return 1;
     }
 
     private Account[] resolveGoogleAccountFallback(Account[] accountArr, String str, String str2, int i) {
-        return ((accountArr == null || accountArr.length <= 0) && accountArr == null) ? EMPTY_ACCOUNT_ARRAY : accountArr;
+        return (accountArr == null || accountArr.length <= 0) ? accountArr == null ? EMPTY_ACCOUNT_ARRAY : accountArr : accountArr;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1623,41 +1623,41 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         if (bundle == null || bundle.containsKey(c.a(-62771506069282L, strArr)) || bundle.getInt(c.a(-62801570840354L, strArr), -1) > 0 || !c.a(-62827340644130L, strArr).equals(str2)) {
             return null;
         }
-        Account accountFindLatestAccountOfType = findLatestAccountOfType(bUserAccounts, str2);
-        if (accountFindLatestAccountOfType != null) {
-            bundle.putString(c.a(-62857405415202L, strArr), accountFindLatestAccountOfType.name);
-            bundle.putString(c.a(-62943304761122L, strArr), accountFindLatestAccountOfType.type);
+        Account findLatestAccountOfType = findLatestAccountOfType(bUserAccounts, str2);
+        if (findLatestAccountOfType != null) {
+            bundle.putString(c.a(-62857405415202L, strArr), findLatestAccountOfType.name);
+            bundle.putString(c.a(-62943304761122L, strArr), findLatestAccountOfType.type);
             bundle.putBoolean(c.a(-63510240444194L, strArr), true);
-            String strA = c.a(-63587549855522L, strArr);
+            String a2 = c.a(-63587549855522L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-63699219005218L, strArr));
-            zd.p(sb, accountFindLatestAccountOfType.type, 3, strA);
+            zd.p(sb, findLatestAccountOfType.type, 3, a2);
         }
-        return accountFindLatestAccountOfType;
+        return findLatestAccountOfType;
     }
 
     private void saveAllAccounts() {
         synchronized (this.mUserAccountsMap) {
-            Parcel parcelObtain = Parcel.obtain();
+            Parcel obtain = Parcel.obtain();
             rg rgVar = new rg(BEnvironment.getAccountsConf());
             try {
-                parcelObtain.writeMap(this.mUserAccountsMap);
-                FileOutputStream fileOutputStreamG0 = null;
+                obtain.writeMap(this.mUserAccountsMap);
+                FileOutputStream fileOutputStream = null;
                 try {
                     try {
-                        fileOutputStreamG0 = rgVar.g0();
-                        fileOutputStreamG0.write(parcelObtain.marshall());
-                        rgVar.B(fileOutputStreamG0);
-                        l8.F(fileOutputStreamG0);
+                        fileOutputStream = rgVar.g0();
+                        fileOutputStream.write(obtain.marshall());
+                        rgVar.B(fileOutputStream);
+                        l8.F(fileOutputStream);
                     } catch (IOException e) {
                         e.printStackTrace();
-                        rgVar.z(fileOutputStreamG0);
-                        l8.F(fileOutputStreamG0);
+                        rgVar.z(fileOutputStream);
+                        l8.F(fileOutputStream);
                     }
                 } finally {
                 }
             } finally {
-                parcelObtain.recycle();
+                obtain.recycle();
             }
         }
     }
@@ -1668,12 +1668,12 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             if (c.a(-49727690391330L, strArr).equals(str)) {
                 int i = bUserAccounts.userId;
                 if (countGoogleAccounts(bUserAccounts) == 1 && this.mPms.isInstalled(c.a(-50307510976290L, strArr), i)) {
-                    long jUptimeMillis = SystemClock.uptimeMillis();
+                    long uptimeMillis = SystemClock.uptimeMillis();
                     synchronized (this.mLastPlayStoreFirstAccountRefreshAt) {
                         try {
                             Long l = this.mLastPlayStoreFirstAccountRefreshAt.get(Integer.valueOf(i));
-                            if (l == null || jUptimeMillis - l.longValue() >= PLAY_STORE_FIRST_ACCOUNT_REFRESH_THROTTLE_MS) {
-                                this.mLastPlayStoreFirstAccountRefreshAt.put(Integer.valueOf(i), Long.valueOf(jUptimeMillis));
+                            if (l == null || uptimeMillis - l.longValue() >= PLAY_STORE_FIRST_ACCOUNT_REFRESH_THROTTLE_MS) {
+                                this.mLastPlayStoreFirstAccountRefreshAt.put(Integer.valueOf(i), Long.valueOf(uptimeMillis));
                                 this.mHandler.postDelayed(new df(i, 1, this), PLAY_STORE_FIRST_ACCOUNT_REFRESH_DELAY_MS);
                             }
                         } catch (Throwable th) {
@@ -1690,16 +1690,16 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         try {
             Intent intent = new Intent(str);
             intent.addFlags(1073741824);
-            Intent intentSendBroadcast = BActivityManagerService.get().sendBroadcast(intent, null, i);
-            if (intentSendBroadcast == null) {
+            Intent sendBroadcast = BActivityManagerService.get().sendBroadcast(intent, null, i);
+            if (sendBroadcast == null) {
                 return;
             }
-            intentSendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
-            ProxyBroadcastRecord.saveStub(intentSendBroadcast, intent, i);
+            sendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
+            ProxyBroadcastRecord.saveStub(sendBroadcast, intent, i);
             if (isProtectedAccountChangedBroadcast(str)) {
-                intentSendBroadcast.setAction(ProxyManifest.getProxyReceiver());
+                sendBroadcast.setAction(ProxyManifest.getProxyReceiver());
             }
-            c01.s.sendBroadcast(intentSendBroadcast);
+            c01.s.sendBroadcast(sendBroadcast);
             nz0.Q(c.a(-37826336014114L, strArr), 3, c.a(-37869285687074L, strArr) + str + c.a(-37547163139874L, strArr) + i);
         } catch (Throwable th) {
             nz0.P(c.a(-37581522878242L, strArr), c.a(-37624472551202L, strArr) + str + c.a(-38444811304738L, strArr) + i, th);
@@ -1718,8 +1718,8 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         String[] strArr = xa1.b;
         try {
             Intent intent = new Intent(str).setPackage(c.a(-49839359541026L, strArr));
-            ResolveInfo resolveInfoResolveService = this.mPms.resolveService(intent, PackageParser.PARSE_IS_PRIVILEGED, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
-            ServiceInfo serviceInfo = resolveInfoResolveService == null ? null : resolveInfoResolveService.serviceInfo;
+            ResolveInfo resolveService = this.mPms.resolveService(intent, PackageParser.PARSE_IS_PRIVILEGED, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i);
+            ServiceInfo serviceInfo = resolveService == null ? null : resolveService.serviceInfo;
             if (serviceInfo != null && serviceInfo.packageName != null && serviceInfo.name != null) {
                 intent.setPackage(null);
                 intent.setComponent(new ComponentName(serviceInfo.packageName, serviceInfo.name));
@@ -1732,20 +1732,20 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     /* JADX INFO: Access modifiers changed from: private */
     public void tagAuthenticatorCaller(Intent intent) {
-        ProcessRecord processRecordFindProcessByPid;
-        if (intent == null || (processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null || processRecordFindProcessByPid.getPackageName() == null || processRecordFindProcessByPid.getPackageName().length() == 0) {
+        ProcessRecord findProcessByPid;
+        if (intent == null || (findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid())) == null || findProcessByPid.getPackageName() == null || findProcessByPid.getPackageName().length() == 0) {
             return;
         }
-        int i = processRecordFindProcessByPid.uid;
+        int i = findProcessByPid.uid;
         if (i <= 0) {
-            i = processRecordFindProcessByPid.buid;
+            i = findProcessByPid.buid;
         }
         if (i <= 0) {
             return;
         }
         String[] strArr = xa1.b;
         intent.putExtra(c.a(-64236089917218L, strArr), i);
-        intent.putExtra(c.a(-64296219459362L, strArr), processRecordFindProcessByPid.getPackageName());
+        intent.putExtra(c.a(-64296219459362L, strArr), findProcessByPid.getPackageName());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1804,12 +1804,12 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             z2 = z;
         }
         if (Build.VERSION.SDK_INT >= 35 && c.a(-59893877980962L, strArr2).equals(str)) {
-            Intent intentBuildGoogleAddAccountIntent = buildGoogleAddAccountIntent(i, bundle2);
-            if (intentBuildGoogleAddAccountIntent != null) {
+            Intent buildGoogleAddAccountIntent = buildGoogleAddAccountIntent(i, bundle2);
+            if (buildGoogleAddAccountIntent != null) {
                 Bundle bundle3 = new Bundle();
-                bundle3.putParcelable(c.a(-59425726545698L, strArr2), intentBuildGoogleAddAccountIntent);
+                bundle3.putParcelable(c.a(-59425726545698L, strArr2), buildGoogleAddAccountIntent);
                 nz0.Q(c.a(-59472971185954L, strArr2), 3, c.a(-59515920858914L, strArr2));
-                kp0.j(c.a(-60435043860258L, strArr2) + kp0.d(intentBuildGoogleAddAccountIntent));
+                kp0.j(c.a(-60435043860258L, strArr2) + kp0.d(buildGoogleAddAccountIntent));
                 iAccountManagerResponse.onResult(bundle3);
                 return;
             }
@@ -1989,31 +1989,31 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
     public Map getAccountsAndVisibilityForPackage(String str, String str2, int i) {
-        boolean zGrantGoogleVisibilityForPackageLocked;
-        HashMap map = new HashMap();
+        boolean z;
+        HashMap hashMap = new HashMap();
         BUserAccounts userAccounts = getUserAccounts(i);
         synchronized (userAccounts.lock) {
             try {
-                zGrantGoogleVisibilityForPackageLocked = false;
+                z = false;
                 for (BAccount bAccount : userAccounts.accounts) {
-                    if (str2 == null || bAccount.account.type.equals(str2)) {
-                        Integer num = userAccounts.getVisibility(bAccount.account).get(str);
-                        if (shouldGrantDefaultGoogleVisibility(bAccount.account, str, i)) {
-                            zGrantGoogleVisibilityForPackageLocked |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str, i);
-                            map.put(bAccount.account, 1);
-                        } else if (num != null) {
-                            map.put(bAccount.account, num);
-                        }
+                    if (str2 != null && !bAccount.account.type.equals(str2)) {
+                    }
+                    Integer num = userAccounts.getVisibility(bAccount.account).get(str);
+                    if (shouldGrantDefaultGoogleVisibility(bAccount.account, str, i)) {
+                        z |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str, i);
+                        hashMap.put(bAccount.account, 1);
+                    } else if (num != null) {
+                        hashMap.put(bAccount.account, num);
                     }
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        if (zGrantGoogleVisibilityForPackageLocked) {
+        if (z) {
             saveAllAccounts();
         }
-        return map;
+        return hashMap;
     }
 
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
@@ -2023,9 +2023,9 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         synchronized (userAccounts.lock) {
             try {
                 for (BAccount bAccount : userAccounts.accounts) {
-                    if (str == null || bAccount.account.type.equals(str)) {
-                        arrayList.add(bAccount.account);
+                    if (str != null && !bAccount.account.type.equals(str)) {
                     }
+                    arrayList.add(bAccount.account);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -2057,49 +2057,21 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
 
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
     public Account[] getAccountsByTypeForPackage(String str, String str2, int i) {
-        boolean zGrantGoogleVisibilityForPackageLocked;
+        boolean z;
         BUserAccounts userAccounts = getUserAccounts(i);
         ArrayList arrayList = new ArrayList();
         synchronized (userAccounts.lock) {
             try {
-                zGrantGoogleVisibilityForPackageLocked = false;
+                z = false;
                 for (BAccount bAccount : userAccounts.accounts) {
-                    if (str == null || bAccount.account.type.equals(str)) {
-                        Integer num = bAccount.visibility.get(str2);
-                        boolean zShouldGrantDefaultGoogleVisibility = shouldGrantDefaultGoogleVisibility(bAccount.account, str2, i);
-                        if (zShouldGrantDefaultGoogleVisibility) {
-                            zGrantGoogleVisibilityForPackageLocked |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str2, i);
-                        }
-                        if (zShouldGrantDefaultGoogleVisibility || (num != null && num.intValue() == 1)) {
-                            arrayList.add(bAccount.account);
-                        }
+                    if (str != null && !bAccount.account.type.equals(str)) {
                     }
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        if (zGrantGoogleVisibilityForPackageLocked) {
-            saveAllAccounts();
-        }
-        return resolveGoogleAccountFallback((Account[]) arrayList.toArray(new Account[0]), str, str2, i);
-    }
-
-    @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
-    public Account[] getAccountsForPackage(String str, int i, int i2) {
-        boolean zGrantGoogleVisibilityForPackageLocked;
-        BUserAccounts userAccounts = getUserAccounts(i2);
-        ArrayList arrayList = new ArrayList();
-        synchronized (userAccounts.lock) {
-            try {
-                zGrantGoogleVisibilityForPackageLocked = false;
-                for (BAccount bAccount : userAccounts.accounts) {
-                    Integer num = bAccount.visibility.get(str);
-                    boolean zShouldGrantDefaultGoogleVisibility = shouldGrantDefaultGoogleVisibility(bAccount.account, str, i2);
-                    if (zShouldGrantDefaultGoogleVisibility) {
-                        zGrantGoogleVisibilityForPackageLocked |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str, i2);
+                    Integer num = bAccount.visibility.get(str2);
+                    boolean shouldGrantDefaultGoogleVisibility = shouldGrantDefaultGoogleVisibility(bAccount.account, str2, i);
+                    if (shouldGrantDefaultGoogleVisibility) {
+                        z |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str2, i);
                     }
-                    if (zShouldGrantDefaultGoogleVisibility || (num != null && num.intValue() == 1)) {
+                    if (shouldGrantDefaultGoogleVisibility || (num != null && num.intValue() == 1)) {
                         arrayList.add(bAccount.account);
                     }
                 }
@@ -2107,7 +2079,35 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                 throw th;
             }
         }
-        if (zGrantGoogleVisibilityForPackageLocked) {
+        if (z) {
+            saveAllAccounts();
+        }
+        return resolveGoogleAccountFallback((Account[]) arrayList.toArray(new Account[0]), str, str2, i);
+    }
+
+    @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
+    public Account[] getAccountsForPackage(String str, int i, int i2) {
+        boolean z;
+        BUserAccounts userAccounts = getUserAccounts(i2);
+        ArrayList arrayList = new ArrayList();
+        synchronized (userAccounts.lock) {
+            try {
+                z = false;
+                for (BAccount bAccount : userAccounts.accounts) {
+                    Integer num = bAccount.visibility.get(str);
+                    boolean shouldGrantDefaultGoogleVisibility = shouldGrantDefaultGoogleVisibility(bAccount.account, str, i2);
+                    if (shouldGrantDefaultGoogleVisibility) {
+                        z |= grantGoogleVisibilityForPackageLocked(bAccount.account, bAccount, str, i2);
+                    }
+                    if (shouldGrantDefaultGoogleVisibility || (num != null && num.intValue() == 1)) {
+                        arrayList.add(bAccount.account);
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
+        if (z) {
             saveAllAccounts();
         }
         return resolveGoogleAccountFallback((Account[]) arrayList.toArray(new Account[0]), null, str, i2);
@@ -2124,20 +2124,20 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         synchronized (this.mUserAccountsMap) {
             try {
                 Iterator<BUserAccounts> it = this.mUserAccountsMap.values().iterator();
-                int length = 0;
+                int i = 0;
                 while (it.hasNext()) {
-                    length += it.next().toAccounts().length;
+                    i += it.next().toAccounts().length;
                 }
-                if (length == 0) {
+                if (i == 0) {
                     return EMPTY_ACCOUNT_ARRAY;
                 }
-                Account[] accountArr = new Account[length];
+                Account[] accountArr = new Account[i];
                 Iterator<BUserAccounts> it2 = this.mUserAccountsMap.values().iterator();
-                int length2 = 0;
+                int i2 = 0;
                 while (it2.hasNext()) {
                     Account[] accounts = it2.next().toAccounts();
-                    System.arraycopy(accounts, 0, accountArr, length2, accounts.length);
-                    length2 += accounts.length;
+                    System.arraycopy(accounts, 0, accountArr, i2, accounts.length);
+                    i2 += accounts.length;
                 }
                 return filterAccounts(bUserAccounts, accountArr, str2, z);
             } catch (Throwable th) {
@@ -2146,20 +2146,363 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0419  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x047d  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x047d  */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0483  */
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public void getAuthToken(android.accounts.IAccountManagerResponse r19, final android.accounts.Account r20, final java.lang.String r21, final boolean r22, boolean r23, android.os.Bundle r24, int r25) {
-        /*
-            Method dump skipped, instructions count: 1334
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.core.system.accounts.BAccountManagerService.getAuthToken(android.accounts.IAccountManagerResponse, android.accounts.Account, java.lang.String, boolean, boolean, android.os.Bundle, int):void");
+    public void getAuthToken(IAccountManagerResponse iAccountManagerResponse, final Account account, final String str, final boolean z, boolean z2, Bundle bundle, int i) {
+        boolean z3;
+        BUserAccounts bUserAccounts;
+        boolean z4;
+        final boolean z5;
+        final String googleAuthBindFailureKey;
+        String[] strArr = xa1.b;
+        boolean z6 = false;
+        az0.j(c.a(-51321123258146L, strArr), iAccountManagerResponse != null);
+        try {
+            if (account == null) {
+                nz0.Q(c.a(-45376888520482L, strArr), 5, c.a(-45488557670178L, strArr));
+                iAccountManagerResponse.onError(7, c.a(-45600226819874L, strArr));
+                return;
+            }
+            if (str == null) {
+                nz0.Q(c.a(-45119190482722L, strArr), 5, c.a(-45230859632418L, strArr));
+                iAccountManagerResponse.onError(7, c.a(-46003953745698L, strArr));
+                return;
+            }
+            BUserAccounts userAccounts = getUserAccounts(i);
+            AuthenticatorInfo authenticatorInfo = this.mAuthenticatorCache.authenticators.get(account.type);
+            Bundle bundle2 = bundle != null ? bundle : new Bundle();
+            boolean z7 = authenticatorInfo != null && authenticatorInfo.desc.customTokens;
+            boolean equals = c.a(-45827860086562L, strArr).equals(account.type);
+            if (equals && bundle2.getBoolean(c.a(-45857924857634L, strArr), false)) {
+                z6 = true;
+            }
+            final String string = bundle2.getString(c.a(-44406225911586L, strArr));
+            if (equals) {
+                String a2 = c.a(-44522190028578L, strArr);
+                StringBuilder sb = new StringBuilder();
+                z3 = equals;
+                sb.append(c.a(-44015383887650L, strArr));
+                sb.append(str);
+                sb.append(c.a(-44182887612194L, strArr));
+                sb.append(string);
+                sb.append(c.a(-44208657415970L, strArr));
+                sb.append(z7);
+                sb.append(c.a(-44234427219746L, strArr));
+                sb.append(z);
+                sb.append(c.a(-44809952837410L, strArr));
+                sb.append(z2);
+                sb.append(c.a(-44938801856290L, strArr));
+                sb.append(z6);
+                nz0.Q(a2, 3, sb.toString());
+                kp0.j(c.a(-45007521333026L, strArr) + kp0.b(account) + c.a(-44612384341794L, strArr) + str + c.a(-44646744080162L, strArr) + string + c.a(-44672513883938L, strArr) + z7 + c.a(-44767003164450L, strArr) + z + c.a(-44792772968226L, strArr) + z2 + c.a(-47601681579810L, strArr) + z6 + c.a(-47670401056546L, strArr) + kp0.c(bundle2));
+            } else {
+                z3 = equals;
+            }
+            bundle2.putInt(c.a(-47752005435170L, strArr), Binder.getCallingUid());
+            bundle2.putInt(c.a(-47777775238946L, strArr), Binder.getCallingPid());
+            if (z) {
+                bundle2.putBoolean(c.a(-47803545042722L, strArr), true);
+            }
+            if (z7 || z6) {
+                bUserAccounts = userAccounts;
+                if (z6) {
+                    boolean z8 = z6;
+                    String a3 = c.a(-46519349821218L, strArr);
+                    StringBuilder sb2 = new StringBuilder();
+                    z4 = z8;
+                    z5 = z7;
+                    sb2.append(c.a(-46562299494178L, strArr));
+                    sb2.append(str);
+                    sb2.append(c.a(-46338961194786L, strArr));
+                    sb2.append(string);
+                    nz0.Q(a3, 3, sb2.toString());
+                    kp0.j(c.a(-46364730998562L, strArr) + str + c.a(-47228019425058L, strArr) + string);
+                    if (!z5 && !z4) {
+                        String readCachedTokenInternal = readCachedTokenInternal(bUserAccounts, account, str, string);
+                        if (readCachedTokenInternal != null) {
+                            if (Log.isLoggable(c.a(-47253789228834L, strArr), 2)) {
+                                Log.v(c.a(-46815702564642L, strArr), c.a(-46927371714338L, strArr));
+                            }
+                            if (z3) {
+                                nz0.Q(c.a(-58712761974562L, strArr), 3, c.a(-58755711647522L, strArr) + str + c.a(-58429294133026L, strArr) + string + c.a(-58455063936802L, strArr) + gs1.f(c.a(-58450768969506L, strArr), readCachedTokenInternal));
+                                StringBuilder sb3 = new StringBuilder();
+                                sb3.append(c.a(-58545258250018L, strArr));
+                                sb3.append(str);
+                                sb3.append(c.a(-59283992624930L, strArr));
+                                sb3.append(string);
+                                kp0.j(sb3.toString());
+                            }
+                            Bundle bundle3 = new Bundle();
+                            bundle3.putString(c.a(-59309762428706L, strArr), readCachedTokenInternal);
+                            bundle3.putString(c.a(-58854495895330L, strArr), account.name);
+                            bundle3.putString(c.a(-58871675764514L, strArr), account.type);
+                            onResult(iAccountManagerResponse, bundle3);
+                            return;
+                        }
+                    } else if (z5 && z4) {
+                        nz0.Q(c.a(-58957575110434L, strArr), 3, c.a(-59000524783394L, strArr) + str + c.a(-57677674856226L, strArr) + string);
+                        kp0.j(c.a(-57703444660002L, strArr) + str + c.a(-58016977272610L, strArr) + string);
+                    }
+                    googleAuthBindFailureKey = !z3 ? googleAuthBindFailureKey(account, string, i) : null;
+                    if (z3 || !isGoogleAuthBindFailureBackedOff(googleAuthBindFailureKey)) {
+                        final Bundle bundle4 = bundle2;
+                        final boolean z9 = z3;
+                        new Session(bUserAccounts, iAccountManagerResponse, account.type, z2, false, account.name, false) { // from class: com.kos.engine.core.system.accounts.BAccountManagerService.3
+                            @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                            public void onBindFailure() {
+                                if (z9) {
+                                    BAccountManagerService.this.rememberGoogleAuthBindFailure(googleAuthBindFailureKey);
+                                }
+                            }
+
+                            @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                            public void onBindSucceeded() {
+                                if (z9) {
+                                    BAccountManagerService.this.clearGoogleAuthBindFailure(googleAuthBindFailureKey);
+                                }
+                            }
+
+                            @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session, android.accounts.IAccountAuthenticatorResponse
+                            public void onResult(Bundle bundle5) {
+                                if (bundle5 != null) {
+                                    String[] strArr2 = xa1.b;
+                                    String string2 = bundle5.getString(c.a(-21346546499362L, strArr2));
+                                    if (z9) {
+                                        String a4 = c.a(-21372316303138L, strArr2);
+                                        StringBuilder sb4 = new StringBuilder();
+                                        sb4.append(c.a(-20934229638946L, strArr2));
+                                        sb4.append(str);
+                                        sb4.append(c.a(-21140388069154L, strArr2));
+                                        sb4.append(string);
+                                        sb4.append(c.a(-21715913686818L, strArr2));
+                                        sb4.append(string2 != null);
+                                        sb4.append(c.a(-21801813032738L, strArr2));
+                                        sb4.append(bundle5.getParcelable(c.a(-21823287869218L, strArr2)) != null);
+                                        sb4.append(c.a(-21853352640290L, strArr2));
+                                        sb4.append(gs1.f(c.a(-21917777149730L, strArr2), string2));
+                                        nz0.Q(a4, 3, sb4.toString());
+                                        StringBuilder sb5 = new StringBuilder();
+                                        sb5.append(c.a(-21943546953506L, strArr2));
+                                        sb5.append(str);
+                                        sb5.append(c.a(-21556999896866L, strArr2));
+                                        sb5.append(string);
+                                        sb5.append(c.a(-21582769700642L, strArr2));
+                                        sb5.append(string2 != null);
+                                        sb5.append(c.a(-21668669046562L, strArr2));
+                                        sb5.append(bundle5.getParcelable(c.a(-20092416048930L, strArr2)) != null);
+                                        sb5.append(c.a(-20070941212450L, strArr2));
+                                        sb5.append(kp0.c(bundle5));
+                                        kp0.j(sb5.toString());
+                                    }
+                                    if (string2 != null) {
+                                        String string3 = bundle5.getString(c.a(-20165430492962L, strArr2));
+                                        String string4 = bundle5.getString(c.a(-20182610362146L, strArr2));
+                                        if (TextUtils.isEmpty(string4) || TextUtils.isEmpty(string3)) {
+                                            onError(5, c.a(-20268509708066L, strArr2));
+                                            return;
+                                        }
+                                        Account account2 = new Account(string3, string4);
+                                        if (!z5) {
+                                            BAccountManagerService.this.saveAuthTokenToDatabase(this.mAccounts, account2, str, string2);
+                                        }
+                                        long j = bundle5.getLong(c.a(-19830423043874L, strArr2), 0L);
+                                        if (z5 && j > System.currentTimeMillis()) {
+                                            BAccountManagerService.this.saveCachedToken(this.mAccounts, account, string, str, string2, j);
+                                        }
+                                    }
+                                }
+                                super.onResult(bundle5);
+                            }
+
+                            @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                            public void run() {
+                                String[] strArr2 = xa1.b;
+                                if (z9) {
+                                    nz0.Q(c.a(-19443875987234L, strArr2), 3, c.a(-19486825660194L, strArr2) + str + c.a(-18099551223586L, strArr2) + string);
+                                    kp0.j(c.a(-18125321027362L, strArr2) + str + c.a(-17820378349346L, strArr2) + string);
+                                }
+                                try {
+                                    this.mAuthenticator.getAuthToken(this, account, str, bundle4);
+                                } catch (RuntimeException e) {
+                                    if (z9) {
+                                        nz0.Q(c.a(-17846148153122L, strArr2), 5, c.a(-18507573116706L, strArr2) + str + c.a(-18163975733026L, strArr2) + string + c.a(-18189745536802L, strArr2) + e.getClass().getSimpleName());
+                                        kp0.l(c.a(-18211220373282L, strArr2) + str + c.a(-21200517611298L, strArr2) + string + c.a(-21295006891810L, strArr2) + e.getClass().getName() + c.a(-21333661597474L, strArr2) + e.getMessage());
+                                    }
+                                    throw e;
+                                }
+                            }
+
+                            @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                            public String toDebugString(long j) {
+                                bundle4.keySet();
+                                StringBuilder sb4 = new StringBuilder();
+                                sb4.append(super.toDebugString(j));
+                                String[] strArr2 = xa1.b;
+                                sb4.append(c.a(-19680099188514L, strArr2));
+                                sb4.append(account.toString());
+                                sb4.append(c.a(-19753113632546L, strArr2));
+                                sb4.append(str);
+                                sb4.append(c.a(-19259192393506L, strArr2));
+                                sb4.append(bundle4);
+                                sb4.append(c.a(-19327911870242L, strArr2));
+                                sb4.append(z);
+                                return sb4.toString();
+                            }
+                        }.bind();
+                    }
+                    nz0.Q(c.a(-58042747076386L, strArr), 5, c.a(-58154416226082L, strArr) + str + c.a(-57901013155618L, strArr) + string);
+                    kp0.l(c.a(-57995502436130L, strArr) + str + c.a(-61019159412514L, strArr) + string);
+                    try {
+                        iAccountManagerResponse.onError(1, c.a(-60495173402402L, strArr));
+                        return;
+                    } catch (RemoteException e) {
+                        nz0.Q(c.a(-60568187846434L, strArr), 5, c.a(-60611137519394L, strArr) + e);
+                        return;
+                    }
+                }
+            } else {
+                bUserAccounts = userAccounts;
+                String readAuthTokenInternal = readAuthTokenInternal(bUserAccounts, account, str);
+                if (readAuthTokenInternal != null) {
+                    if (z3) {
+                        nz0.Q(c.a(-47374048313122L, strArr), 3, c.a(-47416997986082L, strArr) + str + c.a(-48190092099362L, strArr) + string + c.a(-48215861903138L, strArr) + gs1.f(c.a(-48211566935842L, strArr), readAuthTokenInternal));
+                        StringBuilder sb4 = new StringBuilder();
+                        sb4.append(c.a(-48306056216354L, strArr));
+                        sb4.append(str);
+                        sb4.append(c.a(-47945278963490L, strArr));
+                        sb4.append(string);
+                        kp0.j(sb4.toString());
+                    }
+                    Bundle bundle5 = new Bundle();
+                    bundle5.putString(c.a(-47971048767266L, strArr), readAuthTokenInternal);
+                    bundle5.putString(c.a(-48065538047778L, strArr), account.name);
+                    bundle5.putString(c.a(-48082717916962L, strArr), account.type);
+                    onResult(iAccountManagerResponse, bundle5);
+                    return;
+                }
+            }
+            z4 = z6;
+            z5 = z7;
+            if (!z5) {
+            }
+            if (z5) {
+                nz0.Q(c.a(-58957575110434L, strArr), 3, c.a(-59000524783394L, strArr) + str + c.a(-57677674856226L, strArr) + string);
+                kp0.j(c.a(-57703444660002L, strArr) + str + c.a(-58016977272610L, strArr) + string);
+            }
+            googleAuthBindFailureKey = !z3 ? googleAuthBindFailureKey(account, string, i) : null;
+            if (z3) {
+            }
+            final Bundle bundle42 = bundle2;
+            final boolean z92 = z3;
+            new Session(bUserAccounts, iAccountManagerResponse, account.type, z2, false, account.name, false) { // from class: com.kos.engine.core.system.accounts.BAccountManagerService.3
+                @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                public void onBindFailure() {
+                    if (z92) {
+                        BAccountManagerService.this.rememberGoogleAuthBindFailure(googleAuthBindFailureKey);
+                    }
+                }
+
+                @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                public void onBindSucceeded() {
+                    if (z92) {
+                        BAccountManagerService.this.clearGoogleAuthBindFailure(googleAuthBindFailureKey);
+                    }
+                }
+
+                @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session, android.accounts.IAccountAuthenticatorResponse
+                public void onResult(Bundle bundle52) {
+                    if (bundle52 != null) {
+                        String[] strArr2 = xa1.b;
+                        String string2 = bundle52.getString(c.a(-21346546499362L, strArr2));
+                        if (z92) {
+                            String a4 = c.a(-21372316303138L, strArr2);
+                            StringBuilder sb42 = new StringBuilder();
+                            sb42.append(c.a(-20934229638946L, strArr2));
+                            sb42.append(str);
+                            sb42.append(c.a(-21140388069154L, strArr2));
+                            sb42.append(string);
+                            sb42.append(c.a(-21715913686818L, strArr2));
+                            sb42.append(string2 != null);
+                            sb42.append(c.a(-21801813032738L, strArr2));
+                            sb42.append(bundle52.getParcelable(c.a(-21823287869218L, strArr2)) != null);
+                            sb42.append(c.a(-21853352640290L, strArr2));
+                            sb42.append(gs1.f(c.a(-21917777149730L, strArr2), string2));
+                            nz0.Q(a4, 3, sb42.toString());
+                            StringBuilder sb5 = new StringBuilder();
+                            sb5.append(c.a(-21943546953506L, strArr2));
+                            sb5.append(str);
+                            sb5.append(c.a(-21556999896866L, strArr2));
+                            sb5.append(string);
+                            sb5.append(c.a(-21582769700642L, strArr2));
+                            sb5.append(string2 != null);
+                            sb5.append(c.a(-21668669046562L, strArr2));
+                            sb5.append(bundle52.getParcelable(c.a(-20092416048930L, strArr2)) != null);
+                            sb5.append(c.a(-20070941212450L, strArr2));
+                            sb5.append(kp0.c(bundle52));
+                            kp0.j(sb5.toString());
+                        }
+                        if (string2 != null) {
+                            String string3 = bundle52.getString(c.a(-20165430492962L, strArr2));
+                            String string4 = bundle52.getString(c.a(-20182610362146L, strArr2));
+                            if (TextUtils.isEmpty(string4) || TextUtils.isEmpty(string3)) {
+                                onError(5, c.a(-20268509708066L, strArr2));
+                                return;
+                            }
+                            Account account2 = new Account(string3, string4);
+                            if (!z5) {
+                                BAccountManagerService.this.saveAuthTokenToDatabase(this.mAccounts, account2, str, string2);
+                            }
+                            long j = bundle52.getLong(c.a(-19830423043874L, strArr2), 0L);
+                            if (z5 && j > System.currentTimeMillis()) {
+                                BAccountManagerService.this.saveCachedToken(this.mAccounts, account, string, str, string2, j);
+                            }
+                        }
+                    }
+                    super.onResult(bundle52);
+                }
+
+                @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                public void run() {
+                    String[] strArr2 = xa1.b;
+                    if (z92) {
+                        nz0.Q(c.a(-19443875987234L, strArr2), 3, c.a(-19486825660194L, strArr2) + str + c.a(-18099551223586L, strArr2) + string);
+                        kp0.j(c.a(-18125321027362L, strArr2) + str + c.a(-17820378349346L, strArr2) + string);
+                    }
+                    try {
+                        this.mAuthenticator.getAuthToken(this, account, str, bundle42);
+                    } catch (RuntimeException e2) {
+                        if (z92) {
+                            nz0.Q(c.a(-17846148153122L, strArr2), 5, c.a(-18507573116706L, strArr2) + str + c.a(-18163975733026L, strArr2) + string + c.a(-18189745536802L, strArr2) + e2.getClass().getSimpleName());
+                            kp0.l(c.a(-18211220373282L, strArr2) + str + c.a(-21200517611298L, strArr2) + string + c.a(-21295006891810L, strArr2) + e2.getClass().getName() + c.a(-21333661597474L, strArr2) + e2.getMessage());
+                        }
+                        throw e2;
+                    }
+                }
+
+                @Override // com.kos.engine.core.system.accounts.BAccountManagerService.Session
+                public String toDebugString(long j) {
+                    bundle42.keySet();
+                    StringBuilder sb42 = new StringBuilder();
+                    sb42.append(super.toDebugString(j));
+                    String[] strArr2 = xa1.b;
+                    sb42.append(c.a(-19680099188514L, strArr2));
+                    sb42.append(account.toString());
+                    sb42.append(c.a(-19753113632546L, strArr2));
+                    sb42.append(str);
+                    sb42.append(c.a(-19259192393506L, strArr2));
+                    sb42.append(bundle42);
+                    sb42.append(c.a(-19327911870242L, strArr2));
+                    sb42.append(z);
+                    return sb42.toString();
+                }
+            }.bind();
+        } catch (RemoteException e2) {
+            nz0.Q(c.a(-46046903418658L, strArr), 5, c.a(-46158572568354L, strArr) + e2);
+        }
     }
 
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
@@ -2227,25 +2570,25 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
         String[] strArr = xa1.b;
         Objects.requireNonNull(account, c.a(-68015661137698L, strArr));
         BUserAccounts userAccounts = getUserAccounts(i);
-        HashMap map = new HashMap();
+        HashMap hashMap = new HashMap();
         synchronized (userAccounts.lock) {
             try {
                 BAccount account2 = userAccounts.getAccount(account);
                 if (account2 == null) {
-                    return map;
+                    return hashMap;
                 }
                 if (c.a(-68131625254690L, strArr).equals(account.type)) {
-                    HashMap map2 = new HashMap(account2.visibility);
+                    HashMap hashMap2 = new HashMap(account2.visibility);
                     grantDefaultGoogleVisibility(account, account2);
-                    z = !map2.equals(account2.visibility);
+                    z = !hashMap2.equals(account2.visibility);
                 } else {
                     z = false;
                 }
-                map.putAll(account2.visibility);
+                hashMap.putAll(account2.visibility);
                 if (z) {
                     saveAllAccounts();
                 }
-                return map;
+                return hashMap;
             } catch (Throwable th) {
                 throw th;
             }
@@ -2306,12 +2649,12 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             removeCachedAuthToken(str, str2, i);
             return;
         }
-        boolean zRemoveStoredAuthToken = removeStoredAuthToken(userAccounts, str, str2, true);
-        boolean zRemoveCachedAuthToken = removeCachedAuthToken(str, str2, i);
-        nz0.Q(c.a(-35880715829026L, strArr), 3, c.a(-35992384978722L, strArr) + zRemoveStoredAuthToken + c.a(-38522120716066L, strArr) + zRemoveCachedAuthToken);
+        boolean removeStoredAuthToken = removeStoredAuthToken(userAccounts, str, str2, true);
+        boolean removeCachedAuthToken = removeCachedAuthToken(str, str2, i);
+        nz0.Q(c.a(-35880715829026L, strArr), 3, c.a(-35992384978722L, strArr) + removeStoredAuthToken + c.a(-38522120716066L, strArr) + removeCachedAuthToken);
     }
 
-    public void loadAuthenticatorCache(String str) throws XmlPullParserException, IOException {
+    public void loadAuthenticatorCache(String str) {
         this.mAuthenticatorCache.authenticators.clear();
         Intent intent = new Intent(c.a(-63385686392610L, xa1.b));
         if (str != null) {
@@ -2322,12 +2665,12 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     @Override // com.kos.engine.core.system.pm.PackageMonitor
-    public void onPackageInstalled(String str, int i) throws XmlPullParserException, IOException {
+    public void onPackageInstalled(String str, int i) {
         loadAuthenticatorCache(null);
     }
 
     @Override // com.kos.engine.core.system.pm.PackageMonitor
-    public void onPackageUninstalled(String str, boolean z, int i) throws XmlPullParserException, IOException {
+    public void onPackageUninstalled(String str, boolean z, int i) {
         loadAuthenticatorCache(null);
     }
 
@@ -2379,7 +2722,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     public String readCachedTokenInternal(BUserAccounts bUserAccounts, Account account, String str, String str2) {
-        long jCurrentTimeMillis = System.currentTimeMillis();
+        long currentTimeMillis = System.currentTimeMillis();
         synchronized (this.mTokenCaches) {
             try {
                 Iterator<TokenCache> it = this.mTokenCaches.iterator();
@@ -2391,7 +2734,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                             String[] strArr = xa1.b;
                             nz0.Q(c.a(-66203184938786L, strArr), 5, c.a(-66795890425634L, strArr) + str2 + c.a(-66525307485986L, strArr) + str);
                         } else {
-                            if (next.expiryEpochMillis > jCurrentTimeMillis) {
+                            if (next.expiryEpochMillis > currentTimeMillis) {
                                 return next.authToken;
                             }
                             it.remove();
@@ -2476,11 +2819,11 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             return;
         }
         String[] strArr = xa1.b;
-        String strA = c.a(-68144510156578L, strArr);
+        String a2 = c.a(-68144510156578L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-67706423492386L, strArr));
         sb.append(str);
-        jx0.r(sb, c.a(-66332033957666L, strArr), str2, 5, strA);
+        jx0.r(sb, c.a(-66332033957666L, strArr), str2, 5, a2);
     }
 
     @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
@@ -2570,7 +2913,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
     }
 
     @Override // com.kos.engine.core.system.ISystemService
-    public void systemReady() throws Throwable {
+    public void systemReady() {
         loadAccounts();
         loadAuthenticatorCache(null);
         this.mPms.addPackageMonitor(this);
@@ -2614,13 +2957,13 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                                 account2.visibility.put(str2, num2);
                                 String[] strArr = xa1.b;
                                 num = num2;
-                                String strA = c.a(-51080605089570L, strArr);
+                                String a2 = c.a(-51080605089570L, strArr);
                                 StringBuilder sb = new StringBuilder();
                                 i2 = length;
                                 sb.append(c.a(-50642518425378L, strArr));
                                 sb.append(str2);
                                 sb.append(c.a(-50788547313442L, strArr));
-                                nz0.Q(strA, 3, sb.toString());
+                                nz0.Q(a2, 3, sb.toString());
                             } else {
                                 num = num2;
                                 i2 = length;
@@ -2731,7 +3074,7 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
             return null;
         }
         try {
-            AttributeSet attributeSetAsAttributeSet = Xml.asAttributeSet(parser);
+            AttributeSet asAttributeSet = Xml.asAttributeSet(parser);
             do {
                 next = parser.next();
                 if (next == 1) {
@@ -2742,9 +3085,9 @@ public class BAccountManagerService extends IBAccountManagerService.Stub impleme
                 parser.close();
                 return null;
             }
-            AuthenticatorDescription authenticatorDescription = parseAuthenticatorDescription(registeredServicesParser.getResources(this.mContext, serviceInfo.applicationInfo), serviceInfo.packageName, attributeSetAsAttributeSet);
+            AuthenticatorDescription parseAuthenticatorDescription = parseAuthenticatorDescription(registeredServicesParser.getResources(this.mContext, serviceInfo.applicationInfo), serviceInfo.packageName, asAttributeSet);
             parser.close();
-            return authenticatorDescription;
+            return parseAuthenticatorDescription;
         } catch (Throwable unused) {
             parser.close();
             return null;

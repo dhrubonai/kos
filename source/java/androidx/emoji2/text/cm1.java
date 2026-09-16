@@ -11,9 +11,9 @@ public final class cm1 extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        int iI0 = hb1Var.i0(this.t) + hb1Var.i0(this.r);
-        int iI02 = hb1Var.i0(this.u) + hb1Var.i0(this.s);
-        hr1 hr1VarQ = ab1Var.q(xz.j(-iI0, -iI02, j));
-        return hb1Var.P(xz.g(hr1VarQ.d + iI0, j), xz.f(hr1VarQ.e + iI02, j), re0.d, new pc(this, hr1VarQ, hb1Var, 13));
+        int i0 = hb1Var.i0(this.t) + hb1Var.i0(this.r);
+        int i02 = hb1Var.i0(this.u) + hb1Var.i0(this.s);
+        hr1 q = ab1Var.q(xz.j(-i0, -i02, j));
+        return hb1Var.P(xz.g(q.d + i0, j), xz.f(q.e + i02, j), re0.d, new pc(this, q, hb1Var, 13));
     }
 }

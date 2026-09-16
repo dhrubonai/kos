@@ -1,7 +1,6 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import android.content.res.Resources;
 import androidx.core.splashscreen.R;
 import com.kos.engine.core.system.pm.BDeveloperModuleManagerService;
 import com.kos.engine.entity.location.BCell;
@@ -37,7 +36,7 @@ public final class g3 extends hh2 implements Function2 {
                 return new g3(this.i, this.j, l10Var, 3);
             case 4:
                 return new g3(this.i, this.j, l10Var, 4);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new g3(this.i, this.j, l10Var, 5);
             default:
                 return new g3(this.i, l10Var, 6);
@@ -48,34 +47,34 @@ public final class g3 extends hh2 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((g3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1187a);
+                return ((g3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1186a);
             case 1:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 2:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 4:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
+            case 5:
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             default:
-                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((g3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
         }
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Resources.NotFoundException {
+    public final Object k(Object obj) {
         int i = this.h;
         Context context = this.i;
         switch (i) {
             case 0:
                 int i2 = this.j;
                 mz0.L(obj);
-                ip0.f540a.getClass();
-                int iH = ip0.H(i2);
-                String quantityString = context.getResources().getQuantityString(R.plurals.accounts_removed_count, iH, new Integer(iH));
-                lx0.w(quantityString, a.a.a.c.a(-158471967358754L, wj1.f1284a));
+                ip0.f539a.getClass();
+                int H = ip0.H(i2);
+                String quantityString = context.getResources().getQuantityString(R.plurals.accounts_removed_count, H, new Integer(H));
+                lx0.w(quantityString, a.a.a.c.a(-158471967358754L, wj1.f1283a));
                 return quantityString;
             case 1:
                 mz0.L(obj);
@@ -89,12 +88,12 @@ public final class g3 extends hh2 implements Function2 {
             case 4:
                 mz0.L(obj);
                 int i3 = this.j;
-                int i4 = n92.f799a;
+                int i4 = n92.f798a;
                 c01 c01Var = c01.r;
-                String[] strArr = wj1.f1284a;
-                String strA = a.a.a.c.a(-537945212862242L, strArr);
+                String[] strArr = wj1.f1283a;
+                String a2 = a.a.a.c.a(-537945212862242L, strArr);
                 c01Var.getClass();
-                if (!c01.b0(strA, i3)) {
+                if (!c01.b0(a2, i3)) {
                     String string = context.getString(R.string.play_games_not_installed_virtual);
                     lx0.w(string, a.a.a.c.a(-538091241750306L, strArr));
                     return string;
@@ -107,16 +106,16 @@ public final class g3 extends hh2 implements Function2 {
                 String string3 = context.getString(R.string.play_games_not_launchable);
                 lx0.w(string3, a.a.a.c.a(-537764824235810L, strArr));
                 return string3;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 mz0.L(obj);
                 return n92.s(context, this.j);
             default:
-                String[] strArr2 = wj1.f1284a;
+                String[] strArr2 = wj1.f1283a;
                 int i5 = this.j;
                 try {
                     if (i5 == 0) {
                         mz0.L(obj);
-                        ip0 ip0Var = ip0.f540a;
+                        ip0 ip0Var = ip0.f539a;
                         this.j = 1;
                         obj = ip0Var.r(BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID, this);
                         f30 f30Var = f30.d;

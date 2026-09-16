@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ae2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f97a;
+    public float f96a;
     public double b;
     public boolean c;
     public double d;
@@ -14,64 +14,64 @@ public final class ae2 {
     public float g;
 
     public final long a(float f, float f2, long j) {
-        double dCos;
-        double dExp;
+        double cos;
+        double d;
         if (!this.c) {
-            if (this.f97a == Float.MAX_VALUE) {
+            if (this.f96a == Float.MAX_VALUE) {
                 throw new IllegalStateException("Error: Final position of the spring must be set before the animation starts");
             }
             float f3 = this.g;
-            double d = f3;
-            double d2 = d * d;
+            double d2 = f3;
+            double d3 = d2 * d2;
             if (f3 > 1.0f) {
-                double d3 = this.b;
-                double d4 = d2 - 1;
-                this.d = (Math.sqrt(d4) * d3) + ((-f3) * d3);
-                double d5 = -this.g;
-                double d6 = this.b;
-                this.e = (d5 * d6) - (Math.sqrt(d4) * d6);
+                double d4 = this.b;
+                double d5 = d3 - 1;
+                this.d = (Math.sqrt(d5) * d4) + ((-f3) * d4);
+                double d6 = -this.g;
+                double d7 = this.b;
+                this.e = (d6 * d7) - (Math.sqrt(d5) * d7);
             } else if (f3 >= 0.0f && f3 < 1.0f) {
-                this.f = Math.sqrt(1 - d2) * this.b;
+                this.f = Math.sqrt(1 - d3) * this.b;
             }
             this.c = true;
         }
-        float f4 = f - this.f97a;
-        double d7 = j / 1000.0d;
+        float f4 = f - this.f96a;
+        double d8 = j / 1000.0d;
         float f5 = this.g;
         if (f5 > 1.0f) {
-            double d8 = f4;
-            double d9 = this.e;
-            double d10 = ((d9 * d8) - f2) / (d9 - this.d);
-            double d11 = d8 - d10;
-            dExp = (Math.exp(this.d * d7) * d10) + (Math.exp(d9 * d7) * d11);
-            double d12 = this.e;
-            double dExp2 = Math.exp(d12 * d7) * d11 * d12;
-            double d13 = this.d;
-            dCos = (Math.exp(d13 * d7) * d10 * d13) + dExp2;
+            double d9 = f4;
+            double d10 = this.e;
+            double d11 = ((d10 * d9) - f2) / (d10 - this.d);
+            double d12 = d9 - d11;
+            d = (Math.exp(this.d * d8) * d11) + (Math.exp(d10 * d8) * d12);
+            double d13 = this.e;
+            double exp = Math.exp(d13 * d8) * d12 * d13;
+            double d14 = this.d;
+            cos = (Math.exp(d14 * d8) * d11 * d14) + exp;
         } else if (f5 == 1.0f) {
-            double d14 = this.b;
-            double d15 = f4;
-            double d16 = (d14 * d15) + f2;
-            double d17 = (d16 * d7) + d15;
-            dExp = Math.exp((-d14) * d7) * d17;
-            double dExp3 = Math.exp((-this.b) * d7) * d17;
-            double d18 = -this.b;
-            dCos = (dExp3 * d18) + (Math.exp(d18 * d7) * d16);
+            double d15 = this.b;
+            double d16 = f4;
+            double d17 = (d15 * d16) + f2;
+            double d18 = (d17 * d8) + d16;
+            d = Math.exp((-d15) * d8) * d18;
+            double exp2 = Math.exp((-this.b) * d8) * d18;
+            double d19 = -this.b;
+            cos = (exp2 * d19) + (Math.exp(d19 * d8) * d17);
         } else {
-            double d19 = 1 / this.f;
-            double d20 = this.b;
-            double d21 = f4;
-            double d22 = ((f5 * d20 * d21) + f2) * d19;
-            double dExp4 = Math.exp((-f5) * d20 * d7) * ((Math.sin(this.f * d7) * d22) + (Math.cos(this.f * d7) * d21));
-            double d23 = this.b;
-            double d24 = (-d23) * dExp4 * this.g;
-            double dExp5 = Math.exp((-r7) * d23 * d7);
-            double d25 = this.f;
-            double dSin = Math.sin(d25 * d7) * (-d25) * d21;
+            double d20 = 1 / this.f;
+            double d21 = this.b;
+            double d22 = f4;
+            double d23 = ((f5 * d21 * d22) + f2) * d20;
+            double exp3 = Math.exp((-f5) * d21 * d8) * ((Math.sin(this.f * d8) * d23) + (Math.cos(this.f * d8) * d22));
+            double d24 = this.b;
+            double d25 = (-d24) * exp3 * this.g;
+            double exp4 = Math.exp((-r7) * d24 * d8);
             double d26 = this.f;
-            dCos = (((Math.cos(d26 * d7) * d22 * d26) + dSin) * dExp5) + d24;
-            dExp = dExp4;
+            double sin = Math.sin(d26 * d8) * (-d26) * d22;
+            double d27 = this.f;
+            cos = (((Math.cos(d27 * d8) * d23 * d27) + sin) * exp4) + d25;
+            d = exp3;
         }
-        return (Float.floatToRawIntBits((float) (dExp + this.f97a)) << 32) | (Float.floatToRawIntBits((float) dCos) & 4294967295L);
+        return (Float.floatToRawIntBits((float) (d + this.f96a)) << 32) | (Float.floatToRawIntBits((float) cos) & 4294967295L);
     }
 }

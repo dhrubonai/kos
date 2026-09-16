@@ -23,15 +23,15 @@ public final class m60 implements dh1 {
         if (i != 1 || Math.abs(rm1Var.c.g()) <= 1.0E-6d) {
             return 0L;
         }
-        float fG = rm1Var.c.g() * o60Var.m();
-        float f = ((o60Var.k().b + o60Var.k().c) * (-Math.signum(rm1Var.c.g()))) + fG;
+        float g = rm1Var.c.g() * o60Var.m();
+        float f = ((o60Var.k().b + o60Var.k().c) * (-Math.signum(rm1Var.c.g()))) + g;
         if (rm1Var.c.g() > 0.0f) {
-            f = fG;
-            fG = f;
+            f = g;
+            g = f;
         }
-        float f2 = -o60Var.j.d(-az0.o(zi1.d(j), fG, f));
-        float fE = zi1.e(j);
-        return (Float.floatToRawIntBits(fE) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32);
+        float f2 = -o60Var.j.d(-az0.o(zi1.d(j), g, f));
+        float e = zi1.e(j);
+        return (Float.floatToRawIntBits(e) & 4294967295L) | (Float.floatToRawIntBits(f2) << 32);
     }
 
     @Override // androidx.emoji2.text.dh1

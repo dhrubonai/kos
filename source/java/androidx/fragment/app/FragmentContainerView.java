@@ -30,22 +30,22 @@ public final class FragmentContainerView extends FrameLayout {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentContainerView(Context context, AttributeSet attributeSet) {
-        String str;
         super(context, attributeSet, 0);
+        String str;
         lx0.x(context, "context");
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.g = true;
         if (attributeSet != null) {
             String classAttribute = attributeSet.getClassAttribute();
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, dv1.f273a, 0, 0);
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, dv1.f272a, 0, 0);
             if (classAttribute == null) {
-                classAttribute = typedArrayObtainStyledAttributes.getString(0);
+                classAttribute = obtainStyledAttributes.getString(0);
                 str = "android:name";
             } else {
                 str = "class";
             }
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
             if (classAttribute == null || isInEditMode()) {
                 return;
             }
@@ -72,29 +72,29 @@ public final class FragmentContainerView extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final WindowInsets dispatchApplyWindowInsets(WindowInsets windowInsets) {
-        wv2 wv2VarD;
+        wv2 wv2Var;
         lx0.x(windowInsets, "insets");
-        wv2 wv2VarD2 = wv2.d(null, windowInsets);
+        wv2 d = wv2.d(null, windowInsets);
         View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.f;
         if (onApplyWindowInsetsListener != null) {
-            WindowInsets windowInsetsOnApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(this, windowInsets);
-            lx0.w(windowInsetsOnApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
-            wv2VarD = wv2.d(null, windowInsetsOnApplyWindowInsets);
+            WindowInsets onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(this, windowInsets);
+            lx0.w(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
+            wv2Var = wv2.d(null, onApplyWindowInsets);
         } else {
-            Field field = es2.f320a;
-            WindowInsets windowInsetsC = wv2VarD2.c();
-            if (windowInsetsC != null) {
-                WindowInsets windowInsetsB = ur2.b(this, windowInsetsC);
-                if (!windowInsetsB.equals(windowInsetsC)) {
-                    wv2VarD2 = wv2.d(this, windowInsetsB);
+            Field field = es2.f319a;
+            WindowInsets c = d.c();
+            if (c != null) {
+                WindowInsets b = ur2.b(this, c);
+                if (!b.equals(c)) {
+                    d = wv2.d(this, b);
                 }
             }
-            wv2VarD = wv2VarD2;
+            wv2Var = d;
         }
-        if (!wv2VarD.f1306a.o()) {
+        if (!wv2Var.f1305a.o()) {
             int childCount = getChildCount();
             for (int i = 0; i < childCount; i++) {
-                es2.a(getChildAt(i), wv2VarD);
+                es2.a(getChildAt(i), wv2Var);
             }
         }
         return windowInsets;

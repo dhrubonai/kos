@@ -17,10 +17,10 @@ public final class x42 extends g01 implements sm0 {
     public final Object a() {
         switch (this.e) {
             case 0:
-                return Boolean.valueOf(this.f.f1371a.g() > 0);
+                return Boolean.valueOf(this.f.f1370a.g() > 0);
             default:
                 y42 y42Var = this.f;
-                return Boolean.valueOf(y42Var.f1371a.g() < y42Var.d.g());
+                return Boolean.valueOf(y42Var.f1370a.g() < y42Var.d.g());
         }
     }
 }

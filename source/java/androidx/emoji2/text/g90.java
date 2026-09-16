@@ -9,14 +9,14 @@ import java.util.Objects;
 public final class g90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final DisplayCutout f407a;
+    public final DisplayCutout f406a;
 
     public g90(DisplayCutout displayCutout) {
-        this.f407a = displayCutout;
+        this.f406a = displayCutout;
     }
 
     public final zv0 a() {
-        return Build.VERSION.SDK_INT >= 30 ? zv0.c(o1.c(this.f407a)) : zv0.e;
+        return Build.VERSION.SDK_INT >= 30 ? zv0.c(o1.c(this.f406a)) : zv0.e;
     }
 
     public final boolean equals(Object obj) {
@@ -26,14 +26,16 @@ public final class g90 {
         if (obj == null || g90.class != obj.getClass()) {
             return false;
         }
-        return Objects.equals(this.f407a, ((g90) obj).f407a);
+        return Objects.equals(this.f406a, ((g90) obj).f406a);
     }
 
     public final int hashCode() {
-        return this.f407a.hashCode();
+        int hashCode;
+        hashCode = this.f406a.hashCode();
+        return hashCode;
     }
 
     public final String toString() {
-        return "DisplayCutoutCompat{" + this.f407a + "}";
+        return "DisplayCutoutCompat{" + this.f406a + "}";
     }
 }

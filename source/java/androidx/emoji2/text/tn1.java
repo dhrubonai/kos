@@ -9,10 +9,10 @@ import com.kos.engine.entity.location.BCell;
 public final class tn1 implements Parcelable.ClassLoaderCreator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1132a;
+    public final /* synthetic */ int f1131a;
 
     public /* synthetic */ tn1(int i) {
-        this.f1132a = i;
+        this.f1131a = i;
     }
 
     public static un1 a(Parcel parcel, ClassLoader classLoader) {
@@ -20,24 +20,24 @@ public final class tn1 implements Parcelable.ClassLoaderCreator {
         if (classLoader == null) {
             classLoader = tn1.class.getClassLoader();
         }
-        Object value = parcel.readValue(classLoader);
-        int i = parcel.readInt();
-        if (i == 0) {
+        Object readValue = parcel.readValue(classLoader);
+        int readInt = parcel.readInt();
+        if (readInt == 0) {
             rc2Var = dd0.P;
-        } else if (i == 1) {
+        } else if (readInt == 1) {
             rc2Var = j42.o;
         } else {
-            if (i != 2) {
-                throw new IllegalStateException(zd.g("Unsupported MutableState policy ", i, " was restored"));
+            if (readInt != 2) {
+                throw new IllegalStateException(zd.g("Unsupported MutableState policy ", readInt, " was restored"));
             }
             rc2Var = dd0.X;
         }
-        return new un1(value, rc2Var);
+        return new un1(readValue, rc2Var);
     }
 
     @Override // android.os.Parcelable.ClassLoaderCreator
     public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        switch (this.f1132a) {
+        switch (this.f1131a) {
             case 0:
                 return a(parcel, classLoader);
             case 1:
@@ -58,7 +58,7 @@ public final class tn1 implements Parcelable.ClassLoaderCreator {
 
     @Override // android.os.Parcelable.Creator
     public final Object[] newArray(int i) {
-        switch (this.f1132a) {
+        switch (this.f1131a) {
             case 0:
                 return new un1[i];
             case 1:
@@ -76,7 +76,7 @@ public final class tn1 implements Parcelable.ClassLoaderCreator {
 
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        switch (this.f1132a) {
+        switch (this.f1131a) {
             case 0:
                 return a(parcel, null);
             case 1:

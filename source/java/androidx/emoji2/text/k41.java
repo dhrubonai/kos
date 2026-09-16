@@ -24,10 +24,10 @@ public final class k41 extends g01 implements um0 {
                 List list = (List) obj;
                 Object obj2 = list.get(0);
                 lx0.v(obj2, "null cannot be cast to non-null type kotlin.Int");
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
                 Object obj3 = list.get(1);
                 lx0.v(obj3, "null cannot be cast to non-null type kotlin.Float");
-                return new o60(iIntValue, ((Float) obj3).floatValue(), new n60(0, list));
+                return new o60(intValue, ((Float) obj3).floatValue(), new n60(0, list));
         }
     }
 }

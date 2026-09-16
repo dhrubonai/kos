@@ -9,7 +9,7 @@ import android.text.TextDirectionHeuristics;
 public abstract class o01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Layout.Alignment f835a = Layout.Alignment.ALIGN_NORMAL;
+    public static final Layout.Alignment f834a = Layout.Alignment.ALIGN_NORMAL;
 
     static {
         TextDirectionHeuristic textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_LTR;

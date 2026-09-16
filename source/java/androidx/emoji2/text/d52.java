@@ -11,68 +11,54 @@ public final class d52 implements dh1 {
         this.e = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     @Override // androidx.emoji2.text.dh1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object B(long r3, long r5, androidx.emoji2.text.l10 r7) {
-        /*
-            r2 = this;
-            boolean r3 = r7 instanceof androidx.emoji2.text.c52
-            if (r3 == 0) goto L13
-            r3 = r7
-            androidx.emoji2.text.c52 r3 = (androidx.emoji2.text.c52) r3
-            int r4 = r3.j
-            r0 = -2147483648(0xffffffff80000000, float:-0.0)
-            r1 = r4 & r0
-            if (r1 == 0) goto L13
-            int r4 = r4 - r0
-            r3.j = r4
-            goto L1a
-        L13:
-            androidx.emoji2.text.c52 r3 = new androidx.emoji2.text.c52
-            androidx.emoji2.text.n10 r7 = (androidx.emoji2.text.n10) r7
-            r3.<init>(r2, r7)
-        L1a:
-            java.lang.Object r4 = r3.h
-            int r7 = r3.j
-            r0 = 1
-            if (r7 == 0) goto L31
-            if (r7 != r0) goto L29
-            long r5 = r3.g
-            androidx.emoji2.text.mz0.L(r4)
-            goto L47
-        L29:
-            java.lang.IllegalStateException r3 = new java.lang.IllegalStateException
-            java.lang.String r4 = "call to 'resume' before 'invoke' with coroutine"
-            r3.<init>(r4)
-            throw r3
-        L31:
-            androidx.emoji2.text.mz0.L(r4)
-            boolean r4 = r2.e
-            if (r4 == 0) goto L50
-            r3.g = r5
-            r3.j = r0
-            androidx.emoji2.text.x52 r4 = r2.d
-            java.lang.Object r4 = r4.b(r5, r3)
-            androidx.emoji2.text.f30 r3 = androidx.emoji2.text.f30.d
-            if (r4 != r3) goto L47
-            return r3
-        L47:
-            androidx.emoji2.text.fr2 r4 = (androidx.emoji2.text.fr2) r4
-            long r3 = r4.f379a
-            long r3 = androidx.emoji2.text.fr2.d(r5, r3)
-            goto L52
-        L50:
-            r3 = 0
-        L52:
-            androidx.emoji2.text.fr2 r5 = new androidx.emoji2.text.fr2
-            r5.<init>(r3)
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.d52.B(long, long, androidx.emoji2.text.l10):java.lang.Object");
+    public final Object B(long j, long j2, l10 l10Var) {
+        c52 c52Var;
+        int i;
+        long j3;
+        if (l10Var instanceof c52) {
+            c52Var = (c52) l10Var;
+            int i2 = c52Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                c52Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = c52Var.h;
+                i = c52Var.j;
+                if (i != 0) {
+                    mz0.L(obj);
+                    if (!this.e) {
+                        j3 = 0;
+                        return new fr2(j3);
+                    }
+                    c52Var.g = j2;
+                    c52Var.j = 1;
+                    obj = this.d.b(j2, c52Var);
+                    f30 f30Var = f30.d;
+                    if (obj == f30Var) {
+                        return f30Var;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    j2 = c52Var.g;
+                    mz0.L(obj);
+                }
+                j3 = fr2.d(j2, ((fr2) obj).f378a);
+                return new fr2(j3);
+            }
+        }
+        c52Var = new c52(this, (n10) l10Var);
+        Object obj2 = c52Var.h;
+        i = c52Var.j;
+        if (i != 0) {
+        }
+        j3 = fr2.d(j2, ((fr2) obj2).f378a);
+        return new fr2(j3);
     }
 
     @Override // androidx.emoji2.text.dh1
@@ -81,9 +67,9 @@ public final class d52 implements dh1 {
             return 0L;
         }
         x52 x52Var = this.d;
-        if (x52Var.f1319a.a()) {
+        if (x52Var.f1318a.a()) {
             return 0L;
         }
-        return x52Var.g(x52Var.c(x52Var.f1319a.d(x52Var.c(x52Var.f(j2)))));
+        return x52Var.g(x52Var.c(x52Var.f1318a.d(x52Var.c(x52Var.f(j2)))));
     }
 }

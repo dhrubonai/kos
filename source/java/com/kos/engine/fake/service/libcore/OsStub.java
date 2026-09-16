@@ -43,13 +43,13 @@ public class OsStub extends ClassInvocationStub {
     @ProxyMethod("stat")
     public static class stat extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                fy1 fy1VarI = fy1.i(objInvoke);
-                fy1VarI.d(c.a(-929547446009634L, xa1.b));
-                fy1VarI.h(fy1VarI.b, Integer.valueOf(OsStub.getFakeUid(-1)));
-                return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                fy1 i = fy1.i(invoke);
+                i.d(c.a(-929547446009634L, xa1.b));
+                i.h(i.b, Integer.valueOf(OsStub.getFakeUid(-1)));
+                return invoke;
             } catch (Throwable th) {
                 throw th.getCause();
             }
@@ -114,9 +114,9 @@ public class OsStub extends ClassInvocationStub {
                 if (obj2 != null && (obj2 instanceof String) && ((String) obj2).startsWith(c.a(-929577510780706L, xa1.b))) {
                     String str = (String) objArr[i];
                     ensureGoogleProbeDir(str);
-                    String strRedirectPath = IOCore.get().redirectPath(str);
-                    objArr[i] = strRedirectPath;
-                    ensureGoogleProbeDir(strRedirectPath);
+                    String redirectPath = IOCore.get().redirectPath(str);
+                    objArr[i] = redirectPath;
+                    ensureGoogleProbeDir(redirectPath);
                 }
             }
         }

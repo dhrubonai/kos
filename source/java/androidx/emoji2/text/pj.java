@@ -9,13 +9,13 @@ import android.content.pm.PackageManager;
 public final class pj extends ContextWrapper {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ String f909a;
+    public final /* synthetic */ String f908a;
     public final /* synthetic */ Context b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public pj(Context context, String str, Context context2) {
         super(context);
-        this.f909a = str;
+        this.f908a = str;
         this.b = context2;
     }
 
@@ -39,6 +39,6 @@ public final class pj extends ContextWrapper {
 
     @Override // android.content.ContextWrapper, android.content.Context
     public final String getPackageName() {
-        return this.f909a;
+        return this.f908a;
     }
 }

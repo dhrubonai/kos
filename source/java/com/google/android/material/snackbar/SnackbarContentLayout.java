@@ -1,7 +1,6 @@
 package com.google.android.material.snackbar;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.text.Layout;
 import android.util.AttributeSet;
 import android.widget.Button;
@@ -59,7 +58,7 @@ public class SnackbarContentLayout extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i, int i2) throws Resources.NotFoundException {
+    public final void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (getOrientation() == 1) {
             return;

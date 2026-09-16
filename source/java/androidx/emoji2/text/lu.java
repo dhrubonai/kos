@@ -9,14 +9,14 @@ public class lu {
     private volatile /* synthetic */ int _handled$volatile;
 
     /* renamed from: a, reason: collision with root package name */
-    public final Throwable f713a;
+    public final Throwable f712a;
 
     public lu(Throwable th, boolean z) {
-        this.f713a = th;
+        this.f712a = th;
         this._handled$volatile = z ? 1 : 0;
     }
 
     public final String toString() {
-        return getClass().getSimpleName() + '[' + this.f713a + ']';
+        return getClass().getSimpleName() + '[' + this.f712a + ']';
     }
 }

@@ -8,14 +8,14 @@ import java.util.Map;
 public final class un2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final mh0 f1182a;
+    public final mh0 f1181a;
     public final mb2 b;
     public final c42 c;
     public final boolean d;
     public final Map e;
 
     public un2(mh0 mh0Var, mb2 mb2Var, c42 c42Var, boolean z, Map map) {
-        this.f1182a = mh0Var;
+        this.f1181a = mh0Var;
         this.b = mb2Var;
         this.c = c42Var;
         this.d = z;
@@ -30,20 +30,20 @@ public final class un2 {
             return false;
         }
         un2 un2Var = (un2) obj;
-        return lx0.n(this.f1182a, un2Var.f1182a) && lx0.n(this.b, un2Var.b) && lx0.n(this.c, un2Var.c) && this.d == un2Var.d && lx0.n(this.e, un2Var.e);
+        return lx0.n(this.f1181a, un2Var.f1181a) && lx0.n(this.b, un2Var.b) && lx0.n(this.c, un2Var.c) && this.d == un2Var.d && lx0.n(this.e, un2Var.e);
     }
 
     public final int hashCode() {
-        mh0 mh0Var = this.f1182a;
-        int iHashCode = (mh0Var == null ? 0 : mh0Var.hashCode()) * 31;
+        mh0 mh0Var = this.f1181a;
+        int hashCode = (mh0Var == null ? 0 : mh0Var.hashCode()) * 31;
         mb2 mb2Var = this.b;
-        int iHashCode2 = (iHashCode + (mb2Var == null ? 0 : mb2Var.hashCode())) * 961;
+        int hashCode2 = (hashCode + (mb2Var == null ? 0 : mb2Var.hashCode())) * 961;
         c42 c42Var = this.c;
-        return this.e.hashCode() + jx0.d((iHashCode2 + (c42Var != null ? c42Var.hashCode() : 0)) * 31, 31, this.d);
+        return this.e.hashCode() + jx0.d((hashCode2 + (c42Var != null ? c42Var.hashCode() : 0)) * 31, 31, this.d);
     }
 
     public final String toString() {
-        return "TransitionData(fade=" + this.f1182a + ", slide=" + this.b + ", changeSize=null, scale=" + this.c + ", hold=" + this.d + ", effectsMap=" + this.e + ')';
+        return "TransitionData(fade=" + this.f1181a + ", slide=" + this.b + ", changeSize=null, scale=" + this.c + ", hold=" + this.d + ", effectsMap=" + this.e + ')';
     }
 
     public /* synthetic */ un2(mh0 mh0Var, mb2 mb2Var, c42 c42Var, LinkedHashMap linkedHashMap, int i) {

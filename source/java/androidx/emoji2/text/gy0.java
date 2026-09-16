@@ -17,10 +17,10 @@ public final class gy0 extends ip {
 
     @Override // androidx.emoji2.text.ip
     public final Throwable q(jy0 jy0Var) {
-        Throwable thC;
+        Throwable c;
         jy0 jy0Var2 = this.l;
         jy0Var2.getClass();
         Object obj = jy0.d.get(jy0Var2);
-        return (!(obj instanceof iy0) || (thC = ((iy0) obj).c()) == null) ? obj instanceof lu ? ((lu) obj).f713a : jy0Var.l() : thC;
+        return (!(obj instanceof iy0) || (c = ((iy0) obj).c()) == null) ? obj instanceof lu ? ((lu) obj).f712a : jy0Var.l() : c;
     }
 }

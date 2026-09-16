@@ -1,6 +1,5 @@
 package androidx.emoji2.text;
 
-import java.io.InterruptedIOException;
 import java.util.concurrent.TimeUnit;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -34,7 +33,7 @@ public final class jm0 extends fm2 {
     }
 
     @Override // androidx.emoji2.text.fm2
-    public final void f() throws InterruptedIOException {
+    public final void f() {
         this.e.f();
     }
 

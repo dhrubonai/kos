@@ -12,9 +12,9 @@ public abstract class iz1 {
     public static void a(Activity activity, n51 n51Var) {
         lx0.x(n51Var, "event");
         if (activity instanceof v51) {
-            lz0 lz0VarG = ((v51) activity).g();
-            if (lz0VarG instanceof x51) {
-                ((x51) lz0VarG).R(n51Var);
+            lz0 g = ((v51) activity).g();
+            if (g instanceof x51) {
+                ((x51) g).R(n51Var);
             }
         }
     }

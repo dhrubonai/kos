@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public final class ob1 extends BaseAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final qb1 f848a;
+    public final qb1 f847a;
     public int b = -1;
     public boolean c;
     public final boolean d;
@@ -22,13 +22,13 @@ public final class ob1 extends BaseAdapter {
     public ob1(qb1 qb1Var, LayoutInflater layoutInflater, boolean z, int i) {
         this.d = z;
         this.e = layoutInflater;
-        this.f848a = qb1Var;
+        this.f847a = qb1Var;
         this.f = i;
         a();
     }
 
     public final void a() {
-        qb1 qb1Var = this.f848a;
+        qb1 qb1Var = this.f847a;
         ub1 ub1Var = qb1Var.s;
         if (ub1Var != null) {
             qb1Var.i();
@@ -47,34 +47,34 @@ public final class ob1 extends BaseAdapter {
     @Override // android.widget.Adapter
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
     public final ub1 getItem(int i) {
-        ArrayList arrayListK;
+        ArrayList k;
         boolean z = this.d;
-        qb1 qb1Var = this.f848a;
+        qb1 qb1Var = this.f847a;
         if (z) {
             qb1Var.i();
-            arrayListK = qb1Var.j;
+            k = qb1Var.j;
         } else {
-            arrayListK = qb1Var.k();
+            k = qb1Var.k();
         }
         int i2 = this.b;
         if (i2 >= 0 && i >= i2) {
             i++;
         }
-        return (ub1) arrayListK.get(i);
+        return (ub1) k.get(i);
     }
 
     @Override // android.widget.Adapter
     public final int getCount() {
-        ArrayList arrayListK;
+        ArrayList k;
         boolean z = this.d;
-        qb1 qb1Var = this.f848a;
+        qb1 qb1Var = this.f847a;
         if (z) {
             qb1Var.i();
-            arrayListK = qb1Var.j;
+            k = qb1Var.j;
         } else {
-            arrayListK = qb1Var.k();
+            k = qb1Var.k();
         }
-        return this.b < 0 ? arrayListK.size() : arrayListK.size() - 1;
+        return this.b < 0 ? k.size() : k.size() - 1;
     }
 
     @Override // android.widget.Adapter
@@ -92,7 +92,7 @@ public final class ob1 extends BaseAdapter {
         int i3 = i - 1;
         int i4 = i3 >= 0 ? getItem(i3).b : i2;
         ListMenuItemView listMenuItemView = (ListMenuItemView) view;
-        if (this.f848a.l() && i2 != i4) {
+        if (this.f847a.l() && i2 != i4) {
             z = true;
         }
         listMenuItemView.setGroupDividerEnabled(z);

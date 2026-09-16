@@ -7,7 +7,7 @@ import java.util.List;
 public final class sr0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final p01 f1083a;
+    public final p01 f1082a;
     public boolean b;
     public boolean c;
     public boolean d;
@@ -17,10 +17,10 @@ public final class sr0 {
     public final ve1 h;
 
     public sr0(p01 p01Var) {
-        this.f1083a = p01Var;
+        this.f1082a = p01Var;
         ve1 ve1Var = new ve1();
-        ve1Var.f1213a = e42.f285a;
-        ve1Var.b = f81.f350a;
+        ve1Var.f1212a = e42.f284a;
+        ve1Var.b = f81.f349a;
         ve1Var.c = lx0.k;
         ve1Var.c(e42.d(10));
         this.h = ve1Var;
@@ -41,11 +41,11 @@ public final class sr0 {
         sh1 sh1Var2;
         ve1 ve1Var = this.h;
         ve1Var.e = 0;
-        long[] jArr = ve1Var.f1213a;
+        long[] jArr = ve1Var.f1212a;
         char c2 = 7;
-        if (jArr != e42.f285a) {
+        if (jArr != e42.f284a) {
             xh.F0(jArr, -9187201950435737472L);
-            long[] jArr2 = ve1Var.f1213a;
+            long[] jArr2 = ve1Var.f1212a;
             int i2 = ve1Var.d;
             int i3 = i2 >> 3;
             j2 = -9187201950435737472L;
@@ -68,7 +68,7 @@ public final class sr0 {
             if (md1Var.q) {
                 md1Var.p = new l7(9, this, md1Var);
                 if (z2) {
-                    sf1 sf1Var = ci1Var2.f199a;
+                    sf1 sf1Var = ci1Var2.f198a;
                     ?? r14 = sf1Var.d;
                     int i5 = sf1Var.f;
                     c = c2;
@@ -91,9 +91,9 @@ public final class sr0 {
                     if (sh1Var != null) {
                         sh1Var.i = true;
                         sh1Var.d.b(j);
-                        Object objB = ve1Var.b(j);
-                        Object obj = objB;
-                        if (objB == null) {
+                        Object b = ve1Var.b(j);
+                        Object obj = b;
+                        if (b == null) {
                             ze1 ze1Var = new ze1();
                             ve1Var.d(j, ze1Var);
                             obj = ze1Var;
@@ -109,15 +109,15 @@ public final class sr0 {
                 }
                 sh1Var = new sh1(md1Var);
                 sh1Var.d.b(j);
-                Object objB2 = ve1Var.b(j);
-                Object obj2 = objB2;
-                if (objB2 == null) {
+                Object b2 = ve1Var.b(j);
+                Object obj2 = b2;
+                if (b2 == null) {
                     ze1 ze1Var2 = new ze1();
                     ve1Var.d(j, ze1Var2);
                     obj2 = ze1Var2;
                 }
                 ((ze1) obj2).a(sh1Var);
-                ci1Var2.f199a.b(sh1Var);
+                ci1Var2.f198a.b(sh1Var);
                 ci1Var2 = sh1Var;
             } else {
                 c = c2;
@@ -134,7 +134,7 @@ public final class sr0 {
         }
         long[] jArr3 = ve1Var.b;
         Object[] objArr = ve1Var.c;
-        long[] jArr4 = ve1Var.f1213a;
+        long[] jArr4 = ve1Var.f1212a;
         int length = jArr4.length - 2;
         if (length < 0) {
             return;
@@ -151,7 +151,7 @@ public final class sr0 {
                         int i11 = (i7 << 3) + i10;
                         long j8 = jArr3[i11];
                         ze1 ze1Var3 = (ze1) objArr[i11];
-                        sf1 sf1Var2 = ci1Var.f199a;
+                        sf1 sf1Var2 = ci1Var.f198a;
                         i = i8;
                         Object[] objArr2 = sf1Var2.d;
                         int i12 = sf1Var2.f;
@@ -179,11 +179,11 @@ public final class sr0 {
 
     public final boolean b(dx0 dx0Var, boolean z) {
         g81 g81Var = (g81) dx0Var.c;
-        p01 p01Var = this.f1083a;
+        p01 p01Var = this.f1082a;
         ci1 ci1Var = this.g;
-        boolean zA = ci1Var.a(g81Var, p01Var, dx0Var, z);
-        sf1 sf1Var = ci1Var.f199a;
-        if (!zA) {
+        boolean a2 = ci1Var.a(g81Var, p01Var, dx0Var, z);
+        sf1 sf1Var = ci1Var.f198a;
+        if (!a2) {
             return false;
         }
         boolean z2 = true;
@@ -220,7 +220,7 @@ public final class sr0 {
         }
         if (this.d) {
             this.d = false;
-            ci1Var.f199a.g();
+            ci1Var.f198a.g();
         }
         return z2;
     }
@@ -231,7 +231,7 @@ public final class sr0 {
             return;
         }
         ci1 ci1Var = this.g;
-        sf1 sf1Var = ci1Var.f199a;
+        sf1 sf1Var = ci1Var.f198a;
         Object[] objArr = sf1Var.d;
         int i = sf1Var.f;
         for (int i2 = 0; i2 < i; i2++) {
@@ -240,7 +240,7 @@ public final class sr0 {
         if (this.d) {
             this.d = true;
         } else {
-            ci1Var.f199a.g();
+            ci1Var.f198a.g();
         }
     }
 
@@ -258,11 +258,11 @@ public final class sr0 {
             ci1 ci1Var2 = (ci1) ze1Var.j(ze1Var.b - 1);
             int i = 0;
             while (true) {
-                sf1 sf1Var = ci1Var2.f199a;
+                sf1 sf1Var = ci1Var2.f198a;
                 if (i < sf1Var.f) {
                     sh1 sh1Var = (sh1) sf1Var.d[i];
                     if (lx0.n(sh1Var.c, md1Var)) {
-                        ci1Var2.f199a.j(sh1Var);
+                        ci1Var2.f198a.j(sh1Var);
                         sh1Var.c();
                     } else {
                         ze1Var.a(sh1Var);

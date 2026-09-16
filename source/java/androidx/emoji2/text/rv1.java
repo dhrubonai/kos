@@ -7,10 +7,10 @@ import java.lang.ref.WeakReference;
 public final class rv1 extends WeakReference {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f1036a;
+    public final Object f1035a;
 
     public rv1(tv1 tv1Var, Object obj) {
         super(tv1Var);
-        this.f1036a = obj;
+        this.f1035a = obj;
     }
 }

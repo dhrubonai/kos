@@ -32,10 +32,10 @@ public final class ad extends g01 implements um0 {
                 ed edVar = (ed) this.f;
                 pz0.T(geVar, edVar.c);
                 un1 un1Var = geVar.e;
-                Object objA = ed.a(edVar, un1Var.getValue());
-                if (!lx0.n(objA, un1Var.getValue())) {
-                    edVar.c.e.setValue(objA);
-                    ((ie) this.g).e.setValue(objA);
+                Object a2 = ed.a(edVar, un1Var.getValue());
+                if (!lx0.n(a2, un1Var.getValue())) {
+                    edVar.c.e.setValue(a2);
+                    ((ie) this.g).e.setValue(a2);
                     if (um0Var != null) {
                         um0Var.e(edVar);
                     }
@@ -45,7 +45,7 @@ public final class ad extends g01 implements um0 {
                 } else if (um0Var != null) {
                     um0Var.e(edVar);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 h51 h51Var = (h51) this.f;
                 if (h51Var.b()) {
@@ -57,7 +57,7 @@ public final class ad extends g01 implements um0 {
                     f20 f20Var2 = h51Var.u;
                     cy1 cy1Var = new cy1();
                     pc pcVar = new pc(l6Var, f20Var, cy1Var, 16);
-                    cs1 cs1Var = ik2Var.f531a;
+                    cs1 cs1Var = ik2Var.f530a;
                     cs1Var.d(ak2Var, ju0Var, pcVar, f20Var2);
                     nk2 nk2Var = new nk2(ik2Var, cs1Var);
                     ik2Var.b.set(nk2Var);
@@ -69,26 +69,26 @@ public final class ad extends g01 implements um0 {
                 lx0.x((k90) obj, "$this$DisposableEffect");
                 return new kb0((sm0) this.f, (mf1) this.g, (mf1) this.h, (e30) this.i);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 ((mf1) this.f).setValue(Boolean.TRUE);
                 mf1 mf1Var = (mf1) this.i;
                 fb0 fb0Var = new fb0();
                 h50.G((e30) this.g, null, new jb0(fb0Var, null, 1), 3);
                 mf1Var.setValue(fb0Var);
                 ((um0) this.h).e(new zi1(j));
-                return up2.f1187a;
+                return up2.f1186a;
             case 4:
-                long jLongValue = ((Number) obj).longValue();
+                long longValue = ((Number) obj).longValue();
                 e30 e30Var = (e30) this.i;
                 zx1 zx1Var = (zx1) this.h;
                 fv0 fv0Var = (fv0) this.g;
                 qe2 qe2Var = (qe2) ((mf1) this.f).getValue();
-                long jLongValue2 = qe2Var != null ? ((Number) qe2Var.getValue()).longValue() : jLongValue;
+                long longValue2 = qe2Var != null ? ((Number) qe2Var.getValue()).longValue() : longValue;
                 long j2 = fv0Var.c;
-                sf1 sf1Var = fv0Var.f384a;
+                sf1 sf1Var = fv0Var.f383a;
                 int i = 0;
                 if (j2 == Long.MIN_VALUE || zx1Var.d != pz0.w(e30Var.u())) {
-                    fv0Var.c = jLongValue;
+                    fv0Var.c = longValue;
                     int i2 = sf1Var.f;
                     if (i2 > 0) {
                         Object[] objArr = sf1Var.d;
@@ -113,7 +113,7 @@ public final class ad extends g01 implements um0 {
                         } while (i < i4);
                     }
                 } else {
-                    long j3 = (long) ((jLongValue2 - fv0Var.c) / f);
+                    long j3 = (long) ((longValue2 - fv0Var.c) / f);
                     int i5 = sf1Var.f;
                     if (i5 > 0) {
                         Object[] objArr3 = sf1Var.d;
@@ -141,7 +141,7 @@ public final class ad extends g01 implements um0 {
                     }
                     fv0Var.d.setValue(Boolean.valueOf(!z));
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 a41 a41Var = (a41) this.f;
                 a41Var.c = new rg((m31) this.g, (og2) this.h, (pt1) this.i, 15);

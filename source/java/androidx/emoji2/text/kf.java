@@ -27,11 +27,11 @@ public abstract class kf extends AutoCompleteTextView {
         super(context, attributeSet, androidx.core.splashscreen.R.attr.autoCompleteTextViewStyle);
         jm2.a(context);
         ql2.a(this, getContext());
-        rg rgVarV = rg.V(getContext(), attributeSet, g, androidx.core.splashscreen.R.attr.autoCompleteTextViewStyle);
-        if (((TypedArray) rgVarV.e).hasValue(0)) {
-            setDropDownBackgroundDrawable(rgVarV.H(0));
+        rg V = rg.V(getContext(), attributeSet, g, androidx.core.splashscreen.R.attr.autoCompleteTextViewStyle);
+        if (((TypedArray) V.e).hasValue(0)) {
+            setDropDownBackgroundDrawable(V.H(0));
         }
-        rgVarV.X();
+        V.X();
         lf lfVar = new lf(this);
         this.d = lfVar;
         lfVar.e(attributeSet, androidx.core.splashscreen.R.attr.autoCompleteTextViewStyle);
@@ -46,19 +46,19 @@ public abstract class kf extends AutoCompleteTextView {
         if (keyListener instanceof NumberKeyListener) {
             return;
         }
-        boolean zIsFocusable = super.isFocusable();
-        boolean zIsClickable = super.isClickable();
-        boolean zIsLongClickable = super.isLongClickable();
+        boolean isFocusable = super.isFocusable();
+        boolean isClickable = super.isClickable();
+        boolean isLongClickable = super.isLongClickable();
         int inputType = super.getInputType();
-        KeyListener keyListenerM = l6Var.m(keyListener);
-        if (keyListenerM == keyListener) {
+        KeyListener m = l6Var.m(keyListener);
+        if (m == keyListener) {
             return;
         }
-        super.setKeyListener(keyListenerM);
+        super.setKeyListener(m);
         super.setRawInputType(inputType);
-        super.setFocusable(zIsFocusable);
-        super.setClickable(zIsClickable);
-        super.setLongClickable(zIsLongClickable);
+        super.setFocusable(isFocusable);
+        super.setClickable(isClickable);
+        super.setLongClickable(isLongClickable);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -113,9 +113,9 @@ public abstract class kf extends AutoCompleteTextView {
 
     @Override // android.widget.TextView, android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        wj1.E(inputConnectionOnCreateInputConnection, editorInfo, this);
-        return this.f.r(inputConnectionOnCreateInputConnection, editorInfo);
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        wj1.E(onCreateInputConnection, editorInfo, this);
+        return this.f.r(onCreateInputConnection, editorInfo);
     }
 
     @Override // android.view.View

@@ -8,22 +8,22 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class so2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ro2 f1077a;
+    public final ro2 f1076a;
 
     public so2() {
         ro2 ro2Var = new ro2();
         ro2Var.c = false;
         ro2Var.d = new CopyOnWriteArrayList();
-        this.f1077a = ro2Var;
+        this.f1076a = ro2Var;
     }
 
     public final void a(String str) {
         StringBuilder sb = new StringBuilder();
-        ro2 ro2Var = this.f1077a;
+        ro2 ro2Var = this.f1076a;
         for (int i = 0; i < str.length(); i++) {
-            char cCharAt = str.charAt(i);
-            sb.append(cCharAt);
-            ro2 ro2Var2 = new ro2(cCharAt, sb.toString());
+            char charAt = str.charAt(i);
+            sb.append(charAt);
+            ro2 ro2Var2 = new ro2(charAt, sb.toString());
             CopyOnWriteArrayList copyOnWriteArrayList = ro2Var.d;
             CopyOnWriteArrayList copyOnWriteArrayList2 = ro2Var.d;
             if (copyOnWriteArrayList.contains(ro2Var2)) {
@@ -31,7 +31,7 @@ public final class so2 {
                 while (true) {
                     if (it.hasNext()) {
                         ro2Var2 = (ro2) it.next();
-                        if (ro2Var2.f1024a == cCharAt) {
+                        if (ro2Var2.f1023a == charAt) {
                             break;
                         }
                     } else {
@@ -50,11 +50,11 @@ public final class so2 {
     }
 
     public final String b(String str) {
-        ro2 ro2Var = this.f1077a;
+        ro2 ro2Var = this.f1076a;
         String str2 = null;
         for (int i = 0; i < str.length(); i++) {
-            char cCharAt = str.charAt(i);
-            if (!ro2Var.d.contains(new ro2(cCharAt, null))) {
+            char charAt = str.charAt(i);
+            if (!ro2Var.d.contains(new ro2(charAt, null))) {
                 break;
             }
             Iterator it = ro2Var.d.iterator();
@@ -64,7 +64,7 @@ public final class so2 {
                     break;
                 }
                 ro2 ro2Var2 = (ro2) it.next();
-                if (ro2Var2.f1024a == cCharAt) {
+                if (ro2Var2.f1023a == charAt) {
                     ro2Var = ro2Var2;
                     break;
                 }

@@ -10,7 +10,7 @@ import org.bouncycastle.jsse.BCSSLSocket;
 public final class mm implements ed2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final lm f755a = new lm();
+    public static final lm f754a = new lm();
 
     @Override // androidx.emoji2.text.ed2
     public final boolean a() {
@@ -33,7 +33,7 @@ public final class mm implements ed2 {
         if (e(sSLSocket)) {
             BCSSLSocket bCSSLSocket = (BCSSLSocket) sSLSocket;
             BCSSLParameters parameters = bCSSLSocket.getParameters();
-            lr1 lr1Var = lr1.f707a;
+            lr1 lr1Var = lr1.f706a;
             parameters.setApplicationProtocols((String[]) iz0.i(list).toArray(new String[0]));
             bCSSLSocket.setParameters(parameters);
         }

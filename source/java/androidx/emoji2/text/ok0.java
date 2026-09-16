@@ -32,13 +32,13 @@ public final class ok0 {
     }
 
     public final boolean a() {
-        int iOrdinal = ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
+        int ordinal = ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
                 return false;
             }
-            if (iOrdinal != 2) {
-                if (iOrdinal == 3) {
+            if (ordinal != 2) {
+                if (ordinal == 3) {
                     return false;
                 }
                 throw new mu();

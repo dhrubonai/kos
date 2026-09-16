@@ -1,78 +1,56 @@
 package androidx.emoji2.text;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public abstract class o71 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final wu1 f845a;
+    public static final wu1 f844a;
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x002b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x002b, code lost:
     
         r1 = r1.invoke(null, null);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0031, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0031, code lost:
     
         if ((r1 instanceof androidx.emoji2.text.wu1) == false) goto L7;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0033, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0033, code lost:
     
         r1 = (androidx.emoji2.text.wu1) r1;
      */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0024, code lost:
+    
+        r1 = null;
+     */
     static {
-        /*
-            r0 = 0
-            java.lang.Class<androidx.emoji2.text.v51> r1 = androidx.emoji2.text.v51.class
-            java.lang.ClassLoader r1 = r1.getClassLoader()     // Catch: java.lang.Throwable -> L29
-            androidx.emoji2.text.lx0.u(r1)     // Catch: java.lang.Throwable -> L29
-            java.lang.String r2 = "androidx.compose.ui.platform.AndroidCompositionLocals_androidKt"
-            java.lang.String r3 = "getLocalLifecycleOwner"
-            java.lang.Class r1 = r1.loadClass(r2)     // Catch: java.lang.Throwable -> L29
-            java.lang.reflect.Method r1 = r1.getMethod(r3, r0)     // Catch: java.lang.Throwable -> L29
-            java.lang.annotation.Annotation[] r2 = r1.getAnnotations()     // Catch: java.lang.Throwable -> L29
-            int r3 = r2.length     // Catch: java.lang.Throwable -> L29
-            r4 = 0
-        L1c:
-            if (r4 >= r3) goto L2b
-            r5 = r2[r4]     // Catch: java.lang.Throwable -> L29
-            boolean r5 = r5 instanceof androidx.emoji2.text.p70     // Catch: java.lang.Throwable -> L29
-            if (r5 == 0) goto L26
-        L24:
-            r1 = r0
-            goto L3a
-        L26:
-            int r4 = r4 + 1
-            goto L1c
-        L29:
-            r1 = move-exception
-            goto L36
-        L2b:
-            java.lang.Object r1 = r1.invoke(r0, r0)     // Catch: java.lang.Throwable -> L29
-            boolean r2 = r1 instanceof androidx.emoji2.text.wu1     // Catch: java.lang.Throwable -> L29
-            if (r2 == 0) goto L24
-            androidx.emoji2.text.wu1 r1 = (androidx.emoji2.text.wu1) r1     // Catch: java.lang.Throwable -> L29
-            goto L3a
-        L36:
-            androidx.emoji2.text.g02 r1 = androidx.emoji2.text.mz0.h(r1)
-        L3a:
-            boolean r2 = r1 instanceof androidx.emoji2.text.g02
-            if (r2 == 0) goto L3f
-            goto L40
-        L3f:
-            r0 = r1
-        L40:
-            androidx.emoji2.text.wu1 r0 = (androidx.emoji2.text.wu1) r0
-            if (r0 != 0) goto L51
-            androidx.emoji2.text.f4 r0 = new androidx.emoji2.text.f4
-            r1 = 10
-            r0.<init>(r1)
-            androidx.emoji2.text.jf2 r1 = new androidx.emoji2.text.jf2
-            r1.<init>(r0)
-            r0 = r1
-        L51:
-            androidx.emoji2.text.o71.f845a = r0
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.o71.<clinit>():void");
+        Object h;
+        try {
+            ClassLoader classLoader = v51.class.getClassLoader();
+            lx0.u(classLoader);
+            Method method = classLoader.loadClass("androidx.compose.ui.platform.AndroidCompositionLocals_androidKt").getMethod("getLocalLifecycleOwner", null);
+            Annotation[] annotations = method.getAnnotations();
+            int length = annotations.length;
+            int i = 0;
+            while (true) {
+                if (i >= length) {
+                    break;
+                } else if (annotations[i] instanceof p70) {
+                    break;
+                } else {
+                    i++;
+                }
+            }
+        } catch (Throwable th) {
+            h = mz0.h(th);
+        }
+        wu1 wu1Var = (wu1) (h instanceof g02 ? null : h);
+        if (wu1Var == null) {
+            wu1Var = new jf2(new f4(10));
+        }
+        f844a = wu1Var;
     }
 }

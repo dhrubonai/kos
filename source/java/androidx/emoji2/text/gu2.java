@@ -13,13 +13,13 @@ import java.util.Iterator;
 public abstract class gu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final HashSet f440a;
+    public static final HashSet f439a;
     public static final HashSet b;
 
     static {
         xa1.B(-1313564766912290L);
         String[] strArr = xa1.b;
-        f440a = new HashSet(Arrays.asList(a.a.a.c.a(-1325272847761186L, strArr), a.a.a.c.a(-1325410286714658L, strArr), a.a.a.c.a(-1324993674886946L, strArr), a.a.a.c.a(-1325178358480674L, strArr), a.a.a.c.a(-1325904207953698L, strArr), a.a.a.c.a(-1325470416256802L, strArr), a.a.a.c.a(-1325659394817826L, strArr), a.a.a.c.a(-1324121796525858L, strArr), a.a.a.c.a(-1324340839857954L, strArr), a.a.a.c.a(-1323980062605090L, strArr), a.a.a.c.a(-1324697322143522L, strArr), a.a.a.c.a(-1324894890639138L, strArr), a.a.a.c.a(-1324516933517090L, strArr), a.a.a.c.a(-1324620012732194L, strArr), a.a.a.c.a(-1327493345853218L, strArr), a.a.a.c.a(-1327171223306018L, strArr), a.a.a.c.a(-1327252827684642L, strArr)));
+        f439a = new HashSet(Arrays.asList(a.a.a.c.a(-1325272847761186L, strArr), a.a.a.c.a(-1325410286714658L, strArr), a.a.a.c.a(-1324993674886946L, strArr), a.a.a.c.a(-1325178358480674L, strArr), a.a.a.c.a(-1325904207953698L, strArr), a.a.a.c.a(-1325470416256802L, strArr), a.a.a.c.a(-1325659394817826L, strArr), a.a.a.c.a(-1324121796525858L, strArr), a.a.a.c.a(-1324340839857954L, strArr), a.a.a.c.a(-1323980062605090L, strArr), a.a.a.c.a(-1324697322143522L, strArr), a.a.a.c.a(-1324894890639138L, strArr), a.a.a.c.a(-1324516933517090L, strArr), a.a.a.c.a(-1324620012732194L, strArr), a.a.a.c.a(-1327493345853218L, strArr), a.a.a.c.a(-1327171223306018L, strArr), a.a.a.c.a(-1327252827684642L, strArr)));
         b = new HashSet(Arrays.asList(a.a.a.c.a(-1328094641274658L, strArr), a.a.a.c.a(-1328180540620578L, strArr), a.a.a.c.a(-1327802583498530L, strArr), a.a.a.c.a(-1326329409716002L, strArr), a.a.a.c.a(-1326501208407842L, strArr), a.a.a.c.a(-1326144726122274L, strArr), a.a.a.c.a(-1326896345399074L, strArr), a.a.a.c.a(-1326986539712290L, strArr), a.a.a.c.a(-1326587107753762L, strArr), a.a.a.c.a(-1326698776903458L, strArr), a.a.a.c.a(-1320857621380898L, strArr), a.a.a.c.a(-1320574153539362L, strArr), a.a.a.c.a(-1320664347852578L, strArr), a.a.a.c.a(-1321398787260194L, strArr), a.a.a.c.a(-1321523341311778L, strArr), a.a.a.c.a(-1321063779811106L, strArr), a.a.a.c.a(-1321235578502946L, strArr), a.a.a.c.a(-1319740929883938L, strArr), a.a.a.c.a(-1319869778902818L, strArr)));
     }
 
@@ -29,7 +29,7 @@ public abstract class gu2 {
         }
         HashSet hashSet = new HashSet(b);
         if (GmsCore.isGoogleAppOrService(packageInfo.packageName)) {
-            hashSet.addAll(f440a);
+            hashSet.addAll(f439a);
         }
         String[] strArr = packageInfo.requestedPermissions;
         int[] iArr = packageInfo.requestedPermissionsFlags;
@@ -82,11 +82,11 @@ public abstract class gu2 {
         if (str != null) {
             String[] strArr = xa1.b;
             if (str.endsWith(a.a.a.c.a(-1313719385734946L, strArr))) {
-                String strSubstring = str.substring(0, str.length() - a.a.a.c.a(-1313882594492194L, strArr).length());
-                if (strSubstring.length() == 0) {
+                String substring = str.substring(0, str.length() - a.a.a.c.a(-1313882594492194L, strArr).length());
+                if (substring.length() == 0) {
                     return null;
                 }
-                return strSubstring;
+                return substring;
             }
         }
         return null;
@@ -111,23 +111,23 @@ public abstract class gu2 {
     }
 
     public static boolean e(String str, int i, String str2) {
-        String strB = b(str);
-        if (strB == null) {
+        String b2 = b(str);
+        if (b2 == null) {
             return false;
         }
-        if (str2 == null || strB.equals(str2) || c01.X().equals(str2)) {
-            return c(i, strB);
+        if (str2 == null || b2.equals(str2) || c01.X().equals(str2)) {
+            return c(i, b2);
         }
         return false;
     }
 
     public static boolean f(String str, int i, String str2) {
-        if (str == null || !f440a.contains(str)) {
+        if (str == null || !f439a.contains(str)) {
             return false;
         }
-        String strO = rj.B() ? rj.o() : null;
-        if ((str2 == null || c01.X().equals(str2)) && GmsCore.isGoogleAppOrService(strO)) {
-            str2 = strO;
+        String o = rj.B() ? rj.o() : null;
+        if ((str2 == null || c01.X().equals(str2)) && GmsCore.isGoogleAppOrService(o)) {
+            str2 = o;
         }
         return GmsCore.isGoogleAppOrService(str2) && c(i, str2);
     }
@@ -143,11 +143,11 @@ public abstract class gu2 {
     }
 
     public static boolean h(String str, String str2) {
-        String strB = b(str2);
-        if (strB != null && strB.equals(str)) {
+        String b2 = b(str2);
+        if (b2 != null && b2.equals(str)) {
             return true;
         }
-        String strO = null;
+        String str3 = null;
         if (str2 != null && b.contains(str2)) {
             if (((str == null || c01.X().equals(str)) ? rj.B() ? rj.o() : null : str) != null) {
                 return true;
@@ -155,14 +155,14 @@ public abstract class gu2 {
         }
         if (a.a.a.c.a(-1313130975215394L, xa1.b).equals(str2)) {
             if (str != null && !c01.X().equals(str)) {
-                strO = str;
+                str3 = str;
             } else if (rj.B()) {
-                strO = rj.o();
+                str3 = rj.o();
             }
-            if (strO != null) {
+            if (str3 != null) {
                 return true;
             }
         }
-        return str2 != null && f440a.contains(str2) && GmsCore.isGoogleAppOrService(str);
+        return str2 != null && f439a.contains(str2) && GmsCore.isGoogleAppOrService(str);
     }
 }

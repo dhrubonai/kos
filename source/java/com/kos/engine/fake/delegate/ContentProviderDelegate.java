@@ -38,8 +38,8 @@ public class ContentProviderDelegate {
     public static final String TAG = c.a(-418510762295074L, xa1.b);
 
     private static void clearAndroidIdCacheValue(Object obj) {
-        for (Class<?> superclass = obj.getClass(); superclass != null && superclass != Object.class; superclass = superclass.getSuperclass()) {
-            for (Field field : superclass.getDeclaredFields()) {
+        for (Class<?> cls = obj.getClass(); cls != null && cls != Object.class; cls = cls.getSuperclass()) {
+            for (Field field : cls.getDeclaredFields()) {
                 try {
                     field.setAccessible(true);
                     Object obj2 = field.get(obj);
@@ -58,26 +58,26 @@ public class ContentProviderDelegate {
             BRSettingsNameValueCache.get(obj)._set_mContentProvider(null);
             return;
         }
-        Object objMProviderHolder = BRSettingsNameValueCacheOreo.get(obj).mProviderHolder();
-        if (objMProviderHolder != null) {
-            BRSettingsContentProviderHolder.get(objMProviderHolder)._set_mContentProvider(null);
+        Object mProviderHolder = BRSettingsNameValueCacheOreo.get(obj).mProviderHolder();
+        if (mProviderHolder != null) {
+            BRSettingsContentProviderHolder.get(mProviderHolder)._set_mContentProvider(null);
         }
     }
 
     public static void clearSettingProvider() {
-        Object objSNameValueCache;
-        Object objSNameValueCache2 = BRSettingsSystem.get().sNameValueCache();
-        if (objSNameValueCache2 != null) {
-            clearContentProvider(objSNameValueCache2);
+        Object sNameValueCache;
+        Object sNameValueCache2 = BRSettingsSystem.get().sNameValueCache();
+        if (sNameValueCache2 != null) {
+            clearContentProvider(sNameValueCache2);
         }
-        Object objSNameValueCache3 = BRSettingsSecure.get().sNameValueCache();
-        if (objSNameValueCache3 != null) {
-            clearContentProvider(objSNameValueCache3);
+        Object sNameValueCache3 = BRSettingsSecure.get().sNameValueCache();
+        if (sNameValueCache3 != null) {
+            clearContentProvider(sNameValueCache3);
         }
-        if (BRSettingsGlobal.getRealClass() == null || (objSNameValueCache = BRSettingsGlobal.get().sNameValueCache()) == null) {
+        if (BRSettingsGlobal.getRealClass() == null || (sNameValueCache = BRSettingsGlobal.get().sNameValueCache()) == null) {
             return;
         }
-        clearContentProvider(objSNameValueCache);
+        clearContentProvider(sNameValueCache);
     }
 
     private static String inferProviderPackage(String str) {
@@ -118,12 +118,12 @@ public class ContentProviderDelegate {
             zd.s(new StringBuilder(), c.a(-408679582154530L, strArr), th, 5, c.a(-408576502939426L, strArr));
         }
         for (Object obj : ((ArrayMap) BRActivityThread.get(c01.e0()).mProviderMap()).values()) {
-            String[] strArrMNames = BRActivityThreadProviderClientRecordP.get(obj).mNames();
-            if (strArrMNames != null && strArrMNames.length > 0) {
-                String str = strArrMNames[0];
-                IInterface iInterfaceMProvider = BRActivityThreadProviderClientRecordP.get(obj).mProvider();
-                if (iInterfaceMProvider != null && !isKosProviderProxy(iInterfaceMProvider)) {
-                    BRActivityThreadProviderClientRecordP.get(obj)._set_mProvider(wrapProvider(iInterfaceMProvider, str));
+            String[] mNames = BRActivityThreadProviderClientRecordP.get(obj).mNames();
+            if (mNames != null && mNames.length > 0) {
+                String str = mNames[0];
+                IInterface mProvider = BRActivityThreadProviderClientRecordP.get(obj).mProvider();
+                if (mProvider != null && !isKosProviderProxy(mProvider)) {
+                    BRActivityThreadProviderClientRecordP.get(obj)._set_mProvider(wrapProvider(mProvider, str));
                     BRActivityThreadProviderClientRecordP.get(obj)._set_mNames(new String[]{str});
                 }
             }
@@ -161,25 +161,25 @@ public class ContentProviderDelegate {
     }
 
     public static void replace(Object obj, String str, ProviderInfo providerInfo, IBinder iBinder) {
-        IInterface iInterfaceAsInterface;
-        if (obj == null || iBinder == null || (iInterfaceAsInterface = BRContentProviderNative.get().asInterface(iBinder)) == null) {
+        IInterface asInterface;
+        if (obj == null || iBinder == null || (asInterface = BRContentProviderNative.get().asInterface(iBinder)) == null) {
             return;
         }
-        IInterface iInterfaceWrapProvider = wrapProvider(iInterfaceAsInterface, str, providerInfo == null ? null : providerInfo.packageName);
+        IInterface wrapProvider = wrapProvider(asInterface, str, providerInfo == null ? null : providerInfo.packageName);
         if (l8.T()) {
             BRContentProviderHolderOreo.get(obj)._set_info(providerInfo);
-            BRContentProviderHolderOreo.get(obj)._set_provider(iInterfaceWrapProvider);
+            BRContentProviderHolderOreo.get(obj)._set_provider(wrapProvider);
             BRContentProviderHolderOreo.get(obj)._set_noReleaseNeeded(Boolean.TRUE);
         } else {
             BRIActivityManagerContentProviderHolder.get(obj)._set_info(providerInfo);
-            BRIActivityManagerContentProviderHolder.get(obj)._set_provider(iInterfaceWrapProvider);
+            BRIActivityManagerContentProviderHolder.get(obj)._set_provider(wrapProvider);
             BRIActivityManagerContentProviderHolder.get(obj)._set_noReleaseNeeded(Boolean.TRUE);
         }
     }
 
     private static String resolveProviderCallerPackage(String str) {
-        String strO;
-        return (isSettingsProvider(str) || isEngineProvider(str)) ? c01.X() : (rj.n() == null || (strO = rj.o()) == null || strO.length() <= 0) ? c01.X() : strO;
+        String o;
+        return (isSettingsProvider(str) || isEngineProvider(str)) ? c01.X() : (rj.n() == null || (o = rj.o()) == null || o.length() <= 0) ? c01.X() : o;
     }
 
     private static String resolveProviderPackage(String str) {
@@ -187,15 +187,15 @@ public class ContentProviderDelegate {
     }
 
     public static void update(Object obj, String str) {
-        IInterface iInterfaceProvider = l8.T() ? BRContentProviderHolderOreo.get(obj).provider() : BRIActivityManagerContentProviderHolder.get(obj).provider();
-        if (isKosProviderProxy(iInterfaceProvider)) {
+        IInterface provider = l8.T() ? BRContentProviderHolderOreo.get(obj).provider() : BRIActivityManagerContentProviderHolder.get(obj).provider();
+        if (isKosProviderProxy(provider)) {
             return;
         }
-        IInterface iInterfaceWrapProvider = wrapProvider(iInterfaceProvider, str);
+        IInterface wrapProvider = wrapProvider(provider, str);
         if (l8.T()) {
-            BRContentProviderHolderOreo.get(obj)._set_provider(iInterfaceWrapProvider);
+            BRContentProviderHolderOreo.get(obj)._set_provider(wrapProvider);
         } else {
-            BRIActivityManagerContentProviderHolder.get(obj)._set_provider(iInterfaceWrapProvider);
+            BRIActivityManagerContentProviderHolder.get(obj)._set_provider(wrapProvider);
         }
     }
 
@@ -204,7 +204,7 @@ public class ContentProviderDelegate {
     }
 
     private static IInterface wrapProvider(IInterface iInterface, String str, String str2) {
-        String strResolveProviderCallerPackage = resolveProviderCallerPackage(str);
-        return isSettingsProvider(str) ? new SettingsProviderStub().wrapper(iInterface, strResolveProviderCallerPackage) : isGservicesProvider(str) ? new GservicesProviderStub().wrapper(iInterface, strResolveProviderCallerPackage, str2) : new ContentProviderStub().wrapper(iInterface, strResolveProviderCallerPackage, str, str2);
+        String resolveProviderCallerPackage = resolveProviderCallerPackage(str);
+        return isSettingsProvider(str) ? new SettingsProviderStub().wrapper(iInterface, resolveProviderCallerPackage) : isGservicesProvider(str) ? new GservicesProviderStub().wrapper(iInterface, resolveProviderCallerPackage, str2) : new ContentProviderStub().wrapper(iInterface, resolveProviderCallerPackage, str, str2);
     }
 }

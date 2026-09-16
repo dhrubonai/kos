@@ -21,16 +21,16 @@ public class ep1 extends cp1 {
         int i3 = i2 * 5;
         oo2[] oo2VarArr = this.d;
         if (i3 <= 30) {
-            int iB = 1 << pz0.B(i, i3);
-            if (no2Var.h(iB)) {
-                oo2VarArr[i2].a(no2Var.d, Integer.bitCount(no2Var.f819a) * 2, no2Var.f(iB));
+            int B = 1 << pz0.B(i, i3);
+            if (no2Var.h(B)) {
+                oo2VarArr[i2].a(no2Var.d, Integer.bitCount(no2Var.f818a) * 2, no2Var.f(B));
                 this.e = i2;
                 return;
             } else {
-                int iT = no2Var.t(iB);
-                no2 no2VarS = no2Var.s(iT);
-                oo2VarArr[i2].a(no2Var.d, Integer.bitCount(no2Var.f819a) * 2, iT);
-                c(i, no2VarS, obj, i2 + 1);
+                int t = no2Var.t(B);
+                no2 s = no2Var.s(t);
+                oo2VarArr[i2].a(no2Var.d, Integer.bitCount(no2Var.f818a) * 2, t);
+                c(i, s, obj, i2 + 1);
                 return;
             }
         }

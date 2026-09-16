@@ -8,29 +8,29 @@ import java.util.Arrays;
 public final class hy1 implements r20 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f496a;
+    public final float f495a;
 
     public hy1(float f) {
-        this.f496a = f;
+        this.f495a = f;
     }
 
     @Override // androidx.emoji2.text.r20
     public final float a(RectF rectF) {
-        return Math.min(rectF.width(), rectF.height()) * this.f496a;
+        return Math.min(rectF.width(), rectF.height()) * this.f495a;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof hy1) && this.f496a == ((hy1) obj).f496a;
+        return (obj instanceof hy1) && this.f495a == ((hy1) obj).f495a;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Float.valueOf(this.f496a)});
+        return Arrays.hashCode(new Object[]{Float.valueOf(this.f495a)});
     }
 
     public final String toString() {
-        return ((int) (this.f496a * 100.0f)) + "%";
+        return ((int) (this.f495a * 100.0f)) + "%";
     }
 }

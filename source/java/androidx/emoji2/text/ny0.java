@@ -18,12 +18,12 @@ public class ny0 extends ci0 {
     public final gb2 a(zn1 zn1Var) {
         lx0.x(zn1Var, "file");
         File file = zn1Var.toFile();
-        Logger logger = ej1.f307a;
+        Logger logger = ej1.f306a;
         return new ti(1, new FileOutputStream(file, true), new fm2());
     }
 
     @Override // androidx.emoji2.text.ci0
-    public void b(zn1 zn1Var, zn1 zn1Var2) throws IOException {
+    public void b(zn1 zn1Var, zn1 zn1Var2) {
         lx0.x(zn1Var, "source");
         lx0.x(zn1Var2, "target");
         if (zn1Var.toFile().renameTo(zn1Var2.toFile())) {
@@ -33,18 +33,18 @@ public class ny0 extends ci0 {
     }
 
     @Override // androidx.emoji2.text.ci0
-    public final void c(zn1 zn1Var) throws IOException {
+    public final void c(zn1 zn1Var) {
         if (zn1Var.toFile().mkdir()) {
             return;
         }
-        n70 n70VarI = i(zn1Var);
-        if (n70VarI == null || !n70VarI.c) {
+        n70 i = i(zn1Var);
+        if (i == null || !i.c) {
             throw new IOException("failed to create directory: " + zn1Var);
         }
     }
 
     @Override // androidx.emoji2.text.ci0
-    public final void d(zn1 zn1Var) throws IOException {
+    public final void d(zn1 zn1Var) {
         lx0.x(zn1Var, "path");
         if (Thread.interrupted()) {
             throw new InterruptedIOException("interrupted");
@@ -57,7 +57,7 @@ public class ny0 extends ci0 {
     }
 
     @Override // androidx.emoji2.text.ci0
-    public final List g(zn1 zn1Var) throws IOException {
+    public final List g(zn1 zn1Var) {
         File file = zn1Var.toFile();
         String[] list = file.list();
         if (list == null) {
@@ -79,14 +79,14 @@ public class ny0 extends ci0 {
     public n70 i(zn1 zn1Var) {
         lx0.x(zn1Var, "path");
         File file = zn1Var.toFile();
-        boolean zIsFile = file.isFile();
-        boolean zIsDirectory = file.isDirectory();
-        long jLastModified = file.lastModified();
+        boolean isFile = file.isFile();
+        boolean isDirectory = file.isDirectory();
+        long lastModified = file.lastModified();
         long length = file.length();
-        if (!zIsFile && !zIsDirectory && jLastModified == 0 && length == 0 && !file.exists()) {
+        if (!isFile && !isDirectory && lastModified == 0 && length == 0 && !file.exists()) {
             return null;
         }
-        return new n70(zIsFile, zIsDirectory, null, Long.valueOf(length), null, Long.valueOf(jLastModified), null);
+        return new n70(isFile, isDirectory, null, Long.valueOf(length), null, Long.valueOf(lastModified), null);
     }
 
     @Override // androidx.emoji2.text.ci0
@@ -98,7 +98,7 @@ public class ny0 extends ci0 {
     public final gb2 k(zn1 zn1Var) {
         lx0.x(zn1Var, "file");
         File file = zn1Var.toFile();
-        Logger logger = ej1.f307a;
+        Logger logger = ej1.f306a;
         return new ti(1, new FileOutputStream(file, false), new fm2());
     }
 
@@ -106,7 +106,7 @@ public class ny0 extends ci0 {
     public final nd2 l(zn1 zn1Var) {
         lx0.x(zn1Var, "file");
         File file = zn1Var.toFile();
-        Logger logger = ej1.f307a;
+        Logger logger = ej1.f306a;
         return new ui(new FileInputStream(file), fm2.d);
     }
 

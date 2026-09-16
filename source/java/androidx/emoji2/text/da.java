@@ -28,7 +28,7 @@ public final class da extends g01 implements um0 {
     public final Object e(Object obj) {
         Paint paint;
         int i = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         Object obj2 = this.j;
         Object obj3 = this.i;
         Object obj4 = this.f;
@@ -37,7 +37,7 @@ public final class da extends g01 implements um0 {
         switch (i) {
             case 0:
                 i51 i51Var = (i51) obj;
-                c51 c51Var = ((ia) obj6).f516a;
+                c51 c51Var = ((ia) obj6).f515a;
                 i51Var.h = (ak2) obj4;
                 i51Var.i = (ju0) obj5;
                 i51Var.c = (pc) obj3;
@@ -52,7 +52,7 @@ public final class da extends g01 implements um0 {
                 bt1Var.l((sm0) obj6, (et1) obj5, (String) obj3, (q01) obj2);
                 break;
             case 2:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 h50.G((e30) obj4, null, new a6((ty1) obj6, (mf1) obj5, (mf1) obj3, null, 17), 3);
                 ((um0) obj2).e(new zi1(j));
                 break;
@@ -60,44 +60,44 @@ public final class da extends g01 implements um0 {
                 g11 g11Var = (g11) obj;
                 g11Var.b();
                 np npVar = g11Var.d;
-                float fG = ((y30) obj6).b.g();
-                if (fG != 0.0f) {
+                float g = ((y30) obj6).b.g();
+                if (g != 0.0f) {
                     long j2 = ((ak2) obj4).b;
                     int i2 = al2.c;
                     int i3 = (int) (j2 >> 32);
                     ((zg0) obj5).a(i3);
-                    tk2 tk2VarD = ((h51) obj3).d();
-                    zw1 zw1VarC = tk2VarD != null ? tk2VarD.f1127a.c(i3) : new zw1(0.0f, 0.0f, 0.0f, 0.0f);
-                    float fC0 = g11Var.c0(hj2.f473a);
-                    float f = fC0 / 2;
-                    float f2 = zw1VarC.f1459a + f;
-                    float fD = ib2.d(npVar.i()) - f;
-                    if (f2 > fD) {
-                        f2 = fD;
+                    tk2 d = ((h51) obj3).d();
+                    zw1 c = d != null ? d.f1126a.c(i3) : new zw1(0.0f, 0.0f, 0.0f, 0.0f);
+                    float c0 = g11Var.c0(hj2.f472a);
+                    float f = c0 / 2;
+                    float f2 = c.f1458a + f;
+                    float d2 = ib2.d(npVar.i()) - f;
+                    if (f2 > d2) {
+                        f2 = d2;
                     }
                     if (f2 >= f) {
                         f = f2;
                     }
-                    long jD = jz0.d(f, zw1VarC.b);
-                    long jD2 = jz0.d(f, zw1VarC.d);
+                    long d3 = jz0.d(f, c.b);
+                    long d4 = jz0.d(f, c.d);
                     kd2 kd2Var = (kd2) obj2;
                     lp lpVar = npVar.d.c;
-                    pa paVarV = npVar.g;
-                    if (paVarV == null) {
-                        paVarV = l8.v();
-                        paVarV.l(1);
-                        npVar.g = paVarV;
+                    pa paVar = npVar.g;
+                    if (paVar == null) {
+                        paVar = l8.v();
+                        paVar.l(1);
+                        npVar.g = paVar;
                     }
-                    Paint paint2 = paVarV.f896a;
-                    kd2Var.i(fG, npVar.i(), paVarV);
-                    if (!lx0.n(paVarV.d, null)) {
-                        paVarV.f(null);
+                    Paint paint2 = paVar.f895a;
+                    kd2Var.i(g, npVar.i(), paVar);
+                    if (!lx0.n(paVar.d, null)) {
+                        paVar.f(null);
                     }
-                    if (paVarV.b != 3) {
-                        paVarV.d(3);
+                    if (paVar.b != 3) {
+                        paVar.d(3);
                     }
-                    if (paint2.getStrokeWidth() != fC0) {
-                        paVarV.k(fC0);
+                    if (paint2.getStrokeWidth() != c0) {
+                        paVar.k(c0);
                     }
                     if (paint2.getStrokeMiter() == 4.0f) {
                         paint = paint2;
@@ -105,16 +105,16 @@ public final class da extends g01 implements um0 {
                         paint = paint2;
                         paint.setStrokeMiter(4.0f);
                     }
-                    if (paVarV.a() != 0) {
-                        paVarV.i(0);
+                    if (paVar.a() != 0) {
+                        paVar.i(0);
                     }
-                    if (paVarV.b() != 0) {
-                        paVarV.j(0);
+                    if (paVar.b() != 0) {
+                        paVar.j(0);
                     }
                     if (!paint.isFilterBitmap()) {
-                        paVarV.g(1);
+                        paVar.g(1);
                     }
-                    lpVar.s(jD, jD2, paVarV);
+                    lpVar.s(d3, d4, paVar);
                     break;
                 }
                 break;

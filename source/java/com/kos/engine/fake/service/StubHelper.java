@@ -5,7 +5,6 @@ import android.os.IBinder;
 import android.util.Log;
 import androidx.emoji2.text.xa1;
 import black.android.os.BRServiceManager;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -13,13 +12,13 @@ import java.lang.reflect.Method;
 public class StubHelper {
     private static final String TAG = c.a(-949287115702050L, xa1.b);
 
-    public static Object getServiceInterface(String str, String str2, String str3) throws IllegalAccessException, NoSuchMethodException, ClassNotFoundException, SecurityException, IllegalArgumentException, InvocationTargetException {
-        Object objInvoke;
+    public static Object getServiceInterface(String str, String str2, String str3) {
+        Object invoke;
         Method method;
         String[] strArr = xa1.b;
         try {
             Class<?> cls = Class.forName(str2);
-            objInvoke = cls.getMethod(c.a(-947551948914466L, strArr), null).invoke(null, null);
+            invoke = cls.getMethod(c.a(-947551948914466L, strArr), null).invoke(null, null);
             try {
                 method = cls.getMethod(c.a(-947603488522018L, strArr), IBinder.class);
             } catch (NoSuchMethodException unused) {
@@ -47,7 +46,7 @@ public class StubHelper {
             Log.w(c.a(-947367265320738L, strArr), c.a(-947466049568546L, strArr) + str2, e);
         }
         if (method != null) {
-            return method.invoke(objInvoke, BRServiceManager.get().getService(str));
+            return method.invoke(invoke, BRServiceManager.get().getService(str));
         }
         Log.w(c.a(-947723747606306L, strArr), c.a(-947255596171042L, strArr) + str2);
         try {
@@ -58,13 +57,13 @@ public class StubHelper {
         }
     }
 
-    public static Object getServiceInterface(String str, String str2, String str3, IBinder iBinder) throws IllegalAccessException, NoSuchMethodException, ClassNotFoundException, SecurityException, IllegalArgumentException, InvocationTargetException {
-        Object objInvoke;
+    public static Object getServiceInterface(String str, String str2, String str3, IBinder iBinder) {
+        Object invoke;
         Method method;
         String[] strArr = xa1.b;
         try {
             Class<?> cls = Class.forName(str2);
-            objInvoke = cls.getMethod(c.a(-945670753238818L, strArr), null).invoke(null, null);
+            invoke = cls.getMethod(c.a(-945670753238818L, strArr), null).invoke(null, null);
             try {
                 method = cls.getMethod(c.a(-945653573369634L, strArr), IBinder.class);
             } catch (NoSuchMethodException unused) {
@@ -92,7 +91,7 @@ public class StubHelper {
             Log.w(c.a(-946585581272866L, strArr), c.a(-946615646043938L, strArr) + str2, e);
         }
         if (method != null) {
-            return method.invoke(objInvoke, iBinder != null ? iBinder : BRServiceManager.get().getService(str));
+            return method.invoke(invoke, iBinder != null ? iBinder : BRServiceManager.get().getService(str));
         }
         Log.w(c.a(-945842551930658L, strArr), c.a(-946405192646434L, strArr) + str2);
         if (iBinder == null) {

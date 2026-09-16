@@ -41,38 +41,38 @@ public final class vp0 implements sp0 {
     public vp0(v7 v7Var, op opVar, np npVar) {
         this.b = opVar;
         this.c = npVar;
-        RenderNode renderNodeCreate = RenderNode.create("Compose", v7Var);
-        this.d = renderNodeCreate;
+        RenderNode create = RenderNode.create("Compose", v7Var);
+        this.d = create;
         this.e = 0L;
         this.i = 0L;
         if (y.getAndSet(false)) {
-            renderNodeCreate.setScaleX(renderNodeCreate.getScaleX());
-            renderNodeCreate.setScaleY(renderNodeCreate.getScaleY());
-            renderNodeCreate.setTranslationX(renderNodeCreate.getTranslationX());
-            renderNodeCreate.setTranslationY(renderNodeCreate.getTranslationY());
-            renderNodeCreate.setElevation(renderNodeCreate.getElevation());
-            renderNodeCreate.setRotation(renderNodeCreate.getRotation());
-            renderNodeCreate.setRotationX(renderNodeCreate.getRotationX());
-            renderNodeCreate.setRotationY(renderNodeCreate.getRotationY());
-            renderNodeCreate.setCameraDistance(renderNodeCreate.getCameraDistance());
-            renderNodeCreate.setPivotX(renderNodeCreate.getPivotX());
-            renderNodeCreate.setPivotY(renderNodeCreate.getPivotY());
-            renderNodeCreate.setClipToOutline(renderNodeCreate.getClipToOutline());
-            renderNodeCreate.setClipToBounds(false);
-            renderNodeCreate.setAlpha(renderNodeCreate.getAlpha());
-            renderNodeCreate.isValid();
-            renderNodeCreate.setLeftTopRightBottom(0, 0, 0, 0);
-            renderNodeCreate.offsetLeftAndRight(0);
-            renderNodeCreate.offsetTopAndBottom(0);
+            create.setScaleX(create.getScaleX());
+            create.setScaleY(create.getScaleY());
+            create.setTranslationX(create.getTranslationX());
+            create.setTranslationY(create.getTranslationY());
+            create.setElevation(create.getElevation());
+            create.setRotation(create.getRotation());
+            create.setRotationX(create.getRotationX());
+            create.setRotationY(create.getRotationY());
+            create.setCameraDistance(create.getCameraDistance());
+            create.setPivotX(create.getPivotX());
+            create.setPivotY(create.getPivotY());
+            create.setClipToOutline(create.getClipToOutline());
+            create.setClipToBounds(false);
+            create.setAlpha(create.getAlpha());
+            create.isValid();
+            create.setLeftTopRightBottom(0, 0, 0, 0);
+            create.offsetLeftAndRight(0);
+            create.offsetTopAndBottom(0);
             if (Build.VERSION.SDK_INT >= 28) {
-                ry1.c(renderNodeCreate, ry1.a(renderNodeCreate));
-                ry1.d(renderNodeCreate, ry1.b(renderNodeCreate));
+                ry1.c(create, ry1.a(create));
+                ry1.d(create, ry1.b(create));
             }
-            qy1.a(renderNodeCreate);
-            renderNodeCreate.setLayerType(0);
-            renderNodeCreate.setHasOverlappingRendering(renderNodeCreate.hasOverlappingRendering());
+            qy1.a(create);
+            create.setLayerType(0);
+            create.setHasOverlappingRendering(create.hasOverlappingRendering());
         }
-        renderNodeCreate.setClipToBounds(false);
+        create.setClipToBounds(false);
         b(0);
         this.j = 0;
         this.k = 3;
@@ -318,9 +318,9 @@ public final class vp0 implements sp0 {
 
     @Override // androidx.emoji2.text.sp0
     public final void q(lp lpVar) {
-        DisplayListCanvas displayListCanvasA = x6.a(lpVar);
-        lx0.v(displayListCanvasA, "null cannot be cast to non-null type android.view.DisplayListCanvas");
-        displayListCanvasA.drawRenderNode(this.d);
+        DisplayListCanvas a2 = x6.a(lpVar);
+        lx0.v(a2, "null cannot be cast to non-null type android.view.DisplayListCanvas");
+        a2.drawRenderNode(this.d);
     }
 
     @Override // androidx.emoji2.text.sp0
@@ -364,24 +364,24 @@ public final class vp0 implements sp0 {
 
     @Override // androidx.emoji2.text.sp0
     public final void x(j70 j70Var, q01 q01Var, rp0 rp0Var, r5 r5Var) {
-        Canvas canvasStart = this.d.start(Math.max((int) (this.e >> 32), (int) (this.i >> 32)), Math.max((int) (this.e & 4294967295L), (int) (this.i & 4294967295L)));
+        Canvas start = this.d.start(Math.max((int) (this.e >> 32), (int) (this.i >> 32)), Math.max((int) (this.e & 4294967295L), (int) (this.i & 4294967295L)));
         try {
-            w6 w6Var = this.b.f867a;
-            Canvas canvas = w6Var.f1261a;
-            w6Var.f1261a = canvasStart;
+            w6 w6Var = this.b.f866a;
+            Canvas canvas = w6Var.f1260a;
+            w6Var.f1260a = start;
             np npVar = this.c;
             rg rgVar = npVar.e;
-            long jM = kx0.M(this.e);
+            long M = kx0.M(this.e);
             mp mpVar = ((np) rgVar.g).d;
-            j70 j70Var2 = mpVar.f760a;
+            j70 j70Var2 = mpVar.f759a;
             q01 q01Var2 = mpVar.b;
-            lp lpVarD = rgVar.D();
-            long jM2 = rgVar.M();
+            lp D = rgVar.D();
+            long M2 = rgVar.M();
             rp0 rp0Var2 = (rp0) rgVar.f;
             rgVar.c0(j70Var);
             rgVar.d0(q01Var);
             rgVar.b0(w6Var);
-            rgVar.e0(jM);
+            rgVar.e0(M);
             rgVar.f = rp0Var;
             w6Var.f();
             try {
@@ -389,23 +389,23 @@ public final class vp0 implements sp0 {
                 w6Var.n();
                 rgVar.c0(j70Var2);
                 rgVar.d0(q01Var2);
-                rgVar.b0(lpVarD);
-                rgVar.e0(jM2);
+                rgVar.b0(D);
+                rgVar.e0(M2);
                 rgVar.f = rp0Var2;
-                w6Var.f1261a = canvas;
-                this.d.end(canvasStart);
+                w6Var.f1260a = canvas;
+                this.d.end(start);
             } catch (Throwable th) {
                 w6Var.n();
                 rg rgVar2 = npVar.e;
                 rgVar2.c0(j70Var2);
                 rgVar2.d0(q01Var2);
-                rgVar2.b0(lpVarD);
-                rgVar2.e0(jM2);
+                rgVar2.b0(D);
+                rgVar2.e0(M2);
                 rgVar2.f = rp0Var2;
                 throw th;
             }
         } catch (Throwable th2) {
-            this.d.end(canvasStart);
+            this.d.end(start);
             throw th2;
         }
     }

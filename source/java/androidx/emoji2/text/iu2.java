@@ -11,7 +11,7 @@ import androidx.core.splashscreen.R;
 public final class iu2 extends AnimatorListenerAdapter implements qn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ViewGroup f550a;
+    public final ViewGroup f549a;
     public final View b;
     public final View c;
     public boolean d = true;
@@ -19,7 +19,7 @@ public final class iu2 extends AnimatorListenerAdapter implements qn2 {
 
     public iu2(lh0 lh0Var, ViewGroup viewGroup, View view, View view2) {
         this.e = lh0Var;
-        this.f550a = viewGroup;
+        this.f549a = viewGroup;
         this.b = view;
         this.c = view2;
     }
@@ -38,7 +38,7 @@ public final class iu2 extends AnimatorListenerAdapter implements qn2 {
 
     public final void g() {
         this.c.setTag(R.id.save_overlay_view, null);
-        this.f550a.getOverlay().remove(this.b);
+        this.f549a.getOverlay().remove(this.b);
         this.d = false;
     }
 
@@ -49,14 +49,14 @@ public final class iu2 extends AnimatorListenerAdapter implements qn2 {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
     public final void onAnimationPause(Animator animator) {
-        this.f550a.getOverlay().remove(this.b);
+        this.f549a.getOverlay().remove(this.b);
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
     public final void onAnimationResume(Animator animator) {
         View view = this.b;
         if (view.getParent() == null) {
-            this.f550a.getOverlay().add(view);
+            this.f549a.getOverlay().add(view);
         } else {
             this.e.c();
         }
@@ -68,7 +68,7 @@ public final class iu2 extends AnimatorListenerAdapter implements qn2 {
             View view = this.c;
             View view2 = this.b;
             view.setTag(R.id.save_overlay_view, view2);
-            this.f550a.getOverlay().add(view2);
+            this.f549a.getOverlay().add(view2);
             this.d = true;
         }
     }

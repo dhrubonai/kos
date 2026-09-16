@@ -3,6 +3,8 @@ package androidx.emoji2.text;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.Spanned;
 import android.view.inputmethod.EditorInfo;
 import java.nio.ByteBuffer;
@@ -17,7 +19,7 @@ public final class qd0 {
     public static volatile qd0 k;
 
     /* renamed from: a, reason: collision with root package name */
-    public final ReentrantReadWriteLock f951a;
+    public final ReentrantReadWriteLock f950a;
     public final wh b;
     public volatile int c;
     public final Handler d;
@@ -29,9 +31,9 @@ public final class qd0 {
 
     public qd0(ll0 ll0Var) {
         ReentrantReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
-        this.f951a = reentrantReadWriteLock;
+        this.f950a = reentrantReadWriteLock;
         this.c = 3;
-        pd0 pd0Var = ll0Var.f695a;
+        pd0 pd0Var = ll0Var.f694a;
         this.f = pd0Var;
         int i = ll0Var.b;
         this.h = i;
@@ -46,7 +48,7 @@ public final class qd0 {
             try {
                 this.c = 0;
             } catch (Throwable th) {
-                this.f951a.writeLock().unlock();
+                this.f950a.writeLock().unlock();
                 throw th;
             }
         }
@@ -99,11 +101,11 @@ public final class qd0 {
     }
 
     public final int c() {
-        this.f951a.readLock().lock();
+        this.f950a.readLock().lock();
         try {
             return this.c;
         } finally {
-            this.f951a.readLock().unlock();
+            this.f950a.readLock().unlock();
         }
     }
 
@@ -114,71 +116,175 @@ public final class qd0 {
         if (c() == 1) {
             return;
         }
-        this.f951a.writeLock().lock();
+        this.f950a.writeLock().lock();
         try {
             if (this.c == 0) {
                 return;
             }
             this.c = 0;
-            this.f951a.writeLock().unlock();
+            this.f950a.writeLock().unlock();
             te1 te1Var = this.e;
-            qd0 qd0Var = (qd0) te1Var.f1117a;
+            qd0 qd0Var = (qd0) te1Var.f1116a;
             try {
                 qd0Var.f.s(new md0(te1Var));
             } catch (Throwable th) {
                 qd0Var.f(th);
             }
         } finally {
-            this.f951a.writeLock().unlock();
+            this.f950a.writeLock().unlock();
         }
     }
 
     public final void f(Throwable th) {
         ArrayList arrayList = new ArrayList();
-        this.f951a.writeLock().lock();
+        this.f950a.writeLock().lock();
         try {
             this.c = 2;
             arrayList.addAll(this.b);
             this.b.clear();
-            this.f951a.writeLock().unlock();
+            this.f950a.writeLock().unlock();
             this.d.post(new zo(arrayList, this.c, th));
         } catch (Throwable th2) {
-            this.f951a.writeLock().unlock();
+            this.f950a.writeLock().unlock();
             throw th2;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:101:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x0098 A[Catch: all -> 0x008b, TRY_ENTER, TryCatch #2 {all -> 0x008b, blocks: (B:35:0x0063, B:38:0x0068, B:40:0x006c, B:42:0x0079, B:49:0x0098, B:51:0x00a2, B:53:0x00a5, B:55:0x00a8, B:57:0x00b8, B:58:0x00bb), top: B:96:0x0063 }] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00a8 A[Catch: all -> 0x008b, TryCatch #2 {all -> 0x008b, blocks: (B:35:0x0063, B:38:0x0068, B:40:0x006c, B:42:0x0079, B:49:0x0098, B:51:0x00a2, B:53:0x00a5, B:55:0x00a8, B:57:0x00b8, B:58:0x00bb), top: B:96:0x0063 }] */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x00ca A[Catch: all -> 0x0100, TRY_ENTER, TryCatch #0 {all -> 0x0100, blocks: (B:62:0x00ca, B:65:0x00d2, B:47:0x008e), top: B:92:0x008e }] */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x00d0  */
-    /* JADX WARN: Removed duplicated region for block: B:83:0x0108  */
-    /* JADX WARN: Removed duplicated region for block: B:99:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00a8 A[Catch: all -> 0x008b, TryCatch #2 {all -> 0x008b, blocks: (B:79:0x0063, B:82:0x0068, B:84:0x006c, B:86:0x0079, B:32:0x0098, B:34:0x00a2, B:36:0x00a5, B:38:0x00a8, B:40:0x00b8, B:41:0x00bb), top: B:78:0x0063 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0108  */
+    /* JADX WARN: Removed duplicated region for block: B:50:? A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:75:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.CharSequence g(int r12, int r13, int r14, java.lang.CharSequence r15) {
-        /*
-            Method dump skipped, instructions count: 296
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.qd0.g(int, int, int, java.lang.CharSequence):java.lang.CharSequence");
+    public final CharSequence g(int i, int i2, int i3, CharSequence charSequence) {
+        CharSequence charSequence2;
+        Throwable th;
+        int i4;
+        int i5;
+        ip2[] ip2VarArr;
+        if (!(c() == 1)) {
+            throw new IllegalStateException("Not initialized yet");
+        }
+        if (i < 0) {
+            throw new IllegalArgumentException("start cannot be negative");
+        }
+        if (i2 < 0) {
+            throw new IllegalArgumentException("end cannot be negative");
+        }
+        az0.j("start should be <= than end", i <= i2);
+        yp2 yp2Var = null;
+        if (charSequence == null) {
+            return null;
+        }
+        az0.j("start should be < than charSequence length", i <= charSequence.length());
+        az0.j("end should be < than charSequence length", i2 <= charSequence.length());
+        if (charSequence.length() == 0 || i == i2) {
+            return charSequence;
+        }
+        boolean z = i3 == 1;
+        rg rgVar = (rg) this.e.b;
+        rgVar.getClass();
+        boolean z2 = charSequence instanceof ud2;
+        if (z2) {
+            ((ud2) charSequence).a();
+        }
+        try {
+            if (!z2) {
+                try {
+                    if (!(charSequence instanceof Spannable)) {
+                        if ((charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(i - 1, i2 + 1, ip2.class) <= i2) {
+                            yp2Var = new yp2();
+                            yp2Var.d = false;
+                            yp2Var.e = new SpannableString(charSequence);
+                        }
+                        if (yp2Var != null && (ip2VarArr = (ip2[]) yp2Var.e.getSpans(i, i2, ip2.class)) != null && ip2VarArr.length > 0) {
+                            for (ip2 ip2Var : ip2VarArr) {
+                                int spanStart = yp2Var.e.getSpanStart(ip2Var);
+                                int spanEnd = yp2Var.e.getSpanEnd(ip2Var);
+                                if (spanStart != i2) {
+                                    yp2Var.removeSpan(ip2Var);
+                                }
+                                i = Math.min(spanStart, i);
+                                i2 = Math.max(spanEnd, i2);
+                            }
+                        }
+                        i4 = i;
+                        i5 = i2;
+                        if (i4 != i5 || i4 >= charSequence.length()) {
+                            charSequence2 = charSequence;
+                            if (!z2) {
+                                return charSequence2;
+                            }
+                        } else {
+                            charSequence2 = charSequence;
+                            try {
+                                yp2 yp2Var2 = (yp2) rgVar.W(charSequence2, i4, i5, Integer.MAX_VALUE, z, new l6(12, yp2Var, (on) rgVar.e));
+                                if (yp2Var2 != null) {
+                                    Spannable spannable = yp2Var2.e;
+                                    if (z2) {
+                                        ((ud2) charSequence2).b();
+                                    }
+                                    return spannable;
+                                }
+                                if (!z2) {
+                                    return charSequence2;
+                                }
+                            } catch (Throwable th2) {
+                                th = th2;
+                                th = th;
+                                if (!z2) {
+                                }
+                            }
+                        }
+                        ((ud2) charSequence2).b();
+                        return charSequence2;
+                    }
+                } catch (Throwable th3) {
+                    th = th3;
+                    charSequence2 = charSequence;
+                    if (!z2) {
+                    }
+                }
+            }
+            yp2Var = new yp2((Spannable) charSequence);
+            if (yp2Var != null) {
+                while (r1 < r3) {
+                }
+            }
+            i4 = i;
+            i5 = i2;
+            if (i4 != i5) {
+            }
+            charSequence2 = charSequence;
+            if (!z2) {
+            }
+            ((ud2) charSequence2).b();
+            return charSequence2;
+        } catch (Throwable th4) {
+            th = th4;
+            charSequence2 = charSequence;
+            th = th;
+            if (!z2) {
+                throw th;
+            }
+            ((ud2) charSequence2).b();
+            throw th;
+        }
     }
 
     public final void h(od0 od0Var) {
         az0.l(od0Var, "initCallback cannot be null");
-        this.f951a.writeLock().lock();
+        this.f950a.writeLock().lock();
         try {
-            if (this.c == 1 || this.c == 2) {
-                this.d.post(new zo(Arrays.asList(od0Var), this.c, null));
-            } else {
+            if (this.c != 1 && this.c != 2) {
                 this.b.add(od0Var);
+                this.f950a.writeLock().unlock();
             }
-            this.f951a.writeLock().unlock();
+            this.d.post(new zo(Arrays.asList(od0Var), this.c, null));
+            this.f950a.writeLock().unlock();
         } catch (Throwable th) {
-            this.f951a.writeLock().unlock();
+            this.f950a.writeLock().unlock();
             throw th;
         }
     }
@@ -194,8 +300,8 @@ public final class qd0 {
         te1Var.getClass();
         Bundle bundle = editorInfo.extras;
         mc1 mc1Var = (mc1) ((s6) te1Var.c).d;
-        int iA = mc1Var.a(4);
-        bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", iA != 0 ? ((ByteBuffer) mc1Var.g).getInt(iA + mc1Var.d) : 0);
+        int a2 = mc1Var.a(4);
+        bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a2 != 0 ? ((ByteBuffer) mc1Var.g).getInt(a2 + mc1Var.d) : 0);
         editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);
     }
 }

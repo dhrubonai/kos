@@ -33,7 +33,7 @@ public abstract class l implements Parcelable {
     }
 
     public l(Parcel parcel, ClassLoader classLoader) {
-        Parcelable parcelable = parcel.readParcelable(classLoader);
-        this.d = parcelable == null ? e : parcelable;
+        Parcelable readParcelable = parcel.readParcelable(classLoader);
+        this.d = readParcelable == null ? e : readParcelable;
     }
 }

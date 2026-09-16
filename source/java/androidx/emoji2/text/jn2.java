@@ -9,7 +9,7 @@ import android.view.View;
 public final class jn2 extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f589a = 1;
+    public final /* synthetic */ int f588a = 1;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
@@ -20,14 +20,14 @@ public final class jn2 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.f589a) {
+        switch (this.f588a) {
             case 0:
                 ((uh) this.b).remove(animator);
                 ((sn2) this.c).q.remove(animator);
                 break;
             default:
                 fv2 fv2Var = (fv2) this.b;
-                fv2Var.f386a.e(1.0f);
+                fv2Var.f385a.e(1.0f);
                 av2.f((View) this.c, fv2Var);
                 break;
         }
@@ -35,7 +35,7 @@ public final class jn2 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationStart(Animator animator) {
-        switch (this.f589a) {
+        switch (this.f588a) {
             case 0:
                 ((sn2) this.c).q.add(animator);
                 break;

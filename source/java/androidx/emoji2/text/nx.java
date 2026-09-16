@@ -23,7 +23,7 @@ public final /* synthetic */ class nx implements sm0 {
     }
 
     @Override // androidx.emoji2.text.sm0
-    public final Object a() throws Exception {
+    public final Object a() {
         String str;
         switch (this.d) {
             case 0:
@@ -63,41 +63,41 @@ public final /* synthetic */ class nx implements sm0 {
                 t91 t91Var = (t91) this.e;
                 jn0 jn0Var = (jn0) this.f;
                 mf1 mf1Var = (mf1) this.g;
-                dn0 dn0Var = jn0Var.f587a;
-                boolean zBooleanValue = ((Boolean) mf1Var.getValue()).booleanValue();
+                dn0 dn0Var = jn0Var.f586a;
+                boolean booleanValue = ((Boolean) mf1Var.getValue()).booleanValue();
                 t91Var.getClass();
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 lx0.x(dn0Var, a.a.a.c.a(-147197678206754L, strArr));
-                if (zBooleanValue) {
-                    t91Var.j.f460a.edit().putBoolean(a.a.a.c.a(-332023005855522L, strArr), false).apply();
+                if (booleanValue) {
+                    t91Var.j.f459a.edit().putBoolean(a.a.a.c.a(-332023005855522L, strArr), false).apply();
                 }
                 t91Var.e.h(null);
                 t91Var.h(dn0Var);
-                return up2.f1187a;
+                return up2.f1186a;
             case 2:
                 List list = (List) this.e;
                 o60 o60Var = (o60) this.f;
                 Context context = (Context) this.g;
-                int iJ = o60Var.j();
+                int j = o60Var.j();
                 lx0.x(list, "<this>");
-                o4 o4Var = (o4) ((iJ < 0 || iJ >= list.size()) ? null : list.get(iJ));
+                o4 o4Var = (o4) ((j < 0 || j >= list.size()) ? null : list.get(j));
                 if (o4Var != null && (str = o4Var.e) != null && str.length() > 0) {
                     bz0.T(context, str);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 Context context2 = (Context) this.e;
                 u91 u91Var = (u91) this.f;
                 ((mf1) this.g).setValue(Boolean.FALSE);
-                String[] strArr2 = wj1.f1284a;
-                Intent intentPutExtra = new Intent(a.a.a.c.a(-271253513584418L, strArr2)).putExtra(a.a.a.c.a(-265373703356194L, strArr2), context2.getPackageName());
-                lx0.w(intentPutExtra, a.a.a.c.a(-265008631136034L, strArr2));
+                String[] strArr2 = wj1.f1283a;
+                Intent putExtra = new Intent(a.a.a.c.a(-271253513584418L, strArr2)).putExtra(a.a.a.c.a(-265373703356194L, strArr2), context2.getPackageName());
+                lx0.w(putExtra, a.a.a.c.a(-265008631136034L, strArr2));
                 try {
-                    u91Var.N(intentPutExtra);
+                    u91Var.N(putExtra);
                 } catch (ActivityNotFoundException unused) {
                     u91Var.N(new Intent(a.a.a.c.a(-265017221070626L, strArr2), Uri.parse(a.a.a.c.a(-265231969435426L, strArr2) + context2.getPackageName())));
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 t5 t5Var = (t5) this.e;
                 rb2 rb2Var = (rb2) this.f;
@@ -105,17 +105,17 @@ public final /* synthetic */ class nx implements sm0 {
                 if (t5Var != null) {
                     rb2Var.a(rb2Var.c(t5Var) - rb2Var.t);
                 }
-                List listK = kx0.k(rb2Var, null, rb2Var.t, null);
-                fx fxVar = (fx) ws.G0(listK);
-                Integer num = fxVar != null ? fxVar.f390a : null;
-                List listH = el1Var.h(num);
-                if (num != null && !listH.isEmpty()) {
-                    fx fxVar2 = (fx) ws.A0(listH);
-                    List listY0 = ws.y0(listH);
+                List k = kx0.k(rb2Var, null, rb2Var.t, null);
+                fx fxVar = (fx) ws.G0(k);
+                Integer num = fxVar != null ? fxVar.f389a : null;
+                List h = el1Var.h(num);
+                if (num != null && !h.isEmpty()) {
+                    fx fxVar2 = (fx) ws.A0(h);
+                    List y0 = ws.y0(h);
                     fxVar2.getClass();
-                    listH = ws.H0(lx0.M(new fx(null, num)), listY0);
+                    h = ws.H0(lx0.M(new fx(null, num)), y0);
                 }
-                return ws.H0(listK, listH);
+                return ws.H0(k, h);
         }
     }
 

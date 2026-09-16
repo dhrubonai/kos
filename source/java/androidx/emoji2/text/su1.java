@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public abstract class su1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1088a;
+    public static final float f1087a;
     public static final float b;
     public static final float c = (float) 48.0d;
 
     static {
         float f = (float) 4.0d;
-        f1088a = f;
+        f1087a = f;
         b = f;
     }
 }

@@ -32,15 +32,15 @@ public final class rw2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((rw2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((rw2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         switch (this.h) {
             case 0:
                 int i = this.i;
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 if (i != 0) {
                     if (i != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -51,15 +51,15 @@ public final class rw2 extends hh2 implements Function2 {
                 mz0.L(obj);
                 v7 v7Var = this.j.d;
                 this.i = 1;
-                Object objL = v7Var.v.l(this);
+                Object l = v7Var.v.l(this);
                 f30 f30Var = f30.d;
-                if (objL != f30Var) {
-                    objL = up2Var;
+                if (l != f30Var) {
+                    l = up2Var;
                 }
-                return objL == f30Var ? f30Var : up2Var;
+                return l == f30Var ? f30Var : up2Var;
             default:
                 int i2 = this.i;
-                up2 up2Var2 = up2.f1187a;
+                up2 up2Var2 = up2.f1186a;
                 if (i2 != 0) {
                     if (i2 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -70,12 +70,12 @@ public final class rw2 extends hh2 implements Function2 {
                 mz0.L(obj);
                 v7 v7Var2 = this.j.d;
                 this.i = 1;
-                Object objA = v7Var2.w.a(this);
+                Object a2 = v7Var2.w.a(this);
                 f30 f30Var2 = f30.d;
-                if (objA != f30Var2) {
-                    objA = up2Var2;
+                if (a2 != f30Var2) {
+                    a2 = up2Var2;
                 }
-                return objA == f30Var2 ? f30Var2 : up2Var2;
+                return a2 == f30Var2 ? f30Var2 : up2Var2;
         }
     }
 }

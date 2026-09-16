@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class d42 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f237a = 0;
+    public static final /* synthetic */ int f236a = 0;
 
     static {
         Float.floatToRawIntBits(Float.NaN);

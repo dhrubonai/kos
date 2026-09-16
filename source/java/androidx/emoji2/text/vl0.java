@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class vl0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float[] f1228a = {8.0f, 10.0f, 12.0f, 14.0f, 18.0f, 20.0f, 24.0f, 30.0f, 100.0f};
+    public static final float[] f1227a = {8.0f, 10.0f, 12.0f, 14.0f, 18.0f, 20.0f, 24.0f, 30.0f, 100.0f};
     public static volatile vd2 b = new vd2(0);
     public static final Object[] c;
 
@@ -27,54 +27,54 @@ public abstract class vl0 {
 
     public static ul0 a(float f) {
         float f2;
-        ul0 wl0Var;
-        float[] fArr = f1228a;
+        ul0 ul0Var;
+        float[] fArr = f1227a;
         if (f < 1.03f) {
             return null;
         }
         int i = (int) (f * 100.0f);
-        ul0 ul0Var = (ul0) b.c(i);
-        if (ul0Var != null) {
-            return ul0Var;
+        ul0 ul0Var2 = (ul0) b.c(i);
+        if (ul0Var2 != null) {
+            return ul0Var2;
         }
         vd2 vd2Var = b;
-        int iQ = lx0.q(vd2Var.f, i, vd2Var.d);
-        if (iQ >= 0) {
-            return (ul0) b.e(iQ);
+        int q = lx0.q(vd2Var.f, i, vd2Var.d);
+        if (q >= 0) {
+            return (ul0) b.e(q);
         }
-        int i2 = -(iQ + 1);
+        int i2 = -(q + 1);
         int i3 = i2 - 1;
         if (i2 >= b.f) {
-            wl0 wl0Var2 = new wl0(new float[]{1.0f}, new float[]{f});
-            b(f, wl0Var2);
-            return wl0Var2;
+            wl0 wl0Var = new wl0(new float[]{1.0f}, new float[]{f});
+            b(f, wl0Var);
+            return wl0Var;
         }
         if (i3 < 0) {
-            wl0Var = new wl0(fArr, fArr);
+            ul0Var = new wl0(fArr, fArr);
             f2 = 1.0f;
         } else {
             f2 = b.d[i3] / 100.0f;
-            wl0Var = (ul0) b.e(i3);
+            ul0Var = (ul0) b.e(i3);
         }
         float f3 = b.d[i2] / 100.0f;
-        float fMax = (Math.max(0.0f, Math.min(1.0f, f2 == f3 ? 0.0f : (f - f2) / (f3 - f2))) * 1.0f) + 0.0f;
-        ul0 ul0Var2 = (ul0) b.e(i2);
+        float max = (Math.max(0.0f, Math.min(1.0f, f2 == f3 ? 0.0f : (f - f2) / (f3 - f2))) * 1.0f) + 0.0f;
+        ul0 ul0Var3 = (ul0) b.e(i2);
         float[] fArr2 = new float[9];
         for (int i4 = 0; i4 < 9; i4++) {
             float f4 = fArr[i4];
-            float fB = wl0Var.b(f4);
-            fArr2[i4] = ((ul0Var2.b(f4) - fB) * fMax) + fB;
+            float b2 = ul0Var.b(f4);
+            fArr2[i4] = ((ul0Var3.b(f4) - b2) * max) + b2;
         }
-        wl0 wl0Var3 = new wl0(fArr, fArr2);
-        b(f, wl0Var3);
-        return wl0Var3;
+        wl0 wl0Var2 = new wl0(fArr, fArr2);
+        b(f, wl0Var2);
+        return wl0Var2;
     }
 
     public static void b(float f, wl0 wl0Var) {
         synchronized (c) {
-            vd2 vd2VarB = b.clone();
-            vd2VarB.d((int) (f * 100.0f), wl0Var);
-            b = vd2VarB;
+            vd2 clone = b.clone();
+            clone.d((int) (f * 100.0f), wl0Var);
+            b = clone;
         }
     }
 }

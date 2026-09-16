@@ -8,12 +8,12 @@ import android.widget.EdgeEffect;
 public final class do0 extends EdgeEffect {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f265a;
+    public final float f264a;
     public float b;
 
     public do0(Context context) {
         super(context);
-        this.f265a = lx0.f(context).d * 1;
+        this.f264a = lx0.f(context).d * 1;
     }
 
     @Override // android.widget.EdgeEffect

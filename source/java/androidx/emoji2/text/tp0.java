@@ -40,25 +40,25 @@ public final class tp0 implements sl1 {
     }
 
     public final float[] a() {
-        float[] fArrA = this.l;
-        if (fArrA == null) {
-            fArrA = ya1.a();
-            this.l = fArrA;
+        float[] fArr = this.l;
+        if (fArr == null) {
+            fArr = ya1.a();
+            this.l = fArr;
         }
         if (this.u) {
             this.u = false;
-            float[] fArrB = b();
+            float[] b = b();
             if (this.v) {
-                return fArrB;
+                return b;
             }
-            if (!wj1.y(fArrB, fArrA)) {
-                fArrA[0] = Float.NaN;
+            if (!wj1.y(b, fArr)) {
+                fArr[0] = Float.NaN;
                 return null;
             }
-        } else if (Float.isNaN(fArrA[0])) {
+        } else if (Float.isNaN(fArr[0])) {
             return null;
         }
-        return fArrA;
+        return fArr;
     }
 
     public final float[] b() {
@@ -66,47 +66,47 @@ public final class tp0 implements sl1 {
         float[] fArr = this.k;
         if (z) {
             rp0 rp0Var = this.d;
-            long jO = rp0Var.v;
-            sp0 sp0Var = rp0Var.f1025a;
-            if ((9223372034707292159L & jO) == 9205357640488583168L) {
-                jO = mz0.o(kx0.M(this.i));
+            long j = rp0Var.v;
+            sp0 sp0Var = rp0Var.f1024a;
+            if ((9223372034707292159L & j) == 9205357640488583168L) {
+                j = mz0.o(kx0.M(this.i));
             }
-            float fIntBitsToFloat = Float.intBitsToFloat((int) (jO >> 32));
-            float fIntBitsToFloat2 = Float.intBitsToFloat((int) (jO & 4294967295L));
-            float fE = sp0Var.E();
-            float fW = sp0Var.w();
-            float fG = sp0Var.G();
-            float fO = sp0Var.o();
-            float fR = sp0Var.r();
-            float fE2 = sp0Var.e();
-            float fO2 = sp0Var.O();
-            double d = fG * 0.017453292519943295d;
-            float fSin = (float) Math.sin(d);
-            float fCos = (float) Math.cos(d);
-            float f = -fSin;
-            float f2 = (fW * fCos) - (1.0f * fSin);
-            float f3 = (1.0f * fCos) + (fW * fSin);
-            double d2 = fO * 0.017453292519943295d;
-            float fSin2 = (float) Math.sin(d2);
-            float fCos2 = (float) Math.cos(d2);
-            float f4 = -fSin2;
-            float f5 = fSin * fSin2;
-            float f6 = fSin * fCos2;
-            float f7 = fCos * fSin2;
-            float f8 = fCos * fCos2;
-            float f9 = (f3 * fSin2) + (fE * fCos2);
-            float f10 = (f3 * fCos2) + ((-fE) * fSin2);
-            double d3 = fR * 0.017453292519943295d;
-            float fSin3 = (float) Math.sin(d3);
-            float fCos3 = (float) Math.cos(d3);
-            float f11 = -fSin3;
-            float f12 = (fCos3 * f5) + (f11 * fCos2);
-            float f13 = ((f5 * fSin3) + (fCos2 * fCos3)) * fE2;
-            float f14 = fSin3 * fCos * fE2;
-            float f15 = ((fSin3 * f6) + (fCos3 * f4)) * fE2;
-            float f16 = f12 * fO2;
-            float f17 = fCos * fCos3 * fO2;
-            float f18 = ((fCos3 * f6) + (f11 * f4)) * fO2;
+            float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+            float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
+            float E = sp0Var.E();
+            float w = sp0Var.w();
+            float G = sp0Var.G();
+            float o = sp0Var.o();
+            float r = sp0Var.r();
+            float e = sp0Var.e();
+            float O = sp0Var.O();
+            double d = G * 0.017453292519943295d;
+            float sin = (float) Math.sin(d);
+            float cos = (float) Math.cos(d);
+            float f = -sin;
+            float f2 = (w * cos) - (1.0f * sin);
+            float f3 = (1.0f * cos) + (w * sin);
+            double d2 = o * 0.017453292519943295d;
+            float sin2 = (float) Math.sin(d2);
+            float cos2 = (float) Math.cos(d2);
+            float f4 = -sin2;
+            float f5 = sin * sin2;
+            float f6 = sin * cos2;
+            float f7 = cos * sin2;
+            float f8 = cos * cos2;
+            float f9 = (f3 * sin2) + (E * cos2);
+            float f10 = (f3 * cos2) + ((-E) * sin2);
+            double d3 = r * 0.017453292519943295d;
+            float sin3 = (float) Math.sin(d3);
+            float cos3 = (float) Math.cos(d3);
+            float f11 = -sin3;
+            float f12 = (cos3 * f5) + (f11 * cos2);
+            float f13 = ((f5 * sin3) + (cos2 * cos3)) * e;
+            float f14 = sin3 * cos * e;
+            float f15 = ((sin3 * f6) + (cos3 * f4)) * e;
+            float f16 = f12 * O;
+            float f17 = cos * cos3 * O;
+            float f18 = ((cos3 * f6) + (f11 * f4)) * O;
             float f19 = f7 * 1.0f;
             float f20 = f * 1.0f;
             float f21 = f8 * 1.0f;
@@ -123,10 +123,10 @@ public final class tp0 implements sl1 {
                 fArr[9] = f20;
                 fArr[10] = f21;
                 fArr[11] = 0.0f;
-                float f22 = -fIntBitsToFloat;
-                fArr[12] = ((f13 * f22) - (fIntBitsToFloat2 * f16)) + f9 + fIntBitsToFloat;
-                fArr[13] = ((f14 * f22) - (fIntBitsToFloat2 * f17)) + f2 + fIntBitsToFloat2;
-                fArr[14] = ((f22 * f15) - (fIntBitsToFloat2 * f18)) + f10;
+                float f22 = -intBitsToFloat;
+                fArr[12] = ((f13 * f22) - (intBitsToFloat2 * f16)) + f9 + intBitsToFloat;
+                fArr[13] = ((f14 * f22) - (intBitsToFloat2 * f17)) + f2 + intBitsToFloat2;
+                fArr[14] = ((f22 * f15) - (intBitsToFloat2 * f18)) + f10;
                 fArr[15] = 1.0f;
             }
             this.t = false;
@@ -136,16 +136,16 @@ public final class tp0 implements sl1 {
     }
 
     public final long c(long j, boolean z) {
-        float[] fArrB;
+        float[] b;
         if (z) {
-            fArrB = a();
-            if (fArrB == null) {
+            b = a();
+            if (b == null) {
                 return 9187343241974906880L;
             }
         } else {
-            fArrB = b();
+            b = b();
         }
-        return this.v ? j : ya1.b(j, fArrB);
+        return this.v ? j : ya1.b(j, b);
     }
 
     public final void d(long j) {
@@ -156,7 +156,7 @@ public final class tp0 implements sl1 {
         rp0 rp0Var = this.d;
         if (!nw0.b(rp0Var.t, j)) {
             rp0Var.t = j;
-            rp0Var.f1025a.n((int) (j >> 32), (int) (j & 4294967295L), rp0Var.u);
+            rp0Var.f1024a.n((int) (j >> 32), (int) (j & 4294967295L), rp0Var.u);
         }
         if (Build.VERSION.SDK_INT < 26) {
             v7Var.invalidate();
@@ -191,12 +191,12 @@ public final class tp0 implements sl1 {
         if (this.m) {
             if (!fn2.a(this.r, fn2.b) && !uw0.a(this.d.u, this.i)) {
                 rp0 rp0Var = this.d;
-                float fB = fn2.b(this.r) * ((int) (this.i >> 32));
-                float fC = fn2.c(this.r) * ((int) (this.i & 4294967295L));
-                long jFloatToRawIntBits = (Float.floatToRawIntBits(fC) & 4294967295L) | (Float.floatToRawIntBits(fB) << 32);
-                if (!zi1.b(rp0Var.v, jFloatToRawIntBits)) {
-                    rp0Var.v = jFloatToRawIntBits;
-                    rp0Var.f1025a.s(jFloatToRawIntBits);
+                float b = fn2.b(this.r) * ((int) (this.i >> 32));
+                float c = fn2.c(this.r) * ((int) (this.i & 4294967295L));
+                long floatToRawIntBits = (Float.floatToRawIntBits(c) & 4294967295L) | (Float.floatToRawIntBits(b) << 32);
+                if (!zi1.b(rp0Var.v, floatToRawIntBits)) {
+                    rp0Var.v = floatToRawIntBits;
+                    rp0Var.f1024a.s(floatToRawIntBits);
                 }
             }
             rp0 rp0Var2 = this.d;
@@ -204,7 +204,7 @@ public final class tp0 implements sl1 {
             q01 q01Var = this.o;
             long j = this.i;
             long j2 = rp0Var2.u;
-            sp0 sp0Var = rp0Var2.f1025a;
+            sp0 sp0Var = rp0Var2.f1024a;
             if (!uw0.a(j2, j)) {
                 rp0Var2.u = j;
                 long j3 = rp0Var2.t;

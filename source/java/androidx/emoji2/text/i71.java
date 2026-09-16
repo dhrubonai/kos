@@ -60,21 +60,21 @@ public abstract class i71 implements ab2 {
         int resourceId;
         this.d = context;
         this.u = new Handler(context.getMainLooper());
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(null, gv1.l, i, 0);
-        this.h = typedArrayObtainStyledAttributes.getDimensionPixelOffset(0, 0);
-        int dimensionPixelOffset = typedArrayObtainStyledAttributes.getDimensionPixelOffset(1, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(null, gv1.l, i, 0);
+        this.h = obtainStyledAttributes.getDimensionPixelOffset(0, 0);
+        int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(1, 0);
         this.i = dimensionPixelOffset;
         if (dimensionPixelOffset != 0) {
             this.j = true;
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
         xf xfVar = new xf(context, null, i, 0);
-        TypedArray typedArrayObtainStyledAttributes2 = context.obtainStyledAttributes(null, gv1.p, i, 0);
-        if (typedArrayObtainStyledAttributes2.hasValue(2)) {
-            xfVar.setOverlapAnchor(typedArrayObtainStyledAttributes2.getBoolean(2, false));
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(null, gv1.p, i, 0);
+        if (obtainStyledAttributes2.hasValue(2)) {
+            xfVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xfVar.setBackgroundDrawable((!typedArrayObtainStyledAttributes2.hasValue(0) || (resourceId = typedArrayObtainStyledAttributes2.getResourceId(0, 0)) == 0) ? typedArrayObtainStyledAttributes2.getDrawable(0) : xo2.o(context, resourceId));
-        typedArrayObtainStyledAttributes2.recycle();
+        xfVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : xo2.o(context, resourceId));
+        obtainStyledAttributes2.recycle();
         this.y = xfVar;
         xfVar.setInputMethodMode(1);
     }
@@ -145,33 +145,33 @@ public abstract class i71 implements ab2 {
             rect.setEmpty();
             i = 0;
         }
-        int iA = c71.a(xfVar, this.o, this.i, xfVar.getInputMethodMode() == 2);
+        int a2 = c71.a(xfVar, this.o, this.i, xfVar.getInputMethodMode() == 2);
         int i3 = this.g;
-        int iA2 = this.f.a(i3 != -2 ? i3 != -1 ? View.MeasureSpec.makeMeasureSpec(i3, 1073741824) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), 1073741824) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), Integer.MIN_VALUE), iA);
-        int paddingBottom = iA2 + (iA2 > 0 ? this.f.getPaddingBottom() + this.f.getPaddingTop() + i : 0);
+        int a3 = this.f.a(i3 != -2 ? i3 != -1 ? View.MeasureSpec.makeMeasureSpec(i3, 1073741824) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), 1073741824) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), Integer.MIN_VALUE), a2);
+        int paddingBottom = a3 + (a3 > 0 ? this.f.getPaddingBottom() + this.f.getPaddingTop() + i : 0);
         xfVar.getInputMethodMode();
         xfVar.setWindowLayoutType(1002);
         if (xfVar.isShowing()) {
             if (this.o.isAttachedToWindow()) {
-                int width = this.g;
-                if (width == -1) {
-                    width = -1;
-                } else if (width == -2) {
-                    width = this.o.getWidth();
+                int i4 = this.g;
+                if (i4 == -1) {
+                    i4 = -1;
+                } else if (i4 == -2) {
+                    i4 = this.o.getWidth();
                 }
                 xfVar.setOutsideTouchable(true);
-                xfVar.update(this.o, this.h, this.i, width < 0 ? -1 : width, paddingBottom < 0 ? -1 : paddingBottom);
+                xfVar.update(this.o, this.h, this.i, i4 < 0 ? -1 : i4, paddingBottom < 0 ? -1 : paddingBottom);
                 return;
             }
             return;
         }
-        int width2 = this.g;
-        if (width2 == -1) {
-            width2 = -1;
-        } else if (width2 == -2) {
-            width2 = this.o.getWidth();
+        int i5 = this.g;
+        if (i5 == -1) {
+            i5 = -1;
+        } else if (i5 == -2) {
+            i5 = this.o.getWidth();
         }
-        xfVar.setWidth(width2);
+        xfVar.setWidth(i5);
         xfVar.setHeight(paddingBottom);
         if (Build.VERSION.SDK_INT <= 28) {
             Method method = z;

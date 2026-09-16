@@ -71,7 +71,7 @@ public final class mc0 implements Iterator, ry0 {
     }
 
     public mc0(nc0 nc0Var) {
-        this.e = nc0Var.f803a.iterator();
+        this.e = nc0Var.f802a.iterator();
         this.f = nc0Var.b;
     }
 }

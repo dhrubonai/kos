@@ -27,9 +27,9 @@ public final class hr extends fy0 {
     public final void k(Throwable th) {
         switch (this.h) {
             case 0:
-                jy0 jy0VarI = i();
+                jy0 i = i();
                 ip ipVar = this.i;
-                Throwable thQ = ipVar.q(jy0VarI);
+                Throwable q = ipVar.q(i);
                 if (ipVar.x()) {
                     a90 a90Var = (a90) ipVar.g;
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a90.k;
@@ -37,7 +37,7 @@ public final class hr extends fy0 {
                         Object obj = atomicReferenceFieldUpdater.get(a90Var);
                         de0 de0Var = l8.d;
                         if (lx0.n(obj, de0Var)) {
-                            while (!atomicReferenceFieldUpdater.compareAndSet(a90Var, de0Var, thQ)) {
+                            while (!atomicReferenceFieldUpdater.compareAndSet(a90Var, de0Var, q)) {
                                 if (atomicReferenceFieldUpdater.get(a90Var) != de0Var) {
                                     break;
                                 }
@@ -54,14 +54,14 @@ public final class hr extends fy0 {
                         }
                     }
                 }
-                ipVar.z(thQ);
+                ipVar.z(q);
                 if (!ipVar.x()) {
                     ipVar.o();
                     break;
                 }
                 break;
             default:
-                this.i.g(up2.f1187a);
+                this.i.g(up2.f1186a);
                 break;
         }
     }

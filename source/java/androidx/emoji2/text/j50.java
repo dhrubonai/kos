@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class j50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gz0 f563a;
+    public final gz0 f562a;
 
     public j50(gz0 gz0Var) {
-        this.f563a = gz0Var;
+        this.f562a = gz0Var;
     }
 }

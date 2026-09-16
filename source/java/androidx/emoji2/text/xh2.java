@@ -8,10 +8,10 @@ public final class xh2 {
     public static final xh2 b = new xh2(re0.d);
 
     /* renamed from: a, reason: collision with root package name */
-    public final Map f1340a;
+    public final Map f1339a;
 
     public xh2(Map map) {
-        this.f1340a = map;
+        this.f1339a = map;
     }
 
     public final boolean equals(Object obj) {
@@ -19,16 +19,16 @@ public final class xh2 {
             return true;
         }
         if (obj instanceof xh2) {
-            return lx0.n(this.f1340a, ((xh2) obj).f1340a);
+            return lx0.n(this.f1339a, ((xh2) obj).f1339a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f1340a.hashCode();
+        return this.f1339a.hashCode();
     }
 
     public final String toString() {
-        return "Tags(tags=" + this.f1340a + ')';
+        return "Tags(tags=" + this.f1339a + ')';
     }
 }

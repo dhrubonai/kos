@@ -38,16 +38,16 @@ public final class lq0 extends tz {
         }
         ez ezVar = this.t0;
         s61Var.getClass();
-        int iN = s61.n(ezVar);
+        int n = s61.n(ezVar);
         if (this.u0 == 1) {
-            this.Y = iN;
+            this.Y = n;
             this.Z = 0;
             L(this.T.k());
             O(0);
             return;
         }
         this.Y = 0;
-        this.Z = iN;
+        this.Z = n;
         O(this.T.q());
         L(0);
     }
@@ -83,62 +83,62 @@ public final class lq0 extends tz {
         if (uzVar == null) {
             return;
         }
-        Object objI = uzVar.i(2);
-        Object objI2 = uzVar.i(4);
+        Object i = uzVar.i(2);
+        Object i2 = uzVar.i(4);
         tz tzVar = this.T;
         boolean z2 = tzVar != null && tzVar.p0[0] == 2;
         if (this.u0 == 0) {
-            objI = uzVar.i(3);
-            objI2 = uzVar.i(5);
+            i = uzVar.i(3);
+            i2 = uzVar.i(5);
             tz tzVar2 = this.T;
             z2 = tzVar2 != null && tzVar2.p0[1] == 2;
         }
         if (this.v0) {
             ez ezVar = this.t0;
             if (ezVar.c) {
-                ld2 ld2VarK = s61Var.k(ezVar);
-                s61Var.d(ld2VarK, this.t0.d());
+                ld2 k = s61Var.k(ezVar);
+                s61Var.d(k, this.t0.d());
                 if (this.r0 != -1) {
                     if (z2) {
-                        s61Var.f(s61Var.k(objI2), ld2VarK, 0, 5);
+                        s61Var.f(s61Var.k(i2), k, 0, 5);
                     }
                 } else if (this.s0 != -1 && z2) {
-                    ld2 ld2VarK2 = s61Var.k(objI2);
-                    s61Var.f(ld2VarK, s61Var.k(objI), 0, 5);
-                    s61Var.f(ld2VarK2, ld2VarK, 0, 5);
+                    ld2 k2 = s61Var.k(i2);
+                    s61Var.f(k, s61Var.k(i), 0, 5);
+                    s61Var.f(k2, k, 0, 5);
                 }
                 this.v0 = false;
                 return;
             }
         }
         if (this.r0 != -1) {
-            ld2 ld2VarK3 = s61Var.k(this.t0);
-            s61Var.e(ld2VarK3, s61Var.k(objI), this.r0, 8);
+            ld2 k3 = s61Var.k(this.t0);
+            s61Var.e(k3, s61Var.k(i), this.r0, 8);
             if (z2) {
-                s61Var.f(s61Var.k(objI2), ld2VarK3, 0, 5);
+                s61Var.f(s61Var.k(i2), k3, 0, 5);
                 return;
             }
             return;
         }
         if (this.s0 != -1) {
-            ld2 ld2VarK4 = s61Var.k(this.t0);
-            ld2 ld2VarK5 = s61Var.k(objI2);
-            s61Var.e(ld2VarK4, ld2VarK5, -this.s0, 8);
+            ld2 k4 = s61Var.k(this.t0);
+            ld2 k5 = s61Var.k(i2);
+            s61Var.e(k4, k5, -this.s0, 8);
             if (z2) {
-                s61Var.f(ld2VarK4, s61Var.k(objI), 0, 5);
-                s61Var.f(ld2VarK5, ld2VarK4, 0, 5);
+                s61Var.f(k4, s61Var.k(i), 0, 5);
+                s61Var.f(k5, k4, 0, 5);
                 return;
             }
             return;
         }
         if (this.q0 != -1.0f) {
-            ld2 ld2VarK6 = s61Var.k(this.t0);
-            ld2 ld2VarK7 = s61Var.k(objI2);
+            ld2 k6 = s61Var.k(this.t0);
+            ld2 k7 = s61Var.k(i2);
             float f = this.q0;
-            vh vhVarL = s61Var.l();
-            vhVarL.d.g(ld2VarK6, -1.0f);
-            vhVarL.d.g(ld2VarK7, f);
-            s61Var.c(vhVarL);
+            vh l = s61Var.l();
+            l.d.g(k6, -1.0f);
+            l.d.g(k7, f);
+            s61Var.c(l);
         }
     }
 
@@ -149,11 +149,11 @@ public final class lq0 extends tz {
 
     @Override // androidx.emoji2.text.tz
     public final ez i(int i) {
-        int iW = zd.w(i);
-        if (iW != 1) {
-            if (iW != 2) {
-                if (iW != 3) {
-                    if (iW != 4) {
+        int w = zd.w(i);
+        if (w != 1) {
+            if (w != 2) {
+                if (w != 3) {
+                    if (w != 4) {
                         return null;
                     }
                 }

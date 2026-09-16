@@ -23,11 +23,11 @@ public final class ViewStubCompat extends View {
     public ViewStubCompat(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
         this.d = 0;
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.u, 0, 0);
-        this.e = typedArrayObtainStyledAttributes.getResourceId(2, -1);
-        this.d = typedArrayObtainStyledAttributes.getResourceId(1, 0);
-        setId(typedArrayObtainStyledAttributes.getResourceId(0, -1));
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.u, 0, 0);
+        this.e = obtainStyledAttributes.getResourceId(2, -1);
+        this.d = obtainStyledAttributes.getResourceId(1, 0);
+        setId(obtainStyledAttributes.getResourceId(0, -1));
+        obtainStyledAttributes.recycle();
         setVisibility(8);
         setWillNotDraw(true);
     }
@@ -82,24 +82,24 @@ public final class ViewStubCompat extends View {
                 throw new IllegalArgumentException("ViewStub must have a valid layoutResource");
             }
             ViewGroup viewGroup = (ViewGroup) parent;
-            LayoutInflater layoutInflaterFrom = this.g;
-            if (layoutInflaterFrom == null) {
-                layoutInflaterFrom = LayoutInflater.from(getContext());
+            LayoutInflater layoutInflater = this.g;
+            if (layoutInflater == null) {
+                layoutInflater = LayoutInflater.from(getContext());
             }
-            View viewInflate = layoutInflaterFrom.inflate(this.d, viewGroup, false);
+            View inflate = layoutInflater.inflate(this.d, viewGroup, false);
             int i2 = this.e;
             if (i2 != -1) {
-                viewInflate.setId(i2);
+                inflate.setId(i2);
             }
-            int iIndexOfChild = viewGroup.indexOfChild(this);
+            int indexOfChild = viewGroup.indexOfChild(this);
             viewGroup.removeViewInLayout(this);
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
             if (layoutParams != null) {
-                viewGroup.addView(viewInflate, iIndexOfChild, layoutParams);
+                viewGroup.addView(inflate, indexOfChild, layoutParams);
             } else {
-                viewGroup.addView(viewInflate, iIndexOfChild);
+                viewGroup.addView(inflate, indexOfChild);
             }
-            this.f = new WeakReference(viewInflate);
+            this.f = new WeakReference(inflate);
         }
     }
 

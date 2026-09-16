@@ -8,7 +8,7 @@ public final class m01 {
     public long f;
 
     /* renamed from: a, reason: collision with root package name */
-    public float f727a = 1.0f;
+    public float f726a = 1.0f;
     public float b = 1.0f;
     public float e = 8.0f;
 

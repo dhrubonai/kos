@@ -35,11 +35,11 @@ public final class l81 extends gr1 {
 
     @Override // androidx.emoji2.text.gr1
     public float c(as0 as0Var) {
-        float fIntBitsToFloat;
-        int iL0;
+        float intBitsToFloat;
+        int L0;
         switch (this.e) {
             case 0:
-                Function2 function2 = as0Var.f119a;
+                Function2 function2 = as0Var.f118a;
                 if (function2 != null) {
                     return ((Number) function2.invoke(this, Float.valueOf(Float.NaN))).floatValue();
                 }
@@ -50,26 +50,26 @@ public final class l81 extends gr1 {
                 k81 k81Var2 = k81Var;
                 while (true) {
                     lf lfVar = k81Var2.p;
-                    if (!Float.isNaN((lfVar == null || (iL0 = xh.L0(as0Var, (as0[]) lfVar.b)) < 0) ? Float.NaN : ((float[]) lfVar.c)[iL0])) {
+                    if (!Float.isNaN((lfVar == null || (L0 = xh.L0(as0Var, (as0[]) lfVar.b)) < 0) ? Float.NaN : ((float[]) lfVar.c)[L0])) {
                         k81Var2.n0(k81Var.A0(), as0Var);
-                        p01 p01VarY0 = k81Var2.y0();
-                        p01 p01VarY02 = k81Var.y0();
+                        p01 y0 = k81Var2.y0();
+                        p01 y02 = k81Var.y0();
                         switch (as0Var.b) {
                             case 0:
-                                fIntBitsToFloat = Float.intBitsToFloat((int) (p01VarY02.H(p01VarY0, (Float.floatToRawIntBits(r3) & 4294967295L) | (Float.floatToRawIntBits(((int) (p01VarY0.k() >> 32)) / 2.0f) << 32)) & 4294967295L));
+                                intBitsToFloat = Float.intBitsToFloat((int) (y02.H(y0, (Float.floatToRawIntBits(r3) & 4294967295L) | (Float.floatToRawIntBits(((int) (y0.k() >> 32)) / 2.0f) << 32)) & 4294967295L));
                                 break;
                             default:
-                                fIntBitsToFloat = Float.intBitsToFloat((int) (p01VarY02.H(p01VarY0, (Float.floatToRawIntBits(r3) << 32) | (Float.floatToRawIntBits(((int) (p01VarY0.k() & 4294967295L)) / 2.0f) & 4294967295L)) >> 32));
+                                intBitsToFloat = Float.intBitsToFloat((int) (y02.H(y0, (Float.floatToRawIntBits(r3) << 32) | (Float.floatToRawIntBits(((int) (y0.k() & 4294967295L)) / 2.0f) & 4294967295L)) >> 32));
                                 break;
                         }
-                        return fIntBitsToFloat;
+                        return intBitsToFloat;
                     }
-                    k81 k81VarC0 = k81Var2.C0();
-                    if (k81VarC0 == null) {
+                    k81 C0 = k81Var2.C0();
+                    if (C0 == null) {
                         k81Var2.n0(k81Var.A0(), as0Var);
                         return Float.NaN;
                     }
-                    k81Var2 = k81VarC0;
+                    k81Var2 = C0;
                 }
                 break;
             default:

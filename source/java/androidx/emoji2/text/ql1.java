@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class ql1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ky f964a = new ky(hy.z);
+    public static final ky f963a = new ky(hy.z);
 }

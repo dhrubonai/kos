@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 public abstract class hc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Method f467a;
+    public static final Method f466a;
     public static final Method b;
     public static final Method c;
     public static final boolean d;
@@ -21,7 +21,7 @@ public abstract class hc0 {
             Class cls2 = Boolean.TYPE;
             Class cls3 = Float.TYPE;
             Method declaredMethod = AbsListView.class.getDeclaredMethod("positionSelector", cls, View.class, cls2, cls3, cls3);
-            f467a = declaredMethod;
+            f466a = declaredMethod;
             declaredMethod.setAccessible(true);
             Method declaredMethod2 = AdapterView.class.getDeclaredMethod("setSelectedPositionInt", cls);
             b = declaredMethod2;

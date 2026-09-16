@@ -9,17 +9,17 @@ public abstract class fy0 extends x71 implements l90, pu0 {
 
     @Override // androidx.emoji2.text.l90
     public final void a() {
-        jy0 jy0VarI = i();
+        jy0 i = i();
         while (true) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = jy0.d;
-            Object obj = atomicReferenceFieldUpdater.get(jy0VarI);
+            Object obj = atomicReferenceFieldUpdater.get(i);
             if (obj instanceof fy0) {
                 if (obj != this) {
                     return;
                 }
                 le0 le0Var = jm.m;
-                while (!atomicReferenceFieldUpdater.compareAndSet(jy0VarI, obj, le0Var)) {
-                    if (atomicReferenceFieldUpdater.get(jy0VarI) != obj) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(i, obj, le0Var)) {
+                    if (atomicReferenceFieldUpdater.get(i) != obj) {
                         break;
                     }
                 }

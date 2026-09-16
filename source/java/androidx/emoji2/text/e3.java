@@ -3,7 +3,6 @@ package androidx.emoji2.text;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import androidx.core.splashscreen.R;
 import com.kos.engine.core.GmsCore;
 import com.kos.engine.entity.pm.InstallResult;
@@ -48,18 +47,18 @@ public final class e3 extends hh2 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((e3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1187a);
+                return ((e3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1186a);
             case 1:
-                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 2:
-                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             default:
-                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((e3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
         }
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws PackageManager.NameNotFoundException {
+    public final Object k(Object obj) {
         String string;
         int i = this.h;
         int i2 = 0;
@@ -67,11 +66,11 @@ public final class e3 extends hh2 implements Function2 {
         h82 h82Var = this.j;
         switch (i) {
             case 0:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 int i3 = this.i;
                 mz0.L(obj);
                 h82Var.h(i3, mp0.e);
-                ip0.f540a.getClass();
+                ip0.f539a.getClass();
                 if (ip0.p(i3)) {
                     if (ip0.t(i3, a.a.a.c.a(-293265220976418L, strArr))) {
                         String string2 = context.getString(R.string.play_games_opened);
@@ -95,44 +94,44 @@ public final class e3 extends hh2 implements Function2 {
             case 1:
                 mz0.L(obj);
                 int i4 = this.i;
-                InstallResult installResultInstallGApps = GmsCore.installGApps(i4);
-                ArrayList arrayListQ = n92.q(i4);
-                ip0.f540a.getClass();
+                InstallResult installGApps = GmsCore.installGApps(i4);
+                ArrayList q = n92.q(i4);
+                ip0.f539a.getClass();
                 if (ip0.o(i4)) {
                     h82Var.h(i4, mp0.e);
                 }
-                if (!installResultInstallGApps.success) {
-                    String string6 = installResultInstallGApps.msg;
-                    if (string6 == null) {
-                        string6 = context.getString(R.string.unknown_error);
-                        lx0.w(string6, a.a.a.c.a(-495442216501026L, wj1.f1284a));
-                    }
-                    string = context.getString(R.string.gms_install_failed, string6);
-                } else if (arrayListQ.isEmpty()) {
-                    string = context.getString(R.string.gms_added_account, new Integer(i4 + 1));
-                } else {
-                    int size = arrayListQ.size();
-                    while (i2 < size) {
-                        Object obj2 = arrayListQ.get(i2);
-                        i2++;
-                        if (!((jo0) obj2).b) {
-                            string = context.getString(R.string.gms_partially_added);
+                if (installGApps.success) {
+                    if (!q.isEmpty()) {
+                        int size = q.size();
+                        while (i2 < size) {
+                            Object obj2 = q.get(i2);
+                            i2++;
+                            if (!((jo0) obj2).b) {
+                                string = context.getString(R.string.gms_partially_added);
+                            }
                         }
                     }
                     string = context.getString(R.string.gms_added_account, new Integer(i4 + 1));
+                } else {
+                    String str2 = installGApps.msg;
+                    if (str2 == null) {
+                        str2 = context.getString(R.string.unknown_error);
+                        lx0.w(str2, a.a.a.c.a(-495442216501026L, wj1.f1283a));
+                    }
+                    string = context.getString(R.string.gms_install_failed, str2);
                 }
                 lx0.u(string);
-                return new hn1(arrayListQ, string);
+                return new hn1(q, string);
             case 2:
                 mz0.L(obj);
                 c01 c01Var = c01.r;
-                String str2 = GmsCore.VENDING_PKG;
+                String str3 = GmsCore.VENDING_PKG;
                 int i5 = this.i;
                 c01Var.getClass();
-                if (!c01.b0(str2, i5)) {
+                if (!c01.b0(str3, i5)) {
                     return context.getString(R.string.play_store_not_installed_virtual);
                 }
-                if (!c01Var.d0(i5, str2)) {
+                if (!c01Var.d0(i5, str3)) {
                     return context.getString(R.string.play_store_launch_failed);
                 }
                 h82Var.h(i5, mp0.e);
@@ -141,14 +140,14 @@ public final class e3 extends hh2 implements Function2 {
                 mz0.L(obj);
                 int i6 = this.i;
                 h82Var.h(i6, mp0.e);
-                int i7 = n92.f799a;
-                String[] strArr2 = wj1.f1284a;
-                ip0.f540a.getClass();
-                ArrayList arrayListJ = ip0.j();
-                int size2 = arrayListJ.size();
+                int i7 = n92.f798a;
+                String[] strArr2 = wj1.f1283a;
+                ip0.f539a.getClass();
+                ArrayList j = ip0.j();
+                int size2 = j.size();
                 int i8 = 0;
                 while (i8 < size2) {
-                    Object obj3 = arrayListJ.get(i8);
+                    Object obj3 = j.get(i8);
                     i8++;
                     lx0.w(obj3, a.a.a.c.a(-544074131193634L, strArr2));
                     Intent intent = (Intent) obj3;
@@ -165,22 +164,22 @@ public final class e3 extends hh2 implements Function2 {
                     if (BPackageManager.get().resolveActivity(intent, 0, intent.resolveTypeIfNeeded(c01.s.getContentResolver()), i6) != null) {
                         c01.r.l.getClass();
                         BActivityManager.get().startActivity(intent, i6);
-                        String string7 = context.getString(R.string.google_account_manager_launched);
-                        lx0.w(string7, a.a.a.c.a(-544099900997410L, strArr2));
-                        return string7;
+                        String string6 = context.getString(R.string.google_account_manager_launched);
+                        lx0.w(string6, a.a.a.c.a(-544099900997410L, strArr2));
+                        return string6;
                     }
                 }
                 c01 c01Var3 = c01.r;
-                String strA = a.a.a.c.a(-544164325506850L, strArr2);
+                String a2 = a.a.a.c.a(-544164325506850L, strArr2);
                 c01Var3.getClass();
-                if (c01.b0(strA, i6) && c01Var3.d0(i6, a.a.a.c.a(-543773483482914L, strArr2))) {
-                    String string8 = context.getString(R.string.google_account_manager_launched);
-                    lx0.w(string8, a.a.a.c.a(-543846497926946L, strArr2));
-                    return string8;
+                if (c01.b0(a2, i6) && c01Var3.d0(i6, a.a.a.c.a(-543773483482914L, strArr2))) {
+                    String string7 = context.getString(R.string.google_account_manager_launched);
+                    lx0.w(string7, a.a.a.c.a(-543846497926946L, strArr2));
+                    return string7;
                 }
-                String string9 = context.getString(R.string.google_account_manager_not_launchable);
-                lx0.w(string9, a.a.a.c.a(-543928102305570L, strArr2));
-                return string9;
+                String string8 = context.getString(R.string.google_account_manager_not_launchable);
+                lx0.w(string8, a.a.a.c.a(-543928102305570L, strArr2));
+                return string8;
         }
     }
 

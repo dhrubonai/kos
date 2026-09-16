@@ -8,10 +8,10 @@ import com.google.android.material.bottomappbar.BottomAppBar$Behavior;
 public final class am implements View.OnLayoutChangeListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ BottomAppBar$Behavior f108a;
+    public final /* synthetic */ BottomAppBar$Behavior f107a;
 
     public am(BottomAppBar$Behavior bottomAppBar$Behavior) {
-        this.f108a = bottomAppBar$Behavior;
+        this.f107a = bottomAppBar$Behavior;
     }
 
     @Override // android.view.View.OnLayoutChangeListener

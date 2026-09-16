@@ -15,16 +15,17 @@ import java.nio.file.attribute.FileTime;
 /* loaded from: classes.dex */
 public final class qh1 extends ny0 {
     public static Long m(FileTime fileTime) {
-        long millis = fileTime.toMillis();
-        Long lValueOf = Long.valueOf(millis);
+        long millis;
+        millis = fileTime.toMillis();
+        Long valueOf = Long.valueOf(millis);
         if (millis != 0) {
-            return lValueOf;
+            return valueOf;
         }
         return null;
     }
 
     @Override // androidx.emoji2.text.ny0, androidx.emoji2.text.ci0
-    public final void b(zn1 zn1Var, zn1 zn1Var2) throws IOException {
+    public final void b(zn1 zn1Var, zn1 zn1Var2) {
         lx0.x(zn1Var, "source");
         lx0.x(zn1Var2, "target");
         try {
@@ -37,28 +38,28 @@ public final class qh1 extends ny0 {
     }
 
     @Override // androidx.emoji2.text.ny0, androidx.emoji2.text.ci0
-    public final n70 i(zn1 zn1Var) throws IOException {
-        zn1 zn1VarO;
+    public final n70 i(zn1 zn1Var) {
+        zn1 zn1Var2;
         lx0.x(zn1Var, "path");
-        Path pathE = zn1Var.e();
+        Path e = zn1Var.e();
         try {
-            BasicFileAttributes attributes = Files.readAttributes(pathE, (Class<BasicFileAttributes>) BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
-            Path symbolicLink = attributes.isSymbolicLink() ? Files.readSymbolicLink(pathE) : null;
-            boolean zIsRegularFile = attributes.isRegularFile();
-            boolean zIsDirectory = attributes.isDirectory();
-            if (symbolicLink != null) {
+            BasicFileAttributes readAttributes = Files.readAttributes(e, (Class<BasicFileAttributes>) BasicFileAttributes.class, LinkOption.NOFOLLOW_LINKS);
+            Path readSymbolicLink = readAttributes.isSymbolicLink() ? Files.readSymbolicLink(e) : null;
+            boolean isRegularFile = readAttributes.isRegularFile();
+            boolean isDirectory = readAttributes.isDirectory();
+            if (readSymbolicLink != null) {
                 String str = zn1.e;
-                zn1VarO = iz0.o(symbolicLink.toString());
+                zn1Var2 = iz0.o(readSymbolicLink.toString());
             } else {
-                zn1VarO = null;
+                zn1Var2 = null;
             }
-            Long lValueOf = Long.valueOf(attributes.size());
-            FileTime fileTimeCreationTime = attributes.creationTime();
-            Long lM = fileTimeCreationTime != null ? m(fileTimeCreationTime) : null;
-            FileTime fileTimeLastModifiedTime = attributes.lastModifiedTime();
-            Long lM2 = fileTimeLastModifiedTime != null ? m(fileTimeLastModifiedTime) : null;
-            FileTime fileTimeLastAccessTime = attributes.lastAccessTime();
-            return new n70(zIsRegularFile, zIsDirectory, zn1VarO, lValueOf, lM, lM2, fileTimeLastAccessTime != null ? m(fileTimeLastAccessTime) : null);
+            Long valueOf = Long.valueOf(readAttributes.size());
+            FileTime creationTime = readAttributes.creationTime();
+            Long m = creationTime != null ? m(creationTime) : null;
+            FileTime lastModifiedTime = readAttributes.lastModifiedTime();
+            Long m2 = lastModifiedTime != null ? m(lastModifiedTime) : null;
+            FileTime lastAccessTime = readAttributes.lastAccessTime();
+            return new n70(isRegularFile, isDirectory, zn1Var2, valueOf, m, m2, lastAccessTime != null ? m(lastAccessTime) : null);
         } catch (NoSuchFileException | FileSystemException unused) {
             return null;
         }

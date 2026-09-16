@@ -17,7 +17,7 @@ import org.xmlpull.v1.XmlPullParserException;
 public final class xe2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1334a;
+    public final int f1333a;
     public final v92 b;
     public final int[][] c;
     public final v92[] d;
@@ -27,7 +27,7 @@ public final class xe2 {
     public final we2 h;
 
     public xe2(lt0 lt0Var) {
-        this.f1334a = lt0Var.b;
+        this.f1333a = lt0Var.b;
         this.b = (v92) lt0Var.c;
         this.c = (int[][]) lt0Var.d;
         this.d = (v92[]) lt0Var.e;
@@ -37,7 +37,7 @@ public final class xe2 {
         this.h = (we2) lt0Var.i;
     }
 
-    public static void a(lt0 lt0Var, Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
+    public static void a(lt0 lt0Var, Context context, XmlResourceParser xmlResourceParser, AttributeSet attributeSet, Resources.Theme theme) {
         int depth = xmlResourceParser.getDepth() + 1;
         while (true) {
             int next = xmlResourceParser.next();
@@ -51,9 +51,9 @@ public final class xe2 {
             if (next == 2 && depth2 <= depth && xmlResourceParser.getName().equals("item")) {
                 Resources resources = context.getResources();
                 int[] iArr = fv1.m;
-                TypedArray typedArrayObtainAttributes = theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
-                v92 v92VarA = v92.a(context, typedArrayObtainAttributes.getResourceId(0, 0), typedArrayObtainAttributes.getResourceId(1, 0), new m(0)).a();
-                typedArrayObtainAttributes.recycle();
+                TypedArray obtainAttributes = theme == null ? resources.obtainAttributes(attributeSet, iArr) : theme.obtainStyledAttributes(attributeSet, iArr, 0, 0);
+                v92 a2 = v92.a(context, obtainAttributes.getResourceId(0, 0), obtainAttributes.getResourceId(1, 0), new m(0)).a();
+                obtainAttributes.recycle();
                 int attributeCount = attributeSet.getAttributeCount();
                 int[] iArr2 = new int[attributeCount];
                 int i = 0;
@@ -68,14 +68,14 @@ public final class xe2 {
                         i = i3;
                     }
                 }
-                lt0Var.a(StateSet.trimStateSet(iArr2, i), v92VarA);
+                lt0Var.a(StateSet.trimStateSet(iArr2, i), a2);
             }
         }
     }
 
     public static xe2 b(Context context, TypedArray typedArray, int i) {
         XmlResourceParser xml;
-        AttributeSet attributeSetAsAttributeSet;
+        AttributeSet asAttributeSet;
         int next;
         int resourceId = typedArray.getResourceId(i, 0);
         if (resourceId == 0 || !Objects.equals(context.getResources().getResourceTypeName(resourceId), "xml")) {
@@ -86,7 +86,7 @@ public final class xe2 {
         try {
             xml = context.getResources().getXml(resourceId);
             try {
-                attributeSetAsAttributeSet = Xml.asAttributeSet(xml);
+                asAttributeSet = Xml.asAttributeSet(xml);
                 do {
                     next = xml.next();
                     if (next == 2) {
@@ -110,7 +110,7 @@ public final class xe2 {
             throw new XmlPullParserException("No start tag found");
         }
         if (xml.getName().equals("selector")) {
-            a(lt0Var, context, xml, attributeSetAsAttributeSet, context.getTheme());
+            a(lt0Var, context, xml, asAttributeSet, context.getTheme());
         }
         xml.close();
         if (lt0Var.b == 0) {
@@ -128,20 +128,20 @@ public final class xe2 {
         if (we2Var4 == null && we2Var3 == null && we2Var2 == null && we2Var == null) {
             return v92Var;
         }
-        u92 u92VarF = v92Var.f();
+        u92 f = v92Var.f();
         if (we2Var4 != null) {
-            u92VarF.e = we2Var4.b;
+            f.e = we2Var4.b;
         }
         if (we2Var3 != null) {
-            u92VarF.f = we2Var3.b;
+            f.f = we2Var3.b;
         }
         if (we2Var2 != null) {
-            u92VarF.h = we2Var2.b;
+            f.h = we2Var2.b;
         }
         if (we2Var != null) {
-            u92VarF.g = we2Var.b;
+            f.g = we2Var.b;
         }
-        return u92VarF.a();
+        return f.a();
     }
 
     public final boolean d() {
@@ -149,6 +149,6 @@ public final class xe2 {
         we2 we2Var2;
         we2 we2Var3;
         we2 we2Var4;
-        return this.f1334a > 1 || ((we2Var = this.e) != null && we2Var.f1275a > 1) || (((we2Var2 = this.f) != null && we2Var2.f1275a > 1) || (((we2Var3 = this.g) != null && we2Var3.f1275a > 1) || ((we2Var4 = this.h) != null && we2Var4.f1275a > 1)));
+        return this.f1333a > 1 || ((we2Var = this.e) != null && we2Var.f1274a > 1) || (((we2Var2 = this.f) != null && we2Var2.f1274a > 1) || (((we2Var3 = this.g) != null && we2Var3.f1274a > 1) || ((we2Var4 = this.h) != null && we2Var4.f1274a > 1)));
     }
 }

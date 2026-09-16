@@ -7,7 +7,7 @@ import java.util.List;
 public final class dx0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f278a = 0;
+    public final /* synthetic */ int f277a = 0;
     public boolean b;
     public final Object c;
     public final Object d;
@@ -28,7 +28,7 @@ public final class dx0 {
                 break;
             }
             obj = list.get(i);
-            if (os1.a(((rs1) obj).f1030a, j)) {
+            if (os1.a(((rs1) obj).f1029a, j)) {
                 break;
             }
             i++;
@@ -51,13 +51,13 @@ public final class dx0 {
     }
 
     public String toString() {
-        switch (this.f278a) {
+        switch (this.f277a) {
             case 1:
                 StringBuilder sb = new StringBuilder("SingleSelectionLayout(isStartHandle=");
                 sb.append(this.b);
                 sb.append(", crossed=");
-                int iB = b();
-                sb.append(iB != 1 ? iB != 2 ? iB != 3 ? "null" : "COLLAPSED" : "NOT_CROSSED" : "CROSSED");
+                int b = b();
+                sb.append(b != 1 ? b != 2 ? b != 3 ? "null" : "COLLAPSED" : "NOT_CROSSED" : "CROSSED");
                 sb.append(", info=\n\t");
                 sb.append((on0) this.d);
                 sb.append(')');

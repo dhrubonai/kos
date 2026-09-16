@@ -8,19 +8,19 @@ import android.net.Network;
 public final class fw1 extends ConnectivityManager.NetworkCallback {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ rg f389a;
+    public final /* synthetic */ rg f388a;
 
     public fw1(rg rgVar) {
-        this.f389a = rgVar;
+        this.f388a = rgVar;
     }
 
     @Override // android.net.ConnectivityManager.NetworkCallback
     public final void onAvailable(Network network) {
-        rg.q(this.f389a, network, true);
+        rg.q(this.f388a, network, true);
     }
 
     @Override // android.net.ConnectivityManager.NetworkCallback
     public final void onLost(Network network) {
-        rg.q(this.f389a, network, false);
+        rg.q(this.f388a, network, false);
     }
 }

@@ -12,18 +12,18 @@ public abstract class sc1 {
     }
 
     public static final void b(View view, Object obj) {
-        OnBackInvokedDispatcher onBackInvokedDispatcherFindOnBackInvokedDispatcher;
-        if (!(obj instanceof OnBackInvokedCallback) || (onBackInvokedDispatcherFindOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher()) == null) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+        if (!(obj instanceof OnBackInvokedCallback) || (findOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher()) == null) {
             return;
         }
-        onBackInvokedDispatcherFindOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, (OnBackInvokedCallback) obj);
+        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, (OnBackInvokedCallback) obj);
     }
 
     public static final void c(View view, Object obj) {
-        OnBackInvokedDispatcher onBackInvokedDispatcherFindOnBackInvokedDispatcher;
-        if (!(obj instanceof OnBackInvokedCallback) || (onBackInvokedDispatcherFindOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher()) == null) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher;
+        if (!(obj instanceof OnBackInvokedCallback) || (findOnBackInvokedDispatcher = view.findOnBackInvokedDispatcher()) == null) {
             return;
         }
-        onBackInvokedDispatcherFindOnBackInvokedDispatcher.unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj);
+        findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback((OnBackInvokedCallback) obj);
     }
 }

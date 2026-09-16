@@ -73,15 +73,15 @@ public abstract class gs1 {
     }
 
     public static String f(String str, String str2) {
-        String strA;
+        String a2;
         String[] strArr = xa1.b;
         if (str == null || str.length() == 0) {
             str = a.a.a.c.a(-1286759876017954L, strArr);
         }
         if (str2 == null) {
-            StringBuilder sbK = jx0.k(str);
-            sbK.append(a.a.a.c.a(-1286802825690914L, strArr));
-            return sbK.toString();
+            StringBuilder k = jx0.k(str);
+            k.append(a.a.a.c.a(-1286802825690914L, strArr));
+            return k.toString();
         }
         int i = 0;
         for (int i2 = 0; i2 < str2.length(); i2++) {
@@ -89,27 +89,27 @@ public abstract class gs1 {
                 i++;
             }
         }
-        StringBuilder sbK2 = jx0.k(str);
-        sbK2.append(a.a.a.c.a(-1286777055887138L, strArr));
-        sbK2.append(str2.length());
-        sbK2.append(a.a.a.c.a(-1286897314971426L, strArr));
+        StringBuilder k2 = jx0.k(str);
+        k2.append(a.a.a.c.a(-1286777055887138L, strArr));
+        k2.append(str2.length());
+        k2.append(a.a.a.c.a(-1286897314971426L, strArr));
         try {
-            byte[] bArrDigest = MessageDigest.getInstance(a.a.a.c.a(-1299344130195234L, strArr)).digest(str2.getBytes(a.a.a.c.a(-1297729222491938L, strArr)));
+            byte[] digest = MessageDigest.getInstance(a.a.a.c.a(-1299344130195234L, strArr)).digest(str2.getBytes(a.a.a.c.a(-1297729222491938L, strArr)));
             StringBuilder sb = new StringBuilder();
-            for (int i3 = 0; i3 < bArrDigest.length && i3 < 6; i3++) {
-                sb.append(String.format(Locale.ENGLISH, a.a.a.c.a(-1297703452688162L, strArr), Integer.valueOf(bArrDigest[i3] & 255)));
+            for (int i3 = 0; i3 < digest.length && i3 < 6; i3++) {
+                sb.append(String.format(Locale.ENGLISH, a.a.a.c.a(-1297703452688162L, strArr), Integer.valueOf(digest[i3] & 255)));
             }
-            strA = sb.toString();
+            a2 = sb.toString();
         } catch (Throwable unused) {
-            strA = a.a.a.c.a(-1297742107393826L, strArr);
+            a2 = a.a.a.c.a(-1297742107393826L, strArr);
         }
-        sbK2.append(strA);
-        sbK2.append(a.a.a.c.a(-1286970329415458L, strArr));
-        sbK2.append(i + 1);
-        sbK2.append(a.a.a.c.a(-1286437753470754L, strArr));
-        sbK2.append(i >= 2);
-        sbK2.append(a.a.a.c.a(-1286467818241826L, strArr));
-        return sbK2.toString();
+        k2.append(a2);
+        k2.append(a.a.a.c.a(-1286970329415458L, strArr));
+        k2.append(i + 1);
+        k2.append(a.a.a.c.a(-1286437753470754L, strArr));
+        k2.append(i >= 2);
+        k2.append(a.a.a.c.a(-1286467818241826L, strArr));
+        return k2.toString();
     }
 
     public static String g(ServiceInfo serviceInfo) {
@@ -147,10 +147,10 @@ public abstract class gs1 {
     }
 
     public static void l(String str, String str2, String str3) {
-        StringBuilder sbK = jx0.k(str);
-        sbK.append(a.a.a.c.a(-1287296746929954L, xa1.b));
-        sbK.append(f(str2, str3));
-        k(sbK.toString());
+        StringBuilder k = jx0.k(str);
+        k.append(a.a.a.c.a(-1287296746929954L, xa1.b));
+        k.append(f(str2, str3));
+        k(k.toString());
     }
 
     public static boolean m(int i) {

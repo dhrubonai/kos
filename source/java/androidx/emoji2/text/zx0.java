@@ -11,12 +11,12 @@ import java.util.List;
 public final class zx0 implements InvocationHandler {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f1461a;
+    public final ArrayList f1460a;
     public boolean b;
     public String c;
 
     public zx0(ArrayList arrayList) {
-        this.f1461a = arrayList;
+        this.f1460a = arrayList;
     }
 
     @Override // java.lang.reflect.InvocationHandler
@@ -35,9 +35,9 @@ public final class zx0 implements InvocationHandler {
             this.b = true;
             return null;
         }
-        boolean zN = lx0.n(name, "protocols");
-        ArrayList arrayList = this.f1461a;
-        if (zN && objArr.length == 0) {
+        boolean n = lx0.n(name, "protocols");
+        ArrayList arrayList = this.f1460a;
+        if (n && objArr.length == 0) {
             return arrayList;
         }
         if ((lx0.n(name, "selectProtocol") || lx0.n(name, "select")) && String.class.equals(returnType) && objArr.length == 1) {

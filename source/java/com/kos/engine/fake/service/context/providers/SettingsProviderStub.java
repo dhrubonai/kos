@@ -46,24 +46,24 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
         String[] strArr = xa1.b;
         bundle.putString(c.a(-835887094185762L, strArr), settingsAndroidId);
         bundle.putString(c.a(-836479799672610L, strArr), settingsAndroidId);
-        String strA = c.a(-836509864443682L, strArr);
+        String a2 = c.a(-836509864443682L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-836617238626082L, strArr));
         sb.append(str);
-        jx0.r(sb, c.a(-836720317841186L, strArr), settingsAndroidId, 3, strA);
+        jx0.r(sb, c.a(-836720317841186L, strArr), settingsAndroidId, 3, a2);
         return bundle;
     }
 
     private MatrixCursor androidIdCursor(Object[] objArr) {
         String[] strArr = xa1.b;
-        String[] strArrFindSettingsProjection = findSettingsProjection(objArr);
-        if (strArrFindSettingsProjection == null || strArrFindSettingsProjection.length == 0) {
-            strArrFindSettingsProjection = new String[]{c.a(-835942928760610L, strArr), c.a(-835981583466274L, strArr)};
+        String[] findSettingsProjection = findSettingsProjection(objArr);
+        if (findSettingsProjection == null || findSettingsProjection.length == 0) {
+            findSettingsProjection = new String[]{c.a(-835942928760610L, strArr), c.a(-835981583466274L, strArr)};
         }
-        MatrixCursor matrixCursor = new MatrixCursor(strArrFindSettingsProjection);
-        Object[] objArr2 = new Object[strArrFindSettingsProjection.length];
-        for (int i = 0; i < strArrFindSettingsProjection.length; i++) {
-            String str = strArrFindSettingsProjection[i];
+        MatrixCursor matrixCursor = new MatrixCursor(findSettingsProjection);
+        Object[] objArr2 = new Object[findSettingsProjection.length];
+        for (int i = 0; i < findSettingsProjection.length; i++) {
+            String str = findSettingsProjection[i];
             if (c.a(-836024533139234L, strArr).equals(str)) {
                 objArr2[i] = c.a(-836011648237346L, strArr);
             } else if (c.a(-836093252615970L, strArr).equals(str)) {
@@ -73,10 +73,10 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
             }
         }
         matrixCursor.addRow(objArr2);
-        String strA = c.a(-836076072746786L, strArr);
+        String a2 = c.a(-836076072746786L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-835650870984482L, strArr));
-        zd.p(sb, getSettingsAndroidId(), 3, strA);
+        zd.p(sb, getSettingsAndroidId(), 3, a2);
         return matrixCursor;
     }
 
@@ -162,22 +162,22 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
             return null;
         }
         String[] strArr = xa1.b;
-        String strA = c.a(-836192036863778L, strArr);
-        HashMap map = ho0.f480a;
-        StrictMode.ThreadPolicy threadPolicyAllowThreadDiskReads = StrictMode.allowThreadDiskReads();
+        String a2 = c.a(-836192036863778L, strArr);
+        HashMap hashMap = ho0.f479a;
+        StrictMode.ThreadPolicy allowThreadDiskReads = StrictMode.allowThreadDiskReads();
         try {
-            String strN = ho0.N(c.a(-890523373158178L, strArr), strA);
-            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
-            if (!isUsableCheckedInAndroidId(strN) || !ho0.x()) {
+            String N = ho0.N(c.a(-890523373158178L, strArr), a2);
+            StrictMode.setThreadPolicy(allowThreadDiskReads);
+            if (!isUsableCheckedInAndroidId(N) || !ho0.x()) {
                 return null;
             }
             try {
-                return String.format(Locale.ENGLISH, c.a(-836273641242402L, strArr), Long.valueOf(jx0.s(strN)));
+                return String.format(Locale.ENGLISH, c.a(-836273641242402L, strArr), Long.valueOf(jx0.s(N)));
             } catch (Throwable unused) {
                 return null;
             }
         } catch (Throwable th) {
-            StrictMode.setThreadPolicy(threadPolicyAllowThreadDiskReads);
+            StrictMode.setThreadPolicy(allowThreadDiskReads);
             throw th;
         }
     }
@@ -199,8 +199,8 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
     }
 
     private String getSettingsTable(String str) {
-        int iIndexOf = str.indexOf(95);
-        return (iIndexOf == -1 || iIndexOf == str.length() + (-1)) ? c.a(-839224283774754L, xa1.b) : str.substring(iIndexOf + 1);
+        int indexOf = str.indexOf(95);
+        return (indexOf == -1 || indexOf == str.length() + (-1)) ? c.a(-839224283774754L, xa1.b) : str.substring(indexOf + 1);
     }
 
     private Object handleVirtualSettingsCall(Method method, Object[] objArr) {
@@ -208,47 +208,47 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
         if (!c.a(-844004582375202L, strArr).equals(method.getName())) {
             return UNHANDLED;
         }
-        String strFindSettingsCommand = findSettingsCommand(objArr);
-        if (strFindSettingsCommand == null) {
+        String findSettingsCommand = findSettingsCommand(objArr);
+        if (findSettingsCommand == null) {
             return UNHANDLED;
         }
-        if (strFindSettingsCommand.startsWith(c.a(-843991697473314L, strArr)) && isAndroidIdRequest(objArr)) {
-            return androidIdBundle(strFindSettingsCommand);
+        if (findSettingsCommand.startsWith(c.a(-843991697473314L, strArr)) && isAndroidIdRequest(objArr)) {
+            return androidIdBundle(findSettingsCommand);
         }
-        if (isConfigRead(strFindSettingsCommand)) {
-            return emptyConfigReadResult(strFindSettingsCommand);
+        if (isConfigRead(findSettingsCommand)) {
+            return emptyConfigReadResult(findSettingsCommand);
         }
-        String strFindSettingName = findSettingName(objArr, strFindSettingsCommand);
-        if (strFindSettingName == null) {
+        String findSettingName = findSettingName(objArr, findSettingsCommand);
+        if (findSettingName == null) {
             return UNHANDLED;
         }
-        String strK = zd.k(jx0.k(getSettingsTable(strFindSettingsCommand)), c.a(-844030352178978L, strArr), strFindSettingName);
-        if (!isSettingsMutation(strFindSettingsCommand)) {
-            if (strFindSettingsCommand.startsWith(c.a(-842651667676962L, strArr))) {
+        String k = zd.k(jx0.k(getSettingsTable(findSettingsCommand)), c.a(-844030352178978L, strArr), findSettingName);
+        if (!isSettingsMutation(findSettingsCommand)) {
+            if (findSettingsCommand.startsWith(c.a(-842651667676962L, strArr))) {
                 Map<String, String> map = sVirtualSettings;
-                if (map.containsKey(strK)) {
+                if (map.containsKey(k)) {
                     Bundle bundle = new Bundle();
-                    bundle.putString(c.a(-842690322382626L, strArr), map.get(strK));
-                    String strA = c.a(-842733272055586L, strArr);
+                    bundle.putString(c.a(-842690322382626L, strArr), map.get(k));
+                    String a2 = c.a(-842733272055586L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-842239350816546L, strArr));
-                    sb.append(strFindSettingsCommand);
+                    sb.append(findSettingsCommand);
                     sb.append(c.a(-842342430031650L, strArr));
-                    sb.append(strFindSettingName);
+                    sb.append(findSettingName);
                     sb.append(c.a(-842333840097058L, strArr));
-                    zd.p(sb, map.get(strK), 3, strA);
+                    zd.p(sb, map.get(k), 3, a2);
                     return bundle;
                 }
             }
             return UNHANDLED;
         }
-        String strExtractSettingsValue = extractSettingsValue(objArr);
-        if (strExtractSettingsValue != null) {
-            sVirtualSettings.put(strK, strExtractSettingsValue);
-        } else if (strFindSettingsCommand.startsWith(c.a(-844021762244386L, strArr)) || strFindSettingsCommand.startsWith(c.a(-844056121982754L, strArr))) {
-            sVirtualSettings.remove(strK);
+        String extractSettingsValue = extractSettingsValue(objArr);
+        if (extractSettingsValue != null) {
+            sVirtualSettings.put(k, extractSettingsValue);
+        } else if (findSettingsCommand.startsWith(c.a(-844021762244386L, strArr)) || findSettingsCommand.startsWith(c.a(-844056121982754L, strArr))) {
+            sVirtualSettings.remove(k);
         }
-        nz0.Q(c.a(-844103366623010L, strArr), 3, c.a(-842561473363746L, strArr) + strFindSettingsCommand + c.a(-842668847546146L, strArr) + strFindSettingName + c.a(-842660257611554L, strArr) + strExtractSettingsValue);
+        nz0.Q(c.a(-844103366623010L, strArr), 3, c.a(-842561473363746L, strArr) + findSettingsCommand + c.a(-842668847546146L, strArr) + findSettingName + c.a(-842660257611554L, strArr) + extractSettingsValue);
         return new Bundle();
     }
 
@@ -330,21 +330,21 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
     }
 
     private boolean isGoogleSettingsCaller() {
-        String strO;
-        String strQ = null;
+        String str;
+        String str2 = null;
         try {
-            strO = rj.o();
+            str = rj.o();
             try {
-                strQ = rj.q();
+                str2 = rj.q();
             } catch (Throwable unused) {
             }
         } catch (Throwable unused2) {
-            strO = null;
+            str = null;
         }
-        if (!GmsCore.isGoogleAppOrService(strO)) {
-            if (strQ != null) {
+        if (!GmsCore.isGoogleAppOrService(str)) {
+            if (str2 != null) {
                 String[] strArr = xa1.b;
-                if (strQ.startsWith(c.a(-836247871438626L, strArr)) || strQ.startsWith(c.a(-836363835555618L, strArr))) {
+                if (str2.startsWith(c.a(-836247871438626L, strArr)) || str2.startsWith(c.a(-836363835555618L, strArr))) {
                 }
             }
             return false;
@@ -414,7 +414,7 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         String[] strArr = xa1.b;
         if (c.a(-840422579650338L, strArr).equals(method.getName())) {
             return method.invoke(this.mBase, objArr);
@@ -422,9 +422,9 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
         if (c.a(-840461234356002L, strArr).equals(method.getName()) && isAndroidIdQuery(objArr)) {
             return androidIdCursor(objArr);
         }
-        Object objHandleVirtualSettingsCall = handleVirtualSettingsCall(method, objArr);
-        if (objHandleVirtualSettingsCall != UNHANDLED) {
-            return objHandleVirtualSettingsCall;
+        Object handleVirtualSettingsCall = handleVirtualSettingsCall(method, objArr);
+        if (handleVirtualSettingsCall != UNHANDLED) {
+            return handleVirtualSettingsCall;
         }
         if (objArr != null && objArr.length > 0) {
             ProviderAttributionFixer.fixArgsForHostProvider(objArr);
@@ -465,7 +465,7 @@ public class SettingsProviderStub extends ClassInvocationStub implements BConten
     }
 
     @Override // com.kos.engine.fake.service.context.providers.BContentProvider
-    public IInterface wrapper(IInterface iInterface, String str) throws IllegalArgumentException {
+    public IInterface wrapper(IInterface iInterface, String str) {
         this.mBase = iInterface;
         this.mAppPkg = str;
         injectHook();

@@ -16,7 +16,7 @@ public final class et {
     public static final /* synthetic */ int l = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f321a;
+    public final long f320a;
 
     static {
         bz0.h(4282664004L);
@@ -34,27 +34,27 @@ public final class et {
     }
 
     public /* synthetic */ et(long j2) {
-        this.f321a = j2;
+        this.f320a = j2;
     }
 
     public static final long a(long j2, mt mtVar) {
-        wy wyVarR;
-        mt mtVarF = f(j2);
-        int i2 = mtVarF.c;
+        wy wyVar;
+        mt f2 = f(j2);
+        int i2 = f2.c;
         int i3 = mtVar.c;
         if ((i2 | i3) < 0) {
-            wyVarR = xa1.r(mtVarF, mtVar);
+            wyVar = xa1.r(f2, mtVar);
         } else {
-            qe1 qe1Var = xy.f1363a;
+            qe1 qe1Var = xy.f1362a;
             int i4 = i2 | (i3 << 6);
-            Object objB = qe1Var.b(i4);
-            if (objB == null) {
-                objB = xa1.r(mtVarF, mtVar);
-                qe1Var.g(i4, objB);
+            Object b2 = qe1Var.b(i4);
+            if (b2 == null) {
+                b2 = xa1.r(f2, mtVar);
+                qe1Var.g(i4, b2);
             }
-            wyVarR = (wy) objB;
+            wyVar = (wy) b2;
         }
-        return wyVarR.a(j2);
+        return wyVar.a(j2);
     }
 
     public static long b(float f2, long j2) {
@@ -66,16 +66,16 @@ public final class et {
     }
 
     public static final float d(long j2) {
-        float fJ0;
+        float j0;
         float f2;
         if ((63 & j2) == 0) {
-            fJ0 = (float) n6.j0((j2 >>> 56) & 255);
+            j0 = (float) n6.j0((j2 >>> 56) & 255);
             f2 = 255.0f;
         } else {
-            fJ0 = (float) n6.j0((j2 >>> 6) & 1023);
+            j0 = (float) n6.j0((j2 >>> 6) & 1023);
             f2 = 1023.0f;
         }
-        return fJ0 / f2;
+        return j0 / f2;
     }
 
     public static final float e(long j2) {
@@ -86,7 +86,7 @@ public final class et {
             return ((float) n6.j0((j2 >>> 32) & 255)) / 255.0f;
         }
         short s = (short) ((j2 >>> 16) & 65535);
-        int i5 = Short.MIN_VALUE & s;
+        int i5 = 32768 & s;
         int i6 = ((65535 & s) >>> 10) & 31;
         int i7 = s & 1023;
         if (i6 != 0) {
@@ -104,8 +104,8 @@ public final class et {
             i4 = i9;
         } else {
             if (i7 != 0) {
-                float fIntBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f152a;
-                return i5 == 0 ? fIntBitsToFloat : -fIntBitsToFloat;
+                float intBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f151a;
+                return i5 == 0 ? intBitsToFloat : -intBitsToFloat;
             }
             i4 = 0;
             i3 = 0;
@@ -114,7 +114,7 @@ public final class et {
     }
 
     public static final mt f(long j2) {
-        float[] fArr = qt.f977a;
+        float[] fArr = qt.f976a;
         return qt.y[(int) (j2 & 63)];
     }
 
@@ -126,7 +126,7 @@ public final class et {
             return ((float) n6.j0((j2 >>> 40) & 255)) / 255.0f;
         }
         short s = (short) ((j2 >>> 32) & 65535);
-        int i5 = Short.MIN_VALUE & s;
+        int i5 = 32768 & s;
         int i6 = ((65535 & s) >>> 10) & 31;
         int i7 = s & 1023;
         if (i6 != 0) {
@@ -144,8 +144,8 @@ public final class et {
             i4 = i9;
         } else {
             if (i7 != 0) {
-                float fIntBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f152a;
-                return i5 == 0 ? fIntBitsToFloat : -fIntBitsToFloat;
+                float intBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f151a;
+                return i5 == 0 ? intBitsToFloat : -intBitsToFloat;
             }
             i4 = 0;
             i3 = 0;
@@ -161,7 +161,7 @@ public final class et {
             return ((float) n6.j0((j2 >>> 48) & 255)) / 255.0f;
         }
         short s = (short) ((j2 >>> 48) & 65535);
-        int i5 = Short.MIN_VALUE & s;
+        int i5 = 32768 & s;
         int i6 = ((65535 & s) >>> 10) & 31;
         int i7 = s & 1023;
         if (i6 != 0) {
@@ -179,8 +179,8 @@ public final class et {
             i4 = i9;
         } else {
             if (i7 != 0) {
-                float fIntBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f152a;
-                return i5 == 0 ? fIntBitsToFloat : -fIntBitsToFloat;
+                float intBitsToFloat = Float.intBitsToFloat(i7 + 1056964608) - bj0.f151a;
+                return i5 == 0 ? intBitsToFloat : -intBitsToFloat;
             }
             i4 = 0;
             i3 = 0;
@@ -198,21 +198,21 @@ public final class et {
         sb.append(", ");
         sb.append(d(j2));
         sb.append(", ");
-        return jx0.i(sb, f(j2).f766a, ')');
+        return jx0.i(sb, f(j2).f765a, ')');
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof et) {
-            return this.f321a == ((et) obj).f321a;
+            return this.f320a == ((et) obj).f320a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f321a);
+        return Long.hashCode(this.f320a);
     }
 
     public final String toString() {
-        return i(this.f321a);
+        return i(this.f320a);
     }
 }

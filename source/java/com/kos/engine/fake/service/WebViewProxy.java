@@ -87,18 +87,55 @@ public class WebViewProxy extends ClassInvocationStub {
             }
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:11:0x002c A[Catch: Exception -> 0x0029, TryCatch #0 {Exception -> 0x0029, blocks: (B:4:0x001b, B:6:0x001e, B:8:0x0025, B:13:0x0030, B:15:0x007a, B:16:0x00a1, B:17:0x0119, B:19:0x0121, B:11:0x002c), top: B:23:0x001b }] */
+        /* JADX WARN: Removed duplicated region for block: B:11:0x0121 A[Catch: Exception -> 0x0029, TRY_LEAVE, TryCatch #0 {Exception -> 0x0029, blocks: (B:20:0x001b, B:22:0x001e, B:24:0x0025, B:5:0x0030, B:7:0x007a, B:8:0x00a1, B:9:0x0119, B:11:0x0121, B:3:0x002c), top: B:19:0x001b }] */
+        /* JADX WARN: Removed duplicated region for block: B:5:0x0030 A[Catch: Exception -> 0x0029, TryCatch #0 {Exception -> 0x0029, blocks: (B:20:0x001b, B:22:0x001e, B:24:0x0025, B:5:0x0030, B:7:0x007a, B:8:0x00a1, B:9:0x0119, B:11:0x0121, B:3:0x002c), top: B:19:0x001b }] */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r9, java.lang.reflect.Method r10, java.lang.Object[] r11) throws java.lang.IllegalAccessException, java.lang.IllegalArgumentException, java.lang.reflect.InvocationTargetException {
-            /*
-                Method dump skipped, instructions count: 322
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.WebViewProxy.Constructor.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Object invoke;
+            String[] strArr = xa1.b;
+            nz0.Q(c.a(-953010852347682L, strArr), 3, c.a(-953101046660898L, strArr));
+            Context context = null;
+            if (objArr != null) {
+                try {
+                    if (objArr.length > 0) {
+                        Object obj2 = objArr[0];
+                        if (obj2 instanceof Context) {
+                            context = (Context) obj2;
+                            if (context != null) {
+                                context.getPackageName();
+                                String str = context.getApplicationInfo().dataDir + c.a(-952834758688546L, strArr) + String.valueOf(rj.u()) + c.a(-952929247969058L, strArr) + Process.myPid();
+                                File file = new File(str);
+                                if (!file.exists()) {
+                                    file.mkdirs();
+                                    nz0.Q(c.a(-952920658034466L, strArr), 3, c.a(-952993672478498L, strArr) + str);
+                                }
+                                System.setProperty(c.a(-964714638229282L, strArr), str);
+                                System.setProperty(c.a(-964770472804130L, strArr), str + c.a(-964280846532386L, strArr));
+                                System.setProperty(c.a(-964328091172642L, strArr), str + c.a(-964379630780194L, strArr));
+                                nz0.Q(c.a(-964469825093410L, strArr), 3, c.a(-964491299929890L, strArr) + str);
+                            }
+                            invoke = method.invoke(obj, objArr);
+                            if (invoke instanceof WebView) {
+                                configureWebView((WebView) invoke);
+                            }
+                            return invoke;
+                        }
+                    }
+                } catch (Exception e) {
+                    nz0.P(c.a(-965217149402914L, strArr), c.a(-965238624239394L, strArr), e);
+                    return createFallbackWebView(context);
+                }
+            }
+            context = c01.s;
+            if (context != null) {
+            }
+            invoke = method.invoke(obj, objArr);
+            if (invoke instanceof WebView) {
+            }
+            return invoke;
         }
     }
 

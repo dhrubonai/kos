@@ -21,9 +21,9 @@ public class BrowserEngineProxy extends ClassInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             if (objArr != null && objArr.length > 0) {
-                int iIntValue = ((Integer) objArr[0]).intValue();
+                int intValue = ((Integer) objArr[0]).intValue();
                 String[] strArr = xa1.b;
-                zd.o(new StringBuilder(), c.a(-344194943172386L, strArr), iIntValue, 3, c.a(-344680274476834L, strArr));
+                zd.o(new StringBuilder(), c.a(-344194943172386L, strArr), intValue, 3, c.a(-344680274476834L, strArr));
             }
             return method.invoke(obj, objArr);
         }
@@ -33,15 +33,15 @@ public class BrowserEngineProxy extends ClassInvocationStub {
     @ProxyMethod("start")
     public static class ProcessStart extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             try {
-                Object objInvoke = method.invoke(obj, objArr);
+                Object invoke = method.invoke(obj, objArr);
                 if (objArr == null || objArr.length <= 0) {
-                    return objInvoke;
+                    return invoke;
                 }
                 nz0.Q(c.a(-344362446896930L, strArr), 3, c.a(-344976627220258L, strArr) + objArr.length);
-                return objInvoke;
+                return invoke;
             } catch (Exception e) {
                 nz0.t(c.a(-345204260486946L, strArr), c.a(-344718929182498L, strArr) + e.getMessage(), e);
                 throw e;

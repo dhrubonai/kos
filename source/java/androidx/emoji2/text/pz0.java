@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import android.content.Context;
 import android.content.pm.PackageParser;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.icu.text.DecimalFormatSymbols;
@@ -15,11 +16,14 @@ import android.view.ActionMode;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import androidx.compose.runtime.internal.ComposableLambdaImpl;
 import androidx.core.splashscreen.R;
 import com.kos.engine.entity.location.BCell;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.CancellationException;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -27,7 +31,7 @@ import kotlin.jvm.functions.Function2;
 public abstract class pz0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static gu0 f935a = null;
+    public static gu0 f934a = null;
     public static final int b = 9;
     public static final int c = 6;
     public static final int d = 10;
@@ -58,10 +62,10 @@ public abstract class pz0 {
                     case 4:
                         textDirectionHeuristic = TextDirectionHeuristics.RTL;
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         textDirectionHeuristic = TextDirectionHeuristics.LOCALE;
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         break;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                         textDirectionHeuristic = TextDirectionHeuristics.FIRSTSTRONG_RTL;
@@ -114,19 +118,19 @@ public abstract class pz0 {
         boolean z4;
         int i2;
         int i3;
-        int iT = rb2Var.t(i);
-        int i4 = i + iT;
-        int iF = rb2Var.f(i);
-        int iF2 = rb2Var.f(i4);
-        int i5 = iF2 - iF;
+        int t = rb2Var.t(i);
+        int i4 = i + t;
+        int f2 = rb2Var.f(i);
+        int f3 = rb2Var.f(i4);
+        int i5 = f3 - f2;
         boolean z5 = i >= 0 && (rb2Var.b[(rb2Var.r(i) * 5) + 1] & 201326592) != 0;
-        rb2Var2.v(iT);
+        rb2Var2.v(t);
         rb2Var2.w(i5, rb2Var2.t);
         if (rb2Var.g < i4) {
             rb2Var.A(i4);
         }
-        if (rb2Var.k < iF2) {
-            rb2Var.B(iF2, i4);
+        if (rb2Var.k < f3) {
+            rb2Var.B(f3, i4);
         }
         int[] iArr = rb2Var2.b;
         int i6 = rb2Var2.t;
@@ -134,12 +138,12 @@ public abstract class pz0 {
         xh.w0(i7, i * 5, i4 * 5, rb2Var.b, iArr);
         Object[] objArr = rb2Var2.c;
         int i8 = rb2Var2.i;
-        System.arraycopy(rb2Var.c, iF, objArr, i8, i5);
+        System.arraycopy(rb2Var.c, f2, objArr, i8, i5);
         int i9 = rb2Var2.v;
         iArr[i7 + 2] = i9;
         int i10 = i6 - i;
-        int i11 = i6 + iT;
-        int iG = i8 - rb2Var2.g(iArr, i6);
+        int i11 = i6 + t;
+        int g = i8 - rb2Var2.g(iArr, i6);
         int i12 = rb2Var2.m;
         int i13 = rb2Var2.l;
         int length = objArr.length;
@@ -152,7 +156,7 @@ public abstract class pz0 {
                 iArr[i16] = iArr[i16] + i10;
             }
             int[] iArr2 = iArr;
-            int iG2 = rb2Var2.g(iArr, i15) + iG;
+            int g2 = rb2Var2.g(iArr, i15) + g;
             if (i14 < i15) {
                 i2 = i6;
                 i3 = 0;
@@ -160,7 +164,7 @@ public abstract class pz0 {
                 i2 = i6;
                 i3 = rb2Var2.k;
             }
-            iArr2[(i15 * 5) + 4] = rb2.i(iG2, i3, i13, length);
+            iArr2[(i15 * 5) + 4] = rb2.i(g2, i3, i13, length);
             if (i15 == i14) {
                 i14++;
             }
@@ -170,26 +174,26 @@ public abstract class pz0 {
         }
         int[] iArr3 = iArr;
         rb2Var2.m = i14;
-        int iB = qb2.b(rb2Var.d, i, rb2Var.p());
-        int iB2 = qb2.b(rb2Var.d, i4, rb2Var.p());
-        if (iB < iB2) {
+        int b2 = qb2.b(rb2Var.d, i, rb2Var.p());
+        int b3 = qb2.b(rb2Var.d, i4, rb2Var.p());
+        if (b2 < b3) {
             ArrayList arrayList = rb2Var.d;
-            ArrayList arrayList2 = new ArrayList(iB2 - iB);
-            for (int i17 = iB; i17 < iB2; i17++) {
+            ArrayList arrayList2 = new ArrayList(b3 - b2);
+            for (int i17 = b2; i17 < b3; i17++) {
                 t5 t5Var = (t5) arrayList.get(i17);
-                t5Var.f1104a += i10;
+                t5Var.f1103a += i10;
                 arrayList2.add(t5Var);
             }
             rb2Var2.d.addAll(qb2.b(rb2Var2.d, rb2Var2.t, rb2Var2.p()), arrayList2);
-            arrayList.subList(iB, iB2).clear();
+            arrayList.subList(b2, b3).clear();
             qe0Var = arrayList2;
         } else {
             qe0Var = qe0.d;
         }
         if (!qe0Var.isEmpty()) {
-            HashMap map = rb2Var.e;
-            HashMap map2 = rb2Var2.e;
-            if (map != null && map2 != null) {
+            HashMap hashMap = rb2Var.e;
+            HashMap hashMap2 = rb2Var2.e;
+            if (hashMap != null && hashMap2 != null) {
                 int size = qe0Var.size();
                 for (int i18 = 0; i18 < size; i18++) {
                 }
@@ -197,29 +201,29 @@ public abstract class pz0 {
         }
         int i19 = rb2Var2.v;
         rb2Var2.N(i9);
-        int iD = rb2Var.D(rb2Var.b, i);
+        int D = rb2Var.D(rb2Var.b, i);
         if (!z3) {
             z4 = false;
         } else if (z) {
-            boolean z7 = iD >= 0;
+            boolean z7 = D >= 0;
             if (z7) {
                 rb2Var.O();
-                rb2Var.a(iD - rb2Var.t);
+                rb2Var.a(D - rb2Var.t);
                 rb2Var.O();
             }
             rb2Var.a(i - rb2Var.t);
-            boolean zG = rb2Var.G();
+            boolean G = rb2Var.G();
             if (z7) {
                 rb2Var.L();
                 rb2Var.j();
                 rb2Var.L();
                 rb2Var.j();
             }
-            z4 = zG;
+            z4 = G;
         } else {
-            boolean zH = rb2Var.H(i, iT);
-            rb2Var.I(iF, i5, i - 1);
-            z4 = zH;
+            boolean H = rb2Var.H(i, t);
+            rb2Var.I(f2, i5, i - 1);
+            z4 = H;
         }
         if (z4) {
             vx.c("Unexpectedly removed anchors");
@@ -238,16 +242,25 @@ public abstract class pz0 {
     }
 
     public static void I(ak2 ak2Var, bj2 bj2Var, sk2 sk2Var, p01 p01Var, nk2 nk2Var, boolean z, zg0 zg0Var) {
+        long a2;
+        zw1 zw1Var;
         if (z) {
-            int iD = al2.d(ak2Var.b);
-            zg0Var.a(iD);
-            zw1 zw1VarB = iD < sk2Var.f1073a.f1017a.e.length() ? sk2Var.b(iD) : iD != 0 ? sk2Var.b(iD - 1) : new zw1(0.0f, 0.0f, 1.0f, (int) (ij2.a(bj2Var.b, bj2Var.g, bj2Var.h, ij2.f529a, 1) & 4294967295L));
-            float f2 = zw1VarB.b;
-            float f3 = zw1VarB.f1459a;
+            int d2 = al2.d(ak2Var.b);
+            zg0Var.a(d2);
+            if (d2 < sk2Var.f1072a.f1016a.e.length()) {
+                zw1Var = sk2Var.b(d2);
+            } else if (d2 != 0) {
+                zw1Var = sk2Var.b(d2 - 1);
+            } else {
+                a2 = ij2.a(bj2Var.b, bj2Var.g, bj2Var.h, ij2.f528a, 1);
+                zw1Var = new zw1(0.0f, 0.0f, 1.0f, (int) (a2 & 4294967295L));
+            }
+            float f2 = zw1Var.b;
+            float f3 = zw1Var.f1458a;
             long J = p01Var.J(jz0.d(f3, f2));
-            zw1 zw1VarJ = nz0.j(jz0.d(zi1.d(J), zi1.e(J)), mz0.c(zw1VarB.c - f3, zw1VarB.d - f2));
-            if (lx0.n((nk2) nk2Var.f813a.b.get(), nk2Var)) {
-                nk2Var.b.h(zw1VarJ);
+            zw1 j = nz0.j(jz0.d(zi1.d(J), zi1.e(J)), mz0.c(zw1Var.c - f3, zw1Var.d - f2));
+            if (lx0.n((nk2) nk2Var.f812a.b.get(), nk2Var)) {
+                nk2Var.b.h(j);
             }
         }
     }
@@ -312,9 +325,9 @@ public abstract class pz0 {
     }
 
     public static final long P(long j, long j2) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j2 >> 32)) * Float.intBitsToFloat((int) (j >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j2 & 4294967295L)) * Float.intBitsToFloat((int) (j & 4294967295L));
-        return (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j2 >> 32)) * Float.intBitsToFloat((int) (j >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j2 & 4294967295L)) * Float.intBitsToFloat((int) (j & 4294967295L));
+        return (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
     }
 
     public static final void Q(is1 is1Var, long j, um0 um0Var, boolean z) {
@@ -340,15 +353,15 @@ public abstract class pz0 {
     }
 
     public static ActionMode.Callback S(ActionMode.Callback callback) {
-        return (!(callback instanceof ll2) || Build.VERSION.SDK_INT < 26) ? callback : ((ll2) callback).f697a;
+        return (!(callback instanceof ll2) || Build.VERSION.SDK_INT < 26) ? callback : ((ll2) callback).f696a;
     }
 
     public static final void T(ge geVar, ie ieVar) {
         ieVar.e.setValue(geVar.e.getValue());
         oe oeVar = ieVar.f;
         oe oeVar2 = geVar.f;
-        int iB = oeVar.b();
-        for (int i = 0; i < iB; i++) {
+        int b2 = oeVar.b();
+        for (int i = 0; i < b2; i++) {
             oeVar.e(i, oeVar2.a(i));
         }
         ieVar.h = geVar.h;
@@ -376,49 +389,269 @@ public abstract class pz0 {
         } else {
             az0.a(l8.f0(-1488997347, new androidx.compose.foundation.lazy.layout.b(a41Var, nd1Var, function2, az0.b0(sm0Var, txVar)), txVar), txVar, 6);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new cx2(sm0Var, nd1Var, a41Var, function2, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new cx2(sm0Var, nd1Var, a41Var, function2, i);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0089  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x00a3  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x00d1 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00d9  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:66:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0112  */
+    /* JADX WARN: Removed duplicated region for block: B:29:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x008d  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0049  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void b(androidx.emoji2.text.aq0 r14, androidx.emoji2.text.nd1 r15, androidx.emoji2.text.r21 r16, androidx.emoji2.text.em1 r17, androidx.emoji2.text.kh r18, androidx.emoji2.text.ih r19, androidx.emoji2.text.yi0 r20, boolean r21, androidx.emoji2.text.um0 r22, androidx.emoji2.text.lx r23, int r24, int r25) {
-        /*
-            Method dump skipped, instructions count: 296
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.pz0.b(androidx.emoji2.text.aq0, androidx.emoji2.text.nd1, androidx.emoji2.text.r21, androidx.emoji2.text.em1, androidx.emoji2.text.kh, androidx.emoji2.text.ih, androidx.emoji2.text.yi0, boolean, androidx.emoji2.text.um0, androidx.emoji2.text.lx, int, int):void");
+    public static final void b(aq0 aq0Var, nd1 nd1Var, r21 r21Var, em1 em1Var, kh khVar, ih ihVar, yi0 yi0Var, boolean z, um0 um0Var, lx lxVar, int i, int i2) {
+        r21 r21Var2;
+        int i3;
+        int i4;
+        int i5;
+        boolean z2;
+        boolean f2;
+        Object M;
+        yi0 yi0Var2;
+        int i6;
+        boolean z3;
+        int i7;
+        Object M2;
+        em1 em1Var2;
+        ih ihVar2;
+        r21 r21Var3;
+        boolean z4;
+        yi0 yi0Var3;
+        pw1 s;
+        tx txVar = (tx) lxVar;
+        txVar.Z(1485410512);
+        int i8 = i | (txVar.f(aq0Var) ? 4 : 2);
+        if ((i & 48) == 0) {
+            i8 |= txVar.f(nd1Var) ? 32 : 16;
+        }
+        if ((i2 & 4) == 0) {
+            r21Var2 = r21Var;
+            if (txVar.f(r21Var2)) {
+                i3 = PackageParser.PARSE_COLLECT_CERTIFICATES;
+                i4 = i8 | i3 | 104882176 | (!txVar.h(um0Var) ? 536870912 : 268435456);
+                if ((306783379 & i4) == 306783378 || !txVar.B()) {
+                    txVar.U();
+                    i5 = i & 1;
+                    Object obj = kx.f662a;
+                    z2 = true;
+                    if (i5 != 0 || txVar.y()) {
+                        if ((i2 & 4) != 0) {
+                            r21Var2 = t21.a(txVar);
+                            i4 &= -897;
+                        }
+                        j50 a2 = xd2.a(txVar);
+                        f2 = txVar.f(a2);
+                        M = txVar.M();
+                        if (!f2 || M == obj) {
+                            M = new u50(a2);
+                            txVar.i0(M);
+                        }
+                        yi0Var2 = (u50) M;
+                        i6 = i4 & (-29360129);
+                        z3 = true;
+                    } else {
+                        txVar.S();
+                        if ((i2 & 4) != 0) {
+                            i4 &= -897;
+                        }
+                        i6 = i4 & (-29360129);
+                        yi0Var2 = yi0Var;
+                        z3 = z;
+                    }
+                    txVar.q();
+                    int i9 = i6 >> 3;
+                    i7 = (i6 & 14) | 432;
+                    if ((((i7 & 14) ^ 6) > 4 || !txVar.f(aq0Var)) && (i7 & 6) != 4) {
+                        z2 = false;
+                    }
+                    M2 = txVar.M();
+                    if (!z2 || M2 == obj) {
+                        em1Var2 = em1Var;
+                        ihVar2 = ihVar;
+                        M2 = new dq0(new o8(em1Var2, aq0Var, ihVar2, 4));
+                        txVar.i0(M2);
+                    } else {
+                        em1Var2 = em1Var;
+                        ihVar2 = ihVar;
+                    }
+                    r21Var3 = r21Var2;
+                    yi0 yi0Var4 = yi0Var2;
+                    a01.h(nd1Var, r21Var3, (dq0) M2, em1Var2, yi0Var4, z3, khVar, ihVar2, um0Var, txVar, (i9 & 14) | 196608 | (i9 & 112) | 918580224, (i6 >> 27) & 14);
+                    z4 = z3;
+                    yi0Var3 = yi0Var4;
+                } else {
+                    txVar.S();
+                    yi0Var3 = yi0Var;
+                    z4 = z;
+                    r21Var3 = r21Var2;
+                }
+                s = txVar.s();
+                if (s == null) {
+                    s.d = new go(aq0Var, nd1Var, r21Var3, em1Var, khVar, ihVar, yi0Var3, z4, um0Var, i, i2);
+                    return;
+                }
+                return;
+            }
+        } else {
+            r21Var2 = r21Var;
+        }
+        i3 = PackageParser.PARSE_IS_PRIVILEGED;
+        i4 = i8 | i3 | 104882176 | (!txVar.h(um0Var) ? 536870912 : 268435456);
+        if ((306783379 & i4) == 306783378) {
+        }
+        txVar.U();
+        i5 = i & 1;
+        Object obj2 = kx.f662a;
+        z2 = true;
+        if (i5 != 0) {
+        }
+        if ((i2 & 4) != 0) {
+        }
+        j50 a22 = xd2.a(txVar);
+        f2 = txVar.f(a22);
+        M = txVar.M();
+        if (!f2) {
+        }
+        M = new u50(a22);
+        txVar.i0(M);
+        yi0Var2 = (u50) M;
+        i6 = i4 & (-29360129);
+        z3 = true;
+        txVar.q();
+        int i92 = i6 >> 3;
+        i7 = (i6 & 14) | 432;
+        if (((i7 & 14) ^ 6) > 4) {
+        }
+        z2 = false;
+        M2 = txVar.M();
+        if (z2) {
+        }
+        em1Var2 = em1Var;
+        ihVar2 = ihVar;
+        M2 = new dq0(new o8(em1Var2, aq0Var, ihVar2, 4));
+        txVar.i0(M2);
+        r21Var3 = r21Var2;
+        yi0 yi0Var42 = yi0Var2;
+        a01.h(nd1Var, r21Var3, (dq0) M2, em1Var2, yi0Var42, z3, khVar, ihVar2, um0Var, txVar, (i92 & 14) | 196608 | (i92 & 112) | 918580224, (i6 >> 27) & 14);
+        z4 = z3;
+        yi0Var3 = yi0Var42;
+        s = txVar.s();
+        if (s == null) {
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:63:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0167  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0177  */
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x013e, code lost:
+    
+        if (r1 == r0) goto L60;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final void c(androidx.emoji2.text.sm0 r22, androidx.emoji2.text.jd1 r23, androidx.emoji2.text.ed r24, androidx.compose.runtime.internal.ComposableLambdaImpl r25, androidx.emoji2.text.lx r26, int r27) {
-        /*
-            Method dump skipped, instructions count: 418
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.pz0.c(androidx.emoji2.text.sm0, androidx.emoji2.text.jd1, androidx.emoji2.text.ed, androidx.compose.runtime.internal.ComposableLambdaImpl, androidx.emoji2.text.lx, int):void");
+    public static final void c(sm0 sm0Var, jd1 jd1Var, ed edVar, ComposableLambdaImpl composableLambdaImpl, lx lxVar, int i) {
+        int i2;
+        jd1 jd1Var2;
+        on onVar;
+        q01 q01Var;
+        boolean z;
+        tx txVar;
+        Object obj;
+        on onVar2;
+        tx txVar2;
+        tx txVar3 = (tx) lxVar;
+        txVar3.Z(1254951810);
+        if ((i & 6) == 0) {
+            i2 = (txVar3.h(sm0Var) ? 4 : 2) | i;
+        } else {
+            i2 = i;
+        }
+        if ((i & 48) == 0) {
+            jd1Var2 = jd1Var;
+            i2 |= txVar3.f(jd1Var2) ? 32 : 16;
+        } else {
+            jd1Var2 = jd1Var;
+        }
+        if ((i & 384) == 0) {
+            i2 |= (i & PackageParser.PARSE_TRUSTED_OVERLAY) == 0 ? txVar3.f(edVar) : txVar3.h(edVar) ? PackageParser.PARSE_COLLECT_CERTIFICATES : PackageParser.PARSE_IS_PRIVILEGED;
+        }
+        if ((i & 3072) == 0) {
+            i2 |= txVar3.h(composableLambdaImpl) ? 2048 : 1024;
+        }
+        int i3 = i2;
+        if ((i3 & 1171) == 1170 && txVar3.B()) {
+            txVar3.S();
+            txVar2 = txVar3;
+        } else {
+            View view = (View) txVar3.j(t8.f);
+            j70 j70Var = (j70) txVar3.j(iy.h);
+            q01 q01Var2 = (q01) txVar3.j(iy.n);
+            qx J = jm.J(txVar3);
+            mf1 b0 = az0.b0(composableLambdaImpl, txVar3);
+            UUID uuid = (UUID) oy0.O(new Object[0], null, hy.y, txVar3, 3072, 6);
+            Object M = txVar3.M();
+            on onVar3 = kx.f662a;
+            if (M == onVar3) {
+                jy jyVar = new jy(bz0.D(txVar3));
+                txVar3.i0(jyVar);
+                M = jyVar;
+            }
+            e30 e30Var = ((jy) M).d;
+            boolean z2 = true;
+            if ((((Configuration) txVar3.j(t8.f1107a)).uiMode & 48) != 32) {
+                z2 = false;
+            }
+            boolean f2 = txVar3.f(view) | txVar3.f(j70Var);
+            Object M2 = txVar3.M();
+            if (f2 || M2 == onVar3) {
+                tx txVar4 = txVar3;
+                onVar = onVar3;
+                q01Var = q01Var2;
+                z = true;
+                zc1 zc1Var = new zc1(sm0Var, jd1Var2, view, q01Var, j70Var, uuid, edVar, e30Var, z2);
+                ComposableLambdaImpl composableLambdaImpl2 = new ComposableLambdaImpl(-1560960657, true, new l9(2, b0));
+                xc1 xc1Var = zc1Var.k;
+                xc1Var.setParentCompositionContext(J);
+                xc1Var.p.setValue(composableLambdaImpl2);
+                xc1Var.r = true;
+                xc1Var.c();
+                txVar4.i0(zc1Var);
+                obj = zc1Var;
+                txVar = txVar4;
+            } else {
+                obj = M2;
+                txVar = txVar3;
+                onVar = onVar3;
+                q01Var = q01Var2;
+                z = true;
+            }
+            zc1 zc1Var2 = (zc1) obj;
+            boolean h = txVar.h(zc1Var2);
+            Object M3 = txVar.M();
+            if (h) {
+                onVar2 = onVar;
+            } else {
+                onVar2 = onVar;
+            }
+            M3 = new yc1(zc1Var2, 1);
+            txVar.i0(M3);
+            bz0.k(zc1Var2, (um0) M3, txVar);
+            boolean h2 = txVar.h(zc1Var2) | ((i3 & 14) == 4 ? z : false) | ((i3 & 112) == 32 ? z : false) | txVar.f(q01Var);
+            Object M4 = txVar.M();
+            if (h2 || M4 == onVar2) {
+                j9 j9Var = new j9(zc1Var2, sm0Var, jd1Var, q01Var, 4);
+                txVar.i0(j9Var);
+                M4 = j9Var;
+            }
+            bz0.p((sm0) M4, txVar);
+            txVar2 = txVar;
+        }
+        pw1 s = txVar2.s();
+        if (s != null) {
+            s.d = new k5(sm0Var, jd1Var, edVar, composableLambdaImpl, i, 3);
+        }
     }
 
     public static ra d(String str, gl2 gl2Var, long j, j70 j70Var, bl0 bl0Var, int i, int i2) {
@@ -427,10 +660,10 @@ public abstract class pz0 {
     }
 
     public static final q12 e(float f2, float f3, float f4, float f5, long j) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(fIntBitsToFloat) << 32) | (4294967295L & Float.floatToRawIntBits(fIntBitsToFloat2));
-        return new q12(f2, f3, f4, f5, jFloatToRawIntBits, jFloatToRawIntBits, jFloatToRawIntBits, jFloatToRawIntBits);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L));
+        long floatToRawIntBits = (Float.floatToRawIntBits(intBitsToFloat) << 32) | (4294967295L & Float.floatToRawIntBits(intBitsToFloat2));
+        return new q12(f2, f3, f4, f5, floatToRawIntBits, floatToRawIntBits, floatToRawIntBits, floatToRawIntBits);
     }
 
     public static final int f(float[] fArr) {
@@ -487,38 +720,235 @@ public abstract class pz0 {
             }
         }
         sb.append("]");
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 
     public static final Object l(float f2, float f3, float f4, he heVar, Function2 function2, hh2 hh2Var) {
-        wo2 wo2Var = qq2.f974a;
+        wo2 wo2Var = qq2.f973a;
         Float f5 = new Float(f2);
         Float f6 = new Float(f3);
         ke keVar = new ke(new Float(f4).floatValue());
-        Object objM = m(new ie(wo2Var, f5, keVar, 56), new li2(heVar, wo2Var, f5, f6, keVar), Long.MIN_VALUE, new ch2(function2), hh2Var);
-        up2 up2Var = up2.f1187a;
+        Object m = m(new ie(wo2Var, f5, keVar, 56), new li2(heVar, wo2Var, f5, f6, keVar), Long.MIN_VALUE, new ch2(function2), hh2Var);
+        up2 up2Var = up2.f1186a;
         f30 f30Var = f30.d;
-        if (objM != f30Var) {
-            objM = up2Var;
+        if (m != f30Var) {
+            m = up2Var;
         }
-        return objM == f30Var ? objM : up2Var;
+        return m == f30Var ? m : up2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:74:0x018e  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x019b  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x001a  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0117 A[Catch: CancellationException -> 0x003d, TRY_LEAVE, TryCatch #2 {CancellationException -> 0x003d, blocks: (B:16:0x0038, B:18:0x0100, B:20:0x0117, B:25:0x0139, B:27:0x0149, B:29:0x0153, B:36:0x0160, B:37:0x0165, B:39:0x0166), top: B:15:0x0038 }] */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x019b  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x017f A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x002c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object m(androidx.emoji2.text.ie r24, androidx.emoji2.text.yd r25, long r26, androidx.emoji2.text.um0 r28, androidx.emoji2.text.n10 r29) {
-        /*
-            Method dump skipped, instructions count: 423
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.pz0.m(androidx.emoji2.text.ie, androidx.emoji2.text.yd, long, androidx.emoji2.text.um0, androidx.emoji2.text.n10):java.lang.Object");
+    public static final Object m(ie ieVar, yd ydVar, long j, um0 um0Var, n10 n10Var) {
+        dh2 dh2Var;
+        dh2 dh2Var2;
+        int i;
+        f30 f30Var;
+        cy1 cy1Var;
+        ie ieVar2;
+        ie ieVar3;
+        fh2 fh2Var;
+        cy1 cy1Var2;
+        Object k;
+        um0 um0Var2;
+        ge geVar;
+        ge geVar2;
+        Object obj;
+        Object k2;
+        yd ydVar2 = ydVar;
+        dd0 dd0Var = dd0.J;
+        if (n10Var instanceof dh2) {
+            dh2Var = (dh2) n10Var;
+            int i2 = dh2Var.l;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                dh2Var.l = i2 - Integer.MIN_VALUE;
+                dh2Var2 = dh2Var;
+                v20 v20Var = dh2Var2.e;
+                Object obj2 = dh2Var2.k;
+                i = dh2Var2.l;
+                f30Var = f30.d;
+                if (i != 0) {
+                    mz0.L(obj2);
+                    Object f2 = ydVar2.f(0L);
+                    oe d2 = ydVar2.d(0L);
+                    cy1Var = new cy1();
+                    if (j == Long.MIN_VALUE) {
+                        try {
+                            lx0.u(v20Var);
+                            ieVar2 = ieVar;
+                            try {
+                                fh2Var = new fh2(cy1Var, f2, ydVar2, d2, ieVar2, w(v20Var), um0Var);
+                                cy1Var2 = cy1Var;
+                            } catch (CancellationException e2) {
+                                e = e2;
+                                ieVar3 = ieVar2;
+                                geVar = (ge) cy1Var.d;
+                                if (geVar != null) {
+                                    geVar.i.setValue(Boolean.FALSE);
+                                }
+                                geVar2 = (ge) cy1Var.d;
+                                if (geVar2 != null && geVar2.g == ieVar3.g) {
+                                    ieVar3.i = false;
+                                }
+                                throw e;
+                            }
+                            try {
+                                dh2Var2.g = ieVar2;
+                                dh2Var2.h = ydVar2;
+                                dh2Var2.i = um0Var;
+                                dh2Var2.j = cy1Var2;
+                                dh2Var2.l = 1;
+                                if (!ydVar2.a()) {
+                                    ch2 ch2Var = new ch2(fh2Var);
+                                    lx0.u(v20Var);
+                                    k = ly0.v(v20Var).k(ch2Var, dh2Var2);
+                                } else {
+                                    if (dh2Var2.t().n(dd0Var) != null) {
+                                        throw new ClassCastException();
+                                    }
+                                    k = ly0.v(dh2Var2.t()).k(fh2Var, dh2Var2);
+                                }
+                                if (k != f30Var) {
+                                    ieVar3 = ieVar2;
+                                    um0Var2 = um0Var;
+                                }
+                                return f30Var;
+                            } catch (CancellationException e3) {
+                                e = e3;
+                                ieVar3 = ieVar2;
+                                cy1Var = cy1Var2;
+                                geVar = (ge) cy1Var.d;
+                                if (geVar != null) {
+                                }
+                                geVar2 = (ge) cy1Var.d;
+                                if (geVar2 != null) {
+                                }
+                                throw e;
+                            }
+                        } catch (CancellationException e4) {
+                            e = e4;
+                            ieVar2 = ieVar;
+                        }
+                    } else {
+                        cy1Var2 = cy1Var;
+                        try {
+                            ge geVar3 = new ge(f2, ydVar2.c(), d2, j, ydVar2.g(), j, new eh2(ieVar, 1));
+                            lx0.u(v20Var);
+                            s(geVar3, j, w(v20Var), ydVar2, ieVar, um0Var);
+                            cy1Var2.d = geVar3;
+                            ieVar3 = ieVar;
+                            ydVar2 = ydVar;
+                            um0Var2 = um0Var;
+                        } catch (CancellationException e5) {
+                            e = e5;
+                            ieVar3 = ieVar;
+                            cy1Var = cy1Var2;
+                            geVar = (ge) cy1Var.d;
+                            if (geVar != null) {
+                            }
+                            geVar2 = (ge) cy1Var.d;
+                            if (geVar2 != null) {
+                                ieVar3.i = false;
+                            }
+                            throw e;
+                        }
+                    }
+                    cy1Var = cy1Var2;
+                } else {
+                    if (i != 1 && i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    cy1Var = dh2Var2.j;
+                    um0Var2 = dh2Var2.i;
+                    ydVar2 = dh2Var2.h;
+                    ieVar3 = dh2Var2.g;
+                    try {
+                        mz0.L(obj2);
+                    } catch (CancellationException e6) {
+                        e = e6;
+                        geVar = (ge) cy1Var.d;
+                        if (geVar != null) {
+                        }
+                        geVar2 = (ge) cy1Var.d;
+                        if (geVar2 != null) {
+                        }
+                        throw e;
+                    }
+                }
+                do {
+                    v20 v20Var2 = dh2Var2.e;
+                    obj = cy1Var.d;
+                    lx0.u(obj);
+                    if (((Boolean) ((ge) obj).i.getValue()).booleanValue()) {
+                        return up2.f1186a;
+                    }
+                    lx0.u(v20Var2);
+                    cy1 cy1Var3 = cy1Var;
+                    um0 um0Var3 = um0Var2;
+                    yd ydVar3 = ydVar2;
+                    ie ieVar4 = ieVar3;
+                    try {
+                        gh2 gh2Var = new gh2(cy1Var3, w(v20Var2), ydVar3, ieVar4, um0Var3);
+                        cy1Var = cy1Var3;
+                        ydVar2 = ydVar3;
+                        ieVar3 = ieVar4;
+                        um0Var2 = um0Var3;
+                        dh2Var2.g = ieVar3;
+                        dh2Var2.h = ydVar2;
+                        dh2Var2.i = um0Var2;
+                        dh2Var2.j = cy1Var;
+                        dh2Var2.l = 2;
+                        if (!ydVar2.a()) {
+                            ch2 ch2Var2 = new ch2(gh2Var);
+                            lx0.u(v20Var2);
+                            k2 = ly0.v(v20Var2).k(ch2Var2, dh2Var2);
+                        } else {
+                            if (dh2Var2.t().n(dd0Var) != null) {
+                                throw new ClassCastException();
+                            }
+                            k2 = ly0.v(dh2Var2.t()).k(gh2Var, dh2Var2);
+                        }
+                    } catch (CancellationException e7) {
+                        e = e7;
+                        cy1Var = cy1Var3;
+                        ieVar3 = ieVar4;
+                        geVar = (ge) cy1Var.d;
+                        if (geVar != null) {
+                        }
+                        geVar2 = (ge) cy1Var.d;
+                        if (geVar2 != null) {
+                        }
+                        throw e;
+                    }
+                } while (k2 != f30Var);
+                return f30Var;
+            }
+        }
+        dh2Var = new dh2(n10Var);
+        dh2Var2 = dh2Var;
+        v20 v20Var3 = dh2Var2.e;
+        Object obj22 = dh2Var2.k;
+        i = dh2Var2.l;
+        f30Var = f30.d;
+        if (i != 0) {
+        }
+        do {
+            v20 v20Var22 = dh2Var2.e;
+            obj = cy1Var.d;
+            lx0.u(obj);
+            if (((Boolean) ((ge) obj).i.getValue()).booleanValue()) {
+            }
+        } while (k2 != f30Var);
+        return f30Var;
     }
 
     public static /* synthetic */ Object n(float f2, he heVar, Function2 function2, hh2 hh2Var, int i) {
@@ -529,13 +959,13 @@ public abstract class pz0 {
     }
 
     public static final Object o(ie ieVar, j50 j50Var, boolean z, um0 um0Var, n10 n10Var) {
-        Object objM = m(ieVar, new i50(j50Var, ieVar.d, ieVar.e.getValue(), ieVar.f), z ? ieVar.g : Long.MIN_VALUE, um0Var, n10Var);
-        return objM == f30.d ? objM : up2.f1187a;
+        Object m = m(ieVar, new i50(j50Var, ieVar.d, ieVar.e.getValue(), ieVar.f), z ? ieVar.g : Long.MIN_VALUE, um0Var, n10Var);
+        return m == f30.d ? m : up2.f1186a;
     }
 
     public static final Object p(ie ieVar, Float f2, he heVar, boolean z, um0 um0Var, n10 n10Var) {
-        Object objM = m(ieVar, new li2(heVar, ieVar.d, ieVar.e.getValue(), f2, ieVar.f), z ? ieVar.g : Long.MIN_VALUE, um0Var, n10Var);
-        return objM == f30.d ? objM : up2.f1187a;
+        Object m = m(ieVar, new li2(heVar, ieVar.d, ieVar.e.getValue(), f2, ieVar.f), z ? ieVar.g : Long.MIN_VALUE, um0Var, n10Var);
+        return m == f30.d ? m : up2.f1186a;
     }
 
     public static final int r(float f2) {
@@ -543,11 +973,11 @@ public abstract class pz0 {
     }
 
     public static final void s(ge geVar, long j, float f2, yd ydVar, ie ieVar, um0 um0Var) {
-        long jB = f2 == 0.0f ? ydVar.b() : (long) ((j - geVar.c) / f2);
+        long b2 = f2 == 0.0f ? ydVar.b() : (long) ((j - geVar.c) / f2);
         geVar.g = j;
-        geVar.e.setValue(ydVar.f(jB));
-        geVar.f = ydVar.d(jB);
-        if (ydVar.e(jB)) {
+        geVar.e.setValue(ydVar.f(b2));
+        geVar.f = ydVar.d(b2);
+        if (ydVar.e(b2)) {
             geVar.h = geVar.g;
             geVar.i.setValue(Boolean.FALSE);
         }
@@ -563,39 +993,39 @@ public abstract class pz0 {
             if (v51Var != null) {
                 return v51Var;
             }
-            Object objZ = nz0.z(view);
-            view = objZ instanceof View ? (View) objZ : null;
+            Object z = nz0.z(view);
+            view = z instanceof View ? (View) z : null;
         }
         return null;
     }
 
     public static int u(Context context, int i, int i2) {
-        Integer numValueOf;
-        TypedValue typedValueJ = nz0.J(context, i);
-        if (typedValueJ != null) {
-            int i3 = typedValueJ.resourceId;
-            numValueOf = Integer.valueOf(i3 != 0 ? context.getColor(i3) : typedValueJ.data);
+        Integer num;
+        TypedValue J = nz0.J(context, i);
+        if (J != null) {
+            int i3 = J.resourceId;
+            num = Integer.valueOf(i3 != 0 ? context.getColor(i3) : J.data);
         } else {
-            numValueOf = null;
+            num = null;
         }
-        return numValueOf != null ? numValueOf.intValue() : i2;
+        return num != null ? num.intValue() : i2;
     }
 
     public static int v(View view, int i) {
         Context context = view.getContext();
-        TypedValue typedValueK = nz0.K(view.getContext(), i, view.getClass().getCanonicalName());
-        int i2 = typedValueK.resourceId;
-        return i2 != 0 ? context.getColor(i2) : typedValueK.data;
+        TypedValue K = nz0.K(view.getContext(), i, view.getClass().getCanonicalName());
+        int i2 = K.resourceId;
+        return i2 != 0 ? context.getColor(i2) : K.data;
     }
 
     public static final float w(v20 v20Var) {
         xd1 xd1Var = (xd1) v20Var.n(dd0.N);
-        float fP = xd1Var != null ? xd1Var.p() : 1.0f;
-        if (fP >= 0.0f) {
-            return fP;
+        float p = xd1Var != null ? xd1Var.p() : 1.0f;
+        if (p >= 0.0f) {
+            return p;
         }
         kt1.b("negative scale factor");
-        return fP;
+        return p;
     }
 
     public static final int x(int i, int i2, int i3) {
@@ -647,12 +1077,12 @@ public abstract class pz0 {
     }
 
     public static final gu0 z() {
-        gu0 gu0Var = f935a;
+        gu0 gu0Var = f934a;
         if (gu0Var != null) {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.SportsEsports", 24.0f, 24.0f, false, 96);
-        int i = uq2.f1189a;
+        int i = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         pm0 pm0Var = new pm0(2);
         pm0Var.m(21.58f, 16.09f);
@@ -698,8 +1128,8 @@ public abstract class pz0 {
         pm0Var.f(18.0f, 12.55f, 17.55f, 13.0f, 17.0f, 13.0f);
         pm0Var.e();
         fu0.a(fu0Var, pm0Var.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        f935a = gu0VarB;
-        return gu0VarB;
+        gu0 b2 = fu0Var.b();
+        f934a = b2;
+        return b2;
     }
 }

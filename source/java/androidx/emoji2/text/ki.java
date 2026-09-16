@@ -17,7 +17,7 @@ public final /* synthetic */ class ki implements jj0, zm0 {
     @Override // androidx.emoji2.text.jj0
     public final Object b(Object obj, l10 l10Var) {
         this.d.k((ji) obj);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public final boolean equals(Object obj) {

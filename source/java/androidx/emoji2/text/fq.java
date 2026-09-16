@@ -7,7 +7,7 @@ import android.view.View;
 public final class fq {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f375a;
+    public int f374a;
     public int b;
     public int c;
     public int d;

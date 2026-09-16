@@ -23,14 +23,14 @@ public final class hy0 extends fy0 {
     @Override // androidx.emoji2.text.fy0
     public final void k(Throwable th) {
         jr jrVar = this.j;
-        jr jrVarX = jy0.X(jrVar);
+        jr X = jy0.X(jrVar);
         jy0 jy0Var = this.h;
         iy0 iy0Var = this.i;
         Object obj = this.k;
-        if (jrVarX == null || !jy0Var.g0(iy0Var, jrVarX, obj)) {
+        if (X == null || !jy0Var.g0(iy0Var, X, obj)) {
             iy0Var.d.d(new a71(2), 2);
-            jr jrVarX2 = jy0.X(jrVar);
-            if (jrVarX2 == null || !jy0Var.g0(iy0Var, jrVarX2, obj)) {
+            jr X2 = jy0.X(jrVar);
+            if (X2 == null || !jy0Var.g0(iy0Var, X2, obj)) {
                 jy0Var.v(jy0Var.K(iy0Var, obj));
             }
         }

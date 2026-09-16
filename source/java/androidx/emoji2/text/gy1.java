@@ -10,21 +10,21 @@ public final class gy1 implements Serializable {
 
     public gy1(String str) {
         lx0.x(str, "pattern");
-        Pattern patternCompile = Pattern.compile(str);
-        lx0.w(patternCompile, "compile(...)");
-        this.d = patternCompile;
+        Pattern compile = Pattern.compile(str);
+        lx0.w(compile, "compile(...)");
+        this.d = compile;
     }
 
     public final String a(String str, String str2) {
         lx0.x(str2, "replacement");
-        String strReplaceAll = this.d.matcher(str).replaceAll(str2);
-        lx0.w(strReplaceAll, "replaceAll(...)");
-        return strReplaceAll;
+        String replaceAll = this.d.matcher(str).replaceAll(str2);
+        lx0.w(replaceAll, "replaceAll(...)");
+        return replaceAll;
     }
 
     public final String toString() {
-        String string = this.d.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String pattern = this.d.toString();
+        lx0.w(pattern, "toString(...)");
+        return pattern;
     }
 }

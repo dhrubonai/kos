@@ -14,7 +14,7 @@ import com.google.android.material.button.MaterialButton;
 public final class ma1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final MaterialButton f739a;
+    public final MaterialButton f738a;
     public v92 b;
     public xe2 c;
     public zd2 d;
@@ -39,7 +39,7 @@ public final class ma1 {
     public boolean u = true;
 
     public ma1(MaterialButton materialButton, v92 v92Var) {
-        this.f739a = materialButton;
+        this.f738a = materialButton;
         this.b = v92Var;
     }
 
@@ -52,7 +52,7 @@ public final class ma1 {
     }
 
     public final void b(int i, int i2) {
-        MaterialButton materialButton = this.f739a;
+        MaterialButton materialButton = this.f738a;
         int paddingStart = materialButton.getPaddingStart();
         int paddingTop = materialButton.getPaddingTop();
         int paddingEnd = materialButton.getPaddingEnd();
@@ -81,7 +81,7 @@ public final class ma1 {
         if (j4Var != null) {
             ua1Var.G = j4Var;
         }
-        MaterialButton materialButton = this.f739a;
+        MaterialButton materialButton = this.f738a;
         ua1Var.k(materialButton.getContext());
         ua1Var.setTintList(this.m);
         PorterDuff.Mode mode = this.l;
@@ -108,13 +108,13 @@ public final class ma1 {
         }
         ua1Var2.setTint(0);
         float f2 = this.k;
-        int iV = this.q ? pz0.v(materialButton, R.attr.colorSurface) : 0;
+        int v = this.q ? pz0.v(materialButton, R.attr.colorSurface) : 0;
         ua1Var2.e.k = f2;
         ua1Var2.invalidateSelf();
-        ColorStateList colorStateListValueOf = ColorStateList.valueOf(iV);
+        ColorStateList valueOf = ColorStateList.valueOf(v);
         sa1 sa1Var2 = ua1Var2.e;
-        if (sa1Var2.e != colorStateListValueOf) {
-            sa1Var2.e = colorStateListValueOf;
+        if (sa1Var2.e != valueOf) {
+            sa1Var2.e = valueOf;
             ua1Var2.onStateChange(ua1Var2.getState());
         }
         ua1 ua1Var3 = new ua1(this.b);
@@ -131,38 +131,38 @@ public final class ma1 {
         RippleDrawable rippleDrawable = new RippleDrawable(i12.a(this.o), new InsetDrawable((Drawable) new LayerDrawable(new Drawable[]{ua1Var2, ua1Var}), this.f, this.h, this.g, this.i), this.p);
         this.v = rippleDrawable;
         materialButton.setInternalBackground(rippleDrawable);
-        ua1 ua1VarA = a(false);
-        if (ua1VarA != null) {
-            ua1VarA.m(this.w);
-            ua1VarA.setState(materialButton.getDrawableState());
+        ua1 a2 = a(false);
+        if (a2 != null) {
+            a2.m(this.w);
+            a2.setState(materialButton.getDrawableState());
         }
     }
 
     public final void d() {
-        ua1 ua1VarA = a(false);
-        if (ua1VarA != null) {
+        ua1 a2 = a(false);
+        if (a2 != null) {
             xe2 xe2Var = this.c;
             if (xe2Var != null) {
-                ua1VarA.o(xe2Var);
+                a2.o(xe2Var);
             } else {
-                ua1VarA.setShapeAppearanceModel(this.b);
+                a2.setShapeAppearanceModel(this.b);
             }
             zd2 zd2Var = this.d;
             if (zd2Var != null) {
-                ua1VarA.l(zd2Var);
+                a2.l(zd2Var);
             }
         }
-        ua1 ua1VarA2 = a(true);
-        if (ua1VarA2 != null) {
+        ua1 a3 = a(true);
+        if (a3 != null) {
             xe2 xe2Var2 = this.c;
             if (xe2Var2 != null) {
-                ua1VarA2.o(xe2Var2);
+                a3.o(xe2Var2);
             } else {
-                ua1VarA2.setShapeAppearanceModel(this.b);
+                a3.setShapeAppearanceModel(this.b);
             }
             zd2 zd2Var2 = this.d;
             if (zd2Var2 != null) {
-                ua1VarA2.l(zd2Var2);
+                a3.l(zd2Var2);
             }
         }
         RippleDrawable rippleDrawable = this.v;
@@ -184,28 +184,28 @@ public final class ma1 {
     }
 
     public final void e() {
-        ua1 ua1VarA = a(false);
-        ua1 ua1VarA2 = a(true);
-        if (ua1VarA != null) {
+        ua1 a2 = a(false);
+        ua1 a3 = a(true);
+        if (a2 != null) {
             float f = this.k;
             ColorStateList colorStateList = this.n;
-            ua1VarA.e.k = f;
-            ua1VarA.invalidateSelf();
-            sa1 sa1Var = ua1VarA.e;
+            a2.e.k = f;
+            a2.invalidateSelf();
+            sa1 sa1Var = a2.e;
             if (sa1Var.e != colorStateList) {
                 sa1Var.e = colorStateList;
-                ua1VarA.onStateChange(ua1VarA.getState());
+                a2.onStateChange(a2.getState());
             }
-            if (ua1VarA2 != null) {
+            if (a3 != null) {
                 float f2 = this.k;
-                int iV = this.q ? pz0.v(this.f739a, R.attr.colorSurface) : 0;
-                ua1VarA2.e.k = f2;
-                ua1VarA2.invalidateSelf();
-                ColorStateList colorStateListValueOf = ColorStateList.valueOf(iV);
-                sa1 sa1Var2 = ua1VarA2.e;
-                if (sa1Var2.e != colorStateListValueOf) {
-                    sa1Var2.e = colorStateListValueOf;
-                    ua1VarA2.onStateChange(ua1VarA2.getState());
+                int v = this.q ? pz0.v(this.f738a, R.attr.colorSurface) : 0;
+                a3.e.k = f2;
+                a3.invalidateSelf();
+                ColorStateList valueOf = ColorStateList.valueOf(v);
+                sa1 sa1Var2 = a3.e;
+                if (sa1Var2.e != valueOf) {
+                    sa1Var2.e = valueOf;
+                    a3.onStateChange(a3.getState());
                 }
             }
         }

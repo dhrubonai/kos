@@ -13,7 +13,9 @@ public class ov2 extends nv2 {
 
     @Override // androidx.emoji2.text.tv2
     public wv2 a() {
-        return wv2.d(null, this.c.consumeDisplayCutout());
+        WindowInsets consumeDisplayCutout;
+        consumeDisplayCutout = this.c.consumeDisplayCutout();
+        return wv2.d(null, consumeDisplayCutout);
     }
 
     @Override // androidx.emoji2.text.mv2, androidx.emoji2.text.tv2
@@ -30,7 +32,8 @@ public class ov2 extends nv2 {
 
     @Override // androidx.emoji2.text.tv2
     public g90 f() {
-        DisplayCutout displayCutout = this.c.getDisplayCutout();
+        DisplayCutout displayCutout;
+        displayCutout = this.c.getDisplayCutout();
         if (displayCutout == null) {
             return null;
         }

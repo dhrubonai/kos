@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class on2 implements nn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f865a;
+    public final Object f864a;
     public final Object b;
 
     public on2(Object obj, Object obj2) {
-        this.f865a = obj;
+        this.f864a = obj;
         this.b = obj2;
     }
 
     @Override // androidx.emoji2.text.nn2
     public final Object a() {
-        return this.f865a;
+        return this.f864a;
     }
 
     public final boolean equals(Object obj) {
@@ -23,7 +23,7 @@ public final class on2 implements nn2 {
             return false;
         }
         nn2 nn2Var = (nn2) obj;
-        return lx0.n(this.f865a, nn2Var.a()) && lx0.n(this.b, nn2Var.getTargetState());
+        return lx0.n(this.f864a, nn2Var.a()) && lx0.n(this.b, nn2Var.getTargetState());
     }
 
     @Override // androidx.emoji2.text.nn2
@@ -32,9 +32,9 @@ public final class on2 implements nn2 {
     }
 
     public final int hashCode() {
-        Object obj = this.f865a;
-        int iHashCode = (obj != null ? obj.hashCode() : 0) * 31;
+        Object obj = this.f864a;
+        int hashCode = (obj != null ? obj.hashCode() : 0) * 31;
         Object obj2 = this.b;
-        return iHashCode + (obj2 != null ? obj2.hashCode() : 0);
+        return hashCode + (obj2 != null ? obj2.hashCode() : 0);
     }
 }

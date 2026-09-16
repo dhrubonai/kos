@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class dl1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f260a;
+    public final int f259a;
     public final int b;
 
     public dl1(int i, int i2) {
-        this.f260a = i;
+        this.f259a = i;
         this.b = i2;
     }
 
@@ -20,8 +20,8 @@ public abstract class dl1 {
     }
 
     public final String toString() {
-        String strB = dy1.a(getClass()).b();
-        return strB == null ? "" : strB;
+        String b = dy1.a(getClass()).b();
+        return b == null ? "" : b;
     }
 
     public /* synthetic */ dl1(int i, int i2, int i3) {

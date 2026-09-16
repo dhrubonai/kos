@@ -58,9 +58,9 @@ public class IAppWidgetManagerProxy extends BinderInvocationStub {
         addMethodHook(new ValueMethodProxy(c.a(-657877879635746L, strArr), 0));
         addMethodHook(new ValueMethodProxy(c.a(-657959484014370L, strArr), null));
         addMethodHook(new ValueMethodProxy(c.a(-657547167153954L, strArr), null));
-        String strA = c.a(-657671721205538L, strArr);
+        String a2 = c.a(-657671721205538L, strArr);
         Boolean bool = Boolean.FALSE;
-        addMethodHook(new ValueMethodProxy(strA, bool));
+        addMethodHook(new ValueMethodProxy(a2, bool));
         addMethodHook(new ValueMethodProxy(c.a(-657770505453346L, strArr), 0));
         addMethodHook(new ValueMethodProxy(c.a(-658401865645858L, strArr), bool));
         addMethodHook(new ValueMethodProxy(c.a(-658470585122594L, strArr), 0));

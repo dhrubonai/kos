@@ -1,7 +1,5 @@
 package androidx.emoji2.text;
 
-import java.io.IOException;
-
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class d31 extends g01 implements um0 {
@@ -18,7 +16,7 @@ public final class d31 extends g01 implements um0 {
     }
 
     @Override // androidx.emoji2.text.um0
-    public final Object e(Object obj) throws IOException {
+    public final Object e(Object obj) {
         switch (this.e) {
             case 0:
                 this.f.f(((Number) ((ed) obj).d()).floatValue());
@@ -29,6 +27,6 @@ public final class d31 extends g01 implements um0 {
                 this.g.c.a();
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

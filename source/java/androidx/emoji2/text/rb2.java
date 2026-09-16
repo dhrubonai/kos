@@ -2,13 +2,14 @@ package androidx.emoji2.text;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class rb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ob2 f1001a;
+    public final ob2 f1000a;
     public int[] b;
     public Object[] c;
     public ArrayList d;
@@ -34,7 +35,7 @@ public final class rb2 {
     public pe1 x;
 
     public rb2(ob2 ob2Var) {
-        this.f1001a = ob2Var;
+        this.f1000a = ob2Var;
         int[] iArr = ob2Var.d;
         this.b = iArr;
         Object[] objArr = ob2Var.f;
@@ -62,9 +63,9 @@ public final class rb2 {
 
     public static void y(rb2 rb2Var) {
         int i = rb2Var.v;
-        int iR = rb2Var.r(i);
+        int r = rb2Var.r(i);
         int[] iArr = rb2Var.b;
-        int i2 = (iR * 5) + 1;
+        int i2 = (r * 5) + 1;
         int i3 = iArr[i2];
         if ((i3 & 134217728) != 0) {
             return;
@@ -77,6 +78,28 @@ public final class rb2 {
         rb2Var.S(rb2Var.D(iArr, i));
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x005d, code lost:
+    
+        r2 = r8.b;
+        r3 = r9 * 5;
+        r4 = r0 * 5;
+        r5 = r1 * 5;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0065, code lost:
+    
+        if (r9 >= r1) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0067, code lost:
+    
+        androidx.emoji2.text.xh.w0(r4 + r3, r3, r5, r2, r2);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x006c, code lost:
+    
+        androidx.emoji2.text.xh.w0(r5, r5 + r4, r3 + r4, r2, r2);
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void A(int i) {
         t5 t5Var;
         int i2;
@@ -87,44 +110,33 @@ public final class rb2 {
         int i6 = this.g;
         if (i6 != i) {
             if (!this.d.isEmpty()) {
-                int iO = o() - this.h;
+                int o = o() - this.h;
                 if (i6 < i) {
-                    for (int iB = qb2.b(this.d, i6, iO); iB < this.d.size() && (i3 = (t5Var2 = (t5) this.d.get(iB)).f1104a) < 0 && (i4 = i3 + iO) < i; iB++) {
-                        t5Var2.f1104a = i4;
+                    for (int b = qb2.b(this.d, i6, o); b < this.d.size() && (i3 = (t5Var2 = (t5) this.d.get(b)).f1103a) < 0 && (i4 = i3 + o) < i; b++) {
+                        t5Var2.f1103a = i4;
                     }
                 } else {
-                    for (int iB2 = qb2.b(this.d, i, iO); iB2 < this.d.size() && (i2 = (t5Var = (t5) this.d.get(iB2)).f1104a) >= 0; iB2++) {
-                        t5Var.f1104a = -(iO - i2);
+                    for (int b2 = qb2.b(this.d, i, o); b2 < this.d.size() && (i2 = (t5Var = (t5) this.d.get(b2)).f1103a) >= 0; b2++) {
+                        t5Var.f1103a = -(o - i2);
                     }
-                }
-            }
-            if (i5 > 0) {
-                int[] iArr = this.b;
-                int i7 = i * 5;
-                int i8 = i5 * 5;
-                int i9 = i6 * 5;
-                if (i < i6) {
-                    xh.w0(i8 + i7, i7, i9, iArr, iArr);
-                } else {
-                    xh.w0(i9, i9 + i8, i7 + i8, iArr, iArr);
                 }
             }
             if (i < i6) {
                 i6 = i + i5;
             }
-            int iO2 = o();
-            if (i6 >= iO2) {
+            int o2 = o();
+            if (i6 >= o2) {
                 vx.c("Check failed");
             }
-            while (i6 < iO2) {
-                int i10 = (i6 * 5) + 2;
-                int i11 = this.b[i10];
-                int iP = i11 > -2 ? i11 : (p() + i11) - (-2);
-                if (iP >= i) {
-                    iP = -((p() - iP) - (-2));
+            while (i6 < o2) {
+                int i7 = (i6 * 5) + 2;
+                int i8 = this.b[i7];
+                int p = i8 > -2 ? i8 : (p() + i8) - (-2);
+                if (p >= i) {
+                    p = -((p() - p) - (-2));
                 }
-                if (iP != i11) {
-                    this.b[i10] = iP;
+                if (p != i8) {
+                    this.b[i7] = p;
                 }
                 i6++;
                 if (i6 == i) {
@@ -148,51 +160,51 @@ public final class rb2 {
                 System.arraycopy(objArr, i6, objArr, i4, (i + i3) - i6);
             }
         }
-        int iMin = Math.min(i2 + 1, p());
-        if (i5 != iMin) {
+        int min = Math.min(i2 + 1, p());
+        if (i5 != min) {
             int length = this.c.length - i3;
-            if (iMin < i5) {
-                int iR = r(iMin);
-                int iR2 = r(i5);
+            if (min < i5) {
+                int r = r(min);
+                int r2 = r(i5);
                 int i7 = this.g;
-                while (iR < iR2) {
-                    int i8 = (iR * 5) + 4;
+                while (r < r2) {
+                    int i8 = (r * 5) + 4;
                     int i9 = this.b[i8];
                     if (!(i9 >= 0)) {
                         vx.c("Unexpected anchor value, expected a positive anchor");
                     }
                     this.b[i8] = -((length - i9) + 1);
-                    iR++;
-                    if (iR == i7) {
-                        iR += this.h;
+                    r++;
+                    if (r == i7) {
+                        r += this.h;
                     }
                 }
             } else {
-                int iR3 = r(i5);
-                int iR4 = r(iMin);
-                while (iR3 < iR4) {
-                    int i10 = (iR3 * 5) + 4;
+                int r3 = r(i5);
+                int r4 = r(min);
+                while (r3 < r4) {
+                    int i10 = (r3 * 5) + 4;
                     int i11 = this.b[i10];
                     if (!(i11 < 0)) {
                         vx.c("Unexpected anchor value, expected a negative anchor");
                     }
                     this.b[i10] = i11 + length + 1;
-                    iR3++;
-                    if (iR3 == this.g) {
-                        iR3 += this.h;
+                    r3++;
+                    if (r3 == this.g) {
+                        r3 += this.h;
                     }
                 }
             }
-            this.m = iMin;
+            this.m = min;
         }
         this.k = i;
     }
 
     public final Object C(int i) {
-        int iR = r(i);
+        int r = r(i);
         int[] iArr = this.b;
-        if ((iArr[(iR * 5) + 1] & 1073741824) != 0) {
-            return this.c[h(g(iArr, iR))];
+        if ((iArr[(r * 5) + 1] & 1073741824) != 0) {
+            return this.c[h(g(iArr, r))];
         }
         return null;
     }
@@ -222,30 +234,30 @@ public final class rb2 {
         pe1 pe1Var = this.x;
         if (pe1Var != null) {
             while (pe1Var.b != 0) {
-                int iK = lz0.K(pe1Var);
-                int iR = r(iK);
-                int iT = iK + 1;
-                int iT2 = t(iK) + iK;
+                int K = lz0.K(pe1Var);
+                int r = r(K);
+                int i2 = K + 1;
+                int t = t(K) + K;
                 while (true) {
-                    if (iT >= iT2) {
+                    if (i2 >= t) {
                         i = 0;
                         break;
                     } else {
-                        if ((this.b[(r(iT) * 5) + 1] & 201326592) != 0) {
+                        if ((this.b[(r(i2) * 5) + 1] & 201326592) != 0) {
                             i = 1;
                             break;
                         }
-                        iT += t(iT);
+                        i2 += t(i2);
                     }
                 }
                 int[] iArr = this.b;
-                int i2 = (iR * 5) + 1;
-                int i3 = iArr[i2];
-                if (((67108864 & i3) != 0 ? 1 : 0) != i) {
-                    iArr[i2] = (i << 26) | ((-67108865) & i3);
-                    int iD = D(iArr, iK);
-                    if (iD >= 0) {
-                        lz0.e(pe1Var, iD);
+                int i3 = (r * 5) + 1;
+                int i4 = iArr[i3];
+                if (((67108864 & i4) != 0 ? 1 : 0) != i) {
+                    iArr[i3] = (i << 26) | ((-67108865) & i4);
+                    int D = D(iArr, K);
+                    if (D >= 0) {
+                        lz0.e(pe1Var, D);
                     }
                 }
             }
@@ -258,8 +270,8 @@ public final class rb2 {
         }
         int i = this.t;
         int i2 = this.i;
-        int iG = g(this.b, r(i));
-        int iK = K();
+        int g = g(this.b, r(i));
+        int K = K();
         N(this.v);
         pe1 pe1Var = this.x;
         if (pe1Var != null) {
@@ -272,18 +284,18 @@ public final class rb2 {
                     lz0.N("IntList is empty.");
                     throw null;
                 }
-                if (pe1Var.f901a[0] < i) {
+                if (pe1Var.f900a[0] < i) {
                     break;
                 }
                 lz0.K(pe1Var);
             }
         }
-        boolean zH = H(i, this.t - i);
-        I(iG, this.i - iG, i - 1);
+        boolean H = H(i, this.t - i);
+        I(g, this.i - g, i - 1);
         this.t = i;
         this.i = i2;
-        this.o -= iK;
-        return zH;
+        this.o -= K;
+        return H;
     }
 
     public final boolean H(int i, int i2) {
@@ -291,33 +303,33 @@ public final class rb2 {
             ArrayList arrayList = this.d;
             A(i);
             if (!arrayList.isEmpty()) {
-                HashMap map = this.e;
+                HashMap hashMap = this.e;
                 int i3 = i + i2;
-                int iB = qb2.b(this.d, i3, o() - this.h);
-                if (iB >= this.d.size()) {
-                    iB--;
+                int b = qb2.b(this.d, i3, o() - this.h);
+                if (b >= this.d.size()) {
+                    b--;
                 }
-                int i4 = iB + 1;
+                int i4 = b + 1;
                 int i5 = 0;
-                while (iB >= 0) {
-                    t5 t5Var = (t5) this.d.get(iB);
-                    int iC = c(t5Var);
-                    if (iC < i) {
+                while (b >= 0) {
+                    t5 t5Var = (t5) this.d.get(b);
+                    int c = c(t5Var);
+                    if (c < i) {
                         break;
                     }
-                    if (iC < i3) {
-                        t5Var.f1104a = Integer.MIN_VALUE;
-                        if (map != null) {
+                    if (c < i3) {
+                        t5Var.f1103a = Integer.MIN_VALUE;
+                        if (hashMap != null) {
                         }
                         if (i5 == 0) {
-                            i5 = iB + 1;
+                            i5 = b + 1;
                         }
-                        i4 = iB;
+                        i4 = b;
                     }
-                    iB--;
+                    b--;
                 }
-                z = i4 < i5;
-                if (z) {
+                r0 = i4 < i5;
+                if (r0) {
                     this.d.subList(i4, i5).clear();
                 }
             }
@@ -336,7 +348,7 @@ public final class rb2 {
                 S(i8);
             }
         }
-        return z;
+        return r0;
     }
 
     public final void I(int i, int i2, int i3) {
@@ -355,25 +367,25 @@ public final class rb2 {
     }
 
     public final Object J(int i, int i2, Object obj) {
-        int iM = M(this.b, r(i));
-        int iG = g(this.b, r(i + 1));
-        int i3 = iM + i2;
-        if (i3 < iM || i3 >= iG) {
+        int M = M(this.b, r(i));
+        int g = g(this.b, r(i + 1));
+        int i3 = M + i2;
+        if (i3 < M || i3 >= g) {
             vx.c("Write to an invalid slot index " + i2 + " for group " + i);
         }
-        int iH = h(i3);
+        int h = h(i3);
         Object[] objArr = this.c;
-        Object obj2 = objArr[iH];
-        objArr[iH] = obj;
+        Object obj2 = objArr[h];
+        objArr[h] = obj;
         return obj2;
     }
 
     public final int K() {
-        int iR = r(this.t);
-        int iA = qb2.a(this.b, iR) + this.t;
-        this.t = iA;
-        this.i = g(this.b, r(iA));
-        int i = this.b[(iR * 5) + 1];
+        int r = r(this.t);
+        int a2 = qb2.a(this.b, r) + this.t;
+        this.t = a2;
+        this.i = g(this.b, r(a2));
+        int i = this.b[(r * 5) + 1];
         if ((1073741824 & i) != 0) {
             return 1;
         }
@@ -390,24 +402,24 @@ public final class rb2 {
         if (i >= o()) {
             return this.c.length - this.l;
         }
-        int iC = qb2.c(iArr, i);
-        return iC < 0 ? (this.c.length - this.l) + iC + 1 : iC;
+        int c = qb2.c(iArr, i);
+        return c < 0 ? (this.c.length - this.l) + c + 1 : c;
     }
 
     public final hq0 N(int i) {
-        t5 t5VarQ;
-        HashMap map = this.e;
-        if (map == null || (t5VarQ = Q(i)) == null) {
+        t5 Q;
+        HashMap hashMap = this.e;
+        if (hashMap == null || (Q = Q(i)) == null) {
             return null;
         }
-        return (hq0) map.get(t5VarQ);
+        return (hq0) hashMap.get(Q);
     }
 
     public final void O() {
         if (this.n != 0) {
             vx.c("Key must be supplied when inserting");
         }
-        on onVar = kx.f663a;
+        on onVar = kx.f662a;
         P(0, onVar, onVar, false);
     }
 
@@ -417,23 +429,23 @@ public final class rb2 {
         int i3 = this.v;
         Object[] objArr = this.n > 0;
         this.r.c(this.o);
-        on onVar = kx.f663a;
+        on onVar = kx.f662a;
         if (objArr == true) {
             int i4 = this.t;
-            int iG = g(this.b, r(i4));
+            int g = g(this.b, r(i4));
             v(1);
-            this.i = iG;
-            this.j = iG;
-            int iR = r(i4);
+            this.i = g;
+            this.j = g;
+            int r = r(i4);
             int i5 = obj != onVar ? 1 : 0;
             int i6 = (z || obj2 == onVar) ? 0 : 1;
-            int i7 = i(iG, this.k, this.l, this.c.length);
+            int i7 = i(g, this.k, this.l, this.c.length);
             if (i7 >= 0 && this.m < i4) {
                 i7 = -(((this.c.length - this.l) - i7) + 1);
             }
             int[] iArr = this.b;
             int i8 = this.v;
-            int i9 = iR * 5;
+            int i9 = r * 5;
             iArr[i9] = i;
             iArr[i9 + 1] = ((z ? 1 : 0) << 30) | (i5 << 29) | (i6 << 28);
             iArr[i9 + 2] = i8;
@@ -469,7 +481,7 @@ public final class rb2 {
             this.p.c(i3);
             this.q.c((o() - this.h) - this.u);
             int i12 = this.t;
-            int iR2 = r(i12);
+            int r2 = r(i12);
             if (!lx0.n(obj2, onVar)) {
                 if (z) {
                     T(this.t, obj2);
@@ -477,10 +489,10 @@ public final class rb2 {
                     R(obj2);
                 }
             }
-            this.i = M(this.b, iR2);
+            this.i = M(this.b, r2);
             this.j = g(this.b, r(this.t + 1));
             int[] iArr2 = this.b;
-            int i13 = iR2 * 5;
+            int i13 = r2 * 5;
             this.o = iArr2[i13 + 1] & 67108863;
             this.v = i12;
             this.t = i12 + 1;
@@ -491,22 +503,22 @@ public final class rb2 {
 
     public final t5 Q(int i) {
         ArrayList arrayList;
-        int iE;
-        if (i < 0 || i >= p() || (iE = qb2.e((arrayList = this.d), i, p())) < 0) {
+        int e;
+        if (i < 0 || i >= p() || (e = qb2.e((arrayList = this.d), i, p())) < 0) {
             return null;
         }
-        return (t5) arrayList.get(iE);
+        return (t5) arrayList.get(e);
     }
 
     public final void R(Object obj) {
-        int iR = r(this.t);
-        int i = (iR * 5) + 1;
+        int r = r(this.t);
+        int i = (r * 5) + 1;
         if ((this.b[i] & 268435456) == 0) {
             vx.c("Updating the data of a group that was not created with a data slot");
         }
         Object[] objArr = this.c;
         int[] iArr = this.b;
-        objArr[h(Integer.bitCount(iArr[i] >> 29) + g(iArr, iR))] = obj;
+        objArr[h(Integer.bitCount(iArr[i] >> 29) + g(iArr, r))] = obj;
     }
 
     public final void S(int i) {
@@ -520,47 +532,21 @@ public final class rb2 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0015  */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0012, code lost:
+    
+        if ((r1[(r0 * 5) + 1] & 1073741824) != 0) goto L8;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void T(int r5, java.lang.Object r6) {
-        /*
-            r4 = this;
-            int r0 = r4.r(r5)
-            int[] r1 = r4.b
-            int r2 = r1.length
-            if (r0 >= r2) goto L15
-            int r2 = r0 * 5
-            r3 = 1
-            int r2 = r2 + r3
-            r1 = r1[r2]
-            r2 = 1073741824(0x40000000, float:2.0)
-            r1 = r1 & r2
-            if (r1 == 0) goto L15
-            goto L16
-        L15:
-            r3 = 0
-        L16:
-            if (r3 != 0) goto L2e
-            java.lang.StringBuilder r1 = new java.lang.StringBuilder
-            java.lang.String r2 = "Updating the node of a group at "
-            r1.<init>(r2)
-            r1.append(r5)
-            java.lang.String r5 = " that was not created with as a node group"
-            r1.append(r5)
-            java.lang.String r5 = r1.toString()
-            androidx.emoji2.text.vx.c(r5)
-        L2e:
-            java.lang.Object[] r5 = r4.c
-            int[] r1 = r4.b
-            int r0 = r4.g(r1, r0)
-            int r0 = r4.h(r0)
-            r5[r0] = r6
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.rb2.T(int, java.lang.Object):void");
+    public final void T(int i, Object obj) {
+        int r = r(i);
+        int[] iArr = this.b;
+        boolean z = r < iArr.length;
+        if (!z) {
+            vx.c("Updating the node of a group at " + i + " that was not created with as a node group");
+        }
+        this.c[h(g(this.b, r))] = obj;
     }
 
     public final void a(int i) {
@@ -582,27 +568,27 @@ public final class rb2 {
             vx.c("Cannot seek outside the current group (" + this.v + '-' + this.u + ')');
         }
         this.t = i2;
-        int iG = g(this.b, r(i2));
-        this.i = iG;
-        this.j = iG;
+        int g = g(this.b, r(i2));
+        this.i = g;
+        this.j = g;
     }
 
     public final t5 b(int i) {
         ArrayList arrayList = this.d;
-        int iE = qb2.e(arrayList, i, p());
-        if (iE >= 0) {
-            return (t5) arrayList.get(iE);
+        int e = qb2.e(arrayList, i, p());
+        if (e >= 0) {
+            return (t5) arrayList.get(e);
         }
         if (i > this.g) {
             i = -(p() - i);
         }
         t5 t5Var = new t5(i);
-        arrayList.add(-(iE + 1), t5Var);
+        arrayList.add(-(e + 1), t5Var);
         return t5Var;
     }
 
     public final int c(t5 t5Var) {
-        int i = t5Var.f1104a;
+        int i = t5Var.f1103a;
         return i < 0 ? p() + i : i;
     }
 
@@ -628,9 +614,9 @@ public final class rb2 {
         Object[] objArr = this.c;
         int i3 = this.k;
         ArrayList arrayList = this.d;
-        HashMap map = this.e;
+        HashMap hashMap = this.e;
         qe1 qe1Var = this.f;
-        ob2 ob2Var = this.f1001a;
+        ob2 ob2Var = this.f1000a;
         if (!ob2Var.j) {
             jt1.a("Unexpected writer close()");
         }
@@ -640,7 +626,7 @@ public final class rb2 {
         ob2Var.f = objArr;
         ob2Var.g = i3;
         ob2Var.l = arrayList;
-        ob2Var.m = map;
+        ob2Var.m = hashMap;
         ob2Var.n = qe1Var;
     }
 
@@ -666,17 +652,17 @@ public final class rb2 {
         int i = this.t;
         int i2 = this.u;
         int i3 = this.v;
-        int iR = r(i3);
+        int r = r(i3);
         int i4 = this.o;
         int i5 = i - i3;
-        int i6 = iR * 5;
+        int i6 = r * 5;
         int i7 = i6 + 1;
         boolean z2 = (this.b[i7] & 1073741824) != 0;
         vw0 vw0Var = this.r;
         if (z) {
             qe1 qe1Var = this.s;
             if (qe1Var != null && (ze1Var = (ze1) qe1Var.b(i3)) != null) {
-                Object[] objArr = ze1Var.f1436a;
+                Object[] objArr = ze1Var.f1435a;
                 int i8 = ze1Var.b;
                 for (int i9 = 0; i9 < i8; i9++) {
                     E(objArr[i9]);
@@ -684,18 +670,18 @@ public final class rb2 {
             }
             int[] iArr = this.b;
             iArr[i6 + 3] = i5;
-            qb2.d(iR, i4, iArr);
-            int iB = vw0Var.b();
+            qb2.d(r, i4, iArr);
+            int b = vw0Var.b();
             if (z2) {
                 i4 = 1;
             }
-            this.o = iB + i4;
-            int iD = D(this.b, i3);
-            this.v = iD;
-            int iP = iD < 0 ? p() : r(iD + 1);
-            int iG = iP >= 0 ? g(this.b, iP) : 0;
-            this.i = iG;
-            this.j = iG;
+            this.o = b + i4;
+            int D = D(this.b, i3);
+            this.v = D;
+            int p = D < 0 ? p() : r(D + 1);
+            int g = p >= 0 ? g(this.b, p) : 0;
+            this.i = g;
+            this.j = g;
             return;
         }
         if (i != i2) {
@@ -706,36 +692,36 @@ public final class rb2 {
         int i11 = iArr2[i10];
         int i12 = iArr2[i7] & 67108863;
         iArr2[i10] = i5;
-        qb2.d(iR, i4, iArr2);
-        int iB2 = this.p.b();
+        qb2.d(r, i4, iArr2);
+        int b2 = this.p.b();
         this.u = (o() - this.h) - this.q.b();
-        this.v = iB2;
-        int iD2 = D(this.b, i3);
-        int iB3 = vw0Var.b();
-        this.o = iB3;
-        if (iD2 == iB2) {
-            this.o = iB3 + (z2 ? 0 : i4 - i12);
+        this.v = b2;
+        int D2 = D(this.b, i3);
+        int b3 = vw0Var.b();
+        this.o = b3;
+        if (D2 == b2) {
+            this.o = b3 + (z2 ? 0 : i4 - i12);
             return;
         }
         int i13 = i5 - i11;
         int i14 = z2 ? 0 : i4 - i12;
         if (i13 != 0 || i14 != 0) {
-            while (iD2 != 0 && iD2 != iB2 && (i14 != 0 || i13 != 0)) {
-                int iR2 = r(iD2);
+            while (D2 != 0 && D2 != b2 && (i14 != 0 || i13 != 0)) {
+                int r2 = r(D2);
                 if (i13 != 0) {
                     int[] iArr3 = this.b;
-                    int i15 = (iR2 * 5) + 3;
+                    int i15 = (r2 * 5) + 3;
                     iArr3[i15] = iArr3[i15] + i13;
                 }
                 if (i14 != 0) {
                     int[] iArr4 = this.b;
-                    qb2.d(iR2, (iArr4[(iR2 * 5) + 1] & 67108863) + i14, iArr4);
+                    qb2.d(r2, (iArr4[(r2 * 5) + 1] & 67108863) + i14, iArr4);
                 }
                 int[] iArr5 = this.b;
-                if ((iArr5[(iR2 * 5) + 1] & 1073741824) != 0) {
+                if ((iArr5[(r2 * 5) + 1] & 1073741824) != 0) {
                     i14 = 0;
                 }
-                iD2 = D(iArr5, iD2);
+                D2 = D(iArr5, D2);
             }
         }
         this.o += i14;
@@ -791,24 +777,107 @@ public final class rb2 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:51:0x00eb, code lost:
-    
-        androidx.emoji2.text.lz0.M("Index must be between 0 and size");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x00f0, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:60:0x00f0, code lost:
     
         throw null;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void n(int r20, kotlin.jvm.functions.Function2 r21) {
-        /*
-            Method dump skipped, instructions count: 276
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.rb2.n(int, kotlin.jvm.functions.Function2):void");
+    public final void n(int i, Function2 function2) {
+        int i2;
+        int i3;
+        t5 t5Var;
+        Function2 function22 = function2;
+        int D = D(this.b, i);
+        int p = p();
+        int t = t(i) + i;
+        int i4 = i;
+        re1 re1Var = null;
+        pe1 pe1Var = null;
+        loop0: while (i4 < t) {
+            int i5 = i4 + 1;
+            int f = f(i5);
+            for (int f2 = f(i4); f2 < f; f2++) {
+                Object obj = this.c[h(f2)];
+                if ((obj instanceof ly1) && (t5Var = ((ly1) obj).b) != null && t5Var.a()) {
+                    int c = c(t5Var);
+                    if (re1Var == null) {
+                        int[] iArr = tw0.f1147a;
+                        re1Var = new re1();
+                    }
+                    if (pe1Var == null) {
+                        pe1Var = new pe1();
+                    }
+                    re1Var.a(c);
+                    pe1Var.a(c);
+                    pe1Var.a(f2);
+                } else {
+                    function22.invoke(Integer.valueOf(f2), obj);
+                }
+            }
+            int D2 = i5 < p ? D(this.b, i5) : -1;
+            if (D2 != i4) {
+                while (true) {
+                    if (pe1Var == null || re1Var == null || !re1Var.e(i4)) {
+                        i2 = p;
+                    } else {
+                        int i6 = pe1Var.b;
+                        int i7 = i6 / 2;
+                        int i8 = 0;
+                        int i9 = 0;
+                        while (i8 < i7) {
+                            int i10 = i8 * 2;
+                            int i11 = p;
+                            int c2 = pe1Var.c(i10);
+                            if (c2 == i4) {
+                                int c3 = pe1Var.c(i10 + 1);
+                                function22.invoke(Integer.valueOf(c3), this.c[h(c3)]);
+                            } else if (i10 != i9) {
+                                int i12 = i9 + 1;
+                                pe1Var.e(i9, c2);
+                                i9 += 2;
+                                pe1Var.e(i12, pe1Var.c(i10 + 1));
+                            } else {
+                                i9 += 2;
+                            }
+                            i8++;
+                            function22 = function2;
+                            p = i11;
+                        }
+                        i2 = p;
+                        if (i9 != i6) {
+                            if (i9 < 0 || i9 > (i3 = pe1Var.b) || i6 < 0 || i6 > i3) {
+                                break loop0;
+                            }
+                            if (i6 < i9) {
+                                lz0.L("The end index must be < start index");
+                                throw null;
+                            }
+                            if (i6 != i9) {
+                                if (i6 < i3) {
+                                    int[] iArr2 = pe1Var.f900a;
+                                    xh.w0(i9, i6, i3, iArr2, iArr2);
+                                }
+                                pe1Var.b -= i6 - i9;
+                            }
+                        }
+                    }
+                    if (i4 != i && D != D2) {
+                        i4 = D;
+                        p = i2;
+                        D = D(this.b, D);
+                        function22 = function2;
+                    }
+                }
+            } else {
+                i2 = p;
+            }
+            function22 = function2;
+            D = D2;
+            i4 = i5;
+            p = i2;
+        }
     }
 
     public final int o() {
@@ -820,13 +889,13 @@ public final class rb2 {
     }
 
     public final Object q(int i) {
-        int iR = r(i);
+        int r = r(i);
         int[] iArr = this.b;
-        int i2 = (iR * 5) + 1;
+        int i2 = (r * 5) + 1;
         if ((iArr[i2] & 268435456) == 0) {
-            return kx.f663a;
+            return kx.f662a;
         }
-        return this.c[Integer.bitCount(iArr[i2] >> 29) + g(iArr, iR)];
+        return this.c[Integer.bitCount(iArr[i2] >> 29) + g(iArr, r)];
     }
 
     public final int r(int i) {
@@ -834,9 +903,9 @@ public final class rb2 {
     }
 
     public final Object s(int i) {
-        int iR = r(i);
+        int r = r(i);
         int[] iArr = this.b;
-        int i2 = iR * 5;
+        int i2 = r * 5;
         int i3 = iArr[i2 + 1];
         if ((536870912 & i3) == 0) {
             return null;
@@ -853,20 +922,20 @@ public final class rb2 {
     }
 
     public final boolean u(int i, int i2) {
-        int iO;
-        int iT;
+        int o;
+        int t;
         if (i2 == this.v) {
-            iO = this.u;
+            o = this.u;
         } else {
             vw0 vw0Var = this.p;
             if (i2 > vw0Var.a(0)) {
-                iT = t(i2);
+                t = t(i2);
             } else {
-                int[] iArr = vw0Var.f1246a;
-                int iMin = Math.min(iArr.length, vw0Var.b);
+                int[] iArr = vw0Var.f1245a;
+                int min = Math.min(iArr.length, vw0Var.b);
                 int i3 = 0;
                 while (true) {
-                    if (i3 >= iMin) {
+                    if (i3 >= min) {
                         i3 = -1;
                         break;
                     }
@@ -876,14 +945,14 @@ public final class rb2 {
                     i3++;
                 }
                 if (i3 < 0) {
-                    iT = t(i2);
+                    t = t(i2);
                 } else {
-                    iO = (o() - this.h) - this.q.f1246a[i3];
+                    o = (o() - this.h) - this.q.f1245a[i3];
                 }
             }
-            iO = iT + i2;
+            o = t + i2;
         }
-        return i > i2 && i < iO;
+        return i > i2 && i < o;
     }
 
     public final void v(int i) {
@@ -896,9 +965,9 @@ public final class rb2 {
             int length = iArr.length / 5;
             int i5 = length - i4;
             if (i4 < i) {
-                int iMax = Math.max(Math.max(length * 2, i5 + i), 32);
-                int[] iArr2 = new int[iMax * 5];
-                int i6 = iMax - i5;
+                int max = Math.max(Math.max(length * 2, i5 + i), 32);
+                int[] iArr2 = new int[max * 5];
+                int i6 = max - i5;
                 xh.w0(0, 0, i3 * 5, iArr, iArr2);
                 xh.w0((i3 + i6) * 5, (i4 + i3) * 5, length * 5, iArr, iArr2);
                 this.b = iArr2;
@@ -931,12 +1000,12 @@ public final class rb2 {
                 Object[] objArr = this.c;
                 int length = objArr.length;
                 int i5 = length - i4;
-                int iMax = Math.max(Math.max(length * 2, i5 + i), 32);
-                Object[] objArr2 = new Object[iMax];
-                for (int i6 = 0; i6 < iMax; i6++) {
+                int max = Math.max(Math.max(length * 2, i5 + i), 32);
+                Object[] objArr2 = new Object[max];
+                for (int i6 = 0; i6 < max; i6++) {
                     objArr2[i6] = null;
                 }
-                int i7 = iMax - i5;
+                int i7 = max - i5;
                 int i8 = i4 + i3;
                 System.arraycopy(objArr, 0, objArr2, 0, i3);
                 System.arraycopy(objArr, i8, objArr2, i3 + i7, length - i8);
@@ -960,7 +1029,7 @@ public final class rb2 {
         if (this.n <= 0) {
             vx.c("Check failed");
         }
-        if (i == 0 && this.t == 0 && this.f1001a.e == 0) {
+        if (i == 0 && this.t == 0 && this.f1000a.e == 0) {
             int[] iArr = ob2Var.d;
             int i2 = iArr[(i * 5) + 3];
             int i3 = ob2Var.e;
@@ -968,11 +1037,11 @@ public final class rb2 {
                 int[] iArr2 = this.b;
                 Object[] objArr = this.c;
                 ArrayList arrayList = this.d;
-                HashMap map = this.e;
+                HashMap hashMap = this.e;
                 qe1 qe1Var = this.f;
                 Object[] objArr2 = ob2Var.f;
                 int i4 = ob2Var.g;
-                HashMap map2 = ob2Var.m;
+                HashMap hashMap2 = ob2Var.m;
                 qe1 qe1Var2 = ob2Var.n;
                 this.b = iArr;
                 this.c = objArr2;
@@ -982,24 +1051,24 @@ public final class rb2 {
                 this.k = i4;
                 this.l = objArr2.length - i4;
                 this.m = i3;
-                this.e = map2;
+                this.e = hashMap2;
                 this.f = qe1Var2;
                 ob2Var.d = iArr2;
                 ob2Var.e = 0;
                 ob2Var.f = objArr;
                 ob2Var.g = 0;
                 ob2Var.l = arrayList;
-                ob2Var.m = map;
+                ob2Var.m = hashMap;
                 ob2Var.n = qe1Var;
                 return;
             }
         }
-        rb2 rb2VarD = ob2Var.d();
+        rb2 d = ob2Var.d();
         try {
-            pz0.H(rb2VarD, i, this, true, true, false);
-            rb2VarD.e(true);
+            pz0.H(d, i, this, true, true, false);
+            d.e(true);
         } catch (Throwable th) {
-            rb2VarD.e(false);
+            d.e(false);
             throw th;
         }
     }

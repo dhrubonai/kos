@@ -8,7 +8,7 @@ import android.view.View;
 public abstract class c1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Object f177a;
+    public Object f176a;
     public final Object b;
 
     public c1() {
@@ -58,7 +58,7 @@ public abstract class c1 {
     public abstract int m();
 
     public String n() {
-        String str = (String) this.f177a;
+        String str = (String) this.f176a;
         if (str != null) {
             return str;
         }
@@ -78,6 +78,6 @@ public abstract class c1 {
 
     public c1(jx1 jx1Var) {
         this.b = new Rect();
-        this.f177a = jx1Var;
+        this.f176a = jx1Var;
     }
 }

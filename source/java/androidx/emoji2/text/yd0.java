@@ -41,22 +41,22 @@ public final class yd0 extends od0 implements Runnable {
             if (inputFilter2 == inputFilter) {
                 if (textView.isAttachedToWindow()) {
                     CharSequence text = textView.getText();
-                    qd0 qd0VarA = qd0.a();
+                    qd0 a2 = qd0.a();
                     if (text == null) {
                         length = 0;
                     } else {
-                        qd0VarA.getClass();
+                        a2.getClass();
                         length = text.length();
                     }
-                    CharSequence charSequenceG = qd0VarA.g(0, length, 0, text);
-                    if (text == charSequenceG) {
+                    CharSequence g = a2.g(0, length, 0, text);
+                    if (text == g) {
                         return;
                     }
-                    int selectionStart = Selection.getSelectionStart(charSequenceG);
-                    int selectionEnd = Selection.getSelectionEnd(charSequenceG);
-                    textView.setText(charSequenceG);
-                    if (charSequenceG instanceof Spannable) {
-                        Spannable spannable = (Spannable) charSequenceG;
+                    int selectionStart = Selection.getSelectionStart(g);
+                    int selectionEnd = Selection.getSelectionEnd(g);
+                    textView.setText(g);
+                    if (g instanceof Spannable) {
+                        Spannable spannable = (Spannable) g;
                         if (selectionStart >= 0 && selectionEnd >= 0) {
                             Selection.setSelection(spannable, selectionStart, selectionEnd);
                             return;

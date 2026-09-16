@@ -18,13 +18,13 @@ public final class bd1 extends g01 implements um0 {
         switch (this.e) {
             case 0:
                 this.f.a();
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
-                long j = ((zi1) obj).f1442a;
+                long j = ((zi1) obj).f1441a;
                 this.f.a();
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                return new zi1(((zi1) this.f.a()).f1442a);
+                return new zi1(((zi1) this.f.a()).f1441a);
         }
     }
 }

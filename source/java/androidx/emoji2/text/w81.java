@@ -45,7 +45,7 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
         }
         t70 t70Var = this.y;
         if (t70Var != null) {
-            return ((zi1) t70Var.getValue()).f1442a;
+            return ((zi1) t70Var.getValue()).f1441a;
         }
         return 9205357640488583168L;
     }
@@ -55,17 +55,17 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
         if (pr1Var != null) {
             ((rr1) pr1Var).b();
         }
-        View viewD0 = this.u;
-        if (viewD0 == null) {
-            viewD0 = bz0.d0(this);
+        View view = this.u;
+        if (view == null) {
+            view = bz0.d0(this);
         }
-        this.u = viewD0;
+        this.u = view;
         j70 j70Var = this.v;
         if (j70Var == null) {
             j70Var = lx0.T(this).A;
         }
         this.v = j70Var;
-        this.w = this.t.b(viewD0, j70Var);
+        this.w = this.t.b(view, j70Var);
         L0();
     }
 
@@ -75,7 +75,7 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
             j70Var = lx0.T(this).A;
             this.v = j70Var;
         }
-        long j = ((zi1) this.r.e(j70Var)).f1442a;
+        long j = ((zi1) this.r.e(j70Var)).f1441a;
         if (!jz0.I(j) || !jz0.I(I0())) {
             this.z = 9205357640488583168L;
             pr1 pr1Var = this.w;
@@ -103,9 +103,9 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
             return;
         }
         rr1 rr1Var = (rr1) pr1Var;
-        long jC = rr1Var.c();
+        long c = rr1Var.c();
         uw0 uw0Var = this.A;
-        if (uw0Var != null && jC == uw0Var.f1196a) {
+        if (uw0Var != null && c == uw0Var.f1195a) {
             return;
         }
         this.s.e(new ga0(j70Var.v(kx0.M(rr1Var.c()))));
@@ -117,7 +117,7 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
         g11Var.b();
         vn vnVar = this.B;
         if (vnVar != null) {
-            vnVar.r(up2.f1187a);
+            vnVar.r(up2.f1186a);
         }
     }
 
@@ -133,6 +133,6 @@ public final class w81 extends md1 implements xn0, ub0, w62, xi1 {
 
     @Override // androidx.emoji2.text.w62
     public final void z(u62 u62Var) {
-        u62Var.d(x81.f1323a, new v81(this, 1));
+        u62Var.d(x81.f1322a, new v81(this, 1));
     }
 }

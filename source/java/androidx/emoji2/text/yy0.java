@@ -22,7 +22,7 @@ public final class yy0 {
     public static final /* synthetic */ int p = 0;
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1411a;
+    public final long f1410a;
 
     static {
         jz0.c(0);
@@ -115,7 +115,7 @@ public final class yy0 {
     }
 
     public /* synthetic */ yy0(long j2) {
-        this.f1411a = j2;
+        this.f1410a = j2;
     }
 
     public static final boolean a(long j2, long j3) {
@@ -124,16 +124,16 @@ public final class yy0 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof yy0) {
-            return this.f1411a == ((yy0) obj).f1411a;
+            return this.f1410a == ((yy0) obj).f1410a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f1411a);
+        return Long.hashCode(this.f1410a);
     }
 
     public final String toString() {
-        return jx0.h(this.f1411a, "Key code: ");
+        return jx0.h(this.f1410a, "Key code: ");
     }
 }

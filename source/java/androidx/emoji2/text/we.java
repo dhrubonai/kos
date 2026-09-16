@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class we {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ue f1273a = new ue("");
+    public static final ue f1272a = new ue("");
 
     public static final List a(ue ueVar, int i, int i2, ve veVar) {
         List list;
@@ -20,8 +20,8 @@ public abstract class we {
             int size = list.size();
             for (int i3 = 0; i3 < size; i3++) {
                 te teVar = (te) list.get(i3);
-                if ((veVar != null ? ((Boolean) veVar.e(teVar.f1116a)).booleanValue() : true) && b(i, i2, teVar.b, teVar.c)) {
-                    arrayList.add(new te((qe) teVar.f1116a, az0.p(teVar.b, i, i2) - i, az0.p(teVar.c, i, i2) - i, teVar.d));
+                if ((veVar != null ? ((Boolean) veVar.e(teVar.f1115a)).booleanValue() : true) && b(i, i2, teVar.b, teVar.c)) {
+                    arrayList.add(new te((qe) teVar.f1115a, az0.p(teVar.b, i, i2) - i, az0.p(teVar.c, i, i2) - i, teVar.d));
                 }
             }
             return arrayList;
@@ -33,7 +33,7 @@ public abstract class we {
         int size2 = list.size();
         for (int i4 = 0; i4 < size2; i4++) {
             Object obj = list.get(i4);
-            if (((Boolean) veVar.e(((te) obj).f1116a)).booleanValue()) {
+            if (((Boolean) veVar.e(((te) obj).f1115a)).booleanValue()) {
                 arrayList2.add(obj);
             }
         }

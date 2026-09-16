@@ -25,7 +25,7 @@ public final class g52 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((g52) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((g52) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -34,11 +34,11 @@ public final class g52 extends hh2 implements Function2 {
         if (i == 0) {
             mz0.L(obj);
             x52 x52Var = this.i.G;
-            long jD = jz0.d(this.j, this.k);
+            long d = jz0.d(this.j, this.k);
             this.h = 1;
-            Object objA = androidx.compose.foundation.gestures.a.a(x52Var, jD, this);
+            Object a2 = androidx.compose.foundation.gestures.a.a(x52Var, d, this);
             f30 f30Var = f30.d;
-            if (objA == f30Var) {
+            if (a2 == f30Var) {
                 return f30Var;
             }
         } else {
@@ -47,6 +47,6 @@ public final class g52 extends hh2 implements Function2 {
             }
             mz0.L(obj);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

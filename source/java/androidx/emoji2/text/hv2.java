@@ -13,10 +13,12 @@ public class hv2 extends lv2 {
 
     @Override // androidx.emoji2.text.lv2
     public wv2 b() {
+        WindowInsets build;
         a();
-        wv2 wv2VarD = wv2.d(null, this.c.build());
-        wv2VarD.f1306a.r(this.b);
-        return wv2VarD;
+        build = this.c.build();
+        wv2 d = wv2.d(null, build);
+        d.f1305a.r(this.b);
+        return d;
     }
 
     @Override // androidx.emoji2.text.lv2
@@ -45,14 +47,14 @@ public class hv2 extends lv2 {
     }
 
     public hv2(wv2 wv2Var) {
-        WindowInsets.Builder builderJ;
         super(wv2Var);
-        WindowInsets windowInsetsC = wv2Var.c();
-        if (windowInsetsC != null) {
-            builderJ = zo2.e(windowInsetsC);
+        WindowInsets.Builder j;
+        WindowInsets c = wv2Var.c();
+        if (c != null) {
+            j = zo2.e(c);
         } else {
-            builderJ = wp0.j();
+            j = wp0.j();
         }
-        this.c = builderJ;
+        this.c = j;
     }
 }

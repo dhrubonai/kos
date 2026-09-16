@@ -34,106 +34,50 @@ public final class ph2 extends lz0 {
         SwipeDismissBehavior swipeDismissBehavior = this.g;
         float f = width * swipeDismissBehavior.e;
         float width2 = view.getWidth() * swipeDismissBehavior.f;
-        float fAbs = Math.abs(i - this.e);
-        if (fAbs <= f) {
+        float abs = Math.abs(i - this.e);
+        if (abs <= f) {
             view.setAlpha(1.0f);
-        } else if (fAbs >= width2) {
+        } else if (abs >= width2) {
             view.setAlpha(0.0f);
         } else {
-            view.setAlpha(Math.min(Math.max(0.0f, 1.0f - ((fAbs - f) / (width2 - f))), 1.0f));
+            view.setAlpha(Math.min(Math.max(0.0f, 1.0f - ((abs - f) / (width2 - f))), 1.0f));
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0050  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0065  */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x004e, code lost:
+    
+        if (java.lang.Math.abs(r9.getLeft() - r8.e) >= java.lang.Math.round(r9.getWidth() * 0.5f)) goto L27;
+     */
     @Override // androidx.emoji2.text.lz0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void F(android.view.View r9, float r10, float r11) {
-        /*
-            r8 = this;
-            r11 = -1
-            r8.f = r11
-            int r11 = r9.getWidth()
-            r0 = 0
-            int r1 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
-            r2 = 0
-            com.google.android.material.behavior.SwipeDismissBehavior r3 = r8.g
-            r4 = 1
-            if (r1 == 0) goto L37
-            int r5 = r9.getLayoutDirection()
-            if (r5 != r4) goto L18
-            r5 = r4
-            goto L19
-        L18:
-            r5 = r2
-        L19:
-            int r6 = r3.d
-            r7 = 2
-            if (r6 != r7) goto L1f
-            goto L50
-        L1f:
-            if (r6 != 0) goto L2b
-            if (r5 == 0) goto L28
-            int r1 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
-            if (r1 >= 0) goto L65
-            goto L50
-        L28:
-            if (r1 <= 0) goto L65
-            goto L50
-        L2b:
-            if (r6 != r4) goto L65
-            if (r5 == 0) goto L32
-            if (r1 <= 0) goto L65
-            goto L50
-        L32:
-            int r1 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
-            if (r1 >= 0) goto L65
-            goto L50
-        L37:
-            int r1 = r9.getLeft()
-            int r5 = r8.e
-            int r1 = r1 - r5
-            int r5 = r9.getWidth()
-            float r5 = (float) r5
-            r6 = 1056964608(0x3f000000, float:0.5)
-            float r5 = r5 * r6
-            int r5 = java.lang.Math.round(r5)
-            int r1 = java.lang.Math.abs(r1)
-            if (r1 < r5) goto L65
-        L50:
-            int r10 = (r10 > r0 ? 1 : (r10 == r0 ? 0 : -1))
-            if (r10 < 0) goto L5f
-            int r10 = r9.getLeft()
-            int r0 = r8.e
-            if (r10 >= r0) goto L5d
-            goto L5f
-        L5d:
-            int r0 = r0 + r11
-            goto L63
-        L5f:
-            int r10 = r8.e
-            int r0 = r10 - r11
-        L63:
-            r2 = r4
-            goto L67
-        L65:
-            int r0 = r8.e
-        L67:
-            androidx.emoji2.text.is2 r10 = r3.f1468a
-            int r11 = r9.getTop()
-            boolean r10 = r10.o(r0, r11)
-            if (r10 == 0) goto L7b
-            androidx.emoji2.text.u3 r10 = new androidx.emoji2.text.u3
-            r10.<init>(r3, r9, r2)
-            r9.postOnAnimation(r10)
-        L7b:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ph2.F(android.view.View, float, float):void");
+    public final void F(View view, float f, float f2) {
+        int i;
+        this.f = -1;
+        int width = view.getWidth();
+        boolean z = false;
+        SwipeDismissBehavior swipeDismissBehavior = this.g;
+        if (f != 0.0f) {
+            boolean z2 = view.getLayoutDirection() == 1;
+            int i2 = swipeDismissBehavior.d;
+            if (i2 != 2) {
+                i = i2 == 0 ? this.e : this.e;
+            }
+            if (f >= 0.0f) {
+                int left = view.getLeft();
+                int i3 = this.e;
+                if (left >= i3) {
+                    i = i3 + width;
+                    z = true;
+                }
+            }
+            i = this.e - width;
+            z = true;
+        }
+        if (swipeDismissBehavior.f1467a.o(i, view.getTop())) {
+            view.postOnAnimation(new u3(swipeDismissBehavior, view, z));
+        }
     }
 
     @Override // androidx.emoji2.text.lz0

@@ -8,11 +8,11 @@ import com.kos.engine.entity.location.BCell;
 public abstract class lt {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final jf2 f709a = new jf2(m8.s);
+    public static final jf2 f708a = new jf2(m8.s);
     public static final jf2 b = new jf2(m8.t);
 
     public static final long a(kt ktVar, long j) {
-        long j2 = ktVar.f655a;
+        long j2 = ktVar.f654a;
         long j3 = ktVar.q;
         if (et.c(j, j2)) {
             return ktVar.b;
@@ -50,7 +50,22 @@ public abstract class lt {
         if (et.c(j, ktVar.r)) {
             return ktVar.s;
         }
-        if (et.c(j, ktVar.D) || et.c(j, ktVar.F) || et.c(j, ktVar.G) || et.c(j, ktVar.H) || et.c(j, ktVar.I) || et.c(j, ktVar.J)) {
+        if (et.c(j, ktVar.D)) {
+            return j3;
+        }
+        if (et.c(j, ktVar.F)) {
+            return j3;
+        }
+        if (et.c(j, ktVar.G)) {
+            return j3;
+        }
+        if (et.c(j, ktVar.H)) {
+            return j3;
+        }
+        if (et.c(j, ktVar.I)) {
+            return j3;
+        }
+        if (et.c(j, ktVar.J)) {
             return j3;
         }
         int i = et.l;
@@ -60,12 +75,12 @@ public abstract class lt {
     public static final long b(long j, lx lxVar) {
         tx txVar = (tx) lxVar;
         txVar.X(-1680936624);
-        long jA = a((kt) txVar.j(f709a), j);
-        if (jA == 16) {
-            jA = ((et) txVar.j(g00.f396a)).f321a;
+        long a2 = a((kt) txVar.j(f708a), j);
+        if (a2 == 16) {
+            a2 = ((et) txVar.j(g00.f395a)).f320a;
         }
         txVar.p(false);
-        return jA;
+        return a2;
     }
 
     public static final long c(kt ktVar, int i) {
@@ -80,21 +95,21 @@ public abstract class lt {
                 return ktVar.v;
             case 4:
                 return ktVar.e;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return ktVar.u;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return ktVar.o;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return ktVar.x;
             case 8:
                 return ktVar.z;
-            case 9:
+            case pz0.b /* 9 */:
                 return ktVar.b;
-            case 10:
+            case pz0.d /* 10 */:
                 return ktVar.d;
             case 11:
             case 12:
-            case 15:
+            case pz0.f /* 15 */:
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
             case 21:
             case 22:
@@ -121,7 +136,7 @@ public abstract class lt {
             case 24:
                 return ktVar.B;
             case 25:
-                return ktVar.f655a;
+                return ktVar.f654a;
             case 26:
                 return ktVar.c;
             case 29:
@@ -158,6 +173,6 @@ public abstract class lt {
     }
 
     public static final long d(lx lxVar, int i) {
-        return c((kt) ((tx) lxVar).j(f709a), i);
+        return c((kt) ((tx) lxVar).j(f708a), i);
     }
 }

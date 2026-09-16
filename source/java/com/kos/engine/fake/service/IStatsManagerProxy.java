@@ -50,13 +50,13 @@ public class IStatsManagerProxy implements IInjectHook {
 
     @Override // com.kos.engine.fake.hook.IInjectHook
     public void injectHook() {
-        Map<String, IBinder> mapSCache = BRServiceManager.get().sCache();
-        if (mapSCache == null) {
+        Map<String, IBinder> sCache = BRServiceManager.get().sCache();
+        if (sCache == null) {
             return;
         }
         for (String str : SERVICE_NAMES) {
             if (BRServiceManager.get().getService(str) == null) {
-                mapSCache.put(str, new EmptyStatsBinder());
+                sCache.put(str, new EmptyStatsBinder());
                 String[] strArr = xa1.b;
                 jx0.r(new StringBuilder(), c.a(-1001445198544674L, strArr), str, 3, c.a(-1000762298744610L, strArr));
             }

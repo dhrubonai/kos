@@ -6,6 +6,7 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -37,9 +38,9 @@ public final class x51 extends lz0 {
     }
 
     public final o51 P(u51 u51Var) {
-        HashMap map = this.f.h;
-        q22 q22Var = map.containsKey(u51Var) ? ((q22) map.get(u51Var)).g : null;
-        o51 o51Var = q22Var != null ? ((w51) q22Var.e).f1260a : null;
+        HashMap hashMap = this.f.h;
+        q22 q22Var = hashMap.containsKey(u51Var) ? ((q22) hashMap.get(u51Var)).g : null;
+        o51 o51Var = q22Var != null ? ((w51) q22Var.e).f1259a : null;
         ArrayList arrayList = this.l;
         o51 o51Var2 = arrayList.isEmpty() ? null : (o51) arrayList.get(arrayList.size() - 1);
         o51 o51Var3 = this.g;
@@ -109,25 +110,96 @@ public final class x51 extends lz0 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0030, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0030, code lost:
     
         r12.k = false;
         r12.m.h(r12.g);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0039, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
     
         return;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void T() {
-        /*
-            Method dump skipped, instructions count: 409
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.x51.T():void");
+        v51 v51Var = (v51) this.h.get();
+        if (v51Var == null) {
+            throw new IllegalStateException("LifecycleOwner of this LifecycleRegistry is already garbage collected. It is too late to change lifecycle state.");
+        }
+        while (true) {
+            ph0 ph0Var = this.f;
+            if (ph0Var.g != 0) {
+                q22 q22Var = ph0Var.d;
+                lx0.u(q22Var);
+                o51 o51Var = ((w51) q22Var.e).f1259a;
+                q22 q22Var2 = this.f.e;
+                lx0.u(q22Var2);
+                o51 o51Var2 = ((w51) q22Var2.e).f1259a;
+                if (o51Var == o51Var2 && this.g == o51Var2) {
+                    break;
+                }
+                this.k = false;
+                o51 o51Var3 = this.g;
+                q22 q22Var3 = this.f.d;
+                lx0.u(q22Var3);
+                int compareTo = o51Var3.compareTo(((w51) q22Var3.e).f1259a);
+                ArrayList arrayList = this.l;
+                if (compareTo < 0) {
+                    ph0 ph0Var2 = this.f;
+                    p22 p22Var = new p22(ph0Var2.e, ph0Var2.d, 1);
+                    ph0Var2.f.put(p22Var, Boolean.FALSE);
+                    while (p22Var.hasNext() && !this.k) {
+                        Map.Entry entry = (Map.Entry) p22Var.next();
+                        lx0.u(entry);
+                        u51 u51Var = (u51) entry.getKey();
+                        w51 w51Var = (w51) entry.getValue();
+                        while (w51Var.f1259a.compareTo(this.g) > 0 && !this.k && this.f.h.containsKey(u51Var)) {
+                            l51 l51Var = n51.Companion;
+                            o51 o51Var4 = w51Var.f1259a;
+                            l51Var.getClass();
+                            lx0.x(o51Var4, "state");
+                            int ordinal = o51Var4.ordinal();
+                            n51 n51Var = ordinal != 2 ? ordinal != 3 ? ordinal != 4 ? null : n51.ON_PAUSE : n51.ON_STOP : n51.ON_DESTROY;
+                            if (n51Var == null) {
+                                throw new IllegalStateException("no event down from " + w51Var.f1259a);
+                            }
+                            arrayList.add(n51Var.a());
+                            w51Var.a(v51Var, n51Var);
+                            arrayList.remove(arrayList.size() - 1);
+                        }
+                    }
+                }
+                q22 q22Var4 = this.f.e;
+                if (!this.k && q22Var4 != null && this.g.compareTo(((w51) q22Var4.e).f1259a) > 0) {
+                    ph0 ph0Var3 = this.f;
+                    ph0Var3.getClass();
+                    r22 r22Var = new r22(ph0Var3);
+                    ph0Var3.f.put(r22Var, Boolean.FALSE);
+                    while (r22Var.hasNext() && !this.k) {
+                        Map.Entry entry2 = (Map.Entry) r22Var.next();
+                        u51 u51Var2 = (u51) entry2.getKey();
+                        w51 w51Var2 = (w51) entry2.getValue();
+                        while (w51Var2.f1259a.compareTo(this.g) < 0 && !this.k && this.f.h.containsKey(u51Var2)) {
+                            arrayList.add(w51Var2.f1259a);
+                            l51 l51Var2 = n51.Companion;
+                            o51 o51Var5 = w51Var2.f1259a;
+                            l51Var2.getClass();
+                            lx0.x(o51Var5, "state");
+                            int ordinal2 = o51Var5.ordinal();
+                            n51 n51Var2 = ordinal2 != 1 ? ordinal2 != 2 ? ordinal2 != 3 ? null : n51.ON_RESUME : n51.ON_START : n51.ON_CREATE;
+                            if (n51Var2 == null) {
+                                throw new IllegalStateException("no event up from " + w51Var2.f1259a);
+                            }
+                            w51Var2.a(v51Var, n51Var2);
+                            arrayList.remove(arrayList.size() - 1);
+                        }
+                    }
+                }
+            } else {
+                break;
+            }
+        }
     }
 
     @Override // androidx.emoji2.text.lz0
@@ -143,7 +215,7 @@ public final class x51 extends lz0 {
             o51Var2 = o51.e;
         }
         w51 w51Var = new w51();
-        HashMap map = z51.f1420a;
+        HashMap hashMap = z51.f1419a;
         boolean z = u51Var instanceof t51;
         boolean z2 = u51Var instanceof j60;
         int i = 2;
@@ -175,13 +247,13 @@ public final class x51 extends lz0 {
             }
         }
         w51Var.b = l60Var;
-        w51Var.f1260a = o51Var2;
+        w51Var.f1259a = o51Var2;
         ph0 ph0Var = this.f;
-        q22 q22VarA = ph0Var.a(u51Var);
-        if (q22VarA != null) {
-            obj = q22VarA.e;
+        q22 a2 = ph0Var.a(u51Var);
+        if (a2 != null) {
+            obj = a2.e;
         } else {
-            HashMap map2 = ph0Var.h;
+            HashMap hashMap2 = ph0Var.h;
             q22 q22Var = new q22(u51Var, w51Var);
             ph0Var.g++;
             q22 q22Var2 = ph0Var.e;
@@ -193,29 +265,29 @@ public final class x51 extends lz0 {
                 q22Var.g = q22Var2;
                 ph0Var.e = q22Var;
             }
-            map2.put(u51Var, q22Var);
+            hashMap2.put(u51Var, q22Var);
             obj = null;
         }
         if (((w51) obj) == null && (v51Var = (v51) this.h.get()) != null) {
             boolean z3 = this.i != 0 || this.j;
-            o51 o51VarP = P(u51Var);
+            o51 P = P(u51Var);
             this.i++;
-            while (w51Var.f1260a.compareTo(o51VarP) < 0 && this.f.h.containsKey(u51Var)) {
-                o51 o51Var3 = w51Var.f1260a;
+            while (w51Var.f1259a.compareTo(P) < 0 && this.f.h.containsKey(u51Var)) {
+                o51 o51Var3 = w51Var.f1259a;
                 ArrayList arrayList = this.l;
                 arrayList.add(o51Var3);
                 l51 l51Var = n51.Companion;
-                o51 o51Var4 = w51Var.f1260a;
+                o51 o51Var4 = w51Var.f1259a;
                 l51Var.getClass();
                 lx0.x(o51Var4, "state");
-                int iOrdinal = o51Var4.ordinal();
-                n51 n51Var = iOrdinal != 1 ? iOrdinal != 2 ? iOrdinal != 3 ? null : n51.ON_RESUME : n51.ON_START : n51.ON_CREATE;
+                int ordinal = o51Var4.ordinal();
+                n51 n51Var = ordinal != 1 ? ordinal != 2 ? ordinal != 3 ? null : n51.ON_RESUME : n51.ON_START : n51.ON_CREATE;
                 if (n51Var == null) {
-                    throw new IllegalStateException("no event up from " + w51Var.f1260a);
+                    throw new IllegalStateException("no event up from " + w51Var.f1259a);
                 }
                 w51Var.a(v51Var, n51Var);
                 arrayList.remove(arrayList.size() - 1);
-                o51VarP = P(u51Var);
+                P = P(u51Var);
             }
             if (!z3) {
                 T();

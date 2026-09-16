@@ -18,6 +18,6 @@ public final class zq1 implements sm0 {
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
         this.f.setValue(n6.Z(this.d, this.e));
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

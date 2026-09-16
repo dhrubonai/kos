@@ -33,9 +33,9 @@ public final class t61 implements Iterator, ry0 {
         int length = charSequence.length();
         int length2 = charSequence.length();
         for (int i4 = this.f; i4 < length2; i4++) {
-            char cCharAt = charSequence.charAt(i4);
-            if (cCharAt == '\n' || cCharAt == '\r') {
-                i = (cCharAt == '\r' && (i2 = i4 + 1) < charSequence.length() && charSequence.charAt(i2) == '\n') ? 2 : 1;
+            char charAt = charSequence.charAt(i4);
+            if (charAt == '\n' || charAt == '\r') {
+                i = (charAt == '\r' && (i2 = i4 + 1) < charSequence.length() && charSequence.charAt(i2) == '\n') ? 2 : 1;
                 length = i4;
                 this.e = 1;
                 this.h = i;

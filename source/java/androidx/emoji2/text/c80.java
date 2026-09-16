@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class c80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f187a;
+    public final String f186a;
     public final String b;
     public final boolean c;
     public final String d;
 
     public c80(String str, String str2) {
-        this.f187a = str;
+        this.f186a = str;
         this.b = str2;
         this.c = str != null;
         this.d = null;
@@ -22,11 +22,11 @@ public final class c80 {
         if (!this.c) {
             return a.a.a.c.a(-870985566928674L, strArr) + this.d;
         }
-        return a.a.a.c.a(-870899667582754L, strArr) + this.b + a.a.a.c.a(-871007041765154L, strArr) + this.f187a;
+        return a.a.a.c.a(-870899667582754L, strArr) + this.b + a.a.a.c.a(-871007041765154L, strArr) + this.f186a;
     }
 
     public c80(String str) {
-        this.f187a = null;
+        this.f186a = null;
         this.b = null;
         this.c = false;
         this.d = str;

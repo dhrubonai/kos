@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class cp implements hi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f213a;
+    public final /* synthetic */ int f212a;
     public final Object b;
 
     public /* synthetic */ cp(int i, Object obj) {
-        this.f213a = i;
+        this.f212a = i;
         this.b = obj;
     }
 
     public final String toString() {
-        switch (this.f213a) {
+        switch (this.f212a) {
             case 0:
                 return "CancelHandler.UserSupplied[" + ((um0) this.b).getClass().getSimpleName() + '@' + h50.y(this) + ']';
             default:

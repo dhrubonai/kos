@@ -16,7 +16,7 @@ public final class s8 implements ComponentCallbacks2 {
     public final void onConfigurationChanged(Configuration configuration) {
         tz1 tz1Var = this.d;
         synchronized (tz1Var) {
-            tz1Var.f1153a.c();
+            tz1Var.f1152a.c();
         }
     }
 
@@ -24,7 +24,7 @@ public final class s8 implements ComponentCallbacks2 {
     public final void onLowMemory() {
         tz1 tz1Var = this.d;
         synchronized (tz1Var) {
-            tz1Var.f1153a.c();
+            tz1Var.f1152a.c();
         }
     }
 
@@ -32,7 +32,7 @@ public final class s8 implements ComponentCallbacks2 {
     public final void onTrimMemory(int i) {
         tz1 tz1Var = this.d;
         synchronized (tz1Var) {
-            tz1Var.f1153a.c();
+            tz1Var.f1152a.c();
         }
     }
 }

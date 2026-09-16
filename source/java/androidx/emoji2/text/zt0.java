@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class zt0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f1454a = true;
+    public final boolean f1453a = true;
     public final boolean b = true;
     public final boolean c = true;
     public final int d = 4;

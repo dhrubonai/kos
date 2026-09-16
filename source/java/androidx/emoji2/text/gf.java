@@ -8,7 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 public final class gf {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final gf f415a = new gf();
+    public static final gf f414a = new gf();
 
     public final void a(InputMethodManager inputMethodManager, View view) {
         inputMethodManager.startStylusHandwriting(view);

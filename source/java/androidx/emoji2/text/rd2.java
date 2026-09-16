@@ -7,7 +7,7 @@ import android.content.pm.PackageParser;
 public final class rd2 implements qe {
 
     /* renamed from: a, reason: collision with root package name */
-    public final bk2 f1004a;
+    public final bk2 f1003a;
     public final long b;
     public final zl0 c;
     public final xl0 d;
@@ -35,14 +35,14 @@ public final class rd2 implements qe {
     }
 
     public final boolean b(rd2 rd2Var) {
-        return lx0.n(this.f1004a, rd2Var.f1004a) && lx0.n(this.m, rd2Var.m) && lx0.n(this.n, rd2Var.n) && lx0.n(this.o, rd2Var.o);
+        return lx0.n(this.f1003a, rd2Var.f1003a) && lx0.n(this.m, rd2Var.m) && lx0.n(this.n, rd2Var.n) && lx0.n(this.o, rd2Var.o);
     }
 
     public final rd2 c(rd2 rd2Var) {
         if (rd2Var == null) {
             return this;
         }
-        bk2 bk2Var = rd2Var.f1004a;
+        bk2 bk2Var = rd2Var.f1003a;
         return sd2.a(this, bk2Var.g(), bk2Var.k(), bk2Var.d(), rd2Var.b, rd2Var.c, rd2Var.d, rd2Var.e, rd2Var.f, rd2Var.g, rd2Var.h, rd2Var.i, rd2Var.j, rd2Var.k, rd2Var.l, rd2Var.m, rd2Var.n, rd2Var.o);
     }
 
@@ -58,41 +58,41 @@ public final class rd2 implements qe {
     }
 
     public final int hashCode() {
-        bk2 bk2Var = this.f1004a;
-        long jG = bk2Var.g();
+        bk2 bk2Var = this.f1003a;
+        long g = bk2Var.g();
         int i = et.l;
-        int iHashCode = Long.hashCode(jG) * 31;
-        wj1 wj1VarK = bk2Var.k();
-        int iHashCode2 = (Float.hashCode(bk2Var.d()) + ((iHashCode + (wj1VarK != null ? wj1VarK.hashCode() : 0)) * 31)) * 31;
+        int hashCode = Long.hashCode(g) * 31;
+        wj1 k = bk2Var.k();
+        int hashCode2 = (Float.hashCode(bk2Var.d()) + ((hashCode + (k != null ? k.hashCode() : 0)) * 31)) * 31;
         kl2[] kl2VarArr = jl2.b;
-        int iB = jx0.b(iHashCode2, 31, this.b);
+        int b = jx0.b(hashCode2, 31, this.b);
         zl0 zl0Var = this.c;
-        int i2 = (iB + (zl0Var != null ? zl0Var.d : 0)) * 31;
+        int i2 = (b + (zl0Var != null ? zl0Var.d : 0)) * 31;
         xl0 xl0Var = this.d;
-        int iHashCode3 = (i2 + (xl0Var != null ? Integer.hashCode(xl0Var.f1343a) : 0)) * 31;
+        int hashCode3 = (i2 + (xl0Var != null ? Integer.hashCode(xl0Var.f1342a) : 0)) * 31;
         yl0 yl0Var = this.e;
-        int iHashCode4 = (iHashCode3 + (yl0Var != null ? Integer.hashCode(yl0Var.f1393a) : 0)) * 31;
+        int hashCode4 = (hashCode3 + (yl0Var != null ? Integer.hashCode(yl0Var.f1392a) : 0)) * 31;
         vh2 vh2Var = this.f;
-        int iHashCode5 = (iHashCode4 + (vh2Var != null ? vh2Var.hashCode() : 0)) * 31;
+        int hashCode5 = (hashCode4 + (vh2Var != null ? vh2Var.hashCode() : 0)) * 31;
         String str = this.g;
-        int iB2 = jx0.b((iHashCode5 + (str != null ? str.hashCode() : 0)) * 31, 31, this.h);
+        int b2 = jx0.b((hashCode5 + (str != null ? str.hashCode() : 0)) * 31, 31, this.h);
         sk skVar = this.i;
-        int iHashCode6 = (iB2 + (skVar != null ? Float.hashCode(skVar.f1072a) : 0)) * 31;
+        int hashCode6 = (b2 + (skVar != null ? Float.hashCode(skVar.f1071a) : 0)) * 31;
         ck2 ck2Var = this.j;
-        int iHashCode7 = (iHashCode6 + (ck2Var != null ? ck2Var.hashCode() : 0)) * 31;
+        int hashCode7 = (hashCode6 + (ck2Var != null ? ck2Var.hashCode() : 0)) * 31;
         t71 t71Var = this.k;
-        int iB3 = jx0.b((iHashCode7 + (t71Var != null ? t71Var.d.hashCode() : 0)) * 31, 31, this.l);
+        int b3 = jx0.b((hashCode7 + (t71Var != null ? t71Var.d.hashCode() : 0)) * 31, 31, this.l);
         zi2 zi2Var = this.m;
-        int i3 = (iB3 + (zi2Var != null ? zi2Var.f1443a : 0)) * 31;
+        int i3 = (b3 + (zi2Var != null ? zi2Var.f1442a : 0)) * 31;
         q92 q92Var = this.n;
-        int iHashCode8 = (i3 + (q92Var != null ? q92Var.hashCode() : 0)) * 961;
+        int hashCode8 = (i3 + (q92Var != null ? q92Var.hashCode() : 0)) * 961;
         l8 l8Var = this.o;
-        return iHashCode8 + (l8Var != null ? l8Var.hashCode() : 0);
+        return hashCode8 + (l8Var != null ? l8Var.hashCode() : 0);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("SpanStyle(color=");
-        bk2 bk2Var = this.f1004a;
+        bk2 bk2Var = this.f1003a;
         sb.append((Object) et.i(bk2Var.g()));
         sb.append(", brush=");
         sb.append(bk2Var.k());
@@ -130,7 +130,7 @@ public final class rd2 implements qe {
     }
 
     public rd2(bk2 bk2Var, long j, zl0 zl0Var, xl0 xl0Var, yl0 yl0Var, vh2 vh2Var, String str, long j2, sk skVar, ck2 ck2Var, t71 t71Var, long j3, zi2 zi2Var, q92 q92Var, l8 l8Var) {
-        this.f1004a = bk2Var;
+        this.f1003a = bk2Var;
         this.b = j;
         this.c = zl0Var;
         this.d = xl0Var;

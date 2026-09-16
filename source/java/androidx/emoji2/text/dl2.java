@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class dl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f261a;
+    public final String f260a;
     public String b;
     public boolean c = false;
     public mn1 d = null;
 
     public dl2(String str, String str2) {
-        this.f261a = str;
+        this.f260a = str;
         this.b = str2;
     }
 
@@ -23,13 +23,13 @@ public final class dl2 {
             return false;
         }
         dl2 dl2Var = (dl2) obj;
-        return lx0.n(this.f261a, dl2Var.f261a) && lx0.n(this.b, dl2Var.b) && this.c == dl2Var.c && lx0.n(this.d, dl2Var.d);
+        return lx0.n(this.f260a, dl2Var.f260a) && lx0.n(this.b, dl2Var.b) && this.c == dl2Var.c && lx0.n(this.d, dl2Var.d);
     }
 
     public final int hashCode() {
-        int iD = jx0.d(jx0.c(this.f261a.hashCode() * 31, 31, this.b), 31, this.c);
+        int d = jx0.d(jx0.c(this.f260a.hashCode() * 31, 31, this.b), 31, this.c);
         mn1 mn1Var = this.d;
-        return iD + (mn1Var == null ? 0 : mn1Var.hashCode());
+        return d + (mn1Var == null ? 0 : mn1Var.hashCode());
     }
 
     public final String toString() {

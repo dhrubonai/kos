@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowInsets;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 
@@ -33,7 +32,7 @@ public class mv2 extends tv2 {
     }
 
     @SuppressLint({"PrivateApi"})
-    private static void B() throws ClassNotFoundException, SecurityException {
+    private static void B() {
         try {
             j = View.class.getDeclaredMethod("getViewRootImpl", null);
             Class<?> cls = Class.forName("android.view.View$AttachInfo");
@@ -54,21 +53,21 @@ public class mv2 extends tv2 {
 
     @SuppressLint({"WrongConstant"})
     private zv0 w(int i2, boolean z) {
-        zv0 zv0VarA = zv0.e;
+        zv0 zv0Var = zv0.e;
         for (int i3 = 1; i3 <= 512; i3 <<= 1) {
             if ((i2 & i3) != 0) {
-                zv0VarA = zv0.a(zv0VarA, x(i3, z));
+                zv0Var = zv0.a(zv0Var, x(i3, z));
             }
         }
-        return zv0VarA;
+        return zv0Var;
     }
 
     private zv0 y() {
         wv2 wv2Var = this.f;
-        return wv2Var != null ? wv2Var.f1306a.j() : zv0.e;
+        return wv2Var != null ? wv2Var.f1305a.j() : zv0.e;
     }
 
-    private zv0 z(View view) throws IllegalAccessException, ClassNotFoundException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    private zv0 z(View view) {
         if (Build.VERSION.SDK_INT >= 30) {
             throw new UnsupportedOperationException("getVisibleInsets() should not be called on API >= 30. Use WindowInsets.isVisible() instead.");
         }
@@ -78,12 +77,12 @@ public class mv2 extends tv2 {
         Method method = j;
         if (method != null && k != null && l != null) {
             try {
-                Object objInvoke = method.invoke(view, null);
-                if (objInvoke == null) {
+                Object invoke = method.invoke(view, null);
+                if (invoke == null) {
                     Log.w("WindowInsetsCompat", "Failed to get visible insets. getViewRootImpl() returned null from the provided view. This means that the view is either not attached or the method has been overridden", new NullPointerException());
                     return null;
                 }
-                Rect rect = (Rect) l.get(m.get(objInvoke));
+                Rect rect = (Rect) l.get(m.get(invoke));
                 if (rect != null) {
                     return zv0.b(rect.left, rect.top, rect.right, rect.bottom);
                 }
@@ -107,19 +106,19 @@ public class mv2 extends tv2 {
     }
 
     @Override // androidx.emoji2.text.tv2
-    public void d(View view) throws IllegalAccessException, ClassNotFoundException, SecurityException, IllegalArgumentException, InvocationTargetException {
-        zv0 zv0VarZ = z(view);
-        if (zv0VarZ == null) {
-            zv0VarZ = zv0.e;
+    public void d(View view) {
+        zv0 z = z(view);
+        if (z == null) {
+            z = zv0.e;
         }
-        s(zv0VarZ);
+        s(z);
     }
 
     @Override // androidx.emoji2.text.tv2
     public void e(wv2 wv2Var) {
-        wv2Var.f1306a.t(this.f);
+        wv2Var.f1305a.t(this.f);
         zv0 zv0Var = this.g;
-        tv2 tv2Var = wv2Var.f1306a;
+        tv2 tv2Var = wv2Var.f1305a;
         tv2Var.s(zv0Var);
         tv2Var.v(this.h);
     }
@@ -154,9 +153,9 @@ public class mv2 extends tv2 {
 
     @Override // androidx.emoji2.text.tv2
     public wv2 n(int i2, int i3, int i4, int i5) {
-        wv2 wv2VarD = wv2.d(null, this.c);
+        wv2 d = wv2.d(null, this.c);
         int i6 = Build.VERSION.SDK_INT;
-        lv2 kv2Var = i6 >= 34 ? new kv2(wv2VarD) : i6 >= 31 ? new jv2(wv2VarD) : i6 >= 30 ? new iv2(wv2VarD) : i6 >= 29 ? new hv2(wv2VarD) : new gv2(wv2VarD);
+        lv2 kv2Var = i6 >= 34 ? new kv2(d) : i6 >= 31 ? new jv2(d) : i6 >= 30 ? new iv2(d) : i6 >= 29 ? new hv2(d) : new gv2(d);
         kv2Var.g(wv2.b(l(), i2, i3, i4, i5));
         kv2Var.e(wv2.b(j(), i2, i3, i4, i5));
         return kv2Var.b();
@@ -199,25 +198,25 @@ public class mv2 extends tv2 {
     }
 
     public zv0 x(int i2, boolean z) {
-        zv0 zv0VarJ;
+        zv0 j2;
         int i3;
         zv0 zv0Var = zv0.e;
         if (i2 != 1) {
             if (i2 != 2) {
                 if (i2 == 8) {
                     zv0[] zv0VarArr = this.d;
-                    zv0VarJ = zv0VarArr != null ? zv0VarArr[mz0.t(8)] : null;
-                    if (zv0VarJ != null) {
-                        return zv0VarJ;
+                    j2 = zv0VarArr != null ? zv0VarArr[mz0.t(8)] : null;
+                    if (j2 != null) {
+                        return j2;
                     }
-                    zv0 zv0VarL = l();
-                    zv0 zv0VarY = y();
-                    int i4 = zv0VarL.d;
-                    if (i4 > zv0VarY.d) {
+                    zv0 l2 = l();
+                    zv0 y = y();
+                    int i4 = l2.d;
+                    if (i4 > y.d) {
                         return zv0.b(0, 0, 0, i4);
                     }
                     zv0 zv0Var2 = this.g;
-                    if (zv0Var2 != null && !zv0Var2.equals(zv0Var) && (i3 = this.g.d) > zv0VarY.d) {
+                    if (zv0Var2 != null && !zv0Var2.equals(zv0Var) && (i3 = this.g.d) > y.d) {
                         return zv0.b(0, 0, 0, i3);
                     }
                 } else {
@@ -232,28 +231,28 @@ public class mv2 extends tv2 {
                     }
                     if (i2 == 128) {
                         wv2 wv2Var = this.f;
-                        g90 g90VarF = wv2Var != null ? wv2Var.f1306a.f() : f();
-                        if (g90VarF != null) {
+                        g90 f = wv2Var != null ? wv2Var.f1305a.f() : f();
+                        if (f != null) {
                             int i5 = Build.VERSION.SDK_INT;
-                            return zv0.b(i5 >= 28 ? f90.g(g90VarF.f407a) : 0, i5 >= 28 ? f90.i(g90VarF.f407a) : 0, i5 >= 28 ? f90.h(g90VarF.f407a) : 0, i5 >= 28 ? f90.f(g90VarF.f407a) : 0);
+                            return zv0.b(i5 >= 28 ? f90.g(f.f406a) : 0, i5 >= 28 ? f90.i(f.f406a) : 0, i5 >= 28 ? f90.h(f.f406a) : 0, i5 >= 28 ? f90.f(f.f406a) : 0);
                         }
                     }
                 }
             } else {
                 if (z) {
-                    zv0 zv0VarY2 = y();
-                    zv0 zv0VarJ2 = j();
-                    return zv0.b(Math.max(zv0VarY2.f1457a, zv0VarJ2.f1457a), 0, Math.max(zv0VarY2.c, zv0VarJ2.c), Math.max(zv0VarY2.d, zv0VarJ2.d));
+                    zv0 y2 = y();
+                    zv0 j3 = j();
+                    return zv0.b(Math.max(y2.f1456a, j3.f1456a), 0, Math.max(y2.c, j3.c), Math.max(y2.d, j3.d));
                 }
                 if ((this.h & 2) == 0) {
-                    zv0 zv0VarL2 = l();
+                    zv0 l3 = l();
                     wv2 wv2Var2 = this.f;
-                    zv0VarJ = wv2Var2 != null ? wv2Var2.f1306a.j() : null;
-                    int iMin = zv0VarL2.d;
-                    if (zv0VarJ != null) {
-                        iMin = Math.min(iMin, zv0VarJ.d);
+                    j2 = wv2Var2 != null ? wv2Var2.f1305a.j() : null;
+                    int i6 = l3.d;
+                    if (j2 != null) {
+                        i6 = Math.min(i6, j2.d);
                     }
-                    return zv0.b(zv0VarL2.f1457a, 0, zv0VarL2.c, iMin);
+                    return zv0.b(l3.f1456a, 0, l3.c, i6);
                 }
             }
         } else {

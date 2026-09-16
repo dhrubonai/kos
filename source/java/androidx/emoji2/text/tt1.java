@@ -37,127 +37,102 @@ public final class tt1 implements j70 {
         return this.d.a();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object b(androidx.emoji2.text.n10 r5) {
-        /*
-            r4 = this;
-            boolean r0 = r5 instanceof androidx.emoji2.text.rt1
-            if (r0 == 0) goto L13
-            r0 = r5
-            androidx.emoji2.text.rt1 r0 = (androidx.emoji2.text.rt1) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.rt1 r0 = new androidx.emoji2.text.rt1
-            r0.<init>(r4, r5)
-        L18:
-            java.lang.Object r5 = r0.h
-            int r1 = r0.j
-            r2 = 1
-            if (r1 == 0) goto L2f
-            if (r1 != r2) goto L27
-            androidx.emoji2.text.tt1 r0 = r0.g
-            androidx.emoji2.text.mz0.L(r5)
-            goto L42
-        L27:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r0)
-            throw r5
-        L2f:
-            androidx.emoji2.text.mz0.L(r5)
-            r0.g = r4
-            r0.j = r2
-            androidx.emoji2.text.dg1 r5 = r4.g
-            java.lang.Object r5 = r5.c(r0)
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r5 != r0) goto L41
-            return r0
-        L41:
-            r0 = r4
-        L42:
-            r5 = 0
-            r0.e = r5
-            r0.f = r5
-            androidx.emoji2.text.up2 r5 = androidx.emoji2.text.up2.f1187a
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.tt1.b(androidx.emoji2.text.n10):java.lang.Object");
+    public final Object b(n10 n10Var) {
+        rt1 rt1Var;
+        int i;
+        tt1 tt1Var;
+        if (n10Var instanceof rt1) {
+            rt1Var = (rt1) n10Var;
+            int i2 = rt1Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                rt1Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = rt1Var.h;
+                i = rt1Var.j;
+                if (i != 0) {
+                    mz0.L(obj);
+                    rt1Var.g = this;
+                    rt1Var.j = 1;
+                    Object c = this.g.c(rt1Var);
+                    f30 f30Var = f30.d;
+                    if (c == f30Var) {
+                        return f30Var;
+                    }
+                    tt1Var = this;
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    tt1Var = rt1Var.g;
+                    mz0.L(obj);
+                }
+                tt1Var.e = false;
+                tt1Var.f = false;
+                return up2.f1186a;
+            }
+        }
+        rt1Var = new rt1(this, n10Var);
+        Object obj2 = rt1Var.h;
+        i = rt1Var.j;
+        if (i != 0) {
+        }
+        tt1Var.e = false;
+        tt1Var.f = false;
+        return up2.f1186a;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object c(androidx.emoji2.text.n10 r5) {
-        /*
-            r4 = this;
-            boolean r0 = r5 instanceof androidx.emoji2.text.st1
-            if (r0 == 0) goto L13
-            r0 = r5
-            androidx.emoji2.text.st1 r0 = (androidx.emoji2.text.st1) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.st1 r0 = new androidx.emoji2.text.st1
-            r0.<init>(r4, r5)
-        L18:
-            java.lang.Object r5 = r0.h
-            int r1 = r0.j
-            r2 = 1
-            if (r1 == 0) goto L2f
-            if (r1 != r2) goto L27
-            androidx.emoji2.text.tt1 r0 = r0.g
-            androidx.emoji2.text.mz0.L(r5)
-            goto L4a
-        L27:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r0)
-            throw r5
-        L2f:
-            androidx.emoji2.text.mz0.L(r5)
-            boolean r5 = r4.e
-            if (r5 != 0) goto L51
-            boolean r5 = r4.f
-            if (r5 != 0) goto L51
-            r0.g = r4
-            r0.j = r2
-            androidx.emoji2.text.dg1 r5 = r4.g
-            java.lang.Object r5 = r5.c(r0)
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r5 != r0) goto L49
-            return r0
-        L49:
-            r0 = r4
-        L4a:
-            androidx.emoji2.text.dg1 r5 = r0.g
-            r1 = 0
-            r5.e(r1)
-            goto L52
-        L51:
-            r0 = r4
-        L52:
-            boolean r5 = r0.e
-            java.lang.Boolean r5 = java.lang.Boolean.valueOf(r5)
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.tt1.c(androidx.emoji2.text.n10):java.lang.Object");
+    public final Object c(n10 n10Var) {
+        st1 st1Var;
+        int i;
+        tt1 tt1Var;
+        if (n10Var instanceof st1) {
+            st1Var = (st1) n10Var;
+            int i2 = st1Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                st1Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = st1Var.h;
+                i = st1Var.j;
+                if (i != 0) {
+                    mz0.L(obj);
+                    if (this.e || this.f) {
+                        tt1Var = this;
+                        return Boolean.valueOf(tt1Var.e);
+                    }
+                    st1Var.g = this;
+                    st1Var.j = 1;
+                    Object c = this.g.c(st1Var);
+                    f30 f30Var = f30.d;
+                    if (c == f30Var) {
+                        return f30Var;
+                    }
+                    tt1Var = this;
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    tt1Var = st1Var.g;
+                    mz0.L(obj);
+                }
+                tt1Var.g.e(null);
+                return Boolean.valueOf(tt1Var.e);
+            }
+        }
+        st1Var = new st1(this, n10Var);
+        Object obj2 = st1Var.h;
+        i = st1Var.j;
+        if (i != 0) {
+        }
+        tt1Var.g.e(null);
+        return Boolean.valueOf(tt1Var.e);
     }
 
     @Override // androidx.emoji2.text.j70

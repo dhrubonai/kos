@@ -8,11 +8,11 @@ import java.util.Locale;
 public abstract class qt1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final iz0 f979a;
+    public static final iz0 f978a;
 
     static {
         String lowerCase = Build.FINGERPRINT.toLowerCase(Locale.ROOT);
         lx0.w(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
-        f979a = lowerCase.equals("robolectric") ? new iz0(15) : null;
+        f978a = lowerCase.equals("robolectric") ? new iz0(15) : null;
     }
 }

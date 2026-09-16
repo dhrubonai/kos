@@ -103,7 +103,7 @@ public final class y7 implements View.OnAttachStateChangeListener {
                     break;
                 }
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 HideViewOnScrollBehavior hideViewOnScrollBehavior = (HideViewOnScrollBehavior) this.e;
                 pr0 pr0Var2 = hideViewOnScrollBehavior.c;
                 if (pr0Var2 != null && (accessibilityManager3 = hideViewOnScrollBehavior.b) != null) {
@@ -112,7 +112,7 @@ public final class y7 implements View.OnAttachStateChangeListener {
                     break;
                 }
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 je2 je2Var = (je2) this.e;
                 ViewTreeObserver viewTreeObserver2 = je2Var.r;
                 if (viewTreeObserver2 != null) {
@@ -126,7 +126,7 @@ public final class y7 implements View.OnAttachStateChangeListener {
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 y yVar = (y) this.e;
                 ViewParent parent = yVar.getParent();
-                Iterator it = (parent == null ? ue0.f1169a : new h70(2, new t2(14, parent), os2.k)).iterator();
+                Iterator it = (parent == null ? ue0.f1168a : new h70(2, new t2(14, parent), os2.k)).iterator();
                 while (true) {
                     if (it.hasNext()) {
                         Object obj = (ViewParent) it.next();

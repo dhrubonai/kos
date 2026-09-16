@@ -30,7 +30,7 @@ public final class cg1 implements gp, lu2 {
         atomicReferenceFieldUpdater.set(dg1Var, null);
         v vVar = new v(5, dg1Var, this);
         ip ipVar = this.d;
-        ipVar.D(up2.f1187a, ipVar.f, new hp(0, vVar));
+        ipVar.D(up2.f1186a, ipVar.f, new hp(0, vVar));
     }
 
     @Override // androidx.emoji2.text.l10
@@ -42,11 +42,11 @@ public final class cg1 implements gp, lu2 {
     public final de0 h(Object obj, wm0 wm0Var) {
         dg1 dg1Var = this.e;
         hp hpVar = new hp(dg1Var, this);
-        de0 de0VarH = this.d.h((up2) obj, hpVar);
-        if (de0VarH != null) {
+        de0 h = this.d.h((up2) obj, hpVar);
+        if (h != null) {
             dg1.h.set(dg1Var, null);
         }
-        return de0VarH;
+        return h;
     }
 
     @Override // androidx.emoji2.text.l10

@@ -7,6 +7,6 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class cx0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final AtomicReference f225a = new AtomicReference(null);
+    public final AtomicReference f224a = new AtomicReference(null);
     public final dg1 b = new dg1();
 }

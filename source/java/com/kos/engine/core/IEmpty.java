@@ -49,17 +49,17 @@ public interface IEmpty extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-16974269792034L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IEmpty)) ? new Proxy(iBinder) : (IEmpty) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-16974269792034L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IEmpty)) ? new Proxy(iBinder) : (IEmpty) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-16592017702690L, xa1.b);
+            String a2 = c.a(-16592017702690L, xa1.b);
             if (i != 1598968902) {
                 return super.onTransact(i, parcel, parcel2, i2);
             }
-            parcel2.writeString(strA);
+            parcel2.writeString(a2);
             return true;
         }
 

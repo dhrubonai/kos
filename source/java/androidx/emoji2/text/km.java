@@ -1,9 +1,6 @@
 package androidx.emoji2.text;
 
 import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
 import java.security.Provider;
 import java.util.Arrays;
 import java.util.List;
@@ -41,14 +38,14 @@ public final class km extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final SSLContext k() throws NoSuchAlgorithmException {
+    public final SSLContext k() {
         SSLContext sSLContext = SSLContext.getInstance("TLS", this.c);
         lx0.w(sSLContext, "getInstance(\"TLS\", provider)");
         return sSLContext;
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final X509TrustManager m() throws NoSuchAlgorithmException, KeyStoreException, NoSuchProviderException {
+    public final X509TrustManager m() {
         TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("PKIX", "BCJSSE");
         trustManagerFactory.init((KeyStore) null);
         TrustManager[] trustManagers = trustManagerFactory.getTrustManagers();
@@ -60,8 +57,8 @@ public final class km extends lr1 {
                 return (X509TrustManager) trustManager;
             }
         }
-        String string = Arrays.toString(trustManagers);
-        lx0.w(string, "toString(this)");
-        throw new IllegalStateException("Unexpected default trust managers: ".concat(string).toString());
+        String arrays = Arrays.toString(trustManagers);
+        lx0.w(arrays, "toString(this)");
+        throw new IllegalStateException("Unexpected default trust managers: ".concat(arrays).toString());
     }
 }

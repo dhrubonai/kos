@@ -1,10 +1,12 @@
 package androidx.emoji2.text;
 
 import android.content.res.Resources;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
+import java.lang.reflect.Field;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -61,7 +63,7 @@ public final class l71 implements View.OnTouchListener {
         fArr3[0] = 0.001f;
         fArr3[1] = 0.001f;
         this.k = u;
-        ziVar.f1440a = 500;
+        ziVar.f1439a = 500;
         ziVar.b = 500;
         this.t = lc0Var;
     }
@@ -70,68 +72,36 @@ public final class l71 implements View.OnTouchListener {
         return f > f3 ? f3 : f < f2 ? f2 : f;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x003b A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003b A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final float a(int r4, float r5, float r6, float r7) {
-        /*
-            r3 = this;
-            float[] r0 = r3.h
-            r0 = r0[r4]
-            float[] r1 = r3.i
-            r1 = r1[r4]
-            float r0 = r0 * r6
-            r2 = 0
-            float r0 = b(r0, r2, r1)
-            float r1 = r3.c(r5, r0)
-            float r6 = r6 - r5
-            float r5 = r3.c(r6, r0)
-            float r5 = r5 - r1
-            int r6 = (r5 > r2 ? 1 : (r5 == r2 ? 0 : -1))
-            android.view.animation.AccelerateInterpolator r0 = r3.e
-            if (r6 >= 0) goto L25
-            float r5 = -r5
-            float r5 = r0.getInterpolation(r5)
-            float r5 = -r5
-            goto L2d
-        L25:
-            int r6 = (r5 > r2 ? 1 : (r5 == r2 ? 0 : -1))
-            if (r6 <= 0) goto L36
-            float r5 = r0.getInterpolation(r5)
-        L2d:
-            r6 = -1082130432(0xffffffffbf800000, float:-1.0)
-            r0 = 1065353216(0x3f800000, float:1.0)
-            float r5 = b(r5, r6, r0)
-            goto L37
-        L36:
-            r5 = r2
-        L37:
-            int r6 = (r5 > r2 ? 1 : (r5 == r2 ? 0 : -1))
-            if (r6 != 0) goto L3c
-            return r2
-        L3c:
-            float[] r0 = r3.l
-            r0 = r0[r4]
-            float[] r1 = r3.m
-            r1 = r1[r4]
-            float[] r2 = r3.n
-            r4 = r2[r4]
-            float r0 = r0 * r7
-            if (r6 <= 0) goto L51
-            float r5 = r5 * r0
-            float r4 = b(r5, r1, r4)
-            return r4
-        L51:
-            float r5 = -r5
-            float r5 = r5 * r0
-            float r4 = b(r5, r1, r4)
-            float r4 = -r4
-            return r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.l71.a(int, float, float, float):float");
+    public final float a(int i, float f, float f2, float f3) {
+        float f4;
+        float interpolation;
+        float b = b(this.h[i] * f2, 0.0f, this.i[i]);
+        float c = c(f2 - f, b) - c(f, b);
+        AccelerateInterpolator accelerateInterpolator = this.e;
+        if (c < 0.0f) {
+            interpolation = -accelerateInterpolator.getInterpolation(-c);
+        } else {
+            if (c <= 0.0f) {
+                f4 = 0.0f;
+                if (f4 != 0.0f) {
+                    return 0.0f;
+                }
+                float f5 = this.l[i];
+                float f6 = this.m[i];
+                float f7 = this.n[i];
+                float f8 = f5 * f3;
+                return f4 > 0.0f ? b(f4 * f8, f6, f7) : -b((-f4) * f8, f6, f7);
+            }
+            interpolation = accelerateInterpolator.getInterpolation(c);
+        }
+        f4 = b(interpolation, -1.0f, 1.0f);
+        if (f4 != 0.0f) {
+        }
     }
 
     public final float c(float f, float f2) {
@@ -159,9 +129,9 @@ public final class l71 implements View.OnTouchListener {
             this.r = false;
             return;
         }
-        long jCurrentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
+        long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         zi ziVar = this.d;
-        int i2 = (int) (jCurrentAnimationTimeMillis - ziVar.e);
+        int i2 = (int) (currentAnimationTimeMillis - ziVar.e);
         int i3 = ziVar.b;
         if (i2 > i3) {
             i = i3;
@@ -169,8 +139,8 @@ public final class l71 implements View.OnTouchListener {
             i = i2;
         }
         ziVar.i = i;
-        ziVar.h = ziVar.a(jCurrentAnimationTimeMillis);
-        ziVar.g = jCurrentAnimationTimeMillis;
+        ziVar.h = ziVar.a(currentAnimationTimeMillis);
+        ziVar.g = currentAnimationTimeMillis;
     }
 
     public final boolean e() {
@@ -178,97 +148,67 @@ public final class l71 implements View.OnTouchListener {
         int count;
         zi ziVar = this.d;
         float f = ziVar.d;
-        int iAbs = (int) (f / Math.abs(f));
+        int abs = (int) (f / Math.abs(f));
         Math.abs(ziVar.c);
-        if (iAbs != 0 && (count = (lc0Var = this.t).getCount()) != 0) {
+        if (abs != 0 && (count = (lc0Var = this.t).getCount()) != 0) {
             int childCount = lc0Var.getChildCount();
             int firstVisiblePosition = lc0Var.getFirstVisiblePosition();
             int i = firstVisiblePosition + childCount;
-            if (iAbs <= 0 ? !(iAbs >= 0 || (firstVisiblePosition <= 0 && lc0Var.getChildAt(0).getTop() >= 0)) : !(i >= count && lc0Var.getChildAt(childCount - 1).getBottom() <= lc0Var.getHeight())) {
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && lc0Var.getChildAt(0).getTop() >= 0)) : !(i >= count && lc0Var.getChildAt(childCount - 1).getBottom() <= lc0Var.getHeight())) {
                 return true;
             }
         }
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0014, code lost:
     
         if (r0 != 3) goto L30;
      */
     @Override // android.view.View.OnTouchListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean onTouch(android.view.View r8, android.view.MotionEvent r9) {
-        /*
-            r7 = this;
-            boolean r0 = r7.s
-            r1 = 0
-            if (r0 != 0) goto L7
-            goto L7c
-        L7:
-            int r0 = r9.getActionMasked()
-            r2 = 1
-            if (r0 == 0) goto L1b
-            if (r0 == r2) goto L17
-            r3 = 2
-            if (r0 == r3) goto L1f
-            r8 = 3
-            if (r0 == r8) goto L17
-            goto L7c
-        L17:
-            r7.d()
-            return r1
-        L1b:
-            r7.q = r2
-            r7.o = r1
-        L1f:
-            float r0 = r9.getX()
-            int r3 = r8.getWidth()
-            float r3 = (float) r3
-            androidx.emoji2.text.lc0 r4 = r7.f
-            int r5 = r4.getWidth()
-            float r5 = (float) r5
-            float r0 = r7.a(r1, r0, r3, r5)
-            float r9 = r9.getY()
-            int r8 = r8.getHeight()
-            float r8 = (float) r8
-            int r3 = r4.getHeight()
-            float r3 = (float) r3
-            float r8 = r7.a(r2, r9, r8, r3)
-            androidx.emoji2.text.zi r9 = r7.d
-            r9.c = r0
-            r9.d = r8
-            boolean r8 = r7.r
-            if (r8 != 0) goto L7c
-            boolean r8 = r7.e()
-            if (r8 == 0) goto L7c
-            androidx.emoji2.text.t7 r8 = r7.g
-            if (r8 != 0) goto L60
-            androidx.emoji2.text.t7 r8 = new androidx.emoji2.text.t7
-            r8.<init>(r2, r7)
-            r7.g = r8
-        L60:
-            r7.r = r2
-            r7.p = r2
-            boolean r8 = r7.o
-            if (r8 != 0) goto L75
-            int r8 = r7.k
-            if (r8 <= 0) goto L75
-            androidx.emoji2.text.t7 r9 = r7.g
-            long r5 = (long) r8
-            java.lang.reflect.Field r8 = androidx.emoji2.text.es2.f320a
-            r4.postOnAnimationDelayed(r9, r5)
-            goto L7a
-        L75:
-            androidx.emoji2.text.t7 r8 = r7.g
-            r8.run()
-        L7a:
-            r7.o = r2
-        L7c:
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.l71.onTouch(android.view.View, android.view.MotionEvent):boolean");
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        int i;
+        if (this.s) {
+            int actionMasked = motionEvent.getActionMasked();
+            int i2 = 1;
+            if (actionMasked != 0) {
+                if (actionMasked != 1) {
+                    if (actionMasked != 2) {
+                    }
+                }
+                d();
+                return false;
+            }
+            this.q = true;
+            this.o = false;
+            float x = motionEvent.getX();
+            float width = view.getWidth();
+            lc0 lc0Var = this.f;
+            float a2 = a(0, x, width, lc0Var.getWidth());
+            float a3 = a(1, motionEvent.getY(), view.getHeight(), lc0Var.getHeight());
+            zi ziVar = this.d;
+            ziVar.c = a2;
+            ziVar.d = a3;
+            if (!this.r && e()) {
+                if (this.g == null) {
+                    this.g = new t7(i2, this);
+                }
+                this.r = true;
+                this.p = true;
+                if (this.o || (i = this.k) <= 0) {
+                    this.g.run();
+                } else {
+                    t7 t7Var = this.g;
+                    long j = i;
+                    Field field = es2.f319a;
+                    lc0Var.postOnAnimationDelayed(t7Var, j);
+                }
+                this.o = true;
+            }
+        }
+        return false;
     }
 }

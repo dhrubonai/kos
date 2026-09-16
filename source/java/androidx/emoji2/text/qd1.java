@@ -4,7 +4,7 @@ package androidx.emoji2.text;
 /* loaded from: classes.dex */
 public interface qd1 extends sd1, y60 {
     default a01 R() {
-        return se0.f1066a;
+        return se0.f1065a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -43,57 +43,57 @@ public interface qd1 extends sd1, y60 {
             iv0.b("visitAncestors called on an unattached node");
         }
         md1 md1Var2 = md1Var.d.h;
-        e11 e11VarT = lx0.T(this);
-        while (e11VarT != null) {
-            if ((e11VarT.H.f.g & 32) != 0) {
+        e11 T = lx0.T(this);
+        while (T != null) {
+            if ((T.H.f.g & 32) != 0) {
                 while (md1Var2 != null) {
                     if ((md1Var2.f & 32) != 0) {
-                        z60 z60VarM = md1Var2;
-                        ?? sf1Var = 0;
-                        while (z60VarM != 0) {
-                            if (z60VarM instanceof qd1) {
-                                qd1 qd1Var = (qd1) z60VarM;
+                        z60 z60Var = md1Var2;
+                        ?? r4 = 0;
+                        while (z60Var != 0) {
+                            if (z60Var instanceof qd1) {
+                                qd1 qd1Var = (qd1) z60Var;
                                 if (qd1Var.R().v(xu1Var)) {
                                     return qd1Var.R().D(xu1Var);
                                 }
-                            } else if ((z60VarM.f & 32) != 0 && (z60VarM instanceof z60)) {
-                                md1 md1Var3 = z60VarM.s;
+                            } else if ((z60Var.f & 32) != 0 && (z60Var instanceof z60)) {
+                                md1 md1Var3 = z60Var.s;
                                 int i = 0;
-                                z60VarM = z60VarM;
-                                sf1Var = sf1Var;
+                                z60Var = z60Var;
+                                r4 = r4;
                                 while (md1Var3 != null) {
                                     if ((md1Var3.f & 32) != 0) {
                                         i++;
-                                        sf1Var = sf1Var;
+                                        r4 = r4;
                                         if (i == 1) {
-                                            z60VarM = md1Var3;
+                                            z60Var = md1Var3;
                                         } else {
-                                            if (sf1Var == 0) {
-                                                sf1Var = new sf1(new md1[16]);
+                                            if (r4 == 0) {
+                                                r4 = new sf1(new md1[16]);
                                             }
-                                            if (z60VarM != 0) {
-                                                sf1Var.b(z60VarM);
-                                                z60VarM = 0;
+                                            if (z60Var != 0) {
+                                                r4.b(z60Var);
+                                                z60Var = 0;
                                             }
-                                            sf1Var.b(md1Var3);
+                                            r4.b(md1Var3);
                                         }
                                     }
                                     md1Var3 = md1Var3.i;
-                                    z60VarM = z60VarM;
-                                    sf1Var = sf1Var;
+                                    z60Var = z60Var;
+                                    r4 = r4;
                                 }
                                 if (i == 1) {
                                 }
                             }
-                            z60VarM = lx0.m(sf1Var);
+                            z60Var = lx0.m(r4);
                         }
                     }
                     md1Var2 = md1Var2.h;
                 }
             }
-            e11VarT = e11VarT.u();
-            md1Var2 = (e11VarT == null || (vh1Var = e11VarT.H) == null) ? null : vh1Var.e;
+            T = T.u();
+            md1Var2 = (T == null || (vh1Var = T.H) == null) ? null : vh1Var.e;
         }
-        return xu1Var.f1359a.a();
+        return xu1Var.f1358a.a();
     }
 }

@@ -19,66 +19,66 @@ public final /* synthetic */ class ua implements xm0 {
         switch (this.d) {
             case 0:
                 va vaVar = (va) this.e;
-                kp2 kp2VarB = ((cl0) vaVar.h).b((vh2) obj, (zl0) obj2, ((xl0) obj3).f1343a, ((yl0) obj4).f1393a);
-                if (kp2VarB instanceof kp2) {
-                    Object obj5 = kp2VarB.d;
+                kp2 b = ((cl0) vaVar.h).b((vh2) obj, (zl0) obj2, ((xl0) obj3).f1342a, ((yl0) obj4).f1392a);
+                if (b instanceof kp2) {
+                    Object obj5 = b.d;
                     lx0.v(obj5, "null cannot be cast to non-null type android.graphics.Typeface");
                     return (Typeface) obj5;
                 }
-                rg rgVar = new rg(kp2VarB, vaVar.m);
+                rg rgVar = new rg(b, vaVar.m);
                 vaVar.m = rgVar;
                 Object obj6 = rgVar.g;
                 lx0.v(obj6, "null cannot be cast to non-null type android.graphics.Typeface");
                 return (Typeface) obj6;
             case 1:
                 List list = (List) this.e;
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
                 lx lxVar = (lx) obj3;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 lx0.x((qm1) obj, a.a.a.c.a(-14745181765410L, strArr));
                 a.a.a.c.a(-14307095101218L, strArr);
-                lz0.a(((o4) list.get(iIntValue)).d, null, androidx.compose.foundation.layout.c.c, p00.f884a, lxVar, 1573296);
-                return up2.f1187a;
+                lz0.a(((o4) list.get(intValue)).d, null, androidx.compose.foundation.layout.c.c, p00.f883a, lxVar, 1573296);
+                return up2.f1186a;
             default:
                 mf1 mf1Var = (mf1) this.e;
                 j82 j82Var = (j82) obj2;
                 lx lxVar2 = (lx) obj3;
-                String[] strArr2 = wj1.f1284a;
+                String[] strArr2 = wj1.f1283a;
                 lx0.x((od) obj, a.a.a.c.a(-137160339636002L, strArr2));
                 lx0.x(j82Var, a.a.a.c.a(-139952068378402L, strArr2));
                 a.a.a.c.a(-139982133149474L, strArr2);
-                boolean zEquals = j82Var.equals(i82.c);
-                on onVar = kx.f663a;
-                if (zEquals) {
+                boolean equals = j82Var.equals(i82.c);
+                on onVar = kx.f662a;
+                if (equals) {
                     tx txVar = (tx) lxVar2;
                     txVar.X(397815152);
                     a.a.a.c.a(-140540478897954L, strArr2);
                     a.a.a.c.a(-140634968178466L, strArr2);
-                    Object objM = txVar.M();
-                    if (objM == onVar) {
-                        objM = new j2(4, mf1Var);
-                        txVar.i0(objM);
+                    Object M = txVar.M();
+                    if (M == onVar) {
+                        M = new j2(4, mf1Var);
+                        txVar.i0(M);
                     }
-                    n92.i((sm0) objM, txVar, 6);
+                    n92.i((sm0) M, txVar, 6);
                     txVar.p(false);
-                } else if (j82Var.equals(i82.f514a)) {
+                } else if (j82Var.equals(i82.f513a)) {
                     tx txVar2 = (tx) lxVar2;
                     txVar2.X(398158570);
                     a.a.a.c.a(-140269895958306L, strArr2);
                     a.a.a.c.a(-140445989617442L, strArr2);
-                    Object objM2 = txVar2.M();
-                    if (objM2 == onVar) {
-                        objM2 = new j2(5, mf1Var);
-                        txVar2.i0(objM2);
+                    Object M2 = txVar2.M();
+                    if (M2 == onVar) {
+                        M2 = new j2(5, mf1Var);
+                        txVar2.i0(M2);
                     }
-                    sm0 sm0Var = (sm0) objM2;
+                    sm0 sm0Var = (sm0) M2;
                     a.a.a.c.a(-138981405769506L, strArr2);
-                    Object objM3 = txVar2.M();
-                    if (objM3 == onVar) {
-                        objM3 = new j2(6, mf1Var);
-                        txVar2.i0(objM3);
+                    Object M3 = txVar2.M();
+                    if (M3 == onVar) {
+                        M3 = new j2(6, mf1Var);
+                        txVar2.i0(M3);
                     }
-                    l8.m(sm0Var, (sm0) objM3, txVar2, 54);
+                    l8.m(sm0Var, (sm0) M3, txVar2, 54);
                     txVar2.p(false);
                 } else {
                     if (!j82Var.equals(i82.b)) {
@@ -91,15 +91,15 @@ public final /* synthetic */ class ua implements xm0 {
                     txVar4.X(398506824);
                     a.a.a.c.a(-138599153680162L, strArr2);
                     a.a.a.c.a(-138706527862562L, strArr2);
-                    Object objM4 = txVar4.M();
-                    if (objM4 == onVar) {
-                        objM4 = new j2(7, mf1Var);
-                        txVar4.i0(objM4);
+                    Object M4 = txVar4.M();
+                    if (M4 == onVar) {
+                        M4 = new j2(7, mf1Var);
+                        txVar4.i0(M4);
                     }
-                    n92.d((sm0) objM4, txVar4, 6);
+                    n92.d((sm0) M4, txVar4, 6);
                     txVar4.p(false);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

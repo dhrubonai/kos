@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import androidx.core.splashscreen.R;
 import java.util.UUID;
@@ -23,8 +24,10 @@ public final class zc1 extends cv {
     /* JADX WARN: Type inference failed for: r10v17, types: [androidx.emoji2.text.zv2] */
     /* JADX WARN: Type inference failed for: r9v0, types: [android.app.Dialog, androidx.emoji2.text.cv, androidx.emoji2.text.zc1] */
     public zc1(sm0 sm0Var, jd1 jd1Var, View view, q01 q01Var, j70 j70Var, UUID uuid, ed edVar, e30 e30Var, boolean z) {
-        xv2 yv2Var;
         super(new ContextThemeWrapper(view.getContext(), R.style.EdgeToEdgeFloatingDialogWindowTheme), 0);
+        WindowInsetsController insetsController;
+        xv2 xv2Var;
+        WindowInsetsController insetsController2;
         this.h = sm0Var;
         this.i = jd1Var;
         this.j = view;
@@ -50,36 +53,38 @@ public final class zc1 extends cv {
         gz0 gz0Var = new gz0(window.getDecorView());
         int i = Build.VERSION.SDK_INT;
         if (i >= 35) {
-            ?? aw2Var = new aw2(window.getInsetsController(), gz0Var);
+            insetsController2 = window.getInsetsController();
+            ?? aw2Var = new aw2(insetsController2, gz0Var);
             aw2Var.f = window;
-            yv2Var = aw2Var;
+            xv2Var = aw2Var;
         } else if (i >= 30) {
-            ?? zv2Var = new zv2(window.getInsetsController(), gz0Var);
+            insetsController = window.getInsetsController();
+            ?? zv2Var = new zv2(insetsController, gz0Var);
             zv2Var.f = window;
-            yv2Var = zv2Var;
+            xv2Var = zv2Var;
         } else {
-            yv2Var = i >= 26 ? new yv2(window, gz0Var) : new xv2(window, gz0Var);
+            xv2Var = i >= 26 ? new yv2(window, gz0Var) : new xv2(window, gz0Var);
         }
         boolean z2 = !z;
-        yv2Var.M(z2);
-        yv2Var.L(z2);
+        xv2Var.M(z2);
+        xv2Var.L(z2);
         lz0.f(a(), this, new yc1(this, 0));
     }
 
     public final void e(sm0 sm0Var, jd1 jd1Var, q01 q01Var) {
         this.h = sm0Var;
         this.i = jd1Var;
-        a62 a62Var = jd1Var.f574a;
+        a62 a62Var = jd1Var.f573a;
         ViewGroup.LayoutParams layoutParams = this.j.getRootView().getLayoutParams();
         WindowManager.LayoutParams layoutParams2 = layoutParams instanceof WindowManager.LayoutParams ? (WindowManager.LayoutParams) layoutParams : null;
         int i = 1;
         boolean z = (layoutParams2 == null || (layoutParams2.flags & 8192) == 0) ? false : true;
-        int iOrdinal = a62Var.ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
+        int ordinal = a62Var.ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
                 z = true;
             } else {
-                if (iOrdinal != 2) {
+                if (ordinal != 2) {
                     throw new mu();
                 }
                 z = false;
@@ -88,10 +93,10 @@ public final class zc1 extends cv {
         Window window = getWindow();
         lx0.u(window);
         window.setFlags(z ? 8192 : -8193, 8192);
-        int iOrdinal2 = q01Var.ordinal();
-        if (iOrdinal2 == 0) {
+        int ordinal2 = q01Var.ordinal();
+        if (ordinal2 == 0) {
             i = 0;
-        } else if (iOrdinal2 != 1) {
+        } else if (ordinal2 != 1) {
             throw new mu();
         }
         this.k.setLayoutDirection(i);
@@ -107,11 +112,11 @@ public final class zc1 extends cv {
 
     @Override // android.app.Dialog
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean zOnTouchEvent = super.onTouchEvent(motionEvent);
-        if (zOnTouchEvent) {
+        boolean onTouchEvent = super.onTouchEvent(motionEvent);
+        if (onTouchEvent) {
             this.h.a();
         }
-        return zOnTouchEvent;
+        return onTouchEvent;
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

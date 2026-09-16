@@ -47,18 +47,18 @@ public final class i61 implements LineHeightSpan {
         }
         if (this.j == Integer.MIN_VALUE) {
             int i7 = i5 - i6;
-            int iCeil = (int) Math.ceil(this.d);
-            int i8 = iCeil - i7;
+            int ceil = (int) Math.ceil(this.d);
+            int i8 = ceil - i7;
             if (!this.i || i8 > 0) {
-                float fAbs = this.h;
-                if (fAbs == -1.0f) {
-                    fAbs = Math.abs(fontMetricsInt.ascent) / (fontMetricsInt.descent - fontMetricsInt.ascent);
+                float f = this.h;
+                if (f == -1.0f) {
+                    f = Math.abs(fontMetricsInt.ascent) / (fontMetricsInt.descent - fontMetricsInt.ascent);
                 }
-                int iCeil2 = (int) (i8 <= 0 ? Math.ceil(i8 * fAbs) : Math.ceil((1.0f - fAbs) * i8));
+                int ceil2 = (int) (i8 <= 0 ? Math.ceil(i8 * f) : Math.ceil((1.0f - f) * i8));
                 int i9 = fontMetricsInt.descent;
-                int i10 = iCeil2 + i9;
+                int i10 = ceil2 + i9;
                 this.l = i10;
-                int i11 = i10 - iCeil;
+                int i11 = i10 - ceil;
                 this.k = i11;
                 if (z4) {
                     i11 = fontMetricsInt.ascent;

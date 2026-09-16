@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class uq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f1189a = 0;
+    public static final /* synthetic */ int f1188a = 0;
 
     static {
         int i = et.l;

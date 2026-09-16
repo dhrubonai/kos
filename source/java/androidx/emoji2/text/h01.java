@@ -72,7 +72,7 @@ public final class h01 implements ky1, y20 {
     }
 
     @Override // androidx.emoji2.text.y20
-    public final void o(v20 v20Var, Throwable th) throws Throwable {
+    public final void o(v20 v20Var, Throwable th) {
         ay ayVar = (ay) v20Var.n(ay.e);
         if (ayVar != null) {
             lx0.f0(th, new yj(1, ayVar, this));

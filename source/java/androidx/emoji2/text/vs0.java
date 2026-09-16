@@ -18,7 +18,7 @@ public final class vs0 extends mi2 {
     }
 
     @Override // androidx.emoji2.text.mi2
-    public final long a() throws IOException {
+    public final long a() {
         switch (this.e) {
             case 0:
                 xs0 xs0Var = (xs0) this.f;
@@ -32,7 +32,7 @@ public final class vs0 extends mi2 {
                 }
             case 1:
                 wv1 wv1Var = (wv1) this.f;
-                long jNanoTime = System.nanoTime();
+                long nanoTime = System.nanoTime();
                 Iterator it = wv1Var.d.iterator();
                 int i = 0;
                 long j = Long.MIN_VALUE;
@@ -42,11 +42,11 @@ public final class vs0 extends mi2 {
                     vv1 vv1Var2 = (vv1) it.next();
                     lx0.w(vv1Var2, "connection");
                     synchronized (vv1Var2) {
-                        if (wv1Var.b(vv1Var2, jNanoTime) > 0) {
+                        if (wv1Var.b(vv1Var2, nanoTime) > 0) {
                             i2++;
                         } else {
                             i++;
-                            long j2 = jNanoTime - vv1Var2.q;
+                            long j2 = nanoTime - vv1Var2.q;
                             if (j2 > j) {
                                 vv1Var = vv1Var2;
                                 j = j2;
@@ -54,7 +54,7 @@ public final class vs0 extends mi2 {
                         }
                     }
                 }
-                long j3 = wv1Var.f1305a;
+                long j3 = wv1Var.f1304a;
                 if (j < j3 && i <= 5) {
                     if (i > 0) {
                         return j3 - j;
@@ -69,7 +69,7 @@ public final class vs0 extends mi2 {
                     if (!vv1Var.p.isEmpty()) {
                         return 0L;
                     }
-                    if (vv1Var.q + j != jNanoTime) {
+                    if (vv1Var.q + j != nanoTime) {
                         return 0L;
                     }
                     vv1Var.j = true;

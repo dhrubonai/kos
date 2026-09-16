@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class ps1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f926a;
+    public final long f925a;
     public final long b;
     public final long c;
     public final boolean d;
@@ -24,7 +24,7 @@ public final class ps1 {
     public ps1 o;
 
     public ps1(long j, long j2, long j3, boolean z, float f, long j4, long j5, boolean z2, boolean z3, int i, long j6) {
-        this.f926a = j;
+        this.f925a = j;
         this.b = j2;
         this.c = j3;
         this.d = z;
@@ -56,7 +56,7 @@ public final class ps1 {
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("PointerInputChange(id=");
-        sb.append((Object) os1.b(this.f926a));
+        sb.append((Object) os1.b(this.f925a));
         sb.append(", uptimeMillis=");
         sb.append(this.b);
         sb.append(", position=");

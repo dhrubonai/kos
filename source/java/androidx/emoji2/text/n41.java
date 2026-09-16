@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class n41 implements r31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final m41 f791a;
+    public final m41 f790a;
     public final p31 b;
     public final long c;
     public final /* synthetic */ p31 d;
@@ -26,7 +26,7 @@ public final class n41 implements r31 {
         this.i = i4;
         this.j = j2;
         this.k = s41Var;
-        this.f791a = m41Var;
+        this.f790a = m41Var;
         this.b = p31Var;
         this.c = xz.b(vz.h(j), Integer.MAX_VALUE, 5);
     }
@@ -37,9 +37,9 @@ public final class n41 implements r31 {
     }
 
     public final p41 b(int i, long j) {
-        m41 m41Var = this.f791a;
-        Object objC = m41Var.c(i);
-        Object objP = m41Var.b.p(i);
-        return new p41(i, this.b.b(i, j), this.g, this.d.e.getLayoutDirection(), this.h, this.i, i == this.e + (-1) ? 0 : this.f, this.j, objC, objP, this.k.m, j);
+        m41 m41Var = this.f790a;
+        Object c = m41Var.c(i);
+        Object p = m41Var.b.p(i);
+        return new p41(i, this.b.b(i, j), this.g, this.d.e.getLayoutDirection(), this.h, this.i, i == this.e + (-1) ? 0 : this.f, this.j, c, p, this.k.m, j);
     }
 }

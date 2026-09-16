@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class y3 extends l61 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f1367a;
+    public boolean f1366a;
     public int b;
     public int c;
     public boolean d;

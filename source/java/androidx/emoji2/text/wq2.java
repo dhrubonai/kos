@@ -34,7 +34,7 @@ public final class wq2 extends fn1 {
 
     @Override // androidx.emoji2.text.fn1
     public final long h() {
-        return ((ib2) this.i.getValue()).f518a;
+        return ((ib2) this.i.getValue()).f517a;
     }
 
     @Override // androidx.emoji2.text.fn1
@@ -46,16 +46,16 @@ public final class wq2 extends fn1 {
             qlVar = (ql) pq2Var.g.getValue();
         }
         if (((Boolean) this.j.getValue()).booleanValue() && g11Var.getLayoutDirection() == q01.e) {
-            long jJ0 = npVar.j0();
+            long j0 = npVar.j0();
             rg rgVar = npVar.e;
-            long jM = rgVar.M();
+            long M = rgVar.M();
             rgVar.D().f();
             try {
-                ((p4) rgVar.e).E(-1.0f, 1.0f, jJ0);
+                ((p4) rgVar.e).E(-1.0f, 1.0f, j0);
                 pq2Var.e(g11Var, this.m, qlVar);
             } finally {
                 rgVar.D().n();
-                rgVar.e0(jM);
+                rgVar.e0(M);
             }
         } else {
             pq2Var.e(g11Var, this.m, qlVar);

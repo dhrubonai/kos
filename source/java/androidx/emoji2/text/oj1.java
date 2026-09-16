@@ -7,11 +7,11 @@ import android.window.OnBackInvokedDispatcher;
 public final class oj1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Runnable f860a;
+    public final Runnable f859a;
     public final th2 b = az0.U(new t2(8, this));
 
     public oj1(Runnable runnable) {
-        this.f860a = runnable;
+        this.f859a = runnable;
     }
 
     public final mj1 a() {

@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public interface jq extends o72, mw1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final iq f594a = iq.f541a;
+    public static final iq f593a = iq.f540a;
 }

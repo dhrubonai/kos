@@ -6,7 +6,7 @@ public final class ns2 {
     public static final ys1 b = new ys1(20);
 
     /* renamed from: a, reason: collision with root package name */
-    public int f825a;
+    public int f824a;
 
     public static ns2 a() {
         ns2 ns2Var = (ns2) b.a();

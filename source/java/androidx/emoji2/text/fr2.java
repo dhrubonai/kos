@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class fr2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f379a;
+    public final long f378a;
 
     public static long a(long j, float f, float f2, int i) {
         if ((i & 1) != 0) {
@@ -26,15 +26,15 @@ public final class fr2 {
     }
 
     public static final long d(long j, long j2) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L));
-        return (Float.floatToRawIntBits(fIntBitsToFloat) << 32) | (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j >> 32)) - Float.intBitsToFloat((int) (j2 >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j & 4294967295L)) - Float.intBitsToFloat((int) (j2 & 4294967295L));
+        return (Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L);
     }
 
     public static final long e(long j, long j2) {
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (j2 >> 32)) + Float.intBitsToFloat((int) (j >> 32));
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (j2 & 4294967295L)) + Float.intBitsToFloat((int) (j & 4294967295L));
-        return (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat) << 32);
+        float intBitsToFloat = Float.intBitsToFloat((int) (j2 >> 32)) + Float.intBitsToFloat((int) (j >> 32));
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (j2 & 4294967295L)) + Float.intBitsToFloat((int) (j & 4294967295L));
+        return (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat) << 32);
     }
 
     public static String f(long j) {
@@ -43,16 +43,16 @@ public final class fr2 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof fr2) {
-            return this.f379a == ((fr2) obj).f379a;
+            return this.f378a == ((fr2) obj).f378a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f379a);
+        return Long.hashCode(this.f378a);
     }
 
     public final String toString() {
-        return f(this.f379a);
+        return f(this.f378a);
     }
 }

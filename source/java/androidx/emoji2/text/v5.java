@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class v5 implements gc1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final fl f1203a;
+    public final fl f1202a;
     public final fl b;
     public final int c;
 
     public v5(fl flVar, fl flVar2, int i) {
-        this.f1203a = flVar;
+        this.f1202a = flVar;
         this.b = flVar2;
         this.c = i;
     }
 
     @Override // androidx.emoji2.text.gc1
     public final int a(rw0 rw0Var, long j, int i) {
-        int iA = this.b.a(0, rw0Var.b());
-        return rw0Var.b + iA + (-this.f1203a.a(0, i)) + this.c;
+        int a2 = this.b.a(0, rw0Var.b());
+        return rw0Var.b + a2 + (-this.f1202a.a(0, i)) + this.c;
     }
 
     public final boolean equals(Object obj) {
@@ -29,16 +29,16 @@ public final class v5 implements gc1 {
             return false;
         }
         v5 v5Var = (v5) obj;
-        return this.f1203a.equals(v5Var.f1203a) && this.b.equals(v5Var.b) && this.c == v5Var.c;
+        return this.f1202a.equals(v5Var.f1202a) && this.b.equals(v5Var.b) && this.c == v5Var.c;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.c) + zd.b(this.b.f368a, Float.hashCode(this.f1203a.f368a) * 31, 31);
+        return Integer.hashCode(this.c) + zd.b(this.b.f367a, Float.hashCode(this.f1202a.f367a) * 31, 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("Vertical(menuAlignment=");
-        sb.append(this.f1203a);
+        sb.append(this.f1202a);
         sb.append(", anchorAlignment=");
         sb.append(this.b);
         sb.append(", offset=");

@@ -14,13 +14,13 @@ public final class a81 {
     private volatile /* synthetic */ long _state$volatile;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f90a;
+    public final int f89a;
     public final boolean b;
     public final int c;
     public final /* synthetic */ AtomicReferenceArray d;
 
     public a81(int i, boolean z) {
-        this.f90a = i;
+        this.f89a = i;
         this.b = z;
         int i2 = i - 1;
         this.c = i2;
@@ -51,25 +51,25 @@ public final class a81 {
             if (z || atomicReferenceArray.get(i2 & i3) == null) {
                 if (f.compareAndSet(this, j, ((-1152921503533105153L) & j) | (((i2 + 1) & 1073741823) << 30))) {
                     atomicReferenceArray.set(i2 & i3, obj);
-                    a81 a81VarC = this;
-                    while ((atomicLongFieldUpdater.get(a81VarC) & 1152921504606846976L) != 0) {
-                        a81VarC = a81VarC.c();
-                        AtomicReferenceArray atomicReferenceArray2 = a81VarC.d;
-                        int i4 = a81VarC.c & i2;
+                    a81 a81Var = this;
+                    while ((atomicLongFieldUpdater.get(a81Var) & 1152921504606846976L) != 0) {
+                        a81Var = a81Var.c();
+                        AtomicReferenceArray atomicReferenceArray2 = a81Var.d;
+                        int i4 = a81Var.c & i2;
                         Object obj2 = atomicReferenceArray2.get(i4);
-                        if ((obj2 instanceof z71) && ((z71) obj2).f1423a == i2) {
+                        if ((obj2 instanceof z71) && ((z71) obj2).f1422a == i2) {
                             atomicReferenceArray2.set(i4, obj);
                         } else {
-                            a81VarC = null;
+                            a81Var = null;
                         }
-                        if (a81VarC == null) {
+                        if (a81Var == null) {
                             return 0;
                         }
                     }
                     return 0;
                 }
             } else {
-                int i5 = this.f90a;
+                int i5 = this.f89a;
                 if (i5 < 1024 || ((i2 - i) & 1073741823) > (i5 >> 1)) {
                     return 1;
                 }
@@ -117,7 +117,7 @@ public final class a81 {
             if (a81Var2 != null) {
                 return a81Var2;
             }
-            a81 a81Var3 = new a81(a81Var.f90a * 2, a81Var.b);
+            a81 a81Var3 = new a81(a81Var.f89a * 2, a81Var.b);
             int i = (int) (1073741823 & j);
             int i2 = (int) ((1152921503533105152L & j) >> 30);
             while (true) {
@@ -126,11 +126,11 @@ public final class a81 {
                 if (i4 == (i3 & i2)) {
                     break;
                 }
-                Object z71Var = a81Var.d.get(i4);
-                if (z71Var == null) {
-                    z71Var = new z71(i);
+                Object obj = a81Var.d.get(i4);
+                if (obj == null) {
+                    obj = new z71(i);
                 }
-                a81Var3.d.set(a81Var3.c & i, z71Var);
+                a81Var3.d.set(a81Var3.c & i, obj);
                 i++;
             }
             atomicLongFieldUpdater.set(a81Var3, (-1152921504606846977L) & j);
@@ -139,107 +139,59 @@ public final class a81 {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0041, code lost:
-    
+    public final Object d() {
+        a81 a81Var = this;
+        while (true) {
+            AtomicLongFieldUpdater atomicLongFieldUpdater = f;
+            long j = atomicLongFieldUpdater.get(a81Var);
+            if ((j & 1152921504606846976L) != 0) {
+                return g;
+            }
+            int i = (int) (j & 1073741823);
+            int i2 = a81Var.c;
+            int i3 = i & i2;
+            if ((((int) ((1152921503533105152L & j) >> 30)) & i2) == i3) {
+                break;
+            }
+            AtomicReferenceArray atomicReferenceArray = a81Var.d;
+            Object obj = atomicReferenceArray.get(i3);
+            boolean z = a81Var.b;
+            if (obj == null) {
+                if (z) {
+                    break;
+                }
+            } else {
+                if (obj instanceof z71) {
+                    break;
+                }
+                long j2 = (i + 1) & 1073741823;
+                if (f.compareAndSet(a81Var, j, (j & (-1073741824)) | j2)) {
+                    atomicReferenceArray.set(i3, null);
+                    return obj;
+                }
+                a81Var = this;
+                if (z) {
+                    while (true) {
+                        long j3 = atomicLongFieldUpdater.get(a81Var);
+                        int i4 = (int) (j3 & 1073741823);
+                        if ((j3 & 1152921504606846976L) != 0) {
+                            a81Var = a81Var.c();
+                        } else {
+                            a81 a81Var2 = a81Var;
+                            if (f.compareAndSet(a81Var2, j3, (j3 & (-1073741824)) | j2)) {
+                                a81Var2.d.set(i4 & a81Var2.c, null);
+                                a81Var = null;
+                            } else {
+                                a81Var = a81Var2;
+                            }
+                        }
+                        if (a81Var == null) {
+                            return obj;
+                        }
+                    }
+                }
+            }
+        }
         return null;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object d() {
-        /*
-            r30 = this;
-            r1 = r30
-        L2:
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r6 = androidx.emoji2.text.a81.f
-            long r2 = r6.get(r1)
-            r7 = 1152921504606846976(0x1000000000000000, double:1.2882297539194267E-231)
-            long r4 = r2 & r7
-            r9 = 0
-            int r0 = (r4 > r9 ? 1 : (r4 == r9 ? 0 : -1))
-            if (r0 == 0) goto L15
-            androidx.emoji2.text.de0 r0 = androidx.emoji2.text.a81.g
-            return r0
-        L15:
-            r11 = 1073741823(0x3fffffff, double:5.304989472E-315)
-            long r4 = r2 & r11
-            int r0 = (int) r4
-            r4 = 1152921503533105152(0xfffffffc0000000, double:1.2882296003504729E-231)
-            long r4 = r4 & r2
-            r13 = 30
-            long r4 = r4 >> r13
-            int r4 = (int) r4
-            int r5 = r1.c
-            r4 = r4 & r5
-            r13 = r0 & r5
-            r14 = 0
-            if (r4 != r13) goto L2e
-            goto L41
-        L2e:
-            java.util.concurrent.atomic.AtomicReferenceArray r15 = r1.d
-            java.lang.Object r4 = r15.get(r13)
-            boolean r5 = r1.b
-            if (r4 != 0) goto L3b
-            if (r5 == 0) goto L2
-            goto L41
-        L3b:
-            r16 = r7
-            boolean r7 = r4 instanceof androidx.emoji2.text.z71
-            if (r7 == 0) goto L42
-        L41:
-            return r14
-        L42:
-            int r0 = r0 + 1
-            r7 = 1073741823(0x3fffffff, float:1.9999999)
-            r0 = r0 & r7
-            r7 = -1073741824(0xffffffffc0000000, double:NaN)
-            long r18 = r2 & r7
-            r20 = r7
-            long r7 = (long) r0
-            long r18 = r18 | r7
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r0 = androidx.emoji2.text.a81.f
-            r28 = r18
-            r18 = r4
-            r19 = r5
-            r4 = r28
-            boolean r0 = r0.compareAndSet(r1, r2, r4)
-            if (r0 == 0) goto L66
-            r15.set(r13, r14)
-            return r18
-        L66:
-            r1 = r30
-            if (r19 == 0) goto L2
-        L6a:
-            long r24 = r6.get(r1)
-            long r2 = r24 & r11
-            int r0 = (int) r2
-            long r2 = r24 & r16
-            int r2 = (r2 > r9 ? 1 : (r2 == r9 ? 0 : -1))
-            if (r2 == 0) goto L7d
-            androidx.emoji2.text.a81 r0 = r1.c()
-            r1 = r0
-            goto L96
-        L7d:
-            long r2 = r24 & r20
-            long r26 = r2 | r7
-            java.util.concurrent.atomic.AtomicLongFieldUpdater r22 = androidx.emoji2.text.a81.f
-            r23 = r1
-            boolean r1 = r22.compareAndSet(r23, r24, r26)
-            r2 = r23
-            if (r1 == 0) goto L99
-            java.util.concurrent.atomic.AtomicReferenceArray r1 = r2.d
-            int r2 = r2.c
-            r0 = r0 & r2
-            r1.set(r0, r14)
-            r1 = r14
-        L96:
-            if (r1 != 0) goto L6a
-            return r18
-        L99:
-            r1 = r2
-            goto L6a
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.a81.d():java.lang.Object");
     }
 }

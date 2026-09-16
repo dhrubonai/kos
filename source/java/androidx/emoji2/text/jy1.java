@@ -10,7 +10,7 @@ import java.util.Set;
 public final class jy1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Set f607a;
+    public Set f606a;
     public ay b;
     public final sf1 c;
     public hf1 d;
@@ -25,7 +25,7 @@ public final class jy1 {
     public jy1() {
         sf1 sf1Var = new sf1(new ly1[16]);
         this.c = sf1Var;
-        int i = f42.f343a;
+        int i = f42.f342a;
         this.d = new hf1();
         this.e = sf1Var;
         this.f = new sf1(new Object[16]);
@@ -33,7 +33,7 @@ public final class jy1 {
     }
 
     public final void a() {
-        this.f607a = null;
+        this.f606a = null;
         this.b = null;
         sf1 sf1Var = this.c;
         sf1Var.g();
@@ -47,7 +47,7 @@ public final class jy1 {
     }
 
     public final void b() {
-        Set set = this.f607a;
+        Set set = this.f606a;
         if (set == null || set.isEmpty()) {
             return;
         }
@@ -65,7 +65,7 @@ public final class jy1 {
     }
 
     public final void c() {
-        Set set = this.f607a;
+        Set set = this.f606a;
         if (set == null) {
             return;
         }
@@ -84,7 +84,7 @@ public final class jy1 {
                     Object obj = sf1Var.d[i];
                     try {
                         if (obj instanceof ly1) {
-                            ky1 ky1Var = ((ly1) obj).f723a;
+                            ky1 ky1Var = ((ly1) obj).f722a;
                             set.remove(ky1Var);
                             ky1Var.d();
                         }
@@ -110,13 +110,13 @@ public final class jy1 {
         if (sf1Var2.f != 0) {
             Trace.beginSection("Compose:onRemembered");
             try {
-                Set set2 = this.f607a;
+                Set set2 = this.f606a;
                 if (set2 != null) {
                     Object[] objArr = sf1Var2.d;
                     int i2 = sf1Var2.f;
                     for (int i3 = 0; i3 < i2; i3++) {
                         ly1 ly1Var = (ly1) objArr[i3];
-                        ky1 ky1Var2 = ly1Var.f723a;
+                        ky1 ky1Var2 = ly1Var.f722a;
                         set2.remove(ky1Var2);
                         try {
                             ky1Var2.f();
@@ -143,17 +143,17 @@ public final class jy1 {
                     Object[] objArr = sf1Var.d;
                     int i = sf1Var.f;
                     for (int i2 = 0; i2 < i; i2++) {
-                        if (((ly1) objArr[i2]).f723a instanceof to1) {
+                        if (((ly1) objArr[i2]).f722a instanceof to1) {
                             throw null;
                         }
                     }
                 }
             }
-            Set set = this.f607a;
+            Set set = this.f606a;
             if (set == null) {
                 return;
             } else {
-                set.add(ly1Var.f723a);
+                set.add(ly1Var.f722a);
             }
         }
         hf1 hf1Var = this.k;
@@ -164,7 +164,7 @@ public final class jy1 {
 
     public final void e(Set set, ay ayVar) {
         a();
-        this.f607a = set;
+        this.f606a = set;
         this.b = ayVar;
     }
 }

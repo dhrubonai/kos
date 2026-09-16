@@ -7,9 +7,9 @@ import android.os.Build;
 public abstract class eo2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final boolean f314a;
+    public static final boolean f313a;
 
     static {
-        f314a = Build.VERSION.SDK_INT >= 28;
+        f313a = Build.VERSION.SDK_INT >= 28;
     }
 }

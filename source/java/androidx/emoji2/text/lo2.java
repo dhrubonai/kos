@@ -8,9 +8,9 @@ public final class lo2 extends gs {
     @Override // androidx.emoji2.text.u
     public final void L0(u62 u62Var) {
         nm2 nm2Var = this.L;
-        wy0[] wy0VarArr = e72.f290a;
+        wy0[] wy0VarArr = e72.f289a;
         f72 f72Var = c72.I;
-        wy0 wy0Var = e72.f290a[24];
+        wy0 wy0Var = e72.f289a[24];
         f72Var.a(u62Var, nm2Var);
     }
 }

@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.net.Socket;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -52,7 +53,7 @@ public final class xs0 implements Closeable {
         }
         this.f = str;
         this.h = 3;
-        qi2 qi2Var = (qi2) pfVar.f902a;
+        qi2 qi2Var = (qi2) pfVar.f901a;
         this.j = qi2Var;
         this.k = qi2Var.e();
         this.l = qi2Var.e();
@@ -84,25 +85,25 @@ public final class xs0 implements Closeable {
         this.B = new LinkedHashSet();
     }
 
-    public final void b(int i, int i2, IOException iOException) throws IOException {
+    public final void b(int i, int i2, IOException iOException) {
         int i3;
-        Object[] array;
+        Object[] objArr;
         zd.m(i, "connectionCode");
         zd.m(i2, "streamCode");
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         try {
             f(i);
         } catch (IOException unused) {
         }
         synchronized (this) {
             if (this.e.isEmpty()) {
-                array = null;
+                objArr = null;
             } else {
-                array = this.e.values().toArray(new et0[0]);
+                objArr = this.e.values().toArray(new et0[0]);
                 this.e.clear();
             }
         }
-        et0[] et0VarArr = (et0[]) array;
+        et0[] et0VarArr = (et0[]) objArr;
         if (et0VarArr != null) {
             for (et0 et0Var : et0VarArr) {
                 try {
@@ -129,7 +130,7 @@ public final class xs0 implements Closeable {
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws IOException {
+    public final void close() {
         b(1, 9, null);
     }
 
@@ -148,7 +149,7 @@ public final class xs0 implements Closeable {
                     return;
                 }
                 this.i = true;
-                this.z.f(jq2.f596a, this.g, i);
+                this.z.f(jq2.f595a, this.g, i);
             }
         }
     }
@@ -167,7 +168,7 @@ public final class xs0 implements Closeable {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0035, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0035, code lost:
     
         r2 = java.lang.Math.min((int) java.lang.Math.min(r12, r6 - r4), r8.z.f);
         r6 = r2;
@@ -175,78 +176,41 @@ public final class xs0 implements Closeable {
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void k(int r9, boolean r10, androidx.emoji2.text.rn r11, long r12) {
-        /*
-            r8 = this;
-            r0 = 0
-            int r2 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
-            r3 = 0
-            if (r2 != 0) goto Ld
-            androidx.emoji2.text.ft0 r12 = r8.z
-            r12.c(r10, r9, r11, r3)
-            return
-        Ld:
-            int r2 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
-            if (r2 <= 0) goto L68
-            monitor-enter(r8)
-        L12:
-            long r4 = r8.w     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            long r6 = r8.x     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            int r2 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1))
-            if (r2 < 0) goto L34
-            java.util.LinkedHashMap r2 = r8.e     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            java.lang.Integer r4 = java.lang.Integer.valueOf(r9)     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            boolean r2 = r2.containsKey(r4)     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            if (r2 == 0) goto L2c
-            r8.wait()     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            goto L12
-        L2a:
-            r9 = move-exception
-            goto L66
-        L2c:
-            java.io.IOException r9 = new java.io.IOException     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            java.lang.String r10 = "stream closed"
-            r9.<init>(r10)     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-            throw r9     // Catch: java.lang.Throwable -> L2a java.lang.InterruptedException -> L59
-        L34:
-            long r6 = r6 - r4
-            long r4 = java.lang.Math.min(r12, r6)     // Catch: java.lang.Throwable -> L2a
-            int r2 = (int) r4     // Catch: java.lang.Throwable -> L2a
-            androidx.emoji2.text.ft0 r4 = r8.z     // Catch: java.lang.Throwable -> L2a
-            int r4 = r4.f     // Catch: java.lang.Throwable -> L2a
-            int r2 = java.lang.Math.min(r2, r4)     // Catch: java.lang.Throwable -> L2a
-            long r4 = r8.w     // Catch: java.lang.Throwable -> L2a
-            long r6 = (long) r2     // Catch: java.lang.Throwable -> L2a
-            long r4 = r4 + r6
-            r8.w = r4     // Catch: java.lang.Throwable -> L2a
-            monitor-exit(r8)
-            long r12 = r12 - r6
-            androidx.emoji2.text.ft0 r4 = r8.z
-            if (r10 == 0) goto L54
-            int r5 = (r12 > r0 ? 1 : (r12 == r0 ? 0 : -1))
-            if (r5 != 0) goto L54
-            r5 = 1
-            goto L55
-        L54:
-            r5 = r3
-        L55:
-            r4.c(r5, r9, r11, r2)
-            goto Ld
-        L59:
-            java.lang.Thread r9 = java.lang.Thread.currentThread()     // Catch: java.lang.Throwable -> L2a
-            r9.interrupt()     // Catch: java.lang.Throwable -> L2a
-            java.io.InterruptedIOException r9 = new java.io.InterruptedIOException     // Catch: java.lang.Throwable -> L2a
-            r9.<init>()     // Catch: java.lang.Throwable -> L2a
-            throw r9     // Catch: java.lang.Throwable -> L2a
-        L66:
-            monitor-exit(r8)
-            throw r9
-        L68:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.xs0.k(int, boolean, androidx.emoji2.text.rn, long):void");
+    public final void k(int i, boolean z, rn rnVar, long j) {
+        int min;
+        long j2;
+        if (j == 0) {
+            this.z.c(z, i, rnVar, 0);
+            return;
+        }
+        while (j > 0) {
+            synchronized (this) {
+                while (true) {
+                    try {
+                        try {
+                            long j3 = this.w;
+                            long j4 = this.x;
+                            if (j3 < j4) {
+                                break;
+                            } else {
+                                if (!this.e.containsKey(Integer.valueOf(i))) {
+                                    throw new IOException("stream closed");
+                                }
+                                wait();
+                            }
+                        } catch (InterruptedException unused) {
+                            Thread.currentThread().interrupt();
+                            throw new InterruptedIOException();
+                        }
+                    } catch (Throwable th) {
+                        throw th;
+                    }
+                }
+            }
+            j -= j2;
+            this.z.c(z && j == 0, i, rnVar, min);
+        }
     }
 
     public final void l(int i, int i2) {

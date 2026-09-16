@@ -8,8 +8,8 @@ import kotlin.jvm.functions.Function2;
 public final /* synthetic */ class wv extends q4 implements Function2 {
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        int iIntValue = ((Number) obj2).intValue();
-        ((ComposableLambdaImpl) this.d).invoke((lx) obj, iIntValue);
-        return up2.f1187a;
+        int intValue = ((Number) obj2).intValue();
+        ((ComposableLambdaImpl) this.d).invoke((lx) obj, intValue);
+        return up2.f1186a;
     }
 }

@@ -8,11 +8,11 @@ import androidx.compose.ui.semantics.AppendedSemanticsElement;
 public abstract class yh1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ye1 f1388a;
+    public static final ye1 f1387a;
 
     static {
-        ye1 ye1Var = ti1.f1122a;
-        f1388a = new ye1();
+        ye1 ye1Var = ti1.f1121a;
+        f1387a = new ye1();
     }
 
     public static final void a(md1 md1Var, int i, int i2) {
@@ -43,20 +43,20 @@ public abstract class yh1 {
             }
             if ((i & PackageParser.PARSE_COLLECT_CERTIFICATES) != 0 && (md1Var instanceof xn0)) {
                 if (i2 == 1) {
-                    e11 e11VarT = lx0.T(md1Var);
-                    e11VarT.b0(e11VarT.R + 1);
+                    e11 T = lx0.T(md1Var);
+                    T.b0(T.R + 1);
                 } else if (i2 == 2) {
                     lx0.T(md1Var).b0(r0.R - 1);
                 }
                 if (i2 != 2) {
-                    e11 e11VarT2 = lx0.T(md1Var);
-                    if (e11VarT2.R != 0 && !e11VarT2.p() && !e11VarT2.q() && !e11VarT2.Q) {
-                        v7 v7Var = (v7) h11.a(e11VarT2);
+                    e11 T2 = lx0.T(md1Var);
+                    if (T2.R != 0 && !T2.p() && !T2.q() && !T2.Q) {
+                        v7 v7Var = (v7) h11.a(T2);
                         l6 l6Var = v7Var.R.e;
                         l6Var.getClass();
-                        if (e11VarT2.R > 0) {
-                            ((sf1) l6Var.e).b(e11VarT2);
-                            e11VarT2.Q = true;
+                        if (T2.R > 0) {
+                            ((sf1) l6Var.e).b(T2);
+                            T2.Q = true;
                         }
                         v7Var.H(null);
                     }
@@ -79,7 +79,7 @@ public abstract class yh1 {
             if ((i & 2048) != 0 && (md1Var instanceof jk0)) {
                 jk0 jk0Var = (jk0) md1Var;
                 bp.b = null;
-                jk0Var.k(bp.f162a);
+                jk0Var.k(bp.f161a);
                 if (bp.b != null) {
                     md1 md1Var2 = (md1) jk0Var;
                     if (!md1Var2.d.q) {
@@ -98,49 +98,49 @@ public abstract class yh1 {
                         if (i3 == 0) {
                             break;
                         }
-                        md1 md1VarM = (md1) sf1Var.k(i3 - 1);
-                        if ((md1VarM.g & 1024) == 0) {
-                            lx0.i(sf1Var, md1VarM);
+                        md1 md1Var5 = (md1) sf1Var.k(i3 - 1);
+                        if ((md1Var5.g & 1024) == 0) {
+                            lx0.i(sf1Var, md1Var5);
                         } else {
                             while (true) {
-                                if (md1VarM == null) {
+                                if (md1Var5 == null) {
                                     break;
                                 }
-                                if ((md1VarM.f & 1024) != 0) {
+                                if ((md1Var5.f & 1024) != 0) {
                                     sf1 sf1Var2 = null;
-                                    while (md1VarM != null) {
-                                        if (md1VarM instanceof rk0) {
-                                            rk0 rk0Var = (rk0) md1VarM;
+                                    while (md1Var5 != null) {
+                                        if (md1Var5 instanceof rk0) {
+                                            rk0 rk0Var = (rk0) md1Var5;
                                             dk0 dk0Var = ((gk0) ((v7) lx0.U(rk0Var)).getFocusOwner()).d;
                                             if (dk0Var.c.a(rk0Var)) {
                                                 dk0Var.a();
                                             }
-                                        } else if ((md1VarM.f & 1024) != 0 && (md1VarM instanceof z60)) {
+                                        } else if ((md1Var5.f & 1024) != 0 && (md1Var5 instanceof z60)) {
                                             int i4 = 0;
-                                            for (md1 md1Var5 = ((z60) md1VarM).s; md1Var5 != null; md1Var5 = md1Var5.i) {
-                                                if ((md1Var5.f & 1024) != 0) {
+                                            for (md1 md1Var6 = ((z60) md1Var5).s; md1Var6 != null; md1Var6 = md1Var6.i) {
+                                                if ((md1Var6.f & 1024) != 0) {
                                                     i4++;
                                                     if (i4 == 1) {
-                                                        md1VarM = md1Var5;
+                                                        md1Var5 = md1Var6;
                                                     } else {
                                                         if (sf1Var2 == null) {
                                                             sf1Var2 = new sf1(new md1[16]);
                                                         }
-                                                        if (md1VarM != null) {
-                                                            sf1Var2.b(md1VarM);
-                                                            md1VarM = null;
+                                                        if (md1Var5 != null) {
+                                                            sf1Var2.b(md1Var5);
+                                                            md1Var5 = null;
                                                         }
-                                                        sf1Var2.b(md1Var5);
+                                                        sf1Var2.b(md1Var6);
                                                     }
                                                 }
                                             }
                                             if (i4 == 1) {
                                             }
                                         }
-                                        md1VarM = lx0.m(sf1Var2);
+                                        md1Var5 = lx0.m(sf1Var2);
                                     }
                                 } else {
-                                    md1VarM = md1VarM.i;
+                                    md1Var5 = md1Var5.i;
                                 }
                             }
                         }
@@ -194,10 +194,10 @@ public abstract class yh1 {
             return i;
         }
         Class<?> cls = md1Var.getClass();
-        ye1 ye1Var = f1388a;
-        int iD = ye1Var.d(cls);
-        if (iD >= 0) {
-            return ye1Var.c[iD];
+        ye1 ye1Var = f1387a;
+        int d = ye1Var.d(cls);
+        if (d >= 0) {
+            return ye1Var.c[d];
         }
         int i2 = md1Var instanceof w01 ? 3 : 1;
         if (md1Var instanceof ub0) {
@@ -254,11 +254,11 @@ public abstract class yh1 {
             return e(md1Var);
         }
         z60 z60Var = (z60) md1Var;
-        int iF = z60Var.r;
+        int i = z60Var.r;
         for (md1 md1Var2 = z60Var.s; md1Var2 != null; md1Var2 = md1Var2.i) {
-            iF |= f(md1Var2);
+            i |= f(md1Var2);
         }
-        return iF;
+        return i;
     }
 
     public static final boolean g(int i) {

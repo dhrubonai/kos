@@ -15,27 +15,27 @@ public final class hm1 implements in {
 
     @Override // androidx.emoji2.text.in
     public final float a(float f, float f2, float f3) {
-        float fA = this.c.a(f, f2, f3);
+        float a2 = this.c.a(f, f2, f3);
         o60 o60Var = this.b;
-        if (fA == 0.0f) {
+        if (a2 == 0.0f) {
             int i = o60Var.e;
             if (i == 0) {
                 return 0.0f;
             }
-            float fN = i * (-1.0f);
+            float f4 = i * (-1.0f);
             if (((Boolean) o60Var.E.getValue()).booleanValue()) {
-                fN += o60Var.n();
+                f4 += o60Var.n();
             }
-            return az0.o(fN, -f3, f3);
+            return az0.o(f4, -f3, f3);
         }
-        float fN2 = o60Var.e * (-1);
-        while (fA > 0.0f && fN2 < fA) {
-            fN2 += o60Var.n();
+        float f5 = o60Var.e * (-1);
+        while (a2 > 0.0f && f5 < a2) {
+            f5 += o60Var.n();
         }
-        while (fA < 0.0f && fN2 > fA) {
-            fN2 -= o60Var.n();
+        while (a2 < 0.0f && f5 > a2) {
+            f5 -= o60Var.n();
         }
-        return fN2;
+        return f5;
     }
 
     @Override // androidx.emoji2.text.in

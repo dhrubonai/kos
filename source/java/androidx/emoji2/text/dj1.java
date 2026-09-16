@@ -2,8 +2,6 @@ package androidx.emoji2.text;
 
 import com.kos.engine.core.system.user.BUserHandle;
 import java.net.ProxySelector;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -42,7 +40,13 @@ public final class dj1 implements Cloneable, uo {
     public final int y;
     public final int z;
 
-    public dj1() throws NoSuchAlgorithmException, KeyStoreException {
+    /* JADX WARN: Removed duplicated region for block: B:11:0x00e7  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0171  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public dj1() {
+        List list;
         s6 s6Var = new s6(3);
         p4 p4Var = new p4(13);
         ArrayList arrayList = new ArrayList();
@@ -53,9 +57,9 @@ public final class dj1 implements Cloneable, uo {
         dd0 dd0Var3 = dd0.C;
         SocketFactory socketFactory = SocketFactory.getDefault();
         lx0.w(socketFactory, "getDefault()");
-        List list = D;
-        List list2 = C;
-        cj1 cj1Var = cj1.f200a;
+        List list2 = D;
+        List list3 = C;
+        cj1 cj1Var = cj1.f199a;
         zp zpVar = zp.c;
         this.d = s6Var;
         this.e = p4Var;
@@ -69,81 +73,85 @@ public final class dj1 implements Cloneable, uo {
         this.m = dd0Var2;
         this.n = dd0Var3;
         ProxySelector proxySelector = ProxySelector.getDefault();
-        this.o = proxySelector == null ? ni1.f810a : proxySelector;
+        this.o = proxySelector == null ? ni1.f809a : proxySelector;
         this.p = dd0Var;
         this.q = socketFactory;
-        this.t = list;
-        this.u = list2;
+        this.t = list2;
+        this.u = list3;
         this.v = cj1Var;
         this.y = BUserHandle.AID_APP_START;
         this.z = BUserHandle.AID_APP_START;
         this.A = BUserHandle.AID_APP_START;
         this.B = new gz0(17);
-        if (list == null || !list.isEmpty()) {
-            Iterator it = list.iterator();
+        if (list2 == null || !list2.isEmpty()) {
+            Iterator it = list2.iterator();
             while (it.hasNext()) {
-                if (((sy) it.next()).f1093a) {
-                    lr1 lr1Var = lr1.f707a;
-                    X509TrustManager x509TrustManagerM = lr1.f707a.m();
-                    this.s = x509TrustManagerM;
-                    this.r = lr1.f707a.l(x509TrustManagerM);
-                    lx0 lx0VarB = lr1.f707a.b(x509TrustManagerM);
-                    this.x = lx0VarB;
-                    this.w = lx0.n(zpVar.b, lx0VarB) ? zpVar : new zp(zpVar.f1451a, lx0VarB);
-                }
-            }
-            this.r = null;
-            this.x = null;
-            this.s = null;
-            this.w = zp.c;
-        } else {
-            this.r = null;
-            this.x = null;
-            this.s = null;
-            this.w = zp.c;
-        }
-        X509TrustManager x509TrustManager = this.s;
-        lx0 lx0Var = this.x;
-        SSLSocketFactory sSLSocketFactory = this.r;
-        List list3 = this.g;
-        List list4 = this.f;
-        lx0.v(list4, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
-        if (list4.contains(null)) {
-            throw new IllegalStateException(("Null interceptor: " + list4).toString());
-        }
-        lx0.v(list3, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
-        if (list3.contains(null)) {
-            throw new IllegalStateException(("Null network interceptor: " + list3).toString());
-        }
-        List list5 = this.t;
-        if (list5 == null || !list5.isEmpty()) {
-            Iterator it2 = list5.iterator();
-            while (it2.hasNext()) {
-                if (((sy) it2.next()).f1093a) {
-                    if (sSLSocketFactory == null) {
-                        throw new IllegalStateException("sslSocketFactory == null");
+                if (((sy) it.next()).f1092a) {
+                    lr1 lr1Var = lr1.f706a;
+                    X509TrustManager m = lr1.f706a.m();
+                    this.s = m;
+                    this.r = lr1.f706a.l(m);
+                    lx0 b = lr1.f706a.b(m);
+                    this.x = b;
+                    this.w = lx0.n(zpVar.b, b) ? zpVar : new zp(zpVar.f1450a, b);
+                    X509TrustManager x509TrustManager = this.s;
+                    lx0 lx0Var = this.x;
+                    SSLSocketFactory sSLSocketFactory = this.r;
+                    List list4 = this.g;
+                    list = this.f;
+                    lx0.v(list, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
+                    if (!list.contains(null)) {
+                        throw new IllegalStateException(("Null interceptor: " + list).toString());
                     }
-                    if (lx0Var == null) {
-                        throw new IllegalStateException("certificateChainCleaner == null");
+                    lx0.v(list4, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
+                    if (list4.contains(null)) {
+                        throw new IllegalStateException(("Null network interceptor: " + list4).toString());
                     }
-                    if (x509TrustManager == null) {
-                        throw new IllegalStateException("x509TrustManager == null");
+                    List list5 = this.t;
+                    if (list5 == null || !list5.isEmpty()) {
+                        Iterator it2 = list5.iterator();
+                        while (it2.hasNext()) {
+                            if (((sy) it2.next()).f1092a) {
+                                if (sSLSocketFactory == null) {
+                                    throw new IllegalStateException("sslSocketFactory == null");
+                                }
+                                if (lx0Var == null) {
+                                    throw new IllegalStateException("certificateChainCleaner == null");
+                                }
+                                if (x509TrustManager == null) {
+                                    throw new IllegalStateException("x509TrustManager == null");
+                                }
+                                return;
+                            }
+                        }
+                    }
+                    if (sSLSocketFactory != null) {
+                        throw new IllegalStateException("Check failed.");
+                    }
+                    if (lx0Var != null) {
+                        throw new IllegalStateException("Check failed.");
+                    }
+                    if (x509TrustManager != null) {
+                        throw new IllegalStateException("Check failed.");
+                    }
+                    if (!lx0.n(this.w, zp.c)) {
+                        throw new IllegalStateException("Check failed.");
                     }
                     return;
                 }
             }
         }
-        if (sSLSocketFactory != null) {
-            throw new IllegalStateException("Check failed.");
-        }
-        if (lx0Var != null) {
-            throw new IllegalStateException("Check failed.");
-        }
-        if (x509TrustManager != null) {
-            throw new IllegalStateException("Check failed.");
-        }
-        if (!lx0.n(this.w, zp.c)) {
-            throw new IllegalStateException("Check failed.");
+        this.r = null;
+        this.x = null;
+        this.s = null;
+        this.w = zp.c;
+        X509TrustManager x509TrustManager2 = this.s;
+        lx0 lx0Var2 = this.x;
+        SSLSocketFactory sSLSocketFactory2 = this.r;
+        List list42 = this.g;
+        list = this.f;
+        lx0.v(list, "null cannot be cast to non-null type kotlin.collections.List<okhttp3.Interceptor?>");
+        if (!list.contains(null)) {
         }
     }
 

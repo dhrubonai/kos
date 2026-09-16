@@ -7,13 +7,13 @@ import android.view.animation.Interpolator;
 public abstract class ev2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f328a;
+    public final int f327a;
     public float b;
     public final Interpolator c;
     public final long d;
 
     public ev2(int i, Interpolator interpolator, long j) {
-        this.f328a = i;
+        this.f327a = i;
         this.c = interpolator;
         this.d = j;
     }
@@ -32,7 +32,7 @@ public abstract class ev2 {
     }
 
     public int d() {
-        return this.f328a;
+        return this.f327a;
     }
 
     public void e(float f) {

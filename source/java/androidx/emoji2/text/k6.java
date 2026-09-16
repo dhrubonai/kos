@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class k6 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ m6 f622a;
+    public final /* synthetic */ m6 f621a;
 
     public k6(m6 m6Var) {
-        this.f622a = m6Var;
+        this.f621a = m6Var;
     }
 }

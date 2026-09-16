@@ -80,27 +80,27 @@ public class IInputMethodManagerProxy extends BinderInvocationStub {
         if (objArr == null) {
             return false;
         }
-        boolean zFixEditorInfoPackage = false;
+        boolean z = false;
         for (int i = 0; i < objArr.length; i++) {
             Object obj = objArr[i];
             if ((obj instanceof String) && shouldUseHostPackage((String) obj)) {
                 objArr[i] = c01.X();
-                zFixEditorInfoPackage = true;
+                z = true;
             } else if (obj instanceof EditorInfo) {
-                zFixEditorInfoPackage |= fixEditorInfoPackage((EditorInfo) obj);
+                z |= fixEditorInfoPackage((EditorInfo) obj);
             }
         }
-        return zFixEditorInfoPackage;
+        return z;
     }
 
     private static boolean fixInputMethodUser(String str, Object[] objArr) {
-        int iInputMethodUserIndex;
+        int inputMethodUserIndex;
         int i;
         c01 c01Var = c01.r;
-        if (!c01Var.a0() || !isUserAwareInputMethod(str) || objArr == null || objArr.length == 0 || (iInputMethodUserIndex = inputMethodUserIndex(str, objArr)) < 0 || ((Integer) objArr[iInputMethodUserIndex]).intValue() == (i = c01Var.p)) {
+        if (!c01Var.a0() || !isUserAwareInputMethod(str) || objArr == null || objArr.length == 0 || (inputMethodUserIndex = inputMethodUserIndex(str, objArr)) < 0 || ((Integer) objArr[inputMethodUserIndex]).intValue() == (i = c01Var.p)) {
             return false;
         }
-        objArr[iInputMethodUserIndex] = Integer.valueOf(i);
+        objArr[inputMethodUserIndex] = Integer.valueOf(i);
         return true;
     }
 
@@ -194,22 +194,22 @@ public class IInputMethodManagerProxy extends BinderInvocationStub {
         if (!isVirtualThreadReady() || str == null || c01.X().equals(str)) {
             return false;
         }
-        String strO = rj.o();
-        Object objQ = rj.q();
-        if (str.equals(strO) || str.equals(objQ)) {
+        String o = rj.o();
+        Object q = rj.q();
+        if (str.equals(o) || str.equals(q)) {
             return true;
         }
-        if (strO != null) {
-            StringBuilder sbK = jx0.k(strO);
-            sbK.append(c.a(-588831985385250L, xa1.b));
-            if (str.startsWith(sbK.toString())) {
+        if (o != null) {
+            StringBuilder k = jx0.k(o);
+            k.append(c.a(-588831985385250L, xa1.b));
+            if (str.startsWith(k.toString())) {
                 return true;
             }
         }
         c01 c01Var = c01.r;
-        int iU = rj.u();
+        int u = rj.u();
         c01Var.getClass();
-        return c01.b0(str, iU);
+        return c01.b0(str, u);
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub
@@ -228,10 +228,10 @@ public class IInputMethodManagerProxy extends BinderInvocationStub {
         String[] strArr = xa1.b;
         Object[] objArr2 = objArr == null ? null : (Object[]) objArr.clone();
         if ((fixInputMethodUser(method.getName(), objArr) | fixInputMethodIdentity(objArr)) && isInputStartOrShowMethod(method.getName())) {
-            String strA = c.a(-574804622196514L, strArr);
+            String a2 = c.a(-574804622196514L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-574911996378914L, strArr), 3, strA);
+            zd.p(sb, c.a(-574911996378914L, strArr), 3, a2);
         }
         try {
             return super.invoke(obj, method, objArr);
@@ -243,10 +243,10 @@ public class IInputMethodManagerProxy extends BinderInvocationStub {
                 nz0.Q(c.a(-574559809060642L, strArr), 5, method.getName() + c.a(-574650003373858L, strArr));
                 return super.invoke(obj, method, objArr2);
             } catch (SecurityException unused) {
-                String strA2 = c.a(-586435393634082L, strArr);
+                String a3 = c.a(-586435393634082L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(method.getName());
-                zd.p(sb2, c.a(-586542767816482L, strArr), 5, strA2);
+                zd.p(sb2, c.a(-586542767816482L, strArr), 5, a3);
                 return emptyInputMethodResult(method);
             }
         }

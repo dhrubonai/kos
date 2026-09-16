@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class vx1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public WeakReference f1249a;
+    public WeakReference f1248a;
     public int b;
     public px1 c;
     public boolean d;

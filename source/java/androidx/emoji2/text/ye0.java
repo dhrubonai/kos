@@ -12,14 +12,14 @@ import java.util.Locale;
 public final class ye0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1381a;
+    public final /* synthetic */ int f1380a;
     public int b;
     public int c;
     public Object d;
     public Object e;
 
     public /* synthetic */ ye0() {
-        this.f1381a = 1;
+        this.f1380a = 1;
     }
 
     public void a(int i) {
@@ -55,8 +55,8 @@ public final class ye0 {
                 if (!qd0.d()) {
                     return false;
                 }
-                qd0 qd0VarA = qd0.a();
-                if (qd0VarA.c() != 1 || qd0VarA.b(charSequence, i3) == -1) {
+                qd0 a2 = qd0.a();
+                if (a2.c() != 1 || a2.b(charSequence, i3) == -1) {
                     return false;
                 }
             }
@@ -86,9 +86,9 @@ public final class ye0 {
     public boolean f(int i) {
         CharSequence charSequence = (CharSequence) this.d;
         int i2 = i - 1;
-        Character.UnicodeBlock unicodeBlockOf = Character.UnicodeBlock.of(charSequence.charAt(i2));
+        Character.UnicodeBlock of = Character.UnicodeBlock.of(charSequence.charAt(i2));
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.HIRAGANA;
-        if (lx0.n(unicodeBlockOf, unicodeBlock) && lx0.n(Character.UnicodeBlock.of(charSequence.charAt(i)), Character.UnicodeBlock.KATAKANA)) {
+        if (lx0.n(of, unicodeBlock) && lx0.n(Character.UnicodeBlock.of(charSequence.charAt(i)), Character.UnicodeBlock.KATAKANA)) {
             return true;
         }
         return lx0.n(Character.UnicodeBlock.of(charSequence.charAt(i)), unicodeBlock) && lx0.n(Character.UnicodeBlock.of(charSequence.charAt(i2)), Character.UnicodeBlock.KATAKANA);
@@ -104,8 +104,8 @@ public final class ye0 {
             if (!qd0.d()) {
                 return false;
             }
-            qd0 qd0VarA = qd0.a();
-            if (qd0VarA.c() != 1 || qd0VarA.b(charSequence, i) == -1) {
+            qd0 a2 = qd0.a();
+            if (a2.c() != 1 || a2.b(charSequence, i) == -1) {
                 return false;
             }
         }
@@ -122,14 +122,14 @@ public final class ye0 {
 
     public int i(int i) {
         a(i);
-        int iFollowing = ((BreakIterator) this.e).following(i);
-        return (g(iFollowing + (-1)) && g(iFollowing) && !f(iFollowing)) ? i(iFollowing) : iFollowing;
+        int following = ((BreakIterator) this.e).following(i);
+        return (g(following + (-1)) && g(following) && !f(following)) ? i(following) : following;
     }
 
     public int j(int i) {
         a(i);
-        int iPreceding = ((BreakIterator) this.e).preceding(i);
-        return (g(iPreceding) && c(iPreceding) && !f(iPreceding)) ? j(iPreceding) : iPreceding;
+        int preceding = ((BreakIterator) this.e).preceding(i);
+        return (g(preceding) && c(preceding) && !f(preceding)) ? j(preceding) : preceding;
     }
 
     public void k(int i, int i2, String str) {
@@ -141,23 +141,23 @@ public final class ye0 {
         }
         on0 on0Var = (on0) this.e;
         if (on0Var == null) {
-            int iMax = Math.max(255, str.length() + PackageParser.PARSE_IS_PRIVILEGED);
-            char[] cArr = new char[iMax];
-            int iMin = Math.min(i, 64);
-            int iMin2 = Math.min(((String) this.d).length() - i2, 64);
+            int max = Math.max(255, str.length() + PackageParser.PARSE_IS_PRIVILEGED);
+            char[] cArr = new char[max];
+            int min = Math.min(i, 64);
+            int min2 = Math.min(((String) this.d).length() - i2, 64);
             String str2 = (String) this.d;
-            int i3 = i - iMin;
+            int i3 = i - min;
             lx0.v(str2, "null cannot be cast to non-null type java.lang.String");
             str2.getChars(i3, i, cArr, 0);
             String str3 = (String) this.d;
-            int i4 = iMax - iMin2;
-            int i5 = iMin2 + i2;
+            int i4 = max - min2;
+            int i5 = min2 + i2;
             lx0.v(str3, "null cannot be cast to non-null type java.lang.String");
             str3.getChars(i2, i5, cArr, i4);
-            str.getChars(0, str.length(), cArr, iMin);
-            int length = str.length() + iMin;
+            str.getChars(0, str.length(), cArr, min);
+            int length = str.length() + min;
             on0 on0Var2 = new on0();
-            on0Var2.b = iMax;
+            on0Var2.b = max;
             on0Var2.e = cArr;
             on0Var2.c = length;
             on0Var2.d = i4;
@@ -179,11 +179,11 @@ public final class ye0 {
         }
         int length2 = str.length() - (i8 - i7);
         if (length2 > on0Var.b()) {
-            int iB = length2 - on0Var.b();
+            int b = length2 - on0Var.b();
             int i9 = on0Var.b;
             do {
                 i9 *= 2;
-            } while (i9 - on0Var.b < iB);
+            } while (i9 - on0Var.b < b);
             char[] cArr2 = new char[i9];
             xh.x0((char[]) on0Var.e, cArr2, 0, 0, on0Var.c);
             int i10 = on0Var.b;
@@ -203,13 +203,13 @@ public final class ye0 {
             on0Var.c = i7;
             on0Var.d -= i15;
         } else if (i7 >= i14 || i8 < i14) {
-            int iB2 = on0Var.b() + i7;
-            int iB3 = on0Var.b() + i8;
+            int b2 = on0Var.b() + i7;
+            int b3 = on0Var.b() + i8;
             int i16 = on0Var.d;
             char[] cArr4 = (char[]) on0Var.e;
-            xh.x0(cArr4, cArr4, on0Var.c, i16, iB2);
-            on0Var.c += iB2 - i16;
-            on0Var.d = iB3;
+            xh.x0(cArr4, cArr4, on0Var.c, i16, b2);
+            on0Var.c += b2 - i16;
+            on0Var.d = b3;
         } else {
             on0Var.d = on0Var.b() + i8;
             on0Var.c = i7;
@@ -219,7 +219,7 @@ public final class ye0 {
     }
 
     public String toString() {
-        switch (this.f1381a) {
+        switch (this.f1380a) {
             case 1:
                 on0 on0Var = (on0) this.e;
                 if (on0Var == null) {
@@ -240,7 +240,7 @@ public final class ye0 {
     }
 
     public ye0(CharSequence charSequence, int i, Locale locale) {
-        this.f1381a = 2;
+        this.f1380a = 2;
         this.d = charSequence;
         if (charSequence.length() < 0) {
             jv0.a("input start index is outside the CharSequence");
@@ -256,7 +256,7 @@ public final class ye0 {
     }
 
     public ye0(ze0 ze0Var, rg rgVar) {
-        this.f1381a = 0;
+        this.f1380a = 0;
         this.d = new SparseArray();
         this.e = ze0Var;
         TypedArray typedArray = (TypedArray) rgVar.e;

@@ -17,64 +17,44 @@ public final class cb implements e30 {
         this.f = e30Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void a(androidx.emoji2.text.i51 r5, androidx.emoji2.text.n10 r6) {
-        /*
-            r4 = this;
-            boolean r0 = r6 instanceof androidx.emoji2.text.bb
-            if (r0 == 0) goto L13
-            r0 = r6
-            androidx.emoji2.text.bb r0 = (androidx.emoji2.text.bb) r0
-            int r1 = r0.i
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.i = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.bb r0 = new androidx.emoji2.text.bb
-            r0.<init>(r4, r6)
-        L18:
-            java.lang.Object r6 = r0.g
-            int r1 = r0.i
-            r2 = 1
-            if (r1 == 0) goto L2d
-            if (r1 == r2) goto L29
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r6 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r6)
-            throw r5
-        L29:
-            androidx.emoji2.text.mz0.L(r6)
-            goto L4f
-        L2d:
-            androidx.emoji2.text.mz0.L(r6)
-            androidx.emoji2.text.q8 r6 = new androidx.emoji2.text.q8
-            r1 = 2
-            r6.<init>(r1, r5, r4)
-            androidx.emoji2.text.p r5 = new androidx.emoji2.text.p
-            r1 = 6
-            r3 = 0
-            r5.<init>(r4, r3, r1)
-            r0.i = r2
-            androidx.emoji2.text.ha r1 = new androidx.emoji2.text.ha
-            java.util.concurrent.atomic.AtomicReference r2 = r4.g
-            r1.<init>(r6, r2, r5, r3)
-            java.lang.Object r5 = androidx.emoji2.text.wj1.s(r1, r0)
-            androidx.emoji2.text.f30 r6 = androidx.emoji2.text.f30.d
-            if (r5 != r6) goto L4f
-            return
-        L4f:
-            androidx.emoji2.text.mu r5 = new androidx.emoji2.text.mu
-            r5.<init>()
-            throw r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.cb.a(androidx.emoji2.text.i51, androidx.emoji2.text.n10):void");
+    public final void a(i51 i51Var, n10 n10Var) {
+        bb bbVar;
+        int i;
+        if (n10Var instanceof bb) {
+            bbVar = (bb) n10Var;
+            int i2 = bbVar.i;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                bbVar.i = i2 - Integer.MIN_VALUE;
+                Object obj = bbVar.g;
+                i = bbVar.i;
+                if (i != 0) {
+                    mz0.L(obj);
+                    q8 q8Var = new q8(2, i51Var, this);
+                    p pVar = new p(this, null, 6);
+                    bbVar.i = 1;
+                    if (wj1.s(new ha(q8Var, this.g, pVar, null), bbVar) == f30.d) {
+                        return;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                }
+                throw new mu();
+            }
+        }
+        bbVar = new bb(this, n10Var);
+        Object obj2 = bbVar.g;
+        i = bbVar.i;
+        if (i != 0) {
+        }
+        throw new mu();
     }
 
     @Override // androidx.emoji2.text.e30

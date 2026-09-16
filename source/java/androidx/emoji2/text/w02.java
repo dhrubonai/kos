@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class w02 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f1253a = 10;
+    public static final float f1252a = 10;
 
     public static final float a(j70 j70Var, boolean z, long j) {
-        float fC = zi1.c(jz0.d(ib2.d(j), ib2.b(j))) / 2.0f;
-        return z ? j70Var.c0(f1253a) + fC : fC;
+        float c = zi1.c(jz0.d(ib2.d(j), ib2.b(j))) / 2.0f;
+        return z ? j70Var.c0(f1252a) + c : c;
     }
 }

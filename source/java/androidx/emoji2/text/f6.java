@@ -16,7 +16,7 @@ public final class f6 extends hh2 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        return new f6(this.i, this.j, (l10) obj).k(up2.f1187a);
+        return new f6(this.i, this.j, (l10) obj).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -28,9 +28,9 @@ public final class f6 extends hh2 implements um0 {
             e6 e6Var = new e6(m6Var, 0);
             a6 a6Var = new a6(this.j, m6Var, (l10) null, 2);
             this.h = 1;
-            Object objA = androidx.compose.material3.internal.a.a(e6Var, a6Var, this);
+            Object a2 = androidx.compose.material3.internal.a.a(e6Var, a6Var, this);
             f30 f30Var = f30.d;
-            if (objA == f30Var) {
+            if (a2 == f30Var) {
                 return f30Var;
             }
         } else {
@@ -39,6 +39,6 @@ public final class f6 extends hh2 implements um0 {
             }
             mz0.L(obj);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

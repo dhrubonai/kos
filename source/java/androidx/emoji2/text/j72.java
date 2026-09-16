@@ -9,7 +9,7 @@ public final /* synthetic */ class j72 extends bn0 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        int i = m72.f736a;
+        int i = m72.f735a;
         return new n72(((Number) obj).longValue(), (n72) obj2, 0);
     }
 }

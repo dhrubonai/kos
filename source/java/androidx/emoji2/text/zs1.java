@@ -12,19 +12,19 @@ public final class zs1 extends ys1 {
 
     @Override // androidx.emoji2.text.ys1
     public final Object a() {
-        Object objA;
+        Object a2;
         synchronized (this.c) {
-            objA = super.a();
+            a2 = super.a();
         }
-        return objA;
+        return a2;
     }
 
     @Override // androidx.emoji2.text.ys1
     public final boolean c(Object obj) {
-        boolean zC;
+        boolean c;
         synchronized (this.c) {
-            zC = super.c(obj);
+            c = super.c(obj);
         }
-        return zC;
+        return c;
     }
 }

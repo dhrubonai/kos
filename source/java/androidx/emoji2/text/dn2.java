@@ -9,7 +9,7 @@ import android.util.Log;
 public abstract class dn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f264a = 0;
+    public static final /* synthetic */ int f263a = 0;
 
     static {
         if (Build.VERSION.SDK_INT < 29) {

@@ -9,48 +9,48 @@ public final class ek1 extends dl1 {
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
         int i;
         sw0 sw0Var = (sw0) on0Var.d(0);
-        int iC = rb2Var.c((t5) on0Var.d(1));
-        if (rb2Var.t >= iC) {
+        int c2 = rb2Var.c((t5) on0Var.d(1));
+        if (rb2Var.t >= c2) {
             vx.c("Check failed");
         }
-        pz0.J(rb2Var, wgVar, iC);
+        pz0.J(rb2Var, wgVar, c2);
         int i2 = rb2Var.t;
-        int iD = rb2Var.v;
-        while (iD >= 0 && !rb2Var.x(iD)) {
-            iD = rb2Var.D(rb2Var.b, iD);
+        int i3 = rb2Var.v;
+        while (i3 >= 0 && !rb2Var.x(i3)) {
+            i3 = rb2Var.D(rb2Var.b, i3);
         }
-        int iT = iD + 1;
-        int iK = 0;
-        while (iT < i2) {
-            if (rb2Var.u(i2, iT)) {
-                if (rb2Var.x(iT)) {
-                    iK = 0;
+        int i4 = i3 + 1;
+        int i5 = 0;
+        while (i4 < i2) {
+            if (rb2Var.u(i2, i4)) {
+                if (rb2Var.x(i4)) {
+                    i5 = 0;
                 }
-                iT++;
+                i4++;
             } else {
-                iK += rb2Var.x(iT) ? 1 : rb2Var.b[(rb2Var.r(iT) * 5) + 1] & 67108863;
-                iT += rb2Var.t(iT);
+                i5 += rb2Var.x(i4) ? 1 : rb2Var.b[(rb2Var.r(i4) * 5) + 1] & 67108863;
+                i4 += rb2Var.t(i4);
             }
         }
         while (true) {
             i = rb2Var.t;
-            if (i >= iC) {
+            if (i >= c2) {
                 break;
             }
-            if (rb2Var.u(iC, i)) {
-                int i3 = rb2Var.t;
-                if (i3 < rb2Var.u && (rb2Var.b[(rb2Var.r(i3) * 5) + 1] & 1073741824) != 0) {
+            if (rb2Var.u(c2, i)) {
+                int i6 = rb2Var.t;
+                if (i6 < rb2Var.u && (rb2Var.b[(rb2Var.r(i6) * 5) + 1] & 1073741824) != 0) {
                     wgVar.d(rb2Var.C(rb2Var.t));
-                    iK = 0;
+                    i5 = 0;
                 }
                 rb2Var.O();
             } else {
-                iK += rb2Var.K();
+                i5 += rb2Var.K();
             }
         }
-        if (i != iC) {
+        if (i != c2) {
             vx.c("Check failed");
         }
-        sw0Var.f1090a = iK;
+        sw0Var.f1089a = i5;
     }
 }

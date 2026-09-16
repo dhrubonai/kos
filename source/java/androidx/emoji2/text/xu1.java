@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class xu1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final g01 f1359a;
+    public final g01 f1358a;
 
     /* JADX WARN: Multi-variable type inference failed */
     public xu1(sm0 sm0Var) {
-        this.f1359a = (g01) sm0Var;
+        this.f1358a = (g01) sm0Var;
     }
 }

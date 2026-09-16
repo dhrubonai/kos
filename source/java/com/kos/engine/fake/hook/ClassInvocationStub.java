@@ -30,15 +30,15 @@ public abstract class ClassInvocationStub implements InvocationHandler, IInjectH
     }
 
     public IBinder getExtension() {
-        Object objAsBinder = this.mBase;
-        if (objAsBinder instanceof IInterface) {
-            objAsBinder = ((IInterface) objAsBinder).asBinder();
+        Object obj = this.mBase;
+        if (obj instanceof IInterface) {
+            obj = ((IInterface) obj).asBinder();
         }
-        if (objAsBinder != null) {
+        if (obj != null) {
             try {
-                Object objInvoke = objAsBinder.getClass().getMethod(c.a(-300596730150690L, xa1.b), null).invoke(objAsBinder, null);
-                if (objInvoke instanceof IBinder) {
-                    return (IBinder) objInvoke;
+                Object invoke = obj.getClass().getMethod(c.a(-300596730150690L, xa1.b), null).invoke(obj, null);
+                if (invoke instanceof IBinder) {
+                    return (IBinder) invoke;
                 }
             } catch (Throwable unused) {
             }
@@ -55,10 +55,10 @@ public abstract class ClassInvocationStub implements InvocationHandler, IInjectH
     public void initAnnotation(Class<?> cls) {
         ProxyMethod proxyMethod = (ProxyMethod) cls.getAnnotation(ProxyMethod.class);
         if (proxyMethod != null) {
-            String strValue = proxyMethod.value();
-            if (!TextUtils.isEmpty(strValue)) {
+            String value = proxyMethod.value();
+            if (!TextUtils.isEmpty(value)) {
                 try {
-                    addMethodHook(strValue, (MethodHook) cls.newInstance());
+                    addMethodHook(value, (MethodHook) cls.newInstance());
                 } catch (Throwable th) {
                     th.printStackTrace();
                 }
@@ -79,14 +79,14 @@ public abstract class ClassInvocationStub implements InvocationHandler, IInjectH
     public abstract void inject(Object obj, Object obj2);
 
     @Override // com.kos.engine.fake.hook.IInjectHook
-    public void injectHook() throws IllegalArgumentException {
+    public void injectHook() {
         Object who = getWho();
         this.mBase = who;
         if (who != null) {
-            Object objNewProxyInstance = Proxy.newProxyInstance(who.getClass().getClassLoader(), mz0.m(this.mBase.getClass()), this);
-            this.mProxyInvocation = objNewProxyInstance;
+            Object newProxyInstance = Proxy.newProxyInstance(who.getClass().getClassLoader(), mz0.m(this.mBase.getClass()), this);
+            this.mProxyInvocation = newProxyInstance;
             if (!this.onlyProxy) {
-                inject(this.mBase, objNewProxyInstance);
+                inject(this.mBase, newProxyInstance);
             }
         }
         onBindMethod();
@@ -104,14 +104,14 @@ public abstract class ClassInvocationStub implements InvocationHandler, IInjectH
     }
 
     @Override // java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
+    public Object invoke(Object obj, Method method, Object[] objArr) {
         if (c.a(-300523715706658L, xa1.b).equals(method.getName())) {
             return getExtension();
         }
         MethodHook methodHook = this.mMethodHookMap.get(method.getName());
         if (methodHook != null && methodHook.isEnable()) {
-            Object objBeforeHook = methodHook.beforeHook(this.mBase, method, objArr);
-            return objBeforeHook != null ? objBeforeHook : methodHook.afterHook(methodHook.hook(this.mBase, method, objArr));
+            Object beforeHook = methodHook.beforeHook(this.mBase, method, objArr);
+            return beforeHook != null ? beforeHook : methodHook.afterHook(methodHook.hook(this.mBase, method, objArr));
         }
         try {
             return method.invoke(this.mBase, objArr);

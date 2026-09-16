@@ -5,26 +5,26 @@ package androidx.emoji2.text;
 public final class z90 extends ba0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1426a;
+    public final int f1425a;
 
     public z90(int i) {
-        this.f1426a = i;
+        this.f1425a = i;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof z90) && this.f1426a == ((z90) obj).f1426a;
+        return (obj instanceof z90) && this.f1425a == ((z90) obj).f1425a;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f1426a);
+        return Integer.hashCode(this.f1425a);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(a.a.a.c.a(-393462513024802L, wj1.f1284a));
-        return zd.j(sb, this.f1426a, ')');
+        sb.append(a.a.a.c.a(-393462513024802L, wj1.f1283a));
+        return zd.j(sb, this.f1425a, ')');
     }
 }

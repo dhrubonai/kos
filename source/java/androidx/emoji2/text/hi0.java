@@ -44,11 +44,11 @@ public final class hi0 implements Iterator, ry0 {
     }
 
     public di0 b(File file) {
-        int iOrdinal = ((ji0) ((h70) this.h).c).ordinal();
-        if (iOrdinal == 0) {
+        int ordinal = ((ji0) ((h70) this.h).c).ordinal();
+        if (ordinal == 0) {
             return new gi0(file);
         }
-        if (iOrdinal == 1) {
+        if (ordinal == 1) {
             return new ei0(file);
         }
         throw new mu();
@@ -56,7 +56,7 @@ public final class hi0 implements Iterator, ry0 {
 
     public boolean c() {
         File file;
-        File fileA;
+        File a2;
         this.e = 3;
         ArrayDeque arrayDeque = (ArrayDeque) this.g;
         while (true) {
@@ -65,17 +65,17 @@ public final class hi0 implements Iterator, ry0 {
                 file = null;
                 break;
             }
-            fileA = ii0Var.a();
-            if (fileA == null) {
+            a2 = ii0Var.a();
+            if (a2 == null) {
                 arrayDeque.pop();
             } else {
-                if (fileA.equals(ii0Var.f526a) || !fileA.isDirectory() || arrayDeque.size() >= Integer.MAX_VALUE) {
+                if (a2.equals(ii0Var.f525a) || !a2.isDirectory() || arrayDeque.size() >= Integer.MAX_VALUE) {
                     break;
                 }
-                arrayDeque.push(b(fileA));
+                arrayDeque.push(b(a2));
             }
         }
-        file = fileA;
+        file = a2;
         if (file != null) {
             this.f = file;
             this.e = 1;
@@ -149,7 +149,7 @@ public final class hi0 implements Iterator, ry0 {
     public hi0(pi0 pi0Var) {
         this.d = 1;
         this.h = pi0Var;
-        this.f = pi0Var.f906a.iterator();
+        this.f = pi0Var.f905a.iterator();
         this.e = -1;
     }
 }

@@ -1,10 +1,17 @@
 package androidx.emoji2.text;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.net.ProtocolException;
+import java.net.Proxy;
+import java.net.SocketTimeoutException;
+import java.security.cert.CertificateException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
+import javax.net.ssl.SSLHandshakeException;
+import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSocketFactory;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -12,7 +19,7 @@ import javax.net.ssl.SSLSocketFactory;
 public final class vm implements ax0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1230a = 0;
+    public final /* synthetic */ int f1229a = 0;
     public final Object b;
 
     public vm(dd0 dd0Var) {
@@ -20,19 +27,19 @@ public final class vm implements ax0 {
         this.b = dd0Var;
     }
 
-    public static int d(c02 c02Var, int i) throws NumberFormatException {
-        String strB = c02.b(c02Var, "Retry-After");
-        if (strB == null) {
+    public static int d(c02 c02Var, int i) {
+        String b = c02.b(c02Var, "Retry-After");
+        if (b == null) {
             return i;
         }
-        Pattern patternCompile = Pattern.compile("\\d+");
-        lx0.w(patternCompile, "compile(...)");
-        if (!patternCompile.matcher(strB).matches()) {
+        Pattern compile = Pattern.compile("\\d+");
+        lx0.w(compile, "compile(...)");
+        if (!compile.matcher(b).matches()) {
             return Integer.MAX_VALUE;
         }
-        Integer numValueOf = Integer.valueOf(strB);
-        lx0.w(numValueOf, "valueOf(header)");
-        return numValueOf.intValue();
+        Integer valueOf = Integer.valueOf(b);
+        lx0.w(valueOf, "valueOf(header)");
+        return valueOf.intValue();
     }
 
     @Override // androidx.emoji2.text.ax0
@@ -41,54 +48,54 @@ public final class vm implements ax0 {
         SSLSocketFactory sSLSocketFactory;
         cj1 cj1Var;
         zp zpVar;
-        switch (this.f1230a) {
+        switch (this.f1229a) {
             case 0:
                 dd0 dd0Var = (dd0) this.b;
                 dv dvVar = (dv) m21Var.i;
-                s6 s6VarM = dvVar.m();
+                s6 m = dvVar.m();
                 dr0 dr0Var = (dr0) dvVar.g;
                 mt0 mt0Var = (mt0) dvVar.e;
                 boolean z = false;
                 if (dr0Var.a("Host") == null) {
-                    s6VarM.u("Host", jq2.s(mt0Var, false));
+                    m.u("Host", jq2.s(mt0Var, false));
                 }
                 if (dr0Var.a("Connection") == null) {
-                    s6VarM.u("Connection", "Keep-Alive");
+                    m.u("Connection", "Keep-Alive");
                 }
                 if (dr0Var.a("Accept-Encoding") == null && dr0Var.a("Range") == null) {
-                    s6VarM.u("Accept-Encoding", "gzip");
+                    m.u("Accept-Encoding", "gzip");
                     z = true;
                 }
                 dd0Var.getClass();
                 lx0.x(mt0Var, "url");
                 if (dr0Var.a("User-Agent") == null) {
-                    s6VarM.u("User-Agent", "okhttp/4.12.0");
+                    m.u("User-Agent", "okhttp/4.12.0");
                 }
-                c02 c02VarF = m21Var.f(s6VarM.f());
-                dr0 dr0Var2 = c02VarF.i;
+                c02 f = m21Var.f(m.f());
+                dr0 dr0Var2 = f.i;
                 gt0.b(dd0Var, mt0Var, dr0Var2);
-                b02 b02VarC = c02VarF.c();
-                b02VarC.f131a = dvVar;
-                if (z && "gzip".equalsIgnoreCase(c02.b(c02VarF, "Content-Encoding")) && gt0.a(c02VarF) && (du0Var = c02VarF.j) != null) {
+                b02 c = f.c();
+                c.f130a = dvVar;
+                if (z && "gzip".equalsIgnoreCase(c02.b(f, "Content-Encoding")) && gt0.a(f) && (du0Var = f.j) != null) {
                     nq0 nq0Var = new nq0(du0Var.f());
-                    pm0 pm0VarC = dr0Var2.c();
-                    pm0VarC.p("Content-Encoding");
-                    pm0VarC.p("Content-Length");
-                    b02VarC.f = pm0VarC.d().c();
-                    b02VarC.g = new gw1(c02.b(c02VarF, "Content-Type"), -1L, n6.N(nq0Var));
+                    pm0 c2 = dr0Var2.c();
+                    c2.p("Content-Encoding");
+                    c2.p("Content-Length");
+                    c.f = c2.d().c();
+                    c.g = new gw1(c02.b(f, "Content-Type"), -1L, n6.N(nq0Var));
                 }
-                return b02VarC.a();
+                return c.a();
             default:
                 dv dvVar2 = (dv) m21Var.i;
                 tv1 tv1Var = (tv1) m21Var.g;
-                List listI0 = qe0.d;
+                List list = qe0.d;
                 c02 c02Var = null;
                 int i = 0;
-                dv dvVarB = dvVar2;
+                dv dvVar3 = dvVar2;
                 while (true) {
                     boolean z2 = true;
                     while (true) {
-                        lx0.x(dvVarB, "request");
+                        lx0.x(dvVar3, "request");
                         if (tv1Var.l != null) {
                             throw new IllegalStateException("Check failed.");
                         }
@@ -106,7 +113,7 @@ public final class vm implements ax0 {
                         }
                         if (z2) {
                             wv1 wv1Var = tv1Var.f;
-                            mt0 mt0Var2 = (mt0) dvVarB.e;
+                            mt0 mt0Var2 = (mt0) dvVar3.e;
                             dj1 dj1Var = tv1Var.d;
                             if (mt0Var2.i) {
                                 SSLSocketFactory sSLSocketFactory2 = dj1Var.r;
@@ -130,21 +137,21 @@ public final class vm implements ax0 {
                             }
                             try {
                                 try {
-                                    c02 c02VarF2 = m21Var.f(dvVarB);
+                                    c02 f2 = m21Var.f(dvVar3);
                                     if (c02Var != null) {
-                                        b02 b02VarC2 = c02VarF2.c();
-                                        b02 b02VarC3 = c02Var.c();
-                                        b02VarC3.g = null;
-                                        c02 c02VarA = b02VarC3.a();
-                                        if (c02VarA.j != null) {
+                                        b02 c3 = f2.c();
+                                        b02 c4 = c02Var.c();
+                                        c4.g = null;
+                                        c02 a2 = c4.a();
+                                        if (a2.j != null) {
                                             throw new IllegalArgumentException("priorResponse.body != null");
                                         }
-                                        b02VarC2.j = c02VarA;
-                                        c02VarF2 = b02VarC2.a();
+                                        c3.j = a2;
+                                        f2 = c3.a();
                                     }
-                                    c02Var = c02VarF2;
-                                    dvVarB = b(c02Var, tv1Var.l);
-                                    if (dvVarB == null) {
+                                    c02Var = f2;
+                                    dvVar3 = b(c02Var, tv1Var.l);
+                                    if (dvVar3 == null) {
                                         tv1Var.e(false);
                                         return c02Var;
                                     }
@@ -158,28 +165,28 @@ public final class vm implements ax0 {
                                     }
                                     tv1Var.e(true);
                                 } catch (v12 e) {
-                                    if (!c(e.e, tv1Var, dvVarB, false)) {
+                                    if (!c(e.e, tv1Var, dvVar3, false)) {
                                         IOException iOException = e.d;
                                         lx0.x(iOException, "<this>");
-                                        Iterator it = listI0.iterator();
+                                        Iterator it = list.iterator();
                                         while (it.hasNext()) {
                                             h50.i(iOException, (Exception) it.next());
                                         }
                                         throw iOException;
                                     }
-                                    listI0 = ws.I0(listI0, e.d);
+                                    list = ws.I0(list, e.d);
                                     tv1Var.e(true);
                                     z2 = false;
                                 }
                             } catch (IOException e2) {
-                                if (!c(e2, tv1Var, dvVarB, !(e2 instanceof qy))) {
-                                    Iterator it2 = listI0.iterator();
+                                if (!c(e2, tv1Var, dvVar3, !(e2 instanceof qy))) {
+                                    Iterator it2 = list.iterator();
                                     while (it2.hasNext()) {
                                         h50.i(e2, (Exception) it2.next());
                                     }
                                     throw e2;
                                 }
-                                listI0 = ws.I0(listI0, e2);
+                                list = ws.I0(list, e2);
                                 tv1Var.e(true);
                                 z2 = false;
                             }
@@ -192,142 +199,140 @@ public final class vm implements ax0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00c3  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public androidx.emoji2.text.dv b(androidx.emoji2.text.c02 r13, androidx.emoji2.text.lr r14) throws java.net.ProtocolException {
-        /*
-            Method dump skipped, instructions count: 376
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vm.b(androidx.emoji2.text.c02, androidx.emoji2.text.lr):androidx.emoji2.text.dv");
+    public dv b(c02 c02Var, lr lrVar) {
+        lt0 lt0Var;
+        c02 c02Var2;
+        vv1 vv1Var;
+        u12 u12Var = (lrVar == null || (vv1Var = (vv1) lrVar.e) == null) ? null : vv1Var.b;
+        int i = c02Var.g;
+        String str = (String) c02Var.d.f;
+        if (i != 307 && i != 308) {
+            if (i == 401) {
+                ((dj1) this.b).j.getClass();
+                return null;
+            }
+            if (i != 421) {
+                if (i == 503) {
+                    c02 c02Var3 = c02Var.m;
+                    if ((c02Var3 == null || c02Var3.g != 503) && d(c02Var, Integer.MAX_VALUE) == 0) {
+                        return c02Var.d;
+                    }
+                } else {
+                    if (i == 407) {
+                        lx0.u(u12Var);
+                        if (u12Var.b.type() != Proxy.Type.HTTP) {
+                            throw new ProtocolException("Received HTTP_PROXY_AUTH (407) code while not using proxy");
+                        }
+                        ((dj1) this.b).p.getClass();
+                        return null;
+                    }
+                    if (i != 408) {
+                        switch (i) {
+                        }
+                    } else if (((dj1) this.b).i && (((c02Var2 = c02Var.m) == null || c02Var2.g != 408) && d(c02Var, 0) <= 0)) {
+                        return c02Var.d;
+                    }
+                }
+            } else if (lrVar != null && !lx0.n(((hg0) lrVar.c).b.h.d, ((vv1) lrVar.e).b.f1154a.h.d)) {
+                vv1 vv1Var2 = (vv1) lrVar.e;
+                synchronized (vv1Var2) {
+                    vv1Var2.k = true;
+                }
+                return c02Var.d;
+            }
+            return null;
+        }
+        dj1 dj1Var = (dj1) this.b;
+        if (dj1Var.k) {
+            String b = c02.b(c02Var, "Location");
+            dv dvVar = c02Var.d;
+            if (b != null) {
+                mt0 mt0Var = (mt0) dvVar.e;
+                mt0Var.getClass();
+                try {
+                    lt0Var = new lt0(0);
+                    lt0Var.e(mt0Var, b);
+                } catch (IllegalArgumentException unused) {
+                    lt0Var = null;
+                }
+                mt0 b2 = lt0Var != null ? lt0Var.b() : null;
+                if (b2 != null && (lx0.n(b2.f766a, ((mt0) dvVar.e).f766a) || dj1Var.l)) {
+                    s6 m = dvVar.m();
+                    if (xo2.C(str)) {
+                        int i2 = c02Var.g;
+                        boolean z = str.equals("PROPFIND") || i2 == 308 || i2 == 307;
+                        if (str.equals("PROPFIND") || i2 == 308 || i2 == 307) {
+                            m.v(str, null);
+                        } else {
+                            m.v("GET", null);
+                        }
+                        if (!z) {
+                            ((pm0) m.f).p("Transfer-Encoding");
+                            ((pm0) m.f).p("Content-Length");
+                            ((pm0) m.f).p("Content-Type");
+                        }
+                    }
+                    if (!jq2.a((mt0) dvVar.e, b2)) {
+                        ((pm0) m.f).p("Authorization");
+                    }
+                    m.d = b2;
+                    return m.f();
+                }
+            }
+        }
+        return null;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0085  */
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x001f, code lost:
+    
+        if (r7 == false) goto L26;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public boolean c(java.io.IOException r4, androidx.emoji2.text.tv1 r5, androidx.emoji2.text.dv r6, boolean r7) {
-        /*
-            r3 = this;
-            java.lang.Object r6 = r3.b
-            androidx.emoji2.text.dj1 r6 = (androidx.emoji2.text.dj1) r6
-            boolean r6 = r6.i
-            r0 = 0
-            if (r6 != 0) goto Lb
-            goto L9d
-        Lb:
-            if (r7 == 0) goto L12
-            boolean r6 = r4 instanceof java.io.FileNotFoundException
-            if (r6 == 0) goto L12
-            return r0
-        L12:
-            boolean r6 = r4 instanceof java.net.ProtocolException
-            if (r6 == 0) goto L17
-            return r0
-        L17:
-            boolean r6 = r4 instanceof java.io.InterruptedIOException
-            if (r6 == 0) goto L22
-            boolean r4 = r4 instanceof java.net.SocketTimeoutException
-            if (r4 == 0) goto L9d
-            if (r7 != 0) goto L9d
-            goto L35
-        L22:
-            boolean r6 = r4 instanceof javax.net.ssl.SSLHandshakeException
-            if (r6 == 0) goto L30
-            java.lang.Throwable r6 = r4.getCause()
-            boolean r6 = r6 instanceof java.security.cert.CertificateException
-            if (r6 == 0) goto L30
-            goto L9d
-        L30:
-            boolean r4 = r4 instanceof javax.net.ssl.SSLPeerUnverifiedException
-            if (r4 == 0) goto L35
-            return r0
-        L35:
-            androidx.emoji2.text.hg0 r4 = r5.j
-            androidx.emoji2.text.lx0.u(r4)
-            int r5 = r4.f
-            r6 = 1
-            if (r5 != 0) goto L49
-            int r7 = r4.g
-            if (r7 != 0) goto L49
-            int r7 = r4.h
-            if (r7 != 0) goto L49
-            r4 = r0
-            goto L9b
-        L49:
-            androidx.emoji2.text.u12 r7 = r4.i
-            if (r7 == 0) goto L4e
-            goto L96
-        L4e:
-            r7 = 0
-            if (r5 > r6) goto L81
-            int r5 = r4.g
-            if (r5 > r6) goto L81
-            int r5 = r4.h
-            if (r5 <= 0) goto L5a
-            goto L81
-        L5a:
-            androidx.emoji2.text.tv1 r5 = r4.c
-            androidx.emoji2.text.vv1 r5 = r5.k
-            if (r5 != 0) goto L61
-            goto L81
-        L61:
-            monitor-enter(r5)
-            int r1 = r5.l     // Catch: java.lang.Throwable -> L7e
-            if (r1 == 0) goto L68
-            monitor-exit(r5)
-            goto L81
-        L68:
-            androidx.emoji2.text.u12 r1 = r5.b     // Catch: java.lang.Throwable -> L7e
-            androidx.emoji2.text.w4 r1 = r1.f1155a     // Catch: java.lang.Throwable -> L7e
-            androidx.emoji2.text.mt0 r1 = r1.h     // Catch: java.lang.Throwable -> L7e
-            androidx.emoji2.text.w4 r2 = r4.b     // Catch: java.lang.Throwable -> L7e
-            androidx.emoji2.text.mt0 r2 = r2.h     // Catch: java.lang.Throwable -> L7e
-            boolean r1 = androidx.emoji2.text.jq2.a(r1, r2)     // Catch: java.lang.Throwable -> L7e
-            if (r1 != 0) goto L7a
-            monitor-exit(r5)
-            goto L81
-        L7a:
-            androidx.emoji2.text.u12 r7 = r5.b     // Catch: java.lang.Throwable -> L7e
-            monitor-exit(r5)
-            goto L81
-        L7e:
-            r4 = move-exception
-            monitor-exit(r5)
-            throw r4
-        L81:
-            if (r7 == 0) goto L87
-            r4.i = r7
-        L85:
-            r4 = r6
-            goto L9b
-        L87:
-            androidx.emoji2.text.em r5 = r4.d
-            if (r5 == 0) goto L92
-            boolean r5 = r5.f()
-            if (r5 != r6) goto L92
-            goto L96
-        L92:
-            androidx.emoji2.text.lf r4 = r4.e
-            if (r4 != 0) goto L97
-        L96:
-            goto L85
-        L97:
-            boolean r4 = r4.d()
-        L9b:
-            if (r4 != 0) goto L9e
-        L9d:
-            return r0
-        L9e:
-            return r6
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.vm.c(java.io.IOException, androidx.emoji2.text.tv1, androidx.emoji2.text.dv, boolean):boolean");
+    public boolean c(IOException iOException, tv1 tv1Var, dv dvVar, boolean z) {
+        boolean z2;
+        lf lfVar;
+        vv1 vv1Var;
+        if (!((dj1) this.b).i || ((z && (iOException instanceof FileNotFoundException)) || (iOException instanceof ProtocolException))) {
+            return false;
+        }
+        if (iOException instanceof InterruptedIOException) {
+            if (iOException instanceof SocketTimeoutException) {
+            }
+        }
+        if (((iOException instanceof SSLHandshakeException) && (iOException.getCause() instanceof CertificateException)) || (iOException instanceof SSLPeerUnverifiedException)) {
+            return false;
+        }
+        hg0 hg0Var = tv1Var.j;
+        lx0.u(hg0Var);
+        int i = hg0Var.f;
+        if (i == 0 && hg0Var.g == 0 && hg0Var.h == 0) {
+            z2 = false;
+        } else {
+            if (hg0Var.i == null) {
+                u12 u12Var = null;
+                if (i <= 1 && hg0Var.g <= 1 && hg0Var.h <= 0 && (vv1Var = hg0Var.c.k) != null) {
+                    synchronized (vv1Var) {
+                        if (vv1Var.l == 0) {
+                            if (jq2.a(vv1Var.b.f1154a.h, hg0Var.b.h)) {
+                                u12Var = vv1Var.b;
+                            }
+                        }
+                    }
+                }
+                if (u12Var != null) {
+                    hg0Var.i = u12Var;
+                } else {
+                    em emVar = hg0Var.d;
+                    if ((emVar == null || !emVar.f()) && (lfVar = hg0Var.e) != null) {
+                        z2 = lfVar.d();
+                    }
+                }
+            }
+            z2 = true;
+        }
+        return z2;
     }
 
     public vm(dj1 dj1Var) {

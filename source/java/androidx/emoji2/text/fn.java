@@ -14,13 +14,13 @@ public final class fn implements xm {
 
     @Override // androidx.emoji2.text.xm
     public final Object h0(xh1 xh1Var, sm0 sm0Var, n10 n10Var) {
-        View viewD0 = bz0.d0(this.d);
+        View d0 = bz0.d0(this.d);
         long J = xh1Var.J(0L);
         zw1 zw1Var = (zw1) sm0Var.a();
-        zw1 zw1VarI = zw1Var != null ? zw1Var.i(J) : null;
-        if (zw1VarI != null) {
-            viewD0.requestRectangleOnScreen(new Rect((int) zw1VarI.f1459a, (int) zw1VarI.b, (int) zw1VarI.c, (int) zw1VarI.d), false);
+        zw1 i = zw1Var != null ? zw1Var.i(J) : null;
+        if (i != null) {
+            d0.requestRectangleOnScreen(new Rect((int) i.f1458a, (int) i.b, (int) i.c, (int) i.d), false);
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class qc1 extends md1 implements ey, w01 {
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        float f = ((da0) xa1.t(this, zw0.f1458a)).d;
+        float f = ((da0) xa1.t(this, zw0.f1457a)).d;
         float f2 = 0;
         if (f < f2) {
             f = f2;
         }
-        hr1 hr1VarQ = ab1Var.q(j);
+        hr1 q = ab1Var.q(j);
         boolean z = this.q && !Float.isNaN(f) && Float.compare(f, f2) > 0;
-        int iI0 = Float.isNaN(f) ? 0 : hb1Var.i0(f);
-        int iMax = z ? Math.max(hr1VarQ.d, iI0) : hr1VarQ.d;
-        int iMax2 = z ? Math.max(hr1VarQ.e, iI0) : hr1VarQ.e;
-        return hb1Var.P(iMax, iMax2, re0.d, new dw0(iMax, hr1VarQ, iMax2));
+        int i0 = Float.isNaN(f) ? 0 : hb1Var.i0(f);
+        int max = z ? Math.max(q.d, i0) : q.d;
+        int max2 = z ? Math.max(q.e, i0) : q.e;
+        return hb1Var.P(max, max2, re0.d, new dw0(max, q, max2));
     }
 }

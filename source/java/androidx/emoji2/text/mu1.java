@@ -5,8 +5,8 @@ package androidx.emoji2.text;
 public abstract class mu1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f770a = su1.b;
+    public static final float f769a = su1.b;
     public static final int b = 1;
     public static final int c = 1;
-    public static final float d = su1.f1088a;
+    public static final float d = su1.f1087a;
 }

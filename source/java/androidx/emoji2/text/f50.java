@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class f50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Integer f344a;
+    public Integer f343a;
 }

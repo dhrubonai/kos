@@ -5,22 +5,22 @@ package androidx.emoji2.text;
 public abstract class lq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public um0 f704a;
+    public um0 f703a;
 
     public abstract void a(vb0 vb0Var);
 
     public um0 b() {
-        return this.f704a;
+        return this.f703a;
     }
 
     public final void c() {
-        um0 um0VarB = b();
-        if (um0VarB != null) {
-            um0VarB.e(this);
+        um0 b = b();
+        if (b != null) {
+            b.e(this);
         }
     }
 
     public void d(r5 r5Var) {
-        this.f704a = r5Var;
+        this.f703a = r5Var;
     }
 }

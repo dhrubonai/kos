@@ -31,7 +31,7 @@ public final class f21 extends g01 implements um0 {
         int i4;
         int i5;
         int i6 = this.e;
-        up2 up2Var3 = up2.f1187a;
+        up2 up2Var3 = up2.f1186a;
         mf1 mf1Var2 = this.g;
         int i7 = Integer.MIN_VALUE;
         ArrayList arrayList = this.f;
@@ -55,36 +55,36 @@ public final class f21 extends g01 implements um0 {
                         int i11 = h21Var.q - hr1Var.e;
                         int i12 = h21Var.r;
                         long j = h21Var.t;
-                        f31 f31VarA = h21Var.j.a(i10, h21Var.b);
-                        if (f31VarA != null) {
+                        f31 a2 = h21Var.j.a(i10, h21Var.b);
+                        if (a2 != null) {
                             i = size;
                             i2 = i9;
-                            long jD = nw0.d(j, ((nw0) f31VarA.q.getValue()).f830a);
+                            long d = nw0.d(j, ((nw0) a2.q.getValue()).f829a);
                             int i13 = (int) (j & 4294967295L);
-                            if (((i13 > i11 || ((int) (jD & 4294967295L)) > i11) && (i13 < i12 || ((int) (jD & 4294967295L)) < i12)) || !((Boolean) f31VarA.h.getValue()).booleanValue()) {
+                            if (((i13 > i11 || ((int) (d & 4294967295L)) > i11) && (i13 < i12 || ((int) (d & 4294967295L)) < i12)) || !((Boolean) a2.h.getValue()).booleanValue()) {
                                 i3 = i8;
                             } else {
                                 i3 = i8;
-                                h50.G(f31VarA.f341a, null, new c31(f31VarA, null, i3), 3);
+                                h50.G(a2.f340a, null, new c31(a2, null, i3), 3);
                             }
-                            j = jD;
-                            rp0Var = f31VarA.n;
+                            j = d;
+                            rp0Var = a2.n;
                         } else {
                             i = size;
                             i2 = i9;
                             i3 = i8;
                             rp0Var = null;
                         }
-                        long jD2 = nw0.d(j, h21Var.h);
-                        if (f31VarA != null) {
-                            f31VarA.m = jD2;
+                        long d2 = nw0.d(j, h21Var.h);
+                        if (a2 != null) {
+                            a2.m = d2;
                         }
                         if (rp0Var != null) {
                             gr1Var.getClass();
                             gr1.b(gr1Var, hr1Var);
-                            hr1Var.h0(nw0.d(jD2, hr1Var.h), 0.0f, rp0Var);
+                            hr1Var.h0(nw0.d(d2, hr1Var.h), 0.0f, rp0Var);
                         } else {
-                            gr1.n(gr1Var, hr1Var, jD2);
+                            gr1.n(gr1Var, hr1Var, d2);
                         }
                         i10++;
                         i8 = i3;
@@ -113,30 +113,30 @@ public final class f21 extends g01 implements um0 {
                         hr1 hr1Var2 = (hr1) list2.get(i15);
                         int[] iArr = ib1Var.k;
                         int i16 = i15 * 2;
-                        long jE = jm.e(iArr[i16], iArr[i16 + 1]);
+                        long e = jm.e(iArr[i16], iArr[i16 + 1]);
                         if (ib1Var.h) {
                             if (z2) {
                                 up2Var = up2Var3;
                                 mf1Var = mf1Var2;
-                                i4 = (int) (jE >> 32);
+                                i4 = (int) (e >> 32);
                             } else {
                                 up2Var = up2Var3;
                                 mf1Var = mf1Var2;
-                                i4 = (ib1Var.m - ((int) (jE >> 32))) - (z2 ? hr1Var2.e : hr1Var2.d);
+                                i4 = (ib1Var.m - ((int) (e >> 32))) - (z2 ? hr1Var2.e : hr1Var2.d);
                             }
                             if (z2) {
-                                i5 = (ib1Var.m - ((int) (jE & 4294967295L))) - (z2 ? hr1Var2.e : hr1Var2.d);
+                                i5 = (ib1Var.m - ((int) (e & 4294967295L))) - (z2 ? hr1Var2.e : hr1Var2.d);
                             } else {
-                                i5 = (int) (jE & 4294967295L);
+                                i5 = (int) (e & 4294967295L);
                             }
-                            jE = jm.e(i4, i5);
+                            e = jm.e(i4, i5);
                         } else {
                             up2Var = up2Var3;
                             mf1Var = mf1Var2;
                         }
-                        long jD3 = nw0.d(jE, ib1Var.c);
+                        long d3 = nw0.d(e, ib1Var.c);
                         if (z2) {
-                            gr1.n(gr1Var2, hr1Var2, jD3);
+                            gr1.n(gr1Var2, hr1Var2, d3);
                             up2Var2 = up2Var;
                             z = z2;
                         } else {
@@ -146,12 +146,12 @@ public final class f21 extends g01 implements um0 {
                             if (gr1Var2.d() == q01.d || gr1Var2.e() == 0) {
                                 z = z2;
                                 gr1.b(gr1Var2, hr1Var2);
-                                hr1Var2.g0(nw0.d(jD3, hr1Var2.h), 0.0f, vl1Var);
+                                hr1Var2.g0(nw0.d(d3, hr1Var2.h), 0.0f, vl1Var);
                             } else {
                                 z = z2;
-                                int iE = (gr1Var2.e() - hr1Var2.d) - ((int) (jD3 >> 32));
+                                int e2 = (gr1Var2.e() - hr1Var2.d) - ((int) (d3 >> 32));
                                 gr1.b(gr1Var2, hr1Var2);
-                                hr1Var2.g0(nw0.d((((int) (jD3 & 4294967295L)) & 4294967295L) | (iE << 32), hr1Var2.h), 0.0f, vl1Var);
+                                hr1Var2.g0(nw0.d((((int) (d3 & 4294967295L)) & 4294967295L) | (e2 << 32), hr1Var2.h), 0.0f, vl1Var);
                             }
                         }
                         i15++;

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ne0 implements lp {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ne0 f807a = new ne0();
+    public static final ne0 f806a = new ne0();
 
     @Override // androidx.emoji2.text.lp
     public final void a(wa waVar, pa paVar) {

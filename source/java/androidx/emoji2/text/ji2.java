@@ -5,90 +5,99 @@ package androidx.emoji2.text;
 public abstract class ji2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ib0 f580a = new ib0(3, null, 2);
+    public static final ib0 f579a = new ib0(3, null, 2);
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0040 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x004d A[LOOP:0: B:19:0x004b->B:20:0x004d, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x004d A[LOOP:0: B:11:0x004b->B:12:0x004d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0040 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x002f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x001f  */
     /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object, java.util.List] */
     /* JADX WARN: Type inference failed for: r8v6, types: [java.lang.Object, java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x003e -> B:18:0x0041). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x003e -> B:10:0x0041). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object a(androidx.emoji2.text.nh2 r7, androidx.emoji2.text.lk r8) {
-        /*
-            boolean r0 = r8 instanceof androidx.emoji2.text.bi2
-            if (r0 == 0) goto L13
-            r0 = r8
-            androidx.emoji2.text.bi2 r0 = (androidx.emoji2.text.bi2) r0
-            int r1 = r0.i
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.i = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.bi2 r0 = new androidx.emoji2.text.bi2
-            r0.<init>(r8)
-        L18:
-            java.lang.Object r8 = r0.h
-            int r1 = r0.i
-            r2 = 1
-            if (r1 == 0) goto L2f
-            if (r1 != r2) goto L27
-            androidx.emoji2.text.nh2 r7 = r0.g
-            androidx.emoji2.text.mz0.L(r8)
-            goto L41
-        L27:
-            java.lang.IllegalStateException r7 = new java.lang.IllegalStateException
-            java.lang.String r8 = "call to 'resume' before 'invoke' with coroutine"
-            r7.<init>(r8)
-            throw r7
-        L2f:
-            androidx.emoji2.text.mz0.L(r8)
-        L32:
-            r0.g = r7
-            r0.i = r2
-            androidx.emoji2.text.js1 r8 = androidx.emoji2.text.js1.e
-            java.lang.Object r8 = r7.b(r8, r0)
-            androidx.emoji2.text.f30 r1 = androidx.emoji2.text.f30.d
-            if (r8 != r1) goto L41
-            return r1
-        L41:
-            androidx.emoji2.text.is1 r8 = (androidx.emoji2.text.is1) r8
-            java.lang.Object r1 = r8.f547a
-            int r3 = r1.size()
-            r4 = 0
-            r5 = r4
-        L4b:
-            if (r5 >= r3) goto L59
-            java.lang.Object r6 = r1.get(r5)
-            androidx.emoji2.text.ps1 r6 = (androidx.emoji2.text.ps1) r6
-            r6.a()
-            int r5 = r5 + 1
-            goto L4b
-        L59:
-            java.lang.Object r8 = r8.f547a
-            int r1 = r8.size()
-        L5f:
-            if (r4 >= r1) goto L6f
-            java.lang.Object r3 = r8.get(r4)
-            androidx.emoji2.text.ps1 r3 = (androidx.emoji2.text.ps1) r3
-            boolean r3 = r3.d
-            if (r3 == 0) goto L6c
-            goto L32
-        L6c:
-            int r4 = r4 + 1
-            goto L5f
-        L6f:
-            androidx.emoji2.text.up2 r7 = androidx.emoji2.text.up2.f1187a
-            return r7
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ji2.a(androidx.emoji2.text.nh2, androidx.emoji2.text.lk):java.lang.Object");
+    public static final Object a(nh2 nh2Var, lk lkVar) {
+        bi2 bi2Var;
+        int i;
+        f30 f30Var;
+        int size;
+        int i2;
+        int i3;
+        int size2;
+        if (lkVar instanceof bi2) {
+            bi2Var = (bi2) lkVar;
+            int i4 = bi2Var.i;
+            if ((i4 & Integer.MIN_VALUE) != 0) {
+                bi2Var.i = i4 - Integer.MIN_VALUE;
+                Object obj = bi2Var.h;
+                i = bi2Var.i;
+                if (i != 0) {
+                    mz0.L(obj);
+                    bi2Var.g = nh2Var;
+                    bi2Var.i = 1;
+                    obj = nh2Var.b(js1.e, bi2Var);
+                    f30Var = f30.d;
+                    if (obj == f30Var) {
+                    }
+                    is1 is1Var = (is1) obj;
+                    ?? r1 = is1Var.f546a;
+                    size = r1.size();
+                    i2 = 0;
+                    while (i3 < size) {
+                    }
+                    ?? r8 = is1Var.f546a;
+                    size2 = r8.size();
+                    while (i2 < size2) {
+                    }
+                    return up2.f1186a;
+                }
+                if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                nh2Var = bi2Var.g;
+                mz0.L(obj);
+                is1 is1Var2 = (is1) obj;
+                ?? r12 = is1Var2.f546a;
+                size = r12.size();
+                i2 = 0;
+                for (i3 = 0; i3 < size; i3++) {
+                    ((ps1) r12.get(i3)).a();
+                }
+                ?? r82 = is1Var2.f546a;
+                size2 = r82.size();
+                while (i2 < size2) {
+                    if (((ps1) r82.get(i2)).d) {
+                        bi2Var.g = nh2Var;
+                        bi2Var.i = 1;
+                        obj = nh2Var.b(js1.e, bi2Var);
+                        f30Var = f30.d;
+                        if (obj == f30Var) {
+                            return f30Var;
+                        }
+                        is1 is1Var22 = (is1) obj;
+                        ?? r122 = is1Var22.f546a;
+                        size = r122.size();
+                        i2 = 0;
+                        while (i3 < size) {
+                        }
+                        ?? r822 = is1Var22.f546a;
+                        size2 = r822.size();
+                        while (i2 < size2) {
+                        }
+                    } else {
+                        i2++;
+                    }
+                }
+                return up2.f1186a;
+            }
+        }
+        bi2Var = new bi2(lkVar);
+        Object obj2 = bi2Var.h;
+        i = bi2Var.i;
+        if (i != 0) {
+        }
     }
 
     /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -97,17 +106,15 @@ public abstract class ji2 {
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004a A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x007c A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x004a A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007f  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x007c A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object, java.util.List] */
     /* JADX WARN: Type inference failed for: r9v3, types: [java.lang.Object, java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x0048 -> B:18:0x004b). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0048 -> B:10:0x004b). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public static final java.lang.Object b(androidx.emoji2.text.nh2 r9, boolean r10, androidx.emoji2.text.js1 r11, androidx.emoji2.text.lk r12) {
         /*
@@ -158,7 +165,7 @@ public abstract class ji2 {
             return r1
         L4b:
             androidx.emoji2.text.is1 r12 = (androidx.emoji2.text.is1) r12
-            java.lang.Object r1 = r12.f547a
+            java.lang.Object r1 = r12.f546a
             int r3 = r1.size()
             r4 = 0
             r5 = r4
@@ -191,7 +198,7 @@ public abstract class ji2 {
             r1 = r2
         L7d:
             if (r1 == 0) goto L3a
-            java.lang.Object r9 = r12.f547a
+            java.lang.Object r9 = r12.f546a
             java.lang.Object r9 = r9.get(r4)
             return r9
         */
@@ -199,142 +206,110 @@ public abstract class ji2 {
     }
 
     public static Object d(ts1 ts1Var, um0 um0Var, hh2 hh2Var) {
-        Object objS = wj1.s(new fd(ts1Var, f580a, (um0) null, (um0) null, um0Var, (l10) null), hh2Var);
-        return objS == f30.d ? objS : up2.f1187a;
+        Object s = wj1.s(new fd(ts1Var, f579a, (um0) null, (um0) null, um0Var, (l10) null), hh2Var);
+        return s == f30.d ? s : up2.f1186a;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x009e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:43:0x009e, code lost:
     
         if (r15 == r5) goto L36;
      */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     /* JADX WARN: Type inference failed for: r15v10, types: [java.lang.Object, java.util.List] */
     /* JADX WARN: Type inference failed for: r15v4, types: [java.lang.Object, java.util.List] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x009e -> B:13:0x002e). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:32:0x009e -> B:11:0x002e). Please report as a decompilation issue!!! */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final java.lang.Object e(androidx.emoji2.text.nh2 r13, androidx.emoji2.text.js1 r14, androidx.emoji2.text.lk r15) {
-        /*
-            boolean r0 = r15 instanceof androidx.emoji2.text.ii2
-            if (r0 == 0) goto L13
-            r0 = r15
-            androidx.emoji2.text.ii2 r0 = (androidx.emoji2.text.ii2) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.ii2 r0 = new androidx.emoji2.text.ii2
-            r0.<init>(r15)
-        L18:
-            java.lang.Object r15 = r0.i
-            int r1 = r0.j
-            r2 = 2
-            r3 = 0
-            r4 = 1
-            androidx.emoji2.text.f30 r5 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L43
-            if (r1 == r4) goto L3b
-            if (r1 != r2) goto L33
-            androidx.emoji2.text.js1 r13 = r0.h
-            androidx.emoji2.text.nh2 r14 = r0.g
-            androidx.emoji2.text.mz0.L(r15)
-        L2e:
-            r12 = r14
-            r14 = r13
-            r13 = r12
-            goto La1
-        L33:
-            java.lang.IllegalStateException r13 = new java.lang.IllegalStateException
-            java.lang.String r14 = "call to 'resume' before 'invoke' with coroutine"
-            r13.<init>(r14)
-            throw r13
-        L3b:
-            androidx.emoji2.text.js1 r13 = r0.h
-            androidx.emoji2.text.nh2 r14 = r0.g
-            androidx.emoji2.text.mz0.L(r15)
-            goto L56
-        L43:
-            androidx.emoji2.text.mz0.L(r15)
-        L46:
-            r0.g = r13
-            r0.h = r14
-            r0.j = r4
-            java.lang.Object r15 = r13.b(r14, r0)
-            if (r15 != r5) goto L53
-            goto La0
-        L53:
-            r12 = r14
-            r14 = r13
-            r13 = r12
-        L56:
-            androidx.emoji2.text.is1 r15 = (androidx.emoji2.text.is1) r15
-            java.lang.Object r15 = r15.f547a
-            int r1 = r15.size()
-            r6 = r3
-        L5f:
-            if (r6 >= r1) goto Lc0
-            java.lang.Object r7 = r15.get(r6)
-            androidx.emoji2.text.ps1 r7 = (androidx.emoji2.text.ps1) r7
-            boolean r7 = androidx.emoji2.text.nz0.o(r7)
-            if (r7 != 0) goto Lbd
-            int r1 = r15.size()
-            r6 = r3
-        L72:
-            if (r6 >= r1) goto L92
-            java.lang.Object r7 = r15.get(r6)
-            androidx.emoji2.text.ps1 r7 = (androidx.emoji2.text.ps1) r7
-            boolean r8 = r7.b()
-            if (r8 != 0) goto Lb8
-            androidx.emoji2.text.oh2 r8 = r14.i
-            long r8 = r8.B
-            long r10 = r14.c()
-            boolean r7 = androidx.emoji2.text.nz0.F(r7, r8, r10)
-            if (r7 == 0) goto L8f
-            goto Lb8
-        L8f:
-            int r6 = r6 + 1
-            goto L72
-        L92:
-            r0.g = r14
-            r0.h = r13
-            r0.j = r2
-            androidx.emoji2.text.js1 r15 = androidx.emoji2.text.js1.f
-            java.lang.Object r15 = r14.b(r15, r0)
-            if (r15 != r5) goto L2e
-        La0:
-            return r5
-        La1:
-            androidx.emoji2.text.is1 r15 = (androidx.emoji2.text.is1) r15
-            java.lang.Object r15 = r15.f547a
-            int r1 = r15.size()
-            r6 = r3
-        Laa:
-            if (r6 >= r1) goto L46
-            java.lang.Object r7 = r15.get(r6)
-            androidx.emoji2.text.ps1 r7 = (androidx.emoji2.text.ps1) r7
-            boolean r7 = r7.b()
-            if (r7 == 0) goto Lba
-        Lb8:
-            r13 = 0
-            return r13
-        Lba:
-            int r6 = r6 + 1
-            goto Laa
-        Lbd:
-            int r6 = r6 + 1
-            goto L5f
-        Lc0:
-            java.lang.Object r13 = r15.get(r3)
-            return r13
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ji2.e(androidx.emoji2.text.nh2, androidx.emoji2.text.js1, androidx.emoji2.text.lk):java.lang.Object");
+    public static final Object e(nh2 nh2Var, js1 js1Var, lk lkVar) {
+        ii2 ii2Var;
+        int i;
+        nh2 nh2Var2;
+        js1 js1Var2;
+        int size;
+        int i2;
+        if (lkVar instanceof ii2) {
+            ii2Var = (ii2) lkVar;
+            int i3 = ii2Var.j;
+            if ((i3 & Integer.MIN_VALUE) != 0) {
+                ii2Var.j = i3 - Integer.MIN_VALUE;
+                Object obj = ii2Var.i;
+                i = ii2Var.j;
+                f30 f30Var = f30.d;
+                if (i != 0) {
+                    mz0.L(obj);
+                    ii2Var.g = nh2Var;
+                    ii2Var.h = js1Var;
+                    ii2Var.j = 1;
+                    obj = nh2Var.b(js1Var, ii2Var);
+                    if (obj != f30Var) {
+                    }
+                    return f30Var;
+                }
+                if (i == 1) {
+                    js1Var2 = ii2Var.h;
+                    nh2Var2 = ii2Var.g;
+                    mz0.L(obj);
+                    ?? r15 = ((is1) obj).f546a;
+                    size = r15.size();
+                    while (i2 < size) {
+                    }
+                    return r15.get(0);
+                }
+                if (i != 2) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                js1Var2 = ii2Var.h;
+                nh2Var2 = ii2Var.g;
+                mz0.L(obj);
+                nh2 nh2Var3 = nh2Var2;
+                js1Var = js1Var2;
+                nh2Var = nh2Var3;
+                ?? r152 = ((is1) obj).f546a;
+                int size2 = r152.size();
+                for (int i4 = 0; i4 < size2; i4++) {
+                    if (((ps1) r152.get(i4)).b()) {
+                        return null;
+                    }
+                }
+                ii2Var.g = nh2Var;
+                ii2Var.h = js1Var;
+                ii2Var.j = 1;
+                obj = nh2Var.b(js1Var, ii2Var);
+                if (obj != f30Var) {
+                    js1 js1Var3 = js1Var;
+                    nh2Var2 = nh2Var;
+                    js1Var2 = js1Var3;
+                    ?? r153 = ((is1) obj).f546a;
+                    size = r153.size();
+                    for (i2 = 0; i2 < size; i2++) {
+                        if (!nz0.o((ps1) r153.get(i2))) {
+                            int size3 = r153.size();
+                            for (int i5 = 0; i5 < size3; i5++) {
+                                ps1 ps1Var = (ps1) r153.get(i5);
+                                if (ps1Var.b() || nz0.F(ps1Var, nh2Var2.i.B, nh2Var2.c())) {
+                                    return null;
+                                }
+                            }
+                            ii2Var.g = nh2Var2;
+                            ii2Var.h = js1Var2;
+                            ii2Var.j = 2;
+                            obj = nh2Var2.b(js1.f, ii2Var);
+                        }
+                    }
+                    return r153.get(0);
+                }
+                return f30Var;
+            }
+        }
+        ii2Var = new ii2(lkVar);
+        Object obj2 = ii2Var.i;
+        i = ii2Var.j;
+        f30 f30Var2 = f30.d;
+        if (i != 0) {
+        }
     }
 }

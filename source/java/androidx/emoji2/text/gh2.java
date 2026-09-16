@@ -21,10 +21,10 @@ public final class gh2 extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        long jLongValue = ((Number) obj).longValue();
+        long longValue = ((Number) obj).longValue();
         Object obj2 = this.e.d;
         lx0.u(obj2);
-        pz0.s((ge) obj2, jLongValue, this.f, this.g, this.h, this.i);
-        return up2.f1187a;
+        pz0.s((ge) obj2, longValue, this.f, this.g, this.h, this.i);
+        return up2.f1186a;
     }
 }

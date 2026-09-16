@@ -19,7 +19,7 @@ public final /* synthetic */ class s4 implements Function2 {
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
         int i = this.d;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         AddAccountActivity addAccountActivity = this.f;
         String str = this.e;
         int i2 = 2;
@@ -27,11 +27,11 @@ public final /* synthetic */ class s4 implements Function2 {
         switch (i) {
             case 0:
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
                 int i4 = AddAccountActivity.y;
-                a.a.a.c.a(-219649481522978L, wj1.f1284a);
+                a.a.a.c.a(-219649481522978L, wj1.f1283a);
                 tx txVar = (tx) lxVar;
-                if (!txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (!txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     txVar.S();
                     break;
                 } else {
@@ -40,11 +40,11 @@ public final /* synthetic */ class s4 implements Function2 {
                 }
             case 1:
                 lx lxVar2 = (lx) obj;
-                int iIntValue2 = ((Integer) obj2).intValue();
+                int intValue2 = ((Integer) obj2).intValue();
                 int i5 = AddAccountActivity.y;
-                a.a.a.c.a(-216260752326434L, wj1.f1284a);
+                a.a.a.c.a(-216260752326434L, wj1.f1283a);
                 tx txVar2 = (tx) lxVar2;
-                if (!txVar2.P(1 & iIntValue2, (iIntValue2 & 3) != 2)) {
+                if (!txVar2.P(1 & intValue2, (intValue2 & 3) != 2)) {
                     txVar2.S();
                     break;
                 } else {
@@ -53,23 +53,23 @@ public final /* synthetic */ class s4 implements Function2 {
                 }
             default:
                 lx lxVar3 = (lx) obj;
-                int iIntValue3 = ((Integer) obj2).intValue();
+                int intValue3 = ((Integer) obj2).intValue();
                 int i6 = AddAccountActivity.y;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-216007349255970L, strArr);
                 tx txVar3 = (tx) lxVar3;
-                if (!txVar3.P(iIntValue3 & 1, (iIntValue3 & 3) != 2)) {
+                if (!txVar3.P(intValue3 & 1, (intValue3 & 3) != 2)) {
                     txVar3.S();
                     break;
                 } else {
                     a.a.a.c.a(-216097543569186L, strArr);
-                    boolean zH = txVar3.h(addAccountActivity);
-                    Object objM = txVar3.M();
-                    if (zH || objM == kx.f663a) {
-                        objM = new t2(1, addAccountActivity);
-                        txVar3.i0(objM);
+                    boolean h = txVar3.h(addAccountActivity);
+                    Object M = txVar3.M();
+                    if (h || M == kx.f662a) {
+                        M = new t2(1, addAccountActivity);
+                        txVar3.i0(M);
                     }
-                    lx0.a(str, (sm0) objM, txVar3, 0);
+                    lx0.a(str, (sm0) M, txVar3, 0);
                     break;
                 }
                 break;

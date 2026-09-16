@@ -23,9 +23,9 @@ public final class jg1 extends g01 implements sm0 {
             case 1:
                 break;
             default:
-                le leVar = q62.f942a;
+                le leVar = q62.f941a;
                 break;
         }
-        return new zi1(((zi1) qe2Var.getValue()).f1442a);
+        return new zi1(((zi1) qe2Var.getValue()).f1441a);
     }
 }

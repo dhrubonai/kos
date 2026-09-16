@@ -121,13 +121,13 @@ public final class j11 implements pg2, hb1 {
         if (e11Var4 == null) {
             return qe0.d;
         }
-        List listN0 = e11Var4.I.p.n0();
-        pf1 pf1Var = (pf1) listN0;
+        List n0 = e11Var4.I.p.n0();
+        pf1 pf1Var = (pf1) n0;
         int i3 = pf1Var.d.f;
         for (int i4 = 0; i4 < i3; i4++) {
             ((eb1) pf1Var.get(i4)).i.b = true;
         }
-        return listN0;
+        return n0;
     }
 
     @Override // androidx.emoji2.text.j70

@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class rg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1011a;
+    public final int f1010a;
     public final float b;
     public final float c;
     public final float d;
     public final long e;
 
     public rg1(int i, float f, float f2, float f3, long j) {
-        this.f1011a = i;
+        this.f1010a = i;
         this.b = f;
         this.c = f2;
         this.d = f3;
@@ -25,16 +25,16 @@ public final class rg1 {
         }
         if (obj != null && rg1.class == obj.getClass()) {
             rg1 rg1Var = (rg1) obj;
-            return this.c == rg1Var.c && this.d == rg1Var.d && this.b == rg1Var.b && this.f1011a == rg1Var.f1011a && this.e == rg1Var.e;
+            return this.c == rg1Var.c && this.d == rg1Var.d && this.b == rg1Var.b && this.f1010a == rg1Var.f1010a && this.e == rg1Var.e;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.e) + jx0.a(this.f1011a, zd.b(this.b, zd.b(this.d, Float.hashCode(this.c) * 31, 31), 31), 31);
+        return Long.hashCode(this.e) + jx0.a(this.f1010a, zd.b(this.b, zd.b(this.d, Float.hashCode(this.c) * 31, 31), 31), 31);
     }
 
     public final String toString() {
-        return "NavigationEvent(touchX=" + this.c + ", touchY=" + this.d + ", progress=" + this.b + ", swipeEdge=" + this.f1011a + ", frameTimeMillis=" + this.e + ')';
+        return "NavigationEvent(touchX=" + this.c + ", touchY=" + this.d + ", progress=" + this.b + ", swipeEdge=" + this.f1010a + ", frameTimeMillis=" + this.e + ')';
     }
 }

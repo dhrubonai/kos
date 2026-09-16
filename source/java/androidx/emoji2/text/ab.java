@@ -4,7 +4,6 @@ import android.net.http.X509TrustManagerExtensions;
 import android.os.Build;
 import android.security.NetworkSecurityPolicy;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -29,7 +28,7 @@ public final class ab extends lr1 {
         e = z;
     }
 
-    public ab() throws NoSuchMethodException, ClassNotFoundException, SecurityException {
+    public ab() {
         ie2 ie2Var;
         Method method;
         Method method2;
@@ -40,16 +39,16 @@ public final class ab extends lr1 {
             Class.forName("com.android.org.conscrypt".concat(".SSLParametersImpl"));
             ie2Var = new ie2(cls);
         } catch (Exception e2) {
-            lr1.f707a.getClass();
+            lr1.f706a.getClass();
             lr1.i(5, "unable to load android socket classes", e2);
             ie2Var = null;
         }
         int i = 0;
-        ArrayList arrayListH0 = xh.H0(new ed2[]{ie2Var, new v60(zb.f), new v60(cz.f228a), new v60(mm.f755a)});
+        ArrayList H0 = xh.H0(new ed2[]{ie2Var, new v60(zb.f), new v60(cz.f227a), new v60(mm.f754a)});
         ArrayList arrayList = new ArrayList();
-        int size = arrayListH0.size();
+        int size = H0.size();
         while (i < size) {
-            Object obj = arrayListH0.get(i);
+            Object obj = H0.get(i);
             i++;
             if (((ed2) obj).a()) {
                 arrayList.add(obj);
@@ -82,7 +81,7 @@ public final class ab extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final uo2 c(X509TrustManager x509TrustManager) throws NoSuchMethodException, SecurityException {
+    public final uo2 c(X509TrustManager x509TrustManager) {
         try {
             Method declaredMethod = x509TrustManager.getClass().getDeclaredMethod("findTrustAnchorByIssuerAndSignature", X509Certificate.class);
             declaredMethod.setAccessible(true);
@@ -117,7 +116,7 @@ public final class ab extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final void e(Socket socket, InetSocketAddress inetSocketAddress, int i) throws IOException {
+    public final void e(Socket socket, InetSocketAddress inetSocketAddress, int i) {
         lx0.x(inetSocketAddress, "address");
         try {
             socket.connect(inetSocketAddress, i);
@@ -154,17 +153,17 @@ public final class ab extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final Object g() throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final Object g() {
         os osVar = this.d;
         osVar.getClass();
-        Method method = osVar.f872a;
+        Method method = osVar.f871a;
         if (method != null) {
             try {
-                Object objInvoke = method.invoke(null, null);
+                Object invoke = method.invoke(null, null);
                 Method method2 = osVar.b;
                 lx0.u(method2);
-                method2.invoke(objInvoke, "response.body().close()");
-                return objInvoke;
+                method2.invoke(invoke, "response.body().close()");
+                return invoke;
             } catch (Exception unused) {
             }
         }
@@ -178,7 +177,7 @@ public final class ab extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final void j(Object obj, String str) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void j(Object obj, String str) {
         lx0.x(str, "message");
         os osVar = this.d;
         osVar.getClass();

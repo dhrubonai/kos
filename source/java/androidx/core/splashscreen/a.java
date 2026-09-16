@@ -7,6 +7,8 @@ import androidx.core.splashscreen.SplashScreen;
 public final /* synthetic */ class a implements SplashScreen.KeepOnScreenCondition {
     @Override // androidx.core.splashscreen.SplashScreen.KeepOnScreenCondition
     public final boolean shouldKeepOnScreen() {
-        return SplashScreen.Impl.splashScreenWaitPredicate$lambda$0();
+        boolean splashScreenWaitPredicate$lambda$0;
+        splashScreenWaitPredicate$lambda$0 = SplashScreen.Impl.splashScreenWaitPredicate$lambda$0();
+        return splashScreenWaitPredicate$lambda$0;
     }
 }

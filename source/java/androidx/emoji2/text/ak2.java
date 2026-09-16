@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class ak2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f106a;
+    public final ue f105a;
     public final long b;
     public final al2 c;
 
     public ak2(ue ueVar, long j, al2 al2Var) {
         al2 al2Var2;
-        this.f106a = ueVar;
+        this.f105a = ueVar;
         this.b = n6.P(ueVar.e.length(), j);
         if (al2Var != null) {
-            al2Var2 = new al2(n6.P(ueVar.e.length(), al2Var.f107a));
+            al2Var2 = new al2(n6.P(ueVar.e.length(), al2Var.f106a));
         } else {
             al2Var2 = null;
         }
@@ -23,7 +23,7 @@ public final class ak2 {
 
     public static ak2 a(ak2 ak2Var, ue ueVar, long j, int i) {
         if ((i & 1) != 0) {
-            ueVar = ak2Var.f106a;
+            ueVar = ak2Var.f105a;
         }
         if ((i & 2) != 0) {
             j = ak2Var.b;
@@ -41,19 +41,19 @@ public final class ak2 {
             return false;
         }
         ak2 ak2Var = (ak2) obj;
-        return al2.a(this.b, ak2Var.b) && lx0.n(this.c, ak2Var.c) && lx0.n(this.f106a, ak2Var.f106a);
+        return al2.a(this.b, ak2Var.b) && lx0.n(this.c, ak2Var.c) && lx0.n(this.f105a, ak2Var.f105a);
     }
 
     public final int hashCode() {
-        int iHashCode = this.f106a.hashCode() * 31;
+        int hashCode = this.f105a.hashCode() * 31;
         int i = al2.c;
-        int iB = jx0.b(iHashCode, 31, this.b);
+        int b = jx0.b(hashCode, 31, this.b);
         al2 al2Var = this.c;
-        return iB + (al2Var != null ? Long.hashCode(al2Var.f107a) : 0);
+        return b + (al2Var != null ? Long.hashCode(al2Var.f106a) : 0);
     }
 
     public final String toString() {
-        return "TextFieldValue(text='" + ((Object) this.f106a) + "', selection=" + ((Object) al2.g(this.b)) + ", composition=" + this.c + ')';
+        return "TextFieldValue(text='" + ((Object) this.f105a) + "', selection=" + ((Object) al2.g(this.b)) + ", composition=" + this.c + ')';
     }
 
     public ak2(int i, String str, long j) {

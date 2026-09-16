@@ -40,10 +40,10 @@ public class IDevicePolicyManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-563599052521250L, strArr);
+            String a2 = c.a(-563599052521250L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-563693541801762L, strArr), 3, strA);
+            zd.p(sb, c.a(-563693541801762L, strArr), 3, a2);
             return null;
         }
     }
@@ -100,10 +100,10 @@ public class IDevicePolicyManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-566261932244770L, strArr);
+            String a2 = c.a(-566261932244770L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-566356421525282L, strArr), 3, strA);
+            zd.p(sb, c.a(-566356421525282L, strArr), 3, a2);
             return Boolean.FALSE;
         }
     }
@@ -114,10 +114,10 @@ public class IDevicePolicyManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-566558284988194L, strArr);
+            String a2 = c.a(-566558284988194L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-566721493745442L, strArr), 3, strA);
+            zd.p(sb, c.a(-566721493745442L, strArr), 3, a2);
             return null;
         }
     }
@@ -191,11 +191,11 @@ public class IDevicePolicyManagerProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException unused) {
-            String strA = c.a(-567245479755554L, strArr);
+            String a2 = c.a(-567245479755554L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-566858932698914L, strArr), method);
             sb.append(c.a(-566949127012130L, strArr));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }

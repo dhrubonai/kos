@@ -40,7 +40,7 @@ public class SystemProviderStub extends ClassInvocationStub implements BContentP
                 for (Object obj2 : objArr) {
                     if (obj2 != null && realClass2 != null && obj2.getClass().getName().equals(realClass2.getName())) {
                         int i = c01.r.o;
-                        int i2 = v00.f1200a;
+                        int i2 = v00.f1199a;
                         v00.b(obj2, i, c01.X());
                     }
                 }
@@ -55,7 +55,7 @@ public class SystemProviderStub extends ClassInvocationStub implements BContentP
                 }
             } else if (obj3 != null && (realClass = BRAttributionSource.getRealClass()) != null && obj3.getClass().getName().equals(realClass.getName())) {
                 int i3 = c01.r.o;
-                int i4 = v00.f1200a;
+                int i4 = v00.f1199a;
                 v00.b(obj3, i3, c01.X());
             }
         }
@@ -68,7 +68,7 @@ public class SystemProviderStub extends ClassInvocationStub implements BContentP
     }
 
     @Override // com.kos.engine.fake.service.context.providers.BContentProvider
-    public IInterface wrapper(IInterface iInterface, String str) throws IllegalArgumentException {
+    public IInterface wrapper(IInterface iInterface, String str) {
         this.mBase = iInterface;
         injectHook();
         return (IInterface) getProxyInvocation();

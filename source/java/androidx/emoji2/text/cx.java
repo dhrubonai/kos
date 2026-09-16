@@ -32,15 +32,15 @@ public final class cx extends hh2 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((cx) i((l10) obj2, Float.valueOf(((Number) obj).floatValue()))).k(up2.f1187a);
+                return ((cx) i((l10) obj2, Float.valueOf(((Number) obj).floatValue()))).k(up2.f1186a);
             default:
-                return ((cx) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((cx) i((l10) obj2, (e30) obj)).k(up2.f1186a);
         }
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        Object objB;
+        Object b;
         switch (this.h) {
             case 0:
                 dx dxVar = (dx) this.k;
@@ -48,11 +48,11 @@ public final class cx extends hh2 implements Function2 {
                 if (i == 0) {
                     mz0.L(obj);
                     float f = this.j;
-                    Object objG = dxVar.f277a.d.d.g(t62.e);
-                    if (objG == null) {
-                        objG = null;
+                    Object g = dxVar.f276a.d.d.g(t62.e);
+                    if (g == null) {
+                        g = null;
                     }
-                    Function2 function2 = (Function2) objG;
+                    Function2 function2 = (Function2) g;
                     if (function2 == null) {
                         throw zd.c("Required value was null.");
                     }
@@ -69,10 +69,10 @@ public final class cx extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return new Float(Float.intBitsToFloat((int) (((zi1) obj).f1442a & 4294967295L)));
+                return new Float(Float.intBitsToFloat((int) (((zi1) obj).f1441a & 4294967295L)));
             default:
                 int i2 = this.i;
-                up2 up2Var = up2.f1187a;
+                up2 up2Var = up2.f1186a;
                 if (i2 != 0) {
                     if (i2 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -86,16 +86,16 @@ public final class cx extends hh2 implements Function2 {
                 this.i = 1;
                 m6 m6Var = ya2Var.b;
                 Object value = m6Var.g.getValue();
-                Object objC = m6Var.c(m6Var.f(), f2, value);
-                boolean zBooleanValue = ((Boolean) m6Var.d.e(objC)).booleanValue();
+                Object c = m6Var.c(m6Var.f(), f2, value);
+                boolean booleanValue = ((Boolean) m6Var.d.e(c)).booleanValue();
                 f30 f30Var2 = f30.d;
-                if (!zBooleanValue ? (objB = androidx.compose.material3.internal.a.b(m6Var, value, f2, this)) != f30Var2 : (objB = androidx.compose.material3.internal.a.b(m6Var, objC, f2, this)) != f30Var2) {
-                    objB = up2Var;
+                if (!booleanValue ? (b = androidx.compose.material3.internal.a.b(m6Var, value, f2, this)) != f30Var2 : (b = androidx.compose.material3.internal.a.b(m6Var, c, f2, this)) != f30Var2) {
+                    b = up2Var;
                 }
-                if (objB != f30Var2) {
-                    objB = up2Var;
+                if (b != f30Var2) {
+                    b = up2Var;
                 }
-                return objB == f30Var2 ? f30Var2 : up2Var;
+                return b == f30Var2 ? f30Var2 : up2Var;
         }
     }
 

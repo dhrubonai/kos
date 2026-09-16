@@ -14,7 +14,7 @@ public final class yj0 {
     public static final ec f = new ec(3);
 
     /* renamed from: a, reason: collision with root package name */
-    public final Rect f1391a = new Rect();
+    public final Rect f1390a = new Rect();
     public final Rect b = new Rect();
     public final Rect c = new Rect();
     public final xj0 d = new xj0(new pt(this));
@@ -27,10 +27,10 @@ public final class yj0 {
     }
 
     public final View a(int i, Rect rect, View view, ViewGroup viewGroup, ArrayList arrayList) {
-        int iIndexOf;
-        int iLastIndexOf;
+        int indexOf;
+        int lastIndexOf;
         int i2;
-        Rect rect2 = this.f1391a;
+        Rect rect2 = this.f1390a;
         if (view != null) {
             view.getFocusedRect(rect2);
             viewGroup.offsetDescendantRectToMyCoords(view, rect2);
@@ -72,39 +72,37 @@ public final class yj0 {
             xj0Var.c.a();
             xj0Var.b.b();
             xj0Var.d.a();
-            xj0Var.f1341a.a();
+            xj0Var.f1340a.a();
             int size = arrayList.size();
-            View viewC = null;
+            View view2 = null;
             if (size < 2) {
                 return null;
             }
             if (i != 1) {
                 if (i != 2) {
                     if (i == 17 || i == 33 || i == 66 || i == 130) {
-                        viewC = c(i, this.f1391a, view, viewGroup, arrayList);
+                        view2 = c(i, this.f1390a, view, viewGroup, arrayList);
                     }
                 } else if (size >= 2) {
-                    viewC = (view == null || (iLastIndexOf = arrayList.lastIndexOf(view)) < 0 || (i2 = iLastIndexOf + 1) >= size) ? (View) arrayList.get(0) : (View) arrayList.get(i2);
+                    view2 = (view == null || (lastIndexOf = arrayList.lastIndexOf(view)) < 0 || (i2 = lastIndexOf + 1) >= size) ? (View) arrayList.get(0) : (View) arrayList.get(i2);
                 }
             } else if (size >= 2) {
-                viewC = (view == null || (iIndexOf = arrayList.indexOf(view)) <= 0) ? (View) arrayList.get(size - 1) : (View) arrayList.get(iIndexOf - 1);
+                view2 = (view == null || (indexOf = arrayList.indexOf(view)) <= 0) ? (View) arrayList.get(size - 1) : (View) arrayList.get(indexOf - 1);
             }
-            return viewC == null ? (View) arrayList.get(size - 1) : viewC;
+            return view2 == null ? (View) arrayList.get(size - 1) : view2;
         } catch (Throwable th) {
             xj0Var.c.a();
             xj0Var.b.b();
             xj0Var.d.a();
-            xj0Var.f1341a.a();
+            xj0Var.f1340a.a();
             throw th;
         }
     }
 
     public final View b(int i, View view, ViewGroup viewGroup) {
         ViewGroup viewGroup2;
-        View viewA = null;
-        if (view == null || view == viewGroup) {
-            viewGroup2 = viewGroup;
-        } else {
+        View view2 = null;
+        if (view != null && view != viewGroup) {
             ViewParent parent = view.getParent();
             ViewGroup viewGroup3 = null;
             while (true) {
@@ -117,35 +115,32 @@ public final class yj0 {
                         viewGroup3 = viewGroup4;
                     }
                     parent = viewGroup4.getParent();
-                } else {
-                    if (viewGroup3 == null) {
-                        break;
-                    }
+                } else if (viewGroup3 != null) {
                     viewGroup2 = viewGroup3;
                 }
             }
-            viewGroup2 = viewGroup;
         }
-        View viewF = kx0.f(view, viewGroup2, i);
+        viewGroup2 = viewGroup;
+        View f2 = kx0.f(view, viewGroup2, i);
         boolean z = true;
-        View viewF2 = viewF;
-        while (viewF != null) {
-            if (viewF.isFocusable() && viewF.getVisibility() == 0 && (!viewF.isInTouchMode() || viewF.isFocusableInTouchMode())) {
-                viewA = viewF;
+        View view3 = f2;
+        while (f2 != null) {
+            if (f2.isFocusable() && f2.getVisibility() == 0 && (!f2.isInTouchMode() || f2.isFocusableInTouchMode())) {
+                view2 = f2;
                 break;
             }
-            viewF = kx0.f(viewF, viewGroup2, i);
+            f2 = kx0.f(f2, viewGroup2, i);
             boolean z2 = !z;
             if (!z) {
-                viewF2 = viewF2 != null ? kx0.f(viewF2, viewGroup2, i) : null;
-                if (viewF2 == viewF) {
+                view3 = view3 != null ? kx0.f(view3, viewGroup2, i) : null;
+                if (view3 == f2) {
                     break;
                 }
             }
             z = z2;
         }
-        if (viewA != null) {
-            return viewA;
+        if (view2 != null) {
+            return view2;
         }
         ArrayList<View> arrayList = this.e;
         try {
@@ -156,10 +151,10 @@ public final class yj0 {
                 viewGroup2.addFocusables(arrayList, i, viewGroup2.isInTouchMode() ? 1 : 0);
             }
             if (!arrayList.isEmpty()) {
-                viewA = a(i, null, view, viewGroup2, arrayList);
+                view2 = a(i, null, view, viewGroup2, arrayList);
             }
             arrayList.clear();
-            return viewA;
+            return view2;
         } catch (Throwable th) {
             arrayList.clear();
             throw th;
@@ -186,11 +181,11 @@ public final class yj0 {
                 Rect rect3 = this.c;
                 view3.getFocusedRect(rect3);
                 viewGroup.offsetDescendantRectToMyCoords(view3, rect3);
-                zw1 zw1VarP = mz0.P(rect3);
-                zw1 zw1VarP2 = mz0.P(rect2);
-                zw1 zw1VarP3 = mz0.P(rect);
-                vj0 vj0VarJ0 = bz0.j0(i);
-                if (a01.L(zw1VarP, zw1VarP2, zw1VarP3, vj0VarJ0 != null ? vj0VarJ0.f1223a : 1)) {
+                zw1 P = mz0.P(rect3);
+                zw1 P2 = mz0.P(rect2);
+                zw1 P3 = mz0.P(rect);
+                vj0 j0 = bz0.j0(i);
+                if (a01.L(P, P2, P3, j0 != null ? j0.f1222a : 1)) {
                     rect2.set(rect3);
                     view2 = view3;
                 }

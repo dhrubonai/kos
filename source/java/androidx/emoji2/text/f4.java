@@ -24,38 +24,38 @@ public final /* synthetic */ class f4 implements sm0 {
             case 1:
                 return UUID.randomUUID().toString();
             case 2:
-                return up2.f1187a;
+                return up2.f1186a;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                jf2 jf2Var = cy.f227a;
+                jf2 jf2Var = cy.f226a;
                 return null;
             case 4:
                 vx.d("Unexpected call to default provider");
                 throw new mu();
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new Handler(Looper.getMainLooper());
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return new dj1();
             case 8:
-                jf2 jf2Var2 = iw0.f552a;
+                jf2 jf2Var2 = iw0.f551a;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return null;
-            case 9:
-                ky kyVar = m71.f735a;
+            case pz0.b /* 9 */:
+                ky kyVar = m71.f734a;
                 return null;
-            case 10:
+            case pz0.d /* 10 */:
                 throw new IllegalStateException("CompositionLocal LocalLifecycleOwner not present");
             case 11:
-                ky kyVar2 = p71.f893a;
+                ky kyVar2 = p71.f892a;
                 return null;
             case 12:
-                ky kyVar3 = q71.f944a;
+                ky kyVar3 = q71.f943a;
                 return null;
             case 13:
                 throw new IllegalStateException("CompositionLocal LocalSavedStateRegistryOwner not present");
             case 14:
                 return new w22(new LinkedHashMap());
-            case 15:
-                jf2 jf2Var3 = a32.f80a;
+            case pz0.f /* 15 */:
+                jf2 jf2Var3 = a32.f79a;
                 return null;
             default:
                 return new d01();

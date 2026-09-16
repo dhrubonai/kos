@@ -9,11 +9,15 @@ public final class jp extends lu {
     public static final /* synthetic */ AtomicIntegerFieldUpdater c = AtomicIntegerFieldUpdater.newUpdater(jp.class, "_resumed$volatile");
     private volatile /* synthetic */ int _resumed$volatile;
 
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public jp(ip ipVar, Throwable th, boolean z) {
+        super(th, z);
         if (th == null) {
             th = new CancellationException("Continuation " + ipVar + " was cancelled normally");
         }
-        super(th, z);
         this._resumed$volatile = 0;
     }
 }

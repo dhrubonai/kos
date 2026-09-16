@@ -5,21 +5,21 @@ package androidx.emoji2.text;
 public final class rq extends sq {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Throwable f1026a;
+    public final Throwable f1025a;
 
     public rq(Throwable th) {
-        this.f1026a = th;
+        this.f1025a = th;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof rq) {
-            return lx0.n(this.f1026a, ((rq) obj).f1026a);
+            return lx0.n(this.f1025a, ((rq) obj).f1025a);
         }
         return false;
     }
 
     public final int hashCode() {
-        Throwable th = this.f1026a;
+        Throwable th = this.f1025a;
         if (th != null) {
             return th.hashCode();
         }
@@ -28,6 +28,6 @@ public final class rq extends sq {
 
     @Override // androidx.emoji2.text.sq
     public final String toString() {
-        return "Closed(" + this.f1026a + ')';
+        return "Closed(" + this.f1025a + ')';
     }
 }

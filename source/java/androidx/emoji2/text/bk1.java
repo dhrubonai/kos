@@ -9,7 +9,7 @@ public final class bk1 extends dl1 {
 
     @Override // androidx.emoji2.text.dl1
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
-        int i = ((sw0) on0Var.d(0)).f1090a;
+        int i = ((sw0) on0Var.d(0)).f1089a;
         List list = (List) on0Var.d(1);
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {

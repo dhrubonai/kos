@@ -19,10 +19,10 @@ public final /* synthetic */ class ol2 implements Function2 {
         Integer num = (Integer) obj2;
         switch (this.d) {
             case 0:
-                int iIntValue = num.intValue();
-                a.a.a.c.a(-165455584182050L, wj1.f1284a);
+                int intValue = num.intValue();
+                a.a.a.c.a(-165455584182050L, wj1.f1283a);
                 tx txVar = (tx) lxVar;
-                if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     wa1.a(pl2.h, pl2.g, null, this.e, txVar, 54, 4);
                 } else {
                     txVar.S();
@@ -33,7 +33,7 @@ public final /* synthetic */ class ol2 implements Function2 {
                 pl2.a(this.e, lxVar, n6.k0(7));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ ol2(ComposableLambdaImpl composableLambdaImpl) {

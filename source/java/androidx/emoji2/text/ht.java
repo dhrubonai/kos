@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class ht {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f488a;
+    public static final long f487a;
     public static final long b;
     public static final long c;
     public static final long d;
@@ -14,7 +14,7 @@ public abstract class ht {
     static {
         long j = 3;
         long j2 = j << 32;
-        f488a = (0 & 4294967295L) | j2;
+        f487a = (0 & 4294967295L) | j2;
         b = (1 & 4294967295L) | j2;
         c = j2 | (2 & 4294967295L);
         d = (j & 4294967295L) | (4 << 32);
@@ -25,6 +25,6 @@ public abstract class ht {
     }
 
     public static String b(long j) {
-        return a(j, f488a) ? "Rgb" : a(j, b) ? "Xyz" : a(j, c) ? "Lab" : a(j, d) ? "Cmyk" : "Unknown";
+        return a(j, f487a) ? "Rgb" : a(j, b) ? "Xyz" : a(j, c) ? "Lab" : a(j, d) ? "Cmyk" : "Unknown";
     }
 }

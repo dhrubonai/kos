@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class n61 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f794a;
+    public final /* synthetic */ int f793a;
     public int b;
     public int c;
     public boolean d;
     public boolean e;
 
     public n61(int i) {
-        this.f794a = i;
+        this.f793a = i;
         switch (i) {
             case 1:
                 break;
@@ -26,7 +26,7 @@ public final class n61 {
     }
 
     public String toString() {
-        switch (this.f794a) {
+        switch (this.f793a) {
             case 0:
                 return "AnchorInfo{mPosition=" + this.b + ", mCoordinate=" + this.c + ", mLayoutFromEnd=" + this.d + ", mValid=" + this.e + '}';
             default:

@@ -17,41 +17,41 @@ public final /* synthetic */ class rt2 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        String string;
+        String str;
         switch (this.d) {
             case 0:
                 return Boolean.valueOf(this.e.getLaunchIntentForPackage(((ApplicationInfo) obj).packageName) != null);
             case 1:
                 PackageManager packageManager = this.e;
                 ApplicationInfo applicationInfo = (ApplicationInfo) obj;
-                aa aaVarQ = null;
+                aa aaVar = null;
                 try {
-                    string = applicationInfo.loadLabel(packageManager).toString();
+                    str = applicationInfo.loadLabel(packageManager).toString();
                 } catch (Throwable unused) {
-                    string = null;
+                    str = null;
                 }
-                if (string == null) {
-                    string = applicationInfo.packageName;
+                if (str == null) {
+                    str = applicationInfo.packageName;
                 }
-                String str = string;
+                String str2 = str;
                 try {
-                    Drawable drawableLoadIcon = applicationInfo.loadIcon(packageManager);
-                    if (drawableLoadIcon != null) {
-                        aaVarQ = jz0.Q(drawableLoadIcon);
+                    Drawable loadIcon = applicationInfo.loadIcon(packageManager);
+                    if (loadIcon != null) {
+                        aaVar = jz0.Q(loadIcon);
                     }
                 } catch (Throwable unused2) {
                 }
-                String str2 = applicationInfo.packageName;
-                lx0.w(str2, a.a.a.c.a(-384490326343458L, wj1.f1284a));
-                lx0.u(str);
-                return new i01(str2, str, aaVarQ, null, null, j01.d, true, new k01(0L, 0L, 0L));
+                String str3 = applicationInfo.packageName;
+                lx0.w(str3, a.a.a.c.a(-384490326343458L, wj1.f1283a));
+                lx0.u(str2);
+                return new i01(str3, str2, aaVar, null, null, j01.d, true, new k01(0L, 0L, 0L));
             default:
                 ApplicationInfo applicationInfo2 = (ApplicationInfo) obj;
                 PackageManager packageManager2 = this.e;
                 lx0.u(packageManager2);
-                String str3 = applicationInfo2.packageName;
-                lx0.w(str3, a.a.a.c.a(-384473146474274L, wj1.f1284a));
-                return jz0.o(packageManager2, str3, applicationInfo2);
+                String str4 = applicationInfo2.packageName;
+                lx0.w(str4, a.a.a.c.a(-384473146474274L, wj1.f1283a));
+                return jz0.o(packageManager2, str4, applicationInfo2);
         }
     }
 }

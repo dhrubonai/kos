@@ -8,13 +8,13 @@ import java.util.Map;
 public final class lw1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f718a;
+    public final int f717a;
     public final WeakReference b;
     public final Map c;
     public final int d;
 
     public lw1(int i, WeakReference weakReference, Map map, int i2) {
-        this.f718a = i;
+        this.f717a = i;
         this.b = weakReference;
         this.c = map;
         this.d = i2;

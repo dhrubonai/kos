@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class z41 implements mq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final th2 f1419a;
+    public final th2 f1418a;
 
     public z41(sm0 sm0Var) {
-        this.f1419a = az0.U(sm0Var);
+        this.f1418a = az0.U(sm0Var);
     }
 
     @Override // androidx.emoji2.text.mq2
     public final Object a(ap1 ap1Var) {
-        return this.f1419a.getValue();
+        return this.f1418a.getValue();
     }
 }

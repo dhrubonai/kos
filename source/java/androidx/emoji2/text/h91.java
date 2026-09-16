@@ -10,41 +10,41 @@ import java.util.ServiceConfigurationError;
 public abstract class h91 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final sq0 f462a;
+    public static final sq0 f461a;
 
     static {
-        String property;
-        int i = wh2.f1281a;
-        Object next = null;
+        String str;
+        int i = wh2.f1280a;
+        Object obj = null;
         try {
-            property = System.getProperty("kotlinx.coroutines.fast.service.loader");
+            str = System.getProperty("kotlinx.coroutines.fast.service.loader");
         } catch (SecurityException unused) {
-            property = null;
+            str = null;
         }
-        if (property != null) {
-            Boolean.parseBoolean(property);
+        if (str != null) {
+            Boolean.parseBoolean(str);
         }
         try {
             Iterator it = Arrays.asList(new p9()).iterator();
             lx0.x(it, "<this>");
             Iterator it2 = s72.W(new dz(new dt(1, it))).iterator();
             if (it2.hasNext()) {
-                next = it2.next();
+                obj = it2.next();
                 if (it2.hasNext()) {
-                    ((p9) next).getClass();
+                    ((p9) obj).getClass();
                     do {
                         ((p9) it2.next()).getClass();
                     } while (it2.hasNext());
                 }
             }
-            if (((p9) next) == null) {
+            if (((p9) obj) == null) {
                 throw new IllegalStateException("Module with the Main dispatcher is missing. Add dependency providing the Main dispatcher, e.g. 'kotlinx-coroutines-android' and ensure it has the same version as 'kotlinx-coroutines-core'");
             }
             Looper mainLooper = Looper.getMainLooper();
             if (mainLooper == null) {
                 throw new IllegalStateException("The main looper is not available");
             }
-            f462a = new sq0(tq0.a(mainLooper));
+            f461a = new sq0(tq0.a(mainLooper));
         } catch (Throwable th) {
             throw new ServiceConfigurationError(th.getMessage(), th);
         }

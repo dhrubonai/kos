@@ -9,7 +9,7 @@ import java.util.LinkedHashSet;
 public final class wg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final te2 f1279a = ex2.g(xg1.e);
+    public final te2 f1278a = ex2.g(xg1.e);
     public final te2 b;
     public final mv1 c;
     public final nh d;
@@ -25,9 +25,9 @@ public final class wg1 {
     public boolean n;
 
     public wg1() {
-        te2 te2VarG = ex2.g(new ug1());
-        this.b = te2VarG;
-        this.c = new mv1(te2VarG);
+        te2 g = ex2.g(new ug1());
+        this.b = g;
+        this.c = new mv1(g);
         this.d = new nh();
         this.e = new nh();
         this.i = new LinkedHashSet();
@@ -37,14 +37,14 @@ public final class wg1 {
 
     public final void a(s6 s6Var, vg1 vg1Var, int i) {
         lx0.x(s6Var, "dispatcher");
-        if (vg1Var.f1216a == null) {
+        if (vg1Var.f1215a == null) {
             (i != 0 ? i != 1 ? this.i : this.j : this.k).add(vg1Var);
-            vg1Var.f1216a = s6Var;
+            vg1Var.f1215a = s6Var;
             lx0.x((ug1) this.c.d.getValue(), "history");
             vg1Var.b(i != 0 ? i != 1 ? this.n : this.l : this.m);
             return;
         }
-        throw new IllegalArgumentException(("Input '" + vg1Var + "' is already added to dispatcher " + vg1Var.f1216a + '.').toString());
+        throw new IllegalArgumentException(("Input '" + vg1Var + "' is already added to dispatcher " + vg1Var.f1215a + '.').toString());
     }
 
     public final void b() {
@@ -60,10 +60,8 @@ public final class wg1 {
                     break;
                 }
             }
-            z = false;
-        } else {
-            z = false;
         }
+        z = false;
         nh nhVar2 = this.e;
         if (nhVar2 == null || !nhVar2.isEmpty()) {
             Iterator it2 = nhVar2.iterator();
@@ -73,10 +71,8 @@ public final class wg1 {
                     break;
                 }
             }
-            z2 = false;
-        } else {
-            z2 = false;
         }
+        z2 = false;
         boolean z3 = z || z2;
         boolean z4 = this.m != z;
         boolean z5 = this.l != z2;
@@ -105,16 +101,16 @@ public final class wg1 {
         this.m = z;
         this.l = z2;
         this.n = z3;
-        tg1 tg1VarC = this.f;
-        if (tg1VarC == null) {
-            tg1VarC = c(0);
+        tg1 tg1Var = this.f;
+        if (tg1Var == null) {
+            tg1Var = c(0);
         }
-        tg1 tg1VarC2 = this.f;
-        if (tg1VarC2 == null) {
-            tg1VarC2 = c(0);
+        tg1 tg1Var2 = this.f;
+        if (tg1Var2 == null) {
+            tg1Var2 = c(0);
         }
-        if (lx0.n(tg1VarC2, tg1VarC)) {
-            if (tg1VarC2 == null) {
+        if (lx0.n(tg1Var2, tg1Var)) {
+            if (tg1Var2 == null) {
                 ug1Var = new ug1();
             } else {
                 ArrayList arrayList = new ArrayList();
@@ -126,7 +122,7 @@ public final class wg1 {
                 while (it7.hasNext()) {
                     boolean z8 = ((tg1) it7.next()).b;
                 }
-                lz0 lz0Var = tg1VarC2.f1119a;
+                lz0 lz0Var = tg1Var2.f1118a;
                 z61 z61Var = new z61(10);
                 ct.u0(arrayList, z61Var);
                 z61Var.add(lz0Var);
@@ -154,24 +150,24 @@ public final class wg1 {
     }
 
     public final tg1 c(int i) {
-        Object next;
-        Object next2;
+        Object obj;
+        Object obj2;
         nh nhVar = this.e;
         nh nhVar2 = this.d;
-        Object obj = null;
+        Object obj3 = null;
         if (i == -1) {
             Iterator it = nhVar2.iterator();
             while (true) {
                 if (!it.hasNext()) {
-                    next = null;
+                    obj = null;
                     break;
                 }
-                next = it.next();
-                if (((tg1) next).b) {
+                obj = it.next();
+                if (((tg1) obj).b) {
                     break;
                 }
             }
-            tg1 tg1Var = (tg1) next;
+            tg1 tg1Var = (tg1) obj;
             if (tg1Var != null) {
                 return tg1Var;
             }
@@ -180,13 +176,13 @@ public final class wg1 {
                 if (!it2.hasNext()) {
                     break;
                 }
-                Object next3 = it2.next();
-                if (((tg1) next3).b) {
-                    obj = next3;
+                Object next = it2.next();
+                if (((tg1) next).b) {
+                    obj3 = next;
                     break;
                 }
             }
-            return (tg1) obj;
+            return (tg1) obj3;
         }
         if (i != 0) {
             if (i != 1) {
@@ -205,15 +201,15 @@ public final class wg1 {
         Iterator it5 = nhVar2.iterator();
         while (true) {
             if (!it5.hasNext()) {
-                next2 = null;
+                obj2 = null;
                 break;
             }
-            next2 = it5.next();
-            if (((tg1) next2).b) {
+            obj2 = it5.next();
+            if (((tg1) obj2).b) {
                 break;
             }
         }
-        tg1 tg1Var2 = (tg1) next2;
+        tg1 tg1Var2 = (tg1) obj2;
         if (tg1Var2 != null) {
             return tg1Var2;
         }
@@ -222,12 +218,12 @@ public final class wg1 {
             if (!it6.hasNext()) {
                 break;
             }
-            Object next4 = it6.next();
-            if (((tg1) next4).b) {
-                obj = next4;
+            Object next2 = it6.next();
+            if (((tg1) next2).b) {
+                obj3 = next2;
                 break;
             }
         }
-        return (tg1) obj;
+        return (tg1) obj3;
     }
 }

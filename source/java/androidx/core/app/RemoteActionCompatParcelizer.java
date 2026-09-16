@@ -7,19 +7,18 @@ import androidx.core.graphics.drawable.IconCompat;
 import androidx.emoji2.text.lr2;
 import androidx.emoji2.text.mr2;
 import androidx.emoji2.text.nr2;
-import java.lang.reflect.InvocationTargetException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
     public static RemoteActionCompat read(lr2 lr2Var) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
-        nr2 nr2VarG = remoteActionCompat.f69a;
+        nr2 nr2Var = remoteActionCompat.f69a;
         boolean z = true;
         if (lr2Var.e(1)) {
-            nr2VarG = lr2Var.g();
+            nr2Var = lr2Var.g();
         }
-        remoteActionCompat.f69a = (IconCompat) nr2VarG;
+        remoteActionCompat.f69a = (IconCompat) nr2Var;
         CharSequence charSequence = remoteActionCompat.b;
         if (lr2Var.e(2)) {
             charSequence = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(((mr2) lr2Var).e);
@@ -46,7 +45,7 @@ public class RemoteActionCompatParcelizer {
         return remoteActionCompat;
     }
 
-    public static void write(RemoteActionCompat remoteActionCompat, lr2 lr2Var) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public static void write(RemoteActionCompat remoteActionCompat, lr2 lr2Var) {
         lr2Var.getClass();
         IconCompat iconCompat = remoteActionCompat.f69a;
         lr2Var.h(1);

@@ -7,23 +7,23 @@ import android.content.pm.PackageParser;
 public abstract class ns0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final io f824a;
+    public static final io f823a;
     public static final String[] b;
     public static final String[] c;
     public static final String[] d;
 
     static {
         io ioVar = io.g;
-        f824a = on.h("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
+        f823a = on.h("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
         b = new String[]{"DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION"};
         c = new String[64];
         String[] strArr = new String[PackageParser.PARSE_COLLECT_CERTIFICATES];
         for (int i = 0; i < 256; i++) {
             String binaryString = Integer.toBinaryString(i);
             lx0.w(binaryString, "toBinaryString(it)");
-            String strReplace = jq2.f("%8s", binaryString).replace(' ', '0');
-            lx0.w(strReplace, "replace(...)");
-            strArr[i] = strReplace;
+            String replace = jq2.f("%8s", binaryString).replace(' ', '0');
+            lx0.w(replace, "replace(...)");
+            strArr[i] = replace;
         }
         d = strArr;
         String[] strArr2 = c;
@@ -57,93 +57,31 @@ public abstract class ns0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x0067  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public static java.lang.String a(boolean r4, int r5, int r6, int r7, int r8) {
-        /*
-            java.lang.String[] r0 = androidx.emoji2.text.ns0.b
-            int r1 = r0.length
-            if (r7 >= r1) goto L8
-            r0 = r0[r7]
-            goto L16
-        L8:
-            java.lang.Integer r0 = java.lang.Integer.valueOf(r7)
-            java.lang.Object[] r0 = new java.lang.Object[]{r0}
-            java.lang.String r1 = "0x%02x"
-            java.lang.String r0 = androidx.emoji2.text.jq2.f(r1, r0)
-        L16:
-            if (r8 != 0) goto L1b
-            java.lang.String r7 = ""
-            goto L69
-        L1b:
-            r1 = 2
-            java.lang.String[] r2 = androidx.emoji2.text.ns0.d
-            if (r7 == r1) goto L67
-            r1 = 3
-            if (r7 == r1) goto L67
-            r1 = 4
-            if (r7 == r1) goto L5e
-            r1 = 6
-            if (r7 == r1) goto L5e
-            r1 = 7
-            if (r7 == r1) goto L67
-            r1 = 8
-            if (r7 == r1) goto L67
-            java.lang.String[] r1 = androidx.emoji2.text.ns0.c
-            int r3 = r1.length
-            if (r8 >= r3) goto L3b
-            r1 = r1[r8]
-            androidx.emoji2.text.lx0.u(r1)
-            goto L3d
-        L3b:
-            r1 = r2[r8]
-        L3d:
-            r2 = 5
-            if (r7 != r2) goto L4d
-            r2 = r8 & 4
-            if (r2 == 0) goto L4d
-            java.lang.String r7 = "HEADERS"
-            java.lang.String r8 = "PUSH_PROMISE"
-            java.lang.String r7 = androidx.emoji2.text.eg2.X(r1, r7, r8)
-            goto L69
-        L4d:
-            if (r7 != 0) goto L5c
-            r7 = r8 & 32
-            if (r7 == 0) goto L5c
-            java.lang.String r7 = "PRIORITY"
-            java.lang.String r8 = "COMPRESSED"
-            java.lang.String r7 = androidx.emoji2.text.eg2.X(r1, r7, r8)
-            goto L69
-        L5c:
-            r7 = r1
-            goto L69
-        L5e:
-            r7 = 1
-            if (r8 != r7) goto L64
-            java.lang.String r7 = "ACK"
-            goto L69
-        L64:
-            r7 = r2[r8]
-            goto L69
-        L67:
-            r7 = r2[r8]
-        L69:
-            if (r4 == 0) goto L6e
-            java.lang.String r4 = "<<"
-            goto L70
-        L6e:
-            java.lang.String r4 = ">>"
-        L70:
-            java.lang.Integer r5 = java.lang.Integer.valueOf(r5)
-            java.lang.Integer r6 = java.lang.Integer.valueOf(r6)
-            java.lang.Object[] r4 = new java.lang.Object[]{r4, r5, r6, r0, r7}
-            java.lang.String r5 = "%s 0x%08x %5d %-13s %s"
-            java.lang.String r4 = androidx.emoji2.text.jq2.f(r5, r4)
-            return r4
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ns0.a(boolean, int, int, int, int):java.lang.String");
+    public static String a(boolean z, int i, int i2, int i3, int i4) {
+        String str;
+        String str2;
+        String[] strArr = b;
+        String f = i3 < strArr.length ? strArr[i3] : jq2.f("0x%02x", Integer.valueOf(i3));
+        if (i4 == 0) {
+            str = "";
+        } else {
+            String[] strArr2 = d;
+            if (i3 != 2 && i3 != 3) {
+                if (i3 == 4 || i3 == 6) {
+                    str = i4 == 1 ? "ACK" : strArr2[i4];
+                } else if (i3 != 7 && i3 != 8) {
+                    String[] strArr3 = c;
+                    if (i4 < strArr3.length) {
+                        str2 = strArr3[i4];
+                        lx0.u(str2);
+                    } else {
+                        str2 = strArr2[i4];
+                    }
+                    str = (i3 != 5 || (i4 & 4) == 0) ? (i3 != 0 || (i4 & 32) == 0) ? str2 : eg2.X(str2, "PRIORITY", "COMPRESSED") : eg2.X(str2, "HEADERS", "PUSH_PROMISE");
+                }
+            }
+            str = strArr2[i4];
+        }
+        return jq2.f("%s 0x%08x %5d %-13s %s", z ? "<<" : ">>", Integer.valueOf(i), Integer.valueOf(i2), f, str);
     }
 }

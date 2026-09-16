@@ -24,7 +24,7 @@ public final class yd2 {
     public boolean l;
 
     /* renamed from: a, reason: collision with root package name */
-    public float f1379a = 0.0f;
+    public float f1378a = 0.0f;
     public float b = Float.MAX_VALUE;
     public boolean e = false;
     public long f = 0;
@@ -58,6 +58,7 @@ public final class yd2 {
 
     /* JADX WARN: Type inference failed for: r1v19, types: [androidx.emoji2.text.ae, java.lang.Object] */
     public final void a(float f) {
+        float durationScale;
         if (this.e) {
             this.k = f;
             return;
@@ -75,9 +76,9 @@ public final class yd2 {
         if (d2 < -3.4028235E38f) {
             throw new UnsupportedOperationException("Final position of the spring cannot be less than the min value.");
         }
-        double dAbs = Math.abs(this.g * 0.75f);
-        zd2Var.d = dAbs;
-        zd2Var.e = dAbs * 62.5d;
+        double abs = Math.abs(this.g * 0.75f);
+        zd2Var.d = abs;
+        zd2Var.e = abs * 62.5d;
         l6 l6Var = b().e;
         l6Var.getClass();
         if (Thread.currentThread() != ((Looper) l6Var.f).getThread()) {
@@ -93,21 +94,22 @@ public final class yd2 {
         if (F > Float.MAX_VALUE || F < -3.4028235E38f) {
             throw new IllegalArgumentException("Starting value need to be in between min value and max value");
         }
-        ce ceVarB = b();
-        ArrayList arrayList = ceVarB.b;
+        ce b = b();
+        ArrayList arrayList = b.b;
         if (arrayList.size() == 0) {
-            ((Choreographer) ceVarB.e.e).postFrameCallback(new be(ceVarB.d, 0));
+            ((Choreographer) b.e.e).postFrameCallback(new be(b.d, 0));
             if (Build.VERSION.SDK_INT >= 33) {
-                ceVarB.g = ValueAnimator.getDurationScale();
-                if (ceVarB.h == null) {
-                    ceVarB.h = new l6(1, ceVarB);
+                durationScale = ValueAnimator.getDurationScale();
+                b.g = durationScale;
+                if (b.h == null) {
+                    b.h = new l6(1, b);
                 }
-                final l6 l6Var2 = ceVarB.h;
+                final l6 l6Var2 = b.h;
                 if (((ae) l6Var2.e) == null) {
                     ?? r1 = new ValueAnimator.DurationScaleChangeListener() { // from class: androidx.emoji2.text.ae
                         @Override // android.animation.ValueAnimator.DurationScaleChangeListener
                         public final void onChanged(float f2) {
-                            ((ce) l6Var2.f).g = f2;
+                            ((ce) l6.this.f).g = f2;
                         }
                     };
                     l6Var2.e = r1;

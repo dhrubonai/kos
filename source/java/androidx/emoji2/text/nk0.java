@@ -6,7 +6,7 @@ public abstract class nk0 {
     public static int b;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ze1 f812a = new ze1();
+    public static final ze1 f811a = new ze1();
     public static int c = 1;
     public static final gf1 d = new gf1();
     public static final jj e = new jj(3);

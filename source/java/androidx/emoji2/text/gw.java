@@ -7,10 +7,10 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public abstract class gw {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ComposableLambdaImpl f442a;
+    public static final ComposableLambdaImpl f441a;
 
     static {
         new ComposableLambdaImpl(-1187811352, false, wc.r);
-        f442a = new ComposableLambdaImpl(-91331245, false, wc.s);
+        f441a = new ComposableLambdaImpl(-91331245, false, wc.s);
     }
 }

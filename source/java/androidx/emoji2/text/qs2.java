@@ -28,7 +28,7 @@ public final class qs2 extends View {
         this.i = true;
         this.j = h50.c;
         this.k = q01.d;
-        sp0.f1079a.getClass();
+        sp0.f1078a.getClass();
         this.l = o90.p;
         setWillNotDraw(false);
         setClipBounds(null);
@@ -37,29 +37,29 @@ public final class qs2 extends View {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         op opVar = this.e;
-        w6 w6Var = opVar.f867a;
-        Canvas canvas2 = w6Var.f1261a;
-        w6Var.f1261a = canvas;
+        w6 w6Var = opVar.f866a;
+        Canvas canvas2 = w6Var.f1260a;
+        w6Var.f1260a = canvas;
         j70 j70Var = this.j;
         q01 q01Var = this.k;
         float width = getWidth();
         float height = getHeight();
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32);
+        long floatToRawIntBits = (Float.floatToRawIntBits(height) & 4294967295L) | (Float.floatToRawIntBits(width) << 32);
         rp0 rp0Var = this.m;
         um0 um0Var = this.l;
         np npVar = this.f;
         rg rgVar = npVar.e;
         mp mpVar = ((np) rgVar.g).d;
-        j70 j70Var2 = mpVar.f760a;
+        j70 j70Var2 = mpVar.f759a;
         q01 q01Var2 = mpVar.b;
-        lp lpVarD = rgVar.D();
+        lp D = rgVar.D();
         rg rgVar2 = npVar.e;
-        long jM = rgVar2.M();
+        long M = rgVar2.M();
         rp0 rp0Var2 = (rp0) rgVar2.f;
         rgVar2.c0(j70Var);
         rgVar2.d0(q01Var);
         rgVar2.b0(w6Var);
-        rgVar2.e0(jFloatToRawIntBits);
+        rgVar2.e0(floatToRawIntBits);
         rgVar2.f = rp0Var;
         w6Var.f();
         try {
@@ -67,17 +67,17 @@ public final class qs2 extends View {
             w6Var.n();
             rgVar2.c0(j70Var2);
             rgVar2.d0(q01Var2);
-            rgVar2.b0(lpVarD);
-            rgVar2.e0(jM);
+            rgVar2.b0(D);
+            rgVar2.e0(M);
             rgVar2.f = rp0Var2;
-            opVar.f867a.f1261a = canvas2;
+            opVar.f866a.f1260a = canvas2;
             this.g = false;
         } catch (Throwable th) {
             w6Var.n();
             rgVar2.c0(j70Var2);
             rgVar2.d0(q01Var2);
-            rgVar2.b0(lpVarD);
-            rgVar2.e0(jM);
+            rgVar2.b0(D);
+            rgVar2.e0(M);
             rgVar2.f = rp0Var2;
             throw th;
         }

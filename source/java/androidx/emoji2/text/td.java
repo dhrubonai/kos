@@ -8,11 +8,11 @@ import java.util.List;
 public final class td implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final xd f1115a;
+    public final xd f1114a;
     public boolean b;
 
     public td(xd xdVar) {
-        this.f1115a = xdVar;
+        this.f1114a = xdVar;
     }
 
     @Override // androidx.emoji2.text.fb1
@@ -29,8 +29,8 @@ public final class td implements fb1 {
         } else {
             obj = arrayList.get(0);
             int i2 = ((hr1) obj).d;
-            int iL0 = xs.l0(arrayList);
-            if (1 <= iL0) {
+            int l0 = xs.l0(arrayList);
+            if (1 <= l0) {
                 int i3 = 1;
                 while (true) {
                     Object obj3 = arrayList.get(i3);
@@ -39,7 +39,7 @@ public final class td implements fb1 {
                         obj = obj3;
                         i2 = i4;
                     }
-                    if (i3 == iL0) {
+                    if (i3 == l0) {
                         break;
                     }
                     i3++;
@@ -51,8 +51,8 @@ public final class td implements fb1 {
         if (!arrayList.isEmpty()) {
             obj2 = arrayList.get(0);
             int i6 = ((hr1) obj2).e;
-            int iL02 = xs.l0(arrayList);
-            if (1 <= iL02) {
+            int l02 = xs.l0(arrayList);
+            if (1 <= l02) {
                 int i7 = 1;
                 while (true) {
                     Object obj4 = arrayList.get(i7);
@@ -61,7 +61,7 @@ public final class td implements fb1 {
                         obj2 = obj4;
                         i6 = i8;
                     }
-                    if (i7 == iL02) {
+                    if (i7 == l02) {
                         break;
                     }
                     i7++;
@@ -71,124 +71,124 @@ public final class td implements fb1 {
         hr1 hr1Var2 = (hr1) obj2;
         int i9 = hr1Var2 != null ? hr1Var2.e : 0;
         boolean Z = hb1Var.Z();
-        xd xdVar = this.f1115a;
+        xd xdVar = this.f1114a;
         if (Z) {
             this.b = true;
-            xdVar.f1330a.setValue(new uw0(kx0.d(i5, i9)));
+            xdVar.f1329a.setValue(new uw0(kx0.d(i5, i9)));
         } else if (!this.b) {
-            xdVar.f1330a.setValue(new uw0(kx0.d(i5, i9)));
+            xdVar.f1329a.setValue(new uw0(kx0.d(i5, i9)));
         }
         return hb1Var.P(i5, i9, re0.d, new m9(2, arrayList));
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int f(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).N(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).N(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).N(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).N(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int g(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).c(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).c(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).c(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).c(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int i(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).l(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).l(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).l(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).l(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int j(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).n(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).n(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).n(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).n(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }

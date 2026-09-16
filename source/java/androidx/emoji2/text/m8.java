@@ -86,12 +86,12 @@ public final class m8 extends g01 implements sm0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // androidx.emoji2.text.sm0
-    public final Object a() throws Throwable {
-        eg0 eg0VarA;
-        v20 v20VarE;
+    public final Object a() {
+        eg0 eg0Var;
+        v20 E2;
         Choreographer choreographer;
         int i2 = this.e;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         Object[] objArr = 0;
         switch (i2) {
             case 0:
@@ -109,9 +109,9 @@ public final class m8 extends g01 implements sm0 {
             case 4:
                 t8.b("LocalView");
                 throw null;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return UUID.randomUUID();
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return "DEFAULT_TEST_TAG";
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return UUID.randomUUID();
@@ -119,59 +119,59 @@ public final class m8 extends g01 implements sm0 {
                 if (Looper.myLooper() == Looper.getMainLooper()) {
                     choreographer = Choreographer.getInstance();
                 } else {
-                    q60 q60Var = e90.f294a;
-                    sq0 sq0Var = h91.f462a;
+                    q60 q60Var = e90.f293a;
+                    sq0 sq0Var = h91.f461a;
                     Function2 dcVar = new dc(2, objArr == true ? 1 : 0, 0);
-                    Thread threadCurrentThread = Thread.currentThread();
+                    Thread currentThread = Thread.currentThread();
                     dd0 dd0Var = dd0.z;
                     o10 o10Var = (o10) sq0Var.n(dd0Var);
                     oe0 oe0Var = oe0.d;
                     if (o10Var == null) {
-                        eg0VarA = sl2.a();
-                        v20VarE = lx0.E(oe0Var, kx0.H(sq0Var, eg0VarA), true);
-                        q60 q60Var2 = e90.f294a;
-                        if (v20VarE != q60Var2 && v20VarE.n(dd0Var) == null) {
-                            v20VarE = v20VarE.B(q60Var2);
+                        eg0Var = sl2.a();
+                        E2 = lx0.E(oe0Var, kx0.H(sq0Var, eg0Var), true);
+                        q60 q60Var2 = e90.f293a;
+                        if (E2 != q60Var2 && E2.n(dd0Var) == null) {
+                            E2 = E2.B(q60Var2);
                         }
                     } else {
                         if (o10Var instanceof eg0) {
                         }
-                        eg0VarA = (eg0) sl2.f1075a.get();
-                        v20VarE = lx0.E(oe0Var, sq0Var, true);
-                        q60 q60Var3 = e90.f294a;
-                        if (v20VarE != q60Var3 && v20VarE.n(dd0Var) == null) {
-                            v20VarE = v20VarE.B(q60Var3);
+                        eg0Var = (eg0) sl2.f1074a.get();
+                        E2 = lx0.E(oe0Var, sq0Var, true);
+                        q60 q60Var3 = e90.f293a;
+                        if (E2 != q60Var3 && E2.n(dd0Var) == null) {
+                            E2 = E2.B(q60Var3);
                         }
                     }
-                    sl slVar = new sl(v20VarE, threadCurrentThread, eg0VarA);
+                    sl slVar = new sl(E2, currentThread, eg0Var);
                     slVar.j0(h30.d, slVar, dcVar);
-                    eg0 eg0Var = slVar.h;
-                    if (eg0Var != null) {
+                    eg0 eg0Var2 = slVar.h;
+                    if (eg0Var2 != null) {
                         int i3 = eg0.i;
-                        eg0Var.J(false);
+                        eg0Var2.J(false);
                     }
                     while (!Thread.interrupted()) {
                         try {
-                            long jK = eg0Var != null ? eg0Var.K() : Long.MAX_VALUE;
+                            long K = eg0Var2 != null ? eg0Var2.K() : Long.MAX_VALUE;
                             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = jy0.d;
                             if (atomicReferenceFieldUpdater.get(slVar) instanceof pu0) {
-                                LockSupport.parkNanos(slVar, jK);
+                                LockSupport.parkNanos(slVar, K);
                             } else {
-                                if (eg0Var != null) {
+                                if (eg0Var2 != null) {
                                     int i4 = eg0.i;
-                                    eg0Var.G(false);
+                                    eg0Var2.G(false);
                                 }
-                                Object objO = jm.O(atomicReferenceFieldUpdater.get(slVar));
-                                lu luVar = objO instanceof lu ? (lu) objO : null;
+                                Object O = jm.O(atomicReferenceFieldUpdater.get(slVar));
+                                lu luVar = O instanceof lu ? (lu) O : null;
                                 if (luVar != null) {
-                                    throw luVar.f713a;
+                                    throw luVar.f712a;
                                 }
-                                choreographer = (Choreographer) objO;
+                                choreographer = (Choreographer) O;
                             }
                         } catch (Throwable th) {
-                            if (eg0Var != null) {
+                            if (eg0Var2 != null) {
                                 int i5 = eg0.i;
-                                eg0Var.G(false);
+                                eg0Var2.G(false);
                             }
                             throw th;
                         }
@@ -182,19 +182,19 @@ public final class m8 extends g01 implements sm0 {
                 }
                 gc gcVar = new gc(choreographer, ex2.p(Looper.getMainLooper()));
                 return kx0.H(gcVar, gcVar.o);
-            case 9:
-            case 10:
+            case pz0.b /* 9 */:
+            case pz0.d /* 10 */:
             case 11:
                 return up2Var;
             case 12:
                 return null;
             case 13:
-                jf2 jf2Var = lt.f709a;
+                jf2 jf2Var = lt.f708a;
                 long j2 = gt.t;
-                return new kt(j2, gt.j, gt.u, gt.k, gt.e, gt.w, gt.l, gt.x, gt.m, gt.H, gt.p, gt.I, gt.q, gt.f437a, gt.g, gt.y, gt.n, gt.G, gt.o, j2, gt.f, gt.d, gt.b, gt.h, gt.c, gt.i, gt.r, gt.s, gt.v, gt.z, gt.F, gt.A, gt.B, gt.C, gt.D, gt.E);
+                return new kt(j2, gt.j, gt.u, gt.k, gt.e, gt.w, gt.l, gt.x, gt.m, gt.H, gt.p, gt.I, gt.q, gt.f436a, gt.g, gt.y, gt.n, gt.G, gt.o, j2, gt.f, gt.d, gt.b, gt.h, gt.c, gt.i, gt.r, gt.s, gt.v, gt.z, gt.F, gt.A, gt.B, gt.C, gt.D, gt.E);
             case 14:
                 return Boolean.TRUE;
-            case 15:
+            case pz0.f /* 15 */:
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
                 return null;
             case 17:

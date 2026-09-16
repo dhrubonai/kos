@@ -8,10 +8,10 @@ import java.util.NoSuchElementException;
 public final class nd implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final sd f805a;
+    public final sd f804a;
 
     public nd(sd sdVar) {
-        this.f805a = sdVar;
+        this.f804a = sdVar;
     }
 
     @Override // androidx.emoji2.text.fb1
@@ -33,13 +33,13 @@ public final class nd implements fb1 {
                 break;
             }
             ab1 ab1Var = (ab1) list.get(i5);
-            Object objT = ab1Var.t();
-            pd pdVar = objT instanceof pd ? (pd) objT : null;
-            if (pdVar != null && ((Boolean) pdVar.f899a.getValue()).booleanValue()) {
-                hr1 hr1VarQ = ab1Var.q(j);
-                long jD = kx0.d(hr1VarQ.d, hr1VarQ.e);
-                hr1VarArr[i5] = hr1VarQ;
-                j2 = jD;
+            Object t = ab1Var.t();
+            pd pdVar = t instanceof pd ? (pd) t : null;
+            if (pdVar != null && ((Boolean) pdVar.f898a.getValue()).booleanValue()) {
+                hr1 q = ab1Var.q(j);
+                long d = kx0.d(q.d, q.e);
+                hr1VarArr[i5] = q;
+                j2 = d;
             }
             i5++;
         }
@@ -129,119 +129,119 @@ public final class nd implements fb1 {
             }
         }
         if (!hb1Var.Z()) {
-            this.f805a.b.setValue(new uw0(kx0.d(i2, i4)));
+            this.f804a.b.setValue(new uw0(kx0.d(i2, i4)));
         }
         return hb1Var.P(i2, i4, re0.d, new dw0(hr1VarArr, this, i2, i4));
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int f(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).N(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).N(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).N(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).N(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int g(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).c(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).c(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).c(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).c(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int i(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).l(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).l(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).l(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).l(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final int j(fx0 fx0Var, List list, int i) {
-        Integer numValueOf;
+        Integer valueOf;
         if (list.isEmpty()) {
-            numValueOf = null;
+            valueOf = null;
         } else {
-            numValueOf = Integer.valueOf(((ab1) list.get(0)).n(i));
-            int iL0 = xs.l0(list);
+            valueOf = Integer.valueOf(((ab1) list.get(0)).n(i));
+            int l0 = xs.l0(list);
             int i2 = 1;
-            if (1 <= iL0) {
+            if (1 <= l0) {
                 while (true) {
-                    Integer numValueOf2 = Integer.valueOf(((ab1) list.get(i2)).n(i));
-                    if (numValueOf2.compareTo(numValueOf) > 0) {
-                        numValueOf = numValueOf2;
+                    Integer valueOf2 = Integer.valueOf(((ab1) list.get(i2)).n(i));
+                    if (valueOf2.compareTo(valueOf) > 0) {
+                        valueOf = valueOf2;
                     }
-                    if (i2 == iL0) {
+                    if (i2 == l0) {
                         break;
                     }
                     i2++;
                 }
             }
         }
-        if (numValueOf != null) {
-            return numValueOf.intValue();
+        if (valueOf != null) {
+            return valueOf.intValue();
         }
         return 0;
     }

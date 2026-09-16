@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class yf0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final yf0 f1384a = new yf0();
+    public static final yf0 f1383a = new yf0();
 }

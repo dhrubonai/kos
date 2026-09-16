@@ -10,14 +10,14 @@ public final class z9 implements qp0 {
     public static boolean f = true;
 
     /* renamed from: a, reason: collision with root package name */
-    public final v7 f1425a;
+    public final v7 f1424a;
     public final Object b = new Object();
     public rs2 c;
     public boolean d;
     public final y9 e;
 
     public z9(v7 v7Var) {
-        this.f1425a = v7Var;
+        this.f1424a = v7Var;
         y9 y9Var = new y9(this);
         this.e = y9Var;
         if (v7Var.isAttachedToWindow()) {
@@ -46,7 +46,7 @@ public final class z9 implements qp0 {
         rp0 rp0Var;
         synchronized (this.b) {
             try {
-                v7 v7Var = this.f1425a;
+                v7 v7Var = this.f1424a;
                 int i = Build.VERSION.SDK_INT;
                 if (i >= 29) {
                     v7Var.getUniqueDrawingId();
@@ -55,13 +55,13 @@ public final class z9 implements qp0 {
                     zp0Var = new xp0();
                 } else if (f) {
                     try {
-                        zp0Var = new vp0(this.f1425a, new op(), new np());
+                        zp0Var = new vp0(this.f1424a, new op(), new np());
                     } catch (Throwable unused) {
                         f = false;
-                        zp0Var = new zp0(c(this.f1425a));
+                        zp0Var = new zp0(c(this.f1424a));
                     }
                 } else {
-                    zp0Var = new zp0(c(this.f1425a));
+                    zp0Var = new zp0(c(this.f1424a));
                 }
                 rp0Var = new rp0(zp0Var);
             } catch (Throwable th) {

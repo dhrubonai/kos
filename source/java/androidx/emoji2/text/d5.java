@@ -59,11 +59,11 @@ public final class d5 extends g01 implements um0 {
                 hb1 hb1Var2 = (hb1) this.f;
                 bs0 bs0Var = (bs0) this.h;
                 int i5 = bs0Var.b;
-                rj2 rj2Var = bs0Var.f165a;
+                rj2 rj2Var = bs0Var.f164a;
                 gn2 gn2Var = bs0Var.c;
                 tk2 tk2Var = (tk2) bs0Var.d.a();
-                rj2Var.a(il1.e, ly0.d(hb1Var2, i5, gn2Var, tk2Var != null ? tk2Var.f1127a : null, hb1Var2.getLayoutDirection() == q01.e, hr1Var.d), this.g, hr1Var.d);
-                gr1.j(gr1Var2, hr1Var, Math.round(-rj2Var.f1016a.g()), 0);
+                rj2Var.a(il1.e, ly0.d(hb1Var2, i5, gn2Var, tk2Var != null ? tk2Var.f1126a : null, hb1Var2.getLayoutDirection() == q01.e, hr1Var.d), this.g, hr1Var.d);
+                gr1.j(gr1Var2, hr1Var, Math.round(-rj2Var.f1015a.g()), 0);
                 break;
             case 2:
                 gr1 gr1Var3 = (gr1) obj;
@@ -77,8 +77,8 @@ public final class d5 extends g01 implements um0 {
                     hr1 hr1Var2 = hr1VarArr[i6];
                     int i8 = i7 + 1;
                     lx0.u(hr1Var2);
-                    Object objT = hr1Var2.t();
-                    x12 x12Var = objT instanceof x12 ? (x12) objT : null;
+                    Object t = hr1Var2.t();
+                    x12 x12Var = t instanceof x12 ? (x12) t : null;
                     t30 t30Var = x12Var != null ? x12Var.c : null;
                     int i9 = this.g;
                     gr1Var3.f(hr1Var2, iArr3[i7], t30Var != null ? t30Var.a(i9 - hr1Var2.e, q01.d) : z12Var.b.a(0, i9 - hr1Var2.e), 0.0f);
@@ -92,21 +92,21 @@ public final class d5 extends g01 implements um0 {
                 hb1 hb1Var3 = (hb1) this.f;
                 pr2 pr2Var = (pr2) this.h;
                 int i10 = pr2Var.b;
-                rj2 rj2Var2 = pr2Var.f924a;
+                rj2 rj2Var2 = pr2Var.f923a;
                 gn2 gn2Var2 = pr2Var.c;
                 tk2 tk2Var2 = (tk2) pr2Var.d.a();
-                rj2Var2.a(il1.d, ly0.d(hb1Var3, i10, gn2Var2, tk2Var2 != null ? tk2Var2.f1127a : null, false, hr1Var3.d), this.g, hr1Var3.e);
-                gr1.j(gr1Var4, hr1Var3, 0, Math.round(-rj2Var2.f1016a.g()));
+                rj2Var2.a(il1.d, ly0.d(hb1Var3, i10, gn2Var2, tk2Var2 != null ? tk2Var2.f1126a : null, false, hr1Var3.d), this.g, hr1Var3.e);
+                gr1.j(gr1Var4, hr1Var3, 0, Math.round(-rj2Var2.f1015a.g()));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d5(ArrayList arrayList, hb1 hb1Var, int i, ArrayList arrayList2) {
         super(1);
         this.e = 0;
-        float f = l5.f675a;
+        float f = l5.f674a;
         this.h = arrayList;
         this.f = hb1Var;
         this.g = i;

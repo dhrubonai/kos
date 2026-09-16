@@ -7,17 +7,17 @@ import java.util.List;
 public final class hb implements fb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ bt1 f465a;
+    public final /* synthetic */ bt1 f464a;
     public final /* synthetic */ q01 b;
 
     public hb(bt1 bt1Var, q01 q01Var) {
-        this.f465a = bt1Var;
+        this.f464a = bt1Var;
         this.b = q01Var;
     }
 
     @Override // androidx.emoji2.text.fb1
     public final gb1 e(hb1 hb1Var, List list, long j) {
-        this.f465a.setParentLayoutDirection(this.b);
+        this.f464a.setParentLayoutDirection(this.b);
         return hb1Var.P(0, 0, re0.d, j7.m);
     }
 }

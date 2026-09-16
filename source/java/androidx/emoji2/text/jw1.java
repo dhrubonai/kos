@@ -14,7 +14,7 @@ public final class jw1 extends t81 {
     @Override // androidx.emoji2.text.t81
     public final void c(Object obj, Object obj2, Object obj3) {
         iw1 iw1Var = (iw1) obj2;
-        ((em) this.h.e).h((mb1) obj, iw1Var.f553a, iw1Var.b, iw1Var.c);
+        ((em) this.h.e).h((mb1) obj, iw1Var.f552a, iw1Var.b, iw1Var.c);
     }
 
     @Override // androidx.emoji2.text.t81

@@ -3,23 +3,22 @@ package androidx.emoji2.text;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import java.lang.reflect.InvocationTargetException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class nj implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f811a;
+    public final /* synthetic */ int f810a;
     public boolean b;
 
     public /* synthetic */ nj(int i) {
-        this.f811a = i;
+        this.f810a = i;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        switch (this.f811a) {
+    public final void onActivityCreated(Activity activity, Bundle bundle) {
+        switch (this.f810a) {
             case 0:
                 if (!this.b) {
                     hs1.d(activity);
@@ -39,32 +38,32 @@ public final class nj implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityDestroyed(Activity activity) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityPaused(Activity activity) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityResumed(Activity activity) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityStarted(Activity activity) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityStopped(Activity activity) {
-        int i = this.f811a;
+        int i = this.f810a;
     }
 
     private final void a(Activity activity) {

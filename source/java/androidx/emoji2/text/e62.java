@@ -7,15 +7,15 @@ import java.util.concurrent.atomic.AtomicReference;
 public abstract class e62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final b62 f288a = new b62(new byte[0], 0, 0, false);
+    public static final b62 f287a = new b62(new byte[0], 0, 0, false);
     public static final int b;
     public static final AtomicReference[] c;
 
     static {
-        int iHighestOneBit = Integer.highestOneBit((Runtime.getRuntime().availableProcessors() * 2) - 1);
-        b = iHighestOneBit;
-        AtomicReference[] atomicReferenceArr = new AtomicReference[iHighestOneBit];
-        for (int i = 0; i < iHighestOneBit; i++) {
+        int highestOneBit = Integer.highestOneBit((Runtime.getRuntime().availableProcessors() * 2) - 1);
+        b = highestOneBit;
+        AtomicReference[] atomicReferenceArr = new AtomicReference[highestOneBit];
+        for (int i = 0; i < highestOneBit; i++) {
             atomicReferenceArr[i] = new AtomicReference();
         }
         c = atomicReferenceArr;
@@ -30,7 +30,7 @@ public abstract class e62 {
             return;
         }
         AtomicReference atomicReference = c[(int) (Thread.currentThread().getId() & (b - 1))];
-        b62 b62Var2 = f288a;
+        b62 b62Var2 = f287a;
         b62 b62Var3 = (b62) atomicReference.getAndSet(b62Var2);
         if (b62Var3 == b62Var2) {
             return;
@@ -48,7 +48,7 @@ public abstract class e62 {
 
     public static final b62 b() {
         AtomicReference atomicReference = c[(int) (Thread.currentThread().getId() & (b - 1))];
-        b62 b62Var = f288a;
+        b62 b62Var = f287a;
         b62 b62Var2 = (b62) atomicReference.getAndSet(b62Var);
         if (b62Var2 == b62Var) {
             return new b62();

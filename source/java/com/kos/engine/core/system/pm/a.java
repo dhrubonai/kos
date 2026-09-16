@@ -9,19 +9,19 @@ import com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession;
 public final /* synthetic */ class a implements BPackageInstallerService.CallbackInvocation {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1477a;
+    public final /* synthetic */ int f1476a;
     public final /* synthetic */ VirtualPackageInstallerSession b;
     public final /* synthetic */ boolean c;
 
     public /* synthetic */ a(VirtualPackageInstallerSession virtualPackageInstallerSession, boolean z, int i) {
-        this.f1477a = i;
+        this.f1476a = i;
         this.b = virtualPackageInstallerSession;
         this.c = z;
     }
 
     @Override // com.kos.engine.core.system.pm.BPackageInstallerService.CallbackInvocation
     public final void invoke(IPackageInstallerCallback iPackageInstallerCallback) {
-        switch (this.f1477a) {
+        switch (this.f1476a) {
             case 0:
                 BPackageInstallerService.lambda$notifySessionFinished$5(this.b, this.c, iPackageInstallerCallback);
                 break;

@@ -36,18 +36,18 @@ public final class e92 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((e92) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((e92) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         mf1 mf1Var;
         int i = this.i;
         Context context = this.j;
         int i2 = this.k;
         if (i == 0) {
             mz0.L(obj);
-            q60 q60Var = e90.f294a;
+            q60 q60Var = e90.f293a;
             a60 a60Var = a60.f;
             g3 g3Var = new g3(context, i2, null, 2);
             mf1 mf1Var2 = this.l;
@@ -61,17 +61,17 @@ public final class e92 extends hh2 implements Function2 {
             mf1Var = mf1Var2;
         } else {
             if (i != 1) {
-                throw new IllegalStateException(a.a.a.c.a(-505818857488162L, wj1.f1284a));
+                throw new IllegalStateException(a.a.a.c.a(-505818857488162L, wj1.f1283a));
             }
             mf1Var = this.h;
             mz0.L(obj);
         }
-        int i3 = n92.f799a;
+        int i3 = n92.f798a;
         mf1Var.setValue((List) obj);
         this.m.setValue(n92.q(i2));
         n92.n(i2, this.n);
         this.o.setValue(Boolean.FALSE);
         Toast.makeText(context, context.getString(R.string.gms_checks_refreshed), 0).show();
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

@@ -6,12 +6,12 @@ public class te1 {
     public static final Object d = new Object();
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f1117a;
+    public final Object f1116a;
     public volatile Object b;
     public volatile Object c;
 
     public te1() {
-        this.f1117a = new Object();
+        this.f1116a = new Object();
         new t22();
         Object obj = d;
         this.c = obj;
@@ -19,6 +19,6 @@ public class te1 {
     }
 
     public te1(qd0 qd0Var) {
-        this.f1117a = qd0Var;
+        this.f1116a = qd0Var;
     }
 }

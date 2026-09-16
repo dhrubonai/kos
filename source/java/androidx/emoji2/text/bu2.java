@@ -21,17 +21,17 @@ public abstract class bu2 extends gz {
     public void g(AttributeSet attributeSet) {
         super.g(attributeSet);
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, av1.b);
-            int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+            TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, av1.b);
+            int indexCount = obtainStyledAttributes.getIndexCount();
             for (int i = 0; i < indexCount; i++) {
-                int index = typedArrayObtainStyledAttributes.getIndex(i);
+                int index = obtainStyledAttributes.getIndex(i);
                 if (index == 6) {
                     this.k = true;
                 } else if (index == 22) {
                     this.l = true;
                 }
             }
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 

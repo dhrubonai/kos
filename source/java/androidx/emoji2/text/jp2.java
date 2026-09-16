@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class jp2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final vh2 f593a;
+    public final vh2 f592a;
     public final zl0 b;
     public final int c;
     public final int d;
     public final Object e;
 
     public jp2(vh2 vh2Var, zl0 zl0Var, int i, int i2, Object obj) {
-        this.f593a = vh2Var;
+        this.f592a = vh2Var;
         this.b = zl0Var;
         this.c = i;
         this.d = i2;
@@ -27,19 +27,19 @@ public final class jp2 {
             return false;
         }
         jp2 jp2Var = (jp2) obj;
-        return lx0.n(this.f593a, jp2Var.f593a) && lx0.n(this.b, jp2Var.b) && this.c == jp2Var.c && this.d == jp2Var.d && lx0.n(this.e, jp2Var.e);
+        return lx0.n(this.f592a, jp2Var.f592a) && lx0.n(this.b, jp2Var.b) && this.c == jp2Var.c && this.d == jp2Var.d && lx0.n(this.e, jp2Var.e);
     }
 
     public final int hashCode() {
-        vh2 vh2Var = this.f593a;
-        int iA = jx0.a(this.d, jx0.a(this.c, (((vh2Var == null ? 0 : vh2Var.hashCode()) * 31) + this.b.d) * 31, 31), 31);
+        vh2 vh2Var = this.f592a;
+        int a2 = jx0.a(this.d, jx0.a(this.c, (((vh2Var == null ? 0 : vh2Var.hashCode()) * 31) + this.b.d) * 31, 31), 31);
         Object obj = this.e;
-        return iA + (obj != null ? obj.hashCode() : 0);
+        return a2 + (obj != null ? obj.hashCode() : 0);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("TypefaceRequest(fontFamily=");
-        sb.append(this.f593a);
+        sb.append(this.f592a);
         sb.append(", fontWeight=");
         sb.append(this.b);
         sb.append(", fontStyle=");

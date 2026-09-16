@@ -90,9 +90,9 @@ public final class jg2 implements List, sy0 {
         int i2 = this.e;
         Iterator it = az0.l0(i2, i + i2).iterator();
         while (it.hasNext()) {
-            int iNextInt = ((pw0) it).nextInt();
-            if (lx0.n(obj, this.d.get(iNextInt))) {
-                return iNextInt - i2;
+            int nextInt = ((pw0) it).nextInt();
+            if (lx0.n(obj, this.d.get(nextInt))) {
+                return nextInt - i2;
             }
         }
         return -1;
@@ -128,11 +128,11 @@ public final class jg2 implements List, sy0 {
 
     @Override // java.util.List, java.util.Collection
     public final boolean remove(Object obj) {
-        int iIndexOf = indexOf(obj);
-        if (iIndexOf < 0) {
+        int indexOf = indexOf(obj);
+        if (indexOf < 0) {
             return false;
         }
-        remove(iIndexOf);
+        remove(indexOf);
         return true;
     }
 
@@ -154,8 +154,8 @@ public final class jg2 implements List, sy0 {
     public final boolean retainAll(Collection collection) {
         int i;
         l0 l0Var;
-        ec2 ec2VarK;
-        boolean zU;
+        ec2 k;
+        boolean u;
         a();
         yc2 yc2Var = this.d;
         int i2 = this.e;
@@ -170,20 +170,20 @@ public final class jg2 implements List, sy0 {
                 l0Var = af2Var2.c;
             }
             lx0.u(l0Var);
-            qp1 qp1VarE = l0Var.e();
-            qp1VarE.subList(i2, i3).retainAll(collection);
-            l0 l0VarC = qp1VarE.c();
-            if (lx0.n(l0VarC, l0Var)) {
+            qp1 e = l0Var.e();
+            e.subList(i2, i3).retainAll(collection);
+            l0 c = e.c();
+            if (lx0.n(c, l0Var)) {
                 break;
             }
             af2 af2Var3 = yc2Var.d;
             lx0.v(af2Var3, "null cannot be cast to non-null type androidx.compose.runtime.snapshots.StateListStateRecord<T of androidx.compose.runtime.snapshots.SnapshotStateListKt.writable>");
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                zU = bz0.u((af2) kc2.w(af2Var3, yc2Var, ec2VarK), i, l0VarC, true);
+                k = kc2.k();
+                u = bz0.u((af2) kc2.w(af2Var3, yc2Var, k), i, c, true);
             }
-            kc2.n(ec2VarK, yc2Var);
-        } while (!zU);
+            kc2.n(k, yc2Var);
+        } while (!u);
         int size2 = size - yc2Var.size();
         if (size2 > 0) {
             this.f = bz0.L(this.d);
@@ -241,12 +241,12 @@ public final class jg2 implements List, sy0 {
         a();
         int i2 = i + this.e;
         yc2 yc2Var = this.d;
-        boolean zAddAll = yc2Var.addAll(i2, collection);
-        if (zAddAll) {
+        boolean addAll = yc2Var.addAll(i2, collection);
+        if (addAll) {
             this.g = collection.size() + this.g;
             this.f = bz0.L(yc2Var);
         }
-        return zAddAll;
+        return addAll;
     }
 
     @Override // java.util.List
@@ -254,10 +254,10 @@ public final class jg2 implements List, sy0 {
         a();
         int i2 = this.e + i;
         yc2 yc2Var = this.d;
-        Object objRemove = yc2Var.remove(i2);
+        Object remove = yc2Var.remove(i2);
         this.g--;
         this.f = bz0.L(yc2Var);
-        return objRemove;
+        return remove;
     }
 
     @Override // java.util.List

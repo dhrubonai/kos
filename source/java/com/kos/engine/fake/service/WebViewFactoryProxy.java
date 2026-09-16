@@ -8,7 +8,6 @@ import androidx.emoji2.text.xa1;
 import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -20,21 +19,21 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewPackage")
     public static class GetWebViewPackage extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-943145312468770L, strArr), 3, c.a(-943265571553058L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-942874729529122L, strArr), 3, c.a(-942994988613410L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-941556174569250L, strArr), c.a(-941607714176802L, strArr), e);
             }
-            String strA = c.a(-941272706727714L, strArr);
-            jx0.r(new StringBuilder(), c.a(-942024326004514L, strArr), strA, 3, c.a(-941354311106338L, strArr));
-            return strA;
+            String a2 = c.a(-941272706727714L, strArr);
+            jx0.r(new StringBuilder(), c.a(-942024326004514L, strArr), a2, 3, c.a(-941354311106338L, strArr));
+            return a2;
         }
     }
 
@@ -42,14 +41,14 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderClass")
     public static class GetWebViewProviderClass extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-942213304565538L, strArr), 3, c.a(-941783807835938L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-942002851168034L, strArr), 3, c.a(-944803169845026L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-944493932199714L, strArr), c.a(-944614191284002L, strArr), e);
@@ -68,14 +67,14 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderClassLoader")
     public static class GetWebViewProviderClassLoader extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-943768082726690L, strArr), 3, c.a(-943888341810978L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-943531859525410L, strArr), 3, c.a(-943652118609698L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-944472457363234L, strArr), c.a(-943974241156898L, strArr), e);
@@ -95,16 +94,16 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderClassLoader")
     public static class GetWebViewProviderClassLoaderWithPackage extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (objArr != null && objArr.length > 0) {
                 jx0.r(new StringBuilder(), c.a(-956498365792034L, strArr), (String) objArr[0], 3, c.a(-956378106707746L, strArr));
             }
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-956219192917794L, strArr), 3, c.a(-956270732525346L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-954892048023330L, strArr), c.a(-954462551293730L, strArr), e);
@@ -124,16 +123,16 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderClass")
     public static class GetWebViewProviderClassWithPackage extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             if (objArr != null && objArr.length > 0) {
                 jx0.r(new StringBuilder(), c.a(-958121863429922L, strArr), (String) objArr[0], 3, c.a(-958070323822370L, strArr));
             }
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-957868460359458L, strArr), 3, c.a(-957919999967010L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-958710273949474L, strArr), c.a(-958280777219874L, strArr), e);
@@ -152,14 +151,14 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderInfo")
     public static class GetWebViewProviderInfo extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-957434668662562L, strArr), 3, c.a(-957554927746850L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-957219920297762L, strArr), 3, c.a(-957271459905314L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-951477549023010L, strArr), c.a(-951529088630562L, strArr), e);
@@ -173,21 +172,21 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderPackage")
     public static class GetWebViewProviderPackage extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-952083139411746L, strArr), 3, c.a(-951653642682146L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-951864096079650L, strArr), 3, c.a(-950266368245538L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-950498296479522L, strArr), c.a(-950068799749922L, strArr), e);
             }
-            String strA = c.a(-950854778765090L, strArr);
-            jx0.r(new StringBuilder(), c.a(-951073822097186L, strArr), strA, 3, c.a(-950953563012898L, strArr));
-            return strA;
+            String a2 = c.a(-950854778765090L, strArr);
+            jx0.r(new StringBuilder(), c.a(-951073822097186L, strArr), a2, 3, c.a(-950953563012898L, strArr));
+            return a2;
         }
     }
 
@@ -195,14 +194,14 @@ public class WebViewFactoryProxy extends ClassInvocationStub {
     @ProxyMethod("getWebViewProviderPackageInfo")
     public static class GetWebViewProviderPackageInfo extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
             nz0.Q(c.a(-950713044844322L, strArr), 3, c.a(-953582082998050L, strArr));
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
                     nz0.Q(c.a(-953758176657186L, strArr), 3, c.a(-953328679927586L, strArr));
-                    return objInvoke;
+                    return invoke;
                 }
             } catch (Exception e) {
                 nz0.P(c.a(-954166198550306L, strArr), c.a(-954217738157858L, strArr), e);

@@ -52,14 +52,14 @@ public class BlackReflection {
                         BFieldNotProcess bFieldNotProcess = (BFieldNotProcess) method.getAnnotation(BFieldNotProcess.class);
                         if (bField == null && bFieldNotProcess == null) {
                             if (((BFieldSetNotProcess) method.getAnnotation(BFieldSetNotProcess.class)) != null) {
-                                Reflector reflectorField = Reflector.on((Class<?>) classNameByBlackClass).field(name.substring(5));
+                                Reflector field = Reflector.on((Class<?>) classNameByBlackClass).field(name.substring(5));
                                 if (z2) {
-                                    reflectorField.set(objArr[0]);
+                                    field.set(objArr[0]);
                                 } else {
                                     if (obj3 == null) {
                                         return 0;
                                     }
-                                    reflectorField.set(obj3, objArr[0]);
+                                    field.set(obj3, objArr[0]);
                                 }
                                 return 0;
                             }
@@ -81,13 +81,13 @@ public class BlackReflection {
                             BConstructor bConstructor = (BConstructor) method.getAnnotation(BConstructor.class);
                             BConstructorNotProcess bConstructorNotProcess = (BConstructorNotProcess) method.getAnnotation(BConstructorNotProcess.class);
                             if (bConstructor == null && bConstructorNotProcess == null) {
-                                Reflector reflectorMethod = Reflector.on((Class<?>) classNameByBlackClass).method(name, paramClass);
-                                return z2 ? reflectorMethod.call(objArr) : obj3 == null ? BlackReflection.generateNullValue(returnType) : reflectorMethod.callByCaller(obj3, objArr);
+                                Reflector method2 = Reflector.on((Class<?>) classNameByBlackClass).method(name, paramClass);
+                                return z2 ? method2.call(objArr) : obj3 == null ? BlackReflection.generateNullValue(returnType) : method2.callByCaller(obj3, objArr);
                             }
                             return Reflector.on((Class<?>) classNameByBlackClass).constructor(paramClass).newInstance(objArr);
                         }
-                        Reflector reflectorField2 = Reflector.on((Class<?>) classNameByBlackClass).field(name);
-                        return z2 ? reflectorField2.get() : obj3 == null ? BlackReflection.generateNullValue(returnType) : reflectorField2.get(obj3);
+                        Reflector field2 = Reflector.on((Class<?>) classNameByBlackClass).field(name);
+                        return z2 ? field2.get() : obj3 == null ? BlackReflection.generateNullValue(returnType) : field2.get(obj3);
                     } catch (Throwable th) {
                         if (BlackReflection.DEBUG) {
                             if (th.getCause() != null) {

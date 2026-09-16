@@ -7,7 +7,7 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public final class l31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f672a;
+    public final Object f671a;
     public final Object b;
     public int c;
     public ComposableLambdaImpl d;
@@ -15,7 +15,7 @@ public final class l31 {
 
     public l31(m31 m31Var, int i, Object obj, Object obj2) {
         this.e = m31Var;
-        this.f672a = obj;
+        this.f671a = obj;
         this.b = obj2;
         this.c = i;
     }

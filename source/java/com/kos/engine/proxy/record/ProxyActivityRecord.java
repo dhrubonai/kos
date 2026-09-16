@@ -42,10 +42,10 @@ public class ProxyActivityRecord {
         if (str != null && str.length() > 0) {
             intent.putExtra(c.a(-847779858628386L, strArr), str);
         }
-        String strA = c.a(-847887232810786L, strArr);
+        String a2 = c.a(-847887232810786L, strArr);
         Bundle bundle = new Bundle();
         bundle.putBinder(c.a(-862314027958050L, strArr), iBinder);
-        intent.putExtra(strA, bundle);
+        intent.putExtra(a2, bundle);
     }
 
     public static void saveStub(Intent intent, Intent intent2, ActivityInfo activityInfo, IBinder iBinder, int i) {

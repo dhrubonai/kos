@@ -17,8 +17,8 @@ public abstract class n10 extends lk {
     public void l() {
         l10 l10Var = this.f;
         if (l10Var != null && l10Var != this) {
-            t20 t20VarN = t().n(dd0.z);
-            lx0.u(t20VarN);
+            t20 n = t().n(dd0.z);
+            lx0.u(n);
             a90 a90Var = (a90) l10Var;
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a90.k;
             while (atomicReferenceFieldUpdater.get(a90Var) == l8.d) {

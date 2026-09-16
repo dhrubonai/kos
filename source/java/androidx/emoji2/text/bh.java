@@ -40,7 +40,7 @@ public final class bh extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((bh) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((bh) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -51,7 +51,7 @@ public final class bh extends hh2 implements Function2 {
         boolean z2;
         switch (this.h) {
             case 0:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 String str2 = this.i;
                 int i = this.j;
                 mz0.L(obj);
@@ -89,7 +89,7 @@ public final class bh extends hh2 implements Function2 {
                     c01.j0(str3, i2);
                     z2 = !c01.b0(str3, i2);
                 } catch (Exception e2) {
-                    String[] strArr2 = wj1.f1284a;
+                    String[] strArr2 = wj1.f1283a;
                     Log.e(a.a.a.c.a(-378352818077474L, strArr2), a.a.a.c.a(-378434422456098L, strArr2) + str3 + a.a.a.c.a(-379091552452386L, strArr2) + i2, e2);
                     z2 = false;
                 }

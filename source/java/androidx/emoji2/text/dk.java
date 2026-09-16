@@ -12,14 +12,14 @@ import java.util.ArrayList;
 public final class dk {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f255a;
+    public final /* synthetic */ int f254a;
     public int b;
     public boolean c;
     public final Object d;
     public final Object e;
 
     public dk(om0 om0Var) {
-        this.f255a = 0;
+        this.f254a = 0;
         om0Var.getClass();
         this.d = new ArrayList();
         this.b = -1;
@@ -27,7 +27,7 @@ public final class dk {
     }
 
     public void a(int i) {
-        switch (this.f255a) {
+        switch (this.f254a) {
             case 1:
                 BottomSheetBehavior bottomSheetBehavior = (BottomSheetBehavior) this.e;
                 WeakReference weakReference = bottomSheetBehavior.W;
@@ -56,7 +56,7 @@ public final class dk {
     }
 
     public String toString() {
-        switch (this.f255a) {
+        switch (this.f254a) {
             case 0:
                 StringBuilder sb = new StringBuilder(PackageParser.PARSE_IS_PRIVILEGED);
                 sb.append("BackStackEntry{");
@@ -73,13 +73,13 @@ public final class dk {
     }
 
     public dk(SideSheetBehavior sideSheetBehavior) {
-        this.f255a = 2;
+        this.f254a = 2;
         this.e = sideSheetBehavior;
         this.d = new f7(20, this);
     }
 
     public dk(BottomSheetBehavior bottomSheetBehavior) {
-        this.f255a = 1;
+        this.f254a = 1;
         this.e = bottomSheetBehavior;
         this.d = new t7(2, this);
     }

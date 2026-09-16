@@ -9,7 +9,7 @@ public final class aj1 extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        hr1 hr1VarQ = ab1Var.q(j);
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new pc(this, hr1VarQ, hb1Var, 12));
+        hr1 q = ab1Var.q(j);
+        return hb1Var.P(q.d, q.e, re0.d, new pc(this, q, hb1Var, 12));
     }
 }

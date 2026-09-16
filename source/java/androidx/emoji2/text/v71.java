@@ -7,7 +7,7 @@ import android.content.Context;
 public abstract class v71 extends zu {
     @Override // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
     public final void attachBaseContext(Context context) {
-        lx0.x(context, a.a.a.c.a(-249813036842786L, wj1.f1284a));
+        lx0.x(context, a.a.a.c.a(-249813036842786L, wj1.f1283a));
         super.attachBaseContext(ex2.W(context));
     }
 }

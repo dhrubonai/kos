@@ -20,43 +20,61 @@ public abstract class nf extends CheckBox {
     public tf g;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006e A[Catch: all -> 0x004d, TryCatch #1 {all -> 0x004d, blocks: (B:3:0x0034, B:5:0x003b, B:8:0x0041, B:9:0x0067, B:11:0x006e, B:12:0x0075, B:14:0x007c, B:21:0x0050, B:23:0x0056, B:25:0x005c), top: B:2:0x0034 }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007c A[Catch: all -> 0x004d, TRY_LEAVE, TryCatch #1 {all -> 0x004d, blocks: (B:3:0x0034, B:5:0x003b, B:8:0x0041, B:9:0x0067, B:11:0x006e, B:12:0x0075, B:14:0x007c, B:21:0x0050, B:23:0x0056, B:25:0x005c), top: B:2:0x0034 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public nf(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.chipStyle);
         int resourceId;
         int resourceId2;
-        super(context, attributeSet, R.attr.chipStyle);
         jm2.a(context);
         ql2.a(this, getContext());
         this.d = new of(this);
         Context context2 = getContext();
         int[] iArr = gv1.j;
-        rg rgVarV = rg.V(context2, attributeSet, iArr, R.attr.chipStyle);
-        TypedArray typedArray = (TypedArray) rgVarV.e;
-        es2.j(this, getContext(), iArr, attributeSet, (TypedArray) rgVarV.e, R.attr.chipStyle);
+        rg V = rg.V(context2, attributeSet, iArr, R.attr.chipStyle);
+        TypedArray typedArray = (TypedArray) V.e;
+        es2.j(this, getContext(), iArr, attributeSet, (TypedArray) V.e, R.attr.chipStyle);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
                     setButtonDrawable(xo2.o(getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
-            } else if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
+                if (typedArray.hasValue(2)) {
+                    setButtonTintList(V.G(2));
+                }
+                if (typedArray.hasValue(3)) {
+                    setButtonTintMode(fc0.b(typedArray.getInt(3, -1), null));
+                }
+                V.X();
+                lf lfVar = new lf(this);
+                this.e = lfVar;
+                lfVar.e(attributeSet, R.attr.chipStyle);
+                fg fgVar = new fg(this);
+                this.f = fgVar;
+                fgVar.d(attributeSet, R.attr.chipStyle);
+                getEmojiTextViewHelper().a(attributeSet, R.attr.chipStyle);
+            }
+            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
                 setButtonDrawable(xo2.o(getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
-                setButtonTintList(rgVarV.G(2));
             }
             if (typedArray.hasValue(3)) {
-                setButtonTintMode(fc0.b(typedArray.getInt(3, -1), null));
             }
-            rgVarV.X();
-            lf lfVar = new lf(this);
-            this.e = lfVar;
-            lfVar.e(attributeSet, R.attr.chipStyle);
-            fg fgVar = new fg(this);
-            this.f = fgVar;
-            fgVar.d(attributeSet, R.attr.chipStyle);
+            V.X();
+            lf lfVar2 = new lf(this);
+            this.e = lfVar2;
+            lfVar2.e(attributeSet, R.attr.chipStyle);
+            fg fgVar2 = new fg(this);
+            this.f = fgVar2;
+            fgVar2.d(attributeSet, R.attr.chipStyle);
             getEmojiTextViewHelper().a(attributeSet, R.attr.chipStyle);
         } catch (Throwable th) {
-            rgVarV.X();
+            V.X();
             throw th;
         }
     }
@@ -212,7 +230,7 @@ public abstract class nf extends CheckBox {
         of ofVar = this.d;
         if (ofVar != null) {
             ofVar.e = colorStateList;
-            ofVar.f852a = true;
+            ofVar.f851a = true;
             ofVar.a();
         }
     }

@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class rl0 implements ql0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final sl0[] f1018a;
+    public final sl0[] f1017a;
 
     public rl0(sl0[] sl0VarArr) {
-        this.f1018a = sl0VarArr;
+        this.f1017a = sl0VarArr;
     }
 }

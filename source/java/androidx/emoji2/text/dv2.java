@@ -14,22 +14,30 @@ public final class dv2 extends ev2 {
 
     @Override // androidx.emoji2.text.ev2
     public final float a() {
-        return this.e.getAlpha();
+        float alpha;
+        alpha = this.e.getAlpha();
+        return alpha;
     }
 
     @Override // androidx.emoji2.text.ev2
     public final long b() {
-        return this.e.getDurationMillis();
+        long durationMillis;
+        durationMillis = this.e.getDurationMillis();
+        return durationMillis;
     }
 
     @Override // androidx.emoji2.text.ev2
     public final float c() {
-        return this.e.getInterpolatedFraction();
+        float interpolatedFraction;
+        interpolatedFraction = this.e.getInterpolatedFraction();
+        return interpolatedFraction;
     }
 
     @Override // androidx.emoji2.text.ev2
     public final int d() {
-        return this.e.getTypeMask();
+        int typeMask;
+        typeMask = this.e.getTypeMask();
+        return typeMask;
     }
 
     @Override // androidx.emoji2.text.ev2

@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class v9 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f1209a;
+    public final float f1208a;
     public final float b;
 
     public v9(float f, float f2) {
-        this.f1209a = f;
+        this.f1208a = f;
         this.b = f2;
     }
 
@@ -21,16 +21,16 @@ public final class v9 {
             return false;
         }
         v9 v9Var = (v9) obj;
-        return Float.compare(this.f1209a, v9Var.f1209a) == 0 && Float.compare(this.b, v9Var.b) == 0;
+        return Float.compare(this.f1208a, v9Var.f1208a) == 0 && Float.compare(this.b, v9Var.b) == 0;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.b) + (Float.hashCode(this.f1209a) * 31);
+        return Float.hashCode(this.b) + (Float.hashCode(this.f1208a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("FlingResult(distanceCoefficient=");
-        sb.append(this.f1209a);
+        sb.append(this.f1208a);
         sb.append(", velocityCoefficient=");
         return zd.i(sb, this.b, ')');
     }

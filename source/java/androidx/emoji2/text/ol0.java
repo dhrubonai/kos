@@ -7,16 +7,16 @@ import android.graphics.Typeface;
 public final class ol0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Typeface f861a;
+    public final Typeface f860a;
     public final int b;
 
     public ol0(int i) {
-        this.f861a = null;
+        this.f860a = null;
         this.b = i;
     }
 
     public ol0(Typeface typeface) {
-        this.f861a = typeface;
+        this.f860a = typeface;
         this.b = 0;
     }
 }

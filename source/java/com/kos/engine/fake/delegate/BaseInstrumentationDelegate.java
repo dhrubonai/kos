@@ -29,12 +29,12 @@ import java.util.Iterator;
 public class BaseInstrumentationDelegate extends Instrumentation {
     protected Instrumentation mBaseInstrumentation;
 
-    private static fy1 invokeExecStartActivity(Object obj, Class<?>... clsArr) throws NoSuchMethodException {
-        for (Class<?> superclass = obj.getClass(); superclass != null; superclass = superclass.getSuperclass()) {
+    private static fy1 invokeExecStartActivity(Object obj, Class<?>... clsArr) {
+        for (Class<?> cls = obj.getClass(); cls != null; cls = cls.getSuperclass()) {
             try {
-                Class<?> cls = obj.getClass();
+                Class<?> cls2 = obj.getClass();
                 fy1 fy1Var = new fy1();
-                fy1Var.f392a = cls;
+                fy1Var.f391a = cls2;
                 fy1Var.f(c.a(-409014589603618L, xa1.b), clsArr);
                 return fy1Var;
             } catch (Exception unused) {

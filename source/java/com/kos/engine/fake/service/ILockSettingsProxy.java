@@ -39,21 +39,21 @@ public class ILockSettingsProxy extends BinderInvocationStub {
     }
 
     private static Map<Integer, Method> buildRecoveryTransactions() {
-        Integer transactionCode;
+        Integer readTransactionCode;
         String[] strArr = xa1.b;
-        HashMap map = new HashMap();
+        HashMap hashMap = new HashMap();
         try {
             Class<?> cls = Class.forName(c.a(-597580833767202L, strArr));
             Class<?> cls2 = Class.forName(c.a(-597194286710562L, strArr));
             for (Method method : cls.getMethods()) {
-                if (isRecoverableKeyStoreMethod(method.getName()) && (transactionCode = readTransactionCode(cls2, method.getName())) != null) {
-                    map.put(transactionCode, method);
+                if (isRecoverableKeyStoreMethod(method.getName()) && (readTransactionCode = readTransactionCode(cls2, method.getName())) != null) {
+                    hashMap.put(readTransactionCode, method);
                 }
             }
-            return map;
+            return hashMap;
         } catch (Throwable th) {
             nz0.Q(c.a(-597945905987362L, strArr), 5, c.a(-598010330496802L, strArr) + th);
-            return map;
+            return hashMap;
         }
     }
 

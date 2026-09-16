@@ -1,5 +1,10 @@
 package androidx.emoji2.text;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Trace;
 import com.kos.engine.core.system.user.BUserHandle;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -11,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class pl0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final t81 f912a = new t81(16);
+    public static final t81 f911a = new t81(16);
     public static final ThreadPoolExecutor b;
     public static final Object c;
     public static final db2 d;
@@ -37,132 +42,84 @@ public abstract class pl0 {
         return sb.toString();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x00b5, code lost:
-    
-        r8 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x00b9, code lost:
-    
-        throw r8;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004e A[Catch: all -> 0x00b5, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0057 A[Catch: all -> 0x00b5, TRY_ENTER, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0091 A[Catch: all -> 0x00b5, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009d A[Catch: all -> 0x00b5, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x00b5, all -> 0x0074, all -> 0x00a6, NameNotFoundException -> 0x00ab, blocks: (B:3:0x0007, B:5:0x000f, B:10:0x0018, B:11:0x001c, B:16:0x004e, B:19:0x0057, B:21:0x005d, B:23:0x0063, B:26:0x0070, B:28:0x0091, B:31:0x009d, B:36:0x0075, B:37:0x0078, B:38:0x0079, B:41:0x008c, B:44:0x00a7, B:45:0x00aa, B:47:0x002b, B:49:0x0033, B:52:0x0037, B:54:0x003b, B:56:0x0046, B:65:0x00ab, B:25:0x006a, B:40:0x0086), top: B:2:0x0007 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static androidx.emoji2.text.ol0 b(java.lang.String r8, android.content.Context r9, java.util.List r10, int r11) {
-        /*
-            androidx.emoji2.text.t81 r0 = androidx.emoji2.text.pl0.f912a
-            java.lang.String r1 = "getFontSync"
-            androidx.emoji2.text.jz0.m(r1)
-            java.lang.Object r1 = r0.d(r8)     // Catch: java.lang.Throwable -> Lb5
-            android.graphics.Typeface r1 = (android.graphics.Typeface) r1     // Catch: java.lang.Throwable -> Lb5
-            if (r1 == 0) goto L18
-            androidx.emoji2.text.ol0 r8 = new androidx.emoji2.text.ol0     // Catch: java.lang.Throwable -> Lb5
-            r8.<init>(r1)     // Catch: java.lang.Throwable -> Lb5
-            android.os.Trace.endSection()
-            return r8
-        L18:
-            androidx.emoji2.text.bm0 r10 = androidx.emoji2.text.il0.a(r9, r10)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> Lab java.lang.Throwable -> Lb5
-            java.util.List r1 = r10.b     // Catch: java.lang.Throwable -> Lb5
-            int r10 = r10.f157a     // Catch: java.lang.Throwable -> Lb5
-            r2 = 1
-            r3 = -3
-            r4 = 0
-            if (r10 == 0) goto L2b
-            if (r10 == r2) goto L29
-        L27:
-            r10 = r3
-            goto L4c
-        L29:
-            r10 = -2
-            goto L4c
-        L2b:
-            java.lang.Object r10 = r1.get(r4)     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.cm0[] r10 = (androidx.emoji2.text.cm0[]) r10     // Catch: java.lang.Throwable -> Lb5
-            if (r10 == 0) goto L4b
-            int r5 = r10.length     // Catch: java.lang.Throwable -> Lb5
-            if (r5 != 0) goto L37
-            goto L4b
-        L37:
-            int r5 = r10.length     // Catch: java.lang.Throwable -> Lb5
-            r6 = r4
-        L39:
-            if (r6 >= r5) goto L49
-            r7 = r10[r6]     // Catch: java.lang.Throwable -> Lb5
-            int r7 = r7.f     // Catch: java.lang.Throwable -> Lb5
-            if (r7 == 0) goto L46
-            if (r7 >= 0) goto L44
-            goto L27
-        L44:
-            r10 = r7
-            goto L4c
-        L46:
-            int r6 = r6 + 1
-            goto L39
-        L49:
-            r10 = r4
-            goto L4c
-        L4b:
-            r10 = r2
-        L4c:
-            if (r10 == 0) goto L57
-            androidx.emoji2.text.ol0 r8 = new androidx.emoji2.text.ol0     // Catch: java.lang.Throwable -> Lb5
-            r8.<init>(r10)     // Catch: java.lang.Throwable -> Lb5
-            android.os.Trace.endSection()
-            return r8
-        L57:
-            int r10 = r1.size()     // Catch: java.lang.Throwable -> Lb5
-            if (r10 <= r2) goto L79
-            int r10 = android.os.Build.VERSION.SDK_INT     // Catch: java.lang.Throwable -> Lb5
-            r2 = 29
-            if (r10 < r2) goto L79
-            androidx.emoji2.text.ly0 r10 = androidx.emoji2.text.ap2.f115a     // Catch: java.lang.Throwable -> Lb5
-            java.lang.String r10 = "TypefaceCompat.createFromFontInfoWithFallback"
-            androidx.emoji2.text.jz0.m(r10)     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.ly0 r10 = androidx.emoji2.text.ap2.f115a     // Catch: java.lang.Throwable -> L74
-            android.graphics.Typeface r9 = r10.l(r9, r1, r11)     // Catch: java.lang.Throwable -> L74
-            android.os.Trace.endSection()     // Catch: java.lang.Throwable -> Lb5
-            goto L8f
-        L74:
-            r8 = move-exception
-            android.os.Trace.endSection()     // Catch: java.lang.Throwable -> Lb5
-            throw r8     // Catch: java.lang.Throwable -> Lb5
-        L79:
-            java.lang.Object r10 = r1.get(r4)     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.cm0[] r10 = (androidx.emoji2.text.cm0[]) r10     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.ly0 r1 = androidx.emoji2.text.ap2.f115a     // Catch: java.lang.Throwable -> Lb5
-            java.lang.String r1 = "TypefaceCompat.createFromFontInfo"
-            androidx.emoji2.text.jz0.m(r1)     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.ly0 r1 = androidx.emoji2.text.ap2.f115a     // Catch: java.lang.Throwable -> La6
-            android.graphics.Typeface r9 = r1.k(r9, r10, r11)     // Catch: java.lang.Throwable -> La6
-            android.os.Trace.endSection()     // Catch: java.lang.Throwable -> Lb5
-        L8f:
-            if (r9 == 0) goto L9d
-            r0.g(r8, r9)     // Catch: java.lang.Throwable -> Lb5
-            androidx.emoji2.text.ol0 r8 = new androidx.emoji2.text.ol0     // Catch: java.lang.Throwable -> Lb5
-            r8.<init>(r9)     // Catch: java.lang.Throwable -> Lb5
-            android.os.Trace.endSection()
-            return r8
-        L9d:
-            androidx.emoji2.text.ol0 r8 = new androidx.emoji2.text.ol0     // Catch: java.lang.Throwable -> Lb5
-            r8.<init>(r3)     // Catch: java.lang.Throwable -> Lb5
-            android.os.Trace.endSection()
-            return r8
-        La6:
-            r8 = move-exception
-            android.os.Trace.endSection()     // Catch: java.lang.Throwable -> Lb5
-            throw r8     // Catch: java.lang.Throwable -> Lb5
-        Lab:
-            androidx.emoji2.text.ol0 r8 = new androidx.emoji2.text.ol0     // Catch: java.lang.Throwable -> Lb5
-            r9 = -1
-            r8.<init>(r9)     // Catch: java.lang.Throwable -> Lb5
-            android.os.Trace.endSection()
-            return r8
-        Lb5:
-            r8 = move-exception
-            android.os.Trace.endSection()
-            throw r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.pl0.b(java.lang.String, android.content.Context, java.util.List, int):androidx.emoji2.text.ol0");
+    public static ol0 b(String str, Context context, List list, int i) {
+        Typeface typeface;
+        int i2;
+        Typeface k;
+        t81 t81Var = f911a;
+        jz0.m("getFontSync");
+        try {
+            typeface = (Typeface) t81Var.d(str);
+        } catch (PackageManager.NameNotFoundException unused) {
+            return new ol0(-1);
+        } catch (Throwable th) {
+            throw th;
+        } finally {
+        }
+        if (typeface != null) {
+            return new ol0(typeface);
+        }
+        bm0 a2 = il0.a(context, list);
+        List list2 = a2.b;
+        int i3 = a2.f156a;
+        if (i3 != 0) {
+            if (i3 == 1) {
+                i2 = -2;
+                if (i2 == 0) {
+                    return new ol0(i2);
+                }
+                if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
+                    cm0[] cm0VarArr = (cm0[]) list2.get(0);
+                    ly0 ly0Var = ap2.f114a;
+                    jz0.m("TypefaceCompat.createFromFontInfo");
+                    k = ap2.f114a.k(context, cm0VarArr, i);
+                    Trace.endSection();
+                    if (k != null) {
+                        return new ol0(-3);
+                    }
+                    t81Var.g(str, k);
+                    return new ol0(k);
+                }
+                ly0 ly0Var2 = ap2.f114a;
+                jz0.m("TypefaceCompat.createFromFontInfoWithFallback");
+                k = ap2.f114a.l(context, list2, i);
+                Trace.endSection();
+                if (k != null) {
+                }
+            }
+            i2 = -3;
+            if (i2 == 0) {
+            }
+        } else {
+            cm0[] cm0VarArr2 = (cm0[]) list2.get(0);
+            if (cm0VarArr2 != null && cm0VarArr2.length != 0) {
+                int length = cm0VarArr2.length;
+                int i4 = 0;
+                while (true) {
+                    if (i4 >= length) {
+                        i2 = 0;
+                        break;
+                    }
+                    int i5 = cm0VarArr2[i4].f;
+                    if (i5 == 0) {
+                        i4++;
+                    } else if (i5 >= 0) {
+                        i2 = i5;
+                    }
+                }
+                if (i2 == 0) {
+                }
+            }
+            i2 = 1;
+            if (i2 == 0) {
+            }
+        }
     }
 }

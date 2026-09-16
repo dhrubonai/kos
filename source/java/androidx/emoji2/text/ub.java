@@ -18,8 +18,8 @@ public final class ub extends g01 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         u62 u62Var = (u62) obj;
-        long jA = this.e.a();
-        u62Var.d(p62.c, new o62(this.f ? oq0.e : oq0.f, jA, this.g ? 1 : 3, jz0.I(jA)));
-        return up2.f1187a;
+        long a2 = this.e.a();
+        u62Var.d(p62.c, new o62(this.f ? oq0.e : oq0.f, a2, this.g ? 1 : 3, jz0.I(a2)));
+        return up2.f1186a;
     }
 }

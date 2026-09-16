@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class py1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final x71 f933a;
+    public final x71 f932a;
 
     public py1(x71 x71Var) {
-        this.f933a = x71Var;
+        this.f932a = x71Var;
     }
 
     public final String toString() {
-        return "Removed[" + this.f933a + ']';
+        return "Removed[" + this.f932a + ']';
     }
 }

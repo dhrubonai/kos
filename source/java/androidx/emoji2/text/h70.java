@@ -12,19 +12,19 @@ import kotlin.jvm.functions.Function2;
 public final class h70 implements q72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f458a;
+    public final /* synthetic */ int f457a;
     public final Object b;
     public final Object c;
 
     public /* synthetic */ h70(int i, Object obj, Object obj2) {
-        this.f458a = i;
+        this.f457a = i;
         this.b = obj;
         this.c = obj2;
     }
 
     @Override // androidx.emoji2.text.q72
     public final Iterator iterator() {
-        switch (this.f458a) {
+        switch (this.f457a) {
             case 0:
                 return new g70(this);
             case 1:
@@ -46,13 +46,13 @@ public final class h70 implements q72 {
     }
 
     public h70(File file) {
-        this.f458a = 1;
+        this.f457a = 1;
         this.b = file;
         this.c = ji0.d;
     }
 
     public h70(CharSequence charSequence, Function2 function2) {
-        this.f458a = 0;
+        this.f457a = 0;
         lx0.x(charSequence, "input");
         this.b = charSequence;
         this.c = function2;

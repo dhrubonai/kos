@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class cr2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final oe f216a;
+    public final oe f215a;
     public final yc0 b;
 
     public cr2(oe oeVar, yc0 yc0Var) {
-        this.f216a = oeVar;
+        this.f215a = oeVar;
         this.b = yc0Var;
     }
 
@@ -21,14 +21,14 @@ public final class cr2 {
             return false;
         }
         cr2 cr2Var = (cr2) obj;
-        return lx0.n(this.f216a, cr2Var.f216a) && lx0.n(this.b, cr2Var.b);
+        return lx0.n(this.f215a, cr2Var.f215a) && lx0.n(this.b, cr2Var.b);
     }
 
     public final int hashCode() {
-        return Integer.hashCode(0) + ((this.b.hashCode() + (this.f216a.hashCode() * 31)) * 31);
+        return Integer.hashCode(0) + ((this.b.hashCode() + (this.f215a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "VectorizedKeyframeSpecElementInfo(vectorValue=" + this.f216a + ", easing=" + this.b + ", arcMode=ArcMode(value=0))";
+        return "VectorizedKeyframeSpecElementInfo(vectorValue=" + this.f215a + ", easing=" + this.b + ", arcMode=ArcMode(value=0))";
     }
 }

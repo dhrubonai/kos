@@ -7,7 +7,7 @@ import android.net.Uri;
 public final class cm0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Uri f209a;
+    public final Uri f208a;
     public final int b;
     public final int c;
     public final boolean d;
@@ -16,7 +16,7 @@ public final class cm0 {
 
     public cm0(Uri uri, int i, int i2, boolean z, int i3) {
         uri.getClass();
-        this.f209a = uri;
+        this.f208a = uri;
         this.b = i;
         this.c = i2;
         this.d = z;
@@ -25,7 +25,7 @@ public final class cm0 {
     }
 
     public cm0(String str, String str2) {
-        this.f209a = new Uri.Builder().scheme("systemfont").authority(str).build();
+        this.f208a = new Uri.Builder().scheme("systemfont").authority(str).build();
         this.b = 0;
         this.c = 400;
         this.d = false;

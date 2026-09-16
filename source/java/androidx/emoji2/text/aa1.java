@@ -91,11 +91,11 @@ public final class aa1 extends AbstractCollection implements Collection, sy0 {
             case 0:
                 y91 y91Var = (y91) this.e;
                 y91Var.b();
-                int iH = y91Var.h(obj);
-                if (iH < 0) {
+                int h = y91Var.h(obj);
+                if (h < 0) {
                     return false;
                 }
-                y91Var.k(iH);
+                y91Var.k(h);
                 return true;
             default:
                 return super.remove(obj);

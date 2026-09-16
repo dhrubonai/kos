@@ -22,8 +22,8 @@ public final class cw0 extends xu2 implements Runnable, gj1, View.OnAttachStateC
         this.g = false;
         this.h = false;
         wv2 wv2Var = this.i;
-        if (fv2Var.f386a.b() != 0 && wv2Var != null) {
-            tv2 tv2Var = wv2Var.f1306a;
+        if (fv2Var.f385a.b() != 0 && wv2Var != null) {
+            tv2 tv2Var = wv2Var.f1305a;
             bw2 bw2Var = this.f;
             bw2Var.r.f(a01.d0(tv2Var.g(8)));
             bw2Var.q.f(a01.d0(tv2Var.g(8)));
@@ -56,7 +56,7 @@ public final class cw0 extends xu2 implements Runnable, gj1, View.OnAttachStateC
         this.i = wv2Var;
         bw2 bw2Var = this.f;
         nq2 nq2Var = bw2Var.q;
-        tv2 tv2Var = wv2Var.f1306a;
+        tv2 tv2Var = wv2Var.f1305a;
         nq2Var.f(a01.d0(tv2Var.g(8)));
         if (this.g) {
             if (Build.VERSION.SDK_INT == 30) {
@@ -82,7 +82,7 @@ public final class cw0 extends xu2 implements Runnable, gj1, View.OnAttachStateC
             wv2 wv2Var = this.i;
             if (wv2Var != null) {
                 bw2 bw2Var = this.f;
-                bw2Var.r.f(a01.d0(wv2Var.f1306a.g(8)));
+                bw2Var.r.f(a01.d0(wv2Var.f1305a.g(8)));
                 bw2.a(bw2Var, wv2Var);
                 this.i = null;
             }

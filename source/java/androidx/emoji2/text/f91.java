@@ -30,29 +30,29 @@ public final /* synthetic */ class f91 implements sm0 {
             case 0:
                 sm0 sm0Var = (sm0) this.f;
                 sm0 sm0Var2 = (sm0) this.g;
-                String string = (String) this.h;
+                String str = (String) this.h;
                 Context context = this.e;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 if (sm0Var != null) {
                     sm0Var.a();
                     sm0Var2.a();
-                } else if (string == null || string.length() == 0) {
+                } else if (str == null || str.length() == 0) {
                     sm0Var2.a();
                 } else {
                     try {
-                        context.startActivity(new Intent(a.a.a.c.a(-264948501593890L, strArr), Uri.parse(string)));
+                        context.startActivity(new Intent(a.a.a.c.a(-264948501593890L, strArr), Uri.parse(str)));
                     } catch (ActivityNotFoundException unused) {
-                        String strA = a.a.a.c.a(-264566249504546L, strArr);
-                        String strA2 = a.a.a.c.a(-264622084079394L, strArr);
-                        lx0.x(string, "<this>");
-                        lx0.x(strA, "oldValue");
-                        lx0.x(strA2, "newValue");
-                        int iH0 = wf2.h0(string, strA, 0, false, 2);
-                        if (iH0 >= 0) {
-                            string = wf2.q0(string, iH0, strA.length() + iH0, strA2).toString();
+                        String a2 = a.a.a.c.a(-264566249504546L, strArr);
+                        String a3 = a.a.a.c.a(-264622084079394L, strArr);
+                        lx0.x(str, "<this>");
+                        lx0.x(a2, "oldValue");
+                        lx0.x(a3, "newValue");
+                        int h0 = wf2.h0(str, a2, 0, false, 2);
+                        if (h0 >= 0) {
+                            str = wf2.q0(str, h0, a2.length() + h0, a3).toString();
                         }
                         try {
-                            context.startActivity(new Intent(a.a.a.c.a(-267538366873378L, strArr), Uri.parse(string)));
+                            context.startActivity(new Intent(a.a.a.c.a(-267538366873378L, strArr), Uri.parse(str)));
                         } catch (ActivityNotFoundException unused2) {
                             Toast.makeText(context, context.getString(R.string.error_no_app_can_open_page), 0).show();
                         }
@@ -69,6 +69,6 @@ public final /* synthetic */ class f91 implements sm0 {
                 h50.G(e30Var, null, new wt2(this.e, mf1Var2, null, 1), 3);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

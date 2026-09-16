@@ -7,7 +7,7 @@ public final class nw2 {
     public final pv0 g;
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f831a = az0.W(Boolean.TRUE);
+    public final un1 f830a = az0.W(Boolean.TRUE);
     public final un1 b = az0.W(Boolean.FALSE);
     public final qn1 c = new qn1(0.0f);
     public final sn1 d = new sn1(0);

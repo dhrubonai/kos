@@ -36,7 +36,7 @@ public final class p20 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((p20) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((p20) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -45,7 +45,7 @@ public final class p20 extends hh2 implements Function2 {
         ej2 ej2Var = this.k;
         ts1 ts1Var = this.j;
         f30 f30Var = f30.d;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         int i2 = 1;
         switch (i) {
             case 0:
@@ -53,11 +53,11 @@ public final class p20 extends hh2 implements Function2 {
                 if (i3 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objS = wj1.s(new a50(ts1Var, ej2Var, null), this);
-                    if (objS != f30Var) {
-                        objS = up2Var;
+                    Object s = wj1.s(new a50(ts1Var, ej2Var, null), this);
+                    if (s != f30Var) {
+                        s = up2Var;
                     }
-                    if (objS == f30Var) {
+                    if (s == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -72,11 +72,11 @@ public final class p20 extends hh2 implements Function2 {
                 if (i4 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objO = jm.o(ts1Var, new em0(ej2Var, null), this);
-                    if (objO != f30Var) {
-                        objO = up2Var;
+                    Object o = jm.o(ts1Var, new em0(ej2Var, null), this);
+                    if (o != f30Var) {
+                        o = up2Var;
                     }
-                    if (objO == f30Var) {
+                    if (o == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -95,18 +95,18 @@ public final class p20 extends hh2 implements Function2 {
                     e81 e81Var = new e81(ej2Var, 0);
                     e81 e81Var2 = new e81(ej2Var, 1);
                     x xVar = new x(8, ej2Var);
-                    float f = wa0.f1270a;
-                    Object objO2 = jm.o(ts1Var, new ta0(hy.o, new by1(), null, new id(i2, d81Var), xVar, e81Var2, new r5(14, e81Var), null), this);
-                    if (objO2 != f30Var) {
-                        objO2 = up2Var;
+                    float f = wa0.f1269a;
+                    Object o2 = jm.o(ts1Var, new ta0(hy.o, new by1(), null, new id(i2, d81Var), xVar, e81Var2, new r5(14, e81Var), null), this);
+                    if (o2 != f30Var) {
+                        o2 = up2Var;
                     }
-                    if (objO2 != f30Var) {
-                        objO2 = up2Var;
+                    if (o2 != f30Var) {
+                        o2 = up2Var;
                     }
-                    if (objO2 != f30Var) {
-                        objO2 = up2Var;
+                    if (o2 != f30Var) {
+                        o2 = up2Var;
                     }
-                    if (objO2 == f30Var) {
+                    if (o2 == f30Var) {
                         return f30Var;
                     }
                 } else {

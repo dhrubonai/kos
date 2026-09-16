@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class an1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f112a = 56;
+    public static final float f111a = 56;
     public static final pm1 b;
     public static final xm1 c;
 
@@ -21,13 +21,13 @@ public abstract class an1 {
         long j = (i * (pm1Var.c + pm1Var.b)) + (-pm1Var.f) + pm1Var.d;
         il1 il1Var = pm1Var.e;
         il1 il1Var2 = il1.e;
-        long jF = pm1Var.f();
-        int i2 = (int) (il1Var == il1Var2 ? jF >> 32 : jF & 4294967295L);
+        long f = pm1Var.f();
+        int i2 = (int) (il1Var == il1Var2 ? f >> 32 : f & 4294967295L);
         pm1Var.m.getClass();
-        long jP = j - (i2 - az0.p(0, 0, i2));
-        if (jP < 0) {
+        long p = j - (i2 - az0.p(0, 0, i2));
+        if (p < 0) {
             return 0L;
         }
-        return jP;
+        return p;
     }
 }

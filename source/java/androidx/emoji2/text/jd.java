@@ -7,13 +7,13 @@ import java.util.Map;
 public final class jd implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f572a;
+    public final /* synthetic */ int f571a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
     public /* synthetic */ jd(Object obj, Object obj2, Object obj3, int i) {
-        this.f572a = i;
+        this.f571a = i;
         this.b = obj;
         this.c = obj2;
         this.d = obj3;
@@ -21,7 +21,7 @@ public final class jd implements j90 {
 
     @Override // androidx.emoji2.text.j90
     public final void a() {
-        switch (this.f572a) {
+        switch (this.f571a) {
             case 0:
                 yc2 yc2Var = (yc2) this.b;
                 Object obj = this.c;
@@ -40,13 +40,13 @@ public final class jd implements j90 {
                 w22 w22Var = (w22) this.b;
                 gf1 gf1Var = w22Var.e;
                 Object obj2 = this.c;
-                Object objK = gf1Var.k(obj2);
+                Object k = gf1Var.k(obj2);
                 b32 b32Var = (b32) this.d;
-                if (objK == b32Var) {
+                if (k == b32Var) {
                     Map map = w22Var.d;
-                    Map mapC = b32Var.c();
-                    if (!mapC.isEmpty()) {
-                        map.put(obj2, mapC);
+                    Map c = b32Var.c();
+                    if (!c.isEmpty()) {
+                        map.put(obj2, c);
                         break;
                     } else {
                         map.remove(obj2);

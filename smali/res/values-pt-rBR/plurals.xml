@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accounts_removed_count">
+        <item quantity="other">%1$d contas removidas.</item>
+        <item quantity="one">%1$d conta removida.</item>
+    </plurals>
+    <plurals name="virtual_google_accounts_removed_count">
+        <item quantity="other">%1$d contas virtuais do Google removidas.</item>
+        <item quantity="one">%1$d conta virtual do Google removida.</item>
+    </plurals>
+</resources>

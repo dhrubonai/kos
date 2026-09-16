@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract /* synthetic */ class wh2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f1281a = Runtime.getRuntime().availableProcessors();
+    public static final int f1280a = Runtime.getRuntime().availableProcessors();
 }

@@ -16,7 +16,7 @@ public final class cd extends hh2 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         cd cdVar = new cd(this.h, this.i, (l10) obj);
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         cdVar.k(up2Var);
         return up2Var;
     }
@@ -26,9 +26,9 @@ public final class cd extends hh2 implements um0 {
         mz0.L(obj);
         ed edVar = this.h;
         ed.b(edVar);
-        Object objA = ed.a(edVar, this.i);
-        edVar.c.e.setValue(objA);
-        edVar.e.setValue(objA);
-        return up2.f1187a;
+        Object a2 = ed.a(edVar, this.i);
+        edVar.c.e.setValue(a2);
+        edVar.e.setValue(a2);
+        return up2.f1186a;
     }
 }

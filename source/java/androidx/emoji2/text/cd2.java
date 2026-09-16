@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class cd2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final g01 f195a;
+    public final g01 f194a;
     public boolean c;
     public j4 h;
     public bd2 i;
@@ -22,7 +22,7 @@ public final class cd2 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public cd2(um0 um0Var) {
-        this.f195a = (g01) um0Var;
+        this.f194a = (g01) um0Var;
     }
 
     public final void a() {
@@ -58,7 +58,7 @@ public final class cd2 {
                 Object obj = atomicReference.get();
                 set = null;
                 List list = null;
-                List listSubList = null;
+                List list2 = null;
                 if (obj == null) {
                     break;
                 }
@@ -69,15 +69,15 @@ public final class cd2 {
                         vx.d("Unexpected notification");
                         throw new mu();
                     }
-                    List list2 = (List) obj;
-                    Set set3 = (Set) list2.get(0);
-                    if (list2.size() == 2) {
-                        listSubList = list2.get(1);
-                    } else if (list2.size() > 2) {
-                        listSubList = list2.subList(1, list2.size());
+                    List list3 = (List) obj;
+                    Set set3 = (Set) list3.get(0);
+                    if (list3.size() == 2) {
+                        list2 = list3.get(1);
+                    } else if (list3.size() > 2) {
+                        list2 = list3.subList(1, list3.size());
                     }
                     set2 = set3;
-                    list = listSubList;
+                    list = list2;
                 }
                 while (!atomicReference.compareAndSet(obj, list)) {
                     if (atomicReference.get() != obj) {
@@ -115,7 +115,7 @@ public final class cd2 {
                     break;
                 }
                 obj2 = objArr[i2];
-                if (((bd2) obj2).f144a == um0Var) {
+                if (((bd2) obj2).f143a == um0Var) {
                     break;
                 } else {
                     i2++;
@@ -146,7 +146,7 @@ public final class cd2 {
 
     public final void d() {
         f2 f2Var = this.d;
-        kc2.f(kc2.f632a);
+        kc2.f(kc2.f631a);
         synchronized (kc2.c) {
             kc2.h = ws.I0((List) kc2.h, f2Var);
         }

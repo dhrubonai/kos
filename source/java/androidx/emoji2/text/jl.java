@@ -6,7 +6,7 @@ public final class jl extends im0 {
     public Exception e;
 
     @Override // androidx.emoji2.text.im0, androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws Exception {
+    public final long v(long j, rn rnVar) {
         try {
             return super.v(j, rnVar);
         } catch (Exception e) {

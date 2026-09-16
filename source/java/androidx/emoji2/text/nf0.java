@@ -17,9 +17,9 @@ public final class nf0 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                return new nw0(jm.e(((Number) this.f.e(Integer.valueOf((int) (((uw0) obj).f1196a >> 32)))).intValue(), 0));
+                return new nw0(jm.e(((Number) this.f.e(Integer.valueOf((int) (((uw0) obj).f1195a >> 32)))).intValue(), 0));
             default:
-                return new nw0(jm.e(((Number) this.f.e(Integer.valueOf((int) (((uw0) obj).f1196a >> 32)))).intValue(), 0));
+                return new nw0(jm.e(((Number) this.f.e(Integer.valueOf((int) (((uw0) obj).f1195a >> 32)))).intValue(), 0));
         }
     }
 }

@@ -29,7 +29,7 @@ public final class nn implements vd1 {
     public final void a(long j) {
         int i;
         ip ipVar;
-        Object objH;
+        Object h;
         synchronized (this.e) {
             try {
                 ze1 ze1Var = this.h;
@@ -42,14 +42,14 @@ public final class nn implements vd1 {
                 int i2 = ze1Var.b;
                 for (int i3 = 0; i3 < i2; i3++) {
                     ln lnVar = (ln) ze1Var.e(i3);
-                    um0 um0Var = lnVar.f699a;
+                    um0 um0Var = lnVar.f698a;
                     if (um0Var != null && (ipVar = lnVar.b) != null) {
                         try {
-                            objH = um0Var.e(Long.valueOf(j));
+                            h = um0Var.e(Long.valueOf(j));
                         } catch (Throwable th) {
-                            objH = mz0.h(th);
+                            h = mz0.h(th);
                         }
-                        ipVar.g(objH);
+                        ipVar.g(h);
                     }
                 }
                 ze1Var.c();
@@ -72,7 +72,7 @@ public final class nn implements vd1 {
         ip ipVar = new ip(1, xa1.E(n10Var));
         ipVar.s();
         ln lnVar = new ln();
-        lnVar.f699a = um0Var;
+        lnVar.f698a = um0Var;
         lnVar.b = ipVar;
         ay1 ay1Var = new ay1();
         ay1Var.d = -1;
@@ -99,7 +99,7 @@ public final class nn implements vd1 {
                                 if (this.f == null) {
                                     this.f = th2;
                                     ze1 ze1Var = this.h;
-                                    Object[] objArr = ze1Var.f1436a;
+                                    Object[] objArr = ze1Var.f1435a;
                                     int i4 = ze1Var.b;
                                     for (int i5 = 0; i5 < i4; i5++) {
                                         ip ipVar2 = ((ln) objArr[i5]).b;

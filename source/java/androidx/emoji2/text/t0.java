@@ -46,9 +46,9 @@ public abstract class t0 implements Future {
             s0Var = t0Var.f;
         } while (!i.n(t0Var, s0Var, s0.c));
         while (s0Var != null) {
-            Thread thread = s0Var.f1043a;
+            Thread thread = s0Var.f1042a;
             if (thread != null) {
-                s0Var.f1043a = null;
+                s0Var.f1042a = null;
                 LockSupport.unpark(thread);
             }
             s0Var = s0Var.b;
@@ -58,13 +58,13 @@ public abstract class t0 implements Future {
         } while (!i.l(t0Var, p0Var));
         p0 p0Var2 = null;
         while (p0Var != null) {
-            p0 p0Var3 = p0Var.f883a;
-            p0Var.f883a = p0Var2;
+            p0 p0Var3 = p0Var.f882a;
+            p0Var.f882a = p0Var2;
             p0Var2 = p0Var;
             p0Var = p0Var3;
         }
         while (p0Var2 != null) {
-            p0Var2 = p0Var2.f883a;
+            p0Var2 = p0Var2.f882a;
             try {
                 throw null;
             } catch (RuntimeException e) {
@@ -73,9 +73,9 @@ public abstract class t0 implements Future {
         }
     }
 
-    public static Object c(Object obj) throws ExecutionException {
+    public static Object c(Object obj) {
         if (obj instanceof n0) {
-            Throwable th = ((n0) obj).f781a;
+            Throwable th = ((n0) obj).f780a;
             CancellationException cancellationException = new CancellationException("Task was cancelled.");
             cancellationException.initCause(th);
             throw cancellationException;
@@ -113,9 +113,9 @@ public abstract class t0 implements Future {
 
     public final void a(StringBuilder sb) {
         try {
-            Object objD = d(this);
+            Object d = d(this);
             sb.append("SUCCESS, result=[");
-            sb.append(objD == this ? "this future" : String.valueOf(objD));
+            sb.append(d == this ? "this future" : String.valueOf(d));
             sb.append("]");
         } catch (CancellationException unused) {
             sb.append("CANCELLED");
@@ -144,7 +144,7 @@ public abstract class t0 implements Future {
     }
 
     public final void e(s0 s0Var) {
-        s0Var.f1043a = null;
+        s0Var.f1042a = null;
         while (true) {
             s0 s0Var2 = this.f;
             if (s0Var2 == s0.c) {
@@ -153,11 +153,11 @@ public abstract class t0 implements Future {
             s0 s0Var3 = null;
             while (s0Var2 != null) {
                 s0 s0Var4 = s0Var2.b;
-                if (s0Var2.f1043a != null) {
+                if (s0Var2.f1042a != null) {
                     s0Var3 = s0Var2;
                 } else if (s0Var3 != null) {
                     s0Var3.b = s0Var4;
-                    if (s0Var3.f1043a == null) {
+                    if (s0Var3.f1042a == null) {
                         break;
                     }
                 } else if (!i.n(this, s0Var2, s0Var4)) {
@@ -170,7 +170,7 @@ public abstract class t0 implements Future {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j2, TimeUnit timeUnit) throws InterruptedException, TimeoutException {
+    public final Object get(long j2, TimeUnit timeUnit) {
         s0 s0Var = s0.c;
         long nanos = timeUnit.toNanos(j2);
         if (Thread.interrupted()) {
@@ -180,7 +180,7 @@ public abstract class t0 implements Future {
         if (obj != null) {
             return c(obj);
         }
-        long jNanoTime = nanos > 0 ? System.nanoTime() + nanos : 0L;
+        long nanoTime = nanos > 0 ? System.nanoTime() + nanos : 0L;
         if (nanos >= 1000) {
             s0 s0Var2 = this.f;
             if (s0Var2 != s0Var) {
@@ -199,7 +199,7 @@ public abstract class t0 implements Future {
                             if (obj2 != null) {
                                 return c(obj2);
                             }
-                            nanos = jNanoTime - System.nanoTime();
+                            nanos = nanoTime - System.nanoTime();
                         } while (nanos >= 1000);
                         e(s0Var3);
                     } else {
@@ -217,35 +217,35 @@ public abstract class t0 implements Future {
             if (Thread.interrupted()) {
                 throw new InterruptedException();
             }
-            nanos = jNanoTime - System.nanoTime();
+            nanos = nanoTime - System.nanoTime();
         }
-        String string = toString();
-        String string2 = timeUnit.toString();
+        String t0Var = toString();
+        String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
-        String lowerCase = string2.toLowerCase(locale);
-        String strH = "Waited " + j2 + " " + timeUnit.toString().toLowerCase(locale);
+        String lowerCase = obj4.toLowerCase(locale);
+        String str = "Waited " + j2 + " " + timeUnit.toString().toLowerCase(locale);
         if (nanos + 1000 < 0) {
-            String strH2 = zd.h(strH, " (plus ");
+            String h2 = zd.h(str, " (plus ");
             long j3 = -nanos;
-            long jConvert = timeUnit.convert(j3, TimeUnit.NANOSECONDS);
-            long nanos2 = j3 - timeUnit.toNanos(jConvert);
-            boolean z = jConvert == 0 || nanos2 > 1000;
-            if (jConvert > 0) {
-                String strH3 = strH2 + jConvert + " " + lowerCase;
+            long convert = timeUnit.convert(j3, TimeUnit.NANOSECONDS);
+            long nanos2 = j3 - timeUnit.toNanos(convert);
+            boolean z = convert == 0 || nanos2 > 1000;
+            if (convert > 0) {
+                String str2 = h2 + convert + " " + lowerCase;
                 if (z) {
-                    strH3 = zd.h(strH3, ",");
+                    str2 = zd.h(str2, ",");
                 }
-                strH2 = zd.h(strH3, " ");
+                h2 = zd.h(str2, " ");
             }
             if (z) {
-                strH2 = strH2 + nanos2 + " nanoseconds ";
+                h2 = h2 + nanos2 + " nanoseconds ";
             }
-            strH = zd.h(strH2, "delay)");
+            str = zd.h(h2, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(zd.h(strH, " but future completed as timeout expired"));
+            throw new TimeoutException(zd.h(str, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(strH + " for " + string);
+        throw new TimeoutException(str + " for " + t0Var);
     }
 
     @Override // java.util.concurrent.Future
@@ -293,7 +293,7 @@ public abstract class t0 implements Future {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get() throws InterruptedException {
+    public final Object get() {
         Object obj;
         s0 s0Var = s0.c;
         if (!Thread.interrupted()) {

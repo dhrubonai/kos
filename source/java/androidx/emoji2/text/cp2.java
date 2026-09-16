@@ -57,89 +57,89 @@ public final class cp2 extends ly0 {
         }
     }
 
-    public static Typeface N(Object obj) throws ArrayIndexOutOfBoundsException, IllegalArgumentException, NegativeArraySizeException {
+    public static Typeface N(Object obj) {
         try {
-            Object objNewInstance = Array.newInstance((Class<?>) f, 1);
-            Array.set(objNewInstance, 0, obj);
-            return (Typeface) i.invoke(null, objNewInstance);
+            Object newInstance = Array.newInstance((Class<?>) f, 1);
+            Array.set(newInstance, 0, obj);
+            return (Typeface) i.invoke(null, newInstance);
         } catch (IllegalAccessException | InvocationTargetException unused) {
             return null;
         }
     }
 
     @Override // androidx.emoji2.text.ly0
-    public final Typeface j(Context context, rl0 rl0Var, Resources resources, int i2) throws IllegalAccessException, InstantiationException, IllegalArgumentException, InvocationTargetException {
-        Object objNewInstance;
-        MappedByteBuffer map;
+    public final Typeface j(Context context, rl0 rl0Var, Resources resources, int i2) {
+        Object obj;
+        int i3;
+        MappedByteBuffer mappedByteBuffer;
         FileInputStream fileInputStream;
         try {
-            objNewInstance = g.newInstance(null);
+            obj = g.newInstance(null);
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            objNewInstance = null;
+            obj = null;
         }
-        if (objNewInstance != null) {
-            for (sl0 sl0Var : rl0Var.f1018a) {
-                int i3 = sl0Var.f;
-                File fileD = oy0.D(context);
-                if (fileD != null) {
+        if (obj != null) {
+            for (sl0 sl0Var : rl0Var.f1017a) {
+                int i4 = sl0Var.f;
+                File D = oy0.D(context);
+                if (D != null) {
                     try {
-                        if (oy0.u(fileD, resources, i3)) {
+                        if (oy0.u(D, resources, i4)) {
                             try {
-                                fileInputStream = new FileInputStream(fileD);
+                                fileInputStream = new FileInputStream(D);
                             } catch (IOException unused2) {
-                                map = null;
+                                mappedByteBuffer = null;
                             }
                             try {
                                 FileChannel channel = fileInputStream.getChannel();
-                                map = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
+                                mappedByteBuffer = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
                                 fileInputStream.close();
-                                if (map != null && M(objNewInstance, map, sl0Var.e, sl0Var.b, sl0Var.c)) {
-                                }
+                                i3 = (mappedByteBuffer != null && M(obj, mappedByteBuffer, sl0Var.e, sl0Var.b, sl0Var.c)) ? i3 + 1 : 0;
                             } finally {
                             }
                         }
                     } finally {
-                        fileD.delete();
+                        D.delete();
                     }
                 }
-                map = null;
-                if (map != null) {
+                mappedByteBuffer = null;
+                if (mappedByteBuffer != null) {
                 }
             }
-            return N(objNewInstance);
+            return N(obj);
         }
         return null;
     }
 
     @Override // androidx.emoji2.text.ly0
-    public final Typeface k(Context context, cm0[] cm0VarArr, int i2) throws IllegalAccessException, InstantiationException, IOException, ArrayIndexOutOfBoundsException, IllegalArgumentException, InvocationTargetException, NegativeArraySizeException {
-        Object objNewInstance;
+    public final Typeface k(Context context, cm0[] cm0VarArr, int i2) {
+        Object obj;
         try {
-            objNewInstance = g.newInstance(null);
+            obj = g.newInstance(null);
         } catch (IllegalAccessException | InstantiationException | InvocationTargetException unused) {
-            objNewInstance = null;
+            obj = null;
         }
-        if (objNewInstance != null) {
+        if (obj != null) {
             int i3 = 0;
             db2 db2Var = new db2(0);
             int length = cm0VarArr.length;
             while (true) {
                 if (i3 < length) {
                     cm0 cm0Var = cm0VarArr[i3];
-                    Uri uri = cm0Var.f209a;
-                    ByteBuffer byteBufferL = (ByteBuffer) db2Var.get(uri);
-                    if (byteBufferL == null) {
-                        byteBufferL = oy0.L(context, uri);
-                        db2Var.put(uri, byteBufferL);
+                    Uri uri = cm0Var.f208a;
+                    ByteBuffer byteBuffer = (ByteBuffer) db2Var.get(uri);
+                    if (byteBuffer == null) {
+                        byteBuffer = oy0.L(context, uri);
+                        db2Var.put(uri, byteBuffer);
                     }
-                    if (byteBufferL == null || !M(objNewInstance, byteBufferL, cm0Var.b, cm0Var.c, cm0Var.d)) {
+                    if (byteBuffer == null || !M(obj, byteBuffer, cm0Var.b, cm0Var.c, cm0Var.d)) {
                         break;
                     }
                     i3++;
                 } else {
-                    Typeface typefaceN = N(objNewInstance);
-                    if (typefaceN != null) {
-                        return Typeface.create(typefaceN, i2);
+                    Typeface N = N(obj);
+                    if (N != null) {
+                        return Typeface.create(N, i2);
                     }
                 }
             }

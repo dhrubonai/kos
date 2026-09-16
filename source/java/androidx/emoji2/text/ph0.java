@@ -14,8 +14,8 @@ public final class ph0 extends t22 {
 
     @Override // androidx.emoji2.text.t22
     public final Object b(Object obj) {
-        Object objB = super.b(obj);
+        Object b = super.b(obj);
         this.h.remove(obj);
-        return objB;
+        return b;
     }
 }

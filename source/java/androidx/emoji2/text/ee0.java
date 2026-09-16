@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 public final class ee0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f302a = 1;
+    public int f301a = 1;
     public final nc1 b;
     public nc1 c;
     public nc1 d;
@@ -20,14 +20,14 @@ public final class ee0 {
     }
 
     public final void a() {
-        this.f302a = 1;
+        this.f301a = 1;
         this.c = this.b;
         this.f = 0;
     }
 
     public final boolean b() {
-        lc1 lc1VarB = this.c.b.b();
-        int iA = lc1VarB.a(6);
-        return !(iA == 0 || ((ByteBuffer) lc1VarB.g).get(iA + lc1VarB.d) == 0) || this.e == 65039;
+        lc1 b = this.c.b.b();
+        int a2 = b.a(6);
+        return !(a2 == 0 || ((ByteBuffer) b.g).get(a2 + b.d) == 0) || this.e == 65039;
     }
 }

@@ -12,11 +12,11 @@ public final class w42 extends md1 implements w62 {
         l42 l42Var = new l42(new v42(this, 0), new v42(this, 1));
         if (this.s) {
             f72 f72Var = c72.u;
-            wy0 wy0Var = e72.f290a[12];
+            wy0 wy0Var = e72.f289a[12];
             f72Var.a(u62Var, l42Var);
         } else {
             f72 f72Var2 = c72.t;
-            wy0 wy0Var2 = e72.f290a[11];
+            wy0 wy0Var2 = e72.f289a[11];
             f72Var2.a(u62Var, l42Var);
         }
     }

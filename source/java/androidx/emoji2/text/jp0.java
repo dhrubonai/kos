@@ -9,14 +9,14 @@ import java.util.Set;
 public abstract class jp0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final List f592a;
+    public static final List f591a;
 
     static {
-        String[] strArr = wj1.f1284a;
-        String strA = a.a.a.c.a(-324051546554146L, strArr);
-        String strA2 = a.a.a.c.a(-318231865868066L, strArr);
-        Set setSingleton = Collections.singleton(a.a.a.c.a(-317849613778722L, strArr));
-        lx0.w(setSingleton, "singleton(...)");
-        f592a = xs.m0(new lp0(strA, strA2, setSingleton), new lp0(a.a.a.c.a(-317987052732194L, strArr), a.a.a.c.a(-318712902205218L, strArr), ve0.d));
+        String[] strArr = wj1.f1283a;
+        String a2 = a.a.a.c.a(-324051546554146L, strArr);
+        String a3 = a.a.a.c.a(-318231865868066L, strArr);
+        Set singleton = Collections.singleton(a.a.a.c.a(-317849613778722L, strArr));
+        lx0.w(singleton, "singleton(...)");
+        f591a = xs.m0(new lp0(a2, a3, singleton), new lp0(a.a.a.c.a(-317987052732194L, strArr), a.a.a.c.a(-318712902205218L, strArr), ve0.d));
     }
 }

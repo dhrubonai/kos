@@ -25,11 +25,11 @@ public final /* synthetic */ class wu implements Runnable {
             case 0:
                 xu xuVar = (xu) this.e;
                 Serializable serializable = (Serializable) ((p4) this.g).e;
-                String str = (String) xuVar.f1357a.get(Integer.valueOf(this.f));
+                String str = (String) xuVar.f1356a.get(Integer.valueOf(this.f));
                 if (str != null) {
                     g4 g4Var = (g4) xuVar.e.get(str);
-                    if ((g4Var != null ? g4Var.f400a : null) != null) {
-                        j4 j4Var = g4Var.f400a;
+                    if ((g4Var != null ? g4Var.f399a : null) != null) {
+                        j4 j4Var = g4Var.f399a;
                         if (xuVar.d.remove(str)) {
                             j4Var.c(serializable);
                             break;

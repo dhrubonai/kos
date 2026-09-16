@@ -64,37 +64,37 @@ public final class zh0 implements nd2 {
                 j2 = -1;
                 break;
             }
-            b62 b62VarS = rnVar.s(1);
-            byte[] bArr = b62VarS.f137a;
-            int i2 = b62VarS.c;
+            b62 s = rnVar.s(1);
+            byte[] bArr = s.f136a;
+            int i2 = s.c;
             j2 = -1;
-            int iMin = (int) Math.min(j5 - j6, 8192 - i2);
+            int min = (int) Math.min(j5 - j6, 8192 - i2);
             synchronized (my0Var) {
                 lx0.x(bArr, "array");
                 my0Var.g.seek(j6);
                 i = 0;
                 while (true) {
-                    if (i >= iMin) {
+                    if (i >= min) {
                         break;
                     }
-                    int i3 = my0Var.g.read(bArr, i2, iMin - i);
-                    if (i3 != -1) {
-                        i += i3;
+                    int read = my0Var.g.read(bArr, i2, min - i);
+                    if (read != -1) {
+                        i += read;
                     } else if (i == 0) {
                         i = -1;
                     }
                 }
             }
             if (i == -1) {
-                if (b62VarS.b == b62VarS.c) {
-                    rnVar.d = b62VarS.a();
-                    e62.a(b62VarS);
+                if (s.b == s.c) {
+                    rnVar.d = s.a();
+                    e62.a(s);
                 }
                 if (j4 == j6) {
                     j3 = -1;
                 }
             } else {
-                b62VarS.c += i;
+                s.c += i;
                 long j7 = i;
                 j6 += j7;
                 rnVar.e += j7;

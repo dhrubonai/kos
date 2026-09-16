@@ -5,19 +5,19 @@ package androidx.emoji2.text;
 public final class i62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final h62 f511a;
+    public final h62 f510a;
     public final h62 b;
     public final boolean c;
 
     public i62(h62 h62Var, h62 h62Var2, boolean z) {
-        this.f511a = h62Var;
+        this.f510a = h62Var;
         this.b = h62Var2;
         this.c = z;
     }
 
     public static i62 a(i62 i62Var, h62 h62Var, h62 h62Var2, boolean z, int i) {
         if ((i & 1) != 0) {
-            h62Var = i62Var.f511a;
+            h62Var = i62Var.f510a;
         }
         if ((i & 2) != 0) {
             h62Var2 = i62Var.b;
@@ -34,14 +34,14 @@ public final class i62 {
             return false;
         }
         i62 i62Var = (i62) obj;
-        return lx0.n(this.f511a, i62Var.f511a) && lx0.n(this.b, i62Var.b) && this.c == i62Var.c;
+        return lx0.n(this.f510a, i62Var.f510a) && lx0.n(this.b, i62Var.b) && this.c == i62Var.c;
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.c) + ((this.b.hashCode() + (this.f511a.hashCode() * 31)) * 31);
+        return Boolean.hashCode(this.c) + ((this.b.hashCode() + (this.f510a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "Selection(start=" + this.f511a + ", end=" + this.b + ", handlesCrossed=" + this.c + ')';
+        return "Selection(start=" + this.f510a + ", end=" + this.b + ", handlesCrossed=" + this.c + ')';
     }
 }

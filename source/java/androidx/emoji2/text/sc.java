@@ -19,6 +19,7 @@ public final class sc extends g01 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
+        wl1 snapshotObserver;
         switch (this.e) {
             case 0:
                 this.f.getLayoutNode().C();
@@ -26,7 +27,8 @@ public final class sc extends g01 implements sm0 {
             case 1:
                 js2 js2Var = this.f;
                 if (js2Var.h && js2Var.isAttachedToWindow() && js2Var.getView().getParent() == js2Var) {
-                    js2Var.getSnapshotObserver().a(js2Var, j7.p, js2Var.getUpdate());
+                    snapshotObserver = js2Var.getSnapshotObserver();
+                    snapshotObserver.a(js2Var, j7.p, js2Var.getUpdate());
                 }
                 break;
             case 2:
@@ -47,6 +49,6 @@ public final class sc extends g01 implements sm0 {
                 js2Var4.getUpdateBlock().e(js2Var4.C);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

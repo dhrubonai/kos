@@ -21,7 +21,7 @@ public abstract class b {
 
     static {
         qe1 qe1Var = new qe1(8);
-        ew2.f332a.getClass();
+        ew2.f331a.getClass();
         fw2 fw2Var = dw2.g;
         qe1Var.g(1, fw2Var);
         fw2 fw2Var2 = dw2.f;

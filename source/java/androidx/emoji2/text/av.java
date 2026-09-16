@@ -10,7 +10,7 @@ import androidx.compose.runtime.internal.ComposableLambdaImpl;
 public abstract class av {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ViewGroup.LayoutParams f122a = new ViewGroup.LayoutParams(-2, -2);
+    public static final ViewGroup.LayoutParams f121a = new ViewGroup.LayoutParams(-2, -2);
 
     public static void a(v71 v71Var, ComposableLambdaImpl composableLambdaImpl) {
         View childAt = ((ViewGroup) v71Var.getWindow().getDecorView().findViewById(R.id.content)).getChildAt(0);
@@ -33,6 +33,6 @@ public abstract class av {
         if (a01.C(decorView) == null) {
             a01.Z(decorView, v71Var);
         }
-        v71Var.setContentView(ixVar2, f122a);
+        v71Var.setContentView(ixVar2, f121a);
     }
 }

@@ -32,7 +32,7 @@ public final class ft0 implements Closeable {
                 throw new IOException("closed");
             }
             int i2 = this.f;
-            int i3 = g82Var.f405a;
+            int i3 = g82Var.f404a;
             if ((i3 & 32) != 0) {
                 i2 = g82Var.b[5];
             }
@@ -41,24 +41,24 @@ public final class ft0 implements Closeable {
                 gs0 gs0Var = this.h;
                 int i4 = (i3 & 2) != 0 ? g82Var.b[1] : -1;
                 gs0Var.getClass();
-                int iMin = Math.min(i4, 16384);
+                int min = Math.min(i4, 16384);
                 int i5 = gs0Var.d;
-                if (i5 != iMin) {
-                    if (iMin < i5) {
-                        gs0Var.b = Math.min(gs0Var.b, iMin);
+                if (i5 != min) {
+                    if (min < i5) {
+                        gs0Var.b = Math.min(gs0Var.b, min);
                     }
                     gs0Var.c = true;
-                    gs0Var.d = iMin;
+                    gs0Var.d = min;
                     int i6 = gs0Var.h;
-                    if (iMin < i6) {
-                        if (iMin == 0) {
+                    if (min < i6) {
+                        if (min == 0) {
                             cr0[] cr0VarArr = gs0Var.e;
                             xh.E0(cr0VarArr, 0, cr0VarArr.length);
                             gs0Var.f = gs0Var.e.length - 1;
                             gs0Var.g = 0;
                             gs0Var.h = 0;
                         } else {
-                            gs0Var.a(i6 - iMin);
+                            gs0Var.a(i6 - min);
                         }
                     }
                 }
@@ -100,7 +100,7 @@ public final class ft0 implements Closeable {
         if ((Integer.MIN_VALUE & i2) != 0) {
             throw new IllegalArgumentException(zd.f(i2, "reserved bit set: ").toString());
         }
-        byte[] bArr = jq2.f596a;
+        byte[] bArr = jq2.f595a;
         yn ynVar = this.d;
         lx0.x(ynVar, "<this>");
         ynVar.writeByte((i3 >>> 16) & 255);
@@ -141,20 +141,20 @@ public final class ft0 implements Closeable {
         }
         this.h.d(arrayList);
         long j = this.e.e;
-        long jMin = Math.min(this.f, j);
-        int i3 = j == jMin ? 4 : 0;
+        long min = Math.min(this.f, j);
+        int i3 = j == min ? 4 : 0;
         if (z) {
             i3 |= 1;
         }
-        e(i2, (int) jMin, 1, i3);
-        this.d.g(jMin, this.e);
-        if (j > jMin) {
-            long j2 = j - jMin;
+        e(i2, (int) min, 1, i3);
+        this.d.g(min, this.e);
+        if (j > min) {
+            long j2 = j - min;
             while (j2 > 0) {
-                long jMin2 = Math.min(this.f, j2);
-                j2 -= jMin2;
-                e(i2, (int) jMin2, 9, j2 == 0 ? 4 : 0);
-                this.d.g(jMin2, this.e);
+                long min2 = Math.min(this.f, j2);
+                j2 -= min2;
+                e(i2, (int) min2, 9, j2 == 0 ? 4 : 0);
+                this.d.g(min2, this.e);
             }
         }
     }

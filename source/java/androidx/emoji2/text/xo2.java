@@ -10,11 +10,14 @@ import androidx.compose.foundation.BorderModifierNodeElement;
 import androidx.compose.runtime.internal.ComposableLambda;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -29,7 +32,7 @@ public abstract class xo2 {
     public static np o;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float[][] f1349a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
+    public static final float[][] f1348a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
     public static final float[][] b = {new float[]{1.8620678f, -1.0112547f, 0.14918678f}, new float[]{0.38752654f, 0.62144744f, -0.00897398f}, new float[]{-0.0158415f, -0.03412294f, 1.0499644f}};
     public static final float[] c = {95.047f, 100.0f, 108.883f};
     public static final float[][] d = {new float[]{0.41233894f, 0.35762063f, 0.18051042f}, new float[]{0.2126f, 0.7152f, 0.0722f}, new float[]{0.01932141f, 0.11916382f, 0.9503448f}};
@@ -46,38 +49,110 @@ public abstract class xo2 {
     }
 
     public static final String A(String str) {
-        String string;
-        if (str == null || (string = wf2.z0(str).toString()) == null) {
+        String obj;
+        if (str == null || (obj = wf2.z0(str).toString()) == null) {
             return null;
         }
         Locale locale = Locale.ROOT;
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.w(locale, a.a.a.c.a(-380616265842466L, strArr));
-        String upperCase = string.toUpperCase(locale);
+        String upperCase = obj.toUpperCase(locale);
         lx0.w(upperCase, a.a.a.c.a(-380654920548130L, strArr));
         if (upperCase.length() != 2) {
             return null;
         }
         for (int i2 = 0; i2 < upperCase.length(); i2++) {
-            char cCharAt = upperCase.charAt(i2);
-            if ('A' > cCharAt || cCharAt >= '[') {
+            char charAt = upperCase.charAt(i2);
+            if ('A' > charAt || charAt >= '[') {
                 return null;
             }
         }
         return upperCase;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00a6  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public static long B(int r14, java.lang.String r15) throws java.lang.NumberFormatException {
-        /*
-            Method dump skipped, instructions count: 327
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.xo2.B(int, java.lang.String):long");
+    public static long B(int i2, String str) {
+        int i3 = i(str, false, 0, i2);
+        Matcher matcher = p10.m.matcher(str);
+        int i4 = -1;
+        int i5 = -1;
+        int i6 = -1;
+        int i7 = -1;
+        int i8 = -1;
+        int i9 = -1;
+        while (i3 < i2) {
+            int i10 = i(str, true, i3 + 1, i2);
+            matcher.region(i3, i10);
+            if (i5 == -1 && matcher.usePattern(p10.m).matches()) {
+                String group = matcher.group(1);
+                lx0.w(group, "matcher.group(1)");
+                i5 = Integer.parseInt(group);
+                String group2 = matcher.group(2);
+                lx0.w(group2, "matcher.group(2)");
+                i8 = Integer.parseInt(group2);
+                String group3 = matcher.group(3);
+                lx0.w(group3, "matcher.group(3)");
+                i9 = Integer.parseInt(group3);
+            } else if (i6 == -1 && matcher.usePattern(p10.l).matches()) {
+                String group4 = matcher.group(1);
+                lx0.w(group4, "matcher.group(1)");
+                i6 = Integer.parseInt(group4);
+            } else {
+                if (i7 == -1) {
+                    Pattern pattern = p10.k;
+                    if (matcher.usePattern(pattern).matches()) {
+                        String group5 = matcher.group(1);
+                        lx0.w(group5, "matcher.group(1)");
+                        Locale locale = Locale.US;
+                        lx0.w(locale, "US");
+                        String lowerCase = group5.toLowerCase(locale);
+                        lx0.w(lowerCase, "this as java.lang.String).toLowerCase(locale)");
+                        String pattern2 = pattern.pattern();
+                        lx0.w(pattern2, "MONTH_PATTERN.pattern()");
+                        i7 = wf2.h0(pattern2, lowerCase, 0, false, 6) / 4;
+                    }
+                }
+                if (i4 == -1 && matcher.usePattern(p10.j).matches()) {
+                    String group6 = matcher.group(1);
+                    lx0.w(group6, "matcher.group(1)");
+                    i4 = Integer.parseInt(group6);
+                }
+            }
+            i3 = i(str, false, i10 + 1, i2);
+        }
+        if (70 <= i4 && i4 < 100) {
+            i4 += 1900;
+        }
+        if (i4 >= 0 && i4 < 70) {
+            i4 += 2000;
+        }
+        if (i4 < 1601) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        if (i7 == -1) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        if (1 > i6 || i6 >= 32) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        if (i5 < 0 || i5 >= 24) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        if (i8 < 0 || i8 >= 60) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        if (i9 < 0 || i9 >= 60) {
+            throw new IllegalArgumentException("Failed requirement.");
+        }
+        GregorianCalendar gregorianCalendar = new GregorianCalendar(jq2.d);
+        gregorianCalendar.setLenient(false);
+        gregorianCalendar.set(1, i4);
+        gregorianCalendar.set(2, i7 - 1);
+        gregorianCalendar.set(5, i6);
+        gregorianCalendar.set(11, i5);
+        gregorianCalendar.set(12, i8);
+        gregorianCalendar.set(13, i9);
+        gregorianCalendar.set(14, 0);
+        return gregorianCalendar.getTimeInMillis();
     }
 
     public static final boolean C(String str) {
@@ -102,15 +177,15 @@ public abstract class xo2 {
     public static final Object E(ap1 ap1Var, wu1 wu1Var) {
         lx0.v(wu1Var, "null cannot be cast to non-null type androidx.compose.runtime.CompositionLocal<kotlin.Any?>");
         zo1 zo1Var = (zo1) ap1Var;
-        Object objB = zo1Var.get(wu1Var);
-        if (objB == null) {
-            objB = wu1Var.b();
+        Object obj = zo1Var.get(wu1Var);
+        if (obj == null) {
+            obj = wu1Var.b();
         }
-        return ((mq2) objB).a(zo1Var);
+        return ((mq2) obj).a(zo1Var);
     }
 
     public static final Object F(Object obj) {
-        return obj instanceof lu ? mz0.h(((lu) obj).f713a) : obj;
+        return obj instanceof lu ? mz0.h(((lu) obj).f712a) : obj;
     }
 
     public static final void G(Matrix matrix, float[] fArr) {
@@ -177,9 +252,9 @@ public abstract class xo2 {
     }
 
     public static final long I(float f2, long j2) {
-        float fMax = Math.max(0.0f, Float.intBitsToFloat((int) (j2 >> 32)) - f2);
-        float fMax2 = Math.max(0.0f, Float.intBitsToFloat((int) (j2 & 4294967295L)) - f2);
-        return (Float.floatToRawIntBits(fMax) << 32) | (Float.floatToRawIntBits(fMax2) & 4294967295L);
+        float max = Math.max(0.0f, Float.intBitsToFloat((int) (j2 >> 32)) - f2);
+        float max2 = Math.max(0.0f, Float.intBitsToFloat((int) (j2 & 4294967295L)) - f2);
+        return (Float.floatToRawIntBits(max) << 32) | (Float.floatToRawIntBits(max2) & 4294967295L);
     }
 
     public static void J(Object obj, String str) {
@@ -189,7 +264,154 @@ public abstract class xo2 {
     }
 
     public static final BlendMode K(int i2) {
-        return i2 == 0 ? BlendMode.CLEAR : i2 == 1 ? BlendMode.SRC : i2 == 2 ? BlendMode.DST : i2 == 3 ? BlendMode.SRC_OVER : i2 == 4 ? BlendMode.DST_OVER : i2 == 5 ? BlendMode.SRC_IN : i2 == 6 ? BlendMode.DST_IN : i2 == 7 ? BlendMode.SRC_OUT : i2 == 8 ? BlendMode.DST_OUT : i2 == 9 ? BlendMode.SRC_ATOP : i2 == 10 ? BlendMode.DST_ATOP : i2 == 11 ? BlendMode.XOR : i2 == 12 ? BlendMode.PLUS : i2 == 13 ? BlendMode.MODULATE : i2 == 14 ? BlendMode.SCREEN : i2 == 15 ? BlendMode.OVERLAY : i2 == 16 ? BlendMode.DARKEN : i2 == 17 ? BlendMode.LIGHTEN : i2 == 18 ? BlendMode.COLOR_DODGE : i2 == 19 ? BlendMode.COLOR_BURN : i2 == 20 ? BlendMode.HARD_LIGHT : i2 == 21 ? BlendMode.SOFT_LIGHT : i2 == 22 ? BlendMode.DIFFERENCE : i2 == 23 ? BlendMode.EXCLUSION : i2 == 24 ? BlendMode.MULTIPLY : i2 == 25 ? BlendMode.HUE : i2 == 26 ? BlendMode.SATURATION : i2 == 27 ? BlendMode.COLOR : i2 == 28 ? BlendMode.LUMINOSITY : BlendMode.SRC_OVER;
+        BlendMode blendMode;
+        BlendMode blendMode2;
+        BlendMode blendMode3;
+        BlendMode blendMode4;
+        BlendMode blendMode5;
+        BlendMode blendMode6;
+        BlendMode blendMode7;
+        BlendMode blendMode8;
+        BlendMode blendMode9;
+        BlendMode blendMode10;
+        BlendMode blendMode11;
+        BlendMode blendMode12;
+        BlendMode blendMode13;
+        BlendMode blendMode14;
+        BlendMode blendMode15;
+        BlendMode blendMode16;
+        BlendMode blendMode17;
+        BlendMode blendMode18;
+        BlendMode blendMode19;
+        BlendMode blendMode20;
+        BlendMode blendMode21;
+        BlendMode blendMode22;
+        BlendMode blendMode23;
+        BlendMode blendMode24;
+        BlendMode blendMode25;
+        BlendMode blendMode26;
+        BlendMode blendMode27;
+        BlendMode blendMode28;
+        BlendMode blendMode29;
+        BlendMode blendMode30;
+        if (i2 == 0) {
+            blendMode30 = BlendMode.CLEAR;
+            return blendMode30;
+        }
+        if (i2 == 1) {
+            blendMode29 = BlendMode.SRC;
+            return blendMode29;
+        }
+        if (i2 == 2) {
+            blendMode28 = BlendMode.DST;
+            return blendMode28;
+        }
+        if (i2 == 3) {
+            blendMode27 = BlendMode.SRC_OVER;
+            return blendMode27;
+        }
+        if (i2 == 4) {
+            blendMode26 = BlendMode.DST_OVER;
+            return blendMode26;
+        }
+        if (i2 == 5) {
+            blendMode25 = BlendMode.SRC_IN;
+            return blendMode25;
+        }
+        if (i2 == 6) {
+            blendMode24 = BlendMode.DST_IN;
+            return blendMode24;
+        }
+        if (i2 == 7) {
+            blendMode23 = BlendMode.SRC_OUT;
+            return blendMode23;
+        }
+        if (i2 == 8) {
+            blendMode22 = BlendMode.DST_OUT;
+            return blendMode22;
+        }
+        if (i2 == 9) {
+            blendMode21 = BlendMode.SRC_ATOP;
+            return blendMode21;
+        }
+        if (i2 == 10) {
+            blendMode20 = BlendMode.DST_ATOP;
+            return blendMode20;
+        }
+        if (i2 == 11) {
+            blendMode19 = BlendMode.XOR;
+            return blendMode19;
+        }
+        if (i2 == 12) {
+            blendMode18 = BlendMode.PLUS;
+            return blendMode18;
+        }
+        if (i2 == 13) {
+            blendMode17 = BlendMode.MODULATE;
+            return blendMode17;
+        }
+        if (i2 == 14) {
+            blendMode16 = BlendMode.SCREEN;
+            return blendMode16;
+        }
+        if (i2 == 15) {
+            blendMode15 = BlendMode.OVERLAY;
+            return blendMode15;
+        }
+        if (i2 == 16) {
+            blendMode14 = BlendMode.DARKEN;
+            return blendMode14;
+        }
+        if (i2 == 17) {
+            blendMode13 = BlendMode.LIGHTEN;
+            return blendMode13;
+        }
+        if (i2 == 18) {
+            blendMode12 = BlendMode.COLOR_DODGE;
+            return blendMode12;
+        }
+        if (i2 == 19) {
+            blendMode11 = BlendMode.COLOR_BURN;
+            return blendMode11;
+        }
+        if (i2 == 20) {
+            blendMode10 = BlendMode.HARD_LIGHT;
+            return blendMode10;
+        }
+        if (i2 == 21) {
+            blendMode9 = BlendMode.SOFT_LIGHT;
+            return blendMode9;
+        }
+        if (i2 == 22) {
+            blendMode8 = BlendMode.DIFFERENCE;
+            return blendMode8;
+        }
+        if (i2 == 23) {
+            blendMode7 = BlendMode.EXCLUSION;
+            return blendMode7;
+        }
+        if (i2 == 24) {
+            blendMode6 = BlendMode.MULTIPLY;
+            return blendMode6;
+        }
+        if (i2 == 25) {
+            blendMode5 = BlendMode.HUE;
+            return blendMode5;
+        }
+        if (i2 == 26) {
+            blendMode4 = BlendMode.SATURATION;
+            return blendMode4;
+        }
+        if (i2 == 27) {
+            blendMode3 = BlendMode.COLOR;
+            return blendMode3;
+        }
+        if (i2 == 28) {
+            blendMode2 = BlendMode.LUMINOSITY;
+            return blendMode2;
+        }
+        blendMode = BlendMode.SRC_OVER;
+        return blendMode;
     }
 
     public static final PorterDuff.Mode L(int i2) {
@@ -252,7 +474,7 @@ public abstract class xo2 {
             if (tnVar != tnVar2) {
                 return new py(1, tnVar);
             }
-            jq.f594a.getClass();
+            jq.f593a.getClass();
             return new vn(iq.b);
         }
         if (i2 != -1) {
@@ -291,8 +513,8 @@ public abstract class xo2 {
 
     public static final Object e(cy0 cy0Var, n10 n10Var) {
         cy0Var.c(null);
-        Object objW = cy0Var.w(n10Var);
-        return objW == f30.d ? objW : up2.f1187a;
+        Object w = cy0Var.w(n10Var);
+        return w == f30.d ? w : up2.f1186a;
     }
 
     public static final nd1 f(nd1 nd1Var, t92 t92Var) {
@@ -304,14 +526,14 @@ public abstract class xo2 {
     }
 
     public static String h(String str) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         Locale locale = Locale.getDefault();
         lx0.w(locale, a.a.a.c.a(-381084417277730L, strArr));
         lx0.x(str, a.a.a.c.a(-380989927997218L, strArr));
         a.a.a.c.a(-381075827343138L, strArr);
-        String strA = A(str);
-        if (strA != null) {
-            String displayCountry = new Locale.Builder().setRegion(strA).build().getDisplayCountry(locale);
+        String A = A(str);
+        if (A != null) {
+            String displayCountry = new Locale.Builder().setRegion(A).build().getDisplayCountry(locale);
             if (wf2.j0(displayCountry)) {
                 displayCountry = null;
             }
@@ -324,8 +546,8 @@ public abstract class xo2 {
 
     public static int i(String str, boolean z, int i2, int i3) {
         while (i2 < i3) {
-            char cCharAt = str.charAt(i2);
-            if (((cCharAt < ' ' && cCharAt != '\t') || cCharAt >= 127 || ('0' <= cCharAt && cCharAt < ':') || (('a' <= cCharAt && cCharAt < '{') || (('A' <= cCharAt && cCharAt < '[') || cCharAt == ':'))) == (!z)) {
+            char charAt = str.charAt(i2);
+            if (((charAt < ' ' && charAt != '\t') || charAt >= 127 || ('0' <= charAt && charAt < ':') || (('a' <= charAt && charAt < '{') || (('A' <= charAt && charAt < '[') || charAt == ':'))) == (!z)) {
                 return i2;
             }
             i2++;
@@ -353,128 +575,86 @@ public abstract class xo2 {
         return xh1Var != null ? az0.A(xh1Var).K(xh1Var, false) : zw1.e;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x006d, code lost:
-    
-        return r8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x0026, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x0026, code lost:
     
         continue;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static final androidx.emoji2.text.rk0 m(androidx.emoji2.text.rk0 r8) {
-        /*
-            androidx.emoji2.text.md1 r0 = r8.d
-            boolean r0 = r0.q
-            r1 = 0
-            if (r0 != 0) goto L9
-            goto Lac
-        L9:
-            if (r0 != 0) goto L10
-            java.lang.String r0 = "visitChildren called on an unattached node"
-            androidx.emoji2.text.iv0.b(r0)
-        L10:
-            androidx.emoji2.text.sf1 r0 = new androidx.emoji2.text.sf1
-            r2 = 16
-            androidx.emoji2.text.md1[] r3 = new androidx.emoji2.text.md1[r2]
-            r0.<init>(r3)
-            androidx.emoji2.text.md1 r8 = r8.d
-            androidx.emoji2.text.md1 r3 = r8.i
-            if (r3 != 0) goto L23
-            androidx.emoji2.text.lx0.i(r0, r8)
-            goto L26
-        L23:
-            r0.b(r3)
-        L26:
-            int r8 = r0.f
-            if (r8 == 0) goto Lac
-            int r8 = r8 + (-1)
-            java.lang.Object r8 = r0.k(r8)
-            androidx.emoji2.text.md1 r8 = (androidx.emoji2.text.md1) r8
-            int r3 = r8.g
-            r3 = r3 & 1024(0x400, float:1.435E-42)
-            if (r3 != 0) goto L3c
-            androidx.emoji2.text.lx0.i(r0, r8)
-            goto L26
-        L3c:
-            if (r8 == 0) goto L26
-            int r3 = r8.f
-            r3 = r3 & 1024(0x400, float:1.435E-42)
-            if (r3 == 0) goto La9
-            r3 = r1
-        L45:
-            if (r8 == 0) goto L26
-            boolean r4 = r8 instanceof androidx.emoji2.text.rk0
-            r5 = 1
-            if (r4 == 0) goto L6e
-            androidx.emoji2.text.rk0 r8 = (androidx.emoji2.text.rk0) r8
-            androidx.emoji2.text.md1 r4 = r8.d
-            boolean r4 = r4.q
-            if (r4 == 0) goto La4
-            androidx.emoji2.text.ok0 r4 = r8.K0()
-            int r4 = r4.ordinal()
-            if (r4 == 0) goto L6d
-            if (r4 == r5) goto L6d
-            r5 = 2
-            if (r4 == r5) goto L6d
-            r8 = 3
-            if (r4 != r8) goto L67
-            goto La4
-        L67:
-            androidx.emoji2.text.mu r8 = new androidx.emoji2.text.mu
-            r8.<init>()
-            throw r8
-        L6d:
-            return r8
-        L6e:
-            int r4 = r8.f
-            r4 = r4 & 1024(0x400, float:1.435E-42)
-            if (r4 == 0) goto La4
-            boolean r4 = r8 instanceof androidx.emoji2.text.z60
-            if (r4 == 0) goto La4
-            r4 = r8
-            androidx.emoji2.text.z60 r4 = (androidx.emoji2.text.z60) r4
-            androidx.emoji2.text.md1 r4 = r4.s
-            r6 = 0
-        L7e:
-            if (r4 == 0) goto La1
-            int r7 = r4.f
-            r7 = r7 & 1024(0x400, float:1.435E-42)
-            if (r7 == 0) goto L9e
-            int r6 = r6 + 1
-            if (r6 != r5) goto L8c
-            r8 = r4
-            goto L9e
-        L8c:
-            if (r3 != 0) goto L95
-            androidx.emoji2.text.sf1 r3 = new androidx.emoji2.text.sf1
-            androidx.emoji2.text.md1[] r7 = new androidx.emoji2.text.md1[r2]
-            r3.<init>(r7)
-        L95:
-            if (r8 == 0) goto L9b
-            r3.b(r8)
-            r8 = r1
-        L9b:
-            r3.b(r4)
-        L9e:
-            androidx.emoji2.text.md1 r4 = r4.i
-            goto L7e
-        La1:
-            if (r6 != r5) goto La4
-            goto L45
-        La4:
-            androidx.emoji2.text.md1 r8 = androidx.emoji2.text.lx0.m(r3)
-            goto L45
-        La9:
-            androidx.emoji2.text.md1 r8 = r8.i
-            goto L3c
-        Lac:
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.xo2.m(androidx.emoji2.text.rk0):androidx.emoji2.text.rk0");
+    public static final rk0 m(rk0 rk0Var) {
+        boolean z = rk0Var.d.q;
+        if (z) {
+            if (!z) {
+                iv0.b("visitChildren called on an unattached node");
+            }
+            sf1 sf1Var = new sf1(new md1[16]);
+            md1 md1Var = rk0Var.d;
+            md1 md1Var2 = md1Var.i;
+            if (md1Var2 == null) {
+                lx0.i(sf1Var, md1Var);
+            } else {
+                sf1Var.b(md1Var2);
+            }
+            loop0: while (true) {
+                int i2 = sf1Var.f;
+                if (i2 == 0) {
+                    break;
+                }
+                md1 md1Var3 = (md1) sf1Var.k(i2 - 1);
+                if ((md1Var3.g & 1024) == 0) {
+                    lx0.i(sf1Var, md1Var3);
+                } else {
+                    while (true) {
+                        if (md1Var3 == null) {
+                            break;
+                        }
+                        if ((md1Var3.f & 1024) != 0) {
+                            sf1 sf1Var2 = null;
+                            while (md1Var3 != null) {
+                                if (md1Var3 instanceof rk0) {
+                                    rk0 rk0Var2 = (rk0) md1Var3;
+                                    if (rk0Var2.d.q) {
+                                        int ordinal = rk0Var2.K0().ordinal();
+                                        if (ordinal == 0 || ordinal == 1 || ordinal == 2) {
+                                            break loop0;
+                                        }
+                                        if (ordinal != 3) {
+                                            throw new mu();
+                                        }
+                                    }
+                                } else if ((md1Var3.f & 1024) != 0 && (md1Var3 instanceof z60)) {
+                                    int i3 = 0;
+                                    for (md1 md1Var4 = ((z60) md1Var3).s; md1Var4 != null; md1Var4 = md1Var4.i) {
+                                        if ((md1Var4.f & 1024) != 0) {
+                                            i3++;
+                                            if (i3 == 1) {
+                                                md1Var3 = md1Var4;
+                                            } else {
+                                                if (sf1Var2 == null) {
+                                                    sf1Var2 = new sf1(new md1[16]);
+                                                }
+                                                if (md1Var3 != null) {
+                                                    sf1Var2.b(md1Var3);
+                                                    md1Var3 = null;
+                                                }
+                                                sf1Var2.b(md1Var4);
+                                            }
+                                        }
+                                    }
+                                    if (i3 == 1) {
+                                    }
+                                }
+                                md1Var3 = lx0.m(sf1Var2);
+                            }
+                        } else {
+                            md1Var3 = md1Var3.i;
+                        }
+                    }
+                }
+            }
+        }
+        return null;
     }
 
     public static final gu0 n() {
@@ -483,7 +663,7 @@ public abstract class xo2 {
             return gu0Var;
         }
         fu0 fu0Var = new fu0("Rounded.DeleteSweep", 24.0f, 24.0f, false, 96);
-        int i2 = uq2.f1189a;
+        int i2 = uq2.f1188a;
         kd2 kd2Var = new kd2(et.b);
         pm0 pm0Var = new pm0(2);
         pm0Var.m(16.0f, 16.0f);
@@ -533,9 +713,9 @@ public abstract class xo2 {
         pm0Var.o(-0.45f, -1.0f, -1.0f, -1.0f);
         pm0Var.e();
         fu0.a(fu0Var, pm0Var.d, 0, "", kd2Var, 1.0f, 2, 1.0f);
-        gu0 gu0VarB = fu0Var.b();
-        l = gu0VarB;
-        return gu0VarB;
+        gu0 b2 = fu0Var.b();
+        l = b2;
+        return b2;
     }
 
     public static Drawable o(Context context, int i2) {
@@ -544,11 +724,11 @@ public abstract class xo2 {
 
     public static Set p() {
         try {
-            Object objInvoke = Class.forName("android.text.EmojiConsistency").getMethod("getEmojiConsistencySet", null).invoke(null, null);
-            if (objInvoke == null) {
+            Object invoke = Class.forName("android.text.EmojiConsistency").getMethod("getEmojiConsistencySet", null).invoke(null, null);
+            if (invoke == null) {
                 return Collections.EMPTY_SET;
             }
-            Set set = (Set) objInvoke;
+            Set set = (Set) invoke;
             Iterator it = set.iterator();
             while (it.hasNext()) {
                 if (!(it.next() instanceof int[])) {
@@ -604,7 +784,7 @@ public abstract class xo2 {
             Object obj2 = atomicReferenceFieldUpdater2.get(ipVar2);
             if (!(obj2 instanceof ju) || ((ju) obj2).d == null) {
                 ip.i.set(ipVar2, 536870911);
-                atomicReferenceFieldUpdater2.set(ipVar2, a4.f81a);
+                atomicReferenceFieldUpdater2.set(ipVar2, a4.f80a);
                 ipVar = ipVar2;
             } else {
                 ipVar2.o();
@@ -631,8 +811,8 @@ public abstract class xo2 {
             if (psVar == null) {
                 v20 v20Var = oe0.d;
                 try {
-                    q60 q60Var = e90.f294a;
-                    v20Var = h91.f462a.i;
+                    q60 q60Var = e90.f293a;
+                    v20Var = h91.f461a.i;
                 } catch (ii1 | IllegalStateException unused) {
                 }
                 ps psVar2 = new ps(v20Var.B(nz0.l()));
@@ -686,25 +866,25 @@ public abstract class xo2 {
     }
 
     public static boolean y(int i2, Object obj) {
-        int iC;
+        int i3;
         if (obj instanceof ym0) {
             if (obj instanceof an0) {
-                iC = ((an0) obj).c();
+                i3 = ((an0) obj).c();
             } else if (obj instanceof sm0) {
-                iC = 0;
+                i3 = 0;
             } else if (obj instanceof um0) {
-                iC = 1;
+                i3 = 1;
             } else if (obj instanceof Function2) {
-                iC = 2;
+                i3 = 2;
             } else if (obj instanceof wm0) {
-                iC = 3;
+                i3 = 3;
             } else if (obj instanceof xm0) {
-                iC = 4;
+                i3 = 4;
             } else {
                 boolean z = obj instanceof ComposableLambda;
-                iC = z ? 5 : z ? 6 : z ? 7 : z ? 8 : z ? 9 : z ? 10 : z ? 11 : z ? 13 : z ? 14 : z ? 15 : z ? 16 : z ? 17 : z ? 18 : z ? 19 : z ? 20 : z ? 21 : -1;
+                i3 = z ? 5 : z ? 6 : z ? 7 : z ? 8 : z ? 9 : z ? 10 : z ? 11 : z ? 13 : z ? 14 : z ? 15 : z ? 16 : z ? 17 : z ? 18 : z ? 19 : z ? 20 : z ? 21 : -1;
             }
-            if (iC == i2) {
+            if (i3 == i2) {
                 return true;
             }
         }

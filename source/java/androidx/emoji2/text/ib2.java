@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class ib2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f518a;
+    public final long f517a;
 
     public /* synthetic */ ib2(long j) {
-        this.f518a = j;
+        this.f517a = j;
     }
 
     public static final boolean a(long j, long j2) {
@@ -40,16 +40,16 @@ public final class ib2 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof ib2) {
-            return this.f518a == ((ib2) obj).f518a;
+            return this.f517a == ((ib2) obj).f517a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f518a);
+        return Long.hashCode(this.f517a);
     }
 
     public final String toString() {
-        return f(this.f518a);
+        return f(this.f517a);
     }
 }

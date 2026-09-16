@@ -45,9 +45,9 @@ public class ca1 implements Map.Entry, ry0 {
         switch (this.d) {
             case 0:
                 Object obj = this.e;
-                int iHashCode = obj != null ? obj.hashCode() : 0;
+                int hashCode = obj != null ? obj.hashCode() : 0;
                 Object value = getValue();
-                return (value != null ? value.hashCode() : 0) ^ iHashCode;
+                return (value != null ? value.hashCode() : 0) ^ hashCode;
             default:
                 return super.hashCode();
         }

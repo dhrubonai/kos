@@ -177,7 +177,7 @@ public class IXiaomiSettingsProxy extends ClassInvocationStub {
             nz0.Q(c.a(-914983211908898L, strArr), 3, c.a(-915039046483746L, strArr));
             return;
         }
-        String strA = c.a(-916705493794594L, strArr);
+        String a2 = c.a(-916705493794594L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-915163600535330L, strArr));
         String str = yw2.f;
@@ -188,7 +188,7 @@ public class IXiaomiSettingsProxy extends ClassInvocationStub {
         sb.append(str);
         sb.append(c.a(-914957442105122L, strArr));
         sb.append(yw2.c());
-        zd.p(sb, c.a(-914991801843490L, strArr), 3, strA);
+        zd.p(sb, c.a(-914991801843490L, strArr), 3, a2);
     }
 
     @Override // com.kos.engine.fake.hook.IInjectHook

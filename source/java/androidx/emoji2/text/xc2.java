@@ -9,26 +9,26 @@ import com.kos.engine.entity.location.BCell;
 public final class xc2 implements Parcelable.ClassLoaderCreator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1329a;
+    public final /* synthetic */ int f1328a;
 
     public static yc2 a(Parcel parcel, ClassLoader classLoader) {
         if (classLoader == null) {
             classLoader = xc2.class.getClassLoader();
         }
-        int i = parcel.readInt();
-        if (i == 0) {
+        int readInt = parcel.readInt();
+        if (readInt == 0) {
             return new yc2();
         }
-        qp1 qp1VarE = sb2.e.e();
-        for (int i2 = 0; i2 < i; i2++) {
-            qp1VarE.add(parcel.readValue(classLoader));
+        qp1 e = sb2.e.e();
+        for (int i = 0; i < readInt; i++) {
+            e.add(parcel.readValue(classLoader));
         }
-        return new yc2(qp1VarE.c());
+        return new yc2(e.c());
     }
 
     @Override // android.os.Parcelable.ClassLoaderCreator
     public final Object createFromParcel(Parcel parcel, ClassLoader classLoader) {
-        switch (this.f1329a) {
+        switch (this.f1328a) {
             case 0:
                 return a(parcel, classLoader);
             case 1:
@@ -44,7 +44,7 @@ public final class xc2 implements Parcelable.ClassLoaderCreator {
 
     @Override // android.os.Parcelable.Creator
     public final Object[] newArray(int i) {
-        switch (this.f1329a) {
+        switch (this.f1328a) {
             case 0:
                 return new yc2[i];
             case 1:
@@ -60,7 +60,7 @@ public final class xc2 implements Parcelable.ClassLoaderCreator {
 
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        switch (this.f1329a) {
+        switch (this.f1328a) {
             case 0:
                 return a(parcel, null);
             case 1:

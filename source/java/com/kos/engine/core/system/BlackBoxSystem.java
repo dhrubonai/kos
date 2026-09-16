@@ -46,7 +46,7 @@ public class BlackBoxSystem {
         return sBlackBoxSystem;
     }
 
-    private void initJarEnv() throws IOException {
+    private void initJarEnv() {
         try {
             AssetManager assets = c01.s.getAssets();
             String[] strArr = xa1.b;
@@ -57,7 +57,7 @@ public class BlackBoxSystem {
         }
     }
 
-    public void startup() throws PackageManager.NameNotFoundException, IOException {
+    public void startup() {
         if (isStartup.getAndSet(true)) {
             return;
         }

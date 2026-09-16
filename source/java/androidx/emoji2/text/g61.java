@@ -5,21 +5,21 @@ package androidx.emoji2.text;
 public final class g61 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f401a;
+    public final int f400a;
 
     public final boolean equals(Object obj) {
         if (obj instanceof g61) {
-            return this.f401a == ((g61) obj).f401a;
+            return this.f400a == ((g61) obj).f400a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f401a);
+        return Integer.hashCode(this.f400a);
     }
 
     public final String toString() {
-        int i = this.f401a;
+        int i = this.f400a;
         return i == 1 ? "LineHeightStyle.Trim.FirstLineTop" : i == 16 ? "LineHeightStyle.Trim.LastLineBottom" : i == 17 ? "LineHeightStyle.Trim.Both" : i == 0 ? "LineHeightStyle.Trim.None" : "Invalid";
     }
 }

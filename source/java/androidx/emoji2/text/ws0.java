@@ -18,7 +18,7 @@ public final class ws0 extends mi2 {
     }
 
     @Override // androidx.emoji2.text.mi2
-    public final long a() throws IOException {
+    public final long a() {
         xs0 xs0Var = this.e;
         try {
             xs0Var.z.n(this.f, this.g);

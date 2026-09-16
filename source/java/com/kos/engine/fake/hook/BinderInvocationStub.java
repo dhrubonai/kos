@@ -3,7 +3,6 @@ package com.kos.engine.fake.hook;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import android.os.RemoteException;
 import black.android.os.BRServiceManager;
 import java.io.FileDescriptor;
 
@@ -17,12 +16,12 @@ public abstract class BinderInvocationStub extends ClassInvocationStub implement
     }
 
     @Override // android.os.IBinder
-    public void dump(FileDescriptor fileDescriptor, String[] strArr) throws RemoteException {
+    public void dump(FileDescriptor fileDescriptor, String[] strArr) {
         this.mBaseBinder.dump(fileDescriptor, strArr);
     }
 
     @Override // android.os.IBinder
-    public void dumpAsync(FileDescriptor fileDescriptor, String[] strArr) throws RemoteException {
+    public void dumpAsync(FileDescriptor fileDescriptor, String[] strArr) {
         this.mBaseBinder.dumpAsync(fileDescriptor, strArr);
     }
 
@@ -37,7 +36,7 @@ public abstract class BinderInvocationStub extends ClassInvocationStub implement
     }
 
     @Override // android.os.IBinder
-    public void linkToDeath(IBinder.DeathRecipient deathRecipient, int i) throws RemoteException {
+    public void linkToDeath(IBinder.DeathRecipient deathRecipient, int i) {
         this.mBaseBinder.linkToDeath(deathRecipient, i);
     }
 

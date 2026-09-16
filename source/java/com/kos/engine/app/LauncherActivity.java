@@ -42,16 +42,16 @@ public class LauncherActivity extends Activity {
         c01 c01Var = c01.r;
         PackageInfo packageInfo = BPackageManager.get().getPackageInfo(stringExtra, 0, intExtra);
         if (packageInfo != null) {
-            Drawable drawableLoadIcon = packageInfo.applicationInfo.loadIcon(c01.s.getPackageManager());
+            Drawable loadIcon = packageInfo.applicationInfo.loadIcon(c01.s.getPackageManager());
             setContentView(R.layout.activity_launcher);
-            findViewById(R.id.iv_icon).setBackgroundDrawable(drawableLoadIcon);
+            findViewById(R.id.iv_icon).setBackgroundDrawable(loadIcon);
             new Thread(new df(intExtra, 3, intent2)).start();
             return;
         }
-        String strA = c.a(-138234081460002L, strArr);
-        StringBuilder sbK = jx0.k(stringExtra);
-        sbK.append(c.a(-136657828462370L, strArr));
-        nz0.s(strA, sbK.toString());
+        String a2 = c.a(-138234081460002L, strArr);
+        StringBuilder k = jx0.k(stringExtra);
+        k.append(c.a(-136657828462370L, strArr));
+        nz0.s(a2, k.toString());
         finish();
     }
 

@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class zl1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f1448a;
+    public final String f1447a;
     public final long b;
 
     public zl1(long j, String str) {
-        this.f1448a = str;
+        this.f1447a = str;
         this.b = j;
     }
 
@@ -21,19 +21,19 @@ public final class zl1 {
             return false;
         }
         zl1 zl1Var = (zl1) obj;
-        return lx0.n(this.f1448a, zl1Var.f1448a) && this.b == zl1Var.b;
+        return lx0.n(this.f1447a, zl1Var.f1447a) && this.b == zl1Var.b;
     }
 
     public final int hashCode() {
-        String str = this.f1448a;
+        String str = this.f1447a;
         return Long.hashCode(this.b) + ((str == null ? 0 : str.hashCode()) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-320843205984034L, strArr));
-        sb.append(this.f1448a);
+        sb.append(this.f1447a);
         sb.append(a.a.a.c.a(-320929105329954L, strArr));
         sb.append(this.b);
         sb.append(')');

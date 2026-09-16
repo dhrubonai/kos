@@ -8,7 +8,7 @@ import android.view.VelocityTracker;
 public final class p80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f895a;
+    public final Context f894a;
     public final gz0 b;
     public VelocityTracker c;
     public float d;
@@ -18,7 +18,7 @@ public final class p80 {
     public final int[] h = {Integer.MAX_VALUE, 0};
 
     public p80(Context context, gz0 gz0Var) {
-        this.f895a = context;
+        this.f894a = context;
         this.b = gz0Var;
     }
 }

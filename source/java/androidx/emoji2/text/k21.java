@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class k21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f614a;
+    public final int f613a;
     public final int b;
 
     public k21(int i, int i2) {
-        this.f614a = i;
+        this.f613a = i;
         this.b = i2;
     }
 }

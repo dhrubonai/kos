@@ -17,15 +17,15 @@ public final /* synthetic */ class qt2 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        boolean zB0;
+        boolean z;
         switch (this.d) {
             case 0:
                 i01 i01Var = (i01) obj;
-                lx0.x(i01Var, a.a.a.c.a(-384739434446626L, wj1.f1284a));
+                lx0.x(i01Var, a.a.a.c.a(-384739434446626L, wj1.f1283a));
                 return Integer.valueOf(i01Var.f.ordinal());
             case 1:
                 i01 i01Var2 = (i01) obj;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 lx0.x(i01Var2, a.a.a.c.a(-384786679086882L, strArr));
                 String lowerCase = i01Var2.b.toLowerCase(Locale.ROOT);
                 lx0.w(lowerCase, a.a.a.c.a(-384782384119586L, strArr));
@@ -36,23 +36,23 @@ public final /* synthetic */ class qt2 implements um0 {
                 return Boolean.valueOf(GmsCore.isGoogleAppOrService(((ApplicationInfo) obj).packageName));
             case 4:
                 return Boolean.valueOf(!lx0.n(((ApplicationInfo) obj).packageName, c01.X()));
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 ApplicationInfo applicationInfo = (ApplicationInfo) obj;
                 try {
                     c01 c01Var = c01.r;
                     String str = applicationInfo.packageName;
                     c01Var.getClass();
-                    zB0 = c01.b0(str, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
+                    z = c01.b0(str, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
                 } catch (Throwable unused) {
-                    zB0 = false;
+                    z = false;
                 }
-                return Boolean.valueOf(zB0);
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                lx0.x((w70) obj, a.a.a.c.a(-384288462880546L, wj1.f1284a));
+                return Boolean.valueOf(z);
+            case 6:
+                lx0.x((w70) obj, a.a.a.c.a(-384288462880546L, wj1.f1283a));
                 return Boolean.valueOf(!r5.n);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 w70 w70Var = (w70) obj;
-                String[] strArr2 = wj1.f1284a;
+                String[] strArr2 = wj1.f1283a;
                 lx0.x(w70Var, a.a.a.c.a(-384284167913250L, strArr2));
                 String str2 = w70Var.b;
                 Locale locale = Locale.getDefault();
@@ -62,12 +62,12 @@ public final /* synthetic */ class qt2 implements um0 {
                 return lowerCase2;
             case 8:
                 return Boolean.valueOf(((ApplicationInfo) obj).packageName != null);
-            case 9:
+            case pz0.b /* 9 */:
                 return Boolean.valueOf(!lx0.n(((ApplicationInfo) obj).packageName, c01.X()));
             default:
                 i01 i01Var3 = (i01) obj;
-                lx0.x(i01Var3, a.a.a.c.a(-374315548819234L, wj1.f1284a));
-                return i01Var3.f501a;
+                lx0.x(i01Var3, a.a.a.c.a(-374315548819234L, wj1.f1283a));
+                return i01Var3.f500a;
         }
     }
 }

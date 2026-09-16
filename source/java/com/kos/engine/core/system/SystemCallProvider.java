@@ -2,17 +2,15 @@ package com.kos.engine.core.system;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.emoji2.text.xa1;
-import java.io.IOException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public class SystemCallProvider extends ContentProvider {
-    private boolean initSystem() throws PackageManager.NameNotFoundException, IOException {
+    private boolean initSystem() {
         BlackBoxSystem.getSystem().startup();
         return true;
     }

@@ -8,11 +8,11 @@ import java.util.Map;
 public final class nb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Bitmap f801a;
+    public final Bitmap f800a;
     public final Map b;
 
     public nb1(Bitmap bitmap, Map map) {
-        this.f801a = bitmap;
+        this.f800a = bitmap;
         this.b = map;
     }
 
@@ -24,14 +24,14 @@ public final class nb1 {
             return false;
         }
         nb1 nb1Var = (nb1) obj;
-        return lx0.n(this.f801a, nb1Var.f801a) && lx0.n(this.b, nb1Var.b);
+        return lx0.n(this.f800a, nb1Var.f800a) && lx0.n(this.b, nb1Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f801a.hashCode() * 31);
+        return this.b.hashCode() + (this.f800a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "Value(bitmap=" + this.f801a + ", extras=" + this.b + ')';
+        return "Value(bitmap=" + this.f800a + ", extras=" + this.b + ')';
     }
 }

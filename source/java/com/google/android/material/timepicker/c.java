@@ -21,13 +21,13 @@ public final class c extends a1 {
 
     @Override // androidx.emoji2.text.a1
     public final void d(View view, s1 s1Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
-        this.f76a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-        int iIntValue = ((Integer) view.getTag(R.id.material_value_index)).intValue();
-        if (iIntValue > 0) {
-            accessibilityNodeInfo.setTraversalAfter((View) this.d.A.get(iIntValue - 1));
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
+        this.f75a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        int intValue = ((Integer) view.getTag(R.id.material_value_index)).intValue();
+        if (intValue > 0) {
+            accessibilityNodeInfo.setTraversalAfter((View) this.d.A.get(intValue - 1));
         }
-        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(0, 1, iIntValue, 1, false, view.isSelected()));
+        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(0, 1, intValue, 1, false, view.isSelected()));
         accessibilityNodeInfo.setClickable(true);
         s1Var.b(n1.e);
     }
@@ -37,13 +37,13 @@ public final class c extends a1 {
         if (i != 16) {
             return super.g(view, i, bundle);
         }
-        long jUptimeMillis = SystemClock.uptimeMillis();
+        long uptimeMillis = SystemClock.uptimeMillis();
         ClockFaceView clockFaceView = this.d;
         view.getHitRect(clockFaceView.x);
-        float fCenterX = clockFaceView.x.centerX();
-        float fCenterY = clockFaceView.x.centerY();
-        clockFaceView.w.onTouchEvent(MotionEvent.obtain(jUptimeMillis, jUptimeMillis, 0, fCenterX, fCenterY, 0));
-        clockFaceView.w.onTouchEvent(MotionEvent.obtain(jUptimeMillis, jUptimeMillis, 1, fCenterX, fCenterY, 0));
+        float centerX = clockFaceView.x.centerX();
+        float centerY = clockFaceView.x.centerY();
+        clockFaceView.w.onTouchEvent(MotionEvent.obtain(uptimeMillis, uptimeMillis, 0, centerX, centerY, 0));
+        clockFaceView.w.onTouchEvent(MotionEvent.obtain(uptimeMillis, uptimeMillis, 1, centerX, centerY, 0));
         return true;
     }
 }

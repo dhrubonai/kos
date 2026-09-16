@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class me extends oe {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f742a;
+    public float f741a;
     public float b;
     public float c;
 
     public me(float f, float f2, float f3) {
-        this.f742a = f;
+        this.f741a = f;
         this.b = f2;
         this.c = f3;
     }
@@ -18,7 +18,7 @@ public final class me extends oe {
     @Override // androidx.emoji2.text.oe
     public final float a(int i) {
         if (i == 0) {
-            return this.f742a;
+            return this.f741a;
         }
         if (i == 1) {
             return this.b;
@@ -41,7 +41,7 @@ public final class me extends oe {
 
     @Override // androidx.emoji2.text.oe
     public final void d() {
-        this.f742a = 0.0f;
+        this.f741a = 0.0f;
         this.b = 0.0f;
         this.c = 0.0f;
     }
@@ -49,7 +49,7 @@ public final class me extends oe {
     @Override // androidx.emoji2.text.oe
     public final void e(int i, float f) {
         if (i == 0) {
-            this.f742a = f;
+            this.f741a = f;
         } else if (i == 1) {
             this.b = f;
         } else {
@@ -65,14 +65,14 @@ public final class me extends oe {
             return false;
         }
         me meVar = (me) obj;
-        return meVar.f742a == this.f742a && meVar.b == this.b && meVar.c == this.c;
+        return meVar.f741a == this.f741a && meVar.b == this.b && meVar.c == this.c;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.c) + zd.b(this.b, Float.hashCode(this.f742a) * 31, 31);
+        return Float.hashCode(this.c) + zd.b(this.b, Float.hashCode(this.f741a) * 31, 31);
     }
 
     public final String toString() {
-        return "AnimationVector3D: v1 = " + this.f742a + ", v2 = " + this.b + ", v3 = " + this.c;
+        return "AnimationVector3D: v1 = " + this.f741a + ", v2 = " + this.b + ", v3 = " + this.c;
     }
 }

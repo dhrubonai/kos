@@ -8,7 +8,7 @@ import java.io.File;
 public final class xh0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final xh0 f1339a = new xh0();
+    public static final xh0 f1338a = new xh0();
     public static final File b = new File("/proc/self/fd");
     public static int c = 30;
     public static long d = SystemClock.uptimeMillis();

@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class aj0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float f104a = (float) (Math.log(0.78d) / Math.log(0.9d));
+    public static final float f103a = (float) (Math.log(0.78d) / Math.log(0.9d));
 }

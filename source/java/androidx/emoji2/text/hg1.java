@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class hg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f471a;
+    public final long f470a;
     public final long b;
     public final long c;
     public final long d;
@@ -14,7 +14,7 @@ public final class hg1 {
     public final long g;
 
     public hg1(long j, long j2, long j3, long j4, long j5, long j6, long j7) {
-        this.f471a = j;
+        this.f470a = j;
         this.b = j2;
         this.c = j3;
         this.d = j4;
@@ -31,11 +31,11 @@ public final class hg1 {
             return false;
         }
         hg1 hg1Var = (hg1) obj;
-        return et.c(this.f471a, hg1Var.f471a) && et.c(this.d, hg1Var.d) && et.c(this.b, hg1Var.b) && et.c(this.e, hg1Var.e) && et.c(this.c, hg1Var.c) && et.c(this.f, hg1Var.f) && et.c(this.g, hg1Var.g);
+        return et.c(this.f470a, hg1Var.f470a) && et.c(this.d, hg1Var.d) && et.c(this.b, hg1Var.b) && et.c(this.e, hg1Var.e) && et.c(this.c, hg1Var.c) && et.c(this.f, hg1Var.f) && et.c(this.g, hg1Var.g);
     }
 
     public final int hashCode() {
         int i = et.l;
-        return Long.hashCode(this.g) + jx0.b(jx0.b(jx0.b(jx0.b(jx0.b(Long.hashCode(this.f471a) * 31, 31, this.d), 31, this.b), 31, this.e), 31, this.c), 31, this.f);
+        return Long.hashCode(this.g) + jx0.b(jx0.b(jx0.b(jx0.b(jx0.b(Long.hashCode(this.f470a) * 31, 31, this.d), 31, this.b), 31, this.e), 31, this.c), 31, this.f);
     }
 }

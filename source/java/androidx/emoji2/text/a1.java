@@ -20,7 +20,7 @@ public class a1 {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
 
     /* renamed from: a, reason: collision with root package name */
-    public final View.AccessibilityDelegate f76a;
+    public final View.AccessibilityDelegate f75a;
     public final z0 b;
 
     public a1() {
@@ -28,11 +28,11 @@ public class a1 {
     }
 
     public boolean a(View view, AccessibilityEvent accessibilityEvent) {
-        return this.f76a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
+        return this.f75a.dispatchPopulateAccessibilityEvent(view, accessibilityEvent);
     }
 
     public p4 b(View view) {
-        AccessibilityNodeProvider accessibilityNodeProvider = this.f76a.getAccessibilityNodeProvider(view);
+        AccessibilityNodeProvider accessibilityNodeProvider = this.f75a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
             return new p4(2, accessibilityNodeProvider);
         }
@@ -40,30 +40,30 @@ public class a1 {
     }
 
     public void c(View view, AccessibilityEvent accessibilityEvent) {
-        this.f76a.onInitializeAccessibilityEvent(view, accessibilityEvent);
+        this.f75a.onInitializeAccessibilityEvent(view, accessibilityEvent);
     }
 
     public void d(View view, s1 s1Var) {
-        this.f76a.onInitializeAccessibilityNodeInfo(view, s1Var.f1045a);
+        this.f75a.onInitializeAccessibilityNodeInfo(view, s1Var.f1044a);
     }
 
     public void e(View view, AccessibilityEvent accessibilityEvent) {
-        this.f76a.onPopulateAccessibilityEvent(view, accessibilityEvent);
+        this.f75a.onPopulateAccessibilityEvent(view, accessibilityEvent);
     }
 
     public boolean f(ViewGroup viewGroup, View view, AccessibilityEvent accessibilityEvent) {
-        return this.f76a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
+        return this.f75a.onRequestSendAccessibilityEvent(viewGroup, view, accessibilityEvent);
     }
 
     public boolean g(View view, int i, Bundle bundle) {
-        boolean zPerformAccessibilityAction;
+        boolean z;
         WeakReference weakReference;
         ClickableSpan clickableSpan;
         List list = (List) view.getTag(R.id.tag_accessibility_actions);
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        boolean z = false;
+        boolean z2 = false;
         int i2 = 0;
         while (true) {
             if (i2 >= list.size()) {
@@ -84,18 +84,18 @@ public class a1 {
                             Log.e("A11yActionCompat", "Failed to execute command with argument class ViewCommandArgument: ".concat(cls.getName()), e);
                         }
                     }
-                    zPerformAccessibilityAction = c2Var.a(view);
+                    z = c2Var.a(view);
                 }
             } else {
                 i2++;
             }
         }
-        zPerformAccessibilityAction = false;
-        if (!zPerformAccessibilityAction) {
-            zPerformAccessibilityAction = this.f76a.performAccessibilityAction(view, i, bundle);
+        z = false;
+        if (!z) {
+            z = this.f75a.performAccessibilityAction(view, i, bundle);
         }
-        if (zPerformAccessibilityAction || i != R.id.accessibility_action_clickable_span || bundle == null) {
-            return zPerformAccessibilityAction;
+        if (z || i != R.id.accessibility_action_clickable_span || bundle == null) {
+            return z;
         }
         int i3 = bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1);
         SparseArray sparseArray = (SparseArray) view.getTag(R.id.tag_accessibility_clickable_spans);
@@ -109,25 +109,25 @@ public class a1 {
                 }
                 if (clickableSpan.equals(clickableSpanArr[i4])) {
                     clickableSpan.onClick(view);
-                    z = true;
+                    z2 = true;
                     break;
                 }
                 i4++;
             }
         }
-        return z;
+        return z2;
     }
 
     public void h(View view, int i) {
-        this.f76a.sendAccessibilityEvent(view, i);
+        this.f75a.sendAccessibilityEvent(view, i);
     }
 
     public void i(View view, AccessibilityEvent accessibilityEvent) {
-        this.f76a.sendAccessibilityEventUnchecked(view, accessibilityEvent);
+        this.f75a.sendAccessibilityEventUnchecked(view, accessibilityEvent);
     }
 
     public a1(View.AccessibilityDelegate accessibilityDelegate) {
-        this.f76a = accessibilityDelegate;
+        this.f75a = accessibilityDelegate;
         this.b = new z0(this);
     }
 }

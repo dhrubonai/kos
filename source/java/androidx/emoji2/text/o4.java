@@ -11,7 +11,7 @@ public final class o4 implements Parcelable {
     public final String e;
 
     public o4(String str, String str2) {
-        lx0.x(str, a.a.a.c.a(-157849197100834L, wj1.f1284a));
+        lx0.x(str, a.a.a.c.a(-157849197100834L, wj1.f1283a));
         this.d = str;
         this.e = str2;
     }
@@ -33,14 +33,14 @@ public final class o4 implements Parcelable {
     }
 
     public final int hashCode() {
-        int iHashCode = this.d.hashCode() * 31;
+        int hashCode = this.d.hashCode() * 31;
         String str = this.e;
-        return iHashCode + (str == null ? 0 : str.hashCode());
+        return hashCode + (str == null ? 0 : str.hashCode());
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-157965161217826L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-158038175661858L, strArr));
@@ -49,7 +49,7 @@ public final class o4 implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-157887851806498L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-157887851806498L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeString(this.e);
     }

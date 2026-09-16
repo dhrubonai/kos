@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class mx {
 
     /* renamed from: a, reason: collision with root package name */
-    public final tx f776a;
+    public final tx f775a;
     public hq b;
     public boolean c;
     public int f;
@@ -21,7 +21,7 @@ public final class mx {
     public int k = -1;
 
     public mx(tx txVar, hq hqVar) {
-        this.f776a = txVar;
+        this.f775a = txVar;
         this.b = hqVar;
     }
 
@@ -40,7 +40,7 @@ public final class mx {
         if (i > 0) {
             fl1 fl1Var = this.b.f;
             fl1Var.Q(bl1.c);
-            fl1Var.h[fl1Var.i - fl1Var.f[fl1Var.g - 1].f260a] = i;
+            fl1Var.h[fl1Var.i - fl1Var.f[fl1Var.g - 1].f259a] = i;
             this.g = 0;
         }
         ArrayList arrayList = this.h;
@@ -70,7 +70,7 @@ public final class mx {
                 b();
                 fl1 fl1Var = this.b.f;
                 fl1Var.Q(tk1.c);
-                int i3 = fl1Var.i - fl1Var.f[fl1Var.g - 1].f260a;
+                int i3 = fl1Var.i - fl1Var.f[fl1Var.g - 1].f259a;
                 int[] iArr = fl1Var.h;
                 iArr[i3] = i2;
                 iArr[i3 + 1] = i;
@@ -81,7 +81,7 @@ public final class mx {
                 b();
                 fl1 fl1Var2 = this.b.f;
                 fl1Var2.Q(qk1.c);
-                int i6 = fl1Var2.i - fl1Var2.f[fl1Var2.g - 1].f260a;
+                int i6 = fl1Var2.i - fl1Var2.f[fl1Var2.g - 1].f259a;
                 int[] iArr2 = fl1Var2.h;
                 iArr2[i6 + 1] = i4;
                 iArr2[i6] = i5;
@@ -94,7 +94,7 @@ public final class mx {
     }
 
     public final void d(boolean z) {
-        tx txVar = this.f776a;
+        tx txVar = this.f775a;
         int i = z ? txVar.G.i : txVar.G.g;
         int i2 = i - this.f;
         if (i2 < 0) {
@@ -103,7 +103,7 @@ public final class mx {
         if (i2 > 0) {
             fl1 fl1Var = this.b.f;
             fl1Var.Q(yj1.c);
-            fl1Var.h[fl1Var.i - fl1Var.f[fl1Var.g - 1].f260a] = i2;
+            fl1Var.h[fl1Var.i - fl1Var.f[fl1Var.g - 1].f259a] = i2;
             this.f = i;
         }
     }

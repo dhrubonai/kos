@@ -55,7 +55,7 @@ public class ApkAssetsProxy extends ClassInvocationStub {
         APK_ASSETS_CLASS = c.a(-326641411833634L, strArr);
     }
 
-    public ApkAssetsProxy() throws ClassNotFoundException {
+    public ApkAssetsProxy() {
         String[] strArr = xa1.b;
         try {
             Class.forName(c.a(-332860524478242L, strArr));

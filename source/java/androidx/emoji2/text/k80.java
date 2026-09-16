@@ -19,8 +19,8 @@ public final class k80 extends y implements gj1 {
     public k80(Context context, Window window) {
         super(context);
         this.l = window;
-        this.m = az0.W(zv.f1456a);
-        Field field = es2.f320a;
+        this.m = az0.W(zv.f1455a);
+        Field field = es2.f319a;
         wr2.i(this, this);
         es2.m(this, new lc(this, 1));
     }
@@ -35,9 +35,9 @@ public final class k80 extends y implements gj1 {
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new x(i, 5, this);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new x(i, 5, this);
         }
     }
 
@@ -62,12 +62,12 @@ public final class k80 extends y implements gj1 {
     public final wv2 g(View view, wv2 wv2Var) {
         if (!this.o) {
             View childAt = getChildAt(0);
-            int iMax = Math.max(0, childAt.getLeft());
-            int iMax2 = Math.max(0, childAt.getTop());
-            int iMax3 = Math.max(0, getWidth() - childAt.getRight());
-            int iMax4 = Math.max(0, getHeight() - childAt.getBottom());
-            if (iMax != 0 || iMax2 != 0 || iMax3 != 0 || iMax4 != 0) {
-                return wv2Var.f1306a.n(iMax, iMax2, iMax3, iMax4);
+            int max = Math.max(0, childAt.getLeft());
+            int max2 = Math.max(0, childAt.getTop());
+            int max3 = Math.max(0, getWidth() - childAt.getRight());
+            int max4 = Math.max(0, getHeight() - childAt.getBottom());
+            if (max != 0 || max2 != 0 || max3 != 0 || max4 != 0) {
+                return wv2Var.f1305a.n(max, max2, max3, max4);
             }
         }
         return wv2Var;

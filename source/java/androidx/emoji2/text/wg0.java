@@ -7,5 +7,5 @@ import android.graphics.Paint;
 public abstract class wg0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Paint f1278a = new Paint(3);
+    public static final Paint f1277a = new Paint(3);
 }

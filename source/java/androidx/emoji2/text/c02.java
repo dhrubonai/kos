@@ -41,16 +41,16 @@ public final class c02 implements Closeable {
 
     public static String b(c02 c02Var, String str) {
         c02Var.getClass();
-        String strA = c02Var.i.a(str);
-        if (strA == null) {
+        String a2 = c02Var.i.a(str);
+        if (a2 == null) {
             return null;
         }
-        return strA;
+        return a2;
     }
 
     public final b02 c() {
         b02 b02Var = new b02();
-        b02Var.f131a = this.d;
+        b02Var.f130a = this.d;
         b02Var.b = this.e;
         b02Var.c = this.g;
         b02Var.d = this.f;

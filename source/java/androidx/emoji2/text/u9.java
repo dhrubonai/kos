@@ -1,5 +1,10 @@
 package androidx.emoji2.text;
 
+import android.os.Build;
+import java.lang.Thread;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class u9 extends a0 implements y20 {
@@ -10,58 +15,37 @@ public final class u9 extends a0 implements y20 {
         this._preHandler = this;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x002f  */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x002c, code lost:
+    
+        if (java.lang.reflect.Modifier.isStatic(r3.getModifiers()) != false) goto L15;
+     */
     @Override // androidx.emoji2.text.y20
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void o(androidx.emoji2.text.v20 r3, java.lang.Throwable r4) {
-        /*
-            r2 = this;
-            int r3 = android.os.Build.VERSION.SDK_INT
-            r0 = 26
-            if (r0 > r3) goto L4a
-            r0 = 28
-            if (r3 >= r0) goto L4a
-            java.lang.Object r3 = r2._preHandler
-            r0 = 0
-            if (r3 == r2) goto L12
-            java.lang.reflect.Method r3 = (java.lang.reflect.Method) r3
-            goto L32
-        L12:
-            java.lang.Class<java.lang.Thread> r3 = java.lang.Thread.class
-            java.lang.String r1 = "getUncaughtExceptionPreHandler"
-            java.lang.reflect.Method r3 = r3.getDeclaredMethod(r1, r0)     // Catch: java.lang.Throwable -> L2f
-            int r1 = r3.getModifiers()     // Catch: java.lang.Throwable -> L2f
-            boolean r1 = java.lang.reflect.Modifier.isPublic(r1)     // Catch: java.lang.Throwable -> L2f
-            if (r1 == 0) goto L2f
-            int r1 = r3.getModifiers()     // Catch: java.lang.Throwable -> L2f
-            boolean r1 = java.lang.reflect.Modifier.isStatic(r1)     // Catch: java.lang.Throwable -> L2f
-            if (r1 == 0) goto L2f
-            goto L30
-        L2f:
-            r3 = r0
-        L30:
-            r2._preHandler = r3
-        L32:
-            if (r3 == 0) goto L39
-            java.lang.Object r3 = r3.invoke(r0, r0)
-            goto L3a
-        L39:
-            r3 = r0
-        L3a:
-            boolean r1 = r3 instanceof java.lang.Thread.UncaughtExceptionHandler
-            if (r1 == 0) goto L41
-            r0 = r3
-            java.lang.Thread$UncaughtExceptionHandler r0 = (java.lang.Thread.UncaughtExceptionHandler) r0
-        L41:
-            if (r0 == 0) goto L4a
-            java.lang.Thread r3 = java.lang.Thread.currentThread()
-            r0.uncaughtException(r3, r4)
-        L4a:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.u9.o(androidx.emoji2.text.v20, java.lang.Throwable):void");
+    public final void o(v20 v20Var, Throwable th) {
+        Method method;
+        int i = Build.VERSION.SDK_INT;
+        if (26 > i || i >= 28) {
+            return;
+        }
+        Object obj = this._preHandler;
+        if (obj != this) {
+            method = (Method) obj;
+        } else {
+            try {
+                method = Thread.class.getDeclaredMethod("getUncaughtExceptionPreHandler", null);
+                if (Modifier.isPublic(method.getModifiers())) {
+                }
+            } catch (Throwable unused) {
+            }
+            method = null;
+            this._preHandler = method;
+        }
+        Object invoke = method != null ? method.invoke(null, null) : null;
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = invoke instanceof Thread.UncaughtExceptionHandler ? (Thread.UncaughtExceptionHandler) invoke : null;
+        if (uncaughtExceptionHandler != null) {
+            uncaughtExceptionHandler.uncaughtException(Thread.currentThread(), th);
+        }
     }
 }

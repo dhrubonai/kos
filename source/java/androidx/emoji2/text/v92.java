@@ -12,7 +12,7 @@ import android.view.ContextThemeWrapper;
 public final class v92 {
 
     /* renamed from: a, reason: collision with root package name */
-    public h50 f1210a = new t12();
+    public h50 f1209a = new t12();
     public h50 b = new t12();
     public h50 c = new t12();
     public h50 d = new t12();
@@ -38,69 +38,69 @@ public final class v92 {
         if (i2 != 0) {
             contextThemeWrapper.getTheme().applyStyle(i2, true);
         }
-        TypedArray typedArrayObtainStyledAttributes = contextThemeWrapper.obtainStyledAttributes(fv1.s);
+        TypedArray obtainStyledAttributes = contextThemeWrapper.obtainStyledAttributes(fv1.s);
         try {
-            int i3 = typedArrayObtainStyledAttributes.getInt(0, 0);
-            int i4 = typedArrayObtainStyledAttributes.getInt(3, i3);
-            int i5 = typedArrayObtainStyledAttributes.getInt(4, i3);
-            int i6 = typedArrayObtainStyledAttributes.getInt(2, i3);
-            int i7 = typedArrayObtainStyledAttributes.getInt(1, i3);
-            r20 r20VarC = c(typedArrayObtainStyledAttributes, 5, mVar);
-            r20 r20VarC2 = c(typedArrayObtainStyledAttributes, 8, r20VarC);
-            r20 r20VarC3 = c(typedArrayObtainStyledAttributes, 9, r20VarC);
-            r20 r20VarC4 = c(typedArrayObtainStyledAttributes, 7, r20VarC);
-            r20 r20VarC5 = c(typedArrayObtainStyledAttributes, 6, r20VarC);
+            int i3 = obtainStyledAttributes.getInt(0, 0);
+            int i4 = obtainStyledAttributes.getInt(3, i3);
+            int i5 = obtainStyledAttributes.getInt(4, i3);
+            int i6 = obtainStyledAttributes.getInt(2, i3);
+            int i7 = obtainStyledAttributes.getInt(1, i3);
+            r20 c = c(obtainStyledAttributes, 5, mVar);
+            r20 c2 = c(obtainStyledAttributes, 8, c);
+            r20 c3 = c(obtainStyledAttributes, 9, c);
+            r20 c4 = c(obtainStyledAttributes, 7, c);
+            r20 c5 = c(obtainStyledAttributes, 6, c);
             u92 u92Var = new u92();
-            u92Var.f1166a = ly0.i(i4);
-            u92Var.e = r20VarC2;
+            u92Var.f1165a = ly0.i(i4);
+            u92Var.e = c2;
             u92Var.b = ly0.i(i5);
-            u92Var.f = r20VarC3;
+            u92Var.f = c3;
             u92Var.c = ly0.i(i6);
-            u92Var.g = r20VarC4;
+            u92Var.g = c4;
             u92Var.d = ly0.i(i7);
-            u92Var.h = r20VarC5;
+            u92Var.h = c5;
             return u92Var;
         } finally {
-            typedArrayObtainStyledAttributes.recycle();
+            obtainStyledAttributes.recycle();
         }
     }
 
     public static u92 b(Context context, AttributeSet attributeSet, int i, int i2) {
         m mVar = new m(0);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.m, i, i2);
-        int resourceId = typedArrayObtainStyledAttributes.getResourceId(0, 0);
-        int resourceId2 = typedArrayObtainStyledAttributes.getResourceId(1, 0);
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.m, i, i2);
+        int resourceId = obtainStyledAttributes.getResourceId(0, 0);
+        int resourceId2 = obtainStyledAttributes.getResourceId(1, 0);
+        obtainStyledAttributes.recycle();
         return a(context, resourceId, resourceId2, mVar);
     }
 
     public static r20 c(TypedArray typedArray, int i, r20 r20Var) {
-        TypedValue typedValuePeekValue = typedArray.peekValue(i);
-        if (typedValuePeekValue != null) {
-            int i2 = typedValuePeekValue.type;
+        TypedValue peekValue = typedArray.peekValue(i);
+        if (peekValue != null) {
+            int i2 = peekValue.type;
             if (i2 == 5) {
-                return new m(TypedValue.complexToDimensionPixelSize(typedValuePeekValue.data, typedArray.getResources().getDisplayMetrics()));
+                return new m(TypedValue.complexToDimensionPixelSize(peekValue.data, typedArray.getResources().getDisplayMetrics()));
             }
             if (i2 == 6) {
-                return new hy1(typedValuePeekValue.getFraction(1.0f, 1.0f));
+                return new hy1(peekValue.getFraction(1.0f, 1.0f));
             }
         }
         return r20Var;
     }
 
     public final boolean d() {
-        return (this.b instanceof t12) && (this.f1210a instanceof t12) && (this.c instanceof t12) && (this.d instanceof t12);
+        return (this.b instanceof t12) && (this.f1209a instanceof t12) && (this.c instanceof t12) && (this.d instanceof t12);
     }
 
     public final boolean e(RectF rectF) {
         boolean z = this.l.getClass().equals(dd0.class) && this.j.getClass().equals(dd0.class) && this.i.getClass().equals(dd0.class) && this.k.getClass().equals(dd0.class);
-        float fA = this.e.a(rectF);
-        return z && ((this.f.a(rectF) > fA ? 1 : (this.f.a(rectF) == fA ? 0 : -1)) == 0 && (this.h.a(rectF) > fA ? 1 : (this.h.a(rectF) == fA ? 0 : -1)) == 0 && (this.g.a(rectF) > fA ? 1 : (this.g.a(rectF) == fA ? 0 : -1)) == 0) && d();
+        float a2 = this.e.a(rectF);
+        return z && ((this.f.a(rectF) > a2 ? 1 : (this.f.a(rectF) == a2 ? 0 : -1)) == 0 && (this.h.a(rectF) > a2 ? 1 : (this.h.a(rectF) == a2 ? 0 : -1)) == 0 && (this.g.a(rectF) > a2 ? 1 : (this.g.a(rectF) == a2 ? 0 : -1)) == 0) && d();
     }
 
     public final u92 f() {
         u92 u92Var = new u92();
-        u92Var.f1166a = this.f1210a;
+        u92Var.f1165a = this.f1209a;
         u92Var.b = this.b;
         u92Var.c = this.c;
         u92Var.d = this.d;

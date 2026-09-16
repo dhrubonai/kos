@@ -49,9 +49,9 @@ final class EnterExitTransitionElement extends ud1 {
     }
 
     public final int hashCode() {
-        int iHashCode = this.f0a.hashCode() * 29791;
+        int hashCode = this.f0a.hashCode() * 29791;
         mn2 mn2Var = this.b;
-        return this.f.hashCode() + ((this.e.hashCode() + ((this.d.f1385a.hashCode() + ((this.c.f1008a.hashCode() + ((iHashCode + (mn2Var == null ? 0 : mn2Var.hashCode())) * 31)) * 31)) * 31)) * 31);
+        return this.f.hashCode() + ((this.e.hashCode() + ((this.d.f1384a.hashCode() + ((this.c.f1007a.hashCode() + ((hashCode + (mn2Var == null ? 0 : mn2Var.hashCode())) * 31)) * 31)) * 31)) * 31);
     }
 
     @Override // androidx.emoji2.text.ud1

@@ -16,14 +16,14 @@ import java.io.File;
 public abstract class am1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f110a = Build.VERSION.SDK_INT;
+    public static final int f109a = Build.VERSION.SDK_INT;
 
     public static void a(PackageParser packageParser, PackageParser.Package r4) {
         if (l8.U()) {
             BRPackageParserPie.getWithException().collectCertificates(r4, true);
             return;
         }
-        int i = f110a;
+        int i = f109a;
         if (i >= 24) {
             BRPackageParserNougat.getWithException().collectCertificates(r4, 0);
             return;
@@ -42,7 +42,7 @@ public abstract class am1 {
     }
 
     public static PackageParser b() {
-        int i = f110a;
+        int i = f109a;
         if (i >= 23) {
             return BRPackageParserMarshmallow.get()._new();
         }
@@ -56,7 +56,7 @@ public abstract class am1 {
     }
 
     public static PackageParser.Package c(PackageParser packageParser, File file) {
-        int i = f110a;
+        int i = f109a;
         return i >= 23 ? BRPackageParserMarshmallow.getWithException(packageParser).parsePackage(file, 0) : i >= 22 ? BRPackageParserLollipop22.getWithException(packageParser).parsePackage(file, 0) : i >= 21 ? BRPackageParserLollipop.getWithException(packageParser).parsePackage(file, 0) : BRPackageParser.getWithException(packageParser).parsePackage(file, null, new DisplayMetrics(), 0);
     }
 }

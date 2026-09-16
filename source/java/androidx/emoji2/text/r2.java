@@ -22,7 +22,7 @@ public final /* synthetic */ class r2 implements sm0 {
                 if (!((Boolean) this.f.getValue()).booleanValue()) {
                     this.e.a();
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 n6.H(this.f, false);
                 this.e.a();
@@ -39,7 +39,7 @@ public final /* synthetic */ class r2 implements sm0 {
                 n6.H(this.f, false);
                 this.e.a();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 n6.H(this.f, false);
                 this.e.a();
                 break;
@@ -48,6 +48,6 @@ public final /* synthetic */ class r2 implements sm0 {
                 this.e.a();
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

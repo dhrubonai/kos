@@ -10,41 +10,41 @@ import android.view.ViewGroup;
 public class kx1 extends ViewGroup.MarginLayoutParams {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Rect f665a;
+    public final Rect f664a;
     public boolean b;
     public boolean c;
 
     public kx1(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f665a = new Rect();
+        this.f664a = new Rect();
         this.b = true;
         this.c = false;
     }
 
     public kx1(int i, int i2) {
         super(i, i2);
-        this.f665a = new Rect();
+        this.f664a = new Rect();
         this.b = true;
         this.c = false;
     }
 
     public kx1(ViewGroup.MarginLayoutParams marginLayoutParams) {
         super(marginLayoutParams);
-        this.f665a = new Rect();
+        this.f664a = new Rect();
         this.b = true;
         this.c = false;
     }
 
     public kx1(ViewGroup.LayoutParams layoutParams) {
         super(layoutParams);
-        this.f665a = new Rect();
+        this.f664a = new Rect();
         this.b = true;
         this.c = false;
     }
 
     public kx1(kx1 kx1Var) {
         super((ViewGroup.LayoutParams) kx1Var);
-        this.f665a = new Rect();
+        this.f664a = new Rect();
         this.b = true;
         this.c = false;
     }

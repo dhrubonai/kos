@@ -7,15 +7,15 @@ import android.database.DataSetObserver;
 public final class f71 extends DataSetObserver {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ i71 f347a;
+    public final /* synthetic */ i71 f346a;
 
     public f71(i71 i71Var) {
-        this.f347a = i71Var;
+        this.f346a = i71Var;
     }
 
     @Override // android.database.DataSetObserver
     public final void onChanged() {
-        i71 i71Var = this.f347a;
+        i71 i71Var = this.f346a;
         if (i71Var.y.isShowing()) {
             i71Var.f();
         }
@@ -23,6 +23,6 @@ public final class f71 extends DataSetObserver {
 
     @Override // android.database.DataSetObserver
     public final void onInvalidated() {
-        this.f347a.dismiss();
+        this.f346a.dismiss();
     }
 }

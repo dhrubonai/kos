@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class l21 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final l21 f670a = new l21();
+    public static final l21 f669a = new l21();
 }

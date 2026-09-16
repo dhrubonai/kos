@@ -27,7 +27,7 @@ public final class ui implements nd2 {
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws IOException {
+    public final void close() {
         switch (this.d) {
             case 0:
                 fd2 fd2Var = (fd2) this.e;
@@ -63,7 +63,7 @@ public final class ui implements nd2 {
     }
 
     @Override // androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws IOException {
+    public final long v(long j, rn rnVar) {
         switch (this.d) {
             case 0:
                 lx0.x(rnVar, "sink");
@@ -71,11 +71,11 @@ public final class ui implements nd2 {
                 ui uiVar = (ui) this.f;
                 fd2Var.h();
                 try {
-                    long jV = uiVar.v(j, rnVar);
+                    long v = uiVar.v(j, rnVar);
                     if (fd2Var.i()) {
                         throw fd2Var.k(null);
                     }
-                    return jV;
+                    return v;
                 } catch (IOException e) {
                     if (fd2Var.i()) {
                         throw fd2Var.k(e);
@@ -94,17 +94,17 @@ public final class ui implements nd2 {
                 }
                 try {
                     ((fm2) this.f).f();
-                    b62 b62VarS = rnVar.s(1);
-                    int i = ((InputStream) this.e).read(b62VarS.f137a, b62VarS.c, (int) Math.min(j, 8192 - b62VarS.c));
-                    if (i == -1) {
-                        if (b62VarS.b == b62VarS.c) {
-                            rnVar.d = b62VarS.a();
-                            e62.a(b62VarS);
+                    b62 s = rnVar.s(1);
+                    int read = ((InputStream) this.e).read(s.f136a, s.c, (int) Math.min(j, 8192 - s.c));
+                    if (read == -1) {
+                        if (s.b == s.c) {
+                            rnVar.d = s.a();
+                            e62.a(s);
                         }
                         return -1L;
                     }
-                    b62VarS.c += i;
-                    long j2 = i;
+                    s.c += read;
+                    long j2 = read;
                     rnVar.e += j2;
                     return j2;
                 } catch (AssertionError e2) {

@@ -7,8 +7,8 @@ public final class bl1 extends dl1 {
 
     @Override // androidx.emoji2.text.dl1
     public final void a(on0 on0Var, wg wgVar, rb2 rb2Var, jy1 jy1Var, el1 el1Var) {
-        int iC = on0Var.c(0);
-        for (int i = 0; i < iC; i++) {
+        int c2 = on0Var.c(0);
+        for (int i = 0; i < c2; i++) {
             wgVar.j();
         }
     }

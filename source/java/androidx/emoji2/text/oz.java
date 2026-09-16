@@ -40,7 +40,7 @@ public final class oz {
     public int Z;
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f881a;
+    public boolean f880a;
     public int a0;
     public int b;
     public int b0;
@@ -157,217 +157,217 @@ public final class oz {
     }
 
     public final void a(Context context, AttributeSet attributeSet) {
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.e);
-        int indexCount = typedArrayObtainStyledAttributes.getIndexCount();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, av1.e);
+        int indexCount = obtainStyledAttributes.getIndexCount();
         for (int i = 0; i < indexCount; i++) {
-            int index = typedArrayObtainStyledAttributes.getIndex(i);
+            int index = obtainStyledAttributes.getIndex(i);
             SparseIntArray sparseIntArray = p0;
             int i2 = sparseIntArray.get(index);
             switch (i2) {
                 case 1:
-                    this.p = sz.f(typedArrayObtainStyledAttributes, index, this.p);
+                    this.p = sz.f(obtainStyledAttributes, index, this.p);
                     break;
                 case 2:
-                    this.I = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.I);
+                    this.I = obtainStyledAttributes.getDimensionPixelSize(index, this.I);
                     break;
                 case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                    this.o = sz.f(typedArrayObtainStyledAttributes, index, this.o);
+                    this.o = sz.f(obtainStyledAttributes, index, this.o);
                     break;
                 case 4:
-                    this.n = sz.f(typedArrayObtainStyledAttributes, index, this.n);
+                    this.n = sz.f(obtainStyledAttributes, index, this.n);
                     break;
-                case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                    this.y = typedArrayObtainStyledAttributes.getString(index);
+                case 5:
+                    this.y = obtainStyledAttributes.getString(index);
                     break;
-                case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                    this.C = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, this.C);
+                case 6:
+                    this.C = obtainStyledAttributes.getDimensionPixelOffset(index, this.C);
                     break;
                 case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                    this.D = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, this.D);
+                    this.D = obtainStyledAttributes.getDimensionPixelOffset(index, this.D);
                     break;
                 case 8:
-                    this.J = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.J);
+                    this.J = obtainStyledAttributes.getDimensionPixelSize(index, this.J);
                     break;
-                case 9:
-                    this.v = sz.f(typedArrayObtainStyledAttributes, index, this.v);
+                case pz0.b /* 9 */:
+                    this.v = sz.f(obtainStyledAttributes, index, this.v);
                     break;
-                case 10:
-                    this.u = sz.f(typedArrayObtainStyledAttributes, index, this.u);
+                case pz0.d /* 10 */:
+                    this.u = sz.f(obtainStyledAttributes, index, this.u);
                     break;
                 case 11:
-                    this.P = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.P);
+                    this.P = obtainStyledAttributes.getDimensionPixelSize(index, this.P);
                     break;
                 case 12:
-                    this.Q = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.Q);
+                    this.Q = obtainStyledAttributes.getDimensionPixelSize(index, this.Q);
                     break;
                 case 13:
-                    this.M = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.M);
+                    this.M = obtainStyledAttributes.getDimensionPixelSize(index, this.M);
                     break;
                 case 14:
-                    this.O = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.O);
+                    this.O = obtainStyledAttributes.getDimensionPixelSize(index, this.O);
                     break;
-                case 15:
-                    this.R = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.R);
+                case pz0.f /* 15 */:
+                    this.R = obtainStyledAttributes.getDimensionPixelSize(index, this.R);
                     break;
                 case PackageParser.PARSE_FORWARD_LOCK /* 16 */:
-                    this.N = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.N);
+                    this.N = obtainStyledAttributes.getDimensionPixelSize(index, this.N);
                     break;
                 case 17:
-                    this.d = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, this.d);
+                    this.d = obtainStyledAttributes.getDimensionPixelOffset(index, this.d);
                     break;
                 case 18:
-                    this.e = typedArrayObtainStyledAttributes.getDimensionPixelOffset(index, this.e);
+                    this.e = obtainStyledAttributes.getDimensionPixelOffset(index, this.e);
                     break;
                 case 19:
-                    this.f = typedArrayObtainStyledAttributes.getFloat(index, this.f);
+                    this.f = obtainStyledAttributes.getFloat(index, this.f);
                     break;
                 case 20:
-                    this.w = typedArrayObtainStyledAttributes.getFloat(index, this.w);
+                    this.w = obtainStyledAttributes.getFloat(index, this.w);
                     break;
                 case 21:
-                    this.c = typedArrayObtainStyledAttributes.getLayoutDimension(index, this.c);
+                    this.c = obtainStyledAttributes.getLayoutDimension(index, this.c);
                     break;
                 case 22:
-                    this.b = typedArrayObtainStyledAttributes.getLayoutDimension(index, this.b);
+                    this.b = obtainStyledAttributes.getLayoutDimension(index, this.b);
                     break;
                 case 23:
-                    this.F = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.F);
+                    this.F = obtainStyledAttributes.getDimensionPixelSize(index, this.F);
                     break;
                 case 24:
-                    this.h = sz.f(typedArrayObtainStyledAttributes, index, this.h);
+                    this.h = sz.f(obtainStyledAttributes, index, this.h);
                     break;
                 case 25:
-                    this.i = sz.f(typedArrayObtainStyledAttributes, index, this.i);
+                    this.i = sz.f(obtainStyledAttributes, index, this.i);
                     break;
                 case 26:
-                    this.E = typedArrayObtainStyledAttributes.getInt(index, this.E);
+                    this.E = obtainStyledAttributes.getInt(index, this.E);
                     break;
                 case 27:
-                    this.G = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.G);
+                    this.G = obtainStyledAttributes.getDimensionPixelSize(index, this.G);
                     break;
                 case 28:
-                    this.j = sz.f(typedArrayObtainStyledAttributes, index, this.j);
+                    this.j = sz.f(obtainStyledAttributes, index, this.j);
                     break;
                 case 29:
-                    this.k = sz.f(typedArrayObtainStyledAttributes, index, this.k);
+                    this.k = sz.f(obtainStyledAttributes, index, this.k);
                     break;
                 case 30:
-                    this.K = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.K);
+                    this.K = obtainStyledAttributes.getDimensionPixelSize(index, this.K);
                     break;
                 case 31:
-                    this.s = sz.f(typedArrayObtainStyledAttributes, index, this.s);
+                    this.s = sz.f(obtainStyledAttributes, index, this.s);
                     break;
                 case PackageParser.PARSE_EXTERNAL_STORAGE /* 32 */:
-                    this.t = sz.f(typedArrayObtainStyledAttributes, index, this.t);
+                    this.t = sz.f(obtainStyledAttributes, index, this.t);
                     break;
                 case 33:
-                    this.H = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.H);
+                    this.H = obtainStyledAttributes.getDimensionPixelSize(index, this.H);
                     break;
                 case 34:
-                    this.m = sz.f(typedArrayObtainStyledAttributes, index, this.m);
+                    this.m = sz.f(obtainStyledAttributes, index, this.m);
                     break;
                 case 35:
-                    this.l = sz.f(typedArrayObtainStyledAttributes, index, this.l);
+                    this.l = sz.f(obtainStyledAttributes, index, this.l);
                     break;
                 case 36:
-                    this.x = typedArrayObtainStyledAttributes.getFloat(index, this.x);
+                    this.x = obtainStyledAttributes.getFloat(index, this.x);
                     break;
                 case 37:
-                    this.U = typedArrayObtainStyledAttributes.getFloat(index, this.U);
+                    this.U = obtainStyledAttributes.getFloat(index, this.U);
                     break;
                 case 38:
-                    this.T = typedArrayObtainStyledAttributes.getFloat(index, this.T);
+                    this.T = obtainStyledAttributes.getFloat(index, this.T);
                     break;
                 case 39:
-                    this.V = typedArrayObtainStyledAttributes.getInt(index, this.V);
+                    this.V = obtainStyledAttributes.getInt(index, this.V);
                     break;
                 case 40:
-                    this.W = typedArrayObtainStyledAttributes.getInt(index, this.W);
+                    this.W = obtainStyledAttributes.getInt(index, this.W);
                     break;
                 case 41:
-                    sz.g(this, typedArrayObtainStyledAttributes, index, 0);
+                    sz.g(this, obtainStyledAttributes, index, 0);
                     break;
                 case 42:
-                    sz.g(this, typedArrayObtainStyledAttributes, index, 1);
+                    sz.g(this, obtainStyledAttributes, index, 1);
                     break;
                 default:
                     switch (i2) {
                         case 61:
-                            this.z = sz.f(typedArrayObtainStyledAttributes, index, this.z);
+                            this.z = sz.f(obtainStyledAttributes, index, this.z);
                             break;
                         case 62:
-                            this.A = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.A);
+                            this.A = obtainStyledAttributes.getDimensionPixelSize(index, this.A);
                             break;
                         case 63:
-                            this.B = typedArrayObtainStyledAttributes.getFloat(index, this.B);
+                            this.B = obtainStyledAttributes.getFloat(index, this.B);
                             break;
                         default:
                             switch (i2) {
                                 case 69:
-                                    this.d0 = typedArrayObtainStyledAttributes.getFloat(index, 1.0f);
+                                    this.d0 = obtainStyledAttributes.getFloat(index, 1.0f);
                                     break;
                                 case 70:
-                                    this.e0 = typedArrayObtainStyledAttributes.getFloat(index, 1.0f);
+                                    this.e0 = obtainStyledAttributes.getFloat(index, 1.0f);
                                     break;
                                 case 71:
                                     Log.e("ConstraintSet", "CURRENTLY UNSUPPORTED");
                                     break;
                                 case 72:
-                                    this.f0 = typedArrayObtainStyledAttributes.getInt(index, this.f0);
+                                    this.f0 = obtainStyledAttributes.getInt(index, this.f0);
                                     break;
                                 case 73:
-                                    this.g0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.g0);
+                                    this.g0 = obtainStyledAttributes.getDimensionPixelSize(index, this.g0);
                                     break;
                                 case 74:
-                                    this.j0 = typedArrayObtainStyledAttributes.getString(index);
+                                    this.j0 = obtainStyledAttributes.getString(index);
                                     break;
                                 case 75:
-                                    this.n0 = typedArrayObtainStyledAttributes.getBoolean(index, this.n0);
+                                    this.n0 = obtainStyledAttributes.getBoolean(index, this.n0);
                                     break;
                                 case 76:
-                                    this.o0 = typedArrayObtainStyledAttributes.getInt(index, this.o0);
+                                    this.o0 = obtainStyledAttributes.getInt(index, this.o0);
                                     break;
                                 case 77:
-                                    this.q = sz.f(typedArrayObtainStyledAttributes, index, this.q);
+                                    this.q = sz.f(obtainStyledAttributes, index, this.q);
                                     break;
                                 case 78:
-                                    this.r = sz.f(typedArrayObtainStyledAttributes, index, this.r);
+                                    this.r = sz.f(obtainStyledAttributes, index, this.r);
                                     break;
                                 case 79:
-                                    this.S = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.S);
+                                    this.S = obtainStyledAttributes.getDimensionPixelSize(index, this.S);
                                     break;
                                 case 80:
-                                    this.L = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.L);
+                                    this.L = obtainStyledAttributes.getDimensionPixelSize(index, this.L);
                                     break;
                                 case 81:
-                                    this.X = typedArrayObtainStyledAttributes.getInt(index, this.X);
+                                    this.X = obtainStyledAttributes.getInt(index, this.X);
                                     break;
                                 case 82:
-                                    this.Y = typedArrayObtainStyledAttributes.getInt(index, this.Y);
+                                    this.Y = obtainStyledAttributes.getInt(index, this.Y);
                                     break;
                                 case 83:
-                                    this.a0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.a0);
+                                    this.a0 = obtainStyledAttributes.getDimensionPixelSize(index, this.a0);
                                     break;
                                 case 84:
-                                    this.Z = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.Z);
+                                    this.Z = obtainStyledAttributes.getDimensionPixelSize(index, this.Z);
                                     break;
                                 case 85:
-                                    this.c0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.c0);
+                                    this.c0 = obtainStyledAttributes.getDimensionPixelSize(index, this.c0);
                                     break;
                                 case 86:
-                                    this.b0 = typedArrayObtainStyledAttributes.getDimensionPixelSize(index, this.b0);
+                                    this.b0 = obtainStyledAttributes.getDimensionPixelSize(index, this.b0);
                                     break;
                                 case 87:
-                                    this.l0 = typedArrayObtainStyledAttributes.getBoolean(index, this.l0);
+                                    this.l0 = obtainStyledAttributes.getBoolean(index, this.l0);
                                     break;
                                 case 88:
-                                    this.m0 = typedArrayObtainStyledAttributes.getBoolean(index, this.m0);
+                                    this.m0 = obtainStyledAttributes.getBoolean(index, this.m0);
                                     break;
                                 case 89:
-                                    this.k0 = typedArrayObtainStyledAttributes.getString(index);
+                                    this.k0 = obtainStyledAttributes.getString(index);
                                     break;
                                 case 90:
-                                    this.g = typedArrayObtainStyledAttributes.getBoolean(index, this.g);
+                                    this.g = obtainStyledAttributes.getBoolean(index, this.g);
                                     break;
                                 case 91:
                                     Log.w("ConstraintSet", "unused attribute 0x" + Integer.toHexString(index) + "   " + sparseIntArray.get(index));
@@ -379,6 +379,6 @@ public final class oz {
                     }
             }
         }
-        typedArrayObtainStyledAttributes.recycle();
+        obtainStyledAttributes.recycle();
     }
 }

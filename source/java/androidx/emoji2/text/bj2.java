@@ -7,7 +7,7 @@ import java.util.List;
 public final class bj2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f153a;
+    public final ue f152a;
     public final gl2 b;
     public final boolean e;
     public final j70 g;
@@ -20,7 +20,7 @@ public final class bj2 {
     public final List i = qe0.d;
 
     public bj2(ue ueVar, gl2 gl2Var, boolean z, j70 j70Var, bl0 bl0Var, int i) {
-        this.f153a = ueVar;
+        this.f152a = ueVar;
         this.b = gl2Var;
         this.e = z;
         this.g = j70Var;
@@ -31,7 +31,7 @@ public final class bj2 {
         dv dvVar = this.j;
         if (dvVar == null || q01Var != this.k || dvVar.a()) {
             this.k = q01Var;
-            dvVar = new dv(this.f153a, mz0.B(this.b, q01Var), this.i, this.g, this.h);
+            dvVar = new dv(this.f152a, mz0.B(this.b, q01Var), this.i, this.g, this.h);
         }
         this.j = dvVar;
     }

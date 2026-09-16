@@ -15,7 +15,7 @@ public final class ol extends fn1 {
         int i2;
         this.i = aaVar;
         this.j = j;
-        if (((int) 0) < 0 || ((int) 0) < 0 || (i = (int) (j >> 32)) < 0 || (i2 = (int) (4294967295L & j)) < 0 || i > aaVar.f91a.getWidth() || i2 > aaVar.f91a.getHeight()) {
+        if (((int) 0) < 0 || ((int) 0) < 0 || (i = (int) (j >> 32)) < 0 || (i2 = (int) (4294967295L & j)) < 0 || i > aaVar.f90a.getWidth() || i2 > aaVar.f90a.getHeight()) {
             throw new IllegalArgumentException("Failed requirement.");
         }
         this.l = j;

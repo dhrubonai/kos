@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public abstract class es2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static Field f320a = null;
+    public static Field f319a = null;
     public static boolean b = false;
     public static final int[] c = {R.id.accessibility_custom_action_0, R.id.accessibility_custom_action_1, R.id.accessibility_custom_action_2, R.id.accessibility_custom_action_3, R.id.accessibility_custom_action_4, R.id.accessibility_custom_action_5, R.id.accessibility_custom_action_6, R.id.accessibility_custom_action_7, R.id.accessibility_custom_action_8, R.id.accessibility_custom_action_9, R.id.accessibility_custom_action_10, R.id.accessibility_custom_action_11, R.id.accessibility_custom_action_12, R.id.accessibility_custom_action_13, R.id.accessibility_custom_action_14, R.id.accessibility_custom_action_15, R.id.accessibility_custom_action_16, R.id.accessibility_custom_action_17, R.id.accessibility_custom_action_18, R.id.accessibility_custom_action_19, R.id.accessibility_custom_action_20, R.id.accessibility_custom_action_21, R.id.accessibility_custom_action_22, R.id.accessibility_custom_action_23, R.id.accessibility_custom_action_24, R.id.accessibility_custom_action_25, R.id.accessibility_custom_action_26, R.id.accessibility_custom_action_27, R.id.accessibility_custom_action_28, R.id.accessibility_custom_action_29, R.id.accessibility_custom_action_30, R.id.accessibility_custom_action_31};
     public static final sr2 d = new sr2();
@@ -28,13 +28,13 @@ public abstract class es2 {
 
     public static void a(View view, wv2 wv2Var) {
         int i = Build.VERSION.SDK_INT;
-        WindowInsets windowInsetsC = wv2Var.c();
-        if (windowInsetsC != null) {
-            WindowInsets windowInsetsA = i >= 30 ? bs2.a(view, windowInsetsC) : ur2.a(view, windowInsetsC);
-            if (windowInsetsA.equals(windowInsetsC)) {
+        WindowInsets c2 = wv2Var.c();
+        if (c2 != null) {
+            WindowInsets a2 = i >= 30 ? bs2.a(view, c2) : ur2.a(view, c2);
+            if (a2.equals(c2)) {
                 return;
             }
-            wv2.d(view, windowInsetsA);
+            wv2.d(view, a2);
         }
     }
 
@@ -45,10 +45,10 @@ public abstract class es2 {
         if (b) {
             return null;
         }
-        if (f320a == null) {
+        if (f319a == null) {
             try {
                 Field declaredField = View.class.getDeclaredField("mAccessibilityDelegate");
-                f320a = declaredField;
+                f319a = declaredField;
                 declaredField.setAccessible(true);
             } catch (Throwable unused) {
                 b = true;
@@ -56,7 +56,7 @@ public abstract class es2 {
             }
         }
         try {
-            Object obj = f320a.get(view);
+            Object obj = f319a.get(view);
             if (obj instanceof View.AccessibilityDelegate) {
                 return (View.AccessibilityDelegate) obj;
             }
@@ -99,16 +99,16 @@ public abstract class es2 {
         if (accessibilityManager.isEnabled()) {
             boolean z = c(view) != null && view.isShown() && view.getWindowVisibility() == 0;
             if (view.getAccessibilityLiveRegion() != 0 || z) {
-                AccessibilityEvent accessibilityEventObtain = AccessibilityEvent.obtain();
-                accessibilityEventObtain.setEventType(z ? 32 : 2048);
-                accessibilityEventObtain.setContentChangeTypes(i);
+                AccessibilityEvent obtain = AccessibilityEvent.obtain();
+                obtain.setEventType(z ? 32 : 2048);
+                obtain.setContentChangeTypes(i);
                 if (z) {
-                    accessibilityEventObtain.getText().add(c(view));
+                    obtain.getText().add(c(view));
                     if (view.getImportantForAccessibility() == 0) {
                         view.setImportantForAccessibility(1);
                     }
                 }
-                view.sendAccessibilityEventUnchecked(accessibilityEventObtain);
+                view.sendAccessibilityEventUnchecked(obtain);
                 return;
             }
             if (i != 32) {
@@ -123,14 +123,14 @@ public abstract class es2 {
                 }
                 return;
             }
-            AccessibilityEvent accessibilityEventObtain2 = AccessibilityEvent.obtain();
-            view.onInitializeAccessibilityEvent(accessibilityEventObtain2);
-            accessibilityEventObtain2.setEventType(32);
-            accessibilityEventObtain2.setContentChangeTypes(i);
-            accessibilityEventObtain2.setSource(view);
-            view.onPopulateAccessibilityEvent(accessibilityEventObtain2);
-            accessibilityEventObtain2.getText().add(c(view));
-            accessibilityManager.sendAccessibilityEvent(accessibilityEventObtain2);
+            AccessibilityEvent obtain2 = AccessibilityEvent.obtain();
+            view.onInitializeAccessibilityEvent(obtain2);
+            obtain2.setEventType(32);
+            obtain2.setContentChangeTypes(i);
+            obtain2.setSource(view);
+            view.onPopulateAccessibilityEvent(obtain2);
+            obtain2.getText().add(c(view));
+            accessibilityManager.sendAccessibilityEvent(obtain2);
         }
     }
 
@@ -150,21 +150,21 @@ public abstract class es2 {
             }
             return sj1Var.a(n00Var);
         }
-        n00 n00VarA = ml2.a(view, n00Var);
-        if (n00VarA == null) {
+        n00 a2 = ml2.a(view, n00Var);
+        if (a2 == null) {
             return null;
         }
         if (view instanceof sj1) {
             sj1Var = (sj1) view;
         }
-        return sj1Var.a(n00VarA);
+        return sj1Var.a(a2);
     }
 
     public static void h(View view, int i) {
-        ArrayList arrayListD = d(view);
-        for (int i2 = 0; i2 < arrayListD.size(); i2++) {
-            if (((n1) arrayListD.get(i2)).a() == i) {
-                arrayListD.remove(i2);
+        ArrayList d2 = d(view);
+        for (int i2 = 0; i2 < d2.size(); i2++) {
+            if (((n1) d2.get(i2)).a() == i) {
+                d2.remove(i2);
                 return;
             }
         }
@@ -172,8 +172,8 @@ public abstract class es2 {
 
     public static void i(View view, n1 n1Var, c2 c2Var) {
         n1 n1Var2 = new n1(null, n1Var.b, null, c2Var, n1Var.c);
-        View.AccessibilityDelegate accessibilityDelegateB = b(view);
-        a1 a1Var = accessibilityDelegateB == null ? null : accessibilityDelegateB instanceof z0 ? ((z0) accessibilityDelegateB).f1413a : new a1(accessibilityDelegateB);
+        View.AccessibilityDelegate b2 = b(view);
+        a1 a1Var = b2 == null ? null : b2 instanceof z0 ? ((z0) b2).f1412a : new a1(b2);
         if (a1Var == null) {
             a1Var = new a1();
         }
@@ -214,8 +214,8 @@ public abstract class es2 {
                 }
             }
             if (!TextUtils.equals((CharSequence) tag, charSequence)) {
-                View.AccessibilityDelegate accessibilityDelegateB = b(view);
-                a1 a1Var = accessibilityDelegateB == null ? null : accessibilityDelegateB instanceof z0 ? ((z0) accessibilityDelegateB).f1413a : new a1(accessibilityDelegateB);
+                View.AccessibilityDelegate b2 = b(view);
+                a1 a1Var = b2 == null ? null : b2 instanceof z0 ? ((z0) b2).f1412a : new a1(b2);
                 if (a1Var == null) {
                     a1Var = new a1();
                 }

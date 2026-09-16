@@ -5,21 +5,21 @@ package androidx.emoji2.text;
 public final class og0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f856a;
+    public final int f855a;
     public final String b;
     public final int c;
     public final int d;
 
     public og0(String str, int i, int i2) {
         this.b = str;
-        this.f856a = i;
+        this.f855a = i;
         this.c = i2;
         this.d = -1;
     }
 
     public og0(String str, int i, int i2, int i3) {
         this.b = str;
-        this.f856a = i;
+        this.f855a = i;
         this.c = i2;
         this.d = i3;
     }

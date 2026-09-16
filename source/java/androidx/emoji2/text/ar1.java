@@ -21,17 +21,71 @@ public final class ar1 implements xm0 {
         this.i = mf1Var2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0055  */
     @Override // androidx.emoji2.text.xm0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r14, java.lang.Object r15, java.lang.Object r16, java.lang.Object r17) {
-        /*
-            Method dump skipped, instructions count: 284
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ar1.invoke(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
+        int i;
+        ty1 ty1Var = (ty1) obj;
+        boolean booleanValue = ((Boolean) obj2).booleanValue();
+        lx lxVar = (lx) obj3;
+        int intValue = ((Number) obj4).intValue();
+        lx0.x(ty1Var, "$this$ReorderableItem");
+        if ((intValue & 6) == 0) {
+            i = (((tx) lxVar).f(ty1Var) ? 4 : 2) | intValue;
+        } else {
+            i = intValue;
+        }
+        if ((intValue & 48) == 0) {
+            i |= ((tx) lxVar).g(booleanValue) ? 32 : 16;
+        }
+        if ((i & 147) == 146) {
+            tx txVar = (tx) lxVar;
+            if (txVar.B()) {
+                txVar.S();
+                return up2.f1186a;
+            }
+        }
+        qe2 a2 = gd.a(booleanValue ? 1.12f : 1.0f, null, "dragScale", lxVar, 3072, 22);
+        mf1 mf1Var = this.h;
+        boolean booleanValue2 = ((Boolean) mf1Var.getValue()).booleanValue();
+        kd1 kd1Var = kd1.f633a;
+        nd1 y = booleanValue2 ? bz0.y(kd1Var, new sy1(ty1Var, vl1.r, hy.D)) : kd1Var;
+        boolean booleanValue3 = ((Boolean) mf1Var.getValue()).booleanValue();
+        tx txVar2 = (tx) lxVar;
+        um0 um0Var = this.e;
+        boolean f = txVar2.f(um0Var);
+        i01 i01Var = this.d;
+        boolean h = f | txVar2.h(i01Var);
+        Object M = txVar2.M();
+        on onVar = kx.f662a;
+        if (h || M == onVar) {
+            M = new wq1(um0Var, i01Var, 1);
+            txVar2.i0(M);
+        }
+        sm0 sm0Var = (sm0) M;
+        boolean h2 = txVar2.h(i01Var);
+        List list = this.f;
+        boolean h3 = h2 | txVar2.h(list);
+        Object M2 = txVar2.M();
+        if (h3 || M2 == onVar) {
+            M2 = new zq1(i01Var, list, this.i);
+            txVar2.i0(M2);
+        }
+        sm0 sm0Var2 = (sm0) M2;
+        um0 um0Var2 = this.g;
+        boolean f2 = txVar2.f(um0Var2) | txVar2.h(i01Var);
+        Object M3 = txVar2.M();
+        if (f2 || M3 == onVar) {
+            M3 = new wq1(um0Var2, i01Var, 2);
+            txVar2.i0(M3);
+        }
+        sm0 sm0Var3 = (sm0) M3;
+        boolean f3 = txVar2.f(a2);
+        Object M4 = txVar2.M();
+        if (f3 || M4 == onVar) {
+            M4 = new ao0(2, a2);
+            txVar2.i0(M4);
+        }
+        n6.e(i01Var, booleanValue3, sm0Var, sm0Var2, sm0Var3, androidx.compose.ui.graphics.a.a(kd1Var, (um0) M4).k(y), txVar2, 0);
+        return up2.f1186a;
     }
 }

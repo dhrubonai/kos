@@ -8,13 +8,13 @@ import android.view.animation.Interpolator;
 public final class fv2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public ev2 f386a;
+    public ev2 f385a;
 
     public fv2(int i, Interpolator interpolator, long j) {
         if (Build.VERSION.SDK_INT >= 30) {
-            this.f386a = new dv2(k1.i(i, interpolator, j));
+            this.f385a = new dv2(k1.i(i, interpolator, j));
         } else {
-            this.f386a = new av2(i, interpolator, j);
+            this.f385a = new av2(i, interpolator, j);
         }
     }
 }

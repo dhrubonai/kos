@@ -8,17 +8,17 @@ import android.widget.AutoCompleteTextView;
 public final /* synthetic */ class x7 implements AccessibilityManager.TouchExplorationStateChangeListener {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1322a;
+    public final /* synthetic */ int f1321a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ x7(int i, Object obj) {
-        this.f1322a = i;
+        this.f1321a = i;
         this.b = obj;
     }
 
     @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
     public final void onTouchExplorationStateChanged(boolean z) {
-        switch (this.f1322a) {
+        switch (this.f1321a) {
             case 0:
                 d8 d8Var = (d8) this.b;
                 d8Var.k = d8Var.g.getEnabledAccessibilityServiceList(-1);

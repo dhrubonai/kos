@@ -2,7 +2,6 @@ package com.google.android.material.carousel;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.AttributeSet;
@@ -19,6 +18,7 @@ import androidx.emoji2.text.up;
 import androidx.emoji2.text.wc0;
 import androidx.emoji2.text.zd;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.carousel.CarouselLayoutManager;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -36,7 +36,7 @@ public class CarouselLayoutManager extends jx1 {
                 if (i3 - i == i7 - i5 && i4 - i2 == i8 - i6) {
                     return;
                 }
-                view.post(new f7(7, this.f1078a));
+                view.post(new f7(7, CarouselLayoutManager.this));
             }
         };
         this.k = wc0Var;
@@ -50,19 +50,19 @@ public class CarouselLayoutManager extends jx1 {
     }
 
     @Override // androidx.emoji2.text.jx1
-    public final void K(RecyclerView recyclerView) throws Resources.NotFoundException {
+    public final void K(RecyclerView recyclerView) {
         Context context = recyclerView.getContext();
         wc0 wc0Var = this.k;
-        float dimension = wc0Var.f1272a;
-        if (dimension <= 0.0f) {
-            dimension = context.getResources().getDimension(R.dimen.m3_carousel_small_item_size_min);
+        float f = wc0Var.f1271a;
+        if (f <= 0.0f) {
+            f = context.getResources().getDimension(R.dimen.m3_carousel_small_item_size_min);
         }
-        wc0Var.f1272a = dimension;
-        float dimension2 = wc0Var.b;
-        if (dimension2 <= 0.0f) {
-            dimension2 = context.getResources().getDimension(R.dimen.m3_carousel_small_item_size_max);
+        wc0Var.f1271a = f;
+        float f2 = wc0Var.b;
+        if (f2 <= 0.0f) {
+            f2 = context.getResources().getDimension(R.dimen.m3_carousel_small_item_size_max);
         }
-        wc0Var.b = dimension2;
+        wc0Var.b = f2;
         W();
         recyclerView.addOnLayoutChangeListener(this.m);
     }
@@ -110,7 +110,7 @@ public class CarouselLayoutManager extends jx1 {
     }
 
     public final boolean c0() {
-        return this.l.f1184a == 0;
+        return this.l.f1183a == 0;
     }
 
     @Override // androidx.emoji2.text.jx1
@@ -125,7 +125,7 @@ public class CarouselLayoutManager extends jx1 {
         }
         b(null);
         up upVar2 = this.l;
-        if (upVar2 == null || i != upVar2.f1184a) {
+        if (upVar2 == null || i != upVar2.f1183a) {
             if (i == 0) {
                 upVar = new up(this, 1);
             } else {
@@ -195,17 +195,17 @@ public class CarouselLayoutManager extends jx1 {
                 if (i32 - i3 == i7 - i5 && i4 - i22 == i8 - i6) {
                     return;
                 }
-                view.post(new f7(7, this.f1078a));
+                view.post(new f7(7, CarouselLayoutManager.this));
             }
         };
         this.k = new wc0();
         W();
         if (attributeSet != null) {
-            TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.b);
-            typedArrayObtainStyledAttributes.getInt(0, 0);
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, fv1.b);
+            obtainStyledAttributes.getInt(0, 0);
             W();
-            d0(typedArrayObtainStyledAttributes.getInt(0, 0));
-            typedArrayObtainStyledAttributes.recycle();
+            d0(obtainStyledAttributes.getInt(0, 0));
+            obtainStyledAttributes.recycle();
         }
     }
 }

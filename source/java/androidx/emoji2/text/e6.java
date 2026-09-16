@@ -29,36 +29,36 @@ public final class e6 extends g01 implements sm0 {
                 if (value != null) {
                     return value;
                 }
-                float fG = m6Var2.j.g();
+                float g = m6Var2.j.g();
                 un1 un1Var = m6Var2.g;
-                if (Float.isNaN(fG)) {
+                if (Float.isNaN(g)) {
                     return un1Var.getValue();
                 }
                 Object value2 = un1Var.getValue();
-                ba1 ba1VarD = m6Var2.d();
-                float fD = ba1VarD.d(value2);
-                if (fD != fG && !Float.isNaN(fD)) {
-                    if (fD < fG) {
-                        Object objB = ba1VarD.b(fG, true);
-                        if (objB != null) {
-                            return objB;
+                ba1 d = m6Var2.d();
+                float d2 = d.d(value2);
+                if (d2 != g && !Float.isNaN(d2)) {
+                    if (d2 < g) {
+                        Object b = d.b(g, true);
+                        if (b != null) {
+                            return b;
                         }
                     } else {
-                        Object objB2 = ba1VarD.b(fG, false);
-                        if (objB2 != null) {
-                            return objB2;
+                        Object b2 = d.b(g, false);
+                        if (b2 != null) {
+                            return b2;
                         }
                     }
                 }
                 return value2;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 m6 m6Var3 = this.f;
-                float fD2 = m6Var3.d().d(m6Var3.g.getValue());
-                float fD3 = m6Var3.d().d(m6Var3.i.getValue()) - fD2;
-                float fAbs = Math.abs(fD3);
+                float d3 = m6Var3.d().d(m6Var3.g.getValue());
+                float d4 = m6Var3.d().d(m6Var3.i.getValue()) - d3;
+                float abs = Math.abs(d4);
                 float f = 1.0f;
-                if (!Float.isNaN(fAbs) && fAbs > 1.0E-6f) {
-                    float f2 = (m6Var3.f() - fD2) / fD3;
+                if (!Float.isNaN(abs) && abs > 1.0E-6f) {
+                    float f2 = (m6Var3.f() - d3) / d4;
                     if (f2 < 1.0E-6f) {
                         f = 0.0f;
                     } else if (f2 <= 0.999999f) {
@@ -72,9 +72,9 @@ public final class e6 extends g01 implements sm0 {
                 if (value3 != null) {
                     return value3;
                 }
-                float fG2 = m6Var4.j.g();
+                float g2 = m6Var4.j.g();
                 un1 un1Var2 = m6Var4.g;
-                return !Float.isNaN(fG2) ? m6Var4.c(fG2, 0.0f, un1Var2.getValue()) : un1Var2.getValue();
+                return !Float.isNaN(g2) ? m6Var4.c(g2, 0.0f, un1Var2.getValue()) : un1Var2.getValue();
         }
     }
 }

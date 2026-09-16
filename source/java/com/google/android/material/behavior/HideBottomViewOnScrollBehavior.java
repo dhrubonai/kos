@@ -32,7 +32,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends q10 {
     public ViewPropertyAnimator k;
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashSet f1466a = new LinkedHashSet();
+    public final LinkedHashSet f1465a = new LinkedHashSet();
     public int f = 0;
     public final boolean i = true;
     public int j = 2;
@@ -83,7 +83,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends q10 {
             view.clearAnimation();
         }
         this.j = 1;
-        Iterator it = this.f1466a.iterator();
+        Iterator it = this.f1465a.iterator();
         if (it.hasNext()) {
             throw jx0.g(it);
         }
@@ -105,7 +105,7 @@ public class HideBottomViewOnScrollBehavior<V extends View> extends q10 {
             view.clearAnimation();
         }
         this.j = 2;
-        Iterator it = this.f1466a.iterator();
+        Iterator it = this.f1465a.iterator();
         if (it.hasNext()) {
             throw jx0.g(it);
         }

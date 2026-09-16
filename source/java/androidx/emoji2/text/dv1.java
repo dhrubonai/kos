@@ -6,5 +6,5 @@ import android.R;
 public abstract class dv1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int[] f273a = {R.attr.name, R.attr.tag};
+    public static final int[] f272a = {R.attr.name, R.attr.tag};
 }

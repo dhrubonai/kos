@@ -5,20 +5,20 @@ package androidx.emoji2.text;
 public final class i70 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f512a;
+    public int f511a;
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof i70) && this.f512a == ((i70) obj).f512a;
+        return (obj instanceof i70) && this.f511a == ((i70) obj).f511a;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.f512a);
+        return Integer.hashCode(this.f511a);
     }
 
     public final String toString() {
-        return zd.j(new StringBuilder("DeltaCounter(count="), this.f512a, ')');
+        return zd.j(new StringBuilder("DeltaCounter(count="), this.f511a, ')');
     }
 }

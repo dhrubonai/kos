@@ -7,14 +7,14 @@ public final class jl2 {
     public static final long c = nz0.H(Float.NaN, 0);
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f584a;
+    public final long f583a;
 
     public static final boolean a(long j, long j2) {
         return j == j2;
     }
 
     public static final long b(long j) {
-        return b[(int) ((j & 1095216660480L) >>> 32)].f645a;
+        return b[(int) ((j & 1095216660480L) >>> 32)].f644a;
     }
 
     public static final float c(long j) {
@@ -22,14 +22,14 @@ public final class jl2 {
     }
 
     public static String d(long j) {
-        long jB = b(j);
-        if (kl2.a(jB, 0L)) {
+        long b2 = b(j);
+        if (kl2.a(b2, 0L)) {
             return "Unspecified";
         }
-        if (kl2.a(jB, 4294967296L)) {
+        if (kl2.a(b2, 4294967296L)) {
             return c(j) + ".sp";
         }
-        if (!kl2.a(jB, 8589934592L)) {
+        if (!kl2.a(b2, 8589934592L)) {
             return "Invalid";
         }
         return c(j) + ".em";
@@ -37,16 +37,16 @@ public final class jl2 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof jl2) {
-            return this.f584a == ((jl2) obj).f584a;
+            return this.f583a == ((jl2) obj).f583a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f584a);
+        return Long.hashCode(this.f583a);
     }
 
     public final String toString() {
-        return d(this.f584a);
+        return d(this.f583a);
     }
 }

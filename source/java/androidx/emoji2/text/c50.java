@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class c50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public long f183a;
+    public long f182a;
     public float b;
 
     public final boolean equals(Object obj) {
@@ -16,16 +16,16 @@ public final class c50 {
             return false;
         }
         c50 c50Var = (c50) obj;
-        return this.f183a == c50Var.f183a && Float.compare(this.b, c50Var.b) == 0;
+        return this.f182a == c50Var.f182a && Float.compare(this.b, c50Var.b) == 0;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.b) + (Long.hashCode(this.f183a) * 31);
+        return Float.hashCode(this.b) + (Long.hashCode(this.f182a) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("DataPointAtTime(time=");
-        sb.append(this.f183a);
+        sb.append(this.f182a);
         sb.append(", dataPoint=");
         return zd.i(sb, this.b, ')');
     }

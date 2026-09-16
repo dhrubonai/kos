@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class w80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f1265a;
+    public final String f1264a;
     public final long[] b = new long[2];
     public final ArrayList c = new ArrayList(2);
     public final ArrayList d = new ArrayList(2);
@@ -20,7 +20,7 @@ public final class w80 {
 
     public w80(z80 z80Var, String str) {
         this.i = z80Var;
-        this.f1265a = str;
+        this.f1264a = str;
         StringBuilder sb = new StringBuilder(str);
         sb.append('.');
         int length = sb.length();

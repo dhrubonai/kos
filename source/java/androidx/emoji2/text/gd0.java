@@ -7,7 +7,7 @@ import android.view.inputmethod.EditorInfo;
 public final class gd0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final gd0 f413a = new gd0();
+    public static final gd0 f412a = new gd0();
 
     public final void a(EditorInfo editorInfo) {
         editorInfo.setSupportedHandwritingGestures(xs.m0(ba.l(), ba.z(), ba.v(), ba.x(), ba.B(), ba.C(), ba.D()));

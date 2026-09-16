@@ -17,7 +17,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("getBoolean")
     public static class GetBoolean extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -38,7 +38,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("getFloat")
     public static class GetFloat extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -59,7 +59,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("getInt")
     public static class GetInt extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -80,7 +80,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("getLong")
     public static class GetLong extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -101,7 +101,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("getString")
     public static class GetString extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {
@@ -122,7 +122,7 @@ public class FeatureFlagUtilsProxy extends ClassInvocationStub {
     @ProxyMethod("isEnabled")
     public static class IsEnabled extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Exception {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (Exception e) {

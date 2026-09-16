@@ -46,17 +46,17 @@ public final class h3 extends hh2 implements Function2 {
     public final Object invoke(Object obj, Object obj2) {
         switch (this.h) {
             case 0:
-                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 1:
-                return ((h3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1187a);
+                return ((h3) i((l10) obj2, Integer.valueOf(((Number) obj).intValue()))).k(up2.f1186a);
             case 2:
-                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             case 4:
-                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
             default:
-                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+                return ((h3) i((l10) obj2, (e30) obj)).k(up2.f1186a);
         }
     }
 
@@ -67,23 +67,23 @@ public final class h3 extends hh2 implements Function2 {
             case 0:
                 mz0.L(obj);
                 int i2 = this.i;
-                ip0.f540a.getClass();
+                ip0.f539a.getClass();
                 return new e2(ip0.o(i2), ip0.k(i2), ip0.p(i2), (String) ws.B0(ip0.i(i2)));
             case 1:
                 mz0.L(obj);
                 return Boolean.valueOf(this.i > 0);
             case 2:
                 mz0.L(obj);
-                ip0 ip0Var = ip0.f540a;
-                wo0 wo0VarP = ip0Var.P(this.i);
-                Object[] objArr = {Integer.valueOf(wo0VarP.f1291a), Integer.valueOf(wo0VarP.b), Integer.valueOf(wo0VarP.c)};
+                ip0 ip0Var = ip0.f539a;
+                wo0 P = ip0Var.P(this.i);
+                Object[] objArr = {Integer.valueOf(P.f1290a), Integer.valueOf(P.b), Integer.valueOf(P.c)};
                 ip0Var.getClass();
                 return ip0.M(objArr, R.string.gms_warm_up_result);
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 mz0.L(obj);
-                ip0 ip0Var2 = ip0.f540a;
+                ip0 ip0Var2 = ip0.f539a;
                 int i3 = this.i;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 ip0Var2.getClass();
                 if (!ip0.n(i3)) {
                     return new uo0(false, ip0.p(i3), ip0.p(i3), ip0.M(new Object[0], R.string.google_services_removal_in_progress));
@@ -91,51 +91,51 @@ public final class h3 extends hh2 implements Function2 {
                 try {
                     c01.s.getPackageManager().getPackageInfo(a.a.a.c.a(-305338374045474L, strArr), 0);
                     c01 c01Var = c01.r;
-                    String strA = a.a.a.c.a(-303835135491874L, strArr);
+                    String a2 = a.a.a.c.a(-303835135491874L, strArr);
                     c01Var.getClass();
-                    boolean zB0 = c01.b0(strA, i3);
+                    boolean b0 = c01.b0(a2, i3);
                     try {
                         ip0.L(i3, a.a.a.c.a(-303912444903202L, strArr));
                         c01.j0(a.a.a.c.a(-303508717977378L, strArr), i3);
                         wj1.t(BEnvironment.getDataDir(a.a.a.c.a(-307941124226850L, strArr), i3));
                         wj1.t(BEnvironment.getDeDataDir(a.a.a.c.a(-308087153114914L, strArr), i3));
                         wj1.t(BEnvironment.getExternalDataDir(a.a.a.c.a(-308782937816866L, strArr), i3));
-                        InstallResult installResultZ = c01.Z(i3, a.a.a.c.a(-303654746865442L, strArr));
-                        if (installResultZ.success && c01.b0(a.a.a.c.a(-304350531567394L, strArr), i3)) {
+                        InstallResult Z = c01.Z(i3, a.a.a.c.a(-303654746865442L, strArr));
+                        if (Z.success && c01.b0(a.a.a.c.a(-304350531567394L, strArr), i3)) {
                             GmsCore.ensureGoogleDataDirs(GmsCore.GMS_PKG, i3);
                             GmsCore.ensureGoogleDataDirs(a.a.a.c.a(-304427840978722L, strArr), i3);
                             ip0Var2.R(i3);
-                            return new uo0(true, zB0, true, zB0 ? ip0.M(new Object[0], R.string.play_games_reinstalled_clean) : ip0.M(new Object[0], R.string.play_games_installed_fresh));
+                            return new uo0(true, b0, true, b0 ? ip0.M(new Object[0], R.string.play_games_reinstalled_clean) : ip0.M(new Object[0], R.string.play_games_installed_fresh));
                         }
-                        String strM = installResultZ.msg;
-                        if (strM == null) {
-                            strM = ip0.M(new Object[0], R.string.unknown_error);
+                        String str = Z.msg;
+                        if (str == null) {
+                            str = ip0.M(new Object[0], R.string.unknown_error);
                         }
-                        return new uo0(false, zB0, false, ip0.M(new Object[]{strM}, R.string.play_games_reinstall_failed));
+                        return new uo0(false, b0, false, ip0.M(new Object[]{str}, R.string.play_games_reinstall_failed));
                     } catch (Throwable th) {
                         c01 c01Var2 = c01.r;
-                        String strA2 = a.a.a.c.a(-304024114052898L, strArr);
+                        String a3 = a.a.a.c.a(-304024114052898L, strArr);
                         c01Var2.getClass();
-                        boolean zB02 = c01.b0(strA2, i3);
+                        boolean b02 = c01.b0(a3, i3);
                         String message = th.getMessage();
                         if (message == null) {
                             message = ip0.M(new Object[0], R.string.unknown_error);
                         }
-                        return new uo0(false, zB0, zB02, ip0.M(new Object[]{message}, R.string.play_games_reset_failed));
+                        return new uo0(false, b0, b02, ip0.M(new Object[]{message}, R.string.play_games_reset_failed));
                     }
                 } catch (Throwable unused) {
                     return new uo0(false, false, false, ip0.M(new Object[0], R.string.play_games_not_installed_real_device));
                 }
             case 4:
                 mz0.L(obj);
-                return ip0.f540a.I(this.i);
+                return ip0.f539a.I(this.i);
             default:
                 mz0.L(obj);
                 int i4 = this.i;
-                List<au2> listR = n92.r(i4);
-                if (!listR.isEmpty()) {
-                    for (au2 au2Var : listR) {
-                        if (BAccountManager.get().removeAccountExplicitly(new Account(au2Var.f121a, au2Var.b), i4) && (i = i + 1) < 0) {
+                List<au2> r = n92.r(i4);
+                if (!r.isEmpty()) {
+                    for (au2 au2Var : r) {
+                        if (BAccountManager.get().removeAccountExplicitly(new Account(au2Var.f120a, au2Var.b), i4) && (i = i + 1) < 0) {
                             throw new ArithmeticException("Count overflow has happened.");
                         }
                     }

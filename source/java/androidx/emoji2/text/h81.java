@@ -31,39 +31,39 @@ public final class h81 implements j70 {
             lfVar = new lf();
             k81Var.p = lfVar;
         }
-        int iL0 = xh.L0(as0Var, (as0[]) lfVar.b);
-        if (iL0 >= 0) {
+        int L0 = xh.L0(as0Var, (as0[]) lfVar.b);
+        if (L0 >= 0) {
             float[] fArr = (float[]) lfVar.c;
-            if (fArr[iL0] != f) {
-                fArr[iL0] = f;
-                ((byte[]) lfVar.d)[iL0] = 1;
+            if (fArr[L0] != f) {
+                fArr[L0] = f;
+                ((byte[]) lfVar.d)[L0] = 1;
                 return;
             } else {
                 byte[] bArr = (byte[]) lfVar.d;
-                if (bArr[iL0] == 2) {
-                    bArr[iL0] = 0;
+                if (bArr[L0] == 2) {
+                    bArr[L0] = 0;
                     return;
                 }
                 return;
             }
         }
-        int i = lfVar.f689a;
+        int i = lfVar.f688a;
         as0[] as0VarArr = (as0[]) lfVar.b;
         if (i == as0VarArr.length) {
             int i2 = i * 2;
-            Object[] objArrCopyOf = Arrays.copyOf(as0VarArr, i2);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            lfVar.b = (as0[]) objArrCopyOf;
-            float[] fArrCopyOf = Arrays.copyOf((float[]) lfVar.c, i2);
-            lx0.w(fArrCopyOf, "copyOf(...)");
-            lfVar.c = fArrCopyOf;
-            byte[] bArrCopyOf = Arrays.copyOf((byte[]) lfVar.d, i2);
-            lx0.w(bArrCopyOf, "copyOf(...)");
-            lfVar.d = bArrCopyOf;
+            Object[] copyOf = Arrays.copyOf(as0VarArr, i2);
+            lx0.w(copyOf, "copyOf(...)");
+            lfVar.b = (as0[]) copyOf;
+            float[] copyOf2 = Arrays.copyOf((float[]) lfVar.c, i2);
+            lx0.w(copyOf2, "copyOf(...)");
+            lfVar.c = copyOf2;
+            byte[] copyOf3 = Arrays.copyOf((byte[]) lfVar.d, i2);
+            lx0.w(copyOf3, "copyOf(...)");
+            lfVar.d = copyOf3;
         }
         ((as0[]) lfVar.b)[i] = as0Var;
         ((byte[]) lfVar.d)[i] = 3;
         ((float[]) lfVar.c)[i] = f;
-        lfVar.f689a++;
+        lfVar.f688a++;
     }
 }

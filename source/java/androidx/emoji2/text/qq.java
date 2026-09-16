@@ -19,7 +19,7 @@ public final class qq extends lq {
 
     @Override // androidx.emoji2.text.lq
     public final Object d(jj0 jj0Var, l10 l10Var) {
-        Object objS = wj1.s(new nq(this, jj0Var, null), l10Var);
-        return objS == f30.d ? objS : up2.f1187a;
+        Object s = wj1.s(new nq(this, jj0Var, null), l10Var);
+        return s == f30.d ? s : up2.f1186a;
     }
 }

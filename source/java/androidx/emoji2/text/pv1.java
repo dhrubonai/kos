@@ -16,30 +16,40 @@ public final class pv1 implements zn {
         this.e = new rn();
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0031, code lost:
+    
+        if (r0 == 0) goto L21;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:21:0x0034, code lost:
+    
+        androidx.emoji2.text.ex2.m(16);
+        r1 = java.lang.Integer.toString(r2, 16);
+        androidx.emoji2.text.lx0.w(r1, "toString(...)");
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x004d, code lost:
+    
+        throw new java.lang.NumberFormatException("Expected leading [0-9a-fA-F] character but was 0x".concat(r1));
+     */
     @Override // androidx.emoji2.text.zn
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final long C() {
         rn rnVar;
-        byte bF;
         z(1L);
         int i = 0;
         while (true) {
             int i2 = i + 1;
-            boolean zT = t(i2);
+            boolean t = t(i2);
             rnVar = this.e;
-            if (!zT) {
+            if (!t) {
                 break;
             }
-            bF = rnVar.f(i);
-            if ((bF < 48 || bF > 57) && ((bF < 97 || bF > 102) && (bF < 65 || bF > 70))) {
+            byte f = rnVar.f(i);
+            if ((f < 48 || f > 57) && ((f < 97 || f > 102) && (f < 65 || f > 70))) {
                 break;
             }
             i = i2;
-        }
-        if (i == 0) {
-            ex2.m(16);
-            String string = Integer.toString(bF, 16);
-            lx0.w(string, "toString(...)");
-            throw new NumberFormatException("Expected leading [0-9a-fA-F] character but was 0x".concat(string));
         }
         return rnVar.C();
     }
@@ -64,22 +74,23 @@ public final class pv1 implements zn {
         if (0 > j2) {
             throw new IllegalArgumentException(jx0.h(j2, "fromIndex=0 toIndex=").toString());
         }
-        long jMax = 0;
-        while (jMax < j2) {
+        long j3 = 0;
+        while (j3 < j2) {
             rn rnVar = this.e;
             byte b2 = b;
-            long j3 = j2;
-            long j4 = rnVar.j(b2, jMax, j3);
-            if (j4 != -1) {
-                return j4;
+            long j4 = j2;
+            long j5 = rnVar.j(b2, j3, j4);
+            if (j5 == -1) {
+                long j6 = rnVar.e;
+                if (j6 >= j4 || this.d.v(8192L, rnVar) == -1) {
+                    break;
+                }
+                j3 = Math.max(j3, j6);
+                b = b2;
+                j2 = j4;
+            } else {
+                return j5;
             }
-            long j5 = rnVar.e;
-            if (j5 >= j3 || this.d.v(8192L, rnVar) == -1) {
-                break;
-            }
-            jMax = Math.max(jMax, j5);
-            b = b2;
-            j2 = j3;
         }
         return -1L;
     }
@@ -103,11 +114,11 @@ public final class pv1 implements zn {
 
     public final int e() {
         z(4L);
-        int i = this.e.readInt();
-        return ((i & 255) << 24) | (((-16777216) & i) >>> 24) | ((16711680 & i) >>> 8) | ((65280 & i) << 8);
+        int readInt = this.e.readInt();
+        return ((readInt & 255) << 24) | (((-16777216) & readInt) >>> 24) | ((16711680 & readInt) >>> 8) | ((65280 & readInt) << 8);
     }
 
-    public final long f() throws EOFException {
+    public final long f() {
         char c;
         char c2;
         char c3;
@@ -129,7 +140,7 @@ public final class pv1 implements zn {
             c = 24;
             c2 = '(';
         } else {
-            byte[] bArr = b62Var.f137a;
+            byte[] bArr = b62Var.f136a;
             c = 24;
             c2 = '(';
             c3 = '8';
@@ -169,19 +180,19 @@ public final class pv1 implements zn {
         z(j);
         rn rnVar = this.e;
         rnVar.getClass();
-        return rnVar.p(j, vq.f1236a);
+        return rnVar.p(j, vq.f1235a);
     }
 
     @Override // androidx.emoji2.text.zn
-    public final String m(long j) throws EOFException {
+    public final String m(long j) {
         if (j < 0) {
             throw new IllegalArgumentException(jx0.h(j, "limit < 0: ").toString());
         }
         long j2 = j == Long.MAX_VALUE ? Long.MAX_VALUE : j + 1;
-        long jC = c((byte) 10, 0L, j2);
+        long c = c((byte) 10, 0L, j2);
         rn rnVar = this.e;
-        if (jC != -1) {
-            return b.a(jC, rnVar);
+        if (c != -1) {
+            return b.a(c, rnVar);
         }
         if (j2 < Long.MAX_VALUE && t(j2) && rnVar.f(j2 - 1) == 13 && t(j2 + 1) && rnVar.f(j2) == 10) {
             return b.a(j2, rnVar);
@@ -229,9 +240,9 @@ public final class pv1 implements zn {
             if (rnVar.e == 0 && this.d.v(8192L, rnVar) == -1) {
                 throw new EOFException();
             }
-            long jMin = Math.min(j, rnVar.e);
-            rnVar.skip(jMin);
-            j -= jMin;
+            long min = Math.min(j, rnVar.e);
+            rnVar.skip(min);
+            j -= min;
         }
     }
 
@@ -288,10 +299,10 @@ public final class pv1 implements zn {
             if (nd2Var.v(8192L, rnVar) == -1) {
                 break;
             }
-            long jB = rnVar.b();
-            if (jB > 0) {
-                j += jB;
-                nv1Var.g(jB, rnVar);
+            long b = rnVar.b();
+            if (b > 0) {
+                j += b;
+                nv1Var.g(b, rnVar);
             }
         }
         long j2 = rnVar.e;

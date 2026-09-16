@@ -36,7 +36,7 @@ public final /* synthetic */ class v8 implements Runnable {
     }
 
     @Override // java.lang.Runnable
-    public final void run() throws InterruptedException {
+    public final void run() {
         BroadcastReceiver broadcastReceiver;
         Throwable th;
         int i = this.d;
@@ -52,14 +52,14 @@ public final /* synthetic */ class v8 implements Runnable {
                 ReceiverData receiverData = (ReceiverData) obj;
                 Intent intent = receiverData.intent;
                 ActivityInfo activityInfo = receiverData.activityInfo;
-                BroadcastReceiver.PendingResult pendingResultBuild = receiverData.data.build();
+                BroadcastReceiver.PendingResult build = receiverData.data.build();
                 try {
                     Context baseContext = rjVar.b.getBaseContext();
                     ClassLoader classLoader = baseContext.getClassLoader();
                     intent.setExtrasClassLoader(classLoader);
                     broadcastReceiver = (BroadcastReceiver) classLoader.loadClass(activityInfo.name).newInstance();
                     try {
-                        BRBroadcastReceiver.get(broadcastReceiver).setPendingResult(pendingResultBuild);
+                        BRBroadcastReceiver.get(broadcastReceiver).setPendingResult(build);
                         broadcastReceiver.onReceive(baseContext, intent);
                         BroadcastReceiver.PendingResult pendingResult = BRBroadcastReceiver.get(broadcastReceiver).getPendingResult();
                         if (pendingResult != null && !receiverData.data.mFinished) {
@@ -88,24 +88,24 @@ public final /* synthetic */ class v8 implements Runnable {
                 if (rj.i().b != null) {
                     intent2.setExtrasClassLoader(rj.i().b.getClassLoader());
                 }
-                String strO = rj.o();
-                if (strO == null || strO.length() == 0) {
-                    strO = c01.X();
+                String o = rj.o();
+                if (o == null || o.length() == 0) {
+                    o = c01.X();
                 }
-                Intent intent_new = BRReferrerIntent.get()._new(intent2, strO);
-                Object objE0 = c01.e0();
+                Intent _new = BRReferrerIntent.get()._new(intent2, o);
+                Object e0 = c01.e0();
                 if (BRActivityThread.get(c01.e0())._check_performNewIntents(null, null) == null) {
-                    if (BRActivityThreadNMR1.get(objE0)._check_performNewIntents(null, null, false) == null) {
-                        if (BRActivityThreadQ.get(objE0)._check_handleNewIntent(null, null) != null) {
-                            BRActivityThreadQ.get(objE0).handleNewIntent(iBinder, Collections.singletonList(intent_new));
+                    if (BRActivityThreadNMR1.get(e0)._check_performNewIntents(null, null, false) == null) {
+                        if (BRActivityThreadQ.get(e0)._check_handleNewIntent(null, null) != null) {
+                            BRActivityThreadQ.get(e0).handleNewIntent(iBinder, Collections.singletonList(_new));
                             break;
                         }
                     } else {
-                        BRActivityThreadNMR1.get(objE0).performNewIntents(iBinder, Collections.singletonList(intent_new), true);
+                        BRActivityThreadNMR1.get(e0).performNewIntents(iBinder, Collections.singletonList(_new), true);
                         break;
                     }
                 } else {
-                    BRActivityThread.get(objE0).performNewIntents(iBinder, Collections.singletonList(intent_new));
+                    BRActivityThread.get(e0).performNewIntents(iBinder, Collections.singletonList(_new));
                     break;
                 }
                 break;
@@ -115,11 +115,11 @@ public final /* synthetic */ class v8 implements Runnable {
             case 4:
                 BLocationManagerService.lambda$addTask$0((IInterface) obj2, (BLocation) obj);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 zu zuVar = (zu) obj2;
                 zuVar.d.g(new qu(i2, (oj1) obj, zuVar));
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ((LogDumpActivity) obj2).lambda$onCreate$0((File) obj);
                 break;
             default:

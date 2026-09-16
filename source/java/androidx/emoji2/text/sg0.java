@@ -1,6 +1,5 @@
 package androidx.emoji2.text;
 
-import java.io.IOException;
 import java.io.InputStream;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -19,17 +18,17 @@ public final class sg0 extends InputStream {
     }
 
     @Override // java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws IOException {
+    public final void close() {
         this.d.close();
     }
 
     @Override // java.io.InputStream
-    public final int read() throws IOException {
-        int i = this.d.read();
-        if (i == -1) {
+    public final int read() {
+        int read = this.d.read();
+        if (read == -1) {
             this.e = 0;
         }
-        return i;
+        return read;
     }
 
     @Override // java.io.InputStream
@@ -38,20 +37,20 @@ public final class sg0 extends InputStream {
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr) throws IOException {
-        int i = this.d.read(bArr);
-        if (i == -1) {
+    public final int read(byte[] bArr) {
+        int read = this.d.read(bArr);
+        if (read == -1) {
             this.e = 0;
         }
-        return i;
+        return read;
     }
 
     @Override // java.io.InputStream
-    public final int read(byte[] bArr, int i, int i2) throws IOException {
-        int i3 = this.d.read(bArr, i, i2);
-        if (i3 == -1) {
+    public final int read(byte[] bArr, int i, int i2) {
+        int read = this.d.read(bArr, i, i2);
+        if (read == -1) {
             this.e = 0;
         }
-        return i3;
+        return read;
     }
 }

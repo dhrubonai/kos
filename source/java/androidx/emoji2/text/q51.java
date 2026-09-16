@@ -7,5 +7,5 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class q51 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final AtomicBoolean f941a = new AtomicBoolean(false);
+    public static final AtomicBoolean f940a = new AtomicBoolean(false);
 }

@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class rx {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1039a;
+    public final /* synthetic */ int f1038a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ rx(int i, Object obj) {
-        this.f1039a = i;
+        this.f1038a = i;
         this.b = obj;
     }
 
     public final void a() {
-        switch (this.f1039a) {
+        switch (this.f1038a) {
             case 0:
                 tx txVar = (tx) this.b;
                 txVar.A--;
@@ -27,7 +27,7 @@ public final class rx {
     }
 
     public final void b() {
-        switch (this.f1039a) {
+        switch (this.f1038a) {
             case 0:
                 ((tx) this.b).A++;
                 break;

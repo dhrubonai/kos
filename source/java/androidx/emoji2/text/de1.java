@@ -6,7 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.content.Context;
-import android.content.res.Resources;
 import android.util.Log;
 import java.util.ArrayList;
 
@@ -15,20 +14,20 @@ import java.util.ArrayList;
 public final class de1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final db2 f248a = new db2(0);
+    public final db2 f247a = new db2(0);
     public final db2 b = new db2(0);
 
-    public static de1 a(Context context, int i) throws Resources.NotFoundException {
+    public static de1 a(Context context, int i) {
         try {
-            Animator animatorLoadAnimator = AnimatorInflater.loadAnimator(context, i);
-            if (animatorLoadAnimator instanceof AnimatorSet) {
-                return b(((AnimatorSet) animatorLoadAnimator).getChildAnimations());
+            Animator loadAnimator = AnimatorInflater.loadAnimator(context, i);
+            if (loadAnimator instanceof AnimatorSet) {
+                return b(((AnimatorSet) loadAnimator).getChildAnimations());
             }
-            if (animatorLoadAnimator == null) {
+            if (loadAnimator == null) {
                 return null;
             }
             ArrayList arrayList = new ArrayList();
-            arrayList.add(animatorLoadAnimator);
+            arrayList.add(loadAnimator);
             return b(arrayList);
         } catch (Exception e) {
             Log.w("MotionSpec", "Can't load animation resource ID #0x" + Integer.toHexString(i), e);
@@ -53,12 +52,12 @@ public final class de1 {
             ee1 ee1Var = new ee1();
             ee1Var.d = 0;
             ee1Var.e = 1;
-            ee1Var.f303a = startDelay;
+            ee1Var.f302a = startDelay;
             ee1Var.b = duration;
             ee1Var.c = interpolator;
             ee1Var.d = objectAnimator.getRepeatCount();
             ee1Var.e = objectAnimator.getRepeatMode();
-            de1Var.f248a.put(propertyName, ee1Var);
+            de1Var.f247a.put(propertyName, ee1Var);
         }
         return de1Var;
     }
@@ -68,16 +67,16 @@ public final class de1 {
             return true;
         }
         if (obj instanceof de1) {
-            return this.f248a.equals(((de1) obj).f248a);
+            return this.f247a.equals(((de1) obj).f247a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f248a.hashCode();
+        return this.f247a.hashCode();
     }
 
     public final String toString() {
-        return "\n" + de1.class.getName() + '{' + Integer.toHexString(System.identityHashCode(this)) + " timings: " + this.f248a + "}\n";
+        return "\n" + de1.class.getName() + '{' + Integer.toHexString(System.identityHashCode(this)) + " timings: " + this.f247a + "}\n";
     }
 }

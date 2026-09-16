@@ -9,19 +9,19 @@ import java.io.FileFilter;
 public final /* synthetic */ class k30 implements FileFilter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f617a;
+    public final /* synthetic */ int f616a;
 
     public /* synthetic */ k30(int i) {
-        this.f617a = i;
+        this.f616a = i;
     }
 
     @Override // java.io.FileFilter
     public final boolean accept(File file) {
-        switch (this.f617a) {
+        switch (this.f616a) {
             case 0:
                 if (file.isFile()) {
                     String name = file.getName();
-                    String[] strArr = wj1.f1284a;
+                    String[] strArr = wj1.f1283a;
                     lx0.w(name, a.a.a.c.a(-246617581174562L, strArr));
                     if (!eg2.T(name, a.a.a.c.a(-246639056011042L, strArr), false)) {
                         String name2 = file.getName();
@@ -34,7 +34,7 @@ public final /* synthetic */ class k30 implements FileFilter {
             case 2:
                 if (file.isFile()) {
                     String name3 = file.getName();
-                    String[] strArr2 = wj1.f1284a;
+                    String[] strArr2 = wj1.f1283a;
                     lx0.w(name3, a.a.a.c.a(-248206719074082L, strArr2));
                     if (eg2.T(name3, a.a.a.c.a(-246578926468898L, strArr2), false)) {
                     }
@@ -43,7 +43,7 @@ public final /* synthetic */ class k30 implements FileFilter {
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 if (file.isFile()) {
                     String name4 = file.getName();
-                    String[] strArr3 = wj1.f1284a;
+                    String[] strArr3 = wj1.f1283a;
                     lx0.w(name4, a.a.a.c.a(-248039215349538L, strArr3));
                     if (eg2.T(name4, a.a.a.c.a(-248043510316834L, strArr3), false)) {
                     }
@@ -52,16 +52,16 @@ public final /* synthetic */ class k30 implements FileFilter {
             case 4:
                 if (file.isFile()) {
                     String name5 = file.getName();
-                    String[] strArr4 = wj1.f1284a;
+                    String[] strArr4 = wj1.f1283a;
                     lx0.w(name5, a.a.a.c.a(-248077870055202L, strArr4));
                     if (eg2.T(name5, a.a.a.c.a(-248168064368418L, strArr4), false)) {
                     }
                 }
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 if (file.isFile()) {
                     String name6 = file.getName();
-                    String[] strArr5 = wj1.f1284a;
+                    String[] strArr5 = wj1.f1283a;
                     lx0.w(name6, a.a.a.c.a(-247480869601058L, strArr5));
                     if (eg2.Z(name6, p30.h + '-', false)) {
                         String name7 = file.getName();
@@ -71,10 +71,10 @@ public final /* synthetic */ class k30 implements FileFilter {
                     }
                 }
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 if (file.isFile()) {
                     String name8 = file.getName();
-                    String[] strArr6 = wj1.f1284a;
+                    String[] strArr6 = wj1.f1283a;
                     lx0.w(name8, a.a.a.c.a(-248455827177250L, strArr6));
                     if (eg2.T(name8, a.a.a.c.a(-247996265676578L, strArr6), false)) {
                     }

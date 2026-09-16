@@ -8,12 +8,12 @@ public final class ov0 extends xh1 {
     public nv0 T;
 
     static {
-        pa paVarV = l8.v();
+        pa v = l8.v();
         int i = et.l;
-        paVarV.e(et.f);
-        paVarV.k(1.0f);
-        paVarV.l(1);
-        U = paVarV;
+        v.e(et.f);
+        v.k(1.0f);
+        v.l(1);
+        U = v;
     }
 
     public ov0(e11 e11Var) {
@@ -27,10 +27,10 @@ public final class ov0 extends xh1 {
 
     @Override // androidx.emoji2.text.ab1
     public final int N(int i) {
-        l6 l6VarT = this.r.t();
-        fb1 fb1VarN = l6VarT.n();
-        e11 e11Var = (e11) l6VarT.e;
-        return fb1VarN.f(e11Var.H.d, e11Var.m(), i);
+        l6 t = this.r.t();
+        fb1 n = t.n();
+        e11 e11Var = (e11) t.e;
+        return n.f(e11Var.H.d, e11Var.m(), i);
     }
 
     @Override // androidx.emoji2.text.xh1
@@ -51,8 +51,8 @@ public final class ov0 extends xh1 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:106:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:95:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r5v12 */
     /* JADX WARN: Type inference failed for: r5v13, types: [androidx.emoji2.text.md1] */
     /* JADX WARN: Type inference failed for: r5v14, types: [java.lang.Object] */
@@ -78,26 +78,144 @@ public final class ov0 extends xh1 {
     @Override // androidx.emoji2.text.xh1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void Z0(androidx.emoji2.text.iz0 r19, long r20, androidx.emoji2.text.vr0 r22, int r23, boolean r24) {
-        /*
-            Method dump skipped, instructions count: 328
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ov0.Z0(androidx.emoji2.text.iz0, long, androidx.emoji2.text.vr0, int, boolean):void");
+    public final void Z0(iz0 iz0Var, long j, vr0 vr0Var, int i, boolean z) {
+        boolean z2;
+        int i2;
+        boolean z3;
+        boolean z4;
+        e11 e11Var;
+        long j2 = j;
+        vr0 vr0Var2 = vr0Var;
+        int i3 = iz0Var.d;
+        e11 e11Var2 = this.r;
+        switch (i3) {
+            case 6:
+                z2 = true;
+                break;
+            default:
+                u62 x = e11Var2.x();
+                z2 = !(x != null && x.g);
+                break;
+        }
+        if (z2) {
+            if (u1(j2)) {
+                i2 = i;
+                z3 = z;
+                z4 = true;
+            } else {
+                i2 = i;
+                if (i2 == 1 && (Float.floatToRawIntBits(L0(j2, S0())) & Integer.MAX_VALUE) < 2139095040) {
+                    z4 = true;
+                    z3 = false;
+                }
+            }
+            if (z4) {
+                return;
+            }
+            int i4 = vr0Var2.f;
+            sf1 y = e11Var2.y();
+            Object[] objArr = y.d;
+            int i5 = y.f - 1;
+            while (i5 >= 0) {
+                e11 e11Var3 = (e11) objArr[i5];
+                if (e11Var3.J()) {
+                    switch (iz0Var.d) {
+                        case 6:
+                            e11Var3.A(j2, vr0Var2, i2, z3);
+                            e11Var = e11Var3;
+                            break;
+                        default:
+                            vh1 vh1Var = e11Var3.H;
+                            vh1Var.d.Y0(xh1.R, vh1Var.d.Q0(j2), vr0Var2, 1, z3);
+                            vr0Var2 = vr0Var;
+                            e11Var = e11Var3;
+                            break;
+                    }
+                    long a2 = vr0Var2.a();
+                    if (kx0.C(a2) < 0.0f && kx0.F(a2) && !kx0.E(a2)) {
+                        xh1 xh1Var = e11Var.H.d;
+                        xh1Var.getClass();
+                        md1 V0 = xh1Var.V0(yh1.g(16));
+                        if (V0 != null && V0.q) {
+                            if (!V0.d.q) {
+                                iv0.b("visitLocalDescendants called on an unattached node");
+                            }
+                            md1 md1Var = V0.d;
+                            if ((md1Var.g & 16) != 0) {
+                                while (md1Var != null) {
+                                    if ((md1Var.f & 16) != 0) {
+                                        z60 z60Var = md1Var;
+                                        ?? r6 = 0;
+                                        while (z60Var != 0) {
+                                            if (z60Var instanceof ss1) {
+                                                if (((ss1) z60Var).k0()) {
+                                                    vr0Var2.f = vr0Var2.d.b - 1;
+                                                }
+                                            } else if ((z60Var.f & 16) != 0 && (z60Var instanceof z60)) {
+                                                md1 md1Var2 = z60Var.s;
+                                                int i6 = 0;
+                                                z60Var = z60Var;
+                                                r6 = r6;
+                                                while (md1Var2 != null) {
+                                                    if ((md1Var2.f & 16) != 0) {
+                                                        i6++;
+                                                        r6 = r6;
+                                                        if (i6 == 1) {
+                                                            z60Var = md1Var2;
+                                                        } else {
+                                                            if (r6 == 0) {
+                                                                r6 = new sf1(new md1[16]);
+                                                            }
+                                                            if (z60Var != 0) {
+                                                                r6.b(z60Var);
+                                                                z60Var = 0;
+                                                            }
+                                                            r6.b(md1Var2);
+                                                        }
+                                                    }
+                                                    md1Var2 = md1Var2.i;
+                                                    z60Var = z60Var;
+                                                    r6 = r6;
+                                                }
+                                                if (i6 == 1) {
+                                                }
+                                            }
+                                            z60Var = lx0.m(r6);
+                                        }
+                                    }
+                                    md1Var = md1Var.i;
+                                }
+                            }
+                        }
+                        vr0Var2.f = i4;
+                        return;
+                    }
+                }
+                i5--;
+                j2 = j;
+                i2 = i;
+            }
+            vr0Var2.f = i4;
+            return;
+        }
+        i2 = i;
+        z3 = z;
+        z4 = false;
+        if (z4) {
+        }
     }
 
     @Override // androidx.emoji2.text.ab1
     public final int c(int i) {
-        l6 l6VarT = this.r.t();
-        fb1 fb1VarN = l6VarT.n();
-        e11 e11Var = (e11) l6VarT.e;
-        return fb1VarN.g(e11Var.H.d, e11Var.m(), i);
+        l6 t = this.r.t();
+        fb1 n = t.n();
+        e11 e11Var = (e11) t.e;
+        return n.g(e11Var.H.d, e11Var.m(), i);
     }
 
     @Override // androidx.emoji2.text.hr1
-    public final void g0(long j, float f, um0 um0Var) throws Throwable {
+    public final void g0(long j, float f, um0 um0Var) {
         j1(j, f, um0Var, null);
         if (this.m) {
             return;
@@ -106,7 +224,7 @@ public final class ov0 extends xh1 {
     }
 
     @Override // androidx.emoji2.text.xh1, androidx.emoji2.text.hr1
-    public final void h0(long j, float f, rp0 rp0Var) throws Throwable {
+    public final void h0(long j, float f, rp0 rp0Var) {
         j1(j, f, null, rp0Var);
         if (this.m) {
             return;
@@ -117,17 +235,17 @@ public final class ov0 extends xh1 {
     @Override // androidx.emoji2.text.xh1
     public final void i1(lp lpVar, rp0 rp0Var) {
         e11 e11Var = this.r;
-        tl1 tl1VarA = h11.a(e11Var);
-        sf1 sf1VarY = e11Var.y();
-        Object[] objArr = sf1VarY.d;
-        int i = sf1VarY.f;
+        tl1 a2 = h11.a(e11Var);
+        sf1 y = e11Var.y();
+        Object[] objArr = y.d;
+        int i = y.f;
         for (int i2 = 0; i2 < i; i2++) {
             e11 e11Var2 = (e11) objArr[i2];
             if (e11Var2.J()) {
                 e11Var2.i(lpVar, rp0Var);
             }
         }
-        if (((v7) tl1VarA).getShowLayoutBounds()) {
+        if (((v7) a2).getShowLayoutBounds()) {
             long j = this.f;
             lpVar.o(0.5f, 0.5f, ((int) (j >> 32)) - 0.5f, ((int) (j & 4294967295L)) - 0.5f, U);
         }
@@ -135,22 +253,22 @@ public final class ov0 extends xh1 {
 
     @Override // androidx.emoji2.text.ab1
     public final int l(int i) {
-        l6 l6VarT = this.r.t();
-        fb1 fb1VarN = l6VarT.n();
-        e11 e11Var = (e11) l6VarT.e;
-        return fb1VarN.i(e11Var.H.d, e11Var.m(), i);
+        l6 t = this.r.t();
+        fb1 n = t.n();
+        e11 e11Var = (e11) t.e;
+        return n.i(e11Var.H.d, e11Var.m(), i);
     }
 
     @Override // androidx.emoji2.text.ab1
     public final int n(int i) {
-        l6 l6VarT = this.r.t();
-        fb1 fb1VarN = l6VarT.n();
-        e11 e11Var = (e11) l6VarT.e;
-        return fb1VarN.j(e11Var.H.d, e11Var.m(), i);
+        l6 t = this.r.t();
+        fb1 n = t.n();
+        e11 e11Var = (e11) t.e;
+        return n.j(e11Var.H.d, e11Var.m(), i);
     }
 
     @Override // androidx.emoji2.text.k81
-    public final int o0(xr0 xr0Var) throws Throwable {
+    public final int o0(xr0 xr0Var) {
         nv0 nv0Var = this.T;
         if (nv0Var != null) {
             return nv0Var.o0(xr0Var);
@@ -180,9 +298,9 @@ public final class ov0 extends xh1 {
     public final hr1 q(long j) {
         l0(j);
         e11 e11Var = this.r;
-        sf1 sf1VarZ = e11Var.z();
-        Object[] objArr = sf1VarZ.d;
-        int i = sf1VarZ.f;
+        sf1 z = e11Var.z();
+        Object[] objArr = z.d;
+        int i = z.f;
         for (int i2 = 0; i2 < i; i2++) {
             ((e11) objArr[i2]).I.p.o = c11.f;
         }

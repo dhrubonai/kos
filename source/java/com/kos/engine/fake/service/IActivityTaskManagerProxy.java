@@ -32,10 +32,13 @@ public class IActivityTaskManagerProxy extends BinderInvocationStub {
     public static class GetCallingActivity extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            String virtualCallingPackage;
             c01 c01Var = c01.r;
             ComponentName callingActivity = BActivityManager.get().getCallingActivity((IBinder) objArr[0], rj.u());
-            return ((callingActivity == null || c01.X().equals(callingActivity.getPackageName())) && (virtualCallingPackage = ActivityManagerCommonProxy.getVirtualCallingPackage(objArr)) != null && virtualCallingPackage.length() > 0) ? new ComponentName(virtualCallingPackage, c.a(-642433177239330L, xa1.b)) : callingActivity;
+            if (callingActivity != null && !c01.X().equals(callingActivity.getPackageName())) {
+                return callingActivity;
+            }
+            String virtualCallingPackage = ActivityManagerCommonProxy.getVirtualCallingPackage(objArr);
+            return (virtualCallingPackage == null || virtualCallingPackage.length() <= 0) ? callingActivity : new ComponentName(virtualCallingPackage, c.a(-642433177239330L, xa1.b));
         }
     }
 
@@ -54,7 +57,7 @@ public class IActivityTaskManagerProxy extends BinderInvocationStub {
     @ProxyMethod("reportSizeConfigurations")
     public static class ReportSizeConfigurations extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws Throwable {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 return method.invoke(obj, objArr);
             } catch (InvocationTargetException e) {

@@ -11,6 +11,7 @@ import android.content.pm.ServiceInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.os.Parcelable;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.jx0;
@@ -26,6 +27,7 @@ import black.android.app.BRActivityManagerNative;
 import black.android.app.BRActivityThread;
 import black.android.app.BRActivityThreadActivityClientRecord;
 import black.android.app.BRActivityThreadCreateServiceData;
+import black.android.app.BRActivityThreadH;
 import black.android.app.BRIActivityManager;
 import black.android.app.servertransaction.BRActivityResultItem;
 import black.android.app.servertransaction.BRClientTransaction;
@@ -65,17 +67,17 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
         }
 
         @Override // java.lang.ClassLoader
-        public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+        public Class<?> loadClass(String str, boolean z) {
             Class<?> cls = null;
             for (ClassLoader classLoader : this.delegates) {
                 if (classLoader != null) {
                     try {
-                        Class<?> clsLoadClass = classLoader.loadClass(str);
+                        Class<?> loadClass = classLoader.loadClass(str);
                         if (cls == null) {
-                            cls = clsLoadClass;
+                            cls = loadClass;
                         }
-                        if (Parcelable.class.isAssignableFrom(clsLoadClass)) {
-                            return clsLoadClass;
+                        if (Parcelable.class.isAssignableFrom(loadClass)) {
+                            return loadClass;
                         }
                     } catch (ClassNotFoundException unused) {
                         continue;
@@ -162,21 +164,21 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
 
     private void fixActivityResultIntents(Object obj) {
         ClassLoader appClassLoader;
-        List listMResultInfoList;
+        List mResultInfoList;
         String[] strArr = xa1.b;
         try {
-            List<Object> listMActivityCallbacks = BRClientTransaction.get(obj).mActivityCallbacks();
-            if (listMActivityCallbacks != null && !listMActivityCallbacks.isEmpty() && (appClassLoader = getAppClassLoader()) != null) {
-                for (Object obj2 : listMActivityCallbacks) {
-                    if (obj2 != null && BRActivityResultItem.getRealClass().getName().equals(obj2.getClass().getCanonicalName()) && (listMResultInfoList = BRActivityResultItem.get(obj2).mResultInfoList()) != null && !listMResultInfoList.isEmpty()) {
-                        for (Object obj3 : listMResultInfoList) {
+            List<Object> mActivityCallbacks = BRClientTransaction.get(obj).mActivityCallbacks();
+            if (mActivityCallbacks != null && !mActivityCallbacks.isEmpty() && (appClassLoader = getAppClassLoader()) != null) {
+                for (Object obj2 : mActivityCallbacks) {
+                    if (obj2 != null && BRActivityResultItem.getRealClass().getName().equals(obj2.getClass().getCanonicalName()) && (mResultInfoList = BRActivityResultItem.get(obj2).mResultInfoList()) != null && !mResultInfoList.isEmpty()) {
+                        for (Object obj3 : mResultInfoList) {
                             Intent resultData = getResultData(obj3);
                             if (!cancelBrokenAutofillAuthenticationResult(obj3, resultData, appClassLoader)) {
                                 if (maybeRepairPlayStoreGoogleAddAccountResult(obj3, resultData, appClassLoader)) {
                                     resultData = getResultData(obj3);
                                 }
                                 fixIntentClassLoader(resultData, appClassLoader);
-                                String strA = c.a(-721439100649250L, strArr);
+                                String a2 = c.a(-721439100649250L, strArr);
                                 StringBuilder sb = new StringBuilder();
                                 sb.append(c.a(-721516410060578L, strArr));
                                 sb.append(rj.o());
@@ -186,7 +188,7 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
                                 sb.append(getResultInt(obj3, c.a(-721847122542370L, strArr)));
                                 sb.append(c.a(-721864302411554L, strArr));
                                 sb.append(resultData != null);
-                                nz0.Q(strA, 3, sb.toString());
+                                nz0.Q(a2, 3, sb.toString());
                             }
                         }
                     }
@@ -254,11 +256,11 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
     }
 
     private Object getLaunchActivityItem(Object obj) {
-        List<Object> listMActivityCallbacks = BRClientTransaction.get(obj).mActivityCallbacks();
-        if (listMActivityCallbacks == null) {
+        List<Object> mActivityCallbacks = BRClientTransaction.get(obj).mActivityCallbacks();
+        if (mActivityCallbacks == null) {
             return null;
         }
-        for (Object obj2 : listMActivityCallbacks) {
+        for (Object obj2 : mActivityCallbacks) {
             if (BRLaunchActivityItem.getRealClass().getName().equals(obj2.getClass().getCanonicalName())) {
                 return obj2;
             }
@@ -271,11 +273,11 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
             return c01.s.createPackageContext(str, 3).getClassLoader();
         } catch (Throwable th) {
             String[] strArr = xa1.b;
-            String strA = c.a(-738554545323810L, strArr);
+            String a2 = c.a(-738554545323810L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-738563135258402L, strArr));
             sb.append(str);
-            zd.s(sb, c.a(-737094256443170L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-737094256443170L, strArr), th, 5, a2);
             return null;
         }
     }
@@ -324,13 +326,13 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
 
     private boolean handleCreateService(Object obj) {
         if (rj.n() != null) {
-            String strO = rj.o();
-            ServiceInfo serviceInfoInfo = BRActivityThreadCreateServiceData.get(obj).info();
-            if (!serviceInfoInfo.name.equals(ProxyManifest.getProxyService(rj.p())) && !serviceInfoInfo.name.equals(ProxyManifest.getProxyJobService(rj.p()))) {
+            String o = rj.o();
+            ServiceInfo info = BRActivityThreadCreateServiceData.get(obj).info();
+            if (!info.name.equals(ProxyManifest.getProxyService(rj.p())) && !info.name.equals(ProxyManifest.getProxyJobService(rj.p()))) {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-737089961475874L, strArr), 3, c.a(-737167270887202L, strArr) + obj);
                 Intent intent = new Intent();
-                intent.setComponent(new ComponentName(strO, serviceInfoInfo.name));
+                intent.setComponent(new ComponentName(o, info.name));
                 c01 c01Var = c01.r;
                 BActivityManager.get().startService(intent, null, false, rj.u());
                 return true;
@@ -341,7 +343,7 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
 
     private boolean handleLaunchActivity(Object obj) {
         Intent intent;
-        IBinder iBinderMActivityToken;
+        IBinder iBinder;
         String str;
         String[] strArr = xa1.b;
         Object launchActivityItem = l8.U() ? getLaunchActivityItem(obj) : obj;
@@ -351,11 +353,11 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
         }
         if (l8.U()) {
             intent = BRLaunchActivityItem.get(launchActivityItem).mIntent();
-            iBinderMActivityToken = BRClientTransaction.get(obj).mActivityToken();
+            iBinder = BRClientTransaction.get(obj).mActivityToken();
         } else {
             ActivityThreadActivityClientRecordContext activityThreadActivityClientRecordContext = BRActivityThreadActivityClientRecord.get(launchActivityItem);
             intent = activityThreadActivityClientRecordContext.intent();
-            iBinderMActivityToken = activityThreadActivityClientRecordContext.token();
+            iBinder = activityThreadActivityClientRecordContext.token();
         }
         if (intent == null) {
             return false;
@@ -364,100 +366,102 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
         if (proxyExtrasClassLoader != null) {
             intent.setExtrasClassLoader(proxyExtrasClassLoader);
         }
-        ProxyActivityRecord proxyActivityRecordCreate = ProxyActivityRecord.create(intent);
-        ActivityInfo activityInfo = proxyActivityRecordCreate.mActivityInfo;
+        ProxyActivityRecord create = ProxyActivityRecord.create(intent);
+        ActivityInfo activityInfo = create.mActivityInfo;
         if (activityInfo != null) {
-            ActivityInfo activityInfoRefreshActivityInfo = refreshActivityInfo(activityInfo, proxyActivityRecordCreate.mTarget, proxyActivityRecordCreate.mUserId);
-            if (activityInfoRefreshActivityInfo == null) {
+            ActivityInfo refreshActivityInfo = refreshActivityInfo(activityInfo, create.mTarget, create.mUserId);
+            if (refreshActivityInfo == null) {
                 nz0.Q(c.a(-736084939128610L, strArr), 5, c.a(-736093529063202L, strArr));
                 return false;
             }
-            rememberGoogleVerifierClientForActivity(activityInfoRefreshActivityInfo, proxyActivityRecordCreate);
-            String strO = rj.o();
-            if (strO != null && !strO.equals(activityInfoRefreshActivityInfo.packageName)) {
-                ActivityInfo activityInfoRestoreCrossBoundProxyActivityInfo = restoreCrossBoundProxyActivityInfo(launchActivityItem, intent);
-                String strA = c.a(-735758521614114L, strArr);
+            rememberGoogleVerifierClientForActivity(refreshActivityInfo, create);
+            String o = rj.o();
+            if (o != null && !o.equals(refreshActivityInfo.packageName)) {
+                ActivityInfo restoreCrossBoundProxyActivityInfo = restoreCrossBoundProxyActivityInfo(launchActivityItem, intent);
+                String a2 = c.a(-735758521614114L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-735835831025442L, strArr));
-                sb.append(strO);
+                sb.append(o);
                 sb.append(c.a(-736617515073314L, strArr));
-                sb.append(activityInfoRefreshActivityInfo.packageName);
+                sb.append(refreshActivityInfo.packageName);
                 sb.append(c.a(-736123593834274L, strArr));
-                if (activityInfoRestoreCrossBoundProxyActivityInfo == null) {
+                if (restoreCrossBoundProxyActivityInfo == null) {
                     str = null;
                 } else {
-                    str = activityInfoRestoreCrossBoundProxyActivityInfo.packageName + c.a(-736162248539938L, strArr) + activityInfoRestoreCrossBoundProxyActivityInfo.name;
+                    str = restoreCrossBoundProxyActivityInfo.packageName + c.a(-736162248539938L, strArr) + restoreCrossBoundProxyActivityInfo.name;
                 }
-                zd.p(sb, str, 5, strA);
+                zd.p(sb, str, 5, a2);
                 return false;
             }
             if (rj.n() == null) {
                 c01 c01Var = c01.r;
-                BActivityManager.get().restartProcess(activityInfoRefreshActivityInfo.packageName, activityInfoRefreshActivityInfo.processName, proxyActivityRecordCreate.mUserId);
-                Intent launchIntentForPackage = BPackageManager.get().getLaunchIntentForPackage(activityInfoRefreshActivityInfo.packageName, proxyActivityRecordCreate.mUserId);
-                if (c.a(-736222378082082L, strArr).equals(activityInfoRefreshActivityInfo.name) && proxyActivityRecordCreate.mTarget != null) {
+                BActivityManager.get().restartProcess(refreshActivityInfo.packageName, refreshActivityInfo.processName, create.mUserId);
+                Intent launchIntentForPackage = BPackageManager.get().getLaunchIntentForPackage(refreshActivityInfo.packageName, create.mUserId);
+                if (c.a(-736222378082082L, strArr).equals(refreshActivityInfo.name) && create.mTarget != null) {
                     z = true;
                 }
-                if (z || launchIntentForPackage == null) {
-                    launchIntentForPackage = proxyActivityRecordCreate.mTarget;
+                if (z) {
+                    launchIntentForPackage = create.mTarget;
+                } else if (launchIntentForPackage == null) {
+                    launchIntentForPackage = create.mTarget;
                 }
                 if (z) {
                     nz0.Q(c.a(-734865168416546L, strArr), 3, c.a(-734942477827874L, strArr));
                 }
                 intent.setExtrasClassLoader(getClass().getClassLoader());
-                ProxyActivityRecord.saveStub(intent, launchIntentForPackage, activityInfoRefreshActivityInfo, proxyActivityRecordCreate.mActivityRecord, proxyActivityRecordCreate.mUserId, proxyActivityRecordCreate.mCallerPackage);
+                ProxyActivityRecord.saveStub(intent, launchIntentForPackage, refreshActivityInfo, create.mActivityRecord, create.mUserId, create.mCallerPackage);
                 if (l8.U()) {
                     LaunchActivityItemContext launchActivityItemContext = BRLaunchActivityItem.get(launchActivityItem);
                     launchActivityItemContext._set_mIntent(intent);
-                    launchActivityItemContext._set_mInfo(activityInfoRefreshActivityInfo);
+                    launchActivityItemContext._set_mInfo(refreshActivityInfo);
                 } else {
                     ActivityThreadActivityClientRecordContext activityThreadActivityClientRecordContext2 = BRActivityThreadActivityClientRecord.get(launchActivityItem);
                     activityThreadActivityClientRecordContext2._set_intent(intent);
-                    activityThreadActivityClientRecordContext2._set_activityInfo(activityInfoRefreshActivityInfo);
+                    activityThreadActivityClientRecordContext2._set_activityInfo(refreshActivityInfo);
                 }
                 return true;
             }
-            if (proxyActivityRecordCreate.mTarget == null) {
-                String strA2 = c.a(-734654715019042L, strArr);
+            if (create.mTarget == null) {
+                String a3 = c.a(-734654715019042L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-734732024430370L, strArr));
-                zd.p(sb2, activityInfoRefreshActivityInfo.name, 5, strA2);
+                zd.p(sb2, refreshActivityInfo.name, 5, a3);
                 return false;
             }
             if (!rj.i().A()) {
-                rj.i().d(activityInfoRefreshActivityInfo.packageName, activityInfoRefreshActivityInfo.processName);
+                rj.i().d(refreshActivityInfo.packageName, refreshActivityInfo.processName);
                 return true;
             }
-            int iIntValue = BRIActivityManager.get(BRActivityManagerNative.get().getDefault()).getTaskForActivity(iBinderMActivityToken, false).intValue();
+            int intValue = BRIActivityManager.get(BRActivityManagerNative.get().getDefault()).getTaskForActivity(iBinder, false).intValue();
             c01 c01Var2 = c01.r;
-            BActivityManager.get().onActivityCreated(iIntValue, iBinderMActivityToken, proxyActivityRecordCreate.mActivityRecord);
+            BActivityManager.get().onActivityCreated(intValue, iBinder, create.mActivityRecord);
             try {
                 if (rj.i().b != null) {
                     ClassLoader classLoader = rj.i().b.getClassLoader();
-                    proxyActivityRecordCreate.mTarget.setExtrasClassLoader(classLoader);
+                    create.mTarget.setExtrasClassLoader(classLoader);
                     intent.setExtrasClassLoader(classLoader);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
             if (l8.W()) {
-                Object launchingActivity = BRActivityThread.get(c01.e0()).getLaunchingActivity(iBinderMActivityToken);
+                Object launchingActivity = BRActivityThread.get(c01.e0()).getLaunchingActivity(iBinder);
                 if (launchingActivity != null) {
                     ActivityThreadActivityClientRecordContext activityThreadActivityClientRecordContext3 = BRActivityThreadActivityClientRecord.get(launchingActivity);
-                    activityThreadActivityClientRecordContext3._set_intent(proxyActivityRecordCreate.mTarget);
-                    activityThreadActivityClientRecordContext3._set_activityInfo(activityInfoRefreshActivityInfo);
-                    activityThreadActivityClientRecordContext3._set_packageInfo(rj.i().f1015a.g);
+                    activityThreadActivityClientRecordContext3._set_intent(create.mTarget);
+                    activityThreadActivityClientRecordContext3._set_activityInfo(refreshActivityInfo);
+                    activityThreadActivityClientRecordContext3._set_packageInfo(rj.i().f1014a.g);
                 }
                 checkActivityClient();
             }
             if (l8.U()) {
                 LaunchActivityItemContext launchActivityItemContext2 = BRLaunchActivityItem.get(launchActivityItem);
-                launchActivityItemContext2._set_mIntent(proxyActivityRecordCreate.mTarget);
-                launchActivityItemContext2._set_mInfo(activityInfoRefreshActivityInfo);
+                launchActivityItemContext2._set_mIntent(create.mTarget);
+                launchActivityItemContext2._set_mInfo(refreshActivityInfo);
             } else {
                 ActivityThreadActivityClientRecordContext activityThreadActivityClientRecordContext4 = BRActivityThreadActivityClientRecord.get(launchActivityItem);
-                activityThreadActivityClientRecordContext4._set_intent(proxyActivityRecordCreate.mTarget);
-                activityThreadActivityClientRecordContext4._set_activityInfo(activityInfoRefreshActivityInfo);
+                activityThreadActivityClientRecordContext4._set_intent(create.mTarget);
+                activityThreadActivityClientRecordContext4._set_activityInfo(refreshActivityInfo);
             }
         }
         return false;
@@ -484,13 +488,13 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
         fixIntentClassLoader(intent, classLoader);
         setResultField(obj, c.a(-723504979918626L, strArr), -1);
         setResultField(obj, c.a(-723522159787810L, strArr), intent);
-        String strA = c.a(-723565109460770L, strArr);
+        String a2 = c.a(-723565109460770L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-723642418872098L, strArr));
         sb.append(account.type);
         sb.append(c.a(-724385448214306L, strArr));
         sb.append(resultInt);
-        zd.o(sb, c.a(-724449872723746L, strArr), resultInt2, 3, strA);
+        zd.o(sb, c.a(-724449872723746L, strArr), resultInt2, 3, a2);
         return true;
     }
 
@@ -515,11 +519,11 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
                     return activityInfo2;
                 }
             } catch (Throwable th) {
-                String strA = c.a(-738627559767842L, strArr);
+                String a2 = c.a(-738627559767842L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-738636149702434L, strArr));
                 sb.append(component);
-                zd.s(sb, c.a(-738863782969122L, strArr), th, 5, strA);
+                zd.s(sb, c.a(-738863782969122L, strArr), th, 5, a2);
                 return activityInfo;
             }
         }
@@ -570,93 +574,55 @@ public class HCallbackProxy implements IInjectHook, Handler.Callback {
             declaredField.set(obj, obj2);
         } catch (Throwable th) {
             String[] strArr = xa1.b;
-            String strA = c.a(-724561541873442L, strArr);
+            String a2 = c.a(-724561541873442L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-724089095470882L, strArr));
             sb.append(str);
-            zd.s(sb, c.a(-724213649522466L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-724213649522466L, strArr), th, 5, a2);
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0074 A[Catch: all -> 0x003e, TRY_LEAVE, TryCatch #0 {all -> 0x003e, blocks: (B:4:0x000a, B:6:0x0010, B:8:0x0020, B:10:0x002d, B:20:0x0064, B:22:0x0074, B:25:0x0080, B:27:0x0084, B:15:0x0040, B:17:0x0050, B:19:0x0058), top: B:34:0x000a }] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0080 A[Catch: all -> 0x003e, TRY_ENTER, TryCatch #0 {all -> 0x003e, blocks: (B:4:0x000a, B:6:0x0010, B:8:0x0020, B:10:0x002d, B:20:0x0064, B:22:0x0074, B:25:0x0080, B:27:0x0084, B:15:0x0040, B:17:0x0050, B:19:0x0058), top: B:34:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0074 A[Catch: all -> 0x003e, TRY_LEAVE, TryCatch #0 {all -> 0x003e, blocks: (B:6:0x000a, B:8:0x0010, B:10:0x0020, B:12:0x002d, B:15:0x0064, B:17:0x0074, B:20:0x0080, B:22:0x0084, B:25:0x0040, B:27:0x0050, B:29:0x0058), top: B:5:0x000a }] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0080 A[Catch: all -> 0x003e, TRY_ENTER, TryCatch #0 {all -> 0x003e, blocks: (B:6:0x000a, B:8:0x0010, B:10:0x0020, B:12:0x002d, B:15:0x0064, B:17:0x0074, B:20:0x0080, B:22:0x0084, B:25:0x0040, B:27:0x0050, B:29:0x0058), top: B:5:0x000a }] */
     @Override // android.os.Handler.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public boolean handleMessage(android.os.Message r5) {
-        /*
-            r4 = this;
-            java.util.concurrent.atomic.AtomicBoolean r0 = r4.mBeing
-            r1 = 1
-            boolean r0 = r0.getAndSet(r1)
-            r2 = 0
-            if (r0 != 0) goto L95
-            boolean r0 = androidx.emoji2.text.l8.U()     // Catch: java.lang.Throwable -> L3e
-            if (r0 == 0) goto L40
-            int r0 = r5.what     // Catch: java.lang.Throwable -> L3e
-            black.android.app.ActivityThreadHStatic r3 = black.android.app.BRActivityThreadH.get()     // Catch: java.lang.Throwable -> L3e
-            java.lang.Integer r3 = r3.EXECUTE_TRANSACTION()     // Catch: java.lang.Throwable -> L3e
-            int r3 = r3.intValue()     // Catch: java.lang.Throwable -> L3e
-            if (r0 != r3) goto L64
-            java.lang.Object r0 = r5.obj     // Catch: java.lang.Throwable -> L3e
-            r4.fixActivityResultIntents(r0)     // Catch: java.lang.Throwable -> L3e
-            java.lang.Object r0 = r5.obj     // Catch: java.lang.Throwable -> L3e
-            boolean r0 = r4.handleLaunchActivity(r0)     // Catch: java.lang.Throwable -> L3e
-            if (r0 == 0) goto L64
-            android.os.Handler r0 = r4.getH()     // Catch: java.lang.Throwable -> L3e
-            android.os.Message r5 = android.os.Message.obtain(r5)     // Catch: java.lang.Throwable -> L3e
-            r0.sendMessageAtFrontOfQueue(r5)     // Catch: java.lang.Throwable -> L3e
-        L38:
-            java.util.concurrent.atomic.AtomicBoolean r5 = r4.mBeing
-            r5.set(r2)
-            return r1
-        L3e:
-            r5 = move-exception
-            goto L8f
-        L40:
-            int r0 = r5.what     // Catch: java.lang.Throwable -> L3e
-            black.android.app.ActivityThreadHStatic r3 = black.android.app.BRActivityThreadH.get()     // Catch: java.lang.Throwable -> L3e
-            java.lang.Integer r3 = r3.LAUNCH_ACTIVITY()     // Catch: java.lang.Throwable -> L3e
-            int r3 = r3.intValue()     // Catch: java.lang.Throwable -> L3e
-            if (r0 != r3) goto L64
-            java.lang.Object r0 = r5.obj     // Catch: java.lang.Throwable -> L3e
-            boolean r0 = r4.handleLaunchActivity(r0)     // Catch: java.lang.Throwable -> L3e
-            if (r0 == 0) goto L64
-            android.os.Handler r0 = r4.getH()     // Catch: java.lang.Throwable -> L3e
-            android.os.Message r5 = android.os.Message.obtain(r5)     // Catch: java.lang.Throwable -> L3e
-            r0.sendMessageAtFrontOfQueue(r5)     // Catch: java.lang.Throwable -> L3e
-            goto L38
-        L64:
-            int r0 = r5.what     // Catch: java.lang.Throwable -> L3e
-            black.android.app.ActivityThreadHStatic r1 = black.android.app.BRActivityThreadH.get()     // Catch: java.lang.Throwable -> L3e
-            java.lang.Integer r1 = r1.CREATE_SERVICE()     // Catch: java.lang.Throwable -> L3e
-            int r1 = r1.intValue()     // Catch: java.lang.Throwable -> L3e
-            if (r0 != r1) goto L80
-            java.lang.Object r5 = r5.obj     // Catch: java.lang.Throwable -> L3e
-            boolean r5 = r4.handleCreateService(r5)     // Catch: java.lang.Throwable -> L3e
-        L7a:
-            java.util.concurrent.atomic.AtomicBoolean r0 = r4.mBeing
-            r0.set(r2)
-            return r5
-        L80:
-            android.os.Handler$Callback r0 = r4.mOtherCallback     // Catch: java.lang.Throwable -> L3e
-            if (r0 == 0) goto L89
-            boolean r5 = r0.handleMessage(r5)     // Catch: java.lang.Throwable -> L3e
-            goto L7a
-        L89:
-            java.util.concurrent.atomic.AtomicBoolean r5 = r4.mBeing
-            r5.set(r2)
-            return r2
-        L8f:
-            java.util.concurrent.atomic.AtomicBoolean r0 = r4.mBeing
-            r0.set(r2)
-            throw r5
-        L95:
-            return r2
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.HCallbackProxy.handleMessage(android.os.Message):boolean");
+    public boolean handleMessage(Message message) {
+        boolean handleMessage;
+        if (this.mBeing.getAndSet(true)) {
+            return false;
+        }
+        try {
+            if (!l8.U()) {
+                if (message.what == BRActivityThreadH.get().LAUNCH_ACTIVITY().intValue() && handleLaunchActivity(message.obj)) {
+                    getH().sendMessageAtFrontOfQueue(Message.obtain(message));
+                    return true;
+                }
+                if (message.what != BRActivityThreadH.get().CREATE_SERVICE().intValue()) {
+                }
+                return handleMessage;
+            }
+            if (message.what == BRActivityThreadH.get().EXECUTE_TRANSACTION().intValue()) {
+                fixActivityResultIntents(message.obj);
+                if (handleLaunchActivity(message.obj)) {
+                    getH().sendMessageAtFrontOfQueue(Message.obtain(message));
+                    return true;
+                }
+            }
+            if (message.what != BRActivityThreadH.get().CREATE_SERVICE().intValue()) {
+                handleMessage = handleCreateService(message.obj);
+            } else {
+                Handler.Callback callback = this.mOtherCallback;
+                if (callback == null) {
+                    return false;
+                }
+                handleMessage = callback.handleMessage(message);
+            }
+            return handleMessage;
+        } finally {
+            this.mBeing.set(false);
+        }
     }
 
     @Override // com.kos.engine.fake.hook.IInjectHook

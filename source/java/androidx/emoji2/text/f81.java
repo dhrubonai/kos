@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public abstract class f81 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long[] f350a;
+    public static final long[] f349a;
 
     static {
         new we1(0);
-        f350a = new long[0];
+        f349a = new long[0];
     }
 }

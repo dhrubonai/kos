@@ -17,7 +17,7 @@ public final class te2 extends v0 implements nf1, hj0, cn0 {
     @Override // androidx.emoji2.text.jj0
     public final Object b(Object obj, l10 l10Var) {
         h(obj);
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     @Override // androidx.emoji2.text.v0
@@ -79,7 +79,7 @@ public final class te2 extends v0 implements nf1, hj0, cn0 {
                 if (ue2VarArr != null) {
                     for (ue2 ue2Var : ue2VarArr) {
                         if (ue2Var != null) {
-                            AtomicReference atomicReference = ue2Var.f1171a;
+                            AtomicReference atomicReference = ue2Var.f1170a;
                             while (true) {
                                 Object obj4 = atomicReference.get();
                                 if (obj4 != null && obj4 != (de0Var = ex2.i)) {
@@ -90,7 +90,7 @@ public final class te2 extends v0 implements nf1, hj0, cn0 {
                                                 break;
                                             }
                                         }
-                                        ((ip) obj4).g(up2.f1187a);
+                                        ((ip) obj4).g(up2.f1186a);
                                         break;
                                     }
                                     while (!atomicReference.compareAndSet(obj4, de0Var)) {
@@ -123,20 +123,16 @@ public final class te2 extends v0 implements nf1, hj0, cn0 {
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    /* JADX WARN: Path cross not found for [B:58:0x00f7, B:59:0x00f8], limit reached: 66 */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0086 A[Catch: all -> 0x003e, TryCatch #0 {all -> 0x003e, blocks: (B:14:0x0039, B:28:0x007e, B:30:0x0086, B:33:0x008d, B:34:0x0091, B:36:0x0094, B:46:0x00b5, B:49:0x00c5, B:50:0x00e1, B:56:0x00f1, B:53:0x00e8, B:55:0x00ee, B:38:0x009a, B:42:0x00a1, B:21:0x0053, B:24:0x005d, B:27:0x006e), top: B:63:0x0027 }] */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0094 A[Catch: all -> 0x003e, TryCatch #0 {all -> 0x003e, blocks: (B:14:0x0039, B:28:0x007e, B:30:0x0086, B:33:0x008d, B:34:0x0091, B:36:0x0094, B:46:0x00b5, B:49:0x00c5, B:50:0x00e1, B:56:0x00f1, B:53:0x00e8, B:55:0x00ee, B:38:0x009a, B:42:0x00a1, B:21:0x0053, B:24:0x005d, B:27:0x006e), top: B:63:0x0027 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00a0  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00c5 A[Catch: all -> 0x003e, TryCatch #0 {all -> 0x003e, blocks: (B:14:0x0039, B:28:0x007e, B:30:0x0086, B:33:0x008d, B:34:0x0091, B:36:0x0094, B:46:0x00b5, B:49:0x00c5, B:50:0x00e1, B:56:0x00f1, B:53:0x00e8, B:55:0x00ee, B:38:0x009a, B:42:0x00a1, B:21:0x0053, B:24:0x005d, B:27:0x006e), top: B:63:0x0027 }] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0017  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:48:0x00c4 -> B:28:0x007e). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0086 A[Catch: all -> 0x003e, TryCatch #0 {all -> 0x003e, blocks: (B:13:0x0039, B:15:0x007e, B:17:0x0086, B:20:0x008d, B:21:0x0091, B:25:0x0094, B:27:0x00b5, B:30:0x00c5, B:31:0x00e1, B:37:0x00f1, B:33:0x00e8, B:36:0x00ee, B:46:0x009a, B:49:0x00a1, B:57:0x0053, B:59:0x005d, B:60:0x006e), top: B:7:0x0027 }] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00c4  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00c5 A[Catch: all -> 0x003e, TryCatch #0 {all -> 0x003e, blocks: (B:13:0x0039, B:15:0x007e, B:17:0x0086, B:20:0x008d, B:21:0x0091, B:25:0x0094, B:27:0x00b5, B:30:0x00c5, B:31:0x00e1, B:37:0x00f1, B:33:0x00e8, B:36:0x00ee, B:46:0x009a, B:49:0x00a1, B:57:0x0053, B:59:0x005d, B:60:0x006e), top: B:7:0x0027 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x00a0  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x00c4 -> B:15:0x007e). Please report as a decompilation issue!!! */
     @Override // androidx.emoji2.text.hj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final java.lang.Object j(androidx.emoji2.text.jj0 r18, androidx.emoji2.text.l10 r19) {
         /*

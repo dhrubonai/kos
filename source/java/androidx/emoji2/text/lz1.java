@@ -13,7 +13,7 @@ public final class lz1 extends Thread {
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
-    public final void run() throws SecurityException, IllegalArgumentException {
+    public final void run() {
         Process.setThreadPriority(this.d);
         super.run();
     }

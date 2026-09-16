@@ -103,17 +103,17 @@ final class StableProcessSlotRegistry {
         if (i2 < 0) {
             return false;
         }
-        ProcessKey processKeyOf = ProcessKey.of(str, str2, i);
-        Integer num = this.slotsByProcess.get(processKeyOf);
+        ProcessKey of = ProcessKey.of(str, str2, i);
+        Integer num = this.slotsByProcess.get(of);
         if (num != null) {
             return num.intValue() == i2;
         }
         ProcessKey processKey = this.ownersBySlot.get(Integer.valueOf(i2));
-        if (processKey != null && !processKey.equals(processKeyOf)) {
+        if (processKey != null && !processKey.equals(of)) {
             return false;
         }
-        this.slotsByProcess.put(processKeyOf, Integer.valueOf(i2));
-        this.ownersBySlot.put(Integer.valueOf(i2), processKeyOf);
+        this.slotsByProcess.put(of, Integer.valueOf(i2));
+        this.ownersBySlot.put(Integer.valueOf(i2), of);
         return true;
     }
 

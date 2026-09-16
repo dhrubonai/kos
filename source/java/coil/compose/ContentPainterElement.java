@@ -17,12 +17,12 @@ import androidx.emoji2.text.zd;
 public final class ContentPainterElement extends ud1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final pi f1465a;
+    public final pi f1464a;
     public final n5 b;
     public final q00 c;
 
     public ContentPainterElement(pi piVar, n5 n5Var, q00 q00Var) {
-        this.f1465a = piVar;
+        this.f1464a = piVar;
         this.b = n5Var;
         this.c = q00Var;
     }
@@ -35,13 +35,13 @@ public final class ContentPainterElement extends ud1 {
             return false;
         }
         ContentPainterElement contentPainterElement = (ContentPainterElement) obj;
-        return this.f1465a.equals(contentPainterElement.f1465a) && lx0.n(this.b, contentPainterElement.b) && lx0.n(this.c, contentPainterElement.c) && Float.compare(1.0f, 1.0f) == 0;
+        return this.f1464a.equals(contentPainterElement.f1464a) && lx0.n(this.b, contentPainterElement.b) && lx0.n(this.c, contentPainterElement.c) && Float.compare(1.0f, 1.0f) == 0;
     }
 
     @Override // androidx.emoji2.text.ud1
     public final md1 f() {
         o00 o00Var = new o00();
-        o00Var.r = this.f1465a;
+        o00Var.r = this.f1464a;
         o00Var.s = this.b;
         o00Var.t = this.c;
         o00Var.u = 1.0f;
@@ -49,26 +49,26 @@ public final class ContentPainterElement extends ud1 {
     }
 
     public final int hashCode() {
-        return zd.b(1.0f, (this.c.hashCode() + ((this.b.hashCode() + (this.f1465a.hashCode() * 31)) * 31)) * 31, 31);
+        return zd.b(1.0f, (this.c.hashCode() + ((this.b.hashCode() + (this.f1464a.hashCode() * 31)) * 31)) * 31, 31);
     }
 
     @Override // androidx.emoji2.text.ud1
     public final void l(md1 md1Var) {
         o00 o00Var = (o00) md1Var;
-        long jH = o00Var.r.h();
-        pi piVar = this.f1465a;
-        boolean zA = ib2.a(jH, piVar.h());
+        long h = o00Var.r.h();
+        pi piVar = this.f1464a;
+        boolean a2 = ib2.a(h, piVar.h());
         o00Var.r = piVar;
         o00Var.s = this.b;
         o00Var.t = this.c;
         o00Var.u = 1.0f;
-        if (!zA) {
+        if (!a2) {
             n6.W(o00Var);
         }
         ex2.I(o00Var);
     }
 
     public final String toString() {
-        return "ContentPainterElement(painter=" + this.f1465a + ", alignment=" + this.b + ", contentScale=" + this.c + ", alpha=1.0, colorFilter=null)";
+        return "ContentPainterElement(painter=" + this.f1464a + ", alignment=" + this.b + ", contentScale=" + this.c + ", alpha=1.0, colorFilter=null)";
     }
 }

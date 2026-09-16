@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public abstract class tu1 extends uu1 implements um0 {
     @Override // androidx.emoji2.text.wo
     public final py0 b() {
-        dy1.f279a.getClass();
+        dy1.f278a.getClass();
         return this;
     }
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        return Boolean.valueOf(((zy0) obj).f1463a.isCtrlPressed());
+        return Boolean.valueOf(((zy0) obj).f1462a.isCtrlPressed());
     }
 }

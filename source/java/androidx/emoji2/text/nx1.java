@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class nx1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f832a = new ArrayList();
+    public final ArrayList f831a = new ArrayList();
     public final int b = 5;
     public final long c = 0;
 }

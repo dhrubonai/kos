@@ -10,13 +10,13 @@ import java.util.ServiceConfigurationError;
 public abstract class z20 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final List f1416a;
+    public static final List f1415a;
 
     static {
         try {
             Iterator it = Arrays.asList(new u9()).iterator();
             lx0.x(it, "<this>");
-            f1416a = s72.W(new dz(new dt(1, it)));
+            f1415a = s72.W(new dz(new dt(1, it)));
         } catch (Throwable th) {
             throw new ServiceConfigurationError(th.getMessage(), th);
         }

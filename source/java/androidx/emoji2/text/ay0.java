@@ -26,7 +26,7 @@ public final class ay0 extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final void a(SSLSocket sSLSocket) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void a(SSLSocket sSLSocket) {
         try {
             this.e.invoke(null, sSLSocket);
         } catch (IllegalAccessException e) {
@@ -37,7 +37,7 @@ public final class ay0 extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final void d(SSLSocket sSLSocket, String str, List list) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void d(SSLSocket sSLSocket, String str, List list) {
         lx0.x(list, "protocols");
         ArrayList arrayList = new ArrayList();
         for (Object obj : list) {
@@ -63,7 +63,7 @@ public final class ay0 extends lr1 {
     }
 
     @Override // androidx.emoji2.text.lr1
-    public final String f(SSLSocket sSLSocket) throws IllegalArgumentException {
+    public final String f(SSLSocket sSLSocket) {
         try {
             InvocationHandler invocationHandler = Proxy.getInvocationHandler(this.d.invoke(null, sSLSocket));
             lx0.v(invocationHandler, "null cannot be cast to non-null type okhttp3.internal.platform.Jdk8WithJettyBootPlatform.AlpnProvider");

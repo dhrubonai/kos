@@ -9,15 +9,15 @@ public final class fg1 implements Comparator {
     public static final fg1 c = new fg1(1);
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f363a;
+    public final /* synthetic */ int f362a;
 
     public /* synthetic */ fg1(int i) {
-        this.f363a = i;
+        this.f362a = i;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f363a) {
+        switch (this.f362a) {
             case 0:
                 Comparable comparable = (Comparable) obj;
                 Comparable comparable2 = (Comparable) obj2;
@@ -35,7 +35,7 @@ public final class fg1 implements Comparator {
 
     @Override // java.util.Comparator
     public final Comparator reversed() {
-        switch (this.f363a) {
+        switch (this.f362a) {
             case 0:
                 return c;
             default:

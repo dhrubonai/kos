@@ -5,28 +5,28 @@ package androidx.emoji2.text;
 public final class fl {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f368a;
+    public final float f367a;
 
     public fl(float f) {
-        this.f368a = f;
+        this.f367a = f;
     }
 
     public final int a(int i, int i2) {
-        return Math.round((1 + this.f368a) * ((i2 - i) / 2.0f));
+        return Math.round((1 + this.f367a) * ((i2 - i) / 2.0f));
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof fl) && Float.compare(this.f368a, ((fl) obj).f368a) == 0;
+        return (obj instanceof fl) && Float.compare(this.f367a, ((fl) obj).f367a) == 0;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f368a);
+        return Float.hashCode(this.f367a);
     }
 
     public final String toString() {
-        return zd.i(new StringBuilder("Vertical(bias="), this.f368a, ')');
+        return zd.i(new StringBuilder("Vertical(bias="), this.f367a, ')');
     }
 }

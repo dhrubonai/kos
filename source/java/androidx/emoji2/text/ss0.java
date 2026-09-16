@@ -16,7 +16,7 @@ public final class ss0 implements sm0 {
     }
 
     @Override // androidx.emoji2.text.sm0
-    public final Object a() throws IOException {
+    public final Object a() {
         switch (this.d) {
             case 0:
                 xs0 xs0Var = (xs0) this.f;
@@ -36,16 +36,16 @@ public final class ss0 implements sm0 {
                 }
                 xs0Var.b(1, 9, null);
                 jq2.b(at0Var);
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 ((um0) this.e).e((w70) this.f);
-                return up2.f1187a;
+                return up2.f1186a;
             case 2:
                 ((um0) this.e).e((j30) this.f);
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 ((um0) this.e).e((s62) this.f);
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

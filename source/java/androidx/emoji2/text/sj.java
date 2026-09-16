@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.IntentSender;
 import com.kos.engine.core.system.pm.BPackageInstallerService;
 import com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession;
-import java.io.IOException;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -23,7 +22,7 @@ public final /* synthetic */ class sj implements Runnable {
     }
 
     @Override // java.lang.Runnable
-    public final void run() throws IntentSender.SendIntentException, IOException {
+    public final void run() {
         switch (this.d) {
             case 0:
                 ((BPackageInstallerService) this.e).lambda$commitSession$0((VirtualPackageInstallerSession) this.f, (IntentSender) this.g);
@@ -33,15 +32,15 @@ public final /* synthetic */ class sj implements Runnable {
                 wj1 wj1Var = (wj1) this.f;
                 ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) this.g;
                 try {
-                    ll0 ll0VarP = h50.p((Context) p4Var.e);
-                    if (ll0VarP == null) {
+                    ll0 p = h50.p((Context) p4Var.e);
+                    if (p == null) {
                         throw new RuntimeException("EmojiCompat font provider not available on this device.");
                     }
-                    kl0 kl0Var = (kl0) ll0VarP.f695a;
+                    kl0 kl0Var = (kl0) p.f694a;
                     synchronized (kl0Var.g) {
                         kl0Var.i = threadPoolExecutor;
                     }
-                    ll0VarP.f695a.s(new sd0(wj1Var, threadPoolExecutor));
+                    p.f694a.s(new sd0(wj1Var, threadPoolExecutor));
                     return;
                 } catch (Throwable th) {
                     wj1Var.F(th);

@@ -10,15 +10,15 @@ import com.google.android.material.chip.Chip;
 public final class or extends ViewOutlineProvider {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ Chip f869a;
+    public final /* synthetic */ Chip f868a;
 
     public or(Chip chip) {
-        this.f869a = chip;
+        this.f868a = chip;
     }
 
     @Override // android.view.ViewOutlineProvider
     public final void getOutline(View view, Outline outline) {
-        rr rrVar = this.f869a.h;
+        rr rrVar = this.f868a.h;
         if (rrVar != null) {
             rrVar.getOutline(outline);
         } else {

@@ -13,13 +13,12 @@ import androidx.emoji2.text.gz0;
 import androidx.emoji2.text.kx0;
 import androidx.emoji2.text.lx0;
 import java.io.File;
-import java.io.IOException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) throws PackageManager.NameNotFoundException, IOException {
+    public final void onReceive(Context context, Intent intent) {
         Bundle extras;
         if (intent == null) {
             return;

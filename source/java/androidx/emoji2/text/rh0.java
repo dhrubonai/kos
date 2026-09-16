@@ -8,7 +8,7 @@ import android.animation.AnimatorListenerAdapter;
 public final class rh0 extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f1012a = false;
+    public boolean f1011a = false;
     public final /* synthetic */ sh0 b;
 
     public rh0(sh0 sh0Var) {
@@ -17,13 +17,13 @@ public final class rh0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationCancel(Animator animator) {
-        this.f1012a = true;
+        this.f1011a = true;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        if (this.f1012a) {
-            this.f1012a = false;
+        if (this.f1011a) {
+            this.f1011a = false;
             return;
         }
         sh0 sh0Var = this.b;

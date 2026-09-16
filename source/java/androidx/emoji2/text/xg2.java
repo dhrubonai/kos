@@ -18,7 +18,7 @@ public final class xg2 {
     public final /* synthetic */ yg2 D;
 
     /* renamed from: a, reason: collision with root package name */
-    public final Menu f1338a;
+    public final Menu f1337a;
     public boolean h;
     public int i;
     public int j;
@@ -49,10 +49,10 @@ public final class xg2 {
 
     public xg2(yg2 yg2Var, Menu menu) {
         this.D = yg2Var;
-        this.f1338a = menu;
+        this.f1337a = menu;
     }
 
-    public final Object a(String str, Class[] clsArr, Object[] objArr) throws NoSuchMethodException, SecurityException {
+    public final Object a(String str, Class[] clsArr, Object[] objArr) {
         try {
             Constructor<?> constructor = Class.forName(str, false, this.D.c.getClassLoader()).getConstructor(clsArr);
             constructor.setAccessible(true);
@@ -82,7 +82,7 @@ public final class xg2 {
             Object obj = yg2Var.d;
             String str = this.y;
             wg2 wg2Var = new wg2();
-            wg2Var.f1280a = obj;
+            wg2Var.f1279a = obj;
             Class<?> cls = obj.getClass();
             try {
                 wg2Var.b = cls.getMethod(str, wg2.c);
@@ -99,7 +99,7 @@ public final class xg2 {
         }
         String str2 = this.x;
         if (str2 != null) {
-            menuItem.setActionView((View) a(str2, yg2.e, yg2Var.f1386a));
+            menuItem.setActionView((View) a(str2, yg2.e, yg2Var.f1385a));
             z = true;
         }
         int i2 = this.w;

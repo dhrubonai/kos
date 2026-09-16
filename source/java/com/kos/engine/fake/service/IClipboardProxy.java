@@ -121,10 +121,10 @@ public class IClipboardProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-668941715390242L, strArr);
+            String a2 = c.a(-668941715390242L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-669010434866978L, strArr), method);
-            zd.s(sb, c.a(-668606707941154L, strArr), th, 5, strA);
+            zd.s(sb, c.a(-668606707941154L, strArr), th, 5, a2);
             return defaultValue(method.getReturnType());
         }
     }

@@ -30,26 +30,26 @@ public final class k61 extends o92 {
         if (Float.intBitsToFloat(i3) == Float.POSITIVE_INFINITY) {
             i3 = (int) (j >> 32);
         }
-        float fIntBitsToFloat = Float.intBitsToFloat(i3);
+        float intBitsToFloat = Float.intBitsToFloat(i3);
         long j3 = 4294967295L;
         int i4 = (int) (j2 & 4294967295L);
         if (Float.intBitsToFloat(i4) == Float.POSITIVE_INFINITY) {
             i4 = (int) (j & 4294967295L);
         }
-        float fIntBitsToFloat2 = Float.intBitsToFloat(i4);
+        float intBitsToFloat2 = Float.intBitsToFloat(i4);
         long j4 = this.n;
         int i5 = (int) (j4 >> 32);
         if (Float.intBitsToFloat(i5) == Float.POSITIVE_INFINITY) {
             i5 = (int) (j >> 32);
         }
-        float fIntBitsToFloat3 = Float.intBitsToFloat(i5);
+        float intBitsToFloat3 = Float.intBitsToFloat(i5);
         int i6 = (int) (j4 & 4294967295L);
         if (Float.intBitsToFloat(i6) == Float.POSITIVE_INFINITY) {
             i6 = (int) (j & 4294967295L);
         }
-        float fIntBitsToFloat4 = Float.intBitsToFloat(i6);
-        long jFloatToRawIntBits = (Float.floatToRawIntBits(fIntBitsToFloat) << 32) | (Float.floatToRawIntBits(fIntBitsToFloat2) & 4294967295L);
-        long jFloatToRawIntBits2 = (Float.floatToRawIntBits(fIntBitsToFloat3) << 32) | (Float.floatToRawIntBits(fIntBitsToFloat4) & 4294967295L);
+        float intBitsToFloat4 = Float.intBitsToFloat(i6);
+        long floatToRawIntBits = (Float.floatToRawIntBits(intBitsToFloat) << 32) | (Float.floatToRawIntBits(intBitsToFloat2) & 4294967295L);
+        long floatToRawIntBits2 = (Float.floatToRawIntBits(intBitsToFloat3) << 32) | (Float.floatToRawIntBits(intBitsToFloat4) & 4294967295L);
         List list = this.l;
         if (list.size() < 2) {
             throw new IllegalArgumentException("colors must have length of at least 2 if colorStops is omitted.");
@@ -57,13 +57,13 @@ public final class k61 extends o92 {
         if (Build.VERSION.SDK_INT >= 26) {
             i = 0;
         } else {
-            int iL0 = xs.l0(list);
+            int l0 = xs.l0(list);
             i = 0;
             int i7 = 1;
-            while (i7 < iL0) {
+            while (i7 < l0) {
                 char c2 = c;
                 long j5 = j3;
-                if (et.d(((et) list.get(i7)).f321a) == 0.0f) {
+                if (et.d(((et) list.get(i7)).f320a) == 0.0f) {
                     i++;
                 }
                 i7++;
@@ -73,35 +73,35 @@ public final class k61 extends o92 {
         }
         char c3 = c;
         long j6 = j3;
-        float fIntBitsToFloat5 = Float.intBitsToFloat((int) (jFloatToRawIntBits >> c3));
-        float fIntBitsToFloat6 = Float.intBitsToFloat((int) (jFloatToRawIntBits & j6));
-        float fIntBitsToFloat7 = Float.intBitsToFloat((int) (jFloatToRawIntBits2 >> c3));
-        float fIntBitsToFloat8 = Float.intBitsToFloat((int) (jFloatToRawIntBits2 & j6));
+        float intBitsToFloat5 = Float.intBitsToFloat((int) (floatToRawIntBits >> c3));
+        float intBitsToFloat6 = Float.intBitsToFloat((int) (floatToRawIntBits & j6));
+        float intBitsToFloat7 = Float.intBitsToFloat((int) (floatToRawIntBits2 >> c3));
+        float intBitsToFloat8 = Float.intBitsToFloat((int) (floatToRawIntBits2 & j6));
         if (Build.VERSION.SDK_INT >= 26) {
             int size = list.size();
             iArr = new int[size];
             for (int i8 = 0; i8 < size; i8++) {
-                iArr[i8] = bz0.i0(((et) list.get(i8)).f321a);
+                iArr[i8] = bz0.i0(((et) list.get(i8)).f320a);
             }
         } else {
             iArr = new int[list.size() + i];
-            int iL02 = xs.l0(list);
+            int l02 = xs.l0(list);
             int size2 = list.size();
             int i9 = 0;
             for (int i10 = 0; i10 < size2; i10++) {
-                long j7 = ((et) list.get(i10)).f321a;
+                long j7 = ((et) list.get(i10)).f320a;
                 if (et.d(j7) == 0.0f) {
                     if (i10 == 0) {
                         i2 = i9 + 1;
-                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(1)).f321a));
-                    } else if (i10 == iL02) {
+                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(1)).f320a));
+                    } else if (i10 == l02) {
                         i2 = i9 + 1;
-                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(i10 - 1)).f321a));
+                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(i10 - 1)).f320a));
                     } else {
                         int i11 = i9 + 1;
-                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(i10 - 1)).f321a));
+                        iArr[i9] = bz0.i0(et.b(0.0f, ((et) list.get(i10 - 1)).f320a));
                         i9 += 2;
-                        iArr[i11] = bz0.i0(et.b(0.0f, ((et) list.get(i10 + 1)).f321a));
+                        iArr[i11] = bz0.i0(et.b(0.0f, ((et) list.get(i10 + 1)).f320a));
                     }
                     i9 = i2;
                 } else {
@@ -116,23 +116,23 @@ public final class k61 extends o92 {
         } else {
             fArr = new float[list.size() + i];
             fArr[0] = 0.0f;
-            int iL03 = xs.l0(list);
+            int l03 = xs.l0(list);
             int i12 = 1;
-            for (int i13 = 1; i13 < iL03; i13++) {
-                long j8 = ((et) list.get(i13)).f321a;
-                float fL0 = i13 / xs.l0(list);
+            for (int i13 = 1; i13 < l03; i13++) {
+                long j8 = ((et) list.get(i13)).f320a;
+                float l04 = i13 / xs.l0(list);
                 int i14 = i12 + 1;
-                fArr[i12] = fL0;
+                fArr[i12] = l04;
                 if (et.d(j8) == 0.0f) {
                     i12 += 2;
-                    fArr[i14] = fL0;
+                    fArr[i14] = l04;
                 } else {
                     i12 = i14;
                 }
             }
             fArr[i12] = 1.0f;
         }
-        return new LinearGradient(fIntBitsToFloat5, fIntBitsToFloat6, fIntBitsToFloat7, fIntBitsToFloat8, iArr2, fArr, Shader.TileMode.CLAMP);
+        return new LinearGradient(intBitsToFloat5, intBitsToFloat6, intBitsToFloat7, intBitsToFloat8, iArr2, fArr, Shader.TileMode.CLAMP);
     }
 
     public final boolean equals(Object obj) {

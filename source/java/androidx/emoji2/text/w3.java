@@ -137,112 +137,112 @@ public final class w3 implements ic1 {
 
     @Override // androidx.emoji2.text.ic1
     public final boolean d() {
-        int size;
-        ArrayList arrayListK;
         int i;
+        ArrayList arrayList;
+        int i2;
         boolean z;
         w3 w3Var = this;
         qb1 qb1Var = w3Var.f;
         if (qb1Var != null) {
-            arrayListK = qb1Var.k();
-            size = arrayListK.size();
+            arrayList = qb1Var.k();
+            i = arrayList.size();
         } else {
-            size = 0;
-            arrayListK = null;
+            i = 0;
+            arrayList = null;
         }
-        int i2 = w3Var.r;
-        int i3 = w3Var.q;
-        int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+        int i3 = w3Var.r;
+        int i4 = w3Var.q;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
         ActionMenuView actionMenuView = w3Var.j;
-        int i4 = 0;
-        boolean z2 = false;
         int i5 = 0;
+        boolean z2 = false;
         int i6 = 0;
+        int i7 = 0;
         while (true) {
-            i = 2;
+            i2 = 2;
             z = true;
-            if (i4 >= size) {
+            if (i5 >= i) {
                 break;
             }
-            ub1 ub1Var = (ub1) arrayListK.get(i4);
-            int i7 = ub1Var.y;
-            if ((i7 & 2) == 2) {
-                i5++;
-            } else if ((i7 & 1) == 1) {
+            ub1 ub1Var = (ub1) arrayList.get(i5);
+            int i8 = ub1Var.y;
+            if ((i8 & 2) == 2) {
                 i6++;
+            } else if ((i8 & 1) == 1) {
+                i7++;
             } else {
                 z2 = true;
             }
             if (w3Var.s && ub1Var.B) {
-                i2 = 0;
+                i3 = 0;
             }
-            i4++;
+            i5++;
         }
-        if (w3Var.n && (z2 || i6 + i5 > i2)) {
-            i2--;
+        if (w3Var.n && (z2 || i7 + i6 > i3)) {
+            i3--;
         }
-        int i8 = i2 - i5;
+        int i9 = i3 - i6;
         SparseBooleanArray sparseBooleanArray = w3Var.t;
         sparseBooleanArray.clear();
-        int i9 = 0;
         int i10 = 0;
-        while (i9 < size) {
-            ub1 ub1Var2 = (ub1) arrayListK.get(i9);
-            int i11 = ub1Var2.y;
-            boolean z3 = (i11 & 2) == i ? z : false;
-            int i12 = ub1Var2.b;
+        int i11 = 0;
+        while (i10 < i) {
+            ub1 ub1Var2 = (ub1) arrayList.get(i10);
+            int i12 = ub1Var2.y;
+            boolean z3 = (i12 & 2) == i2 ? z : false;
+            int i13 = ub1Var2.b;
             if (z3) {
-                View viewE = w3Var.e(ub1Var2, null, actionMenuView);
-                viewE.measure(iMakeMeasureSpec, iMakeMeasureSpec);
-                int measuredWidth = viewE.getMeasuredWidth();
-                i3 -= measuredWidth;
-                if (i10 == 0) {
-                    i10 = measuredWidth;
+                View e = w3Var.e(ub1Var2, null, actionMenuView);
+                e.measure(makeMeasureSpec, makeMeasureSpec);
+                int measuredWidth = e.getMeasuredWidth();
+                i4 -= measuredWidth;
+                if (i11 == 0) {
+                    i11 = measuredWidth;
                 }
-                if (i12 != 0) {
-                    sparseBooleanArray.put(i12, z);
+                if (i13 != 0) {
+                    sparseBooleanArray.put(i13, z);
                 }
                 ub1Var2.d(z);
-            } else if ((i11 & 1) == z) {
-                boolean z4 = sparseBooleanArray.get(i12);
-                boolean z5 = ((i8 > 0 || z4) && i3 > 0) ? z : false;
+            } else if ((i12 & 1) == z) {
+                boolean z4 = sparseBooleanArray.get(i13);
+                boolean z5 = ((i9 > 0 || z4) && i4 > 0) ? z : false;
                 if (z5) {
-                    View viewE2 = w3Var.e(ub1Var2, null, actionMenuView);
-                    viewE2.measure(iMakeMeasureSpec, iMakeMeasureSpec);
-                    int measuredWidth2 = viewE2.getMeasuredWidth();
-                    i3 -= measuredWidth2;
-                    if (i10 == 0) {
-                        i10 = measuredWidth2;
+                    View e2 = w3Var.e(ub1Var2, null, actionMenuView);
+                    e2.measure(makeMeasureSpec, makeMeasureSpec);
+                    int measuredWidth2 = e2.getMeasuredWidth();
+                    i4 -= measuredWidth2;
+                    if (i11 == 0) {
+                        i11 = measuredWidth2;
                     }
-                    z5 &= i3 + i10 > 0;
+                    z5 &= i4 + i11 > 0;
                 }
-                if (z5 && i12 != 0) {
-                    sparseBooleanArray.put(i12, true);
+                if (z5 && i13 != 0) {
+                    sparseBooleanArray.put(i13, true);
                 } else if (z4) {
-                    sparseBooleanArray.put(i12, false);
-                    for (int i13 = 0; i13 < i9; i13++) {
-                        ub1 ub1Var3 = (ub1) arrayListK.get(i13);
-                        if (ub1Var3.b == i12) {
+                    sparseBooleanArray.put(i13, false);
+                    for (int i14 = 0; i14 < i10; i14++) {
+                        ub1 ub1Var3 = (ub1) arrayList.get(i14);
+                        if (ub1Var3.b == i13) {
                             if ((ub1Var3.x & 32) == 32) {
-                                i8++;
+                                i9++;
                             }
                             ub1Var3.d(false);
                         }
                     }
                 }
                 if (z5) {
-                    i8--;
+                    i9--;
                 }
                 ub1Var2.d(z5);
             } else {
                 ub1Var2.d(false);
-                i9++;
-                i = 2;
+                i10++;
+                i2 = 2;
                 w3Var = this;
                 z = true;
             }
-            i9++;
-            i = 2;
+            i10++;
+            i2 = 2;
             w3Var = this;
             z = true;
         }
@@ -306,25 +306,25 @@ public final class w3 implements ic1 {
             qb1 qb1Var = this.f;
             if (qb1Var != null) {
                 qb1Var.i();
-                ArrayList arrayListK = this.f.k();
-                int size = arrayListK.size();
+                ArrayList k = this.f.k();
+                int size = k.size();
                 i = 0;
                 for (int i2 = 0; i2 < size; i2++) {
-                    ub1 ub1Var = (ub1) arrayListK.get(i2);
+                    ub1 ub1Var = (ub1) k.get(i2);
                     if ((ub1Var.x & 32) == 32) {
                         View childAt = actionMenuView.getChildAt(i);
                         ub1 itemData = childAt instanceof kc1 ? ((kc1) childAt).getItemData() : null;
-                        View viewE = e(ub1Var, childAt, actionMenuView);
+                        View e = e(ub1Var, childAt, actionMenuView);
                         if (ub1Var != itemData) {
-                            viewE.setPressed(false);
-                            viewE.jumpDrawablesToCurrentState();
+                            e.setPressed(false);
+                            e.jumpDrawablesToCurrentState();
                         }
-                        if (viewE != childAt) {
-                            ViewGroup viewGroup = (ViewGroup) viewE.getParent();
+                        if (e != childAt) {
+                            ViewGroup viewGroup = (ViewGroup) e.getParent();
                             if (viewGroup != null) {
-                                viewGroup.removeView(viewE);
+                                viewGroup.removeView(e);
                             }
-                            this.j.addView(viewE, i);
+                            this.j.addView(e, i);
                         }
                         i++;
                     }
@@ -375,9 +375,9 @@ public final class w3 implements ic1 {
                 ActionMenuView actionMenuView2 = this.j;
                 v3 v3Var = this.k;
                 actionMenuView2.getClass();
-                y3 y3VarI = ActionMenuView.i();
-                y3VarI.f1367a = true;
-                actionMenuView2.addView(v3Var, y3VarI);
+                y3 i4 = ActionMenuView.i();
+                i4.f1366a = true;
+                actionMenuView2.addView(v3Var, i4);
             }
         } else {
             v3 v3Var2 = this.k;
@@ -433,7 +433,7 @@ public final class w3 implements ic1 {
             i = 3;
         }
         this.r = i;
-        int measuredWidth = this.p;
+        int i4 = this.p;
         if (this.n) {
             if (this.k == null) {
                 v3 v3Var = new v3(this, this.d);
@@ -443,14 +443,14 @@ public final class w3 implements ic1 {
                     this.l = null;
                     this.m = false;
                 }
-                int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
-                this.k.measure(iMakeMeasureSpec, iMakeMeasureSpec);
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
+                this.k.measure(makeMeasureSpec, makeMeasureSpec);
             }
-            measuredWidth -= this.k.getMeasuredWidth();
+            i4 -= this.k.getMeasuredWidth();
         } else {
             this.k = null;
         }
-        this.q = measuredWidth;
+        this.q = i4;
         float f = resources.getDisplayMetrics().density;
     }
 

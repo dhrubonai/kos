@@ -7,5 +7,5 @@ import java.util.concurrent.atomic.AtomicReference;
 public abstract class hw2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final AtomicReference f495a = new AtomicReference(j42.v);
+    public static final AtomicReference f494a = new AtomicReference(j42.v);
 }

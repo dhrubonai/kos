@@ -8,6 +8,6 @@ import java.util.List;
 public final class eu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public List f324a;
+    public List f323a;
     public ArrayList b;
 }

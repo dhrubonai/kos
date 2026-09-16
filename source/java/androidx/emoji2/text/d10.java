@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class d10 extends e10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f232a;
+    public final long f231a;
 
     public d10(long j) {
-        this.f232a = j;
+        this.f231a = j;
         if (!jz0.I(j)) {
             throw new IllegalStateException("ContextMenuState.Status should never be open with an unspecified offset. Use ContextMenuState.Status.Closed instead.");
         }
@@ -21,14 +21,14 @@ public final class d10 extends e10 {
         if (!(obj instanceof d10)) {
             return false;
         }
-        return zi1.b(this.f232a, ((d10) obj).f232a);
+        return zi1.b(this.f231a, ((d10) obj).f231a);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f232a);
+        return Long.hashCode(this.f231a);
     }
 
     public final String toString() {
-        return "Open(offset=" + ((Object) zi1.i(this.f232a)) + ')';
+        return "Open(offset=" + ((Object) zi1.i(this.f231a)) + ')';
     }
 }

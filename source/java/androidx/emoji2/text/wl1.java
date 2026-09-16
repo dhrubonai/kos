@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class wl1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final cd2 f1288a;
+    public final cd2 f1287a;
     public final vl1 b = vl1.j;
     public final vl1 c = vl1.k;
     public final vl1 d = vl1.l;
@@ -15,10 +15,10 @@ public final class wl1 {
     public final vl1 h = vl1.i;
 
     public wl1(p7 p7Var) {
-        this.f1288a = new cd2(p7Var);
+        this.f1287a = new cd2(p7Var);
     }
 
     public final void a(ul1 ul1Var, um0 um0Var, sm0 sm0Var) {
-        this.f1288a.c(ul1Var, um0Var, sm0Var);
+        this.f1287a.c(ul1Var, um0Var, sm0Var);
     }
 }

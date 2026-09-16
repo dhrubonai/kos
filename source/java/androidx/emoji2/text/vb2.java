@@ -19,20 +19,20 @@ public final class vb2 extends g01 implements um0 {
     public final Object e(Object obj) {
         switch (this.e) {
             case 0:
-                float fFloatValue = ((Number) obj).floatValue();
+                float floatValue = ((Number) obj).floatValue();
                 zx1 zx1Var = this.f;
-                float f = zx1Var.d - fFloatValue;
+                float f = zx1Var.d - floatValue;
                 zx1Var.d = f;
                 this.g.e(Float.valueOf(f));
                 break;
             default:
-                float fFloatValue2 = ((Number) obj).floatValue();
+                float floatValue2 = ((Number) obj).floatValue();
                 zx1 zx1Var2 = this.f;
-                float f2 = zx1Var2.d - fFloatValue2;
+                float f2 = zx1Var2.d - floatValue2;
                 zx1Var2.d = f2;
                 this.g.e(Float.valueOf(f2));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

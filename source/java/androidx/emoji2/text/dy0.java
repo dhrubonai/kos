@@ -35,9 +35,9 @@ public final class dy0 extends CancellationException {
     public final int hashCode() {
         String message = getMessage();
         lx0.u(message);
-        int iHashCode = (this.d.hashCode() + (message.hashCode() * 31)) * 31;
+        int hashCode = (this.d.hashCode() + (message.hashCode() * 31)) * 31;
         Throwable cause = getCause();
-        return iHashCode + (cause != null ? cause.hashCode() : 0);
+        return hashCode + (cause != null ? cause.hashCode() : 0);
     }
 
     @Override // java.lang.Throwable

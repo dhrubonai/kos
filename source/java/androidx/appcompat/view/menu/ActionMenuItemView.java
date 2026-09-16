@@ -41,9 +41,9 @@ public class ActionMenuItemView extends jg implements kc1, View.OnClickListener,
         super(context, attributeSet, 0);
         Resources resources = context.getResources();
         this.q = g();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.c, 0, 0);
-        this.s = typedArrayObtainStyledAttributes.getDimensionPixelSize(0, 0);
-        typedArrayObtainStyledAttributes.recycle();
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, gv1.c, 0, 0);
+        this.s = obtainStyledAttributes.getDimensionPixelSize(0, 0);
+        obtainStyledAttributes.recycle();
         this.u = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);
         setOnClickListener(this);
         this.t = -1;
@@ -55,7 +55,7 @@ public class ActionMenuItemView extends jg implements kc1, View.OnClickListener,
         this.k = ub1Var;
         setIcon(ub1Var.getIcon());
         setTitle(ub1Var.getTitleCondensed());
-        setId(ub1Var.f1167a);
+        setId(ub1Var.f1166a);
         setVisibility(ub1Var.isVisible() ? 0 : 8);
         setEnabled(ub1Var.isEnabled());
         if (ub1Var.hasSubMenu() && this.o == null) {
@@ -133,8 +133,8 @@ public class ActionMenuItemView extends jg implements kc1, View.OnClickListener,
     @Override // androidx.emoji2.text.jg, android.widget.TextView, android.view.View
     public final void onMeasure(int i, int i2) {
         int i3;
-        boolean zIsEmpty = TextUtils.isEmpty(getText());
-        if (!zIsEmpty && (i3 = this.t) >= 0) {
+        boolean isEmpty = TextUtils.isEmpty(getText());
+        if (!isEmpty && (i3 = this.t) >= 0) {
             super.setPadding(i3, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
         super.onMeasure(i, i2);
@@ -142,11 +142,11 @@ public class ActionMenuItemView extends jg implements kc1, View.OnClickListener,
         int size = View.MeasureSpec.getSize(i);
         int measuredWidth = getMeasuredWidth();
         int i4 = this.s;
-        int iMin = mode == Integer.MIN_VALUE ? Math.min(size, i4) : i4;
-        if (mode != 1073741824 && i4 > 0 && measuredWidth < iMin) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(iMin, 1073741824), i2);
+        int min = mode == Integer.MIN_VALUE ? Math.min(size, i4) : i4;
+        if (mode != 1073741824 && i4 > 0 && measuredWidth < min) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, 1073741824), i2);
         }
-        if (!zIsEmpty || this.m == null) {
+        if (!isEmpty || this.m == null) {
             return;
         }
         super.setPadding((getMeasuredWidth() - this.m.getBounds().width()) / 2, getPaddingTop(), getPaddingRight(), getPaddingBottom());

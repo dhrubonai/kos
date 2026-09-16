@@ -5,16 +5,16 @@ package androidx.emoji2.text;
 public final class vj2 implements bj1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ uj2 f1225a;
+    public final /* synthetic */ uj2 f1224a;
     public final /* synthetic */ boolean b;
 
     public vj2(uj2 uj2Var, boolean z) {
-        this.f1225a = uj2Var;
+        this.f1224a = uj2Var;
         this.b = z;
     }
 
     @Override // androidx.emoji2.text.bj1
     public final long a() {
-        return this.f1225a.i(this.b);
+        return this.f1224a.i(this.b);
     }
 }

@@ -19,28 +19,28 @@ public final class ua2 implements dh1 {
 
     @Override // androidx.emoji2.text.dh1
     public final long J(int i, long j) {
-        float fE = zi1.e(j);
-        if (fE >= 0.0f || i != 1) {
+        float e = zi1.e(j);
+        if (e >= 0.0f || i != 1) {
             return 0L;
         }
         m6 m6Var = this.d.b;
-        float fE2 = m6Var.e(fE);
+        float e2 = m6Var.e(e);
         qn1 qn1Var = m6Var.j;
-        float fG = Float.isNaN(qn1Var.g()) ? 0.0f : qn1Var.g();
-        qn1Var.h(fE2);
-        return jz0.d(0.0f, fE2 - fG);
+        float g = Float.isNaN(qn1Var.g()) ? 0.0f : qn1Var.g();
+        qn1Var.h(e2);
+        return jz0.d(0.0f, e2 - g);
     }
 
     @Override // androidx.emoji2.text.dh1
     public final Object W(long j, l10 l10Var) {
-        float fC = fr2.c(j);
+        float c = fr2.c(j);
         ya2 ya2Var = this.d;
         float f = ya2Var.b.f();
-        float fC2 = ya2Var.b.d().c();
-        if (fC >= 0.0f || f <= fC2) {
+        float c2 = ya2Var.b.d().c();
+        if (c >= 0.0f || f <= c2) {
             j = 0;
         } else {
-            this.e.e(new Float(fC));
+            this.e.e(new Float(c));
         }
         return new fr2(j);
     }
@@ -51,10 +51,10 @@ public final class ua2 implements dh1 {
             return 0L;
         }
         m6 m6Var = this.d.b;
-        float fE = m6Var.e(zi1.e(j2));
+        float e = m6Var.e(zi1.e(j2));
         qn1 qn1Var = m6Var.j;
-        float fG = Float.isNaN(qn1Var.g()) ? 0.0f : qn1Var.g();
-        qn1Var.h(fE);
-        return jz0.d(0.0f, fE - fG);
+        float g = Float.isNaN(qn1Var.g()) ? 0.0f : qn1Var.g();
+        qn1Var.h(e);
+        return jz0.d(0.0f, e - g);
     }
 }

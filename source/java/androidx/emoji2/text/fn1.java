@@ -24,12 +24,12 @@ public abstract class fn1 {
                     }
                     this.e = false;
                 } else {
-                    pa paVarV = this.d;
-                    if (paVarV == null) {
-                        paVarV = l8.v();
-                        this.d = paVarV;
+                    pa paVar2 = this.d;
+                    if (paVar2 == null) {
+                        paVar2 = l8.v();
+                        this.d = paVar2;
                     }
-                    paVarV.c(f);
+                    paVar2.c(f);
                     this.e = true;
                 }
             }
@@ -38,18 +38,18 @@ public abstract class fn1 {
         if (!lx0.n(this.f, qlVar)) {
             if (!c(qlVar)) {
                 if (qlVar == null) {
-                    pa paVar2 = this.d;
-                    if (paVar2 != null) {
-                        paVar2.f(null);
+                    pa paVar3 = this.d;
+                    if (paVar3 != null) {
+                        paVar3.f(null);
                     }
                     this.e = false;
                 } else {
-                    pa paVarV2 = this.d;
-                    if (paVarV2 == null) {
-                        paVarV2 = l8.v();
-                        this.d = paVarV2;
+                    pa paVar4 = this.d;
+                    if (paVar4 == null) {
+                        paVar4 = l8.v();
+                        this.d = paVar4;
                     }
-                    paVarV2.f(qlVar);
+                    paVar4.f(qlVar);
                     this.e = true;
                 }
             }
@@ -61,29 +61,29 @@ public abstract class fn1 {
             this.h = layoutDirection;
         }
         int i = (int) (j >> 32);
-        float fIntBitsToFloat = Float.intBitsToFloat((int) (npVar.i() >> 32)) - Float.intBitsToFloat(i);
+        float intBitsToFloat = Float.intBitsToFloat((int) (npVar.i() >> 32)) - Float.intBitsToFloat(i);
         int i2 = (int) (j & 4294967295L);
-        float fIntBitsToFloat2 = Float.intBitsToFloat((int) (npVar.i() & 4294967295L)) - Float.intBitsToFloat(i2);
-        ((p4) npVar.e.e).B(0.0f, 0.0f, fIntBitsToFloat, fIntBitsToFloat2);
+        float intBitsToFloat2 = Float.intBitsToFloat((int) (npVar.i() & 4294967295L)) - Float.intBitsToFloat(i2);
+        ((p4) npVar.e.e).B(0.0f, 0.0f, intBitsToFloat, intBitsToFloat2);
         if (f > 0.0f) {
             try {
                 if (Float.intBitsToFloat(i) > 0.0f && Float.intBitsToFloat(i2) > 0.0f) {
                     if (this.e) {
-                        float fIntBitsToFloat3 = Float.intBitsToFloat(i);
-                        float fIntBitsToFloat4 = Float.intBitsToFloat(i2);
-                        zw1 zw1VarJ = nz0.j(0L, (Float.floatToRawIntBits(fIntBitsToFloat4) & 4294967295L) | (Float.floatToRawIntBits(fIntBitsToFloat3) << 32));
-                        lp lpVarD = npVar.e.D();
-                        pa paVarV3 = this.d;
-                        if (paVarV3 == null) {
-                            paVarV3 = l8.v();
-                            this.d = paVarV3;
+                        float intBitsToFloat3 = Float.intBitsToFloat(i);
+                        float intBitsToFloat4 = Float.intBitsToFloat(i2);
+                        zw1 j2 = nz0.j(0L, (Float.floatToRawIntBits(intBitsToFloat4) & 4294967295L) | (Float.floatToRawIntBits(intBitsToFloat3) << 32));
+                        lp D = npVar.e.D();
+                        pa paVar5 = this.d;
+                        if (paVar5 == null) {
+                            paVar5 = l8.v();
+                            this.d = paVar5;
                         }
                         try {
-                            lpVarD.p(zw1VarJ, paVarV3);
+                            D.p(j2, paVar5);
                             i(g11Var);
-                            lpVarD.n();
+                            D.n();
                         } catch (Throwable th) {
-                            lpVarD.n();
+                            D.n();
                             throw th;
                         }
                     } else {
@@ -91,11 +91,11 @@ public abstract class fn1 {
                     }
                 }
             } catch (Throwable th2) {
-                ((p4) npVar.e.e).B(-0.0f, -0.0f, -fIntBitsToFloat, -fIntBitsToFloat2);
+                ((p4) npVar.e.e).B(-0.0f, -0.0f, -intBitsToFloat, -intBitsToFloat2);
                 throw th2;
             }
         }
-        ((p4) npVar.e.e).B(-0.0f, -0.0f, -fIntBitsToFloat, -fIntBitsToFloat2);
+        ((p4) npVar.e.e).B(-0.0f, -0.0f, -intBitsToFloat, -intBitsToFloat2);
     }
 
     public abstract long h();

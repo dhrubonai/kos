@@ -57,15 +57,15 @@ public final class mo2 extends g0 {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        Object objA = a();
+        Object a2 = a();
         int i = this.d + 1;
         this.d = i;
         if (i == this.e) {
             this.h = true;
-            return objA;
+            return a2;
         }
         c(0);
-        return objA;
+        return a2;
     }
 
     @Override // java.util.ListIterator

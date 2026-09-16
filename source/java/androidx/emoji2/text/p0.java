@@ -6,5 +6,5 @@ public final class p0 {
     public static final p0 b = new p0();
 
     /* renamed from: a, reason: collision with root package name */
-    public p0 f883a;
+    public p0 f882a;
 }

@@ -15,13 +15,12 @@ public final class g70 implements Iterator, ry0 {
 
     public g70(h70 h70Var) {
         this.h = h70Var;
-        int iP = az0.p(0, 0, ((CharSequence) h70Var.b).length());
-        this.e = iP;
-        this.f = iP;
+        int p = az0.p(0, 0, ((CharSequence) h70Var.b).length());
+        this.e = p;
+        this.f = p;
     }
 
     public final void a() {
-        hn1 hn1Var;
         h70 h70Var = this.h;
         CharSequence charSequence = (CharSequence) h70Var.b;
         int i = this.f;
@@ -30,16 +29,22 @@ public final class g70 implements Iterator, ry0 {
             this.g = null;
             return;
         }
-        if (i <= charSequence.length() && (hn1Var = (hn1) ((Function2) h70Var.c).invoke(charSequence, Integer.valueOf(this.f))) != null) {
-            int iIntValue = ((Number) hn1Var.d).intValue();
-            int iIntValue2 = ((Number) hn1Var.e).intValue();
-            this.g = az0.l0(this.e, iIntValue);
-            int i2 = iIntValue + iIntValue2;
-            this.e = i2;
-            this.f = i2 + (iIntValue2 == 0 ? 1 : 0);
-        } else {
+        if (i > charSequence.length()) {
             this.g = new qw0(this.e, wf2.d0(charSequence), 1);
             this.f = -1;
+        } else {
+            hn1 hn1Var = (hn1) ((Function2) h70Var.c).invoke(charSequence, Integer.valueOf(this.f));
+            if (hn1Var == null) {
+                this.g = new qw0(this.e, wf2.d0(charSequence), 1);
+                this.f = -1;
+            } else {
+                int intValue = ((Number) hn1Var.d).intValue();
+                int intValue2 = ((Number) hn1Var.e).intValue();
+                this.g = az0.l0(this.e, intValue);
+                int i2 = intValue + intValue2;
+                this.e = i2;
+                this.f = i2 + (intValue2 == 0 ? 1 : 0);
+            }
         }
         this.d = 1;
     }

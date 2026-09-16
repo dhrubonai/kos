@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public final class k01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f610a;
+    public final long f609a;
     public final long b;
     public final long c;
 
     public k01(long j, long j2, long j3) {
-        this.f610a = j;
+        this.f609a = j;
         this.b = j2;
         this.c = j3;
     }
@@ -23,14 +23,14 @@ public final class k01 {
             return false;
         }
         k01 k01Var = (k01) obj;
-        return this.f610a == k01Var.f610a && this.b == k01Var.b && this.c == k01Var.c;
+        return this.f609a == k01Var.f609a && this.b == k01Var.b && this.c == k01Var.c;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.c) + jx0.b(Long.hashCode(this.f610a) * 31, 31, this.b);
+        return Long.hashCode(this.c) + jx0.b(Long.hashCode(this.f609a) * 31, 31, this.b);
     }
 
     public final String toString() {
-        return "LauncherAppStorage(appBytes=" + this.f610a + ", dataBytes=" + this.b + ", cacheBytes=" + this.c + ")";
+        return "LauncherAppStorage(appBytes=" + this.f609a + ", dataBytes=" + this.b + ", cacheBytes=" + this.c + ")";
     }
 }

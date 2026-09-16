@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public final class lk2 implements cs1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final View f694a;
+    public final View f693a;
     public final rg b;
     public final mk2 c;
     public boolean d;
@@ -30,7 +30,7 @@ public final class lk2 implements cs1 {
     public lk2(View view, v7 v7Var) {
         rg rgVar = new rg(view);
         mk2 mk2Var = new mk2(Choreographer.getInstance());
-        this.f694a = view;
+        this.f693a = view;
         this.b = rgVar;
         this.c = mk2Var;
         this.e = jj2.j;
@@ -83,9 +83,11 @@ public final class lk2 implements cs1 {
                 x30Var.m = cn1Var;
                 x30Var.n = zw1Var;
                 x30Var.o = zw1Var2;
-                if (x30Var.e || x30Var.d) {
-                    x30Var.a();
+                if (!x30Var.e) {
+                    if (x30Var.d) {
+                    }
                 }
+                x30Var.a();
             } catch (Throwable th) {
                 throw th;
             }
@@ -124,17 +126,17 @@ public final class lk2 implements cs1 {
         if (lx0.n(ak2Var, ak2Var2)) {
             if (z) {
                 rg rgVar = this.b;
-                int iE = al2.e(ak2Var2.b);
-                int iD = al2.d(ak2Var2.b);
+                int e = al2.e(ak2Var2.b);
+                int d = al2.d(ak2Var2.b);
                 al2 al2Var = this.g.c;
-                int iE2 = al2Var != null ? al2.e(al2Var.f107a) : -1;
+                int e2 = al2Var != null ? al2.e(al2Var.f106a) : -1;
                 al2 al2Var2 = this.g.c;
-                ((InputMethodManager) rgVar.f.getValue()).updateSelection((View) rgVar.e, iE, iD, iE2, al2Var2 != null ? al2.d(al2Var2.f107a) : -1);
+                ((InputMethodManager) rgVar.f.getValue()).updateSelection((View) rgVar.e, e, d, e2, al2Var2 != null ? al2.d(al2Var2.f106a) : -1);
                 return;
             }
             return;
         }
-        if (ak2Var != null && (!lx0.n(ak2Var.f106a.e, ak2Var2.f106a.e) || (al2.a(ak2Var.b, ak2Var2.b) && !lx0.n(ak2Var.c, ak2Var2.c)))) {
+        if (ak2Var != null && (!lx0.n(ak2Var.f105a.e, ak2Var2.f105a.e) || (al2.a(ak2Var.b, ak2Var2.b) && !lx0.n(ak2Var.c, ak2Var2.c)))) {
             rg rgVar2 = this.b;
             ((InputMethodManager) rgVar2.f.getValue()).restartInput((View) rgVar2.e);
             return;
@@ -152,9 +154,9 @@ public final class lk2 implements cs1 {
                     }
                     al2 al2Var3 = ak2Var3.c;
                     long j = ak2Var3.b;
-                    int iE3 = al2Var3 != null ? al2.e(al2Var3.f107a) : -1;
+                    int e3 = al2Var3 != null ? al2.e(al2Var3.f106a) : -1;
                     al2 al2Var4 = ak2Var3.c;
-                    ((InputMethodManager) rgVar3.f.getValue()).updateSelection((View) rgVar3.e, al2.e(j), al2.d(j), iE3, al2Var4 != null ? al2.d(al2Var4.f107a) : -1);
+                    ((InputMethodManager) rgVar3.f.getValue()).updateSelection((View) rgVar3.e, al2.e(j), al2.d(j), e3, al2Var4 != null ? al2.d(al2Var4.f106a) : -1);
                 }
             }
         }
@@ -163,11 +165,11 @@ public final class lk2 implements cs1 {
     @Override // androidx.emoji2.text.cs1
     public final void h(zw1 zw1Var) {
         Rect rect;
-        this.k = new Rect(xa1.Q(zw1Var.f1459a), xa1.Q(zw1Var.b), xa1.Q(zw1Var.c), xa1.Q(zw1Var.d));
+        this.k = new Rect(xa1.Q(zw1Var.f1458a), xa1.Q(zw1Var.b), xa1.Q(zw1Var.c), xa1.Q(zw1Var.d));
         if (!this.i.isEmpty() || (rect = this.k) == null) {
             return;
         }
-        this.f694a.requestRectangleOnScreen(new Rect(rect));
+        this.f693a.requestRectangleOnScreen(new Rect(rect));
     }
 
     public final void i(jk2 jk2Var) {

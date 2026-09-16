@@ -7,7 +7,7 @@ import android.view.View;
 public final class k8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final k8 f625a = new k8();
+    public static final k8 f624a = new k8();
 
     public final void a(View view, int i, boolean z) {
         view.setFocusable(i);

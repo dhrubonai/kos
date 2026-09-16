@@ -61,12 +61,12 @@ public final class kl0 implements pd0 {
             Object obj = objArr[0];
             Objects.requireNonNull(obj);
             arrayList.add(obj);
-            bm0 bm0VarA = il0.a(context, Collections.unmodifiableList(arrayList));
-            int i = bm0VarA.f157a;
+            bm0 a2 = il0.a(context, Collections.unmodifiableList(arrayList));
+            int i = a2.f156a;
             if (i != 0) {
                 throw new RuntimeException(zd.g("fetchFonts failed (", i, ")"));
             }
-            cm0[] cm0VarArr = (cm0[]) bm0VarA.b.get(0);
+            cm0[] cm0VarArr = (cm0[]) a2.b.get(0);
             if (cm0VarArr == null || cm0VarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }

@@ -34,10 +34,10 @@ final class IndicationModifierElement extends ud1 {
 
     @Override // androidx.emoji2.text.ud1
     public final md1 f() {
-        y60 y60VarB = this.b.b(this.f5a);
+        y60 b = this.b.b(this.f5a);
         yu0 yu0Var = new yu0();
-        yu0Var.t = y60VarB;
-        yu0Var.I0(y60VarB);
+        yu0Var.t = b;
+        yu0Var.I0(b);
         return yu0Var;
     }
 
@@ -48,9 +48,9 @@ final class IndicationModifierElement extends ud1 {
     @Override // androidx.emoji2.text.ud1
     public final void l(md1 md1Var) {
         yu0 yu0Var = (yu0) md1Var;
-        y60 y60VarB = this.b.b(this.f5a);
+        y60 b = this.b.b(this.f5a);
         yu0Var.J0(yu0Var.t);
-        yu0Var.t = y60VarB;
-        yu0Var.I0(y60VarB);
+        yu0Var.t = b;
+        yu0Var.I0(b);
     }
 }

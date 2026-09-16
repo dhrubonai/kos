@@ -7,12 +7,12 @@ import java.util.Iterator;
 public final class nc0 implements q72, oc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final q72 f803a;
+    public final q72 f802a;
     public final int b;
 
     public nc0(q72 q72Var, int i) {
         lx0.x(q72Var, "sequence");
-        this.f803a = q72Var;
+        this.f802a = q72Var;
         this.b = i;
         if (i >= 0) {
             return;
@@ -23,7 +23,7 @@ public final class nc0 implements q72, oc0 {
     @Override // androidx.emoji2.text.oc0
     public final q72 a(int i) {
         int i2 = this.b + i;
-        return i2 < 0 ? new nc0(this, i) : new nc0(this.f803a, i2);
+        return i2 < 0 ? new nc0(this, i) : new nc0(this.f802a, i2);
     }
 
     @Override // androidx.emoji2.text.q72

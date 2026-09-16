@@ -33,12 +33,12 @@ public final /* synthetic */ class nq1 implements um0 {
                 l41Var.Q(list2.size(), new q8(24, veVar2, list2), new b50(1, list2), new ComposableLambdaImpl(-632812321, true, new xq1(list2, this.f, 0)));
                 break;
             default:
-                lx0.x(l41Var, a.a.a.c.a(-374379973328674L, wj1.f1284a));
+                lx0.x(l41Var, a.a.a.c.a(-374379973328674L, wj1.f1283a));
                 qt2 qt2Var = new qt2(10);
                 List list3 = this.e;
                 l41Var.Q(list3.size(), new v32(11, qt2Var, list3), new b50(9, list3), new ComposableLambdaImpl(-632812321, true, new xq1(list3, this.f, 3)));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

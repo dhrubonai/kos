@@ -11,7 +11,7 @@ public final class e01 {
     public static final /* synthetic */ e01[] g;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         e01 e01Var = new e01(a.a.a.c.a(-75106652143394L, strArr), 0);
         d = e01Var;
         e01 e01Var2 = new e01(a.a.a.c.a(-75080882339618L, strArr), 1);

@@ -46,13 +46,13 @@ public final class n7 extends g01 implements um0 {
                 lx0.v(jo2Var, "null cannot be cast to non-null type androidx.compose.foundation.lazy.layout.TraversablePrefetchStateNode");
                 a41 a41Var = ((ko2) jo2Var).r;
                 cy1 cy1Var2 = this.f;
-                List listN0 = (List) cy1Var2.d;
-                if (listN0 != null) {
-                    listN0.add(a41Var);
+                List list = (List) cy1Var2.d;
+                if (list != null) {
+                    list.add(a41Var);
                 } else {
-                    listN0 = xs.n0(a41Var);
+                    list = xs.n0(a41Var);
                 }
-                cy1Var2.d = listN0;
+                cy1Var2.d = list;
                 return io2.e;
         }
     }

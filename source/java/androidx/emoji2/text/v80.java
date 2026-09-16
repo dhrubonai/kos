@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class v80 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f1208a;
+    public boolean f1207a;
     public final Object b;
     public Object c;
     public Object d;
@@ -16,20 +16,20 @@ public final class v80 {
         this.b = new Object();
         this.c = new ArrayList();
         this.d = new ArrayList();
-        this.f1208a = true;
+        this.f1207a = true;
     }
 
     public void a(boolean z) {
         z80 z80Var = (z80) this.d;
         synchronized (z80Var) {
             try {
-                if (this.f1208a) {
+                if (this.f1207a) {
                     throw new IllegalStateException("editor is closed");
                 }
                 if (lx0.n(((w80) this.b).g, this)) {
                     z80.b(z80Var, this, z);
                 }
-                this.f1208a = true;
+                this.f1207a = true;
             } catch (Throwable th) {
                 throw th;
             }
@@ -40,7 +40,7 @@ public final class v80 {
         zn1 zn1Var;
         z80 z80Var = (z80) this.d;
         synchronized (z80Var) {
-            if (this.f1208a) {
+            if (this.f1207a) {
                 throw new IllegalStateException("editor is closed");
             }
             ((boolean[]) this.c)[i] = true;

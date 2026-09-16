@@ -89,23 +89,23 @@ public class DeveloperModuleInfo implements Parcelable {
     }
 
     public String dexPath() {
-        String strA = this.sourceDir;
-        if (strA == null) {
-            strA = c.a(-386478896201506L, xa1.b);
+        String str = this.sourceDir;
+        if (str == null) {
+            str = c.a(-386478896201506L, xa1.b);
         }
-        StringBuilder sb = new StringBuilder(strA);
+        StringBuilder sb = new StringBuilder(str);
         ArrayList<String> arrayList = this.splitSourceDirs;
         int size = arrayList.size();
         int i = 0;
         while (i < size) {
-            String str = arrayList.get(i);
+            String str2 = arrayList.get(i);
             i++;
-            String str2 = str;
-            if (str2 != null && str2.length() != 0) {
+            String str3 = str2;
+            if (str3 != null && str3.length() != 0) {
                 if (sb.length() > 0) {
                     sb.append(File.pathSeparator);
                 }
-                sb.append(str2);
+                sb.append(str3);
             }
         }
         return sb.toString();

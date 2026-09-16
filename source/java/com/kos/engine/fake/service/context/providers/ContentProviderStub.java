@@ -7,6 +7,7 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IInterface;
+import android.os.SystemClock;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.l8;
 import androidx.emoji2.text.lt2;
@@ -84,51 +85,29 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:4:0x0020  */
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0034, code lost:
+    
+        if (r2 <= com.kos.engine.fake.service.context.providers.ContentProviderStub.GOOGLE_AUTH_RECENT_CALLER_GRACE_MS) goto L9;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private java.util.Set<java.lang.String> collectRequestedPackages(java.lang.Object[] r7) {
-        /*
-            r6 = this;
-            java.util.HashSet r0 = new java.util.HashSet
-            r0.<init>()
-            r6.collectPackages(r7, r0)
-            java.lang.String r7 = r6.mAppPkg
-            r6.collectPackageName(r7, r0)
-            java.lang.String r7 = androidx.emoji2.text.rj.o()
-            r6.collectPackageName(r7, r0)
-            java.lang.String r7 = androidx.emoji2.text.mt2.c()
-            r6.collectPackageName(r7, r0)
-            androidx.emoji2.text.lt2 r7 = androidx.emoji2.text.mt2.c
-            r1 = 0
-            if (r7 != 0) goto L22
-        L20:
-            r7 = r1
-            goto L36
-        L22:
-            long r2 = android.os.SystemClock.elapsedRealtime()
-            long r4 = androidx.emoji2.text.mt2.d
-            long r2 = r2 - r4
-            r4 = 0
-            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r4 < 0) goto L20
-            r4 = 60000(0xea60, double:2.9644E-319)
-            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r2 > 0) goto L20
-        L36:
-            if (r7 != 0) goto L39
-            goto L3b
-        L39:
-            java.lang.String r1 = r7.b
-        L3b:
-            r6.collectPackageName(r1, r0)
-            java.lang.String r7 = androidx.emoji2.text.mt2.d()
-            r6.collectPackageName(r7, r0)
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.context.providers.ContentProviderStub.collectRequestedPackages(java.lang.Object[]):java.util.Set");
+    private Set<String> collectRequestedPackages(Object[] objArr) {
+        HashSet hashSet = new HashSet();
+        collectPackages(objArr, hashSet);
+        collectPackageName(this.mAppPkg, hashSet);
+        collectPackageName(rj.o(), hashSet);
+        collectPackageName(mt2.c(), hashSet);
+        lt2 lt2Var = mt2.c;
+        if (lt2Var != null) {
+            long elapsedRealtime = SystemClock.elapsedRealtime() - mt2.d;
+            if (elapsedRealtime >= 0) {
+            }
+        }
+        lt2Var = null;
+        collectPackageName(lt2Var != null ? lt2Var.b : null, hashSet);
+        collectPackageName(mt2.d(), hashSet);
+        return hashSet;
     }
 
     private Bundle createAccountAccessSuccessBundle(Object[] objArr) {
@@ -138,11 +117,11 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private MatrixCursor emptyCursor(Object[] objArr) {
-        String[] strArrFindProjection = findProjection(objArr);
-        if (strArrFindProjection == null) {
-            strArrFindProjection = new String[0];
+        String[] findProjection = findProjection(objArr);
+        if (findProjection == null) {
+            findProjection = new String[0];
         }
-        return new MatrixCursor(strArrFindProjection);
+        return new MatrixCursor(findProjection);
     }
 
     private Object emptyProviderResult(Method method) {
@@ -158,28 +137,28 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private int extractAlternateUid(Throwable th, int i) {
-        int iExtractCallingUid = extractCallingUid(th);
-        if (iExtractCallingUid > 0 && iExtractCallingUid != i) {
-            return iExtractCallingUid;
+        int extractCallingUid = extractCallingUid(th);
+        if (extractCallingUid > 0 && extractCallingUid != i) {
+            return extractCallingUid;
         }
-        int iExtractSourceUid = extractSourceUid(th);
-        if (iExtractSourceUid <= 0 || iExtractSourceUid == i) {
+        int extractSourceUid = extractSourceUid(th);
+        if (extractSourceUid <= 0 || extractSourceUid == i) {
             return -1;
         }
-        return iExtractSourceUid;
+        return extractSourceUid;
     }
 
     private int extractCallingUid(String str) {
         String[] strArr = xa1.b;
-        int iExtractUidAfterMarker = extractUidAfterMarker(str, c.a(-785704696299298L, strArr));
-        return iExtractUidAfterMarker > 0 ? iExtractUidAfterMarker : extractUidAfterMarker(str, c.a(-785790595645218L, strArr));
+        int extractUidAfterMarker = extractUidAfterMarker(str, c.a(-785704696299298L, strArr));
+        return extractUidAfterMarker > 0 ? extractUidAfterMarker : extractUidAfterMarker(str, c.a(-785790595645218L, strArr));
     }
 
     private int extractSourceUid(Throwable th) {
         while (th != null) {
-            int iExtractUidAfterMarker = extractUidAfterMarker(th.getMessage(), c.a(-785691811397410L, xa1.b));
-            if (iExtractUidAfterMarker > 0) {
-                return iExtractUidAfterMarker;
+            int extractUidAfterMarker = extractUidAfterMarker(th.getMessage(), c.a(-785691811397410L, xa1.b));
+            if (extractUidAfterMarker > 0) {
+                return extractUidAfterMarker;
             }
             th = th.getCause();
         }
@@ -187,11 +166,11 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private int extractUidAfterMarker(String str, String str2) {
-        int iIndexOf;
-        if (str == null || (iIndexOf = str.indexOf(str2)) < 0) {
+        int indexOf;
+        if (str == null || (indexOf = str.indexOf(str2)) < 0) {
             return -1;
         }
-        int length = str2.length() + iIndexOf;
+        int length = str2.length() + indexOf;
         while (length < str.length() && (Character.isWhitespace(str.charAt(length)) || str.charAt(length) == ':')) {
             length++;
         }
@@ -263,13 +242,13 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private String getCurrentAppPackage() {
-        String strO;
+        String o;
         try {
-            if (rj.n() == null || (strO = rj.o()) == null) {
+            if (rj.n() == null || (o = rj.o()) == null) {
                 return null;
             }
-            if (strO.length() > 0) {
-                return strO;
+            if (o.length() > 0) {
+                return o;
             }
             return null;
         } catch (Throwable unused) {
@@ -308,7 +287,7 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private void grantGoogleAccountAccessForRequestedPackages(Object[] objArr) {
-        Set<String> setCollectRequestedPackages = collectRequestedPackages(objArr);
+        Set<String> collectRequestedPackages = collectRequestedPackages(objArr);
         int userId = getUserId();
         BAccountManager bAccountManager = BAccountManager.get();
         String[] strArr = xa1.b;
@@ -316,16 +295,16 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         if (accountsAsUser == null || accountsAsUser.length == 0) {
             return;
         }
-        for (String str : setCollectRequestedPackages) {
+        for (String str : collectRequestedPackages) {
             if (isVisibleVirtualOrGooglePackage(str, userId)) {
                 for (Account account : accountsAsUser) {
                     BAccountManager.get().setAccountVisibility(account, str, 1, userId);
                 }
-                String strA = c.a(-793792119717666L, strArr);
+                String a2 = c.a(-793792119717666L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-793362622988066L, strArr));
                 sb.append(str);
-                zd.o(sb, c.a(-793474292137762L, strArr), userId, 3, strA);
+                zd.o(sb, c.a(-793474292137762L, strArr), userId, 3, a2);
             }
         }
     }
@@ -356,19 +335,19 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
 
     private Object invokeProvider(Method method, Object[] objArr, String str) {
         boolean z;
-        Integer numE;
-        int iResolvePackageUid;
+        Integer num;
+        int resolvePackageUid;
         lt2 lt2Var = null;
-        if (!shouldOverrideCallingUidForProvider(str) || (iResolvePackageUid = resolvePackageUid(str)) <= 0) {
+        if (!shouldOverrideCallingUidForProvider(str) || (resolvePackageUid = resolvePackageUid(str)) <= 0) {
             z = false;
-            numE = null;
+            num = null;
         } else {
-            numE = mt2.e(iResolvePackageUid);
+            num = mt2.e(resolvePackageUid);
             lt2 lt2Var2 = mt2.b;
-            if (iResolvePackageUid <= 0 || str == null || str.length() <= 0) {
+            if (resolvePackageUid <= 0 || str == null || str.length() <= 0) {
                 mt2.b = null;
             } else {
-                mt2.b = new lt2(iResolvePackageUid, str);
+                mt2.b = new lt2(resolvePackageUid, str);
             }
             z = true;
             lt2Var = lt2Var2;
@@ -381,7 +360,7 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
                 mt2.b = lt2Var;
             }
             if (z2) {
-                mt2.g(numE);
+                mt2.g(num);
             }
         }
     }
@@ -395,10 +374,10 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         String[] strArr = xa1.b;
         sb.append(c.a(-799933922950946L, strArr));
         sb.append(c01.X());
-        String string = sb.toString();
+        String sb2 = sb.toString();
         while (th != null) {
             String message = th.getMessage();
-            if ((th instanceof SecurityException) && message != null && message.contains(c.a(-799972577656610L, strArr)) && message.contains(string)) {
+            if ((th instanceof SecurityException) && message != null && message.contains(c.a(-799972577656610L, strArr)) && message.contains(sb2)) {
                 return true;
             }
             th = th.getCause();
@@ -551,69 +530,44 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         bundle.putString(c.a(-793676155600674L, strArr), accountsAsUser[0].type);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0039  */
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x004d, code lost:
+    
+        if (r2 <= com.kos.engine.fake.service.context.providers.ContentProviderStub.GOOGLE_AUTH_RECENT_CALLER_GRACE_MS) goto L29;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    private java.lang.String resolveCurrentCallerPackage() {
-        /*
-            r6 = this;
-            java.lang.String r0 = r6.resolveCurrentGoogleProviderCallerPackage()
-            if (r0 == 0) goto L7
-            return r0
-        L7:
-            java.lang.String r0 = androidx.emoji2.text.mt2.c()
-            if (r0 == 0) goto L14
-            int r1 = r0.length()
-            if (r1 <= 0) goto L14
-            return r0
-        L14:
-            com.kos.engine.entity.AppConfig r0 = androidx.emoji2.text.rj.n()     // Catch: java.lang.Throwable -> L27
-            if (r0 == 0) goto L27
-            java.lang.String r0 = androidx.emoji2.text.rj.o()     // Catch: java.lang.Throwable -> L27
-            if (r0 == 0) goto L27
-            int r1 = r0.length()     // Catch: java.lang.Throwable -> L27
-            if (r1 <= 0) goto L27
-            return r0
-        L27:
-            java.lang.String r0 = androidx.emoji2.text.mt2.d()
-            if (r0 == 0) goto L34
-            int r1 = r0.length()
-            if (r1 <= 0) goto L34
-            return r0
-        L34:
-            androidx.emoji2.text.lt2 r0 = androidx.emoji2.text.mt2.c
-            r1 = 0
-            if (r0 != 0) goto L3b
-        L39:
-            r0 = r1
-            goto L4f
-        L3b:
-            long r2 = android.os.SystemClock.elapsedRealtime()
-            long r4 = androidx.emoji2.text.mt2.d
-            long r2 = r2 - r4
-            r4 = 0
-            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r4 < 0) goto L39
-            r4 = 60000(0xea60, double:2.9644E-319)
-            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r2 > 0) goto L39
-        L4f:
-            if (r0 != 0) goto L52
-            goto L54
-        L52:
-            java.lang.String r1 = r0.b
-        L54:
-            if (r1 == 0) goto L5d
-            int r0 = r1.length()
-            if (r0 <= 0) goto L5d
-            return r1
-        L5d:
-            java.lang.String r0 = r6.mAppPkg
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.context.providers.ContentProviderStub.resolveCurrentCallerPackage():java.lang.String");
+    private String resolveCurrentCallerPackage() {
+        String o;
+        String resolveCurrentGoogleProviderCallerPackage = resolveCurrentGoogleProviderCallerPackage();
+        if (resolveCurrentGoogleProviderCallerPackage != null) {
+            return resolveCurrentGoogleProviderCallerPackage;
+        }
+        String c = mt2.c();
+        if (c != null && c.length() > 0) {
+            return c;
+        }
+        try {
+            if (rj.n() != null && (o = rj.o()) != null) {
+                if (o.length() > 0) {
+                    return o;
+                }
+            }
+        } catch (Throwable unused) {
+        }
+        String d = mt2.d();
+        if (d != null && d.length() > 0) {
+            return d;
+        }
+        lt2 lt2Var = mt2.c;
+        if (lt2Var != null) {
+            long elapsedRealtime = SystemClock.elapsedRealtime() - mt2.d;
+            if (elapsedRealtime >= 0) {
+            }
+        }
+        lt2Var = null;
+        String str = lt2Var != null ? lt2Var.b : null;
+        return (str == null || str.length() <= 0) ? this.mAppPkg : str;
     }
 
     private String resolveCurrentGoogleProviderCallerPackage() {
@@ -655,63 +609,63 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     private String resolveProviderBoundaryPackage(String str) {
-        String strResolveGoogleProviderPackage;
+        String resolveGoogleProviderPackage;
         if (shouldUseHostAttributionForProvider()) {
             return c01.X();
         }
-        String strResolveCurrentGoogleProviderCallerPackage = resolveCurrentGoogleProviderCallerPackage();
-        if (strResolveCurrentGoogleProviderCallerPackage != null) {
-            return strResolveCurrentGoogleProviderCallerPackage;
+        String resolveCurrentGoogleProviderCallerPackage = resolveCurrentGoogleProviderCallerPackage();
+        if (resolveCurrentGoogleProviderCallerPackage != null) {
+            return resolveCurrentGoogleProviderCallerPackage;
         }
         if (shouldUseSetupOrPartnerProviderIdentity() && shouldUseProviderIdentityForAttribution(this.mProviderPkg)) {
             return this.mProviderPkg;
         }
-        if (shouldUseGoogleProviderSelfIdentity() && (strResolveGoogleProviderPackage = resolveGoogleProviderPackage()) != null) {
-            return strResolveGoogleProviderPackage;
+        if (shouldUseGoogleProviderSelfIdentity() && (resolveGoogleProviderPackage = resolveGoogleProviderPackage()) != null) {
+            return resolveGoogleProviderPackage;
         }
         String str2 = this.mProviderPkg;
         return (str2 != null && str2.equals(str) && shouldUseProviderIdentityForAttribution(this.mProviderPkg)) ? this.mProviderPkg : str;
     }
 
-    private Object retryAfterUidMismatch(Method method, Object[] objArr, Throwable th, String str) throws Throwable {
-        String strResolvePackageNameForUid;
-        boolean zIsUidMismatchSecurityException;
+    private Object retryAfterUidMismatch(Method method, Object[] objArr, Throwable th, String str) {
+        String resolvePackageNameForUid;
+        boolean isUidMismatchSecurityException;
         String[] strArr = xa1.b;
         if (objArr == null || objArr.length == 0) {
             return UID_MISMATCH_RETRY_NOT_HANDLED;
         }
-        int iExtractCallingUid = extractCallingUid(th);
-        if (iExtractCallingUid <= 0) {
+        int extractCallingUid = extractCallingUid(th);
+        if (extractCallingUid <= 0) {
             return UID_MISMATCH_RETRY_NOT_HANDLED;
         }
         if (shouldUseStrictHostAttributionForProvider()) {
-            strResolvePackageNameForUid = c01.X();
-            ProviderAttributionFixer.fixArgsForHostTransport(objArr, strResolvePackageNameForUid);
+            resolvePackageNameForUid = c01.X();
+            ProviderAttributionFixer.fixArgsForHostTransport(objArr, resolvePackageNameForUid);
         } else {
-            strResolvePackageNameForUid = ProviderAttributionFixer.resolvePackageNameForUid(iExtractCallingUid, str);
-            ProviderAttributionFixer.fixArgsForProviderProcess(objArr, iExtractCallingUid, strResolvePackageNameForUid);
+            resolvePackageNameForUid = ProviderAttributionFixer.resolvePackageNameForUid(extractCallingUid, str);
+            ProviderAttributionFixer.fixArgsForProviderProcess(objArr, extractCallingUid, resolvePackageNameForUid);
         }
         if (objArr[0] instanceof String) {
-            objArr[0] = strResolvePackageNameForUid;
+            objArr[0] = resolvePackageNameForUid;
         }
         try {
-            nz0.Q(c.a(-786799912959778L, strArr), 5, c.a(-786851452567330L, strArr) + this.mAuthority + c.a(-786967416684322L, strArr) + iExtractCallingUid + c.a(-785472768065314L, strArr) + strResolvePackageNameForUid);
-            return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, strResolvePackageNameForUid));
+            nz0.Q(c.a(-786799912959778L, strArr), 5, c.a(-786851452567330L, strArr) + this.mAuthority + c.a(-786967416684322L, strArr) + extractCallingUid + c.a(-785472768065314L, strArr) + resolvePackageNameForUid);
+            return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, resolvePackageNameForUid));
         } catch (Throwable th2) {
             th = th2;
-            if (!zIsUidMismatchSecurityException) {
+            if (!isUidMismatchSecurityException) {
                 throw th;
             }
-            int iExtractAlternateUid = extractAlternateUid(th, iExtractCallingUid);
-            if (iExtractAlternateUid > 0 && iExtractAlternateUid != iExtractCallingUid) {
-                String strResolvePackageNameForUid2 = ProviderAttributionFixer.resolvePackageNameForUid(iExtractAlternateUid, str);
-                ProviderAttributionFixer.fixArgsForProviderProcess(objArr, iExtractAlternateUid, strResolvePackageNameForUid2);
+            int extractAlternateUid = extractAlternateUid(th, extractCallingUid);
+            if (extractAlternateUid > 0 && extractAlternateUid != extractCallingUid) {
+                String resolvePackageNameForUid2 = ProviderAttributionFixer.resolvePackageNameForUid(extractAlternateUid, str);
+                ProviderAttributionFixer.fixArgsForProviderProcess(objArr, extractAlternateUid, resolvePackageNameForUid2);
                 if (objArr[0] instanceof String) {
-                    objArr[0] = strResolvePackageNameForUid2;
+                    objArr[0] = resolvePackageNameForUid2;
                 }
                 try {
-                    nz0.Q(c.a(-785502832836386L, strArr), 5, c.a(-785073336106786L, strArr) + this.mAuthority + c.a(-785120580747042L, strArr) + iExtractAlternateUid + c.a(-785305264340770L, strArr) + strResolvePackageNameForUid2);
-                    return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, strResolvePackageNameForUid2));
+                    nz0.Q(c.a(-785502832836386L, strArr), 5, c.a(-785073336106786L, strArr) + this.mAuthority + c.a(-785120580747042L, strArr) + extractAlternateUid + c.a(-785305264340770L, strArr) + resolvePackageNameForUid2);
+                    return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, resolvePackageNameForUid2));
                 } finally {
                     th = th;
                     if (th.getCause() != null) {
@@ -719,19 +673,19 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
                     }
                     if (!isUidMismatchSecurityException(th)) {
                     }
-                    String strA = c.a(-785936624533282L, strArr);
+                    String a2 = c.a(-785936624533282L, strArr);
                     StringBuilder sb = new StringBuilder();
                     sb.append(c.a(-785988164140834L, strArr));
                     sb.append(this.mAuthority);
-                    zd.s(sb, c.a(-786013933944610L, strArr), th, 5, strA);
+                    zd.s(sb, c.a(-786013933944610L, strArr), th, 5, a2);
                     return UID_MISMATCH_RETRY_NOT_HANDLED;
                 }
             }
-            String strA2 = c.a(-785936624533282L, strArr);
+            String a22 = c.a(-785936624533282L, strArr);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(c.a(-785988164140834L, strArr));
             sb2.append(this.mAuthority);
-            zd.s(sb2, c.a(-786013933944610L, strArr), th, 5, strA2);
+            zd.s(sb2, c.a(-786013933944610L, strArr), th, 5, a22);
             return UID_MISMATCH_RETRY_NOT_HANDLED;
         }
     }
@@ -802,20 +756,20 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub, java.lang.reflect.InvocationHandler
-    public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
-        String strResolveProviderBoundaryPackage;
+    public Object invoke(Object obj, Method method, Object[] objArr) {
+        String str;
         String[] strArr = xa1.b;
         if (c.a(-784042543955746L, strArr).equals(method.getName())) {
             return method.invoke(this.mBase, objArr);
         }
         boolean z = false;
         if (objArr == null || objArr.length <= 0) {
-            strResolveProviderBoundaryPackage = null;
+            str = null;
         } else {
-            strResolveProviderBoundaryPackage = resolveProviderBoundaryPackage(resolveCurrentCallerPackage());
-            fixAttributionSource(objArr, strResolveProviderBoundaryPackage);
+            str = resolveProviderBoundaryPackage(resolveCurrentCallerPackage());
+            fixAttributionSource(objArr, str);
             if (objArr[0] instanceof String) {
-                objArr[0] = strResolveProviderBoundaryPackage;
+                objArr[0] = str;
             }
         }
         if (c.a(-784064018792226L, strArr).equals(method.getName()) && isRequestGoogleAccountsAccess(objArr)) {
@@ -825,7 +779,7 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
             grantGoogleAccountAccessForRequestedPackages(objArr);
         }
         try {
-            return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, strResolveProviderBoundaryPackage));
+            return fixGoogleAuthAccountsResult(method, objArr, invokeProvider(method, objArr, str));
         } catch (Throwable th) {
             th = th;
             if (th.getCause() != null) {
@@ -841,11 +795,11 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
                 return createAccountAccessSuccessBundle(objArr);
             }
             if (c.a(-783166370627362L, strArr).equals(method.getName()) && isSetupWizardDeviceOriginSecurityException(th)) {
-                String strA = c.a(-783209320300322L, strArr);
+                String a2 = c.a(-783209320300322L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-783329579384610L, strArr));
                 sb.append(this.mAuthority);
-                zd.s(sb, c.a(-782960212197154L, strArr), th, 5, strA);
+                zd.s(sb, c.a(-782960212197154L, strArr), th, 5, a2);
                 return emptyCursor(objArr);
             }
             if (c.a(-783007456837410L, strArr).equals(method.getName()) && isGoogleChimeraServiceIntentNullPointer(th)) {
@@ -859,19 +813,19 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
             if (!isUidMismatchSecurityException(th)) {
                 throw th;
             }
-            Object objRetryAfterUidMismatch = retryAfterUidMismatch(method, objArr, th, strResolveProviderBoundaryPackage);
-            if (objRetryAfterUidMismatch != UID_MISMATCH_RETRY_NOT_HANDLED) {
-                return objRetryAfterUidMismatch;
+            Object retryAfterUidMismatch = retryAfterUidMismatch(method, objArr, th, str);
+            if (retryAfterUidMismatch != UID_MISMATCH_RETRY_NOT_HANDLED) {
+                return retryAfterUidMismatch;
             }
             if (isGoogleAuthAccountsProvider() && c.a(-786542214922018L, strArr).equals(method.getName())) {
                 zd.s(new StringBuilder(), c.a(-786632409235234L, strArr), th, 5, c.a(-786580869627682L, strArr));
                 return googleAuthAccountsBundle();
             }
-            String strA2 = c.a(-787040431128354L, strArr);
+            String a3 = c.a(-787040431128354L, strArr);
             StringBuilder sb2 = new StringBuilder();
             sb2.append(c.a(-787091970735906L, strArr));
             sb2.append(this.mAuthority);
-            zd.s(sb2, c.a(-786735488450338L, strArr), th, 5, strA2);
+            zd.s(sb2, c.a(-786735488450338L, strArr), th, 5, a3);
             return emptyProviderResult(method);
         }
     }
@@ -890,7 +844,7 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
         return wrapper(iInterface, str, str2, null);
     }
 
-    public IInterface wrapper(IInterface iInterface, String str, String str2, String str3) throws IllegalArgumentException {
+    public IInterface wrapper(IInterface iInterface, String str, String str2, String str3) {
         this.mBase = iInterface;
         this.mAppPkg = str;
         this.mAuthority = str2;
@@ -901,9 +855,9 @@ public class ContentProviderStub extends ClassInvocationStub implements BContent
 
     private int extractCallingUid(Throwable th) {
         while (th != null) {
-            int iExtractCallingUid = extractCallingUid(th.getMessage());
-            if (iExtractCallingUid > 0) {
-                return iExtractCallingUid;
+            int extractCallingUid = extractCallingUid(th.getMessage());
+            if (extractCallingUid > 0) {
+                return extractCallingUid;
             }
             th = th.getCause();
         }

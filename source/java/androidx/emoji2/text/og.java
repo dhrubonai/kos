@@ -11,7 +11,6 @@ import android.text.method.TransformationMethod;
 import android.util.Log;
 import android.util.TypedValue;
 import android.widget.TextView;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +24,7 @@ public final class og {
     public static final ConcurrentHashMap m = new ConcurrentHashMap();
 
     /* renamed from: a, reason: collision with root package name */
-    public int f855a = 0;
+    public int f854a = 0;
     public boolean b = false;
     public float c = -1.0f;
     public float d = -1.0f;
@@ -69,16 +68,16 @@ public final class og {
         return iArr;
     }
 
-    public static Method d(String str) throws SecurityException {
+    public static Method d(String str) {
         try {
             ConcurrentHashMap concurrentHashMap = m;
-            Method declaredMethod = (Method) concurrentHashMap.get(str);
-            if (declaredMethod != null || (declaredMethod = TextView.class.getDeclaredMethod(str, null)) == null) {
-                return declaredMethod;
+            Method method = (Method) concurrentHashMap.get(str);
+            if (method != null || (method = TextView.class.getDeclaredMethod(str, null)) == null) {
+                return method;
             }
-            declaredMethod.setAccessible(true);
-            concurrentHashMap.put(str, declaredMethod);
-            return declaredMethod;
+            method.setAccessible(true);
+            concurrentHashMap.put(str, method);
+            return method;
         } catch (Exception e) {
             Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e);
             return null;
@@ -111,9 +110,9 @@ public final class og {
                         rectF.setEmpty();
                         rectF.right = measuredWidth;
                         rectF.bottom = height;
-                        float fC = c(rectF);
-                        if (fC != this.i.getTextSize()) {
-                            g(0, fC);
+                        float c = c(rectF);
+                        if (c != this.i.getTextSize()) {
+                            g(0, c);
                         }
                     } finally {
                     }
@@ -150,8 +149,8 @@ public final class og {
             }
             this.h.set(textView.getPaint());
             this.h.setTextSize(i5);
-            StaticLayout staticLayoutA = kg.a(text, (Layout.Alignment) e(textView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), maxLines, textView, this.h, this.k);
-            if ((maxLines == -1 || (staticLayoutA.getLineCount() <= maxLines && staticLayoutA.getLineEnd(staticLayoutA.getLineCount() - 1) == text.length())) && staticLayoutA.getHeight() <= rectF.bottom) {
+            StaticLayout a2 = kg.a(text, (Layout.Alignment) e(textView, "getLayoutAlignment", Layout.Alignment.ALIGN_NORMAL), Math.round(rectF.right), maxLines, textView, this.h, this.k);
+            if ((maxLines == -1 || (a2.getLineCount() <= maxLines && a2.getLineEnd(a2.getLineCount() - 1) == text.length())) && a2.getHeight() <= rectF.bottom) {
                 int i6 = i4 + 1;
                 i2 = i3;
                 i3 = i6;
@@ -164,27 +163,27 @@ public final class og {
     }
 
     public final boolean f() {
-        return j() && this.f855a != 0;
+        return j() && this.f854a != 0;
     }
 
-    public final void g(int i, float f) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void g(int i, float f) {
         Context context = this.j;
-        float fApplyDimension = TypedValue.applyDimension(i, f, (context == null ? Resources.getSystem() : context.getResources()).getDisplayMetrics());
+        float applyDimension = TypedValue.applyDimension(i, f, (context == null ? Resources.getSystem() : context.getResources()).getDisplayMetrics());
         TextView textView = this.i;
-        if (fApplyDimension != textView.getPaint().getTextSize()) {
-            textView.getPaint().setTextSize(fApplyDimension);
-            boolean zIsInLayout = textView.isInLayout();
+        if (applyDimension != textView.getPaint().getTextSize()) {
+            textView.getPaint().setTextSize(applyDimension);
+            boolean isInLayout = textView.isInLayout();
             if (textView.getLayout() != null) {
                 this.b = false;
                 try {
-                    Method methodD = d("nullLayouts");
-                    if (methodD != null) {
-                        methodD.invoke(textView, null);
+                    Method d = d("nullLayouts");
+                    if (d != null) {
+                        d.invoke(textView, null);
                     }
                 } catch (Exception e) {
                     Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e);
                 }
-                if (zIsInLayout) {
+                if (isInLayout) {
                     textView.forceLayout();
                 } else {
                     textView.requestLayout();
@@ -195,11 +194,11 @@ public final class og {
     }
 
     public final boolean h() {
-        if (j() && this.f855a == 1) {
+        if (j() && this.f854a == 1) {
             if (!this.g || this.f.length == 0) {
-                int iFloor = ((int) Math.floor((this.e - this.d) / this.c)) + 1;
-                int[] iArr = new int[iFloor];
-                for (int i = 0; i < iFloor; i++) {
+                int floor = ((int) Math.floor((this.e - this.d) / this.c)) + 1;
+                int[] iArr = new int[floor];
+                for (int i = 0; i < floor; i++) {
                     iArr[i] = Math.round((i * this.c) + this.d);
                 }
                 this.f = b(iArr);
@@ -215,7 +214,7 @@ public final class og {
         boolean z = this.f.length > 0;
         this.g = z;
         if (z) {
-            this.f855a = 1;
+            this.f854a = 1;
             this.d = r0[0];
             this.e = r0[r1 - 1];
             this.c = -1.0f;
@@ -237,7 +236,7 @@ public final class og {
         if (f3 <= 0.0f) {
             throw new IllegalArgumentException("The auto-size step granularity (" + f3 + "px) is less or equal to (0px)");
         }
-        this.f855a = 1;
+        this.f854a = 1;
         this.d = f;
         this.e = f2;
         this.c = f3;

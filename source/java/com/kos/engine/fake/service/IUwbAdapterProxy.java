@@ -26,10 +26,10 @@ public class IUwbAdapterProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1034795619598114L, strArr);
+            String a2 = c.a(-1034795619598114L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1034864339074850L, strArr), method);
-            zd.p(sb, c.a(-1035469929463586L, strArr), 3, strA);
+            zd.p(sb, c.a(-1035469929463586L, strArr), 3, a2);
             return null;
         }
     }
@@ -75,11 +75,11 @@ public class IUwbAdapterProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-1035598778482466L, strArr)).getMethod(c.a(-1035671792926498L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-1035598778482466L, strArr)).getMethod(c.a(-1035671792926498L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-1035276655935266L, strArr), th, 3, c.a(-1035207936458530L, strArr));
             return null;
@@ -92,10 +92,10 @@ public class IUwbAdapterProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-1035328195542818L, strArr);
+            String a2 = c.a(-1035328195542818L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1035396915019554L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 

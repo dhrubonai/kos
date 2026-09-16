@@ -29,7 +29,7 @@ public final class bh1 extends lf1 {
     }
 
     @Override // androidx.emoji2.text.lf1
-    public final ly0 w() throws Throwable {
+    public final ly0 w() {
         bh1 bh1Var;
         lf1 lf1Var = this.o;
         if (lf1Var.m || lf1Var.c) {
@@ -37,7 +37,7 @@ public final class bh1 extends lf1 {
         }
         hf1 hf1Var = this.h;
         long j = this.b;
-        HashMap mapC = hf1Var != null ? kc2.c(lf1Var.g(), this, this.o.d()) : null;
+        HashMap c = hf1Var != null ? kc2.c(lf1Var.g(), this, this.o.d()) : null;
         Object obj = kc2.c;
         synchronized (obj) {
             try {
@@ -51,13 +51,13 @@ public final class bh1 extends lf1 {
                     a();
                 } else {
                     bh1Var = this;
-                    ly0 ly0VarZ = bh1Var.z(this.o.g(), hf1Var, mapC, this.o.d());
-                    if (!ly0VarZ.equals(gc2.f)) {
-                        return ly0VarZ;
+                    ly0 z = bh1Var.z(this.o.g(), hf1Var, c, this.o.d());
+                    if (!z.equals(gc2.f)) {
+                        return z;
                     }
-                    hf1 hf1VarX = bh1Var.o.x();
-                    if (hf1VarX != null) {
-                        hf1VarX.i(hf1Var);
+                    hf1 x = bh1Var.o.x();
+                    if (x != null) {
+                        x.i(hf1Var);
                     } else {
                         bh1Var.o.B(hf1Var);
                         bh1Var.h = null;
@@ -76,9 +76,9 @@ public final class bh1 extends lf1 {
                     int[] iArr = lf1Var3.k;
                     lx0.x(iArr, "<this>");
                     int length = iArr.length;
-                    int[] iArrCopyOf = Arrays.copyOf(iArr, length + 1);
-                    iArrCopyOf[length] = i;
-                    lf1Var3.k = iArrCopyOf;
+                    int[] copyOf = Arrays.copyOf(iArr, length + 1);
+                    copyOf[length] = i;
+                    lf1Var3.k = copyOf;
                 } else {
                     lf1Var3.getClass();
                 }
@@ -95,10 +95,10 @@ public final class bh1 extends lf1 {
                         if (iArr3.length != 0) {
                             int length2 = iArr3.length;
                             int length3 = iArr2.length;
-                            int[] iArrCopyOf2 = Arrays.copyOf(iArr3, length2 + length3);
-                            System.arraycopy(iArr2, 0, iArrCopyOf2, length2, length3);
-                            lx0.u(iArrCopyOf2);
-                            iArr2 = iArrCopyOf2;
+                            int[] copyOf2 = Arrays.copyOf(iArr3, length2 + length3);
+                            System.arraycopy(iArr2, 0, copyOf2, length2, length3);
+                            lx0.u(copyOf2);
+                            iArr2 = copyOf2;
                         }
                         lf1Var5.k = iArr2;
                     }

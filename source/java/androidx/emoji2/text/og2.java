@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class og2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final rg2 f857a;
+    public final rg2 f856a;
     public r11 b;
     public final ng2 c = new ng2(this, 2);
     public final ng2 d = new ng2(this, 0);
     public final ng2 e = new ng2(this, 1);
 
     public og2(rg2 rg2Var) {
-        this.f857a = rg2Var;
+        this.f856a = rg2Var;
     }
 
     public final r11 a() {

@@ -7,14 +7,14 @@ import java.util.ArrayList;
 public final class jn0 extends mn0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final dn0 f587a;
+    public final dn0 f586a;
     public final ArrayList b;
 
     public jn0(dn0 dn0Var, ArrayList arrayList) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(dn0Var, a.a.a.c.a(-277726029299490L, strArr));
         a.a.a.c.a(-277695964528418L, strArr);
-        this.f587a = dn0Var;
+        this.f586a = dn0Var;
         this.b = arrayList;
     }
 
@@ -26,18 +26,18 @@ public final class jn0 extends mn0 {
             return false;
         }
         jn0 jn0Var = (jn0) obj;
-        return lx0.n(this.f587a, jn0Var.f587a) && lx0.n(this.b, jn0Var.b);
+        return lx0.n(this.f586a, jn0Var.f586a) && lx0.n(this.b, jn0Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f587a.hashCode() * 31);
+        return this.b.hashCode() + (this.f586a.hashCode() * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-277889238056738L, strArr));
-        sb.append(this.f587a);
+        sb.append(this.f586a);
         sb.append(a.a.a.c.a(-280723916472098L, strArr));
         sb.append(this.b);
         sb.append(')');

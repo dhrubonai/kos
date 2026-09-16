@@ -60,9 +60,9 @@ public final class sh implements Iterator, Map.Entry {
         }
         int i = this.e;
         uh uhVar = this.g;
-        Object objF = uhVar.f(i);
-        Object objI = uhVar.i(this.e);
-        return (objF == null ? 0 : objF.hashCode()) ^ (objI != null ? objI.hashCode() : 0);
+        Object f = uhVar.f(i);
+        Object i2 = uhVar.i(this.e);
+        return (f == null ? 0 : f.hashCode()) ^ (i2 != null ? i2.hashCode() : 0);
     }
 
     @Override // java.util.Iterator

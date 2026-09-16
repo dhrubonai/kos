@@ -64,7 +64,7 @@ public class GridLayoutManager extends LinearLayoutManager {
 
     @Override // androidx.emoji2.text.jx1
     public final void O(px1 px1Var, sx1 sx1Var, View view, s1 s1Var) {
-        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1045a;
+        AccessibilityNodeInfo accessibilityNodeInfo = s1Var.f1044a;
         if (view.getLayoutParams() instanceof cq0) {
             throw null;
         }
@@ -115,6 +115,14 @@ public class GridLayoutManager extends LinearLayoutManager {
         return this.k == 0 ? new cq0(-2, -1) : new cq0(-1, -2);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x00d7, code lost:
+    
+        r22.b = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00d9, code lost:
+    
+        return;
+     */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r13v18 */
     /* JADX WARN: Type inference failed for: r13v19, types: [boolean, int] */
@@ -122,95 +130,94 @@ public class GridLayoutManager extends LinearLayoutManager {
     /* JADX WARN: Type inference failed for: r13v23 */
     /* JADX WARN: Type inference failed for: r13v37 */
     @Override // androidx.recyclerview.widget.LinearLayoutManager
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void m0(px1 px1Var, sx1 sx1Var, p61 p61Var, o61 o61Var) {
-        int iW0;
         int i;
         int i2;
         int i3;
-        int iE;
-        int iX;
-        int iZ;
-        int iE2;
-        int iR;
-        int iR2;
-        ?? r13;
         int i4;
-        View viewB;
         int i5;
-        int iK = this.m.k();
-        boolean z = iK != 1073741824;
-        int i6 = q() > 0 ? this.w[this.v] : 0;
+        int i6;
+        int i7;
+        int i8;
+        int r;
+        int i9;
+        ?? r13;
+        int i10;
+        View b;
+        int i11;
+        int k = this.m.k();
+        boolean z = k != 1073741824;
+        int i12 = q() > 0 ? this.w[this.v] : 0;
         if (z) {
             y0();
         }
         boolean z2 = p61Var.e == 1;
         if (z2) {
-            iW0 = this.v;
+            i = this.v;
         } else {
-            int i7 = p61Var.d;
+            int i13 = p61Var.d;
             boolean z3 = sx1Var.e;
             p4 p4Var = this.A;
             if (z3) {
-                int i8 = this.z.get(i7, -1);
-                if (i8 != -1) {
-                    i5 = i8;
+                int i14 = this.z.get(i13, -1);
+                if (i14 != -1) {
+                    i11 = i14;
                 } else {
-                    int iD = px1Var.d(i7);
-                    if (iD == -1) {
-                        Log.w("GridLayoutManager", "Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:" + i7);
-                        i5 = 0;
+                    int d = px1Var.d(i13);
+                    if (d == -1) {
+                        Log.w("GridLayoutManager", "Cannot find span size for pre layout position. It is not cached, not in the adapter. Pos:" + i13);
+                        i11 = 0;
                     } else {
                         p4Var.getClass();
-                        i5 = iD % this.v;
+                        i11 = d % this.v;
                     }
                 }
             } else {
                 p4Var.getClass();
-                i5 = i7 % this.v;
+                i11 = i13 % this.v;
             }
-            iW0 = w0(p61Var.d, px1Var, sx1Var) + i5;
+            i = w0(p61Var.d, px1Var, sx1Var) + i11;
         }
-        int i9 = 0;
-        while (i9 < this.v && (i4 = p61Var.d) >= 0 && i4 < sx1Var.a() && iW0 > 0) {
-            int i10 = p61Var.d;
-            int iW02 = w0(i10, px1Var, sx1Var);
-            if (iW02 > this.v) {
-                throw new IllegalArgumentException("Item at position " + i10 + " requires " + iW02 + " spans but GridLayoutManager has only " + this.v + " spans.");
+        int i15 = 0;
+        while (i15 < this.v && (i10 = p61Var.d) >= 0 && i10 < sx1Var.a() && i > 0) {
+            int i16 = p61Var.d;
+            int w0 = w0(i16, px1Var, sx1Var);
+            if (w0 > this.v) {
+                throw new IllegalArgumentException("Item at position " + i16 + " requires " + w0 + " spans but GridLayoutManager has only " + this.v + " spans.");
             }
-            iW0 -= iW02;
-            if (iW0 < 0 || (viewB = p61Var.b(px1Var)) == null) {
+            i -= w0;
+            if (i < 0 || (b = p61Var.b(px1Var)) == null) {
                 break;
             }
-            this.x[i9] = viewB;
-            i9++;
-        }
-        if (i9 == 0) {
-            o61Var.b = true;
-            return;
+            this.x[i15] = b;
+            i15++;
         }
         if (z2) {
-            i3 = 1;
-            i2 = i9;
-            i = 0;
+            i4 = 1;
+            i3 = i15;
+            i2 = 0;
         } else {
-            i = i9 - 1;
-            i2 = -1;
+            i2 = i15 - 1;
             i3 = -1;
+            i4 = -1;
         }
-        int i11 = 0;
-        while (i != i2) {
-            View view = this.x[i];
+        int i17 = 0;
+        while (i2 != i3) {
+            View view = this.x[i2];
             cq0 cq0Var = (cq0) view.getLayoutParams();
-            int iW03 = w0(jx1.A(view), px1Var, sx1Var);
-            cq0Var.e = iW03;
-            cq0Var.d = i11;
-            i11 += iW03;
-            i += i3;
+            int w02 = w0(jx1.A(view), px1Var, sx1Var);
+            cq0Var.e = w02;
+            cq0Var.d = i17;
+            i17 += w02;
+            i2 += i4;
         }
         float f = 0.0f;
-        int i12 = 0;
-        for (int i13 = 0; i13 < i9; i13++) {
-            View view2 = this.x[i13];
+        int i18 = 0;
+        for (int i19 = 0; i19 < i15; i19++) {
+            View view2 = this.x[i19];
             if (p61Var.j != null) {
                 r13 = 0;
                 r13 = 0;
@@ -233,92 +240,92 @@ public class GridLayoutManager extends LinearLayoutManager {
             } else {
                 rect.set(recyclerView.t(view2));
             }
-            x0(view2, iK, r13);
-            int iD2 = this.m.d(view2);
-            if (iD2 > i12) {
-                i12 = iD2;
+            x0(view2, k, r13);
+            int d2 = this.m.d(view2);
+            if (d2 > i18) {
+                i18 = d2;
             }
-            float fE = (this.m.e(view2) * 1.0f) / ((cq0) view2.getLayoutParams()).e;
-            if (fE > f) {
-                f = fE;
+            float e = (this.m.e(view2) * 1.0f) / ((cq0) view2.getLayoutParams()).e;
+            if (e > f) {
+                f = e;
             }
         }
         if (z) {
-            s0(Math.max(Math.round(f * this.v), i6));
-            int i14 = 0;
-            for (int i15 = 0; i15 < i9; i15++) {
-                View view3 = this.x[i15];
+            s0(Math.max(Math.round(f * this.v), i12));
+            int i20 = 0;
+            for (int i21 = 0; i21 < i15; i21++) {
+                View view3 = this.x[i21];
                 x0(view3, 1073741824, true);
-                int iD3 = this.m.d(view3);
-                if (iD3 > i14) {
-                    i14 = iD3;
+                int d3 = this.m.d(view3);
+                if (d3 > i20) {
+                    i20 = d3;
                 }
             }
-            i12 = i14;
+            i18 = i20;
         }
-        for (int i16 = 0; i16 < i9; i16++) {
-            View view4 = this.x[i16];
-            if (this.m.d(view4) != i12) {
+        for (int i22 = 0; i22 < i15; i22++) {
+            View view4 = this.x[i22];
+            if (this.m.d(view4) != i18) {
                 cq0 cq0Var2 = (cq0) view4.getLayoutParams();
-                Rect rect2 = cq0Var2.f665a;
-                int i17 = rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) cq0Var2).topMargin + ((ViewGroup.MarginLayoutParams) cq0Var2).bottomMargin;
-                int i18 = rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) cq0Var2).leftMargin + ((ViewGroup.MarginLayoutParams) cq0Var2).rightMargin;
-                int iU0 = u0(cq0Var2.d, cq0Var2.e);
+                Rect rect2 = cq0Var2.f664a;
+                int i23 = rect2.top + rect2.bottom + ((ViewGroup.MarginLayoutParams) cq0Var2).topMargin + ((ViewGroup.MarginLayoutParams) cq0Var2).bottomMargin;
+                int i24 = rect2.left + rect2.right + ((ViewGroup.MarginLayoutParams) cq0Var2).leftMargin + ((ViewGroup.MarginLayoutParams) cq0Var2).rightMargin;
+                int u0 = u0(cq0Var2.d, cq0Var2.e);
                 if (this.k == 1) {
-                    iR2 = jx1.r(false, iU0, 1073741824, i18, ((ViewGroup.MarginLayoutParams) cq0Var2).width);
-                    iR = View.MeasureSpec.makeMeasureSpec(i12 - i17, 1073741824);
+                    i9 = jx1.r(false, u0, 1073741824, i24, ((ViewGroup.MarginLayoutParams) cq0Var2).width);
+                    r = View.MeasureSpec.makeMeasureSpec(i18 - i23, 1073741824);
                 } else {
-                    int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i12 - i18, 1073741824);
-                    iR = jx1.r(false, iU0, 1073741824, i17, ((ViewGroup.MarginLayoutParams) cq0Var2).height);
-                    iR2 = iMakeMeasureSpec;
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i18 - i24, 1073741824);
+                    r = jx1.r(false, u0, 1073741824, i23, ((ViewGroup.MarginLayoutParams) cq0Var2).height);
+                    i9 = makeMeasureSpec;
                 }
-                if (b0(view4, iR2, iR, (kx1) view4.getLayoutParams())) {
-                    view4.measure(iR2, iR);
+                if (b0(view4, i9, r, (kx1) view4.getLayoutParams())) {
+                    view4.measure(i9, r);
                 }
             }
         }
-        o61Var.f842a = i12;
+        o61Var.f841a = i18;
         if (this.k != 1) {
             if (p61Var.f == -1) {
-                int i19 = p61Var.b;
-                iX = i19 - i12;
-                iE = i19;
+                int i25 = p61Var.b;
+                i6 = i25 - i18;
+                i5 = i25;
             } else {
-                int i20 = p61Var.b;
-                iE = i20 + i12;
-                iX = i20;
+                int i26 = p61Var.b;
+                i5 = i26 + i18;
+                i6 = i26;
             }
-            iZ = 0;
-            iE2 = 0;
+            i7 = 0;
+            i8 = 0;
         } else if (p61Var.f == -1) {
-            iE2 = p61Var.b;
-            iZ = iE2 - i12;
-            iX = 0;
-            iE = 0;
+            i8 = p61Var.b;
+            i7 = i8 - i18;
+            i6 = 0;
+            i5 = 0;
         } else {
-            int i21 = p61Var.b;
-            iZ = i21;
-            iE = 0;
-            iE2 = i21 + i12;
-            iX = 0;
+            int i27 = p61Var.b;
+            i7 = i27;
+            i5 = 0;
+            i8 = i27 + i18;
+            i6 = 0;
         }
-        if (i9 <= 0) {
+        if (i15 <= 0) {
             Arrays.fill(this.x, (Object) null);
             return;
         }
         View view5 = this.x[0];
         cq0 cq0Var3 = (cq0) view5.getLayoutParams();
         if (this.k != 1) {
-            iZ = z() + this.w[cq0Var3.d];
-            iE2 = this.m.e(view5) + iZ;
+            i7 = z() + this.w[cq0Var3.d];
+            i8 = this.m.e(view5) + i7;
         } else if (l0()) {
-            iE = this.w[this.v - cq0Var3.d] + x();
-            iX = iE - this.m.e(view5);
+            i5 = this.w[this.v - cq0Var3.d] + x();
+            i6 = i5 - this.m.e(view5);
         } else {
-            iX = x() + this.w[cq0Var3.d];
-            iE = this.m.e(view5) + iX;
+            i6 = x() + this.w[cq0Var3.d];
+            i5 = this.m.e(view5) + i6;
         }
-        jx1.G(view5, iX, iZ, iE, iE2);
+        jx1.G(view5, i6, i7, i5, i8);
         cq0Var3.getClass();
         throw null;
     }
@@ -414,10 +421,10 @@ public class GridLayoutManager extends LinearLayoutManager {
             p4Var.getClass();
             return p4.A(i, this.v);
         }
-        int iD = px1Var.d(i);
-        if (iD != -1) {
+        int d = px1Var.d(i);
+        if (d != -1) {
             p4Var.getClass();
-            return p4.A(iD, this.v);
+            return p4.A(d, this.v);
         }
         Log.w("GridLayoutManager", "Cannot find span size for pre layout position. " + i);
         return 0;
@@ -443,38 +450,38 @@ public class GridLayoutManager extends LinearLayoutManager {
     }
 
     public final void x0(View view, int i, boolean z) {
-        int iR;
-        int iR2;
+        int i2;
+        int i3;
         cq0 cq0Var = (cq0) view.getLayoutParams();
-        Rect rect = cq0Var.f665a;
-        int i2 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) cq0Var).topMargin + ((ViewGroup.MarginLayoutParams) cq0Var).bottomMargin;
-        int i3 = rect.left + rect.right + ((ViewGroup.MarginLayoutParams) cq0Var).leftMargin + ((ViewGroup.MarginLayoutParams) cq0Var).rightMargin;
-        int iU0 = u0(cq0Var.d, cq0Var.e);
+        Rect rect = cq0Var.f664a;
+        int i4 = rect.top + rect.bottom + ((ViewGroup.MarginLayoutParams) cq0Var).topMargin + ((ViewGroup.MarginLayoutParams) cq0Var).bottomMargin;
+        int i5 = rect.left + rect.right + ((ViewGroup.MarginLayoutParams) cq0Var).leftMargin + ((ViewGroup.MarginLayoutParams) cq0Var).rightMargin;
+        int u0 = u0(cq0Var.d, cq0Var.e);
         if (this.k == 1) {
-            iR2 = jx1.r(false, iU0, i, i3, ((ViewGroup.MarginLayoutParams) cq0Var).width);
-            iR = jx1.r(true, this.m.o(), this.h, i2, ((ViewGroup.MarginLayoutParams) cq0Var).height);
+            i3 = jx1.r(false, u0, i, i5, ((ViewGroup.MarginLayoutParams) cq0Var).width);
+            i2 = jx1.r(true, this.m.o(), this.h, i4, ((ViewGroup.MarginLayoutParams) cq0Var).height);
         } else {
-            int iR3 = jx1.r(false, iU0, i, i2, ((ViewGroup.MarginLayoutParams) cq0Var).height);
-            int iR4 = jx1.r(true, this.m.o(), this.g, i3, ((ViewGroup.MarginLayoutParams) cq0Var).width);
-            iR = iR3;
-            iR2 = iR4;
+            int r = jx1.r(false, u0, i, i4, ((ViewGroup.MarginLayoutParams) cq0Var).height);
+            int r2 = jx1.r(true, this.m.o(), this.g, i5, ((ViewGroup.MarginLayoutParams) cq0Var).width);
+            i2 = r;
+            i3 = r2;
         }
         kx1 kx1Var = (kx1) view.getLayoutParams();
-        if (z ? b0(view, iR2, iR, kx1Var) : a0(view, iR2, iR, kx1Var)) {
-            view.measure(iR2, iR);
+        if (z ? b0(view, i3, i2, kx1Var) : a0(view, i3, i2, kx1Var)) {
+            view.measure(i3, i2);
         }
     }
 
     public final void y0() {
-        int iW;
-        int iZ;
+        int w;
+        int z;
         if (this.k == 1) {
-            iW = this.i - y();
-            iZ = x();
+            w = this.i - y();
+            z = x();
         } else {
-            iW = this.j - w();
-            iZ = z();
+            w = this.j - w();
+            z = z();
         }
-        s0(iW - iZ);
+        s0(w - z);
     }
 }

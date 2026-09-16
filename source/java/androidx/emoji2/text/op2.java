@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class op2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final gl2 f868a;
+    public static final gl2 f867a;
     public static final gl2 b;
     public static final gl2 c;
     public static final gl2 d;
@@ -22,10 +22,10 @@ public abstract class op2 {
     public static final gl2 o;
 
     static {
-        gl2 gl2Var = pp2.f921a;
-        un0 un0Var = yo2.f1395a;
+        gl2 gl2Var = pp2.f920a;
+        un0 un0Var = yo2.f1394a;
         zl0 zl0Var = yo2.e;
-        f868a = gl2.a(gl2Var, yo2.c, zl0Var, un0Var, yo2.d, yo2.b, null, 16645977);
+        f867a = gl2.a(gl2Var, yo2.c, zl0Var, un0Var, yo2.d, yo2.b, null, 16645977);
         un0 un0Var2 = yo2.f;
         zl0 zl0Var2 = yo2.j;
         b = gl2.a(gl2Var, yo2.h, zl0Var2, un0Var2, yo2.i, yo2.g, null, 16645977);

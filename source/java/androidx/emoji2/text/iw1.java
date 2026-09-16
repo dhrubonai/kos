@@ -8,12 +8,12 @@ import java.util.Map;
 public final class iw1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Bitmap f553a;
+    public final Bitmap f552a;
     public final Map b;
     public final int c;
 
     public iw1(Bitmap bitmap, Map map, int i) {
-        this.f553a = bitmap;
+        this.f552a = bitmap;
         this.b = map;
         this.c = i;
     }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public final class ga2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f410a;
+    public float f409a;
     public float b;
     public float c;
     public float d;
@@ -53,17 +53,17 @@ public final class ga2 {
         da2Var.c = f2;
         this.f.add(da2Var);
         ba2 ba2Var = new ba2(da2Var, this.b, this.c);
-        float fB = ba2Var.b() + 270.0f;
-        float fB2 = ba2Var.b() + 270.0f;
-        a(fB);
+        float b = ba2Var.b() + 270.0f;
+        float b2 = ba2Var.b() + 270.0f;
+        a(b);
         this.g.add(ba2Var);
-        this.d = fB2;
+        this.d = b2;
         this.b = f;
         this.c = f2;
     }
 
     public final void d(float f, float f2, float f3) {
-        this.f410a = f;
+        this.f409a = f;
         this.b = 0.0f;
         this.c = f;
         this.d = f2;

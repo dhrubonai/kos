@@ -12,7 +12,7 @@ public final class z72 extends b82 {
     public final int f;
 
     public z72(String str, Long l, int i) {
-        lx0.x(str, a.a.a.c.a(-163239381057314L, wj1.f1284a));
+        lx0.x(str, a.a.a.c.a(-163239381057314L, wj1.f1283a));
         this.d = str;
         this.e = l;
         this.f = i;
@@ -35,14 +35,14 @@ public final class z72 extends b82 {
     }
 
     public final int hashCode() {
-        int iHashCode = this.d.hashCode() * 31;
+        int hashCode = this.d.hashCode() * 31;
         Long l = this.e;
-        return Integer.hashCode(this.f) + ((iHashCode + (l == null ? 0 : l.hashCode())) * 31);
+        return Integer.hashCode(this.f) + ((hashCode + (l == null ? 0 : l.hashCode())) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-162745459818274L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-162818474262306L, strArr));
@@ -53,7 +53,7 @@ public final class z72 extends b82 {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-163213611253538L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-163213611253538L, wj1.f1283a));
         parcel.writeString(this.d);
         Long l = this.e;
         if (l == null) {

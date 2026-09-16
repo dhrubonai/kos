@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 public abstract class oy {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ AtomicReferenceFieldUpdater f879a = AtomicReferenceFieldUpdater.newUpdater(oy.class, Object.class, "_next$volatile");
+    public static final /* synthetic */ AtomicReferenceFieldUpdater f878a = AtomicReferenceFieldUpdater.newUpdater(oy.class, Object.class, "_next$volatile");
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(oy.class, Object.class, "_prev$volatile");
     private volatile /* synthetic */ Object _next$volatile;
     private volatile /* synthetic */ Object _prev$volatile;
@@ -21,7 +21,7 @@ public abstract class oy {
     }
 
     public final oy b() {
-        Object obj = f879a.get(this);
+        Object obj = f878a.get(this);
         if (obj == kx0.b) {
             return null;
         }
@@ -31,7 +31,7 @@ public abstract class oy {
     public abstract boolean c();
 
     public final void d() {
-        oy oyVarB;
+        oy b2;
         if (b() == null) {
             return;
         }
@@ -41,24 +41,24 @@ public abstract class oy {
             while (oyVar != null && oyVar.c()) {
                 oyVar = (oy) atomicReferenceFieldUpdater.get(oyVar);
             }
-            oy oyVarB2 = b();
-            lx0.u(oyVarB2);
-            while (oyVarB2.c() && (oyVarB = oyVarB2.b()) != null) {
-                oyVarB2 = oyVarB;
+            oy b3 = b();
+            lx0.u(b3);
+            while (b3.c() && (b2 = b3.b()) != null) {
+                b3 = b2;
             }
             while (true) {
-                Object obj = atomicReferenceFieldUpdater.get(oyVarB2);
+                Object obj = atomicReferenceFieldUpdater.get(b3);
                 oy oyVar2 = ((oy) obj) == null ? null : oyVar;
-                while (!atomicReferenceFieldUpdater.compareAndSet(oyVarB2, obj, oyVar2)) {
-                    if (atomicReferenceFieldUpdater.get(oyVarB2) != obj) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(b3, obj, oyVar2)) {
+                    if (atomicReferenceFieldUpdater.get(b3) != obj) {
                         break;
                     }
                 }
             }
             if (oyVar != null) {
-                f879a.set(oyVar, oyVarB2);
+                f878a.set(oyVar, b3);
             }
-            if (!oyVarB2.c() || oyVarB2.b() == null) {
+            if (!b3.c() || b3.b() == null) {
                 if (oyVar == null || !oyVar.c()) {
                     return;
                 }

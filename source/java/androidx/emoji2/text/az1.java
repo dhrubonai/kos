@@ -36,7 +36,7 @@ public final class az1 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((az1) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((az1) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -47,9 +47,9 @@ public final class az1 extends hh2 implements Function2 {
                 if (i == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB = gz1.b(this.j, this.k, this.l, this);
+                    Object b = gz1.b(this.j, this.k, this.l, this);
                     f30 f30Var = f30.d;
-                    if (objB == f30Var) {
+                    if (b == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -58,15 +58,15 @@ public final class az1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    Object objB2 = gz1.b(this.j, this.k, this.l, this);
+                    Object b2 = gz1.b(this.j, this.k, this.l, this);
                     f30 f30Var2 = f30.d;
-                    if (objB2 == f30Var2) {
+                    if (b2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -75,7 +75,7 @@ public final class az1 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

@@ -8,7 +8,7 @@ public final class e61 {
     public static final float d;
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f287a;
+    public final float f286a;
 
     static {
         a(0.0f);
@@ -44,16 +44,16 @@ public final class e61 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof e61) {
-            return Float.compare(this.f287a, ((e61) obj).f287a) == 0;
+            return Float.compare(this.f286a, ((e61) obj).f286a) == 0;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.f287a);
+        return Float.hashCode(this.f286a);
     }
 
     public final String toString() {
-        return b(this.f287a);
+        return b(this.f286a);
     }
 }

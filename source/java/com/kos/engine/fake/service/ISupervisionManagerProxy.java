@@ -44,10 +44,10 @@ public class ISupervisionManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             String[] strArr = xa1.b;
-            String strA = c.a(-1011173299470114L, strArr);
+            String a2 = c.a(-1011173299470114L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(method.getName());
-            zd.p(sb, c.a(-1011246313914146L, strArr), 3, strA);
+            zd.p(sb, c.a(-1011246313914146L, strArr), 3, a2);
             return Boolean.FALSE;
         }
     }
@@ -133,11 +133,11 @@ public class ISupervisionManagerProxy extends BinderInvocationStub {
     public Object getWho() {
         String[] strArr = xa1.b;
         try {
-            IBinder iBinderFindServiceBinder = findServiceBinder();
-            if (iBinderFindServiceBinder == null) {
+            IBinder findServiceBinder = findServiceBinder();
+            if (findServiceBinder == null) {
                 return null;
             }
-            return Class.forName(c.a(-1009755960262434L, strArr)).getMethod(c.a(-1009416657846050L, strArr), IBinder.class).invoke(null, iBinderFindServiceBinder);
+            return Class.forName(c.a(-1009755960262434L, strArr)).getMethod(c.a(-1009416657846050L, strArr), IBinder.class).invoke(null, findServiceBinder);
         } catch (Throwable th) {
             zd.s(new StringBuilder(), c.a(-1009489672290082L, strArr), th, 3, c.a(-1009433837715234L, strArr));
             return null;
@@ -150,10 +150,10 @@ public class ISupervisionManagerProxy extends BinderInvocationStub {
         if (str != null) {
             replaceSystemService(str);
             String[] strArr = xa1.b;
-            String strA = c.a(-1010194046926626L, strArr);
+            String a2 = c.a(-1010194046926626L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(c.a(-1010267061370658L, strArr));
-            zd.p(sb, sServiceName, 3, strA);
+            zd.p(sb, sServiceName, 3, a2);
         }
     }
 
@@ -163,11 +163,11 @@ public class ISupervisionManagerProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException unused) {
-            String strA = c.a(-1010408795291426L, strArr);
+            String a2 = c.a(-1010408795291426L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-1009932053921570L, strArr), method);
             sb.append(c.a(-1010013658300194L, strArr));
-            nz0.Q(strA, 5, sb.toString());
+            nz0.Q(a2, 5, sb.toString());
             return defaultValue(method.getReturnType());
         }
     }

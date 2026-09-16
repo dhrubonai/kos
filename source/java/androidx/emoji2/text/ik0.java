@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ik0 implements hk0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f530a;
+    public boolean f529a;
     public kk0 b;
     public kk0 c;
     public kk0 d;
@@ -19,12 +19,12 @@ public final class ik0 implements hk0 {
 
     @Override // androidx.emoji2.text.hk0
     public final boolean a() {
-        return this.f530a;
+        return this.f529a;
     }
 
     @Override // androidx.emoji2.text.hk0
     public final void b(boolean z) {
-        this.f530a = z;
+        this.f529a = z;
     }
 
     @Override // androidx.emoji2.text.hk0

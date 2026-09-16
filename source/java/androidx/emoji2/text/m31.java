@@ -9,12 +9,12 @@ import kotlin.jvm.functions.Function2;
 public final class m31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final v22 f731a;
+    public final v22 f730a;
     public final z10 b;
     public final LinkedHashMap c = new LinkedHashMap();
 
     public m31(v22 v22Var, z10 z10Var) {
-        this.f731a = v22Var;
+        this.f730a = v22Var;
         this.b = z10Var;
     }
 
@@ -50,9 +50,9 @@ public final class m31 {
             return l31Var.b;
         }
         n31 n31Var = (n31) this.b.a();
-        int iB = n31Var.b(obj);
-        if (iB != -1) {
-            return n31Var.d(iB);
+        int b = n31Var.b(obj);
+        if (b != -1) {
+            return n31Var.d(b);
         }
         return null;
     }

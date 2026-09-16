@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 public final class pw1 implements nw1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public dy f931a;
+    public dy f930a;
     public int b;
     public t5 c;
     public Function2 d;
@@ -16,7 +16,7 @@ public final class pw1 implements nw1 {
     public gf1 g;
 
     public pw1(dy dyVar) {
-        this.f931a = dyVar;
+        this.f930a = dyVar;
     }
 
     public static boolean a(t70 t70Var, gf1 gf1Var) {
@@ -29,7 +29,7 @@ public final class pw1 implements nw1 {
     }
 
     public final boolean b() {
-        if (this.f931a != null) {
+        if (this.f930a != null) {
             t5 t5Var = this.c;
             if (t5Var != null ? t5Var.a() : false) {
                 return true;
@@ -39,18 +39,18 @@ public final class pw1 implements nw1 {
     }
 
     public final vx0 c(Object obj) {
-        vx0 vx0VarR;
-        dy dyVar = this.f931a;
-        return (dyVar == null || (vx0VarR = dyVar.r(this, obj)) == null) ? vx0.d : vx0VarR;
+        vx0 r;
+        dy dyVar = this.f930a;
+        return (dyVar == null || (r = dyVar.r(this, obj)) == null) ? vx0.d : r;
     }
 
     public final void d() {
-        dy dyVar = this.f931a;
+        dy dyVar = this.f930a;
         if (dyVar != null) {
             dyVar.r = true;
             dyVar.u.x();
         }
-        this.f931a = null;
+        this.f930a = null;
         this.f = null;
         this.g = null;
         this.d = null;

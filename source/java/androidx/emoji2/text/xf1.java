@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class xf1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final cy0 f1336a;
+    public final cy0 f1335a;
 
     public xf1(cy0 cy0Var) {
-        this.f1336a = cy0Var;
+        this.f1335a = cy0Var;
     }
 }

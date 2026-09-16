@@ -19,13 +19,13 @@ public final class y6 extends lx0 {
     }
 
     @Override // androidx.emoji2.text.lx0
-    public final List B(String str, List list) throws CertificateException, SSLPeerUnverifiedException {
+    public final List B(String str, List list) {
         lx0.x(list, "chain");
         lx0.x(str, "hostname");
         try {
-            List<X509Certificate> listCheckServerTrusted = this.u.checkServerTrusted((X509Certificate[]) list.toArray(new X509Certificate[0]), "RSA", str);
-            lx0.w(listCheckServerTrusted, "x509TrustManagerExtensio…ficates, \"RSA\", hostname)");
-            return listCheckServerTrusted;
+            List<X509Certificate> checkServerTrusted = this.u.checkServerTrusted((X509Certificate[]) list.toArray(new X509Certificate[0]), "RSA", str);
+            lx0.w(checkServerTrusted, "x509TrustManagerExtensio…ficates, \"RSA\", hostname)");
+            return checkServerTrusted;
         } catch (CertificateException e) {
             SSLPeerUnverifiedException sSLPeerUnverifiedException = new SSLPeerUnverifiedException(e.getMessage());
             sSLPeerUnverifiedException.initCause(e);

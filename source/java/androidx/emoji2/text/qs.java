@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class qs {
 
     /* renamed from: a, reason: collision with root package name */
-    public final float f975a;
+    public final float f974a;
     public final float b;
 
     public qs(float f, float f2) {
-        this.f975a = f;
+        this.f974a = f;
         this.b = f2;
     }
 
@@ -21,20 +21,20 @@ public final class qs {
         if (!(obj instanceof qs)) {
             return false;
         }
-        float f = this.f975a;
+        float f = this.f974a;
         float f2 = this.b;
         if (f > f2) {
             qs qsVar = (qs) obj;
-            if (qsVar.f975a > qsVar.b) {
+            if (qsVar.f974a > qsVar.b) {
                 return true;
             }
         }
         qs qsVar2 = (qs) obj;
-        return f == qsVar2.f975a && f2 == qsVar2.b;
+        return f == qsVar2.f974a && f2 == qsVar2.b;
     }
 
     public final int hashCode() {
-        float f = this.f975a;
+        float f = this.f974a;
         float f2 = this.b;
         if (f > f2) {
             return -1;
@@ -43,6 +43,6 @@ public final class qs {
     }
 
     public final String toString() {
-        return this.f975a + ".." + this.b;
+        return this.f974a + ".." + this.b;
     }
 }

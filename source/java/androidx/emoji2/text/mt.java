@@ -5,12 +5,12 @@ package androidx.emoji2.text;
 public abstract class mt {
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f766a;
+    public final String f765a;
     public final long b;
     public final int c;
 
     public mt(int i, String str, long j) {
-        this.f766a = str;
+        this.f765a = str;
         this.b = j;
         this.c = i;
         if (str.length() == 0) {
@@ -41,7 +41,7 @@ public abstract class mt {
             return false;
         }
         mt mtVar = (mt) obj;
-        if (this.c == mtVar.c && lx0.n(this.f766a, mtVar.f766a)) {
+        if (this.c == mtVar.c && lx0.n(this.f765a, mtVar.f765a)) {
             return ht.a(this.b, mtVar.b);
         }
         return false;
@@ -50,12 +50,12 @@ public abstract class mt {
     public abstract long f(float f, float f2, float f3, float f4, mt mtVar);
 
     public int hashCode() {
-        int iHashCode = this.f766a.hashCode() * 31;
+        int hashCode = this.f765a.hashCode() * 31;
         int i = ht.e;
-        return jx0.b(iHashCode, 31, this.b) + this.c;
+        return jx0.b(hashCode, 31, this.b) + this.c;
     }
 
     public final String toString() {
-        return this.f766a + " (id=" + this.c + ", model=" + ((Object) ht.b(this.b)) + ')';
+        return this.f765a + " (id=" + this.c + ", model=" + ((Object) ht.b(this.b)) + ')';
     }
 }

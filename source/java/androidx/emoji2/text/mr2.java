@@ -22,12 +22,12 @@ public final class mr2 extends lr2 {
     @Override // androidx.emoji2.text.lr2
     public final mr2 a() {
         Parcel parcel = this.e;
-        int iDataPosition = parcel.dataPosition();
+        int dataPosition = parcel.dataPosition();
         int i = this.j;
         if (i == this.f) {
             i = this.g;
         }
-        return new mr2(parcel, iDataPosition, i, zd.k(new StringBuilder(), this.h, "  "), this.f708a, this.b, this.c);
+        return new mr2(parcel, dataPosition, i, zd.k(new StringBuilder(), this.h, "  "), this.f707a, this.b, this.c);
     }
 
     @Override // androidx.emoji2.text.lr2
@@ -43,9 +43,9 @@ public final class mr2 extends lr2 {
             int i3 = this.j;
             Parcel parcel = this.e;
             parcel.setDataPosition(i3);
-            int i4 = parcel.readInt();
+            int readInt = parcel.readInt();
             this.k = parcel.readInt();
-            this.j += i4;
+            this.j += readInt;
         }
         return this.k == i;
     }
@@ -57,10 +57,10 @@ public final class mr2 extends lr2 {
         Parcel parcel = this.e;
         if (i2 >= 0) {
             int i3 = sparseIntArray.get(i2);
-            int iDataPosition = parcel.dataPosition();
+            int dataPosition = parcel.dataPosition();
             parcel.setDataPosition(i3);
-            parcel.writeInt(iDataPosition - i3);
-            parcel.setDataPosition(iDataPosition);
+            parcel.writeInt(dataPosition - i3);
+            parcel.setDataPosition(dataPosition);
         }
         this.i = i;
         sparseIntArray.put(i, parcel.dataPosition());

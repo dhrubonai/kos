@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 public final class k11 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Object f612a;
+    public Object f611a;
     public Function2 b;
     public dy c;
     public boolean d;

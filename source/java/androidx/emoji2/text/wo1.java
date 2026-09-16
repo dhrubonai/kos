@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class wo1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ArrayList f1292a;
+    public final ArrayList f1291a;
     public final int b;
     public int c;
     public final ArrayList d;
@@ -15,7 +15,7 @@ public final class wo1 {
     public final th2 f;
 
     public wo1(int i, ArrayList arrayList) {
-        this.f1292a = arrayList;
+        this.f1291a = arrayList;
         this.b = i;
         if (i < 0) {
             jt1.a("Invalid start index");
@@ -25,7 +25,7 @@ public final class wo1 {
         int size = arrayList.size();
         int i2 = 0;
         for (int i3 = 0; i3 < size; i3++) {
-            cz0 cz0Var = (cz0) this.f1292a.get(i3);
+            cz0 cz0Var = (cz0) this.f1291a.get(i3);
             int i4 = cz0Var.c;
             int i5 = cz0Var.d;
             qe1Var.g(i4, new fq0(i3, i2, i5));
@@ -49,7 +49,7 @@ public final class wo1 {
             return true;
         }
         Object[] objArr = qe1Var.c;
-        long[] jArr = qe1Var.f717a;
+        long[] jArr = qe1Var.f716a;
         int length = jArr.length - 2;
         if (length < 0) {
             return true;

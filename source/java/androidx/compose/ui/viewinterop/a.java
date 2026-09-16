@@ -67,8 +67,8 @@ public abstract class a {
             i3 |= txVar.h(j7Var) ? 16384 : 8192;
         }
         if (txVar.P(i3 & 1, (i3 & 9363) != 9362)) {
-            int iHashCode = Long.hashCode(txVar.T);
-            nd1 nd1VarK = nd1Var.k(FocusGroupPropertiesElement.f67a);
+            int hashCode = Long.hashCode(txVar.T);
+            nd1 k = nd1Var.k(FocusGroupPropertiesElement.f67a);
             FocusTargetNode$FocusTargetElement focusTargetNode$FocusTargetElement = new ud1() { // from class: androidx.compose.ui.focus.FocusTargetNode$FocusTargetElement
                 public final boolean equals(Object obj) {
                     return obj == this;
@@ -87,34 +87,34 @@ public abstract class a {
                 public final /* bridge */ /* synthetic */ void l(md1 md1Var) {
                 }
             };
-            nd1 nd1VarQ = bz0.Q(txVar, nd1VarK.k(focusTargetNode$FocusTargetElement).k(FocusTargetPropertiesElement.f68a).k(focusTargetNode$FocusTargetElement));
+            nd1 Q = bz0.Q(txVar, k.k(focusTargetNode$FocusTargetElement).k(FocusTargetPropertiesElement.f68a).k(focusTargetNode$FocusTargetElement));
             j70 j70Var = (j70) txVar.j(iy.h);
             q01 q01Var2 = (q01) txVar.j(iy.n);
-            ap1 ap1VarL = txVar.l();
-            v51 v51Var2 = (v51) txVar.j(o71.f845a);
-            m32 m32Var2 = (m32) txVar.j(r71.f996a);
+            ap1 l = txVar.l();
+            v51 v51Var2 = (v51) txVar.j(o71.f844a);
+            m32 m32Var2 = (m32) txVar.j(r71.f995a);
             txVar.X(1314800527);
             int i4 = i3 & 14;
-            int iHashCode2 = Long.hashCode(txVar.T);
+            int hashCode2 = Long.hashCode(txVar.T);
             Context context = (Context) txVar.j(t8.b);
-            qx qxVarJ = jm.J(txVar);
-            y22 y22Var = (y22) txVar.j(a32.f80a);
+            qx J = jm.J(txVar);
+            y22 y22Var = (y22) txVar.j(a32.f79a);
             View view = (View) txVar.j(t8.f);
-            boolean zH = txVar.h(context) | ((((i4 & 14) ^ 6) > 4 && txVar.f(um0Var)) || (i4 & 6) == 4) | txVar.h(qxVarJ) | txVar.h(y22Var) | txVar.d(iHashCode2) | txVar.h(view);
-            Object objM = txVar.M();
-            if (zH || objM == kx.f663a) {
+            boolean h = txVar.h(context) | ((((i4 & 14) ^ 6) > 4 && txVar.f(um0Var)) || (i4 & 6) == 4) | txVar.h(J) | txVar.h(y22Var) | txVar.d(hashCode2) | txVar.h(view);
+            Object M = txVar.M();
+            if (h || M == kx.f662a) {
                 m32Var = m32Var2;
                 v51Var = v51Var2;
                 q01Var = q01Var2;
-                xc xcVar = new xc(context, um0Var, qxVarJ, y22Var, iHashCode2, view);
+                xc xcVar = new xc(context, um0Var, J, y22Var, hashCode2, view);
                 txVar.i0(xcVar);
-                objM = xcVar;
+                M = xcVar;
             } else {
                 q01Var = q01Var2;
                 m32Var = m32Var2;
                 v51Var = v51Var2;
             }
-            sm0 sm0Var = (sm0) objM;
+            sm0 sm0Var = (sm0) M;
             txVar.T(125, 1, null, null);
             txVar.r = true;
             if (txVar.S) {
@@ -123,15 +123,15 @@ public abstract class a {
                 txVar.l0();
             }
             hx.b.getClass();
-            mz0.G(txVar, ap1VarL, gx.d);
-            mz0.G(txVar, nd1VarQ, wc.h);
+            mz0.G(txVar, l, gx.d);
+            mz0.G(txVar, Q, wc.h);
             mz0.G(txVar, j70Var, wc.i);
             mz0.G(txVar, v51Var, wc.j);
             mz0.G(txVar, m32Var, wc.k);
             mz0.G(txVar, q01Var, wc.l);
             wc wcVar = gx.f;
-            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(iHashCode))) {
-                zd.l(iHashCode, txVar, iHashCode, wcVar);
+            if (txVar.S || !lx0.n(txVar.M(), Integer.valueOf(hashCode))) {
+                zd.l(hashCode, txVar, hashCode, wcVar);
             }
             mz0.G(txVar, j7Var, wc.f);
             mz0.G(txVar, j7Var, wc.g);
@@ -140,9 +140,9 @@ public abstract class a {
         } else {
             txVar.S();
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new o9(um0Var, nd1Var, i);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new o9(um0Var, nd1Var, i);
         }
     }
 
@@ -159,9 +159,9 @@ public abstract class a {
             txVar.S();
             um0Var3 = um0Var2;
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new o8(um0Var, nd1Var, um0Var3, i, 1);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new o8(um0Var, nd1Var, um0Var3, i, 1);
         }
     }
 

@@ -19,22 +19,22 @@ public final class cw implements Function2 {
         switch (this.d) {
             case 0:
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Number) obj2).intValue();
+                int intValue = ((Number) obj2).intValue();
                 tx txVar = (tx) lxVar;
-                if (!txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (!txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     txVar.S();
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             case 1:
                 lx lxVar2 = (lx) obj;
-                int iIntValue2 = ((Number) obj2).intValue();
+                int intValue2 = ((Number) obj2).intValue();
                 tx txVar2 = (tx) lxVar2;
-                if (!txVar2.P(iIntValue2 & 1, (iIntValue2 & 3) != 2)) {
+                if (!txVar2.P(intValue2 & 1, (intValue2 & 3) != 2)) {
                     txVar2.S();
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                long j = ((et) obj2).f321a;
+                long j = ((et) obj2).f320a;
                 return j == 16 ? Boolean.FALSE : Integer.valueOf(bz0.i0(j));
         }
     }

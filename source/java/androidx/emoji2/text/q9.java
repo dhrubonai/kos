@@ -4,14 +4,14 @@ import android.view.DragEvent;
 import android.view.View;
 import androidx.compose.ui.draganddrop.AndroidDragAndDropManager$modifier$1;
 import androidx.emoji2.text.md1;
-import com.kos.engine.entity.location.BCell;
+import androidx.emoji2.text.q9;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class q9 implements View.OnDragListener, ha0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ja0 f945a;
+    public final ja0 f944a;
     public final wh b;
     public final AndroidDragAndDropManager$modifier$1 c;
 
@@ -19,7 +19,7 @@ public final class q9 implements View.OnDragListener, ha0 {
     public q9(m7 m7Var) {
         ja0 ja0Var = new ja0();
         ja0Var.t = 0L;
-        this.f945a = ja0Var;
+        this.f944a = ja0Var;
         this.b = new wh(0);
         this.c = new ud1() { // from class: androidx.compose.ui.draganddrop.AndroidDragAndDropManager$modifier$1
             public final boolean equals(Object obj) {
@@ -28,11 +28,11 @@ public final class q9 implements View.OnDragListener, ha0 {
 
             @Override // androidx.emoji2.text.ud1
             public final md1 f() {
-                return this.f43a.f945a;
+                return q9.this.f944a;
             }
 
             public final int hashCode() {
-                return this.f43a.f945a.hashCode();
+                return q9.this.f944a.hashCode();
             }
 
             @Override // androidx.emoji2.text.ud1
@@ -47,7 +47,7 @@ public final class q9 implements View.OnDragListener, ha0 {
         int action = dragEvent.getAction();
         io2 io2Var = io2.d;
         wh whVar = this.b;
-        ja0 ja0Var = this.f945a;
+        ja0 ja0Var = this.f944a;
         switch (action) {
             case 1:
                 yx1 yx1Var = new yx1();
@@ -72,10 +72,10 @@ public final class q9 implements View.OnDragListener, ha0 {
                 }
                 whVar.clear();
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 ja0Var.J0(p4Var);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ja0Var.K0(p4Var);
                 break;
         }

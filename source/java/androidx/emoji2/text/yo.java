@@ -12,72 +12,58 @@ public final class yo extends kq {
         this.h = a6Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0053 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0054  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     @Override // androidx.emoji2.text.kq
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object a(androidx.emoji2.text.eu1 r5, androidx.emoji2.text.l10 r6) {
-        /*
-            r4 = this;
-            boolean r0 = r6 instanceof androidx.emoji2.text.xo
-            if (r0 == 0) goto L13
-            r0 = r6
-            androidx.emoji2.text.xo r0 = (androidx.emoji2.text.xo) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L1a
-        L13:
-            androidx.emoji2.text.xo r0 = new androidx.emoji2.text.xo
-            androidx.emoji2.text.n10 r6 = (androidx.emoji2.text.n10) r6
-            r0.<init>(r4, r6)
-        L1a:
-            java.lang.Object r6 = r0.h
-            int r1 = r0.j
-            androidx.emoji2.text.up2 r2 = androidx.emoji2.text.up2.f1187a
-            r3 = 1
-            if (r1 == 0) goto L33
-            if (r1 != r3) goto L2b
-            androidx.emoji2.text.eu1 r5 = r0.g
-            androidx.emoji2.text.mz0.L(r6)
-            goto L49
-        L2b:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r6 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r6)
-            throw r5
-        L33:
-            androidx.emoji2.text.mz0.L(r6)
-            r0.g = r5
-            r0.j = r3
-            androidx.emoji2.text.a6 r6 = r4.g
-            java.lang.Object r6 = r6.invoke(r5, r0)
-            androidx.emoji2.text.f30 r0 = androidx.emoji2.text.f30.d
-            if (r6 != r0) goto L45
-            goto L46
-        L45:
-            r6 = r2
-        L46:
-            if (r6 != r0) goto L49
-            return r0
-        L49:
-            androidx.emoji2.text.du1 r5 = (androidx.emoji2.text.du1) r5
-            androidx.emoji2.text.vn r5 = r5.g
-            boolean r5 = r5.u()
-            if (r5 == 0) goto L54
-            return r2
-        L54:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r6 = "'awaitClose { yourCallbackOrListener.cancel() }' should be used in the end of callbackFlow block.\nOtherwise, a callback/listener may leak in case of external cancellation.\nSee callbackFlow API documentation for the details."
-            r5.<init>(r6)
-            throw r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.yo.a(androidx.emoji2.text.eu1, androidx.emoji2.text.l10):java.lang.Object");
+    public final Object a(eu1 eu1Var, l10 l10Var) {
+        xo xoVar;
+        int i;
+        if (l10Var instanceof xo) {
+            xoVar = (xo) l10Var;
+            int i2 = xoVar.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                xoVar.j = i2 - Integer.MIN_VALUE;
+                Object obj = xoVar.h;
+                i = xoVar.j;
+                up2 up2Var = up2.f1186a;
+                if (i != 0) {
+                    mz0.L(obj);
+                    xoVar.g = eu1Var;
+                    xoVar.j = 1;
+                    Object invoke = this.g.invoke(eu1Var, xoVar);
+                    f30 f30Var = f30.d;
+                    if (invoke != f30Var) {
+                        invoke = up2Var;
+                    }
+                    if (invoke == f30Var) {
+                        return f30Var;
+                    }
+                } else {
+                    if (i != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    eu1Var = xoVar.g;
+                    mz0.L(obj);
+                }
+                if (((du1) eu1Var).g.u()) {
+                    throw new IllegalStateException("'awaitClose { yourCallbackOrListener.cancel() }' should be used in the end of callbackFlow block.\nOtherwise, a callback/listener may leak in case of external cancellation.\nSee callbackFlow API documentation for the details.");
+                }
+                return up2Var;
+            }
+        }
+        xoVar = new xo(this, (n10) l10Var);
+        Object obj2 = xoVar.h;
+        i = xoVar.j;
+        up2 up2Var2 = up2.f1186a;
+        if (i != 0) {
+        }
+        if (((du1) eu1Var).g.u()) {
+        }
     }
 
     @Override // androidx.emoji2.text.kq

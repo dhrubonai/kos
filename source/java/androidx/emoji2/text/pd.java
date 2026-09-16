@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class pd implements ld1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f899a;
+    public final un1 f898a;
 
     public pd(boolean z) {
-        this.f899a = az0.W(Boolean.valueOf(z));
+        this.f898a = az0.W(Boolean.valueOf(z));
     }
 }

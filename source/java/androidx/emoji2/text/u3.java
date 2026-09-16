@@ -33,7 +33,7 @@ public final class u3 implements Runnable {
                 w3 w3Var = (w3) this.f;
                 qb1 qb1Var = w3Var.f;
                 if (qb1Var != null && (p4Var = qb1Var.e) != null && (pm2Var = ((ActionMenuView) p4Var.e).w) != null) {
-                    Toolbar toolbar = pm2Var.f916a;
+                    Toolbar toolbar = pm2Var.f915a;
                     w3 w3Var2 = toolbar.d.v;
                     if (w3Var2 == null || (s3Var = w3Var2.u) == null || !s3Var.b()) {
                         Iterator it = ((CopyOnWriteArrayList) toolbar.J.d).iterator();
@@ -45,12 +45,12 @@ public final class u3 implements Runnable {
                 }
                 ActionMenuView actionMenuView = w3Var.j;
                 if (actionMenuView != null && actionMenuView.getWindowToken() != null) {
-                    if (s3Var2.b()) {
-                        w3Var.u = s3Var2;
-                    } else if (s3Var2.e != null) {
-                        s3Var2.d(0, 0, false, false);
-                        w3Var.u = s3Var2;
+                    if (!s3Var2.b()) {
+                        if (s3Var2.e != null) {
+                            s3Var2.d(0, 0, false, false);
+                        }
                     }
+                    w3Var.u = s3Var2;
                 }
                 w3Var.w = null;
                 return;
@@ -76,11 +76,11 @@ public final class u3 implements Runnable {
                     } catch (Throwable th) {
                         xa1.D(oe0.d, th);
                     }
-                    Runnable runnableG = b61Var.G();
-                    if (runnableG == null) {
+                    Runnable G = b61Var.G();
+                    if (G == null) {
                         return;
                     }
-                    this.e = runnableG;
+                    this.e = G;
                     i++;
                     if (i >= 16 && x20Var.E(b61Var)) {
                         x20Var.D(b61Var, this);
@@ -92,7 +92,7 @@ public final class u3 implements Runnable {
                 ((nl0) this.e).accept(this.f);
                 return;
             default:
-                is2 is2Var = ((SwipeDismissBehavior) this.f).f1468a;
+                is2 is2Var = ((SwipeDismissBehavior) this.f).f1467a;
                 if (is2Var == null || !is2Var.f()) {
                     return;
                 }

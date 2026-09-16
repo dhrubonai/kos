@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class o21 implements ld1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f838a;
+    public final /* synthetic */ int f837a;
     public final /* synthetic */ i52 b;
 
     public /* synthetic */ o21(i52 i52Var, int i) {
-        this.f838a = i;
+        this.f837a = i;
         this.b = i52Var;
     }
 }

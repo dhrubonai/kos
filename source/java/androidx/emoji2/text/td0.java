@@ -8,14 +8,14 @@ public final class td0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         try {
-            int i = dn2.f264a;
+            int i = dn2.f263a;
             Trace.beginSection("EmojiCompat.EmojiCompatInitializer.run");
             if (qd0.d()) {
                 qd0.a().e();
             }
             Trace.endSection();
         } catch (Throwable th) {
-            int i2 = dn2.f264a;
+            int i2 = dn2.f263a;
             Trace.endSection();
             throw th;
         }

@@ -8,13 +8,13 @@ import java.net.Proxy;
 public final class u12 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final w4 f1155a;
+    public final w4 f1154a;
     public final Proxy b;
     public final InetSocketAddress c;
 
     public u12(w4 w4Var, Proxy proxy, InetSocketAddress inetSocketAddress) {
         lx0.x(inetSocketAddress, "socketAddress");
-        this.f1155a = w4Var;
+        this.f1154a = w4Var;
         this.b = proxy;
         this.c = inetSocketAddress;
     }
@@ -24,11 +24,11 @@ public final class u12 {
             return false;
         }
         u12 u12Var = (u12) obj;
-        return lx0.n(u12Var.f1155a, this.f1155a) && lx0.n(u12Var.b, this.b) && lx0.n(u12Var.c, this.c);
+        return lx0.n(u12Var.f1154a, this.f1154a) && lx0.n(u12Var.b, this.b) && lx0.n(u12Var.c, this.c);
     }
 
     public final int hashCode() {
-        return this.c.hashCode() + ((this.b.hashCode() + ((this.f1155a.hashCode() + 527) * 31)) * 31);
+        return this.c.hashCode() + ((this.b.hashCode() + ((this.f1154a.hashCode() + 527) * 31)) * 31);
     }
 
     public final String toString() {

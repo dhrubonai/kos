@@ -7,30 +7,43 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageParser;
 import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Looper;
+import android.os.Process;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.emoji2.text.c01;
+import androidx.emoji2.text.dh0;
 import androidx.emoji2.text.ho0;
+import androidx.emoji2.text.jx0;
+import androidx.emoji2.text.ke2;
 import androidx.emoji2.text.l8;
+import androidx.emoji2.text.lt2;
+import androidx.emoji2.text.mt2;
 import androidx.emoji2.text.mz0;
 import androidx.emoji2.text.nz0;
 import androidx.emoji2.text.rj;
 import androidx.emoji2.text.xa1;
 import androidx.emoji2.text.zd;
+import com.kos.engine.app.FacebookWebViewActivity;
 import com.kos.engine.core.GmsCore;
 import com.kos.engine.entity.am.RunningAppProcessInfo;
 import com.kos.engine.fake.frameworks.BAccountManager;
@@ -38,6 +51,8 @@ import com.kos.engine.fake.frameworks.BActivityManager;
 import com.kos.engine.fake.frameworks.BPackageManager;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
+import com.kos.engine.fake.provider.FileProviderHandler;
+import java.io.File;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Locale;
@@ -191,10 +206,13 @@ public class ActivityManagerCommonProxy {
     public static class getCallingActivity extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
-            String virtualCallingPackage;
             c01 c01Var = c01.r;
             ComponentName callingActivity = BActivityManager.get().getCallingActivity((IBinder) objArr[0], rj.u());
-            return ((callingActivity == null || c01.X().equals(callingActivity.getPackageName())) && (virtualCallingPackage = ActivityManagerCommonProxy.getVirtualCallingPackage(objArr)) != null && virtualCallingPackage.length() > 0) ? new ComponentName(virtualCallingPackage, c.a(-314452294647586L, xa1.b)) : callingActivity;
+            if (callingActivity != null && !c01.X().equals(callingActivity.getPackageName())) {
+                return callingActivity;
+            }
+            String virtualCallingPackage = ActivityManagerCommonProxy.getVirtualCallingPackage(objArr);
+            return (virtualCallingPackage == null || virtualCallingPackage.length() <= 0) ? callingActivity : new ComponentName(virtualCallingPackage, c.a(-314452294647586L, xa1.b));
         }
     }
 
@@ -282,8 +300,8 @@ public class ActivityManagerCommonProxy {
         if (objArr == null) {
             return null;
         }
-        for (int iMax = Math.max(0, i + 1); iMax < objArr.length; iMax++) {
-            Object obj = objArr[iMax];
+        for (int max = Math.max(0, i + 1); max < objArr.length; max++) {
+            Object obj = objArr[max];
             if (obj instanceof Intent) {
                 return (Intent) obj;
             }
@@ -309,12 +327,12 @@ public class ActivityManagerCommonProxy {
         if (objArr == null) {
             return -1;
         }
-        for (int iMax = Math.max(0, i + 1); iMax < objArr.length; iMax++) {
-            if (objArr[iMax] instanceof IBinder) {
+        for (int max = Math.max(0, i + 1); max < objArr.length; max++) {
+            if (objArr[max] instanceof IBinder) {
                 if (i2 >= 0) {
-                    return iMax;
+                    return max;
                 }
-                i2 = iMax;
+                i2 = max;
             }
         }
         return i2;
@@ -340,10 +358,10 @@ public class ActivityManagerCommonProxy {
         }
         for (int i = 0; i < objArr.length; i++) {
             Object obj = objArr[i];
-            IBinder iBinderAsBinder = obj instanceof IInterface ? ((IInterface) obj).asBinder() : obj instanceof IBinder ? (IBinder) obj : null;
-            if (iBinderAsBinder != null) {
+            IBinder asBinder = obj instanceof IInterface ? ((IInterface) obj).asBinder() : obj instanceof IBinder ? (IBinder) obj : null;
+            if (asBinder != null) {
                 c01 c01Var = c01.r;
-                Intent intentForIntentSender = BActivityManager.get().getIntentForIntentSender(iBinderAsBinder);
+                Intent intentForIntentSender = BActivityManager.get().getIntentForIntentSender(asBinder);
                 if (intentForIntentSender != null) {
                     return new IntentSenderTarget(i, intentForIntentSender);
                 }
@@ -353,8 +371,8 @@ public class ActivityManagerCommonProxy {
     }
 
     public static void fixFinishResultIntent(Object[] objArr) {
-        Intent intentMaybeRepairGoogleAddAccountResult = maybeRepairGoogleAddAccountResult(objArr, findFinishResultIntent(objArr));
-        if (intentMaybeRepairGoogleAddAccountResult == null) {
+        Intent maybeRepairGoogleAddAccountResult = maybeRepairGoogleAddAccountResult(objArr, findFinishResultIntent(objArr));
+        if (maybeRepairGoogleAddAccountResult == null) {
             return;
         }
         ClassLoader classLoader = null;
@@ -367,9 +385,9 @@ public class ActivityManagerCommonProxy {
         if (classLoader == null) {
             classLoader = ActivityManagerCommonProxy.class.getClassLoader();
         }
-        intentMaybeRepairGoogleAddAccountResult.setExtrasClassLoader(classLoader);
+        maybeRepairGoogleAddAccountResult.setExtrasClassLoader(classLoader);
         try {
-            Bundle extras = intentMaybeRepairGoogleAddAccountResult.getExtras();
+            Bundle extras = maybeRepairGoogleAddAccountResult.getExtras();
             if (extras != null) {
                 extras.setClassLoader(classLoader);
             }
@@ -391,82 +409,39 @@ public class ActivityManagerCommonProxy {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0049, code lost:
+    
+        if (r2 <= com.kos.engine.fake.service.ActivityManagerCommonProxy.PLAY_GAMES_SIGN_IN_READY_SETTLE_MS) goto L21;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public static java.lang.String getVirtualCallingPackage(java.lang.Object[] r6) {
-        /*
-            if (r6 == 0) goto L20
-            int r0 = r6.length
-            if (r0 == 0) goto L20
-            r0 = 0
-            r1 = r6[r0]
-            boolean r1 = r1 instanceof android.os.IBinder
-            if (r1 != 0) goto Ld
-            goto L20
-        Ld:
-            androidx.emoji2.text.c01 r1 = androidx.emoji2.text.c01.r
-            com.kos.engine.fake.frameworks.BActivityManager r1 = com.kos.engine.fake.frameworks.BActivityManager.get()
-            r6 = r6[r0]
-            android.os.IBinder r6 = (android.os.IBinder) r6
-            int r0 = androidx.emoji2.text.rj.u()
-            java.lang.String r6 = r1.getCallingPackage(r6, r0)
-            goto L24
-        L20:
-            java.lang.String r6 = androidx.emoji2.text.rj.o()
-        L24:
-            if (r6 == 0) goto L31
-            java.lang.String r0 = androidx.emoji2.text.c01.X()
-            boolean r0 = r0.equals(r6)
-            if (r0 != 0) goto L31
-            return r6
-        L31:
-            androidx.emoji2.text.lt2 r0 = androidx.emoji2.text.mt2.c
-            r1 = 0
-            if (r0 != 0) goto L38
-        L36:
-            r0 = r1
-            goto L4b
-        L38:
-            long r2 = android.os.SystemClock.elapsedRealtime()
-            long r4 = androidx.emoji2.text.mt2.d
-            long r2 = r2 - r4
-            r4 = 0
-            int r4 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r4 < 0) goto L36
-            r4 = 10000(0x2710, double:4.9407E-320)
-            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
-            if (r2 > 0) goto L36
-        L4b:
-            if (r0 != 0) goto L4e
-            goto L50
-        L4e:
-            java.lang.String r1 = r0.b
-        L50:
-            boolean r0 = isInstalledNonGoogleVirtualPackage(r1)
-            if (r0 == 0) goto L74
-            java.lang.String[] r6 = androidx.emoji2.text.xa1.b
-            r2 = -318214685998882(0xfffede95deadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r2, r6)
-            java.lang.StringBuilder r2 = new java.lang.StringBuilder
-            r2.<init>()
-            r3 = -318244750769954(0xfffede8edeadc0de, double:NaN)
-            java.lang.String r6 = a.a.a.c.a(r3, r6)
-            r3 = 3
-            androidx.emoji2.text.jx0.r(r2, r6, r1, r3, r0)
-            return r1
-        L74:
-            java.lang.String r0 = androidx.emoji2.text.rj.o()
-            if (r0 == 0) goto L81
-            int r1 = r0.length()
-            if (r1 <= 0) goto L81
-            return r0
-        L81:
-            return r6
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.ActivityManagerCommonProxy.getVirtualCallingPackage(java.lang.Object[]):java.lang.String");
+    public static String getVirtualCallingPackage(Object[] objArr) {
+        String o;
+        if (objArr == null || objArr.length == 0 || !(objArr[0] instanceof IBinder)) {
+            o = rj.o();
+        } else {
+            c01 c01Var = c01.r;
+            o = BActivityManager.get().getCallingPackage((IBinder) objArr[0], rj.u());
+        }
+        if (o != null && !c01.X().equals(o)) {
+            return o;
+        }
+        lt2 lt2Var = mt2.c;
+        if (lt2Var != null) {
+            long elapsedRealtime = SystemClock.elapsedRealtime() - mt2.d;
+            if (elapsedRealtime >= 0) {
+            }
+        }
+        lt2Var = null;
+        String str = lt2Var != null ? lt2Var.b : null;
+        if (!isInstalledNonGoogleVirtualPackage(str)) {
+            String o2 = rj.o();
+            return (o2 == null || o2.length() <= 0) ? o : o2;
+        }
+        String[] strArr = xa1.b;
+        jx0.r(new StringBuilder(), c.a(-318244750769954L, strArr), str, 3, c.a(-318214685998882L, strArr));
+        return str;
     }
 
     public static int getVirtualCallingUid(Object[] objArr) {
@@ -489,12 +464,12 @@ public class ActivityManagerCommonProxy {
         if (intent == null) {
             return false;
         }
-        String packageName = intent.getPackage();
-        if (packageName == null && intent.getComponent() != null) {
-            packageName = intent.getComponent().getPackageName();
+        String str = intent.getPackage();
+        if (str == null && intent.getComponent() != null) {
+            str = intent.getComponent().getPackageName();
         }
         String[] strArr = xa1.b;
-        return c.a(-323776668647202L, strArr).equals(packageName) || c.a(-323325697081122L, strArr).equals(packageName) || c.a(-323441661198114L, strArr).equals(packageName) || c.a(-324111676096290L, strArr).equals(packageName);
+        return c.a(-323776668647202L, strArr).equals(str) || c.a(-323325697081122L, strArr).equals(str) || c.a(-323441661198114L, strArr).equals(str) || c.a(-324111676096290L, strArr).equals(str);
     }
 
     private static boolean isGoogleAddAccountActivity(IBinder iBinder) {
@@ -503,8 +478,8 @@ public class ActivityManagerCommonProxy {
             return false;
         }
         try {
-            Activity activityM = rj.m(iBinder);
-            ComponentName componentName = activityM == null ? null : activityM.getComponentName();
+            Activity m = rj.m(iBinder);
+            ComponentName componentName = m == null ? null : m.getComponentName();
             if (componentName != null) {
                 String[] strArr = xa1.b;
                 if (c.a(-317050749861666L, strArr).equals(componentName.getPackageName()) && (className = componentName.getClassName()) != null) {
@@ -522,11 +497,11 @@ public class ActivityManagerCommonProxy {
         if (intent == null) {
             return false;
         }
-        String packageName = intent.getPackage();
-        if (packageName == null && intent.getComponent() != null) {
-            packageName = intent.getComponent().getPackageName();
+        String str = intent.getPackage();
+        if (str == null && intent.getComponent() != null) {
+            str = intent.getComponent().getPackageName();
         }
-        if (c.a(-324025776750370L, xa1.b).equals(packageName)) {
+        if (c.a(-324025776750370L, xa1.b).equals(str)) {
             return containsAuthMarker(intent.getAction()) || containsAuthMarker(intent.getComponent() != null ? intent.getComponent().getClassName() : null);
         }
         return false;
@@ -537,9 +512,9 @@ public class ActivityManagerCommonProxy {
             return false;
         }
         c01 c01Var = c01.r;
-        int iU = rj.u();
+        int u = rj.u();
         c01Var.getClass();
-        return c01.b0(str, iU);
+        return c01.b0(str, u);
     }
 
     private static Intent maybeRepairGoogleAddAccountResult(Object[] objArr, Intent intent) {
@@ -553,11 +528,11 @@ public class ActivityManagerCommonProxy {
             intent.putExtra(c.a(-318811686453026L, strArr), account.name);
             intent.putExtra(c.a(-318828866322210L, strArr), account.type);
             intent.putExtra(c.a(-318365009854242L, strArr), true);
-            int iFindFinishResultCodeIndex = findFinishResultCodeIndex(objArr);
-            if (iFindFinishResultCodeIndex >= 0) {
-                objArr[iFindFinishResultCodeIndex] = -1;
+            int findFinishResultCodeIndex = findFinishResultCodeIndex(objArr);
+            if (findFinishResultCodeIndex >= 0) {
+                objArr[findFinishResultCodeIndex] = -1;
             }
-            putFinishResultIntent(objArr, iFindFinishResultCodeIndex, intent);
+            putFinishResultIntent(objArr, findFinishResultCodeIndex, intent);
             nz0.Q(c.a(-318442319265570L, strArr), 3, c.a(-318455204167458L, strArr) + account.type + c.a(-317016390123298L, strArr) + rj.u());
         }
         return intent;
@@ -592,34 +567,34 @@ public class ActivityManagerCommonProxy {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean startVirtualGoogleAuthIntentSender(Object[] objArr) {
-        IntentSenderTarget intentSenderTargetFindVirtualIntentSenderTarget = findVirtualIntentSenderTarget(objArr);
-        if (intentSenderTargetFindVirtualIntentSenderTarget == null || !isGoogleAuthIntent(intentSenderTargetFindVirtualIntentSenderTarget.intent)) {
+        IntentSenderTarget findVirtualIntentSenderTarget = findVirtualIntentSenderTarget(objArr);
+        if (findVirtualIntentSenderTarget == null || !isGoogleAuthIntent(findVirtualIntentSenderTarget.intent)) {
             return false;
         }
-        Intent intent = new Intent(intentSenderTargetFindVirtualIntentSenderTarget.intent);
+        Intent intent = new Intent(findVirtualIntentSenderTarget.intent);
         fixIntentClassLoader(intent);
-        Intent intentFindIntentAfter = findIntentAfter(objArr, intentSenderTargetFindVirtualIntentSenderTarget.index);
-        if (intentFindIntentAfter != null) {
-            fixIntentClassLoader(intentFindIntentAfter);
-            intent.fillIn(intentFindIntentAfter, 0);
+        Intent findIntentAfter = findIntentAfter(objArr, findVirtualIntentSenderTarget.index);
+        if (findIntentAfter != null) {
+            fixIntentClassLoader(findIntentAfter);
+            intent.fillIn(findIntentAfter, 0);
         }
-        int iFindResultToIndex = findResultToIndex(objArr, intentSenderTargetFindVirtualIntentSenderTarget.index);
-        IBinder iBinder = iFindResultToIndex >= 0 ? (IBinder) objArr[iFindResultToIndex] : null;
-        String strFindStringAfter = findStringAfter(objArr, iFindResultToIndex);
-        int iFindIntAfter = findIntAfter(objArr, iFindResultToIndex, -1);
-        Bundle bundleFindLastBundle = findLastBundle(objArr);
+        int findResultToIndex = findResultToIndex(objArr, findVirtualIntentSenderTarget.index);
+        IBinder iBinder = findResultToIndex >= 0 ? (IBinder) objArr[findResultToIndex] : null;
+        String findStringAfter = findStringAfter(objArr, findResultToIndex);
+        int findIntAfter = findIntAfter(objArr, findResultToIndex, -1);
+        Bundle findLastBundle = findLastBundle(objArr);
         String[] strArr = xa1.b;
-        String strA = c.a(-324188985507618L, strArr);
+        String a2 = c.a(-324188985507618L, strArr);
         StringBuilder sb = new StringBuilder();
         sb.append(c.a(-324270589886242L, strArr));
         sb.append(intent);
         sb.append(c.a(-323879747862306L, strArr));
-        sb.append(iFindIntAfter);
+        sb.append(findIntAfter);
         sb.append(c.a(-323944172371746L, strArr));
         sb.append(iBinder != null);
-        nz0.Q(strA, 3, sb.toString());
+        nz0.Q(a2, 3, sb.toString());
         c01 c01Var = c01.r;
-        BActivityManager.get().startActivityAms(rj.u(), intent, null, iBinder, strFindStringAfter, iFindIntAfter, 0, bundleFindLastBundle);
+        BActivityManager.get().startActivityAms(rj.u(), intent, null, iBinder, findStringAfter, findIntAfter, 0, findLastBundle);
         return true;
     }
 
@@ -680,10 +655,10 @@ public class ActivityManagerCommonProxy {
                     }
                     try {
                         c01 c01Var = c01.r;
-                        ResolveInfo resolveInfoResolveActivity = BPackageManager.get().resolveActivity(this.intent, PackageParser.PARSE_IS_PRIVILEGED, this.resolvedType, this.userId);
-                        if (resolveInfoResolveActivity != null && resolveInfoResolveActivity.activityInfo != null) {
+                        ResolveInfo resolveActivity = BPackageManager.get().resolveActivity(this.intent, PackageParser.PARSE_IS_PRIVILEGED, this.resolvedType, this.userId);
+                        if (resolveActivity != null && resolveActivity.activityInfo != null) {
                             Intent intent = this.intent;
-                            ActivityInfo activityInfo = resolveInfoResolveActivity.activityInfo;
+                            ActivityInfo activityInfo = resolveActivity.activityInfo;
                             intent.setComponent(new ComponentName(activityInfo.packageName, activityInfo.name));
                             nz0.Q(c.a(-316634138033954L, strArr), 3, c.a(-316114446991138L, strArr) + this.userId + c.a(-316324900388642L, strArr) + this.requestCode + c.a(-314757237325602L, strArr) + z + c.a(-314774417194786L, strArr) + (SystemClock.elapsedRealtime() - this.deferredAt));
                             StartActivity.startVirtualActivity(this.intent, this.resolvedType, this.resultTo, this.resultWho, this.requestCode, this.flags, this.options);
@@ -719,10 +694,10 @@ public class ActivityManagerCommonProxy {
                 IBinder iBinder = this.resultTo;
                 if (iBinder != null) {
                     try {
-                        Activity activityM = rj.m(iBinder);
-                        if (activityM != null && !activityM.isFinishing()) {
-                            if (!activityM.isDestroyed()) {
-                                return activityM;
+                        Activity m = rj.m(iBinder);
+                        if (m != null && !m.isFinishing()) {
+                            if (!m.isDestroyed()) {
+                                return m;
                             }
                         }
                     } catch (Throwable th) {
@@ -751,9 +726,9 @@ public class ActivityManagerCommonProxy {
             }
 
             private void updateFeedback(long j) {
-                Activity activityResolveCallingActivity;
-                if (this.feedback == null && (activityResolveCallingActivity = resolveCallingActivity()) != null) {
-                    PlayGamesSetupFeedback playGamesSetupFeedback = new PlayGamesSetupFeedback(activityResolveCallingActivity, this.callerPackage, 0);
+                Activity resolveCallingActivity;
+                if (this.feedback == null && (resolveCallingActivity = resolveCallingActivity()) != null) {
+                    PlayGamesSetupFeedback playGamesSetupFeedback = new PlayGamesSetupFeedback(resolveCallingActivity, this.callerPackage, 0);
                     this.feedback = playGamesSetupFeedback;
                     playGamesSetupFeedback.show();
                 }
@@ -769,22 +744,22 @@ public class ActivityManagerCommonProxy {
                 if (StartActivity.sDeferredPlayGamesSignIns.get(this.key) != this) {
                     return;
                 }
-                long jElapsedRealtime = SystemClock.elapsedRealtime();
-                updateFeedback(jElapsedRealtime);
+                long elapsedRealtime = SystemClock.elapsedRealtime();
+                updateFeedback(elapsedRealtime);
                 if (StartActivity.isPlayGamesRuntimeReady(this.userId)) {
                     int gmsMainProcessPid = StartActivity.getGmsMainProcessPid(this.userId);
                     if (gmsMainProcessPid <= 0 || gmsMainProcessPid != (i = this.readyProcessPid)) {
                         this.readyProcessPid = gmsMainProcessPid;
-                        this.readySince = jElapsedRealtime;
+                        this.readySince = elapsedRealtime;
                         if (gmsMainProcessPid > 0) {
                             String[] strArr = xa1.b;
-                            String strA = c.a(-312412185181986L, strArr);
+                            String a2 = c.a(-312412185181986L, strArr);
                             StringBuilder sb = new StringBuilder();
                             sb.append(c.a(-312493789560610L, strArr));
                             sb.append(this.userId);
-                            zd.o(sb, c.a(-313348488052514L, strArr), gmsMainProcessPid, 3, strA);
+                            zd.o(sb, c.a(-313348488052514L, strArr), gmsMainProcessPid, 3, a2);
                         }
-                    } else if (StartActivity.isStablePlayGamesRuntime(true, gmsMainProcessPid, i, jElapsedRealtime - this.readySince)) {
+                    } else if (StartActivity.isStablePlayGamesRuntime(true, gmsMainProcessPid, i, elapsedRealtime - this.readySince)) {
                         scheduleLaunch(false);
                         return;
                     }
@@ -792,7 +767,7 @@ public class ActivityManagerCommonProxy {
                     this.readySince = 0L;
                     this.readyProcessPid = 0;
                 }
-                if (jElapsedRealtime - this.deferredAt >= ActivityManagerCommonProxy.PLAY_GAMES_SIGN_IN_MAX_DEFER_MS) {
+                if (elapsedRealtime - this.deferredAt >= ActivityManagerCommonProxy.PLAY_GAMES_SIGN_IN_MAX_DEFER_MS) {
                     abandonTimedOutRequest();
                     return;
                 }
@@ -835,9 +810,9 @@ public class ActivityManagerCommonProxy {
                 if (str == null) {
                     str = c.a(-314551078895394L, strArr);
                 }
-                Locale localeForLanguageTag = Locale.forLanguageTag(str);
-                String language = localeForLanguageTag.getLanguage();
-                return c.a(-314538193993506L, strArr).equals(language) ? new FeedbackCopy(localeForLanguageTag, c.a(-314533899026210L, strArr), c.a(-314727172554530L, strArr)) : c.a(-315135194447650L, strArr).equals(language) ? new FeedbackCopy(localeForLanguageTag, c.a(-315113719611170L, strArr), c.a(-315272633401122L, strArr)) : new FeedbackCopy(Locale.ENGLISH, c.a(-309040635854626L, strArr), c.a(-309199549644578L, strArr));
+                Locale forLanguageTag = Locale.forLanguageTag(str);
+                String language = forLanguageTag.getLanguage();
+                return c.a(-314538193993506L, strArr).equals(language) ? new FeedbackCopy(forLanguageTag, c.a(-314533899026210L, strArr), c.a(-314727172554530L, strArr)) : c.a(-315135194447650L, strArr).equals(language) ? new FeedbackCopy(forLanguageTag, c.a(-315113719611170L, strArr), c.a(-315272633401122L, strArr)) : new FeedbackCopy(Locale.ENGLISH, c.a(-309040635854626L, strArr), c.a(-309199549644578L, strArr));
             }
         }
 
@@ -882,10 +857,10 @@ public class ActivityManagerCommonProxy {
 
             private CharSequence resolveGameLabel() {
                 try {
-                    CharSequence charSequenceLoadLabel = this.activity.getApplicationInfo().loadLabel(this.activity.getPackageManager());
-                    if (charSequenceLoadLabel != null) {
-                        if (charSequenceLoadLabel.length() > 0) {
-                            return charSequenceLoadLabel;
+                    CharSequence loadLabel = this.activity.getApplicationInfo().loadLabel(this.activity.getPackageManager());
+                    if (loadLabel != null) {
+                        if (loadLabel.length() > 0) {
+                            return loadLabel;
                         }
                     }
                 } catch (Throwable unused) {
@@ -914,9 +889,9 @@ public class ActivityManagerCommonProxy {
                 if (alertDialog == null || !alertDialog.isShowing() || this.progressBar == null || this.percentageView == null) {
                     return;
                 }
-                int iMax = Math.max(0, Math.min(100, i));
-                this.progressBar.setProgress(iMax, true);
-                this.percentageView.setText(String.format(Locale.US, c.a(-307880994684706L, xa1.b), Integer.valueOf(iMax)));
+                int max = Math.max(0, Math.min(100, i));
+                this.progressBar.setProgress(max, true);
+                this.percentageView.setText(String.format(Locale.US, c.a(-307880994684706L, xa1.b), Integer.valueOf(max)));
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -926,14 +901,14 @@ public class ActivityManagerCommonProxy {
                     return;
                 }
                 try {
-                    FeedbackCopy feedbackCopyForLanguage = FeedbackCopy.forLanguage(resolveLanguage());
+                    FeedbackCopy forLanguage = FeedbackCopy.forLanguage(resolveLanguage());
                     AlertDialog.Builder builder = new AlertDialog.Builder(this.activity, isNightMode() ? R.style.Theme.Material.Dialog.Alert : R.style.Theme.Material.Light.Dialog.Alert);
                     LinearLayout linearLayout = new LinearLayout(builder.getContext());
                     linearLayout.setOrientation(1);
-                    int iDp = dp(24);
-                    linearLayout.setPadding(iDp, dp(8), iDp, dp(8));
+                    int dp = dp(24);
+                    linearLayout.setPadding(dp, dp(8), dp, dp(8));
                     TextView textView = new TextView(builder.getContext());
-                    textView.setText(String.format(feedbackCopyForLanguage.locale, feedbackCopyForLanguage.messageFormat, resolveGameLabel()));
+                    textView.setText(String.format(forLanguage.locale, forLanguage.messageFormat, resolveGameLabel()));
                     textView.setTextSize(16.0f);
                     textView.setLineSpacing(0.0f, 1.15f);
                     linearLayout.addView(textView, new LinearLayout.LayoutParams(-1, -2));
@@ -951,9 +926,9 @@ public class ActivityManagerCommonProxy {
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, -2);
                     layoutParams2.topMargin = dp(6);
                     linearLayout.addView(this.percentageView, layoutParams2);
-                    AlertDialog alertDialogCreate = builder.setTitle(feedbackCopyForLanguage.title).setView(linearLayout).setCancelable(false).create();
-                    this.dialog = alertDialogCreate;
-                    alertDialogCreate.setCanceledOnTouchOutside(false);
+                    AlertDialog create = builder.setTitle(forLanguage.title).setView(linearLayout).setCancelable(false).create();
+                    this.dialog = create;
+                    create.setCanceledOnTouchOutside(false);
                     this.dialog.show();
                     Window window = this.dialog.getWindow();
                     if (window != null) {
@@ -1068,22 +1043,183 @@ public class ActivityManagerCommonProxy {
             deferredPlayGamesSignIn.run();
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:47:0x0101  */
-        /* JADX WARN: Removed duplicated region for block: B:57:0x013a  */
-        /* JADX WARN: Removed duplicated region for block: B:72:0x0161  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x0172  */
-        /* JADX WARN: Removed duplicated region for block: B:79:0x018c  */
-        /* JADX WARN: Removed duplicated region for block: B:81:0x01b6  */
+        /* JADX WARN: Removed duplicated region for block: B:41:0x0104  */
+        /* JADX WARN: Removed duplicated region for block: B:44:0x012f  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x013d  */
+        /* JADX WARN: Removed duplicated region for block: B:53:0x014a  */
+        /* JADX WARN: Removed duplicated region for block: B:57:0x0161  */
+        /* JADX WARN: Removed duplicated region for block: B:62:0x018c  */
+        /* JADX WARN: Removed duplicated region for block: B:64:0x01b6  */
+        /* JADX WARN: Removed duplicated region for block: B:68:0x015c  */
+        /* JADX WARN: Removed duplicated region for block: B:70:0x010f  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        private static boolean maybeDeferPlayGamesSignIn(android.content.Intent r23, java.lang.Object[] r24) {
-            /*
-                Method dump skipped, instructions count: 517
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.ActivityManagerCommonProxy.StartActivity.maybeDeferPlayGamesSignIn(android.content.Intent, java.lang.Object[]):boolean");
+        private static boolean maybeDeferPlayGamesSignIn(Intent intent, Object[] objArr) {
+            String className;
+            String str;
+            String str2;
+            Bundle bundle;
+            Bundle bundle2;
+            String k;
+            DeferredPlayGamesSignIn deferredPlayGamesSignIn;
+            IBinder iBinder;
+            boolean z;
+            int i;
+            int i2;
+            String[] strArr = xa1.b;
+            int i3 = 0;
+            if (shouldBypassPlayGamesSignInDeferral(intent != null && intent.getBooleanExtra(c.a(-323080883945250L, strArr), false))) {
+                intent.removeExtra(c.a(-323205437996834L, strArr));
+                nz0.Q(c.a(-322797416103714L, strArr), 3, c.a(-322810301005602L, strArr));
+                return false;
+            }
+            String o = rj.o();
+            String str3 = null;
+            ComponentName component = intent == null ? null : intent.getComponent();
+            int u = rj.u();
+            boolean hasVirtualGoogleAccount = hasVirtualGoogleAccount(u);
+            boolean isPlayGamesRuntimeReady = isPlayGamesRuntimeReady(u);
+            String action = intent == null ? null : intent.getAction();
+            String packageName = component == null ? null : component.getPackageName();
+            if (component == null) {
+                str = action;
+                str2 = packageName;
+                className = null;
+            } else {
+                String str4 = packageName;
+                className = component.getClassName();
+                str = action;
+                str2 = str4;
+            }
+            if (!shouldDeferPlayGamesSignIn(str, str2, className, o, hasVirtualGoogleAccount, isPlayGamesRuntimeReady)) {
+                return false;
+            }
+            Handler deferredPlayGamesHandler = getDeferredPlayGamesHandler();
+            if (deferredPlayGamesHandler == null) {
+                nz0.Q(c.a(-321414436634402L, strArr), 5, c.a(-321496041013026L, strArr));
+                return false;
+            }
+            if (!ho0.R(u, o)) {
+                String a2 = c.a(-321191098335010L, strArr);
+                StringBuilder sb = new StringBuilder();
+                sb.append(c.a(-321203983236898L, strArr));
+                sb.append(o);
+                zd.o(sb, c.a(-322028616957730L, strArr), u, 5, a2);
+                return false;
+            }
+            Intent intent2 = new Intent(intent);
+            ClassLoader classLoader = rj.i().b == null ? ActivityManagerCommonProxy.class.getClassLoader() : rj.i().b.getClassLoader();
+            intent2.setExtrasClassLoader(classLoader);
+            int i4 = ke2.f635a;
+            if (objArr != null) {
+                int length = objArr.length;
+                int i5 = ke2.f;
+                if (length >= i5) {
+                    bundle = (Bundle) objArr[i5];
+                    if (bundle == null) {
+                        Bundle bundle3 = new Bundle(bundle);
+                        bundle3.setClassLoader(classLoader);
+                        bundle2 = bundle3;
+                    } else {
+                        bundle2 = bundle;
+                    }
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(u);
+                    k = zd.k(sb2, c.a(-322062976696098L, strArr), o);
+                    String a3 = ke2.a(objArr);
+                    if (objArr != null) {
+                        int length2 = objArr.length;
+                        int i6 = ke2.b;
+                        if (length2 >= i6) {
+                            iBinder = (IBinder) objArr[i6];
+                            if (objArr != null) {
+                                int length3 = objArr.length;
+                                int i7 = ke2.c;
+                                if (length3 >= i7) {
+                                    str3 = (String) objArr[i7];
+                                }
+                            }
+                            String str5 = str3;
+                            if (objArr != null) {
+                                int length4 = objArr.length;
+                                z = true;
+                                int i8 = ke2.d;
+                                if (length4 >= i8) {
+                                    i = ((Integer) objArr[i8]).intValue();
+                                    if (objArr != null) {
+                                        int length5 = objArr.length;
+                                        int i9 = ke2.e;
+                                        if (length5 >= i9) {
+                                            i2 = ((Integer) objArr[i9]).intValue();
+                                            deferredPlayGamesSignIn = new DeferredPlayGamesSignIn(k, u, o, intent2, a3, iBinder, str5, i, i2, bundle2, SystemClock.elapsedRealtime(), 0);
+                                            if (sDeferredPlayGamesSignIns.putIfAbsent(k, deferredPlayGamesSignIn) != null) {
+                                                String a4 = c.a(-322054386761506L, strArr);
+                                                StringBuilder sb3 = new StringBuilder();
+                                                sb3.append(c.a(-322153171009314L, strArr));
+                                                sb3.append(o);
+                                                zd.o(sb3, c.a(-321796688723746L, strArr), u, 3, a4);
+                                                return z;
+                                            }
+                                            nz0.Q(c.a(-321831048462114L, strArr), 3, c.a(-321861113233186L, strArr) + o + c.a(-324416618774306L, strArr) + u + c.a(-324450978512674L, strArr) + deferredPlayGamesSignIn.requestCode);
+                                            deferredPlayGamesHandler.post(new a(deferredPlayGamesSignIn, i3));
+                                            return z;
+                                        }
+                                    }
+                                    i2 = -1;
+                                    deferredPlayGamesSignIn = new DeferredPlayGamesSignIn(k, u, o, intent2, a3, iBinder, str5, i, i2, bundle2, SystemClock.elapsedRealtime(), 0);
+                                    if (sDeferredPlayGamesSignIns.putIfAbsent(k, deferredPlayGamesSignIn) != null) {
+                                    }
+                                }
+                            } else {
+                                z = true;
+                            }
+                            i = -1;
+                            if (objArr != null) {
+                            }
+                            i2 = -1;
+                            deferredPlayGamesSignIn = new DeferredPlayGamesSignIn(k, u, o, intent2, a3, iBinder, str5, i, i2, bundle2, SystemClock.elapsedRealtime(), 0);
+                            if (sDeferredPlayGamesSignIns.putIfAbsent(k, deferredPlayGamesSignIn) != null) {
+                            }
+                        }
+                    }
+                    iBinder = null;
+                    if (objArr != null) {
+                    }
+                    String str52 = str3;
+                    if (objArr != null) {
+                    }
+                    i = -1;
+                    if (objArr != null) {
+                    }
+                    i2 = -1;
+                    deferredPlayGamesSignIn = new DeferredPlayGamesSignIn(k, u, o, intent2, a3, iBinder, str52, i, i2, bundle2, SystemClock.elapsedRealtime(), 0);
+                    if (sDeferredPlayGamesSignIns.putIfAbsent(k, deferredPlayGamesSignIn) != null) {
+                    }
+                }
+            }
+            bundle = null;
+            if (bundle == null) {
+            }
+            StringBuilder sb22 = new StringBuilder();
+            sb22.append(u);
+            k = zd.k(sb22, c.a(-322062976696098L, strArr), o);
+            String a32 = ke2.a(objArr);
+            if (objArr != null) {
+            }
+            iBinder = null;
+            if (objArr != null) {
+            }
+            String str522 = str3;
+            if (objArr != null) {
+            }
+            i = -1;
+            if (objArr != null) {
+            }
+            i2 = -1;
+            deferredPlayGamesSignIn = new DeferredPlayGamesSignIn(k, u, o, intent2, a32, iBinder, str522, i, i2, bundle2, SystemClock.elapsedRealtime(), 0);
+            if (sDeferredPlayGamesSignIns.putIfAbsent(k, deferredPlayGamesSignIn) != null) {
+            }
         }
 
         public static boolean shouldDeferPlayGamesSignIn(String str, String str2, String str3, String str4, boolean z, boolean z2) {
@@ -1094,84 +1230,85 @@ public class ActivityManagerCommonProxy {
             return c.a(-324463863414562L, strArr).equals(str) && c.a(-325232662560546L, strArr).equals(str3);
         }
 
-        /* JADX WARN: Removed duplicated region for block: B:14:0x0020  */
-        /* JADX WARN: Removed duplicated region for block: B:21:0x0033  */
-        /* JADX WARN: Removed duplicated region for block: B:8:0x0012  */
+        /* JADX WARN: Removed duplicated region for block: B:12:0x0024  */
+        /* JADX WARN: Removed duplicated region for block: B:16:0x0036  */
+        /* JADX WARN: Removed duplicated region for block: B:20:0x0046  */
+        /* JADX WARN: Removed duplicated region for block: B:7:0x0015  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        private static void startVirtualActivity(android.content.Intent r8, java.lang.Object[] r9) {
-            /*
-                java.lang.String r1 = androidx.emoji2.text.ke2.a(r9)
-                r0 = 0
-                if (r9 == 0) goto L12
-                int r2 = r9.length
-                int r3 = androidx.emoji2.text.ke2.b
-                if (r2 >= r3) goto Ld
-                goto L12
-            Ld:
-                r2 = r9[r3]
-                android.os.IBinder r2 = (android.os.IBinder) r2
-                goto L13
-            L12:
-                r2 = r0
-            L13:
-                if (r9 == 0) goto L20
-                int r3 = r9.length
-                int r4 = androidx.emoji2.text.ke2.c
-                if (r3 >= r4) goto L1b
-                goto L20
-            L1b:
-                r3 = r9[r4]
-                java.lang.String r3 = (java.lang.String) r3
-                goto L21
-            L20:
-                r3 = r0
-            L21:
-                r4 = -1
-                if (r9 == 0) goto L33
-                int r5 = r9.length
-                int r6 = androidx.emoji2.text.ke2.d
-                if (r5 >= r6) goto L2a
-                goto L33
-            L2a:
-                r5 = r9[r6]
-                java.lang.Integer r5 = (java.lang.Integer) r5
-                int r5 = r5.intValue()
-                goto L34
-            L33:
-                r5 = r4
-            L34:
-                if (r9 == 0) goto L44
-                int r6 = r9.length
-                int r7 = androidx.emoji2.text.ke2.e
-                if (r6 >= r7) goto L3c
-                goto L44
-            L3c:
-                r4 = r9[r7]
-                java.lang.Integer r4 = (java.lang.Integer) r4
-                int r4 = r4.intValue()
-            L44:
-                if (r9 == 0) goto L51
-                int r6 = r9.length
-                int r7 = androidx.emoji2.text.ke2.f
-                if (r6 >= r7) goto L4c
-                goto L51
-            L4c:
-                r9 = r9[r7]
-                r0 = r9
-                android.os.Bundle r0 = (android.os.Bundle) r0
-            L51:
-                r6 = r5
-                r5 = r4
-                r4 = r6
-                r6 = r0
-                r0 = r8
-                startVirtualActivity(r0, r1, r2, r3, r4, r5, r6)
-                return
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.ActivityManagerCommonProxy.StartActivity.startVirtualActivity(android.content.Intent, java.lang.Object[]):void");
+        private static void startVirtualActivity(Intent intent, Object[] objArr) {
+            IBinder iBinder;
+            String str;
+            int i;
+            String a2 = ke2.a(objArr);
+            Bundle bundle = null;
+            if (objArr != null) {
+                int length = objArr.length;
+                int i2 = ke2.b;
+                if (length >= i2) {
+                    iBinder = (IBinder) objArr[i2];
+                    if (objArr != null) {
+                        int length2 = objArr.length;
+                        int i3 = ke2.c;
+                        if (length2 >= i3) {
+                            str = (String) objArr[i3];
+                            int i4 = -1;
+                            if (objArr != null) {
+                                int length3 = objArr.length;
+                                int i5 = ke2.d;
+                                if (length3 >= i5) {
+                                    i = ((Integer) objArr[i5]).intValue();
+                                    if (objArr != null) {
+                                        int length4 = objArr.length;
+                                        int i6 = ke2.e;
+                                        if (length4 >= i6) {
+                                            i4 = ((Integer) objArr[i6]).intValue();
+                                        }
+                                    }
+                                    if (objArr != null) {
+                                        int length5 = objArr.length;
+                                        int i7 = ke2.f;
+                                        if (length5 >= i7) {
+                                            bundle = (Bundle) objArr[i7];
+                                        }
+                                    }
+                                    startVirtualActivity(intent, a2, iBinder, str, i, i4, bundle);
+                                }
+                            }
+                            i = -1;
+                            if (objArr != null) {
+                            }
+                            if (objArr != null) {
+                            }
+                            startVirtualActivity(intent, a2, iBinder, str, i, i4, bundle);
+                        }
+                    }
+                    str = null;
+                    int i42 = -1;
+                    if (objArr != null) {
+                    }
+                    i = -1;
+                    if (objArr != null) {
+                    }
+                    if (objArr != null) {
+                    }
+                    startVirtualActivity(intent, a2, iBinder, str, i, i42, bundle);
+                }
+            }
+            iBinder = null;
+            if (objArr != null) {
+            }
+            str = null;
+            int i422 = -1;
+            if (objArr != null) {
+            }
+            i = -1;
+            if (objArr != null) {
+            }
+            if (objArr != null) {
+            }
+            startVirtualActivity(intent, a2, iBinder, str, i, i422, bundle);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:29:0x00fe, code lost:
@@ -1181,14 +1318,133 @@ public class ActivityManagerCommonProxy {
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r11, java.lang.reflect.Method r12, java.lang.Object[] r13) {
-            /*
-                Method dump skipped, instructions count: 932
-                To view this dump add '--comments-level debug' option
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.ActivityManagerCommonProxy.StartActivity.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Context context;
+            mz0.y(objArr);
+            Intent intent = getIntent(objArr);
+            String[] strArr = xa1.b;
+            nz0.Q(c.a(-308739988143906L, strArr), 3, c.a(-308770052914978L, strArr) + intent);
+            if (intent == null) {
+                nz0.Q(c.a(-308851657293602L, strArr), 5, c.a(-308881722064674L, strArr));
+                return method.invoke(obj, objArr);
+            }
+            if (rj.i().b != null) {
+                intent.setExtrasClassLoader(rj.i().b.getClassLoader());
+            }
+            if (intent.getBooleanExtra(c.a(-308649793830690L, strArr), false)) {
+                nz0.Q(c.a(-311441522573090L, strArr), 3, c.a(-311523126951714L, strArr));
+                intent.setComponent(new ComponentName(c01.X(), FacebookWebViewActivity.class.getName()));
+                return method.invoke(obj, objArr);
+            }
+            if (!maybeDeferPlayGamesSignIn(intent, objArr)) {
+                if (intent.getParcelableExtra(c.a(-311213889306402L, strArr)) != null) {
+                    return method.invoke(obj, objArr);
+                }
+                if (c.a(-876002088730402L, strArr).equals(intent.getType())) {
+                    File convertFile = FileProviderHandler.convertFile(rj.i().b, intent.getData());
+                    if (convertFile != null && convertFile.exists()) {
+                        try {
+                            PackageInfo packageArchiveInfo = c01.s.getPackageManager().getPackageArchiveInfo(convertFile.getAbsolutePath(), 0);
+                            if (packageArchiveInfo != null) {
+                            }
+                        } catch (Exception unused) {
+                        }
+                    }
+                    c01.r.l.getClass();
+                    intent.setData(FileProviderHandler.convertFileUri(rj.i().b, intent.getData()));
+                    return method.invoke(obj, objArr);
+                }
+                String dataString = intent.getDataString();
+                if (dataString != null) {
+                    if (dataString.equals(c.a(-311235364142882L, strArr) + rj.o())) {
+                        intent.setData(Uri.parse(c.a(-311325558456098L, strArr) + c01.X()));
+                    }
+                }
+                if (intent.getData() != null && c.a(-311364213161762L, strArr).equals(intent.getAction())) {
+                    String uri = intent.getData().toString();
+                    if (uri.contains(c.a(-311995573354274L, strArr)) && uri.contains(c.a(-312085767667490L, strArr))) {
+                        nz0.Q(c.a(-312090062634786L, strArr), 3, c.a(-312188846882594L, strArr));
+                        if (rj.n() != null) {
+                            boolean z = dh0.f250a;
+                            synchronized (dh0.class) {
+                                if (!dh0.f250a) {
+                                    try {
+                                        context = rj.i().b;
+                                        if (context == null) {
+                                            context = c01.s;
+                                        }
+                                    } catch (Exception e) {
+                                        String[] strArr2 = xa1.b;
+                                        Log.e(c.a(-121303320379170L, strArr2), c.a(-121419284496162L, strArr2), e);
+                                    }
+                                    if (context == null) {
+                                        Log.w(c.a(-122282572922658L, strArr), c.a(-122879573376802L, strArr));
+                                    } else {
+                                        IntentFilter intentFilter = new IntentFilter(c.a(-123115796578082L, strArr));
+                                        dh0 dh0Var = new dh0();
+                                        if (Build.VERSION.SDK_INT >= 33) {
+                                            context.registerReceiver(dh0Var, intentFilter, 4);
+                                        } else {
+                                            context.registerReceiver(dh0Var, intentFilter);
+                                        }
+                                        dh0.f250a = true;
+                                        Log.d(c.a(-122716364619554L, strArr), c.a(-122780789128994L, strArr) + Process.myPid());
+                                    }
+                                }
+                            }
+                            Intent intent2 = new Intent();
+                            intent2.setComponent(new ComponentName(c01.X(), FacebookWebViewActivity.class.getName()));
+                            String[] strArr3 = xa1.b;
+                            intent2.putExtra(c.a(-311888199171874L, strArr3), uri);
+                            intent2.addFlags(268435456);
+                            intent2.putExtra(c.a(-311961213615906L, strArr3), true);
+                            intent2.putExtra(c.a(-310423615323938L, strArr3), rj.u());
+                            intent2.putExtra(c.a(-310483744866082L, strArr3), rj.o());
+                            c01.s.startActivity(intent2);
+                            return 0;
+                        }
+                    }
+                }
+                c01 c01Var = c01.r;
+                ResolveInfo resolveActivity = BPackageManager.get().resolveActivity(intent, PackageParser.PARSE_IS_PRIVILEGED, ke2.a(objArr), rj.u());
+                if (resolveActivity == null) {
+                    String str = intent.getPackage();
+                    if (intent.getPackage() == null && intent.getComponent() == null) {
+                        intent.setPackage(rj.o());
+                    } else {
+                        str = intent.getPackage();
+                    }
+                    ResolveInfo resolveActivity2 = BPackageManager.get().resolveActivity(intent, PackageParser.PARSE_IS_PRIVILEGED, ke2.a(objArr), rj.u());
+                    if (resolveActivity2 == null) {
+                        if (ActivityManagerCommonProxy.isExplicitGoogleTarget(intent)) {
+                            String a2 = c.a(-310561054277410L, strArr);
+                            StringBuilder sb = new StringBuilder();
+                            zd.q(sb, c.a(-310591119048482L, strArr), intent);
+                            sb.append(c.a(-310264701533986L, strArr));
+                            sb.append(intent.getPackage());
+                            sb.append(c.a(-310277586435874L, strArr));
+                            sb.append(intent.getComponent());
+                            nz0.Q(a2, 3, sb.toString());
+                            return 0;
+                        }
+                        if (!ActivityManagerCommonProxy.isExplicitCurrentAppTarget(intent)) {
+                            intent.setPackage(str);
+                            return method.invoke(obj, objArr);
+                        }
+                        nz0.Q(c.a(-310917536562978L, strArr), 5, c.a(-310930421464866L, strArr) + intent.getComponent());
+                        startVirtualActivity(intent, objArr);
+                        return 0;
+                    }
+                    resolveActivity = resolveActivity2;
+                }
+                intent.setExtrasClassLoader(obj.getClass().getClassLoader());
+                ActivityInfo activityInfo = resolveActivity.activityInfo;
+                intent.setComponent(new ComponentName(activityInfo.packageName, activityInfo.name));
+                startVirtualActivity(intent, objArr);
+                return 0;
+            }
+            return 0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1198,14 +1454,17 @@ public class ActivityManagerCommonProxy {
                 BActivityManager.get().startActivityAms(rj.u(), intent, str, iBinder, str2, i, i2, bundle);
             } catch (NullPointerException e) {
                 String message = e.getMessage();
-                if (ActivityManagerCommonProxy.isExplicitCurrentAppTarget(intent) && message != null) {
+                if (!ActivityManagerCommonProxy.isExplicitCurrentAppTarget(intent)) {
+                    throw e;
+                }
+                if (message != null) {
                     String[] strArr = xa1.b;
                     if (message.contains(c.a(-322492473425698L, strArr))) {
-                        String strA = c.a(-322604142575394L, strArr);
+                        String a2 = c.a(-322604142575394L, strArr);
                         StringBuilder sb = new StringBuilder();
                         sb.append(c.a(-322702926823202L, strArr));
                         sb.append(intent.getComponent());
-                        zd.p(sb, c.a(-322350739504930L, strArr), 5, strA);
+                        zd.p(sb, c.a(-322350739504930L, strArr), 5, a2);
                         return;
                     }
                     throw e;

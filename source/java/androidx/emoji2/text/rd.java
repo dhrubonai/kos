@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class rd implements u01 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final mn2 f1003a;
+    public final mn2 f1002a;
     public final mf1 b;
     public final /* synthetic */ sd c;
 
     public rd(sd sdVar, mn2 mn2Var, mf1 mf1Var) {
         this.c = sdVar;
-        this.f1003a = mn2Var;
+        this.f1002a = mn2Var;
         this.b = mf1Var;
     }
 
@@ -22,10 +22,10 @@ public final class rd implements u01 {
 
     @Override // androidx.emoji2.text.u01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        hr1 hr1VarQ = ab1Var.q(j);
+        hr1 q = ab1Var.q(j);
         sd sdVar = this.c;
-        long jD = hb1Var.Z() ? kx0.d(hr1VarQ.d, hr1VarQ.e) : ((uw0) this.f1003a.a(new q8(9, sdVar, this), new r5(7, sdVar)).getValue()).f1196a;
-        return hb1Var.P((int) (jD >> 32), (int) (4294967295L & jD), re0.d, new qd(sdVar, hr1VarQ, jD));
+        long d = hb1Var.Z() ? kx0.d(q.d, q.e) : ((uw0) this.f1002a.a(new q8(9, sdVar, this), new r5(7, sdVar)).getValue()).f1195a;
+        return hb1Var.P((int) (d >> 32), (int) (4294967295L & d), re0.d, new qd(sdVar, q, d));
     }
 
     @Override // androidx.emoji2.text.u01

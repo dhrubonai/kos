@@ -11,7 +11,7 @@ import android.widget.TextView;
 public final class d60 extends AnimatorListenerAdapter {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f239a = 1;
+    public final /* synthetic */ int f238a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
     public final /* synthetic */ View d;
@@ -28,7 +28,7 @@ public final class d60 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationCancel(Animator animator) {
-        switch (this.f239a) {
+        switch (this.f238a) {
             case 0:
                 int i = this.b;
                 View view = this.d;
@@ -49,7 +49,7 @@ public final class d60 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         jg jgVar;
-        switch (this.f239a) {
+        switch (this.f238a) {
             case 0:
                 ((ViewPropertyAnimator) this.e).setListener(null);
                 g60 g60Var = (g60) this.f;
@@ -80,7 +80,7 @@ public final class d60 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationStart(Animator animator) {
-        switch (this.f239a) {
+        switch (this.f238a) {
             case 0:
                 ((g60) this.f).getClass();
                 break;

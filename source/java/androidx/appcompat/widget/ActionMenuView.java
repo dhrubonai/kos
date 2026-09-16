@@ -55,7 +55,7 @@ public class ActionMenuView extends m61 implements pb1 {
 
     public static y3 i() {
         y3 y3Var = new y3(-2, -2);
-        y3Var.f1367a = false;
+        y3Var.f1366a = false;
         ((LinearLayout.LayoutParams) y3Var).gravity = 16;
         return y3Var;
     }
@@ -68,7 +68,7 @@ public class ActionMenuView extends m61 implements pb1 {
         if (layoutParams instanceof y3) {
             y3 y3Var2 = (y3) layoutParams;
             y3Var = new y3(y3Var2);
-            y3Var.f1367a = y3Var2.f1367a;
+            y3Var.f1366a = y3Var2.f1366a;
         } else {
             y3Var = new y3(layoutParams);
         }
@@ -162,16 +162,16 @@ public class ActionMenuView extends m61 implements pb1 {
     }
 
     public final boolean k(int i) {
-        boolean zB = false;
+        boolean z = false;
         if (i == 0) {
             return false;
         }
         KeyEvent.Callback childAt = getChildAt(i - 1);
         KeyEvent.Callback childAt2 = getChildAt(i);
         if (i < getChildCount() && (childAt instanceof x3)) {
-            zB = ((x3) childAt).b();
+            z = ((x3) childAt).b();
         }
-        return (i <= 0 || !(childAt2 instanceof x3)) ? zB : ((x3) childAt2).c() | zB;
+        return (i <= 0 || !(childAt2 instanceof x3)) ? z : ((x3) childAt2).c() | z;
     }
 
     @Override // android.view.View
@@ -206,86 +206,86 @@ public class ActionMenuView extends m61 implements pb1 {
     @Override // androidx.emoji2.text.m61, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int width;
-        int paddingLeft;
+        int i5;
         if (!this.x) {
             super.onLayout(z, i, i2, i3, i4);
             return;
         }
         int childCount = getChildCount();
-        int i5 = (i4 - i2) / 2;
+        int i6 = (i4 - i2) / 2;
         int dividerWidth = getDividerWidth();
-        int i6 = i3 - i;
-        int paddingRight = (i6 - getPaddingRight()) - getPaddingLeft();
-        boolean z2 = ct2.f218a;
+        int i7 = i3 - i;
+        int paddingRight = (i7 - getPaddingRight()) - getPaddingLeft();
+        boolean z2 = ct2.f217a;
         boolean z3 = getLayoutDirection() == 1;
-        int i7 = 0;
         int i8 = 0;
-        for (int i9 = 0; i9 < childCount; i9++) {
-            View childAt = getChildAt(i9);
+        int i9 = 0;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
             if (childAt.getVisibility() != 8) {
                 y3 y3Var = (y3) childAt.getLayoutParams();
-                if (y3Var.f1367a) {
+                if (y3Var.f1366a) {
                     int measuredWidth = childAt.getMeasuredWidth();
-                    if (k(i9)) {
+                    if (k(i10)) {
                         measuredWidth += dividerWidth;
                     }
                     int measuredHeight = childAt.getMeasuredHeight();
                     if (z3) {
-                        paddingLeft = getPaddingLeft() + ((LinearLayout.LayoutParams) y3Var).leftMargin;
-                        width = paddingLeft + measuredWidth;
+                        i5 = getPaddingLeft() + ((LinearLayout.LayoutParams) y3Var).leftMargin;
+                        width = i5 + measuredWidth;
                     } else {
                         width = (getWidth() - getPaddingRight()) - ((LinearLayout.LayoutParams) y3Var).rightMargin;
-                        paddingLeft = width - measuredWidth;
+                        i5 = width - measuredWidth;
                     }
-                    int i10 = i5 - (measuredHeight / 2);
-                    childAt.layout(paddingLeft, i10, width, measuredHeight + i10);
+                    int i11 = i6 - (measuredHeight / 2);
+                    childAt.layout(i5, i11, width, measuredHeight + i11);
                     paddingRight -= measuredWidth;
-                    i7 = 1;
+                    i8 = 1;
                 } else {
                     paddingRight -= (childAt.getMeasuredWidth() + ((LinearLayout.LayoutParams) y3Var).leftMargin) + ((LinearLayout.LayoutParams) y3Var).rightMargin;
-                    k(i9);
-                    i8++;
+                    k(i10);
+                    i9++;
                 }
             }
         }
-        if (childCount == 1 && i7 == 0) {
+        if (childCount == 1 && i8 == 0) {
             View childAt2 = getChildAt(0);
             int measuredWidth2 = childAt2.getMeasuredWidth();
             int measuredHeight2 = childAt2.getMeasuredHeight();
-            int i11 = (i6 / 2) - (measuredWidth2 / 2);
-            int i12 = i5 - (measuredHeight2 / 2);
-            childAt2.layout(i11, i12, measuredWidth2 + i11, measuredHeight2 + i12);
+            int i12 = (i7 / 2) - (measuredWidth2 / 2);
+            int i13 = i6 - (measuredHeight2 / 2);
+            childAt2.layout(i12, i13, measuredWidth2 + i12, measuredHeight2 + i13);
             return;
         }
-        int i13 = i8 - (i7 ^ 1);
-        int iMax = Math.max(0, i13 > 0 ? paddingRight / i13 : 0);
+        int i14 = i9 - (i8 ^ 1);
+        int max = Math.max(0, i14 > 0 ? paddingRight / i14 : 0);
         if (z3) {
             int width2 = getWidth() - getPaddingRight();
-            for (int i14 = 0; i14 < childCount; i14++) {
-                View childAt3 = getChildAt(i14);
+            for (int i15 = 0; i15 < childCount; i15++) {
+                View childAt3 = getChildAt(i15);
                 y3 y3Var2 = (y3) childAt3.getLayoutParams();
-                if (childAt3.getVisibility() != 8 && !y3Var2.f1367a) {
-                    int i15 = width2 - ((LinearLayout.LayoutParams) y3Var2).rightMargin;
+                if (childAt3.getVisibility() != 8 && !y3Var2.f1366a) {
+                    int i16 = width2 - ((LinearLayout.LayoutParams) y3Var2).rightMargin;
                     int measuredWidth3 = childAt3.getMeasuredWidth();
                     int measuredHeight3 = childAt3.getMeasuredHeight();
-                    int i16 = i5 - (measuredHeight3 / 2);
-                    childAt3.layout(i15 - measuredWidth3, i16, i15, measuredHeight3 + i16);
-                    width2 = i15 - ((measuredWidth3 + ((LinearLayout.LayoutParams) y3Var2).leftMargin) + iMax);
+                    int i17 = i6 - (measuredHeight3 / 2);
+                    childAt3.layout(i16 - measuredWidth3, i17, i16, measuredHeight3 + i17);
+                    width2 = i16 - ((measuredWidth3 + ((LinearLayout.LayoutParams) y3Var2).leftMargin) + max);
                 }
             }
             return;
         }
-        int paddingLeft2 = getPaddingLeft();
-        for (int i17 = 0; i17 < childCount; i17++) {
-            View childAt4 = getChildAt(i17);
+        int paddingLeft = getPaddingLeft();
+        for (int i18 = 0; i18 < childCount; i18++) {
+            View childAt4 = getChildAt(i18);
             y3 y3Var3 = (y3) childAt4.getLayoutParams();
-            if (childAt4.getVisibility() != 8 && !y3Var3.f1367a) {
-                int i18 = paddingLeft2 + ((LinearLayout.LayoutParams) y3Var3).leftMargin;
+            if (childAt4.getVisibility() != 8 && !y3Var3.f1366a) {
+                int i19 = paddingLeft + ((LinearLayout.LayoutParams) y3Var3).leftMargin;
                 int measuredWidth4 = childAt4.getMeasuredWidth();
                 int measuredHeight4 = childAt4.getMeasuredHeight();
-                int i19 = i5 - (measuredHeight4 / 2);
-                childAt4.layout(i18, i19, i18 + measuredWidth4, measuredHeight4 + i19);
-                paddingLeft2 = measuredWidth4 + ((LinearLayout.LayoutParams) y3Var3).rightMargin + iMax + i18;
+                int i20 = i6 - (measuredHeight4 / 2);
+                childAt4.layout(i19, i20, i19 + measuredWidth4, measuredHeight4 + i20);
+                paddingLeft = measuredWidth4 + ((LinearLayout.LayoutParams) y3Var3).rightMargin + max + i19;
             }
         }
     }
@@ -339,26 +339,26 @@ public class ActionMenuView extends m61 implements pb1 {
         }
         int i12 = (i11 / i10) + i9;
         int childCount2 = getChildCount();
-        int iMax = 0;
         int i13 = 0;
-        int iMax2 = 0;
         int i14 = 0;
-        boolean z3 = false;
         int i15 = 0;
+        int i16 = 0;
+        boolean z3 = false;
+        int i17 = 0;
         long j = 0;
         while (true) {
             i3 = this.A;
-            if (i14 >= childCount2) {
+            if (i16 >= childCount2) {
                 break;
             }
-            View childAt = getChildAt(i14);
-            int i16 = size3;
-            int i17 = paddingBottom;
+            View childAt = getChildAt(i16);
+            int i18 = size3;
+            int i19 = paddingBottom;
             if (childAt.getVisibility() == 8) {
                 i5 = i12;
             } else {
                 boolean z4 = childAt instanceof ActionMenuItemView;
-                i13++;
+                i14++;
                 if (z4) {
                     childAt.setPadding(i3, 0, i3, 0);
                 }
@@ -370,18 +370,18 @@ public class ActionMenuView extends m61 implements pb1 {
                 ((LinearLayout.LayoutParams) y3Var2).leftMargin = 0;
                 ((LinearLayout.LayoutParams) y3Var2).rightMargin = 0;
                 y3Var2.e = z4 && !TextUtils.isEmpty(((ActionMenuItemView) childAt).getText());
-                int i18 = y3Var2.f1367a ? 1 : i10;
+                int i20 = y3Var2.f1366a ? 1 : i10;
                 y3 y3Var3 = (y3) childAt.getLayoutParams();
-                int i19 = i10;
+                int i21 = i10;
                 i5 = i12;
-                int iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(childMeasureSpec) - i17, View.MeasureSpec.getMode(childMeasureSpec));
+                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(childMeasureSpec) - i19, View.MeasureSpec.getMode(childMeasureSpec));
                 ActionMenuItemView actionMenuItemView = z4 ? (ActionMenuItemView) childAt : null;
                 boolean z5 = (actionMenuItemView == null || TextUtils.isEmpty(actionMenuItemView.getText())) ? false : true;
                 boolean z6 = z5;
-                if (i18 <= 0 || (z5 && i18 < 2)) {
+                if (i20 <= 0 || (z5 && i20 < 2)) {
                     i6 = 0;
                 } else {
-                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i5 * i18, Integer.MIN_VALUE), iMakeMeasureSpec);
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(i5 * i20, Integer.MIN_VALUE), makeMeasureSpec);
                     int measuredWidth = childAt.getMeasuredWidth();
                     i6 = measuredWidth / i5;
                     if (measuredWidth % i5 != 0) {
@@ -391,130 +391,130 @@ public class ActionMenuView extends m61 implements pb1 {
                         i6 = 2;
                     }
                 }
-                y3Var3.d = !y3Var3.f1367a && z6;
+                y3Var3.d = !y3Var3.f1366a && z6;
                 y3Var3.b = i6;
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(i6 * i5, 1073741824), iMakeMeasureSpec);
-                iMax2 = Math.max(iMax2, i6);
+                childAt.measure(View.MeasureSpec.makeMeasureSpec(i6 * i5, 1073741824), makeMeasureSpec);
+                i15 = Math.max(i15, i6);
                 if (y3Var2.d) {
-                    i15++;
+                    i17++;
                 }
-                if (y3Var2.f1367a) {
+                if (y3Var2.f1366a) {
                     z3 = true;
                 }
-                i10 = i19 - i6;
-                iMax = Math.max(iMax, childAt.getMeasuredHeight());
+                i10 = i21 - i6;
+                i13 = Math.max(i13, childAt.getMeasuredHeight());
                 if (i6 == 1) {
-                    j |= 1 << i14;
+                    j |= 1 << i16;
                 }
             }
-            i14++;
-            size3 = i16;
-            paddingBottom = i17;
+            i16++;
+            size3 = i18;
+            paddingBottom = i19;
             i12 = i5;
         }
-        int i20 = size3;
-        int i21 = i10;
-        int i22 = i12;
-        boolean z7 = z3 && i13 == 2;
-        int i23 = i21;
+        int i22 = size3;
+        int i23 = i10;
+        int i24 = i12;
+        boolean z7 = z3 && i14 == 2;
+        int i25 = i23;
         boolean z8 = false;
-        while (i15 > 0 && i23 > 0) {
-            int i24 = Integer.MAX_VALUE;
+        while (i17 > 0 && i25 > 0) {
+            int i26 = Integer.MAX_VALUE;
             long j2 = 0;
-            int i25 = 0;
-            int i26 = 0;
-            while (i26 < childCount2) {
-                int i27 = iMax;
-                y3 y3Var4 = (y3) getChildAt(i26).getLayoutParams();
+            int i27 = 0;
+            int i28 = 0;
+            while (i28 < childCount2) {
+                int i29 = i13;
+                y3 y3Var4 = (y3) getChildAt(i28).getLayoutParams();
                 boolean z9 = z7;
                 if (y3Var4.d) {
-                    int i28 = y3Var4.b;
-                    if (i28 < i24) {
-                        j2 = 1 << i26;
-                        i24 = i28;
-                        i25 = 1;
-                    } else if (i28 == i24) {
-                        j2 |= 1 << i26;
-                        i25++;
+                    int i30 = y3Var4.b;
+                    if (i30 < i26) {
+                        j2 = 1 << i28;
+                        i26 = i30;
+                        i27 = 1;
+                    } else if (i30 == i26) {
+                        j2 |= 1 << i28;
+                        i27++;
                     }
                 }
-                i26++;
+                i28++;
                 z7 = z9;
-                iMax = i27;
+                i13 = i29;
             }
-            i4 = iMax;
+            i4 = i13;
             boolean z10 = z7;
             j |= j2;
-            if (i25 > i23) {
+            if (i27 > i25) {
                 break;
             }
-            int i29 = i24 + 1;
-            int i30 = 0;
-            while (i30 < childCount2) {
-                View childAt2 = getChildAt(i30);
+            int i31 = i26 + 1;
+            int i32 = 0;
+            while (i32 < childCount2) {
+                View childAt2 = getChildAt(i32);
                 y3 y3Var5 = (y3) childAt2.getLayoutParams();
                 boolean z11 = z3;
-                long j3 = 1 << i30;
+                long j3 = 1 << i32;
                 if ((j2 & j3) != 0) {
                     if (z10 && y3Var5.e) {
                         r11 = 1;
                         r11 = 1;
-                        if (i23 == 1) {
-                            childAt2.setPadding(i3 + i22, 0, i3, 0);
+                        if (i25 == 1) {
+                            childAt2.setPadding(i3 + i24, 0, i3, 0);
                         }
                     } else {
                         r11 = 1;
                     }
                     y3Var5.b += r11;
                     y3Var5.f = r11;
-                    i23--;
-                } else if (y3Var5.b == i29) {
+                    i25--;
+                } else if (y3Var5.b == i31) {
                     j |= j3;
                 }
-                i30++;
+                i32++;
                 z3 = z11;
             }
             z7 = z10;
-            iMax = i4;
+            i13 = i4;
             z8 = true;
         }
-        i4 = iMax;
-        boolean z12 = !z3 && i13 == 1;
-        if (i23 > 0 && j != 0 && (i23 < i13 - 1 || z12 || iMax2 > 1)) {
-            float fBitCount = Long.bitCount(j);
+        i4 = i13;
+        boolean z12 = !z3 && i14 == 1;
+        if (i25 > 0 && j != 0 && (i25 < i14 - 1 || z12 || i15 > 1)) {
+            float bitCount = Long.bitCount(j);
             if (!z12) {
                 if ((j & 1) != 0 && !((y3) getChildAt(0).getLayoutParams()).e) {
-                    fBitCount -= 0.5f;
+                    bitCount -= 0.5f;
                 }
-                int i31 = childCount2 - 1;
-                if ((j & (1 << i31)) != 0 && !((y3) getChildAt(i31).getLayoutParams()).e) {
-                    fBitCount -= 0.5f;
+                int i33 = childCount2 - 1;
+                if ((j & (1 << i33)) != 0 && !((y3) getChildAt(i33).getLayoutParams()).e) {
+                    bitCount -= 0.5f;
                 }
             }
-            int i32 = fBitCount > 0.0f ? (int) ((i23 * i22) / fBitCount) : 0;
+            int i34 = bitCount > 0.0f ? (int) ((i25 * i24) / bitCount) : 0;
             boolean z13 = z8;
-            for (int i33 = 0; i33 < childCount2; i33++) {
-                if ((j & (1 << i33)) != 0) {
-                    View childAt3 = getChildAt(i33);
+            for (int i35 = 0; i35 < childCount2; i35++) {
+                if ((j & (1 << i35)) != 0) {
+                    View childAt3 = getChildAt(i35);
                     y3 y3Var6 = (y3) childAt3.getLayoutParams();
                     if (childAt3 instanceof ActionMenuItemView) {
-                        y3Var6.c = i32;
+                        y3Var6.c = i34;
                         y3Var6.f = true;
-                        if (i33 == 0 && !y3Var6.e) {
-                            ((LinearLayout.LayoutParams) y3Var6).leftMargin = (-i32) / 2;
+                        if (i35 == 0 && !y3Var6.e) {
+                            ((LinearLayout.LayoutParams) y3Var6).leftMargin = (-i34) / 2;
                         }
                         z13 = true;
-                    } else if (y3Var6.f1367a) {
-                        y3Var6.c = i32;
+                    } else if (y3Var6.f1366a) {
+                        y3Var6.c = i34;
                         y3Var6.f = true;
-                        ((LinearLayout.LayoutParams) y3Var6).rightMargin = (-i32) / 2;
+                        ((LinearLayout.LayoutParams) y3Var6).rightMargin = (-i34) / 2;
                         z13 = true;
                     } else {
-                        if (i33 != 0) {
-                            ((LinearLayout.LayoutParams) y3Var6).leftMargin = i32 / 2;
+                        if (i35 != 0) {
+                            ((LinearLayout.LayoutParams) y3Var6).leftMargin = i34 / 2;
                         }
-                        if (i33 != childCount2 - 1) {
-                            ((LinearLayout.LayoutParams) y3Var6).rightMargin = i32 / 2;
+                        if (i35 != childCount2 - 1) {
+                            ((LinearLayout.LayoutParams) y3Var6).rightMargin = i34 / 2;
                         }
                     }
                 }
@@ -522,15 +522,15 @@ public class ActionMenuView extends m61 implements pb1 {
             z8 = z13;
         }
         if (z8) {
-            for (int i34 = 0; i34 < childCount2; i34++) {
-                View childAt4 = getChildAt(i34);
+            for (int i36 = 0; i36 < childCount2; i36++) {
+                View childAt4 = getChildAt(i36);
                 y3 y3Var7 = (y3) childAt4.getLayoutParams();
                 if (y3Var7.f) {
-                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((y3Var7.b * i22) + y3Var7.c, 1073741824), childMeasureSpec);
+                    childAt4.measure(View.MeasureSpec.makeMeasureSpec((y3Var7.b * i24) + y3Var7.c, 1073741824), childMeasureSpec);
                 }
             }
         }
-        setMeasuredDimension(i8, mode != 1073741824 ? i4 : i20);
+        setMeasuredDimension(i8, mode != 1073741824 ? i4 : i22);
     }
 
     public void setExpandedActionViewsExclusive(boolean z) {

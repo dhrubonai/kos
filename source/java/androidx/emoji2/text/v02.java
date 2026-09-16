@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class v02 {
 
     /* renamed from: a, reason: collision with root package name */
-    public zi1 f1201a;
+    public zi1 f1200a;
     public final float b;
     public final boolean c;
     public Float d;
@@ -18,7 +18,7 @@ public final class v02 {
     public final un1 k;
 
     public v02(zi1 zi1Var, float f, boolean z) {
-        this.f1201a = zi1Var;
+        this.f1200a = zi1Var;
         this.b = f;
         this.c = z;
         iu iuVar = new iu(true);
@@ -29,104 +29,79 @@ public final class v02 {
         this.k = az0.W(bool);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0089 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x006e, code lost:
+    
+        if (r9.y(r0) != r7) goto L29;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0026  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object a(androidx.emoji2.text.n10 r9) {
-        /*
-            r8 = this;
-            boolean r0 = r9 instanceof androidx.emoji2.text.s02
-            if (r0 == 0) goto L13
-            r0 = r9
-            androidx.emoji2.text.s02 r0 = (androidx.emoji2.text.s02) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.s02 r0 = new androidx.emoji2.text.s02
-            r0.<init>(r8, r9)
-        L18:
-            java.lang.Object r9 = r0.h
-            int r1 = r0.j
-            r2 = 3
-            r3 = 2
-            r4 = 1
-            androidx.emoji2.text.up2 r5 = androidx.emoji2.text.up2.f1187a
-            r6 = 0
-            androidx.emoji2.text.f30 r7 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L44
-            if (r1 == r4) goto L3e
-            if (r1 == r3) goto L38
-            if (r1 != r2) goto L30
-            androidx.emoji2.text.mz0.L(r9)
-            return r5
-        L30:
-            java.lang.IllegalStateException r9 = new java.lang.IllegalStateException
-            java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
-            r9.<init>(r0)
-            throw r9
-        L38:
-            androidx.emoji2.text.v02 r1 = r0.g
-            androidx.emoji2.text.mz0.L(r9)
-            goto L71
-        L3e:
-            androidx.emoji2.text.v02 r1 = r0.g
-            androidx.emoji2.text.mz0.L(r9)
-            goto L5d
-        L44:
-            androidx.emoji2.text.mz0.L(r9)
-            r0.g = r8
-            r0.j = r4
-            androidx.emoji2.text.u02 r9 = new androidx.emoji2.text.u02
-            r1 = 0
-            r9.<init>(r8, r6, r1)
-            java.lang.Object r9 = androidx.emoji2.text.wj1.s(r9, r0)
-            if (r9 != r7) goto L58
-            goto L59
-        L58:
-            r9 = r5
-        L59:
-            if (r9 != r7) goto L5c
-            goto L88
-        L5c:
-            r1 = r8
-        L5d:
-            androidx.emoji2.text.un1 r9 = r1.j
-            java.lang.Boolean r4 = java.lang.Boolean.TRUE
-            r9.setValue(r4)
-            androidx.emoji2.text.iu r9 = r1.i
-            r0.g = r1
-            r0.j = r3
-            java.lang.Object r9 = r9.y(r0)
-            if (r9 != r7) goto L71
-            goto L88
-        L71:
-            r0.g = r6
-            r0.j = r2
-            r1.getClass()
-            androidx.emoji2.text.u02 r9 = new androidx.emoji2.text.u02
-            r2 = 1
-            r9.<init>(r1, r6, r2)
-            java.lang.Object r9 = androidx.emoji2.text.wj1.s(r9, r0)
-            if (r9 != r7) goto L85
-            goto L86
-        L85:
-            r9 = r5
-        L86:
-            if (r9 != r7) goto L89
-        L88:
-            return r7
-        L89:
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.v02.a(androidx.emoji2.text.n10):java.lang.Object");
+    public final Object a(n10 n10Var) {
+        s02 s02Var;
+        int i;
+        v02 v02Var;
+        if (n10Var instanceof s02) {
+            s02Var = (s02) n10Var;
+            int i2 = s02Var.j;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                s02Var.j = i2 - Integer.MIN_VALUE;
+                Object obj = s02Var.h;
+                i = s02Var.j;
+                up2 up2Var = up2.f1186a;
+                l10 l10Var = null;
+                f30 f30Var = f30.d;
+                if (i != 0) {
+                    mz0.L(obj);
+                    s02Var.g = this;
+                    s02Var.j = 1;
+                    Object s = wj1.s(new u02(this, l10Var, 0), s02Var);
+                    if (s != f30Var) {
+                        s = up2Var;
+                    }
+                    if (s != f30Var) {
+                        v02Var = this;
+                    }
+                }
+                if (i != 1) {
+                    if (i != 2) {
+                        if (i != 3) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        mz0.L(obj);
+                        return up2Var;
+                    }
+                    v02Var = s02Var.g;
+                    mz0.L(obj);
+                    s02Var.g = null;
+                    s02Var.j = 3;
+                    v02Var.getClass();
+                    Object s2 = wj1.s(new u02(v02Var, l10Var, 1), s02Var);
+                    if (s2 != f30Var) {
+                        s2 = up2Var;
+                    }
+                    return s2 == f30Var ? f30Var : up2Var;
+                }
+                v02Var = s02Var.g;
+                mz0.L(obj);
+                v02Var.j.setValue(Boolean.TRUE);
+                iu iuVar = v02Var.i;
+                s02Var.g = v02Var;
+                s02Var.j = 2;
+            }
+        }
+        s02Var = new s02(this, n10Var);
+        Object obj2 = s02Var.h;
+        i = s02Var.j;
+        up2 up2Var2 = up2.f1186a;
+        l10 l10Var2 = null;
+        f30 f30Var2 = f30.d;
+        if (i != 0) {
+        }
+        v02Var.j.setValue(Boolean.TRUE);
+        iu iuVar2 = v02Var.i;
+        s02Var.g = v02Var;
+        s02Var.j = 2;
     }
 }

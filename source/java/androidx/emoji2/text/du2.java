@@ -8,14 +8,14 @@ import android.os.IInterface;
 public final class du2 implements IInterface {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ eu2 f272a;
+    public final /* synthetic */ eu2 f271a;
 
     public du2(eu2 eu2Var) {
-        this.f272a = eu2Var;
+        this.f271a = eu2Var;
     }
 
     @Override // android.os.IInterface
     public final IBinder asBinder() {
-        return this.f272a;
+        return this.f271a;
     }
 }

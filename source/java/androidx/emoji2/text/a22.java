@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.LayoutWeightElement;
 public final class a22 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final a22 f79a = new a22();
+    public static final a22 f78a = new a22();
 
     public static nd1 a(a22 a22Var, nd1 nd1Var) {
         a22Var.getClass();

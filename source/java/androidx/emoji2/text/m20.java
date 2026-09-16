@@ -28,10 +28,10 @@ public final class m20 extends g01 implements um0 {
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
         u62 u62Var = (u62) obj;
-        ue ueVar = this.e.f432a;
-        wy0[] wy0VarArr = e72.f290a;
+        ue ueVar = this.e.f431a;
+        wy0[] wy0VarArr = e72.f289a;
         f72 f72Var = c72.E;
-        wy0[] wy0VarArr2 = e72.f290a;
+        wy0[] wy0VarArr2 = e72.f289a;
         wy0 wy0Var = wy0VarArr2[18];
         f72Var.a(u62Var, ueVar);
         ak2 ak2Var = this.f;
@@ -39,7 +39,7 @@ public final class m20 extends g01 implements um0 {
         f72 f72Var2 = c72.F;
         wy0 wy0Var2 = wy0VarArr2[19];
         f72Var2.a(u62Var, new al2(j));
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         boolean z = this.g;
         if (!z) {
             u62Var.d(c72.i, up2Var);

@@ -7,7 +7,7 @@ import android.view.View;
 public final class af {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final af f98a = new af();
+    public static final af f97a = new af();
 
     public final boolean a(View view) {
         return view.isShowingLayoutBounds();

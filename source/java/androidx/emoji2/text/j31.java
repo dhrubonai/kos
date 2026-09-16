@@ -7,17 +7,17 @@ import java.util.Comparator;
 public final class j31 implements Comparator {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f560a;
+    public final /* synthetic */ int f559a;
     public final /* synthetic */ o31 b;
 
     public /* synthetic */ j31(o31 o31Var, int i) {
-        this.f560a = i;
+        this.f559a = i;
         this.b = o31Var;
     }
 
     @Override // java.util.Comparator
     public final int compare(Object obj, Object obj2) {
-        switch (this.f560a) {
+        switch (this.f559a) {
             case 0:
                 Object key = ((q31) obj).getKey();
                 o31 o31Var = this.b;

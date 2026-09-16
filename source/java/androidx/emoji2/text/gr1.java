@@ -25,9 +25,9 @@ public abstract class gr1 implements j70 {
             b(gr1Var, hr1Var);
             hr1Var.g0(nw0.d(j, hr1Var.h), 0.0f, null);
         } else {
-            int iE = (gr1Var.e() - hr1Var.d) - ((int) (j >> 32));
+            int e = (gr1Var.e() - hr1Var.d) - ((int) (j >> 32));
             b(gr1Var, hr1Var);
-            hr1Var.g0(nw0.d((iE << 32) | (((int) (j & 4294967295L)) & 4294967295L), hr1Var.h), 0.0f, null);
+            hr1Var.g0(nw0.d((e << 32) | (((int) (j & 4294967295L)) & 4294967295L), hr1Var.h), 0.0f, null);
         }
     }
 
@@ -39,9 +39,9 @@ public abstract class gr1 implements j70 {
             b(gr1Var, hr1Var);
             hr1Var.g0(nw0.d(j, hr1Var.h), 0.0f, vl1Var);
         } else {
-            int iE = (gr1Var.e() - hr1Var.d) - ((int) (j >> 32));
+            int e = (gr1Var.e() - hr1Var.d) - ((int) (j >> 32));
             b(gr1Var, hr1Var);
-            hr1Var.g0(nw0.d((iE << 32) | (((int) (j & 4294967295L)) & 4294967295L), hr1Var.h), 0.0f, vl1Var);
+            hr1Var.g0(nw0.d((e << 32) | (((int) (j & 4294967295L)) & 4294967295L), hr1Var.h), 0.0f, vl1Var);
         }
     }
 

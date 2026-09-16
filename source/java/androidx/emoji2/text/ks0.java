@@ -22,20 +22,20 @@ public final class ks0 extends is0 {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
-        boolean zQ;
+        boolean z;
         if (this.e) {
             return;
         }
         if (this.g != 0) {
             TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-            byte[] bArr = jq2.f596a;
+            byte[] bArr = jq2.f595a;
             lx0.x(timeUnit, "timeUnit");
             try {
-                zQ = jq2.q(this, 100);
+                z = jq2.q(this, 100);
             } catch (IOException unused) {
-                zQ = false;
+                z = false;
             }
-            if (!zQ) {
+            if (!z) {
                 this.h.b.k();
                 b();
             }
@@ -44,7 +44,7 @@ public final class ks0 extends is0 {
     }
 
     @Override // androidx.emoji2.text.is0, androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws ProtocolException {
+    public final long v(long j, rn rnVar) {
         lx0.x(rnVar, "sink");
         if (j < 0) {
             throw new IllegalArgumentException(jx0.h(j, "byteCount < 0: ").toString());
@@ -56,18 +56,18 @@ public final class ks0 extends is0 {
         if (j2 == 0) {
             return -1L;
         }
-        long jV = super.v(Math.min(j2, j), rnVar);
-        if (jV == -1) {
+        long v = super.v(Math.min(j2, j), rnVar);
+        if (v == -1) {
             this.h.b.k();
             ProtocolException protocolException = new ProtocolException("unexpected end of stream");
             b();
             throw protocolException;
         }
-        long j3 = this.g - jV;
+        long j3 = this.g - v;
         this.g = j3;
         if (j3 == 0) {
             b();
         }
-        return jV;
+        return v;
     }
 }

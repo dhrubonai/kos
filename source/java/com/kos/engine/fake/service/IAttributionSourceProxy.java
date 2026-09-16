@@ -9,7 +9,6 @@ import com.kos.engine.fake.hook.ClassInvocationStub;
 import com.kos.engine.fake.hook.MethodHook;
 import com.kos.engine.fake.hook.ProxyMethod;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -20,8 +19,10 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("AttributionSource")
     public static class AttributionSourceConstructor extends MethodHook {
-        private Object createSafeAttributionSource(int i, String str) throws NoSuchMethodException, ClassNotFoundException, SecurityException {
+        private Object createSafeAttributionSource(int i, String str) {
             Constructor<?> declaredConstructor;
+            int parameterCount;
+            int parameterCount2;
             Class cls = Integer.TYPE;
             String[] strArr = xa1.b;
             try {
@@ -39,7 +40,12 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
                     return null;
                 }
                 declaredConstructor.setAccessible(true);
-                return declaredConstructor.getParameterCount() == 3 ? declaredConstructor.newInstance(Integer.valueOf(i), str, null) : declaredConstructor.getParameterCount() == 2 ? declaredConstructor.newInstance(Integer.valueOf(i), str) : declaredConstructor.newInstance(null);
+                parameterCount = declaredConstructor.getParameterCount();
+                if (parameterCount == 3) {
+                    return declaredConstructor.newInstance(Integer.valueOf(i), str, null);
+                }
+                parameterCount2 = declaredConstructor.getParameterCount();
+                return parameterCount2 == 2 ? declaredConstructor.newInstance(Integer.valueOf(i), str) : declaredConstructor.newInstance(null);
             } catch (Exception e) {
                 nz0.s(c.a(-653058926329634L, strArr), c.a(-652612249730850L, strArr) + e.getMessage());
                 return null;
@@ -51,10 +57,10 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
             String[] strArr = xa1.b;
             try {
                 int i = c01.r.o;
-                String strX = c01.X();
-                nz0.Q(c.a(-658320261267234L, strArr), 3, c.a(-652376026529570L, strArr) + i + c.a(-652556415156002L, strArr) + strX);
-                Object objCreateSafeAttributionSource = createSafeAttributionSource(i, strX);
-                return objCreateSafeAttributionSource != null ? objCreateSafeAttributionSource : method.invoke(obj, objArr);
+                String X = c01.X();
+                nz0.Q(c.a(-658320261267234L, strArr), 3, c.a(-652376026529570L, strArr) + i + c.a(-652556415156002L, strArr) + X);
+                Object createSafeAttributionSource = createSafeAttributionSource(i, X);
+                return createSafeAttributionSource != null ? createSafeAttributionSource : method.invoke(obj, objArr);
             } catch (Exception e) {
                 jx0.q(new StringBuilder(), c.a(-652126918426402L, strArr), e, 5, c.a(-652023839211298L, strArr));
                 return createSafeAttributionSource(c01.r.o, c01.X());
@@ -97,7 +103,7 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("fromParcel")
     public static class FromParcel extends MethodHook {
-        private Object createSafeAttributionSource(int i, String str) throws NoSuchMethodException, SecurityException {
+        private Object createSafeAttributionSource(int i, String str) {
             String[] strArr = xa1.b;
             try {
                 Constructor<?> declaredConstructor = Class.forName(c.a(-654862812593954L, strArr)).getDeclaredConstructor(Integer.TYPE, String.class, String.class);
@@ -109,7 +115,7 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
             }
         }
 
-        private void fixAttributionSourceUid(Object obj) throws IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+        private void fixAttributionSourceUid(Object obj) {
             String[] strArr = xa1.b;
             try {
                 Method declaredMethod = obj.getClass().getDeclaredMethod(c.a(-654373186322210L, strArr), Integer.TYPE);
@@ -123,14 +129,14 @@ public class IAttributionSourceProxy extends ClassInvocationStub {
         }
 
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke == null) {
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke == null) {
                     return createSafeAttributionSource(c01.r.o, c01.X());
                 }
-                fixAttributionSourceUid(objInvoke);
-                return objInvoke;
+                fixAttributionSourceUid(invoke);
+                return invoke;
             } catch (Exception e) {
                 String[] strArr = xa1.b;
                 jx0.q(new StringBuilder(), c.a(-654742553509666L, strArr), e, 5, c.a(-654639474294562L, strArr));

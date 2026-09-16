@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class qu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final pu0 f980a;
+    public final pu0 f979a;
 
     public qu0(pu0 pu0Var) {
-        this.f980a = pu0Var;
+        this.f979a = pu0Var;
     }
 }

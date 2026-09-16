@@ -12,15 +12,15 @@ import java.nio.ByteBuffer;
 public final class ai implements vh0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f103a;
+    public final /* synthetic */ int f102a;
 
     public /* synthetic */ ai(int i) {
-        this.f103a = i;
+        this.f102a = i;
     }
 
     @Override // androidx.emoji2.text.vh0
     public final wh0 a(Object obj, gl1 gl1Var) {
-        switch (this.f103a) {
+        switch (this.f102a) {
             case 0:
                 Uri uri = (Uri) obj;
                 if (h.c(uri)) {
@@ -39,7 +39,7 @@ public final class ai implements vh0 {
                 return null;
             case 4:
                 return new nl((Drawable) obj, gl1Var, 2);
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new yh0((File) obj);
             default:
                 Uri uri3 = (Uri) obj;

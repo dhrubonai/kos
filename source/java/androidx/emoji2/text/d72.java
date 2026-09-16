@@ -5,6 +5,6 @@ package androidx.emoji2.text;
 public abstract class d72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f72 f241a = new f72("TestTagsAsResourceId", false, xy1.w);
+    public static final f72 f240a = new f72("TestTagsAsResourceId", false, xy1.w);
     public static final f72 b = new f72("AccessibilityClassName", true, xy1.v);
 }

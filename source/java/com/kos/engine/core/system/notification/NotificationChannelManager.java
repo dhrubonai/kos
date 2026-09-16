@@ -29,9 +29,9 @@ public class NotificationChannelManager {
         Context context = c01.s;
         String[] strArr = xa1.b;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(c.a(-425481494216482L, strArr));
-        NotificationChannel notificationChannelE = e40.e(c01.s.getPackageName(), c.a(-425004752846626L, strArr));
-        APP_CHANNEL = notificationChannelE;
-        notificationChannelE.enableLights(true);
+        NotificationChannel e = e40.e(c01.s.getPackageName(), c.a(-425004752846626L, strArr));
+        APP_CHANNEL = e;
+        e.enableLights(true);
         APP_CHANNEL.setLightColor(-65536);
         APP_CHANNEL.setShowBadge(true);
         APP_CHANNEL.setLockscreenVisibility(1);

@@ -34,11 +34,11 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
     private final Map<String, JobRecord> mJobRecords = new HashMap();
 
     private JobInfo cloneJobInfo(JobInfo jobInfo) {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         try {
-            jobInfo.writeToParcel(parcelObtain, 0);
-            parcelObtain.setDataPosition(0);
-            JobInfo jobInfo2 = (JobInfo) JobInfo.CREATOR.createFromParcel(parcelObtain);
+            jobInfo.writeToParcel(obtain, 0);
+            obtain.setDataPosition(0);
+            JobInfo jobInfo2 = (JobInfo) JobInfo.CREATOR.createFromParcel(obtain);
             return jobInfo2 != null ? jobInfo2 : jobInfo;
         } catch (Throwable th) {
             try {
@@ -46,7 +46,7 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
                 nz0.P(c.a(-534169936609058L, strArr), c.a(-534285900726050L, strArr) + jobInfo.getId() + c.a(-533843519094562L, strArr), th);
                 return jobInfo;
             } finally {
-                parcelObtain.recycle();
+                obtain.recycle();
             }
         }
     }
@@ -65,25 +65,25 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
             return false;
         }
         String lowerCase = String.valueOf(serviceInfo.name).toLowerCase();
-        String strA = c.a(-534041087590178L, strArr);
+        String a2 = c.a(-534041087590178L, strArr);
         try {
-            strA = String.valueOf(jobInfo.getExtras()).toLowerCase();
+            a2 = String.valueOf(jobInfo.getExtras()).toLowerCase();
         } catch (Throwable unused) {
         }
-        String strK = zd.k(jx0.k(lowerCase), c.a(-534028202688290L, strArr), strA);
-        return strK.contains(c.a(-534019612753698L, strArr)) || strK.contains(c.a(-532469129559842L, strArr)) || strK.contains(c.a(-532503489298210L, strArr)) || strK.contains(c.a(-532524964134690L, strArr)) || strK.contains(c.a(-532670993022754L, strArr)) || strK.contains(c.a(-532705352761122L, strArr)) || strK.contains(c.a(-532189956685602L, strArr)) || strK.contains(c.a(-532198546620194L, strArr)) || strK.contains(c.a(-532280150998818L, strArr)) || strK.contains(c.a(-532335985573666L, strArr)) || strK.contains(c.a(-533014590406434L, strArr));
+        String k = zd.k(jx0.k(lowerCase), c.a(-534028202688290L, strArr), a2);
+        return k.contains(c.a(-534019612753698L, strArr)) || k.contains(c.a(-532469129559842L, strArr)) || k.contains(c.a(-532503489298210L, strArr)) || k.contains(c.a(-532524964134690L, strArr)) || k.contains(c.a(-532670993022754L, strArr)) || k.contains(c.a(-532705352761122L, strArr)) || k.contains(c.a(-532189956685602L, strArr)) || k.contains(c.a(-532198546620194L, strArr)) || k.contains(c.a(-532280150998818L, strArr)) || k.contains(c.a(-532335985573666L, strArr)) || k.contains(c.a(-533014590406434L, strArr));
     }
 
     private ComponentName normalizeVirtualSchedulerComponent(ComponentName componentName) {
         String className;
-        String strResolveGoogleSchedulerPackage;
+        String resolveGoogleSchedulerPackage;
         if (componentName == null) {
             return null;
         }
-        if (!c01.X().equals(componentName.getPackageName()) || (strResolveGoogleSchedulerPackage = resolveGoogleSchedulerPackage((className = componentName.getClassName()))) == null) {
+        if (!c01.X().equals(componentName.getPackageName()) || (resolveGoogleSchedulerPackage = resolveGoogleSchedulerPackage((className = componentName.getClassName()))) == null) {
             return componentName;
         }
-        ComponentName componentName2 = new ComponentName(strResolveGoogleSchedulerPackage, className);
+        ComponentName componentName2 = new ComponentName(resolveGoogleSchedulerPackage, className);
         String[] strArr = xa1.b;
         nz0.Q(c.a(-521778955960098L, strArr), 3, c.a(-521843380469538L, strArr) + componentName + c.a(-533603000925986L, strArr) + componentName2);
         return componentName2;
@@ -112,9 +112,9 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
             return;
         }
         for (String str2 : this.mJobRecords.keySet()) {
-            StringBuilder sbK = jx0.k(str);
-            sbK.append(c.a(-533087604850466L, xa1.b));
-            if (str2.startsWith(sbK.toString())) {
+            StringBuilder k = jx0.k(str);
+            k.append(c.a(-533087604850466L, xa1.b));
+            if (str2.startsWith(k.toString())) {
                 this.mJobRecords.get(str2);
             }
         }
@@ -132,21 +132,21 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
             nz0.Q(c.a(-522930007195426L, strArr), 5, c.a(-522994431704866L, strArr));
             return null;
         }
-        ComponentName componentNameNormalizeVirtualSchedulerComponent = normalizeVirtualSchedulerComponent(jobInfo.getService());
-        if (componentNameNormalizeVirtualSchedulerComponent == null) {
+        ComponentName normalizeVirtualSchedulerComponent = normalizeVirtualSchedulerComponent(jobInfo.getService());
+        if (normalizeVirtualSchedulerComponent == null) {
             nz0.Q(c.a(-521512667987746L, strArr), 5, c.a(-521645811973922L, strArr) + jobInfo.getId());
             return jobInfo;
         }
         Intent intent = new Intent();
-        intent.setComponent(componentNameNormalizeVirtualSchedulerComponent);
-        ResolveInfo resolveInfoResolveService = BPackageManagerService.get().resolveService(intent, PackageParser.PARSE_IS_PRIVILEGED, null, i);
-        if (resolveInfoResolveService == null) {
+        intent.setComponent(normalizeVirtualSchedulerComponent);
+        ResolveInfo resolveService = BPackageManagerService.get().resolveService(intent, PackageParser.PARSE_IS_PRIVILEGED, null, i);
+        if (resolveService == null) {
             return jobInfo;
         }
-        ServiceInfo serviceInfo = resolveInfoResolveService.serviceInfo;
-        ProcessRecord processRecordFindProcessRecord = BProcessManagerService.get().findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
-        if (processRecordFindProcessRecord != null || (processRecordFindProcessRecord = BProcessManagerService.get().startProcessLocked(serviceInfo.packageName, serviceInfo.processName, i, -1, Binder.getCallingPid())) != null) {
-            return scheduleJob(processRecordFindProcessRecord, jobInfo, serviceInfo);
+        ServiceInfo serviceInfo = resolveService.serviceInfo;
+        ProcessRecord findProcessRecord = BProcessManagerService.get().findProcessRecord(serviceInfo.packageName, serviceInfo.processName, i);
+        if (findProcessRecord != null || (findProcessRecord = BProcessManagerService.get().startProcessLocked(serviceInfo.packageName, serviceInfo.processName, i, -1, Binder.getCallingPid())) != null) {
+            return scheduleJob(findProcessRecord, jobInfo, serviceInfo);
         }
         throw new RuntimeException(c.a(-521212020277026L, strArr) + serviceInfo.processName);
     }
@@ -160,9 +160,9 @@ public class BJobManagerService extends IBJobManagerService.Stub implements ISys
             String[] strArr = xa1.b;
             nz0.Q(c.a(-521306509557538L, strArr), 3, c.a(-521439653543714L, strArr) + serviceInfo.packageName + c.a(-522144028180258L, strArr) + serviceInfo.name + c.a(-522135438245666L, strArr) + processRecord.processName + c.a(-522217042624290L, strArr) + processRecord.bpid + c.a(-522238517460770L, strArr) + jobInfo.getId());
         }
-        JobInfo jobInfoCloneJobInfo = cloneJobInfo(jobInfo);
-        BRJobInfo.get(jobInfoCloneJobInfo)._set_service(new ComponentName(c01.X(), ProxyManifest.getProxyJobService(processRecord.bpid)));
-        return jobInfoCloneJobInfo;
+        JobInfo cloneJobInfo = cloneJobInfo(jobInfo);
+        BRJobInfo.get(cloneJobInfo)._set_service(new ComponentName(c01.X(), ProxyManifest.getProxyJobService(processRecord.bpid)));
+        return cloneJobInfo;
     }
 
     @Override // com.kos.engine.core.system.ISystemService

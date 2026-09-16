@@ -36,7 +36,7 @@ public final /* synthetic */ class k2 implements sm0 {
                 this.f.setValue(null);
                 Context context = this.h;
                 String string = context.getString(R.string.busy_removing_google_services);
-                lx0.w(string, a.a.a.c.a(-189614775222050L, wj1.f1284a));
+                lx0.w(string, a.a.a.c.a(-189614775222050L, wj1.f1283a));
                 l8.n(this.e, this.g, this.j, context, ad2Var, this.i, string, new f3(h82Var, null, 1));
                 break;
             default:
@@ -49,7 +49,7 @@ public final /* synthetic */ class k2 implements sm0 {
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ k2(int i, Context context, e30 e30Var, mf1 mf1Var, mf1 mf1Var2, mf1 mf1Var3, h82 h82Var, ad2 ad2Var) {

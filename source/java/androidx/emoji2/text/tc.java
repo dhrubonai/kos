@@ -43,7 +43,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         this.d = gh1Var;
         this.e = view;
         this.f = tl1Var;
-        LinkedHashMap linkedHashMap = mw2.f775a;
+        LinkedHashMap linkedHashMap = mw2.f774a;
         setTag(R.id.androidx_compose_ui_view_composition_context, qxVar);
         int i2 = 0;
         setSaveFromParentEnabled(false);
@@ -54,7 +54,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         this.g = m8.q;
         this.i = m8.p;
         this.j = m8.o;
-        kd1 kd1Var = kd1.f634a;
+        kd1 kd1Var = kd1.f633a;
         this.k = kd1Var;
         this.m = ex2.e();
         int i3 = 2;
@@ -69,9 +69,9 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         this.z = new zg0();
         e11 e11Var = new e11(3);
         e11Var.q = js2Var;
-        nd1 nd1VarA = v62.a(androidx.compose.ui.input.nestedscroll.a.a(kd1Var, kx0.f664a, gh1Var), true, j7.r);
+        nd1 a2 = v62.a(androidx.compose.ui.input.nestedscroll.a.a(kd1Var, kx0.f663a, gh1Var), true, j7.r);
         vs1 vs1Var = new vs1();
-        vs1Var.f1241a = new nc(js2Var, i4);
+        vs1Var.f1240a = new nc(js2Var, i4);
         ao0 ao0Var = new ao0();
         ao0 ao0Var2 = vs1Var.b;
         if (ao0Var2 != null) {
@@ -80,9 +80,9 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         vs1Var.b = ao0Var;
         ao0Var.e = vs1Var;
         setOnRequestDisallowInterceptTouchEvent$ui_release(ao0Var);
-        nd1 nd1VarD = androidx.compose.ui.layout.a.d(androidx.compose.ui.draw.a.a(nd1VarA.k(vs1Var), new pc(js2Var, e11Var, js2Var)), new mc(js2Var, e11Var, i3));
-        e11Var.e0(this.k.k(nd1VarD));
-        this.l = new q8(7, e11Var, nd1VarD);
+        nd1 d = androidx.compose.ui.layout.a.d(androidx.compose.ui.draw.a.a(a2.k(vs1Var), new pc(js2Var, e11Var, js2Var)), new mc(js2Var, e11Var, i3));
+        e11Var.e0(this.k.k(d));
+        this.l = new q8(7, e11Var, d);
         e11Var.a0(this.m);
         this.n = new r5(5, e11Var);
         e11Var.O = new mc(js2Var, e11Var, i2);
@@ -104,7 +104,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
     }
 
     public static zv0 l(zv0 zv0Var, int i, int i2, int i3, int i4) {
-        int i5 = zv0Var.f1457a - i;
+        int i5 = zv0Var.f1456a - i;
         if (i5 < 0) {
             i5 = 0;
         }
@@ -136,18 +136,18 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         if (this.e.isNestedScrollingEnabled()) {
             float f = i;
             float f2 = -1;
-            long jFloatToRawIntBits = (Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(i2 * f2) & 4294967295L);
-            long jFloatToRawIntBits2 = (Float.floatToRawIntBits(i3 * f2) << 32) | (Float.floatToRawIntBits(i4 * f2) & 4294967295L);
+            long floatToRawIntBits = (Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(i2 * f2) & 4294967295L);
+            long floatToRawIntBits2 = (Float.floatToRawIntBits(i3 * f2) << 32) | (Float.floatToRawIntBits(i4 * f2) & 4294967295L);
             int i6 = i5 == 0 ? 1 : 2;
-            jh1 jh1Var = this.d.f419a;
+            jh1 jh1Var = this.d.f418a;
             jh1 jh1Var2 = null;
             if (jh1Var != null && jh1Var.q) {
                 jh1Var2 = (jh1) nz0.w(jh1Var);
             }
             jh1 jh1Var3 = jh1Var2;
-            long jN0 = jh1Var3 != null ? jh1Var3.n0(jFloatToRawIntBits, jFloatToRawIntBits2, i6) : 0L;
-            iArr[0] = pz0.r(Float.intBitsToFloat((int) (jN0 >> 32)));
-            iArr[1] = pz0.r(Float.intBitsToFloat((int) (jN0 & 4294967295L)));
+            long n0 = jh1Var3 != null ? jh1Var3.n0(floatToRawIntBits, floatToRawIntBits2, i6) : 0L;
+            iArr[0] = pz0.r(Float.intBitsToFloat((int) (n0 >> 32)));
+            iArr[1] = pz0.r(Float.intBitsToFloat((int) (n0 & 4294967295L)));
         }
     }
 
@@ -155,16 +155,16 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
     public final void d(View view, int i, int i2, int i3, int i4, int i5) {
         if (this.e.isNestedScrollingEnabled()) {
             float f = -1;
-            long jFloatToRawIntBits = (Float.floatToRawIntBits(i * f) << 32) | (Float.floatToRawIntBits(i2 * f) & 4294967295L);
-            long jFloatToRawIntBits2 = (Float.floatToRawIntBits(i3 * f) << 32) | (Float.floatToRawIntBits(i4 * f) & 4294967295L);
+            long floatToRawIntBits = (Float.floatToRawIntBits(i * f) << 32) | (Float.floatToRawIntBits(i2 * f) & 4294967295L);
+            long floatToRawIntBits2 = (Float.floatToRawIntBits(i3 * f) << 32) | (Float.floatToRawIntBits(i4 * f) & 4294967295L);
             int i6 = i5 == 0 ? 1 : 2;
-            jh1 jh1Var = this.d.f419a;
+            jh1 jh1Var = this.d.f418a;
             jh1 jh1Var2 = null;
             if (jh1Var != null && jh1Var.q) {
                 jh1Var2 = (jh1) nz0.w(jh1Var);
             }
             if (jh1Var2 != null) {
-                jh1Var2.n0(jFloatToRawIntBits, jFloatToRawIntBits2, i6);
+                jh1Var2.n0(floatToRawIntBits, floatToRawIntBits2, i6);
             }
         }
     }
@@ -180,7 +180,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         if (i2 == 1) {
             zg0Var.b = i;
         } else {
-            zg0Var.f1439a = i;
+            zg0Var.f1438a = i;
         }
     }
 
@@ -236,7 +236,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
     @Override // android.view.ViewGroup
     public int getNestedScrollAxes() {
         zg0 zg0Var = this.z;
-        return zg0Var.b | zg0Var.f1439a;
+        return zg0Var.b | zg0Var.f1438a;
     }
 
     public final um0 getOnDensityChanged$ui_release() {
@@ -277,7 +277,7 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         if (i == 1) {
             zg0Var.b = 0;
         } else {
-            zg0Var.f1439a = 0;
+            zg0Var.f1438a = 0;
         }
     }
 
@@ -286,14 +286,14 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         if (this.e.isNestedScrollingEnabled()) {
             float f = i;
             float f2 = -1;
-            long jFloatToRawIntBits = (Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(i2 * f2) & 4294967295L);
+            long floatToRawIntBits = (Float.floatToRawIntBits(f * f2) << 32) | (Float.floatToRawIntBits(i2 * f2) & 4294967295L);
             int i4 = i3 == 0 ? 1 : 2;
-            jh1 jh1Var = this.d.f419a;
+            jh1 jh1Var = this.d.f418a;
             jh1 jh1Var2 = null;
             if (jh1Var != null && jh1Var.q) {
                 jh1Var2 = (jh1) nz0.w(jh1Var);
             }
-            long J = jh1Var2 != null ? jh1Var2.J(i4, jFloatToRawIntBits) : 0L;
+            long J = jh1Var2 != null ? jh1Var2.J(i4, floatToRawIntBits) : 0L;
             iArr[0] = pz0.r(Float.intBitsToFloat((int) (J >> 32)));
             iArr[1] = pz0.r(Float.intBitsToFloat((int) (J & 4294967295L)));
         }
@@ -316,34 +316,34 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
     }
 
     public final wv2 m(wv2 wv2Var) {
-        tv2 tv2Var = wv2Var.f1306a;
-        zv0 zv0VarG = tv2Var.g(-1);
+        tv2 tv2Var = wv2Var.f1305a;
+        zv0 g = tv2Var.g(-1);
         zv0 zv0Var = zv0.e;
-        if (!zv0VarG.equals(zv0Var) || !tv2Var.h(-9).equals(zv0Var) || tv2Var.f() != null) {
+        if (!g.equals(zv0Var) || !tv2Var.h(-9).equals(zv0Var) || tv2Var.f() != null) {
             ov0 ov0Var = this.B.H.c;
             if (ov0Var.S.q) {
-                long jK = jm.K(ov0Var.J(0L));
-                int i = (int) (jK >> 32);
+                long K = jm.K(ov0Var.J(0L));
+                int i = (int) (K >> 32);
                 if (i < 0) {
                     i = 0;
                 }
-                int i2 = (int) (jK & 4294967295L);
+                int i2 = (int) (K & 4294967295L);
                 if (i2 < 0) {
                     i2 = 0;
                 }
-                long jK2 = az0.A(ov0Var).k();
-                int i3 = (int) (jK2 >> 32);
-                int i4 = (int) (jK2 & 4294967295L);
+                long k = az0.A(ov0Var).k();
+                int i3 = (int) (k >> 32);
+                int i4 = (int) (k & 4294967295L);
                 long j = ov0Var.f;
-                long jK3 = jm.K(ov0Var.J((Float.floatToRawIntBits((int) (j >> 32)) << 32) | (Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L)));
-                int i5 = i3 - ((int) (jK3 >> 32));
+                long K2 = jm.K(ov0Var.J((Float.floatToRawIntBits((int) (j >> 32)) << 32) | (Float.floatToRawIntBits((int) (j & 4294967295L)) & 4294967295L)));
+                int i5 = i3 - ((int) (K2 >> 32));
                 if (i5 < 0) {
                     i5 = 0;
                 }
-                int i6 = i4 - ((int) (4294967295L & jK3));
+                int i6 = i4 - ((int) (4294967295L & K2));
                 int i7 = i6 >= 0 ? i6 : 0;
                 if (i != 0 || i2 != 0 || i5 != 0 || i7 != 0) {
-                    return wv2Var.f1306a.n(i, i2, i5, i7);
+                    return wv2Var.f1305a.n(i, i2, i5, i7);
                 }
             }
         }
@@ -366,122 +366,85 @@ public abstract class tc extends ViewGroup implements oh1, zw, ul1, gj1 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0088 A[Catch: all -> 0x0096, TryCatch #0 {all -> 0x0096, blocks: (B:4:0x000e, B:6:0x0016, B:9:0x0080, B:11:0x0088, B:13:0x0098, B:15:0x008d, B:18:0x0029, B:21:0x0035, B:23:0x004a, B:25:0x0056, B:27:0x0060, B:29:0x0070, B:36:0x007b, B:39:0x009c), top: B:3:0x000e }] */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x008b  */
     @Override // android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final void onDetachedFromWindow() {
-        /*
-            r22 = this;
-            r1 = r22
-            super.onDetachedFromWindow()
-            androidx.emoji2.text.wl1 r0 = r1.getSnapshotObserver()
-            androidx.emoji2.text.cd2 r0 = r0.f1288a
-            java.lang.Object r2 = r0.g
-            monitor-enter(r2)
-            androidx.emoji2.text.sf1 r0 = r0.f     // Catch: java.lang.Throwable -> L96
-            int r3 = r0.f     // Catch: java.lang.Throwable -> L96
-            r5 = 0
-            r6 = 0
-        L14:
-            if (r5 >= r3) goto L9c
-            java.lang.Object[] r7 = r0.d     // Catch: java.lang.Throwable -> L96
-            r7 = r7[r5]     // Catch: java.lang.Throwable -> L96
-            androidx.emoji2.text.bd2 r7 = (androidx.emoji2.text.bd2) r7     // Catch: java.lang.Throwable -> L96
-            androidx.emoji2.text.gf1 r8 = r7.f     // Catch: java.lang.Throwable -> L96
-            java.lang.Object r8 = r8.k(r1)     // Catch: java.lang.Throwable -> L96
-            androidx.emoji2.text.ye1 r8 = (androidx.emoji2.text.ye1) r8     // Catch: java.lang.Throwable -> L96
-            if (r8 != 0) goto L29
-        L26:
-            r16 = r5
-            goto L80
-        L29:
-            java.lang.Object[] r9 = r8.b     // Catch: java.lang.Throwable -> L96
-            int[] r10 = r8.c     // Catch: java.lang.Throwable -> L96
-            long[] r8 = r8.f1382a     // Catch: java.lang.Throwable -> L96
-            int r11 = r8.length     // Catch: java.lang.Throwable -> L96
-            int r11 = r11 + (-2)
-            if (r11 < 0) goto L26
-            r12 = 0
-        L35:
-            r13 = r8[r12]     // Catch: java.lang.Throwable -> L96
-            r16 = r5
-            long r4 = ~r13     // Catch: java.lang.Throwable -> L96
-            r17 = 7
-            long r4 = r4 << r17
-            long r4 = r4 & r13
-            r17 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r4 = r4 & r17
-            int r4 = (r4 > r17 ? 1 : (r4 == r17 ? 0 : -1))
-            if (r4 == 0) goto L79
-            int r4 = r12 - r11
-            int r4 = ~r4     // Catch: java.lang.Throwable -> L96
-            int r4 = r4 >>> 31
-            r5 = 8
-            int r4 = 8 - r4
-            r15 = 0
-        L54:
-            if (r15 >= r4) goto L77
-            r18 = 255(0xff, double:1.26E-321)
-            long r18 = r13 & r18
-            r20 = 128(0x80, double:6.3E-322)
-            int r18 = (r18 > r20 ? 1 : (r18 == r20 ? 0 : -1))
-            if (r18 >= 0) goto L6e
-            int r18 = r12 << 3
-            int r18 = r18 + r15
-            r19 = r5
-            r5 = r9[r18]     // Catch: java.lang.Throwable -> L96
-            r18 = r10[r18]     // Catch: java.lang.Throwable -> L96
-            r7.d(r1, r5)     // Catch: java.lang.Throwable -> L96
-            goto L70
-        L6e:
-            r19 = r5
-        L70:
-            long r13 = r13 >> r19
-            int r15 = r15 + 1
-            r5 = r19
-            goto L54
-        L77:
-            if (r4 != r5) goto L80
-        L79:
-            if (r12 == r11) goto L80
-            int r12 = r12 + 1
-            r5 = r16
-            goto L35
-        L80:
-            androidx.emoji2.text.gf1 r4 = r7.f     // Catch: java.lang.Throwable -> L96
-            boolean r4 = r4.j()     // Catch: java.lang.Throwable -> L96
-            if (r4 != 0) goto L8b
-            int r6 = r6 + 1
-            goto L98
-        L8b:
-            if (r6 <= 0) goto L98
-            java.lang.Object[] r4 = r0.d     // Catch: java.lang.Throwable -> L96
-            int r5 = r16 - r6
-            r7 = r4[r16]     // Catch: java.lang.Throwable -> L96
-            r4[r5] = r7     // Catch: java.lang.Throwable -> L96
-            goto L98
-        L96:
-            r0 = move-exception
-            goto La7
-        L98:
-            int r5 = r16 + 1
-            goto L14
-        L9c:
-            java.lang.Object[] r4 = r0.d     // Catch: java.lang.Throwable -> L96
-            int r5 = r3 - r6
-            androidx.emoji2.text.xh.E0(r4, r5, r3)     // Catch: java.lang.Throwable -> L96
-            r0.f = r5     // Catch: java.lang.Throwable -> L96
-            monitor-exit(r2)
-            return
-        La7:
-            monitor-exit(r2)
-            throw r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.tc.onDetachedFromWindow():void");
+        int i;
+        int i2;
+        super.onDetachedFromWindow();
+        cd2 cd2Var = getSnapshotObserver().f1287a;
+        synchronized (cd2Var.g) {
+            try {
+                sf1 sf1Var = cd2Var.f;
+                int i3 = sf1Var.f;
+                int i4 = 0;
+                int i5 = 0;
+                while (i4 < i3) {
+                    bd2 bd2Var = (bd2) sf1Var.d[i4];
+                    ye1 ye1Var = (ye1) bd2Var.f.k(this);
+                    if (ye1Var != null) {
+                        Object[] objArr = ye1Var.b;
+                        int[] iArr = ye1Var.c;
+                        long[] jArr = ye1Var.f1381a;
+                        int length = jArr.length - 2;
+                        if (length >= 0) {
+                            int i6 = 0;
+                            while (true) {
+                                long j = jArr[i6];
+                                i = i4;
+                                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                    int i7 = 8;
+                                    int i8 = 8 - ((~(i6 - length)) >>> 31);
+                                    int i9 = 0;
+                                    while (i9 < i8) {
+                                        if ((j & 255) < 128) {
+                                            int i10 = (i6 << 3) + i9;
+                                            i2 = i7;
+                                            Object obj = objArr[i10];
+                                            int i11 = iArr[i10];
+                                            bd2Var.d(this, obj);
+                                        } else {
+                                            i2 = i7;
+                                        }
+                                        j >>= i2;
+                                        i9++;
+                                        i7 = i2;
+                                    }
+                                    if (i8 != i7) {
+                                        break;
+                                    }
+                                }
+                                if (i6 == length) {
+                                    break;
+                                }
+                                i6++;
+                                i4 = i;
+                            }
+                            if (bd2Var.f.j()) {
+                                i5++;
+                            } else if (i5 > 0) {
+                                Object[] objArr2 = sf1Var.d;
+                                objArr2[i - i5] = objArr2[i];
+                            }
+                            i4 = i + 1;
+                        }
+                    }
+                    i = i4;
+                    if (bd2Var.f.j()) {
+                    }
+                    i4 = i + 1;
+                }
+                int i12 = i3 - i5;
+                xh.E0(sf1Var.d, i12, i3);
+                sf1Var.f = i12;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View

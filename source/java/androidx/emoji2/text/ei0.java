@@ -13,11 +13,11 @@ public final class ei0 extends di0 {
     @Override // androidx.emoji2.text.ii0
     public final File a() {
         boolean z = this.e;
-        File file = this.f526a;
+        File file = this.f525a;
         if (!z && this.c == null) {
-            File[] fileArrListFiles = file.listFiles();
-            this.c = fileArrListFiles;
-            if (fileArrListFiles == null) {
+            File[] listFiles = file.listFiles();
+            this.c = listFiles;
+            if (listFiles == null) {
                 this.e = true;
             }
         }

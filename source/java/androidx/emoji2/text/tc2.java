@@ -39,7 +39,7 @@ public final class tc2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((tc2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((tc2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
@@ -51,9 +51,9 @@ public final class tc2 extends hh2 implements Function2 {
                     mz0.L(obj);
                     cu1 cu1Var = new cu1(this.l, ((e30) this.j).u());
                     this.i = 1;
-                    Object objInvoke = this.k.invoke(cu1Var, this);
+                    Object invoke = this.k.invoke(cu1Var, this);
                     f30 f30Var = f30.d;
-                    if (objInvoke == f30Var) {
+                    if (invoke == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -62,16 +62,16 @@ public final class tc2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     cu1 cu1Var2 = new cu1(this.l, ((e30) this.j).u());
                     this.i = 1;
-                    Object objInvoke2 = this.k.invoke(cu1Var2, this);
+                    Object invoke2 = this.k.invoke(cu1Var2, this);
                     f30 f30Var2 = f30.d;
-                    if (objInvoke2 == f30Var2) {
+                    if (invoke2 == f30Var2) {
                         return f30Var2;
                     }
                 } else {
@@ -80,7 +80,7 @@ public final class tc2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class ds1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final vr1 f268a;
+    public final vr1 f267a;
 
     public ds1(vr1 vr1Var) {
-        this.f268a = vr1Var;
+        this.f267a = vr1Var;
     }
 
     public final boolean equals(Object obj) {
@@ -16,13 +16,13 @@ public final class ds1 {
             return true;
         }
         if (obj instanceof ds1) {
-            return lx0.n(this.f268a, ((ds1) obj).f268a);
+            return lx0.n(this.f267a, ((ds1) obj).f267a);
         }
         return false;
     }
 
     public final int hashCode() {
-        vr1 vr1Var = this.f268a;
+        vr1 vr1Var = this.f267a;
         if (vr1Var != null) {
             return vr1Var.hashCode();
         }
@@ -30,6 +30,6 @@ public final class ds1 {
     }
 
     public final String toString() {
-        return "PlatformTextStyle(spanStyle=null, paragraphSyle=" + this.f268a + ')';
+        return "PlatformTextStyle(spanStyle=null, paragraphSyle=" + this.f267a + ')';
     }
 }

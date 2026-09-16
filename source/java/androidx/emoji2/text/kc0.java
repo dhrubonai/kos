@@ -8,16 +8,16 @@ import java.lang.reflect.Field;
 public abstract class kc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Field f631a;
+    public static final Field f630a;
 
     static {
-        Field declaredField = null;
+        Field field = null;
         try {
-            declaredField = AbsListView.class.getDeclaredField("mIsChildViewEnabled");
-            declaredField.setAccessible(true);
+            field = AbsListView.class.getDeclaredField("mIsChildViewEnabled");
+            field.setAccessible(true);
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
-        f631a = declaredField;
+        f630a = field;
     }
 }

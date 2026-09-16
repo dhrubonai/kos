@@ -7,41 +7,41 @@ import android.os.Parcel;
 public final class k50 {
 
     /* renamed from: a, reason: collision with root package name */
-    public Parcel f621a;
+    public Parcel f620a;
 
     public long a() {
         int i = et.l;
-        long j = this.f621a.readLong();
-        long j2 = 63 & j;
-        return j2 < 16 ? j : (j & (-64)) | (j2 + 1);
+        long readLong = this.f620a.readLong();
+        long j = 63 & readLong;
+        return j < 16 ? readLong : (readLong & (-64)) | (j + 1);
     }
 
     public long b() {
-        Parcel parcel = this.f621a;
-        byte b = parcel.readByte();
-        long j = b == 1 ? 4294967296L : b == 2 ? 8589934592L : 0L;
+        Parcel parcel = this.f620a;
+        byte readByte = parcel.readByte();
+        long j = readByte == 1 ? 4294967296L : readByte == 2 ? 8589934592L : 0L;
         return kl2.a(j, 0L) ? jl2.c : nz0.H(parcel.readFloat(), j);
     }
 
     public void c(byte b) {
-        this.f621a.writeByte(b);
+        this.f620a.writeByte(b);
     }
 
     public void d(float f) {
-        this.f621a.writeFloat(f);
+        this.f620a.writeFloat(f);
     }
 
     public void e(long j) {
-        long jB = jl2.b(j);
-        byte b = 0;
-        if (!kl2.a(jB, 0L)) {
-            if (kl2.a(jB, 4294967296L)) {
-                b = 1;
-            } else if (kl2.a(jB, 8589934592L)) {
-                b = 2;
+        long b = jl2.b(j);
+        byte b2 = 0;
+        if (!kl2.a(b, 0L)) {
+            if (kl2.a(b, 4294967296L)) {
+                b2 = 1;
+            } else if (kl2.a(b, 8589934592L)) {
+                b2 = 2;
             }
         }
-        c(b);
+        c(b2);
         if (kl2.a(jl2.b(j), 0L)) {
             return;
         }
@@ -53,6 +53,6 @@ public final class k50 {
         if (Long.compare(Long.MIN_VALUE ^ j2, -9223372036854775792L) >= 0) {
             j = (j & (-64)) | (j2 - 1);
         }
-        this.f621a.writeLong(j);
+        this.f620a.writeLong(j);
     }
 }

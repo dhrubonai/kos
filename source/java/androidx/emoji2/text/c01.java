@@ -1,9 +1,14 @@
 package androidx.emoji2.text;
 
+import android.app.ActivityManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageParser;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,7 +18,9 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Process;
 import android.provider.MediaStore;
+import androidx.core.splashscreen.R;
 import black.android.app.BRActivityThread;
+import com.kos.engine.core.env.BEnvironment;
 import com.kos.engine.core.system.DaemonService;
 import com.kos.engine.core.system.ServiceManager;
 import com.kos.engine.core.system.user.BUserHandle;
@@ -22,15 +29,22 @@ import com.kos.engine.entity.pm.InstallResult;
 import com.kos.engine.fake.delegate.ContentProviderDelegate;
 import com.kos.engine.fake.frameworks.BActivityManager;
 import com.kos.engine.fake.frameworks.BPackageManager;
+import com.kos.engine.fake.hook.HookManager;
 import com.kos.engine.proxy.ProxyManifest;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
+import sun.misc.Unsafe;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -50,7 +64,7 @@ public final class c01 extends wj1 {
         xa1.B(-976418424110882L);
         r = new c01();
         String[] strArr = xa1.b;
-        if (dd2.f246a) {
+        if (dd2.f245a) {
             return;
         }
         try {
@@ -81,7 +95,7 @@ public final class c01 extends wj1 {
             } catch (Exception e4) {
                 nz0.Q(a.a.a.c.a(-1304781558791970L, strArr), 5, a.a.a.c.a(-1316476754738978L, strArr) + e4.getMessage());
             }
-            dd2.f246a = true;
+            dd2.f245a = true;
             nz0.Q(a.a.a.c.a(-1295427120021282L, strArr), 3, a.a.a.c.a(-1296058480213794L, strArr));
         } catch (Exception e5) {
             nz0.t(a.a.a.c.a(-1296294703415074L, strArr), a.a.a.c.a(-1295895271456546L, strArr) + e5.getMessage(), e5);
@@ -89,28 +103,28 @@ public final class c01 extends wj1 {
     }
 
     public c01() {
-        int iMyUid = Process.myUid();
-        this.o = iMyUid;
-        this.p = BUserHandle.getUserId(iMyUid);
+        int myUid = Process.myUid();
+        this.o = myUid;
+        this.p = BUserHandle.getUserId(myUid);
     }
 
     public static void U() {
         String[] strArr = xa1.b;
-        Process processStart = null;
+        Process process = null;
         try {
             try {
-                processStart = new ProcessBuilder(a.a.a.c.a(-984054875963170L, strArr), a.a.a.c.a(-984033401126690L, strArr)).redirectErrorStream(true).start();
-                processStart.waitFor();
-                processStart.destroy();
+                process = new ProcessBuilder(a.a.a.c.a(-984054875963170L, strArr), a.a.a.c.a(-984033401126690L, strArr)).redirectErrorStream(true).start();
+                process.waitFor();
+                process.destroy();
             } catch (Exception e) {
                 nz0.Q(a.a.a.c.a(-983530889953058L, strArr), 5, a.a.a.c.a(-983556659756834L, strArr) + e.getMessage());
-                if (processStart != null) {
-                    processStart.destroy();
+                if (process != null) {
+                    process.destroy();
                 }
             }
         } catch (Throwable th) {
-            if (processStart != null) {
-                processStart.destroy();
+            if (process != null) {
+                process.destroy();
             }
             throw th;
         }
@@ -118,11 +132,11 @@ public final class c01 extends wj1 {
 
     public static String X() {
         String packageName = r.l.j.getPackageName();
-        lx0.w(packageName, a.a.a.c.a(-211626482614050L, wj1.f1284a));
+        lx0.w(packageName, a.a.a.c.a(-211626482614050L, wj1.f1283a));
         return packageName;
     }
 
-    public static InstallResult Z(int i, String str) throws PackageManager.NameNotFoundException {
+    public static InstallResult Z(int i, String str) {
         try {
             return BPackageManager.get().installPackageAsUser(s.getPackageManager().getPackageInfo(str, 0).applicationInfo.sourceDir, InstallOption.installBySystem(), i);
         } catch (PackageManager.NameNotFoundException e) {
@@ -139,9 +153,15 @@ public final class c01 extends wj1 {
         return BRActivityThread.get().currentActivityThread();
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a4 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static l6 f0(Context context, String str) {
-        Uri uriInsert;
-        OutputStream outputStreamOpenOutputStream;
+        l6 l6Var;
+        Uri uri;
+        Uri insert;
+        OutputStream openOutputStream;
         String[] strArr = xa1.b;
         if (Build.VERSION.SDK_INT >= 30) {
             try {
@@ -149,22 +169,29 @@ public final class c01 extends wj1 {
                 contentValues.put(a.a.a.c.a(-984995473800994L, strArr), str);
                 contentValues.put(a.a.a.c.a(-985072783212322L, strArr), a.a.a.c.a(-985098553016098L, strArr));
                 contentValues.put(a.a.a.c.a(-984630401580834L, strArr), Environment.DIRECTORY_DOWNLOADS + a.a.a.c.a(-984707710992162L, strArr));
-                uriInsert = context.getContentResolver().insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, contentValues);
+                ContentResolver contentResolver = context.getContentResolver();
+                uri = MediaStore.Downloads.EXTERNAL_CONTENT_URI;
+                insert = contentResolver.insert(uri, contentValues);
             } catch (Exception e) {
                 jx0.q(new StringBuilder(), a.a.a.c.a(-984767840534306L, strArr), e, 5, a.a.a.c.a(-984742070730530L, strArr));
             }
-            l6 l6Var = (uriInsert == null || (outputStreamOpenOutputStream = context.getContentResolver().openOutputStream(uriInsert, a.a.a.c.a(-984681941188386L, strArr))) == null) ? null : new l6(16, outputStreamOpenOutputStream, uriInsert.toString());
+            if (insert != null && (openOutputStream = context.getContentResolver().openOutputStream(insert, a.a.a.c.a(-984681941188386L, strArr))) != null) {
+                l6Var = new l6(16, openOutputStream, insert.toString());
+                if (l6Var != null) {
+                    return l6Var;
+                }
+            }
+            l6Var = null;
             if (l6Var != null) {
-                return l6Var;
             }
         }
         try {
-            File fileG0 = g0(context);
-            if (!fileG0.exists() && !fileG0.mkdirs()) {
-                nz0.s(a.a.a.c.a(-983376271130402L, strArr), a.a.a.c.a(-983470760410914L, strArr) + fileG0.getAbsolutePath());
+            File g0 = g0(context);
+            if (!g0.exists() && !g0.mkdirs()) {
+                nz0.s(a.a.a.c.a(-983376271130402L, strArr), a.a.a.c.a(-983470760410914L, strArr) + g0.getAbsolutePath());
                 return null;
             }
-            File file = new File(fileG0, str);
+            File file = new File(g0, str);
             if (file.exists() && !file.delete()) {
                 nz0.Q(a.a.a.c.a(-982998314008354L, strArr), 5, a.a.a.c.a(-983092803288866L, strArr) + file.getAbsolutePath());
             }
@@ -187,7 +214,7 @@ public final class c01 extends wj1 {
         return externalFilesDir != null ? new File(externalFilesDir, a.a.a.c.a(-983960386682658L, strArr)) : new File(context.getExternalFilesDir(null), a.a.a.c.a(-984016221257506L, strArr));
     }
 
-    public static void h0(String str, String str2) throws IOException {
+    public static void h0(String str, String str2) {
         try {
             File file = new File(s.getCacheDir(), a.a.a.c.a(-984484372692770L, xa1.b));
             Properties properties = new Properties();
@@ -218,17 +245,97 @@ public final class c01 extends wj1 {
         BPackageManager.get().uninstallPackageAsUser(str, i);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:75:0x00c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0084, code lost:
+    
+        r1 = android.app.Application.getProcessName();
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void V(android.content.Context r7, androidx.emoji2.text.jf r8) throws java.io.IOException {
-        /*
-            Method dump skipped, instructions count: 426
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.c01.V(android.content.Context, androidx.emoji2.text.jf):void");
+    public final void V(Context context, jf jfVar) {
+        FileInputStream fileInputStream;
+        String trim;
+        String str;
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcesses;
+        String[] strArr = xa1.b;
+        int i = Build.VERSION.SDK_INT;
+        if (i >= 28) {
+            String[] strArr2 = {a.a.a.c.a(-970676052836130L, strArr)};
+            Unsafe unsafe = or0.f869a;
+            HashSet hashSet = lr0.f705a;
+            hashSet.addAll(Arrays.asList(strArr2));
+            String[] strArr3 = new String[hashSet.size()];
+            hashSet.toArray(strArr3);
+            or0.b(strArr3);
+        }
+        s = context;
+        this.l = jfVar;
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(a.a.a.c.a(-977732684103458L, strArr));
+        String str2 = s.getPackageName() + a.a.a.c.a(-978303914753826L, strArr);
+        String a2 = a.a.a.c.a(-978368339263266L, strArr);
+        if (l8.T()) {
+            NotificationChannel e = e40.e(str2, a2);
+            e.enableLights(true);
+            e.setLightColor(-65536);
+            e.setShowBadge(true);
+            e.setLockscreenVisibility(1);
+            notificationManager.createNotificationChannel(e);
+        }
+        Context context2 = s;
+        if (i < 28 || str == null || str.isEmpty()) {
+            int myPid = Process.myPid();
+            ActivityManager activityManager = (ActivityManager) context2.getSystemService(a.a.a.c.a(-977930252599074L, strArr));
+            try {
+                try {
+                    if (activityManager != null && (runningAppProcesses = activityManager.getRunningAppProcesses()) != null) {
+                        Iterator<ActivityManager.RunningAppProcessInfo> it = runningAppProcesses.iterator();
+                        while (true) {
+                            if (it.hasNext()) {
+                                ActivityManager.RunningAppProcessInfo next = it.next();
+                                if (next != null && next.pid == myPid && (trim = next.processName) != null) {
+                                    break;
+                                }
+                            }
+                        }
+                        str = trim;
+                    }
+                    byte[] bArr = new byte[PackageParser.PARSE_COLLECT_CERTIFICATES];
+                    int read = fileInputStream.read(bArr);
+                    if (read > 0) {
+                        int i2 = 0;
+                        while (i2 < read && bArr[i2] != 0) {
+                            i2++;
+                        }
+                        trim = new String(bArr, 0, i2, StandardCharsets.UTF_8).trim();
+                        if (!trim.isEmpty()) {
+                            fileInputStream.close();
+                            str = trim;
+                        }
+                    }
+                    fileInputStream.close();
+                } finally {
+                }
+                fileInputStream = new FileInputStream(a.a.a.c.a(-977968907304738L, strArr));
+            } catch (Exception unused) {
+            }
+            throw new RuntimeException(jx0.j(new StringBuilder(), a.a.a.c.a(-977466396131106L, strArr), myPid));
+        }
+        if (str.equals(X())) {
+            this.j = b01.f;
+            if (s.getSharedPreferences(a.a.a.c.a(-970663167934242L, strArr), 0).getBoolean(a.a.a.c.a(-970736182378274L, strArr), false) && !this.q) {
+                this.q = true;
+                new Thread(new g7(this), a.a.a.c.a(-984965409029922L, strArr)).start();
+            }
+        } else if (str.endsWith(s.getString(R.string.black_box_service_name))) {
+            this.j = b01.d;
+        } else {
+            this.j = b01.e;
+        }
+        if (r.a0()) {
+            BEnvironment.load();
+            str.endsWith(a.a.a.c.a(-970830671658786L, strArr));
+        }
+        HookManager.get().init();
     }
 
     public final void W() {
@@ -271,27 +378,27 @@ public final class c01 extends wj1 {
     }
 
     public final IBinder Y(String str) {
-        Bundle bundleR;
+        Bundle bundle;
         ConcurrentHashMap concurrentHashMap = this.k;
         IBinder iBinder = (IBinder) concurrentHashMap.get(str);
         if (iBinder != null && iBinder.isBinderAlive()) {
             return iBinder;
         }
-        Bundle bundle = new Bundle();
+        Bundle bundle2 = new Bundle();
         String[] strArr = xa1.b;
-        bundle.putString(a.a.a.c.a(-984080645766946L, strArr), str);
+        bundle2.putString(a.a.a.c.a(-984080645766946L, strArr), str);
         try {
-            bundleR = oy0.r(ProxyManifest.getBindProvider(), s, a.a.a.c.a(-984140775309090L, strArr), bundle, 5);
+            bundle = oy0.r(ProxyManifest.getBindProvider(), s, a.a.a.c.a(-984140775309090L, strArr), bundle2, 5);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
-            bundleR = null;
+            bundle = null;
         }
-        if (bundleR == null) {
+        if (bundle == null) {
             concurrentHashMap.remove(str);
             jx0.r(new StringBuilder(), a.a.a.c.a(-984230969622306L, strArr), str, 5, a.a.a.c.a(-984136480341794L, strArr));
             return null;
         }
-        IBinder binder = bundleR.getBinder(a.a.a.c.a(-984892394585890L, strArr));
+        IBinder binder = bundle.getBinder(a.a.a.c.a(-984892394585890L, strArr));
         if (binder != null) {
             concurrentHashMap.put(str, binder);
             return binder;

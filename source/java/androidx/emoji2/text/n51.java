@@ -48,16 +48,16 @@ public final class n51 {
     }
 
     public final o51 a() {
-        switch (m51.f733a[ordinal()]) {
+        switch (m51.f732a[ordinal()]) {
             case 1:
             case 2:
                 return o51.f;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
             case 4:
                 return o51.g;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return o51.h;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 return o51.d;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 throw new IllegalArgumentException(this + " has no target state");

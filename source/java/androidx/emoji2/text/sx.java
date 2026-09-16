@@ -14,12 +14,12 @@ public final class sx implements Function2 {
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
         lx lxVar = (lx) obj;
-        int iIntValue = ((Number) obj2).intValue();
+        int intValue = ((Number) obj2).intValue();
         tx txVar = (tx) lxVar;
-        if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+        if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
             throw null;
         }
         txVar.S();
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

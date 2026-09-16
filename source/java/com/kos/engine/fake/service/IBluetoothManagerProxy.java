@@ -83,9 +83,9 @@ public class IBluetoothManagerProxy extends BinderInvocationStub {
     }
 
     private static String findMessage(Throwable th) {
-        for (Throwable cause = th; cause != null; cause = cause.getCause()) {
-            if (cause.getMessage() != null) {
-                return cause.getMessage();
+        for (Throwable th2 = th; th2 != null; th2 = th2.getCause()) {
+            if (th2.getMessage() != null) {
+                return th2.getMessage();
             }
         }
         return String.valueOf(th);
@@ -134,11 +134,11 @@ public class IBluetoothManagerProxy extends BinderInvocationStub {
                 throw th;
             }
             String[] strArr = xa1.b;
-            String strA = c.a(-669993982377762L, strArr);
+            String a2 = c.a(-669993982377762L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-670092766625570L, strArr), method);
             sb.append(c.a(-669676154797858L, strArr));
-            zd.p(sb, findMessage(th), 5, strA);
+            zd.p(sb, findMessage(th), 5, a2);
             return defaultValue(method);
         }
     }

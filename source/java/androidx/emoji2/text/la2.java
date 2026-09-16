@@ -7,33 +7,33 @@ import com.kos.engine.entity.location.BCell;
 public abstract class la2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final jf2 f682a = new jf2(ka2.f);
+    public static final jf2 f681a = new jf2(ka2.f);
 
     public static final t92 a(lx lxVar, int i) {
-        ja2 ja2Var = (ja2) ((tx) lxVar).j(f682a);
+        ja2 ja2Var = (ja2) ((tx) lxVar).j(f681a);
         switch (zd.w(i)) {
             case 0:
                 return ja2Var.e;
             case 1:
                 return b(ja2Var.e);
             case 2:
-                return ja2Var.f570a;
+                return ja2Var.f569a;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                return b(ja2Var.f570a);
+                return b(ja2Var.f569a);
             case 4:
-                return s12.f1047a;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                return s12.f1046a;
+            case 5:
                 return ja2Var.d;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 float f = (float) 0.0d;
                 return r12.b(ja2Var.d, new ea0(f), null, new ea0(f), 6);
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return b(ja2Var.d);
             case 8:
                 return ja2Var.c;
-            case 9:
+            case pz0.b /* 9 */:
                 return wj1.e;
-            case 10:
+            case pz0.d /* 10 */:
                 return ja2Var.b;
             default:
                 throw new mu();

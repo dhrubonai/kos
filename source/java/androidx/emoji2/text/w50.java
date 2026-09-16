@@ -8,11 +8,11 @@ public final class w50 implements nd0 {
     public static final ThreadLocal b = new ThreadLocal();
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextPaint f1259a;
+    public final TextPaint f1258a;
 
     public w50() {
         TextPaint textPaint = new TextPaint();
-        this.f1259a = textPaint;
+        this.f1258a = textPaint;
         textPaint.setTextSize(10.0f);
     }
 }

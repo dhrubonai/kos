@@ -43,9 +43,9 @@ public abstract class wf2 extends eg2 {
     public static final int f0(CharSequence charSequence, CharSequence charSequence2, int i, int i2, boolean z, boolean z2) {
         ow0 ow0Var;
         if (z2) {
-            int iD0 = d0(charSequence);
-            if (i > iD0) {
-                i = iD0;
+            int d0 = d0(charSequence);
+            if (i > d0) {
+                i = d0;
             }
             if (i2 < 0) {
                 i2 = 0;
@@ -130,18 +130,18 @@ public abstract class wf2 extends eg2 {
         if (i < 0) {
             i = 0;
         }
-        int iD0 = d0(charSequence);
-        if (i > iD0) {
+        int d0 = d0(charSequence);
+        if (i > d0) {
             return -1;
         }
         while (true) {
-            char cCharAt = charSequence.charAt(i);
+            char charAt = charSequence.charAt(i);
             for (char c : cArr) {
-                if (ex2.v(c, cCharAt, z)) {
+                if (ex2.v(c, charAt, z)) {
                     return i;
                 }
             }
-            if (i == iD0) {
+            if (i == d0) {
                 return -1;
             }
             i++;
@@ -177,9 +177,9 @@ public abstract class wf2 extends eg2 {
         if (charSequence instanceof String) {
             return ((String) charSequence).lastIndexOf(xh.O0(cArr), i);
         }
-        int iD0 = d0(charSequence);
-        if (i > iD0) {
-            i = iD0;
+        int d0 = d0(charSequence);
+        if (i > d0) {
+            i = d0;
         }
         while (-1 < i) {
             if (ex2.v(cArr[0], charSequence.charAt(i), false)) {
@@ -191,9 +191,9 @@ public abstract class wf2 extends eg2 {
     }
 
     public static String m0(String str) {
-        CharSequence charSequenceSubSequence;
+        CharSequence charSequence;
         if (8 <= str.length()) {
-            charSequenceSubSequence = str.subSequence(0, str.length());
+            charSequence = str.subSequence(0, str.length());
         } else {
             StringBuilder sb = new StringBuilder(8);
             int length = 8 - str.length();
@@ -208,9 +208,9 @@ public abstract class wf2 extends eg2 {
                 }
             }
             sb.append((CharSequence) str);
-            charSequenceSubSequence = sb;
+            charSequence = sb;
         }
-        return charSequenceSubSequence.toString();
+        return charSequence.toString();
     }
 
     public static final boolean n0(CharSequence charSequence, int i, CharSequence charSequence2, int i2, int i3, boolean z) {
@@ -231,9 +231,9 @@ public abstract class wf2 extends eg2 {
         if (!eg2.Z(str, str2, false)) {
             return str;
         }
-        String strSubstring = str.substring(str2.length());
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(str2.length());
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String p0(String str, String str2) {
@@ -241,9 +241,9 @@ public abstract class wf2 extends eg2 {
         if (!eg2.T(str, str2, false)) {
             return str;
         }
-        String strSubstring = str.substring(0, str.length() - str2.length());
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(0, str.length() - str2.length());
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static StringBuilder q0(CharSequence charSequence, int i, int i2, CharSequence charSequence2) {
@@ -260,18 +260,18 @@ public abstract class wf2 extends eg2 {
     }
 
     public static final List r0(CharSequence charSequence, String str) {
-        int iE0 = e0(charSequence, str, 0, false);
-        if (iE0 == -1) {
+        int e0 = e0(charSequence, str, 0, false);
+        if (e0 == -1) {
             return lx0.M(charSequence.toString());
         }
         ArrayList arrayList = new ArrayList(10);
-        int length = 0;
+        int i = 0;
         do {
-            arrayList.add(charSequence.subSequence(length, iE0).toString());
-            length = str.length() + iE0;
-            iE0 = e0(charSequence, str, length, false);
-        } while (iE0 != -1);
-        arrayList.add(charSequence.subSequence(length, charSequence.length()).toString());
+            arrayList.add(charSequence.subSequence(i, e0).toString());
+            i = str.length() + e0;
+            e0 = e0(charSequence, str, i, false);
+        } while (e0 != -1);
+        arrayList.add(charSequence.subSequence(i, charSequence.length()).toString());
         return arrayList;
     }
 
@@ -296,47 +296,47 @@ public abstract class wf2 extends eg2 {
 
     public static String t0(String str, String str2) {
         lx0.x(str2, "delimiter");
-        int iH0 = h0(str, str2, 0, false, 6);
-        if (iH0 == -1) {
+        int h0 = h0(str, str2, 0, false, 6);
+        if (h0 == -1) {
             return str;
         }
-        String strSubstring = str.substring(str2.length() + iH0, str.length());
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(str2.length() + h0, str.length());
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String u0(String str, char c, String str2) {
-        int iL0 = l0(str, c, 0, 6);
-        if (iL0 == -1) {
+        int l0 = l0(str, c, 0, 6);
+        if (l0 == -1) {
             return str2;
         }
-        String strSubstring = str.substring(iL0 + 1, str.length());
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(l0 + 1, str.length());
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String v0(char c, String str) {
         lx0.x(str, "<this>");
         lx0.x(str, "missingDelimiterValue");
-        int iG0 = g0(str, c, 0, 6);
-        if (iG0 == -1) {
+        int g0 = g0(str, c, 0, 6);
+        if (g0 == -1) {
             return str;
         }
-        String strSubstring = str.substring(0, iG0);
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(0, g0);
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String w0(char c, String str) {
         lx0.x(str, "<this>");
         lx0.x(str, "missingDelimiterValue");
-        int iL0 = l0(str, c, 0, 6);
-        if (iL0 == -1) {
+        int l0 = l0(str, c, 0, 6);
+        if (l0 == -1) {
             return str;
         }
-        String strSubstring = str.substring(0, iL0);
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(0, l0);
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String x0(int i, String str) {
@@ -348,9 +348,9 @@ public abstract class wf2 extends eg2 {
         if (i > length) {
             i = length;
         }
-        String strSubstring = str.substring(0, i);
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(0, i);
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static String y0(int i, String str) {
@@ -362,9 +362,9 @@ public abstract class wf2 extends eg2 {
         if (i > length) {
             i = length;
         }
-        String strSubstring = str.substring(length - i);
-        lx0.w(strSubstring, "substring(...)");
-        return strSubstring;
+        String substring = str.substring(length - i);
+        lx0.w(substring, "substring(...)");
+        return substring;
     }
 
     public static CharSequence z0(String str) {
@@ -373,13 +373,13 @@ public abstract class wf2 extends eg2 {
         int i = 0;
         boolean z = false;
         while (i <= length) {
-            boolean zK = ex2.K(str.charAt(!z ? i : length));
+            boolean K = ex2.K(str.charAt(!z ? i : length));
             if (z) {
-                if (!zK) {
+                if (!K) {
                     break;
                 }
                 length--;
-            } else if (zK) {
+            } else if (K) {
                 i++;
             } else {
                 z = true;

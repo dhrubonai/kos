@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class a61 implements wu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wu2 f84a;
+    public final wu2 f83a;
     public final int b;
 
     public a61(wu2 wu2Var, int i) {
-        this.f84a = wu2Var;
+        this.f83a = wu2Var;
         this.b = i;
     }
 
     @Override // androidx.emoji2.text.wu2
     public final int a(j70 j70Var, q01 q01Var) {
         if (((q01Var == q01.d ? 4 : 1) & this.b) != 0) {
-            return this.f84a.a(j70Var, q01Var);
+            return this.f83a.a(j70Var, q01Var);
         }
         return 0;
     }
@@ -24,7 +24,7 @@ public final class a61 implements wu2 {
     @Override // androidx.emoji2.text.wu2
     public final int b(j70 j70Var) {
         if ((this.b & 32) != 0) {
-            return this.f84a.b(j70Var);
+            return this.f83a.b(j70Var);
         }
         return 0;
     }
@@ -32,7 +32,7 @@ public final class a61 implements wu2 {
     @Override // androidx.emoji2.text.wu2
     public final int c(j70 j70Var) {
         if ((this.b & 16) != 0) {
-            return this.f84a.c(j70Var);
+            return this.f83a.c(j70Var);
         }
         return 0;
     }
@@ -40,7 +40,7 @@ public final class a61 implements wu2 {
     @Override // androidx.emoji2.text.wu2
     public final int d(j70 j70Var, q01 q01Var) {
         if (((q01Var == q01.d ? 8 : 2) & this.b) != 0) {
-            return this.f84a.d(j70Var, q01Var);
+            return this.f83a.d(j70Var, q01Var);
         }
         return 0;
     }
@@ -53,16 +53,16 @@ public final class a61 implements wu2 {
             return false;
         }
         a61 a61Var = (a61) obj;
-        return lx0.n(this.f84a, a61Var.f84a) && this.b == a61Var.b;
+        return lx0.n(this.f83a, a61Var.f83a) && this.b == a61Var.b;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.b) + (this.f84a.hashCode() * 31);
+        return Integer.hashCode(this.b) + (this.f83a.hashCode() * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("(");
-        sb.append(this.f84a);
+        sb.append(this.f83a);
         sb.append(" only ");
         StringBuilder sb2 = new StringBuilder("WindowInsetsSides(");
         StringBuilder sb3 = new StringBuilder();
@@ -89,9 +89,9 @@ public final class a61 implements wu2 {
         if ((i & 32) == 32) {
             pz0.U(sb3, "Bottom");
         }
-        String string = sb3.toString();
-        lx0.w(string, "StringBuilder().apply(builderAction).toString()");
-        sb2.append(string);
+        String sb4 = sb3.toString();
+        lx0.w(sb4, "StringBuilder().apply(builderAction).toString()");
+        sb2.append(sb4);
         sb2.append(')');
         sb.append((Object) sb2.toString());
         sb.append(')');

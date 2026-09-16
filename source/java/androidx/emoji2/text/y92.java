@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public abstract class y92 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final r12 f1375a = ha2.b;
+    public static final r12 f1374a = ha2.b;
     public static final r12 b = ha2.e;
     public static final r12 c = ha2.d;
     public static final r12 d = ha2.c;
-    public static final r12 e = ha2.f464a;
+    public static final r12 e = ha2.f463a;
 }

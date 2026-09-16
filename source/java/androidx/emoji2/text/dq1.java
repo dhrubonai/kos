@@ -34,13 +34,13 @@ public final /* synthetic */ class dq1 implements sm0 {
                 um0 um0Var2 = (um0) this.h;
                 um0 um0Var3 = (um0) this.i;
                 sm0 sm0Var = (sm0) this.k;
-                int iOrdinal = pgVar.ordinal();
-                if (iOrdinal == 0) {
+                int ordinal = pgVar.ordinal();
+                if (ordinal == 0) {
                     um0Var.e(i01Var);
-                } else if (iOrdinal == 1) {
+                } else if (ordinal == 1) {
                     um0Var2.e(i01Var);
                 } else {
-                    if (iOrdinal != 2) {
+                    if (ordinal != 2) {
                         throw new mu();
                     }
                     um0Var3.e(i01Var);
@@ -52,7 +52,7 @@ public final /* synthetic */ class dq1 implements sm0 {
                 h50.G((e30) this.f, null, new ef0((Context) this.g, this.e, (mf1) this.h, (mf1) this.i, (mf1) this.j, (mf1) this.k, null), 3);
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ dq1(e30 e30Var, Context context, mf1 mf1Var, mf1 mf1Var2, mf1 mf1Var3, mf1 mf1Var4, mf1 mf1Var5) {

@@ -224,11 +224,11 @@ public class ProxyActivity extends Activity {
         Log.d(c.a(-850374018875170L, strArr), c.a(-850451328286498L, strArr));
         finish();
         HookManager.get().checkEnv(HCallbackProxy.class);
-        ProxyActivityRecord proxyActivityRecordCreate = ProxyActivityRecord.create(getIntent());
-        if (proxyActivityRecordCreate.mTarget != null) {
-            proxyActivityRecordCreate.mTarget.setExtrasClassLoader(rj.i().b != null ? rj.i().b.getClassLoader() : getClassLoader());
+        ProxyActivityRecord create = ProxyActivityRecord.create(getIntent());
+        if (create.mTarget != null) {
+            create.mTarget.setExtrasClassLoader(rj.i().b != null ? rj.i().b.getClassLoader() : getClassLoader());
             c01 c01Var = c01.r;
-            BActivityManager.get().startActivity(proxyActivityRecordCreate.mTarget, proxyActivityRecordCreate.mUserId);
+            BActivityManager.get().startActivity(create.mTarget, create.mUserId);
         }
     }
 }

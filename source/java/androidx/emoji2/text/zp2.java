@@ -7,7 +7,7 @@ import android.graphics.drawable.RippleDrawable;
 public final class zp2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final zp2 f1452a = new zp2();
+    public static final zp2 f1451a = new zp2();
 
     public final void a(RippleDrawable rippleDrawable, int i) {
         rippleDrawable.setRadius(i);

@@ -19,7 +19,6 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
-import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -60,7 +59,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeMaxTextSize();
         }
         fg fgVar = this.e;
@@ -72,7 +71,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeMinTextSize();
         }
         fg fgVar = this.e;
@@ -84,7 +83,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeStepGranularity();
         }
         fg fgVar = this.e;
@@ -96,7 +95,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeTextAvailableSizes();
         }
         fg fgVar = this.e;
@@ -106,12 +105,12 @@ public class jg extends TextView {
     @Override // android.widget.TextView
     @SuppressLint({"WrongConstant"})
     public int getAutoSizeTextType() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         fg fgVar = this.e;
         if (fgVar != null) {
-            return fgVar.i.f855a;
+            return fgVar.i.f854a;
         }
         return 0;
     }
@@ -213,13 +212,13 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection inputConnectionOnCreateInputConnection = super.onCreateInputConnection(editorInfo);
+        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.e.getClass();
-        if (Build.VERSION.SDK_INT < 30 && inputConnectionOnCreateInputConnection != null) {
+        if (Build.VERSION.SDK_INT < 30 && onCreateInputConnection != null) {
             lx0.X(editorInfo, getText());
         }
-        wj1.E(inputConnectionOnCreateInputConnection, editorInfo, this);
-        return inputConnectionOnCreateInputConnection;
+        wj1.E(onCreateInputConnection, editorInfo, this);
+        return onCreateInputConnection;
     }
 
     @Override // android.view.View
@@ -236,7 +235,7 @@ public class jg extends TextView {
     public final void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         fg fgVar = this.e;
-        if (fgVar == null || ct2.f218a) {
+        if (fgVar == null || ct2.f217a) {
             return;
         }
         fgVar.i.a();
@@ -268,7 +267,7 @@ public class jg extends TextView {
         fg fgVar = this.e;
         if (fgVar != null) {
             og ogVar = fgVar.i;
-            if (ct2.f218a || !ogVar.f()) {
+            if (ct2.f217a || !ogVar.f()) {
                 return;
             }
             ogVar.a();
@@ -283,7 +282,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
             return;
         }
@@ -295,7 +294,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
             return;
         }
@@ -307,7 +306,7 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeWithDefaults(int i) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeWithDefaults(i);
             return;
         }
@@ -489,14 +488,14 @@ public class jg extends TextView {
             }
         }
         setTextDirection(i);
-        getPaint().set(ht1Var.f490a);
+        getPaint().set(ht1Var.f489a);
         setBreakStrategy(ht1Var.c);
         setHyphenationFrequency(ht1Var.d);
     }
 
     @Override // android.widget.TextView
-    public final void setTextSize(int i, float f) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        boolean z = ct2.f218a;
+    public final void setTextSize(int i, float f) {
+        boolean z = ct2.f217a;
         if (z) {
             super.setTextSize(i, f);
             return;
@@ -513,23 +512,23 @@ public class jg extends TextView {
 
     @Override // android.widget.TextView
     public final void setTypeface(Typeface typeface, int i) {
-        Typeface typefaceCreate;
+        Typeface typeface2;
         if (this.h) {
             return;
         }
         if (typeface == null || i <= 0) {
-            typefaceCreate = null;
+            typeface2 = null;
         } else {
             Context context = getContext();
-            ly0 ly0Var = ap2.f115a;
+            ly0 ly0Var = ap2.f114a;
             if (context == null) {
                 throw new IllegalArgumentException("Context cannot be null");
             }
-            typefaceCreate = Typeface.create(typeface, i);
+            typeface2 = Typeface.create(typeface, i);
         }
         this.h = true;
-        if (typefaceCreate != null) {
-            typeface = typefaceCreate;
+        if (typeface2 != null) {
+            typeface = typeface2;
         }
         try {
             super.setTypeface(typeface, i);

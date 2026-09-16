@@ -47,8 +47,8 @@ public final class ze0 extends LinearLayout {
     public final we0 y;
 
     public ze0(TextInputLayout textInputLayout, rg rgVar) {
-        CharSequence text;
         super(textInputLayout.getContext());
+        CharSequence text;
         this.l = 0;
         this.m = new LinkedHashSet();
         this.y = new we0(this);
@@ -62,11 +62,11 @@ public final class ze0 extends LinearLayout {
         this.e = frameLayout;
         frameLayout.setVisibility(8);
         frameLayout.setLayoutParams(new LinearLayout.LayoutParams(-2, -1));
-        LayoutInflater layoutInflaterFrom = LayoutInflater.from(getContext());
-        CheckableImageButton checkableImageButtonA = a(this, layoutInflaterFrom, R.id.text_input_error_icon);
-        this.f = checkableImageButtonA;
-        CheckableImageButton checkableImageButtonA2 = a(frameLayout, layoutInflaterFrom, R.id.text_input_end_icon);
-        this.j = checkableImageButtonA2;
+        LayoutInflater from = LayoutInflater.from(getContext());
+        CheckableImageButton a2 = a(this, from, R.id.text_input_error_icon);
+        this.f = a2;
+        CheckableImageButton a3 = a(frameLayout, from, R.id.text_input_end_icon);
+        this.j = a3;
         this.k = new ye0(this, rgVar);
         jg jgVar = new jg(getContext(), null);
         this.t = jgVar;
@@ -80,12 +80,12 @@ public final class ze0 extends LinearLayout {
         if (typedArray.hasValue(37)) {
             i(rgVar.H(37));
         }
-        checkableImageButtonA.setContentDescription(getResources().getText(R.string.error_icon_content_description));
-        checkableImageButtonA.setImportantForAccessibility(2);
-        checkableImageButtonA.setClickable(false);
-        checkableImageButtonA.setPressable(false);
-        checkableImageButtonA.setCheckable(false);
-        checkableImageButtonA.setFocusable(false);
+        a2.setContentDescription(getResources().getText(R.string.error_icon_content_description));
+        a2.setImportantForAccessibility(2);
+        a2.setClickable(false);
+        a2.setPressable(false);
+        a2.setCheckable(false);
+        a2.setFocusable(false);
         if (!typedArray.hasValue(54)) {
             if (typedArray.hasValue(32)) {
                 this.n = a01.F(getContext(), rgVar, 32);
@@ -96,10 +96,10 @@ public final class ze0 extends LinearLayout {
         }
         if (typedArray.hasValue(30)) {
             g(typedArray.getInt(30, 0));
-            if (typedArray.hasValue(27) && checkableImageButtonA2.getContentDescription() != (text = typedArray.getText(27))) {
-                checkableImageButtonA2.setContentDescription(text);
+            if (typedArray.hasValue(27) && a3.getContentDescription() != (text = typedArray.getText(27))) {
+                a3.setContentDescription(text);
             }
-            checkableImageButtonA2.setCheckable(typedArray.getBoolean(26, true));
+            a3.setCheckable(typedArray.getBoolean(26, true));
         } else if (typedArray.hasValue(54)) {
             if (typedArray.hasValue(55)) {
                 this.n = a01.F(getContext(), rgVar, 55);
@@ -109,8 +109,8 @@ public final class ze0 extends LinearLayout {
             }
             g(typedArray.getBoolean(54, false) ? 1 : 0);
             CharSequence text2 = typedArray.getText(52);
-            if (checkableImageButtonA2.getContentDescription() != text2) {
-                checkableImageButtonA2.setContentDescription(text2);
+            if (a3.getContentDescription() != text2) {
+                a3.setContentDescription(text2);
             }
         }
         int dimensionPixelSize = typedArray.getDimensionPixelSize(29, getResources().getDimensionPixelSize(R.dimen.mtrl_min_touch_target_size));
@@ -119,16 +119,16 @@ public final class ze0 extends LinearLayout {
         }
         if (dimensionPixelSize != this.p) {
             this.p = dimensionPixelSize;
-            checkableImageButtonA2.setMinimumWidth(dimensionPixelSize);
-            checkableImageButtonA2.setMinimumHeight(dimensionPixelSize);
-            checkableImageButtonA.setMinimumWidth(dimensionPixelSize);
-            checkableImageButtonA.setMinimumHeight(dimensionPixelSize);
+            a3.setMinimumWidth(dimensionPixelSize);
+            a3.setMinimumHeight(dimensionPixelSize);
+            a2.setMinimumWidth(dimensionPixelSize);
+            a2.setMinimumHeight(dimensionPixelSize);
         }
         if (typedArray.hasValue(31)) {
-            ImageView.ScaleType scaleTypeH = l8.H(typedArray.getInt(31, -1));
-            this.q = scaleTypeH;
-            checkableImageButtonA2.setScaleType(scaleTypeH);
-            checkableImageButtonA.setScaleType(scaleTypeH);
+            ImageView.ScaleType H = l8.H(typedArray.getInt(31, -1));
+            this.q = H;
+            a3.setScaleType(H);
+            a2.setScaleType(H);
         }
         jgVar.setVisibility(8);
         jgVar.setId(R.id.textinput_suffix_text);
@@ -142,10 +142,10 @@ public final class ze0 extends LinearLayout {
         this.s = TextUtils.isEmpty(text3) ? null : text3;
         jgVar.setText(text3);
         n();
-        frameLayout.addView(checkableImageButtonA2);
+        frameLayout.addView(a3);
         addView(jgVar);
         addView(frameLayout);
-        addView(checkableImageButtonA);
+        addView(a2);
         textInputLayout.i0.add(xe0Var);
         if (textInputLayout.h != null) {
             xe0Var.a(textInputLayout);
@@ -211,22 +211,22 @@ public final class ze0 extends LinearLayout {
 
     public final void f(boolean z) {
         boolean z2;
-        boolean zIsActivated;
+        boolean isActivated;
         boolean z3;
-        af0 af0VarB = b();
-        boolean zJ = af0VarB.j();
+        af0 b = b();
+        boolean j = b.j();
         CheckableImageButton checkableImageButton = this.j;
         boolean z4 = true;
-        if (!zJ || (z3 = checkableImageButton.g) == af0VarB.k()) {
+        if (!j || (z3 = checkableImageButton.g) == b.k()) {
             z2 = false;
         } else {
             checkableImageButton.setChecked(!z3);
             z2 = true;
         }
-        if (!(af0VarB instanceof rc0) || (zIsActivated = checkableImageButton.isActivated()) == ((rc0) af0VarB).l) {
+        if (!(b instanceof rc0) || (isActivated = checkableImageButton.isActivated()) == ((rc0) b).l) {
             z4 = z2;
         } else {
-            checkableImageButton.setActivated(!zIsActivated);
+            checkableImageButton.setActivated(!isActivated);
         }
         if (z || z4) {
             l8.e0(this.d, checkableImageButton, this.n);
@@ -237,56 +237,56 @@ public final class ze0 extends LinearLayout {
         if (this.l == i) {
             return;
         }
-        af0 af0VarB = b();
+        af0 b = b();
         AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListener = this.x;
         AccessibilityManager accessibilityManager = this.w;
         if (touchExplorationStateChangeListener != null && accessibilityManager != null) {
             accessibilityManager.removeTouchExplorationStateChangeListener(touchExplorationStateChangeListener);
         }
         this.x = null;
-        af0VarB.r();
+        b.r();
         this.l = i;
         Iterator it = this.m.iterator();
         if (it.hasNext()) {
             throw jx0.g(it);
         }
         h(i != 0);
-        af0 af0VarB2 = b();
-        int iD = this.k.b;
-        if (iD == 0) {
-            iD = af0VarB2.d();
+        af0 b2 = b();
+        int i2 = this.k.b;
+        if (i2 == 0) {
+            i2 = b2.d();
         }
-        Drawable drawableO = iD != 0 ? xo2.o(getContext(), iD) : null;
+        Drawable o = i2 != 0 ? xo2.o(getContext(), i2) : null;
         CheckableImageButton checkableImageButton = this.j;
-        checkableImageButton.setImageDrawable(drawableO);
+        checkableImageButton.setImageDrawable(o);
         TextInputLayout textInputLayout = this.d;
-        if (drawableO != null) {
+        if (o != null) {
             l8.C(textInputLayout, checkableImageButton, this.n, this.o);
             l8.e0(textInputLayout, checkableImageButton, this.n);
         }
-        int iC = af0VarB2.c();
-        CharSequence text = iC != 0 ? getResources().getText(iC) : null;
+        int c = b2.c();
+        CharSequence text = c != 0 ? getResources().getText(c) : null;
         if (checkableImageButton.getContentDescription() != text) {
             checkableImageButton.setContentDescription(text);
         }
-        checkableImageButton.setCheckable(af0VarB2.j());
-        if (!af0VarB2.i(textInputLayout.getBoxBackgroundMode())) {
+        checkableImageButton.setCheckable(b2.j());
+        if (!b2.i(textInputLayout.getBoxBackgroundMode())) {
             throw new IllegalStateException("The current box background mode " + textInputLayout.getBoxBackgroundMode() + " is not supported by the end icon mode " + i);
         }
-        af0VarB2.q();
-        AccessibilityManager.TouchExplorationStateChangeListener touchExplorationStateChangeListenerH = af0VarB2.h();
-        this.x = touchExplorationStateChangeListenerH;
-        if (touchExplorationStateChangeListenerH != null && accessibilityManager != null && isAttachedToWindow()) {
+        b2.q();
+        AccessibilityManager.TouchExplorationStateChangeListener h = b2.h();
+        this.x = h;
+        if (h != null && accessibilityManager != null && isAttachedToWindow()) {
             accessibilityManager.addTouchExplorationStateChangeListener(this.x);
         }
-        View.OnClickListener onClickListenerF = af0VarB2.f();
+        View.OnClickListener f = b2.f();
         View.OnLongClickListener onLongClickListener = this.r;
-        checkableImageButton.setOnClickListener(onClickListenerF);
+        checkableImageButton.setOnClickListener(f);
         l8.k0(checkableImageButton, onLongClickListener);
         EditText editText = this.v;
         if (editText != null) {
-            af0VarB2.l(editText);
-            j(af0VarB2);
+            b2.l(editText);
+            j(b2);
         }
         l8.C(textInputLayout, checkableImageButton, this.n, this.o);
         f(true);

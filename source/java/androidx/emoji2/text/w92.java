@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class w92 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final x92 f1268a = new x92();
+    public static final x92 f1267a = new x92();
 }

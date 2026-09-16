@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 public abstract class x6 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Canvas f1320a = new Canvas();
+    public static final Canvas f1319a = new Canvas();
 
     public static final Canvas a(lp lpVar) {
         lx0.v(lpVar, "null cannot be cast to non-null type androidx.compose.ui.graphics.AndroidCanvas");
-        return ((w6) lpVar).f1261a;
+        return ((w6) lpVar).f1260a;
     }
 }

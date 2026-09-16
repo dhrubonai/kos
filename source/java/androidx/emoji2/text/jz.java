@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public final class jz {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ConstraintLayout f608a;
+    public final ConstraintLayout f607a;
     public int b;
     public int c;
     public int d;
@@ -21,7 +21,7 @@ public final class jz {
 
     public jz(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2) {
         this.h = constraintLayout;
-        this.f608a = constraintLayout2;
+        this.f607a = constraintLayout2;
     }
 
     public static boolean a(int i, int i2, int i3) {
@@ -38,9 +38,9 @@ public final class jz {
     }
 
     public final void b(tz tzVar, vk vkVar) {
-        int iMakeMeasureSpec;
-        int iMakeMeasureSpec2;
-        int iMax;
+        int makeMeasureSpec;
+        int makeMeasureSpec2;
+        int max;
         boolean z;
         int measuredWidth;
         int baseline;
@@ -60,66 +60,66 @@ public final class jz {
             return;
         }
         qa2 qa2Var = ConstraintLayout.s;
-        int i2 = vkVar.f1226a;
+        int i2 = vkVar.f1225a;
         int i3 = vkVar.b;
         int i4 = vkVar.c;
         int i5 = vkVar.d;
         int i6 = this.b + this.c;
         int i7 = this.d;
         View view = tzVar.f0;
-        int iW = zd.w(i2);
-        if (iW == 0) {
-            iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, 1073741824);
-        } else if (iW == 1) {
-            iMakeMeasureSpec = ViewGroup.getChildMeasureSpec(this.f, i7, -2);
-        } else if (iW == 2) {
-            iMakeMeasureSpec = ViewGroup.getChildMeasureSpec(this.f, i7, -2);
+        int w = zd.w(i2);
+        if (w == 0) {
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, 1073741824);
+        } else if (w == 1) {
+            makeMeasureSpec = ViewGroup.getChildMeasureSpec(this.f, i7, -2);
+        } else if (w == 2) {
+            makeMeasureSpec = ViewGroup.getChildMeasureSpec(this.f, i7, -2);
             boolean z2 = tzVar.r == 1;
             int i8 = vkVar.j;
             if (i8 == 1 || i8 == 2) {
                 boolean z3 = view.getMeasuredHeight() == tzVar.k();
                 if (vkVar.j == 2 || !z2 || ((z2 && z3) || tzVar.A())) {
-                    iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(tzVar.q(), 1073741824);
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(tzVar.q(), 1073741824);
                 }
             }
-        } else if (iW != 3) {
-            iMakeMeasureSpec = 0;
+        } else if (w != 3) {
+            makeMeasureSpec = 0;
         } else {
             int i9 = this.f;
             int i10 = ezVar2 != null ? ezVar2.g : 0;
             if (ezVar != null) {
                 i10 += ezVar.g;
             }
-            iMakeMeasureSpec = ViewGroup.getChildMeasureSpec(i9, i7 + i10, -1);
+            makeMeasureSpec = ViewGroup.getChildMeasureSpec(i9, i7 + i10, -1);
         }
-        int iW2 = zd.w(i3);
-        if (iW2 == 0) {
-            iMakeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, 1073741824);
-        } else if (iW2 == 1) {
-            iMakeMeasureSpec2 = ViewGroup.getChildMeasureSpec(this.g, i6, -2);
-        } else if (iW2 == 2) {
-            iMakeMeasureSpec2 = ViewGroup.getChildMeasureSpec(this.g, i6, -2);
+        int w2 = zd.w(i3);
+        if (w2 == 0) {
+            makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(i5, 1073741824);
+        } else if (w2 == 1) {
+            makeMeasureSpec2 = ViewGroup.getChildMeasureSpec(this.g, i6, -2);
+        } else if (w2 == 2) {
+            makeMeasureSpec2 = ViewGroup.getChildMeasureSpec(this.g, i6, -2);
             boolean z4 = tzVar.s == 1;
             int i11 = vkVar.j;
             if (i11 == 1 || i11 == 2) {
                 boolean z5 = view.getMeasuredWidth() == tzVar.q();
                 if (vkVar.j == 2 || !z4 || ((z4 && z5) || tzVar.B())) {
-                    iMakeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(tzVar.k(), 1073741824);
+                    makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(tzVar.k(), 1073741824);
                 }
             }
-        } else if (iW2 != 3) {
-            iMakeMeasureSpec2 = 0;
+        } else if (w2 != 3) {
+            makeMeasureSpec2 = 0;
         } else {
             int i12 = this.g;
             int i13 = ezVar2 != null ? tzVar.J.g : 0;
             if (ezVar != null) {
                 i13 += tzVar.L.g;
             }
-            iMakeMeasureSpec2 = ViewGroup.getChildMeasureSpec(i12, i6 + i13, -1);
+            makeMeasureSpec2 = ViewGroup.getChildMeasureSpec(i12, i6 + i13, -1);
         }
         uz uzVar = (uz) tzVar.T;
         ConstraintLayout constraintLayout = this.h;
-        if (uzVar != null && l8.L(constraintLayout.l, PackageParser.PARSE_COLLECT_CERTIFICATES) && view.getMeasuredWidth() == tzVar.q() && view.getMeasuredWidth() < uzVar.q() && view.getMeasuredHeight() == tzVar.k() && view.getMeasuredHeight() < uzVar.k() && view.getBaseline() == tzVar.a0 && !tzVar.z() && a(tzVar.G, iMakeMeasureSpec, tzVar.q()) && a(tzVar.H, iMakeMeasureSpec2, tzVar.k())) {
+        if (uzVar != null && l8.L(constraintLayout.l, PackageParser.PARSE_COLLECT_CERTIFICATES) && view.getMeasuredWidth() == tzVar.q() && view.getMeasuredWidth() < uzVar.q() && view.getMeasuredHeight() == tzVar.k() && view.getMeasuredHeight() < uzVar.k() && view.getBaseline() == tzVar.a0 && !tzVar.z() && a(tzVar.G, makeMeasureSpec, tzVar.q()) && a(tzVar.H, makeMeasureSpec2, tzVar.k())) {
             vkVar.e = tzVar.q();
             vkVar.f = tzVar.k();
             vkVar.g = tzVar.a0;
@@ -141,68 +141,68 @@ public final class jz {
             measuredWidth = 0;
             baseline = 0;
             i = -1;
-            iMax = 0;
+            max = 0;
         } else {
             if ((view instanceof bu2) && (tzVar instanceof ij0)) {
-                ((bu2) view).j((ij0) tzVar, iMakeMeasureSpec, iMakeMeasureSpec2);
+                ((bu2) view).j((ij0) tzVar, makeMeasureSpec, makeMeasureSpec2);
             } else {
-                view.measure(iMakeMeasureSpec, iMakeMeasureSpec2);
+                view.measure(makeMeasureSpec, makeMeasureSpec2);
             }
-            tzVar.G = iMakeMeasureSpec;
-            tzVar.H = iMakeMeasureSpec2;
+            tzVar.G = makeMeasureSpec;
+            tzVar.H = makeMeasureSpec2;
             tzVar.g = false;
             int measuredWidth2 = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
             int baseline2 = view.getBaseline();
             int i15 = tzVar.u;
-            int iMax2 = i15 > 0 ? Math.max(i15, measuredWidth2) : measuredWidth2;
+            int max2 = i15 > 0 ? Math.max(i15, measuredWidth2) : measuredWidth2;
             int i16 = tzVar.v;
             if (i16 > 0) {
-                iMax2 = Math.min(i16, iMax2);
+                max2 = Math.min(i16, max2);
             }
             int i17 = tzVar.x;
-            iMax = i17 > 0 ? Math.max(i17, measuredHeight) : measuredHeight;
-            int i18 = iMakeMeasureSpec2;
+            max = i17 > 0 ? Math.max(i17, measuredHeight) : measuredHeight;
+            int i18 = makeMeasureSpec2;
             int i19 = tzVar.y;
             if (i19 > 0) {
-                iMax = Math.min(i19, iMax);
+                max = Math.min(i19, max);
             }
             if (!l8.L(constraintLayout.l, 1)) {
                 if (z10 && z8) {
-                    iMax2 = (int) ((iMax * tzVar.W) + 0.5f);
+                    max2 = (int) ((max * tzVar.W) + 0.5f);
                 } else if (z11 && z9) {
-                    iMax = (int) ((iMax2 / tzVar.W) + 0.5f);
+                    max = (int) ((max2 / tzVar.W) + 0.5f);
                 }
             }
-            if (measuredWidth2 == iMax2 && measuredHeight == iMax) {
+            if (measuredWidth2 == max2 && measuredHeight == max) {
                 baseline = baseline2;
-                measuredWidth = iMax2;
+                measuredWidth = max2;
                 z = false;
             } else {
-                if (measuredWidth2 != iMax2) {
-                    iMakeMeasureSpec = View.MeasureSpec.makeMeasureSpec(iMax2, 1073741824);
+                if (measuredWidth2 != max2) {
+                    makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(max2, 1073741824);
                 }
-                int iMakeMeasureSpec3 = measuredHeight != iMax ? View.MeasureSpec.makeMeasureSpec(iMax, 1073741824) : i18;
-                view.measure(iMakeMeasureSpec, iMakeMeasureSpec3);
-                tzVar.G = iMakeMeasureSpec;
-                tzVar.H = iMakeMeasureSpec3;
+                int makeMeasureSpec3 = measuredHeight != max ? View.MeasureSpec.makeMeasureSpec(max, 1073741824) : i18;
+                view.measure(makeMeasureSpec, makeMeasureSpec3);
+                tzVar.G = makeMeasureSpec;
+                tzVar.H = makeMeasureSpec3;
                 z = false;
                 tzVar.g = false;
                 measuredWidth = view.getMeasuredWidth();
                 int measuredHeight2 = view.getMeasuredHeight();
                 baseline = view.getBaseline();
-                iMax = measuredHeight2;
+                max = measuredHeight2;
             }
             i = -1;
         }
         boolean z12 = baseline != i ? true : z;
-        vkVar.i = (measuredWidth == vkVar.c && iMax == vkVar.d) ? z : true;
+        vkVar.i = (measuredWidth == vkVar.c && max == vkVar.d) ? z : true;
         boolean z13 = izVar.c0 ? true : z12;
         if (z13 && baseline != -1 && tzVar.a0 != baseline) {
             vkVar.i = true;
         }
         vkVar.e = measuredWidth;
-        vkVar.f = iMax;
+        vkVar.f = max;
         vkVar.h = z13;
         vkVar.g = baseline;
     }

@@ -19,7 +19,7 @@ public final class d1 extends c1 {
 
     @Override // androidx.emoji2.text.c1
     public final int[] b(int i2) {
-        int iE;
+        int i3;
         switch (this.c) {
             case 0:
                 int length = n().length();
@@ -41,11 +41,11 @@ public final class d1 extends c1 {
                             lx0.b0("impl");
                             throw null;
                         }
-                        int iFollowing = breakIterator2.following(i2);
-                        if (iFollowing == -1) {
+                        int following = breakIterator2.following(i2);
+                        if (following == -1) {
                             return null;
                         }
-                        return l(i2, iFollowing);
+                        return l(i2, following);
                     }
                     BreakIterator breakIterator3 = (BreakIterator) this.d;
                     if (breakIterator3 == null) {
@@ -78,11 +78,11 @@ public final class d1 extends c1 {
                     lx0.b0("impl");
                     throw null;
                 }
-                int iFollowing2 = breakIterator5.following(i2);
-                if (iFollowing2 == -1 || !v(iFollowing2)) {
+                int following2 = breakIterator5.following(i2);
+                if (following2 == -1 || !v(following2)) {
                     return null;
                 }
-                return l(i2, iFollowing2);
+                return l(i2, following2);
             default:
                 if (n().length() <= 0 || i2 >= n().length()) {
                     return null;
@@ -94,31 +94,31 @@ public final class d1 extends c1 {
                         lx0.b0("layoutResult");
                         throw null;
                     }
-                    iE = sk2Var.e(0);
+                    i3 = sk2Var.e(0);
                 } else {
                     sk2 sk2Var2 = (sk2) this.d;
                     if (sk2Var2 == null) {
                         lx0.b0("layoutResult");
                         throw null;
                     }
-                    int iE2 = sk2Var2.e(i2);
-                    iE = t(iE2, rz1Var) == i2 ? iE2 : iE2 + 1;
+                    int e2 = sk2Var2.e(i2);
+                    i3 = t(e2, rz1Var) == i2 ? e2 : e2 + 1;
                 }
                 sk2 sk2Var3 = (sk2) this.d;
                 if (sk2Var3 == null) {
                     lx0.b0("layoutResult");
                     throw null;
                 }
-                if (iE >= sk2Var3.b.f) {
+                if (i3 >= sk2Var3.b.f) {
                     return null;
                 }
-                return l(t(iE, rz1Var), t(iE, i) + 1);
+                return l(t(i3, rz1Var), t(i3, i) + 1);
         }
     }
 
     @Override // androidx.emoji2.text.c1
     public final int[] s(int i2) {
-        int iE;
+        int i3;
         switch (this.c) {
             case 0:
                 int length = n().length();
@@ -140,11 +140,11 @@ public final class d1 extends c1 {
                             lx0.b0("impl");
                             throw null;
                         }
-                        int iPreceding = breakIterator2.preceding(i2);
-                        if (iPreceding == -1) {
+                        int preceding = breakIterator2.preceding(i2);
+                        if (preceding == -1) {
                             return null;
                         }
-                        return l(iPreceding, i2);
+                        return l(preceding, i2);
                     }
                     BreakIterator breakIterator3 = (BreakIterator) this.d;
                     if (breakIterator3 == null) {
@@ -178,12 +178,12 @@ public final class d1 extends c1 {
                     lx0.b0("impl");
                     throw null;
                 }
-                int iPreceding2 = breakIterator5.preceding(i2);
-                if (iPreceding2 == -1 || !w(iPreceding2)) {
+                int preceding2 = breakIterator5.preceding(i2);
+                if (preceding2 == -1 || !w(preceding2)) {
                     return null;
                 }
-                if (iPreceding2 == 0 || !w(iPreceding2 - 1)) {
-                    return l(iPreceding2, i2);
+                if (preceding2 == 0 || !w(preceding2 - 1)) {
+                    return l(preceding2, i2);
                 }
                 return null;
             default:
@@ -198,20 +198,20 @@ public final class d1 extends c1 {
                         lx0.b0("layoutResult");
                         throw null;
                     }
-                    iE = sk2Var.e(n().length());
+                    i3 = sk2Var.e(n().length());
                 } else {
                     sk2 sk2Var2 = (sk2) this.d;
                     if (sk2Var2 == null) {
                         lx0.b0("layoutResult");
                         throw null;
                     }
-                    int iE2 = sk2Var2.e(i2);
-                    iE = t(iE2, rz1Var) + 1 == i2 ? iE2 : iE2 - 1;
+                    int e2 = sk2Var2.e(i2);
+                    i3 = t(e2, rz1Var) + 1 == i2 ? e2 : e2 - 1;
                 }
-                if (iE < 0) {
+                if (i3 < 0) {
                     return null;
                 }
-                return l(t(iE, h), t(iE, rz1Var) + 1);
+                return l(t(i3, h), t(i3, rz1Var) + 1);
         }
     }
 
@@ -221,13 +221,13 @@ public final class d1 extends c1 {
             lx0.b0("layoutResult");
             throw null;
         }
-        int iH = sk2Var.h(i2);
+        int h2 = sk2Var.h(i2);
         sk2 sk2Var2 = (sk2) this.d;
         if (sk2Var2 == null) {
             lx0.b0("layoutResult");
             throw null;
         }
-        if (rz1Var != sk2Var2.i(iH)) {
+        if (rz1Var != sk2Var2.i(h2)) {
             sk2 sk2Var3 = (sk2) this.d;
             if (sk2Var3 != null) {
                 return sk2Var3.h(i2);
@@ -245,7 +245,7 @@ public final class d1 extends c1 {
     public void u(String str) {
         switch (this.c) {
             case 0:
-                this.f177a = str;
+                this.f176a = str;
                 BreakIterator breakIterator = (BreakIterator) this.d;
                 if (breakIterator != null) {
                     breakIterator.setText(str);
@@ -255,7 +255,7 @@ public final class d1 extends c1 {
                     throw null;
                 }
             default:
-                this.f177a = str;
+                this.f176a = str;
                 BreakIterator breakIterator2 = (BreakIterator) this.d;
                 if (breakIterator2 != null) {
                     breakIterator2.setText(str);

@@ -21,25 +21,25 @@ public final class oq2 extends g01 implements um0 {
                 pq2 pq2Var = this.f;
                 pq2Var.d = true;
                 pq2Var.f.a();
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 vb0 vb0Var = (vb0) obj;
                 pq2 pq2Var2 = this.f;
                 eq0 eq0Var = pq2Var2.b;
                 float f = pq2Var2.k;
                 float f2 = pq2Var2.l;
-                rg rgVarE0 = vb0Var.e0();
-                long jM = rgVarE0.M();
-                rgVarE0.D().f();
+                rg e0 = vb0Var.e0();
+                long M = e0.M();
+                e0.D().f();
                 try {
-                    ((p4) rgVarE0.e).E(f, f2, 0L);
+                    ((p4) e0.e).E(f, f2, 0L);
                     eq0Var.a(vb0Var);
-                    rgVarE0.D().n();
-                    rgVarE0.e0(jM);
-                    return up2.f1187a;
+                    e0.D().n();
+                    e0.e0(M);
+                    return up2.f1186a;
                 } catch (Throwable th) {
-                    rgVarE0.D().n();
-                    rgVarE0.e0(jM);
+                    e0.D().n();
+                    e0.e0(M);
                     throw th;
                 }
         }

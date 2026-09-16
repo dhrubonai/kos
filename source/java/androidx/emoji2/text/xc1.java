@@ -21,7 +21,7 @@ public final class xc1 extends y {
         this.m = sm0Var;
         this.n = edVar;
         this.o = e30Var;
-        this.p = az0.W(gw.f442a);
+        this.p = az0.W(gw.f441a);
     }
 
     @Override // androidx.emoji2.text.y
@@ -33,9 +33,9 @@ public final class xc1 extends y {
         } else {
             ((Function2) this.p.getValue()).invoke(txVar, 0);
         }
-        pw1 pw1VarS = txVar.s();
-        if (pw1VarS != null) {
-            pw1VarS.d = new x(i, 9, this);
+        pw1 s = txVar.s();
+        if (s != null) {
+            s.d = new x(i, 9, this);
         }
     }
 

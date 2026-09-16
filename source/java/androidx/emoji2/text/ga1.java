@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class ga1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f409a = jz0.c(29);
+    public static final long f408a = jz0.c(29);
     public static final long b = jz0.c(31);
     public static final long c = jz0.c(36);
     public static final long d = jz0.c(50);

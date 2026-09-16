@@ -7,7 +7,7 @@ import android.content.Context;
 public abstract class kq2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f651a = xz.h(0, 0, 0, 0);
+    public static final long f650a = xz.h(0, 0, 0, 0);
     public static final hw1 b;
 
     static {
@@ -25,15 +25,15 @@ public abstract class kq2 {
         }
         Context context = (Context) txVar.j(t8.b);
         txVar.Y(-1245195153);
-        boolean zF = txVar.f(context) | txVar.f(obj);
-        Object objM = txVar.M();
-        if (zF || objM == kx.f663a) {
+        boolean f = txVar.f(context) | txVar.f(obj);
+        Object M = txVar.M();
+        if (f || M == kx.f662a) {
             au0 au0Var = new au0(context);
             au0Var.c = obj;
-            objM = au0Var.a();
-            txVar.i0(objM);
+            M = au0Var.a();
+            txVar.i0(M);
         }
-        bu0 bu0Var2 = (bu0) objM;
+        bu0 bu0Var2 = (bu0) M;
         txVar.p(false);
         txVar.p(false);
         return bu0Var2;

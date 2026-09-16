@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class qt {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final float[] f977a;
+    public static final float[] f976a;
     public static final float[] b;
     public static final en2 c;
     public static final en2 d;
@@ -33,7 +33,7 @@ public final class qt {
 
     static {
         float[] fArr = {0.64f, 0.33f, 0.3f, 0.6f, 0.15f, 0.06f};
-        f977a = fArr;
+        f976a = fArr;
         float[] fArr2 = {0.67f, 0.33f, 0.21f, 0.71f, 0.14f, 0.08f};
         b = fArr2;
         float[] fArr3 = {0.708f, 0.292f, 0.17f, 0.797f, 0.131f, 0.046f};
@@ -117,8 +117,8 @@ public final class qt {
         double d4 = d2 * d3;
         double d5 = en2Var.b;
         double d6 = en2Var.d;
-        double dPow = (Math.pow(d4, d6) * en2Var.c) + d5;
-        return Math.pow((dPow >= 0.0d ? dPow : 0.0d) / ((Math.pow(d4, d6) * en2Var.f) + en2Var.e), en2Var.g) * d3;
+        double pow = (Math.pow(d4, d6) * en2Var.c) + d5;
+        return Math.pow((pow >= 0.0d ? pow : 0.0d) / ((Math.pow(d4, d6) * en2Var.f) + en2Var.e), en2Var.g) * d3;
     }
 
     public static double d(en2 en2Var, double d2) {

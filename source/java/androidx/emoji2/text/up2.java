@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class up2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final up2 f1187a = new up2();
+    public static final up2 f1186a = new up2();
 
     public final String toString() {
         return "kotlin.Unit";

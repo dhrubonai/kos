@@ -10,7 +10,7 @@ public final class r0 extends xa1 {
 
     @Override // androidx.emoji2.text.xa1
     public final void N(s0 s0Var, Thread thread) {
-        s0Var.f1043a = thread;
+        s0Var.f1042a = thread;
     }
 
     @Override // androidx.emoji2.text.xa1

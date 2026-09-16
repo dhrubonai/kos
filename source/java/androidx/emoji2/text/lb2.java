@@ -7,9 +7,9 @@ import kotlin.jvm.functions.Function2;
 public final class lb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Function2 f685a;
+    public final Function2 f684a;
 
     public lb2(Function2 function2) {
-        this.f685a = function2;
+        this.f684a = function2;
     }
 }

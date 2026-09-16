@@ -26,7 +26,7 @@ public final class sr {
     public static final sr t;
 
     /* renamed from: a, reason: collision with root package name */
-    public final String f1082a;
+    public final String f1081a;
 
     static {
         on onVar = new on(4);
@@ -155,10 +155,10 @@ public final class sr {
     }
 
     public sr(String str) {
-        this.f1082a = str;
+        this.f1081a = str;
     }
 
     public final String toString() {
-        return this.f1082a;
+        return this.f1081a;
     }
 }

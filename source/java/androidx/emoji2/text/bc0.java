@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class bc0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Object f143a = az0.T(hy.p);
+    public static final Object f142a = az0.T(hy.p);
 }

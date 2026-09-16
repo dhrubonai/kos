@@ -27,7 +27,7 @@ public final class ti implements gb2 {
     }
 
     @Override // androidx.emoji2.text.gb2, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() throws IOException {
+    public final void close() {
         switch (this.d) {
             case 0:
                 fd2 fd2Var = (fd2) this.e;
@@ -54,7 +54,7 @@ public final class ti implements gb2 {
     }
 
     @Override // androidx.emoji2.text.gb2, java.io.Flushable
-    public final void flush() throws IOException {
+    public final void flush() {
         switch (this.d) {
             case 0:
                 fd2 fd2Var = (fd2) this.e;
@@ -81,7 +81,7 @@ public final class ti implements gb2 {
     }
 
     @Override // androidx.emoji2.text.gb2
-    public final void g(long j, rn rnVar) throws IOException {
+    public final void g(long j, rn rnVar) {
         switch (this.d) {
             case 0:
                 lx0.y(rnVar.e, 0L, j);
@@ -131,11 +131,11 @@ public final class ti implements gb2 {
                     ((fm2) this.f).f();
                     b62 b62Var2 = rnVar.d;
                     lx0.u(b62Var2);
-                    int iMin = (int) Math.min(j, b62Var2.c - b62Var2.b);
-                    ((OutputStream) this.e).write(b62Var2.f137a, b62Var2.b, iMin);
-                    int i = b62Var2.b + iMin;
+                    int min = (int) Math.min(j, b62Var2.c - b62Var2.b);
+                    ((OutputStream) this.e).write(b62Var2.f136a, b62Var2.b, min);
+                    int i = b62Var2.b + min;
                     b62Var2.b = i;
-                    long j4 = iMin;
+                    long j4 = min;
                     j -= j4;
                     rnVar.e -= j4;
                     if (i == b62Var2.c) {

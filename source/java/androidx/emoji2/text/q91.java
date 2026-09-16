@@ -37,14 +37,14 @@ public final class q91 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((q91) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((q91) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         switch (this.h) {
             case 0:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 int i = this.i;
                 t91 t91Var = this.j;
                 if (i == 0) {
@@ -71,14 +71,14 @@ public final class q91 extends hh2 implements Function2 {
                 }
                 te2 te2Var2 = t91Var.e;
                 te2Var2.getClass();
-                te2Var2.i(null, en0.f310a);
+                te2Var2.i(null, en0.f309a);
                 te2 te2Var3 = t91Var.e;
                 ln0 ln0Var = new ln0((String) obj);
                 te2Var3.getClass();
                 te2Var3.i(null, ln0Var);
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                String[] strArr2 = wj1.f1284a;
+                String[] strArr2 = wj1.f1283a;
                 int i2 = this.i;
                 t91 t91Var2 = this.j;
                 if (i2 == 0) {
@@ -105,13 +105,13 @@ public final class q91 extends hh2 implements Function2 {
                 }
                 te2 te2Var5 = t91Var2.e;
                 te2Var5.getClass();
-                te2Var5.i(null, en0.f310a);
+                te2Var5.i(null, en0.f309a);
                 t91Var2.m();
                 te2 te2Var6 = t91Var2.e;
                 ln0 ln0Var2 = new ln0((String) obj);
                 te2Var6.getClass();
                 te2Var6.i(null, ln0Var2);
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

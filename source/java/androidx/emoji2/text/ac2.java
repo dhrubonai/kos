@@ -29,29 +29,29 @@ public final class ac2 extends g01 implements um0 {
                 un1 un1Var = geVar.e;
                 ?? r1 = geVar.d;
                 un1 un1Var2 = geVar.i;
-                float fAbs = Math.abs(((Number) un1Var.getValue()).floatValue());
+                float abs = Math.abs(((Number) un1Var.getValue()).floatValue());
                 float f = this.f;
-                float fAbs2 = Math.abs(f);
+                float abs2 = Math.abs(f);
                 um0 um0Var = this.i;
                 u42 u42Var = this.h;
                 zx1 zx1Var = this.g;
-                if (fAbs >= fAbs2) {
-                    float fC = cc2.c(((Number) un1Var.getValue()).floatValue(), f);
-                    float f2 = fC - zx1Var.d;
-                    float fA = u42Var.a(f2);
-                    um0Var.e(Float.valueOf(fA));
-                    if (Math.abs(f2 - fA) > 0.5f) {
+                if (abs >= abs2) {
+                    float c = cc2.c(((Number) un1Var.getValue()).floatValue(), f);
+                    float f2 = c - zx1Var.d;
+                    float a2 = u42Var.a(f2);
+                    um0Var.e(Float.valueOf(a2));
+                    if (Math.abs(f2 - a2) > 0.5f) {
                         un1Var2.setValue(Boolean.FALSE);
                         r1.a();
                     }
                     un1Var2.setValue(Boolean.FALSE);
                     r1.a();
-                    zx1Var.d = fC;
+                    zx1Var.d = c;
                 } else {
-                    float fFloatValue = ((Number) un1Var.getValue()).floatValue() - zx1Var.d;
-                    float fA2 = u42Var.a(fFloatValue);
-                    um0Var.e(Float.valueOf(fA2));
-                    if (Math.abs(fFloatValue - fA2) > 0.5f) {
+                    float floatValue = ((Number) un1Var.getValue()).floatValue() - zx1Var.d;
+                    float a3 = u42Var.a(floatValue);
+                    um0Var.e(Float.valueOf(a3));
+                    if (Math.abs(floatValue - a3) > 0.5f) {
                         un1Var2.setValue(Boolean.FALSE);
                         r1.a();
                     }
@@ -60,18 +60,18 @@ public final class ac2 extends g01 implements um0 {
                 break;
             default:
                 ge geVar2 = (ge) obj;
-                float fC2 = cc2.c(((Number) geVar2.e.getValue()).floatValue(), this.f);
+                float c2 = cc2.c(((Number) geVar2.e.getValue()).floatValue(), this.f);
                 zx1 zx1Var2 = this.g;
-                float f3 = fC2 - zx1Var2.d;
-                float fA3 = this.h.a(f3);
-                this.i.e(Float.valueOf(fA3));
-                if (Math.abs(f3 - fA3) > 0.5f || fC2 != ((Number) geVar2.e.getValue()).floatValue()) {
+                float f3 = c2 - zx1Var2.d;
+                float a4 = this.h.a(f3);
+                this.i.e(Float.valueOf(a4));
+                if (Math.abs(f3 - a4) > 0.5f || c2 != ((Number) geVar2.e.getValue()).floatValue()) {
                     geVar2.i.setValue(Boolean.FALSE);
                     geVar2.d.a();
                 }
-                zx1Var2.d += fA3;
+                zx1Var2.d += a4;
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

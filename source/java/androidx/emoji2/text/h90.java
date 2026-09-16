@@ -8,10 +8,10 @@ import android.util.DisplayMetrics;
 public final class h90 implements kb2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f461a;
+    public final Context f460a;
 
     public h90(Context context) {
-        this.f461a = context;
+        this.f460a = context;
     }
 
     public final boolean equals(Object obj) {
@@ -19,19 +19,19 @@ public final class h90 implements kb2 {
             return true;
         }
         if (obj instanceof h90) {
-            return lx0.n(this.f461a, ((h90) obj).f461a);
+            return lx0.n(this.f460a, ((h90) obj).f460a);
         }
         return false;
     }
 
     @Override // androidx.emoji2.text.kb2
     public final Object f(zv1 zv1Var) {
-        DisplayMetrics displayMetrics = this.f461a.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = this.f460a.getResources().getDisplayMetrics();
         q80 q80Var = new q80(Math.max(displayMetrics.widthPixels, displayMetrics.heightPixels));
         return new hb2(q80Var, q80Var);
     }
 
     public final int hashCode() {
-        return this.f461a.hashCode();
+        return this.f460a.hashCode();
     }
 }

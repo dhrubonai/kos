@@ -7,16 +7,16 @@ import android.graphics.PathMeasure;
 public final class xa {
 
     /* renamed from: a, reason: collision with root package name */
-    public final PathMeasure f1325a;
+    public final PathMeasure f1324a;
 
     public xa(PathMeasure pathMeasure) {
-        this.f1325a = pathMeasure;
+        this.f1324a = pathMeasure;
     }
 
     public final void a(float f, float f2, wa waVar) {
         if (waVar == null) {
             throw new UnsupportedOperationException("Unable to obtain android.graphics.Path");
         }
-        this.f1325a.getSegment(f, f2, waVar.f1269a, true);
+        this.f1324a.getSegment(f, f2, waVar.f1268a, true);
     }
 }

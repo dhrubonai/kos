@@ -9,23 +9,23 @@ import java.util.Arrays;
 public final class ry {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f1040a = true;
+    public boolean f1039a = true;
     public boolean b;
     public Object c;
     public Serializable d;
 
     public sy a() {
-        return new sy(this.f1040a, this.b, (String[]) this.c, (String[]) this.d);
+        return new sy(this.f1039a, this.b, (String[]) this.c, (String[]) this.d);
     }
 
     public void b(sr... srVarArr) {
         lx0.x(srVarArr, "cipherSuites");
-        if (!this.f1040a) {
+        if (!this.f1039a) {
             throw new IllegalArgumentException("no cipher suites for cleartext connections");
         }
         ArrayList arrayList = new ArrayList(srVarArr.length);
         for (sr srVar : srVarArr) {
-            arrayList.add(srVar.f1082a);
+            arrayList.add(srVar.f1081a);
         }
         String[] strArr = (String[]) arrayList.toArray(new String[0]);
         c((String[]) Arrays.copyOf(strArr, strArr.length));
@@ -33,7 +33,7 @@ public final class ry {
 
     public void c(String... strArr) {
         lx0.x(strArr, "cipherSuites");
-        if (!this.f1040a) {
+        if (!this.f1039a) {
             throw new IllegalArgumentException("no cipher suites for cleartext connections");
         }
         if (strArr.length == 0) {
@@ -43,7 +43,7 @@ public final class ry {
     }
 
     public void d(lm2... lm2VarArr) {
-        if (!this.f1040a) {
+        if (!this.f1039a) {
             throw new IllegalArgumentException("no TLS versions for cleartext connections");
         }
         ArrayList arrayList = new ArrayList(lm2VarArr.length);
@@ -57,7 +57,7 @@ public final class ry {
     /* JADX WARN: Type inference failed for: r2v4, types: [java.io.Serializable, java.lang.String[]] */
     public void e(String... strArr) {
         lx0.x(strArr, "tlsVersions");
-        if (!this.f1040a) {
+        if (!this.f1039a) {
             throw new IllegalArgumentException("no TLS versions for cleartext connections");
         }
         if (strArr.length == 0) {

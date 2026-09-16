@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public final class a51 implements uu2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f83a = az0.W(Boolean.FALSE);
+    public final un1 f82a = az0.W(Boolean.FALSE);
 }

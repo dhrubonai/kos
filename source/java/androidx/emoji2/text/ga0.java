@@ -5,21 +5,21 @@ package androidx.emoji2.text;
 public final class ga0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f408a;
+    public final long f407a;
 
     public final boolean equals(Object obj) {
         if (obj instanceof ga0) {
-            return this.f408a == ((ga0) obj).f408a;
+            return this.f407a == ((ga0) obj).f407a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f408a);
+        return Long.hashCode(this.f407a);
     }
 
     public final String toString() {
-        long j = this.f408a;
+        long j = this.f407a;
         if (j == 9205357640488583168L) {
             return "DpSize.Unspecified";
         }

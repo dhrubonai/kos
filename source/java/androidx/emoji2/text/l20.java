@@ -36,36 +36,36 @@ public final class l20 extends g01 implements wm0 {
         Object obj7 = this.j;
         switch (i) {
             case 0:
-                int iIntValue = ((Number) obj).intValue();
-                int iIntValue2 = ((Number) obj2).intValue();
-                boolean zBooleanValue = ((Boolean) obj3).booleanValue();
+                int intValue = ((Number) obj).intValue();
+                int intValue2 = ((Number) obj2).intValue();
+                boolean booleanValue = ((Boolean) obj3).booleanValue();
                 zg0 zg0Var = (zg0) obj4;
                 uj2 uj2Var = (uj2) obj6;
                 ak2 ak2Var = (ak2) obj5;
-                ue ueVar = ak2Var.f106a;
-                if (!zBooleanValue) {
-                    zg0Var.b(iIntValue);
+                ue ueVar = ak2Var.f105a;
+                if (!booleanValue) {
+                    zg0Var.b(intValue);
                 }
-                if (!zBooleanValue) {
-                    zg0Var.b(iIntValue2);
+                if (!booleanValue) {
+                    zg0Var.b(intValue2);
                 }
                 if (z2) {
                     long j = ak2Var.b;
                     int i2 = al2.c;
-                    if (iIntValue != ((int) (j >> 32)) || iIntValue2 != ((int) (j & 4294967295L))) {
-                        int iMin = Math.min(iIntValue, iIntValue2);
+                    if (intValue != ((int) (j >> 32)) || intValue2 != ((int) (j & 4294967295L))) {
+                        int min = Math.min(intValue, intValue2);
                         qq0 qq0Var = qq0.d;
-                        if (iMin < 0 || Math.max(iIntValue, iIntValue2) > ueVar.e.length()) {
+                        if (min < 0 || Math.max(intValue, intValue2) > ueVar.e.length()) {
                             uj2Var.p(false);
                             uj2Var.n(qq0Var);
                         } else {
-                            if (zBooleanValue || iIntValue == iIntValue2) {
+                            if (booleanValue || intValue == intValue2) {
                                 uj2Var.p(false);
                                 uj2Var.n(qq0Var);
                             } else {
                                 uj2Var.f(true);
                             }
-                            ((h51) obj7).t.e(new ak2(ueVar, n6.F(iIntValue, iIntValue2), (al2) null));
+                            ((h51) obj7).t.e(new ak2(ueVar, n6.F(intValue, intValue2), (al2) null));
                             z = true;
                         }
                     }
@@ -80,61 +80,61 @@ public final class l20 extends g01 implements wm0 {
                 lx0.x(nd1Var, "$this$composed");
                 tx txVar = (tx) ((lx) obj2);
                 txVar.X(-884249738);
-                Object objM = txVar.M();
-                on onVar = kx.f663a;
-                if (objM == onVar) {
+                Object M = txVar.M();
+                on onVar = kx.f662a;
+                if (M == onVar) {
                     jy jyVar = new jy(bz0.D(txVar));
                     txVar.i0(jyVar);
-                    objM = jyVar;
+                    M = jyVar;
                 }
-                e30 e30Var = ((jy) objM).d;
+                e30 e30Var = ((jy) M).d;
                 txVar.X(764384671);
-                Object objM2 = txVar.M();
-                if (objM2 == onVar) {
-                    objM2 = az0.W(null);
-                    txVar.i0(objM2);
+                Object M2 = txVar.M();
+                if (M2 == onVar) {
+                    M2 = az0.W(null);
+                    txVar.i0(M2);
                 }
-                mf1 mf1Var2 = (mf1) objM2;
+                mf1 mf1Var2 = (mf1) M2;
                 txVar.p(false);
                 txVar.X(764387240);
-                Object objM3 = txVar.M();
-                if (objM3 == onVar) {
-                    objM3 = az0.W(Boolean.FALSE);
-                    txVar.i0(objM3);
+                Object M3 = txVar.M();
+                if (M3 == onVar) {
+                    M3 = az0.W(Boolean.FALSE);
+                    txVar.i0(M3);
                 }
-                mf1 mf1Var3 = (mf1) objM3;
+                mf1 mf1Var3 = (mf1) M3;
                 txVar.p(false);
                 txVar.X(764389636);
-                boolean zH = txVar.h(e30Var) | txVar.f(null) | txVar.f(sm0Var);
-                Object objM4 = txVar.M();
-                if (zH || objM4 == onVar) {
+                boolean h = txVar.h(e30Var) | txVar.f(null) | txVar.f(sm0Var);
+                Object M4 = txVar.M();
+                if (h || M4 == onVar) {
                     mf1Var = mf1Var3;
                     ad adVar = new ad(sm0Var, mf1Var, mf1Var2, e30Var, 2);
                     mf1Var2 = mf1Var2;
                     txVar.i0(adVar);
-                    objM4 = adVar;
+                    M4 = adVar;
                 } else {
                     mf1Var = mf1Var3;
                 }
                 txVar.p(false);
-                bz0.k(obj4, (um0) objM4, txVar);
-                Boolean boolValueOf = Boolean.valueOf(z2);
+                bz0.k(obj4, (um0) M4, txVar);
+                Boolean valueOf = Boolean.valueOf(z2);
                 txVar.X(764404883);
-                boolean zF = txVar.f(null) | txVar.g(z2) | txVar.h(e30Var) | txVar.f(um0Var) | txVar.f(sm0Var) | txVar.f(function2);
-                Object objM5 = txVar.M();
-                if (zF || objM5 == onVar) {
-                    bool = boolValueOf;
+                boolean f = txVar.f(null) | txVar.g(z2) | txVar.h(e30Var) | txVar.f(um0Var) | txVar.f(sm0Var) | txVar.f(function2);
+                Object M5 = txVar.M();
+                if (f || M5 == onVar) {
+                    bool = valueOf;
                     zt2 zt2Var = new zt2(this.f, function2, um0Var, mf1Var, e30Var, mf1Var2, sm0Var, null);
                     txVar.i0(zt2Var);
-                    objM5 = zt2Var;
+                    M5 = zt2Var;
                 } else {
-                    bool = boolValueOf;
+                    bool = valueOf;
                 }
                 txVar.p(false);
-                is1 is1Var = jh2.f578a;
-                nd1 nd1VarK = nd1Var.k(new SuspendPointerInputElement(obj4, bool, new ih2((Function2) objM5), 4));
+                is1 is1Var = jh2.f577a;
+                nd1 k = nd1Var.k(new SuspendPointerInputElement(obj4, bool, new ih2((Function2) M5), 4));
                 txVar.p(false);
-                return nd1VarK;
+                return k;
         }
     }
 

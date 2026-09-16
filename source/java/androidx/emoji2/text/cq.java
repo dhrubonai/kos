@@ -11,17 +11,17 @@ import com.kos.engine.entity.location.BCell;
 public final class cq extends Property {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f214a;
+    public final /* synthetic */ int f213a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ cq(Class cls, String str, int i) {
         super(cls, str);
-        this.f214a = i;
+        this.f213a = i;
     }
 
     @Override // android.util.Property
     public final Object get(Object obj) {
-        switch (this.f214a) {
+        switch (this.f213a) {
             case 0:
                 return null;
             case 1:
@@ -32,8 +32,8 @@ public final class cq extends Property {
                 return null;
             case 4:
                 return null;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                return Float.valueOf(bt2.f167a.O((View) obj));
+            case 5:
+                return Float.valueOf(bt2.f166a.O((View) obj));
             default:
                 return ((View) obj).getClipBounds();
         }
@@ -41,18 +41,18 @@ public final class cq extends Property {
 
     @Override // android.util.Property
     public final void set(Object obj, Object obj2) {
-        switch (this.f214a) {
+        switch (this.f213a) {
             case 0:
                 fq fqVar = (fq) obj;
                 PointF pointF = (PointF) obj2;
                 fqVar.getClass();
-                fqVar.f375a = Math.round(pointF.x);
-                int iRound = Math.round(pointF.y);
-                fqVar.b = iRound;
+                fqVar.f374a = Math.round(pointF.x);
+                int round = Math.round(pointF.y);
+                fqVar.b = round;
                 int i = fqVar.f + 1;
                 fqVar.f = i;
                 if (i == fqVar.g) {
-                    bt2.a(fqVar.e, fqVar.f375a, iRound, fqVar.c, fqVar.d);
+                    bt2.a(fqVar.e, fqVar.f374a, round, fqVar.c, fqVar.d);
                     fqVar.f = 0;
                     fqVar.g = 0;
                     break;
@@ -63,12 +63,12 @@ public final class cq extends Property {
                 PointF pointF2 = (PointF) obj2;
                 fqVar2.getClass();
                 fqVar2.c = Math.round(pointF2.x);
-                int iRound2 = Math.round(pointF2.y);
-                fqVar2.d = iRound2;
+                int round2 = Math.round(pointF2.y);
+                fqVar2.d = round2;
                 int i2 = fqVar2.g + 1;
                 fqVar2.g = i2;
                 if (fqVar2.f == i2) {
-                    bt2.a(fqVar2.e, fqVar2.f375a, fqVar2.b, fqVar2.c, iRound2);
+                    bt2.a(fqVar2.e, fqVar2.f374a, fqVar2.b, fqVar2.c, round2);
                     fqVar2.f = 0;
                     fqVar2.g = 0;
                     break;
@@ -87,13 +87,13 @@ public final class cq extends Property {
             case 4:
                 View view3 = (View) obj;
                 PointF pointF5 = (PointF) obj2;
-                int iRound3 = Math.round(pointF5.x);
-                int iRound4 = Math.round(pointF5.y);
-                bt2.a(view3, iRound3, iRound4, view3.getWidth() + iRound3, view3.getHeight() + iRound4);
+                int round3 = Math.round(pointF5.x);
+                int round4 = Math.round(pointF5.y);
+                bt2.a(view3, round3, round4, view3.getWidth() + round3, view3.getHeight() + round4);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
-                float fFloatValue = ((Float) obj2).floatValue();
-                bt2.f167a.f0((View) obj, fFloatValue);
+            case 5:
+                float floatValue = ((Float) obj2).floatValue();
+                bt2.f166a.f0((View) obj, floatValue);
                 break;
             default:
                 ((View) obj).setClipBounds((Rect) obj2);

@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public abstract class gg1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f417a = 0;
+    public static final /* synthetic */ int f416a = 0;
 
     static {
-        float f = ld0.f686a;
+        float f = ld0.f685a;
     }
 }

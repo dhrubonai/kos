@@ -6,53 +6,53 @@ public final class yh extends md1 implements w01 {
     public float r;
 
     public final long I0(long j, boolean z) {
-        int iRound;
-        int iG = vz.g(j);
-        if (iG == Integer.MAX_VALUE || (iRound = Math.round(iG * this.r)) <= 0) {
+        int round;
+        int g = vz.g(j);
+        if (g == Integer.MAX_VALUE || (round = Math.round(g * this.r)) <= 0) {
             return 0L;
         }
-        long jD = kx0.d(iRound, iG);
-        if (!z || xz.i(j, jD)) {
-            return jD;
+        long d = kx0.d(round, g);
+        if (!z || xz.i(j, d)) {
+            return d;
         }
         return 0L;
     }
 
     public final long J0(long j, boolean z) {
-        int iRound;
-        int iH = vz.h(j);
-        if (iH == Integer.MAX_VALUE || (iRound = Math.round(iH / this.r)) <= 0) {
+        int round;
+        int h = vz.h(j);
+        if (h == Integer.MAX_VALUE || (round = Math.round(h / this.r)) <= 0) {
             return 0L;
         }
-        long jD = kx0.d(iH, iRound);
-        if (!z || xz.i(j, jD)) {
-            return jD;
+        long d = kx0.d(h, round);
+        if (!z || xz.i(j, d)) {
+            return d;
         }
         return 0L;
     }
 
     public final long K0(long j, boolean z) {
         int i = vz.i(j);
-        int iRound = Math.round(i * this.r);
-        if (iRound <= 0) {
+        int round = Math.round(i * this.r);
+        if (round <= 0) {
             return 0L;
         }
-        long jD = kx0.d(iRound, i);
-        if (!z || xz.i(j, jD)) {
-            return jD;
+        long d = kx0.d(round, i);
+        if (!z || xz.i(j, d)) {
+            return d;
         }
         return 0L;
     }
 
     public final long L0(long j, boolean z) {
-        int iJ = vz.j(j);
-        int iRound = Math.round(iJ / this.r);
-        if (iRound <= 0) {
+        int j2 = vz.j(j);
+        int round = Math.round(j2 / this.r);
+        if (round <= 0) {
             return 0L;
         }
-        long jD = kx0.d(iJ, iRound);
-        if (!z || xz.i(j, jD)) {
-            return jD;
+        long d = kx0.d(j2, round);
+        if (!z || xz.i(j, d)) {
+            return d;
         }
         return 0L;
     }
@@ -64,23 +64,23 @@ public final class yh extends md1 implements w01 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        long jJ0 = J0(j, true);
-        if (uw0.a(jJ0, 0L)) {
-            jJ0 = I0(j, true);
-            if (uw0.a(jJ0, 0L)) {
-                jJ0 = L0(j, true);
-                if (uw0.a(jJ0, 0L)) {
-                    jJ0 = K0(j, true);
-                    if (uw0.a(jJ0, 0L)) {
-                        jJ0 = J0(j, false);
-                        if (uw0.a(jJ0, 0L)) {
-                            jJ0 = I0(j, false);
-                            if (uw0.a(jJ0, 0L)) {
-                                jJ0 = L0(j, false);
-                                if (uw0.a(jJ0, 0L)) {
-                                    jJ0 = K0(j, false);
-                                    if (uw0.a(jJ0, 0L)) {
-                                        jJ0 = 0;
+        long J0 = J0(j, true);
+        if (uw0.a(J0, 0L)) {
+            J0 = I0(j, true);
+            if (uw0.a(J0, 0L)) {
+                J0 = L0(j, true);
+                if (uw0.a(J0, 0L)) {
+                    J0 = K0(j, true);
+                    if (uw0.a(J0, 0L)) {
+                        J0 = J0(j, false);
+                        if (uw0.a(J0, 0L)) {
+                            J0 = I0(j, false);
+                            if (uw0.a(J0, 0L)) {
+                                J0 = L0(j, false);
+                                if (uw0.a(J0, 0L)) {
+                                    J0 = K0(j, false);
+                                    if (uw0.a(J0, 0L)) {
+                                        J0 = 0;
                                     }
                                 }
                             }
@@ -89,16 +89,16 @@ public final class yh extends md1 implements w01 {
                 }
             }
         }
-        if (!uw0.a(jJ0, 0L)) {
-            int i = (int) (jJ0 >> 32);
-            int i2 = (int) (jJ0 & 4294967295L);
+        if (!uw0.a(J0, 0L)) {
+            int i = (int) (J0 >> 32);
+            int i2 = (int) (J0 & 4294967295L);
             if (!((i2 >= 0) & (i >= 0))) {
                 kv0.a("width and height must be >= 0");
             }
             j = xz.h(i, i, i2, i2);
         }
-        hr1 hr1VarQ = ab1Var.q(j);
-        return hb1Var.P(hr1VarQ.d, hr1VarQ.e, re0.d, new jb(hr1VarQ, 1));
+        hr1 q = ab1Var.q(j);
+        return hb1Var.P(q.d, q.e, re0.d, new jb(q, 1));
     }
 
     @Override // androidx.emoji2.text.w01

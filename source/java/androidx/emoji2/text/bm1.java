@@ -5,29 +5,29 @@ package androidx.emoji2.text;
 public final class bm1 implements ur {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Class f158a;
+    public final Class f157a;
 
     public bm1(Class cls) {
-        this.f158a = cls;
+        this.f157a = cls;
     }
 
     @Override // androidx.emoji2.text.ur
     public final Class a() {
-        return this.f158a;
+        return this.f157a;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof bm1) {
-            return lx0.n(this.f158a, ((bm1) obj).f158a);
+            return lx0.n(this.f157a, ((bm1) obj).f157a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.f158a.hashCode();
+        return this.f157a.hashCode();
     }
 
     public final String toString() {
-        return this.f158a.toString() + " (Kotlin reflection is not available)";
+        return this.f157a.toString() + " (Kotlin reflection is not available)";
     }
 }

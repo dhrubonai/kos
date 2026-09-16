@@ -26,9 +26,11 @@ public final /* synthetic */ class rv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$2;
         switch (this.d) {
             case 0:
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
+                invoke$lambda$2 = ComposableLambdaImpl.invoke$lambda$2((ComposableLambdaImpl) this.e, this.g, this.h, this.i, this.f, (lx) obj, intValue);
                 break;
             case 1:
                 ((Integer) obj2).getClass();
@@ -47,7 +49,7 @@ public final /* synthetic */ class rv implements Function2 {
                 n6.h((i01) this.e, (pg) this.g, (sm0) this.h, (sm0) this.i, (lx) obj, n6.k0(this.f | 1));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     public /* synthetic */ rv(Object obj, Object obj2, Object obj3, Object obj4, int i, int i2) {

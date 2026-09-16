@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
 public final class l32 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final m32 f673a;
+    public final m32 f672a;
     public final t2 b;
     public boolean e;
     public Bundle f;
@@ -18,12 +18,12 @@ public final class l32 {
     public boolean h = true;
 
     public l32(m32 m32Var, t2 t2Var) {
-        this.f673a = m32Var;
+        this.f672a = m32Var;
         this.b = t2Var;
     }
 
     public final void a() {
-        m32 m32Var = this.f673a;
+        m32 m32Var = this.f672a;
         if (m32Var.g().q() != o51.e) {
             throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }

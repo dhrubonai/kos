@@ -12,7 +12,7 @@ import java.util.List;
 public final class ni1 extends ProxySelector {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ni1 f810a = new ni1();
+    public static final ni1 f809a = new ni1();
 
     @Override // java.net.ProxySelector
     public final List select(URI uri) {

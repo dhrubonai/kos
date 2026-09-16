@@ -8,7 +8,7 @@ import java.util.Map;
 public final class o41 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final p41 f841a;
+    public final p41 f840a;
     public int b;
     public boolean c;
     public float d;
@@ -27,7 +27,7 @@ public final class o41 implements gb1 {
     public final /* synthetic */ gb1 q;
 
     public o41(p41 p41Var, int i, boolean z, float f, gb1 gb1Var, float f2, boolean z2, e30 e30Var, j70 j70Var, long j, List list, int i2, int i3, int i4, il1 il1Var, int i5, int i6) {
-        this.f841a = p41Var;
+        this.f840a = p41Var;
         this.b = i;
         this.c = z;
         this.d = f;
@@ -76,7 +76,7 @@ public final class o41 implements gb1 {
         p41 p41Var;
         if (!this.f) {
             ?? r0 = this.j;
-            if (!r0.isEmpty() && (p41Var = this.f841a) != null) {
+            if (!r0.isEmpty() && (p41Var = this.f840a) != null) {
                 int i2 = p41Var.o;
                 int i3 = this.b - i;
                 if (i3 >= 0 && i3 < i2) {
@@ -102,10 +102,10 @@ public final class o41 implements gb1 {
                                     if (z) {
                                         int size2 = p41Var4.b.size();
                                         for (int i8 = 0; i8 < size2; i8++) {
-                                            f31 f31VarA = p41Var4.k.a(i8, p41Var4.i);
-                                            if (f31VarA != null) {
-                                                long j = f31VarA.l;
-                                                f31VarA.l = jm.e((int) (j >> 32), ((int) (j & 4294967295L)) + i);
+                                            f31 a2 = p41Var4.k.a(i8, p41Var4.i);
+                                            if (a2 != null) {
+                                                long j = a2.l;
+                                                a2.l = jm.e((int) (j >> 32), ((int) (j & 4294967295L)) + i);
                                             }
                                         }
                                     }

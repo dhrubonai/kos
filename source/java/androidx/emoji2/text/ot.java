@@ -19,6 +19,9 @@ import java.util.function.DoubleUnaryOperator;
 public abstract class ot {
     public static final ColorSpace a(mt mtVar) {
         ColorSpace colorSpace;
+        ColorSpace colorSpace2;
+        ColorSpace.Named named;
+        ColorSpace.Named named2;
         if (lx0.n(mtVar, qt.e)) {
             colorSpace = ColorSpace.get(ColorSpace.Named.SRGB);
         } else if (lx0.n(mtVar, qt.q)) {
@@ -53,19 +56,27 @@ public abstract class ot {
             colorSpace = ColorSpace.get(ColorSpace.Named.SMPTE_C);
         } else {
             if (Build.VERSION.SDK_INT >= 34) {
-                ColorSpace colorSpace2 = lx0.n(mtVar, qt.v) ? ColorSpace.get(ColorSpace.Named.BT2020_HLG) : lx0.n(mtVar, qt.w) ? ColorSpace.get(ColorSpace.Named.BT2020_PQ) : null;
+                if (lx0.n(mtVar, qt.v)) {
+                    named2 = ColorSpace.Named.BT2020_HLG;
+                    colorSpace2 = ColorSpace.get(named2);
+                } else if (lx0.n(mtVar, qt.w)) {
+                    named = ColorSpace.Named.BT2020_PQ;
+                    colorSpace2 = ColorSpace.get(named);
+                } else {
+                    colorSpace2 = null;
+                }
                 if (colorSpace2 != null) {
                     return colorSpace2;
                 }
             }
             if (mtVar instanceof q02) {
-                String str = mtVar.f766a;
+                String str = mtVar.f765a;
                 q02 q02Var = (q02) mtVar;
-                float[] fArrA = q02Var.d.a();
+                float[] a2 = q02Var.d.a();
                 en2 en2Var = q02Var.g;
-                ColorSpace.Rgb.TransferParameters transferParameters = en2Var != null ? new ColorSpace.Rgb.TransferParameters(en2Var.b, en2Var.c, en2Var.d, en2Var.e, en2Var.f, en2Var.g, en2Var.f312a) : null;
+                ColorSpace.Rgb.TransferParameters transferParameters = en2Var != null ? new ColorSpace.Rgb.TransferParameters(en2Var.b, en2Var.c, en2Var.d, en2Var.e, en2Var.f, en2Var.g, en2Var.f311a) : null;
                 if (transferParameters != null) {
-                    return new ColorSpace.Rgb(str, q02Var.h, fArrA, transferParameters);
+                    return new ColorSpace.Rgb(str, q02Var.h, a2, transferParameters);
                 }
                 float[] fArr = q02Var.h;
                 final p02 p02Var = q02Var.l;
@@ -80,7 +91,7 @@ public abstract class ot {
                 };
                 final p02 p02Var2 = q02Var.o;
                 final int i2 = 1;
-                return new ColorSpace.Rgb(str, fArr, fArrA, doubleUnaryOperator, new DoubleUnaryOperator() { // from class: androidx.emoji2.text.nt
+                return new ColorSpace.Rgb(str, fArr, a2, doubleUnaryOperator, new DoubleUnaryOperator() { // from class: androidx.emoji2.text.nt
                     @Override // java.util.function.DoubleUnaryOperator
                     public final double applyAsDouble(double d) {
                         switch (i2) {

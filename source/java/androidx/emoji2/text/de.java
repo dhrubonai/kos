@@ -5,5 +5,5 @@ package androidx.emoji2.text;
 public abstract class de {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final long f247a = kx0.d(Integer.MIN_VALUE, Integer.MIN_VALUE);
+    public static final long f246a = kx0.d(Integer.MIN_VALUE, Integer.MIN_VALUE);
 }

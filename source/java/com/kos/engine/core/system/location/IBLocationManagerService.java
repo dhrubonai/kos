@@ -122,65 +122,65 @@ public interface IBLocationManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public List<BCell> getAllCell(int i, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-548197299797794L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(Stub.TRANSACTION_getAllCell, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(BCell.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-548197299797794L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    this.mRemote.transact(Stub.TRANSACTION_getAllCell, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(BCell.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public BCell getCell(int i, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-548450702868258L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(Stub.TRANSACTION_getCell, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (BCell) _Parcel.readTypedObject(parcelObtain2, BCell.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-548450702868258L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    this.mRemote.transact(Stub.TRANSACTION_getCell, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (BCell) _Parcel.readTypedObject(obtain2, BCell.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public BLocation getGlobalLocation() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-560206028357410L, xa1.b));
-                    this.mRemote.transact(16, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (BLocation) _Parcel.readTypedObject(parcelObtain2, BLocation.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-560206028357410L, xa1.b));
+                    this.mRemote.transact(16, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (BLocation) _Parcel.readTypedObject(obtain2, BLocation.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public List<BCell> getGlobalNeighboringCell() {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-547690493656866L, xa1.b));
-                    this.mRemote.transact(Stub.TRANSACTION_getGlobalNeighboringCell, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(BCell.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-547690493656866L, xa1.b));
+                    this.mRemote.transact(10, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(BCell.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -190,229 +190,229 @@ public interface IBLocationManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public BLocation getLocation(int i, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-559699222216482L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(Stub.TRANSACTION_getLocation, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (BLocation) _Parcel.readTypedObject(parcelObtain2, BLocation.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-559699222216482L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    this.mRemote.transact(Stub.TRANSACTION_getLocation, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (BLocation) _Parcel.readTypedObject(obtain2, BLocation.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public List<BCell> getNeighboringCell(int i, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-548807185153826L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.createTypedArrayList(BCell.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-548807185153826L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.createTypedArrayList(BCell.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public int getPattern(int i, String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-545847952686882L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt();
+                    obtain.writeInterfaceToken(c.a(-545847952686882L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void removeUpdates(IBinder iBinder) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-558582530719522L, xa1.b));
-                    parcelObtain.writeStrongBinder(iBinder);
-                    this.mRemote.transact(Stub.TRANSACTION_removeUpdates, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-558582530719522L, xa1.b));
+                    obtain.writeStrongBinder(iBinder);
+                    this.mRemote.transact(Stub.TRANSACTION_removeUpdates, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void requestLocationUpdates(IBinder iBinder, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-558835933789986L, xa1.b));
-                    parcelObtain.writeStrongBinder(iBinder);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_requestLocationUpdates, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-558835933789986L, xa1.b));
+                    obtain.writeStrongBinder(iBinder);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_requestLocationUpdates, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setAllCell(int i, String str, List<BCell> list) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-546101355757346L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedList(parcelObtain, list, 0);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-546101355757346L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedList(obtain, list, 0);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setCell(int i, String str, BCell bCell) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-546354758827810L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bCell, 0);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-546354758827810L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bCell, 0);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setGlobalAllCell(List<BCell> list) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-549313991294754L, xa1.b));
-                    _Parcel.writeTypedList(parcelObtain, list, 0);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-549313991294754L, xa1.b));
+                    _Parcel.writeTypedList(obtain, list, 0);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setGlobalCell(BCell bCell) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-549636113841954L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, bCell, 0);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-549636113841954L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, bCell, 0);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setGlobalLocation(BLocation bLocation) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-560528150904610L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, bLocation, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_setGlobalLocation, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-560528150904610L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, bLocation, 0);
+                    this.mRemote.transact(15, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setGlobalNeighboringCell(List<BCell> list) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-547943896727330L, xa1.b));
-                    _Parcel.writeTypedList(parcelObtain, list, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_setGlobalNeighboringCell, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-547943896727330L, xa1.b));
+                    _Parcel.writeTypedList(obtain, list, 0);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setLocation(int i, String str, BLocation bLocation) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-560021344763682L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bLocation, 0);
-                    this.mRemote.transact(Stub.TRANSACTION_setLocation, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-560021344763682L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bLocation, 0);
+                    this.mRemote.transact(Stub.TRANSACTION_setLocation, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setNeighboringCell(int i, String str, List<BCell> list) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-549129307701026L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedList(parcelObtain, list, 0);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-549129307701026L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedList(obtain, list, 0);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.location.IBLocationManagerService
             public void setPattern(int i, String str, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-545594549616418L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-545594549616418L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -425,18 +425,18 @@ public interface IBLocationManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-559639092674338L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBLocationManagerService)) ? new Proxy(iBinder) : (IBLocationManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-559639092674338L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBLocationManagerService)) ? new Proxy(iBinder) : (IBLocationManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-559368509734690L, xa1.b);
+            String a2 = c.a(-559368509734690L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
@@ -474,11 +474,11 @@ public interface IBLocationManagerService extends IInterface {
                     setGlobalAllCell(parcel.createTypedArrayList(BCell.CREATOR));
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_setGlobalNeighboringCell /* 9 */:
+                case 9:
                     setGlobalNeighboringCell(parcel.createTypedArrayList(BCell.CREATOR));
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_getGlobalNeighboringCell /* 10 */:
+                case 10:
                     List<BCell> globalNeighboringCell = getGlobalNeighboringCell();
                     parcel2.writeNoException();
                     _Parcel.writeTypedList(parcel2, globalNeighboringCell, 1);
@@ -502,7 +502,7 @@ public interface IBLocationManagerService extends IInterface {
                     parcel2.writeNoException();
                     _Parcel.writeTypedObject(parcel2, location, 1);
                     return true;
-                case TRANSACTION_setGlobalLocation /* 15 */:
+                case 15:
                     setGlobalLocation((BLocation) _Parcel.readTypedObject(parcel, BLocation.CREATOR));
                     parcel2.writeNoException();
                     return true;

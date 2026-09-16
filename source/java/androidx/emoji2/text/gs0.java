@@ -1,7 +1,7 @@
 package androidx.emoji2.text;
 
 import android.content.pm.PackageParser;
-import java.io.EOFException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -9,7 +9,7 @@ import java.util.Arrays;
 public final class gs0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final rn f436a;
+    public final rn f435a;
     public boolean c;
     public int g;
     public int h;
@@ -19,7 +19,7 @@ public final class gs0 {
     public int f = 7;
 
     public gs0(rn rnVar) {
-        this.f436a = rnVar;
+        this.f435a = rnVar;
     }
 
     public final void a(int i) {
@@ -80,34 +80,34 @@ public final class gs0 {
         this.h += i;
     }
 
-    public final void c(io ioVar) throws EOFException {
+    public final void c(io ioVar) {
         lx0.x(ioVar, "data");
-        int[] iArr = nt0.f827a;
-        int iC = ioVar.c();
+        int[] iArr = nt0.f826a;
+        int c = ioVar.c();
         long j = 0;
         long j2 = 0;
-        for (int i = 0; i < iC; i++) {
-            byte bH = ioVar.h(i);
-            byte[] bArr = jq2.f596a;
-            j2 += nt0.b[bH & 255];
+        for (int i = 0; i < c; i++) {
+            byte h = ioVar.h(i);
+            byte[] bArr = jq2.f595a;
+            j2 += nt0.b[h & 255];
         }
         int i2 = (int) ((j2 + 7) >> 3);
-        int iC2 = ioVar.c();
-        rn rnVar = this.f436a;
-        if (i2 >= iC2) {
+        int c2 = ioVar.c();
+        rn rnVar = this.f435a;
+        if (i2 >= c2) {
             e(ioVar.c(), 127, 0);
             rnVar.u(ioVar);
             return;
         }
         rn rnVar2 = new rn();
-        int[] iArr2 = nt0.f827a;
-        int iC3 = ioVar.c();
+        int[] iArr2 = nt0.f826a;
+        int c3 = ioVar.c();
         int i3 = 0;
-        for (int i4 = 0; i4 < iC3; i4++) {
-            byte bH2 = ioVar.h(i4);
-            byte[] bArr2 = jq2.f596a;
-            int i5 = bH2 & 255;
-            int i6 = nt0.f827a[i5];
+        for (int i4 = 0; i4 < c3; i4++) {
+            byte h2 = ioVar.h(i4);
+            byte[] bArr2 = jq2.f595a;
+            int i5 = h2 & 255;
+            int i6 = nt0.f826a[i5];
             byte b = nt0.b[i5];
             j = (j << b) | i6;
             i3 += b;
@@ -119,26 +119,94 @@ public final class gs0 {
         if (i3 > 0) {
             rnVar2.B((int) ((j << (8 - i3)) | (255 >>> i3)));
         }
-        io ioVarD = rnVar2.d(rnVar2.e);
-        e(ioVarD.c(), 127, PackageParser.PARSE_IS_PRIVILEGED);
-        rnVar.u(ioVarD);
+        io d = rnVar2.d(rnVar2.e);
+        e(d.c(), 127, PackageParser.PARSE_IS_PRIVILEGED);
+        rnVar.u(d);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0069  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void d(java.util.ArrayList r14) throws java.io.EOFException {
-        /*
-            Method dump skipped, instructions count: 254
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.gs0.d(java.util.ArrayList):void");
+    public final void d(ArrayList arrayList) {
+        int i;
+        int i2;
+        if (this.c) {
+            int i3 = this.b;
+            if (i3 < this.d) {
+                e(i3, 31, 32);
+            }
+            this.c = false;
+            this.b = Integer.MAX_VALUE;
+            e(this.d, 31, 32);
+        }
+        int size = arrayList.size();
+        for (int i4 = 0; i4 < size; i4++) {
+            cr0 cr0Var = (cr0) arrayList.get(i4);
+            io o = cr0Var.f214a.o();
+            io ioVar = cr0Var.b;
+            Integer num = (Integer) hs0.b.get(o);
+            if (num != null) {
+                int intValue = num.intValue();
+                i2 = intValue + 1;
+                if (2 <= i2 && i2 < 8) {
+                    cr0[] cr0VarArr = hs0.f484a;
+                    if (lx0.n(cr0VarArr[intValue].b, ioVar)) {
+                        i = i2;
+                    } else if (lx0.n(cr0VarArr[i2].b, ioVar)) {
+                        i2 = intValue + 2;
+                        i = i2;
+                    }
+                }
+                i = i2;
+                i2 = -1;
+            } else {
+                i = -1;
+                i2 = -1;
+            }
+            if (i2 == -1) {
+                int i5 = this.f + 1;
+                int length = this.e.length;
+                while (true) {
+                    if (i5 >= length) {
+                        break;
+                    }
+                    cr0 cr0Var2 = this.e[i5];
+                    lx0.u(cr0Var2);
+                    if (lx0.n(cr0Var2.f214a, o)) {
+                        cr0 cr0Var3 = this.e[i5];
+                        lx0.u(cr0Var3);
+                        if (lx0.n(cr0Var3.b, ioVar)) {
+                            i2 = hs0.f484a.length + (i5 - this.f);
+                            break;
+                        } else if (i == -1) {
+                            i = (i5 - this.f) + hs0.f484a.length;
+                        }
+                    }
+                    i5++;
+                }
+            }
+            if (i2 != -1) {
+                e(i2, 127, PackageParser.PARSE_IS_PRIVILEGED);
+            } else if (i == -1) {
+                this.f435a.B(64);
+                c(o);
+                c(ioVar);
+                b(cr0Var);
+            } else {
+                io ioVar2 = cr0.d;
+                o.getClass();
+                lx0.x(ioVar2, "prefix");
+                if (!o.k(0, ioVar2, ioVar2.c()) || lx0.n(cr0.i, o)) {
+                    e(i, 63, 64);
+                    c(ioVar);
+                    b(cr0Var);
+                } else {
+                    e(i, 15, 0);
+                    c(ioVar);
+                }
+            }
+        }
     }
 
     public final void e(int i, int i2, int i3) {
-        rn rnVar = this.f436a;
+        rn rnVar = this.f435a;
         if (i < i2) {
             rnVar.B(i | i3);
             return;

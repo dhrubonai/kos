@@ -111,39 +111,39 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
         }
 
         @Override // android.content.ServiceConnection
-        public void onServiceConnected(ComponentName componentName, IBinder iBinder) throws Throwable {
-            int binderCallingUidOverride;
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            int i;
             boolean z;
             if (!ServiceConnectionDelegate.shouldNormalizeVirtualCallback(componentName, this.expectedComponent)) {
                 this.base.onServiceConnected(componentName, iBinder);
                 return;
             }
             ComponentName componentName2 = this.expectedComponent;
-            int iMyUid = Process.myUid();
-            long jClearCallingIdentity = Binder.clearCallingIdentity();
-            Integer numE = mt2.e(iMyUid);
+            int myUid = Process.myUid();
+            long clearCallingIdentity = Binder.clearCallingIdentity();
+            Integer e = mt2.e(myUid);
             try {
-                binderCallingUidOverride = NativeCore.setBinderCallingUidOverride(iMyUid);
+                i = NativeCore.setBinderCallingUidOverride(myUid);
                 z = true;
                 try {
                     String[] strArr = xa1.b;
-                    nz0.Q(c.a(-421354030645026L, strArr), 3, c.a(-422066995216162L, strArr) + componentName + c.a(-421757757570850L, strArr) + componentName2 + c.a(-421779232407330L, strArr) + iMyUid + c.a(-421856541818658L, strArr) + Binder.getCallingUid());
+                    nz0.Q(c.a(-421354030645026L, strArr), 3, c.a(-422066995216162L, strArr) + componentName + c.a(-421757757570850L, strArr) + componentName2 + c.a(-421779232407330L, strArr) + myUid + c.a(-421856541818658L, strArr) + Binder.getCallingUid());
                     this.base.onServiceConnected(componentName2, iBinder);
-                    NativeCore.restoreBinderCallingUidOverride(binderCallingUidOverride);
-                    mt2.g(numE);
-                    Binder.restoreCallingIdentity(jClearCallingIdentity);
+                    NativeCore.restoreBinderCallingUidOverride(i);
+                    mt2.g(e);
+                    Binder.restoreCallingIdentity(clearCallingIdentity);
                 } catch (Throwable th) {
                     th = th;
                     if (z) {
-                        NativeCore.restoreBinderCallingUidOverride(binderCallingUidOverride);
+                        NativeCore.restoreBinderCallingUidOverride(i);
                     }
-                    mt2.g(numE);
-                    Binder.restoreCallingIdentity(jClearCallingIdentity);
+                    mt2.g(e);
+                    Binder.restoreCallingIdentity(clearCallingIdentity);
                     throw th;
                 }
             } catch (Throwable th2) {
                 th = th2;
-                binderCallingUidOverride = 0;
+                i = 0;
                 z = false;
             }
         }
@@ -170,22 +170,22 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
 
     public static IServiceConnection createProxy(IServiceConnection iServiceConnection, Intent intent) {
         installSameAppSelfBindIdentityScope(iServiceConnection, intent);
-        final IBinder iBinderAsBinder = iServiceConnection.asBinder();
-        ServiceConnectionDelegate serviceConnectionDelegate = sServiceConnectDelegate.get(iBinderAsBinder);
+        final IBinder asBinder = iServiceConnection.asBinder();
+        ServiceConnectionDelegate serviceConnectionDelegate = sServiceConnectDelegate.get(asBinder);
         if (serviceConnectionDelegate == null) {
             try {
-                iBinderAsBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.kos.engine.fake.delegate.ServiceConnectionDelegate.1
+                asBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.kos.engine.fake.delegate.ServiceConnectionDelegate.1
                     @Override // android.os.IBinder.DeathRecipient
                     public void binderDied() {
-                        ServiceConnectionDelegate.sServiceConnectDelegate.remove(iBinderAsBinder);
-                        iBinderAsBinder.unlinkToDeath(this, 0);
+                        ServiceConnectionDelegate.sServiceConnectDelegate.remove(asBinder);
+                        asBinder.unlinkToDeath(this, 0);
                     }
                 }, 0);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
             serviceConnectionDelegate = new ServiceConnectionDelegate(iServiceConnection, intent.getComponent(), intent.getPackage());
-            sServiceConnectDelegate.put(iBinderAsBinder, serviceConnectionDelegate);
+            sServiceConnectDelegate.put(asBinder, serviceConnectionDelegate);
         }
         serviceConnectionDelegate.recordGoogleAccountUiBind(intent);
         return serviceConnectionDelegate;
@@ -198,7 +198,7 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
             componentName = this.mComponentName;
         }
         int i = Build.VERSION.SDK_INT;
-        String strA = c.a(shouldUseSessionAwareConnection(i, z2) ? -414215794999074L : i >= 26 ? -417054768381730L : -417080538185506L, strArr);
+        String a2 = c.a(shouldUseSessionAwareConnection(i, z2) ? -414215794999074L : i >= 26 ? -417054768381730L : -417080538185506L, strArr);
         try {
             try {
                 if (shouldUseSessionAwareConnection(i, z2)) {
@@ -208,10 +208,10 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
                 } else {
                     this.mConn.connected(componentName, iBinder, null, false);
                 }
-                String strA2 = c.a(-417110602956578L, strArr);
+                String a3 = c.a(-417110602956578L, strArr);
                 StringBuilder sb = new StringBuilder();
                 sb.append(c.a(-417205092237090L, strArr));
-                sb.append(strA);
+                sb.append(a2);
                 sb.append(c.a(-416891559624482L, strArr));
                 sb.append(componentName);
                 sb.append(c.a(-416964574068514L, strArr));
@@ -220,12 +220,12 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
                 sb.append(iBinderSession == null);
                 sb.append(c.a(-417694718508834L, strArr));
                 sb.append(z);
-                nz0.Q(strA2, 3, sb.toString());
+                nz0.Q(a3, 3, sb.toString());
             } catch (Throwable th) {
-                String strA3 = c.a(-416161415184162L, strArr);
+                String a4 = c.a(-416161415184162L, strArr);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(c.a(-415706148650786L, strArr));
-                sb2.append(strA);
+                sb2.append(a2);
                 sb2.append(c.a(-416449177992994L, strArr));
                 sb2.append(componentName);
                 sb2.append(c.a(-416539372306210L, strArr));
@@ -234,14 +234,14 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
                 sb2.append(iBinderSession == null);
                 sb2.append(c.a(-416651041455906L, strArr));
                 sb2.append(z);
-                nz0.t(strA3, sb2.toString(), th);
+                nz0.t(a4, sb2.toString(), th);
             }
         } catch (Throwable unused) {
             this.mConn.connected(componentName, iBinder, iBinderSession, z);
-            String strA4 = c.a(-417729078247202L, strArr);
+            String a5 = c.a(-417729078247202L, strArr);
             StringBuilder sb3 = new StringBuilder();
             sb3.append(c.a(-417273811713826L, strArr));
-            sb3.append(strA);
+            sb3.append(a2);
             sb3.append(c.a(-417505739947810L, strArr));
             sb3.append(componentName);
             sb3.append(c.a(-415946666819362L, strArr));
@@ -250,14 +250,14 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
             sb3.append(iBinderSession == null);
             sb3.append(c.a(-416127055445794L, strArr));
             sb3.append(z);
-            nz0.Q(strA4, 3, sb3.toString());
+            nz0.Q(a5, 3, sb3.toString());
         }
     }
 
     private boolean forwardRawConnectionTransaction(int i, Parcel parcel, Parcel parcel2, int i2) {
-        int iDataPosition = parcel.dataPosition();
-        int iDataPosition2 = parcel2 == null ? 0 : parcel2.dataPosition();
-        int iDataSize = parcel2 == null ? 0 : parcel2.dataSize();
+        int dataPosition = parcel.dataPosition();
+        int dataPosition2 = parcel2 == null ? 0 : parcel2.dataPosition();
+        int dataSize = parcel2 == null ? 0 : parcel2.dataSize();
         try {
             if (this.mConn.asBinder().transact(i, parcel, parcel2, i2)) {
                 return true;
@@ -266,10 +266,10 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
             String[] strArr = xa1.b;
             nz0.P(c.a(-414357528919842L, strArr), c.a(-414452018200354L, strArr), th);
         }
-        parcel.setDataPosition(iDataPosition);
+        parcel.setDataPosition(dataPosition);
         if (parcel2 != null) {
-            parcel2.setDataSize(iDataSize);
-            parcel2.setDataPosition(iDataPosition2);
+            parcel2.setDataSize(dataSize);
+            parcel2.setDataPosition(dataPosition2);
         }
         return false;
     }
@@ -279,7 +279,7 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
     }
 
     private static void installSameAppSelfBindIdentityScope(IServiceConnection iServiceConnection, Intent intent) {
-        ServiceConnection serviceConnectionMConnection;
+        ServiceConnection mConnection;
         String str;
         String[] strArr = xa1.b;
         Object obj = null;
@@ -288,20 +288,20 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
             return;
         }
         try {
-            WeakReference<?> weakReferenceMDispatcher = BRLoadedApkServiceDispatcherInnerConnection.get(iServiceConnection).mDispatcher();
-            if (weakReferenceMDispatcher != null) {
-                obj = weakReferenceMDispatcher.get();
+            WeakReference<?> mDispatcher = BRLoadedApkServiceDispatcherInnerConnection.get(iServiceConnection).mDispatcher();
+            if (mDispatcher != null) {
+                obj = mDispatcher.get();
             }
-            if (obj != null && (serviceConnectionMConnection = BRLoadedApkServiceDispatcher.get(obj).mConnection()) != null && !(serviceConnectionMConnection instanceof SelfBindIdentityConnection) && !(serviceConnectionMConnection instanceof ComponentOnlyConnection)) {
-                boolean zIsChromiumServiceConnectionClassName = isChromiumServiceConnectionClassName(serviceConnectionMConnection.getClass().getName());
-                BRLoadedApkServiceDispatcher.get(obj)._set_mConnection(zIsChromiumServiceConnectionClassName ? new ComponentOnlyConnection(serviceConnectionMConnection, component) : new SelfBindIdentityConnection(serviceConnectionMConnection, component));
-                String strA = c.a(-415349666365218L, strArr);
-                if (zIsChromiumServiceConnectionClassName) {
+            if (obj != null && (mConnection = BRLoadedApkServiceDispatcher.get(obj).mConnection()) != null && !(mConnection instanceof SelfBindIdentityConnection) && !(mConnection instanceof ComponentOnlyConnection)) {
+                boolean isChromiumServiceConnectionClassName = isChromiumServiceConnectionClassName(mConnection.getClass().getName());
+                BRLoadedApkServiceDispatcher.get(obj)._set_mConnection(isChromiumServiceConnectionClassName ? new ComponentOnlyConnection(mConnection, component) : new SelfBindIdentityConnection(mConnection, component));
+                String a2 = c.a(-415349666365218L, strArr);
+                if (isChromiumServiceConnectionClassName) {
                     str = c.a(-415444155645730L, strArr) + component;
                 } else {
                     str = c.a(-415233702248226L, strArr) + component;
                 }
-                nz0.Q(strA, 3, str);
+                nz0.Q(a2, 3, str);
             }
         } catch (Throwable th) {
             nz0.P(c.a(-413807773105954L, strArr), c.a(-413902262386466L, strArr) + component, th);
@@ -366,12 +366,12 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
     }
 
     private void traceGoogleAccountUiCallback(ComponentName componentName) {
-        PendingBindTrace pendingBindTracePoll = this.mPendingBindTraces.poll();
-        if (pendingBindTracePoll == null) {
+        PendingBindTrace poll = this.mPendingBindTraces.poll();
+        if (poll == null) {
             return;
         }
         String[] strArr = xa1.b;
-        nz0.Q(c.a(-420602411368226L, strArr), 3, c.a(-420765620125474L, strArr) + pendingBindTracePoll.action + c.a(-414829975322402L, strArr) + pendingBindTracePoll.component + c.a(-414902989766434L, strArr) + componentName + c.a(-414988889112354L, strArr) + System.identityHashCode(this.mConn.asBinder()) + c.a(-414997479046946L, strArr) + (SystemClock.elapsedRealtime() - pendingBindTracePoll.startedElapsedMs) + c.a(-414537917546274L, strArr) + this.mPendingBindTraces.size());
+        nz0.Q(c.a(-420602411368226L, strArr), 3, c.a(-420765620125474L, strArr) + poll.action + c.a(-414829975322402L, strArr) + poll.component + c.a(-414902989766434L, strArr) + componentName + c.a(-414988889112354L, strArr) + System.identityHashCode(this.mConn.asBinder()) + c.a(-414997479046946L, strArr) + (SystemClock.elapsedRealtime() - poll.startedElapsedMs) + c.a(-414537917546274L, strArr) + this.mPendingBindTraces.size());
     }
 
     public void connected(ComponentName componentName, IBinder iBinder) {
@@ -403,14 +403,14 @@ public class ServiceConnectionDelegate extends IServiceConnection.Stub {
         }
         parcel.enforceInterface(c.a(-413657449250594L, xa1.b));
         ComponentName componentName = parcel.readInt() != 0 ? (ComponentName) ComponentName.CREATOR.createFromParcel(parcel) : null;
-        IBinder strongBinder = parcel.readStrongBinder();
-        int iDataAvail = parcel.dataAvail();
-        if (iDataAvail >= 8) {
-            deliverConnected(componentName, strongBinder, IBinderSession.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0, true);
-        } else if (iDataAvail >= 4) {
-            deliverConnected(componentName, strongBinder, null, parcel.readInt() != 0, false);
+        IBinder readStrongBinder = parcel.readStrongBinder();
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail >= 8) {
+            deliverConnected(componentName, readStrongBinder, IBinderSession.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0, true);
+        } else if (dataAvail >= 4) {
+            deliverConnected(componentName, readStrongBinder, null, parcel.readInt() != 0, false);
         } else {
-            deliverConnected(componentName, strongBinder, null, false, false);
+            deliverConnected(componentName, readStrongBinder, null, false, false);
         }
         if (parcel2 != null) {
             parcel2.writeNoException();

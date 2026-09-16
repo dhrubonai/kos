@@ -8,7 +8,7 @@ import java.util.List;
 public final class p61 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f891a;
+    public boolean f890a;
     public int b;
     public int c;
     public int d;
@@ -32,9 +32,9 @@ public final class p61 {
     public final View b(px1 px1Var) {
         List list = this.j;
         if (list == null) {
-            View viewF = px1Var.f(this.d);
+            View f = px1Var.f(this.d);
             this.d += this.e;
-            return viewF;
+            return f;
         }
         if (list.size() <= 0) {
             return null;

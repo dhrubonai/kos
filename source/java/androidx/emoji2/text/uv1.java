@@ -7,7 +7,7 @@ import java.net.Proxy;
 public abstract /* synthetic */ class uv1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int[] f1195a;
+    public static final /* synthetic */ int[] f1194a;
 
     static {
         int[] iArr = new int[Proxy.Type.values().length];
@@ -19,6 +19,6 @@ public abstract /* synthetic */ class uv1 {
             iArr[Proxy.Type.HTTP.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
-        f1195a = iArr;
+        f1194a = iArr;
     }
 }

@@ -43,14 +43,14 @@ public final class xt2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((xt2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((xt2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
         boolean z;
         boolean z2;
-        long jI;
+        long j;
         boolean z3;
         boolean z4;
         switch (this.h) {
@@ -58,7 +58,7 @@ public final class xt2 extends hh2 implements Function2 {
                 mz0.L(obj);
                 try {
                     c01 c01Var = c01.r;
-                    String str = this.i.f501a;
+                    String str = this.i.f500a;
                     c01Var.getClass();
                     z = c01.Z(BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID, str).success;
                 } catch (Throwable unused) {
@@ -67,23 +67,23 @@ public final class xt2 extends hh2 implements Function2 {
                 return Boolean.valueOf(z);
             case 1:
                 mz0.L(obj);
-                boolean zD0 = false;
+                boolean z5 = false;
                 try {
                     c01 c01Var2 = c01.r;
-                    String[] strArr = wj1.f1284a;
-                    String strA = a.a.a.c.a(-484730568064802L, strArr);
+                    String[] strArr = wj1.f1283a;
+                    String a2 = a.a.a.c.a(-484730568064802L, strArr);
                     c01Var2.getClass();
-                    c01.h0(strA, String.valueOf(false));
+                    c01.h0(a2, String.valueOf(false));
                     c01.h0(a.a.a.c.a(-484807877476130L, strArr), a.a.a.c.a(-484850827149090L, strArr));
-                    zD0 = c01Var2.d0(BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID, this.i.f501a);
+                    z5 = c01Var2.d0(BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID, this.i.f500a);
                 } catch (Throwable unused2) {
                 }
-                return Boolean.valueOf(zD0);
+                return Boolean.valueOf(z5);
             case 2:
                 mz0.L(obj);
                 try {
                     c01 c01Var3 = c01.r;
-                    String str2 = this.i.f501a;
+                    String str2 = this.i.f500a;
                     c01Var3.getClass();
                     BPackageManager.get().stopPackage(str2, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
                     z2 = true;
@@ -94,20 +94,20 @@ public final class xt2 extends hh2 implements Function2 {
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 mz0.L(obj);
                 try {
-                    jI = jz0.i(this.i.f501a);
+                    j = jz0.i(this.i.f500a);
                 } catch (Throwable unused4) {
-                    jI = -1;
+                    j = -1;
                 }
-                return new Long(jI);
+                return new Long(j);
             case 4:
                 i01 i01Var = this.i;
                 mz0.L(obj);
                 try {
                     c01 c01Var4 = c01.r;
-                    String str3 = i01Var.f501a;
+                    String str3 = i01Var.f500a;
                     c01Var4.getClass();
                     BPackageManager.get().clearPackage(str3, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
-                    String str4 = i01Var.f501a;
+                    String str4 = i01Var.f500a;
                     if (GmsCore.isGoogleAppOrService(str4)) {
                         GmsCore.ensureGoogleDataDirs(str4, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
                     }
@@ -120,7 +120,7 @@ public final class xt2 extends hh2 implements Function2 {
                 mz0.L(obj);
                 try {
                     c01 c01Var5 = c01.r;
-                    String str5 = this.i.f501a;
+                    String str5 = this.i.f500a;
                     c01Var5.getClass();
                     c01.j0(str5, BDeveloperModuleManagerService.DEVELOPER_SPACE_USER_ID);
                     z4 = true;

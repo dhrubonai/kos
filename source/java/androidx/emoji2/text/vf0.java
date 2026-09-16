@@ -42,9 +42,9 @@ public final class vf0 extends f0 implements uf0, RandomAccess, Serializable {
             return -1;
         }
         Enum r4 = (Enum) obj;
-        int iOrdinal = r4.ordinal();
-        if (((Enum) xh.K0(this.d, iOrdinal)) == r4) {
-            return iOrdinal;
+        int ordinal = r4.ordinal();
+        if (((Enum) xh.K0(this.d, ordinal)) == r4) {
+            return ordinal;
         }
         return -1;
     }
@@ -55,9 +55,9 @@ public final class vf0 extends f0 implements uf0, RandomAccess, Serializable {
             return -1;
         }
         Enum r4 = (Enum) obj;
-        int iOrdinal = r4.ordinal();
-        if (((Enum) xh.K0(this.d, iOrdinal)) == r4) {
-            return iOrdinal;
+        int ordinal = r4.ordinal();
+        if (((Enum) xh.K0(this.d, ordinal)) == r4) {
+            return ordinal;
         }
         return -1;
     }

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public final class ll2 implements ActionMode.Callback {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ActionMode.Callback f697a;
+    public final ActionMode.Callback f696a;
     public final TextView b;
     public Class c;
     public Method d;
@@ -28,28 +28,27 @@ public final class ll2 implements ActionMode.Callback {
     public boolean f = false;
 
     public ll2(ActionMode.Callback callback, TextView textView) {
-        this.f697a = callback;
+        this.f696a = callback;
         this.b = textView;
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        return this.f697a.onActionItemClicked(actionMode, menuItem);
+        return this.f696a.onActionItemClicked(actionMode, menuItem);
     }
 
     @Override // android.view.ActionMode.Callback
     public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        return this.f697a.onCreateActionMode(actionMode, menu);
+        return this.f696a.onCreateActionMode(actionMode, menu);
     }
 
     @Override // android.view.ActionMode.Callback
     public final void onDestroyActionMode(ActionMode actionMode) {
-        this.f697a.onDestroyActionMode(actionMode);
+        this.f696a.onDestroyActionMode(actionMode);
     }
 
     @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) throws IllegalAccessException, ClassNotFoundException, IllegalArgumentException, InvocationTargetException {
-        String str;
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
         TextView textView = this.b;
         Context context = textView.getContext();
         PackageManager packageManager = context.getPackageManager();
@@ -81,7 +80,10 @@ public final class ll2 implements ActionMode.Callback {
                 for (ResolveInfo resolveInfo : packageManager.queryIntentActivities(new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain"), 0)) {
                     if (!context.getPackageName().equals(resolveInfo.activityInfo.packageName)) {
                         ActivityInfo activityInfo = resolveInfo.activityInfo;
-                        if (activityInfo.exported && ((str = activityInfo.permission) == null || context.checkSelfPermission(str) == 0)) {
+                        if (activityInfo.exported) {
+                            String str = activityInfo.permission;
+                            if (str != null && context.checkSelfPermission(str) != 0) {
+                            }
                         }
                     }
                     arrayList.add(resolveInfo);
@@ -89,13 +91,13 @@ public final class ll2 implements ActionMode.Callback {
             }
             for (int i = 0; i < arrayList.size(); i++) {
                 ResolveInfo resolveInfo2 = (ResolveInfo) arrayList.get(i);
-                MenuItem menuItemAdd = menu.add(0, 0, i + 100, resolveInfo2.loadLabel(packageManager));
-                Intent intentPutExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
+                MenuItem add = menu.add(0, 0, i + 100, resolveInfo2.loadLabel(packageManager));
+                Intent putExtra = new Intent().setAction("android.intent.action.PROCESS_TEXT").setType("text/plain").putExtra("android.intent.extra.PROCESS_TEXT_READONLY", !((textView instanceof Editable) && textView.onCheckIsTextEditor() && textView.isEnabled()));
                 ActivityInfo activityInfo2 = resolveInfo2.activityInfo;
-                menuItemAdd.setIntent(intentPutExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);
+                add.setIntent(putExtra.setClassName(activityInfo2.packageName, activityInfo2.name)).setShowAsAction(1);
             }
         } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException unused2) {
         }
-        return this.f697a.onPrepareActionMode(actionMode, menu);
+        return this.f696a.onPrepareActionMode(actionMode, menu);
     }
 }

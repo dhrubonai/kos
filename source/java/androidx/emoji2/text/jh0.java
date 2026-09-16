@@ -16,16 +16,16 @@ import com.kos.engine.app.FacebookWebViewActivity;
 public final class jh0 extends WebViewClient {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ FacebookWebViewActivity f577a;
+    public final /* synthetic */ FacebookWebViewActivity f576a;
 
     public jh0(FacebookWebViewActivity facebookWebViewActivity) {
-        this.f577a = facebookWebViewActivity;
+        this.f576a = facebookWebViewActivity;
     }
 
     @Override // android.webkit.WebViewClient
     public final void onPageFinished(WebView webView, String str) {
         super.onPageFinished(webView, str);
-        FacebookWebViewActivity facebookWebViewActivity = this.f577a;
+        FacebookWebViewActivity facebookWebViewActivity = this.f576a;
         ProgressBar progressBar = facebookWebViewActivity.i;
         if (progressBar != null) {
             progressBar.setVisibility(8);
@@ -40,7 +40,7 @@ public final class jh0 extends WebViewClient {
     public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
         String[] strArr = xa1.b;
         super.onPageStarted(webView, str, bitmap);
-        FacebookWebViewActivity facebookWebViewActivity = this.f577a;
+        FacebookWebViewActivity facebookWebViewActivity = this.f576a;
         ProgressBar progressBar = facebookWebViewActivity.i;
         if (progressBar != null) {
             progressBar.setProgress(0);
@@ -79,7 +79,7 @@ public final class jh0 extends WebViewClient {
             return false;
         }
         String scheme = url.getScheme();
-        FacebookWebViewActivity facebookWebViewActivity = this.f577a;
+        FacebookWebViewActivity facebookWebViewActivity = this.f576a;
         if (scheme != null && (scheme.startsWith(a.a.a.c.a(-129983449284386L, strArr)) || a.a.a.c.a(-130597629607714L, strArr).equals(scheme))) {
             FacebookWebViewActivity.a(facebookWebViewActivity, url);
             return true;

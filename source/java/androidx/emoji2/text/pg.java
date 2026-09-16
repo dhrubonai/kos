@@ -12,7 +12,7 @@ public enum pg {
     public final boolean f;
 
     pg(String str, boolean z, int i) {
-        this.d = str;
+        this.d = r2;
         this.e = str;
         this.f = z;
     }

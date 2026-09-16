@@ -10,7 +10,7 @@ public final class tw2 implements wx, t51 {
     public final dy e;
     public boolean f;
     public lz0 g;
-    public Function2 h = rw.f1037a;
+    public Function2 h = rw.f1036a;
 
     public tw2(v7 v7Var, dy dyVar) {
         this.d = v7Var;

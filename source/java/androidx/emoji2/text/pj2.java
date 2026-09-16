@@ -17,10 +17,10 @@ public final class pj2 extends g01 implements sm0 {
     public final Object a() {
         switch (this.e) {
             case 0:
-                return Boolean.valueOf(this.f.f1016a.g() > 0.0f);
+                return Boolean.valueOf(this.f.f1015a.g() > 0.0f);
             default:
                 rj2 rj2Var = this.f;
-                return Boolean.valueOf(rj2Var.f1016a.g() < rj2Var.b.g());
+                return Boolean.valueOf(rj2Var.f1015a.g() < rj2Var.b.g());
         }
     }
 }

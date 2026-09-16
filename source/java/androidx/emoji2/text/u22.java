@@ -27,30 +27,30 @@ public final class u22 implements ky1 {
         }
     }
 
-    public final void b() throws Exception {
-        String strA;
+    public final void b() {
+        String A;
         y22 y22Var = this.e;
         if (this.i != null) {
             throw new IllegalArgumentException(("entry(" + this.i + ") is not null").toString());
         }
         if (y22Var != null) {
             t2 t2Var = this.j;
-            Object objA = t2Var.a();
-            if (objA == null || y22Var.b(objA)) {
+            Object a2 = t2Var.a();
+            if (a2 == null || y22Var.b(a2)) {
                 this.i = y22Var.e(this.f, t2Var);
                 return;
             }
-            if (objA instanceof pc2) {
-                pc2 pc2Var = (pc2) objA;
+            if (a2 instanceof pc2) {
+                pc2 pc2Var = (pc2) a2;
                 if (pc2Var.d() == dd0.P || pc2Var.d() == j42.o || pc2Var.d() == dd0.X) {
-                    strA = "MutableState containing " + pc2Var.getValue() + " cannot be saved using the current SaveableStateRegistry. The default implementation only supports types which can be stored inside the Bundle. Please consider implementing a custom Saver for this class and pass it as a stateSaver parameter to rememberSaveable().";
+                    A = "MutableState containing " + pc2Var.getValue() + " cannot be saved using the current SaveableStateRegistry. The default implementation only supports types which can be stored inside the Bundle. Please consider implementing a custom Saver for this class and pass it as a stateSaver parameter to rememberSaveable().";
                 } else {
-                    strA = "If you use a custom SnapshotMutationPolicy for your MutableState you have to write a custom Saver";
+                    A = "If you use a custom SnapshotMutationPolicy for your MutableState you have to write a custom Saver";
                 }
             } else {
-                strA = oy0.A(objA);
+                A = oy0.A(a2);
             }
-            throw new IllegalArgumentException(strA);
+            throw new IllegalArgumentException(A);
         }
     }
 
@@ -63,7 +63,7 @@ public final class u22 implements ky1 {
     }
 
     @Override // androidx.emoji2.text.ky1
-    public final void f() throws Exception {
+    public final void f() {
         b();
     }
 }

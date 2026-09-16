@@ -150,17 +150,17 @@ public final class b51 extends az0 {
             case 0:
                 float left = view.getLeft();
                 SideSheetBehavior sideSheetBehavior = this.i;
-                float fAbs = Math.abs((f * sideSheetBehavior.k) + left);
+                float abs = Math.abs((f * sideSheetBehavior.k) + left);
                 sideSheetBehavior.getClass();
-                if (fAbs > 0.5f) {
+                if (abs > 0.5f) {
                 }
                 break;
             default:
                 float right = view.getRight();
                 SideSheetBehavior sideSheetBehavior2 = this.i;
-                float fAbs2 = Math.abs((f * sideSheetBehavior2.k) + right);
+                float abs2 = Math.abs((f * sideSheetBehavior2.k) + right);
                 sideSheetBehavior2.getClass();
-                if (fAbs2 > 0.5f) {
+                if (abs2 > 0.5f) {
                 }
                 break;
         }
@@ -171,8 +171,8 @@ public final class b51 extends az0 {
     public final float i(int i) {
         switch (this.h) {
             case 0:
-                float fC = C();
-                return (i - fC) / (B() - fC);
+                float C = C();
+                return (i - C) / (B() - C);
             default:
                 float f = this.i.m;
                 return (f - i) / (f - B());

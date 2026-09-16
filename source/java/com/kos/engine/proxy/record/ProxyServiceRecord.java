@@ -61,9 +61,9 @@ public class ProxyServiceRecord {
         intent.putExtra(c.a(-847440556212002L, strArr), serviceInfo);
         intent.putExtra(c.a(-859049852813090L, strArr), i);
         intent.putExtra(c.a(-859127162224418L, strArr), i2);
-        String strA = c.a(-859191586733858L, strArr);
+        String a2 = c.a(-859191586733858L, strArr);
         Bundle bundle = new Bundle();
         bundle.putBinder(c.a(-862314027958050L, strArr), iBinder);
-        intent.putExtra(strA, bundle);
+        intent.putExtra(a2, bundle);
     }
 }

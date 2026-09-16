@@ -9,17 +9,17 @@ import android.os.IBinder;
 public final class vo0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1233a;
+    public final int f1232a;
     public final IBinder b;
     public final ServiceConnection c;
     public final String d;
 
     public vo0(int i, Binder binder, gp0 gp0Var, String str) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(binder, a.a.a.c.a(-400179841875746L, strArr));
         lx0.x(gp0Var, a.a.a.c.a(-400201316712226L, strArr));
         lx0.x(str, a.a.a.c.a(-399733165276962L, strArr));
-        this.f1233a = i;
+        this.f1232a = i;
         this.b = binder;
         this.c = gp0Var;
         this.d = str;
@@ -33,18 +33,18 @@ public final class vo0 {
             return false;
         }
         vo0 vo0Var = (vo0) obj;
-        return this.f1233a == vo0Var.f1233a && lx0.n(this.b, vo0Var.b) && lx0.n(this.c, vo0Var.c) && lx0.n(this.d, vo0Var.d);
+        return this.f1232a == vo0Var.f1232a && lx0.n(this.b, vo0Var.b) && lx0.n(this.c, vo0Var.c) && lx0.n(this.d, vo0Var.d);
     }
 
     public final int hashCode() {
-        return this.d.hashCode() + ((this.c.hashCode() + ((this.b.hashCode() + (Integer.hashCode(this.f1233a) * 31)) * 31)) * 31);
+        return this.d.hashCode() + ((this.c.hashCode() + ((this.b.hashCode() + (Integer.hashCode(this.f1232a) * 31)) * 31)) * 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-398315826069282L, strArr));
-        sb.append(this.f1233a);
+        sb.append(this.f1232a);
         sb.append(a.a.a.c.a(-398448970055458L, strArr));
         sb.append(this.b);
         sb.append(a.a.a.c.a(-398517689532194L, strArr));

@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class xy {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final qe1 f1363a;
+    public static final qe1 f1362a;
 
     static {
         q02 q02Var = qt.e;
@@ -17,11 +17,11 @@ public abstract class xy {
         wy wyVar = new wy(q02Var, fj1Var, 0);
         int i4 = (i2 << 6) | fj1Var.c;
         wy wyVar2 = new wy(fj1Var, q02Var, 0);
-        qe1 qe1Var = mw0.f774a;
+        qe1 qe1Var = mw0.f773a;
         qe1 qe1Var2 = new qe1();
         qe1Var2.g(i | (i << 6), uyVar);
         qe1Var2.g(i3, wyVar);
         qe1Var2.g(i4, wyVar2);
-        f1363a = qe1Var2;
+        f1362a = qe1Var2;
     }
 }

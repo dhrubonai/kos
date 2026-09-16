@@ -7,15 +7,15 @@ import android.view.View;
 public final class i8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final i8 f513a = new i8();
+    public static final i8 f512a = new i8();
 
     public final void a(View view) {
         view.clearViewTranslationCallback();
     }
 
     public final void b(View view) {
-        h8 h8Var = h8.f459a;
-        h8 h8Var2 = h8.f459a;
-        view.setViewTranslationCallback(h8.f459a);
+        h8 h8Var = h8.f458a;
+        h8 h8Var2 = h8.f458a;
+        view.setViewTranslationCallback(h8.f458a);
     }
 }

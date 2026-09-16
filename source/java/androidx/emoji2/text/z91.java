@@ -111,12 +111,12 @@ public final class z91 extends j0 {
                     y91 y91Var = this.e;
                     y91Var.getClass();
                     y91Var.b();
-                    int iG = y91Var.g(entry.getKey());
-                    if (iG >= 0) {
+                    int g = y91Var.g(entry.getKey());
+                    if (g >= 0) {
                         Object[] objArr = y91Var.e;
                         lx0.u(objArr);
-                        if (lx0.n(objArr[iG], entry.getValue())) {
-                            y91Var.k(iG);
+                        if (lx0.n(objArr[g], entry.getValue())) {
+                            y91Var.k(g);
                             break;
                         }
                     }
@@ -125,9 +125,9 @@ public final class z91 extends j0 {
             default:
                 y91 y91Var2 = this.e;
                 y91Var2.b();
-                int iG2 = y91Var2.g(obj);
-                if (iG2 >= 0) {
-                    y91Var2.k(iG2);
+                int g2 = y91Var2.g(obj);
+                if (g2 >= 0) {
+                    y91Var2.k(g2);
                     break;
                 }
                 break;

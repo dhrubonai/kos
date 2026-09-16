@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class mp {
 
     /* renamed from: a, reason: collision with root package name */
-    public j70 f760a;
+    public j70 f759a;
     public q01 b;
     public lp c;
     public long d;
@@ -18,14 +18,14 @@ public final class mp {
             return false;
         }
         mp mpVar = (mp) obj;
-        return lx0.n(this.f760a, mpVar.f760a) && this.b == mpVar.b && lx0.n(this.c, mpVar.c) && ib2.a(this.d, mpVar.d);
+        return lx0.n(this.f759a, mpVar.f759a) && this.b == mpVar.b && lx0.n(this.c, mpVar.c) && ib2.a(this.d, mpVar.d);
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.d) + ((this.c.hashCode() + ((this.b.hashCode() + (this.f760a.hashCode() * 31)) * 31)) * 31);
+        return Long.hashCode(this.d) + ((this.c.hashCode() + ((this.b.hashCode() + (this.f759a.hashCode() * 31)) * 31)) * 31);
     }
 
     public final String toString() {
-        return "DrawParams(density=" + this.f760a + ", layoutDirection=" + this.b + ", canvas=" + this.c + ", size=" + ((Object) ib2.f(this.d)) + ')';
+        return "DrawParams(density=" + this.f759a + ", layoutDirection=" + this.b + ", canvas=" + this.c + ", size=" + ((Object) ib2.f(this.d)) + ')';
     }
 }

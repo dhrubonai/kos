@@ -15,7 +15,7 @@ import androidx.core.splashscreen.R;
 public class ac1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Context f93a;
+    public final Context f92a;
     public final qb1 b;
     public final boolean c;
     public final int d;
@@ -28,7 +28,7 @@ public class ac1 {
     public final zb1 k = new zb1(this);
 
     public ac1(Context context, qb1 qb1Var, View view, boolean z, int i, int i2) {
-        this.f93a = context;
+        this.f92a = context;
         this.b = qb1Var;
         this.e = view;
         this.c = z;
@@ -38,14 +38,14 @@ public class ac1 {
     public final yb1 a() {
         yb1 je2Var;
         if (this.i == null) {
-            Context context = this.f93a;
+            Context context = this.f92a;
             Display defaultDisplay = ((WindowManager) context.getSystemService("window")).getDefaultDisplay();
             Point point = new Point();
             defaultDisplay.getRealSize(point);
             if (Math.min(point.x, point.y) >= context.getResources().getDimensionPixelSize(R.dimen.abc_cascading_menus_min_smallest_width)) {
                 je2Var = new yp(context, this.e, this.d, this.c);
             } else {
-                je2Var = new je2(this.f93a, this.b, this.e, this.d, this.c);
+                je2Var = new je2(this.f92a, this.b, this.e, this.d, this.c);
             }
             je2Var.l(this.b);
             je2Var.r(this.k);
@@ -72,17 +72,17 @@ public class ac1 {
     }
 
     public final void d(int i, int i2, boolean z, boolean z2) {
-        yb1 yb1VarA = a();
-        yb1VarA.s(z2);
+        yb1 a2 = a();
+        a2.s(z2);
         if (z) {
             if ((Gravity.getAbsoluteGravity(this.f, this.e.getLayoutDirection()) & 7) == 5) {
                 i -= this.e.getWidth();
             }
-            yb1VarA.q(i);
-            yb1VarA.t(i2);
-            int i3 = (int) ((this.f93a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
-            yb1VarA.d = new Rect(i - i3, i2 - i3, i + i3, i2 + i3);
+            a2.q(i);
+            a2.t(i2);
+            int i3 = (int) ((this.f92a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
+            a2.d = new Rect(i - i3, i2 - i3, i + i3, i2 + i3);
         }
-        yb1VarA.f();
+        a2.f();
     }
 }

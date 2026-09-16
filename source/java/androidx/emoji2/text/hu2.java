@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 public final class hu2 extends AnimatorListenerAdapter implements qn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final View f492a;
+    public final View f491a;
     public final int b;
     public final ViewGroup c;
     public boolean e;
@@ -18,19 +18,19 @@ public final class hu2 extends AnimatorListenerAdapter implements qn2 {
     public final boolean d = true;
 
     public hu2(View view, int i) {
-        this.f492a = view;
+        this.f491a = view;
         this.b = i;
         this.c = (ViewGroup) view.getParent();
         g(true);
     }
 
     @Override // androidx.emoji2.text.qn2
-    public final void b() throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public final void b() {
         g(false);
         if (this.f) {
             return;
         }
-        bt2.b(this.f492a, this.b);
+        bt2.b(this.f491a, this.b);
     }
 
     @Override // androidx.emoji2.text.qn2
@@ -39,12 +39,12 @@ public final class hu2 extends AnimatorListenerAdapter implements qn2 {
     }
 
     @Override // androidx.emoji2.text.qn2
-    public final void f() throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public final void f() {
         g(true);
         if (this.f) {
             return;
         }
-        bt2.b(this.f492a, 0);
+        bt2.b(this.f491a, 0);
     }
 
     public final void g(boolean z) {
@@ -62,9 +62,9 @@ public final class hu2 extends AnimatorListenerAdapter implements qn2 {
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public final void onAnimationEnd(Animator animator) {
         if (!this.f) {
-            bt2.b(this.f492a, this.b);
+            bt2.b(this.f491a, this.b);
             ViewGroup viewGroup = this.c;
             if (viewGroup != null) {
                 viewGroup.invalidate();
@@ -78,9 +78,9 @@ public final class hu2 extends AnimatorListenerAdapter implements qn2 {
     }
 
     @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator, boolean z) throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public final void onAnimationStart(Animator animator, boolean z) {
         if (z) {
-            bt2.b(this.f492a, 0);
+            bt2.b(this.f491a, 0);
             ViewGroup viewGroup = this.c;
             if (viewGroup != null) {
                 viewGroup.invalidate();
@@ -89,12 +89,12 @@ public final class hu2 extends AnimatorListenerAdapter implements qn2 {
     }
 
     @Override // android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator, boolean z) throws IllegalAccessException, NoSuchFieldException, SecurityException, IllegalArgumentException {
+    public final void onAnimationEnd(Animator animator, boolean z) {
         if (z) {
             return;
         }
         if (!this.f) {
-            bt2.b(this.f492a, this.b);
+            bt2.b(this.f491a, this.b);
             ViewGroup viewGroup = this.c;
             if (viewGroup != null) {
                 viewGroup.invalidate();

@@ -1,5 +1,6 @@
 package androidx.emoji2.text;
 
+import androidx.compose.runtime.internal.ComposableLambdaImpl;
 import androidx.core.splashscreen.R;
 import com.kos.engine.entity.location.BCell;
 import java.util.List;
@@ -22,8 +23,10 @@ public final /* synthetic */ class uv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$0;
         switch (this.d) {
             case 0:
+                invoke$lambda$0 = ComposableLambdaImpl.invoke$lambda$0((ComposableLambdaImpl) this.f, this.g, this.e, (lx) obj, ((Integer) obj2).intValue());
                 break;
             case 1:
                 ((Integer) obj2).intValue();
@@ -41,16 +44,16 @@ public final /* synthetic */ class uv implements Function2 {
                 List list = (List) this.f;
                 bh0 bh0Var = (bh0) this.g;
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Integer) obj2).intValue();
-                a.a.a.c.a(-436974826700578L, wj1.f1284a);
+                int intValue = ((Integer) obj2).intValue();
+                a.a.a.c.a(-436974826700578L, wj1.f1283a);
                 tx txVar = (tx) lxVar;
-                if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     pk2.b(n6.h0(R.string.facebook_uninstall_confirm_message, new Object[]{list.get(bh0Var.ordinal()), Integer.valueOf(this.e + 1)}, txVar), null, et.d, nz0.D(14), null, null, null, 0L, null, 0L, 0, false, 0, 0, null, txVar, 3456, 0, 131058);
                 } else {
                     txVar.S();
                 }
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

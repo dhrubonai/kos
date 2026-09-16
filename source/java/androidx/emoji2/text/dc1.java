@@ -30,29 +30,29 @@ public final class dc1 extends lc0 {
     @Override // androidx.emoji2.text.lc0, android.view.View
     public final boolean onHoverEvent(MotionEvent motionEvent) {
         ob1 ob1Var;
-        int headersCount;
-        int iPointToPosition;
         int i;
+        int pointToPosition;
+        int i2;
         if (this.r != null) {
             ListAdapter adapter = getAdapter();
             if (adapter instanceof HeaderViewListAdapter) {
                 HeaderViewListAdapter headerViewListAdapter = (HeaderViewListAdapter) adapter;
-                headersCount = headerViewListAdapter.getHeadersCount();
+                i = headerViewListAdapter.getHeadersCount();
                 ob1Var = (ob1) headerViewListAdapter.getWrappedAdapter();
             } else {
                 ob1Var = (ob1) adapter;
-                headersCount = 0;
+                i = 0;
             }
-            ub1 ub1VarB = (motionEvent.getAction() == 10 || (iPointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i = iPointToPosition - headersCount) < 0 || i >= ob1Var.getCount()) ? null : ob1Var.getItem(i);
+            ub1 item = (motionEvent.getAction() == 10 || (pointToPosition = pointToPosition((int) motionEvent.getX(), (int) motionEvent.getY())) == -1 || (i2 = pointToPosition - i) < 0 || i2 >= ob1Var.getCount()) ? null : ob1Var.getItem(i2);
             ub1 ub1Var = this.s;
-            if (ub1Var != ub1VarB) {
-                qb1 qb1Var = ob1Var.f848a;
+            if (ub1Var != item) {
+                qb1 qb1Var = ob1Var.f847a;
                 if (ub1Var != null) {
                     this.r.m(qb1Var, ub1Var);
                 }
-                this.s = ub1VarB;
-                if (ub1VarB != null) {
-                    this.r.k(qb1Var, ub1VarB);
+                this.s = item;
+                if (item != null) {
+                    this.r.k(qb1Var, item);
                 }
             }
         }
@@ -73,7 +73,7 @@ public final class dc1 extends lc0 {
         }
         setSelection(-1);
         ListAdapter adapter = getAdapter();
-        (adapter instanceof HeaderViewListAdapter ? (ob1) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (ob1) adapter).f848a.c(false);
+        (adapter instanceof HeaderViewListAdapter ? (ob1) ((HeaderViewListAdapter) adapter).getWrappedAdapter() : (ob1) adapter).f847a.c(false);
         return true;
     }
 

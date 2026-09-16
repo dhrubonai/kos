@@ -8,23 +8,31 @@ import java.util.function.ToIntFunction;
 public final /* synthetic */ class b implements ToIntFunction {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f1475a;
+    public final /* synthetic */ int f1474a;
 
     public /* synthetic */ b(int i) {
-        this.f1475a = i;
+        this.f1474a = i;
     }
 
     @Override // java.util.function.ToIntFunction
     public final int applyAsInt(Object obj) {
-        switch (this.f1475a) {
+        int i;
+        int i2;
+        int i3;
+        int i4;
+        switch (this.f1474a) {
             case 0:
-                return ((ManualLogDumper.SessionLogFile) obj).pid;
+                i = ((ManualLogDumper.SessionLogFile) obj).pid;
+                return i;
             case 1:
-                return ((ManualLogDumper.SessionLogFile) obj).segment;
+                i2 = ((ManualLogDumper.SessionLogFile) obj).segment;
+                return i2;
             case 2:
-                return ((ManualLogDumper.ProcessSnapshot) obj).userId;
+                i3 = ((ManualLogDumper.ProcessSnapshot) obj).userId;
+                return i3;
             default:
-                return ((ManualLogDumper.ProcessSnapshot) obj).pid;
+                i4 = ((ManualLogDumper.ProcessSnapshot) obj).pid;
+                return i4;
         }
     }
 }

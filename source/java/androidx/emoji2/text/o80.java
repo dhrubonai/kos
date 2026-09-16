@@ -3,6 +3,7 @@ package androidx.emoji2.text;
 import android.os.Build;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -38,10 +39,10 @@ public final class o80 extends cv {
             WindowManager.LayoutParams attributes = window.getAttributes();
             int i = Build.VERSION.SDK_INT;
             if (i >= 28) {
-                ye.f1380a.a(attributes);
+                ye.f1379a.a(attributes);
             }
             if (i >= 30) {
-                ze zeVar = ze.f1435a;
+                ze zeVar = ze.f1434a;
                 zeVar.a(attributes, 0);
                 zeVar.b(attributes, 0);
             }
@@ -87,26 +88,26 @@ public final class o80 extends cv {
         this.h = sm0Var;
         this.i = l80Var;
         a62 a62Var = l80Var.c;
-        boolean zB = kb.b(this.j);
-        int iOrdinal = a62Var.ordinal();
-        if (iOrdinal != 0) {
-            if (iOrdinal == 1) {
-                zB = true;
+        boolean b = kb.b(this.j);
+        int ordinal = a62Var.ordinal();
+        if (ordinal != 0) {
+            if (ordinal == 1) {
+                b = true;
             } else {
-                if (iOrdinal != 2) {
+                if (ordinal != 2) {
                     throw new mu();
                 }
-                zB = false;
+                b = false;
             }
         }
         Window window = getWindow();
         lx0.u(window);
-        window.setFlags(zB ? 8192 : -8193, 8192);
-        int iOrdinal2 = q01Var.ordinal();
-        if (iOrdinal2 == 0) {
+        window.setFlags(b ? 8192 : -8193, 8192);
+        int ordinal2 = q01Var.ordinal();
+        if (ordinal2 == 0) {
             i = 0;
         } else {
-            if (iOrdinal2 != 1) {
+            if (ordinal2 != 1) {
                 throw new mu();
             }
             i = 1;
@@ -136,95 +137,68 @@ public final class o80 extends cv {
 
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public final boolean onKeyUp(int i, KeyEvent keyEvent) {
-        if (!this.i.f679a || !keyEvent.isTracking() || keyEvent.isCanceled() || i != 111) {
+        if (!this.i.f678a || !keyEvent.isTracking() || keyEvent.isCanceled() || i != 111) {
             return super.onKeyUp(i, keyEvent);
         }
         this.h.a();
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x008b  */
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006b, code lost:
+    
+        if (r5 <= r1) goto L35;
+     */
     @Override // android.app.Dialog
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean onTouchEvent(android.view.MotionEvent r10) {
-        /*
-            r9 = this;
-            boolean r0 = super.onTouchEvent(r10)
-            androidx.emoji2.text.l80 r1 = r9.i
-            boolean r1 = r1.b
-            r2 = 3
-            r3 = 0
-            r4 = 1
-            if (r1 == 0) goto L8b
-            androidx.emoji2.text.k80 r1 = r9.k
-            r1.getClass()
-            float r5 = r10.getX()
-            boolean r6 = java.lang.Float.isInfinite(r5)
-            if (r6 != 0) goto L6e
-            boolean r5 = java.lang.Float.isNaN(r5)
-            if (r5 != 0) goto L6e
-            float r5 = r10.getY()
-            boolean r6 = java.lang.Float.isInfinite(r5)
-            if (r6 != 0) goto L6e
-            boolean r5 = java.lang.Float.isNaN(r5)
-            if (r5 != 0) goto L6e
-            android.view.View r5 = r1.getChildAt(r3)
-            if (r5 != 0) goto L39
-            goto L6e
-        L39:
-            int r6 = r1.getLeft()
-            int r7 = r5.getLeft()
-            int r7 = r7 + r6
-            int r6 = r5.getWidth()
-            int r6 = r6 + r7
-            int r1 = r1.getTop()
-            int r8 = r5.getTop()
-            int r8 = r8 + r1
-            int r1 = r5.getHeight()
-            int r1 = r1 + r8
-            float r5 = r10.getX()
-            int r5 = androidx.emoji2.text.xa1.Q(r5)
-            if (r7 > r5) goto L6e
-            if (r5 > r6) goto L6e
-            float r5 = r10.getY()
-            int r5 = androidx.emoji2.text.xa1.Q(r5)
-            if (r8 > r5) goto L6e
-            if (r5 > r1) goto L6e
-            goto L8b
-        L6e:
-            int r10 = r10.getActionMasked()
-            if (r10 == 0) goto L88
-            if (r10 == r4) goto L7c
-            if (r10 == r2) goto L79
-            goto L95
-        L79:
-            r9.l = r3
-            return r0
-        L7c:
-            boolean r10 = r9.l
-            if (r10 == 0) goto L95
-            androidx.emoji2.text.sm0 r10 = r9.h
-            r10.a()
-            r9.l = r3
-            return r4
-        L88:
-            r9.l = r4
-            return r4
-        L8b:
-            int r10 = r10.getActionMasked()
-            if (r10 == 0) goto L96
-            if (r10 == r4) goto L96
-            if (r10 == r2) goto L96
-        L95:
-            return r0
-        L96:
-            r9.l = r3
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.o80.onTouchEvent(android.view.MotionEvent):boolean");
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        View childAt;
+        boolean onTouchEvent = super.onTouchEvent(motionEvent);
+        if (this.i.b) {
+            k80 k80Var = this.k;
+            k80Var.getClass();
+            float x = motionEvent.getX();
+            if (!Float.isInfinite(x) && !Float.isNaN(x)) {
+                float y = motionEvent.getY();
+                if (!Float.isInfinite(y) && !Float.isNaN(y) && (childAt = k80Var.getChildAt(0)) != null) {
+                    int left = childAt.getLeft() + k80Var.getLeft();
+                    int width = childAt.getWidth() + left;
+                    int top2 = childAt.getTop() + k80Var.getTop();
+                    int height = childAt.getHeight() + top2;
+                    int Q = xa1.Q(motionEvent.getX());
+                    if (left <= Q) {
+                        if (Q <= width) {
+                            int Q2 = xa1.Q(motionEvent.getY());
+                            if (top2 <= Q2) {
+                            }
+                        }
+                    }
+                }
+            }
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked == 0) {
+                this.l = true;
+                return true;
+            }
+            if (actionMasked != 1) {
+                if (actionMasked == 3) {
+                    this.l = false;
+                    return onTouchEvent;
+                }
+            } else if (this.l) {
+                this.h.a();
+                this.l = false;
+                return true;
+            }
+            return onTouchEvent;
+        }
+        int actionMasked2 = motionEvent.getActionMasked();
+        if (actionMasked2 == 0 || actionMasked2 == 1 || actionMasked2 == 3) {
+            this.l = false;
+            return onTouchEvent;
+        }
+        return onTouchEvent;
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

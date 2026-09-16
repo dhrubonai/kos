@@ -8,7 +8,9 @@ import android.view.View;
 public final class it2 extends ht2 {
     @Override // androidx.emoji2.text.az0
     public final float O(View view) {
-        return view.getTransitionAlpha();
+        float transitionAlpha;
+        transitionAlpha = view.getTransitionAlpha();
+        return transitionAlpha;
     }
 
     @Override // androidx.emoji2.text.az0

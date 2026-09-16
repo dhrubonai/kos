@@ -5,18 +5,18 @@ package androidx.emoji2.text;
 public final class le extends oe {
 
     /* renamed from: a, reason: collision with root package name */
-    public float f687a;
+    public float f686a;
     public float b;
 
     public le(float f, float f2) {
-        this.f687a = f;
+        this.f686a = f;
         this.b = f2;
     }
 
     @Override // androidx.emoji2.text.oe
     public final float a(int i) {
         if (i == 0) {
-            return this.f687a;
+            return this.f686a;
         }
         if (i != 1) {
             return 0.0f;
@@ -36,14 +36,14 @@ public final class le extends oe {
 
     @Override // androidx.emoji2.text.oe
     public final void d() {
-        this.f687a = 0.0f;
+        this.f686a = 0.0f;
         this.b = 0.0f;
     }
 
     @Override // androidx.emoji2.text.oe
     public final void e(int i, float f) {
         if (i == 0) {
-            this.f687a = f;
+            this.f686a = f;
         } else {
             if (i != 1) {
                 return;
@@ -57,14 +57,14 @@ public final class le extends oe {
             return false;
         }
         le leVar = (le) obj;
-        return leVar.f687a == this.f687a && leVar.b == this.b;
+        return leVar.f686a == this.f686a && leVar.b == this.b;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.b) + (Float.hashCode(this.f687a) * 31);
+        return Float.hashCode(this.b) + (Float.hashCode(this.f686a) * 31);
     }
 
     public final String toString() {
-        return "AnimationVector2D: v1 = " + this.f687a + ", v2 = " + this.b;
+        return "AnimationVector2D: v1 = " + this.f686a + ", v2 = " + this.b;
     }
 }

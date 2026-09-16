@@ -7,18 +7,18 @@ public final class gu implements g12 {
     public static final gu c = new gu(1);
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f438a;
+    public final /* synthetic */ int f437a;
 
     public /* synthetic */ gu(int i) {
-        this.f438a = i;
+        this.f437a = i;
     }
 
     @Override // androidx.emoji2.text.g12
     public final long a(tx txVar) {
-        switch (this.f438a) {
+        switch (this.f437a) {
             case 0:
                 txVar.X(-1844533201);
-                long j = ((et) txVar.j(g00.f396a)).f321a;
+                long j = ((et) txVar.j(g00.f395a)).f320a;
                 txVar.p(false);
                 return j;
             default:
@@ -32,7 +32,7 @@ public final class gu implements g12 {
 
     @Override // androidx.emoji2.text.g12
     public final r02 b(tx txVar) {
-        switch (this.f438a) {
+        switch (this.f437a) {
             case 0:
                 txVar.X(-290975286);
                 r02 r02Var = xo2.i;

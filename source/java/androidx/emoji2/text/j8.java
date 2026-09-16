@@ -9,7 +9,7 @@ import android.view.View;
 public final class j8 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final j8 f566a = new j8();
+    public static final j8 f565a = new j8();
 
     public final void a(View view, ms1 ms1Var) {
         Context context = view.getContext();

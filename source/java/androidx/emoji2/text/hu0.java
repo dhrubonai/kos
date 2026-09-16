@@ -7,5 +7,5 @@ import java.util.HashMap;
 public final class hu0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final HashMap f491a = new HashMap();
+    public final HashMap f490a = new HashMap();
 }

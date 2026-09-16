@@ -32,28 +32,39 @@ public final class lm1 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((lm1) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((lm1) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0031, code lost:
+    
+        r7 = r1.f(r1.j() + 1, androidx.emoji2.text.lx0.a0(7, null), r6);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0060, code lost:
+    
+        r7 = r1.f(r1.j() - 1, androidx.emoji2.text.lx0.a0(7, null), r6);
+     */
     @Override // androidx.emoji2.text.lk
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final Object k(Object obj) {
-        Object objF;
-        Object objF2;
+        Object obj2;
+        Object obj3;
         int i = this.h;
         o60 o60Var = this.j;
         f30 f30Var = f30.d;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         switch (i) {
             case 0:
                 int i2 = this.i;
                 if (i2 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    float f = an1.f112a;
-                    if (o60Var.j() - 1 < 0 || (objF = o60Var.f(o60Var.j() - 1, lx0.a0(7, null), this)) != f30Var) {
-                        objF = up2Var;
+                    float f = an1.f111a;
+                    if (o60Var.j() - 1 < 0 || obj2 != f30Var) {
+                        obj2 = up2Var;
                     }
-                    if (objF == f30Var) {
+                    if (obj2 == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -68,11 +79,11 @@ public final class lm1 extends hh2 implements Function2 {
                 if (i3 == 0) {
                     mz0.L(obj);
                     this.i = 1;
-                    float f2 = an1.f112a;
-                    if (o60Var.j() + 1 >= o60Var.l() || (objF2 = o60Var.f(o60Var.j() + 1, lx0.a0(7, null), this)) != f30Var) {
-                        objF2 = up2Var;
+                    float f2 = an1.f111a;
+                    if (o60Var.j() + 1 >= o60Var.l() || obj3 != f30Var) {
+                        obj3 = up2Var;
                     }
-                    if (objF2 == f30Var) {
+                    if (obj3 == f30Var) {
                         return f30Var;
                     }
                 } else {

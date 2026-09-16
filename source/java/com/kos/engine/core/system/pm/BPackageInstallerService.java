@@ -111,9 +111,9 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     private int allocateSessionIdLocked() {
         for (int i = 0; i < 64; i++) {
-            int iNextInt = this.mSessionIdRandom.nextInt(2147483646) + 1;
-            if (this.mSessions.get(iNextInt) == null) {
-                return iNextInt;
+            int nextInt = this.mSessionIdRandom.nextInt(2147483646) + 1;
+            if (this.mSessions.get(nextInt) == null) {
+                return nextInt;
             }
         }
         throw new IllegalStateException(a.a.a.c.a(-441931218960162L, xa1.b));
@@ -132,9 +132,9 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         synchronized (this.mSessionLock) {
             for (int i2 = 0; i2 < this.mSessions.size(); i2++) {
                 try {
-                    VirtualPackageInstallerSession virtualPackageInstallerSessionValueAt = this.mSessions.valueAt(i2);
-                    if (virtualPackageInstallerSessionValueAt.userId == i) {
-                        arrayList.add(virtualPackageInstallerSessionValueAt.snapshot());
+                    VirtualPackageInstallerSession valueAt = this.mSessions.valueAt(i2);
+                    if (valueAt.userId == i) {
+                        arrayList.add(valueAt.snapshot());
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -144,72 +144,48 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         return (Bundle[]) arrayList.toArray(new Bundle[0]);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0033  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    private android.os.Bundle[] collectSessions(com.kos.engine.core.system.pm.BPackageInstallerService.CallerIdentity r8, java.lang.String r9, boolean r10) {
-        /*
-            r7 = this;
-            java.util.ArrayList r0 = new java.util.ArrayList
-            r0.<init>()
-            java.lang.Object r1 = r7.mSessionLock
-            monitor-enter(r1)
-            r2 = 0
-            r3 = r2
-        La:
-            android.util.SparseArray<com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession> r4 = r7.mSessions     // Catch: java.lang.Throwable -> L2a
-            int r4 = r4.size()     // Catch: java.lang.Throwable -> L2a
-            if (r3 >= r4) goto L48
-            android.util.SparseArray<com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession> r4 = r7.mSessions     // Catch: java.lang.Throwable -> L2a
-            java.lang.Object r4 = r4.valueAt(r3)     // Catch: java.lang.Throwable -> L2a
-            com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession r4 = (com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession) r4     // Catch: java.lang.Throwable -> L2a
-            int r5 = r4.userId     // Catch: java.lang.Throwable -> L2a
-            int r6 = r8.userId     // Catch: java.lang.Throwable -> L2a
-            if (r5 == r6) goto L21
-            goto L45
-        L21:
-            if (r10 == 0) goto L2c
-            boolean r5 = r7.canObserveSession(r8, r4)     // Catch: java.lang.Throwable -> L2a
-            if (r5 != 0) goto L33
-            goto L45
-        L2a:
-            r8 = move-exception
-            goto L52
-        L2c:
-            int r5 = r4.ownerUid     // Catch: java.lang.Throwable -> L2a
-            int r6 = r8.uid     // Catch: java.lang.Throwable -> L2a
-            if (r5 == r6) goto L33
-            goto L45
-        L33:
-            if (r9 == 0) goto L3e
-            java.lang.String r5 = r4.installerPackage     // Catch: java.lang.Throwable -> L2a
-            boolean r5 = r9.equals(r5)     // Catch: java.lang.Throwable -> L2a
-            if (r5 != 0) goto L3e
-            goto L45
-        L3e:
-            android.os.Bundle r4 = r4.snapshot()     // Catch: java.lang.Throwable -> L2a
-            r0.add(r4)     // Catch: java.lang.Throwable -> L2a
-        L45:
-            int r3 = r3 + 1
-            goto La
-        L48:
-            monitor-exit(r1)     // Catch: java.lang.Throwable -> L2a
-            android.os.Bundle[] r8 = new android.os.Bundle[r2]
-            java.lang.Object[] r8 = r0.toArray(r8)
-            android.os.Bundle[] r8 = (android.os.Bundle[]) r8
-            return r8
-        L52:
-            monitor-exit(r1)     // Catch: java.lang.Throwable -> L2a
-            throw r8
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.core.system.pm.BPackageInstallerService.collectSessions(com.kos.engine.core.system.pm.BPackageInstallerService$CallerIdentity, java.lang.String, boolean):android.os.Bundle[]");
+    private Bundle[] collectSessions(CallerIdentity callerIdentity, String str, boolean z) {
+        ArrayList arrayList = new ArrayList();
+        synchronized (this.mSessionLock) {
+            for (int i = 0; i < this.mSessions.size(); i++) {
+                try {
+                    VirtualPackageInstallerSession valueAt = this.mSessions.valueAt(i);
+                    if (valueAt.userId == callerIdentity.userId) {
+                        if (z) {
+                            if (!canObserveSession(callerIdentity, valueAt)) {
+                            }
+                            if (str != null || str.equals(valueAt.installerPackage)) {
+                                arrayList.add(valueAt.snapshot());
+                            }
+                        } else {
+                            if (valueAt.ownerUid != callerIdentity.uid) {
+                            }
+                            if (str != null) {
+                            }
+                            arrayList.add(valueAt.snapshot());
+                        }
+                    }
+                } catch (Throwable th) {
+                    throw th;
+                }
+            }
+        }
+        return (Bundle[]) arrayList.toArray(new Bundle[0]);
     }
 
-    private void commitMultiPackageSession(VirtualPackageInstallerSession virtualPackageInstallerSession, IntentSender intentSender) throws IntentSender.SendIntentException, IOException {
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x007a, code lost:
+    
+        r0 = r2.msg;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x007c, code lost:
+    
+        if (r0 != null) goto L26;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    private void commitMultiPackageSession(VirtualPackageInstallerSession virtualPackageInstallerSession, IntentSender intentSender) {
         VirtualPackageInstallerSession virtualPackageInstallerSession2;
-        String strA;
         int[] childSessionIds = virtualPackageInstallerSession.getChildSessionIds();
         if (childSessionIds.length == 0) {
             finishSession(virtualPackageInstallerSession, false, INSTALL_FAILED_INTERNAL_ERROR, a.a.a.c.a(-434440795995938L, xa1.b), intentSender);
@@ -225,12 +201,10 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
                 return;
             }
             virtualPackageInstallerSession2.beginCommit();
-            InstallResult installResultInstallStagedSession = installStagedSession(virtualPackageInstallerSession2);
-            if (installResultInstallStagedSession == null || !installResultInstallStagedSession.success || (str = installResultInstallStagedSession.packageName) == null) {
-                if (installResultInstallStagedSession == null || (strA = installResultInstallStagedSession.msg) == null) {
-                    strA = a.a.a.c.a(-435201005207330L, xa1.b);
-                }
-                String str2 = strA;
+            InstallResult installStagedSession = installStagedSession(virtualPackageInstallerSession2);
+            if (installStagedSession == null || !installStagedSession.success || (str = installStagedSession.packageName) == null) {
+                String a2 = a.a.a.c.a(-435201005207330L, xa1.b);
+                String str2 = a2;
                 finishSession(virtualPackageInstallerSession2, false, INSTALL_FAILED_INTERNAL_ERROR, str2, null);
                 finishSession(virtualPackageInstallerSession, false, INSTALL_FAILED_INTERNAL_ERROR, str2, intentSender);
                 return;
@@ -241,93 +215,49 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x005d  */
     /* renamed from: commitSessionInternal, reason: merged with bridge method [inline-methods] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public void lambda$commitSession$0(com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession r12, android.content.IntentSender r13) throws android.content.IntentSender.SendIntentException, java.io.IOException {
-        /*
-            r11 = this;
-            java.lang.String[] r0 = androidx.emoji2.text.xa1.b
-            boolean r1 = r11.isCurrentSession(r12)
-            if (r1 != 0) goto L9
-            return
-        L9:
-            boolean r1 = r12.isMultiPackage()
-            if (r1 == 0) goto L13
-            r11.commitMultiPackageSession(r12, r13)
-            return
-        L13:
-            com.kos.engine.entity.pm.InstallResult r1 = r11.installStagedSession(r12)
-            r2 = 1
-            if (r1 == 0) goto L24
-            boolean r3 = r1.success
-            if (r3 == 0) goto L24
-            java.lang.String r3 = r1.packageName
-            if (r3 == 0) goto L24
-            r6 = r2
-            goto L26
-        L24:
-            r3 = 0
-            r6 = r3
-        L26:
-            if (r1 != 0) goto L2b
-            r3 = 0
-        L29:
-            r10 = r3
-            goto L2e
-        L2b:
-            java.lang.String r3 = r1.packageName
-            goto L29
-        L2e:
-            if (r6 == 0) goto L3b
-            r3 = -434608299720482(0xfffe74b9deadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r3, r0)
-        L39:
-            r8 = r0
-            goto L56
-        L3b:
-            if (r1 != 0) goto L47
-            r3 = -434642659458850(0xfffe74b1deadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r3, r0)
-            goto L39
-        L47:
-            java.lang.String r1 = r1.msg
-            if (r1 != 0) goto L55
-            r3 = -434801573248802(0xfffe748cdeadc0de, double:NaN)
-            java.lang.String r0 = a.a.a.c.a(r3, r0)
-            goto L39
-        L55:
-            r8 = r1
-        L56:
-            if (r6 == 0) goto L5d
-        L58:
-            r4 = r11
-            r5 = r12
-            r9 = r13
-            r7 = r2
-            goto L60
-        L5d:
-            r2 = -110(0xffffffffffffff92, float:NaN)
-            goto L58
-        L60:
-            r4.finishSession(r5, r6, r7, r8, r9, r10)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.core.system.pm.BPackageInstallerService.lambda$commitSession$0(com.kos.engine.core.system.pm.installer.VirtualPackageInstallerSession, android.content.IntentSender):void");
+    public void lambda$commitSession$0(VirtualPackageInstallerSession virtualPackageInstallerSession, IntentSender intentSender) {
+        String str;
+        String a2;
+        String[] strArr = xa1.b;
+        if (isCurrentSession(virtualPackageInstallerSession)) {
+            if (virtualPackageInstallerSession.isMultiPackage()) {
+                commitMultiPackageSession(virtualPackageInstallerSession, intentSender);
+                return;
+            }
+            InstallResult installStagedSession = installStagedSession(virtualPackageInstallerSession);
+            boolean z = (installStagedSession == null || !installStagedSession.success || installStagedSession.packageName == null) ? false : true;
+            String str2 = installStagedSession == null ? null : installStagedSession.packageName;
+            if (z) {
+                a2 = a.a.a.c.a(-434608299720482L, strArr);
+            } else if (installStagedSession == null) {
+                a2 = a.a.a.c.a(-434642659458850L, strArr);
+            } else {
+                String str3 = installStagedSession.msg;
+                if (str3 != null) {
+                    str = str3;
+                    finishSession(virtualPackageInstallerSession, z, z ? 1 : INSTALL_FAILED_INTERNAL_ERROR, str, intentSender, str2);
+                }
+                a2 = a.a.a.c.a(-434801573248802L, strArr);
+            }
+            str = a2;
+            finishSession(virtualPackageInstallerSession, z, z ? 1 : INSTALL_FAILED_INTERNAL_ERROR, str, intentSender, str2);
+        }
     }
 
     private boolean dispatchVirtualInstallerStatus(VirtualPackageInstallerSession virtualPackageInstallerSession, IntentSender intentSender, Intent intent) {
         String[] strArr = xa1.b;
         try {
-            IInterface iInterfaceMTarget = BRIntentSender.get(intentSender).mTarget();
-            if (iInterfaceMTarget == null) {
+            IInterface mTarget = BRIntentSender.get(intentSender).mTarget();
+            if (mTarget == null) {
                 nz0.Q(a.a.a.c.a(-447879748665122L, strArr), 3, a.a.a.c.a(-447987122847522L, strArr) + virtualPackageInstallerSession.sessionId);
                 return false;
             }
-            PendingIntentRecord intentSenderRecord = BActivityManagerService.get().getIntentSenderRecord(iInterfaceMTarget.asBinder(), virtualPackageInstallerSession.userId);
+            PendingIntentRecord intentSenderRecord = BActivityManagerService.get().getIntentSenderRecord(mTarget.asBinder(), virtualPackageInstallerSession.userId);
             if (intentSenderRecord != null && intentSenderRecord.targetIntent != null) {
                 if (!virtualPackageInstallerSession.ownerPackage.equals(intentSenderRecord.packageName)) {
                     nz0.Q(a.a.a.c.a(-448592713236258L, strArr), 5, a.a.a.c.a(-448150331604770L, strArr) + intentSenderRecord.packageName + a.a.a.c.a(-448300655460130L, strArr) + virtualPackageInstallerSession.ownerPackage);
@@ -335,15 +265,15 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
                 }
                 Intent intent2 = new Intent(intentSenderRecord.targetIntent);
                 intent2.fillIn(intent, 0);
-                String strResolveTypeIfNeeded = intent2.resolveTypeIfNeeded(c01.s.getContentResolver());
+                String resolveTypeIfNeeded = intent2.resolveTypeIfNeeded(c01.s.getContentResolver());
                 nz0.Q(a.a.a.c.a(-446771647102754L, strArr), 3, a.a.a.c.a(-446879021285154L, strArr) + virtualPackageInstallerSession.sessionId + a.a.a.c.a(-446531128934178L, strArr) + intentSenderRecord.packageName + a.a.a.c.a(-446569783639842L, strArr) + intentSenderRecord.type + a.a.a.c.a(-446604143378210L, strArr) + intent2);
                 int i = intentSenderRecord.type;
                 if (i == 1) {
-                    Intent intentSendBroadcast = BActivityManagerService.get().sendBroadcast(intent2, strResolveTypeIfNeeded, virtualPackageInstallerSession.userId);
-                    if (intentSendBroadcast != null) {
-                        intentSendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
-                        ProxyBroadcastRecord.saveStub(intentSendBroadcast, intent2, virtualPackageInstallerSession.userId);
-                        c01.s.sendBroadcast(intentSendBroadcast);
+                    Intent sendBroadcast = BActivityManagerService.get().sendBroadcast(intent2, resolveTypeIfNeeded, virtualPackageInstallerSession.userId);
+                    if (sendBroadcast != null) {
+                        sendBroadcast.setExtrasClassLoader(c01.s.getClassLoader());
+                        ProxyBroadcastRecord.saveStub(sendBroadcast, intent2, virtualPackageInstallerSession.userId);
+                        c01.s.sendBroadcast(sendBroadcast);
                         return true;
                     }
                 } else if (i != 2) {
@@ -351,10 +281,10 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
                         nz0.Q(a.a.a.c.a(-446629913181986L, strArr), 3, a.a.a.c.a(-447269863309090L, strArr) + intentSenderRecord.type + a.a.a.c.a(-447467431804706L, strArr) + virtualPackageInstallerSession.sessionId);
                         return false;
                     }
-                    if (BActivityManagerService.get().startService(intent2, strResolveTypeIfNeeded, false, virtualPackageInstallerSession.userId) != null) {
+                    if (BActivityManagerService.get().startService(intent2, resolveTypeIfNeeded, false, virtualPackageInstallerSession.userId) != null) {
                         return true;
                     }
-                } else if (BActivityManagerService.get().startActivityAms(virtualPackageInstallerSession.userId, intent2, strResolveTypeIfNeeded, null, null, -1, 0, null) >= 0) {
+                } else if (BActivityManagerService.get().startActivityAms(virtualPackageInstallerSession.userId, intent2, resolveTypeIfNeeded, null, null, -1, 0, null) >= 0) {
                     return true;
                 }
                 return false;
@@ -367,7 +297,7 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         }
     }
 
-    private void finishSession(VirtualPackageInstallerSession virtualPackageInstallerSession, boolean z, int i, String str, IntentSender intentSender) throws IntentSender.SendIntentException, IOException {
+    private void finishSession(VirtualPackageInstallerSession virtualPackageInstallerSession, boolean z, int i, String str, IntentSender intentSender) {
         finishSession(virtualPackageInstallerSession, z, i, str, intentSender, null);
     }
 
@@ -378,11 +308,11 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
     private InstallResult installStagedSession(VirtualPackageInstallerSession virtualPackageInstallerSession) {
         String[] strArr = xa1.b;
         try {
-            int iNormalizeStagedApkPayloads = normalizeStagedApkPayloads(virtualPackageInstallerSession.stageDir);
-            if (iNormalizeStagedApkPayloads == 0) {
+            int normalizeStagedApkPayloads = normalizeStagedApkPayloads(virtualPackageInstallerSession.stageDir);
+            if (normalizeStagedApkPayloads == 0) {
                 return new InstallResult().installError(a.a.a.c.a(-433714946522914L, strArr));
             }
-            nz0.Q(a.a.a.c.a(-433272564891426L, strArr), 3, a.a.a.c.a(-433362759204642L, strArr) + virtualPackageInstallerSession.sessionId + a.a.a.c.a(-434092903644962L, strArr) + iNormalizeStagedApkPayloads + a.a.a.c.a(-434127263383330L, strArr) + virtualPackageInstallerSession.userId);
+            nz0.Q(a.a.a.c.a(-433272564891426L, strArr), 3, a.a.a.c.a(-433362759204642L, strArr) + virtualPackageInstallerSession.sessionId + a.a.a.c.a(-434092903644962L, strArr) + normalizeStagedApkPayloads + a.a.a.c.a(-434127263383330L, strArr) + virtualPackageInstallerSession.userId);
             return BPackageManagerService.get().installPackageAsUser(virtualPackageInstallerSession.stageDir.getAbsolutePath(), InstallOption.installByStorage(), virtualPackageInstallerSession.userId);
         } catch (IOException e) {
             nz0.t(a.a.a.c.a(-434917537365794L, strArr), a.a.a.c.a(-435024911548194L, strArr) + virtualPackageInstallerSession.sessionId, e);
@@ -406,13 +336,13 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$notifyCallbacks$6(VirtualPackageInstallerSession virtualPackageInstallerSession, CallbackInvocation callbackInvocation) {
-        int iBeginBroadcast = this.mCallbacks.beginBroadcast();
-        for (int i = 0; i < iBeginBroadcast; i++) {
+        int beginBroadcast = this.mCallbacks.beginBroadcast();
+        for (int i = 0; i < beginBroadcast; i++) {
             try {
                 CallbackIdentity callbackIdentity = (CallbackIdentity) this.mCallbacks.getBroadcastCookie(i);
                 if (callbackIdentity != null && canObserveSession(callbackIdentity, virtualPackageInstallerSession)) {
                     try {
-                        callbackInvocation.invoke((IPackageInstallerCallback) this.mCallbacks.getBroadcastItem(i));
+                        callbackInvocation.invoke(this.mCallbacks.getBroadcastItem(i));
                     } catch (RemoteException unused) {
                     }
                 }
@@ -447,17 +377,17 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         iPackageInstallerCallback.onSessionProgressChanged(virtualPackageInstallerSession.sessionId, f);
     }
 
-    private int normalizeStagedApkPayloads(File file) throws IOException {
+    private int normalizeStagedApkPayloads(File file) {
         File file2;
         int i;
         String[] strArr = xa1.b;
-        File[] fileArrListFiles = file.listFiles();
-        if (fileArrListFiles == null) {
+        File[] listFiles = file.listFiles();
+        if (listFiles == null) {
             throw new IOException(a.a.a.c.a(-434105788546850L, strArr));
         }
         int i2 = 0;
         int i3 = 0;
-        for (File file3 : fileArrListFiles) {
+        for (File file3 : listFiles) {
             if (file3.isFile() && !isInstallerSidecar(file3.getName())) {
                 if (!file3.getName().endsWith(a.a.a.c.a(-433822320705314L, strArr))) {
                     while (true) {
@@ -488,7 +418,7 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         this.mInstallHandler.post(new Runnable() { // from class: com.kos.engine.core.system.pm.d
             @Override // java.lang.Runnable
             public final void run() {
-                this.d.lambda$notifyCallbacks$6(virtualPackageInstallerSession, callbackInvocation);
+                BPackageInstallerService.this.lambda$notifyCallbacks$6(virtualPackageInstallerSession, callbackInvocation);
             }
         });
     }
@@ -513,7 +443,7 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         notifyCallbacks(virtualPackageInstallerSession, new CallbackInvocation() { // from class: com.kos.engine.core.system.pm.b
             @Override // com.kos.engine.core.system.pm.BPackageInstallerService.CallbackInvocation
             public final void invoke(IPackageInstallerCallback iPackageInstallerCallback) {
-                BPackageInstallerService.lambda$notifySessionProgressChanged$4(virtualPackageInstallerSession, f, iPackageInstallerCallback);
+                BPackageInstallerService.lambda$notifySessionProgressChanged$4(VirtualPackageInstallerSession.this, f, iPackageInstallerCallback);
             }
         });
     }
@@ -526,23 +456,23 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
     }
 
     private CallerIdentity requireCaller() {
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null || processRecordFindProcessByPid.getPackageName() == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null || findProcessByPid.getPackageName() == null) {
             throw new SecurityException(a.a.a.c.a(-441175304716066L, xa1.b));
         }
-        return new CallerIdentity(processRecordFindProcessByPid.getPackageName(), processRecordFindProcessByPid.buid, processRecordFindProcessByPid.userId);
+        return new CallerIdentity(findProcessByPid.getPackageName(), findProcessByPid.buid, findProcessByPid.userId);
     }
 
     private VirtualPackageInstallerSession requireOwnedSession(int i) {
         VirtualPackageInstallerSession virtualPackageInstallerSession;
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
+        CallerIdentity requireCaller = requireCaller();
         synchronized (this.mSessionLock) {
             try {
                 virtualPackageInstallerSession = this.mSessions.get(i);
                 if (virtualPackageInstallerSession == null) {
                     throw new SecurityException(a.a.a.c.a(-441007800991522L, xa1.b) + i);
                 }
-                virtualPackageInstallerSession.assertOwner(callerIdentityRequireCaller.uid, callerIdentityRequireCaller.userId);
+                virtualPackageInstallerSession.assertOwner(requireCaller.uid, requireCaller.userId);
             } catch (Throwable th) {
                 throw th;
             }
@@ -551,24 +481,24 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
-    public void abandonSession(int i) throws IntentSender.SendIntentException, IOException {
+    public void abandonSession(int i) {
         finishSession(requireOwnedSession(i), false, INSTALL_FAILED_ABORTED, a.a.a.c.a(-431052066799394L, xa1.b), null);
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void addChildSessionId(int i, int i2) {
         String[] strArr = xa1.b;
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession2 = requireOwnedSession(i2);
-        if (virtualPackageInstallerSessionRequireOwnedSession.userId != virtualPackageInstallerSessionRequireOwnedSession2.userId || virtualPackageInstallerSessionRequireOwnedSession.ownerUid != virtualPackageInstallerSessionRequireOwnedSession2.ownerUid) {
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        VirtualPackageInstallerSession requireOwnedSession2 = requireOwnedSession(i2);
+        if (requireOwnedSession.userId != requireOwnedSession2.userId || requireOwnedSession.ownerUid != requireOwnedSession2.ownerUid) {
             throw new SecurityException(a.a.a.c.a(-431833750847266L, strArr));
         }
-        int parentSessionId = virtualPackageInstallerSessionRequireOwnedSession2.getParentSessionId();
+        int parentSessionId = requireOwnedSession2.getParentSessionId();
         if (parentSessionId != -1 && parentSessionId != i) {
             throw new IllegalStateException(a.a.a.c.a(-432018434440994L, strArr));
         }
-        virtualPackageInstallerSessionRequireOwnedSession.addChildSessionId(i2);
-        virtualPackageInstallerSessionRequireOwnedSession2.setParentSessionId(i);
+        requireOwnedSession.addChildSessionId(i2);
+        requireOwnedSession2.setParentSessionId(i);
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
@@ -583,15 +513,15 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
             Object obj = arrayList.get(i2);
             i2++;
             Executor executor = (Executor) obj;
-            int iExec = executor.exec(bPackageSettings, installOption, i);
+            int exec = executor.exec(bPackageSettings, installOption, i);
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-439736490671906L, strArr);
+            String a2 = a.a.a.c.a(-439736490671906L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-439294109040418L, strArr));
             sb.append(executor.getClass().getSimpleName());
-            zd.o(sb, a.a.a.c.a(-439358533549858L, strArr), iExec, 3, strA);
-            if (iExec != 0) {
-                return iExec;
+            zd.o(sb, a.a.a.c.a(-439358533549858L, strArr), exec, 3, a2);
+            if (exec != 0) {
+                return exec;
             }
         }
         return 0;
@@ -599,12 +529,12 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void closeSession(int i) {
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
+        CallerIdentity requireCaller = requireCaller();
         synchronized (this.mSessionLock) {
             try {
                 VirtualPackageInstallerSession virtualPackageInstallerSession = this.mSessions.get(i);
                 if (virtualPackageInstallerSession != null) {
-                    virtualPackageInstallerSession.assertOwner(callerIdentityRequireCaller.uid, callerIdentityRequireCaller.userId);
+                    virtualPackageInstallerSession.assertOwner(requireCaller.uid, requireCaller.userId);
                     if (virtualPackageInstallerSession.close()) {
                         notifySessionActiveChanged(virtualPackageInstallerSession, false);
                         return;
@@ -612,7 +542,7 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
                     return;
                 }
                 String[] strArr = xa1.b;
-                nz0.Q(a.a.a.c.a(-432808708423458L, strArr), 3, a.a.a.c.a(-432898902736674L, strArr) + i + a.a.a.c.a(-431533103136546L, strArr) + callerIdentityRequireCaller.packageName + a.a.a.c.a(-431022002028322L, strArr) + callerIdentityRequireCaller.userId);
+                nz0.Q(a.a.a.c.a(-432808708423458L, strArr), 3, a.a.a.c.a(-432898902736674L, strArr) + i + a.a.a.c.a(-431533103136546L, strArr) + requireCaller.packageName + a.a.a.c.a(-431022002028322L, strArr) + requireCaller.userId);
             } catch (Throwable th) {
                 throw th;
             }
@@ -621,17 +551,17 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void commitSession(int i, IntentSender intentSender) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        virtualPackageInstallerSessionRequireOwnedSession.beginCommit();
-        notifySessionProgressChanged(virtualPackageInstallerSessionRequireOwnedSession, 1.0f);
-        this.mInstallHandler.post(new sj(this, virtualPackageInstallerSessionRequireOwnedSession, intentSender, 0));
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        requireOwnedSession.beginCommit();
+        notifySessionProgressChanged(requireOwnedSession, 1.0f);
+        this.mInstallHandler.post(new sj(this, requireOwnedSession, intentSender, 0));
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public int createSession(Bundle bundle, String str, int i) {
-        int iAllocateSessionIdLocked;
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
-        if (callerIdentityRequireCaller.userId != i) {
+        int allocateSessionIdLocked;
+        CallerIdentity requireCaller = requireCaller();
+        if (requireCaller.userId != i) {
             throw new SecurityException(a.a.a.c.a(-439392893288226L, xa1.b));
         }
         Bundle bundle2 = bundle == null ? new Bundle() : new Bundle(bundle);
@@ -639,8 +569,8 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
             int i2 = 0;
             for (int i3 = 0; i3 < this.mSessions.size(); i3++) {
                 try {
-                    VirtualPackageInstallerSession virtualPackageInstallerSessionValueAt = this.mSessions.valueAt(i3);
-                    if (virtualPackageInstallerSessionValueAt.ownerUid == callerIdentityRequireCaller.uid && virtualPackageInstallerSessionValueAt.userId == callerIdentityRequireCaller.userId) {
+                    VirtualPackageInstallerSession valueAt = this.mSessions.valueAt(i3);
+                    if (valueAt.ownerUid == requireCaller.uid && valueAt.userId == requireCaller.userId) {
                         i2++;
                     }
                 } catch (Throwable th) {
@@ -650,31 +580,38 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
             if (i2 >= 128) {
                 throw new IllegalStateException(a.a.a.c.a(-437919719505698L, xa1.b));
             }
-            iAllocateSessionIdLocked = allocateSessionIdLocked();
-            File packageInstallerSessionDir = BEnvironment.getPackageInstallerSessionDir(callerIdentityRequireCaller.userId, iAllocateSessionIdLocked);
-            if (str == null || !str.equals(callerIdentityRequireCaller.packageName)) {
-                str = callerIdentityRequireCaller.packageName;
+            allocateSessionIdLocked = allocateSessionIdLocked();
+            File packageInstallerSessionDir = BEnvironment.getPackageInstallerSessionDir(requireCaller.userId, allocateSessionIdLocked);
+            if (str != null) {
+                if (!str.equals(requireCaller.packageName)) {
+                }
+                VirtualPackageInstallerSession virtualPackageInstallerSession = new VirtualPackageInstallerSession(allocateSessionIdLocked, requireCaller.userId, requireCaller.uid, requireCaller.packageName, str, bundle2, packageInstallerSessionDir);
+                this.mSessions.put(allocateSessionIdLocked, virtualPackageInstallerSession);
+                String[] strArr = xa1.b;
+                nz0.Q(a.a.a.c.a(-438104403099426L, strArr), 3, a.a.a.c.a(-437662021467938L, strArr) + allocateSessionIdLocked + a.a.a.c.a(-437777985584930L, strArr) + requireCaller.packageName + a.a.a.c.a(-437820935257890L, strArr) + requireCaller.userId);
+                notifySessionCreated(virtualPackageInstallerSession);
             }
-            VirtualPackageInstallerSession virtualPackageInstallerSession = new VirtualPackageInstallerSession(iAllocateSessionIdLocked, callerIdentityRequireCaller.userId, callerIdentityRequireCaller.uid, callerIdentityRequireCaller.packageName, str, bundle2, packageInstallerSessionDir);
-            this.mSessions.put(iAllocateSessionIdLocked, virtualPackageInstallerSession);
-            String[] strArr = xa1.b;
-            nz0.Q(a.a.a.c.a(-438104403099426L, strArr), 3, a.a.a.c.a(-437662021467938L, strArr) + iAllocateSessionIdLocked + a.a.a.c.a(-437777985584930L, strArr) + callerIdentityRequireCaller.packageName + a.a.a.c.a(-437820935257890L, strArr) + callerIdentityRequireCaller.userId);
-            notifySessionCreated(virtualPackageInstallerSession);
+            str = requireCaller.packageName;
+            VirtualPackageInstallerSession virtualPackageInstallerSession2 = new VirtualPackageInstallerSession(allocateSessionIdLocked, requireCaller.userId, requireCaller.uid, requireCaller.packageName, str, bundle2, packageInstallerSessionDir);
+            this.mSessions.put(allocateSessionIdLocked, virtualPackageInstallerSession2);
+            String[] strArr2 = xa1.b;
+            nz0.Q(a.a.a.c.a(-438104403099426L, strArr2), 3, a.a.a.c.a(-437662021467938L, strArr2) + allocateSessionIdLocked + a.a.a.c.a(-437777985584930L, strArr2) + requireCaller.packageName + a.a.a.c.a(-437820935257890L, strArr2) + requireCaller.userId);
+            notifySessionCreated(virtualPackageInstallerSession2);
         }
-        return iAllocateSessionIdLocked;
+        return allocateSessionIdLocked;
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public Bundle[] getAllSessions(int i) {
         String[] strArr = xa1.b;
-        ProcessRecord processRecordFindProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
-        if (processRecordFindProcessByPid == null || processRecordFindProcessByPid.getPackageName() == null) {
+        ProcessRecord findProcessByPid = BProcessManagerService.get().findProcessByPid(Binder.getCallingPid());
+        if (findProcessByPid == null || findProcessByPid.getPackageName() == null) {
             if (Binder.getCallingUid() == Process.myUid()) {
                 return collectHostSessions(i);
             }
             throw new SecurityException(a.a.a.c.a(-437868179898146L, strArr));
         }
-        CallerIdentity callerIdentity = new CallerIdentity(processRecordFindProcessByPid.getPackageName(), processRecordFindProcessByPid.buid, processRecordFindProcessByPid.userId);
+        CallerIdentity callerIdentity = new CallerIdentity(findProcessByPid.getPackageName(), findProcessByPid.buid, findProcessByPid.userId);
         if (callerIdentity.userId == i) {
             return collectSessions(callerIdentity, null, true);
         }
@@ -688,9 +625,9 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public Bundle[] getMySessions(String str, int i) {
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
-        if (callerIdentityRequireCaller.userId == i) {
-            return collectSessions(callerIdentityRequireCaller, callerIdentityRequireCaller.packageName, false);
+        CallerIdentity requireCaller = requireCaller();
+        if (requireCaller.userId == i) {
+            return collectSessions(requireCaller, requireCaller.packageName, false);
         }
         throw new SecurityException(a.a.a.c.a(-438280496758562L, xa1.b));
     }
@@ -711,14 +648,14 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public Bundle getSessionInfo(int i) {
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
+        CallerIdentity requireCaller = requireCaller();
         synchronized (this.mSessionLock) {
             try {
                 VirtualPackageInstallerSession virtualPackageInstallerSession = this.mSessions.get(i);
                 if (virtualPackageInstallerSession == null) {
                     return null;
                 }
-                if (!canObserveSession(callerIdentityRequireCaller, virtualPackageInstallerSession)) {
+                if (!canObserveSession(requireCaller, virtualPackageInstallerSession)) {
                     return null;
                 }
                 return virtualPackageInstallerSession.snapshot();
@@ -746,15 +683,15 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
             Object obj = arrayList.get(i2);
             i2++;
             Executor executor = (Executor) obj;
-            int iExec = executor.exec(bPackageSettings, installOption, i);
+            int exec = executor.exec(bPackageSettings, installOption, i);
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-438714288455458L, strArr);
+            String a2 = a.a.a.c.a(-438714288455458L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-438821662637858L, strArr));
             sb.append(executor.getClass().getSimpleName());
-            zd.o(sb, a.a.a.c.a(-438920446885666L, strArr), iExec, 3, strA);
-            if (iExec != 0) {
-                return iExec;
+            zd.o(sb, a.a.a.c.a(-438920446885666L, strArr), exec, 3, a2);
+            if (exec != 0) {
+                return exec;
             }
         }
         return 0;
@@ -762,11 +699,11 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public boolean openSession(int i) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        boolean zIsActive = virtualPackageInstallerSessionRequireOwnedSession.isActive();
-        virtualPackageInstallerSessionRequireOwnedSession.open();
-        if (!zIsActive) {
-            notifySessionActiveChanged(virtualPackageInstallerSessionRequireOwnedSession, true);
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        boolean isActive = requireOwnedSession.isActive();
+        requireOwnedSession.open();
+        if (!isActive) {
+            notifySessionActiveChanged(requireOwnedSession, true);
         }
         return true;
     }
@@ -800,23 +737,23 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void registerCallback(IBinder iBinder, int i) {
-        CallerIdentity callerIdentityRequireCaller = requireCaller();
-        if (callerIdentityRequireCaller.userId != i || iBinder == null) {
+        CallerIdentity requireCaller = requireCaller();
+        if (requireCaller.userId != i || iBinder == null) {
             throw new SecurityException(a.a.a.c.a(-431653362220834L, xa1.b));
         }
-        IPackageInstallerCallback iPackageInstallerCallbackAsInterface = IPackageInstallerCallback.Stub.asInterface(iBinder);
-        if (iPackageInstallerCallbackAsInterface != null) {
-            this.mCallbacks.register(iPackageInstallerCallbackAsInterface, new CallbackIdentity(callerIdentityRequireCaller.packageName, callerIdentityRequireCaller.uid, callerIdentityRequireCaller.userId));
+        IPackageInstallerCallback asInterface = IPackageInstallerCallback.Stub.asInterface(iBinder);
+        if (asInterface != null) {
+            this.mCallbacks.register(asInterface, new CallbackIdentity(requireCaller.packageName, requireCaller.uid, requireCaller.userId));
         }
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void removeChildSessionId(int i, int i2) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession2 = requireOwnedSession(i2);
-        virtualPackageInstallerSessionRequireOwnedSession.removeChildSessionId(i2);
-        if (virtualPackageInstallerSessionRequireOwnedSession2.getParentSessionId() == i) {
-            virtualPackageInstallerSessionRequireOwnedSession2.setParentSessionId(-1);
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        VirtualPackageInstallerSession requireOwnedSession2 = requireOwnedSession(i2);
+        requireOwnedSession.removeChildSessionId(i2);
+        if (requireOwnedSession2.getParentSessionId() == i) {
+            requireOwnedSession2.setParentSessionId(-1);
         }
     }
 
@@ -840,26 +777,26 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void setClientProgress(int i, float f, boolean z) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        notifySessionProgressChanged(virtualPackageInstallerSessionRequireOwnedSession, virtualPackageInstallerSessionRequireOwnedSession.setProgress(f, z));
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        notifySessionProgressChanged(requireOwnedSession, requireOwnedSession.setProgress(f, z));
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
-    public void setPermissionsResult(int i, boolean z) throws IntentSender.SendIntentException, IOException {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
+    public void setPermissionsResult(int i, boolean z) {
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
         if (z) {
             return;
         }
-        finishSession(virtualPackageInstallerSessionRequireOwnedSession, false, INSTALL_FAILED_ABORTED, a.a.a.c.a(-431163735949090L, xa1.b), null);
+        finishSession(requireOwnedSession, false, INSTALL_FAILED_ABORTED, a.a.a.c.a(-431163735949090L, xa1.b), null);
     }
 
     @Override // com.kos.engine.core.system.ISystemService
     public void systemReady() {
-        File[] fileArrListFiles;
+        File[] listFiles;
         synchronized (this.mSessionLock) {
             try {
-                if (this.mSessions.size() == 0 && (fileArrListFiles = BEnvironment.getPackageInstallerStageDir().listFiles()) != null) {
-                    for (File file : fileArrListFiles) {
+                if (this.mSessions.size() == 0 && (listFiles = BEnvironment.getPackageInstallerStageDir().listFiles()) != null) {
+                    for (File file : listFiles) {
                         wj1.t(file);
                     }
                 }
@@ -883,15 +820,15 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
             Object obj = arrayList.get(i2);
             i2++;
             Executor executor = (Executor) obj;
-            int iExec = executor.exec(bPackageSettings, installOption, i);
+            int exec = executor.exec(bPackageSettings, installOption, i);
             String[] strArr = xa1.b;
-            String strA = a.a.a.c.a(-438954806624034L, strArr);
+            String a2 = a.a.a.c.a(-438954806624034L, strArr);
             StringBuilder sb = new StringBuilder();
             sb.append(a.a.a.c.a(-439611936620322L, strArr));
             sb.append(executor.getClass().getSimpleName());
-            zd.o(sb, a.a.a.c.a(-439702130933538L, strArr), iExec, 3, strA);
-            if (iExec != 0) {
-                return iExec;
+            zd.o(sb, a.a.a.c.a(-439702130933538L, strArr), exec, 3, a2);
+            if (exec != 0) {
+                return exec;
             }
         }
         return 0;
@@ -899,12 +836,12 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void unregisterCallback(IBinder iBinder) {
-        IPackageInstallerCallback iPackageInstallerCallbackAsInterface;
+        IPackageInstallerCallback asInterface;
         requireCaller();
-        if (iBinder == null || (iPackageInstallerCallbackAsInterface = IPackageInstallerCallback.Stub.asInterface(iBinder)) == null) {
+        if (iBinder == null || (asInterface = IPackageInstallerCallback.Stub.asInterface(iBinder)) == null) {
             return;
         }
-        this.mCallbacks.unregister(iPackageInstallerCallbackAsInterface);
+        this.mCallbacks.unregister(asInterface);
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
@@ -918,9 +855,9 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         while (i < size) {
             Object obj = arrayList.get(i);
             i++;
-            int iExec = ((Executor) obj).exec(bPackageSettings, installOption, -1);
-            if (iExec != 0) {
-                return iExec;
+            int exec = ((Executor) obj).exec(bPackageSettings, installOption, -1);
+            if (exec != 0) {
+                return exec;
             }
         }
         return 0;
@@ -928,16 +865,16 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void updateSessionAppIcon(int i, Bitmap bitmap) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        virtualPackageInstallerSessionRequireOwnedSession.updateIcon(bitmap);
-        notifySessionBadgingChanged(virtualPackageInstallerSessionRequireOwnedSession);
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        requireOwnedSession.updateIcon(bitmap);
+        notifySessionBadgingChanged(requireOwnedSession);
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
     public void updateSessionAppLabel(int i, String str) {
-        VirtualPackageInstallerSession virtualPackageInstallerSessionRequireOwnedSession = requireOwnedSession(i);
-        virtualPackageInstallerSessionRequireOwnedSession.updateLabel(str);
-        notifySessionBadgingChanged(virtualPackageInstallerSessionRequireOwnedSession);
+        VirtualPackageInstallerSession requireOwnedSession = requireOwnedSession(i);
+        requireOwnedSession.updateLabel(str);
+        notifySessionBadgingChanged(requireOwnedSession);
     }
 
     @Override // com.kos.engine.core.system.pm.IBPackageInstallerService
@@ -949,7 +886,7 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         }
     }
 
-    private void finishSession(VirtualPackageInstallerSession virtualPackageInstallerSession, boolean z, int i, String str, IntentSender intentSender, String str2) throws IntentSender.SendIntentException, IOException {
+    private void finishSession(VirtualPackageInstallerSession virtualPackageInstallerSession, boolean z, int i, String str, IntentSender intentSender, String str2) {
         if (intentSender != null) {
             Intent intent = new Intent();
             String[] strArr = xa1.b;
@@ -980,13 +917,13 @@ public class BPackageInstallerService extends IBPackageInstallerService.Stub imp
         virtualPackageInstallerSession.destroy();
         notifySessionFinished(virtualPackageInstallerSession, z);
         String[] strArr3 = xa1.b;
-        String strA = a.a.a.c.a(-444800257113890L, strArr3);
+        String a2 = a.a.a.c.a(-444800257113890L, strArr3);
         StringBuilder sb = new StringBuilder();
         sb.append(a.a.a.c.a(-444890451427106L, strArr3));
         sb.append(virtualPackageInstallerSession.sessionId);
         sb.append(a.a.a.c.a(-447828209057570L, strArr3));
         sb.append(z);
-        jx0.r(sb, a.a.a.c.a(-447853978861346L, strArr3), str, 3, strA);
+        jx0.r(sb, a.a.a.c.a(-447853978861346L, strArr3), str, 3, a2);
     }
 
     private boolean canObserveSession(CallbackIdentity callbackIdentity, VirtualPackageInstallerSession virtualPackageInstallerSession) {

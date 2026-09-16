@@ -7,6 +7,6 @@ public final class gi1 implements jj0 {
 
     @Override // androidx.emoji2.text.jj0
     public final Object b(Object obj, l10 l10Var) {
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

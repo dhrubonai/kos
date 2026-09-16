@@ -18,7 +18,7 @@ public final /* synthetic */ class j2 implements sm0 {
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
         int i = this.d;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         mf1 mf1Var = this.e;
         switch (i) {
             case 0:
@@ -34,24 +34,24 @@ public final /* synthetic */ class j2 implements sm0 {
                 mf1Var.setValue(null);
                 break;
             case 4:
-                mf1Var.setValue(i82.f514a);
+                mf1Var.setValue(i82.f513a);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 mf1Var.setValue(i82.c);
                 break;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 mf1Var.setValue(i82.b);
                 break;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
-                mf1Var.setValue(i82.f514a);
+                mf1Var.setValue(i82.f513a);
                 break;
             case 8:
                 mf1Var.setValue(Boolean.valueOf(!((Boolean) mf1Var.getValue()).booleanValue()));
                 break;
-            case 9:
+            case pz0.b /* 9 */:
                 mf1Var.setValue(Boolean.FALSE);
                 break;
-            case 10:
+            case pz0.d /* 10 */:
                 mf1Var.setValue(h22.e);
                 break;
             case 11:
@@ -67,7 +67,7 @@ public final /* synthetic */ class j2 implements sm0 {
             case 14:
                 mf1Var.setValue(Boolean.FALSE);
                 break;
-            case 15:
+            case pz0.f /* 15 */:
                 mf1Var.setValue(Boolean.FALSE);
                 break;
             case PackageParser.PARSE_FORWARD_LOCK /* 16 */:

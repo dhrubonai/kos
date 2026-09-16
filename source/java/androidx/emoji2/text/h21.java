@@ -7,7 +7,7 @@ import java.util.List;
 public final class h21 implements q31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f451a;
+    public final int f450a;
     public final Object b;
     public final int c;
     public final q01 d;
@@ -32,7 +32,7 @@ public final class h21 implements q31 {
     public boolean w;
 
     public h21(int i, Object obj, int i2, int i3, q01 q01Var, int i4, int i5, List list, long j, Object obj2, androidx.compose.foundation.lazy.layout.a aVar, long j2, int i6, int i7) {
-        this.f451a = i;
+        this.f450a = i;
         this.b = obj;
         this.c = i2;
         this.d = q01Var;
@@ -46,14 +46,14 @@ public final class h21 implements q31 {
         this.l = i6;
         this.m = i7;
         int size = list.size();
-        int iMax = 0;
-        for (int i8 = 0; i8 < size; i8++) {
-            iMax = Math.max(iMax, ((hr1) list.get(i8)).e);
+        int i8 = 0;
+        for (int i9 = 0; i9 < size; i9++) {
+            i8 = Math.max(i8, ((hr1) list.get(i9)).e);
         }
-        this.n = iMax;
-        int i9 = i3 + iMax;
-        this.o = i9 >= 0 ? i9 : 0;
-        this.s = kx0.d(this.c, iMax);
+        this.n = i8;
+        int i10 = i3 + i8;
+        this.o = i10 >= 0 ? i10 : 0;
+        this.s = kx0.d(this.c, i8);
         this.t = 0L;
         this.u = -1;
         this.v = -1;
@@ -103,7 +103,7 @@ public final class h21 implements q31 {
 
     @Override // androidx.emoji2.text.q31
     public final int getIndex() {
-        return this.f451a;
+        return this.f450a;
     }
 
     @Override // androidx.emoji2.text.q31

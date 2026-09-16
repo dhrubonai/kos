@@ -7,11 +7,11 @@ import black.android.os.BRStrictMode;
 public abstract class uf2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f1173a;
+    public static final int f1172a;
     public static final int b;
 
     static {
-        f1173a = BRStrictMode.get().DETECT_VM_FILE_URI_EXPOSURE() == null ? 8192 : BRStrictMode.get().DETECT_VM_FILE_URI_EXPOSURE().intValue();
+        f1172a = BRStrictMode.get().DETECT_VM_FILE_URI_EXPOSURE() == null ? 8192 : BRStrictMode.get().DETECT_VM_FILE_URI_EXPOSURE().intValue();
         b = BRStrictMode.get().PENALTY_DEATH_ON_FILE_URI_EXPOSURE() == null ? 67108864 : BRStrictMode.get().PENALTY_DEATH_ON_FILE_URI_EXPOSURE().intValue();
     }
 
@@ -23,7 +23,7 @@ public abstract class uf2 {
                 th.printStackTrace();
             }
         } catch (Throwable unused) {
-            BRStrictMode.get()._set_sVmPolicyMask(Integer.valueOf(BRStrictMode.get().sVmPolicyMask().intValue() & (~(f1173a | b))));
+            BRStrictMode.get()._set_sVmPolicyMask(Integer.valueOf(BRStrictMode.get().sVmPolicyMask().intValue() & (~(f1172a | b))));
         }
     }
 }

@@ -7,10 +7,10 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class ik2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final cs1 f531a;
+    public final cs1 f530a;
     public final AtomicReference b = new AtomicReference(null);
 
     public ik2(cs1 cs1Var) {
-        this.f531a = cs1Var;
+        this.f530a = cs1Var;
     }
 }

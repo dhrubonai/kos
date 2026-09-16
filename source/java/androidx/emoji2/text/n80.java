@@ -10,16 +10,16 @@ import com.kos.engine.entity.location.BCell;
 public final class n80 extends ViewOutlineProvider {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f797a;
+    public final /* synthetic */ int f796a;
 
     public /* synthetic */ n80(int i) {
-        this.f797a = i;
+        this.f796a = i;
     }
 
     @Override // android.view.ViewOutlineProvider
     public final void getOutline(View view, Outline outline) {
         Outline outline2;
-        switch (this.f797a) {
+        switch (this.f796a) {
             case 0:
                 outline.setRect(0, 0, view.getWidth(), view.getHeight());
                 outline.setAlpha(0.0f);

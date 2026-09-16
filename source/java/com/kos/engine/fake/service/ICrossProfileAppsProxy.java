@@ -113,10 +113,10 @@ public class ICrossProfileAppsProxy extends BinderInvocationStub {
         try {
             return super.invoke(obj, method, objArr);
         } catch (SecurityException unused) {
-            String strA = c.a(-565076521271074L, strArr);
+            String a2 = c.a(-565076521271074L, strArr);
             StringBuilder sb = new StringBuilder();
             zd.t(sb, c.a(-564625549704994L, strArr), method);
-            zd.p(sb, c.a(-564715744018210L, strArr), 5, strA);
+            zd.p(sb, c.a(-564715744018210L, strArr), 5, a2);
             return safeDefault(method);
         }
     }

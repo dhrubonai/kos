@@ -33,13 +33,13 @@ public final class em implements c2 {
             return;
         }
         int i = this.d;
-        long[] jArrCopyOf = (long[]) this.e;
-        if (i >= jArrCopyOf.length) {
-            jArrCopyOf = Arrays.copyOf(jArrCopyOf, Math.max(i + 1, jArrCopyOf.length * 2));
-            lx0.w(jArrCopyOf, "copyOf(...)");
-            this.e = jArrCopyOf;
+        long[] jArr = (long[]) this.e;
+        if (i >= jArr.length) {
+            jArr = Arrays.copyOf(jArr, Math.max(i + 1, jArr.length * 2));
+            lx0.w(jArr, "copyOf(...)");
+            this.e = jArr;
         }
-        jArrCopyOf[i] = j;
+        jArr[i] = j;
         if (i >= this.d) {
             this.d = i + 1;
         }
@@ -115,28 +115,28 @@ public final class em implements c2 {
     public synchronized void h(mb1 mb1Var, Bitmap bitmap, Map map, int i) {
         try {
             LinkedHashMap linkedHashMap = (LinkedHashMap) this.e;
-            Object arrayList = linkedHashMap.get(mb1Var);
-            if (arrayList == null) {
-                arrayList = new ArrayList();
-                linkedHashMap.put(mb1Var, arrayList);
+            Object obj = linkedHashMap.get(mb1Var);
+            if (obj == null) {
+                obj = new ArrayList();
+                linkedHashMap.put(mb1Var, obj);
             }
-            ArrayList arrayList2 = (ArrayList) arrayList;
-            int iIdentityHashCode = System.identityHashCode(bitmap);
-            lw1 lw1Var = new lw1(iIdentityHashCode, new WeakReference(bitmap), map, i);
-            int size = arrayList2.size();
+            ArrayList arrayList = (ArrayList) obj;
+            int identityHashCode = System.identityHashCode(bitmap);
+            lw1 lw1Var = new lw1(identityHashCode, new WeakReference(bitmap), map, i);
+            int size = arrayList.size();
             int i2 = 0;
             while (true) {
                 if (i2 >= size) {
-                    arrayList2.add(lw1Var);
+                    arrayList.add(lw1Var);
                     break;
                 }
-                lw1 lw1Var2 = (lw1) arrayList2.get(i2);
+                lw1 lw1Var2 = (lw1) arrayList.get(i2);
                 if (i < lw1Var2.d) {
                     i2++;
-                } else if (lw1Var2.f718a == iIdentityHashCode && lw1Var2.b.get() == bitmap) {
-                    arrayList2.set(i2, lw1Var);
+                } else if (lw1Var2.f717a == identityHashCode && lw1Var2.b.get() == bitmap) {
+                    arrayList.set(i2, lw1Var);
                 } else {
-                    arrayList2.add(i2, lw1Var);
+                    arrayList.add(i2, lw1Var);
                 }
             }
             int i3 = this.d;
@@ -156,7 +156,7 @@ public final class em implements c2 {
                 break;
             default:
                 this.d = 300;
-                qe1 qe1Var = mw0.f774a;
+                qe1 qe1Var = mw0.f773a;
                 this.e = new qe1();
                 break;
         }

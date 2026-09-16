@@ -37,28 +37,28 @@ public class MaterialToolbar extends Toolbar {
     public MaterialToolbar(Context context, AttributeSet attributeSet) {
         super(bz0.m0(context, attributeSet, R.attr.toolbarStyle, R.style.Widget_MaterialComponents_Toolbar), attributeSet, 0);
         Context context2 = getContext();
-        TypedArray typedArrayP = lx0.P(context2, attributeSet, fv1.p, R.attr.toolbarStyle, R.style.Widget_MaterialComponents_Toolbar, new int[0]);
-        if (typedArrayP.hasValue(2)) {
-            setNavigationIconTint(typedArrayP.getColor(2, -1));
+        TypedArray P = lx0.P(context2, attributeSet, fv1.p, R.attr.toolbarStyle, R.style.Widget_MaterialComponents_Toolbar, new int[0]);
+        if (P.hasValue(2)) {
+            setNavigationIconTint(P.getColor(2, -1));
         }
-        this.U = typedArrayP.getBoolean(4, false);
-        this.V = typedArrayP.getBoolean(3, false);
-        int i = typedArrayP.getInt(1, -1);
+        this.U = P.getBoolean(4, false);
+        this.V = P.getBoolean(3, false);
+        int i = P.getInt(1, -1);
         if (i >= 0) {
             ImageView.ScaleType[] scaleTypeArr = b0;
             if (i < scaleTypeArr.length) {
                 this.W = scaleTypeArr[i];
             }
         }
-        if (typedArrayP.hasValue(0)) {
-            this.a0 = Boolean.valueOf(typedArrayP.getBoolean(0, false));
+        if (P.hasValue(0)) {
+            this.a0 = Boolean.valueOf(P.getBoolean(0, false));
         }
-        typedArrayP.recycle();
+        P.recycle();
         Drawable background = getBackground();
-        ColorStateList colorStateListValueOf = background == null ? ColorStateList.valueOf(0) : background instanceof ColorDrawable ? ColorStateList.valueOf(((ColorDrawable) background).getColor()) : (Build.VERSION.SDK_INT < 29 || !wb0.o(background)) ? null : wb0.d(background).getColorStateList();
-        if (colorStateListValueOf != null) {
+        ColorStateList valueOf = background == null ? ColorStateList.valueOf(0) : background instanceof ColorDrawable ? ColorStateList.valueOf(((ColorDrawable) background).getColor()) : (Build.VERSION.SDK_INT < 29 || !wb0.o(background)) ? null : wb0.d(background).getColorStateList();
+        if (valueOf != null) {
             ua1 ua1Var = new ua1();
-            ua1Var.n(colorStateListValueOf);
+            ua1Var.n(valueOf);
             ua1Var.k(context2);
             ua1Var.m(getElevation());
             setBackground(ua1Var);
@@ -91,10 +91,10 @@ public class MaterialToolbar extends Toolbar {
         int i5 = 0;
         ImageView imageView2 = null;
         if (this.U || this.V) {
-            ArrayList arrayListC = xa1.C(this, getTitle());
-            TextView textView = arrayListC.isEmpty() ? null : (TextView) Collections.min(arrayListC, tk0Var);
-            ArrayList arrayListC2 = xa1.C(this, getSubtitle());
-            TextView textView2 = arrayListC2.isEmpty() ? null : (TextView) Collections.max(arrayListC2, tk0Var);
+            ArrayList C = xa1.C(this, getTitle());
+            TextView textView = C.isEmpty() ? null : (TextView) Collections.min(C, tk0Var);
+            ArrayList C2 = xa1.C(this, getSubtitle());
+            TextView textView2 = C2.isEmpty() ? null : (TextView) Collections.max(C2, tk0Var);
             if (textView != null || textView2 != null) {
                 int measuredWidth = getMeasuredWidth();
                 int i6 = measuredWidth / 2;
@@ -206,10 +206,10 @@ public class MaterialToolbar extends Toolbar {
         int measuredWidth2 = textView.getMeasuredWidth();
         int i = (measuredWidth / 2) - (measuredWidth2 / 2);
         int i2 = measuredWidth2 + i;
-        int iMax = Math.max(Math.max(((Integer) pair.first).intValue() - i, 0), Math.max(i2 - ((Integer) pair.second).intValue(), 0));
-        if (iMax > 0) {
-            i += iMax;
-            i2 -= iMax;
+        int max = Math.max(Math.max(((Integer) pair.first).intValue() - i, 0), Math.max(i2 - ((Integer) pair.second).intValue(), 0));
+        if (max > 0) {
+            i += max;
+            i2 -= max;
             textView.measure(View.MeasureSpec.makeMeasureSpec(i2 - i, 1073741824), textView.getMeasuredHeightAndState());
         }
         textView.layout(i, textView.getTop(), i2, textView.getBottom());

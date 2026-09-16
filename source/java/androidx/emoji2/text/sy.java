@@ -13,7 +13,7 @@ public final class sy {
     public static final sy f;
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f1093a;
+    public final boolean f1092a;
     public final boolean b;
     public final String[] c;
     public final String[] d;
@@ -51,7 +51,7 @@ public final class sy {
     }
 
     public sy(boolean z, boolean z2, String[] strArr, String[] strArr2) {
-        this.f1093a = z;
+        this.f1092a = z;
         this.b = z2;
         this.c = strArr;
         this.d = strArr2;
@@ -70,7 +70,7 @@ public final class sy {
     }
 
     public final boolean b(SSLSocket sSLSocket) {
-        if (!this.f1093a) {
+        if (!this.f1092a) {
             return false;
         }
         String[] strArr = this.d;
@@ -101,8 +101,8 @@ public final class sy {
             return true;
         }
         sy syVar = (sy) obj;
-        boolean z = syVar.f1093a;
-        boolean z2 = this.f1093a;
+        boolean z = syVar.f1092a;
+        boolean z2 = this.f1092a;
         if (z2 != z) {
             return false;
         }
@@ -113,17 +113,17 @@ public final class sy {
     }
 
     public final int hashCode() {
-        if (!this.f1093a) {
+        if (!this.f1092a) {
             return 17;
         }
         String[] strArr = this.c;
-        int iHashCode = (527 + (strArr != null ? Arrays.hashCode(strArr) : 0)) * 31;
+        int hashCode = (527 + (strArr != null ? Arrays.hashCode(strArr) : 0)) * 31;
         String[] strArr2 = this.d;
-        return ((iHashCode + (strArr2 != null ? Arrays.hashCode(strArr2) : 0)) * 31) + (!this.b ? 1 : 0);
+        return ((hashCode + (strArr2 != null ? Arrays.hashCode(strArr2) : 0)) * 31) + (!this.b ? 1 : 0);
     }
 
     public final String toString() {
-        if (!this.f1093a) {
+        if (!this.f1092a) {
             return "ConnectionSpec()";
         }
         return "ConnectionSpec(cipherSuites=" + Objects.toString(a(), "[all enabled]") + ", tlsVersions=" + Objects.toString(c(), "[all enabled]") + ", supportsTlsExtensions=" + this.b + ')';

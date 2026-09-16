@@ -5,14 +5,14 @@ package androidx.emoji2.text;
 public final class uo0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f1183a;
+    public final boolean f1182a;
     public final boolean b;
     public final boolean c;
     public final String d;
 
     public uo0(boolean z, boolean z2, boolean z3, String str) {
-        a.a.a.c.a(-396649378758434L, wj1.f1284a);
-        this.f1183a = z;
+        a.a.a.c.a(-396649378758434L, wj1.f1283a);
+        this.f1182a = z;
         this.b = z2;
         this.c = z3;
         this.d = str;
@@ -26,18 +26,18 @@ public final class uo0 {
             return false;
         }
         uo0 uo0Var = (uo0) obj;
-        return this.f1183a == uo0Var.f1183a && this.b == uo0Var.b && this.c == uo0Var.c && lx0.n(this.d, uo0Var.d);
+        return this.f1182a == uo0Var.f1182a && this.b == uo0Var.b && this.c == uo0Var.c && lx0.n(this.d, uo0Var.d);
     }
 
     public final int hashCode() {
-        return this.d.hashCode() + jx0.d(jx0.d(Boolean.hashCode(this.f1183a) * 31, 31, this.b), 31, this.c);
+        return this.d.hashCode() + jx0.d(jx0.d(Boolean.hashCode(this.f1182a) * 31, 31, this.b), 31, this.c);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-396718098235170L, strArr));
-        sb.append(this.f1183a);
+        sb.append(this.f1182a);
         sb.append(a.a.a.c.a(-396864127123234L, strArr));
         sb.append(this.b);
         sb.append(a.a.a.c.a(-396383090786082L, strArr));

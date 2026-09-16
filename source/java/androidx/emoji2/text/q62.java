@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class q62 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final le f942a = new le(Float.NaN, Float.NaN);
+    public static final le f941a = new le(Float.NaN, Float.NaN);
     public static final wo2 b;
     public static final long c;
     public static final be2 d;
@@ -13,10 +13,10 @@ public abstract class q62 {
     static {
         vl1 vl1Var = vl1.z;
         vl1 vl1Var2 = vl1.A;
-        wo2 wo2Var = qq2.f974a;
+        wo2 wo2Var = qq2.f973a;
         b = new wo2(vl1Var, vl1Var2);
-        long jD = jz0.d(0.01f, 0.01f);
-        c = jD;
-        d = new be2(new zi1(jD));
+        long d2 = jz0.d(0.01f, 0.01f);
+        c = d2;
+        d = new be2(new zi1(d2));
     }
 }

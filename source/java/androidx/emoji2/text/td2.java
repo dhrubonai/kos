@@ -1,5 +1,6 @@
 package androidx.emoji2.text;
 
+import android.os.Build;
 import android.text.Editable;
 import android.text.SpanWatcher;
 import android.text.Spannable;
@@ -33,49 +34,25 @@ public final class td2 implements TextWatcher, SpanWatcher {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x001c A[PHI: r11
-      0x001c: PHI (r11v1 int) = (r11v0 int), (r11v3 int) binds: [B:8:0x0011, B:12:0x0017] A[DONT_GENERATE, DONT_INLINE]] */
     @Override // android.text.SpanWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void onSpanChanged(android.text.Spannable r9, java.lang.Object r10, int r11, int r12, int r13, int r14) {
-        /*
-            r8 = this;
-            java.util.concurrent.atomic.AtomicInteger r0 = r8.e
-            int r0 = r0.get()
-            if (r0 <= 0) goto Ld
-            boolean r0 = r10 instanceof androidx.emoji2.text.ip2
-            if (r0 == 0) goto Ld
-            return
-        Ld:
-            int r0 = android.os.Build.VERSION.SDK_INT
-            r1 = 28
-            if (r0 >= r1) goto L1c
-            r0 = 0
-            if (r11 <= r12) goto L17
-            r11 = r0
-        L17:
-            if (r13 <= r14) goto L1c
-            r4 = r11
-            r6 = r0
-            goto L1e
-        L1c:
-            r4 = r11
-            r6 = r13
-        L1e:
-            java.lang.Object r11 = r8.d
-            r1 = r11
-            android.text.SpanWatcher r1 = (android.text.SpanWatcher) r1
-            r2 = r9
-            r3 = r10
-            r5 = r12
-            r7 = r14
-            r1.onSpanChanged(r2, r3, r4, r5, r6, r7)
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.td2.onSpanChanged(android.text.Spannable, java.lang.Object, int, int, int, int):void");
+    public final void onSpanChanged(Spannable spannable, Object obj, int i, int i2, int i3, int i4) {
+        int i5;
+        int i6;
+        if (this.e.get() <= 0 || !(obj instanceof ip2)) {
+            if (Build.VERSION.SDK_INT < 28) {
+                if (i > i2) {
+                    i = 0;
+                }
+                if (i3 > i4) {
+                    i5 = i;
+                    i6 = 0;
+                    ((SpanWatcher) this.d).onSpanChanged(spannable, obj, i5, i2, i6, i4);
+                }
+            }
+            i5 = i;
+            i6 = i3;
+            ((SpanWatcher) this.d).onSpanChanged(spannable, obj, i5, i2, i6, i4);
+        }
     }
 
     @Override // android.text.SpanWatcher

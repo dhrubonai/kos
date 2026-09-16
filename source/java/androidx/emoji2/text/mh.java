@@ -93,8 +93,8 @@ public final class mh implements Collection, ry0 {
         if (this.e && objArr.getClass().equals(Object[].class)) {
             return objArr;
         }
-        Object[] objArrCopyOf = Arrays.copyOf(objArr, objArr.length, Object[].class);
-        lx0.w(objArrCopyOf, "copyOf(...)");
-        return objArrCopyOf;
+        Object[] copyOf = Arrays.copyOf(objArr, objArr.length, Object[].class);
+        lx0.w(copyOf, "copyOf(...)");
+        return copyOf;
     }
 }

@@ -1,7 +1,6 @@
 package androidx.emoji2.text;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.Uri;
 import com.kos.engine.entity.location.BCell;
@@ -14,16 +13,16 @@ import java.util.List;
 public final class ho {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f479a;
+    public final /* synthetic */ int f478a;
 
     public /* synthetic */ ho(int i) {
-        this.f479a = i;
+        this.f478a = i;
     }
 
-    public final Object a(Object obj, gl1 gl1Var) throws PackageManager.NameNotFoundException {
+    public final Object a(Object obj, gl1 gl1Var) {
         String scheme;
         String authority;
-        switch (this.f479a) {
+        switch (this.f478a) {
             case 0:
                 return ByteBuffer.wrap((byte[]) obj);
             case 1:
@@ -47,11 +46,11 @@ public final class ho {
             case 2:
                 return ((mt0) obj).h;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
-                int iIntValue = ((Number) obj).intValue();
-                Context context = gl1Var.f428a;
+                int intValue = ((Number) obj).intValue();
+                Context context = gl1Var.f427a;
                 try {
-                    if (context.getResources().getResourceEntryName(iIntValue) != null) {
-                        return Uri.parse("android.resource://" + context.getPackageName() + '/' + iIntValue);
+                    if (context.getResources().getResourceEntryName(intValue) != null) {
+                        return Uri.parse("android.resource://" + context.getPackageName() + '/' + intValue);
                     }
                 } catch (Resources.NotFoundException unused) {
                 }
@@ -65,7 +64,7 @@ public final class ho {
                 if (authority2 == null) {
                     authority2 = "";
                 }
-                Resources resourcesForApplication = gl1Var.f428a.getPackageManager().getResourcesForApplication(authority2);
+                Resources resourcesForApplication = gl1Var.f427a.getPackageManager().getResourcesForApplication(authority2);
                 List<String> pathSegments = uri2.getPathSegments();
                 int identifier = resourcesForApplication.getIdentifier(pathSegments.get(1), pathSegments.get(0), authority2);
                 if (identifier == 0) {

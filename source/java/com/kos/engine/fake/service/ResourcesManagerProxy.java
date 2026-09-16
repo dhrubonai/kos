@@ -54,7 +54,7 @@ public class ResourcesManagerProxy extends ClassInvocationStub {
         RESOURCES_MANAGER_CLASS = c.a(-933022074552098L, strArr);
     }
 
-    public ResourcesManagerProxy() throws ClassNotFoundException {
+    public ResourcesManagerProxy() {
         String[] strArr = xa1.b;
         try {
             Class.forName(c.a(-932523858345762L, strArr));

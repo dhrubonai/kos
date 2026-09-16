@@ -7,7 +7,7 @@ import kotlin.jvm.functions.Function2;
 public final class kd1 implements nd1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ kd1 f634a = new kd1();
+    public static final /* synthetic */ kd1 f633a = new kd1();
 
     @Override // androidx.emoji2.text.nd1
     public final boolean b(um0 um0Var) {

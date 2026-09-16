@@ -9,7 +9,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 public abstract class ms2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ThreadLocal f765a = new ThreadLocal();
+    public static final ThreadLocal f764a = new ThreadLocal();
     public static final ThreadLocal b = new ThreadLocal();
 
     public static void a(CoordinatorLayout coordinatorLayout, View view, Matrix matrix) {

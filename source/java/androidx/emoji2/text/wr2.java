@@ -19,9 +19,9 @@ public abstract class wr2 {
     }
 
     public static wv2 b(View view, wv2 wv2Var, Rect rect) {
-        WindowInsets windowInsetsC = wv2Var.c();
-        if (windowInsetsC != null) {
-            return wv2.d(view, view.computeSystemWindowInsets(windowInsetsC, rect));
+        WindowInsets c = wv2Var.c();
+        if (c != null) {
+            return wv2.d(view, view.computeSystemWindowInsets(c, rect));
         }
         rect.setEmpty();
         return wv2Var;

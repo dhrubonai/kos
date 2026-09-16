@@ -9,21 +9,21 @@ import java.util.List;
 public final class bm0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f157a;
+    public final int f156a;
     public final List b;
 
     public bm0(int i, List list) {
-        this.f157a = i;
+        this.f156a = i;
         this.b = list;
     }
 
     public bm0() {
-        this.f157a = 1;
+        this.f156a = 1;
         this.b = Collections.singletonList(null);
     }
 
     public bm0(ArrayList arrayList) {
-        this.f157a = 0;
+        this.f156a = 0;
         this.b = arrayList;
     }
 }

@@ -99,14 +99,14 @@ public final class je2 extends yb1 implements PopupWindow.OnDismissListener, Vie
             this.n = null;
             this.f.c(false);
             ec1 ec1Var = this.k;
-            int width = ec1Var.h;
-            int i2 = !ec1Var.j ? 0 : ec1Var.i;
+            int i2 = ec1Var.h;
+            int i3 = !ec1Var.j ? 0 : ec1Var.i;
             if ((Gravity.getAbsoluteGravity(this.v, this.o.getLayoutDirection()) & 7) == 5) {
-                width += this.o.getWidth();
+                i2 += this.o.getWidth();
             }
             if (!ac1Var.b()) {
                 if (ac1Var.e != null) {
-                    ac1Var.d(width, i2, true, true);
+                    ac1Var.d(i2, i3, true, true);
                 }
             }
             hc1 hc1Var2 = this.q;

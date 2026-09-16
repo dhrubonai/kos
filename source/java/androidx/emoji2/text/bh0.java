@@ -14,7 +14,7 @@ public final class bh0 {
     public final String e;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         bh0 bh0Var = new bh0(a.a.a.c.a(-391727346237218L, strArr), 0, a.a.a.c.a(-391705871400738L, strArr), a.a.a.c.a(-391735936171810L, strArr));
         g = bh0Var;
         bh0 bh0Var2 = new bh0(a.a.a.c.a(-391783180812066L, strArr), 1, a.a.a.c.a(-391839015386914L, strArr), a.a.a.c.a(-391912029830946L, strArr));

@@ -27,34 +27,34 @@ public final class a90 extends c90 implements g30, l10 {
 
     @Override // androidx.emoji2.text.l10
     public final void g(Object obj) {
-        Throwable thA = h02.a(obj);
-        Object luVar = thA == null ? obj : new lu(thA, false);
+        Throwable a2 = h02.a(obj);
+        Object luVar = a2 == null ? obj : new lu(a2, false);
         n10 n10Var = this.h;
-        v20 v20VarT = n10Var.t();
+        v20 t = n10Var.t();
         x20 x20Var = this.g;
-        if (x20Var.E(v20VarT)) {
+        if (x20Var.E(t)) {
             this.i = luVar;
             this.f = 0;
             x20Var.D(n10Var.t(), this);
             return;
         }
-        eg0 eg0VarA = sl2.a();
-        if (eg0VarA.f >= 4294967296L) {
+        eg0 a3 = sl2.a();
+        if (a3.f >= 4294967296L) {
             this.i = luVar;
             this.f = 0;
-            eg0VarA.H(this);
+            a3.H(this);
             return;
         }
-        eg0VarA.J(true);
+        a3.J(true);
         try {
-            v20 v20VarT2 = n10Var.t();
-            Object objL0 = bz0.l0(v20VarT2, this.j);
+            v20 t2 = n10Var.t();
+            Object l0 = bz0.l0(t2, this.j);
             try {
                 n10Var.g(obj);
-                while (eg0VarA.L()) {
+                while (a3.L()) {
                 }
             } finally {
-                bz0.e0(v20VarT2, objL0);
+                bz0.e0(t2, l0);
             }
         } finally {
             try {

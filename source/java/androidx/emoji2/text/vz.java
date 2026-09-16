@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class vz {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f1250a;
+    public final long f1249a;
 
     public /* synthetic */ vz(long j) {
-        this.f1250a = j;
+        this.f1249a = j;
     }
 
     public static long a(long j, int i, int i2, int i3, int i4, int i5) {
@@ -100,32 +100,32 @@ public final class vz {
     }
 
     public static String l(long j) {
-        int iH = h(j);
-        String strValueOf = iH == Integer.MAX_VALUE ? "Infinity" : String.valueOf(iH);
-        int iG = g(j);
-        String strValueOf2 = iG != Integer.MAX_VALUE ? String.valueOf(iG) : "Infinity";
+        int h = h(j);
+        String valueOf = h == Integer.MAX_VALUE ? "Infinity" : String.valueOf(h);
+        int g = g(j);
+        String valueOf2 = g != Integer.MAX_VALUE ? String.valueOf(g) : "Infinity";
         StringBuilder sb = new StringBuilder("Constraints(minWidth = ");
         sb.append(j(j));
         sb.append(", maxWidth = ");
-        sb.append(strValueOf);
+        sb.append(valueOf);
         sb.append(", minHeight = ");
         sb.append(i(j));
         sb.append(", maxHeight = ");
-        return jx0.i(sb, strValueOf2, ')');
+        return jx0.i(sb, valueOf2, ')');
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof vz) {
-            return this.f1250a == ((vz) obj).f1250a;
+            return this.f1249a == ((vz) obj).f1249a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f1250a);
+        return Long.hashCode(this.f1249a);
     }
 
     public final String toString() {
-        return l(this.f1250a);
+        return l(this.f1249a);
     }
 }

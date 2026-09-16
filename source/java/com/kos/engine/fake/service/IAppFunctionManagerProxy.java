@@ -24,7 +24,7 @@ public class IAppFunctionManagerProxy extends BinderInvocationStub {
     @ProxyMethod("setAppFunctionEnabled")
     public static class SetAppFunctionEnabled extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws SecurityException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             if (!IAppFunctionManagerProxy.isVirtualGmsEnablement(objArr)) {
                 return IAppFunctionManagerProxy.invokeBase(obj, method, objArr);
             }
@@ -47,20 +47,20 @@ public class IAppFunctionManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void deliverSuccess(Object obj) throws SecurityException {
+    public static void deliverSuccess(Object obj) {
         Class<?> cls = obj.getClass();
         String[] strArr = xa1.b;
-        Method methodFindMethod = findMethod(cls, c.a(-657053245914914L, strArr));
-        if (methodFindMethod == null || methodFindMethod.getParameterTypes().length != 0) {
+        Method findMethod = findMethod(cls, c.a(-657053245914914L, strArr));
+        if (findMethod == null || findMethod.getParameterTypes().length != 0) {
             nz0.Q(c.a(-657079015718690L, strArr), 5, c.a(-657152030162722L, strArr));
             return;
         }
         try {
-            methodFindMethod.setAccessible(true);
+            findMethod.setAccessible(true);
         } catch (Throwable unused) {
         }
         try {
-            methodFindMethod.invoke(obj, null);
+            findMethod.invoke(obj, null);
         } catch (Throwable th) {
             th = th;
             if ((th instanceof InvocationTargetException) && th.getCause() != null) {
@@ -70,7 +70,7 @@ public class IAppFunctionManagerProxy extends BinderInvocationStub {
         }
     }
 
-    private static Method findMethod(Class<?> cls, String str) throws SecurityException {
+    private static Method findMethod(Class<?> cls, String str) {
         for (Method method : cls.getMethods()) {
             if (str.equals(method.getName())) {
                 return method;
@@ -88,7 +88,7 @@ public class IAppFunctionManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static Object invokeBase(Object obj, Method method, Object[] objArr) throws Throwable {
+    public static Object invokeBase(Object obj, Method method, Object[] objArr) {
         try {
             return method.invoke(obj, objArr);
         } catch (InvocationTargetException e) {

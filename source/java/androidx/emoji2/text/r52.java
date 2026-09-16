@@ -14,38 +14,38 @@ public final class r52 extends md1 implements w01 {
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
         h50.m(j, this.s ? il1.d : il1.e);
-        hr1 hr1VarQ = ab1Var.q(vz.a(j, 0, this.s ? vz.h(j) : Integer.MAX_VALUE, 0, this.s ? Integer.MAX_VALUE : vz.g(j), 5));
-        int i = hr1VarQ.d;
-        int iH = vz.h(j);
-        if (i > iH) {
-            i = iH;
+        hr1 q = ab1Var.q(vz.a(j, 0, this.s ? vz.h(j) : Integer.MAX_VALUE, 0, this.s ? Integer.MAX_VALUE : vz.g(j), 5));
+        int i = q.d;
+        int h = vz.h(j);
+        if (i > h) {
+            i = h;
         }
-        int i2 = hr1VarQ.e;
-        int iG = vz.g(j);
-        if (i2 > iG) {
-            i2 = iG;
+        int i2 = q.e;
+        int g = vz.g(j);
+        if (i2 > g) {
+            i2 = g;
         }
-        int i3 = hr1VarQ.e - i2;
-        int i4 = hr1VarQ.d - i;
+        int i3 = q.e - i2;
+        int i4 = q.d - i;
         if (!this.s) {
             i3 = i4;
         }
         y42 y42Var = this.r;
         rn1 rn1Var = y42Var.d;
-        rn1 rn1Var2 = y42Var.f1371a;
+        rn1 rn1Var2 = y42Var.f1370a;
         rn1Var.h(i3);
-        ec2 ec2VarG = a01.G();
-        um0 um0VarE = ec2VarG != null ? ec2VarG.e() : null;
-        ec2 ec2VarS = a01.S(ec2VarG);
+        ec2 G = a01.G();
+        um0 e = G != null ? G.e() : null;
+        ec2 S = a01.S(G);
         try {
             if (rn1Var2.g() > i3) {
                 rn1Var2.h(i3);
             }
-            a01.V(ec2VarG, ec2VarS, um0VarE);
+            a01.V(G, S, e);
             this.r.b.h(this.s ? i2 : i);
-            return hb1Var.P(i, i2, re0.d, new q52(this, i3, hr1VarQ));
+            return hb1Var.P(i, i2, re0.d, new q52(this, i3, q));
         } catch (Throwable th) {
-            a01.V(ec2VarG, ec2VarS, um0VarE);
+            a01.V(G, S, e);
             throw th;
         }
     }

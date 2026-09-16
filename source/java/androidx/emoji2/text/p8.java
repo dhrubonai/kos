@@ -19,20 +19,20 @@ import java.util.concurrent.TimeUnit;
 public final class p8 implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f894a;
+    public final /* synthetic */ int f893a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
     public /* synthetic */ p8(int i, Object obj, Object obj2) {
-        this.f894a = i;
+        this.f893a = i;
         this.b = obj;
         this.c = obj2;
     }
 
     @Override // androidx.emoji2.text.j90
-    public final void a() throws Exception {
-        boolean zIsTerminated;
-        int i = this.f894a;
+    public final void a() {
+        boolean isTerminated;
+        int i = this.f893a;
         Object obj = this.c;
         Object obj2 = this.b;
         switch (i) {
@@ -45,15 +45,15 @@ public final class p8 implements j90 {
             case 2:
                 wj wjVar = (wj) obj2;
                 ww wwVar = (ww) obj;
-                if (wjVar.f1283a != null) {
+                if (wjVar.f1282a != null) {
                     wwVar.b.e();
                     return;
                 }
                 if (wjVar.b == null) {
                     throw new IllegalStateException("Unreachable");
                 }
-                vj vjVar = wwVar.f1307a;
-                ArrayList arrayList = vjVar.f1222a;
+                vj vjVar = wwVar.f1306a;
+                ArrayList arrayList = vjVar.f1221a;
                 CopyOnWriteArrayList copyOnWriteArrayList = vjVar.c;
                 Iterator it = copyOnWriteArrayList.iterator();
                 lx0.w(it, "iterator(...)");
@@ -75,11 +75,11 @@ public final class p8 implements j90 {
                         autoCloseable.close();
                     } else if (autoCloseable instanceof ExecutorService) {
                         ExecutorService executorService = (ExecutorService) autoCloseable;
-                        if (executorService != ForkJoinPool.commonPool() && !(zIsTerminated = executorService.isTerminated())) {
+                        if (executorService != ForkJoinPool.commonPool() && !(isTerminated = executorService.isTerminated())) {
                             executorService.shutdown();
-                            while (!zIsTerminated) {
+                            while (!isTerminated) {
                                 try {
-                                    zIsTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
+                                    isTerminated = executorService.awaitTermination(1L, TimeUnit.DAYS);
                                 } catch (InterruptedException unused) {
                                     if (i2 == 0) {
                                         executorService.shutdownNow();
@@ -107,12 +107,12 @@ public final class p8 implements j90 {
                 ((lz0) obj2).I((qu) obj);
                 return;
             case 4:
-                ((fv0) obj2).f384a.j((dv0) obj);
+                ((fv0) obj2).f383a.j((dv0) obj);
                 return;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 ((v41) obj2).f.add(obj);
                 return;
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
                 ((lz0) obj2).I((u82) obj);
                 return;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -126,10 +126,10 @@ public final class p8 implements j90 {
                     return;
                 }
                 return;
-            case 9:
+            case pz0.b /* 9 */:
                 ((tn2) obj2).i.remove((pn2) obj);
                 return;
-            case 10:
+            case pz0.d /* 10 */:
                 ((lz0) obj2).I((k32) obj);
                 return;
             default:
@@ -138,7 +138,7 @@ public final class p8 implements j90 {
                 int i3 = bw2Var.t - 1;
                 bw2Var.t = i3;
                 if (i3 == 0) {
-                    Field field = es2.f320a;
+                    Field field = es2.f319a;
                     wr2.i(view, null);
                     es2.m(view, null);
                     view.removeOnAttachStateChangeListener(bw2Var.u);

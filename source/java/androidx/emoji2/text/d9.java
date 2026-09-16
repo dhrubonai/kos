@@ -27,23 +27,23 @@ public final class d9 extends g01 implements um0 {
                 ql qlVar = (ql) this.h;
                 np npVar = g11Var.d;
                 rg rgVar = npVar.e;
-                long jM = rgVar.M();
+                long M = rgVar.M();
                 rgVar.D().f();
                 try {
                     p4 p4Var = (p4) rgVar.e;
                     p4Var.F(f, 0.0f);
-                    lp lpVarD = ((rg) p4Var.e).D();
+                    lp D = ((rg) p4Var.e).D();
                     int i = (int) 0;
-                    lpVarD.l(Float.intBitsToFloat(i), Float.intBitsToFloat(i));
-                    lpVarD.m();
-                    lpVarD.l(-Float.intBitsToFloat(i), -Float.intBitsToFloat(i));
+                    D.l(Float.intBitsToFloat(i), Float.intBitsToFloat(i));
+                    D.m();
+                    D.l(-Float.intBitsToFloat(i), -Float.intBitsToFloat(i));
                     npVar.d(aaVar, qlVar);
                     rgVar.D().n();
-                    rgVar.e0(jM);
-                    return up2.f1187a;
+                    rgVar.e0(M);
+                    return up2.f1186a;
                 } catch (Throwable th) {
                     rgVar.D().n();
-                    rgVar.e0(jM);
+                    rgVar.e0(M);
                     throw th;
                 }
             case 1:
@@ -51,25 +51,25 @@ public final class d9 extends g01 implements um0 {
                 hr1 hr1Var = (hr1) this.g;
                 ed edVar = ((bm2) this.h).u;
                 gr1.j(gr1Var, hr1Var, (int) (edVar != null ? ((Number) edVar.d()).floatValue() : this.f), 0);
-                return up2.f1187a;
+                return up2.f1186a;
             default:
-                long jLongValue = ((Number) obj).longValue();
+                long longValue = ((Number) obj).longValue();
                 eq2 eq2Var = (eq2) this.g;
                 if (eq2Var.b == Long.MIN_VALUE) {
-                    eq2Var.b = jLongValue;
+                    eq2Var.b = longValue;
                 }
                 float f2 = eq2Var.e;
                 ke keVar = new ke(f2);
                 float f3 = this.f;
                 ke keVar2 = eq2.f;
-                long jB = f3 == 0.0f ? eq2Var.f316a.b(new ke(f2), keVar2, eq2Var.c) : xa1.R((jLongValue - eq2Var.b) / f3);
-                float f4 = ((ke) eq2Var.f316a.i(jB, keVar, keVar2, eq2Var.c)).f635a;
-                eq2Var.c = (ke) eq2Var.f316a.h(jB, keVar, keVar2, eq2Var.c);
-                eq2Var.b = jLongValue;
+                long b = f3 == 0.0f ? eq2Var.f315a.b(new ke(f2), keVar2, eq2Var.c) : xa1.R((longValue - eq2Var.b) / f3);
+                float f4 = ((ke) eq2Var.f315a.i(b, keVar, keVar2, eq2Var.c)).f634a;
+                eq2Var.c = (ke) eq2Var.f315a.h(b, keVar, keVar2, eq2Var.c);
+                eq2Var.b = longValue;
                 float f5 = eq2Var.e - f4;
                 eq2Var.e = f4;
                 ((um0) this.h).e(Float.valueOf(f5));
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

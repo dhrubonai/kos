@@ -6,7 +6,7 @@ public final class hb2 {
     public static final hb2 c;
 
     /* renamed from: a, reason: collision with root package name */
-    public final jm f466a;
+    public final jm f465a;
     public final jm b;
 
     static {
@@ -15,7 +15,7 @@ public final class hb2 {
     }
 
     public hb2(jm jmVar, jm jmVar2) {
-        this.f466a = jmVar;
+        this.f465a = jmVar;
         this.b = jmVar2;
     }
 
@@ -27,14 +27,14 @@ public final class hb2 {
             return false;
         }
         hb2 hb2Var = (hb2) obj;
-        return lx0.n(this.f466a, hb2Var.f466a) && lx0.n(this.b, hb2Var.b);
+        return lx0.n(this.f465a, hb2Var.f465a) && lx0.n(this.b, hb2Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f466a.hashCode() * 31);
+        return this.b.hashCode() + (this.f465a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "Size(width=" + this.f466a + ", height=" + this.b + ')';
+        return "Size(width=" + this.f465a + ", height=" + this.b + ')';
     }
 }

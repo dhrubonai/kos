@@ -7,20 +7,20 @@ import java.util.LinkedHashMap;
 public final class u81 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final LinkedHashMap f1165a;
+    public final LinkedHashMap f1164a;
 
     public u81(int i) {
         switch (i) {
             case 2:
-                this.f1165a = new LinkedHashMap();
+                this.f1164a = new LinkedHashMap();
                 break;
             default:
-                this.f1165a = new LinkedHashMap(0, 0.75f, true);
+                this.f1164a = new LinkedHashMap(0, 0.75f, true);
                 break;
         }
     }
 
     public u81(pn1 pn1Var) {
-        this.f1165a = ha1.W(pn1Var.d);
+        this.f1164a = ha1.W(pn1Var.d);
     }
 }

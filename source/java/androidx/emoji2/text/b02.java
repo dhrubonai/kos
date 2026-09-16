@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class b02 {
 
     /* renamed from: a, reason: collision with root package name */
-    public dv f131a;
+    public dv f130a;
     public vu1 b;
     public String d;
     public uq0 e;
@@ -41,7 +41,7 @@ public final class b02 {
         if (i < 0) {
             throw new IllegalStateException(("code < 0: " + this.c).toString());
         }
-        dv dvVar = this.f131a;
+        dv dvVar = this.f130a;
         if (dvVar == null) {
             throw new IllegalStateException("request == null");
         }

@@ -17,7 +17,7 @@ import java.util.Map;
 public final class t10 extends ViewGroup.MarginLayoutParams {
 
     /* renamed from: a, reason: collision with root package name */
-    public q10 f1099a;
+    public q10 f1098a;
     public boolean b;
     public final int c;
     public final int d;
@@ -55,9 +55,9 @@ public final class t10 extends ViewGroup.MarginLayoutParams {
         return this.n;
     }
 
-    public t10(Context context, AttributeSet attributeSet) throws NoSuchMethodException, SecurityException {
-        q10 q10Var;
+    public t10(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+        q10 q10Var;
         this.b = false;
         this.c = 0;
         this.d = 0;
@@ -66,17 +66,17 @@ public final class t10 extends ViewGroup.MarginLayoutParams {
         this.g = 0;
         this.h = 0;
         this.o = new Rect();
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, bv1.b);
-        this.c = typedArrayObtainStyledAttributes.getInteger(0, 0);
-        this.f = typedArrayObtainStyledAttributes.getResourceId(1, -1);
-        this.d = typedArrayObtainStyledAttributes.getInteger(2, 0);
-        this.e = typedArrayObtainStyledAttributes.getInteger(6, -1);
-        this.g = typedArrayObtainStyledAttributes.getInt(5, 0);
-        this.h = typedArrayObtainStyledAttributes.getInt(4, 0);
-        boolean zHasValue = typedArrayObtainStyledAttributes.hasValue(3);
-        this.b = zHasValue;
-        if (zHasValue) {
-            String string = typedArrayObtainStyledAttributes.getString(3);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, bv1.b);
+        this.c = obtainStyledAttributes.getInteger(0, 0);
+        this.f = obtainStyledAttributes.getResourceId(1, -1);
+        this.d = obtainStyledAttributes.getInteger(2, 0);
+        this.e = obtainStyledAttributes.getInteger(6, -1);
+        this.g = obtainStyledAttributes.getInt(5, 0);
+        this.h = obtainStyledAttributes.getInt(4, 0);
+        boolean hasValue = obtainStyledAttributes.hasValue(3);
+        this.b = hasValue;
+        if (hasValue) {
+            String string = obtainStyledAttributes.getString(3);
             String str = CoordinatorLayout.w;
             if (TextUtils.isEmpty(string)) {
                 q10Var = null;
@@ -107,10 +107,10 @@ public final class t10 extends ViewGroup.MarginLayoutParams {
                     throw new RuntimeException("Could not inflate Behavior subclass " + string, e);
                 }
             }
-            this.f1099a = q10Var;
+            this.f1098a = q10Var;
         }
-        typedArrayObtainStyledAttributes.recycle();
-        q10 q10Var2 = this.f1099a;
+        obtainStyledAttributes.recycle();
+        q10 q10Var2 = this.f1098a;
         if (q10Var2 != null) {
             q10Var2.c(this);
         }

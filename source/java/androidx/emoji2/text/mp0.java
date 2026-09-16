@@ -11,7 +11,7 @@ public final class mp0 {
     public static final /* synthetic */ mp0[] g;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         mp0 mp0Var = new mp0(a.a.a.c.a(-317390052278050L, strArr), 0);
         d = mp0Var;
         mp0 mp0Var2 = new mp0(a.a.a.c.a(-317424412016418L, strArr), 1);

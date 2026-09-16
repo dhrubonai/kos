@@ -9,11 +9,11 @@ public final /* synthetic */ class wn extends bn0 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        long jLongValue = ((Number) obj).longValue();
+        long longValue = ((Number) obj).longValue();
         tq tqVar = (tq) obj2;
-        tq tqVar2 = xn.f1346a;
+        tq tqVar2 = xn.f1345a;
         vn vnVar = tqVar.e;
         lx0.u(vnVar);
-        return new tq(jLongValue, tqVar, vnVar, 0);
+        return new tq(longValue, tqVar, vnVar, 0);
     }
 }

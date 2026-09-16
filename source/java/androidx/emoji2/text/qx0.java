@@ -7,13 +7,13 @@ import java.util.Map;
 public final class qx0 implements gb1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f985a;
+    public final /* synthetic */ int f984a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Map c;
     public final /* synthetic */ um0 d;
 
     public qx0(int i, int i2, Map map, um0 um0Var) {
-        this.f985a = i;
+        this.f984a = i;
         this.b = i2;
         this.c = map;
         this.d = um0Var;
@@ -31,7 +31,7 @@ public final class qx0 implements gb1 {
 
     @Override // androidx.emoji2.text.gb1
     public final int d() {
-        return this.f985a;
+        return this.f984a;
     }
 
     @Override // androidx.emoji2.text.gb1

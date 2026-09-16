@@ -12,10 +12,10 @@ public class f32 implements r42 {
     public static f32 b;
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f342a;
+    public final /* synthetic */ int f341a;
 
     public /* synthetic */ f32(int i) {
-        this.f342a = i;
+        this.f341a = i;
     }
 
     public static final zc a(int i, String str) {
@@ -40,23 +40,23 @@ public class f32 implements r42 {
         WeakHashMap weakHashMap = bw2.v;
         synchronized (weakHashMap) {
             try {
-                Object bw2Var2 = weakHashMap.get(view);
-                if (bw2Var2 == null) {
-                    bw2Var2 = new bw2(view);
-                    weakHashMap.put(view, bw2Var2);
+                Object obj = weakHashMap.get(view);
+                if (obj == null) {
+                    obj = new bw2(view);
+                    weakHashMap.put(view, obj);
                 }
-                bw2Var = (bw2) bw2Var2;
+                bw2Var = (bw2) obj;
             } catch (Throwable th) {
                 throw th;
             }
         }
-        boolean zH = txVar.h(bw2Var) | txVar.h(view);
-        Object objM = txVar.M();
-        if (zH || objM == kx.f663a) {
-            objM = new v32(12, bw2Var, view);
-            txVar.i0(objM);
+        boolean h = txVar.h(bw2Var) | txVar.h(view);
+        Object M = txVar.M();
+        if (h || M == kx.f662a) {
+            M = new v32(12, bw2Var, view);
+            txVar.i0(M);
         }
-        bz0.k(bw2Var, (um0) objM, txVar);
+        bz0.k(bw2Var, (um0) M, txVar);
         return bw2Var;
     }
 
@@ -72,12 +72,12 @@ public class f32 implements r42 {
     }
 
     public String toString() {
-        switch (this.f342a) {
+        switch (this.f341a) {
             case 4:
                 return "SharingStarted.Eagerly";
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return "SharingStarted.Lazily";
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+            case 6:
             default:
                 return super.toString();
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -86,7 +86,7 @@ public class f32 implements r42 {
     }
 
     public f32(StaggeredGridLayoutManager staggeredGridLayoutManager) {
-        this.f342a = 3;
+        this.f341a = 3;
     }
 
     @Override // androidx.emoji2.text.r42

@@ -28,14 +28,14 @@ public abstract class fm0 extends m61 {
         lx0.t(context, attributeSet, 0, 0);
         int[] iArr = fv1.h;
         lx0.z(context, attributeSet, iArr, 0, 0, new int[0]);
-        TypedArray typedArrayObtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, 0, 0);
-        this.v = typedArrayObtainStyledAttributes.getInt(1, this.v);
-        Drawable drawable = typedArrayObtainStyledAttributes.getDrawable(0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, 0, 0);
+        this.v = obtainStyledAttributes.getInt(1, this.v);
+        Drawable drawable = obtainStyledAttributes.getDrawable(0);
         if (drawable != null) {
             setForeground(drawable);
         }
-        this.w = typedArrayObtainStyledAttributes.getBoolean(2, true);
-        typedArrayObtainStyledAttributes.recycle();
+        this.w = obtainStyledAttributes.getBoolean(2, true);
+        obtainStyledAttributes.recycle();
     }
 
     @Override // android.view.View

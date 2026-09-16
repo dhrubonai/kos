@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class gn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ue f432a;
+    public final ue f431a;
     public final zg0 b;
 
     public gn2(ue ueVar, zg0 zg0Var) {
-        this.f432a = ueVar;
+        this.f431a = ueVar;
         this.b = zg0Var;
     }
 
@@ -21,14 +21,14 @@ public final class gn2 {
             return false;
         }
         gn2 gn2Var = (gn2) obj;
-        return lx0.n(this.f432a, gn2Var.f432a) && lx0.n(this.b, gn2Var.b);
+        return lx0.n(this.f431a, gn2Var.f431a) && lx0.n(this.b, gn2Var.b);
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f432a.hashCode() * 31);
+        return this.b.hashCode() + (this.f431a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "TransformedText(text=" + ((Object) this.f432a) + ", offsetMapping=" + this.b + ')';
+        return "TransformedText(text=" + ((Object) this.f431a) + ", offsetMapping=" + this.b + ')';
     }
 }

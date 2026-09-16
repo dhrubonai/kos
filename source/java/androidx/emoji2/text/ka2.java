@@ -37,26 +37,26 @@ public final class ka2 extends g01 implements sm0 {
     public final Object a() {
         switch (this.e) {
             case 0:
-                return new ja2(y92.f1375a, y92.b, y92.c, y92.d, y92.e);
+                return new ja2(y92.f1374a, y92.b, y92.c, y92.d, y92.e);
             case 1:
                 return new da0(0);
             case 2:
-                return pp2.f921a;
+                return pp2.f920a;
             case BCell.NETWORK_TYPE_UMTS /* 3 */:
                 return cl2.b;
             case 4:
                 cd2 cd2Var = new cd2(jj2.n);
                 cd2Var.d();
                 return cd2Var;
-            case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+            case 5:
                 return new mp2();
-            case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
-                return up2.f1187a;
+            case 6:
+                return up2.f1186a;
             case BCell.NETWORK_TYPE_1xRTT /* 7 */:
                 return new ti0();
             case 8:
                 return new r21(0, 0);
-            case 9:
+            case pz0.b /* 9 */:
                 return new s41(0, 0);
             default:
                 return new y42(0);

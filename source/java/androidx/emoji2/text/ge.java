@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class ge {
 
     /* renamed from: a, reason: collision with root package name */
-    public final wo2 f414a;
+    public final wo2 f413a;
     public final Object b;
     public final long c;
     public final g01 d;
@@ -17,7 +17,7 @@ public final class ge {
 
     /* JADX WARN: Multi-variable type inference failed */
     public ge(Object obj, wo2 wo2Var, oe oeVar, long j, Object obj2, long j2, sm0 sm0Var) {
-        this.f414a = wo2Var;
+        this.f413a = wo2Var;
         this.b = obj2;
         this.c = j2;
         this.d = (g01) sm0Var;

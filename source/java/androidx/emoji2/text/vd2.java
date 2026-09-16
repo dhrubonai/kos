@@ -50,12 +50,12 @@ public final class vd2 implements Cloneable {
                 i4++;
             }
             int i6 = i3 / 4;
-            int[] iArrCopyOf = Arrays.copyOf(this.d, i6);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.d = iArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.e, i6);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.e = objArrCopyOf;
+            int[] copyOf = Arrays.copyOf(this.d, i6);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.e, i6);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.e = copyOf2;
         }
         this.d[i2] = i;
         this.e[i2] = obj;
@@ -63,10 +63,10 @@ public final class vd2 implements Cloneable {
     }
 
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final vd2 clone() throws CloneNotSupportedException {
-        Object objClone = super.clone();
-        lx0.v(objClone, "null cannot be cast to non-null type androidx.collection.SparseArrayCompat<E of androidx.collection.SparseArrayCompat>");
-        vd2 vd2Var = (vd2) objClone;
+    public final vd2 clone() {
+        Object clone = super.clone();
+        lx0.v(clone, "null cannot be cast to non-null type androidx.collection.SparseArrayCompat<E of androidx.collection.SparseArrayCompat>");
+        vd2 vd2Var = (vd2) clone;
         vd2Var.d = (int[]) this.d.clone();
         vd2Var.e = (Object[]) this.e.clone();
         return vd2Var;
@@ -74,20 +74,20 @@ public final class vd2 implements Cloneable {
 
     public final Object c(int i) {
         Object obj;
-        int iQ = lx0.q(this.f, i, this.d);
-        if (iQ < 0 || (obj = this.e[iQ]) == xo2.j) {
+        int q = lx0.q(this.f, i, this.d);
+        if (q < 0 || (obj = this.e[q]) == xo2.j) {
             return null;
         }
         return obj;
     }
 
     public final void d(int i, Object obj) {
-        int iQ = lx0.q(this.f, i, this.d);
-        if (iQ >= 0) {
-            this.e[iQ] = obj;
+        int q = lx0.q(this.f, i, this.d);
+        if (q >= 0) {
+            this.e[q] = obj;
             return;
         }
-        int i2 = ~iQ;
+        int i2 = ~q;
         int i3 = this.f;
         if (i2 < i3) {
             Object[] objArr = this.e;
@@ -112,12 +112,12 @@ public final class vd2 implements Cloneable {
                 i5++;
             }
             int i7 = i4 / 4;
-            int[] iArrCopyOf = Arrays.copyOf(this.d, i7);
-            lx0.w(iArrCopyOf, "copyOf(...)");
-            this.d = iArrCopyOf;
-            Object[] objArrCopyOf = Arrays.copyOf(this.e, i7);
-            lx0.w(objArrCopyOf, "copyOf(...)");
-            this.e = objArrCopyOf;
+            int[] copyOf = Arrays.copyOf(this.d, i7);
+            lx0.w(copyOf, "copyOf(...)");
+            this.d = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.e, i7);
+            lx0.w(copyOf2, "copyOf(...)");
+            this.e = copyOf2;
         }
         int i8 = this.f;
         if (i8 - i2 != 0) {
@@ -154,16 +154,16 @@ public final class vd2 implements Cloneable {
             }
             sb.append(this.d[i3]);
             sb.append('=');
-            Object objE = e(i3);
-            if (objE != this) {
-                sb.append(objE);
+            Object e = e(i3);
+            if (e != this) {
+                sb.append(e);
             } else {
                 sb.append("(this Map)");
             }
         }
         sb.append('}');
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 }

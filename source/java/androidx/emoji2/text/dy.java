@@ -62,14 +62,14 @@ public final class dy implements wx {
         tx txVar = new tx(rgVar, xxVar, ob2Var, jf1Var, hqVar, hqVar2, p4Var, this);
         xxVar.m(txVar);
         this.w = txVar;
-        this.y = dw.f274a;
+        this.y = dw.f273a;
     }
 
     public final void A(Function2 function2) {
-        boolean zI = i();
+        boolean i = i();
         p();
         xx xxVar = this.d;
-        if (!zI) {
+        if (!i) {
             this.y = function2;
             xxVar.a(this, function2);
             return;
@@ -99,118 +99,482 @@ public final class dy implements wx {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0070  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void b(java.lang.Object r21, boolean r22) {
-        /*
-            r20 = this;
-            r0 = r20
-            r1 = r21
-            androidx.emoji2.text.gf1 r2 = r0.j
-            java.lang.Object r2 = r2.g(r1)
-            if (r2 == 0) goto L9c
-            boolean r3 = r2 instanceof androidx.emoji2.text.hf1
-            androidx.emoji2.text.vx0 r4 = androidx.emoji2.text.vx0.d
-            androidx.emoji2.text.hf1 r5 = r0.k
-            androidx.emoji2.text.hf1 r6 = r0.l
-            androidx.emoji2.text.gf1 r7 = r0.p
-            if (r3 == 0) goto L81
-            androidx.emoji2.text.hf1 r2 = (androidx.emoji2.text.hf1) r2
-            java.lang.Object[] r3 = r2.b
-            long[] r2 = r2.f468a
-            int r8 = r2.length
-            int r8 = r8 + (-2)
-            if (r8 < 0) goto L9c
-            r10 = 0
-        L24:
-            r11 = r2[r10]
-            long r13 = ~r11
-            r15 = 7
-            long r13 = r13 << r15
-            long r13 = r13 & r11
-            r15 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r13 = r13 & r15
-            int r13 = (r13 > r15 ? 1 : (r13 == r15 ? 0 : -1))
-            if (r13 == 0) goto L7c
-            int r13 = r10 - r8
-            int r13 = ~r13
-            int r13 = r13 >>> 31
-            r14 = 8
-            int r13 = 8 - r13
-            r15 = 0
-        L3e:
-            if (r15 >= r13) goto L79
-            r16 = 255(0xff, double:1.26E-321)
-            long r16 = r11 & r16
-            r18 = 128(0x80, double:6.3E-322)
-            int r16 = (r16 > r18 ? 1 : (r16 == r18 ? 0 : -1))
-            if (r16 >= 0) goto L70
-            int r16 = r10 << 3
-            int r16 = r16 + r15
-            r16 = r3[r16]
-            r9 = r16
-            androidx.emoji2.text.pw1 r9 = (androidx.emoji2.text.pw1) r9
-            boolean r16 = androidx.emoji2.text.ly0.D(r7, r1, r9)
-            if (r16 != 0) goto L70
-            r16 = r14
-            androidx.emoji2.text.vx0 r14 = r9.c(r1)
-            if (r14 == r4) goto L72
-            androidx.emoji2.text.gf1 r14 = r9.g
-            if (r14 == 0) goto L6c
-            if (r22 != 0) goto L6c
-            r6.a(r9)
-            goto L72
-        L6c:
-            r5.a(r9)
-            goto L72
-        L70:
-            r16 = r14
-        L72:
-            long r11 = r11 >> r16
-            int r15 = r15 + 1
-            r14 = r16
-            goto L3e
-        L79:
-            r9 = r14
-            if (r13 != r9) goto L9c
-        L7c:
-            if (r10 == r8) goto L9c
-            int r10 = r10 + 1
-            goto L24
-        L81:
-            androidx.emoji2.text.pw1 r2 = (androidx.emoji2.text.pw1) r2
-            boolean r3 = androidx.emoji2.text.ly0.D(r7, r1, r2)
-            if (r3 != 0) goto L9c
-            androidx.emoji2.text.vx0 r1 = r2.c(r1)
-            if (r1 == r4) goto L9c
-            androidx.emoji2.text.gf1 r1 = r2.g
-            if (r1 == 0) goto L99
-            if (r22 != 0) goto L99
-            r6.a(r2)
-            return
-        L99:
-            r5.a(r2)
-        L9c:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.b(java.lang.Object, boolean):void");
+    public final void b(Object obj, boolean z) {
+        int i;
+        Object g = this.j.g(obj);
+        if (g == null) {
+            return;
+        }
+        boolean z2 = g instanceof hf1;
+        vx0 vx0Var = vx0.d;
+        hf1 hf1Var = this.k;
+        hf1 hf1Var2 = this.l;
+        gf1 gf1Var = this.p;
+        if (!z2) {
+            pw1 pw1Var = (pw1) g;
+            if (ly0.D(gf1Var, obj, pw1Var) || pw1Var.c(obj) == vx0Var) {
+                return;
+            }
+            if (pw1Var.g == null || z) {
+                hf1Var.a(pw1Var);
+                return;
+            } else {
+                hf1Var2.a(pw1Var);
+                return;
+            }
+        }
+        hf1 hf1Var3 = (hf1) g;
+        Object[] objArr = hf1Var3.b;
+        long[] jArr = hf1Var3.f467a;
+        int length = jArr.length - 2;
+        if (length < 0) {
+            return;
+        }
+        int i2 = 0;
+        while (true) {
+            long j = jArr[i2];
+            if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                int i3 = 8;
+                int i4 = 8 - ((~(i2 - length)) >>> 31);
+                int i5 = 0;
+                while (i5 < i4) {
+                    if ((j & 255) < 128) {
+                        pw1 pw1Var2 = (pw1) objArr[(i2 << 3) + i5];
+                        if (!ly0.D(gf1Var, obj, pw1Var2)) {
+                            i = i3;
+                            if (pw1Var2.c(obj) != vx0Var) {
+                                if (pw1Var2.g == null || z) {
+                                    hf1Var.a(pw1Var2);
+                                } else {
+                                    hf1Var2.a(pw1Var2);
+                                }
+                            }
+                            j >>= i;
+                            i5++;
+                            i3 = i;
+                        }
+                    }
+                    i = i3;
+                    j >>= i;
+                    i5++;
+                    i3 = i;
+                }
+                if (i4 != i3) {
+                    return;
+                }
+            }
+            if (i2 == length) {
+                return;
+            } else {
+                i2++;
+            }
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0235  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x0183 A[EDGE_INSN: B:73:0x0183->B:224:0x0122 BREAK  A[LOOP:13: B:63:0x0151->B:74:0x0185]] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void c(java.util.Set r34, boolean r35) {
-        /*
-            Method dump skipped, instructions count: 918
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.c(java.util.Set, boolean):void");
+    public final void c(Set set, boolean z) {
+        long j;
+        long j2;
+        long j3;
+        char c;
+        int i;
+        long[] jArr;
+        long[] jArr2;
+        long j4;
+        boolean c2;
+        long[] jArr3;
+        long j5;
+        long[] jArr4;
+        long[] jArr5;
+        int i2;
+        long j6;
+        boolean z2;
+        int i3;
+        long j7;
+        long[] jArr6;
+        long[] jArr7;
+        char c3;
+        long j8;
+        int i4;
+        int i5;
+        long[] jArr8;
+        boolean z3 = set instanceof g42;
+        gf1 gf1Var = this.m;
+        Object obj = null;
+        int i6 = 8;
+        if (z3) {
+            hf1 hf1Var = ((g42) set).d;
+            Object[] objArr = hf1Var.b;
+            long[] jArr9 = hf1Var.f467a;
+            int length = jArr9.length - 2;
+            if (length >= 0) {
+                int i7 = 0;
+                j = 128;
+                j2 = 255;
+                while (true) {
+                    long j9 = jArr9[i7];
+                    char c4 = 7;
+                    j3 = -9187201950435737472L;
+                    if ((((~j9) << 7) & j9 & (-9187201950435737472L)) != -9187201950435737472L) {
+                        int i8 = 8 - ((~(i7 - length)) >>> 31);
+                        int i9 = 0;
+                        while (i9 < i8) {
+                            if ((j9 & 255) < 128) {
+                                Object obj2 = objArr[(i7 << 3) + i9];
+                                c3 = c4;
+                                if (obj2 instanceof pw1) {
+                                    ((pw1) obj2).c(obj);
+                                } else {
+                                    b(obj2, z);
+                                    Object g = gf1Var.g(obj2);
+                                    if (g != null) {
+                                        if (g instanceof hf1) {
+                                            hf1 hf1Var2 = (hf1) g;
+                                            Object[] objArr2 = hf1Var2.b;
+                                            long[] jArr10 = hf1Var2.f467a;
+                                            int length2 = jArr10.length - 2;
+                                            if (length2 >= 0) {
+                                                int i10 = i6;
+                                                i4 = length;
+                                                int i11 = 0;
+                                                while (true) {
+                                                    long j10 = jArr10[i11];
+                                                    j8 = j9;
+                                                    long[] jArr11 = jArr10;
+                                                    if ((((~j10) << c3) & j10 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                                        int i12 = 8 - ((~(i11 - length2)) >>> 31);
+                                                        int i13 = 0;
+                                                        while (i13 < i12) {
+                                                            if ((j10 & 255) < 128) {
+                                                                jArr8 = jArr9;
+                                                                b((t70) objArr2[(i11 << 3) + i13], z);
+                                                            } else {
+                                                                jArr8 = jArr9;
+                                                            }
+                                                            j10 >>= i10;
+                                                            i13++;
+                                                            jArr9 = jArr8;
+                                                        }
+                                                        jArr7 = jArr9;
+                                                        if (i12 != i10) {
+                                                            break;
+                                                        }
+                                                    } else {
+                                                        jArr7 = jArr9;
+                                                    }
+                                                    if (i11 == length2) {
+                                                        break;
+                                                    }
+                                                    i11++;
+                                                    jArr10 = jArr11;
+                                                    j9 = j8;
+                                                    jArr9 = jArr7;
+                                                    i10 = 8;
+                                                }
+                                            }
+                                        } else {
+                                            jArr7 = jArr9;
+                                            j8 = j9;
+                                            i4 = length;
+                                            b((t70) g, z);
+                                        }
+                                        i5 = 8;
+                                    }
+                                }
+                                jArr7 = jArr9;
+                                j8 = j9;
+                                i4 = length;
+                                i5 = 8;
+                            } else {
+                                jArr7 = jArr9;
+                                c3 = c4;
+                                j8 = j9;
+                                i4 = length;
+                                i5 = i6;
+                            }
+                            j9 = j8 >> i5;
+                            i9++;
+                            length = i4;
+                            i6 = i5;
+                            c4 = c3;
+                            jArr9 = jArr7;
+                            obj = null;
+                        }
+                        jArr6 = jArr9;
+                        c = c4;
+                        int i14 = length;
+                        if (i8 != i6) {
+                            break;
+                        } else {
+                            length = i14;
+                        }
+                    } else {
+                        jArr6 = jArr9;
+                        c = 7;
+                    }
+                    if (i7 == length) {
+                        break;
+                    }
+                    i7++;
+                    jArr9 = jArr6;
+                    obj = null;
+                    i6 = 8;
+                }
+            } else {
+                j = 128;
+                j2 = 255;
+                j3 = -9187201950435737472L;
+                c = 7;
+            }
+        } else {
+            j = 128;
+            j2 = 255;
+            j3 = -9187201950435737472L;
+            c = 7;
+            for (Object obj3 : set) {
+                if (obj3 instanceof pw1) {
+                    ((pw1) obj3).c(null);
+                } else {
+                    b(obj3, z);
+                    Object g2 = gf1Var.g(obj3);
+                    if (g2 != null) {
+                        if (g2 instanceof hf1) {
+                            hf1 hf1Var3 = (hf1) g2;
+                            Object[] objArr3 = hf1Var3.b;
+                            long[] jArr12 = hf1Var3.f467a;
+                            int length3 = jArr12.length - 2;
+                            if (length3 >= 0) {
+                                while (true) {
+                                    long j11 = jArr12[i];
+                                    if ((((~j11) << 7) & j11 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                        int i15 = 8 - ((~(i - length3)) >>> 31);
+                                        for (int i16 = 0; i16 < i15; i16++) {
+                                            if ((j11 & 255) < 128) {
+                                                b((t70) objArr3[(i << 3) + i16], z);
+                                            }
+                                            j11 >>= 8;
+                                        }
+                                        if (i15 != 8) {
+                                            break;
+                                        }
+                                    }
+                                    i = i != length3 ? i + 1 : 0;
+                                }
+                            }
+                        } else {
+                            b((t70) g2, z);
+                        }
+                    }
+                }
+            }
+        }
+        gf1 gf1Var2 = this.j;
+        hf1 hf1Var4 = this.k;
+        if (z) {
+            hf1 hf1Var5 = this.l;
+            if (hf1Var5.h()) {
+                long[] jArr13 = gf1Var2.f415a;
+                int length4 = jArr13.length - 2;
+                if (length4 >= 0) {
+                    int i17 = 0;
+                    while (true) {
+                        long j12 = jArr13[i17];
+                        if ((((~j12) << c) & j12 & j3) != j3) {
+                            int i18 = 8 - ((~(i17 - length4)) >>> 31);
+                            int i19 = 0;
+                            while (i19 < i18) {
+                                if ((j12 & j2) < j) {
+                                    int i20 = (i17 << 3) + i19;
+                                    Object obj4 = gf1Var2.b[i20];
+                                    Object obj5 = gf1Var2.c[i20];
+                                    if (obj5 instanceof hf1) {
+                                        hf1 hf1Var6 = (hf1) obj5;
+                                        Object[] objArr4 = hf1Var6.b;
+                                        long[] jArr14 = hf1Var6.f467a;
+                                        int length5 = jArr14.length - 2;
+                                        if (length5 >= 0) {
+                                            j6 = j12;
+                                            int i21 = 0;
+                                            while (true) {
+                                                long j13 = jArr14[i21];
+                                                jArr5 = jArr13;
+                                                i2 = length4;
+                                                if ((((~j13) << c) & j13 & j3) != j3) {
+                                                    int i22 = 8 - ((~(i21 - length5)) >>> 31);
+                                                    for (int i23 = 0; i23 < i22; i23 = i3 + 1) {
+                                                        if ((j13 & j2) < j) {
+                                                            i3 = i23;
+                                                            int i24 = (i21 << 3) + i3;
+                                                            j7 = j13;
+                                                            pw1 pw1Var = (pw1) objArr4[i24];
+                                                            if (hf1Var5.c(pw1Var) || hf1Var4.c(pw1Var)) {
+                                                                hf1Var6.l(i24);
+                                                            }
+                                                        } else {
+                                                            i3 = i23;
+                                                            j7 = j13;
+                                                        }
+                                                        j13 = j7 >> 8;
+                                                    }
+                                                    if (i22 != 8) {
+                                                        break;
+                                                    }
+                                                }
+                                                if (i21 == length5) {
+                                                    break;
+                                                }
+                                                i21++;
+                                                length4 = i2;
+                                                jArr13 = jArr5;
+                                            }
+                                        } else {
+                                            jArr5 = jArr13;
+                                            i2 = length4;
+                                            j6 = j12;
+                                        }
+                                        z2 = hf1Var6.g();
+                                    } else {
+                                        jArr5 = jArr13;
+                                        i2 = length4;
+                                        j6 = j12;
+                                        lx0.v(obj5, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                        pw1 pw1Var2 = (pw1) obj5;
+                                        z2 = hf1Var5.c(pw1Var2) || hf1Var4.c(pw1Var2);
+                                    }
+                                    if (z2) {
+                                        gf1Var2.l(i20);
+                                    }
+                                } else {
+                                    jArr5 = jArr13;
+                                    i2 = length4;
+                                    j6 = j12;
+                                }
+                                j12 = j6 >> 8;
+                                i19++;
+                                length4 = i2;
+                                jArr13 = jArr5;
+                            }
+                            jArr4 = jArr13;
+                            int i25 = length4;
+                            if (i18 != 8) {
+                                break;
+                            } else {
+                                length4 = i25;
+                            }
+                        } else {
+                            jArr4 = jArr13;
+                        }
+                        if (i17 == length4) {
+                            break;
+                        }
+                        i17++;
+                        jArr13 = jArr4;
+                    }
+                }
+                hf1Var5.b();
+                h();
+                return;
+            }
+        }
+        if (hf1Var4.h()) {
+            long[] jArr15 = gf1Var2.f415a;
+            int length6 = jArr15.length - 2;
+            if (length6 >= 0) {
+                int i26 = 0;
+                while (true) {
+                    long j14 = jArr15[i26];
+                    if ((((~j14) << c) & j14 & j3) != j3) {
+                        int i27 = 8 - ((~(i26 - length6)) >>> 31);
+                        int i28 = 0;
+                        while (i28 < i27) {
+                            if ((j14 & j2) < j) {
+                                int i29 = (i26 << 3) + i28;
+                                Object obj6 = gf1Var2.b[i29];
+                                Object obj7 = gf1Var2.c[i29];
+                                if (obj7 instanceof hf1) {
+                                    hf1 hf1Var7 = (hf1) obj7;
+                                    Object[] objArr5 = hf1Var7.b;
+                                    long[] jArr16 = hf1Var7.f467a;
+                                    int length7 = jArr16.length - 2;
+                                    if (length7 >= 0) {
+                                        j4 = j14;
+                                        int i30 = 0;
+                                        while (true) {
+                                            long j15 = jArr16[i30];
+                                            Object[] objArr6 = objArr5;
+                                            long[] jArr17 = jArr16;
+                                            if ((((~j15) << c) & j15 & j3) != j3) {
+                                                int i31 = 8 - ((~(i30 - length7)) >>> 31);
+                                                int i32 = 0;
+                                                while (i32 < i31) {
+                                                    if ((j15 & j2) < j) {
+                                                        jArr3 = jArr15;
+                                                        int i33 = (i30 << 3) + i32;
+                                                        j5 = j15;
+                                                        if (hf1Var4.c((pw1) objArr6[i33])) {
+                                                            hf1Var7.l(i33);
+                                                        }
+                                                    } else {
+                                                        jArr3 = jArr15;
+                                                        j5 = j15;
+                                                    }
+                                                    i32++;
+                                                    jArr15 = jArr3;
+                                                    j15 = j5 >> 8;
+                                                }
+                                                jArr2 = jArr15;
+                                                if (i31 != 8) {
+                                                    break;
+                                                }
+                                            } else {
+                                                jArr2 = jArr15;
+                                            }
+                                            if (i30 == length7) {
+                                                break;
+                                            }
+                                            i30++;
+                                            objArr5 = objArr6;
+                                            jArr16 = jArr17;
+                                            jArr15 = jArr2;
+                                        }
+                                    } else {
+                                        jArr2 = jArr15;
+                                        j4 = j14;
+                                    }
+                                    c2 = hf1Var7.g();
+                                } else {
+                                    jArr2 = jArr15;
+                                    j4 = j14;
+                                    lx0.v(obj7, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                    c2 = hf1Var4.c((pw1) obj7);
+                                }
+                                if (c2) {
+                                    gf1Var2.l(i29);
+                                }
+                            } else {
+                                jArr2 = jArr15;
+                                j4 = j14;
+                            }
+                            i28++;
+                            j14 = j4 >> 8;
+                            jArr15 = jArr2;
+                        }
+                        jArr = jArr15;
+                        if (i27 != 8) {
+                            break;
+                        }
+                    } else {
+                        jArr = jArr15;
+                    }
+                    if (i26 == length6) {
+                        break;
+                    }
+                    i26++;
+                    jArr15 = jArr;
+                }
+            }
+            h();
+            hf1Var4.b();
+        }
     }
 
     public final void d() {
@@ -240,17 +604,218 @@ public final class dy implements wx {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:65:0x011d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void e(androidx.emoji2.text.hq r33) throws java.lang.Throwable {
-        /*
-            Method dump skipped, instructions count: 479
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.e(androidx.emoji2.text.hq):void");
+    public final void e(hq hqVar) {
+        jy1 jy1Var;
+        long[] jArr;
+        int i;
+        long[] jArr2;
+        jy1 jy1Var2;
+        long j;
+        char c;
+        long j2;
+        int i2;
+        boolean z;
+        hq hqVar2 = this.o;
+        tx txVar = this.w;
+        ay z2 = txVar.z();
+        jy1 jy1Var3 = this.v;
+        jy1Var3.e(this.h, z2);
+        try {
+            if (hqVar.f.O()) {
+                try {
+                    if (hqVar2.f.O()) {
+                        jy1Var3.b();
+                    }
+                    return;
+                } finally {
+                }
+            }
+            try {
+                Trace.beginSection("Compose:applyChanges");
+                try {
+                    rg rgVar = this.e;
+                    rb2 d = this.i.d();
+                    int i3 = 0;
+                    try {
+                        hqVar.M(rgVar, d, jy1Var3, txVar.z());
+                        d.e(true);
+                        rgVar.n();
+                        Trace.endSection();
+                        jy1Var3.c();
+                        sf1 sf1Var = jy1Var3.g;
+                        if (sf1Var.f != 0) {
+                            Trace.beginSection("Compose:sideeffects");
+                            try {
+                                Object[] objArr = sf1Var.d;
+                                int i4 = sf1Var.f;
+                                for (int i5 = 0; i5 < i4; i5++) {
+                                    ((sm0) objArr[i5]).a();
+                                }
+                                sf1Var.g();
+                                Trace.endSection();
+                            } finally {
+                                Trace.endSection();
+                            }
+                        }
+                        if (this.r) {
+                            Trace.beginSection("Compose:unobserve");
+                            try {
+                                this.r = false;
+                                gf1 gf1Var = this.j;
+                                long[] jArr3 = gf1Var.f415a;
+                                int length = jArr3.length - 2;
+                                if (length >= 0) {
+                                    int i6 = 0;
+                                    while (true) {
+                                        long j3 = jArr3[i6];
+                                        char c2 = 7;
+                                        long j4 = -9187201950435737472L;
+                                        if ((((~j3) << 7) & j3 & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i7 = 8;
+                                            int i8 = 8 - ((~(i6 - length)) >>> 31);
+                                            int i9 = i3;
+                                            while (i9 < i8) {
+                                                if ((j3 & 255) < 128) {
+                                                    c = c2;
+                                                    int i10 = (i6 << 3) + i9;
+                                                    j2 = j4;
+                                                    Object obj = gf1Var.b[i10];
+                                                    Object obj2 = gf1Var.c[i10];
+                                                    if (obj2 instanceof hf1) {
+                                                        hf1 hf1Var = (hf1) obj2;
+                                                        Object[] objArr2 = hf1Var.b;
+                                                        long[] jArr4 = hf1Var.f467a;
+                                                        int i11 = i7;
+                                                        int length2 = jArr4.length - 2;
+                                                        i = i9;
+                                                        jArr2 = jArr3;
+                                                        jy1Var2 = jy1Var3;
+                                                        if (length2 >= 0) {
+                                                            int i12 = 0;
+                                                            while (true) {
+                                                                try {
+                                                                    long j5 = jArr4[i12];
+                                                                    j = j3;
+                                                                    if ((((~j5) << c) & j5 & j2) != j2) {
+                                                                        int i13 = 8 - ((~(i12 - length2)) >>> 31);
+                                                                        for (int i14 = 0; i14 < i13; i14++) {
+                                                                            if ((j5 & 255) < 128) {
+                                                                                int i15 = (i12 << 3) + i14;
+                                                                                if (!((pw1) objArr2[i15]).b()) {
+                                                                                    hf1Var.l(i15);
+                                                                                }
+                                                                            }
+                                                                            j5 >>= i11;
+                                                                        }
+                                                                        if (i13 != i11) {
+                                                                            break;
+                                                                        }
+                                                                    }
+                                                                    if (i12 == length2) {
+                                                                        break;
+                                                                    }
+                                                                    i12++;
+                                                                    i11 = 8;
+                                                                    j3 = j;
+                                                                } catch (Throwable th) {
+                                                                    th = th;
+                                                                    throw th;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            j = j3;
+                                                        }
+                                                        z = hf1Var.g();
+                                                    } else {
+                                                        i = i9;
+                                                        jArr2 = jArr3;
+                                                        jy1Var2 = jy1Var3;
+                                                        j = j3;
+                                                        lx0.v(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                                        z = !((pw1) obj2).b();
+                                                    }
+                                                    if (z) {
+                                                        gf1Var.l(i10);
+                                                    }
+                                                    i2 = 8;
+                                                } else {
+                                                    i = i9;
+                                                    jArr2 = jArr3;
+                                                    jy1Var2 = jy1Var3;
+                                                    j = j3;
+                                                    c = c2;
+                                                    j2 = j4;
+                                                    i2 = i7;
+                                                }
+                                                j3 = j >> i2;
+                                                i9 = i + 1;
+                                                i7 = i2;
+                                                c2 = c;
+                                                j4 = j2;
+                                                jy1Var3 = jy1Var2;
+                                                jArr3 = jArr2;
+                                            }
+                                            jArr = jArr3;
+                                            jy1Var = jy1Var3;
+                                            if (i8 != i7) {
+                                                break;
+                                            }
+                                        } else {
+                                            jArr = jArr3;
+                                            jy1Var = jy1Var3;
+                                        }
+                                        if (i6 == length) {
+                                            break;
+                                        }
+                                        i6++;
+                                        jy1Var3 = jy1Var;
+                                        jArr3 = jArr;
+                                        i3 = 0;
+                                    }
+                                } else {
+                                    jy1Var = jy1Var3;
+                                }
+                                h();
+                                Trace.endSection();
+                            } catch (Throwable th2) {
+                                th = th2;
+                            }
+                        } else {
+                            jy1Var = jy1Var3;
+                        }
+                        try {
+                            if (hqVar2.f.O()) {
+                                jy1Var.b();
+                            }
+                        } finally {
+                            jy1Var.a();
+                        }
+                    } catch (Throwable th3) {
+                        try {
+                            d.e(false);
+                            throw th3;
+                        } catch (Throwable th4) {
+                            th = th4;
+                            Trace.endSection();
+                            throw th;
+                        }
+                    }
+                } catch (Throwable th5) {
+                    th = th5;
+                }
+            } catch (Throwable th6) {
+                th = th6;
+                try {
+                    if (hqVar2.f.O()) {
+                        jy1Var3.b();
+                    }
+                    throw th;
+                } finally {
+                }
+            }
+        } catch (Throwable th7) {
+            th = th7;
+        }
     }
 
     public final void f() {
@@ -313,17 +878,192 @@ public final class dy implements wx {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x009f  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
     public final void h() {
-        /*
-            Method dump skipped, instructions count: 382
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.h():void");
+        char c;
+        long j;
+        long j2;
+        long j3;
+        long[] jArr;
+        long[] jArr2;
+        int i;
+        long j4;
+        char c2;
+        long j5;
+        long j6;
+        int i2;
+        boolean z;
+        int i3;
+        long j7;
+        gf1 gf1Var = this.m;
+        long[] jArr3 = gf1Var.f415a;
+        int length = jArr3.length - 2;
+        char c3 = 7;
+        long j8 = -9187201950435737472L;
+        int i4 = 8;
+        if (length >= 0) {
+            int i5 = 0;
+            long j9 = 128;
+            while (true) {
+                long j10 = jArr3[i5];
+                j2 = 255;
+                if ((((~j10) << c3) & j10 & j8) != j8) {
+                    int i6 = 8 - ((~(i5 - length)) >>> 31);
+                    int i7 = 0;
+                    while (i7 < i6) {
+                        if ((j10 & 255) < j9) {
+                            c2 = c3;
+                            int i8 = (i5 << 3) + i7;
+                            j5 = j8;
+                            Object obj = gf1Var.b[i8];
+                            Object obj2 = gf1Var.c[i8];
+                            boolean z2 = obj2 instanceof hf1;
+                            gf1 gf1Var2 = this.j;
+                            if (z2) {
+                                hf1 hf1Var = (hf1) obj2;
+                                Object[] objArr = hf1Var.b;
+                                long[] jArr4 = hf1Var.f467a;
+                                j6 = j9;
+                                int length2 = jArr4.length - 2;
+                                if (length2 >= 0) {
+                                    j4 = j10;
+                                    int i9 = i4;
+                                    int i10 = 0;
+                                    while (true) {
+                                        long j11 = jArr4[i10];
+                                        jArr2 = jArr3;
+                                        i = length;
+                                        if ((((~j11) << c2) & j11 & j5) != j5) {
+                                            int i11 = 8 - ((~(i10 - length2)) >>> 31);
+                                            int i12 = 0;
+                                            while (i12 < i11) {
+                                                if ((j11 & 255) < j6) {
+                                                    i3 = i12;
+                                                    int i13 = (i10 << 3) + i3;
+                                                    j7 = j11;
+                                                    if (!gf1Var2.c((t70) objArr[i13])) {
+                                                        hf1Var.l(i13);
+                                                    }
+                                                } else {
+                                                    i3 = i12;
+                                                    j7 = j11;
+                                                }
+                                                j11 = j7 >> i9;
+                                                i12 = i3 + 1;
+                                            }
+                                            if (i11 != i9) {
+                                                break;
+                                            }
+                                        }
+                                        if (i10 == length2) {
+                                            break;
+                                        }
+                                        i10++;
+                                        jArr3 = jArr2;
+                                        length = i;
+                                        i9 = 8;
+                                    }
+                                } else {
+                                    jArr2 = jArr3;
+                                    i = length;
+                                    j4 = j10;
+                                }
+                                z = hf1Var.g();
+                            } else {
+                                jArr2 = jArr3;
+                                i = length;
+                                j4 = j10;
+                                j6 = j9;
+                                lx0.v(obj2, "null cannot be cast to non-null type Scope of androidx.compose.runtime.collection.ScopeMap");
+                                z = !gf1Var2.c((t70) obj2);
+                            }
+                            if (z) {
+                                gf1Var.l(i8);
+                            }
+                            i2 = 8;
+                        } else {
+                            jArr2 = jArr3;
+                            i = length;
+                            j4 = j10;
+                            c2 = c3;
+                            j5 = j8;
+                            j6 = j9;
+                            i2 = i4;
+                        }
+                        j10 = j4 >> i2;
+                        i7++;
+                        i4 = i2;
+                        c3 = c2;
+                        j8 = j5;
+                        j9 = j6;
+                        jArr3 = jArr2;
+                        length = i;
+                    }
+                    jArr = jArr3;
+                    int i14 = length;
+                    c = c3;
+                    j = j8;
+                    j3 = j9;
+                    if (i6 != i4) {
+                        break;
+                    } else {
+                        length = i14;
+                    }
+                } else {
+                    jArr = jArr3;
+                    c = c3;
+                    j = j8;
+                    j3 = j9;
+                }
+                if (i5 == length) {
+                    break;
+                }
+                i5++;
+                c3 = c;
+                j8 = j;
+                j9 = j3;
+                jArr3 = jArr;
+                i4 = 8;
+            }
+        } else {
+            c = 7;
+            j = -9187201950435737472L;
+            j2 = 255;
+            j3 = 128;
+        }
+        hf1 hf1Var2 = this.l;
+        if (!hf1Var2.h()) {
+            return;
+        }
+        Object[] objArr2 = hf1Var2.b;
+        long[] jArr5 = hf1Var2.f467a;
+        int length3 = jArr5.length - 2;
+        if (length3 < 0) {
+            return;
+        }
+        int i15 = 0;
+        while (true) {
+            long j12 = jArr5[i15];
+            if ((((~j12) << c) & j12 & j) != j) {
+                int i16 = 8 - ((~(i15 - length3)) >>> 31);
+                for (int i17 = 0; i17 < i16; i17++) {
+                    if ((j12 & j2) < j3) {
+                        int i18 = (i15 << 3) + i17;
+                        if (!(((pw1) objArr2[i18]).g != null)) {
+                            hf1Var2.l(i18);
+                        }
+                    }
+                    j12 >>= 8;
+                }
+                if (i16 != 8) {
+                    return;
+                }
+            }
+            if (i15 == length3) {
+                return;
+            } else {
+                i15++;
+            }
+        }
     }
 
     public final boolean i() {
@@ -384,48 +1124,62 @@ public final class dy implements wx {
     }
 
     public final void k() {
+        jy1 jy1Var;
         synchronized (this.g) {
             try {
                 boolean z = this.i.e > 0;
-                if (z || !this.h.d.g()) {
-                    Trace.beginSection("Compose:deactivate");
+                try {
                     try {
-                        jy1 jy1Var = this.v;
-                        try {
-                            jy1Var.e(this.h, this.w.z());
-                            if (z) {
-                                rb2 rb2VarD = this.i.d();
-                                try {
-                                    rb2VarD.n(rb2VarD.t, new ux(0, this.v, rb2VarD));
-                                    rb2VarD.e(true);
-                                    this.e.n();
-                                    jy1Var.c();
-                                } catch (Throwable th) {
-                                    rb2VarD.e(false);
-                                    throw th;
-                                }
+                        if (!z) {
+                            if (!this.h.d.g()) {
                             }
-                            jy1Var.b();
-                            jy1Var.a();
-                        } catch (Throwable th2) {
-                            jy1Var.a();
-                            throw th2;
+                            this.j.a();
+                            this.m.a();
+                            this.q.a();
+                            this.n.f.M();
+                            this.o.f.M();
+                            tx txVar = this.w;
+                            txVar.E.clear();
+                            txVar.s.clear();
+                            txVar.e.f.M();
+                            txVar.v = null;
+                            this.x = 1;
                         }
-                    } finally {
-                        Trace.endSection();
+                        jy1Var.e(this.h, this.w.z());
+                        if (z) {
+                            rb2 d = this.i.d();
+                            try {
+                                d.n(d.t, new ux(0, this.v, d));
+                                d.e(true);
+                                this.e.n();
+                                jy1Var.c();
+                            } catch (Throwable th) {
+                                d.e(false);
+                                throw th;
+                            }
+                        }
+                        jy1Var.b();
+                        jy1Var.a();
+                        this.j.a();
+                        this.m.a();
+                        this.q.a();
+                        this.n.f.M();
+                        this.o.f.M();
+                        tx txVar2 = this.w;
+                        txVar2.E.clear();
+                        txVar2.s.clear();
+                        txVar2.e.f.M();
+                        txVar2.v = null;
+                        this.x = 1;
+                    } catch (Throwable th2) {
+                        jy1Var.a();
+                        throw th2;
                     }
+                    jy1Var = this.v;
+                } finally {
+                    Trace.endSection();
                 }
-                this.j.a();
-                this.m.a();
-                this.q.a();
-                this.n.f.M();
-                this.o.f.M();
-                tx txVar = this.w;
-                txVar.E.clear();
-                txVar.s.clear();
-                txVar.e.f.M();
-                txVar.v = null;
-                this.x = 1;
+                Trace.beginSection("Compose:deactivate");
             } catch (Throwable th3) {
                 throw th3;
             }
@@ -451,16 +1205,16 @@ public final class dy implements wx {
                         try {
                             jy1Var.e(this.h, this.w.z());
                             if (z) {
-                                rb2 rb2VarD = this.i.d();
+                                rb2 d = this.i.d();
                                 try {
-                                    rb2VarD.n(rb2VarD.t, new f2(3, this.v));
-                                    rb2VarD.G();
-                                    rb2VarD.e(true);
+                                    d.n(d.t, new f2(3, this.v));
+                                    d.G();
+                                    d.e(true);
                                     this.e.t();
                                     this.e.n();
                                     jy1Var.c();
                                 } catch (Throwable th) {
-                                    rb2VarD.e(false);
+                                    d.e(false);
                                     throw th;
                                 }
                             }
@@ -480,7 +1234,7 @@ public final class dy implements wx {
                         txVar.s.clear();
                         txVar.e.f.M();
                         txVar.v = null;
-                        txVar.f1149a.t();
+                        txVar.f1148a.t();
                         Trace.endSection();
                     } catch (Throwable th3) {
                         Trace.endSection();
@@ -620,11 +1374,11 @@ public final class dy implements wx {
             if (pw1Var.d == null) {
                 return vx0.d;
             }
-            vx0 vx0VarT = t(pw1Var, t5Var, obj);
-            if (vx0VarT != vx0.d) {
+            vx0 t = t(pw1Var, t5Var, obj);
+            if (t != vx0.d) {
                 this.u.x();
             }
-            return vx0VarT;
+            return t;
         }
         synchronized (this.g) {
             dyVar = this.s;
@@ -644,7 +1398,7 @@ public final class dy implements wx {
             try {
                 for (Object obj : this.i.f) {
                     pw1 pw1Var = obj instanceof pw1 ? (pw1) obj : null;
-                    if (pw1Var != null && (dyVar = pw1Var.f931a) != null) {
+                    if (pw1Var != null && (dyVar = pw1Var.f930a) != null) {
                         dyVar.r(pw1Var, null);
                     }
                 }
@@ -654,39 +1408,111 @@ public final class dy implements wx {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00cb  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x00d5 A[Catch: all -> 0x0042, EDGE_INSN: B:80:0x00d5->B:65:0x00d5 BREAK  A[LOOP:0: B:47:0x008c->B:61:0x00cd], EDGE_INSN: B:81:0x00d5->B:65:0x00d5 BREAK  A[LOOP:0: B:47:0x008c->B:61:0x00cd], TRY_LEAVE, TryCatch #0 {all -> 0x0042, blocks: (B:4:0x000b, B:6:0x0010, B:8:0x0018, B:10:0x001f, B:14:0x0029, B:16:0x002f, B:13:0x0024, B:25:0x0047, B:27:0x004d, B:32:0x0058, B:36:0x005e, B:37:0x0067, B:39:0x006b, B:40:0x0074, B:42:0x007c, B:44:0x0080, B:47:0x008c, B:49:0x009c, B:51:0x00a8, B:53:0x00b2, B:57:0x00c1, B:61:0x00cd, B:62:0x00d0, B:65:0x00d5), top: B:78:0x000b }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final androidx.emoji2.text.vx0 t(androidx.emoji2.text.pw1 r21, androidx.emoji2.text.t5 r22, java.lang.Object r23) {
-        /*
-            Method dump skipped, instructions count: 245
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.t(androidx.emoji2.text.pw1, androidx.emoji2.text.t5, java.lang.Object):androidx.emoji2.text.vx0");
+    public final vx0 t(pw1 pw1Var, t5 t5Var, Object obj) {
+        dy dyVar;
+        int i;
+        synchronized (this.g) {
+            try {
+                dy dyVar2 = this.s;
+                if (dyVar2 != null) {
+                    ob2 ob2Var = this.i;
+                    int i2 = this.t;
+                    if (ob2Var.j) {
+                        vx.c("Writer is active");
+                    }
+                    if (i2 < 0 || i2 >= ob2Var.e) {
+                        vx.c("Invalid group index");
+                    }
+                    if (ob2Var.e(t5Var)) {
+                        int i3 = ob2Var.d[(i2 * 5) + 3] + i2;
+                        int i4 = t5Var.f1103a;
+                        dyVar = (i2 <= i4 && i4 < i3) ? dyVar2 : null;
+                    }
+                    dyVar2 = null;
+                }
+                if (dyVar == null) {
+                    tx txVar = this.w;
+                    if (txVar.F && txVar.d0(pw1Var, obj)) {
+                        return vx0.g;
+                    }
+                    if (obj == null) {
+                        this.q.m(pw1Var, j42.e);
+                    } else if (obj instanceof t70) {
+                        Object g = this.q.g(pw1Var);
+                        if (g != null) {
+                            if (g instanceof hf1) {
+                                hf1 hf1Var = (hf1) g;
+                                Object[] objArr = hf1Var.b;
+                                long[] jArr = hf1Var.f467a;
+                                int length = jArr.length - 2;
+                                if (length >= 0) {
+                                    int i5 = 0;
+                                    loop0: while (true) {
+                                        long j = jArr[i5];
+                                        if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                            int i6 = 8;
+                                            int i7 = 8 - ((~(i5 - length)) >>> 31);
+                                            int i8 = 0;
+                                            while (i8 < i7) {
+                                                if ((j & 255) < 128) {
+                                                    i = i6;
+                                                    if (objArr[(i5 << 3) + i8] == j42.e) {
+                                                        break loop0;
+                                                    }
+                                                } else {
+                                                    i = i6;
+                                                }
+                                                j >>= i;
+                                                i8++;
+                                                i6 = i;
+                                            }
+                                            if (i7 != i6) {
+                                                break;
+                                            }
+                                        }
+                                        if (i5 == length) {
+                                            break;
+                                        }
+                                        i5++;
+                                    }
+                                }
+                            } else if (g == j42.e) {
+                            }
+                        }
+                        ly0.g(this.q, pw1Var, obj);
+                    } else {
+                        this.q.m(pw1Var, j42.e);
+                    }
+                }
+                if (dyVar != null) {
+                    return dyVar.t(pw1Var, t5Var, obj);
+                }
+                this.d.j(this);
+                return this.w.F ? vx0.f : vx0.e;
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 
     public final void u(Object obj) {
-        Object objG = this.j.g(obj);
-        if (objG == null) {
+        Object g = this.j.g(obj);
+        if (g == null) {
             return;
         }
-        boolean z = objG instanceof hf1;
+        boolean z = g instanceof hf1;
         gf1 gf1Var = this.p;
         if (!z) {
-            pw1 pw1Var = (pw1) objG;
+            pw1 pw1Var = (pw1) g;
             if (pw1Var.c(obj) == vx0.g) {
                 ly0.g(gf1Var, obj, pw1Var);
                 return;
             }
             return;
         }
-        hf1 hf1Var = (hf1) objG;
+        hf1 hf1Var = (hf1) g;
         Object[] objArr = hf1Var.b;
-        long[] jArr = hf1Var.f468a;
+        long[] jArr = hf1Var.f467a;
         int length = jArr.length - 2;
         if (length < 0) {
             return;
@@ -721,93 +1547,55 @@ public final class dy implements wx {
     
         return true;
      */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0059  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean v(java.util.Set r19) {
-        /*
-            r18 = this;
-            r0 = r18
-            r1 = r19
-            boolean r2 = r1 instanceof androidx.emoji2.text.g42
-            androidx.emoji2.text.gf1 r3 = r0.m
-            androidx.emoji2.text.gf1 r4 = r0.j
-            r5 = 0
-            r6 = 1
-            if (r2 == 0) goto L5e
-            androidx.emoji2.text.g42 r1 = (androidx.emoji2.text.g42) r1
-            androidx.emoji2.text.hf1 r1 = r1.d
-            java.lang.Object[] r2 = r1.b
-            long[] r1 = r1.f468a
-            int r7 = r1.length
-            int r7 = r7 + (-2)
-            if (r7 < 0) goto L7b
-            r8 = r5
-        L1c:
-            r9 = r1[r8]
-            long r11 = ~r9
-            r13 = 7
-            long r11 = r11 << r13
-            long r11 = r11 & r9
-            r13 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r11 = r11 & r13
-            int r11 = (r11 > r13 ? 1 : (r11 == r13 ? 0 : -1))
-            if (r11 == 0) goto L59
-            int r11 = r8 - r7
-            int r11 = ~r11
-            int r11 = r11 >>> 31
-            r12 = 8
-            int r11 = 8 - r11
-            r13 = r5
-        L36:
-            if (r13 >= r11) goto L57
-            r14 = 255(0xff, double:1.26E-321)
-            long r14 = r14 & r9
-            r16 = 128(0x80, double:6.3E-322)
-            int r14 = (r14 > r16 ? 1 : (r14 == r16 ? 0 : -1))
-            if (r14 >= 0) goto L53
-            int r14 = r8 << 3
-            int r14 = r14 + r13
-            r14 = r2[r14]
-            boolean r15 = r4.c(r14)
-            if (r15 != 0) goto L52
-            boolean r14 = r3.c(r14)
-            if (r14 == 0) goto L53
-        L52:
-            return r6
-        L53:
-            long r9 = r9 >> r12
-            int r13 = r13 + 1
-            goto L36
-        L57:
-            if (r11 != r12) goto L7b
-        L59:
-            if (r8 == r7) goto L7b
-            int r8 = r8 + 1
-            goto L1c
-        L5e:
-            java.lang.Iterable r1 = (java.lang.Iterable) r1
-            java.util.Iterator r1 = r1.iterator()
-        L64:
-            boolean r2 = r1.hasNext()
-            if (r2 == 0) goto L7b
-            java.lang.Object r2 = r1.next()
-            boolean r7 = r4.c(r2)
-            if (r7 != 0) goto L7a
-            boolean r2 = r3.c(r2)
-            if (r2 == 0) goto L64
-        L7a:
-            return r6
-        L7b:
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.v(java.util.Set):boolean");
+    public final boolean v(Set set) {
+        boolean z = set instanceof g42;
+        gf1 gf1Var = this.m;
+        gf1 gf1Var2 = this.j;
+        if (z) {
+            hf1 hf1Var = ((g42) set).d;
+            Object[] objArr = hf1Var.b;
+            long[] jArr = hf1Var.f467a;
+            int length = jArr.length - 2;
+            if (length >= 0) {
+                int i = 0;
+                loop0: while (true) {
+                    long j = jArr[i];
+                    if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                        int i2 = 8 - ((~(i - length)) >>> 31);
+                        for (int i3 = 0; i3 < i2; i3++) {
+                            if ((255 & j) < 128) {
+                                Object obj = objArr[(i << 3) + i3];
+                                if (gf1Var2.c(obj) || gf1Var.c(obj)) {
+                                    break loop0;
+                                }
+                            }
+                            j >>= 8;
+                        }
+                        if (i2 != 8) {
+                            break;
+                        }
+                    }
+                    if (i == length) {
+                        break;
+                    }
+                    i++;
+                }
+            }
+        } else {
+            for (Object obj2 : set) {
+                if (gf1Var2.c(obj2) || gf1Var.c(obj2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     public final boolean w() {
-        boolean zP;
+        boolean P;
         synchronized (this.g) {
             m();
             try {
@@ -824,15 +1612,15 @@ public final class dy implements wx {
                         try {
                             txVar.n(gf1Var, null);
                             txVar.P = null;
-                            zP = fl1Var.P();
+                            P = fl1Var.P();
                         } catch (Throwable th) {
                             txVar.P = null;
                             throw th;
                         }
                     } else {
-                        zP = false;
+                        P = false;
                     }
-                    if (!zP) {
+                    if (!P) {
                         n();
                     }
                 } catch (Throwable th2) {
@@ -859,7 +1647,7 @@ public final class dy implements wx {
                 }
             }
         }
-        return zP;
+        return P;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -879,9 +1667,9 @@ public final class dy implements wx {
                 }
                 Set[] setArr = (Set[]) obj;
                 int length = setArr.length;
-                ?? CopyOf = Arrays.copyOf(setArr, length + 1);
-                CopyOf[length] = g42Var;
-                g42Var2 = CopyOf;
+                ?? copyOf = Arrays.copyOf(setArr, length + 1);
+                copyOf[length] = g42Var;
+                g42Var2 = copyOf;
             }
             AtomicReference atomicReference = this.f;
             while (!atomicReference.compareAndSet(obj, g42Var2)) {
@@ -899,95 +1687,161 @@ public final class dy implements wx {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x001c  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:48:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void y(java.lang.Object r22) {
-        /*
-            Method dump skipped, instructions count: 233
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.y(java.lang.Object):void");
+    public final void y(Object obj) {
+        pw1 x;
+        int i;
+        boolean z;
+        boolean z2;
+        boolean z3;
+        int i2;
+        tx txVar = this.w;
+        if (txVar.A > 0 || (x = txVar.x()) == null) {
+            return;
+        }
+        boolean z4 = true;
+        int i3 = x.b | 1;
+        x.b = i3;
+        if ((i3 & 32) == 0) {
+            ye1 ye1Var = x.f;
+            if (ye1Var == null) {
+                ye1Var = new ye1();
+                x.f = ye1Var;
+            }
+            int i4 = x.e;
+            int c = ye1Var.c(obj);
+            if (c < 0) {
+                c = ~c;
+                i = -1;
+            } else {
+                i = ye1Var.c[c];
+            }
+            ye1Var.b[c] = obj;
+            ye1Var.c[c] = i4;
+            if (i == x.e) {
+                z = true;
+                this.u.x();
+                if (z) {
+                    if (obj instanceof ef2) {
+                        ((ef2) obj).f(1);
+                    }
+                    ly0.g(this.j, obj, x);
+                    if (obj instanceof t70) {
+                        t70 t70Var = (t70) obj;
+                        s70 h = t70Var.h();
+                        gf1 gf1Var = this.m;
+                        ly0.E(gf1Var, obj);
+                        ye1 ye1Var2 = h.e;
+                        Object[] objArr = ye1Var2.b;
+                        long[] jArr = ye1Var2.f1381a;
+                        int length = jArr.length - 2;
+                        if (length >= 0) {
+                            int i5 = 0;
+                            while (true) {
+                                long j = jArr[i5];
+                                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                    int i6 = 8;
+                                    int i7 = 8 - ((~(i5 - length)) >>> 31);
+                                    int i8 = 0;
+                                    while (i8 < i7) {
+                                        if ((j & 255) < 128) {
+                                            i2 = i6;
+                                            df2 df2Var = (df2) objArr[(i5 << 3) + i8];
+                                            if (df2Var instanceof ef2) {
+                                                z3 = true;
+                                                ((ef2) df2Var).f(1);
+                                            } else {
+                                                z3 = true;
+                                            }
+                                            ly0.g(gf1Var, df2Var, obj);
+                                        } else {
+                                            z3 = z4;
+                                            i2 = i6;
+                                        }
+                                        j >>= i2;
+                                        i8++;
+                                        z4 = z3;
+                                        i6 = i2;
+                                    }
+                                    z2 = z4;
+                                    if (i7 != i6) {
+                                        break;
+                                    }
+                                } else {
+                                    z2 = z4;
+                                }
+                                if (i5 == length) {
+                                    break;
+                                }
+                                i5++;
+                                z4 = z2;
+                            }
+                        }
+                        Object obj2 = h.f;
+                        gf1 gf1Var2 = x.g;
+                        if (gf1Var2 == null) {
+                            gf1Var2 = new gf1();
+                            x.g = gf1Var2;
+                        }
+                        gf1Var2.m(t70Var, obj2);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+        }
+        z = false;
+        this.u.x();
+        if (z) {
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0057  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final void z(java.lang.Object r15) {
-        /*
-            r14 = this;
-            java.lang.Object r0 = r14.g
-            monitor-enter(r0)
-            r14.u(r15)     // Catch: java.lang.Throwable -> L4f
-            androidx.emoji2.text.gf1 r1 = r14.m     // Catch: java.lang.Throwable -> L4f
-            java.lang.Object r15 = r1.g(r15)     // Catch: java.lang.Throwable -> L4f
-            if (r15 == 0) goto L61
-            boolean r1 = r15 instanceof androidx.emoji2.text.hf1     // Catch: java.lang.Throwable -> L4f
-            if (r1 == 0) goto L5c
-            androidx.emoji2.text.hf1 r15 = (androidx.emoji2.text.hf1) r15     // Catch: java.lang.Throwable -> L4f
-            java.lang.Object[] r1 = r15.b     // Catch: java.lang.Throwable -> L4f
-            long[] r15 = r15.f468a     // Catch: java.lang.Throwable -> L4f
-            int r2 = r15.length     // Catch: java.lang.Throwable -> L4f
-            int r2 = r2 + (-2)
-            if (r2 < 0) goto L61
-            r3 = 0
-            r4 = r3
-        L1f:
-            r5 = r15[r4]     // Catch: java.lang.Throwable -> L4f
-            long r7 = ~r5     // Catch: java.lang.Throwable -> L4f
-            r9 = 7
-            long r7 = r7 << r9
-            long r7 = r7 & r5
-            r9 = -9187201950435737472(0x8080808080808080, double:-2.937446524422997E-306)
-            long r7 = r7 & r9
-            int r7 = (r7 > r9 ? 1 : (r7 == r9 ? 0 : -1))
-            if (r7 == 0) goto L57
-            int r7 = r4 - r2
-            int r7 = ~r7     // Catch: java.lang.Throwable -> L4f
-            int r7 = r7 >>> 31
-            r8 = 8
-            int r7 = 8 - r7
-            r9 = r3
-        L39:
-            if (r9 >= r7) goto L55
-            r10 = 255(0xff, double:1.26E-321)
-            long r10 = r10 & r5
-            r12 = 128(0x80, double:6.3E-322)
-            int r10 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1))
-            if (r10 >= 0) goto L51
-            int r10 = r4 << 3
-            int r10 = r10 + r9
-            r10 = r1[r10]     // Catch: java.lang.Throwable -> L4f
-            androidx.emoji2.text.t70 r10 = (androidx.emoji2.text.t70) r10     // Catch: java.lang.Throwable -> L4f
-            r14.u(r10)     // Catch: java.lang.Throwable -> L4f
-            goto L51
-        L4f:
-            r15 = move-exception
-            goto L63
-        L51:
-            long r5 = r5 >> r8
-            int r9 = r9 + 1
-            goto L39
-        L55:
-            if (r7 != r8) goto L61
-        L57:
-            if (r4 == r2) goto L61
-            int r4 = r4 + 1
-            goto L1f
-        L5c:
-            androidx.emoji2.text.t70 r15 = (androidx.emoji2.text.t70) r15     // Catch: java.lang.Throwable -> L4f
-            r14.u(r15)     // Catch: java.lang.Throwable -> L4f
-        L61:
-            monitor-exit(r0)
-            return
-        L63:
-            monitor-exit(r0)
-            throw r15
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.dy.z(java.lang.Object):void");
+    public final void z(Object obj) {
+        synchronized (this.g) {
+            try {
+                u(obj);
+                Object g = this.m.g(obj);
+                if (g != null) {
+                    if (g instanceof hf1) {
+                        hf1 hf1Var = (hf1) g;
+                        Object[] objArr = hf1Var.b;
+                        long[] jArr = hf1Var.f467a;
+                        int length = jArr.length - 2;
+                        if (length >= 0) {
+                            int i = 0;
+                            while (true) {
+                                long j = jArr[i];
+                                if ((((~j) << 7) & j & (-9187201950435737472L)) != -9187201950435737472L) {
+                                    int i2 = 8 - ((~(i - length)) >>> 31);
+                                    for (int i3 = 0; i3 < i2; i3++) {
+                                        if ((255 & j) < 128) {
+                                            u((t70) objArr[(i << 3) + i3]);
+                                        }
+                                        j >>= 8;
+                                    }
+                                    if (i2 != 8) {
+                                        break;
+                                    }
+                                }
+                                if (i == length) {
+                                    break;
+                                } else {
+                                    i++;
+                                }
+                            }
+                        }
+                    } else {
+                        u((t70) g);
+                    }
+                }
+            } catch (Throwable th) {
+                throw th;
+            }
+        }
     }
 }

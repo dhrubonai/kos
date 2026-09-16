@@ -5,17 +5,17 @@ package androidx.emoji2.text;
 public final class tj2 implements ej2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ uj2 f1125a;
+    public final /* synthetic */ uj2 f1124a;
     public final /* synthetic */ boolean b;
 
     public tj2(uj2 uj2Var, boolean z) {
-        this.f1125a = uj2Var;
+        this.f1124a = uj2Var;
         this.b = z;
     }
 
     @Override // androidx.emoji2.text.ej2
     public final void b() {
-        uj2 uj2Var = this.f1125a;
+        uj2 uj2Var = this.f1124a;
         uj2Var.o.setValue(null);
         uj2Var.p.setValue(null);
         uj2Var.p(true);
@@ -23,7 +23,7 @@ public final class tj2 implements ej2 {
 
     @Override // androidx.emoji2.text.ej2
     public final void c() {
-        uj2 uj2Var = this.f1125a;
+        uj2 uj2Var = this.f1124a;
         uj2Var.o.setValue(null);
         uj2Var.p.setValue(null);
         uj2Var.p(true);
@@ -31,21 +31,21 @@ public final class tj2 implements ej2 {
 
     @Override // androidx.emoji2.text.ej2
     public final void d() {
-        tk2 tk2VarD;
+        tk2 d;
         boolean z = this.b;
         oq0 oq0Var = z ? oq0.e : oq0.f;
-        uj2 uj2Var = this.f1125a;
+        uj2 uj2Var = this.f1124a;
         uj2Var.o.setValue(oq0Var);
-        long jI = uj2Var.i(z);
-        float f = p62.f892a;
-        long jD = jz0.d(zi1.d(jI), zi1.e(jI) - 1.0f);
+        long i = uj2Var.i(z);
+        float f = p62.f891a;
+        long d2 = jz0.d(zi1.d(i), zi1.e(i) - 1.0f);
         h51 h51Var = uj2Var.d;
-        if (h51Var == null || (tk2VarD = h51Var.d()) == null) {
+        if (h51Var == null || (d = h51Var.d()) == null) {
             return;
         }
-        long jE = tk2VarD.e(jD);
-        uj2Var.l = jE;
-        uj2Var.p.setValue(new zi1(jE));
+        long e = d.e(d2);
+        uj2Var.l = e;
+        uj2Var.p.setValue(new zi1(e));
         uj2Var.n = 0L;
         uj2Var.q = -1;
         h51 h51Var2 = uj2Var.d;
@@ -57,14 +57,14 @@ public final class tj2 implements ej2 {
 
     @Override // androidx.emoji2.text.ej2
     public final void e(long j) {
-        uj2 uj2Var = this.f1125a;
-        long jG = zi1.g(uj2Var.n, j);
-        uj2Var.n = jG;
-        uj2Var.p.setValue(new zi1(zi1.g(uj2Var.l, jG)));
-        ak2 ak2VarJ = uj2Var.j();
-        zi1 zi1VarG = uj2Var.g();
-        lx0.u(zi1VarG);
-        uj2.a(uj2Var, ak2VarJ, zi1VarG.f1442a, false, this.b, j42.k, true);
+        uj2 uj2Var = this.f1124a;
+        long g = zi1.g(uj2Var.n, j);
+        uj2Var.n = g;
+        uj2Var.p.setValue(new zi1(zi1.g(uj2Var.l, g)));
+        ak2 j2 = uj2Var.j();
+        zi1 g2 = uj2Var.g();
+        lx0.u(g2);
+        uj2.a(uj2Var, j2, g2.f1441a, false, this.b, j42.k, true);
         uj2Var.p(false);
     }
 

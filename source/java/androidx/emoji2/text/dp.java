@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class dp {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f266a;
+    public final int f265a;
     public boolean b;
 
     public dp(int i) {
-        this.f266a = i;
+        this.f265a = i;
     }
 }

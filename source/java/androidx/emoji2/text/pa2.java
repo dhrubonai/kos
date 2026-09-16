@@ -5,27 +5,27 @@ package androidx.emoji2.text;
 public final class pa2 extends w0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public long f897a;
+    public long f896a;
     public ip b;
 
     @Override // androidx.emoji2.text.w0
     public final boolean a(v0 v0Var) {
         oa2 oa2Var = (oa2) v0Var;
-        if (this.f897a >= 0) {
+        if (this.f896a >= 0) {
             return false;
         }
         long j = oa2Var.l;
         if (j < oa2Var.m) {
             oa2Var.m = j;
         }
-        this.f897a = j;
+        this.f896a = j;
         return true;
     }
 
     @Override // androidx.emoji2.text.w0
     public final l10[] b(v0 v0Var) {
-        long j = this.f897a;
-        this.f897a = -1L;
+        long j = this.f896a;
+        this.f896a = -1L;
         this.b = null;
         return ((oa2) v0Var).v(j);
     }

@@ -11,15 +11,15 @@ import androidx.appcompat.widget.ActionBarContainer;
 public final class k3 extends Drawable {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ActionBarContainer f616a;
+    public final ActionBarContainer f615a;
 
     public k3(ActionBarContainer actionBarContainer) {
-        this.f616a = actionBarContainer;
+        this.f615a = actionBarContainer;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        ActionBarContainer actionBarContainer = this.f616a;
+        ActionBarContainer actionBarContainer = this.f615a;
         if (actionBarContainer.j) {
             Drawable drawable = actionBarContainer.i;
             if (drawable != null) {
@@ -46,7 +46,7 @@ public final class k3 extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void getOutline(Outline outline) {
-        ActionBarContainer actionBarContainer = this.f616a;
+        ActionBarContainer actionBarContainer = this.f615a;
         if (actionBarContainer.j) {
             if (actionBarContainer.i != null) {
                 actionBarContainer.g.getOutline(outline);

@@ -32,9 +32,9 @@ public abstract class uu1 extends wo implements wy0 {
         if (py0Var != null) {
             return py0Var;
         }
-        py0 py0VarB = b();
-        this.d = py0VarB;
-        return py0VarB;
+        py0 b = b();
+        this.d = b;
+        return b;
     }
 
     public final int hashCode() {
@@ -42,7 +42,7 @@ public abstract class uu1 extends wo implements wy0 {
     }
 
     public final String toString() {
-        py0 py0VarF = f();
-        return py0VarF != this ? py0VarF.toString() : zd.k(new StringBuilder("property "), this.g, " (Kotlin reflection is not available)");
+        py0 f = f();
+        return f != this ? f.toString() : zd.k(new StringBuilder("property "), this.g, " (Kotlin reflection is not available)");
     }
 }

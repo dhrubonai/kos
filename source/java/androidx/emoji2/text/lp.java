@@ -4,7 +4,7 @@ package androidx.emoji2.text;
 /* loaded from: classes.dex */
 public interface lp {
     static void d(lp lpVar, zw1 zw1Var) {
-        lpVar.k(zw1Var.f1459a, zw1Var.b, zw1Var.c, zw1Var.d, 1);
+        lpVar.k(zw1Var.f1458a, zw1Var.b, zw1Var.c, zw1Var.d, 1);
     }
 
     void a(wa waVar, pa paVar);

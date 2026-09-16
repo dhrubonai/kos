@@ -7,7 +7,7 @@ import android.view.WindowManager;
 public final class ze {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ze f1435a = new ze();
+    public static final ze f1434a = new ze();
 
     public final void a(WindowManager.LayoutParams layoutParams, int i) {
         layoutParams.setFitInsetsSides(i);

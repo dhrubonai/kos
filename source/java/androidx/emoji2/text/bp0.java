@@ -19,21 +19,21 @@ public final class bp0 extends hh2 implements um0 {
     public final Object e(Object obj) {
         long j = this.i;
         yx1 yx1Var = this.j;
-        return new bp0(this.h, j, yx1Var, (l10) obj).k(up2.f1187a);
+        return new bp0(this.h, j, yx1Var, (l10) obj).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        boolean zA;
+        boolean A;
         mz0.L(obj);
-        ip0.f540a.getClass();
+        ip0.f539a.getClass();
         int i = this.h;
         if (ip0.m(i, this.i)) {
-            zA = ho0.A(i);
+            A = ho0.A(i);
         } else {
-            zA = true;
+            A = true;
             this.j.d = true;
         }
-        return Boolean.valueOf(zA);
+        return Boolean.valueOf(A);
     }
 }

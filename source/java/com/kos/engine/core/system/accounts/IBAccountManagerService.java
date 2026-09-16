@@ -154,99 +154,99 @@ public interface IBAccountManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public boolean accountAuthenticated(Account account, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-508120959958818L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_accountAuthenticated, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(c.a(-508120959958818L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_accountAuthenticated, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void addAccount(IAccountManagerResponse iAccountManagerResponse, String str, String str2, String[] strArr, boolean z, Bundle bundle, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-509615608577826L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_addAccount, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-509615608577826L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeStringArray(strArr);
+                    obtain.writeInt(z ? 1 : 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_addAccount, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void addAccountAsUser(IAccountManagerResponse iAccountManagerResponse, String str, String str2, String[] strArr, boolean z, Bundle bundle, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-509289191063330L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_addAccountAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-509289191063330L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeStringArray(strArr);
+                    obtain.writeInt(z ? 1 : 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_addAccountAsUser, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public boolean addAccountExplicitly(Account account, String str, Bundle bundle, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-494978360033058L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_addAccountExplicitly, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(c.a(-494978360033058L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(9, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public boolean addAccountExplicitlyWithVisibility(Account account, String str, Bundle bundle, Map map, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-502881099857698L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeMap(map);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_addAccountExplicitlyWithVisibility, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(c.a(-502881099857698L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeMap(map);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_addAccountExplicitlyWithVisibility, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -257,254 +257,254 @@ public interface IBAccountManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void clearPassword(Account account, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-505836037357346L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_clearPassword, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-505836037357346L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_clearPassword, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void confirmCredentialsAsUser(IAccountManagerResponse iAccountManagerResponse, Account account, Bundle bundle, boolean z, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-508447377473314L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_confirmCredentialsAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-508447377473314L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_confirmCredentialsAsUser, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void copyAccountToUser(IAccountManagerResponse iAccountManagerResponse, Account account, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-507261966499618L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_copyAccountToUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-507261966499618L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_copyAccountToUser, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void editProperties(IAccountManagerResponse iAccountManagerResponse, String str, boolean z, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-509804587138850L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_editProperties, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-509804587138850L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_editProperties, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void getAccountByTypeAndFeatures(IAccountManagerResponse iAccountManagerResponse, String str, String[] strArr, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-496661987213090L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(7, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-496661987213090L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeStringArray(strArr);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(7, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public int getAccountVisibility(Account account, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-503396495933218L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_getAccountVisibility, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt();
+                    obtain.writeInterfaceToken(c.a(-503396495933218L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_getAccountVisibility, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public Map getAccountsAndVisibilityForPackage(String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-503070078418722L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(32, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readHashMap(getClass().getClassLoader());
+                    obtain.writeInterfaceToken(c.a(-503070078418722L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(32, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readHashMap(getClass().getClassLoader());
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public Account[] getAccountsAsUser(String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-496919685250850L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(6, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Account[]) parcelObtain2.createTypedArray(Account.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-496919685250850L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(6, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Account[]) obtain2.createTypedArray(Account.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void getAccountsByFeatures(IAccountManagerResponse iAccountManagerResponse, String str, String[] strArr, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-495236058070818L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(8, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-495236058070818L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeStringArray(strArr);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(8, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public Account[] getAccountsByTypeForPackage(String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-496146591137570L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(5, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Account[]) parcelObtain2.createTypedArray(Account.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-496146591137570L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(5, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Account[]) obtain2.createTypedArray(Account.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public Account[] getAccountsForPackage(String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-496404289175330L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(4, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (Account[]) parcelObtain2.createTypedArray(Account.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-496404289175330L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(4, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (Account[]) obtain2.createTypedArray(Account.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void getAuthToken(IAccountManagerResponse iAccountManagerResponse, Account account, String str, boolean z, boolean z2, Bundle bundle, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-506574771732258L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeInt(z2 ? 1 : 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_getAuthToken, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-506574771732258L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeInt(z2 ? 1 : 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_getAuthToken, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void getAuthTokenLabel(IAccountManagerResponse iAccountManagerResponse, String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-508962773548834L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_getAuthTokenLabel, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-508962773548834L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_getAuthTokenLabel, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public AuthenticatorDescription[] getAuthenticatorTypes(int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-496180950875938L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(3, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (AuthenticatorDescription[]) parcelObtain2.createTypedArray(AuthenticatorDescription.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-496180950875938L, xa1.b));
+                    obtain.writeInt(i);
+                    this.mRemote.transact(3, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (AuthenticatorDescription[]) obtain2.createTypedArray(AuthenticatorDescription.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
@@ -514,267 +514,267 @@ public interface IBAccountManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public Map getPackagesAndVisibilityForAccount(Account account, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-508636356034338L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_getPackagesAndVisibilityForAccount, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readHashMap(getClass().getClassLoader());
+                    obtain.writeInterfaceToken(c.a(-508636356034338L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_getPackagesAndVisibilityForAccount, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readHashMap(getClass().getClassLoader());
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public String getPassword(Account account, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-493466531544866L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readString();
+                    obtain.writeInterfaceToken(c.a(-493466531544866L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readString();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public String getUserData(Account account, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-493140114030370L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readString();
+                    obtain.writeInterfaceToken(c.a(-493140114030370L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readString();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void invalidateAuthToken(String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-507004268461858L, xa1.b));
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_invalidateAuthToken, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-507004268461858L, xa1.b));
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_invalidateAuthToken, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public String peekAuthToken(Account account, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-507777362575138L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_peekAuthToken, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readString();
+                    obtain.writeInterfaceToken(c.a(-507777362575138L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_peekAuthToken, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readString();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void registerAccountListener(String[] strArr, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-501712868753186L, xa1.b));
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_registerAccountListener, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-501712868753186L, xa1.b));
+                    obtain.writeStringArray(strArr);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_registerAccountListener, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void removeAccountAsUser(IAccountManagerResponse iAccountManagerResponse, Account account, boolean z, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-495751454146338L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_removeAccountAsUser, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-495751454146338L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(z ? 1 : 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(10, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public boolean removeAccountExplicitly(Account account, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-495493756108578L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_removeAccountExplicitly, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(c.a(-495493756108578L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_removeAccountExplicitly, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public boolean setAccountVisibility(Account account, String str, int i, int i2) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-502554682343202L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(i2);
-                    this.mRemote.transact(Stub.TRANSACTION_setAccountVisibility, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return parcelObtain2.readInt() != 0;
+                    obtain.writeInterfaceToken(c.a(-502554682343202L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(i2);
+                    this.mRemote.transact(Stub.TRANSACTION_setAccountVisibility, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return obtain2.readInt() != 0;
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void setAuthToken(Account account, String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-507519664537378L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_setAuthToken, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-507519664537378L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(15, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void setPassword(Account account, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-506093735395106L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(16, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-506093735395106L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(16, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void setUserData(Account account, String str, String str2, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-506609131470626L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeString(str2);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_setUserData, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-506609131470626L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeString(str2);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_setUserData, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void unregisterAccountListener(String[] strArr, String str, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-501386451238690L, xa1.b));
-                    parcelObtain.writeStringArray(strArr);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_unregisterAccountListener, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-501386451238690L, xa1.b));
+                    obtain.writeStringArray(strArr);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_unregisterAccountListener, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void updateAppPermission(Account account, String str, int i, boolean z) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-506351433432866L, xa1.b));
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    this.mRemote.transact(Stub.TRANSACTION_updateAppPermission, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-506351433432866L, xa1.b));
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(i);
+                    obtain.writeInt(z ? 1 : 0);
+                    this.mRemote.transact(Stub.TRANSACTION_updateAppPermission, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.accounts.IBAccountManagerService
             public void updateCredentials(IAccountManagerResponse iAccountManagerResponse, Account account, String str, boolean z, Bundle bundle, int i) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-510131004653346L, xa1.b));
-                    parcelObtain.writeStrongInterface(iAccountManagerResponse);
-                    _Parcel.writeTypedObject(parcelObtain, account, 0);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(z ? 1 : 0);
-                    _Parcel.writeTypedObject(parcelObtain, bundle, 0);
-                    parcelObtain.writeInt(i);
-                    this.mRemote.transact(Stub.TRANSACTION_updateCredentials, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-510131004653346L, xa1.b));
+                    obtain.writeStrongInterface(iAccountManagerResponse);
+                    _Parcel.writeTypedObject(obtain, account, 0);
+                    obtain.writeString(str);
+                    obtain.writeInt(z ? 1 : 0);
+                    _Parcel.writeTypedObject(obtain, bundle, 0);
+                    obtain.writeInt(i);
+                    this.mRemote.transact(Stub.TRANSACTION_updateCredentials, obtain, obtain2, 0);
+                    obtain2.readException();
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -787,18 +787,18 @@ public interface IBAccountManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-502451603128098L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBAccountManagerService)) ? new Proxy(iBinder) : (IBAccountManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-502451603128098L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBAccountManagerService)) ? new Proxy(iBinder) : (IBAccountManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-502193905090338L, xa1.b);
+            String a2 = c.a(-502193905090338L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             switch (i) {
@@ -840,19 +840,19 @@ public interface IBAccountManagerService extends IInterface {
                     getAccountsByFeatures(IAccountManagerResponse.Stub.asInterface(parcel.readStrongBinder()), parcel.readString(), parcel.createStringArray(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
-                case TRANSACTION_addAccountExplicitly /* 9 */:
-                    boolean zAddAccountExplicitly = addAccountExplicitly((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR), parcel.readInt());
+                case 9:
+                    boolean addAccountExplicitly = addAccountExplicitly((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeInt(zAddAccountExplicitly ? 1 : 0);
+                    parcel2.writeInt(addAccountExplicitly ? 1 : 0);
                     return true;
-                case TRANSACTION_removeAccountAsUser /* 10 */:
+                case 10:
                     removeAccountAsUser(IAccountManagerResponse.Stub.asInterface(parcel.readStrongBinder()), (Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt() != 0, parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case TRANSACTION_removeAccountExplicitly /* 11 */:
-                    boolean zRemoveAccountExplicitly = removeAccountExplicitly((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt());
+                    boolean removeAccountExplicitly = removeAccountExplicitly((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeInt(zRemoveAccountExplicitly ? 1 : 0);
+                    parcel2.writeInt(removeAccountExplicitly ? 1 : 0);
                     return true;
                 case TRANSACTION_copyAccountToUser /* 12 */:
                     copyAccountToUser(IAccountManagerResponse.Stub.asInterface(parcel.readStrongBinder()), (Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt(), parcel.readInt());
@@ -863,11 +863,11 @@ public interface IBAccountManagerService extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case TRANSACTION_peekAuthToken /* 14 */:
-                    String strPeekAuthToken = peekAuthToken((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), parcel.readInt());
+                    String peekAuthToken = peekAuthToken((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeString(strPeekAuthToken);
+                    parcel2.writeString(peekAuthToken);
                     return true;
-                case TRANSACTION_setAuthToken /* 15 */:
+                case 15:
                     setAuthToken((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
@@ -912,9 +912,9 @@ public interface IBAccountManagerService extends IInterface {
                     parcel2.writeNoException();
                     return true;
                 case TRANSACTION_accountAuthenticated /* 26 */:
-                    boolean zAccountAuthenticated = accountAuthenticated((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt());
+                    boolean accountAuthenticated = accountAuthenticated((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeInt(zAccountAuthenticated ? 1 : 0);
+                    parcel2.writeInt(accountAuthenticated ? 1 : 0);
                     return true;
                 case TRANSACTION_getAuthTokenLabel /* 27 */:
                     getAuthTokenLabel(IAccountManagerResponse.Stub.asInterface(parcel.readStrongBinder()), parcel.readString(), parcel.readString(), parcel.readInt());
@@ -926,9 +926,9 @@ public interface IBAccountManagerService extends IInterface {
                     parcel2.writeMap(packagesAndVisibilityForAccount);
                     return true;
                 case TRANSACTION_addAccountExplicitlyWithVisibility /* 29 */:
-                    boolean zAddAccountExplicitlyWithVisibility = addAccountExplicitlyWithVisibility((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR), parcel.readHashMap(getClass().getClassLoader()), parcel.readInt());
+                    boolean addAccountExplicitlyWithVisibility = addAccountExplicitlyWithVisibility((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), (Bundle) _Parcel.readTypedObject(parcel, Bundle.CREATOR), parcel.readHashMap(getClass().getClassLoader()), parcel.readInt());
                     parcel2.writeNoException();
-                    parcel2.writeInt(zAddAccountExplicitlyWithVisibility ? 1 : 0);
+                    parcel2.writeInt(addAccountExplicitlyWithVisibility ? 1 : 0);
                     return true;
                 case TRANSACTION_setAccountVisibility /* 30 */:
                     boolean accountVisibility = setAccountVisibility((Account) _Parcel.readTypedObject(parcel, Account.CREATOR), parcel.readString(), parcel.readInt(), parcel.readInt());

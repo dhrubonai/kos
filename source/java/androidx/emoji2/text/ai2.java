@@ -25,7 +25,7 @@ public final class ai2 extends f02 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((ai2) i((l10) obj2, (nh2) obj)).k(up2.f1187a);
+        return ((ai2) i((l10) obj2, (nh2) obj)).k(up2.f1186a);
     }
 
     /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -34,13 +34,12 @@ public final class ai2 extends f02 implements Function2 {
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x003f A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0048 A[RETURN] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:10:0x003d -> B:12:0x0040). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0048 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x003f A[RETURN] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:8:0x003d -> B:5:0x0040). Please report as a decompilation issue!!! */
     @Override // androidx.emoji2.text.lk
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final java.lang.Object k(java.lang.Object r7) {
         /*

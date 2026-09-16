@@ -48,11 +48,11 @@ final class CombinedClickableElement extends ud1 {
 
     public final int hashCode() {
         se1 se1Var = this.f4a;
-        int iHashCode = (se1Var != null ? se1Var.hashCode() : 0) * 31;
+        int hashCode = (se1Var != null ? se1Var.hashCode() : 0) * 31;
         zu0 zu0Var = this.b;
-        int iHashCode2 = (this.c.hashCode() + jx0.d((iHashCode + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 29791, true)) * 961;
+        int hashCode2 = (this.c.hashCode() + jx0.d((hashCode + (zu0Var != null ? zu0Var.hashCode() : 0)) * 31, 29791, true)) * 961;
         sm0 sm0Var = this.d;
-        return (iHashCode2 + (sm0Var != null ? sm0Var.hashCode() : 0)) * 31;
+        return (hashCode2 + (sm0Var != null ? sm0Var.hashCode() : 0)) * 31;
     }
 
     @Override // androidx.emoji2.text.ud1

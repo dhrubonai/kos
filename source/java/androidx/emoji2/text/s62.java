@@ -15,7 +15,7 @@ public final class s62 implements Parcelable {
     public final String i;
 
     public s62(String str, String str2, String str3, String str4, String str5, String str6) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(str, a.a.a.c.a(-150448968449826L, strArr));
         lx0.x(str2, a.a.a.c.a(-150487623155490L, strArr));
         this.d = str;
@@ -43,20 +43,20 @@ public final class s62 implements Parcelable {
     }
 
     public final int hashCode() {
-        int iC = jx0.c(this.d.hashCode() * 31, 31, this.e);
+        int c = jx0.c(this.d.hashCode() * 31, 31, this.e);
         String str = this.f;
-        int iHashCode = (iC + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (c + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.g;
-        int iHashCode2 = (iHashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
+        int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         String str3 = this.h;
-        int iHashCode3 = (iHashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        int hashCode3 = (hashCode2 + (str3 == null ? 0 : str3.hashCode())) * 31;
         String str4 = this.i;
-        return iHashCode3 + (str4 != null ? str4.hashCode() : 0);
+        return hashCode3 + (str4 != null ? str4.hashCode() : 0);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder();
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         sb.append(a.a.a.c.a(-150083896229666L, strArr));
         sb.append(this.d);
         sb.append(a.a.a.c.a(-150204155313954L, strArr));
@@ -73,7 +73,7 @@ public final class s62 implements Parcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        lx0.x(parcel, a.a.a.c.a(-150547752697634L, wj1.f1284a));
+        lx0.x(parcel, a.a.a.c.a(-150547752697634L, wj1.f1283a));
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

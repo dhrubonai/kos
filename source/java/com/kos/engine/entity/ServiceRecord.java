@@ -115,7 +115,7 @@ public class ServiceRecord {
         return sb.toString();
     }
 
-    public void addBinder(Intent intent, IBinder iBinder) throws RemoteException {
+    public void addBinder(Intent intent, IBinder iBinder) {
         addBinder(intent, iBinder, false);
     }
 
@@ -171,12 +171,12 @@ public class ServiceRecord {
         this.mStartId = i;
     }
 
-    public void addBinder(Intent intent, final IBinder iBinder, boolean z) throws RemoteException {
-        final Object objBoundKey = boundKey(intent, z);
+    public void addBinder(Intent intent, final IBinder iBinder, boolean z) {
+        final Object boundKey = boundKey(intent, z);
         BoundInfo orCreateBoundInfo = getOrCreateBoundInfo(intent, z);
         if (orCreateBoundInfo == null) {
             orCreateBoundInfo = new BoundInfo();
-            this.mBounds.put(objBoundKey, orCreateBoundInfo);
+            this.mBounds.put(boundKey, orCreateBoundInfo);
         }
         orCreateBoundInfo.setIBinder(iBinder);
         try {
@@ -184,7 +184,7 @@ public class ServiceRecord {
                 @Override // android.os.IBinder.DeathRecipient
                 public void binderDied() {
                     iBinder.unlinkToDeath(this, 0);
-                    ServiceRecord.this.mBounds.remove(objBoundKey);
+                    ServiceRecord.this.mBounds.remove(boundKey);
                 }
             }, 0);
         } catch (RemoteException e) {
@@ -202,13 +202,13 @@ public class ServiceRecord {
     }
 
     public BoundInfo getOrCreateBoundInfo(Intent intent, boolean z) {
-        Object objBoundKey = boundKey(intent, z);
-        BoundInfo boundInfo = this.mBounds.get(objBoundKey);
+        Object boundKey = boundKey(intent, z);
+        BoundInfo boundInfo = this.mBounds.get(boundKey);
         if (boundInfo != null) {
             return boundInfo;
         }
         BoundInfo boundInfo2 = new BoundInfo();
-        this.mBounds.put(objBoundKey, boundInfo2);
+        this.mBounds.put(boundKey, boundInfo2);
         return boundInfo2;
     }
 

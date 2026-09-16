@@ -33,10 +33,10 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     }
 
     private static boolean shouldSurviveBackgroundCrash(Thread thread, Throwable th) {
-        String strO;
+        String o;
         try {
             Looper mainLooper = Looper.getMainLooper();
-            if ((mainLooper == null || thread != mainLooper.getThread()) && (strO = rj.o()) != null && GmsCore.isGoogleAppOrService(strO)) {
+            if ((mainLooper == null || thread != mainLooper.getThread()) && (o = rj.o()) != null && GmsCore.isGoogleAppOrService(o)) {
                 return hasCause(th, ClassCastException.class);
             }
         } catch (Throwable unused) {

@@ -18,30 +18,30 @@ public final class p22 extends s22 implements Iterator {
     @Override // androidx.emoji2.text.s22
     public final void a(q22 q22Var) {
         q22 q22Var2;
-        q22 q22VarB = null;
+        q22 q22Var3 = null;
         if (this.d == q22Var && q22Var == this.e) {
             this.e = null;
             this.d = null;
         }
-        q22 q22Var3 = this.d;
-        if (q22Var3 == q22Var) {
+        q22 q22Var4 = this.d;
+        if (q22Var4 == q22Var) {
             switch (this.f) {
                 case 0:
-                    q22Var2 = q22Var3.g;
+                    q22Var2 = q22Var4.g;
                     break;
                 default:
-                    q22Var2 = q22Var3.f;
+                    q22Var2 = q22Var4.f;
                     break;
             }
             this.d = q22Var2;
         }
-        q22 q22Var4 = this.e;
-        if (q22Var4 == q22Var) {
-            q22 q22Var5 = this.d;
-            if (q22Var4 != q22Var5 && q22Var5 != null) {
-                q22VarB = b(q22Var4);
+        q22 q22Var5 = this.e;
+        if (q22Var5 == q22Var) {
+            q22 q22Var6 = this.d;
+            if (q22Var5 != q22Var6 && q22Var6 != null) {
+                q22Var3 = b(q22Var5);
             }
-            this.e = q22VarB;
+            this.e = q22Var3;
         }
     }
 

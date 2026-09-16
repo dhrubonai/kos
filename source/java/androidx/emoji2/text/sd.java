@@ -5,23 +5,23 @@ package androidx.emoji2.text;
 public final class sd implements nn2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final tn2 f1064a;
+    public final tn2 f1063a;
     public final un1 b = az0.W(new uw0(0));
     public final gf1 c;
 
     public sd(tn2 tn2Var) {
-        this.f1064a = tn2Var;
-        long[] jArr = e42.f285a;
+        this.f1063a = tn2Var;
+        long[] jArr = e42.f284a;
         this.c = new gf1();
     }
 
     @Override // androidx.emoji2.text.nn2
     public final Object a() {
-        return this.f1064a.f().a();
+        return this.f1063a.f().a();
     }
 
     @Override // androidx.emoji2.text.nn2
     public final Object getTargetState() {
-        return this.f1064a.f().getTargetState();
+        return this.f1063a.f().getTargetState();
     }
 }

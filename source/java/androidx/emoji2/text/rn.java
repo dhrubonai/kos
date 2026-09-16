@@ -19,133 +19,77 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     public final void B(int i) {
-        b62 b62VarS = s(1);
-        byte[] bArr = b62VarS.f137a;
-        int i2 = b62VarS.c;
-        b62VarS.c = i2 + 1;
+        b62 s = s(1);
+        byte[] bArr = s.f136a;
+        int i2 = s.c;
+        s.c = i2 + 1;
         bArr[i2] = (byte) i;
         this.e++;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00a2  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a6 A[EDGE_INSN: B:44:0x00a6->B:38:0x00a6 BREAK  A[LOOP:0: B:5:0x000c->B:46:?], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00a6 A[EDGE_INSN: B:40:0x00a6->B:37:0x00a6 BREAK  A[LOOP:0: B:4:0x000c->B:39:?], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x009e  */
     @Override // androidx.emoji2.text.zn
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final long C() throws java.io.EOFException {
-        /*
-            r15 = this;
-            long r0 = r15.e
-            r2 = 0
-            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r0 == 0) goto Lad
-            r0 = 0
-            r1 = r0
-            r6 = r1
-            r4 = r2
-        Lc:
-            androidx.emoji2.text.b62 r7 = r15.d
-            androidx.emoji2.text.lx0.u(r7)
-            byte[] r8 = r7.f137a
-            int r9 = r7.b
-            int r10 = r7.c
-        L17:
-            if (r9 >= r10) goto L92
-            r11 = r8[r9]
-            r12 = 48
-            if (r11 < r12) goto L26
-            r12 = 57
-            if (r11 > r12) goto L26
-            int r12 = r11 + (-48)
-            goto L3b
-        L26:
-            r12 = 97
-            if (r11 < r12) goto L31
-            r12 = 102(0x66, float:1.43E-43)
-            if (r11 > r12) goto L31
-            int r12 = r11 + (-87)
-            goto L3b
-        L31:
-            r12 = 65
-            if (r11 < r12) goto L6a
-            r12 = 70
-            if (r11 > r12) goto L6a
-            int r12 = r11 + (-55)
-        L3b:
-            r13 = -1152921504606846976(0xf000000000000000, double:-3.105036184601418E231)
-            long r13 = r13 & r4
-            int r13 = (r13 > r2 ? 1 : (r13 == r2 ? 0 : -1))
-            if (r13 != 0) goto L4b
-            r11 = 4
-            long r4 = r4 << r11
-            long r11 = (long) r12
-            long r4 = r4 | r11
-            int r9 = r9 + 1
-            int r1 = r1 + 1
-            goto L17
-        L4b:
-            androidx.emoji2.text.rn r0 = new androidx.emoji2.text.rn
-            r0.<init>()
-            r0.D(r4)
-            r0.B(r11)
-            java.lang.NumberFormatException r1 = new java.lang.NumberFormatException
-            long r2 = r0.e
-            java.nio.charset.Charset r4 = androidx.emoji2.text.vq.f1236a
-            java.lang.String r0 = r0.p(r2, r4)
-            java.lang.String r2 = "Number too large: "
-            java.lang.String r0 = r2.concat(r0)
-            r1.<init>(r0)
-            throw r1
-        L6a:
-            r6 = 1
-            if (r1 == 0) goto L6e
-            goto L92
-        L6e:
-            java.lang.NumberFormatException r1 = new java.lang.NumberFormatException
-            char[] r2 = androidx.emoji2.text.l8.f678a
-            int r3 = r11 >> 4
-            r3 = r3 & 15
-            char r3 = r2[r3]
-            r4 = r11 & 15
-            char r2 = r2[r4]
-            r4 = 2
-            char[] r4 = new char[r4]
-            r4[r0] = r3
-            r4[r6] = r2
-            java.lang.String r0 = new java.lang.String
-            r0.<init>(r4)
-            java.lang.String r2 = "Expected leading [0-9a-fA-F] character but was 0x"
-            java.lang.String r0 = r2.concat(r0)
-            r1.<init>(r0)
-            throw r1
-        L92:
-            if (r9 != r10) goto L9e
-            androidx.emoji2.text.b62 r8 = r7.a()
-            r15.d = r8
-            androidx.emoji2.text.e62.a(r7)
-            goto La0
-        L9e:
-            r7.b = r9
-        La0:
-            if (r6 != 0) goto La6
-            androidx.emoji2.text.b62 r7 = r15.d
-            if (r7 != 0) goto Lc
-        La6:
-            long r2 = r15.e
-            long r0 = (long) r1
-            long r2 = r2 - r0
-            r15.e = r2
-            return r4
-        Lad:
-            java.io.EOFException r0 = new java.io.EOFException
-            r0.<init>()
-            throw r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.rn.C():long");
+    public final long C() {
+        int i;
+        if (this.e == 0) {
+            throw new EOFException();
+        }
+        int i2 = 0;
+        boolean z = false;
+        long j = 0;
+        do {
+            b62 b62Var = this.d;
+            lx0.u(b62Var);
+            byte[] bArr = b62Var.f136a;
+            int i3 = b62Var.b;
+            int i4 = b62Var.c;
+            while (i3 < i4) {
+                byte b = bArr[i3];
+                if (b >= 48 && b <= 57) {
+                    i = b - 48;
+                } else if (b >= 97 && b <= 102) {
+                    i = b - 87;
+                } else if (b < 65 || b > 70) {
+                    z = true;
+                    if (i2 == 0) {
+                        char[] cArr = l8.f677a;
+                        throw new NumberFormatException("Expected leading [0-9a-fA-F] character but was 0x".concat(new String(new char[]{cArr[(b >> 4) & 15], cArr[b & 15]})));
+                    }
+                    if (i3 != i4) {
+                        this.d = b62Var.a();
+                        e62.a(b62Var);
+                    } else {
+                        b62Var.b = i3;
+                    }
+                    if (!z) {
+                        break;
+                    }
+                } else {
+                    i = b - 55;
+                }
+                if (((-1152921504606846976L) & j) != 0) {
+                    rn rnVar = new rn();
+                    rnVar.D(j);
+                    rnVar.B(b);
+                    throw new NumberFormatException("Number too large: ".concat(rnVar.p(rnVar.e, vq.f1235a)));
+                }
+                j = (j << 4) | i;
+                i3++;
+                i2++;
+            }
+            if (i3 != i4) {
+            }
+            if (!z) {
+            }
+        } while (this.d != null);
+        this.e -= i2;
+        return j;
     }
 
     public final void D(long j) {
@@ -165,41 +109,41 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         long j11 = j10 + (j10 >>> 8);
         long j12 = j11 + (j11 >>> 16);
         int i = (int) ((((j12 & 63) + ((j12 >>> 32) & 63)) + 3) / 4);
-        b62 b62VarS = s(i);
-        byte[] bArr = b62VarS.f137a;
-        int i2 = b62VarS.c;
+        b62 s = s(i);
+        byte[] bArr = s.f136a;
+        int i2 = s.c;
         for (int i3 = (i2 + i) - 1; i3 >= i2; i3--) {
-            bArr[i3] = b.f129a[(int) (15 & j)];
+            bArr[i3] = b.f128a[(int) (15 & j)];
             j >>>= 4;
         }
-        b62VarS.c += i;
+        s.c += i;
         this.e += i;
     }
 
     public final void E(int i) {
-        b62 b62VarS = s(4);
-        byte[] bArr = b62VarS.f137a;
-        int i2 = b62VarS.c;
+        b62 s = s(4);
+        byte[] bArr = s.f136a;
+        int i2 = s.c;
         bArr[i2] = (byte) ((i >>> 24) & 255);
         bArr[i2 + 1] = (byte) ((i >>> 16) & 255);
         bArr[i2 + 2] = (byte) ((i >>> 8) & 255);
         bArr[i2 + 3] = (byte) (i & 255);
-        b62VarS.c = i2 + 4;
+        s.c = i2 + 4;
         this.e += 4;
     }
 
     public final void F(int i) {
-        b62 b62VarS = s(2);
-        byte[] bArr = b62VarS.f137a;
-        int i2 = b62VarS.c;
+        b62 s = s(2);
+        byte[] bArr = s.f136a;
+        int i2 = s.c;
         bArr[i2] = (byte) ((i >>> 8) & 255);
         bArr[i2 + 1] = (byte) (i & 255);
-        b62VarS.c = i2 + 2;
+        s.c = i2 + 2;
         this.e += 2;
     }
 
     public final void G(int i, int i2, String str) {
-        char cCharAt;
+        char charAt;
         lx0.x(str, "string");
         if (i < 0) {
             throw new IllegalArgumentException(zd.f(i, "beginIndex < 0: ").toString());
@@ -208,65 +152,65 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             throw new IllegalArgumentException(zd.e(i2, i, "endIndex < beginIndex: ", " < ").toString());
         }
         if (i2 > str.length()) {
-            StringBuilder sbL = jx0.l("endIndex > string.length: ", i2, " > ");
-            sbL.append(str.length());
-            throw new IllegalArgumentException(sbL.toString().toString());
+            StringBuilder l = jx0.l("endIndex > string.length: ", i2, " > ");
+            l.append(str.length());
+            throw new IllegalArgumentException(l.toString().toString());
         }
         while (i < i2) {
-            char cCharAt2 = str.charAt(i);
-            if (cCharAt2 < 128) {
-                b62 b62VarS = s(1);
-                byte[] bArr = b62VarS.f137a;
-                int i3 = b62VarS.c - i;
-                int iMin = Math.min(i2, 8192 - i3);
+            char charAt2 = str.charAt(i);
+            if (charAt2 < 128) {
+                b62 s = s(1);
+                byte[] bArr = s.f136a;
+                int i3 = s.c - i;
+                int min = Math.min(i2, 8192 - i3);
                 int i4 = i + 1;
-                bArr[i + i3] = (byte) cCharAt2;
+                bArr[i + i3] = (byte) charAt2;
                 while (true) {
                     i = i4;
-                    if (i >= iMin || (cCharAt = str.charAt(i)) >= 128) {
+                    if (i >= min || (charAt = str.charAt(i)) >= 128) {
                         break;
                     }
                     i4 = i + 1;
-                    bArr[i + i3] = (byte) cCharAt;
+                    bArr[i + i3] = (byte) charAt;
                 }
-                int i5 = b62VarS.c;
+                int i5 = s.c;
                 int i6 = (i3 + i) - i5;
-                b62VarS.c = i5 + i6;
+                s.c = i5 + i6;
                 this.e += i6;
             } else {
-                if (cCharAt2 < 2048) {
-                    b62 b62VarS2 = s(2);
-                    byte[] bArr2 = b62VarS2.f137a;
-                    int i7 = b62VarS2.c;
-                    bArr2[i7] = (byte) ((cCharAt2 >> 6) | 192);
-                    bArr2[i7 + 1] = (byte) ((cCharAt2 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
-                    b62VarS2.c = i7 + 2;
+                if (charAt2 < 2048) {
+                    b62 s2 = s(2);
+                    byte[] bArr2 = s2.f136a;
+                    int i7 = s2.c;
+                    bArr2[i7] = (byte) ((charAt2 >> 6) | 192);
+                    bArr2[i7 + 1] = (byte) ((charAt2 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
+                    s2.c = i7 + 2;
                     this.e += 2;
-                } else if (cCharAt2 < 55296 || cCharAt2 > 57343) {
-                    b62 b62VarS3 = s(3);
-                    byte[] bArr3 = b62VarS3.f137a;
-                    int i8 = b62VarS3.c;
-                    bArr3[i8] = (byte) ((cCharAt2 >> '\f') | 224);
-                    bArr3[i8 + 1] = (byte) ((63 & (cCharAt2 >> 6)) | PackageParser.PARSE_IS_PRIVILEGED);
-                    bArr3[i8 + 2] = (byte) ((cCharAt2 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
-                    b62VarS3.c = i8 + 3;
+                } else if (charAt2 < 55296 || charAt2 > 57343) {
+                    b62 s3 = s(3);
+                    byte[] bArr3 = s3.f136a;
+                    int i8 = s3.c;
+                    bArr3[i8] = (byte) ((charAt2 >> '\f') | 224);
+                    bArr3[i8 + 1] = (byte) ((63 & (charAt2 >> 6)) | PackageParser.PARSE_IS_PRIVILEGED);
+                    bArr3[i8 + 2] = (byte) ((charAt2 & '?') | PackageParser.PARSE_IS_PRIVILEGED);
+                    s3.c = i8 + 3;
                     this.e += 3;
                 } else {
                     int i9 = i + 1;
-                    char cCharAt3 = i9 < i2 ? str.charAt(i9) : (char) 0;
-                    if (cCharAt2 > 56319 || 56320 > cCharAt3 || cCharAt3 >= 57344) {
+                    char charAt3 = i9 < i2 ? str.charAt(i9) : (char) 0;
+                    if (charAt2 > 56319 || 56320 > charAt3 || charAt3 >= 57344) {
                         B(63);
                         i = i9;
                     } else {
-                        int i10 = (((cCharAt2 & 1023) << 10) | (cCharAt3 & 1023)) + 65536;
-                        b62 b62VarS4 = s(4);
-                        byte[] bArr4 = b62VarS4.f137a;
-                        int i11 = b62VarS4.c;
+                        int i10 = (((charAt2 & 1023) << 10) | (charAt3 & 1023)) + 65536;
+                        b62 s4 = s(4);
+                        byte[] bArr4 = s4.f136a;
+                        int i11 = s4.c;
                         bArr4[i11] = (byte) ((i10 >> 18) | 240);
                         bArr4[i11 + 1] = (byte) (((i10 >> 12) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
                         bArr4[i11 + 2] = (byte) (((i10 >> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
                         bArr4[i11 + 3] = (byte) ((i10 & 63) | PackageParser.PARSE_IS_PRIVILEGED);
-                        b62VarS4.c = i11 + 4;
+                        s4.c = i11 + 4;
                         this.e += 4;
                         i += 2;
                     }
@@ -287,12 +231,12 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             return;
         }
         if (i < 2048) {
-            b62 b62VarS = s(2);
-            byte[] bArr = b62VarS.f137a;
-            int i2 = b62VarS.c;
+            b62 s = s(2);
+            byte[] bArr = s.f136a;
+            int i2 = s.c;
             bArr[i2] = (byte) ((i >> 6) | 192);
             bArr[i2 + 1] = (byte) ((i & 63) | PackageParser.PARSE_IS_PRIVILEGED);
-            b62VarS.c = i2 + 2;
+            s.c = i2 + 2;
             this.e += 2;
             return;
         }
@@ -301,27 +245,27 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             return;
         }
         if (i < 65536) {
-            b62 b62VarS2 = s(3);
-            byte[] bArr2 = b62VarS2.f137a;
-            int i3 = b62VarS2.c;
+            b62 s2 = s(3);
+            byte[] bArr2 = s2.f136a;
+            int i3 = s2.c;
             bArr2[i3] = (byte) ((i >> 12) | 224);
             bArr2[i3 + 1] = (byte) (((i >> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
             bArr2[i3 + 2] = (byte) ((i & 63) | PackageParser.PARSE_IS_PRIVILEGED);
-            b62VarS2.c = i3 + 3;
+            s2.c = i3 + 3;
             this.e += 3;
             return;
         }
         if (i > 1114111) {
             throw new IllegalArgumentException("Unexpected code point: 0x".concat(lx0.c0(i)));
         }
-        b62 b62VarS3 = s(4);
-        byte[] bArr3 = b62VarS3.f137a;
-        int i4 = b62VarS3.c;
+        b62 s3 = s(4);
+        byte[] bArr3 = s3.f136a;
+        int i4 = s3.c;
         bArr3[i4] = (byte) ((i >> 18) | 240);
         bArr3[i4 + 1] = (byte) (((i >> 12) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
         bArr3[i4 + 2] = (byte) (((i >> 6) & 63) | PackageParser.PARSE_IS_PRIVILEGED);
         bArr3[i4 + 3] = (byte) ((i & 63) | PackageParser.PARSE_IS_PRIVILEGED);
-        b62VarS3.c = i4 + 4;
+        s3.c = i4 + 4;
         this.e += 4;
     }
 
@@ -364,21 +308,21 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         long j5 = j2;
         while (j5 > 0) {
             lx0.u(b62Var2);
-            b62 b62VarC = b62Var2.c();
-            int i = b62VarC.b + ((int) j3);
-            b62VarC.b = i;
-            b62VarC.c = Math.min(i + ((int) j5), b62VarC.c);
+            b62 c = b62Var2.c();
+            int i = c.b + ((int) j3);
+            c.b = i;
+            c.c = Math.min(i + ((int) j5), c.c);
             b62 b62Var3 = rnVar.d;
             if (b62Var3 == null) {
-                b62VarC.g = b62VarC;
-                b62VarC.f = b62VarC;
-                rnVar.d = b62VarC;
+                c.g = c;
+                c.f = c;
+                rnVar.d = c;
             } else {
                 b62 b62Var4 = b62Var3.g;
                 lx0.u(b62Var4);
-                b62Var4.b(b62VarC);
+                b62Var4.b(c);
             }
-            j5 -= b62VarC.c - b62VarC.b;
+            j5 -= c.c - c.b;
             b62Var2 = b62Var2.f;
             j3 = 0;
         }
@@ -391,12 +335,12 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         }
         b62 b62Var = this.d;
         lx0.u(b62Var);
-        b62 b62VarC = b62Var.c();
-        rnVar.d = b62VarC;
-        b62VarC.g = b62VarC;
-        b62VarC.f = b62VarC;
+        b62 c = b62Var.c();
+        rnVar.d = c;
+        c.g = c;
+        c.f = c;
         for (b62 b62Var2 = b62Var.f; b62Var2 != b62Var; b62Var2 = b62Var2.f) {
-            b62 b62Var3 = b62VarC.g;
+            b62 b62Var3 = c.g;
             lx0.u(b62Var3);
             lx0.u(b62Var2);
             b62Var3.b(b62Var2.c());
@@ -406,7 +350,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     @Override // androidx.emoji2.text.zn
-    public final io d(long j) throws EOFException {
+    public final io d(long j) {
         if (j < 0 || j > 2147483647L) {
             throw new IllegalArgumentException(jx0.h(j, "byteCount: ").toString());
         }
@@ -416,9 +360,9 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         if (j < 4096) {
             return new io(n(j));
         }
-        io ioVarQ = q((int) j);
+        io q = q((int) j);
         skip(j);
-        return ioVarQ;
+        return q;
     }
 
     public final boolean e() {
@@ -448,12 +392,12 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         int i2 = b62Var2.b;
         long j2 = 0;
         while (j2 < this.e) {
-            long jMin = Math.min(b62Var.c - i, b62Var2.c - i2);
+            long min = Math.min(b62Var.c - i, b62Var2.c - i2);
             long j3 = 0;
-            while (j3 < jMin) {
+            while (j3 < min) {
                 int i3 = i + 1;
                 int i4 = i2 + 1;
-                if (b62Var.f137a[i] != b62Var2.f137a[i2]) {
+                if (b62Var.f136a[i] != b62Var2.f136a[i2]) {
                     return false;
                 }
                 j3++;
@@ -470,7 +414,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                 lx0.u(b62Var2);
                 i2 = b62Var2.b;
             }
-            j2 += jMin;
+            j2 += min;
         }
         return true;
     }
@@ -489,7 +433,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                 lx0.u(b62Var);
                 j2 -= b62Var.c - b62Var.b;
             }
-            return b62Var.f137a[(int) ((b62Var.b + j) - j2)];
+            return b62Var.f136a[(int) ((b62Var.b + j) - j2)];
         }
         long j3 = 0;
         while (true) {
@@ -497,7 +441,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             int i2 = b62Var.b;
             long j4 = (i - i2) + j3;
             if (j4 > j) {
-                return b62Var.f137a[(int) ((i2 + j) - j3)];
+                return b62Var.f136a[(int) ((i2 + j) - j3)];
             }
             b62Var = b62Var.f;
             lx0.u(b62Var);
@@ -507,7 +451,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
 
     @Override // androidx.emoji2.text.gb2
     public final void g(long j, rn rnVar) {
-        b62 b62VarB;
+        b62 b;
         lx0.x(rnVar, "source");
         if (rnVar == this) {
             throw new IllegalArgumentException("source == this");
@@ -541,20 +485,20 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                     throw new IllegalArgumentException("byteCount out of range");
                 }
                 if (i3 >= 1024) {
-                    b62VarB = b62Var6.c();
+                    b = b62Var6.c();
                 } else {
-                    b62VarB = e62.b();
-                    byte[] bArr = b62Var6.f137a;
-                    byte[] bArr2 = b62VarB.f137a;
+                    b = e62.b();
+                    byte[] bArr = b62Var6.f136a;
+                    byte[] bArr2 = b.f136a;
                     int i4 = b62Var6.b;
                     xh.v0(0, i4, i4 + i3, bArr, bArr2);
                 }
-                b62VarB.c = b62VarB.b + i3;
+                b.c = b.b + i3;
                 b62Var6.b += i3;
                 b62 b62Var7 = b62Var6.g;
                 lx0.u(b62Var7);
-                b62Var7.b(b62VarB);
-                rnVar.d = b62VarB;
+                b62Var7.b(b);
+                rnVar.d = b;
             }
             b62 b62Var8 = rnVar.d;
             lx0.u(b62Var8);
@@ -610,7 +554,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         do {
             int i2 = b62Var.c;
             for (int i3 = b62Var.b; i3 < i2; i3++) {
-                i = (i * 31) + b62Var.f137a[i3];
+                i = (i * 31) + b62Var.f136a[i3];
             }
             b62Var = b62Var.f;
             lx0.u(b62Var);
@@ -649,9 +593,9 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                 j4 -= b62Var.c - b62Var.b;
             }
             while (j4 < j2) {
-                byte[] bArr = b62Var.f137a;
-                int iMin = (int) Math.min(b62Var.c, (b62Var.b + j2) - j4);
-                for (int i = (int) ((b62Var.b + j) - j4); i < iMin; i++) {
+                byte[] bArr = b62Var.f136a;
+                int min = (int) Math.min(b62Var.c, (b62Var.b + j2) - j4);
+                for (int i = (int) ((b62Var.b + j) - j4); i < min; i++) {
                     if (bArr[i] == b) {
                         return (i - b62Var.b) + j4;
                     }
@@ -673,9 +617,9 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             j3 = j5;
         }
         while (j3 < j2) {
-            byte[] bArr2 = b62Var.f137a;
-            int iMin2 = (int) Math.min(b62Var.c, (b62Var.b + j2) - j3);
-            for (int i2 = (int) ((b62Var.b + j) - j3); i2 < iMin2; i2++) {
+            byte[] bArr2 = b62Var.f136a;
+            int min2 = (int) Math.min(b62Var.c, (b62Var.b + j2) - j3);
+            for (int i2 = (int) ((b62Var.b + j) - j3); i2 < min2; i2++) {
                 if (bArr2[i2] == b) {
                     return (i2 - b62Var.b) + j3;
                 }
@@ -705,19 +649,18 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                 j -= b62Var.c - b62Var.b;
             }
             if (ioVar.c() == 2) {
-                byte bH = ioVar.h(0);
-                byte bH2 = ioVar.h(1);
+                byte h = ioVar.h(0);
+                byte h2 = ioVar.h(1);
                 while (j < this.e) {
-                    byte[] bArr = b62Var.f137a;
+                    byte[] bArr = b62Var.f136a;
                     i = (int) ((b62Var.b + j2) - j);
                     int i3 = b62Var.c;
                     while (i < i3) {
                         byte b = bArr[i];
-                        if (b == bH || b == bH2) {
-                            i2 = b62Var.b;
-                        } else {
+                        if (b != h && b != h2) {
                             i++;
                         }
+                        i2 = b62Var.b;
                     }
                     j2 = (b62Var.c - b62Var.b) + j;
                     b62Var = b62Var.f;
@@ -726,14 +669,14 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
                 }
                 return -1L;
             }
-            byte[] bArrG = ioVar.g();
+            byte[] g = ioVar.g();
             while (j < this.e) {
-                byte[] bArr2 = b62Var.f137a;
+                byte[] bArr2 = b62Var.f136a;
                 i = (int) ((b62Var.b + j2) - j);
                 int i4 = b62Var.c;
                 while (i < i4) {
                     byte b2 = bArr2[i];
-                    for (byte b3 : bArrG) {
+                    for (byte b3 : g) {
                         if (b2 == b3) {
                             i2 = b62Var.b;
                         }
@@ -758,19 +701,18 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             j = j3;
         }
         if (ioVar.c() == 2) {
-            byte bH3 = ioVar.h(0);
-            byte bH4 = ioVar.h(1);
+            byte h3 = ioVar.h(0);
+            byte h4 = ioVar.h(1);
             while (j < this.e) {
-                byte[] bArr3 = b62Var.f137a;
+                byte[] bArr3 = b62Var.f136a;
                 i = (int) ((b62Var.b + j2) - j);
                 int i5 = b62Var.c;
                 while (i < i5) {
                     byte b4 = bArr3[i];
-                    if (b4 == bH3 || b4 == bH4) {
-                        i2 = b62Var.b;
-                    } else {
+                    if (b4 != h3 && b4 != h4) {
                         i++;
                     }
+                    i2 = b62Var.b;
                 }
                 j2 = (b62Var.c - b62Var.b) + j;
                 b62Var = b62Var.f;
@@ -779,14 +721,14 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             }
             return -1L;
         }
-        byte[] bArrG2 = ioVar.g();
+        byte[] g2 = ioVar.g();
         while (j < this.e) {
-            byte[] bArr4 = b62Var.f137a;
+            byte[] bArr4 = b62Var.f136a;
             i = (int) ((b62Var.b + j2) - j);
             int i6 = b62Var.c;
             while (i < i6) {
                 byte b5 = bArr4[i];
-                for (byte b6 : bArrG2) {
+                for (byte b6 : g2) {
                     if (b5 == b6) {
                         i2 = b62Var.b;
                     }
@@ -804,9 +746,9 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
 
     public final boolean l(io ioVar) {
         lx0.x(ioVar, "bytes");
-        int iC = ioVar.c();
-        if (iC >= 0 && this.e >= iC && ioVar.c() >= iC) {
-            for (int i = 0; i < iC; i++) {
+        int c = ioVar.c();
+        if (c >= 0 && this.e >= c && ioVar.c() >= c) {
+            for (int i = 0; i < c; i++) {
                 if (f(i) == ioVar.h(i)) {
                 }
             }
@@ -816,7 +758,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     @Override // androidx.emoji2.text.zn
-    public final String m(long j) throws EOFException {
+    public final String m(long j) {
         if (j < 0) {
             throw new IllegalArgumentException(jx0.h(j, "limit < 0: ").toString());
         }
@@ -833,7 +775,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         throw new EOFException("\\n not found: limit=" + Math.min(this.e, j) + " content=" + rnVar.d(rnVar.e).d() + (char) 8230);
     }
 
-    public final byte[] n(long j) throws EOFException {
+    public final byte[] n(long j) {
         if (j < 0 || j > 2147483647L) {
             throw new IllegalArgumentException(jx0.h(j, "byteCount: ").toString());
         }
@@ -844,21 +786,21 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         byte[] bArr = new byte[i];
         int i2 = 0;
         while (i2 < i) {
-            int i3 = read(bArr, i2, i - i2);
-            if (i3 == -1) {
+            int read = read(bArr, i2, i - i2);
+            if (read == -1) {
                 throw new EOFException();
             }
-            i2 += i3;
+            i2 += read;
         }
         return bArr;
     }
 
-    public final short o() throws EOFException {
-        short s = readShort();
-        return (short) (((s & 255) << 8) | ((65280 & s) >>> 8));
+    public final short o() {
+        short readShort = readShort();
+        return (short) (((readShort & 255) << 8) | ((65280 & readShort) >>> 8));
     }
 
-    public final String p(long j, Charset charset) throws EOFException {
+    public final String p(long j, Charset charset) {
         lx0.x(charset, "charset");
         if (j < 0 || j > 2147483647L) {
             throw new IllegalArgumentException(jx0.h(j, "byteCount: ").toString());
@@ -876,7 +818,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             return new String(n(j), charset);
         }
         int i2 = (int) j;
-        String str = new String(b62Var.f137a, i, i2, charset);
+        String str = new String(b62Var.f136a, i, i2, charset);
         int i3 = b62Var.b + i2;
         b62Var.b = i3;
         this.e -= j;
@@ -913,7 +855,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         int i7 = 0;
         while (i2 < i) {
             lx0.u(b62Var2);
-            bArr[i7] = b62Var2.f137a;
+            bArr[i7] = b62Var2.f136a;
             i2 += b62Var2.c - b62Var2.b;
             iArr[i7] = Math.min(i2, i);
             iArr[i7 + i4] = b62Var2.b;
@@ -937,20 +879,20 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         if (b62Var == null) {
             return -1;
         }
-        int iMin = Math.min(byteBuffer.remaining(), b62Var.c - b62Var.b);
-        byteBuffer.put(b62Var.f137a, b62Var.b, iMin);
-        int i = b62Var.b + iMin;
+        int min = Math.min(byteBuffer.remaining(), b62Var.c - b62Var.b);
+        byteBuffer.put(b62Var.f136a, b62Var.b, min);
+        int i = b62Var.b + min;
         b62Var.b = i;
-        this.e -= iMin;
+        this.e -= min;
         if (i == b62Var.c) {
             this.d = b62Var.a();
             e62.a(b62Var);
         }
-        return iMin;
+        return min;
     }
 
     @Override // androidx.emoji2.text.zn
-    public final byte readByte() throws EOFException {
+    public final byte readByte() {
         if (this.e == 0) {
             throw new EOFException();
         }
@@ -959,7 +901,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         int i = b62Var.b;
         int i2 = b62Var.c;
         int i3 = i + 1;
-        byte b = b62Var.f137a[i];
+        byte b = b62Var.f136a[i];
         this.e--;
         if (i3 != i2) {
             b62Var.b = i3;
@@ -971,7 +913,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     @Override // androidx.emoji2.text.zn
-    public final int readInt() throws EOFException {
+    public final int readInt() {
         if (this.e < 4) {
             throw new EOFException();
         }
@@ -982,7 +924,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         if (i2 - i < 4) {
             return ((readByte() & 255) << 24) | ((readByte() & 255) << 16) | ((readByte() & 255) << 8) | (readByte() & 255);
         }
-        byte[] bArr = b62Var.f137a;
+        byte[] bArr = b62Var.f136a;
         int i3 = i + 3;
         int i4 = ((bArr[i + 1] & 255) << 16) | ((bArr[i] & 255) << 24) | ((bArr[i + 2] & 255) << 8);
         int i5 = i + 4;
@@ -998,7 +940,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     @Override // androidx.emoji2.text.zn
-    public final short readShort() throws EOFException {
+    public final short readShort() {
         if (this.e < 2) {
             throw new EOFException();
         }
@@ -1009,7 +951,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         if (i2 - i < 2) {
             return (short) (((readByte() & 255) << 8) | (readByte() & 255));
         }
-        byte[] bArr = b62Var.f137a;
+        byte[] bArr = b62Var.f136a;
         int i3 = i + 1;
         int i4 = (bArr[i] & 255) << 8;
         int i5 = i + 2;
@@ -1030,20 +972,20 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         }
         b62 b62Var = this.d;
         if (b62Var == null) {
-            b62 b62VarB = e62.b();
-            this.d = b62VarB;
-            b62VarB.g = b62VarB;
-            b62VarB.f = b62VarB;
-            return b62VarB;
+            b62 b = e62.b();
+            this.d = b;
+            b.g = b;
+            b.f = b;
+            return b;
         }
         b62 b62Var2 = b62Var.g;
         lx0.u(b62Var2);
         if (b62Var2.c + i <= 8192 && b62Var2.e) {
             return b62Var2;
         }
-        b62 b62VarB2 = e62.b();
-        b62Var2.b(b62VarB2);
-        return b62VarB2;
+        b62 b2 = e62.b();
+        b62Var2.b(b2);
+        return b2;
     }
 
     @Override // androidx.emoji2.text.zn
@@ -1053,11 +995,11 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
             if (b62Var == null) {
                 throw new EOFException();
             }
-            int iMin = (int) Math.min(j, b62Var.c - b62Var.b);
-            long j2 = iMin;
+            int min = (int) Math.min(j, b62Var.c - b62Var.b);
+            long j2 = min;
             this.e -= j2;
             j -= j2;
-            int i = b62Var.b + iMin;
+            int i = b62Var.b + min;
             b62Var.b = i;
             if (i == b62Var.c) {
                 this.d = b62Var.a();
@@ -1107,11 +1049,11 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         long j = i;
         lx0.y(bArr.length, 0, j);
         while (i2 < i) {
-            b62 b62VarS = s(1);
-            int iMin = Math.min(i - i2, 8192 - b62VarS.c);
-            int i3 = i2 + iMin;
-            xh.v0(b62VarS.c, i2, i3, bArr, b62VarS.f137a);
-            b62VarS.c += iMin;
+            b62 s = s(1);
+            int min = Math.min(i - i2, 8192 - s.c);
+            int i3 = i2 + min;
+            xh.v0(s.c, i2, i3, bArr, s.f136a);
+            s.c += min;
             i2 = i3;
         }
         this.e += j;
@@ -1120,17 +1062,17 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     @Override // java.nio.channels.WritableByteChannel
     public final int write(ByteBuffer byteBuffer) {
         lx0.x(byteBuffer, "source");
-        int iRemaining = byteBuffer.remaining();
-        int i = iRemaining;
+        int remaining = byteBuffer.remaining();
+        int i = remaining;
         while (i > 0) {
-            b62 b62VarS = s(1);
-            int iMin = Math.min(i, 8192 - b62VarS.c);
-            byteBuffer.get(b62VarS.f137a, b62VarS.c, iMin);
-            i -= iMin;
-            b62VarS.c += iMin;
+            b62 s = s(1);
+            int min = Math.min(i, 8192 - s.c);
+            byteBuffer.get(s.f136a, s.c, min);
+            i -= min;
+            s.c += min;
         }
-        this.e += iRemaining;
-        return iRemaining;
+        this.e += remaining;
+        return remaining;
     }
 
     @Override // androidx.emoji2.text.yn
@@ -1166,7 +1108,7 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
     }
 
     @Override // androidx.emoji2.text.zn
-    public final void z(long j) throws EOFException {
+    public final void z(long j) {
         if (this.e < j) {
             throw new EOFException();
         }
@@ -1184,18 +1126,18 @@ public final class rn implements zn, yn, Cloneable, ByteChannel {
         if (b62Var == null) {
             return -1;
         }
-        int iMin = Math.min(i2, b62Var.c - b62Var.b);
-        byte[] bArr2 = b62Var.f137a;
+        int min = Math.min(i2, b62Var.c - b62Var.b);
+        byte[] bArr2 = b62Var.f136a;
         int i3 = b62Var.b;
-        xh.v0(i, i3, i3 + iMin, bArr2, bArr);
-        int i4 = b62Var.b + iMin;
+        xh.v0(i, i3, i3 + min, bArr2, bArr);
+        int i4 = b62Var.b + min;
         b62Var.b = i4;
-        this.e -= iMin;
+        this.e -= min;
         if (i4 == b62Var.c) {
             this.d = b62Var.a();
             e62.a(b62Var);
         }
-        return iMin;
+        return min;
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable, java.nio.channels.Channel, androidx.emoji2.text.gb2

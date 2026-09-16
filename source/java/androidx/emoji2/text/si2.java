@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class si2 implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Thread.UncaughtExceptionHandler f1070a = Thread.getDefaultUncaughtExceptionHandler();
+    public final Thread.UncaughtExceptionHandler f1069a = Thread.getDefaultUncaughtExceptionHandler();
     public final AtomicBoolean b = new AtomicBoolean(false);
 
     static {
@@ -19,18 +19,18 @@ public final class si2 implements Thread.UncaughtExceptionHandler {
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
     public final void uncaughtException(Thread thread, Throwable th) {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         lx0.x(thread, a.a.a.c.a(-165850721173282L, strArr));
         lx0.x(th, a.a.a.c.a(-165880785944354L, strArr));
         if (this.b.compareAndSet(false, true)) {
             try {
-                p30.f886a.getClass();
+                p30.f885a.getClass();
                 p30.i(thread, th);
             } catch (Throwable th2) {
                 Log.e(a.a.a.c.a(-165906555748130L, strArr), a.a.a.c.a(-165928030584610L, strArr), th2);
             }
         }
-        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f1070a;
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.f1069a;
         if (uncaughtExceptionHandler != null && uncaughtExceptionHandler != this) {
             uncaughtExceptionHandler.uncaughtException(thread, th);
         } else {

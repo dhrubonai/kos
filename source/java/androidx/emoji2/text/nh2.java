@@ -1,5 +1,7 @@
 package androidx.emoji2.text;
 
+import kotlin.jvm.functions.Function2;
+
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
 public final class nh2 implements j70, l10 {
@@ -52,11 +54,11 @@ public final class nh2 implements j70, l10 {
     public final long c() {
         oh2 oh2Var = this.i;
         oh2Var.getClass();
-        long jM0 = oh2Var.m0(lx0.T(oh2Var).C.d());
+        long m0 = oh2Var.m0(lx0.T(oh2Var).C.d());
         long j = oh2Var.B;
-        float fMax = Math.max(0.0f, Float.intBitsToFloat((int) (jM0 >> 32)) - ((int) (j >> 32))) / 2.0f;
-        float fMax2 = Math.max(0.0f, Float.intBitsToFloat((int) (jM0 & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f;
-        return (Float.floatToRawIntBits(fMax) << 32) | (Float.floatToRawIntBits(fMax2) & 4294967295L);
+        float max = Math.max(0.0f, Float.intBitsToFloat((int) (m0 >> 32)) - ((int) (j >> 32))) / 2.0f;
+        float max2 = Math.max(0.0f, Float.intBitsToFloat((int) (m0 & 4294967295L)) - ((int) (j & 4294967295L))) / 2.0f;
+        return (Float.floatToRawIntBits(max) << 32) | (Float.floatToRawIntBits(max2) & 4294967295L);
     }
 
     @Override // androidx.emoji2.text.j70
@@ -71,7 +73,8 @@ public final class nh2 implements j70, l10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001f  */
     /* JADX WARN: Type inference failed for: r6v0, types: [long] */
     /* JADX WARN: Type inference failed for: r6v1, types: [androidx.emoji2.text.cy0] */
     /* JADX WARN: Type inference failed for: r6v4, types: [androidx.emoji2.text.cy0] */
@@ -79,77 +82,53 @@ public final class nh2 implements j70, l10 {
     /* JADX WARN: Type inference failed for: r6v8 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object f(long r6, kotlin.jvm.functions.Function2 r8, androidx.emoji2.text.lk r9) {
-        /*
-            r5 = this;
-            boolean r0 = r9 instanceof androidx.emoji2.text.lh2
-            if (r0 == 0) goto L13
-            r0 = r9
-            androidx.emoji2.text.lh2 r0 = (androidx.emoji2.text.lh2) r0
-            int r1 = r0.j
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.j = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.lh2 r0 = new androidx.emoji2.text.lh2
-            r0.<init>(r5, r9)
-        L18:
-            java.lang.Object r9 = r0.h
-            int r1 = r0.j
-            r2 = 1
-            if (r1 == 0) goto L31
-            if (r1 != r2) goto L29
-            androidx.emoji2.text.he2 r6 = r0.g
-            androidx.emoji2.text.mz0.L(r9)     // Catch: java.lang.Throwable -> L27
-            goto L68
-        L27:
-            r7 = move-exception
-            goto L6e
-        L29:
-            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
-            java.lang.String r7 = "call to 'resume' before 'invoke' with coroutine"
-            r6.<init>(r7)
-            throw r6
-        L31:
-            androidx.emoji2.text.mz0.L(r9)
-            r3 = 0
-            int r9 = (r6 > r3 ? 1 : (r6 == r3 ? 0 : -1))
-            if (r9 > 0) goto L4a
-            androidx.emoji2.text.ip r9 = r5.f
-            if (r9 == 0) goto L4a
-            androidx.emoji2.text.ks1 r1 = new androidx.emoji2.text.ks1
-            r1.<init>(r6)
-            androidx.emoji2.text.g02 r1 = androidx.emoji2.text.mz0.h(r1)
-            r9.g(r1)
-        L4a:
-            androidx.emoji2.text.oh2 r9 = r5.i
-            androidx.emoji2.text.e30 r9 = r9.w0()
-            androidx.emoji2.text.rc r1 = new androidx.emoji2.text.rc
-            r3 = 0
-            r1.<init>(r6, r5, r3)
-            r6 = 3
-            androidx.emoji2.text.he2 r6 = androidx.emoji2.text.h50.G(r9, r3, r1, r6)
-            r0.g = r6     // Catch: java.lang.Throwable -> L27
-            r0.j = r2     // Catch: java.lang.Throwable -> L27
-            java.lang.Object r9 = r8.invoke(r5, r0)     // Catch: java.lang.Throwable -> L27
-            androidx.emoji2.text.f30 r7 = androidx.emoji2.text.f30.d
-            if (r9 != r7) goto L68
-            return r7
-        L68:
-            androidx.emoji2.text.ep r7 = androidx.emoji2.text.ep.e
-            r6.c(r7)
-            return r9
-        L6e:
-            androidx.emoji2.text.ep r8 = androidx.emoji2.text.ep.e
-            r6.c(r8)
-            throw r7
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.nh2.f(long, kotlin.jvm.functions.Function2, androidx.emoji2.text.lk):java.lang.Object");
+    public final Object f(long j, Function2 function2, lk lkVar) {
+        lh2 lh2Var;
+        int i;
+        ip ipVar;
+        try {
+            if (lkVar instanceof lh2) {
+                lh2Var = (lh2) lkVar;
+                int i2 = lh2Var.j;
+                if ((i2 & Integer.MIN_VALUE) != 0) {
+                    lh2Var.j = i2 - Integer.MIN_VALUE;
+                    Object obj = lh2Var.h;
+                    i = lh2Var.j;
+                    if (i != 0) {
+                        mz0.L(obj);
+                        if (j <= 0 && (ipVar = this.f) != null) {
+                            ipVar.g(mz0.h(new ks1(j)));
+                        }
+                        he2 G = h50.G(this.i.w0(), null, new rc(j, this, null), 3);
+                        lh2Var.g = G;
+                        lh2Var.j = 1;
+                        obj = function2.invoke(this, lh2Var);
+                        f30 f30Var = f30.d;
+                        j = G;
+                        if (obj == f30Var) {
+                            return f30Var;
+                        }
+                    } else {
+                        if (i != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        he2 he2Var = lh2Var.g;
+                        mz0.L(obj);
+                        j = he2Var;
+                    }
+                    return obj;
+                }
+            }
+            if (i != 0) {
+            }
+            return obj;
+        } finally {
+            j.c(ep.e);
+        }
+        lh2Var = new lh2(this, lkVar);
+        Object obj2 = lh2Var.h;
+        i = lh2Var.j;
     }
 
     @Override // androidx.emoji2.text.l10
@@ -166,55 +145,44 @@ public final class nh2 implements j70, l10 {
         return this.d.i0(f);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x001f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object j(long r5, androidx.emoji2.text.ai2 r7, androidx.emoji2.text.lk r8) {
-        /*
-            r4 = this;
-            boolean r0 = r8 instanceof androidx.emoji2.text.mh2
-            if (r0 == 0) goto L13
-            r0 = r8
-            androidx.emoji2.text.mh2 r0 = (androidx.emoji2.text.mh2) r0
-            int r1 = r0.i
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.i = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.mh2 r0 = new androidx.emoji2.text.mh2
-            r0.<init>(r4, r8)
-        L18:
-            java.lang.Object r8 = r0.g
-            int r1 = r0.i
-            r2 = 1
-            if (r1 == 0) goto L2d
-            if (r1 != r2) goto L25
-            androidx.emoji2.text.mz0.L(r8)     // Catch: androidx.emoji2.text.ks1 -> L3c
-            return r8
-        L25:
-            java.lang.IllegalStateException r5 = new java.lang.IllegalStateException
-            java.lang.String r6 = "call to 'resume' before 'invoke' with coroutine"
-            r5.<init>(r6)
-            throw r5
-        L2d:
-            androidx.emoji2.text.mz0.L(r8)
-            r0.i = r2     // Catch: androidx.emoji2.text.ks1 -> L3c
-            java.lang.Object r5 = r4.f(r5, r7, r0)     // Catch: androidx.emoji2.text.ks1 -> L3c
-            androidx.emoji2.text.f30 r6 = androidx.emoji2.text.f30.d
-            if (r5 != r6) goto L3b
-            return r6
-        L3b:
-            return r5
-        L3c:
-            r5 = 0
-            return r5
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.nh2.j(long, androidx.emoji2.text.ai2, androidx.emoji2.text.lk):java.lang.Object");
+    public final Object j(long j, ai2 ai2Var, lk lkVar) {
+        mh2 mh2Var;
+        int i;
+        try {
+            if (lkVar instanceof mh2) {
+                mh2Var = (mh2) lkVar;
+                int i2 = mh2Var.i;
+                if ((i2 & Integer.MIN_VALUE) != 0) {
+                    mh2Var.i = i2 - Integer.MIN_VALUE;
+                    Object obj = mh2Var.g;
+                    i = mh2Var.i;
+                    if (i == 0) {
+                        if (i != 1) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        mz0.L(obj);
+                        return obj;
+                    }
+                    mz0.L(obj);
+                    mh2Var.i = 1;
+                    Object f = f(j, ai2Var, mh2Var);
+                    Object obj2 = f30.d;
+                    return f == obj2 ? obj2 : f;
+                }
+            }
+            if (i == 0) {
+            }
+        } catch (ks1 unused) {
+            return null;
+        }
+        mh2Var = new mh2(this, lkVar);
+        Object obj3 = mh2Var.g;
+        i = mh2Var.i;
     }
 
     @Override // androidx.emoji2.text.j70

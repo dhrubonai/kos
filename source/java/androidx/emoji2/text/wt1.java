@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class wt1 implements xt1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final vt1 f1302a;
+    public final vt1 f1301a;
 
     public wt1(vt1 vt1Var) {
-        this.f1302a = vt1Var;
+        this.f1301a = vt1Var;
     }
 }

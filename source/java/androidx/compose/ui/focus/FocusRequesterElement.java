@@ -38,10 +38,10 @@ final class FocusRequesterElement extends ud1 {
     @Override // androidx.emoji2.text.ud1
     public final void l(md1 md1Var) {
         mk0 mk0Var = (mk0) md1Var;
-        mk0Var.r.f643a.j(mk0Var);
+        mk0Var.r.f642a.j(mk0Var);
         kk0 kk0Var = this.f51a;
         mk0Var.r = kk0Var;
-        kk0Var.f643a.b(mk0Var);
+        kk0Var.f642a.b(mk0Var);
     }
 
     public final String toString() {

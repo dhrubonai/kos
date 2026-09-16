@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class zd2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public double f1434a;
+    public double f1433a;
     public double b;
     public boolean c;
     public double d;
@@ -17,7 +17,7 @@ public final class zd2 {
     public final wc0 j;
 
     public zd2() {
-        this.f1434a = Math.sqrt(1500.0d);
+        this.f1433a = Math.sqrt(1500.0d);
         this.b = 0.5d;
         this.c = false;
         this.i = Double.MAX_VALUE;
@@ -25,21 +25,21 @@ public final class zd2 {
     }
 
     public final wc0 a(double d, double d2, long j) {
-        double dSin;
-        double dCos;
+        double sin;
+        double cos;
         if (!this.c) {
             if (this.i == Double.MAX_VALUE) {
                 throw new IllegalStateException("Error: Final position of the spring must be set before the animation starts");
             }
             double d3 = this.b;
             if (d3 > 1.0d) {
-                double d4 = this.f1434a;
+                double d4 = this.f1433a;
                 this.f = (Math.sqrt((d3 * d3) - 1.0d) * d4) + ((-d3) * d4);
                 double d5 = this.b;
-                double d6 = this.f1434a;
+                double d6 = this.f1433a;
                 this.g = ((-d5) * d6) - (Math.sqrt((d5 * d5) - 1.0d) * d6);
             } else if (d3 >= 0.0d && d3 < 1.0d) {
-                this.h = Math.sqrt(1.0d - (d3 * d3)) * this.f1434a;
+                this.h = Math.sqrt(1.0d - (d3 * d3)) * this.f1433a;
             }
             this.c = true;
         }
@@ -50,43 +50,43 @@ public final class zd2 {
             double d10 = this.g;
             double d11 = ((d10 * d8) - d2) / (d10 - this.f);
             double d12 = d8 - d11;
-            dSin = (Math.pow(2.718281828459045d, this.f * d7) * d11) + (Math.pow(2.718281828459045d, d10 * d7) * d12);
+            sin = (Math.pow(2.718281828459045d, this.f * d7) * d11) + (Math.pow(2.718281828459045d, d10 * d7) * d12);
             double d13 = this.g;
-            double dPow = Math.pow(2.718281828459045d, d13 * d7) * d12 * d13;
+            double pow = Math.pow(2.718281828459045d, d13 * d7) * d12 * d13;
             double d14 = this.f;
-            dCos = (Math.pow(2.718281828459045d, d14 * d7) * d11 * d14) + dPow;
+            cos = (Math.pow(2.718281828459045d, d14 * d7) * d11 * d14) + pow;
         } else if (d9 == 1.0d) {
-            double d15 = this.f1434a;
+            double d15 = this.f1433a;
             double d16 = (d15 * d8) + d2;
             double d17 = (d16 * d7) + d8;
-            double dPow2 = Math.pow(2.718281828459045d, (-d15) * d7) * d17;
-            double dPow3 = Math.pow(2.718281828459045d, (-this.f1434a) * d7) * d17;
-            double d18 = -this.f1434a;
-            dCos = (Math.pow(2.718281828459045d, d18 * d7) * d16) + (dPow3 * d18);
-            dSin = dPow2;
+            double pow2 = Math.pow(2.718281828459045d, (-d15) * d7) * d17;
+            double pow3 = Math.pow(2.718281828459045d, (-this.f1433a) * d7) * d17;
+            double d18 = -this.f1433a;
+            cos = (Math.pow(2.718281828459045d, d18 * d7) * d16) + (pow3 * d18);
+            sin = pow2;
         } else {
             double d19 = 1.0d / this.h;
-            double d20 = this.f1434a;
+            double d20 = this.f1433a;
             double d21 = ((d9 * d20 * d8) + d2) * d19;
-            dSin = ((Math.sin(this.h * d7) * d21) + (Math.cos(this.h * d7) * d8)) * Math.pow(2.718281828459045d, (-d9) * d20 * d7);
-            double d22 = this.f1434a;
+            sin = ((Math.sin(this.h * d7) * d21) + (Math.cos(this.h * d7) * d8)) * Math.pow(2.718281828459045d, (-d9) * d20 * d7);
+            double d22 = this.f1433a;
             double d23 = this.b;
-            double d24 = (-d22) * dSin * d23;
-            double dPow4 = Math.pow(2.718281828459045d, (-d23) * d22 * d7);
+            double d24 = (-d22) * sin * d23;
+            double pow4 = Math.pow(2.718281828459045d, (-d23) * d22 * d7);
             double d25 = this.h;
-            double dSin2 = Math.sin(d25 * d7) * (-d25) * d8;
+            double sin2 = Math.sin(d25 * d7) * (-d25) * d8;
             double d26 = this.h;
-            dCos = (((Math.cos(d26 * d7) * d21 * d26) + dSin2) * dPow4) + d24;
+            cos = (((Math.cos(d26 * d7) * d21 * d26) + sin2) * pow4) + d24;
         }
-        float f = (float) (dSin + this.i);
+        float f = (float) (sin + this.i);
         wc0 wc0Var = this.j;
-        wc0Var.f1272a = f;
-        wc0Var.b = (float) dCos;
+        wc0Var.f1271a = f;
+        wc0Var.b = (float) cos;
         return wc0Var;
     }
 
     public zd2(float f) {
-        this.f1434a = Math.sqrt(1500.0d);
+        this.f1433a = Math.sqrt(1500.0d);
         this.b = 0.5d;
         this.c = false;
         this.j = new wc0();

@@ -5,43 +5,43 @@ package androidx.emoji2.text;
 public abstract class ec2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public ic2 f299a;
+    public ic2 f298a;
     public long b;
     public boolean c;
     public int d;
 
     public ec2(long j, ic2 ic2Var) {
-        int iA;
-        int iNumberOfTrailingZeros;
-        this.f299a = ic2Var;
+        int i;
+        int numberOfTrailingZeros;
+        this.f298a = ic2Var;
         this.b = j;
-        q32 q32Var = kc2.f632a;
+        q32 q32Var = kc2.f631a;
         if (j != 0) {
-            ic2 ic2VarD = d();
-            long j2 = ic2VarD.f;
-            long[] jArr = ic2VarD.g;
+            ic2 d = d();
+            long j2 = d.f;
+            long[] jArr = d.g;
             if (jArr != null) {
                 j = jArr[0];
             } else {
-                long j3 = ic2VarD.e;
+                long j3 = d.e;
                 if (j3 != 0) {
-                    iNumberOfTrailingZeros = Long.numberOfTrailingZeros(j3);
+                    numberOfTrailingZeros = Long.numberOfTrailingZeros(j3);
                 } else {
-                    long j4 = ic2VarD.d;
+                    long j4 = d.d;
                     if (j4 != 0) {
                         j2 += 64;
-                        iNumberOfTrailingZeros = Long.numberOfTrailingZeros(j4);
+                        numberOfTrailingZeros = Long.numberOfTrailingZeros(j4);
                     }
                 }
-                j = iNumberOfTrailingZeros + j2;
+                j = numberOfTrailingZeros + j2;
             }
             synchronized (kc2.c) {
-                iA = kc2.f.a(j);
+                i = kc2.f.a(j);
             }
         } else {
-            iA = -1;
+            i = -1;
         }
-        this.d = iA;
+        this.d = i;
     }
 
     public static void q(ec2 ec2Var) {
@@ -62,7 +62,7 @@ public abstract class ec2 {
     public abstract void c();
 
     public ic2 d() {
-        return this.f299a;
+        return this.f298a;
     }
 
     public abstract um0 e();
@@ -107,7 +107,7 @@ public abstract class ec2 {
     }
 
     public void r(ic2 ic2Var) {
-        this.f299a = ic2Var;
+        this.f298a = ic2Var;
     }
 
     public void s(long j) {

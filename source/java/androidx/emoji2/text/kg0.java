@@ -6,11 +6,11 @@ public final class kg0 {
     public static final kg0 c = new kg0(0, false);
 
     /* renamed from: a, reason: collision with root package name */
-    public final boolean f639a;
+    public final boolean f638a;
     public final int b;
 
     public kg0(int i, boolean z) {
-        this.f639a = z;
+        this.f638a = z;
         this.b = i;
     }
 }

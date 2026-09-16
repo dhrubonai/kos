@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract /* synthetic */ class j3 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int[] f559a;
+    public static final /* synthetic */ int[] f558a;
 
     static {
         int[] iArr = new int[d2.values().length];
@@ -21,6 +21,6 @@ public abstract /* synthetic */ class j3 {
             iArr[d2.d.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
-        f559a = iArr;
+        f558a = iArr;
     }
 }

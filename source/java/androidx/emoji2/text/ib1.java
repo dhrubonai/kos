@@ -7,7 +7,7 @@ import java.util.List;
 public final class ib1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f517a;
+    public final int f516a;
     public final List b;
     public final long c;
     public final Object d;
@@ -22,7 +22,7 @@ public final class ib1 {
     public int m;
 
     public ib1(int i, int i2, List list, long j, Object obj, il1 il1Var, m5 m5Var, fl flVar, q01 q01Var, boolean z) {
-        this.f517a = i;
+        this.f516a = i;
         this.b = list;
         this.c = j;
         this.d = obj;
@@ -32,12 +32,12 @@ public final class ib1 {
         this.h = z;
         this.i = il1Var == il1.d;
         int size = list.size();
-        int iMax = 0;
-        for (int i3 = 0; i3 < size; i3++) {
-            hr1 hr1Var = (hr1) list.get(i3);
-            iMax = Math.max(iMax, !this.i ? hr1Var.e : hr1Var.d);
+        int i3 = 0;
+        for (int i4 = 0; i4 < size; i4++) {
+            hr1 hr1Var = (hr1) list.get(i4);
+            i3 = Math.max(i3, !this.i ? hr1Var.e : hr1Var.d);
         }
-        this.j = iMax;
+        this.j = i3;
         this.k = new int[this.b.size() * 2];
         this.m = Integer.MIN_VALUE;
     }

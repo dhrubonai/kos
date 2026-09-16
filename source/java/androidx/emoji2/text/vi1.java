@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class vi1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f1220a;
+    public final int f1219a;
     public final Integer b;
 
     public vi1(int i, Integer num) {
-        this.f1220a = i;
+        this.f1219a = i;
         this.b = num;
     }
 
@@ -21,16 +21,16 @@ public final class vi1 {
             return false;
         }
         vi1 vi1Var = (vi1) obj;
-        return this.f1220a == vi1Var.f1220a && lx0.n(this.b, vi1Var.b);
+        return this.f1219a == vi1Var.f1219a && lx0.n(this.b, vi1Var.b);
     }
 
     public final int hashCode() {
-        int iHashCode = Integer.hashCode(this.f1220a) * 31;
+        int hashCode = Integer.hashCode(this.f1219a) * 31;
         Integer num = this.b;
-        return iHashCode + (num == null ? 0 : num.hashCode());
+        return hashCode + (num == null ? 0 : num.hashCode());
     }
 
     public final String toString() {
-        return "ObjectLocation(group=" + this.f1220a + ", dataOffset=" + this.b + ')';
+        return "ObjectLocation(group=" + this.f1219a + ", dataOffset=" + this.b + ')';
     }
 }

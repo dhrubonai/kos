@@ -32,14 +32,16 @@ public final /* synthetic */ class kv implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
+        up2 invoke$lambda$6;
         switch (this.d) {
             case 0:
-                int iIntValue = ((Integer) obj2).intValue();
-                return ComposableLambdaImpl.invoke$lambda$6((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.e, (lx) obj, iIntValue);
+                int intValue = ((Integer) obj2).intValue();
+                invoke$lambda$6 = ComposableLambdaImpl.invoke$lambda$6((ComposableLambdaImpl) this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.e, (lx) obj, intValue);
+                return invoke$lambda$6;
             default:
                 ((Integer) obj2).intValue();
                 n6.n((w70) this.f, (sm0) this.g, (Function2) this.h, (Function2) this.i, (wm0) this.j, (Function2) this.k, (Function2) this.l, (um0) this.m, (lx) obj, n6.k0(this.e | 1));
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 }

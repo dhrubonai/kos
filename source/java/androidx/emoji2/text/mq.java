@@ -15,7 +15,7 @@ public final class mq extends lq {
 
     @Override // androidx.emoji2.text.lq
     public final Object d(jj0 jj0Var, l10 l10Var) {
-        Object objJ = this.g.j(jj0Var, l10Var);
-        return objJ == f30.d ? objJ : up2.f1187a;
+        Object j = this.g.j(jj0Var, l10Var);
+        return j == f30.d ? j : up2.f1186a;
     }
 }

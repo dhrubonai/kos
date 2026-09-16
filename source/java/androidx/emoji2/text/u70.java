@@ -11,12 +11,12 @@ import com.google.android.material.textfield.TextInputLayout;
 public abstract class u70 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ThreadLocal f1163a = new ThreadLocal();
+    public static final ThreadLocal f1162a = new ThreadLocal();
     public static final ThreadLocal b = new ThreadLocal();
 
     public static void a(TextInputLayout textInputLayout, View view, Rect rect) {
         rect.set(0, 0, view.getWidth(), view.getHeight());
-        ThreadLocal threadLocal = f1163a;
+        ThreadLocal threadLocal = f1162a;
         Matrix matrix = (Matrix) threadLocal.get();
         if (matrix == null) {
             matrix = new Matrix();

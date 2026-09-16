@@ -10,9 +10,9 @@ public final class sn1 extends ef2 implements Parcelable, pc2, mf1, qe2 {
     public oc2 e;
 
     public sn1(long j) {
-        ec2 ec2VarK = kc2.k();
-        oc2 oc2Var = new oc2(ec2VarK.g(), j);
-        if (!(ec2VarK instanceof bo0)) {
+        ec2 k = kc2.k();
+        oc2 oc2Var = new oc2(k.g(), j);
+        if (!(k instanceof bo0)) {
             oc2Var.b = new oc2(1, j);
         }
         this.e = oc2Var;
@@ -57,15 +57,15 @@ public final class sn1 extends ef2 implements Parcelable, pc2, mf1, qe2 {
     }
 
     public final void h(long j) {
-        ec2 ec2VarK;
+        ec2 k;
         oc2 oc2Var = (oc2) kc2.i(this.e);
         if (oc2Var.c != j) {
             oc2 oc2Var2 = this.e;
             synchronized (kc2.c) {
-                ec2VarK = kc2.k();
-                ((oc2) kc2.o(oc2Var2, this, ec2VarK, oc2Var)).c = j;
+                k = kc2.k();
+                ((oc2) kc2.o(oc2Var2, this, k, oc2Var)).c = j;
             }
-            kc2.n(ec2VarK, this);
+            kc2.n(k, this);
         }
     }
 

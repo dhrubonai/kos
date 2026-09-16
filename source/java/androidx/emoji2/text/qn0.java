@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public final class qn0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f969a;
+    public boolean f968a;
     public int b;
     public int c;
     public RecyclerView d;

@@ -1,7 +1,6 @@
 package androidx.emoji2.text;
 
 import com.kos.engine.entity.location.BCell;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,11 +18,11 @@ public final class l60 implements t51 {
     }
 
     @Override // androidx.emoji2.text.t51
-    public final void c(v51 v51Var, n51 n51Var) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public final void c(v51 v51Var, n51 n51Var) {
         switch (this.d) {
             case 0:
                 j60 j60Var = (j60) this.e;
-                switch (k60.f623a[n51Var.ordinal()]) {
+                switch (k60.f622a[n51Var.ordinal()]) {
                     case 1:
                         j60Var.getClass();
                         break;
@@ -36,10 +35,10 @@ public final class l60 implements t51 {
                     case 4:
                         j60Var.getClass();
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         j60Var.f(v51Var);
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         j60Var.b(v51Var);
                         break;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -61,11 +60,11 @@ public final class l60 implements t51 {
                 }
                 return;
             default:
-                HashMap map = ((wr) this.f).f1296a;
-                List list = (List) map.get(n51Var);
+                HashMap hashMap = ((wr) this.f).f1295a;
+                List list = (List) hashMap.get(n51Var);
                 Object obj = this.e;
                 wr.a(list, v51Var, n51Var, obj);
-                wr.a((List) map.get(n51.ON_ANY), v51Var, n51Var, obj);
+                wr.a((List) hashMap.get(n51.ON_ANY), v51Var, n51Var, obj);
                 return;
         }
     }
@@ -74,7 +73,7 @@ public final class l60 implements t51 {
         this.e = u51Var;
         yr yrVar = yr.c;
         Class<?> cls = u51Var.getClass();
-        wr wrVar = (wr) yrVar.f1397a.get(cls);
+        wr wrVar = (wr) yrVar.f1396a.get(cls);
         this.f = wrVar == null ? yrVar.a(cls, null) : wrVar;
     }
 

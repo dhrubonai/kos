@@ -63,19 +63,19 @@ public final /* synthetic */ class zr implements View.OnClickListener {
                 linearLayout.setBackground(gradientDrawable);
                 final int i3 = 0;
                 linearLayout.setPadding(0, facebookWebViewActivity.b(6), 0, facebookWebViewActivity.b(6));
-                int iB = facebookWebViewActivity.b(220);
-                final PopupWindow popupWindow = new PopupWindow((View) linearLayout, iB, -2, true);
+                int b = facebookWebViewActivity.b(220);
+                final PopupWindow popupWindow = new PopupWindow((View) linearLayout, b, -2, true);
                 popupWindow.setBackgroundDrawable(new ColorDrawable(0));
                 popupWindow.setElevation(facebookWebViewActivity.b(12));
                 String[] strArr2 = xa1.b;
-                LinearLayout linearLayoutC = facebookWebViewActivity.c(contextThemeWrapper, a.a.a.c.a(-123309070106402L, strArr2));
+                LinearLayout c = facebookWebViewActivity.c(contextThemeWrapper, a.a.a.c.a(-123309070106402L, strArr2));
                 CheckBox checkBox = new CheckBox(contextThemeWrapper);
                 checkBox.setChecked(facebookWebViewActivity.l);
                 checkBox.setClickable(false);
                 checkBox.setFocusable(false);
                 checkBox.setButtonTintList(ColorStateList.valueOf(-278748));
-                linearLayoutC.addView(checkBox, new LinearLayout.LayoutParams(-2, -2));
-                linearLayoutC.setOnClickListener(new View.OnClickListener() { // from class: androidx.emoji2.text.hh0
+                c.addView(checkBox, new LinearLayout.LayoutParams(-2, -2));
+                c.setOnClickListener(new View.OnClickListener() { // from class: androidx.emoji2.text.hh0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         int i4 = i3;
@@ -109,11 +109,11 @@ public final /* synthetic */ class zr implements View.OnClickListener {
                                     }
                                     facebookWebViewActivity2.d(facebookWebViewActivity2.h.getUrl());
                                     facebookWebViewActivity2.h.reload();
-                                    String strA = a.a.a.c.a(-123841646051106L, strArr4);
+                                    String a2 = a.a.a.c.a(-123841646051106L, strArr4);
                                     StringBuilder sb = new StringBuilder();
                                     sb.append(a.a.a.c.a(-123910365527842L, strArr4));
                                     sb.append(a.a.a.c.a(!z ? -126736454008610L : -126732159041314L, strArr4));
-                                    Log.d(strA, sb.toString());
+                                    Log.d(a2, sb.toString());
                                     break;
                                 }
                                 break;
@@ -130,12 +130,12 @@ public final /* synthetic */ class zr implements View.OnClickListener {
                         }
                     }
                 });
-                linearLayout.addView(linearLayoutC);
+                linearLayout.addView(c);
                 View view2 = new View(contextThemeWrapper);
                 view2.setBackgroundColor(-12961222);
                 linearLayout.addView(view2, new LinearLayout.LayoutParams(-1, facebookWebViewActivity.b(1)));
-                View viewC = facebookWebViewActivity.c(contextThemeWrapper, a.a.a.c.a(-123330544942882L, strArr2));
-                viewC.setOnClickListener(new View.OnClickListener() { // from class: androidx.emoji2.text.hh0
+                View c2 = facebookWebViewActivity.c(contextThemeWrapper, a.a.a.c.a(-123330544942882L, strArr2));
+                c2.setOnClickListener(new View.OnClickListener() { // from class: androidx.emoji2.text.hh0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view22) {
                         int i4 = i2;
@@ -169,11 +169,11 @@ public final /* synthetic */ class zr implements View.OnClickListener {
                                     }
                                     facebookWebViewActivity2.d(facebookWebViewActivity2.h.getUrl());
                                     facebookWebViewActivity2.h.reload();
-                                    String strA = a.a.a.c.a(-123841646051106L, strArr4);
+                                    String a2 = a.a.a.c.a(-123841646051106L, strArr4);
                                     StringBuilder sb = new StringBuilder();
                                     sb.append(a.a.a.c.a(-123910365527842L, strArr4));
                                     sb.append(a.a.a.c.a(!z ? -126736454008610L : -126732159041314L, strArr4));
-                                    Log.d(strA, sb.toString());
+                                    Log.d(a2, sb.toString());
                                     break;
                                 }
                                 break;
@@ -190,8 +190,8 @@ public final /* synthetic */ class zr implements View.OnClickListener {
                         }
                     }
                 });
-                linearLayout.addView(viewC);
-                popupWindow.showAsDropDown(view, -(iB - view.getWidth()), facebookWebViewActivity.b(4));
+                linearLayout.addView(c2);
+                popupWindow.showAsDropDown(view, -(b - view.getWidth()), facebookWebViewActivity.b(4));
                 break;
             default:
                 yn1 yn1Var = (yn1) obj;

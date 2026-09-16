@@ -25,11 +25,11 @@ public final class fh2 extends g01 implements um0 {
 
     @Override // androidx.emoji2.text.um0
     public final Object e(Object obj) {
-        long jLongValue = ((Number) obj).longValue();
+        long longValue = ((Number) obj).longValue();
         yd ydVar = this.g;
-        ge geVar = new ge(this.f, ydVar.c(), this.h, jLongValue, ydVar.g(), jLongValue, new eh2(this.i, 0));
-        pz0.s(geVar, jLongValue, this.j, this.g, this.i, this.k);
+        ge geVar = new ge(this.f, ydVar.c(), this.h, longValue, ydVar.g(), longValue, new eh2(this.i, 0));
+        pz0.s(geVar, longValue, this.j, this.g, this.i, this.k);
         this.e.d = geVar;
-        return up2.f1187a;
+        return up2.f1186a;
     }
 }

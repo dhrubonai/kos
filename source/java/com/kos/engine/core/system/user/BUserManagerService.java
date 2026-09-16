@@ -38,28 +38,28 @@ public class BUserManagerService extends IBUserManagerService.Stub implements IS
     }
 
     private void saveUserInfoLocked() {
-        Parcel parcelObtain = Parcel.obtain();
+        Parcel obtain = Parcel.obtain();
         rg rgVar = new rg(BEnvironment.getUserInfoConf());
         try {
-            parcelObtain.writeTypedList(new ArrayList(this.mUsers.values()));
-            FileOutputStream fileOutputStreamG0 = null;
+            obtain.writeTypedList(new ArrayList(this.mUsers.values()));
+            FileOutputStream fileOutputStream = null;
             try {
                 try {
-                    fileOutputStreamG0 = rgVar.g0();
-                    fileOutputStreamG0.write(parcelObtain.marshall());
-                    rgVar.B(fileOutputStreamG0);
-                    l8.F(fileOutputStreamG0);
+                    fileOutputStream = rgVar.g0();
+                    fileOutputStream.write(obtain.marshall());
+                    rgVar.B(fileOutputStream);
+                    l8.F(fileOutputStream);
                 } catch (IOException e) {
                     e.printStackTrace();
-                    rgVar.z(fileOutputStreamG0);
-                    l8.F(fileOutputStreamG0);
+                    rgVar.z(fileOutputStream);
+                    l8.F(fileOutputStream);
                 }
             } catch (Throwable th) {
-                l8.F(fileOutputStreamG0);
+                l8.F(fileOutputStream);
                 throw th;
             }
         } finally {
-            parcelObtain.recycle();
+            obtain.recycle();
         }
     }
 
@@ -67,9 +67,9 @@ public class BUserManagerService extends IBUserManagerService.Stub implements IS
         FileInputStream fileInputStream;
         Throwable th;
         Exception e;
-        ArrayList arrayListCreateTypedArrayList;
+        ArrayList createTypedArrayList;
         synchronized (this.mUserLock) {
-            Parcel parcelObtain = Parcel.obtain();
+            Parcel obtain = Parcel.obtain();
             try {
             } catch (Exception e2) {
                 fileInputStream = null;
@@ -77,7 +77,7 @@ public class BUserManagerService extends IBUserManagerService.Stub implements IS
             } catch (Throwable th2) {
                 fileInputStream = null;
                 th = th2;
-                parcelObtain.recycle();
+                obtain.recycle();
                 l8.F(fileInputStream);
                 throw th;
             }
@@ -85,25 +85,25 @@ public class BUserManagerService extends IBUserManagerService.Stub implements IS
                 fileInputStream = new FileInputStream(BEnvironment.getUserInfoConf());
                 try {
                     try {
-                        byte[] bArrN = wj1.N(fileInputStream);
-                        parcelObtain.unmarshall(bArrN, 0, bArrN.length);
-                        parcelObtain.setDataPosition(0);
-                        arrayListCreateTypedArrayList = parcelObtain.createTypedArrayList(BUserInfo.CREATOR);
+                        byte[] N = wj1.N(fileInputStream);
+                        obtain.unmarshall(N, 0, N.length);
+                        obtain.setDataPosition(0);
+                        createTypedArrayList = obtain.createTypedArrayList(BUserInfo.CREATOR);
                     } catch (Exception e3) {
                         e = e3;
                         e.printStackTrace();
-                        parcelObtain.recycle();
+                        obtain.recycle();
                         l8.F(fileInputStream);
                         return;
                     }
-                    if (arrayListCreateTypedArrayList != null) {
+                    if (createTypedArrayList != null) {
                         synchronized (this.mUsers) {
                             try {
                                 this.mUsers.clear();
-                                int size = arrayListCreateTypedArrayList.size();
+                                int size = createTypedArrayList.size();
                                 int i = 0;
                                 while (i < size) {
-                                    Object obj = arrayListCreateTypedArrayList.get(i);
+                                    Object obj = createTypedArrayList.get(i);
                                     i++;
                                     BUserInfo bUserInfo = (BUserInfo) obj;
                                     this.mUsers.put(Integer.valueOf(bUserInfo.id), bUserInfo);
@@ -111,20 +111,20 @@ public class BUserManagerService extends IBUserManagerService.Stub implements IS
                             } finally {
                             }
                         }
-                        parcelObtain.recycle();
+                        obtain.recycle();
                         l8.F(fileInputStream);
                         return;
                     }
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                 } catch (Throwable th3) {
                     th = th3;
-                    parcelObtain.recycle();
+                    obtain.recycle();
                     l8.F(fileInputStream);
                     throw th;
                 }
             } else {
-                parcelObtain.recycle();
+                obtain.recycle();
                 l8.F(null);
             }
         }

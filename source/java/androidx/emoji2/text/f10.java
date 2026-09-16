@@ -5,23 +5,23 @@ package androidx.emoji2.text;
 public final class f10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final un1 f338a = az0.W(c10.f178a);
+    public final un1 f337a = az0.W(c10.f177a);
 
     public final boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof f10) {
-            return lx0.n((e10) ((f10) obj).f338a.getValue(), (e10) this.f338a.getValue());
+            return lx0.n((e10) ((f10) obj).f337a.getValue(), (e10) this.f337a.getValue());
         }
         return false;
     }
 
     public final int hashCode() {
-        return ((e10) this.f338a.getValue()).hashCode();
+        return ((e10) this.f337a.getValue()).hashCode();
     }
 
     public final String toString() {
-        return "ContextMenuState(status=" + ((e10) this.f338a.getValue()) + ')';
+        return "ContextMenuState(status=" + ((e10) this.f337a.getValue()) + ')';
     }
 }

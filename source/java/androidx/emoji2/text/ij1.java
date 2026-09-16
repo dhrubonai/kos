@@ -7,16 +7,16 @@ import android.window.OnBackInvokedCallback;
 public final /* synthetic */ class ij1 implements OnBackInvokedCallback {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f528a;
+    public final /* synthetic */ int f527a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ ij1(int i, Object obj) {
-        this.f528a = i;
+        this.f527a = i;
         this.b = obj;
     }
 
     public final void onBackInvoked() {
-        switch (this.f528a) {
+        switch (this.f527a) {
             case 0:
                 ((hj1) this.b).a();
                 break;

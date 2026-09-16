@@ -9,22 +9,22 @@ import java.lang.reflect.Field;
 public abstract class ys2 extends q10 {
 
     /* renamed from: a, reason: collision with root package name */
-    public kz f1402a;
+    public kz f1401a;
 
     @Override // androidx.emoji2.text.q10
     public boolean g(CoordinatorLayout coordinatorLayout, View view, int i) {
         r(coordinatorLayout, view, i);
-        if (this.f1402a == null) {
-            this.f1402a = new kz(view);
+        if (this.f1401a == null) {
+            this.f1401a = new kz(view);
         }
-        kz kzVar = this.f1402a;
+        kz kzVar = this.f1401a;
         View view2 = (View) kzVar.f;
         kzVar.d = view2.getTop();
         kzVar.e = view2.getLeft();
-        kz kzVar2 = this.f1402a;
+        kz kzVar2 = this.f1401a;
         View view3 = (View) kzVar2.f;
         int top2 = 0 - (view3.getTop() - kzVar2.d);
-        Field field = es2.f320a;
+        Field field = es2.f319a;
         view3.offsetTopAndBottom(top2);
         view3.offsetLeftAndRight(0 - (view3.getLeft() - kzVar2.e));
         return true;

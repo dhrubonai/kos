@@ -7,7 +7,7 @@ public abstract class t62 {
     public static final f72 B;
 
     /* renamed from: a, reason: collision with root package name */
-    public static final f72 f1107a;
+    public static final f72 f1106a;
     public static final f72 b;
     public static final f72 c;
     public static final f72 d;
@@ -36,7 +36,7 @@ public abstract class t62 {
 
     static {
         xy1 xy1Var = xy1.x;
-        f1107a = new f72("GetTextLayoutResult", true, xy1Var);
+        f1106a = new f72("GetTextLayoutResult", true, xy1Var);
         b = new f72("OnClick", true, xy1Var);
         c = new f72("OnLongClick", true, xy1Var);
         d = new f72("ScrollBy", true, xy1Var);

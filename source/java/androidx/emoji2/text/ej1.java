@@ -7,5 +7,5 @@ import java.util.logging.Logger;
 public abstract /* synthetic */ class ej1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final Logger f307a = Logger.getLogger("okio.Okio");
+    public static final Logger f306a = Logger.getLogger("okio.Okio");
 }

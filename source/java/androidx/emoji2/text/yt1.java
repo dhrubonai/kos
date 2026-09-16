@@ -39,7 +39,7 @@ public final class yt1 extends vh {
                             float f3 = ((ld2) l6Var.e).k[i3];
                             if (f3 == f2) {
                                 i3--;
-                            } else if (f3 < f2) {
+                            } else if (f3 >= f2) {
                             }
                         }
                     }
@@ -59,19 +59,19 @@ public final class yt1 extends vh {
 
     @Override // androidx.emoji2.text.vh
     public final void i(s61 s61Var, vh vhVar, boolean z) {
-        ld2 ld2Var = vhVar.f1217a;
+        ld2 ld2Var = vhVar.f1216a;
         if (ld2Var == null) {
             return;
         }
         float[] fArr = ld2Var.k;
         oh ohVar = vhVar.d;
-        int iD = ohVar.d();
-        for (int i = 0; i < iD; i++) {
-            ld2 ld2VarE = ohVar.e(i);
+        int d = ohVar.d();
+        for (int i = 0; i < d; i++) {
+            ld2 e = ohVar.e(i);
             float f = ohVar.f(i);
             l6 l6Var = this.i;
-            l6Var.e = ld2VarE;
-            if (ld2VarE.d) {
+            l6Var.e = e;
+            if (e.d) {
                 boolean z2 = true;
                 for (int i2 = 0; i2 < 9; i2++) {
                     float[] fArr2 = ((ld2) l6Var.e).k;
@@ -99,7 +99,7 @@ public final class yt1 extends vh {
                         ((ld2) l6Var.e).k[i3] = 0.0f;
                     }
                 }
-                j(ld2VarE);
+                j(e);
             }
             this.b = (vhVar.b * f) + this.b;
         }

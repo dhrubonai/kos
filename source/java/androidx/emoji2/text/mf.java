@@ -12,7 +12,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import androidx.core.splashscreen.R;
-import java.lang.reflect.InvocationTargetException;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -58,7 +57,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public int getAutoSizeMaxTextSize() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeMaxTextSize();
         }
         fg fgVar = this.e;
@@ -70,7 +69,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public int getAutoSizeMinTextSize() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeMinTextSize();
         }
         fg fgVar = this.e;
@@ -82,7 +81,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public int getAutoSizeStepGranularity() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeStepGranularity();
         }
         fg fgVar = this.e;
@@ -94,7 +93,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public int[] getAutoSizeTextAvailableSizes() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeTextAvailableSizes();
         }
         fg fgVar = this.e;
@@ -104,12 +103,12 @@ public abstract class mf extends Button {
     @Override // android.widget.TextView
     @SuppressLint({"WrongConstant"})
     public int getAutoSizeTextType() {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             return super.getAutoSizeTextType() == 1 ? 1 : 0;
         }
         fg fgVar = this.e;
         if (fgVar != null) {
-            return fgVar.i.f855a;
+            return fgVar.i.f854a;
         }
         return 0;
     }
@@ -167,7 +166,7 @@ public abstract class mf extends Button {
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         fg fgVar = this.e;
-        if (fgVar == null || ct2.f218a) {
+        if (fgVar == null || ct2.f217a) {
             return;
         }
         fgVar.i.a();
@@ -179,7 +178,7 @@ public abstract class mf extends Button {
         fg fgVar = this.e;
         if (fgVar != null) {
             og ogVar = fgVar.i;
-            if (ct2.f218a || !ogVar.f()) {
+            if (ct2.f217a || !ogVar.f()) {
                 return;
             }
             ogVar.a();
@@ -194,7 +193,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
             return;
         }
@@ -206,7 +205,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
             return;
         }
@@ -218,7 +217,7 @@ public abstract class mf extends Button {
 
     @Override // android.widget.TextView
     public void setAutoSizeTextTypeWithDefaults(int i) {
-        if (ct2.f218a) {
+        if (ct2.f217a) {
             super.setAutoSizeTextTypeWithDefaults(i);
             return;
         }
@@ -263,7 +262,7 @@ public abstract class mf extends Button {
     public void setSupportAllCaps(boolean z) {
         fg fgVar = this.e;
         if (fgVar != null) {
-            fgVar.f362a.setAllCaps(z);
+            fgVar.f361a.setAllCaps(z);
         }
     }
 
@@ -303,8 +302,8 @@ public abstract class mf extends Button {
     }
 
     @Override // android.widget.TextView
-    public final void setTextSize(int i, float f) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        boolean z = ct2.f218a;
+    public final void setTextSize(int i, float f) {
+        boolean z = ct2.f217a;
         if (z) {
             super.setTextSize(i, f);
             return;

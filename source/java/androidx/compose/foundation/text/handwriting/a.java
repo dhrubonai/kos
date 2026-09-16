@@ -14,6 +14,6 @@ public abstract class a {
     public static final float b = 10;
 
     public static final nd1 a(boolean z, sm0 sm0Var) {
-        return (z && ig2.f523a) ? androidx.compose.foundation.layout.a.j(new StylusHandwritingElementWithNegativePadding(sm0Var), b, f36a) : kd1.f634a;
+        return (z && ig2.f522a) ? androidx.compose.foundation.layout.a.j(new StylusHandwritingElementWithNegativePadding(sm0Var), b, f36a) : kd1.f633a;
     }
 }

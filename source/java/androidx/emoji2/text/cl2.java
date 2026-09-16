@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public abstract class cl2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final ky f207a = new ky(ka2.i);
+    public static final ky f206a = new ky(ka2.i);
     public static final bl2 b;
 
     static {
-        long jH = bz0.h(4282550004L);
-        b = new bl2(jH, et.b(0.4f, jH));
+        long h = bz0.h(4282550004L);
+        b = new bl2(h, et.b(0.4f, h));
     }
 }

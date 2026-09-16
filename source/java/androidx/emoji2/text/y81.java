@@ -35,18 +35,18 @@ public final /* synthetic */ class y81 implements Function2 {
         ?? r1;
         Object obj4;
         int i2 = this.d;
-        up2 up2Var2 = up2.f1187a;
+        up2 up2Var2 = up2.f1186a;
         SplashScreen splashScreen = this.f;
         final MainActivity mainActivity = this.e;
         final int i3 = 1;
         switch (i2) {
             case 0:
                 lx lxVar = (lx) obj;
-                int iIntValue = ((Integer) obj2).intValue();
+                int intValue = ((Integer) obj2).intValue();
                 int i4 = MainActivity.x;
-                a.a.a.c.a(-263359363694370L, wj1.f1284a);
+                a.a.a.c.a(-263359363694370L, wj1.f1283a);
                 tx txVar = (tx) lxVar;
-                if (txVar.P(iIntValue & 1, (iIntValue & 3) != 2)) {
+                if (txVar.P(intValue & 1, (intValue & 3) != 2)) {
                     pl2.a(l8.f0(-617852470, new y81(mainActivity, splashScreen, i3), txVar), txVar, 6);
                 } else {
                     txVar.S();
@@ -55,12 +55,12 @@ public final /* synthetic */ class y81 implements Function2 {
             default:
                 dv dvVar = mainActivity.w;
                 lx lxVar2 = (lx) obj;
-                int iIntValue2 = ((Integer) obj2).intValue();
+                int intValue2 = ((Integer) obj2).intValue();
                 int i5 = MainActivity.x;
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 a.a.a.c.a(-250624785661730L, strArr);
                 tx txVar2 = (tx) lxVar2;
-                if (!txVar2.P(iIntValue2 & 1, (iIntValue2 & 3) != 2)) {
+                if (!txVar2.P(intValue2 & 1, (intValue2 & 3) != 2)) {
                     txVar2.S();
                     return up2Var2;
                 }
@@ -68,44 +68,44 @@ public final /* synthetic */ class y81 implements Function2 {
                 a.a.a.c.a(-248601856065314L, strArr);
                 Context context = (Context) txVar2.j(jf2Var);
                 a.a.a.c.a(-249379245145890L, strArr);
-                Object objM = txVar2.M();
-                Object obj5 = kx.f663a;
-                Object obj6 = objM;
-                if (objM == obj5) {
+                Object M = txVar2.M();
+                Object obj5 = kx.f662a;
+                Object obj6 = M;
+                if (M == obj5) {
                     Object sharedPreferences = context.getSharedPreferences(a.a.a.c.a(-249499504230178L, strArr), 0);
                     txVar2.i0(sharedPreferences);
                     obj6 = sharedPreferences;
                 }
                 SharedPreferences sharedPreferences2 = (SharedPreferences) obj6;
                 a.a.a.c.a(-249525274033954L, strArr);
-                Object objM2 = txVar2.M();
-                Object obj7 = objM2;
-                if (objM2 == obj5) {
-                    Object objW = az0.W(Boolean.valueOf(sharedPreferences2.getBoolean(a.a.a.c.a(-249164496781090L, strArr), false)));
-                    txVar2.i0(objW);
-                    obj7 = objW;
+                Object M2 = txVar2.M();
+                Object obj7 = M2;
+                if (M2 == obj5) {
+                    Object W = az0.W(Boolean.valueOf(sharedPreferences2.getBoolean(a.a.a.c.a(-249164496781090L, strArr), false)));
+                    txVar2.i0(W);
+                    obj7 = W;
                 }
                 final mf1 mf1Var = (mf1) obj7;
                 a.a.a.c.a(-249237511225122L, strArr);
-                Object objM3 = txVar2.M();
-                Object obj8 = objM3;
-                if (objM3 == obj5) {
-                    Object objW2 = az0.W(Boolean.FALSE);
-                    txVar2.i0(objW2);
-                    obj8 = objW2;
+                Object M3 = txVar2.M();
+                Object obj8 = M3;
+                if (M3 == obj5) {
+                    Object W2 = az0.W(Boolean.FALSE);
+                    txVar2.i0(W2);
+                    obj8 = W2;
                 }
                 mf1 mf1Var2 = (mf1) obj8;
-                final mf1 mf1VarS = az0.s(((t91) dvVar.getValue()).d, txVar2);
+                final mf1 s = az0.s(((t91) dvVar.getValue()).d, txVar2);
                 a.a.a.c.a(-260902642401058L, strArr);
-                boolean zF = txVar2.f(mf1VarS);
-                Object objM4 = txVar2.M();
-                Object obj9 = objM4;
-                if (zF || objM4 == obj5) {
+                boolean f = txVar2.f(s);
+                Object M4 = txVar2.M();
+                Object obj9 = M4;
+                if (f || M4 == obj5) {
                     Object obj10 = new SplashScreen.KeepOnScreenCondition() { // from class: androidx.emoji2.text.z81
                         @Override // androidx.core.splashscreen.SplashScreen.KeepOnScreenCondition
                         public final boolean shouldKeepOnScreen() {
                             int i6 = MainActivity.x;
-                            return ((Boolean) mf1Var.getValue()).booleanValue() && (((m91) mf1VarS.getValue()) instanceof k91);
+                            return ((Boolean) mf1.this.getValue()).booleanValue() && (((m91) s.getValue()) instanceof k91);
                         }
                     };
                     txVar2.i0(obj10);
@@ -116,26 +116,26 @@ public final /* synthetic */ class y81 implements Function2 {
                     txVar2.X(1787797345);
                     a.a.a.c.a(-261091620962082L, strArr);
                     a.a.a.c.a(-260675009134370L, strArr);
-                    boolean zH = txVar2.h(sharedPreferences2);
-                    Object objM5 = txVar2.M();
-                    Object obj11 = objM5;
-                    if (zH || objM5 == obj5) {
+                    boolean h = txVar2.h(sharedPreferences2);
+                    Object M5 = txVar2.M();
+                    Object obj11 = M5;
+                    if (h || M5 == obj5) {
                         Object yjVar = new yj(4, sharedPreferences2, mf1Var);
                         txVar2.i0(yjVar);
                         obj11 = yjVar;
                     }
                     sm0 sm0Var = (sm0) obj11;
                     a.a.a.c.a(-260795268218658L, strArr);
-                    boolean zH2 = txVar2.h(mainActivity);
-                    Object objM6 = txVar2.M();
-                    if (zH2 || objM6 == obj5) {
+                    boolean h2 = txVar2.h(mainActivity);
+                    Object M6 = txVar2.M();
+                    if (h2 || M6 == obj5) {
                         r1 = 0;
                         final boolean z3 = false ? 1 : 0;
                         Object obj12 = new sm0() { // from class: androidx.emoji2.text.a91
                             @Override // androidx.emoji2.text.sm0
                             public final Object a() {
                                 int i6 = z3;
-                                up2 up2Var3 = up2.f1187a;
+                                up2 up2Var3 = up2.f1186a;
                                 MainActivity mainActivity2 = mainActivity;
                                 switch (i6) {
                                     case 0:
@@ -154,7 +154,7 @@ public final /* synthetic */ class y81 implements Function2 {
                         obj4 = obj12;
                     } else {
                         r1 = 0;
-                        obj4 = objM6;
+                        obj4 = M6;
                     }
                     n6.E(sm0Var, (sm0) obj4, txVar2, r1);
                     txVar2.p(r1);
@@ -163,9 +163,9 @@ public final /* synthetic */ class y81 implements Function2 {
                 txVar2.X(1788347068);
                 a.a.a.c.a(-261534002593570L, strArr);
                 a.a.a.c.a(-261645671743266L, strArr);
-                Object objM7 = txVar2.M();
-                Object obj13 = objM7;
-                if (objM7 == obj5) {
+                Object M7 = txVar2.M();
+                Object obj13 = M7;
+                if (M7 == obj5) {
                     Object j2Var = new j2(11, mf1Var2);
                     txVar2.i0(j2Var);
                     obj13 = j2Var;
@@ -175,28 +175,28 @@ public final /* synthetic */ class y81 implements Function2 {
                     txVar2.X(1788649225);
                     a.a.a.c.a(-261216175013666L, strArr);
                     a.a.a.c.a(-261319254228770L, strArr);
-                    boolean zH3 = txVar2.h(mainActivity);
-                    Object objM8 = txVar2.M();
-                    Object obj14 = objM8;
-                    if (zH3 || objM8 == obj5) {
+                    boolean h3 = txVar2.h(mainActivity);
+                    Object M8 = txVar2.M();
+                    Object obj14 = M8;
+                    if (h3 || M8 == obj5) {
                         Object h9Var = new h9(mainActivity, null, 2);
                         txVar2.i0(h9Var);
                         obj14 = h9Var;
                     }
                     up2Var = up2Var2;
                     bz0.n(txVar2, up2Var, (Function2) obj14);
-                    m91 m91Var = (m91) mf1VarS.getValue();
+                    m91 m91Var = (m91) s.getValue();
                     if (m91Var instanceof k91) {
                         txVar2.X(1788884484);
                         a.a.a.c.a(-259858965348130L, strArr);
                         FillElement fillElement = androidx.compose.foundation.layout.c.c;
                         gl glVar = dd0.i;
                         a.a.a.c.a(-259863260315426L, strArr);
-                        fb1 fb1VarE = qm.e(glVar, false);
+                        fb1 e = qm.e(glVar, false);
                         a.a.a.c.a(-259489598160674L, strArr);
-                        int iHashCode = Long.hashCode(txVar2.T);
-                        ap1 ap1VarL = txVar2.l();
-                        nd1 nd1VarQ = bz0.Q(txVar2, fillElement);
+                        int hashCode = Long.hashCode(txVar2.T);
+                        ap1 l = txVar2.l();
+                        nd1 Q = bz0.Q(txVar2, fillElement);
                         hx.b.getClass();
                         hy hyVar = gx.b;
                         a.a.a.c.a(-260335706717986L, strArr);
@@ -206,16 +206,16 @@ public final /* synthetic */ class y81 implements Function2 {
                         } else {
                             txVar2.l0();
                         }
-                        mz0.G(txVar2, fb1VarE, gx.e);
-                        mz0.G(txVar2, ap1VarL, gx.d);
+                        mz0.G(txVar2, e, gx.e);
+                        mz0.G(txVar2, l, gx.d);
                         wc wcVar = gx.f;
-                        if (txVar2.S || !lx0.n(txVar2.M(), Integer.valueOf(iHashCode))) {
-                            zd.l(iHashCode, txVar2, iHashCode, wcVar);
+                        if (txVar2.S || !lx0.n(txVar2.M(), Integer.valueOf(hashCode))) {
+                            zd.l(hashCode, txVar2, hashCode, wcVar);
                         }
-                        mz0.G(txVar2, nd1VarQ, gx.c);
+                        mz0.G(txVar2, Q, gx.c);
                         a.a.a.c.a(-260554750050082L, strArr);
                         a.a.a.c.a(-260163908026146L, strArr);
-                        ru1.a(null, pl2.f914a, 0.0f, 0L, 0, txVar2, 0, 29);
+                        ru1.a(null, pl2.f913a, 0.0f, 0L, 0, txVar2, 0, 29);
                         txVar2.p(true);
                         z = false;
                         txVar2.p(false);
@@ -223,27 +223,27 @@ public final /* synthetic */ class y81 implements Function2 {
                         txVar2.X(1789209054);
                         a.a.a.c.a(-260284167110434L, strArr);
                         a.a.a.c.a(-263118845525794L, strArr);
-                        Object objM9 = txVar2.M();
-                        Object obj15 = objM9;
-                        if (objM9 == obj5) {
+                        Object M9 = txVar2.M();
+                        Object obj15 = M9;
+                        if (M9 == obj5) {
                             Object h82Var = new h82(context);
                             txVar2.i0(h82Var);
                             obj15 = h82Var;
                         }
-                        if (((h82) obj15).f460a.getBoolean(a.a.a.c.a(-330652911288098L, strArr), false)) {
+                        if (((h82) obj15).f459a.getBoolean(a.a.a.c.a(-330652911288098L, strArr), false)) {
                             txVar2.X(1789744982);
                             a.a.a.c.a(-263239104610082L, strArr);
                             a.a.a.c.a(-262796722978594L, strArr);
-                            boolean zH4 = txVar2.h(context);
-                            Object objM10 = txVar2.M();
-                            if (zH4 || objM10 == obj5) {
+                            boolean h4 = txVar2.h(context);
+                            Object M10 = txVar2.M();
+                            if (h4 || M10 == obj5) {
                                 z2 = false;
                                 Object b91Var = new b91(context, false ? 1 : 0);
                                 txVar2.i0(b91Var);
                                 obj3 = b91Var;
                             } else {
                                 z2 = false;
-                                obj3 = objM10;
+                                obj3 = M10;
                             }
                             jz0.g((sm0) obj3, txVar2, z2 ? 1 : 0);
                             txVar2.p(z2);
@@ -252,7 +252,7 @@ public final /* synthetic */ class y81 implements Function2 {
                             txVar2.X(1789977885);
                             a.a.a.c.a(-262985701539618L, strArr);
                             l91 l91Var = (l91) m91Var;
-                            l8.w(l91Var.f680a, l91Var.b, (t91) dvVar.getValue(), txVar2, 0);
+                            l8.w(l91Var.f679a, l91Var.b, (t91) dvVar.getValue(), txVar2, 0);
                             txVar2.p(false);
                         }
                         txVar2.p(z2);
@@ -272,19 +272,19 @@ public final /* synthetic */ class y81 implements Function2 {
                             String str = j91Var.b;
                             i = (str == null || str.length() == 0) ? R.string.error_title : R.string.update_required_title;
                         }
-                        String strI0 = n6.i0(txVar2, i);
-                        String str2 = j91Var.f568a;
+                        String i0 = n6.i0(txVar2, i);
+                        String str2 = j91Var.f567a;
                         String str3 = j91Var.b;
                         a.a.a.c.a(-263720140947234L, strArr);
-                        boolean zH5 = txVar2.h(mainActivity);
-                        Object objM11 = txVar2.M();
-                        Object obj16 = objM11;
-                        if (zH5 || objM11 == obj5) {
+                        boolean h5 = txVar2.h(mainActivity);
+                        Object M11 = txVar2.M();
+                        Object obj16 = M11;
+                        if (h5 || M11 == obj5) {
                             Object obj17 = new sm0() { // from class: androidx.emoji2.text.a91
                                 @Override // androidx.emoji2.text.sm0
                                 public final Object a() {
                                     int i6 = i3;
-                                    up2 up2Var3 = up2.f1187a;
+                                    up2 up2Var3 = up2.f1186a;
                                     MainActivity mainActivity2 = mainActivity;
                                     switch (i6) {
                                         case 0:
@@ -302,7 +302,7 @@ public final /* synthetic */ class y81 implements Function2 {
                             txVar2.i0(obj17);
                             obj16 = obj17;
                         }
-                        n6.z(strI0, str2, str3, (sm0) obj16, null, txVar2, 0, 16);
+                        n6.z(i0, str2, str3, (sm0) obj16, null, txVar2, 0, 16);
                         z = false;
                         txVar2.p(false);
                     }

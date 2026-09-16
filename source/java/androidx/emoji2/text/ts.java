@@ -44,7 +44,7 @@ public final class ts {
     public StaticLayout Z;
 
     /* renamed from: a, reason: collision with root package name */
-    public final TextInputLayout f1140a;
+    public final TextInputLayout f1139a;
     public float a0;
     public float b;
     public float b0;
@@ -85,7 +85,7 @@ public final class ts {
     public int j0 = -1;
 
     public ts(TextInputLayout textInputLayout) {
-        this.f1140a = textInputLayout;
+        this.f1139a = textInputLayout;
         TextPaint textPaint = new TextPaint(129);
         this.O = textPaint;
         this.P = new TextPaint(textPaint);
@@ -111,16 +111,16 @@ public final class ts {
         float f = this.b;
         float f2 = this.c.left;
         Rect rect = this.d;
-        float fH = h(f2, rect.left, f, this.Q);
+        float h = h(f2, rect.left, f, this.Q);
         RectF rectF = this.e;
-        rectF.left = fH;
+        rectF.left = h;
         rectF.top = h(this.m, this.n, f, this.Q);
         rectF.right = h(r1.right, rect.right, f, this.Q);
         rectF.bottom = h(r1.bottom, rect.bottom, f, this.Q);
         this.q = h(this.o, this.p, f, this.Q);
         this.r = h(this.m, this.n, f, this.Q);
         d(f, false);
-        TextInputLayout textInputLayout = this.f1140a;
+        TextInputLayout textInputLayout = this.f1139a;
         textInputLayout.postInvalidateOnAnimation();
         oh0 oh0Var = je.b;
         this.b0 = 1.0f - h(0.0f, 1.0f, 1.0f - f, oh0Var);
@@ -145,14 +145,14 @@ public final class ts {
         this.H = je.a(0.0f, this.S, f);
         this.I = je.a(0.0f, this.T, f);
         this.J = je.a(0.0f, this.U, f);
-        int iA = a(f, 0, g(this.V));
-        this.K = iA;
-        textPaint.setShadowLayer(this.H, this.I, this.J, iA);
+        int a2 = a(f, 0, g(this.V));
+        this.K = a2;
+        textPaint.setShadowLayer(this.H, this.I, this.J, a2);
         textInputLayout.postInvalidateOnAnimation();
     }
 
     public final boolean c(CharSequence charSequence) {
-        boolean z = this.f1140a.getLayoutDirection() == 1;
+        boolean z = this.f1139a.getLayoutDirection() == 1;
         if (this.E) {
             return (z ? dj2.d : dj2.c).b(charSequence, charSequence.length());
         }
@@ -166,17 +166,17 @@ public final class ts {
         if (this.B == null) {
             return;
         }
-        float fWidth = this.d.width();
-        float fWidth2 = this.c.width();
+        float width = this.d.width();
+        float width2 = this.c.width();
         if (Math.abs(f - 1.0f) < 1.0E-5f) {
             f2 = o() ? this.i : this.h;
             f3 = o() ? this.W : this.X;
             this.F = o() ? 1.0f : h(this.h, this.i, f, this.R) / this.h;
             if (!o()) {
-                fWidth = fWidth2;
+                width = width2;
             }
             typeface = this.s;
-            fWidth2 = fWidth;
+            width2 = width;
         } else {
             f2 = this.h;
             float f4 = this.X;
@@ -187,37 +187,37 @@ public final class ts {
                 this.F = h(this.h, this.i, f, this.R) / this.h;
             }
             float f5 = this.i / this.h;
-            float f6 = fWidth2 * f5;
-            if (!z && f6 > fWidth && o()) {
-                fWidth2 = Math.min(fWidth / f5, fWidth2);
+            float f6 = width2 * f5;
+            if (!z && f6 > width && o()) {
+                width2 = Math.min(width / f5, width2);
             }
             f3 = f4;
         }
         int i = f < 0.5f ? this.e0 : this.f0;
         TextPaint textPaint = this.O;
-        if (fWidth2 > 0.0f) {
+        if (width2 > 0.0f) {
             boolean z2 = this.G != f2;
             boolean z3 = this.Y != f3;
             boolean z4 = this.y != typeface;
             StaticLayout staticLayout = this.Z;
-            boolean z5 = z2 || z3 || (staticLayout != null && (fWidth2 > ((float) staticLayout.getWidth()) ? 1 : (fWidth2 == ((float) staticLayout.getWidth()) ? 0 : -1)) != 0) || z4 || (this.L != i) || this.N;
+            boolean z5 = z2 || z3 || (staticLayout != null && (width2 > ((float) staticLayout.getWidth()) ? 1 : (width2 == ((float) staticLayout.getWidth()) ? 0 : -1)) != 0) || z4 || (this.L != i) || this.N;
             this.G = f2;
             this.Y = f3;
             this.y = typeface;
             this.N = false;
             this.L = i;
             textPaint.setLinearText(this.F != 1.0f);
-            z = z5;
+            r7 = z5;
         }
-        if (this.C == null || z) {
+        if (this.C == null || r7) {
             textPaint.setTextSize(this.G);
             textPaint.setTypeface(this.y);
             textPaint.setLetterSpacing(this.Y);
-            boolean zC = c(this.B);
-            this.D = zC;
-            StaticLayout staticLayoutE = e(((this.e0 > 1 || this.f0 > 1) && !zC) ? i : 1, textPaint, this.B, fWidth2 * (o() ? 1.0f : this.F), this.D);
-            this.Z = staticLayoutE;
-            this.C = staticLayoutE.getText();
+            boolean c = c(this.B);
+            this.D = c;
+            StaticLayout e = e(((this.e0 > 1 || this.f0 > 1) && !c) ? i : 1, textPaint, this.B, width2 * (o() ? 1.0f : this.F), this.D);
+            this.Z = e;
+            this.C = e.getText();
         }
     }
 
@@ -240,9 +240,9 @@ public final class ts {
         hf2Var.h = f2;
         hf2Var.i = this.h0;
         hf2Var.m = null;
-        StaticLayout staticLayoutA = hf2Var.a();
-        staticLayoutA.getClass();
-        return staticLayoutA;
+        StaticLayout a2 = hf2Var.a();
+        a2.getClass();
+        return a2;
     }
 
     public final float f() {
@@ -291,8 +291,8 @@ public final class ts {
     }
 
     public final void j(boolean z) {
-        float fMeasureText;
-        TextInputLayout textInputLayout = this.f1140a;
+        float measureText;
+        TextInputLayout textInputLayout = this.f1139a;
         if ((textInputLayout.getHeight() <= 0 || textInputLayout.getWidth() <= 0) && !z) {
             return;
         }
@@ -328,9 +328,9 @@ public final class ts {
         }
         if (this.a0 <= rect.width()) {
             float f = this.p;
-            float fMax = Math.max(0.0f, rect.left - f) + f;
-            this.p = fMax;
-            this.p = Math.min(0.0f, rect.right - (this.a0 + fMax)) + fMax;
+            float max = Math.max(0.0f, rect.left - f) + f;
+            this.p = max;
+            this.p = Math.min(0.0f, rect.right - (this.a0 + max)) + max;
         }
         float f2 = this.i;
         TextPaint textPaint2 = this.P;
@@ -339,18 +339,18 @@ public final class ts {
         textPaint2.setLetterSpacing(this.W);
         if (textPaint2.descent() + (-textPaint2.ascent()) <= rect.height()) {
             float f3 = this.n;
-            float fMax2 = Math.max(0.0f, rect.top - f3) + f3;
-            this.n = fMax2;
-            this.n = Math.min(0.0f, rect.bottom - (f() + fMax2)) + fMax2;
+            float max2 = Math.max(0.0f, rect.top - f3) + f3;
+            this.n = max2;
+            this.n = Math.min(0.0f, rect.bottom - (f() + max2)) + max2;
         }
         d(0.0f, z);
         float height = this.Z != null ? r15.getHeight() : 0.0f;
         StaticLayout staticLayout = this.Z;
         if (staticLayout == null || this.e0 <= 1) {
             CharSequence charSequence3 = this.C;
-            fMeasureText = charSequence3 != null ? textPaint.measureText(charSequence3, 0, charSequence3.length()) : 0.0f;
+            measureText = charSequence3 != null ? textPaint.measureText(charSequence3, 0, charSequence3.length()) : 0.0f;
         } else {
-            fMeasureText = staticLayout.getWidth();
+            measureText = staticLayout.getWidth();
         }
         StaticLayout staticLayout2 = this.Z;
         this.l = staticLayout2 != null ? staticLayout2.getLineCount() : 0;
@@ -366,11 +366,11 @@ public final class ts {
         }
         int i4 = absoluteGravity2 & 8388615;
         if (i4 == 1) {
-            this.o = rect2.centerX() - (fMeasureText / 2.0f);
+            this.o = rect2.centerX() - (measureText / 2.0f);
         } else if (i4 != 5) {
             this.o = rect2.left;
         } else {
-            this.o = rect2.right - fMeasureText;
+            this.o = rect2.right - measureText;
         }
         d(this.b, false);
         textInputLayout.postInvalidateOnAnimation();
@@ -395,63 +395,47 @@ public final class ts {
             return false;
         }
         this.u = typeface;
-        Typeface typefaceV = az0.V(this.f1140a.getContext().getResources().getConfiguration(), typeface);
-        this.t = typefaceV;
-        if (typefaceV == null) {
-            typefaceV = this.u;
+        Typeface V = az0.V(this.f1139a.getContext().getResources().getConfiguration(), typeface);
+        this.t = V;
+        if (V == null) {
+            V = this.u;
         }
-        this.s = typefaceV;
+        this.s = V;
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:4:0x0005 A[PHI: r0
-      0x0005: PHI (r0v4 float) = (r0v0 float), (r0v1 float) binds: [B:3:0x0003, B:6:0x000b] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x000b, code lost:
+    
+        if (r3 > 1.0f) goto L4;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void m(float r3) {
-        /*
-            r2 = this;
-            r0 = 0
-            int r1 = (r3 > r0 ? 1 : (r3 == r0 ? 0 : -1))
-            if (r1 >= 0) goto L7
-        L5:
-            r3 = r0
-            goto Le
-        L7:
-            r0 = 1065353216(0x3f800000, float:1.0)
-            int r1 = (r3 > r0 ? 1 : (r3 == r0 ? 0 : -1))
-            if (r1 <= 0) goto Le
-            goto L5
-        Le:
-            float r0 = r2.b
-            int r0 = (r3 > r0 ? 1 : (r3 == r0 ? 0 : -1))
-            if (r0 == 0) goto L19
-            r2.b = r3
-            r2.b()
-        L19:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ts.m(float):void");
+    public final void m(float f) {
+        float f2 = f >= 0.0f ? 1.0f : 0.0f;
+        f = f2;
+        if (f != this.b) {
+            this.b = f;
+            b();
+        }
     }
 
     public final void n(Typeface typeface) {
         boolean z;
-        boolean zL = l(typeface);
+        boolean l = l(typeface);
         if (this.x != typeface) {
             this.x = typeface;
-            Typeface typefaceV = az0.V(this.f1140a.getContext().getResources().getConfiguration(), typeface);
-            this.w = typefaceV;
-            if (typefaceV == null) {
-                typefaceV = this.x;
+            Typeface V = az0.V(this.f1139a.getContext().getResources().getConfiguration(), typeface);
+            this.w = V;
+            if (V == null) {
+                V = this.x;
             }
-            this.v = typefaceV;
+            this.v = V;
             z = true;
         } else {
             z = false;
         }
-        if (zL || z) {
+        if (l || z) {
             j(false);
         }
     }

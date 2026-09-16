@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public abstract class bo2 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final aj f161a;
+    public static final aj f160a;
     public static final ThreadLocal b;
     public static final ArrayList c;
 
@@ -23,7 +23,7 @@ public abstract class bo2 {
         ajVar.I(new lh0(2));
         ajVar.I(new gq());
         ajVar.I(new lh0(1));
-        f161a = ajVar;
+        f160a = ajVar;
         b = new ThreadLocal();
         c = new ArrayList();
     }
@@ -35,9 +35,9 @@ public abstract class bo2 {
         }
         arrayList.add(frameLayout);
         if (sn2Var == null) {
-            sn2Var = f161a;
+            sn2Var = f160a;
         }
-        sn2 sn2VarClone = sn2Var.clone();
+        sn2 clone = sn2Var.clone();
         ArrayList arrayList2 = (ArrayList) b().get(frameLayout);
         if (arrayList2 != null && arrayList2.size() > 0) {
             int size = arrayList2.size();
@@ -48,13 +48,13 @@ public abstract class bo2 {
                 ((sn2) obj).w(frameLayout);
             }
         }
-        sn2VarClone.h(frameLayout, true);
+        clone.h(frameLayout, true);
         if (frameLayout.getTag(R.id.transition_current_scene) != null) {
             throw new ClassCastException();
         }
         frameLayout.setTag(R.id.transition_current_scene, null);
         ao2 ao2Var = new ao2();
-        ao2Var.d = sn2VarClone;
+        ao2Var.d = clone;
         ao2Var.e = frameLayout;
         frameLayout.addOnAttachStateChangeListener(ao2Var);
         frameLayout.getViewTreeObserver().addOnPreDrawListener(ao2Var);

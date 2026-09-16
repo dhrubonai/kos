@@ -5,13 +5,13 @@ package androidx.emoji2.text;
 public final class re {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Object f1005a;
+    public final Object f1004a;
     public final int b;
     public final int c;
     public final String d;
 
     public re(Object obj, int i, int i2, String str) {
-        this.f1005a = obj;
+        this.f1004a = obj;
         this.b = i;
         this.c = i2;
         this.d = str;
@@ -25,17 +25,17 @@ public final class re {
             return false;
         }
         re reVar = (re) obj;
-        return lx0.n(this.f1005a, reVar.f1005a) && this.b == reVar.b && this.c == reVar.c && lx0.n(this.d, reVar.d);
+        return lx0.n(this.f1004a, reVar.f1004a) && this.b == reVar.b && this.c == reVar.c && lx0.n(this.d, reVar.d);
     }
 
     public final int hashCode() {
-        Object obj = this.f1005a;
+        Object obj = this.f1004a;
         return this.d.hashCode() + jx0.a(this.c, jx0.a(this.b, (obj == null ? 0 : obj.hashCode()) * 31, 31), 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("MutableRange(item=");
-        sb.append(this.f1005a);
+        sb.append(this.f1004a);
         sb.append(", start=");
         sb.append(this.b);
         sb.append(", end=");

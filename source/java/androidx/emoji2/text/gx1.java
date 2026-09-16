@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public abstract class gx1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public cx1 f445a;
+    public cx1 f444a;
     public ArrayList b;
     public long c;
     public long d;
@@ -16,9 +16,9 @@ public abstract class gx1 {
     public long f;
 
     public final void a(vx1 vx1Var) {
-        cx1 cx1Var = this.f445a;
+        cx1 cx1Var = this.f444a;
         if (cx1Var != null) {
-            RecyclerView recyclerView = cx1Var.f226a;
+            RecyclerView recyclerView = cx1Var.f225a;
             boolean z = true;
             vx1Var.m(true);
             if ((vx1Var.b & 16) != 0) {
@@ -29,20 +29,20 @@ public abstract class gx1 {
             rg rgVar = recyclerView.g;
             kr krVar = (kr) rgVar.f;
             cx1 cx1Var2 = (cx1) rgVar.e;
-            int iIndexOfChild = cx1Var2.f226a.indexOfChild(null);
-            if (iIndexOfChild == -1) {
+            int indexOfChild = cx1Var2.f225a.indexOfChild(null);
+            if (indexOfChild == -1) {
                 rgVar.h0(null);
-            } else if (krVar.d(iIndexOfChild)) {
-                krVar.g(iIndexOfChild);
+            } else if (krVar.d(indexOfChild)) {
+                krVar.g(indexOfChild);
                 rgVar.h0(null);
-                cx1Var2.a(iIndexOfChild);
+                cx1Var2.a(indexOfChild);
             } else {
                 z = false;
             }
             if (z) {
-                vx1 vx1VarS = RecyclerView.s(null);
-                px1Var.l(vx1VarS);
-                px1Var.j(vx1VarS);
+                vx1 s = RecyclerView.s(null);
+                px1Var.l(s);
+                px1Var.j(s);
             }
             recyclerView.G(!z);
             if (z || !vx1Var.j()) {

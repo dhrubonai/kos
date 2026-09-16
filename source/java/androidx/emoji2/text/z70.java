@@ -13,7 +13,7 @@ import java.util.concurrent.Executor;
 public final class z70 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final Executor f1422a;
+    public final Executor f1421a;
     public final gu1 b;
     public final byte[] c;
     public final File d;
@@ -24,7 +24,7 @@ public final class z70 {
 
     public z70(AssetManager assetManager, Executor executor, gu1 gu1Var, String str, File file) {
         byte[] bArr;
-        this.f1422a = executor;
+        this.f1421a = executor;
         this.b = gu1Var;
         this.e = str;
         this.d = file;
@@ -70,6 +70,6 @@ public final class z70 {
     }
 
     public final void b(int i, Serializable serializable) {
-        this.f1422a.execute(new wu(i, 2, this, serializable));
+        this.f1421a.execute(new wu(i, 2, this, serializable));
     }
 }

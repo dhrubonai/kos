@@ -15,59 +15,59 @@ public final class yy1 extends g01 implements sm0 {
 
     @Override // androidx.emoji2.text.sm0
     public final Object a() {
-        float fX;
-        long jF;
         float f;
+        long f2;
+        float f3;
         long j;
         switch (this.e) {
             case 0:
                 return Boolean.valueOf(this.f.j.getValue() != null);
             case 1:
-                return this.f.f446a.a();
+                return this.f.f445a.a();
             case 2:
                 gz1 gz1Var = this.f;
-                fz1 fz1VarD = gz1Var.d();
-                if (fz1VarD != null) {
-                    gz0 gz0VarA = gz1Var.f446a.a();
-                    g21 g21Var = (g21) gz0VarA.d;
-                    int iOrdinal = gz0VarA.h().ordinal();
-                    if (iOrdinal == 0) {
-                        jF = g21Var.f() & 4294967295L;
+                fz1 d = gz1Var.d();
+                if (d != null) {
+                    gz0 a2 = gz1Var.f445a.a();
+                    g21 g21Var = (g21) a2.d;
+                    int ordinal = a2.h().ordinal();
+                    if (ordinal == 0) {
+                        f2 = g21Var.f() & 4294967295L;
                     } else {
-                        if (iOrdinal != 1) {
+                        if (ordinal != 1) {
                             throw new mu();
                         }
-                        jF = g21Var.f() >> 32;
+                        f2 = g21Var.f() >> 32;
                     }
-                    long jC = fz1VarD.c();
-                    fX = (((int) jF) - nz0.x(jz0.d((int) (jC >> 32), (int) (jC & 4294967295L)), gz1Var.f())) - 1.0f;
-                } else {
-                    fX = 0.0f;
-                }
-                return Float.valueOf(fX);
-            default:
-                gz1 gz1Var2 = this.f;
-                fz1 fz1VarD2 = gz1Var2.d();
-                if (fz1VarD2 != null) {
-                    long jC2 = fz1VarD2.c();
-                    float fX2 = nz0.x(jz0.d((int) (jC2 >> 32), (int) (jC2 & 4294967295L)), gz1Var2.f());
-                    long jD = fz1VarD2.d();
-                    il1 il1VarF = gz1Var2.f();
-                    lx0.x(il1VarF, "orientation");
-                    int iOrdinal2 = il1VarF.ordinal();
-                    if (iOrdinal2 == 0) {
-                        j = jD & 4294967295L;
-                    } else {
-                        if (iOrdinal2 != 1) {
-                            throw new mu();
-                        }
-                        j = jD >> 32;
-                    }
-                    f = (fX2 + ((int) j)) - 1.0f;
+                    long c = d.c();
+                    f = (((int) f2) - nz0.x(jz0.d((int) (c >> 32), (int) (c & 4294967295L)), gz1Var.f())) - 1.0f;
                 } else {
                     f = 0.0f;
                 }
                 return Float.valueOf(f);
+            default:
+                gz1 gz1Var2 = this.f;
+                fz1 d2 = gz1Var2.d();
+                if (d2 != null) {
+                    long c2 = d2.c();
+                    float x = nz0.x(jz0.d((int) (c2 >> 32), (int) (c2 & 4294967295L)), gz1Var2.f());
+                    long d3 = d2.d();
+                    il1 f4 = gz1Var2.f();
+                    lx0.x(f4, "orientation");
+                    int ordinal2 = f4.ordinal();
+                    if (ordinal2 == 0) {
+                        j = d3 & 4294967295L;
+                    } else {
+                        if (ordinal2 != 1) {
+                            throw new mu();
+                        }
+                        j = d3 >> 32;
+                    }
+                    f3 = (x + ((int) j)) - 1.0f;
+                } else {
+                    f3 = 0.0f;
+                }
+                return Float.valueOf(f3);
         }
     }
 }

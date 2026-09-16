@@ -44,7 +44,7 @@ public final class wy1 extends g01 implements Function2 {
                 androidx.compose.material3.a.b(this.f, this.g, this.h, qh2Var, yw0Var, t92Var, (lx) obj, n6.k0(this.i | 1));
                 break;
         }
-        return up2.f1187a;
+        return up2.f1186a;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

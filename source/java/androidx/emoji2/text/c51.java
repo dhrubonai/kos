@@ -17,10 +17,10 @@ public final class c51 extends md1 implements ey, xn0, y60 {
     @Override // androidx.emoji2.text.md1
     public final void A0() {
         ia iaVar = this.r;
-        if (iaVar.f516a != null) {
+        if (iaVar.f515a != null) {
             throw new IllegalStateException("Expected textInputModifierNode to be null");
         }
-        iaVar.f516a = this;
+        iaVar.f515a = this;
     }
 
     @Override // androidx.emoji2.text.md1

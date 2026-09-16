@@ -49,10 +49,10 @@ public final class v3 extends wf implements x3 {
         if (drawable != null && background != null) {
             int width = getWidth();
             int height = getHeight();
-            int iMax = Math.max(width, height) / 2;
+            int max = Math.max(width, height) / 2;
             int paddingLeft = (width + (getPaddingLeft() - getPaddingRight())) / 2;
             int paddingTop = (height + (getPaddingTop() - getPaddingBottom())) / 2;
-            background.setHotspotBounds(paddingLeft - iMax, paddingTop - iMax, paddingLeft + iMax, paddingTop + iMax);
+            background.setHotspotBounds(paddingLeft - max, paddingTop - max, paddingLeft + max, paddingTop + max);
         }
         return frame;
     }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public final class lr {
 
     /* renamed from: a, reason: collision with root package name */
-    public boolean f705a;
+    public boolean f704a;
     public Object b;
     public Object c = lx0.b(0.0f);
     public Object d = new ArrayList();
@@ -16,32 +16,32 @@ public final class lr {
 
     /* JADX WARN: Multi-variable type inference failed */
     public lr(boolean z, sm0 sm0Var) {
-        this.f705a = z;
+        this.f704a = z;
         this.b = (g01) sm0Var;
     }
 
-    public void a(g11 g11Var, float f, long j) throws Throwable {
+    public void a(g11 g11Var, float f, long j) {
         long j2;
         np npVar = g11Var.d;
-        float fFloatValue = ((Number) ((ed) this.c).d()).floatValue();
-        if (fFloatValue <= 0.0f) {
+        float floatValue = ((Number) ((ed) this.c).d()).floatValue();
+        if (floatValue <= 0.0f) {
             return;
         }
-        long jB = et.b(fFloatValue, j);
-        if (!this.f705a) {
-            vb0.a0(f, 124, jB, 0L, g11Var);
+        long b = et.b(floatValue, j);
+        if (!this.f704a) {
+            vb0.a0(f, 124, b, 0L, g11Var);
             return;
         }
-        float fD = ib2.d(npVar.i());
-        float fB = ib2.b(npVar.i());
+        float d = ib2.d(npVar.i());
+        float b2 = ib2.b(npVar.i());
         rg rgVar = npVar.e;
-        long jM = rgVar.M();
+        long M = rgVar.M();
         rgVar.D().f();
         try {
-            ((rg) ((p4) rgVar.e).e).D().k(0.0f, 0.0f, fD, fB, 1);
-            j2 = jM;
+            ((rg) ((p4) rgVar.e).e).D().k(0.0f, 0.0f, d, b2, 1);
+            j2 = M;
             try {
-                vb0.a0(f, 124, jB, 0L, g11Var);
+                vb0.a0(f, 124, b, 0L, g11Var);
                 rgVar.D().n();
                 rgVar.e0(j2);
             } catch (Throwable th) {
@@ -52,7 +52,7 @@ public final class lr {
             }
         } catch (Throwable th2) {
             th = th2;
-            j2 = jM;
+            j2 = M;
         }
     }
 
@@ -63,19 +63,19 @@ public final class lr {
         if (z) {
             arrayList.add(xw0Var);
         } else if (xw0Var instanceof es0) {
-            arrayList.remove(((es0) xw0Var).f319a);
+            arrayList.remove(((es0) xw0Var).f318a);
         } else if (xw0Var instanceof bk0) {
             arrayList.add(xw0Var);
         } else if (xw0Var instanceof ck0) {
-            arrayList.remove(((ck0) xw0Var).f203a);
+            arrayList.remove(((ck0) xw0Var).f202a);
         } else if (xw0Var instanceof fb0) {
             arrayList.add(xw0Var);
         } else if (xw0Var instanceof gb0) {
-            arrayList.remove(((gb0) xw0Var).f411a);
+            arrayList.remove(((gb0) xw0Var).f410a);
         } else if (!(xw0Var instanceof eb0)) {
             return;
         } else {
-            arrayList.remove(((eb0) xw0Var).f297a);
+            arrayList.remove(((eb0) xw0Var).f296a);
         }
         xw0 xw0Var2 = (xw0) ws.G0(arrayList);
         if (lx0.n((xw0) this.e, xw0Var2)) {
@@ -84,15 +84,19 @@ public final class lr {
         l10 l10Var = null;
         if (xw0Var2 != null) {
             r02 r02Var = (r02) ((g01) this.b).a();
-            float f = z ? r02Var.c : xw0Var instanceof bk0 ? r02Var.b : xw0Var instanceof fb0 ? r02Var.f989a : 0.0f;
-            vo2 vo2Var = d12.f234a;
-            if (!(xw0Var2 instanceof ds0) && ((xw0Var2 instanceof bk0) || (xw0Var2 instanceof fb0))) {
-                vo2Var = new vo2(45, zc0.c, 2);
+            float f = z ? r02Var.c : xw0Var instanceof bk0 ? r02Var.b : xw0Var instanceof fb0 ? r02Var.f988a : 0.0f;
+            vo2 vo2Var = d12.f233a;
+            if (!(xw0Var2 instanceof ds0)) {
+                if (xw0Var2 instanceof bk0) {
+                    vo2Var = new vo2(45, zc0.c, 2);
+                } else if (xw0Var2 instanceof fb0) {
+                    vo2Var = new vo2(45, zc0.c, 2);
+                }
             }
             h50.G(e30Var, null, new ve2(this, f, vo2Var, null), 3);
         } else {
             xw0 xw0Var3 = (xw0) this.e;
-            vo2 vo2Var2 = d12.f234a;
+            vo2 vo2Var2 = d12.f233a;
             if (!(xw0Var3 instanceof ds0) && !(xw0Var3 instanceof bk0) && (xw0Var3 instanceof fb0)) {
                 vo2Var2 = new vo2(150, zc0.c, 2);
             }
@@ -108,15 +112,15 @@ public final class lr {
         int i2;
         sr0 sr0Var = (sr0) this.c;
         vr0 vr0Var = (vr0) this.e;
-        if (this.f705a) {
+        if (this.f704a) {
             return 0;
         }
         try {
-            this.f705a = true;
-            dx0 dx0VarR = ((gz0) this.d).r(l6Var, v7Var);
-            g81 g81Var = (g81) dx0VarR.c;
-            int iG = g81Var.g();
-            for (int i3 = 0; i3 < iG; i3++) {
+            this.f704a = true;
+            dx0 r = ((gz0) this.d).r(l6Var, v7Var);
+            g81 g81Var = (g81) r.c;
+            int g = g81Var.g();
+            for (int i3 = 0; i3 < g; i3++) {
                 ps1 ps1Var = (ps1) g81Var.h(i3);
                 if (!ps1Var.d && !ps1Var.h) {
                 }
@@ -124,35 +128,33 @@ public final class lr {
                 break;
             }
             objArr = true;
-            int iG2 = g81Var.g();
-            for (int i4 = 0; i4 < iG2; i4++) {
+            int g2 = g81Var.g();
+            for (int i4 = 0; i4 < g2; i4++) {
                 ps1 ps1Var2 = (ps1) g81Var.h(i4);
                 if (objArr != false || nz0.n(ps1Var2)) {
                     ((e11) this.b).A(ps1Var2.c, (vr0) this.e, ps1Var2.i, true);
                     if (!vr0Var.d.g()) {
-                        sr0Var.a(ps1Var2.f926a, vr0Var, nz0.n(ps1Var2));
+                        sr0Var.a(ps1Var2.f925a, vr0Var, nz0.n(ps1Var2));
                         vr0Var.clear();
                     }
                 }
             }
-            boolean zB = sr0Var.b(dx0VarR, z);
-            if (dx0VarR.b) {
-                i = 0;
-            } else {
-                int iG3 = g81Var.g();
-                for (int i5 = 0; i5 < iG3; i5++) {
+            boolean b = sr0Var.b(r, z);
+            if (!r.b) {
+                int g3 = g81Var.g();
+                for (int i5 = 0; i5 < g3; i5++) {
                     ps1 ps1Var3 = (ps1) g81Var.h(i5);
                     if (!zi1.b(nz0.I(ps1Var3, true), 0L) && ps1Var3.b()) {
                         i = 1;
                         break;
                     }
                 }
-                i = 0;
             }
-            int iG4 = g81Var.g();
+            i = 0;
+            int g4 = g81Var.g();
             int i6 = 0;
             while (true) {
-                if (i6 >= iG4) {
+                if (i6 >= g4) {
                     i2 = 0;
                     break;
                 }
@@ -162,23 +164,23 @@ public final class lr {
                 }
                 i6++;
             }
-            int i7 = (zB ? 1 : 0) | (i << 1) | (i2 << 2);
-            this.f705a = false;
+            int i7 = (b ? 1 : 0) | (i << 1) | (i2 << 2);
+            this.f704a = false;
             return i7;
         } catch (Throwable th) {
-            this.f705a = false;
+            this.f704a = false;
             throw th;
         }
     }
 
-    public b02 d(boolean z) throws IOException {
+    public b02 d(boolean z) {
         try {
-            b02 b02VarB = ((gg0) this.d).b(z);
-            if (b02VarB == null) {
-                return b02VarB;
+            b02 b = ((gg0) this.d).b(z);
+            if (b == null) {
+                return b;
             }
-            b02VarB.m = this;
-            return b02VarB;
+            b.m = this;
+            return b;
         } catch (IOException e) {
             e(e);
             throw e;
@@ -186,30 +188,30 @@ public final class lr {
     }
 
     public void e(IOException iOException) {
-        this.f705a = true;
+        this.f704a = true;
         ((hg0) this.c).c(iOException);
-        vv1 vv1VarC = ((gg0) this.d).c();
+        vv1 c = ((gg0) this.d).c();
         tv1 tv1Var = (tv1) this.b;
-        synchronized (vv1VarC) {
+        synchronized (c) {
             try {
                 if (!(iOException instanceof tf2)) {
-                    if (!(vv1VarC.g != null) || (iOException instanceof qy)) {
-                        vv1VarC.j = true;
-                        if (vv1VarC.m == 0) {
-                            vv1.d(tv1Var.d, vv1VarC.b, iOException);
-                            vv1VarC.l++;
+                    if (!(c.g != null) || (iOException instanceof qy)) {
+                        c.j = true;
+                        if (c.m == 0) {
+                            vv1.d(tv1Var.d, c.b, iOException);
+                            c.l++;
                         }
                     }
                 } else if (((tf2) iOException).d == 8) {
-                    int i = vv1VarC.n + 1;
-                    vv1VarC.n = i;
+                    int i = c.n + 1;
+                    c.n = i;
                     if (i > 1) {
-                        vv1VarC.j = true;
-                        vv1VarC.l++;
+                        c.j = true;
+                        c.l++;
                     }
                 } else if (((tf2) iOException).d != 9 || !tv1Var.p) {
-                    vv1VarC.j = true;
-                    vv1VarC.l++;
+                    c.j = true;
+                    c.l++;
                 }
             } catch (Throwable th) {
                 throw th;

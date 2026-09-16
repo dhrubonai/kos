@@ -25,16 +25,16 @@ public abstract class a {
     }
 
     public static final nd1 c(nd1 nd1Var, se1 se1Var, vu0 vu0Var, boolean z, String str, k12 k12Var, sm0 sm0Var) {
-        nd1 nd1VarK;
+        nd1 k;
         if (vu0Var instanceof zu0) {
-            nd1VarK = new ClickableElement(se1Var, (zu0) vu0Var, z, str, k12Var, sm0Var);
+            k = new ClickableElement(se1Var, (zu0) vu0Var, z, str, k12Var, sm0Var);
         } else if (vu0Var == null) {
-            nd1VarK = new ClickableElement(se1Var, null, z, str, k12Var, sm0Var);
+            k = new ClickableElement(se1Var, null, z, str, k12Var, sm0Var);
         } else {
-            kd1 kd1Var = kd1.f634a;
-            nd1VarK = se1Var != null ? e.a(kd1Var, se1Var, vu0Var).k(new ClickableElement(se1Var, null, z, str, k12Var, sm0Var)) : bz0.y(kd1Var, new b(vu0Var, z, str, k12Var, sm0Var));
+            kd1 kd1Var = kd1.f633a;
+            k = se1Var != null ? e.a(kd1Var, se1Var, vu0Var).k(new ClickableElement(se1Var, null, z, str, k12Var, sm0Var)) : bz0.y(kd1Var, new b(vu0Var, z, str, k12Var, sm0Var));
         }
-        return nd1Var.k(nd1VarK);
+        return nd1Var.k(k);
     }
 
     public static /* synthetic */ nd1 d(nd1 nd1Var, se1 se1Var, vu0 vu0Var, boolean z, k12 k12Var, sm0 sm0Var, int i) {
@@ -55,15 +55,15 @@ public abstract class a {
     }
 
     public static nd1 f(nd1 nd1Var, se1 se1Var, vu0 vu0Var, sm0 sm0Var, sm0 sm0Var2) {
-        nd1 nd1VarK;
+        nd1 k;
         if (vu0Var instanceof zu0) {
-            nd1VarK = new CombinedClickableElement(se1Var, (zu0) vu0Var, sm0Var2, sm0Var);
+            k = new CombinedClickableElement(se1Var, (zu0) vu0Var, sm0Var2, sm0Var);
         } else if (vu0Var == null) {
-            nd1VarK = new CombinedClickableElement(se1Var, null, sm0Var2, sm0Var);
+            k = new CombinedClickableElement(se1Var, null, sm0Var2, sm0Var);
         } else {
-            kd1 kd1Var = kd1.f634a;
-            nd1VarK = se1Var != null ? e.a(kd1Var, se1Var, vu0Var).k(new CombinedClickableElement(se1Var, null, sm0Var2, sm0Var)) : bz0.y(kd1Var, new c(vu0Var, sm0Var2, sm0Var));
+            kd1 kd1Var = kd1.f633a;
+            k = se1Var != null ? e.a(kd1Var, se1Var, vu0Var).k(new CombinedClickableElement(se1Var, null, sm0Var2, sm0Var)) : bz0.y(kd1Var, new c(vu0Var, sm0Var2, sm0Var));
         }
-        return nd1Var.k(nd1VarK);
+        return nd1Var.k(k);
     }
 }

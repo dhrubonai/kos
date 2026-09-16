@@ -7,7 +7,7 @@ import java.util.Arrays;
 public final class mz {
 
     /* renamed from: a, reason: collision with root package name */
-    public int[] f778a;
+    public int[] f777a;
     public int[] b;
     public int c;
     public int[] d;
@@ -38,13 +38,13 @@ public final class mz {
 
     public final void b(int i, int i2) {
         int i3 = this.c;
-        int[] iArr = this.f778a;
+        int[] iArr = this.f777a;
         if (i3 >= iArr.length) {
-            this.f778a = Arrays.copyOf(iArr, iArr.length * 2);
+            this.f777a = Arrays.copyOf(iArr, iArr.length * 2);
             int[] iArr2 = this.b;
             this.b = Arrays.copyOf(iArr2, iArr2.length * 2);
         }
-        int[] iArr3 = this.f778a;
+        int[] iArr3 = this.f777a;
         int i4 = this.c;
         iArr3[i4] = i;
         int[] iArr4 = this.b;

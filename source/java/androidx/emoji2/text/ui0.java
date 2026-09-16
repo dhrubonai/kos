@@ -16,7 +16,7 @@ public final class ui0 extends im0 {
     }
 
     @Override // androidx.emoji2.text.im0, androidx.emoji2.text.nd2
-    public final long v(long j, rn rnVar) throws IOException {
+    public final long v(long j, rn rnVar) {
         lx0.x(rnVar, "sink");
         long j2 = this.g;
         long j3 = this.e;
@@ -29,15 +29,15 @@ public final class ui0 extends im0 {
             }
             j = Math.min(j, j4);
         }
-        long jV = super.v(j, rnVar);
-        if (jV != -1) {
-            this.g += jV;
+        long v = super.v(j, rnVar);
+        if (v != -1) {
+            this.g += v;
         }
         long j5 = this.g;
-        if ((j5 >= j3 || jV != -1) && j5 <= j3) {
-            return jV;
+        if ((j5 >= j3 || v != -1) && j5 <= j3) {
+            return v;
         }
-        if (jV > 0 && j5 > j3) {
+        if (v > 0 && j5 > j3) {
             long j6 = rnVar.e - (j5 - j3);
             rn rnVar2 = new rn();
             rnVar2.A(rnVar);

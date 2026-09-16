@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class jn1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ra f588a;
+    public final ra f587a;
     public final int b;
     public final int c;
     public final int d;
@@ -14,7 +14,7 @@ public final class jn1 {
     public final float g;
 
     public jn1(ra raVar, int i, int i2, int i3, int i4, float f, float f2) {
-        this.f588a = raVar;
+        this.f587a = raVar;
         this.b = i;
         this.c = i2;
         this.d = i3;
@@ -59,16 +59,16 @@ public final class jn1 {
             return false;
         }
         jn1 jn1Var = (jn1) obj;
-        return this.f588a.equals(jn1Var.f588a) && this.b == jn1Var.b && this.c == jn1Var.c && this.d == jn1Var.d && this.e == jn1Var.e && Float.compare(this.f, jn1Var.f) == 0 && Float.compare(this.g, jn1Var.g) == 0;
+        return this.f587a.equals(jn1Var.f587a) && this.b == jn1Var.b && this.c == jn1Var.c && this.d == jn1Var.d && this.e == jn1Var.e && Float.compare(this.f, jn1Var.f) == 0 && Float.compare(this.g, jn1Var.g) == 0;
     }
 
     public final int hashCode() {
-        return Float.hashCode(this.g) + zd.b(this.f, jx0.a(this.e, jx0.a(this.d, jx0.a(this.c, jx0.a(this.b, this.f588a.hashCode() * 31, 31), 31), 31), 31), 31);
+        return Float.hashCode(this.g) + zd.b(this.f, jx0.a(this.e, jx0.a(this.d, jx0.a(this.c, jx0.a(this.b, this.f587a.hashCode() * 31, 31), 31), 31), 31), 31);
     }
 
     public final String toString() {
         StringBuilder sb = new StringBuilder("ParagraphInfo(paragraph=");
-        sb.append(this.f588a);
+        sb.append(this.f587a);
         sb.append(", startIndex=");
         sb.append(this.b);
         sb.append(", endIndex=");

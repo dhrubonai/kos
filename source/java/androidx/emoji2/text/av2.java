@@ -18,10 +18,10 @@ public final class av2 extends ev2 {
     public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
 
     public static void f(View view, fv2 fv2Var) {
-        xu2 xu2VarK = k(view);
-        if (xu2VarK != null) {
-            xu2VarK.a(fv2Var);
-            if (xu2VarK.e == 0) {
+        xu2 k = k(view);
+        if (k != null) {
+            k.a(fv2Var);
+            if (k.e == 0) {
                 return;
             }
         }
@@ -34,12 +34,12 @@ public final class av2 extends ev2 {
     }
 
     public static void g(View view, fv2 fv2Var, wv2 wv2Var, boolean z) {
-        xu2 xu2VarK = k(view);
-        if (xu2VarK != null) {
-            xu2VarK.d = wv2Var;
+        xu2 k = k(view);
+        if (k != null) {
+            k.d = wv2Var;
             if (!z) {
-                xu2VarK.b();
-                z = xu2VarK.e == 0;
+                k.b();
+                z = k.e == 0;
             }
         }
         if (view instanceof ViewGroup) {
@@ -51,10 +51,10 @@ public final class av2 extends ev2 {
     }
 
     public static void h(View view, wv2 wv2Var, List list) {
-        xu2 xu2VarK = k(view);
-        if (xu2VarK != null) {
-            wv2Var = xu2VarK.c(wv2Var, list);
-            if (xu2VarK.e == 0) {
+        xu2 k = k(view);
+        if (k != null) {
+            wv2Var = k.c(wv2Var, list);
+            if (k.e == 0) {
                 return;
             }
         }
@@ -67,10 +67,10 @@ public final class av2 extends ev2 {
     }
 
     public static void i(View view, fv2 fv2Var, a12 a12Var) {
-        xu2 xu2VarK = k(view);
-        if (xu2VarK != null) {
-            xu2VarK.d(fv2Var, a12Var);
-            if (xu2VarK.e == 0) {
+        xu2 k = k(view);
+        if (k != null) {
+            k.d(fv2Var, a12Var);
+            if (k.e == 0) {
                 return;
             }
         }
@@ -89,7 +89,7 @@ public final class av2 extends ev2 {
     public static xu2 k(View view) {
         Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
         if (tag instanceof zu2) {
-            return ((zu2) tag).f1455a;
+            return ((zu2) tag).f1454a;
         }
         return null;
     }

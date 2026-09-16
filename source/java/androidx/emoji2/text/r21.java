@@ -2,6 +2,7 @@ package androidx.emoji2.text;
 
 import java.util.ArrayList;
 import java.util.List;
+import kotlin.jvm.functions.Function2;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
 /* loaded from: classes.dex */
@@ -9,7 +10,7 @@ public final class r21 implements i52 {
     public static final a12 t = ly0.z(wc.F, o90.s);
 
     /* renamed from: a, reason: collision with root package name */
-    public final h60 f992a;
+    public final h60 f991a;
     public final j21 b;
     public final un1 c;
     public final se1 d;
@@ -31,11 +32,11 @@ public final class r21 implements i52 {
 
     public r21(int i, int i2) {
         h60 h60Var = new h60();
-        h60Var.f454a = -1;
+        h60Var.f453a = -1;
         h60Var.c = new sf1(new z31[16]);
-        this.f992a = h60Var;
+        this.f991a = h60Var;
         this.b = new j21(i, i2, 0);
-        this.c = new un1(t21.f1100a, dd0.P);
+        this.c = new un1(t21.f1099a, dd0.P);
         this.d = new se1();
         this.f = new s60(new r5(21, this));
         this.g = true;
@@ -73,103 +74,170 @@ public final class r21 implements i52 {
         return this.f.d(f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x0066, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0066, code lost:
     
-        if (r8.e(r6, r7, r0) == r4) goto L22;
+        if (r8.e(r6, r7, r0) != r4) goto L23;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0013  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
     @Override // androidx.emoji2.text.i52
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object e(androidx.emoji2.text.vf1 r6, kotlin.jvm.functions.Function2 r7, androidx.emoji2.text.l10 r8) {
-        /*
-            r5 = this;
-            boolean r0 = r8 instanceof androidx.emoji2.text.q21
-            if (r0 == 0) goto L13
-            r0 = r8
-            androidx.emoji2.text.q21 r0 = (androidx.emoji2.text.q21) r0
-            int r1 = r0.l
-            r2 = -2147483648(0xffffffff80000000, float:-0.0)
-            r3 = r1 & r2
-            if (r3 == 0) goto L13
-            int r1 = r1 - r2
-            r0.l = r1
-            goto L18
-        L13:
-            androidx.emoji2.text.q21 r0 = new androidx.emoji2.text.q21
-            r0.<init>(r5, r8)
-        L18:
-            java.lang.Object r8 = r0.j
-            int r1 = r0.l
-            r2 = 2
-            r3 = 1
-            androidx.emoji2.text.f30 r4 = androidx.emoji2.text.f30.d
-            if (r1 == 0) goto L3f
-            if (r1 == r3) goto L32
-            if (r1 != r2) goto L2a
-            androidx.emoji2.text.mz0.L(r8)
-            goto L69
-        L2a:
-            java.lang.IllegalStateException r6 = new java.lang.IllegalStateException
-            java.lang.String r7 = "call to 'resume' before 'invoke' with coroutine"
-            r6.<init>(r7)
-            throw r6
-        L32:
-            androidx.emoji2.text.hh2 r6 = r0.i
-            r7 = r6
-            kotlin.jvm.functions.Function2 r7 = (kotlin.jvm.functions.Function2) r7
-            androidx.emoji2.text.vf1 r6 = r0.h
-            androidx.emoji2.text.r21 r1 = r0.g
-            androidx.emoji2.text.mz0.L(r8)
-            goto L57
-        L3f:
-            androidx.emoji2.text.mz0.L(r8)
-            r0.g = r5
-            r0.h = r6
-            r8 = r7
-            androidx.emoji2.text.hh2 r8 = (androidx.emoji2.text.hh2) r8
-            r0.i = r8
-            r0.l = r3
-            androidx.emoji2.text.ij r8 = r5.j
-            java.lang.Object r8 = r8.f(r0)
-            if (r8 != r4) goto L56
-            goto L68
-        L56:
-            r1 = r5
-        L57:
-            androidx.emoji2.text.s60 r8 = r1.f
-            r1 = 0
-            r0.g = r1
-            r0.h = r1
-            r0.i = r1
-            r0.l = r2
-            java.lang.Object r6 = r8.e(r6, r7, r0)
-            if (r6 != r4) goto L69
-        L68:
-            return r4
-        L69:
-            androidx.emoji2.text.up2 r6 = androidx.emoji2.text.up2.f1187a
-            return r6
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.r21.e(androidx.emoji2.text.vf1, kotlin.jvm.functions.Function2, androidx.emoji2.text.l10):java.lang.Object");
+    public final Object e(vf1 vf1Var, Function2 function2, l10 l10Var) {
+        q21 q21Var;
+        int i;
+        r21 r21Var;
+        Function2 function22;
+        if (l10Var instanceof q21) {
+            q21Var = (q21) l10Var;
+            int i2 = q21Var.l;
+            if ((i2 & Integer.MIN_VALUE) != 0) {
+                q21Var.l = i2 - Integer.MIN_VALUE;
+                Object obj = q21Var.j;
+                i = q21Var.l;
+                f30 f30Var = f30.d;
+                if (i != 0) {
+                    mz0.L(obj);
+                    q21Var.g = this;
+                    q21Var.h = vf1Var;
+                    q21Var.i = (hh2) function2;
+                    q21Var.l = 1;
+                    if (this.j.f(q21Var) != f30Var) {
+                        r21Var = this;
+                        function22 = function2;
+                    }
+                    return f30Var;
+                }
+                if (i != 1) {
+                    if (i != 2) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    mz0.L(obj);
+                    return up2.f1186a;
+                }
+                Function2 function23 = (Function2) q21Var.i;
+                vf1Var = q21Var.h;
+                r21Var = q21Var.g;
+                mz0.L(obj);
+                function22 = function23;
+                s60 s60Var = r21Var.f;
+                q21Var.g = null;
+                q21Var.h = null;
+                q21Var.i = null;
+                q21Var.l = 2;
+            }
+        }
+        q21Var = new q21(this, l10Var);
+        Object obj2 = q21Var.j;
+        i = q21Var.l;
+        f30 f30Var2 = f30.d;
+        if (i != 0) {
+        }
+        s60 s60Var2 = r21Var.f;
+        q21Var.g = null;
+        q21Var.h = null;
+        q21Var.i = null;
+        q21Var.l = 2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:28:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x00f8  */
     /* JADX WARN: Type inference failed for: r3v0, types: [java.lang.Object, java.util.Collection, java.util.List] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final void f(androidx.emoji2.text.g21 r12, boolean r13) {
-        /*
-            Method dump skipped, instructions count: 273
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.r21.f(androidx.emoji2.text.g21, boolean):void");
+    public final void f(g21 g21Var, boolean z) {
+        Object obj;
+        int i;
+        int i2;
+        int i3;
+        float f = this.e;
+        float f2 = g21Var.d;
+        il1 il1Var = g21Var.l;
+        ?? r3 = g21Var.h;
+        this.e = f - f2;
+        this.c.setValue(g21Var);
+        i21 i21Var = g21Var.f396a;
+        int i4 = 0;
+        this.s.setValue(Boolean.valueOf(((i21Var != null ? i21Var.f503a : 0) == 0 && g21Var.b == 0) ? false : true));
+        this.r.setValue(Boolean.valueOf(g21Var.c));
+        j21 j21Var = this.b;
+        if (z) {
+            int i5 = g21Var.b;
+            if (i5 >= 0.0f) {
+                j21Var.c.h(i5);
+                return;
+            }
+            j21Var.getClass();
+            throw new IllegalStateException(("scrollOffset should be non-negative (" + i5 + ')').toString());
+        }
+        j21Var.getClass();
+        if (i21Var != null) {
+            h21[] h21VarArr = i21Var.b;
+            h21 h21Var = h21VarArr.length == 0 ? null : h21VarArr[0];
+            if (h21Var != null) {
+                obj = h21Var.b;
+                j21Var.e = obj;
+                if (!j21Var.d || g21Var.k > 0) {
+                    j21Var.d = true;
+                    i = g21Var.b;
+                    if (i >= 0.0f) {
+                        throw new IllegalStateException(("scrollOffset should be non-negative (" + i + ')').toString());
+                    }
+                    if (i21Var != null) {
+                        h21[] h21VarArr2 = i21Var.b;
+                        h21 h21Var2 = h21VarArr2.length != 0 ? h21VarArr2[0] : null;
+                        if (h21Var2 != null) {
+                            i2 = h21Var2.f450a;
+                            j21Var.a(i2, i);
+                        }
+                    }
+                    i2 = 0;
+                    j21Var.a(i2, i);
+                }
+                if (this.g) {
+                    h60 h60Var = this.f991a;
+                    sf1 sf1Var = (sf1) h60Var.c;
+                    if (h60Var.f453a == -1 || r3.isEmpty()) {
+                        return;
+                    }
+                    boolean z2 = h60Var.b;
+                    il1 il1Var2 = il1.d;
+                    if (z2) {
+                        h21 h21Var3 = (h21) ws.F0(r3);
+                        i3 = (il1Var == il1Var2 ? h21Var3.u : h21Var3.v) + 1;
+                    } else {
+                        h21 h21Var4 = (h21) ws.A0(r3);
+                        i3 = (il1Var == il1Var2 ? h21Var4.u : h21Var4.v) - 1;
+                    }
+                    if (h60Var.f453a != i3) {
+                        h60Var.f453a = -1;
+                        int i6 = sf1Var.f;
+                        if (i6 > 0) {
+                            Object[] objArr = sf1Var.d;
+                            do {
+                                ((z31) objArr[i4]).cancel();
+                                i4++;
+                            } while (i4 < i6);
+                        }
+                        sf1Var.g();
+                        return;
+                    }
+                    return;
+                }
+                return;
+            }
+        }
+        obj = null;
+        j21Var.e = obj;
+        if (!j21Var.d) {
+        }
+        j21Var.d = true;
+        i = g21Var.b;
+        if (i >= 0.0f) {
+        }
     }
 
     public final g21 g() {
@@ -189,7 +257,7 @@ public final class r21 implements i52 {
         int i4;
         int i5;
         if (this.g) {
-            h60 h60Var = this.f992a;
+            h60 h60Var = this.f991a;
             sf1 sf1Var = (sf1) h60Var.c;
             ?? r5 = g21Var.h;
             il1 il1Var = g21Var.l;
@@ -202,16 +270,16 @@ public final class r21 implements i52 {
             if (z2) {
                 h21 h21Var = (h21) ws.F0(r7);
                 i = (il1Var == il1Var2 ? h21Var.u : h21Var.v) + 1;
-                i2 = ((h21) ws.F0(r7)).f451a + 1;
+                i2 = ((h21) ws.F0(r7)).f450a + 1;
             } else {
                 h21 h21Var2 = (h21) ws.A0(r7);
                 i = (il1Var == il1Var2 ? h21Var2.u : h21Var2.v) - 1;
-                i2 = ((h21) ws.A0(r7)).f451a - 1;
+                i2 = ((h21) ws.A0(r7)).f450a - 1;
             }
             if (i2 < 0 || i2 >= g21Var.k) {
                 return;
             }
-            if (i == h60Var.f454a || i < 0) {
+            if (i == h60Var.f453a || i < 0) {
                 z = z2;
                 list = r7;
             } else {
@@ -224,15 +292,15 @@ public final class r21 implements i52 {
                     } while (i6 < i5);
                 }
                 h60Var.b = z2;
-                h60Var.f454a = i;
+                h60Var.f453a = i;
                 sf1Var.g();
                 n21 n21Var = this.n;
                 n21Var.getClass();
                 ArrayList arrayList = new ArrayList();
-                r21 r21Var = n21Var.f786a;
-                ec2 ec2VarG = a01.G();
-                um0 um0VarE = ec2VarG != null ? ec2VarG.e() : null;
-                ec2 ec2VarS = a01.S(ec2VarG);
+                r21 r21Var = n21Var.f785a;
+                ec2 G = a01.G();
+                um0 e = G != null ? G.e() : null;
+                ec2 S = a01.S(G);
                 try {
                     List list2 = (List) ((g21) r21Var.c.getValue()).g.e(Integer.valueOf(i));
                     int size = list2.size();
@@ -244,7 +312,7 @@ public final class r21 implements i52 {
                         r21 r21Var2 = r21Var;
                         List list4 = list3;
                         List list5 = list2;
-                        arrayList.add(r21Var.m.a(((Number) hn1Var.d).intValue(), ((vz) hn1Var.e).f1250a));
+                        arrayList.add(r21Var.m.a(((Number) hn1Var.d).intValue(), ((vz) hn1Var.e).f1249a));
                         i7++;
                         z2 = z3;
                         r21Var = r21Var2;
@@ -253,10 +321,10 @@ public final class r21 implements i52 {
                     }
                     z = z2;
                     list = list3;
-                    a01.V(ec2VarG, ec2VarS, um0VarE);
+                    a01.V(G, S, e);
                     sf1Var.d(sf1Var.f, arrayList);
                 } catch (Throwable th) {
-                    a01.V(ec2VarG, ec2VarS, um0VarE);
+                    a01.V(G, S, e);
                     throw th;
                 }
             }

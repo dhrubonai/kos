@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public abstract class m72 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final int f736a = ly0.J(100, 12, "kotlinx.coroutines.semaphore.maxSpinCycles");
+    public static final int f735a = ly0.J(100, 12, "kotlinx.coroutines.semaphore.maxSpinCycles");
     public static final de0 b = new de0("PERMIT", 1);
     public static final de0 c = new de0("TAKEN", 1);
     public static final de0 d = new de0("BROKEN", 1);

@@ -7,7 +7,7 @@ import com.kos.engine.core.system.user.BUserHandle;
 public abstract class xn {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final tq f1346a = new tq(-1, null, null, 0);
+    public static final tq f1345a = new tq(-1, null, null, 0);
     public static final int b = ly0.J(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
     public static final int c = ly0.J(BUserHandle.AID_APP_START, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
     public static final de0 d = new de0("BUFFERED", 1);

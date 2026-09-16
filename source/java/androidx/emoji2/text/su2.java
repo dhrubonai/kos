@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class su2 implements fc1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final cl f1089a;
+    public final cl f1088a;
 
     public su2(cl clVar) {
-        this.f1089a = clVar;
+        this.f1088a = clVar;
     }
 
     @Override // androidx.emoji2.text.fc1
@@ -17,21 +17,21 @@ public final class su2 implements fc1 {
         if (i >= i2) {
             return Math.round((1 + (q01Var != q01.d ? 0.0f * (-1) : 0.0f)) * ((i2 - i) / 2.0f));
         }
-        return az0.p(this.f1089a.a(i, i2, q01Var), 0, i2 - i);
+        return az0.p(this.f1088a.a(i, i2, q01Var), 0, i2 - i);
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof su2) && this.f1089a.equals(((su2) obj).f1089a);
+        return (obj instanceof su2) && this.f1088a.equals(((su2) obj).f1088a);
     }
 
     public final int hashCode() {
-        return Integer.hashCode(0) + (Float.hashCode(this.f1089a.f205a) * 31);
+        return Integer.hashCode(0) + (Float.hashCode(this.f1088a.f204a) * 31);
     }
 
     public final String toString() {
-        return "Horizontal(alignment=" + this.f1089a + ", margin=0)";
+        return "Horizontal(alignment=" + this.f1088a + ", margin=0)";
     }
 }

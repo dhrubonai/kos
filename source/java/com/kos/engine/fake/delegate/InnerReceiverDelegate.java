@@ -25,28 +25,28 @@ public class InnerReceiverDelegate extends IIntentReceiver.Stub {
         this.mIntentReceiver = new WeakReference<>(iIntentReceiver);
     }
 
-    public static IIntentReceiver createProxy(IIntentReceiver iIntentReceiver) throws RemoteException {
+    public static IIntentReceiver createProxy(IIntentReceiver iIntentReceiver) {
         if (iIntentReceiver instanceof InnerReceiverDelegate) {
             return iIntentReceiver;
         }
-        final IBinder iBinderAsBinder = iIntentReceiver.asBinder();
-        InnerReceiverDelegate innerReceiverDelegate = sInnerReceiverDelegate.get(iBinderAsBinder);
+        final IBinder asBinder = iIntentReceiver.asBinder();
+        InnerReceiverDelegate innerReceiverDelegate = sInnerReceiverDelegate.get(asBinder);
         if (innerReceiverDelegate != null) {
             return innerReceiverDelegate;
         }
         try {
-            iBinderAsBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.kos.engine.fake.delegate.InnerReceiverDelegate.1
+            asBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: com.kos.engine.fake.delegate.InnerReceiverDelegate.1
                 @Override // android.os.IBinder.DeathRecipient
                 public void binderDied() {
-                    InnerReceiverDelegate.sInnerReceiverDelegate.remove(iBinderAsBinder);
-                    iBinderAsBinder.unlinkToDeath(this, 0);
+                    InnerReceiverDelegate.sInnerReceiverDelegate.remove(asBinder);
+                    asBinder.unlinkToDeath(this, 0);
                 }
             }, 0);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
         InnerReceiverDelegate innerReceiverDelegate2 = new InnerReceiverDelegate(iIntentReceiver);
-        sInnerReceiverDelegate.put(iBinderAsBinder, innerReceiverDelegate2);
+        sInnerReceiverDelegate.put(asBinder, innerReceiverDelegate2);
         return innerReceiverDelegate2;
     }
 
@@ -57,11 +57,11 @@ public class InnerReceiverDelegate extends IIntentReceiver.Stub {
     @Override // android.content.IIntentReceiver
     public void performReceive(Intent intent, int i, String str, Bundle bundle, boolean z, boolean z2, int i2) {
         intent.setExtrasClassLoader(rj.i().b.getClassLoader());
-        ProxyBroadcastRecord proxyBroadcastRecordCreate = ProxyBroadcastRecord.create(intent);
-        Intent intent2 = proxyBroadcastRecordCreate.mIntent;
+        ProxyBroadcastRecord create = ProxyBroadcastRecord.create(intent);
+        Intent intent2 = create.mIntent;
         if (intent2 != null) {
             intent2.setExtrasClassLoader(rj.i().b.getClassLoader());
-            intent = proxyBroadcastRecordCreate.mIntent;
+            intent = create.mIntent;
         }
         Intent intent3 = intent;
         IIntentReceiver iIntentReceiver = this.mIntentReceiver.get();

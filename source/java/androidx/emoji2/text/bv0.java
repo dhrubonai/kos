@@ -27,7 +27,7 @@ public final class bv0 {
     public Typeface B;
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f169a;
+    public final int f168a;
     public final int b;
     public final int c;
     public final TimeInterpolator d;
@@ -59,11 +59,11 @@ public final class bv0 {
         this.g = context;
         this.h = textInputLayout;
         this.m = context.getResources().getDimensionPixelSize(R.dimen.design_textinput_caption_translate_y);
-        this.f169a = az0.c0(context, R.attr.motionDurationShort4, 217);
+        this.f168a = az0.c0(context, R.attr.motionDurationShort4, 217);
         this.b = az0.c0(context, R.attr.motionDurationMedium4, 167);
         this.c = az0.c0(context, R.attr.motionDurationShort4, 167);
         this.d = az0.d0(context, R.attr.motionEasingEmphasizedDecelerateInterpolator, je.d);
-        LinearInterpolator linearInterpolator = je.f575a;
+        LinearInterpolator linearInterpolator = je.f574a;
         this.e = az0.d0(context, R.attr.motionEasingEmphasizedDecelerateInterpolator, linearInterpolator);
         this.f = az0.d0(context, R.attr.motionEasingLinearInterpolator, linearInterpolator);
     }
@@ -99,18 +99,18 @@ public final class bv0 {
             if (textInputLayout.getEditText() != null) {
                 EditText editText = textInputLayout.getEditText();
                 Context context = this.g;
-                boolean zP = a01.P(context);
+                boolean P = a01.P(context);
                 LinearLayout linearLayout = this.i;
                 int paddingStart = editText.getPaddingStart();
-                if (zP) {
+                if (P) {
                     paddingStart = context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_font_1_3_padding_horizontal);
                 }
                 int dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_default_padding_top);
-                if (zP) {
+                if (P) {
                     dimensionPixelSize = context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_font_1_3_padding_top);
                 }
                 int paddingEnd = editText.getPaddingEnd();
-                if (zP) {
+                if (P) {
                     paddingEnd = context.getResources().getDimensionPixelSize(R.dimen.material_helper_text_font_1_3_padding_horizontal);
                 }
                 linearLayout.setPaddingRelative(paddingStart, dimensionPixelSize, paddingEnd, 0);
@@ -131,22 +131,22 @@ public final class bv0 {
         }
         if (i == i3 || i == i2) {
             boolean z2 = i3 == i;
-            ObjectAnimator objectAnimatorOfFloat = ObjectAnimator.ofFloat(jgVar, (Property<jg, Float>) View.ALPHA, z2 ? 1.0f : 0.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(jgVar, (Property<jg, Float>) View.ALPHA, z2 ? 1.0f : 0.0f);
             int i4 = this.c;
-            objectAnimatorOfFloat.setDuration(z2 ? this.b : i4);
-            objectAnimatorOfFloat.setInterpolator(z2 ? this.e : this.f);
+            ofFloat.setDuration(z2 ? this.b : i4);
+            ofFloat.setInterpolator(z2 ? this.e : this.f);
             if (i == i3 && i2 != 0) {
-                objectAnimatorOfFloat.setStartDelay(i4);
+                ofFloat.setStartDelay(i4);
             }
-            arrayList.add(objectAnimatorOfFloat);
+            arrayList.add(ofFloat);
             if (i3 != i || i2 == 0) {
                 return;
             }
-            ObjectAnimator objectAnimatorOfFloat2 = ObjectAnimator.ofFloat(jgVar, (Property<jg, Float>) View.TRANSLATION_Y, -this.m, 0.0f);
-            objectAnimatorOfFloat2.setDuration(this.f169a);
-            objectAnimatorOfFloat2.setInterpolator(this.d);
-            objectAnimatorOfFloat2.setStartDelay(i4);
-            arrayList.add(objectAnimatorOfFloat2);
+            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(jgVar, (Property<jg, Float>) View.TRANSLATION_Y, -this.m, 0.0f);
+            ofFloat2.setDuration(this.f168a);
+            ofFloat2.setInterpolator(this.d);
+            ofFloat2.setStartDelay(i4);
+            arrayList.add(ofFloat2);
         }
     }
 
@@ -201,8 +201,8 @@ public final class bv0 {
     }
 
     public final void i(int i, int i2, boolean z) {
-        TextView textViewE;
-        TextView textViewE2;
+        TextView e;
+        TextView e2;
         bv0 bv0Var = this;
         if (i == i2) {
             return;
@@ -214,28 +214,28 @@ public final class bv0 {
             bv0Var.d(arrayList, bv0Var.x, bv0Var.y, 2, i, i2);
             bv0Var.d(arrayList, bv0Var.q, bv0Var.r, 1, i, i2);
             int size = arrayList.size();
-            long jMax = 0;
+            long j = 0;
             for (int i3 = 0; i3 < size; i3++) {
                 Animator animator = (Animator) arrayList.get(i3);
-                jMax = Math.max(jMax, animator.getDuration() + animator.getStartDelay());
+                j = Math.max(j, animator.getDuration() + animator.getStartDelay());
             }
-            ValueAnimator valueAnimatorOfInt = ValueAnimator.ofInt(0, 0);
-            valueAnimatorOfInt.setDuration(jMax);
-            arrayList.add(0, valueAnimatorOfInt);
+            ValueAnimator ofInt = ValueAnimator.ofInt(0, 0);
+            ofInt.setDuration(j);
+            arrayList.add(0, ofInt);
             animatorSet.playTogether(arrayList);
             d60 d60Var = new d60(this, i2, e(i), i, bv0Var.e(i2));
             bv0Var = this;
             animatorSet.addListener(d60Var);
             animatorSet.start();
         } else if (i != i2) {
-            if (i2 != 0 && (textViewE2 = bv0Var.e(i2)) != null) {
-                textViewE2.setVisibility(0);
-                textViewE2.setAlpha(1.0f);
+            if (i2 != 0 && (e2 = bv0Var.e(i2)) != null) {
+                e2.setVisibility(0);
+                e2.setAlpha(1.0f);
             }
-            if (i != 0 && (textViewE = e(i)) != null) {
-                textViewE.setVisibility(4);
+            if (i != 0 && (e = e(i)) != null) {
+                e.setVisibility(4);
                 if (i == 1) {
-                    textViewE.setText((CharSequence) null);
+                    e.setText((CharSequence) null);
                 }
             }
             bv0Var.n = i2;

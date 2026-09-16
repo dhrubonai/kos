@@ -9,7 +9,7 @@ import android.view.autofill.AutofillManager$AutofillCallback;
 public final class dj extends AutofillManager$AutofillCallback {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final dj f252a = new dj();
+    public static final dj f251a = new dj();
 
     public final void onAutofillEvent(View view, int i, int i2) {
         super.onAutofillEvent(view, i, i2);

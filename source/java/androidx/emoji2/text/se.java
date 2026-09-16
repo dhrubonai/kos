@@ -25,7 +25,7 @@ public final class se implements Appendable {
             int size = list.size();
             for (int i = 0; i < size; i++) {
                 te teVar = (te) list.get(i);
-                this.e.add(new re(teVar.f1116a, teVar.b + length, teVar.c + length, teVar.d));
+                this.e.add(new re(teVar.f1115a, teVar.b + length, teVar.c + length, teVar.d));
             }
         }
     }
@@ -42,7 +42,7 @@ public final class se implements Appendable {
 
     public final ue b() {
         StringBuilder sb = this.d;
-        String string = sb.toString();
+        String sb2 = sb.toString();
         ArrayList arrayList = this.e;
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size = arrayList.size();
@@ -56,9 +56,9 @@ public final class se implements Appendable {
             if (length == Integer.MIN_VALUE) {
                 jv0.b("Item.end should be set first");
             }
-            arrayList2.add(new te(reVar.f1005a, reVar.b, length, reVar.d));
+            arrayList2.add(new te(reVar.f1004a, reVar.b, length, reVar.d));
         }
-        return new ue(string, arrayList2);
+        return new ue(sb2, arrayList2);
     }
 
     @Override // java.lang.Appendable
@@ -69,12 +69,12 @@ public final class se implements Appendable {
             ue ueVar = (ue) charSequence;
             int length = sb.length();
             sb.append((CharSequence) ueVar.e, i, i2);
-            List listA = we.a(ueVar, i, i2, null);
-            if (listA != null) {
-                int size = listA.size();
+            List a2 = we.a(ueVar, i, i2, null);
+            if (a2 != null) {
+                int size = a2.size();
                 for (int i3 = 0; i3 < size; i3++) {
-                    te teVar = (te) listA.get(i3);
-                    this.e.add(new re(teVar.f1116a, teVar.b + length, teVar.c + length, teVar.d));
+                    te teVar = (te) a2.get(i3);
+                    this.e.add(new re(teVar.f1115a, teVar.b + length, teVar.c + length, teVar.d));
                 }
             }
             return this;

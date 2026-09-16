@@ -28,16 +28,16 @@ public final class f80 extends RuntimeException {
             ((fx) l02Var.get(0)).getClass();
             throw null;
         }
-        z61 z61VarS = lx0.s(z61Var);
-        lx0.x(z61VarS, "<this>");
-        l02 l02Var2 = new l02(z61VarS);
-        int iA = l02Var2.a();
-        for (int i = 0; i < iA; i++) {
+        z61 s = lx0.s(z61Var);
+        lx0.x(s, "<this>");
+        l02 l02Var2 = new l02(s);
+        int a2 = l02Var2.a();
+        for (int i = 0; i < a2; i++) {
             sb.append("\tat " + ((String) l02Var2.get(i)));
             sb.append('\n');
         }
-        String string = sb.toString();
-        lx0.w(string, "toString(...)");
-        return string;
+        String sb2 = sb.toString();
+        lx0.w(sb2, "toString(...)");
+        return sb2;
     }
 }

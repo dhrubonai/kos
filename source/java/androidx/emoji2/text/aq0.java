@@ -5,10 +5,10 @@ package androidx.emoji2.text;
 public final class aq0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final int f117a;
+    public final int f116a;
 
     public aq0(int i) {
-        this.f117a = i;
+        this.f116a = i;
         if (i <= 0) {
             throw new IllegalArgumentException(zd.g("Provided count ", i, " should be larger than zero").toString());
         }
@@ -16,12 +16,12 @@ public final class aq0 {
 
     public final boolean equals(Object obj) {
         if (obj instanceof aq0) {
-            return this.f117a == ((aq0) obj).f117a;
+            return this.f116a == ((aq0) obj).f116a;
         }
         return false;
     }
 
     public final int hashCode() {
-        return -this.f117a;
+        return -this.f116a;
     }
 }

@@ -15,11 +15,11 @@ import android.view.inputmethod.InputContentInfo;
 public class pi1 implements InputConnection {
 
     /* renamed from: a, reason: collision with root package name */
-    public final r5 f907a;
+    public final r5 f906a;
     public ww1 b;
 
     public pi1(ww1 ww1Var, r5 r5Var) {
-        this.f907a = r5Var;
+        this.f906a = r5Var;
         this.b = ww1Var;
     }
 
@@ -53,7 +53,7 @@ public class pi1 implements InputConnection {
                 a(ww1Var);
                 this.b = null;
             }
-            this.f907a.e(this);
+            this.f906a.e(this);
         }
     }
 

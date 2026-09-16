@@ -7,7 +7,7 @@ import java.util.HashSet;
 public final class pd1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final v7 f900a;
+    public final v7 f899a;
     public final sf1 b = new sf1(new ik[16]);
     public final sf1 c = new sf1(new xu1[16]);
     public final sf1 d = new sf1(new e11[16]);
@@ -15,7 +15,7 @@ public final class pd1 {
     public boolean f;
 
     public pd1(v7 v7Var) {
-        this.f900a = v7Var;
+        this.f899a = v7Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -62,11 +62,11 @@ public final class pd1 {
             if ((md1Var4.g & 32) != 0) {
                 for (md1 md1Var5 = md1Var4; md1Var5 != null; md1Var5 = md1Var5.i) {
                     if ((md1Var5.f & 32) != 0) {
-                        z60 z60VarM = md1Var5;
-                        ?? sf1Var2 = 0;
-                        while (z60VarM != 0) {
-                            if (z60VarM instanceof qd1) {
-                                qd1 qd1Var = (qd1) z60VarM;
+                        z60 z60Var = md1Var5;
+                        ?? r5 = 0;
+                        while (z60Var != 0) {
+                            if (z60Var instanceof qd1) {
+                                qd1 qd1Var = (qd1) z60Var;
                                 if (qd1Var instanceof ik) {
                                     ik ikVar = (ik) qd1Var;
                                     if ((ikVar.r instanceof od1) && ikVar.t.contains(xu1Var)) {
@@ -76,36 +76,36 @@ public final class pd1 {
                                 if (qd1Var.R().v(xu1Var)) {
                                     break;
                                 }
-                            } else if ((z60VarM.f & 32) != 0 && (z60VarM instanceof z60)) {
-                                md1 md1Var6 = z60VarM.s;
+                            } else if ((z60Var.f & 32) != 0 && (z60Var instanceof z60)) {
+                                md1 md1Var6 = z60Var.s;
                                 int i2 = 0;
-                                z60VarM = z60VarM;
-                                sf1Var2 = sf1Var2;
+                                z60Var = z60Var;
+                                r5 = r5;
                                 while (md1Var6 != null) {
                                     if ((md1Var6.f & 32) != 0) {
                                         i2++;
-                                        sf1Var2 = sf1Var2;
+                                        r5 = r5;
                                         if (i2 == 1) {
-                                            z60VarM = md1Var6;
+                                            z60Var = md1Var6;
                                         } else {
-                                            if (sf1Var2 == 0) {
-                                                sf1Var2 = new sf1(new md1[16]);
+                                            if (r5 == 0) {
+                                                r5 = new sf1(new md1[16]);
                                             }
-                                            if (z60VarM != 0) {
-                                                sf1Var2.b(z60VarM);
-                                                z60VarM = 0;
+                                            if (z60Var != 0) {
+                                                r5.b(z60Var);
+                                                z60Var = 0;
                                             }
-                                            sf1Var2.b(md1Var6);
+                                            r5.b(md1Var6);
                                         }
                                     }
                                     md1Var6 = md1Var6.i;
-                                    z60VarM = z60VarM;
-                                    sf1Var2 = sf1Var2;
+                                    z60Var = z60Var;
+                                    r5 = r5;
                                 }
                                 if (i2 == 1) {
                                 }
                             }
-                            z60VarM = lx0.m(sf1Var2);
+                            z60Var = lx0.m(r5);
                         }
                     }
                 }
@@ -120,7 +120,7 @@ public final class pd1 {
         }
         this.f = true;
         o oVar = new o(21, this);
-        ze1 ze1Var = this.f900a.y0;
+        ze1 ze1Var = this.f899a.y0;
         if (ze1Var.f(oVar) >= 0) {
             return;
         }

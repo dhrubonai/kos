@@ -28,7 +28,7 @@ import java.util.function.IntConsumer;
 public final class ww1 implements InputConnection {
 
     /* renamed from: a, reason: collision with root package name */
-    public final gz0 f1308a;
+    public final gz0 f1307a;
     public final boolean b;
     public final h51 c;
     public final uj2 d;
@@ -41,7 +41,7 @@ public final class ww1 implements InputConnection {
     public boolean k = true;
 
     public ww1(ak2 ak2Var, gz0 gz0Var, boolean z, h51 h51Var, uj2 uj2Var, gs2 gs2Var) {
-        this.f1308a = gz0Var;
+        this.f1307a = gz0Var;
         this.b = z;
         this.c = h51Var;
         this.d = uj2Var;
@@ -65,7 +65,7 @@ public final class ww1 implements InputConnection {
         if (i == 0) {
             ArrayList arrayList = this.j;
             if (!arrayList.isEmpty()) {
-                ((i51) this.f1308a.d).c.e(ws.O0(arrayList));
+                ((i51) this.f1307a.d).c.e(ws.O0(arrayList));
                 arrayList.clear();
             }
         }
@@ -101,7 +101,7 @@ public final class ww1 implements InputConnection {
         this.j.clear();
         this.f = 0;
         this.k = false;
-        ArrayList arrayList = ((i51) this.f1308a.d).j;
+        ArrayList arrayList = ((i51) this.f1307a.d).j;
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             if (lx0.n(((WeakReference) arrayList.get(i)).get(), this)) {
@@ -182,7 +182,7 @@ public final class ww1 implements InputConnection {
     @Override // android.view.inputmethod.InputConnection
     public final int getCursorCapsMode(int i) {
         ak2 ak2Var = this.g;
-        return TextUtils.getCapsMode(ak2Var.f106a.e, al2.e(ak2Var.b), i);
+        return TextUtils.getCapsMode(ak2Var.f105a.e, al2.e(ak2Var.b), i);
     }
 
     @Override // android.view.inputmethod.InputConnection
@@ -225,7 +225,7 @@ public final class ww1 implements InputConnection {
             z = false;
             switch (i) {
                 case R.id.selectAll:
-                    a(new f82(0, this.g.f106a.e.length()));
+                    a(new f82(0, this.g.f105a.e.length()));
                     break;
                 case R.id.cut:
                     c(277);
@@ -260,10 +260,10 @@ public final class ww1 implements InputConnection {
                     case 4:
                         i2 = 4;
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_0 /* 5 */:
+                    case 5:
                         i2 = 6;
                         break;
-                    case BCell.NETWORK_TYPE_EVDO_A /* 6 */:
+                    case 6:
                         i2 = 7;
                         break;
                     case BCell.NETWORK_TYPE_1xRTT /* 7 */:
@@ -271,14 +271,12 @@ public final class ww1 implements InputConnection {
                         break;
                     default:
                         Log.w("RecordingIC", "IME sends unsupported Editor Action: " + i);
-                        i2 = 1;
                         break;
                 }
-                ((i51) this.f1308a.d).d.e(new iu0(i2));
-            } else {
-                i2 = 1;
-                ((i51) this.f1308a.d).d.e(new iu0(i2));
+                ((i51) this.f1307a.d).d.e(new iu0(i2));
             }
+            i2 = 1;
+            ((i51) this.f1307a.d).d.e(new iu0(i2));
         }
         return z;
     }
@@ -286,7 +284,7 @@ public final class ww1 implements InputConnection {
     @Override // android.view.inputmethod.InputConnection
     public final void performHandwritingGesture(HandwritingGesture handwritingGesture, Executor executor, IntConsumer intConsumer) {
         if (Build.VERSION.SDK_INT >= 34) {
-            ef.f304a.a(this.c, this.d, handwritingGesture, this.e, executor, intConsumer, new cn1(2, this));
+            ef.f303a.a(this.c, this.d, handwritingGesture, this.e, executor, intConsumer, new cn1(2, this));
         }
     }
 
@@ -304,7 +302,7 @@ public final class ww1 implements InputConnection {
         if (Build.VERSION.SDK_INT < 34) {
             return false;
         }
-        return ef.f304a.b(this.c, this.d, previewableHandwritingGesture, cancellationSignal);
+        return ef.f303a.b(this.c, this.d, previewableHandwritingGesture, cancellationSignal);
     }
 
     @Override // android.view.inputmethod.InputConnection
@@ -312,118 +310,70 @@ public final class ww1 implements InputConnection {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x005b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x005b A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Override // android.view.inputmethod.InputConnection
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public final boolean requestCursorUpdates(int r10) {
-        /*
-            r9 = this;
-            boolean r0 = r9.k
-            if (r0 == 0) goto L77
-            r0 = r10 & 1
-            r1 = 0
-            r2 = 1
-            if (r0 == 0) goto Lc
-            r0 = r2
-            goto Ld
-        Lc:
-            r0 = r1
-        Ld:
-            r3 = r10 & 2
-            if (r3 == 0) goto L13
-            r3 = r2
-            goto L14
-        L13:
-            r3 = r1
-        L14:
-            int r4 = android.os.Build.VERSION.SDK_INT
-            r5 = 33
-            if (r4 < r5) goto L4d
-            r5 = r10 & 16
-            if (r5 == 0) goto L20
-            r5 = r2
-            goto L21
-        L20:
-            r5 = r1
-        L21:
-            r6 = r10 & 8
-            if (r6 == 0) goto L27
-            r6 = r2
-            goto L28
-        L27:
-            r6 = r1
-        L28:
-            r7 = r10 & 4
-            if (r7 == 0) goto L2e
-            r7 = r2
-            goto L2f
-        L2e:
-            r7 = r1
-        L2f:
-            r8 = 34
-            if (r4 < r8) goto L38
-            r10 = r10 & 32
-            if (r10 == 0) goto L38
-            r1 = r2
-        L38:
-            if (r5 != 0) goto L4a
-            if (r6 != 0) goto L4a
-            if (r7 != 0) goto L4a
-            if (r1 != 0) goto L4a
-            if (r4 < r8) goto L47
-            r10 = r2
-            r1 = r10
-        L44:
-            r5 = r1
-        L45:
-            r6 = r5
-            goto L50
-        L47:
-            r10 = r1
-            r1 = r2
-            goto L44
-        L4a:
-            r10 = r1
-            r1 = r7
-            goto L50
-        L4d:
-            r10 = r1
-            r5 = r2
-            goto L45
-        L50:
-            androidx.emoji2.text.gz0 r4 = r9.f1308a
-            java.lang.Object r4 = r4.d
-            androidx.emoji2.text.i51 r4 = (androidx.emoji2.text.i51) r4
-            androidx.emoji2.text.d51 r4 = r4.m
-            java.lang.Object r7 = r4.c
-            monitor-enter(r7)
-            r4.f = r5     // Catch: java.lang.Throwable -> L6f
-            r4.g = r6     // Catch: java.lang.Throwable -> L6f
-            r4.h = r1     // Catch: java.lang.Throwable -> L6f
-            r4.i = r10     // Catch: java.lang.Throwable -> L6f
-            if (r0 == 0) goto L71
-            r4.e = r2     // Catch: java.lang.Throwable -> L6f
-            androidx.emoji2.text.ak2 r10 = r4.j     // Catch: java.lang.Throwable -> L6f
-            if (r10 == 0) goto L71
-            r4.a()     // Catch: java.lang.Throwable -> L6f
-            goto L71
-        L6f:
-            r10 = move-exception
-            goto L75
-        L71:
-            r4.d = r3     // Catch: java.lang.Throwable -> L6f
-            monitor-exit(r7)
-            return r2
-        L75:
-            monitor-exit(r7)
-            throw r10
-        L77:
-            return r0
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.ww1.requestCursorUpdates(int):boolean");
+    public final boolean requestCursorUpdates(int i) {
+        boolean z;
+        boolean z2;
+        boolean z3;
+        d51 d51Var;
+        boolean z4 = this.k;
+        if (!z4) {
+            return z4;
+        }
+        boolean z5 = false;
+        boolean z6 = (i & 1) != 0;
+        boolean z7 = (i & 2) != 0;
+        int i2 = Build.VERSION.SDK_INT;
+        if (i2 >= 33) {
+            z2 = (i & 16) != 0;
+            z3 = (i & 8) != 0;
+            boolean z8 = (i & 4) != 0;
+            if (i2 >= 34 && (i & 32) != 0) {
+                z5 = true;
+            }
+            if (z2 || z3 || z8 || z5) {
+                z = z5;
+                z5 = z8;
+                d51Var = ((i51) this.f1307a.d).m;
+                synchronized (d51Var.c) {
+                    try {
+                        d51Var.f = z2;
+                        d51Var.g = z3;
+                        d51Var.h = z5;
+                        d51Var.i = z;
+                        if (z6) {
+                            d51Var.e = true;
+                            if (d51Var.j != null) {
+                                d51Var.a();
+                            }
+                        }
+                        d51Var.d = z7;
+                    } catch (Throwable th) {
+                        throw th;
+                    }
+                }
+                return true;
+            }
+            if (i2 >= 34) {
+                z = true;
+                z5 = true;
+            } else {
+                z = z5;
+                z5 = true;
+            }
+            z2 = z5;
+        } else {
+            z = false;
+            z2 = true;
+        }
+        z3 = z2;
+        d51Var = ((i51) this.f1307a.d).m;
+        synchronized (d51Var.c) {
+        }
     }
 
     /* JADX WARN: Type inference failed for: r0v4, types: [androidx.emoji2.text.u11, java.lang.Object] */
@@ -433,7 +383,7 @@ public final class ww1 implements InputConnection {
         if (!z) {
             return z;
         }
-        ((BaseInputConnection) ((i51) this.f1308a.d).k.getValue()).sendKeyEvent(keyEvent);
+        ((BaseInputConnection) ((i51) this.f1307a.d).k.getValue()).sendKeyEvent(keyEvent);
         return true;
     }
 

@@ -24,8 +24,8 @@ public abstract class BlackManager<Service extends IInterface> {
         Service service = this.mService;
         if (service != null) {
             try {
-                IBinder iBinderAsBinder = service.asBinder();
-                if (iBinderAsBinder != null && iBinderAsBinder.pingBinder()) {
+                IBinder asBinder = service.asBinder();
+                if (asBinder != null && asBinder.pingBinder()) {
                     return this.mService;
                 }
             } catch (Throwable th) {
@@ -34,14 +34,14 @@ public abstract class BlackManager<Service extends IInterface> {
             this.mService = null;
         }
         try {
-            IBinder iBinderY = c01.r.Y(getServiceName());
-            if (iBinderY == null) {
+            IBinder Y = c01.r.Y(getServiceName());
+            if (Y == null) {
                 nz0.Q(c.a(-305162280386338L, strArr), 5, c.a(-305235294830370L, strArr) + getServiceName());
                 return null;
             }
-            fy1 fy1VarG = fy1.g(getTClass().getName() + c.a(-305325489143586L, strArr));
-            fy1VarG.f(c.a(-305368438816546L, strArr), IBinder.class);
-            Service service2 = (Service) fy1VarG.a(fy1VarG.b, iBinderY);
+            fy1 g = fy1.g(getTClass().getName() + c.a(-305325489143586L, strArr));
+            g.f(c.a(-305368438816546L, strArr), IBinder.class);
+            Service service2 = (Service) g.a(g.b, Y);
             this.mService = service2;
             if (service2 == null) {
                 nz0.Q(c.a(-303805070720802L, strArr), 5, c.a(-303809365688098L, strArr) + getServiceName());

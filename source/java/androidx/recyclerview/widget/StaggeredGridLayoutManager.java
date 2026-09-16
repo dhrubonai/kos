@@ -10,6 +10,7 @@ import android.view.accessibility.AccessibilityEvent;
 import androidx.emoji2.text.a12;
 import androidx.emoji2.text.c1;
 import androidx.emoji2.text.ee2;
+import androidx.emoji2.text.es2;
 import androidx.emoji2.text.f32;
 import androidx.emoji2.text.ge2;
 import androidx.emoji2.text.jx1;
@@ -21,6 +22,7 @@ import androidx.emoji2.text.s11;
 import androidx.emoji2.text.sx1;
 import androidx.emoji2.text.t7;
 import androidx.emoji2.text.t81;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.BitSet;
 
@@ -53,8 +55,8 @@ public class StaggeredGridLayoutManager extends jx1 {
         new f32(this);
         this.x = true;
         this.y = new t7(9, this);
-        n61 n61VarB = jx1.B(context, attributeSet, i, i2);
-        int i3 = n61VarB.b;
+        n61 B = jx1.B(context, attributeSet, i, i2);
+        int i3 = B.b;
         if (i3 != 0 && i3 != 1) {
             throw new IllegalArgumentException("invalid orientation.");
         }
@@ -66,7 +68,7 @@ public class StaggeredGridLayoutManager extends jx1 {
             this.n = c1Var;
             W();
         }
-        int i4 = n61VarB.c;
+        int i4 = B.c;
         b(null);
         if (i4 != this.k) {
             a12Var.h();
@@ -79,12 +81,12 @@ public class StaggeredGridLayoutManager extends jx1 {
             }
             W();
         }
-        boolean z = n61VarB.d;
+        boolean z = B.d;
         b(null);
         this.q = z;
         W();
         s11 s11Var = new s11();
-        s11Var.f1046a = true;
+        s11Var.f1045a = true;
         s11Var.f = 0;
         s11Var.g = 0;
         this.p = s11Var;
@@ -158,27 +160,27 @@ public class StaggeredGridLayoutManager extends jx1 {
     public final void M(AccessibilityEvent accessibilityEvent) {
         super.M(accessibilityEvent);
         if (q() > 0) {
-            View viewF0 = f0(false);
-            View viewE0 = e0(false);
-            if (viewF0 == null || viewE0 == null) {
+            View f0 = f0(false);
+            View e0 = e0(false);
+            if (f0 == null || e0 == null) {
                 return;
             }
-            int iA = jx1.A(viewF0);
-            int iA2 = jx1.A(viewE0);
-            if (iA < iA2) {
-                accessibilityEvent.setFromIndex(iA);
-                accessibilityEvent.setToIndex(iA2);
+            int A = jx1.A(f0);
+            int A2 = jx1.A(e0);
+            if (A < A2) {
+                accessibilityEvent.setFromIndex(A);
+                accessibilityEvent.setToIndex(A2);
             } else {
-                accessibilityEvent.setFromIndex(iA2);
-                accessibilityEvent.setToIndex(iA);
+                accessibilityEvent.setFromIndex(A2);
+                accessibilityEvent.setToIndex(A);
             }
         }
     }
 
     @Override // androidx.emoji2.text.jx1
     public final Parcelable P() {
-        int iF;
-        int iM;
+        int f;
+        int m;
         int[] iArr;
         ge2 ge2Var = new ge2();
         ge2Var.k = this.q;
@@ -199,26 +201,31 @@ public class StaggeredGridLayoutManager extends jx1 {
             return ge2Var;
         }
         ge2Var.d = this.v ? h0() : g0();
-        View viewE0 = this.r ? e0(true) : f0(true);
-        ge2Var.e = viewE0 != null ? jx1.A(viewE0) : -1;
+        View e0 = this.r ? e0(true) : f0(true);
+        ge2Var.e = e0 != null ? jx1.A(e0) : -1;
         int i = this.k;
         ge2Var.f = i;
         ge2Var.g = new int[i];
         for (int i2 = 0; i2 < this.k; i2++) {
             if (this.v) {
-                iF = this.l[i2].e(Integer.MIN_VALUE);
-                if (iF != Integer.MIN_VALUE) {
-                    iM = this.m.h();
-                    iF -= iM;
+                f = this.l[i2].e(Integer.MIN_VALUE);
+                if (f != Integer.MIN_VALUE) {
+                    m = this.m.h();
+                    f -= m;
+                    ge2Var.g[i2] = f;
+                } else {
+                    ge2Var.g[i2] = f;
                 }
             } else {
-                iF = this.l[i2].f(Integer.MIN_VALUE);
-                if (iF != Integer.MIN_VALUE) {
-                    iM = this.m.m();
-                    iF -= iM;
+                f = this.l[i2].f(Integer.MIN_VALUE);
+                if (f != Integer.MIN_VALUE) {
+                    m = this.m.m();
+                    f -= m;
+                    ge2Var.g[i2] = f;
+                } else {
+                    ge2Var.g[i2] = f;
                 }
             }
-            ge2Var.g[i2] = iF;
         }
         return ge2Var;
     }
@@ -251,8 +258,18 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0113  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0052  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0057  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x005a  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0138 A[EDGE_INSN: B:48:0x0138->B:49:0x0138 BREAK  A[LOOP:0: B:23:0x0058->B:54:0x0131], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x013a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0131 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0135 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x0054  */
     /* JADX WARN: Type inference failed for: r16v0 */
     /* JADX WARN: Type inference failed for: r16v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r16v14 */
@@ -264,14 +281,143 @@ public class StaggeredGridLayoutManager extends jx1 {
     /* JADX WARN: Type inference failed for: r16v8 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
     public final boolean c0() {
-        /*
-            Method dump skipped, instructions count: 324
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.recyclerview.widget.StaggeredGridLayoutManager.c0():boolean");
+        int g0;
+        char c;
+        ?? r16;
+        View view;
+        int i;
+        if (q() != 0 && this.u != 0 && this.e) {
+            boolean z = this.r;
+            if (z) {
+                g0 = h0();
+                g0();
+            } else {
+                g0 = g0();
+                h0();
+            }
+            if (g0 == 0) {
+                int q = q();
+                int i2 = q - 1;
+                int i3 = this.k;
+                BitSet bitSet = new BitSet(i3);
+                int i4 = 1;
+                bitSet.set(0, i3, true);
+                if (this.o == 1) {
+                    RecyclerView recyclerView = this.b;
+                    Field field = es2.f319a;
+                    if (recyclerView.getLayoutDirection() == 1) {
+                        c = 1;
+                        if (z) {
+                            i2 = 0;
+                        } else {
+                            q = -1;
+                        }
+                        int i5 = i2 < q ? 1 : -1;
+                        while (true) {
+                            if (i2 != q) {
+                                r16 = i4;
+                                view = null;
+                                break;
+                            }
+                            view = p(i2);
+                            ee2 ee2Var = (ee2) view.getLayoutParams();
+                            boolean z2 = bitSet.get(ee2Var.d.e);
+                            c1 c1Var = this.m;
+                            if (z2) {
+                                t81 t81Var = ee2Var.d;
+                                if (z) {
+                                    int i6 = t81Var.c;
+                                    if (i6 == Integer.MIN_VALUE) {
+                                        t81Var.a();
+                                        i6 = t81Var.c;
+                                    }
+                                    if (i6 < c1Var.h()) {
+                                        ArrayList arrayList = (ArrayList) t81Var.f;
+                                        ((ee2) ((View) arrayList.get(arrayList.size() - i4)).getLayoutParams()).getClass();
+                                        r16 = i4;
+                                        break;
+                                    }
+                                    i = i4;
+                                    bitSet.clear(ee2Var.d.e);
+                                    r16 = i;
+                                } else {
+                                    int i7 = t81Var.b;
+                                    ArrayList arrayList2 = (ArrayList) t81Var.f;
+                                    if (i7 != Integer.MIN_VALUE) {
+                                        r16 = i4;
+                                    } else {
+                                        View view2 = (View) arrayList2.get(0);
+                                        ee2 ee2Var2 = (ee2) view2.getLayoutParams();
+                                        r16 = i4;
+                                        t81Var.b = ((StaggeredGridLayoutManager) t81Var.g).m.f(view2);
+                                        ee2Var2.getClass();
+                                        i7 = t81Var.b;
+                                    }
+                                    i = r16;
+                                    if (i7 > c1Var.m()) {
+                                        ((ee2) ((View) arrayList2.get(0)).getLayoutParams()).getClass();
+                                        break;
+                                    }
+                                    bitSet.clear(ee2Var.d.e);
+                                    r16 = i;
+                                }
+                            } else {
+                                r16 = i4;
+                            }
+                            i2 += i5;
+                            if (i2 != q) {
+                                View p = p(i2);
+                                if (!z) {
+                                    int f = c1Var.f(view);
+                                    int f2 = c1Var.f(p);
+                                    if (f > f2) {
+                                        break;
+                                    }
+                                    if (f != f2) {
+                                        continue;
+                                    }
+                                    if ((ee2Var.d.e - ((ee2) p.getLayoutParams()).d.e >= 0 ? r16 == true ? 1 : 0 : false) == (c >= 0 ? r16 == true ? 1 : 0 : false)) {
+                                    }
+                                } else {
+                                    int c2 = c1Var.c(view);
+                                    int c3 = c1Var.c(p);
+                                    if (c2 < c3) {
+                                        break;
+                                    }
+                                    if (c2 != c3) {
+                                        continue;
+                                    }
+                                    if ((ee2Var.d.e - ((ee2) p.getLayoutParams()).d.e >= 0 ? r16 == true ? 1 : 0 : false) == (c >= 0 ? r16 == true ? 1 : 0 : false)) {
+                                        break;
+                                    }
+                                }
+                            }
+                            i4 = r16 == true ? 1 : 0;
+                        }
+                        if (view != null) {
+                            this.t.h();
+                            W();
+                            return r16;
+                        }
+                    }
+                }
+                c = 65535;
+                if (z) {
+                }
+                if (i2 < q) {
+                }
+                while (true) {
+                    if (i2 != q) {
+                    }
+                    i4 = r16 == true ? 1 : 0;
+                }
+                if (view != null) {
+                }
+            }
+        }
+        return false;
     }
 
     @Override // androidx.emoji2.text.jx1
@@ -293,19 +439,19 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final View e0(boolean z) {
-        int iM = this.m.m();
-        int iH = this.m.h();
+        int m = this.m.m();
+        int h = this.m.h();
         View view = null;
-        for (int iQ = q() - 1; iQ >= 0; iQ--) {
-            View viewP = p(iQ);
-            int iF = this.m.f(viewP);
-            int iC = this.m.c(viewP);
-            if (iC > iM && iF < iH) {
-                if (iC <= iH || !z) {
-                    return viewP;
+        for (int q = q() - 1; q >= 0; q--) {
+            View p = p(q);
+            int f = this.m.f(p);
+            int c = this.m.c(p);
+            if (c > m && f < h) {
+                if (c <= h || !z) {
+                    return p;
                 }
                 if (view == null) {
-                    view = viewP;
+                    view = p;
                 }
             }
         }
@@ -313,19 +459,19 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final View f0(boolean z) {
-        int iM = this.m.m();
-        int iH = this.m.h();
-        int iQ = q();
+        int m = this.m.m();
+        int h = this.m.h();
+        int q = q();
         View view = null;
-        for (int i = 0; i < iQ; i++) {
-            View viewP = p(i);
-            int iF = this.m.f(viewP);
-            if (this.m.c(viewP) > iM && iF < iH) {
-                if (iF >= iM || !z) {
-                    return viewP;
+        for (int i = 0; i < q; i++) {
+            View p = p(i);
+            int f = this.m.f(p);
+            if (this.m.c(p) > m && f < h) {
+                if (f >= m || !z) {
+                    return p;
                 }
                 if (view == null) {
-                    view = viewP;
+                    view = p;
                 }
             }
         }
@@ -354,11 +500,11 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final int h0() {
-        int iQ = q();
-        if (iQ == 0) {
+        int q = q();
+        if (q == 0) {
             return 0;
         }
-        return jx1.A(p(iQ - 1));
+        return jx1.A(p(q - 1));
     }
 
     @Override // androidx.emoji2.text.jx1
@@ -379,10 +525,10 @@ public class StaggeredGridLayoutManager extends jx1 {
             rect.set(recyclerView.t(view));
         }
         ee2 ee2Var = (ee2) view.getLayoutParams();
-        int iN0 = n0(i, ((ViewGroup.MarginLayoutParams) ee2Var).leftMargin + rect.left, ((ViewGroup.MarginLayoutParams) ee2Var).rightMargin + rect.right);
-        int iN02 = n0(i2, ((ViewGroup.MarginLayoutParams) ee2Var).topMargin + rect.top, ((ViewGroup.MarginLayoutParams) ee2Var).bottomMargin + rect.bottom);
-        if (a0(view, iN0, iN02, ee2Var)) {
-            view.measure(iN0, iN02);
+        int n0 = n0(i, ((ViewGroup.MarginLayoutParams) ee2Var).leftMargin + rect.left, ((ViewGroup.MarginLayoutParams) ee2Var).rightMargin + rect.right);
+        int n02 = n0(i2, ((ViewGroup.MarginLayoutParams) ee2Var).topMargin + rect.top, ((ViewGroup.MarginLayoutParams) ee2Var).bottomMargin + rect.bottom);
+        if (a0(view, n0, n02, ee2Var)) {
+            view.measure(n0, n02);
         }
     }
 
@@ -396,7 +542,7 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final void j0(px1 px1Var, s11 s11Var) {
-        if (!s11Var.f1046a || s11Var.i) {
+        if (!s11Var.f1045a || s11Var.i) {
             return;
         }
         if (s11Var.b == 0) {
@@ -411,28 +557,28 @@ public class StaggeredGridLayoutManager extends jx1 {
         int i = 1;
         if (s11Var.e == -1) {
             int i2 = s11Var.f;
-            int iF = this.l[0].f(i2);
+            int f = this.l[0].f(i2);
             while (i < this.k) {
-                int iF2 = this.l[i].f(i2);
-                if (iF2 > iF) {
-                    iF = iF2;
+                int f2 = this.l[i].f(i2);
+                if (f2 > f) {
+                    f = f2;
                 }
                 i++;
             }
-            int i3 = i2 - iF;
+            int i3 = i2 - f;
             k0(px1Var, i3 < 0 ? s11Var.g : s11Var.g - Math.min(i3, s11Var.b));
             return;
         }
         int i4 = s11Var.g;
-        int iE = this.l[0].e(i4);
+        int e = this.l[0].e(i4);
         while (i < this.k) {
-            int iE2 = this.l[i].e(i4);
-            if (iE2 < iE) {
-                iE = iE2;
+            int e2 = this.l[i].e(i4);
+            if (e2 < e) {
+                e = e2;
             }
             i++;
         }
-        int i5 = iE - s11Var.g;
+        int i5 = e - s11Var.g;
         l0(px1Var, i5 < 0 ? s11Var.f : Math.min(i5, s11Var.b) + s11Var.f);
     }
 
@@ -442,13 +588,13 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final void k0(px1 px1Var, int i) {
-        int iQ = q() - 1;
-        if (iQ >= 0) {
-            View viewP = p(iQ);
-            if (this.m.f(viewP) < i || this.m.q(viewP) < i) {
+        int q = q() - 1;
+        if (q >= 0) {
+            View p = p(q);
+            if (this.m.f(p) < i || this.m.q(p) < i) {
                 return;
             }
-            ee2 ee2Var = (ee2) viewP.getLayoutParams();
+            ee2 ee2Var = (ee2) p.getLayoutParams();
             ee2Var.getClass();
             if (((ArrayList) ee2Var.d.f).size() == 1) {
                 return;
@@ -470,11 +616,11 @@ public class StaggeredGridLayoutManager extends jx1 {
 
     public final void l0(px1 px1Var, int i) {
         if (q() > 0) {
-            View viewP = p(0);
-            if (this.m.c(viewP) > i || this.m.p(viewP) > i) {
+            View p = p(0);
+            if (this.m.c(p) > i || this.m.p(p) > i) {
                 return;
             }
-            ee2 ee2Var = (ee2) viewP.getLayoutParams();
+            ee2 ee2Var = (ee2) p.getLayoutParams();
             ee2Var.getClass();
             if (((ArrayList) ee2Var.d.f).size() == 1) {
                 return;
@@ -495,25 +641,25 @@ public class StaggeredGridLayoutManager extends jx1 {
     }
 
     public final int m0(int i, px1 px1Var, sx1 sx1Var) {
-        int iG0;
+        int g0;
         int i2;
-        int iH;
+        int h;
         if (q() == 0 || i == 0) {
             return 0;
         }
         if (i > 0) {
-            iG0 = h0();
+            g0 = h0();
             i2 = 1;
         } else {
-            iG0 = g0();
+            g0 = g0();
             i2 = -1;
         }
         s11 s11Var = this.p;
-        s11Var.f1046a = true;
+        s11Var.f1045a = true;
         s11 s11Var2 = this.p;
         boolean z = false;
         s11Var2.b = 0;
-        s11Var2.c = iG0;
+        s11Var2.c = g0;
         RecyclerView recyclerView = this.b;
         if (recyclerView == null || !recyclerView.i) {
             s11Var2.g = this.m.g();
@@ -523,7 +669,7 @@ public class StaggeredGridLayoutManager extends jx1 {
             s11Var2.g = this.m.h();
         }
         s11Var2.h = false;
-        s11Var2.f1046a = true;
+        s11Var2.f1045a = true;
         if (this.m.j() == 0 && this.m.g() == 0) {
             z = true;
         }
@@ -531,7 +677,7 @@ public class StaggeredGridLayoutManager extends jx1 {
         s11 s11Var3 = this.p;
         s11Var3.e = i2;
         s11Var3.d = this.r != (i2 == -1) ? -1 : 1;
-        s11Var.c = iG0 + s11Var.d;
+        s11Var.c = g0 + s11Var.d;
         s11Var.b = Math.abs(i);
         this.s.set(0, this.k, true);
         s11 s11Var4 = this.p;
@@ -575,35 +721,35 @@ public class StaggeredGridLayoutManager extends jx1 {
         }
         int i10 = s11Var5.c;
         if (i10 >= 0 && i10 < sx1Var.a() && (s11Var4.i || !this.s.isEmpty())) {
-            View viewF = px1Var.f(s11Var5.c);
+            View f = px1Var.f(s11Var5.c);
             s11Var5.c += s11Var5.d;
-            ((ee2) viewF.getLayoutParams()).getClass();
+            ((ee2) f.getLayoutParams()).getClass();
             throw null;
         }
         j0(px1Var, s11Var4);
         if (s11Var4.e == -1) {
-            int iM = this.m.m();
-            int iF = this.l[0].f(iM);
+            int m = this.m.m();
+            int f2 = this.l[0].f(m);
             for (int i11 = 1; i11 < this.k; i11++) {
-                int iF2 = this.l[i11].f(iM);
-                if (iF2 < iF) {
-                    iF = iF2;
+                int f3 = this.l[i11].f(m);
+                if (f3 < f2) {
+                    f2 = f3;
                 }
             }
-            iH = this.m.m() - iF;
+            h = this.m.m() - f2;
         } else {
-            int iH2 = this.m.h();
-            int iE = this.l[0].e(iH2);
+            int h2 = this.m.h();
+            int e = this.l[0].e(h2);
             for (int i12 = 1; i12 < this.k; i12++) {
-                int iE2 = this.l[i12].e(iH2);
-                if (iE2 > iE) {
-                    iE = iE2;
+                int e2 = this.l[i12].e(h2);
+                if (e2 > e) {
+                    e = e2;
                 }
             }
-            iH = iE - this.m.h();
+            h = e - this.m.h();
         }
-        int iMin = iH > 0 ? Math.min(s11Var5.b, iH) : 0;
-        int i13 = s11Var5.b < iMin ? i : i < 0 ? -iMin : iMin;
+        int min = h > 0 ? Math.min(s11Var5.b, h) : 0;
+        int i13 = s11Var5.b < min ? i : i < 0 ? -min : min;
         this.m.r(-i13);
         this.v = this.r;
         s11Var5.b = 0;

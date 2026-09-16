@@ -21,8 +21,8 @@ public final class zo1 extends bp1 implements ap1 {
     }
 
     public final zo1 c(wu1 wu1Var, mq2 mq2Var) {
-        em emVarU = this.d.u(wu1Var.hashCode(), 0, wu1Var, mq2Var);
-        return emVarU == null ? this : new zo1((no2) emVarU.e, this.e + emVarU.d);
+        em u = this.d.u(wu1Var.hashCode(), 0, wu1Var, mq2Var);
+        return u == null ? this : new zo1((no2) u.e, this.e + u.d);
     }
 
     @Override // androidx.emoji2.text.bp1, java.util.Map

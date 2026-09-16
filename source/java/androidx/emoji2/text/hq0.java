@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public abstract class hq0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public ArrayList f482a;
+    public ArrayList f481a;
 
     public abstract boolean a(t5 t5Var);
 

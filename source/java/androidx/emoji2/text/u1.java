@@ -8,6 +8,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 public final class u1 extends t1 {
     @Override // android.view.accessibility.AccessibilityNodeProvider
     public final void addExtraDataToAccessibilityNodeInfo(int i, AccessibilityNodeInfo accessibilityNodeInfo, String str, Bundle bundle) {
-        this.f1098a.v(i, new s1(accessibilityNodeInfo), str, bundle);
+        this.f1097a.v(i, new s1(accessibilityNodeInfo), str, bundle);
     }
 }

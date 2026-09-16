@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class fe {
 
     /* renamed from: a, reason: collision with root package name */
-    public final ie f358a;
+    public final ie f357a;
     public final int b;
 
     public fe(ie ieVar, int i) {
-        this.f358a = ieVar;
+        this.f357a = ieVar;
         this.b = i;
     }
 
@@ -18,7 +18,7 @@ public final class fe {
         int i = this.b;
         sb.append(i != 1 ? i != 2 ? "null" : "Finished" : "BoundReached");
         sb.append(", endState=");
-        sb.append(this.f358a);
+        sb.append(this.f357a);
         sb.append(')');
         return sb.toString();
     }

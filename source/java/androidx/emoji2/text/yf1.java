@@ -36,7 +36,7 @@ public final class yf1 extends hh2 implements Function2 {
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(Object obj, Object obj2) {
-        return ((yf1) i((l10) obj2, (e30) obj)).k(up2.f1187a);
+        return ((yf1) i((l10) obj2, (e30) obj)).k(up2.f1186a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -59,14 +59,14 @@ public final class yf1 extends hh2 implements Function2 {
             try {
                 if (i == 0) {
                     mz0.L(obj);
-                    t20 t20VarN = ((e30) this.m).u().n(dd0.K);
-                    lx0.u(t20VarN);
-                    wf1 wf1Var3 = new wf1(this.n, (cy0) t20VarN);
+                    t20 n = ((e30) this.m).u().n(dd0.K);
+                    lx0.u(n);
+                    wf1 wf1Var3 = new wf1(this.n, (cy0) n);
                     zf1 zf1Var2 = this.o;
-                    AtomicReference atomicReference3 = zf1Var2.f1438a;
+                    AtomicReference atomicReference3 = zf1Var2.f1437a;
                     while (true) {
                         wf1 wf1Var4 = (wf1) atomicReference3.get();
-                        if (wf1Var4 != null && wf1Var3.f1277a.compareTo(wf1Var4.f1277a) < 0) {
+                        if (wf1Var4 != null && wf1Var3.f1276a.compareTo(wf1Var4.f1276a) < 0) {
                             throw new CancellationException("Current mutation had a higher priority");
                         }
                         while (!atomicReference3.compareAndSet(wf1Var4, wf1Var3)) {
@@ -92,38 +92,38 @@ public final class yf1 extends hh2 implements Function2 {
                             zf1Var = zf1Var2;
                         }
                     }
-                    return f30Var;
-                }
-                if (i != 1) {
-                    if (i != 2) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    zf1Var = (zf1) this.i;
-                    bg1Var = this.h;
-                    wf1Var2 = (wf1) this.m;
-                    try {
-                        mz0.L(obj);
-                        atomicReference2 = zf1Var.f1438a;
-                        while (!atomicReference2.compareAndSet(wf1Var2, null) && atomicReference2.get() == wf1Var2) {
+                } else {
+                    if (i != 1) {
+                        if (i != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        ((dg1) bg1Var).e(null);
-                        return obj;
-                    } catch (Throwable th) {
-                        th = th;
-                        atomicReference = zf1Var.f1438a;
-                        while (!atomicReference.compareAndSet(wf1Var2, null)) {
+                        zf1Var = (zf1) this.i;
+                        bg1Var = this.h;
+                        wf1Var2 = (wf1) this.m;
+                        try {
+                            mz0.L(obj);
+                            atomicReference2 = zf1Var.f1437a;
+                            while (!atomicReference2.compareAndSet(wf1Var2, null) && atomicReference2.get() == wf1Var2) {
+                            }
+                            ((dg1) bg1Var).e(null);
+                            return obj;
+                        } catch (Throwable th) {
+                            th = th;
+                            atomicReference = zf1Var.f1437a;
+                            while (!atomicReference.compareAndSet(wf1Var2, null)) {
+                            }
+                            throw th;
                         }
-                        throw th;
                     }
+                    zf1Var = this.k;
+                    r60Var = this.j;
+                    ?? r5 = (Function2) this.i;
+                    ?? r6 = this.h;
+                    wf1Var = (wf1) this.m;
+                    mz0.L(obj);
+                    a6Var = r5;
+                    dg1Var = r6;
                 }
-                zf1Var = this.k;
-                r60Var = this.j;
-                ?? r5 = (Function2) this.i;
-                ?? r6 = this.h;
-                wf1Var = (wf1) this.m;
-                mz0.L(obj);
-                a6Var = r5;
-                dg1Var = r6;
                 this.m = wf1Var;
                 this.h = dg1Var;
                 this.i = zf1Var;
@@ -134,7 +134,7 @@ public final class yf1 extends hh2 implements Function2 {
                 if (obj != f30Var) {
                     bg1Var = dg1Var;
                     wf1Var2 = wf1Var;
-                    atomicReference2 = zf1Var.f1438a;
+                    atomicReference2 = zf1Var.f1437a;
                     while (!atomicReference2.compareAndSet(wf1Var2, null)) {
                     }
                     ((dg1) bg1Var).e(null);
@@ -144,7 +144,7 @@ public final class yf1 extends hh2 implements Function2 {
             } catch (Throwable th2) {
                 th = th2;
                 wf1Var2 = wf1Var;
-                atomicReference = zf1Var.f1438a;
+                atomicReference = zf1Var.f1437a;
                 while (!atomicReference.compareAndSet(wf1Var2, null) && atomicReference.get() == wf1Var2) {
                 }
                 throw th;

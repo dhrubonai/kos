@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public final class ma0 extends pa0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final long f738a;
+    public final long f737a;
 
     public ma0(long j) {
-        this.f738a = j;
+        this.f737a = j;
     }
 }

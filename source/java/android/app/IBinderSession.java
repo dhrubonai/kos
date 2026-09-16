@@ -47,8 +47,8 @@ public interface IBinderSession extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(IBinderSession.DESCRIPTOR);
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBinderSession)) ? new Proxy(iBinder) : (IBinderSession) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(IBinderSession.DESCRIPTOR);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBinderSession)) ? new Proxy(iBinder) : (IBinderSession) queryLocalInterface;
         }
 
         @Override // android.os.Binder

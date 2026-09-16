@@ -13,8 +13,8 @@ public final class j22 extends md1 implements w01, jo2 {
 
     @Override // androidx.emoji2.text.w01
     public final gb1 d(hb1 hb1Var, ab1 ab1Var, long j) {
-        hr1 hr1VarQ = ab1Var.q(j);
-        return hb1Var.V(hr1VarQ.d, hr1VarQ.e, re0.d, this.s, new jb(hr1VarQ, 8));
+        hr1 q = ab1Var.q(j);
+        return hb1Var.V(q.d, q.e, re0.d, this.s, new jb(q, 8));
     }
 
     @Override // androidx.emoji2.text.jo2

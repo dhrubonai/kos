@@ -5,11 +5,11 @@ package androidx.emoji2.text;
 public final class fb implements j90 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final /* synthetic */ int f355a;
+    public final /* synthetic */ int f354a;
 
     @Override // androidx.emoji2.text.j90
     public final void a() {
-        int i = this.f355a;
+        int i = this.f354a;
     }
 
     private final void b() {

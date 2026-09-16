@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class sx1 {
 
     /* renamed from: a, reason: collision with root package name */
-    public int f1092a;
+    public int f1091a;
     public int b;
     public int c;
     public boolean d;
@@ -16,10 +16,10 @@ public final class sx1 {
     public boolean i;
 
     public final int a() {
-        return this.e ? this.f1092a - this.b : this.c;
+        return this.e ? this.f1091a - this.b : this.c;
     }
 
     public final String toString() {
-        return "State{mTargetPosition=-1, mData=null, mItemCount=" + this.c + ", mIsMeasuring=" + this.g + ", mPreviousLayoutItemCount=" + this.f1092a + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.b + ", mStructureChanged=" + this.d + ", mInPreLayout=" + this.e + ", mRunSimpleAnimations=" + this.h + ", mRunPredictiveAnimations=" + this.i + '}';
+        return "State{mTargetPosition=-1, mData=null, mItemCount=" + this.c + ", mIsMeasuring=" + this.g + ", mPreviousLayoutItemCount=" + this.f1091a + ", mDeletedInvisibleItemCountSincePreviousLayout=" + this.b + ", mStructureChanged=" + this.d + ", mInPreLayout=" + this.e + ", mRunSimpleAnimations=" + this.h + ", mRunPredictiveAnimations=" + this.i + '}';
     }
 }

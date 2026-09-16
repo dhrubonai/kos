@@ -53,10 +53,10 @@ final class LegacyAdaptingPlatformTextInputModifier extends ud1 {
         ia iaVar = this.f37a;
         c51Var.r = iaVar;
         if (c51Var.q) {
-            if (iaVar.f516a != null) {
+            if (iaVar.f515a != null) {
                 throw new IllegalStateException("Expected textInputModifierNode to be null");
             }
-            iaVar.f516a = c51Var;
+            iaVar.f515a = c51Var;
         }
         c51Var.s = this.b;
         c51Var.t = this.c;

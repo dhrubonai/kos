@@ -39,9 +39,9 @@ final class KeyInputElement extends ud1 {
 
     public final int hashCode() {
         um0 um0Var = this.f55a;
-        int iHashCode = (um0Var != null ? um0Var.hashCode() : 0) * 31;
+        int hashCode = (um0Var != null ? um0Var.hashCode() : 0) * 31;
         um0 um0Var2 = this.b;
-        return iHashCode + (um0Var2 != null ? um0Var2.hashCode() : 0);
+        return hashCode + (um0Var2 != null ? um0Var2.hashCode() : 0);
     }
 
     @Override // androidx.emoji2.text.ud1

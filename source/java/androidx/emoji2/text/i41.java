@@ -5,26 +5,26 @@ package androidx.emoji2.text;
 public final class i41 implements a31 {
 
     /* renamed from: a, reason: collision with root package name */
-    public final s41 f507a;
+    public final s41 f506a;
 
     public i41(s41 s41Var) {
-        this.f507a = s41Var;
+        this.f506a = s41Var;
     }
 
     @Override // androidx.emoji2.text.a31
     public final int a() {
-        return this.f507a.g().m;
+        return this.f506a.g().m;
     }
 
     /* JADX WARN: Type inference failed for: r1v2, types: [java.lang.Object, java.util.List] */
     @Override // androidx.emoji2.text.a31
     public final int b() {
-        return Math.min(a() - 1, ((p41) ws.F0(this.f507a.g().j)).f887a);
+        return Math.min(a() - 1, ((p41) ws.F0(this.f506a.g().j)).f886a);
     }
 
     @Override // androidx.emoji2.text.a31
     public final void c() {
-        e11 e11Var = this.f507a.j;
+        e11 e11Var = this.f506a.j;
         if (e11Var != null) {
             e11Var.k();
         }
@@ -33,11 +33,11 @@ public final class i41 implements a31 {
     /* JADX WARN: Type inference failed for: r0v2, types: [java.lang.Object, java.util.Collection] */
     @Override // androidx.emoji2.text.a31
     public final boolean d() {
-        return !this.f507a.g().j.isEmpty();
+        return !this.f506a.g().j.isEmpty();
     }
 
     @Override // androidx.emoji2.text.a31
     public final int e() {
-        return Math.max(0, this.f507a.d.b.g());
+        return Math.max(0, this.f506a.d.b.g());
     }
 }

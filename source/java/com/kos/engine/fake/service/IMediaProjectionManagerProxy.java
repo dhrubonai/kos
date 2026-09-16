@@ -88,9 +88,9 @@ public class IMediaProjectionManagerProxy extends BinderInvocationStub {
             nz0.Q(c.a(-591524929879842L, strArr), 3, c.a(-591086843215650L, strArr));
             return;
         }
-        Map<String, IBinder> mapSCache = BRServiceManager.get().sCache();
-        if (mapSCache != null) {
-            mapSCache.put(c.a(-589678093942562L, strArr), this);
+        Map<String, IBinder> sCache = BRServiceManager.get().sCache();
+        if (sCache != null) {
+            sCache.put(c.a(-589678093942562L, strArr), this);
             nz0.Q(c.a(-589733928517410L, strArr), 3, c.a(-589845597667106L, strArr));
         }
     }

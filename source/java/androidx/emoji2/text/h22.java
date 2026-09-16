@@ -12,7 +12,7 @@ public final class h22 {
     public static final /* synthetic */ h22[] h;
 
     static {
-        String[] strArr = wj1.f1284a;
+        String[] strArr = wj1.f1283a;
         h22 h22Var = new h22(a.a.a.c.a(-494888165719842L, strArr), 0);
         d = h22Var;
         h22 h22Var2 = new h22(a.a.a.c.a(-494931115392802L, strArr), 1);

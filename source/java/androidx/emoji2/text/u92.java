@@ -5,7 +5,7 @@ package androidx.emoji2.text;
 public final class u92 {
 
     /* renamed from: a, reason: collision with root package name */
-    public h50 f1166a = new t12();
+    public h50 f1165a = new t12();
     public h50 b = new t12();
     public h50 c = new t12();
     public h50 d = new t12();
@@ -28,7 +28,7 @@ public final class u92 {
 
     public final v92 a() {
         v92 v92Var = new v92();
-        v92Var.f1210a = this.f1166a;
+        v92Var.f1209a = this.f1165a;
         v92Var.b = this.b;
         v92Var.c = this.c;
         v92Var.d = this.d;

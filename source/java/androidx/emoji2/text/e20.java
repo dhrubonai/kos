@@ -47,68 +47,17 @@ public final class e20 extends g01 implements Function2 {
         this.v = j70Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     @Override // kotlin.jvm.functions.Function2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
-    */
-    public final java.lang.Object invoke(java.lang.Object r23, java.lang.Object r24) {
-        /*
-            r22 = this;
-            r0 = r22
-            r1 = r23
-            androidx.emoji2.text.lx r1 = (androidx.emoji2.text.lx) r1
-            r2 = r24
-            java.lang.Number r2 = (java.lang.Number) r2
-            int r2 = r2.intValue()
-            r2 = r2 & 3
-            r3 = 2
-            if (r2 != r3) goto L21
-            r2 = r1
-            androidx.emoji2.text.tx r2 = (androidx.emoji2.text.tx) r2
-            boolean r3 = r2.B()
-            if (r3 != 0) goto L1d
-            goto L21
-        L1d:
-            r2.S()
-            goto L65
-        L21:
-            androidx.emoji2.text.d20 r4 = new androidx.emoji2.text.d20
-            androidx.emoji2.text.zg0 r2 = r0.u
-            androidx.emoji2.text.j70 r3 = r0.v
-            androidx.emoji2.text.h51 r5 = r0.f
-            androidx.emoji2.text.gl2 r6 = r0.g
-            int r7 = r0.h
-            int r8 = r0.i
-            androidx.emoji2.text.rj2 r9 = r0.j
-            androidx.emoji2.text.ak2 r10 = r0.k
-            androidx.emoji2.text.pt r11 = r0.l
-            androidx.emoji2.text.nd1 r12 = r0.m
-            androidx.emoji2.text.nd1 r13 = r0.n
-            androidx.emoji2.text.nd1 r14 = r0.o
-            androidx.emoji2.text.nd1 r15 = r0.p
-            r20 = r2
-            androidx.emoji2.text.an r2 = r0.q
-            r16 = r2
-            androidx.emoji2.text.uj2 r2 = r0.r
-            r17 = r2
-            boolean r2 = r0.s
-            r18 = r2
-            androidx.emoji2.text.um0 r2 = r0.t
-            r19 = r2
-            r21 = r3
-            r4.<init>(r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21)
-            r2 = 2032502107(0x7925855b, float:5.371461E34)
-            androidx.compose.runtime.internal.ComposableLambdaImpl r2 = androidx.emoji2.text.l8.f0(r2, r4, r1)
-            r3 = 6
-            java.lang.Integer r3 = java.lang.Integer.valueOf(r3)
-            androidx.emoji2.text.wm0 r4 = r0.e
-            r4.invoke(r2, r1, r3)
-        L65:
-            androidx.emoji2.text.up2 r1 = androidx.emoji2.text.up2.f1187a
-            return r1
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.e20.invoke(java.lang.Object, java.lang.Object):java.lang.Object");
+    public final Object invoke(Object obj, Object obj2) {
+        lx lxVar = (lx) obj;
+        if ((((Number) obj2).intValue() & 3) == 2) {
+            tx txVar = (tx) lxVar;
+            if (txVar.B()) {
+                txVar.S();
+                return up2.f1186a;
+            }
+        }
+        this.e.invoke(l8.f0(2032502107, new d20(this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q, this.r, this.s, this.t, this.u, this.v), lxVar), lxVar, 6);
+        return up2.f1186a;
     }
 }

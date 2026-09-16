@@ -5,9 +5,9 @@ package androidx.emoji2.text;
 public abstract class kw0 {
 
     /* renamed from: a, reason: collision with root package name */
-    public static final /* synthetic */ int f662a = 0;
+    public static final /* synthetic */ int f661a = 0;
 
     static {
-        int[] iArr = tw0.f1148a;
+        int[] iArr = tw0.f1147a;
     }
 }

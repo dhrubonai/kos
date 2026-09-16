@@ -22,7 +22,7 @@ public final class wl extends g01 implements um0 {
         g11 g11Var = (g11) obj;
         g11Var.b();
         zw1 zw1Var = this.e;
-        float f = zw1Var.f1459a;
+        float f = zw1Var.f1458a;
         float f2 = zw1Var.b;
         cy1 cy1Var = this.f;
         long j = this.g;
@@ -32,7 +32,7 @@ public final class wl extends g01 implements um0 {
         try {
             vb0.o(g11Var, (aa) cy1Var.d, j, 0L, 0.0f, qlVar, 0, 890);
             ((p4) npVar.e.e).F(-f, -f2);
-            return up2.f1187a;
+            return up2.f1186a;
         } catch (Throwable th) {
             ((p4) npVar.e.e).F(-f, -f2);
             throw th;

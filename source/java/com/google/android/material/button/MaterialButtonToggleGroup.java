@@ -44,15 +44,15 @@ public class MaterialButtonToggleGroup extends la1 {
         this.n = new LinkedHashSet();
         this.o = false;
         this.s = new HashSet();
-        TypedArray typedArrayP = lx0.P(getContext(), attributeSet, fv1.k, R.attr.materialButtonToggleGroupStyle, R.style.Widget_MaterialComponents_MaterialButtonToggleGroup, new int[0]);
-        setSingleSelection(typedArrayP.getBoolean(7, false));
-        this.r = typedArrayP.getResourceId(2, -1);
-        this.q = typedArrayP.getBoolean(4, false);
+        TypedArray P = lx0.P(getContext(), attributeSet, fv1.k, R.attr.materialButtonToggleGroupStyle, R.style.Widget_MaterialComponents_MaterialButtonToggleGroup, new int[0]);
+        setSingleSelection(P.getBoolean(7, false));
+        this.r = P.getResourceId(2, -1);
+        this.q = P.getBoolean(4, false);
         if (this.i == null) {
             this.i = we2.b(new m(0.0f));
         }
-        setEnabled(typedArrayP.getBoolean(0, true));
-        typedArrayP.recycle();
+        setEnabled(P.getBoolean(0, true));
+        P.recycle();
         setImportantForAccessibility(1);
     }
 
@@ -117,11 +117,11 @@ public class MaterialButtonToggleGroup extends la1 {
         this.s = new HashSet(set);
         for (int i = 0; i < getChildCount(); i++) {
             int id = ((MaterialButton) getChildAt(i)).getId();
-            boolean zContains = set.contains(Integer.valueOf(id));
-            View viewFindViewById = findViewById(id);
-            if (viewFindViewById instanceof MaterialButton) {
+            boolean contains = set.contains(Integer.valueOf(id));
+            View findViewById = findViewById(id);
+            if (findViewById instanceof MaterialButton) {
                 this.o = true;
-                ((MaterialButton) viewFindViewById).setChecked(zContains);
+                ((MaterialButton) findViewById).setChecked(contains);
                 this.o = false;
             }
             if (hashSet.contains(Integer.valueOf(id)) != set.contains(Integer.valueOf(id))) {

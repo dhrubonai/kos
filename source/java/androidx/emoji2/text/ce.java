@@ -10,7 +10,7 @@ public final class ce {
     public l6 h;
 
     /* renamed from: a, reason: collision with root package name */
-    public final db2 f196a = new db2(0);
+    public final db2 f195a = new db2(0);
     public final ArrayList b = new ArrayList();
     public final p4 c = new p4(6, this);
     public final f7 d = new f7(4, this);

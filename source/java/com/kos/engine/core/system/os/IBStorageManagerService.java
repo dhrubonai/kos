@@ -85,37 +85,37 @@ public interface IBStorageManagerService extends IInterface {
 
             @Override // com.kos.engine.core.system.os.IBStorageManagerService
             public Uri getUriForFile(String str) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-436506675265314L, xa1.b));
-                    parcelObtain.writeString(str);
-                    this.mRemote.transact(2, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
+                    obtain.writeInterfaceToken(c.a(-436506675265314L, xa1.b));
+                    obtain.writeString(str);
+                    this.mRemote.transact(2, obtain, obtain2, 0);
+                    obtain2.readException();
                     Parcelable.Creator creator = Uri.CREATOR;
-                    return (Uri) _Parcel.a(parcelObtain2);
+                    return (Uri) _Parcel.a(obtain2);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
 
             @Override // com.kos.engine.core.system.os.IBStorageManagerService
             public StorageVolume[] getVolumeList(int i, String str, int i2, int i3) {
-                Parcel parcelObtain = Parcel.obtain();
-                Parcel parcelObtain2 = Parcel.obtain();
+                Parcel obtain = Parcel.obtain();
+                Parcel obtain2 = Parcel.obtain();
                 try {
-                    parcelObtain.writeInterfaceToken(c.a(-436876042452770L, xa1.b));
-                    parcelObtain.writeInt(i);
-                    parcelObtain.writeString(str);
-                    parcelObtain.writeInt(i2);
-                    parcelObtain.writeInt(i3);
-                    this.mRemote.transact(1, parcelObtain, parcelObtain2, 0);
-                    parcelObtain2.readException();
-                    return (StorageVolume[]) parcelObtain2.createTypedArray(StorageVolume.CREATOR);
+                    obtain.writeInterfaceToken(c.a(-436876042452770L, xa1.b));
+                    obtain.writeInt(i);
+                    obtain.writeString(str);
+                    obtain.writeInt(i2);
+                    obtain.writeInt(i3);
+                    this.mRemote.transact(1, obtain, obtain2, 0);
+                    obtain2.readException();
+                    return (StorageVolume[]) obtain2.createTypedArray(StorageVolume.CREATOR);
                 } finally {
-                    parcelObtain2.recycle();
-                    parcelObtain.recycle();
+                    obtain2.recycle();
+                    obtain.recycle();
                 }
             }
         }
@@ -128,18 +128,18 @@ public interface IBStorageManagerService extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface iInterfaceQueryLocalInterface = iBinder.queryLocalInterface(c.a(-437554647285538L, xa1.b));
-            return (iInterfaceQueryLocalInterface == null || !(iInterfaceQueryLocalInterface instanceof IBStorageManagerService)) ? new Proxy(iBinder) : (IBStorageManagerService) iInterfaceQueryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c.a(-437554647285538L, xa1.b));
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof IBStorageManagerService)) ? new Proxy(iBinder) : (IBStorageManagerService) queryLocalInterface;
         }
 
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
-            String strA = c.a(-437253999574818L, xa1.b);
+            String a2 = c.a(-437253999574818L, xa1.b);
             if (i >= 1 && i <= 16777215) {
-                parcel.enforceInterface(strA);
+                parcel.enforceInterface(a2);
             }
             if (i == 1598968902) {
-                parcel2.writeString(strA);
+                parcel2.writeString(a2);
                 return true;
             }
             if (i == 1) {

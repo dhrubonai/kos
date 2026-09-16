@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.IInterface;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.RemoteException;
 import androidx.emoji2.text.c01;
 import androidx.emoji2.text.jx0;
 import androidx.emoji2.text.k1;
@@ -57,9 +56,9 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
-                    return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
+                    return invoke;
                 }
             } catch (Throwable unused) {
             }
@@ -191,9 +190,9 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
         @Override // com.kos.engine.fake.hook.MethodHook
         public Object hook(Object obj, Method method, Object[] objArr) {
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (IConnectivityManagerProxy.hasNetworkCapabilityResult(objInvoke)) {
-                    return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (IConnectivityManagerProxy.hasNetworkCapabilityResult(invoke)) {
+                    return invoke;
                 }
             } catch (Throwable unused) {
             }
@@ -209,13 +208,13 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     @ProxyMethod("getLinkProperties")
     public static class GetLinkProperties extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        public Object hook(Object obj, Method method, Object[] objArr) {
             try {
                 String[] strArr = xa1.b;
                 nz0.Q(c.a(-672317559684898L, strArr), 3, c.a(-671853703216930L, strArr));
                 mz0.x(objArr);
-                Object objInvoke = method.invoke(obj, objArr);
-                return objInvoke == null ? IConnectivityManagerProxy.getHostActiveLinkProperties() : objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                return invoke == null ? IConnectivityManagerProxy.getHostActiveLinkProperties() : invoke;
             } catch (Exception unused) {
                 return IConnectivityManagerProxy.getHostActiveLinkProperties();
             }
@@ -230,9 +229,9 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
             String[] strArr = xa1.b;
             mz0.x(objArr);
             try {
-                Object objInvoke = method.invoke(obj, objArr);
-                if (objInvoke != null) {
-                    return objInvoke;
+                Object invoke = method.invoke(obj, objArr);
+                if (invoke != null) {
+                    return invoke;
                 }
             } catch (Throwable th) {
                 nz0.P(c.a(-671840818315042L, strArr), c.a(-672004027072290L, strArr), th);
@@ -245,48 +244,40 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
     @ProxyMethod("getNetworkInfo")
     public static class GetNetworkInfo extends MethodHook {
-        /* JADX WARN: Removed duplicated region for block: B:13:0x0022  */
+        /* JADX WARN: Removed duplicated region for block: B:17:0x0029 A[RETURN] */
+        /* JADX WARN: Removed duplicated region for block: B:18:0x002a  */
         @Override // com.kos.engine.fake.hook.MethodHook
         /*
             Code decompiled incorrectly, please refer to instructions dump.
-            To view partially-correct add '--show-bad-code' argument
         */
-        public java.lang.Object hook(java.lang.Object r1, java.lang.reflect.Method r2, java.lang.Object[] r3) {
-            /*
-                r0 = this;
-                java.lang.Object r1 = r2.invoke(r1, r3)     // Catch: java.lang.Throwable -> Lf
-                android.net.NetworkInfo r1 = (android.net.NetworkInfo) r1     // Catch: java.lang.Throwable -> Lf
-                if (r1 == 0) goto Lf
-                boolean r2 = r1.isConnected()     // Catch: java.lang.Throwable -> Lf
-                if (r2 == 0) goto Lf
-                return r1
-            Lf:
-                if (r3 == 0) goto L22
-                int r1 = r3.length
-                if (r1 <= 0) goto L22
-                r1 = 0
-                r1 = r3[r1]
-                boolean r2 = r1 instanceof java.lang.Integer
-                if (r2 == 0) goto L22
-                java.lang.Integer r1 = (java.lang.Integer) r1
-                int r1 = r1.intValue()
-                goto L23
-            L22:
-                r1 = -1
-            L23:
-                android.net.NetworkInfo r2 = com.kos.engine.fake.service.IConnectivityManagerProxy.m(r1)
-                if (r2 == 0) goto L2a
-                return r2
-            L2a:
-                android.net.NetworkInfo r2 = com.kos.engine.fake.service.IConnectivityManagerProxy.i()
-                if (r2 == 0) goto L31
-                goto L35
-            L31:
-                android.net.NetworkInfo r2 = com.kos.engine.fake.service.IConnectivityManagerProxy.a(r1)
-            L35:
-                return r2
-            */
-            throw new UnsupportedOperationException("Method not decompiled: com.kos.engine.fake.service.IConnectivityManagerProxy.GetNetworkInfo.hook(java.lang.Object, java.lang.reflect.Method, java.lang.Object[]):java.lang.Object");
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            int i;
+            NetworkInfo hostNetworkInfo;
+            try {
+                NetworkInfo networkInfo = (NetworkInfo) method.invoke(obj, objArr);
+                if (networkInfo != null) {
+                    if (networkInfo.isConnected()) {
+                        return networkInfo;
+                    }
+                }
+            } catch (Throwable unused) {
+            }
+            if (objArr != null && objArr.length > 0) {
+                Object obj2 = objArr[0];
+                if (obj2 instanceof Integer) {
+                    i = ((Integer) obj2).intValue();
+                    hostNetworkInfo = IConnectivityManagerProxy.getHostNetworkInfo(i);
+                    if (hostNetworkInfo == null) {
+                        return hostNetworkInfo;
+                    }
+                    NetworkInfo hostActiveNetworkInfo = IConnectivityManagerProxy.getHostActiveNetworkInfo();
+                    return hostActiveNetworkInfo != null ? hostActiveNetworkInfo : IConnectivityManagerProxy.createConnectedNetworkInfo(i);
+                }
+            }
+            i = -1;
+            hostNetworkInfo = IConnectivityManagerProxy.getHostNetworkInfo(i);
+            if (hostNetworkInfo == null) {
+            }
         }
     }
 
@@ -318,23 +309,23 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     @ProxyMethod("registerNetworkCallback")
     public static class RegisterNetworkCallback extends MethodHook {
         @Override // com.kos.engine.fake.hook.MethodHook
-        public Object hook(Object obj, Method method, Object[] objArr) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-            Throwable thUnwrapInvocation;
+        public Object hook(Object obj, Method method, Object[] objArr) {
+            Throwable unwrapInvocation;
             mz0.x(objArr);
-            Object objInvoke = null;
+            Object obj2 = null;
             try {
-                objInvoke = method.invoke(obj, objArr);
-                thUnwrapInvocation = null;
+                obj2 = method.invoke(obj, objArr);
+                unwrapInvocation = null;
             } catch (Throwable th) {
-                thUnwrapInvocation = IConnectivityManagerProxy.unwrapInvocation(th);
+                unwrapInvocation = IConnectivityManagerProxy.unwrapInvocation(th);
             }
-            Object objCreateSyntheticNetworkRequest = (objInvoke == null && NetworkRequest.class.isAssignableFrom(method.getReturnType())) ? IConnectivityManagerProxy.createSyntheticNetworkRequest() : objInvoke;
-            IConnectivityManagerProxy.scheduleNetworkCallbackKick(method.getName(), IConnectivityManagerProxy.findMessenger(objArr), objCreateSyntheticNetworkRequest);
-            if (thUnwrapInvocation == null) {
-                return objInvoke != null ? objInvoke : objCreateSyntheticNetworkRequest != null ? objCreateSyntheticNetworkRequest : IConnectivityManagerProxy.defaultReturnFor(method);
+            Object createSyntheticNetworkRequest = (obj2 == null && NetworkRequest.class.isAssignableFrom(method.getReturnType())) ? IConnectivityManagerProxy.createSyntheticNetworkRequest() : obj2;
+            IConnectivityManagerProxy.scheduleNetworkCallbackKick(method.getName(), IConnectivityManagerProxy.findMessenger(objArr), createSyntheticNetworkRequest);
+            if (unwrapInvocation == null) {
+                return obj2 != null ? obj2 : createSyntheticNetworkRequest != null ? createSyntheticNetworkRequest : IConnectivityManagerProxy.defaultReturnFor(method);
             }
-            IConnectivityManagerProxy.logNetworkCallbackFallbackOnce(method.getName(), thUnwrapInvocation);
-            return objCreateSyntheticNetworkRequest != null ? objCreateSyntheticNetworkRequest : IConnectivityManagerProxy.defaultReturnFor(method);
+            IConnectivityManagerProxy.logNetworkCallbackFallbackOnce(method.getName(), unwrapInvocation);
+            return createSyntheticNetworkRequest != null ? createSyntheticNetworkRequest : IConnectivityManagerProxy.defaultReturnFor(method);
         }
     }
 
@@ -357,10 +348,13 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public IConnectivityManagerProxy() {
+        super(r0.getService(c.a(-672729876545314L, r1)));
         ServiceManagerStatic serviceManagerStatic = BRServiceManager.get();
         String[] strArr = xa1.b;
-        super(serviceManagerStatic.getService(c.a(-672729876545314L, strArr)));
         nz0.Q(c.a(-672820070858530L, strArr), 3, c.a(-672364804325154L, strArr));
     }
 
@@ -371,14 +365,14 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
         if (i < 0) {
             i = 1;
         }
-        String strA = c.a(i == 0 ? -671376961847074L : -671407026618146L, strArr);
+        String a2 = c.a(i == 0 ? -671376961847074L : -671407026618146L, strArr);
         try {
             try {
                 Constructor declaredConstructor = NetworkInfo.class.getDeclaredConstructor(cls, cls, String.class, String.class);
                 declaredConstructor.setAccessible(true);
-                NetworkInfo networkInfo = (NetworkInfo) declaredConstructor.newInstance(Integer.valueOf(i), 0, strA, c.a(-671394141716258L, strArr));
-                markConnected(networkInfo, i, strA);
-                logSyntheticNetworkInfoOnce(strA);
+                NetworkInfo networkInfo = (NetworkInfo) declaredConstructor.newInstance(Integer.valueOf(i), 0, a2, c.a(-671394141716258L, strArr));
+                markConnected(networkInfo, i, a2);
+                logSyntheticNetworkInfoOnce(a2);
                 return networkInfo;
             } catch (Throwable unused) {
                 return null;
@@ -387,8 +381,8 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
             Constructor declaredConstructor2 = NetworkInfo.class.getDeclaredConstructor(cls);
             declaredConstructor2.setAccessible(true);
             NetworkInfo networkInfo2 = (NetworkInfo) declaredConstructor2.newInstance(Integer.valueOf(i));
-            markConnected(networkInfo2, i, strA);
-            logSyntheticNetworkInfoOnce(strA);
+            markConnected(networkInfo2, i, a2);
+            logSyntheticNetworkInfoOnce(a2);
             return networkInfo2;
         }
     }
@@ -567,17 +561,17 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     /* JADX INFO: Access modifiers changed from: private */
     public static NetworkCapabilities getSyntheticNetworkCapabilities() {
         try {
-            NetworkCapabilities networkCapabilitiesG = k1.g();
+            NetworkCapabilities g = k1.g();
             String[] strArr = xa1.b;
-            invokeNetworkCapabilitiesInt(networkCapabilitiesG, c.a(-670797141262114L, strArr), 1);
-            invokeNetworkCapabilitiesInt(networkCapabilitiesG, c.a(-670870155706146L, strArr), 12);
-            invokeNetworkCapabilitiesInt(networkCapabilitiesG, c.a(-670878745640738L, strArr), 16);
-            invokeNetworkCapabilitiesInt(networkCapabilitiesG, c.a(-670956055052066L, strArr), 13);
-            invokeNetworkCapabilitiesInt(networkCapabilitiesG, c.a(-671583120277282L, strArr), 14);
-            invokeNetworkCapabilitiesField(networkCapabilitiesG, c.a(-671660429688610L, strArr));
-            invokeNetworkCapabilitiesField(networkCapabilitiesG, c.a(-671733444132642L, strArr));
+            invokeNetworkCapabilitiesInt(g, c.a(-670797141262114L, strArr), 1);
+            invokeNetworkCapabilitiesInt(g, c.a(-670870155706146L, strArr), 12);
+            invokeNetworkCapabilitiesInt(g, c.a(-670878745640738L, strArr), 16);
+            invokeNetworkCapabilitiesInt(g, c.a(-670956055052066L, strArr), 13);
+            invokeNetworkCapabilitiesInt(g, c.a(-671583120277282L, strArr), 14);
+            invokeNetworkCapabilitiesField(g, c.a(-671660429688610L, strArr));
+            invokeNetworkCapabilitiesField(g, c.a(-671733444132642L, strArr));
             logSyntheticNetworkCapabilitiesOnce();
-            return networkCapabilitiesG;
+            return g;
         } catch (Throwable unused) {
             return null;
         }
@@ -696,17 +690,17 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void sendConnectivityCallback(Messenger messenger, int i, NetworkRequest networkRequest, Network network, NetworkCapabilities networkCapabilities, LinkProperties linkProperties) throws RemoteException {
-        Message messageObtain = Message.obtain();
-        messageObtain.what = i;
+    public static void sendConnectivityCallback(Messenger messenger, int i, NetworkRequest networkRequest, Network network, NetworkCapabilities networkCapabilities, LinkProperties linkProperties) {
+        Message obtain = Message.obtain();
+        obtain.what = i;
         Bundle bundle = new Bundle();
         bundle.setClassLoader(NetworkRequest.class.getClassLoader());
         bundle.putParcelable("NetworkRequest", networkRequest);
         bundle.putParcelable("Network", network);
         bundle.putParcelable("NetworkCapabilities", networkCapabilities);
         bundle.putParcelable("LinkProperties", linkProperties);
-        messageObtain.setData(bundle);
-        messenger.send(messageObtain);
+        obtain.setData(bundle);
+        messenger.send(obtain);
     }
 
     private static void setNetworkInfoField(NetworkInfo networkInfo, String str, Object obj) {
@@ -737,9 +731,9 @@ public class IConnectivityManagerProxy extends BinderInvocationStub {
         IConnectivityManagerStubStatic iConnectivityManagerStubStatic = BRIConnectivityManagerStub.get();
         ServiceManagerStatic serviceManagerStatic = BRServiceManager.get();
         String[] strArr = xa1.b;
-        IInterface iInterfaceAsInterface = iConnectivityManagerStubStatic.asInterface(serviceManagerStatic.getService(c.a(-672497948311330L, strArr)));
-        nz0.Q(c.a(-672588142624546L, strArr), 3, c.a(-671033364463394L, strArr) + iInterfaceAsInterface.toString());
-        return iInterfaceAsInterface;
+        IInterface asInterface = iConnectivityManagerStubStatic.asInterface(serviceManagerStatic.getService(c.a(-672497948311330L, strArr)));
+        nz0.Q(c.a(-672588142624546L, strArr), 3, c.a(-671033364463394L, strArr) + asInterface.toString());
+        return asInterface;
     }
 
     @Override // com.kos.engine.fake.hook.ClassInvocationStub

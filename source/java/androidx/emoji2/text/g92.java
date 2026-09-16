@@ -42,13 +42,13 @@ public final class g92 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((g92) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((g92) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
-    public final Object k(Object obj) throws Throwable {
+    public final Object k(Object obj) {
         int i = this.h;
-        up2 up2Var = up2.f1187a;
+        up2 up2Var = up2.f1186a;
         Context context = this.k;
         mf1 mf1Var = this.m;
         mf1 mf1Var2 = this.l;
@@ -60,7 +60,7 @@ public final class g92 extends hh2 implements Function2 {
                 int i3 = this.i;
                 if (i3 == 0) {
                     mz0.L(obj);
-                    q60 q60Var = e90.f294a;
+                    q60 q60Var = e90.f293a;
                     a60 a60Var = a60.f;
                     h3 h3Var = new h3(i2, null, 5);
                     this.i = 1;
@@ -70,26 +70,26 @@ public final class g92 extends hh2 implements Function2 {
                     }
                 } else {
                     if (i3 != 1) {
-                        throw new IllegalStateException(a.a.a.c.a(-502808085413666L, wj1.f1284a));
+                        throw new IllegalStateException(a.a.a.c.a(-502808085413666L, wj1.f1283a));
                     }
                     mz0.L(obj);
                 }
-                int iIntValue = ((Number) obj).intValue();
+                int intValue = ((Number) obj).intValue();
                 n92.n(i2, mf1Var2);
                 mf1Var.setValue(n92.s(context, i2));
                 ((mf1) obj2).setValue(Boolean.FALSE);
-                Toast.makeText(context, context.getResources().getQuantityString(R.plurals.virtual_google_accounts_removed_count, iIntValue, new Integer(iIntValue)), 0).show();
+                Toast.makeText(context, context.getResources().getQuantityString(R.plurals.virtual_google_accounts_removed_count, intValue, new Integer(intValue)), 0).show();
                 return up2Var;
             default:
-                String[] strArr = wj1.f1284a;
+                String[] strArr = wj1.f1283a;
                 int i4 = this.i;
                 if (i4 == 0) {
                     mz0.L(obj);
-                    String strA = a.a.a.c.a(-503868942335778L, strArr);
+                    String a2 = a.a.a.c.a(-503868942335778L, strArr);
                     this.i = 1;
                     ((dh) obj2).getClass();
-                    q60 q60Var2 = e90.f294a;
-                    obj = h50.M(a60.f, new bh(i2, strA, (l10) null), this);
+                    q60 q60Var2 = e90.f293a;
+                    obj = h50.M(a60.f, new bh(i2, a2, (l10) null), this);
                     if (obj == f30Var) {
                         return f30Var;
                     }
@@ -99,11 +99,11 @@ public final class g92 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                boolean zBooleanValue = ((Boolean) obj).booleanValue();
-                int i5 = n92.f799a;
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                int i5 = n92.f798a;
                 Boolean bool = Boolean.FALSE;
                 mf1Var2.setValue(bool);
-                if (zBooleanValue) {
+                if (booleanValue) {
                     return up2Var;
                 }
                 mf1Var.setValue(bool);

@@ -37,12 +37,12 @@ public final class ve2 extends hh2 implements Function2 {
         l10 l10Var = (l10) obj2;
         switch (this.h) {
         }
-        return ((ve2) i(l10Var, e30Var)).k(up2.f1187a);
+        return ((ve2) i(l10Var, e30Var)).k(up2.f1186a);
     }
 
     @Override // androidx.emoji2.text.lk
     public final Object k(Object obj) {
-        float fW;
+        float w;
         e30 e30Var;
         switch (this.h) {
             case 0:
@@ -53,9 +53,9 @@ public final class ve2 extends hh2 implements Function2 {
                     Float f = new Float(this.i);
                     he heVar = (he) this.l;
                     this.j = 1;
-                    Object objC = ed.c(edVar, f, heVar, null, this, 12);
+                    Object c = ed.c(edVar, f, heVar, null, this, 12);
                     f30 f30Var = f30.d;
-                    if (objC == f30Var) {
+                    if (c == f30Var) {
                         return f30Var;
                     }
                 } else {
@@ -64,36 +64,36 @@ public final class ve2 extends hh2 implements Function2 {
                     }
                     mz0.L(obj);
                 }
-                return up2.f1187a;
+                return up2.f1186a;
             default:
                 int i2 = this.j;
                 if (i2 == 0) {
                     mz0.L(obj);
                     e30 e30Var2 = (e30) this.k;
-                    fW = pz0.w(e30Var2.u());
+                    w = pz0.w(e30Var2.u());
                     e30Var = e30Var2;
                 } else {
                     if (i2 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    fW = this.i;
+                    w = this.i;
                     e30Var = (e30) this.k;
                     mz0.L(obj);
                 }
                 while (wj1.z(e30Var)) {
-                    rn2 rn2Var = new rn2((tn2) this.l, fW);
+                    rn2 rn2Var = new rn2((tn2) this.l, w);
                     this.k = e30Var;
-                    this.i = fW;
+                    this.i = w;
                     this.j = 1;
                     v20 v20Var = this.e;
                     lx0.u(v20Var);
-                    Object objK = ly0.v(v20Var).k(rn2Var, this);
+                    Object k = ly0.v(v20Var).k(rn2Var, this);
                     f30 f30Var2 = f30.d;
-                    if (objK == f30Var2) {
+                    if (k == f30Var2) {
                         return f30Var2;
                     }
                 }
-                return up2.f1187a;
+                return up2.f1186a;
         }
     }
 

@@ -1,6 +1,7 @@
 package androidx.emoji2.text;
 
 import android.view.Choreographer;
+import android.view.Display;
 import android.view.View;
 
 /* compiled from: r8-map-id-e3b6dc098cf6d613ac4f8e65c38618200d3974a931f86dcb452a3625706b4731 */
@@ -14,48 +15,24 @@ public final class mb implements pt1, ky1, Runnable, Choreographer.FrameCallback
     public final sf1 e = new sf1(new nt1[16]);
     public final Choreographer g = Choreographer.getInstance();
 
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0035  */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0032, code lost:
+    
+        if (r5 >= 30.0f) goto L11;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
-        To view partially-correct add '--show-bad-code' argument
     */
-    public mb(android.view.View r5) {
-        /*
-            r4 = this;
-            r4.<init>()
-            r4.d = r5
-            androidx.emoji2.text.sf1 r0 = new androidx.emoji2.text.sf1
-            r1 = 16
-            androidx.emoji2.text.nt1[] r1 = new androidx.emoji2.text.nt1[r1]
-            r0.<init>(r1)
-            r4.e = r0
-            android.view.Choreographer r0 = android.view.Choreographer.getInstance()
-            r4.g = r0
-            long r0 = androidx.emoji2.text.mb.j
-            r2 = 0
-            int r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1))
-            if (r0 != 0) goto L3f
-            android.view.Display r0 = r5.getDisplay()
-            boolean r5 = r5.isInEditMode()
-            if (r5 != 0) goto L35
-            if (r0 == 0) goto L35
-            float r5 = r0.getRefreshRate()
-            r0 = 1106247680(0x41f00000, float:30.0)
-            int r0 = (r5 > r0 ? 1 : (r5 == r0 ? 0 : -1))
-            if (r0 < 0) goto L35
-            goto L37
-        L35:
-            r5 = 1114636288(0x42700000, float:60.0)
-        L37:
-            r0 = 1000000000(0x3b9aca00, float:0.0047237873)
-            float r0 = (float) r0
-            float r0 = r0 / r5
-            long r0 = (long) r0
-            androidx.emoji2.text.mb.j = r0
-        L3f:
-            return
-        */
-        throw new UnsupportedOperationException("Method not decompiled: androidx.emoji2.text.mb.<init>(android.view.View):void");
+    public mb(View view) {
+        float f;
+        this.d = view;
+        if (j == 0) {
+            Display display = view.getDisplay();
+            if (!view.isInEditMode() && display != null) {
+                f = display.getRefreshRate();
+            }
+            f = 60.0f;
+            j = (long) (1000000000 / f);
+        }
     }
 
     @Override // androidx.emoji2.text.pt1

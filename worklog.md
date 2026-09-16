@@ -105,3 +105,33 @@ Environment SURVIVED this session (repo + tools intact — persistence works).
    `GET /api/admin/crashes?limit=50` — read device "kos-probe" reports
    (CP0..CP7 trace + FAIL lines with Throwable class = EXACT crash point).
 2. Branch per analysis/FIX_PLAN.md Phase 2 using the checkpoint data.
+
+### Session 5b (2026-09-16) — ROUND-5: VM architecture solved, pristine-lib build shipped
+1. Built Unicorn AArch64 emulation harness (scripts/emu_kos.py): mocked ELF/relocs/
+   ifuncs/PLT/dlsym/stdio/procfs/raw-SVC/JNI. Ran the REAL libkos.so end-to-end.
+2. DISCOVERED the real protection: setup1 (0x565e4) writes 6 call stubs OVER the
+   ".main bodies" and a dispatcher ptr into payload slot 0xdc1008; the "gate" call
+   dispatches into a payload BYTECODE VM (interpreter 0x5659c/0x56884) that also
+   JITs ARM64 into .bss with raw svc syscalls. The "encrypted bodies" theory (9.3)
+   was WRONG — slots are stub storage; the identical prefix was the stub area.
+3. Gate checks (all observed in emu): /proc/self/status Name+TracerPid (byte-wise),
+   /proc/self/maps x2, dlsym import-table validation (every symbol must resolve
+   non-NULL!), C++ static init with pthread guards (gettid != 0), getauxval
+   HWCAP/HWCAP2. **THE APK IS NEVER READ — NO SIGNATURE CHECK IN THE GATE.**
+4. The VM returns JNI_OnLoad's result DIRECTLY (worker-dispatch at 0x57ccc..0x57ce4
+   never executes). Any sub-check failure => return 1 => invalid JNI version =>
+   bionic loadLibrary throws UnsatisfiedLinkError => instant crash.
+5. CORRECTED ROOT CAUSE for rounds 3/4: the patches were inside the VM's domain
+   (0x57f48 overwritten by the stub anyway; forced results at 0x57cc4 dead code) and
+   corrupted VM data => VM fail-path => return 1 => crash. NOT UnsatisfiedLinkError
+   from "natives never registered" as originally reasoned.
+6. ROUND-5 SHIPPED: app/KOS-r5-pristine-signed.apk — libkos.so byte-identical to
+   original (6d274f5aad80603d16bbcc20a38dc31d), probe v2 kept, kos_api_base kept,
+   versionCode 30, kos-release3 keystore, v2+v3. MD5 cc58ef3129256a9b81d73bbb1c4aafec.
+   HYPOTHESIS: pristine lib passes the environment-only gate on a re-signed APK
+   and boots with FULL natives (H4 finally tested properly).
+7. Next-session instructions: read analysis/ROUND5_VM_BREAKTHROUGH.md; check worker
+   for kos-probe reports (POST /api/admin/login, GET /api/admin/crashes). If crash
+   pre-CP3: emulate with on-device-faithful /proc+props. If CP6/CP7: call each stub
+   with JNI args in emu (lazy registration). If license rejected: capture doTask
+   HTTP and adapt worker response.
